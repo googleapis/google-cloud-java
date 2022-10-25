@@ -73,74 +73,79 @@ public final class LogsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/dataplex/v1/logs.proto\022\030g"
-          + "oogle.cloud.dataplex.v1\032\036google/protobuf"
-          + "/duration.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\240\t\n\016DiscoveryEvent\022\017\n\007message\030\001"
-          + " \001(\t\022\017\n\007lake_id\030\002 \001(\t\022\017\n\007zone_id\030\003 \001(\t\022\020"
-          + "\n\010asset_id\030\004 \001(\t\022\025\n\rdata_location\030\005 \001(\t\022"
-          + "@\n\004type\030\n \001(\01622.google.cloud.dataplex.v1"
-          + ".DiscoveryEvent.EventType\022H\n\006config\030\024 \001("
-          + "\01326.google.cloud.dataplex.v1.DiscoveryEv"
-          + "ent.ConfigDetailsH\000\022H\n\006entity\030\025 \001(\01326.go"
-          + "ogle.cloud.dataplex.v1.DiscoveryEvent.En"
-          + "tityDetailsH\000\022N\n\tpartition\030\026 \001(\01329.googl"
-          + "e.cloud.dataplex.v1.DiscoveryEvent.Parti"
-          + "tionDetailsH\000\022H\n\006action\030\027 \001(\01326.google.c"
-          + "loud.dataplex.v1.DiscoveryEvent.ActionDe"
-          + "tailsH\000\032\236\001\n\rConfigDetails\022Z\n\nparameters\030"
-          + "\001 \003(\0132F.google.cloud.dataplex.v1.Discove"
-          + "ryEvent.ConfigDetails.ParametersEntry\0321\n"
-          + "\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\t:\0028\001\032b\n\rEntityDetails\022\016\n\006entity\030\001 \001("
-          + "\t\022A\n\004type\030\002 \001(\01623.google.cloud.dataplex."
-          + "v1.DiscoveryEvent.EntityType\032\230\001\n\020Partiti"
-          + "onDetails\022\021\n\tpartition\030\001 \001(\t\022\016\n\006entity\030\002"
-          + " \001(\t\022A\n\004type\030\003 \001(\01623.google.cloud.datapl"
-          + "ex.v1.DiscoveryEvent.EntityType\022\036\n\026sampl"
-          + "ed_data_locations\030\004 \003(\t\032\035\n\rActionDetails"
-          + "\022\014\n\004type\030\001 \001(\t\"\264\001\n\tEventType\022\032\n\026EVENT_TY"
-          + "PE_UNSPECIFIED\020\000\022\n\n\006CONFIG\020\001\022\022\n\016ENTITY_C"
-          + "REATED\020\002\022\022\n\016ENTITY_UPDATED\020\003\022\022\n\016ENTITY_D"
-          + "ELETED\020\004\022\025\n\021PARTITION_CREATED\020\005\022\025\n\021PARTI"
-          + "TION_UPDATED\020\006\022\025\n\021PARTITION_DELETED\020\007\"A\n"
-          + "\nEntityType\022\033\n\027ENTITY_TYPE_UNSPECIFIED\020\000"
-          + "\022\t\n\005TABLE\020\001\022\013\n\007FILESET\020\002B\t\n\007details\"\234\004\n\010"
-          + "JobEvent\022\017\n\007message\030\001 \001(\t\022\016\n\006job_id\030\002 \001("
-          + "\t\022.\n\nstart_time\030\003 \001(\0132\032.google.protobuf."
-          + "Timestamp\022,\n\010end_time\030\004 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\0227\n\005state\030\005 \001(\0162(.google."
-          + "cloud.dataplex.v1.JobEvent.State\022\017\n\007retr"
-          + "ies\030\006 \001(\005\0225\n\004type\030\007 \001(\0162\'.google.cloud.d"
-          + "ataplex.v1.JobEvent.Type\022;\n\007service\030\010 \001("
-          + "\0162*.google.cloud.dataplex.v1.JobEvent.Se"
-          + "rvice\022\023\n\013service_job\030\t \001(\t\"5\n\004Type\022\024\n\020TY"
-          + "PE_UNSPECIFIED\020\000\022\t\n\005SPARK\020\001\022\014\n\010NOTEBOOK\020"
-          + "\002\"U\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tSUC"
-          + "CEEDED\020\001\022\n\n\006FAILED\020\002\022\r\n\tCANCELLED\020\003\022\013\n\007A"
-          + "BORTED\020\004\"0\n\007Service\022\027\n\023SERVICE_UNSPECIFI"
-          + "ED\020\000\022\014\n\010DATAPROC\020\001\"\302\004\n\014SessionEvent\022\017\n\007m"
-          + "essage\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\t\022\022\n\nsession"
-          + "_id\030\003 \001(\t\022>\n\004type\030\004 \001(\01620.google.cloud.d"
-          + "ataplex.v1.SessionEvent.EventType\022C\n\005que"
-          + "ry\030\005 \001(\01322.google.cloud.dataplex.v1.Sess"
-          + "ionEvent.QueryDetailH\000\032\243\002\n\013QueryDetail\022\020"
-          + "\n\010query_id\030\001 \001(\t\022\022\n\nquery_text\030\002 \001(\t\022I\n\006"
-          + "engine\030\003 \001(\01629.google.cloud.dataplex.v1."
-          + "SessionEvent.QueryDetail.Engine\022+\n\010durat"
-          + "ion\030\004 \001(\0132\031.google.protobuf.Duration\022\031\n\021"
-          + "result_size_bytes\030\005 \001(\003\022\034\n\024data_processe"
-          + "d_bytes\030\006 \001(\003\"=\n\006Engine\022\026\n\022ENGINE_UNSPEC"
-          + "IFIED\020\000\022\r\n\tSPARK_SQL\020\001\022\014\n\010BIGQUERY\020\002\"G\n\t"
-          + "EventType\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\t\n"
-          + "\005START\020\001\022\010\n\004STOP\020\002\022\t\n\005QUERY\020\003B\010\n\006detailB"
-          + "m\n\034com.google.cloud.dataplex.v1B\tLogsPro"
-          + "toP\001Z@google.golang.org/genproto/googlea"
-          + "pis/cloud/dataplex/v1;dataplexb\006proto3"
+          + "oogle.cloud.dataplex.v1\032\031google/api/reso"
+          + "urce.proto\032\036google/protobuf/duration.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\240\t\n\016"
+          + "DiscoveryEvent\022\017\n\007message\030\001 \001(\t\022\017\n\007lake_"
+          + "id\030\002 \001(\t\022\017\n\007zone_id\030\003 \001(\t\022\020\n\010asset_id\030\004 "
+          + "\001(\t\022\025\n\rdata_location\030\005 \001(\t\022@\n\004type\030\n \001(\016"
+          + "22.google.cloud.dataplex.v1.DiscoveryEve"
+          + "nt.EventType\022H\n\006config\030\024 \001(\01326.google.cl"
+          + "oud.dataplex.v1.DiscoveryEvent.ConfigDet"
+          + "ailsH\000\022H\n\006entity\030\025 \001(\01326.google.cloud.da"
+          + "taplex.v1.DiscoveryEvent.EntityDetailsH\000"
+          + "\022N\n\tpartition\030\026 \001(\01329.google.cloud.datap"
+          + "lex.v1.DiscoveryEvent.PartitionDetailsH\000"
+          + "\022H\n\006action\030\027 \001(\01326.google.cloud.dataplex"
+          + ".v1.DiscoveryEvent.ActionDetailsH\000\032\236\001\n\rC"
+          + "onfigDetails\022Z\n\nparameters\030\001 \003(\0132F.googl"
+          + "e.cloud.dataplex.v1.DiscoveryEvent.Confi"
+          + "gDetails.ParametersEntry\0321\n\017ParametersEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032b\n\rE"
+          + "ntityDetails\022\016\n\006entity\030\001 \001(\t\022A\n\004type\030\002 \001"
+          + "(\01623.google.cloud.dataplex.v1.DiscoveryE"
+          + "vent.EntityType\032\230\001\n\020PartitionDetails\022\021\n\t"
+          + "partition\030\001 \001(\t\022\016\n\006entity\030\002 \001(\t\022A\n\004type\030"
+          + "\003 \001(\01623.google.cloud.dataplex.v1.Discove"
+          + "ryEvent.EntityType\022\036\n\026sampled_data_locat"
+          + "ions\030\004 \003(\t\032\035\n\rActionDetails\022\014\n\004type\030\001 \001("
+          + "\t\"\264\001\n\tEventType\022\032\n\026EVENT_TYPE_UNSPECIFIE"
+          + "D\020\000\022\n\n\006CONFIG\020\001\022\022\n\016ENTITY_CREATED\020\002\022\022\n\016E"
+          + "NTITY_UPDATED\020\003\022\022\n\016ENTITY_DELETED\020\004\022\025\n\021P"
+          + "ARTITION_CREATED\020\005\022\025\n\021PARTITION_UPDATED\020"
+          + "\006\022\025\n\021PARTITION_DELETED\020\007\"A\n\nEntityType\022\033"
+          + "\n\027ENTITY_TYPE_UNSPECIFIED\020\000\022\t\n\005TABLE\020\001\022\013"
+          + "\n\007FILESET\020\002B\t\n\007details\"\234\004\n\010JobEvent\022\017\n\007m"
+          + "essage\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\022.\n\nstart_ti"
+          + "me\030\003 \001(\0132\032.google.protobuf.Timestamp\022,\n\010"
+          + "end_time\030\004 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\0227\n\005state\030\005 \001(\0162(.google.cloud.dataple"
+          + "x.v1.JobEvent.State\022\017\n\007retries\030\006 \001(\005\0225\n\004"
+          + "type\030\007 \001(\0162\'.google.cloud.dataplex.v1.Jo"
+          + "bEvent.Type\022;\n\007service\030\010 \001(\0162*.google.cl"
+          + "oud.dataplex.v1.JobEvent.Service\022\023\n\013serv"
+          + "ice_job\030\t \001(\t\"5\n\004Type\022\024\n\020TYPE_UNSPECIFIE"
+          + "D\020\000\022\t\n\005SPARK\020\001\022\014\n\010NOTEBOOK\020\002\"U\n\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006F"
+          + "AILED\020\002\022\r\n\tCANCELLED\020\003\022\013\n\007ABORTED\020\004\"0\n\007S"
+          + "ervice\022\027\n\023SERVICE_UNSPECIFIED\020\000\022\014\n\010DATAP"
+          + "ROC\020\001\"\275\005\n\014SessionEvent\022\017\n\007message\030\001 \001(\t\022"
+          + "\017\n\007user_id\030\002 \001(\t\022\022\n\nsession_id\030\003 \001(\t\022>\n\004"
+          + "type\030\004 \001(\01620.google.cloud.dataplex.v1.Se"
+          + "ssionEvent.EventType\022C\n\005query\030\005 \001(\01322.go"
+          + "ogle.cloud.dataplex.v1.SessionEvent.Quer"
+          + "yDetailH\000\022\027\n\017event_succeeded\030\006 \001(\010\022\034\n\024fa"
+          + "st_startup_enabled\030\007 \001(\010\0226\n\023unassigned_d"
+          + "uration\030\010 \001(\0132\031.google.protobuf.Duration"
+          + "\032\243\002\n\013QueryDetail\022\020\n\010query_id\030\001 \001(\t\022\022\n\nqu"
+          + "ery_text\030\002 \001(\t\022I\n\006engine\030\003 \001(\01629.google."
+          + "cloud.dataplex.v1.SessionEvent.QueryDeta"
+          + "il.Engine\022+\n\010duration\030\004 \001(\0132\031.google.pro"
+          + "tobuf.Duration\022\031\n\021result_size_bytes\030\005 \001("
+          + "\003\022\034\n\024data_processed_bytes\030\006 \001(\003\"=\n\006Engin"
+          + "e\022\026\n\022ENGINE_UNSPECIFIED\020\000\022\r\n\tSPARK_SQL\020\001"
+          + "\022\014\n\010BIGQUERY\020\002\"S\n\tEventType\022\032\n\026EVENT_TYP"
+          + "E_UNSPECIFIED\020\000\022\t\n\005START\020\001\022\010\n\004STOP\020\002\022\t\n\005"
+          + "QUERY\020\003\022\n\n\006CREATE\020\004B\010\n\006detailBm\n\034com.goo"
+          + "gle.cloud.dataplex.v1B\tLogsProtoP\001Z@goog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "dataplex/v1;dataplexb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -226,7 +231,15 @@ public final class LogsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_SessionEvent_descriptor,
             new java.lang.String[] {
-              "Message", "UserId", "SessionId", "Type", "Query", "Detail",
+              "Message",
+              "UserId",
+              "SessionId",
+              "Type",
+              "Query",
+              "EventSucceeded",
+              "FastStartupEnabled",
+              "UnassignedDuration",
+              "Detail",
             });
     internal_static_google_cloud_dataplex_v1_SessionEvent_QueryDetail_descriptor =
         internal_static_google_cloud_dataplex_v1_SessionEvent_descriptor.getNestedTypes().get(0);
@@ -236,6 +249,7 @@ public final class LogsProto {
             new java.lang.String[] {
               "QueryId", "QueryText", "Engine", "Duration", "ResultSizeBytes", "DataProcessedBytes",
             });
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

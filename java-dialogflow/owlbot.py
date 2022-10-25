@@ -102,5 +102,6 @@ java.common_templates(excludes=[
     "SECURITY.md",
     "java.header",
     "license-checks.xml",
-    "renovate.json"
+    "renovate.json",
+    ".gitignore"
 ])

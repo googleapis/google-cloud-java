@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+  <version>3.6.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   <name>Google Cloud Vertex AI Parent</name>
   <description>
     Java client for Google Cloud Vertex AI services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,47 +29,30 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-aiplatform</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+        <version>3.6.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-aiplatform-v1</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
+        <version>3.6.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-aiplatform-v1beta1</artifactId>
-        <version>0.21.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
+        <version>0.22.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1</artifactId>
-        <version>3.5.0</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
+        <version>3.6.0</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-aiplatform-v1beta1</artifactId>
-        <version>0.21.0</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
+        <version>0.22.0</version><!-- {x-version-update:grpc-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-            <ignoredUnusedDeclaredDependencies>
-              <ignoredUnusedDeclaredDependency>org.objenesis:objenesis</ignoredUnusedDeclaredDependency>
-              <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
-            </ignoredUnusedDeclaredDependencies>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 
   <modules>
     <module>google-cloud-aiplatform</module>

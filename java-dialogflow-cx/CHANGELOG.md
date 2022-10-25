@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.16.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-cx-v0.15.1-SNAPSHOT...google-cloud-dialogflow-cx-v0.16.0) (2022-10-24)
+
+
+### Features
+
+* [analyticsdata] add `subject_to_thresholding` field to `ResponseMetadata` type ([#8545](https://github.com/googleapis/google-cloud-java/issues/8545)) ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* add `tokens_per_project_per_hour` field to `PropertyQuota` type ([8fdc6c1](https://github.com/googleapis/google-cloud-java/commit/8fdc6c1f10f88f30f4d1407579d645f75366b4cf))
+* create release please configuration ([41b97e6](https://github.com/googleapis/google-cloud-java/commit/41b97e6d0d38a54fbabf51a3069bf1473c48f730))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-dialogflow-cx-v3 to v0.14.4 ([#8309](https://github.com/googleapis/google-cloud-java/issues/8309)) ([9f5de6c](https://github.com/googleapis/google-cloud-java/commit/9f5de6cde42a5f6cdfebe61de075d5da927c0100))
+* **deps:** update dependency com.google.api.grpc:grpc-google-cloud-dialogflow-cx-v3beta1 to v0.14.4 ([#8310](https://github.com/googleapis/google-cloud-java/issues/8310)) ([00a4308](https://github.com/googleapis/google-cloud-java/commit/00a43086c89cbe179c77b9729a7b74d84eef6480))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.2 ([#8325](https://github.com/googleapis/google-cloud-java/issues/8325)) ([01f492b](https://github.com/googleapis/google-cloud-java/commit/01f492be424acdb90edb23ba66656aeff7cf39eb))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.4 ([#8528](https://github.com/googleapis/google-cloud-java/issues/8528)) ([bd36199](https://github.com/googleapis/google-cloud-java/commit/bd361998ac4eb7c78eef3b3eac39aef31a0cf44e))
+* owl-bot-staging should not be commited ([#8337](https://github.com/googleapis/google-cloud-java/issues/8337)) ([c9bb4a9](https://github.com/googleapis/google-cloud-java/commit/c9bb4a97aa19032b78c86c951fe9920f24ac4eec))
+
+
+### Dependencies
+
+* reverting renovate bot pull requests ([#8417](https://github.com/googleapis/google-cloud-java/issues/8417)) ([8f0c60b](https://github.com/googleapis/google-cloud-java/commit/8f0c60bde446acccc665eb7894723632eefc3503))
+
+
+### Documentation
+
+* [dialogflow-cx] clarified gcs_bucket field of the SecuritySettings message ([#8490](https://github.com/googleapis/google-cloud-java/issues/8490)) ([83d8eaa](https://github.com/googleapis/google-cloud-java/commit/83d8eaac12ca8b843e41f9769cf84cac1b6538b9))
+* [dialogflow-cx] Clarified TTL as time-to-live ([#8649](https://github.com/googleapis/google-cloud-java/issues/8649)) ([24be08c](https://github.com/googleapis/google-cloud-java/commit/24be08c9e4e909a90f80ee88235900c656374df9))
+* Removed pre-GA disclaimer from Interaction Logging (has been GA for awhile) ([24be08c](https://github.com/googleapis/google-cloud-java/commit/24be08c9e4e909a90f80ee88235900c656374df9))
+
 ## [0.15.0](https://github.com/googleapis/google-cloud-java/compare/google-cloud-dialogflow-cx-v0.14.7...google-cloud-dialogflow-cx-v0.15.0) (2022-10-17)
 
 

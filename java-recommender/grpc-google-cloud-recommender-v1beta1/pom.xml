@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-recommender-v1beta1</artifactId>
-  <version>0.18.0</version><!-- {x-version-update:grpc-google-cloud-recommender-v1beta1:current} -->
+  <version>0.19.0</version><!-- {x-version-update:grpc-google-cloud-recommender-v1beta1:current} -->
   <name>grpc-google-cloud-recommender-v1beta1</name>
   <description>GRPC library for grpc-google-cloud-recommender-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-recommender-parent</artifactId>
-    <version>2.6.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
+    <version>2.7.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -44,28 +44,4 @@
       <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

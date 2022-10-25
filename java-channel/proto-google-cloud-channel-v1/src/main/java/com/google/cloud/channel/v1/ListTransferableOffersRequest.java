@@ -439,12 +439,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The BCP-47 language code. For example, "en-US". The
+   * Optional. The BCP-47 language code. For example, "en-US". The
    * response will localize in the corresponding language code, if specified.
    * The default value is "en-US".
    * </pre>
    *
-   * <code>string language_code = 7;</code>
+   * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The languageCode.
    */
@@ -464,12 +464,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The BCP-47 language code. For example, "en-US". The
+   * Optional. The BCP-47 language code. For example, "en-US". The
    * response will localize in the corresponding language code, if specified.
    * The default value is "en-US".
    * </pre>
    *
-   * <code>string language_code = 7;</code>
+   * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for languageCode.
    */
@@ -1669,12 +1669,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The BCP-47 language code. For example, "en-US". The
+     * Optional. The BCP-47 language code. For example, "en-US". The
      * response will localize in the corresponding language code, if specified.
      * The default value is "en-US".
      * </pre>
      *
-     * <code>string language_code = 7;</code>
+     * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The languageCode.
      */
@@ -1693,12 +1693,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The BCP-47 language code. For example, "en-US". The
+     * Optional. The BCP-47 language code. For example, "en-US". The
      * response will localize in the corresponding language code, if specified.
      * The default value is "en-US".
      * </pre>
      *
-     * <code>string language_code = 7;</code>
+     * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for languageCode.
      */
@@ -1717,12 +1717,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The BCP-47 language code. For example, "en-US". The
+     * Optional. The BCP-47 language code. For example, "en-US". The
      * response will localize in the corresponding language code, if specified.
      * The default value is "en-US".
      * </pre>
      *
-     * <code>string language_code = 7;</code>
+     * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The languageCode to set.
      * @return This builder for chaining.
@@ -1740,12 +1740,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The BCP-47 language code. For example, "en-US". The
+     * Optional. The BCP-47 language code. For example, "en-US". The
      * response will localize in the corresponding language code, if specified.
      * The default value is "en-US".
      * </pre>
      *
-     * <code>string language_code = 7;</code>
+     * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1759,12 +1759,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The BCP-47 language code. For example, "en-US". The
+     * Optional. The BCP-47 language code. For example, "en-US". The
      * response will localize in the corresponding language code, if specified.
      * The default value is "en-US".
      * </pre>
      *
-     * <code>string language_code = 7;</code>
+     * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for languageCode to set.
      * @return This builder for chaining.

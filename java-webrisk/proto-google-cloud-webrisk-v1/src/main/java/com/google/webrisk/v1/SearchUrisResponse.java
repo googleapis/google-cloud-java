@@ -1253,7 +1253,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The threat list matches. This may be empty if the URI is on no list.
+   * The threat list matches. This might be empty if the URI is on no list.
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1268,7 +1268,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The threat list matches. This may be empty if the URI is on no list.
+   * The threat list matches. This might be empty if the URI is on no list.
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1285,7 +1285,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The threat list matches. This may be empty if the URI is on no list.
+   * The threat list matches. This might be empty if the URI is on no list.
    * </pre>
    *
    * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1637,7 +1637,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1651,7 +1651,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1671,7 +1671,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1693,7 +1693,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1713,7 +1713,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1739,7 +1739,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1759,7 +1759,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1773,7 +1773,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>
@@ -1791,7 +1791,7 @@ public final class SearchUrisResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The threat list matches. This may be empty if the URI is on no list.
+     * The threat list matches. This might be empty if the URI is on no list.
      * </pre>
      *
      * <code>.google.cloud.webrisk.v1.SearchUrisResponse.ThreatUri threat = 1;</code>

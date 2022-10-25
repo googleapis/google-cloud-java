@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-asset-v1p2beta1</artifactId>
-  <version>0.108.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
+  <version>0.109.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
   <name>grpc-google-cloud-asset-v1p2beta1</name>
   <description>GRPC library for grpc-google-cloud-asset-v1p2beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-asset-parent</artifactId>
-    <version>3.8.0</version><!-- {x-version-update:google-cloud-asset:current} -->
+    <version>3.9.0</version><!-- {x-version-update:google-cloud-asset:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -38,28 +38,4 @@
       <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

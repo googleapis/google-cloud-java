@@ -56,191 +56,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Task(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uid_ = s;
-              break;
-            }
-          case 26:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createTime_ != null) {
-                subBuilder = createTime_.toBuilder();
-              }
-              createTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createTime_);
-                createTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 34:
-            {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (updateTime_ != null) {
-                subBuilder = updateTime_.toBuilder();
-              }
-              updateTime_ =
-                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(updateTime_);
-                updateTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case 50:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              displayName_ = s;
-              break;
-            }
-          case 56:
-            {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-          case 66:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                labels_ =
-                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
-                  input.readMessage(
-                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
-              break;
-            }
-          case 802:
-            {
-              com.google.cloud.dataplex.v1.Task.TriggerSpec.Builder subBuilder = null;
-              if (triggerSpec_ != null) {
-                subBuilder = triggerSpec_.toBuilder();
-              }
-              triggerSpec_ =
-                  input.readMessage(
-                      com.google.cloud.dataplex.v1.Task.TriggerSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(triggerSpec_);
-                triggerSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 810:
-            {
-              com.google.cloud.dataplex.v1.Task.ExecutionSpec.Builder subBuilder = null;
-              if (executionSpec_ != null) {
-                subBuilder = executionSpec_.toBuilder();
-              }
-              executionSpec_ =
-                  input.readMessage(
-                      com.google.cloud.dataplex.v1.Task.ExecutionSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(executionSpec_);
-                executionSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 1610:
-            {
-              com.google.cloud.dataplex.v1.Task.ExecutionStatus.Builder subBuilder = null;
-              if (executionStatus_ != null) {
-                subBuilder = executionStatus_.toBuilder();
-              }
-              executionStatus_ =
-                  input.readMessage(
-                      com.google.cloud.dataplex.v1.Task.ExecutionStatus.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(executionStatus_);
-                executionStatus_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 2402:
-            {
-              com.google.cloud.dataplex.v1.Task.SparkTaskConfig.Builder subBuilder = null;
-              if (configCase_ == 300) {
-                subBuilder =
-                    ((com.google.cloud.dataplex.v1.Task.SparkTaskConfig) config_).toBuilder();
-              }
-              config_ =
-                  input.readMessage(
-                      com.google.cloud.dataplex.v1.Task.SparkTaskConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.dataplex.v1.Task.SparkTaskConfig) config_);
-                config_ = subBuilder.buildPartial();
-              }
-              configCase_ = 300;
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.TasksProto
         .internal_static_google_cloud_dataplex_v1_Task_descriptor;
@@ -427,114 +242,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return this.unknownFields;
     }
 
-    private InfrastructureSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 418:
-              {
-                com.google.cloud.dataplex.v1.Task.InfrastructureSpec.BatchComputeResources.Builder
-                    subBuilder = null;
-                if (resourcesCase_ == 52) {
-                  subBuilder =
-                      ((com.google.cloud.dataplex.v1.Task.InfrastructureSpec.BatchComputeResources)
-                              resources_)
-                          .toBuilder();
-                }
-                resources_ =
-                    input.readMessage(
-                        com.google.cloud.dataplex.v1.Task.InfrastructureSpec.BatchComputeResources
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.BatchComputeResources)
-                          resources_);
-                  resources_ = subBuilder.buildPartial();
-                }
-                resourcesCase_ = 52;
-                break;
-              }
-            case 810:
-              {
-                com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime.Builder
-                    subBuilder = null;
-                if (runtimeCase_ == 101) {
-                  subBuilder =
-                      ((com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime)
-                              runtime_)
-                          .toBuilder();
-                }
-                runtime_ =
-                    input.readMessage(
-                        com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime
-                            .parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime)
-                          runtime_);
-                  runtime_ = subBuilder.buildPartial();
-                }
-                runtimeCase_ = 101;
-                break;
-              }
-            case 1202:
-              {
-                com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork.Builder subBuilder =
-                    null;
-                if (networkCase_ == 150) {
-                  subBuilder =
-                      ((com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork) network_)
-                          .toBuilder();
-                }
-                network_ =
-                    input.readMessage(
-                        com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(
-                      (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork) network_);
-                  network_ = subBuilder.buildPartial();
-                }
-                networkCase_ = 150;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.TasksProto
           .internal_static_google_cloud_dataplex_v1_Task_InfrastructureSpec_descriptor;
@@ -616,56 +323,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return this.unknownFields;
       }
 
-      private BatchComputeResources(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8:
-                {
-                  executorsCount_ = input.readInt32();
-                  break;
-                }
-              case 16:
-                {
-                  maxExecutorsCount_ = input.readInt32();
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dataplex.v1.TasksProto
             .internal_static_google_cloud_dataplex_v1_Task_InfrastructureSpec_BatchComputeResources_descriptor;
@@ -741,7 +398,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (maxExecutorsCount_ != 0) {
           output.writeInt32(2, maxExecutorsCount_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -756,7 +413,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (maxExecutorsCount_ != 0) {
           size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxExecutorsCount_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -776,7 +433,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
         if (getExecutorsCount() != other.getExecutorsCount()) return false;
         if (getMaxExecutorsCount() != other.getMaxExecutorsCount()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -791,7 +448,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getExecutorsCount();
         hash = (37 * hash) + MAX_EXECUTORS_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + getMaxExecutorsCount();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -934,17 +591,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.dataplex.v1.Task.InfrastructureSpec.BatchComputeResources.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -1050,7 +700,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           if (other.getMaxExecutorsCount() != 0) {
             setMaxExecutorsCount(other.getMaxExecutorsCount());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1065,20 +715,43 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dataplex.v1.Task.InfrastructureSpec.BatchComputeResources parsedMessage =
-              null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    executorsCount_ = input.readInt32();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    maxExecutorsCount_ = input.readInt32();
+
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.BatchComputeResources)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -1232,7 +905,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new BatchComputeResources(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -1528,95 +1213,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private ContainerImageRuntime(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  image_ = s;
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    javaJars_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  javaJars_.add(s);
-                  break;
-                }
-              case 26:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                    pythonPackages_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000002;
-                  }
-                  pythonPackages_.add(s);
-                  break;
-                }
-              case 34:
-                {
-                  if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                    properties_ =
-                        com.google.protobuf.MapField.newMapField(
-                            PropertiesDefaultEntryHolder.defaultEntry);
-                    mutable_bitField0_ |= 0x00000004;
-                  }
-                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
-                      input.readMessage(
-                          PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-                  properties_.getMutableMap().put(properties__.getKey(), properties__.getValue());
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            javaJars_ = javaJars_.getUnmodifiableView();
-          }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            pythonPackages_ = pythonPackages_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1987,7 +1583,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
             output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 4);
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -2025,7 +1621,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                   .build();
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, properties__);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -2047,7 +1643,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (!getJavaJarsList().equals(other.getJavaJarsList())) return false;
         if (!getPythonPackagesList().equals(other.getPythonPackagesList())) return false;
         if (!internalGetProperties().equals(other.internalGetProperties())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -2072,7 +1668,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
           hash = (53 * hash) + internalGetProperties().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -2235,17 +1831,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -2385,7 +1974,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             onChanged();
           }
           internalGetMutableProperties().mergeFrom(other.internalGetProperties());
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -2400,20 +1989,62 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime parsedMessage =
-              null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    image_ = input.readStringRequireUtf8();
+
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureJavaJarsIsMutable();
+                    javaJars_.add(s);
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensurePythonPackagesIsMutable();
+                    pythonPackages_.add(s);
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+                        input.readMessage(
+                            PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                    internalGetMutableProperties()
+                        .getMutableMap()
+                        .put(properties__.getKey(), properties__.getValue());
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.ContainerImageRuntime)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -3153,7 +2784,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new ContainerImageRuntime(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -3341,74 +2984,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
-      }
-
-      private VpcNetwork(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  networkNameCase_ = 1;
-                  networkName_ = s;
-                  break;
-                }
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  networkNameCase_ = 2;
-                  networkName_ = s;
-                  break;
-                }
-              case 26:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                    networkTags_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  networkTags_.add(s);
-                  break;
-                }
-              default:
-                {
-                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            networkTags_ = networkTags_.getUnmodifiableView();
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3700,7 +3275,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < networkTags_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, networkTags_.getRaw(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -3723,7 +3298,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           size += dataSize;
           size += 1 * getNetworkTagsList().size();
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -3751,7 +3326,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -3778,7 +3353,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           case 0:
           default:
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -3913,17 +3488,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
         // Construct using
         // com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
+        private Builder() {}
 
         private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
 
         @java.lang.Override
@@ -4060,7 +3628,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 break;
               }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -4075,19 +3643,52 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    networkNameCase_ = 1;
+                    networkName_ = s;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    networkNameCase_ = 2;
+                    networkName_ = s;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureNetworkTagsIsMutable();
+                    networkTags_.add(s);
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage =
-                (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork)
-                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
 
@@ -4584,7 +4185,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-              return new VpcNetwork(input, extensionRegistry);
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
             }
           };
 
@@ -4939,7 +4552,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(
             150, (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork) network_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -4967,7 +4580,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 150, (com.google.cloud.dataplex.v1.Task.InfrastructureSpec.VpcNetwork) network_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5007,7 +4620,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -5042,7 +4655,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -5174,22 +4787,24 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.Task.InfrastructureSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (batchBuilder_ != null) {
+          batchBuilder_.clear();
+        }
+        if (containerImageBuilder_ != null) {
+          containerImageBuilder_.clear();
+        }
+        if (vpcNetworkBuilder_ != null) {
+          vpcNetworkBuilder_.clear();
+        }
         resourcesCase_ = 0;
         resources_ = null;
         runtimeCase_ = 0;
@@ -5332,7 +4947,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -5347,18 +4962,50 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.Task.InfrastructureSpec parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 418:
+                {
+                  input.readMessage(getBatchFieldBuilder().getBuilder(), extensionRegistry);
+                  resourcesCase_ = 52;
+                  break;
+                } // case 418
+              case 810:
+                {
+                  input.readMessage(
+                      getContainerImageFieldBuilder().getBuilder(), extensionRegistry);
+                  runtimeCase_ = 101;
+                  break;
+                } // case 810
+              case 1202:
+                {
+                  input.readMessage(getVpcNetworkFieldBuilder().getBuilder(), extensionRegistry);
+                  networkCase_ = 150;
+                  break;
+                } // case 1202
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataplex.v1.Task.InfrastructureSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -6153,7 +5800,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new InfrastructureSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -6371,84 +6030,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private TriggerSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32:
-              {
-                disabled_ = input.readBool();
-                break;
-              }
-            case 40:
-              {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-            case 50:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (startTime_ != null) {
-                  subBuilder = startTime_.toBuilder();
-                }
-                startTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(startTime_);
-                  startTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 56:
-              {
-                maxRetries_ = input.readInt32();
-                break;
-              }
-            case 802:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                triggerCase_ = 100;
-                trigger_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6924,7 +6505,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (triggerCase_ == 100) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 100, trigger_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -6949,7 +6530,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (triggerCase_ == 100) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, trigger_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -6980,7 +6561,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -7009,7 +6590,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -7140,17 +6721,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.Task.TriggerSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -7286,7 +6860,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7301,17 +6875,62 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.Task.TriggerSpec parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32:
+                {
+                  disabled_ = input.readBool();
+
+                  break;
+                } // case 32
+              case 40:
+                {
+                  type_ = input.readEnum();
+
+                  break;
+                } // case 40
+              case 50:
+                {
+                  input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              case 56:
+                {
+                  maxRetries_ = input.readInt32();
+
+                  break;
+                } // case 56
+              case 802:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  triggerCase_ = 100;
+                  trigger_ = s;
+                  break;
+                } // case 802
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.dataplex.v1.Task.TriggerSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -7966,7 +7585,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new TriggerSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -8264,95 +7895,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ExecutionSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34:
-              {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  args_ =
-                      com.google.protobuf.MapField.newMapField(ArgsDefaultEntryHolder.defaultEntry);
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> args__ =
-                    input.readMessage(
-                        ArgsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                args_.getMutableMap().put(args__.getKey(), args__.getValue());
-                break;
-              }
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                serviceAccount_ = s;
-                break;
-              }
-            case 58:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                project_ = s;
-                break;
-              }
-            case 66:
-              {
-                com.google.protobuf.Duration.Builder subBuilder = null;
-                if (maxJobExecutionLifetime_ != null) {
-                  subBuilder = maxJobExecutionLifetime_.toBuilder();
-                }
-                maxJobExecutionLifetime_ =
-                    input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(maxJobExecutionLifetime_);
-                  maxJobExecutionLifetime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 74:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                kmsKey_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8762,7 +8304,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, kmsKey_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -8795,7 +8337,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, kmsKey_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -8819,7 +8361,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (!getMaxJobExecutionLifetime().equals(other.getMaxJobExecutionLifetime())) return false;
       }
       if (!getKmsKey().equals(other.getKmsKey())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -8844,7 +8386,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKmsKey().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -8995,17 +8537,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.Task.ExecutionSpec.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -9130,7 +8665,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           kmsKey_ = other.kmsKey_;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -9145,18 +8680,65 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.Task.ExecutionSpec parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> args__ =
+                      input.readMessage(
+                          ArgsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableArgs().getMutableMap().put(args__.getKey(), args__.getValue());
+                  break;
+                } // case 34
+              case 42:
+                {
+                  serviceAccount_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 42
+              case 58:
+                {
+                  project_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      getMaxJobExecutionLifetimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 66
+              case 74:
+                {
+                  kmsKey_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 74
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataplex.v1.Task.ExecutionSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -9977,7 +9559,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ExecutionSpec(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -10415,124 +10009,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private SparkTaskConfig(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  fileUris_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                fileUris_.add(s);
-                break;
-              }
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  archiveUris_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                archiveUris_.add(s);
-                break;
-              }
-            case 50:
-              {
-                com.google.cloud.dataplex.v1.Task.InfrastructureSpec.Builder subBuilder = null;
-                if (infrastructureSpec_ != null) {
-                  subBuilder = infrastructureSpec_.toBuilder();
-                }
-                infrastructureSpec_ =
-                    input.readMessage(
-                        com.google.cloud.dataplex.v1.Task.InfrastructureSpec.parser(),
-                        extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(infrastructureSpec_);
-                  infrastructureSpec_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 802:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                driverCase_ = 100;
-                driver_ = s;
-                break;
-              }
-            case 810:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                driverCase_ = 101;
-                driver_ = s;
-                break;
-              }
-            case 818:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                driverCase_ = 102;
-                driver_ = s;
-                break;
-              }
-            case 834:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                driverCase_ = 104;
-                driver_ = s;
-                break;
-              }
-            case 842:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                driverCase_ = 105;
-                driver_ = s;
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          fileUris_ = fileUris_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          archiveUris_ = archiveUris_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11222,7 +10698,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (driverCase_ == 105) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 105, driver_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -11266,7 +10742,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (driverCase_ == 105) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105, driver_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -11308,7 +10784,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -11355,7 +10831,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -11486,17 +10962,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.Task.SparkTaskConfig.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -11689,7 +11158,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               break;
             }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -11704,18 +11173,87 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.Task.SparkTaskConfig parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFileUrisIsMutable();
+                  fileUris_.add(s);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureArchiveUrisIsMutable();
+                  archiveUris_.add(s);
+                  break;
+                } // case 34
+              case 50:
+                {
+                  input.readMessage(
+                      getInfrastructureSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 50
+              case 802:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  driverCase_ = 100;
+                  driver_ = s;
+                  break;
+                } // case 802
+              case 810:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  driverCase_ = 101;
+                  driver_ = s;
+                  break;
+                } // case 810
+              case 818:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  driverCase_ = 102;
+                  driver_ = s;
+                  break;
+                } // case 818
+              case 834:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  driverCase_ = 104;
+                  driver_ = s;
+                  break;
+                } // case 834
+              case 842:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  driverCase_ = 105;
+                  driver_ = s;
+                  break;
+                } // case 842
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataplex.v1.Task.SparkTaskConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -13087,7 +12625,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new SparkTaskConfig(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -13102,6 +12652,1702 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.dataplex.v1.Task.SparkTaskConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface NotebookTaskConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Task.NotebookTaskConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+     * file or the path to a Notebook Content. The execution args are accessible
+     * as environment variables
+     * (`TASK_key=value`).
+     * </pre>
+     *
+     * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The notebook.
+     */
+    java.lang.String getNotebook();
+    /**
+     *
+     *
+     * <pre>
+     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+     * file or the path to a Notebook Content. The execution args are accessible
+     * as environment variables
+     * (`TASK_key=value`).
+     * </pre>
+     *
+     * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for notebook.
+     */
+    com.google.protobuf.ByteString getNotebookBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Infrastructure specification for the execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the infrastructureSpec field is set.
+     */
+    boolean hasInfrastructureSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Infrastructure specification for the execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The infrastructureSpec.
+     */
+    com.google.cloud.dataplex.v1.Task.InfrastructureSpec getInfrastructureSpec();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Infrastructure specification for the execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.Task.InfrastructureSpecOrBuilder getInfrastructureSpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the fileUris.
+     */
+    java.util.List<java.lang.String> getFileUrisList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of fileUris.
+     */
+    int getFileUrisCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fileUris at the given index.
+     */
+    java.lang.String getFileUris(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fileUris at the given index.
+     */
+    com.google.protobuf.ByteString getFileUrisBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the archiveUris.
+     */
+    java.util.List<java.lang.String> getArchiveUrisList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of archiveUris.
+     */
+    int getArchiveUrisCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The archiveUris at the given index.
+     */
+    java.lang.String getArchiveUris(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the archiveUris at the given index.
+     */
+    com.google.protobuf.ByteString getArchiveUrisBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for running scheduled notebooks.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.Task.NotebookTaskConfig}
+   */
+  public static final class NotebookTaskConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Task.NotebookTaskConfig)
+      NotebookTaskConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NotebookTaskConfig.newBuilder() to construct.
+    private NotebookTaskConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NotebookTaskConfig() {
+      notebook_ = "";
+      fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NotebookTaskConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.TasksProto
+          .internal_static_google_cloud_dataplex_v1_Task_NotebookTaskConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.TasksProto
+          .internal_static_google_cloud_dataplex_v1_Task_NotebookTaskConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.class,
+              com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.Builder.class);
+    }
+
+    public static final int NOTEBOOK_FIELD_NUMBER = 4;
+    private volatile java.lang.Object notebook_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+     * file or the path to a Notebook Content. The execution args are accessible
+     * as environment variables
+     * (`TASK_key=value`).
+     * </pre>
+     *
+     * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The notebook.
+     */
+    @java.lang.Override
+    public java.lang.String getNotebook() {
+      java.lang.Object ref = notebook_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notebook_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+     * file or the path to a Notebook Content. The execution args are accessible
+     * as environment variables
+     * (`TASK_key=value`).
+     * </pre>
+     *
+     * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for notebook.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNotebookBytes() {
+      java.lang.Object ref = notebook_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        notebook_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INFRASTRUCTURE_SPEC_FIELD_NUMBER = 3;
+    private com.google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructureSpec_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Infrastructure specification for the execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the infrastructureSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasInfrastructureSpec() {
+      return infrastructureSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Infrastructure specification for the execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The infrastructureSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Task.InfrastructureSpec getInfrastructureSpec() {
+      return infrastructureSpec_ == null
+          ? com.google.cloud.dataplex.v1.Task.InfrastructureSpec.getDefaultInstance()
+          : infrastructureSpec_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Infrastructure specification for the execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Task.InfrastructureSpecOrBuilder
+        getInfrastructureSpecOrBuilder() {
+      return getInfrastructureSpec();
+    }
+
+    public static final int FILE_URIS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList fileUris_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the fileUris.
+     */
+    public com.google.protobuf.ProtocolStringList getFileUrisList() {
+      return fileUris_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of fileUris.
+     */
+    public int getFileUrisCount() {
+      return fileUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The fileUris at the given index.
+     */
+    public java.lang.String getFileUris(int index) {
+      return fileUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+     * executor.
+     * </pre>
+     *
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the fileUris at the given index.
+     */
+    public com.google.protobuf.ByteString getFileUrisBytes(int index) {
+      return fileUris_.getByteString(index);
+    }
+
+    public static final int ARCHIVE_URIS_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList archiveUris_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the archiveUris.
+     */
+    public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
+      return archiveUris_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of archiveUris.
+     */
+    public int getArchiveUrisCount() {
+      return archiveUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The archiveUris at the given index.
+     */
+    public java.lang.String getArchiveUris(int index) {
+      return archiveUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+     * .zip.
+     * </pre>
+     *
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the archiveUris at the given index.
+     */
+    public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
+      return archiveUris_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (infrastructureSpec_ != null) {
+        output.writeMessage(3, getInfrastructureSpec());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebook_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, notebook_);
+      }
+      for (int i = 0; i < fileUris_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, fileUris_.getRaw(i));
+      }
+      for (int i = 0; i < archiveUris_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, archiveUris_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (infrastructureSpec_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, getInfrastructureSpec());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebook_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, notebook_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fileUris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(fileUris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFileUrisList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < archiveUris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(archiveUris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getArchiveUrisList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.Task.NotebookTaskConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.Task.NotebookTaskConfig other =
+          (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) obj;
+
+      if (!getNotebook().equals(other.getNotebook())) return false;
+      if (hasInfrastructureSpec() != other.hasInfrastructureSpec()) return false;
+      if (hasInfrastructureSpec()) {
+        if (!getInfrastructureSpec().equals(other.getInfrastructureSpec())) return false;
+      }
+      if (!getFileUrisList().equals(other.getFileUrisList())) return false;
+      if (!getArchiveUrisList().equals(other.getArchiveUrisList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NOTEBOOK_FIELD_NUMBER;
+      hash = (53 * hash) + getNotebook().hashCode();
+      if (hasInfrastructureSpec()) {
+        hash = (37 * hash) + INFRASTRUCTURE_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getInfrastructureSpec().hashCode();
+      }
+      if (getFileUrisCount() > 0) {
+        hash = (37 * hash) + FILE_URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getFileUrisList().hashCode();
+      }
+      if (getArchiveUrisCount() > 0) {
+        hash = (37 * hash) + ARCHIVE_URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getArchiveUrisList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.Task.NotebookTaskConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for running scheduled notebooks.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.Task.NotebookTaskConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.Task.NotebookTaskConfig)
+        com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.TasksProto
+            .internal_static_google_cloud_dataplex_v1_Task_NotebookTaskConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.TasksProto
+            .internal_static_google_cloud_dataplex_v1_Task_NotebookTaskConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.class,
+                com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        notebook_ = "";
+
+        if (infrastructureSpecBuilder_ == null) {
+          infrastructureSpec_ = null;
+        } else {
+          infrastructureSpec_ = null;
+          infrastructureSpecBuilder_ = null;
+        }
+        fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.TasksProto
+            .internal_static_google_cloud_dataplex_v1_Task_NotebookTaskConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig build() {
+        com.google.cloud.dataplex.v1.Task.NotebookTaskConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig buildPartial() {
+        com.google.cloud.dataplex.v1.Task.NotebookTaskConfig result =
+            new com.google.cloud.dataplex.v1.Task.NotebookTaskConfig(this);
+        int from_bitField0_ = bitField0_;
+        result.notebook_ = notebook_;
+        if (infrastructureSpecBuilder_ == null) {
+          result.infrastructureSpec_ = infrastructureSpec_;
+        } else {
+          result.infrastructureSpec_ = infrastructureSpecBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          fileUris_ = fileUris_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.fileUris_ = fileUris_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          archiveUris_ = archiveUris_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.archiveUris_ = archiveUris_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) {
+          return mergeFrom((com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.Task.NotebookTaskConfig other) {
+        if (other == com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance())
+          return this;
+        if (!other.getNotebook().isEmpty()) {
+          notebook_ = other.notebook_;
+          onChanged();
+        }
+        if (other.hasInfrastructureSpec()) {
+          mergeInfrastructureSpec(other.getInfrastructureSpec());
+        }
+        if (!other.fileUris_.isEmpty()) {
+          if (fileUris_.isEmpty()) {
+            fileUris_ = other.fileUris_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFileUrisIsMutable();
+            fileUris_.addAll(other.fileUris_);
+          }
+          onChanged();
+        }
+        if (!other.archiveUris_.isEmpty()) {
+          if (archiveUris_.isEmpty()) {
+            archiveUris_ = other.archiveUris_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureArchiveUrisIsMutable();
+            archiveUris_.addAll(other.archiveUris_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26:
+                {
+                  input.readMessage(
+                      getInfrastructureSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 34:
+                {
+                  notebook_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 34
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFileUrisIsMutable();
+                  fileUris_.add(s);
+                  break;
+                } // case 42
+              case 50:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureArchiveUrisIsMutable();
+                  archiveUris_.add(s);
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object notebook_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+       * file or the path to a Notebook Content. The execution args are accessible
+       * as environment variables
+       * (`TASK_key=value`).
+       * </pre>
+       *
+       * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The notebook.
+       */
+      public java.lang.String getNotebook() {
+        java.lang.Object ref = notebook_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notebook_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+       * file or the path to a Notebook Content. The execution args are accessible
+       * as environment variables
+       * (`TASK_key=value`).
+       * </pre>
+       *
+       * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for notebook.
+       */
+      public com.google.protobuf.ByteString getNotebookBytes() {
+        java.lang.Object ref = notebook_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          notebook_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+       * file or the path to a Notebook Content. The execution args are accessible
+       * as environment variables
+       * (`TASK_key=value`).
+       * </pre>
+       *
+       * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The notebook to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotebook(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        notebook_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+       * file or the path to a Notebook Content. The execution args are accessible
+       * as environment variables
+       * (`TASK_key=value`).
+       * </pre>
+       *
+       * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNotebook() {
+
+        notebook_ = getDefaultInstance().getNotebook();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
+       * file or the path to a Notebook Content. The execution args are accessible
+       * as environment variables
+       * (`TASK_key=value`).
+       * </pre>
+       *
+       * <code>string notebook = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for notebook to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotebookBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        notebook_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructureSpec_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.Task.InfrastructureSpec,
+              com.google.cloud.dataplex.v1.Task.InfrastructureSpec.Builder,
+              com.google.cloud.dataplex.v1.Task.InfrastructureSpecOrBuilder>
+          infrastructureSpecBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the infrastructureSpec field is set.
+       */
+      public boolean hasInfrastructureSpec() {
+        return infrastructureSpecBuilder_ != null || infrastructureSpec_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The infrastructureSpec.
+       */
+      public com.google.cloud.dataplex.v1.Task.InfrastructureSpec getInfrastructureSpec() {
+        if (infrastructureSpecBuilder_ == null) {
+          return infrastructureSpec_ == null
+              ? com.google.cloud.dataplex.v1.Task.InfrastructureSpec.getDefaultInstance()
+              : infrastructureSpec_;
+        } else {
+          return infrastructureSpecBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInfrastructureSpec(
+          com.google.cloud.dataplex.v1.Task.InfrastructureSpec value) {
+        if (infrastructureSpecBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          infrastructureSpec_ = value;
+          onChanged();
+        } else {
+          infrastructureSpecBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInfrastructureSpec(
+          com.google.cloud.dataplex.v1.Task.InfrastructureSpec.Builder builderForValue) {
+        if (infrastructureSpecBuilder_ == null) {
+          infrastructureSpec_ = builderForValue.build();
+          onChanged();
+        } else {
+          infrastructureSpecBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeInfrastructureSpec(
+          com.google.cloud.dataplex.v1.Task.InfrastructureSpec value) {
+        if (infrastructureSpecBuilder_ == null) {
+          if (infrastructureSpec_ != null) {
+            infrastructureSpec_ =
+                com.google.cloud.dataplex.v1.Task.InfrastructureSpec.newBuilder(infrastructureSpec_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            infrastructureSpec_ = value;
+          }
+          onChanged();
+        } else {
+          infrastructureSpecBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearInfrastructureSpec() {
+        if (infrastructureSpecBuilder_ == null) {
+          infrastructureSpec_ = null;
+          onChanged();
+        } else {
+          infrastructureSpec_ = null;
+          infrastructureSpecBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.Task.InfrastructureSpec.Builder
+          getInfrastructureSpecBuilder() {
+
+        onChanged();
+        return getInfrastructureSpecFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.Task.InfrastructureSpecOrBuilder
+          getInfrastructureSpecOrBuilder() {
+        if (infrastructureSpecBuilder_ != null) {
+          return infrastructureSpecBuilder_.getMessageOrBuilder();
+        } else {
+          return infrastructureSpec_ == null
+              ? com.google.cloud.dataplex.v1.Task.InfrastructureSpec.getDefaultInstance()
+              : infrastructureSpec_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Infrastructure specification for the execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Task.InfrastructureSpec infrastructure_spec = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.Task.InfrastructureSpec,
+              com.google.cloud.dataplex.v1.Task.InfrastructureSpec.Builder,
+              com.google.cloud.dataplex.v1.Task.InfrastructureSpecOrBuilder>
+          getInfrastructureSpecFieldBuilder() {
+        if (infrastructureSpecBuilder_ == null) {
+          infrastructureSpecBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dataplex.v1.Task.InfrastructureSpec,
+                  com.google.cloud.dataplex.v1.Task.InfrastructureSpec.Builder,
+                  com.google.cloud.dataplex.v1.Task.InfrastructureSpecOrBuilder>(
+                  getInfrastructureSpec(), getParentForChildren(), isClean());
+          infrastructureSpec_ = null;
+        }
+        return infrastructureSpecBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList fileUris_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureFileUrisIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the fileUris.
+       */
+      public com.google.protobuf.ProtocolStringList getFileUrisList() {
+        return fileUris_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of fileUris.
+       */
+      public int getFileUrisCount() {
+        return fileUris_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The fileUris at the given index.
+       */
+      public java.lang.String getFileUris(int index) {
+        return fileUris_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the fileUris at the given index.
+       */
+      public com.google.protobuf.ByteString getFileUrisBytes(int index) {
+        return fileUris_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The fileUris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFileUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFileUrisIsMutable();
+        fileUris_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The fileUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFileUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFileUrisIsMutable();
+        fileUris_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The fileUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFileUris(java.lang.Iterable<java.lang.String> values) {
+        ensureFileUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fileUris_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFileUris() {
+        fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
+       * executor.
+       * </pre>
+       *
+       * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the fileUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFileUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFileUrisIsMutable();
+        fileUris_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList archiveUris_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureArchiveUrisIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the archiveUris.
+       */
+      public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
+        return archiveUris_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of archiveUris.
+       */
+      public int getArchiveUrisCount() {
+        return archiveUris_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The archiveUris at the given index.
+       */
+      public java.lang.String getArchiveUris(int index) {
+        return archiveUris_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the archiveUris at the given index.
+       */
+      public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
+        return archiveUris_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The archiveUris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setArchiveUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureArchiveUrisIsMutable();
+        archiveUris_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The archiveUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addArchiveUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureArchiveUrisIsMutable();
+        archiveUris_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The archiveUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllArchiveUris(java.lang.Iterable<java.lang.String> values) {
+        ensureArchiveUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, archiveUris_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearArchiveUris() {
+        archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
+       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
+       * .zip.
+       * </pre>
+       *
+       * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the archiveUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addArchiveUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureArchiveUrisIsMutable();
+        archiveUris_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.Task.NotebookTaskConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.Task.NotebookTaskConfig)
+    private static final com.google.cloud.dataplex.v1.Task.NotebookTaskConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.Task.NotebookTaskConfig();
+    }
+
+    public static com.google.cloud.dataplex.v1.Task.NotebookTaskConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NotebookTaskConfig> PARSER =
+        new com.google.protobuf.AbstractParser<NotebookTaskConfig>() {
+          @java.lang.Override
+          public NotebookTaskConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NotebookTaskConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NotebookTaskConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -13223,75 +14469,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
-    }
-
-    private ExecutionStatus(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26:
-              {
-                com.google.protobuf.Timestamp.Builder subBuilder = null;
-                if (updateTime_ != null) {
-                  subBuilder = updateTime_.toBuilder();
-                }
-                updateTime_ =
-                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(updateTime_);
-                  updateTime_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            case 74:
-              {
-                com.google.cloud.dataplex.v1.Job.Builder subBuilder = null;
-                if (latestJob_ != null) {
-                  subBuilder = latestJob_.toBuilder();
-                }
-                latestJob_ =
-                    input.readMessage(com.google.cloud.dataplex.v1.Job.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(latestJob_);
-                  latestJob_ = subBuilder.buildPartial();
-                }
-
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -13435,7 +14612,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (latestJob_ != null) {
         output.writeMessage(9, getLatestJob());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -13450,7 +14627,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (latestJob_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLatestJob());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -13474,7 +14651,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (hasLatestJob()) {
         if (!getLatestJob().equals(other.getLatestJob())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -13493,7 +14670,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + LATEST_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getLatestJob().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -13624,17 +14801,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.dataplex.v1.Task.ExecutionStatus.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+      private Builder() {}
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
 
       @java.lang.Override
@@ -13747,7 +14917,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         if (other.hasLatestJob()) {
           mergeLatestJob(other.getLatestJob());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -13762,18 +14932,43 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.dataplex.v1.Task.ExecutionStatus parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26:
+                {
+                  input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
+              case 74:
+                {
+                  input.readMessage(getLatestJobFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 74
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.dataplex.v1.Task.ExecutionStatus) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
 
@@ -14216,7 +15411,19 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ExecutionStatus(input, extensionRegistry);
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
           }
         };
 
@@ -14243,6 +15450,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SPARK(300),
+    NOTEBOOK(302),
     CONFIG_NOT_SET(0);
     private final int value;
 
@@ -14263,6 +15471,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 300:
           return SPARK;
+        case 302:
+          return NOTEBOOK;
         case 0:
           return CONFIG_NOT_SET;
         default:
@@ -14931,6 +16141,57 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.Task.SparkTaskConfig.getDefaultInstance();
   }
 
+  public static final int NOTEBOOK_FIELD_NUMBER = 302;
+  /**
+   *
+   *
+   * <pre>
+   * Config related to running scheduled Notebooks.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  @java.lang.Override
+  public boolean hasNotebook() {
+    return configCase_ == 302;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config related to running scheduled Notebooks.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+   *
+   * @return The notebook.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig getNotebook() {
+    if (configCase_ == 302) {
+      return (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_;
+    }
+    return com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config related to running scheduled Notebooks.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder getNotebookOrBuilder() {
+    if (configCase_ == 302) {
+      return (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_;
+    }
+    return com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -14980,7 +16241,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (configCase_ == 300) {
       output.writeMessage(300, (com.google.cloud.dataplex.v1.Task.SparkTaskConfig) config_);
     }
-    unknownFields.writeTo(output);
+    if (configCase_ == 302) {
+      output.writeMessage(302, (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_);
+    }
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -15034,7 +16298,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               300, (com.google.cloud.dataplex.v1.Task.SparkTaskConfig) config_);
     }
-    size += unknownFields.getSerializedSize();
+    if (configCase_ == 302) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              302, (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_);
+    }
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -15080,10 +16349,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       case 300:
         if (!getSpark().equals(other.getSpark())) return false;
         break;
+      case 302:
+        if (!getNotebook().equals(other.getNotebook())) return false;
+        break;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -15133,10 +16405,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + SPARK_FIELD_NUMBER;
         hash = (53 * hash) + getSpark().hashCode();
         break;
+      case 302:
+        hash = (37 * hash) + NOTEBOOK_FIELD_NUMBER;
+        hash = (53 * hash) + getNotebook().hashCode();
+        break;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -15284,17 +16560,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.dataplex.v1.Task.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
 
     @java.lang.Override
@@ -15340,6 +16609,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionStatus_ = null;
         executionStatusBuilder_ = null;
+      }
+      if (sparkBuilder_ != null) {
+        sparkBuilder_.clear();
+      }
+      if (notebookBuilder_ != null) {
+        notebookBuilder_.clear();
       }
       configCase_ = 0;
       config_ = null;
@@ -15407,6 +16682,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           result.config_ = config_;
         } else {
           result.config_ = sparkBuilder_.build();
+        }
+      }
+      if (configCase_ == 302) {
+        if (notebookBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = notebookBuilder_.build();
         }
       }
       result.configCase_ = configCase_;
@@ -15500,12 +16782,17 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             mergeSpark(other.getSpark());
             break;
           }
+        case NOTEBOOK:
+          {
+            mergeNotebook(other.getNotebook());
+            break;
+          }
         case CONFIG_NOT_SET:
           {
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -15520,17 +16807,114 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.dataplex.v1.Task parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+            case 18:
+              {
+                uid_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
+            case 42:
+              {
+                description_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                displayName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
+            case 56:
+              {
+                state_ = input.readEnum();
+
+                break;
+              } // case 56
+            case 66:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                break;
+              } // case 66
+            case 802:
+              {
+                input.readMessage(getTriggerSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 802
+            case 810:
+              {
+                input.readMessage(getExecutionSpecFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 810
+            case 1610:
+              {
+                input.readMessage(getExecutionStatusFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 1610
+            case 2402:
+              {
+                input.readMessage(getSparkFieldBuilder().getBuilder(), extensionRegistry);
+                configCase_ = 300;
+                break;
+              } // case 2402
+            case 2418:
+              {
+                input.readMessage(getNotebookFieldBuilder().getBuilder(), extensionRegistry);
+                configCase_ = 302;
+                break;
+              } // case 2418
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataplex.v1.Task) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -17478,6 +18862,217 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return sparkBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.Task.NotebookTaskConfig,
+            com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.Builder,
+            com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder>
+        notebookBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     *
+     * @return Whether the notebook field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotebook() {
+      return configCase_ == 302;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     *
+     * @return The notebook.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig getNotebook() {
+      if (notebookBuilder_ == null) {
+        if (configCase_ == 302) {
+          return (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_;
+        }
+        return com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance();
+      } else {
+        if (configCase_ == 302) {
+          return notebookBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     */
+    public Builder setNotebook(com.google.cloud.dataplex.v1.Task.NotebookTaskConfig value) {
+      if (notebookBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+        onChanged();
+      } else {
+        notebookBuilder_.setMessage(value);
+      }
+      configCase_ = 302;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     */
+    public Builder setNotebook(
+        com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.Builder builderForValue) {
+      if (notebookBuilder_ == null) {
+        config_ = builderForValue.build();
+        onChanged();
+      } else {
+        notebookBuilder_.setMessage(builderForValue.build());
+      }
+      configCase_ = 302;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     */
+    public Builder mergeNotebook(com.google.cloud.dataplex.v1.Task.NotebookTaskConfig value) {
+      if (notebookBuilder_ == null) {
+        if (configCase_ == 302
+            && config_
+                != com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance()) {
+          config_ =
+              com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.newBuilder(
+                      (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          config_ = value;
+        }
+        onChanged();
+      } else {
+        if (configCase_ == 302) {
+          notebookBuilder_.mergeFrom(value);
+        } else {
+          notebookBuilder_.setMessage(value);
+        }
+      }
+      configCase_ = 302;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     */
+    public Builder clearNotebook() {
+      if (notebookBuilder_ == null) {
+        if (configCase_ == 302) {
+          configCase_ = 0;
+          config_ = null;
+          onChanged();
+        }
+      } else {
+        if (configCase_ == 302) {
+          configCase_ = 0;
+          config_ = null;
+        }
+        notebookBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     */
+    public com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.Builder getNotebookBuilder() {
+      return getNotebookFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder getNotebookOrBuilder() {
+      if ((configCase_ == 302) && (notebookBuilder_ != null)) {
+        return notebookBuilder_.getMessageOrBuilder();
+      } else {
+        if (configCase_ == 302) {
+          return (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_;
+        }
+        return com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config related to running scheduled Notebooks.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.Task.NotebookTaskConfig notebook = 302;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.Task.NotebookTaskConfig,
+            com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.Builder,
+            com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder>
+        getNotebookFieldBuilder() {
+      if (notebookBuilder_ == null) {
+        if (!(configCase_ == 302)) {
+          config_ = com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.getDefaultInstance();
+        }
+        notebookBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.Task.NotebookTaskConfig,
+                com.google.cloud.dataplex.v1.Task.NotebookTaskConfig.Builder,
+                com.google.cloud.dataplex.v1.Task.NotebookTaskConfigOrBuilder>(
+                (com.google.cloud.dataplex.v1.Task.NotebookTaskConfig) config_,
+                getParentForChildren(),
+                isClean());
+        config_ = null;
+      }
+      configCase_ = 302;
+      onChanged();
+      ;
+      return notebookBuilder_;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -17510,7 +19105,18 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Task(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-discoveryengine-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
+  <name>Google Discovery Engine API Parent</name>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>google-cloud-discoveryengine-parent</site.installationModule>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-discoveryengine</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-discoveryengine-v1beta</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-discoveryengine-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-discoveryengine-v1beta</artifactId>
+        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-discoveryengine-v1beta:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>google-cloud-discoveryengine</module>
+    <module>grpc-google-cloud-discoveryengine-v1beta</module>
+    <module>proto-google-cloud-discoveryengine-v1beta</module>
+    <module>google-cloud-discoveryengine-bom</module>
+  </modules>
+</project>

@@ -1167,6 +1167,41 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
+   *
+   * @return Whether the resourceStatus field is set.
+   */
+  boolean hasResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
+   *
+   * @return The resourceStatus.
+   */
+  com.google.cloud.compute.v1.ResourceStatus getResourceStatus();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusOrBuilder getResourceStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Reserved for future use.
    * </pre>
    *

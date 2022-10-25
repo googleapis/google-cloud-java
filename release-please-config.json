@@ -133,6 +133,9 @@
     "java-container": {
       "component": "google-cloud-container"
     },
+    "java-contentwarehouse": {
+      "component": "google-cloud-contentwarehouse"
+    },
     "java-datacatalog": {
       "component": "google-cloud-datacatalog"
     },
@@ -172,6 +175,9 @@
     "java-dialogflow": {
       "component": "google-cloud-dialogflow"
     },
+    "java-discoveryengine": {
+      "component": "google-cloud-discoveryengine"
+    },
     "java-distributedcloudedge": {
       "component": "google-cloud-distributedcloudedge"
     },
@@ -189,6 +195,9 @@
     },
     "java-domains": {
       "component": "google-cloud-domains"
+    },
+    "java-enterpriseknowledgegraph": {
+      "component": "google-cloud-enterpriseknowledgegraph"
     },
     "java-errorreporting": {
       "component": "google-cloud-errorreporting"

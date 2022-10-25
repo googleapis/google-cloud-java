@@ -28,7 +28,7 @@ public interface DeleteServiceRequestOrBuilder
    *
    * <pre>
    * Required. The full name of the Service.
-   * Format: projects/{projectnumber}/locations/{location}/services/{service}
+   * Format: projects/{project}/locations/{location}/services/{service}
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteServiceRequestOrBuilder
    *
    * <pre>
    * Required. The full name of the Service.
-   * Format: projects/{projectnumber}/locations/{location}/services/{service}
+   * Format: projects/{project}/locations/{location}/services/{service}
    * </pre>
    *
    * <code>

@@ -19,6 +19,34 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= CloudChannelReportsServiceClient =======================
+ *
+ * <p>Service Description: CloudChannelReportsService lets Google Cloud resellers and distributors
+ * retrieve and combine a variety of data in Cloud Channel for multiple products (Google Cloud
+ * Platform (GCP), Google Voice, and Google Workspace.)
+ *
+ * <p>Sample for CloudChannelReportsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CloudChannelReportsServiceClient cloudChannelReportsServiceClient =
+ *     CloudChannelReportsServiceClient.create()) {
+ *   RunReportJobRequest request =
+ *       RunReportJobRequest.newBuilder()
+ *           .setName(ReportName.of("[ACCOUNT]", "[REPORT]").toString())
+ *           .setDateRange(DateRange.newBuilder().build())
+ *           .setFilter("filter-1274492040")
+ *           .setLanguageCode("languageCode-2092349083")
+ *           .build();
+ *   RunReportJobResponse response =
+ *       cloudChannelReportsServiceClient.runReportJobAsync(request).get();
+ * }
+ * }</pre>
+ *
  * <p>======================= CloudChannelServiceClient =======================
  *
  * <p>Service Description: CloudChannelService lets Google cloud resellers and distributors manage

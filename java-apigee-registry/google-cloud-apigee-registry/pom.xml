@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apigee-registry</artifactId>
-  <version>0.4.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+  <version>0.5.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   <packaging>jar</packaging>
   <name>Google Registry API</name>
   <description>Registry API allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apigee-registry-parent</artifactId>
-    <version>0.4.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+    <version>0.5.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apigee-registry</site.installationModule>
@@ -110,28 +110,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

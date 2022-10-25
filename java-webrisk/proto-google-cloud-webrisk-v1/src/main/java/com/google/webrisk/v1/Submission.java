@@ -22,7 +22,7 @@ package com.google.webrisk.v1;
  *
  *
  * <pre>
- * Wraps a URI that might be displaying phishing content.
+ * Wraps a URI that might be displaying malicious content.
  * </pre>
  *
  * Protobuf type {@code google.cloud.webrisk.v1.Submission}
@@ -72,7 +72,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for malicious content to be analyzed.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,7 +95,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The URI that is being reported for phishing content to be analyzed.
+   * Required. The URI that is being reported for malicious content to be analyzed.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -276,7 +276,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Wraps a URI that might be displaying phishing content.
+   * Wraps a URI that might be displaying malicious content.
    * </pre>
    *
    * Protobuf type {@code google.cloud.webrisk.v1.Submission}
@@ -446,7 +446,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for malicious content to be analyzed.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -468,7 +468,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for malicious content to be analyzed.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -490,7 +490,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for malicious content to be analyzed.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -511,7 +511,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for malicious content to be analyzed.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -528,7 +528,7 @@ public final class Submission extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI that is being reported for phishing content to be analyzed.
+     * Required. The URI that is being reported for malicious content to be analyzed.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

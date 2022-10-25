@@ -94,6 +94,31 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
+   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv6 = 181467939;</code>
+   *
+   * @return Whether the enableIpv6 field is set.
+   */
+  boolean hasEnableIpv6();
+  /**
+   *
+   *
+   * <pre>
+   * Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
+   * </pre>
+   *
+   * <code>optional bool enable_ipv6 = 181467939;</code>
+   *
+   * @return The enableIpv6.
+   */
+  boolean getEnableIpv6();
+
+  /**
+   *
+   *
+   * <pre>
    * IP address of the local BGP interface.
    * </pre>
    *
@@ -131,6 +156,43 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
+   * IPv6 address of the local BGP interface.
+   * </pre>
+   *
+   * <code>optional string ipv6_nexthop_address = 27968211;</code>
+   *
+   * @return Whether the ipv6NexthopAddress field is set.
+   */
+  boolean hasIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the local BGP interface.
+   * </pre>
+   *
+   * <code>optional string ipv6_nexthop_address = 27968211;</code>
+   *
+   * @return The ipv6NexthopAddress.
+   */
+  java.lang.String getIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the local BGP interface.
+   * </pre>
+   *
+   * <code>optional string ipv6_nexthop_address = 27968211;</code>
+   *
+   * @return The bytes for ipv6NexthopAddress.
+   */
+  com.google.protobuf.ByteString getIpv6NexthopAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
@@ -163,6 +225,31 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The bytes for linkedVpnTunnel.
    */
   com.google.protobuf.ByteString getLinkedVpnTunnelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Informs whether MD5 authentication is enabled on this BGP peer.
+   * </pre>
+   *
+   * <code>optional bool md5_auth_enabled = 451152075;</code>
+   *
+   * @return Whether the md5AuthEnabled field is set.
+   */
+  boolean hasMd5AuthEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Informs whether MD5 authentication is enabled on this BGP peer.
+   * </pre>
+   *
+   * <code>optional bool md5_auth_enabled = 451152075;</code>
+   *
+   * @return The md5AuthEnabled.
+   */
+  boolean getMd5AuthEnabled();
 
   /**
    *
@@ -262,6 +349,43 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The bytes for peerIpAddress.
    */
   com.google.protobuf.ByteString getPeerIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the remote BGP interface.
+   * </pre>
+   *
+   * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
+   *
+   * @return Whether the peerIpv6NexthopAddress field is set.
+   */
+  boolean hasPeerIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the remote BGP interface.
+   * </pre>
+   *
+   * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
+   *
+   * @return The peerIpv6NexthopAddress.
+   */
+  java.lang.String getPeerIpv6NexthopAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the remote BGP interface.
+   * </pre>
+   *
+   * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
+   *
+   * @return The bytes for peerIpv6NexthopAddress.
+   */
+  com.google.protobuf.ByteString getPeerIpv6NexthopAddressBytes();
 
   /**
    *
@@ -376,6 +500,46 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString getStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates why particular status was returned.
+   * Check the StatusReason enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status_reason = 342706993;</code>
+   *
+   * @return Whether the statusReason field is set.
+   */
+  boolean hasStatusReason();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates why particular status was returned.
+   * Check the StatusReason enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status_reason = 342706993;</code>
+   *
+   * @return The statusReason.
+   */
+  java.lang.String getStatusReason();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates why particular status was returned.
+   * Check the StatusReason enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status_reason = 342706993;</code>
+   *
+   * @return The bytes for statusReason.
+   */
+  com.google.protobuf.ByteString getStatusReasonBytes();
 
   /**
    *

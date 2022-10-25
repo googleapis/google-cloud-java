@@ -49,6 +49,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     env_ = java.util.Collections.emptyList();
     ports_ = java.util.Collections.emptyList();
     volumeMounts_ = java.util.Collections.emptyList();
+    workingDir_ = "";
   }
 
   @java.lang.Override
@@ -643,6 +644,179 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     return volumeMounts_.get(index);
   }
 
+  public static final int WORKING_DIR_FIELD_NUMBER = 9;
+  private volatile java.lang.Object workingDir_;
+  /**
+   *
+   *
+   * <pre>
+   * Container's working directory.
+   * If not specified, the container runtime's default will be used, which
+   * might be configured in the container image.
+   * </pre>
+   *
+   * <code>string working_dir = 9;</code>
+   *
+   * @return The workingDir.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkingDir() {
+    java.lang.Object ref = workingDir_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workingDir_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Container's working directory.
+   * If not specified, the container runtime's default will be used, which
+   * might be configured in the container image.
+   * </pre>
+   *
+   * <code>string working_dir = 9;</code>
+   *
+   * @return The bytes for workingDir.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWorkingDirBytes() {
+    java.lang.Object ref = workingDir_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      workingDir_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LIVENESS_PROBE_FIELD_NUMBER = 10;
+  private com.google.cloud.run.v2.Probe livenessProbe_;
+  /**
+   *
+   *
+   * <pre>
+   * Periodic probe of container liveness.
+   * Container will be restarted if the probe fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+   *
+   * @return Whether the livenessProbe field is set.
+   */
+  @java.lang.Override
+  public boolean hasLivenessProbe() {
+    return livenessProbe_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Periodic probe of container liveness.
+   * Container will be restarted if the probe fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+   *
+   * @return The livenessProbe.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.Probe getLivenessProbe() {
+    return livenessProbe_ == null
+        ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+        : livenessProbe_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Periodic probe of container liveness.
+   * Container will be restarted if the probe fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.ProbeOrBuilder getLivenessProbeOrBuilder() {
+    return getLivenessProbe();
+  }
+
+  public static final int STARTUP_PROBE_FIELD_NUMBER = 11;
+  private com.google.cloud.run.v2.Probe startupProbe_;
+  /**
+   *
+   *
+   * <pre>
+   * Startup probe of application within the container.
+   * All other probes are disabled if a startup probe is provided, until it
+   * succeeds. Container will not be added to service endpoints if the probe
+   * fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+   *
+   * @return Whether the startupProbe field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartupProbe() {
+    return startupProbe_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Startup probe of application within the container.
+   * All other probes are disabled if a startup probe is provided, until it
+   * succeeds. Container will not be added to service endpoints if the probe
+   * fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+   *
+   * @return The startupProbe.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.Probe getStartupProbe() {
+    return startupProbe_ == null
+        ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+        : startupProbe_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Startup probe of application within the container.
+   * All other probes are disabled if a startup probe is provided, until it
+   * succeeds. Container will not be added to service endpoints if the probe
+   * fails.
+   * More info:
+   * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.ProbeOrBuilder getStartupProbeOrBuilder() {
+    return getStartupProbe();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -680,6 +854,15 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < volumeMounts_.size(); i++) {
       output.writeMessage(8, volumeMounts_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workingDir_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, workingDir_);
+    }
+    if (livenessProbe_ != null) {
+      output.writeMessage(10, getLivenessProbe());
+    }
+    if (startupProbe_ != null) {
+      output.writeMessage(11, getStartupProbe());
     }
     getUnknownFields().writeTo(output);
   }
@@ -724,6 +907,15 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < volumeMounts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, volumeMounts_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(workingDir_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, workingDir_);
+    }
+    if (livenessProbe_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLivenessProbe());
+    }
+    if (startupProbe_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getStartupProbe());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -750,6 +942,15 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getPortsList().equals(other.getPortsList())) return false;
     if (!getVolumeMountsList().equals(other.getVolumeMountsList())) return false;
+    if (!getWorkingDir().equals(other.getWorkingDir())) return false;
+    if (hasLivenessProbe() != other.hasLivenessProbe()) return false;
+    if (hasLivenessProbe()) {
+      if (!getLivenessProbe().equals(other.getLivenessProbe())) return false;
+    }
+    if (hasStartupProbe() != other.hasStartupProbe()) return false;
+    if (hasStartupProbe()) {
+      if (!getStartupProbe().equals(other.getStartupProbe())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -788,6 +989,16 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (getVolumeMountsCount() > 0) {
       hash = (37 * hash) + VOLUME_MOUNTS_FIELD_NUMBER;
       hash = (53 * hash) + getVolumeMountsList().hashCode();
+    }
+    hash = (37 * hash) + WORKING_DIR_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkingDir().hashCode();
+    if (hasLivenessProbe()) {
+      hash = (37 * hash) + LIVENESS_PROBE_FIELD_NUMBER;
+      hash = (53 * hash) + getLivenessProbe().hashCode();
+    }
+    if (hasStartupProbe()) {
+      hash = (37 * hash) + STARTUP_PROBE_FIELD_NUMBER;
+      hash = (53 * hash) + getStartupProbe().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -965,6 +1176,20 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         volumeMountsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      workingDir_ = "";
+
+      if (livenessProbeBuilder_ == null) {
+        livenessProbe_ = null;
+      } else {
+        livenessProbe_ = null;
+        livenessProbeBuilder_ = null;
+      }
+      if (startupProbeBuilder_ == null) {
+        startupProbe_ = null;
+      } else {
+        startupProbe_ = null;
+        startupProbeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1035,6 +1260,17 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         result.volumeMounts_ = volumeMounts_;
       } else {
         result.volumeMounts_ = volumeMountsBuilder_.build();
+      }
+      result.workingDir_ = workingDir_;
+      if (livenessProbeBuilder_ == null) {
+        result.livenessProbe_ = livenessProbe_;
+      } else {
+        result.livenessProbe_ = livenessProbeBuilder_.build();
+      }
+      if (startupProbeBuilder_ == null) {
+        result.startupProbe_ = startupProbe_;
+      } else {
+        result.startupProbe_ = startupProbeBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1197,6 +1433,16 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getWorkingDir().isEmpty()) {
+        workingDir_ = other.workingDir_;
+        onChanged();
+      }
+      if (other.hasLivenessProbe()) {
+        mergeLivenessProbe(other.getLivenessProbe());
+      }
+      if (other.hasStartupProbe()) {
+        mergeStartupProbe(other.getStartupProbe());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1293,6 +1539,24 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 66
+            case 74:
+              {
+                workingDir_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getLivenessProbeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getStartupProbeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3322,6 +3586,564 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         volumeMounts_ = null;
       }
       return volumeMountsBuilder_;
+    }
+
+    private java.lang.Object workingDir_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Container's working directory.
+     * If not specified, the container runtime's default will be used, which
+     * might be configured in the container image.
+     * </pre>
+     *
+     * <code>string working_dir = 9;</code>
+     *
+     * @return The workingDir.
+     */
+    public java.lang.String getWorkingDir() {
+      java.lang.Object ref = workingDir_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workingDir_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Container's working directory.
+     * If not specified, the container runtime's default will be used, which
+     * might be configured in the container image.
+     * </pre>
+     *
+     * <code>string working_dir = 9;</code>
+     *
+     * @return The bytes for workingDir.
+     */
+    public com.google.protobuf.ByteString getWorkingDirBytes() {
+      java.lang.Object ref = workingDir_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workingDir_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Container's working directory.
+     * If not specified, the container runtime's default will be used, which
+     * might be configured in the container image.
+     * </pre>
+     *
+     * <code>string working_dir = 9;</code>
+     *
+     * @param value The workingDir to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkingDir(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      workingDir_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Container's working directory.
+     * If not specified, the container runtime's default will be used, which
+     * might be configured in the container image.
+     * </pre>
+     *
+     * <code>string working_dir = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkingDir() {
+
+      workingDir_ = getDefaultInstance().getWorkingDir();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Container's working directory.
+     * If not specified, the container runtime's default will be used, which
+     * might be configured in the container image.
+     * </pre>
+     *
+     * <code>string working_dir = 9;</code>
+     *
+     * @param value The bytes for workingDir to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkingDirBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      workingDir_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.run.v2.Probe livenessProbe_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Probe,
+            com.google.cloud.run.v2.Probe.Builder,
+            com.google.cloud.run.v2.ProbeOrBuilder>
+        livenessProbeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     *
+     * @return Whether the livenessProbe field is set.
+     */
+    public boolean hasLivenessProbe() {
+      return livenessProbeBuilder_ != null || livenessProbe_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     *
+     * @return The livenessProbe.
+     */
+    public com.google.cloud.run.v2.Probe getLivenessProbe() {
+      if (livenessProbeBuilder_ == null) {
+        return livenessProbe_ == null
+            ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+            : livenessProbe_;
+      } else {
+        return livenessProbeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     */
+    public Builder setLivenessProbe(com.google.cloud.run.v2.Probe value) {
+      if (livenessProbeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        livenessProbe_ = value;
+        onChanged();
+      } else {
+        livenessProbeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     */
+    public Builder setLivenessProbe(com.google.cloud.run.v2.Probe.Builder builderForValue) {
+      if (livenessProbeBuilder_ == null) {
+        livenessProbe_ = builderForValue.build();
+        onChanged();
+      } else {
+        livenessProbeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     */
+    public Builder mergeLivenessProbe(com.google.cloud.run.v2.Probe value) {
+      if (livenessProbeBuilder_ == null) {
+        if (livenessProbe_ != null) {
+          livenessProbe_ =
+              com.google.cloud.run.v2.Probe.newBuilder(livenessProbe_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          livenessProbe_ = value;
+        }
+        onChanged();
+      } else {
+        livenessProbeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     */
+    public Builder clearLivenessProbe() {
+      if (livenessProbeBuilder_ == null) {
+        livenessProbe_ = null;
+        onChanged();
+      } else {
+        livenessProbe_ = null;
+        livenessProbeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     */
+    public com.google.cloud.run.v2.Probe.Builder getLivenessProbeBuilder() {
+
+      onChanged();
+      return getLivenessProbeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     */
+    public com.google.cloud.run.v2.ProbeOrBuilder getLivenessProbeOrBuilder() {
+      if (livenessProbeBuilder_ != null) {
+        return livenessProbeBuilder_.getMessageOrBuilder();
+      } else {
+        return livenessProbe_ == null
+            ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+            : livenessProbe_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Periodic probe of container liveness.
+     * Container will be restarted if the probe fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe liveness_probe = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Probe,
+            com.google.cloud.run.v2.Probe.Builder,
+            com.google.cloud.run.v2.ProbeOrBuilder>
+        getLivenessProbeFieldBuilder() {
+      if (livenessProbeBuilder_ == null) {
+        livenessProbeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.Probe,
+                com.google.cloud.run.v2.Probe.Builder,
+                com.google.cloud.run.v2.ProbeOrBuilder>(
+                getLivenessProbe(), getParentForChildren(), isClean());
+        livenessProbe_ = null;
+      }
+      return livenessProbeBuilder_;
+    }
+
+    private com.google.cloud.run.v2.Probe startupProbe_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Probe,
+            com.google.cloud.run.v2.Probe.Builder,
+            com.google.cloud.run.v2.ProbeOrBuilder>
+        startupProbeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     *
+     * @return Whether the startupProbe field is set.
+     */
+    public boolean hasStartupProbe() {
+      return startupProbeBuilder_ != null || startupProbe_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     *
+     * @return The startupProbe.
+     */
+    public com.google.cloud.run.v2.Probe getStartupProbe() {
+      if (startupProbeBuilder_ == null) {
+        return startupProbe_ == null
+            ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+            : startupProbe_;
+      } else {
+        return startupProbeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     */
+    public Builder setStartupProbe(com.google.cloud.run.v2.Probe value) {
+      if (startupProbeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startupProbe_ = value;
+        onChanged();
+      } else {
+        startupProbeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     */
+    public Builder setStartupProbe(com.google.cloud.run.v2.Probe.Builder builderForValue) {
+      if (startupProbeBuilder_ == null) {
+        startupProbe_ = builderForValue.build();
+        onChanged();
+      } else {
+        startupProbeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     */
+    public Builder mergeStartupProbe(com.google.cloud.run.v2.Probe value) {
+      if (startupProbeBuilder_ == null) {
+        if (startupProbe_ != null) {
+          startupProbe_ =
+              com.google.cloud.run.v2.Probe.newBuilder(startupProbe_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          startupProbe_ = value;
+        }
+        onChanged();
+      } else {
+        startupProbeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     */
+    public Builder clearStartupProbe() {
+      if (startupProbeBuilder_ == null) {
+        startupProbe_ = null;
+        onChanged();
+      } else {
+        startupProbe_ = null;
+        startupProbeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     */
+    public com.google.cloud.run.v2.Probe.Builder getStartupProbeBuilder() {
+
+      onChanged();
+      return getStartupProbeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     */
+    public com.google.cloud.run.v2.ProbeOrBuilder getStartupProbeOrBuilder() {
+      if (startupProbeBuilder_ != null) {
+        return startupProbeBuilder_.getMessageOrBuilder();
+      } else {
+        return startupProbe_ == null
+            ? com.google.cloud.run.v2.Probe.getDefaultInstance()
+            : startupProbe_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Startup probe of application within the container.
+     * All other probes are disabled if a startup probe is provided, until it
+     * succeeds. Container will not be added to service endpoints if the probe
+     * fails.
+     * More info:
+     * https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.Probe,
+            com.google.cloud.run.v2.Probe.Builder,
+            com.google.cloud.run.v2.ProbeOrBuilder>
+        getStartupProbeFieldBuilder() {
+      if (startupProbeBuilder_ == null) {
+        startupProbeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.Probe,
+                com.google.cloud.run.v2.Probe.Builder,
+                com.google.cloud.run.v2.ProbeOrBuilder>(
+                getStartupProbe(), getParentForChildren(), isClean());
+        startupProbe_ = null;
+      }
+      return startupProbeBuilder_;
     }
 
     @java.lang.Override

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-shell</artifactId>
-  <version>2.3.0</version><!-- {x-version-update:google-cloud-shell:current} -->
+  <version>2.4.0</version><!-- {x-version-update:google-cloud-shell:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Shell</name>
   <description>Cloud Shell is an interactive shell environment for Google Cloud that makes it easy for you to learn and experiment with Google Cloud and manage your projects and resources from your web browser.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shell-parent</artifactId>
-    <version>2.3.0</version><!-- {x-version-update:google-cloud-shell:current} -->
+    <version>2.4.0</version><!-- {x-version-update:google-cloud-shell:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-shell</site.installationModule>
@@ -98,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vision</artifactId>
-  <version>3.2.0</version><!-- {x-version-update:google-cloud-vision:current} -->
+  <version>3.3.0</version><!-- {x-version-update:google-cloud-vision:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Vision</name>
   <description>Java idiomatic client for Google Cloud Vision</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vision-parent</artifactId>
-    <version>3.2.0</version><!-- {x-version-update:google-cloud-vision:current} -->
+    <version>3.3.0</version><!-- {x-version-update:google-cloud-vision:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vision</site.installationModule>
@@ -149,28 +149,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>flatten-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
 </project>

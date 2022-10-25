@@ -401,13 +401,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The super admin of the resold customer generates this token to
+   * Optional. The super admin of the resold customer generates this token to
    * authorize a reseller to access their Cloud Identity and purchase
    * entitlements on their behalf. You can omit this token after authorization.
    * See https://support.google.com/a/answer/7643790 for more details.
    * </pre>
    *
-   * <code>string auth_token = 5;</code>
+   * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The authToken.
    */
@@ -427,13 +427,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The super admin of the resold customer generates this token to
+   * Optional. The super admin of the resold customer generates this token to
    * authorize a reseller to access their Cloud Identity and purchase
    * entitlements on their behalf. You can omit this token after authorization.
    * See https://support.google.com/a/answer/7643790 for more details.
    * </pre>
    *
-   * <code>string auth_token = 5;</code>
+   * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for authToken.
    */
@@ -1607,13 +1607,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The super admin of the resold customer generates this token to
+     * Optional. The super admin of the resold customer generates this token to
      * authorize a reseller to access their Cloud Identity and purchase
      * entitlements on their behalf. You can omit this token after authorization.
      * See https://support.google.com/a/answer/7643790 for more details.
      * </pre>
      *
-     * <code>string auth_token = 5;</code>
+     * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The authToken.
      */
@@ -1632,13 +1632,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The super admin of the resold customer generates this token to
+     * Optional. The super admin of the resold customer generates this token to
      * authorize a reseller to access their Cloud Identity and purchase
      * entitlements on their behalf. You can omit this token after authorization.
      * See https://support.google.com/a/answer/7643790 for more details.
      * </pre>
      *
-     * <code>string auth_token = 5;</code>
+     * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for authToken.
      */
@@ -1657,13 +1657,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The super admin of the resold customer generates this token to
+     * Optional. The super admin of the resold customer generates this token to
      * authorize a reseller to access their Cloud Identity and purchase
      * entitlements on their behalf. You can omit this token after authorization.
      * See https://support.google.com/a/answer/7643790 for more details.
      * </pre>
      *
-     * <code>string auth_token = 5;</code>
+     * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The authToken to set.
      * @return This builder for chaining.
@@ -1681,13 +1681,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The super admin of the resold customer generates this token to
+     * Optional. The super admin of the resold customer generates this token to
      * authorize a reseller to access their Cloud Identity and purchase
      * entitlements on their behalf. You can omit this token after authorization.
      * See https://support.google.com/a/answer/7643790 for more details.
      * </pre>
      *
-     * <code>string auth_token = 5;</code>
+     * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1701,13 +1701,13 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The super admin of the resold customer generates this token to
+     * Optional. The super admin of the resold customer generates this token to
      * authorize a reseller to access their Cloud Identity and purchase
      * entitlements on their behalf. You can omit this token after authorization.
      * See https://support.google.com/a/answer/7643790 for more details.
      * </pre>
      *
-     * <code>string auth_token = 5;</code>
+     * <code>string auth_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for authToken to set.
      * @return This builder for chaining.

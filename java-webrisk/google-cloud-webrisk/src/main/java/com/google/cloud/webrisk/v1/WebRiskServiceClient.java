@@ -210,7 +210,8 @@ public class WebRiskServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param threatType Required. The threat list to update. Only a single ThreatType should be
-   *     specified.
+   *     specified per request. If you want to handle multiple ThreatTypes, you must make one
+   *     request per ThreatType.
    * @param versionToken The current version token of the client for the requested list (the client
    *     version that was received from the last successful diff). If the client does not have a
    *     version token (this is the first time calling ComputeThreatListDiff), this may be left
@@ -421,7 +422,8 @@ public class WebRiskServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param hashPrefix A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
-   *     hash. For JSON requests, this field is base64-encoded.
+   *     hash. For JSON requests, this field is base64-encoded. Note that if this parameter is
+   *     provided by a URI, it must be encoded using the web safe base64 variant (RFC 4648).
    * @param threatTypes Required. The ThreatLists to search in. Multiple ThreatLists may be
    *     specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -505,8 +507,9 @@ public class WebRiskServiceClient implements BackgroundResource {
    * Creates a Submission of a URI suspected of containing phishing content to be reviewed. If the
    * result verifies the existence of malicious phishing content, the site will be added to the
    * [Google's Social Engineering lists](https://support.google.com/webmasters/answer/6350487/) in
-   * order to protect users that could get exposed to this threat in the future. Only projects with
-   * CREATE_SUBMISSION_USERS visibility can use this method.
+   * order to protect users that could get exposed to this threat in the future. Only allowlisted
+   * projects can use this method during Early Access. Please reach out to Sales or your customer
+   * engineer to obtain access.
    *
    * <p>Sample code:
    *
@@ -542,8 +545,9 @@ public class WebRiskServiceClient implements BackgroundResource {
    * Creates a Submission of a URI suspected of containing phishing content to be reviewed. If the
    * result verifies the existence of malicious phishing content, the site will be added to the
    * [Google's Social Engineering lists](https://support.google.com/webmasters/answer/6350487/) in
-   * order to protect users that could get exposed to this threat in the future. Only projects with
-   * CREATE_SUBMISSION_USERS visibility can use this method.
+   * order to protect users that could get exposed to this threat in the future. Only allowlisted
+   * projects can use this method during Early Access. Please reach out to Sales or your customer
+   * engineer to obtain access.
    *
    * <p>Sample code:
    *
@@ -576,8 +580,9 @@ public class WebRiskServiceClient implements BackgroundResource {
    * Creates a Submission of a URI suspected of containing phishing content to be reviewed. If the
    * result verifies the existence of malicious phishing content, the site will be added to the
    * [Google's Social Engineering lists](https://support.google.com/webmasters/answer/6350487/) in
-   * order to protect users that could get exposed to this threat in the future. Only projects with
-   * CREATE_SUBMISSION_USERS visibility can use this method.
+   * order to protect users that could get exposed to this threat in the future. Only allowlisted
+   * projects can use this method during Early Access. Please reach out to Sales or your customer
+   * engineer to obtain access.
    *
    * <p>Sample code:
    *
@@ -609,8 +614,9 @@ public class WebRiskServiceClient implements BackgroundResource {
    * Creates a Submission of a URI suspected of containing phishing content to be reviewed. If the
    * result verifies the existence of malicious phishing content, the site will be added to the
    * [Google's Social Engineering lists](https://support.google.com/webmasters/answer/6350487/) in
-   * order to protect users that could get exposed to this threat in the future. Only projects with
-   * CREATE_SUBMISSION_USERS visibility can use this method.
+   * order to protect users that could get exposed to this threat in the future. Only allowlisted
+   * projects can use this method during Early Access. Please reach out to Sales or your customer
+   * engineer to obtain access.
    *
    * <p>Sample code:
    *

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-data</artifactId>
-  <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
+  <version>0.16.0</version><!-- {x-version-update:google-analytics-data:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Data</name>
   <description>provides programmatic methods to access report data in Google Analytics App+Web properties.</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-data-parent</artifactId>
-    <version>0.15.0</version><!-- {x-version-update:google-analytics-data:current} -->
+    <version>0.16.0</version><!-- {x-version-update:google-analytics-data:current} -->
   </parent>
   <properties>
     <site.installationModule>google-analytics-data</site.installationModule>
@@ -107,28 +107,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

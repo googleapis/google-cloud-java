@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-connect-gateway</artifactId>
-  <version>0.5.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
+  <version>0.6.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
   <packaging>jar</packaging>
   <name>Google Connect Gateway API</name>
   <description>Connect Gateway API builds on the power of fleets to let Anthos users connect to and run commands against registered Anthos clusters in a simple, consistent, and secured way, whether the clusters are on Google Cloud, other public clouds, or on premises, and makes it easier to automate DevOps processes across all your clusters.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gke-connect-gateway-parent</artifactId>
-    <version>0.5.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-gke-connect-gateway</site.installationModule>
@@ -78,28 +78,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

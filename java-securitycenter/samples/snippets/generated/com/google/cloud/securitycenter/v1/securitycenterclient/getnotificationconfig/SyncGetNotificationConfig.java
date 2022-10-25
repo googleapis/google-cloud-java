@@ -38,7 +38,9 @@ public class SyncGetNotificationConfig {
       GetNotificationConfigRequest request =
           GetNotificationConfigRequest.newBuilder()
               .setName(
-                  NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                  NotificationConfigName.ofOrganizationNotificationConfigName(
+                          "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                      .toString())
               .build();
       NotificationConfig response = securityCenterClient.getNotificationConfig(request);
     }

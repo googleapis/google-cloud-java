@@ -215,6 +215,7 @@ public class RoutersClientTest {
             .setId(3355)
             .addAllInterfaces(new ArrayList<RouterInterface>())
             .setKind("kind3292052")
+            .addAllMd5AuthenticationKeys(new ArrayList<RouterMd5AuthenticationKey>())
             .setName("name3373707")
             .addAllNats(new ArrayList<RouterNat>())
             .setNetwork("network1843485230")

@@ -200,12 +200,12 @@ public interface ListTransferableOffersRequestOrBuilder
    *
    *
    * <pre>
-   * The BCP-47 language code. For example, "en-US". The
+   * Optional. The BCP-47 language code. For example, "en-US". The
    * response will localize in the corresponding language code, if specified.
    * The default value is "en-US".
    * </pre>
    *
-   * <code>string language_code = 7;</code>
+   * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The languageCode.
    */
@@ -214,12 +214,12 @@ public interface ListTransferableOffersRequestOrBuilder
    *
    *
    * <pre>
-   * The BCP-47 language code. For example, "en-US". The
+   * Optional. The BCP-47 language code. For example, "en-US". The
    * response will localize in the corresponding language code, if specified.
    * The default value is "en-US".
    * </pre>
    *
-   * <code>string language_code = 7;</code>
+   * <code>string language_code = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for languageCode.
    */

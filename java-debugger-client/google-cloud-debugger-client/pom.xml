@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-debugger-client</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+  <version>1.5.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Debugger</name>
   <description>Cloud Debugger is a feature of Google Cloud Platform that lets you inspect the state of an application, at any code location, without stopping or slowing down the running app. Cloud Debugger makes it easier to view the application state without adding logging statements.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-debugger-client-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+    <version>1.5.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-debugger-client</site.installationModule>
@@ -98,28 +98,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>java9</id>
-      <activation>
-        <jdk>[9,)</jdk>
-      </activation>
-      <dependencies>
-        <dependency>
-          <groupId>javax.annotation</groupId>
-          <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-      </dependencies>
-    </profile>
-  </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

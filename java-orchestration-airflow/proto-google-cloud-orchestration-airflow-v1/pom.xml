@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-orchestration-airflow-v1</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:proto-google-cloud-orchestration-airflow-v1:current} -->
+  <version>1.5.0</version><!-- {x-version-update:proto-google-cloud-orchestration-airflow-v1:current} -->
   <name>proto-google-cloud-orchestration-airflow-v1</name>
   <description>Proto library for google-cloud-orchestration-airflow</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-orchestration-airflow-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
+    <version>1.5.0</version><!-- {x-version-update:google-cloud-orchestration-airflow:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -22,13 +22,4 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

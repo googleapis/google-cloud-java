@@ -995,6 +995,42 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response =
+   *       securityCenterClient.createNotificationConfig(parent, notificationConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      FolderName parent, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
    *   NotificationConfig response =
@@ -1003,13 +1039,49 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationConfig createNotificationConfig(
       OrganizationName parent, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response =
+   *       securityCenterClient.createNotificationConfig(parent, notificationConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      ProjectName parent, NotificationConfig notificationConfig) {
     CreateNotificationConfigRequest request =
         CreateNotificationConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1039,7 +1111,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1067,6 +1139,47 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   String configId = "configId-580140035";
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response =
+   *       securityCenterClient.createNotificationConfig(parent, configId, notificationConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param configId Required. Unique identifier provided by the client within the parent scope. It
+   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     hyphens only.
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      FolderName parent, String configId, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfigId(configId)
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   String configId = "configId-580140035";
    *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
@@ -1076,7 +1189,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
    *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
    *     hyphens only.
@@ -1108,6 +1221,47 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String configId = "configId-580140035";
+   *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+   *   NotificationConfig response =
+   *       securityCenterClient.createNotificationConfig(parent, configId, notificationConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the new notification config's parent. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param configId Required. Unique identifier provided by the client within the parent scope. It
+   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     hyphens only.
+   * @param notificationConfig Required. The notification config being created. The name and the
+   *     service account will be ignored as they are both output only fields on this resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NotificationConfig createNotificationConfig(
+      ProjectName parent, String configId, NotificationConfig notificationConfig) {
+    CreateNotificationConfigRequest request =
+        CreateNotificationConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setConfigId(configId)
+            .setNotificationConfig(notificationConfig)
+            .build();
+    return createNotificationConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a notification config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
    *   String configId = "configId-580140035";
    *   NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
@@ -1117,7 +1271,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Resource name of the new notification config's parent. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
    *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
    *     hyphens only.
@@ -1330,7 +1484,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   NotificationConfigName name =
-   *       NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *       NotificationConfigName.ofOrganizationNotificationConfigName(
+   *           "[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
    *   securityCenterClient.deleteNotificationConfig(name);
    * }
    * }</pre>
@@ -1360,7 +1515,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString();
+   *   String name =
+   *       NotificationConfigName.ofOrganizationNotificationConfigName(
+   *               "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+   *           .toString();
    *   securityCenterClient.deleteNotificationConfig(name);
    * }
    * }</pre>
@@ -1391,7 +1549,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *   DeleteNotificationConfigRequest request =
    *       DeleteNotificationConfigRequest.newBuilder()
    *           .setName(
-   *               NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+   *               NotificationConfigName.ofOrganizationNotificationConfigName(
+   *                       "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+   *                   .toString())
    *           .build();
    *   securityCenterClient.deleteNotificationConfig(request);
    * }
@@ -1420,7 +1580,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *   DeleteNotificationConfigRequest request =
    *       DeleteNotificationConfigRequest.newBuilder()
    *           .setName(
-   *               NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+   *               NotificationConfigName.ofOrganizationNotificationConfigName(
+   *                       "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
    *       securityCenterClient.deleteNotificationConfigCallable().futureCall(request);
@@ -1806,7 +1968,8 @@ public class SecurityCenterClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   NotificationConfigName name =
-   *       NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+   *       NotificationConfigName.ofOrganizationNotificationConfigName(
+   *           "[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
    *   NotificationConfig response = securityCenterClient.getNotificationConfig(name);
    * }
    * }</pre>
@@ -1836,7 +1999,10 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   String name = NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString();
+   *   String name =
+   *       NotificationConfigName.ofOrganizationNotificationConfigName(
+   *               "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+   *           .toString();
    *   NotificationConfig response = securityCenterClient.getNotificationConfig(name);
    * }
    * }</pre>
@@ -1867,7 +2033,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *   GetNotificationConfigRequest request =
    *       GetNotificationConfigRequest.newBuilder()
    *           .setName(
-   *               NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+   *               NotificationConfigName.ofOrganizationNotificationConfigName(
+   *                       "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+   *                   .toString())
    *           .build();
    *   NotificationConfig response = securityCenterClient.getNotificationConfig(request);
    * }
@@ -1896,7 +2064,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *   GetNotificationConfigRequest request =
    *       GetNotificationConfigRequest.newBuilder()
    *           .setName(
-   *               NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+   *               NotificationConfigName.ofOrganizationNotificationConfigName(
+   *                       "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<NotificationConfig> future =
    *       securityCenterClient.getNotificationConfigCallable().futureCall(request);
@@ -2987,6 +3157,39 @@ public class SecurityCenterClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   FolderName parent = FolderName.of("[FOLDER]");
+   *   for (NotificationConfig element :
+   *       securityCenterClient.listNotificationConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization to list notification configs. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotificationConfigsPagedResponse listNotificationConfigs(FolderName parent) {
+    ListNotificationConfigsRequest request =
+        ListNotificationConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNotificationConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists notification configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
    *   for (NotificationConfig element :
    *       securityCenterClient.listNotificationConfigs(parent).iterateAll()) {
@@ -2996,11 +3199,44 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the organization to list notification configs. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(
       OrganizationName parent) {
+    ListNotificationConfigsRequest request =
+        ListNotificationConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNotificationConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists notification configs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (NotificationConfig element :
+   *       securityCenterClient.listNotificationConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization to list notification configs. Its format is
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNotificationConfigsPagedResponse listNotificationConfigs(ProjectName parent) {
     ListNotificationConfigsRequest request =
         ListNotificationConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3030,7 +3266,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Name of the organization to list notification configs. Its format is
-   *     "organizations/[organization_id]".
+   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(String parent) {

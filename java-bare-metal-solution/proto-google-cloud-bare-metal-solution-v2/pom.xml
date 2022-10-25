@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-bare-metal-solution-v2</artifactId>
-  <version>0.4.0</version><!-- {x-version-update:proto-google-cloud-bare-metal-solution-v2:current} -->
+  <version>0.5.0</version><!-- {x-version-update:proto-google-cloud-bare-metal-solution-v2:current} -->
   <name>proto-google-cloud-bare-metal-solution-v2</name>
   <description>Proto library for google-cloud-bare-metal-solution</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bare-metal-solution-parent</artifactId>
-    <version>0.4.0</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+    <version>0.5.0</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -30,13 +30,4 @@
       <artifactId>guava</artifactId>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
-    </plugins>
-  </build>
 </project>

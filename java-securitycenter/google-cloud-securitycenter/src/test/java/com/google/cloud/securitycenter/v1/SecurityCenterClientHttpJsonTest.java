@@ -891,14 +891,16 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .build();
     mockService.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    FolderName parent = FolderName.of("[FOLDER]");
     NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
 
     NotificationConfig actualResponse = client.createNotificationConfig(parent, notificationConfig);
@@ -927,7 +929,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      FolderName parent = FolderName.of("[FOLDER]");
       NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
       client.createNotificationConfig(parent, notificationConfig);
       Assert.fail("No exception raised");
@@ -941,14 +943,16 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "organizations/organization-8287";
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
     NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
 
     NotificationConfig actualResponse = client.createNotificationConfig(parent, notificationConfig);
@@ -977,7 +981,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "organizations/organization-8287";
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
       NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
       client.createNotificationConfig(parent, notificationConfig);
       Assert.fail("No exception raised");
@@ -991,7 +995,168 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setPubsubTopic("pubsubTopic255880396")
+            .setServiceAccount("serviceAccount1079137720")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+
+    NotificationConfig actualResponse = client.createNotificationConfig(parent, notificationConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNotificationConfigExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+      client.createNotificationConfig(parent, notificationConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNotificationConfigTest4() throws Exception {
+    NotificationConfig expectedResponse =
+        NotificationConfig.newBuilder()
+            .setName(
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setPubsubTopic("pubsubTopic255880396")
+            .setServiceAccount("serviceAccount1079137720")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-8287";
+    NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+
+    NotificationConfig actualResponse = client.createNotificationConfig(parent, notificationConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNotificationConfigExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-8287";
+      NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+      client.createNotificationConfig(parent, notificationConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNotificationConfigTest5() throws Exception {
+    NotificationConfig expectedResponse =
+        NotificationConfig.newBuilder()
+            .setName(
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setPubsubTopic("pubsubTopic255880396")
+            .setServiceAccount("serviceAccount1079137720")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+    String configId = "configId-580140035";
+    NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+
+    NotificationConfig actualResponse =
+        client.createNotificationConfig(parent, configId, notificationConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNotificationConfigExceptionTest5() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      String configId = "configId-580140035";
+      NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+      client.createNotificationConfig(parent, configId, notificationConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNotificationConfigTest6() throws Exception {
+    NotificationConfig expectedResponse =
+        NotificationConfig.newBuilder()
+            .setName(
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -1022,7 +1187,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createNotificationConfigExceptionTest3() throws Exception {
+  public void createNotificationConfigExceptionTest6() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -1040,11 +1205,68 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createNotificationConfigTest4() throws Exception {
+  public void createNotificationConfigTest7() throws Exception {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setPubsubTopic("pubsubTopic255880396")
+            .setServiceAccount("serviceAccount1079137720")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    String configId = "configId-580140035";
+    NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+
+    NotificationConfig actualResponse =
+        client.createNotificationConfig(parent, configId, notificationConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNotificationConfigExceptionTest7() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String configId = "configId-580140035";
+      NotificationConfig notificationConfig = NotificationConfig.newBuilder().build();
+      client.createNotificationConfig(parent, configId, notificationConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNotificationConfigTest8() throws Exception {
+    NotificationConfig expectedResponse =
+        NotificationConfig.newBuilder()
+            .setName(
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -1075,7 +1297,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createNotificationConfigExceptionTest4() throws Exception {
+  public void createNotificationConfigExceptionTest8() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -1180,7 +1402,8 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     NotificationConfigName name =
-        NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+        NotificationConfigName.ofOrganizationNotificationConfigName(
+            "[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
 
     client.deleteNotificationConfig(name);
 
@@ -1208,7 +1431,8 @@ public class SecurityCenterClientHttpJsonTest {
 
     try {
       NotificationConfigName name =
-          NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+          NotificationConfigName.ofOrganizationNotificationConfigName(
+              "[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
       client.deleteNotificationConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1569,7 +1793,9 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -1577,7 +1803,8 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     NotificationConfigName name =
-        NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+        NotificationConfigName.ofOrganizationNotificationConfigName(
+            "[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
 
     NotificationConfig actualResponse = client.getNotificationConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1606,7 +1833,8 @@ public class SecurityCenterClientHttpJsonTest {
 
     try {
       NotificationConfigName name =
-          NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
+          NotificationConfigName.ofOrganizationNotificationConfigName(
+              "[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
       client.getNotificationConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1619,7 +1847,9 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -2375,7 +2605,7 @@ public class SecurityCenterClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    FolderName parent = FolderName.of("[FOLDER]");
 
     ListNotificationConfigsPagedResponse pagedListResponse = client.listNotificationConfigs(parent);
 
@@ -2407,7 +2637,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      FolderName parent = FolderName.of("[FOLDER]");
       client.listNotificationConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2417,6 +2647,106 @@ public class SecurityCenterClientHttpJsonTest {
 
   @Test
   public void listNotificationConfigsTest2() throws Exception {
+    NotificationConfig responsesElement = NotificationConfig.newBuilder().build();
+    ListNotificationConfigsResponse expectedResponse =
+        ListNotificationConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNotificationConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListNotificationConfigsPagedResponse pagedListResponse = client.listNotificationConfigs(parent);
+
+    List<NotificationConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNotificationConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNotificationConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listNotificationConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNotificationConfigsTest3() throws Exception {
+    NotificationConfig responsesElement = NotificationConfig.newBuilder().build();
+    ListNotificationConfigsResponse expectedResponse =
+        ListNotificationConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNotificationConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListNotificationConfigsPagedResponse pagedListResponse = client.listNotificationConfigs(parent);
+
+    List<NotificationConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNotificationConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listNotificationConfigsExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listNotificationConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNotificationConfigsTest4() throws Exception {
     NotificationConfig responsesElement = NotificationConfig.newBuilder().build();
     ListNotificationConfigsResponse expectedResponse =
         ListNotificationConfigsResponse.newBuilder()
@@ -2450,7 +2780,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listNotificationConfigsExceptionTest2() throws Exception {
+  public void listNotificationConfigsExceptionTest4() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -3551,7 +3881,9 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -3561,7 +3893,9 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig notificationConfig =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -3596,7 +3930,9 @@ public class SecurityCenterClientHttpJsonTest {
       NotificationConfig notificationConfig =
           NotificationConfig.newBuilder()
               .setName(
-                  NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                  NotificationConfigName.ofOrganizationNotificationConfigName(
+                          "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                      .toString())
               .setDescription("description-1724546052")
               .setPubsubTopic("pubsubTopic255880396")
               .setServiceAccount("serviceAccount1079137720")
@@ -3613,7 +3949,9 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig expectedResponse =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -3623,7 +3961,9 @@ public class SecurityCenterClientHttpJsonTest {
     NotificationConfig notificationConfig =
         NotificationConfig.newBuilder()
             .setName(
-                NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                NotificationConfigName.ofOrganizationNotificationConfigName(
+                        "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                    .toString())
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
@@ -3660,7 +4000,9 @@ public class SecurityCenterClientHttpJsonTest {
       NotificationConfig notificationConfig =
           NotificationConfig.newBuilder()
               .setName(
-                  NotificationConfigName.of("[ORGANIZATION]", "[NOTIFICATION_CONFIG]").toString())
+                  NotificationConfigName.ofOrganizationNotificationConfigName(
+                          "[ORGANIZATION]", "[NOTIFICATION_CONFIG]")
+                      .toString())
               .setDescription("description-1724546052")
               .setPubsubTopic("pubsubTopic255880396")
               .setServiceAccount("serviceAccount1079137720")

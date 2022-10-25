@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-discoveryengine:0.1.0:0.1.0
+proto-google-cloud-discoveryengine-v1beta:0.1.0:0.1.0
+grpc-google-cloud-discoveryengine-v1beta:0.1.0:0.1.0

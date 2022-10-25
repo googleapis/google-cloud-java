@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-beyondcorp-appgateways:0.2.0:0.2.0
-proto-google-cloud-beyondcorp-appgateways-v1:0.2.0:0.2.0
-grpc-google-cloud-beyondcorp-appgateways-v1:0.2.0:0.2.0
+google-cloud-beyondcorp-appgateways:0.3.0:0.3.0
+proto-google-cloud-beyondcorp-appgateways-v1:0.3.0:0.3.0
+grpc-google-cloud-beyondcorp-appgateways-v1:0.3.0:0.3.0

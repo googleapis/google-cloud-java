@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-tpu:2.5.0:2.5.0
-grpc-google-cloud-tpu-v1:2.5.0:2.5.0
-grpc-google-cloud-tpu-v2alpha1:2.5.0:2.5.0
-proto-google-cloud-tpu-v1:2.5.0:2.5.0
-proto-google-cloud-tpu-v2alpha1:2.5.0:2.5.0
+google-cloud-tpu:2.6.0:2.6.0
+grpc-google-cloud-tpu-v1:2.6.0:2.6.0
+grpc-google-cloud-tpu-v2alpha1:2.6.0:2.6.0
+proto-google-cloud-tpu-v1:2.6.0:2.6.0
+proto-google-cloud-tpu-v2alpha1:2.6.0:2.6.0

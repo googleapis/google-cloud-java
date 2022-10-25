@@ -276,13 +276,13 @@ public final class JobProto {
           + "S_POSSIBLE\020\001:o\352Al\n\036batch.googleapis.com/"
           + "TaskGroup\022Jprojects/{project}/locations/"
           + "{location}/jobs/{job}/taskGroups/{task_g"
-          + "roup}\"/\n\016ServiceAccount\022\r\n\005email\030\001 \001(\t\022\016"
-          + "\n\006scopes\030\002 \003(\tB\315\001\n\036com.google.cloud.batc"
-          + "h.v1alphaB\010JobProtoP\001Z?google.golang.org"
-          + "/genproto/googleapis/cloud/batch/v1alpha"
-          + ";batch\242\002\003GCB\252\002\032Google.Cloud.Batch.V1Alph"
-          + "a\312\002\032Google\\Cloud\\Batch\\V1alpha\352\002\035Google:"
-          + ":Cloud::Batch::V1alphab\006proto3"
+          + "roup}\"3\n\016ServiceAccount\022\r\n\005email\030\001 \001(\t\022\022"
+          + "\n\006scopes\030\002 \003(\tB\002\030\001B\315\001\n\036com.google.cloud."
+          + "batch.v1alphaB\010JobProtoP\001Z?google.golang"
+          + ".org/genproto/googleapis/cloud/batch/v1a"
+          + "lpha;batch\242\002\003GCB\252\002\032Google.Cloud.Batch.V1"
+          + "Alpha\312\002\032Google\\Cloud\\Batch\\V1alpha\352\002\035Goo"
+          + "gle::Cloud::Batch::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
