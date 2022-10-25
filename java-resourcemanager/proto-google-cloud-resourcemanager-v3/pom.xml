@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-resourcemanager-v3</artifactId>
-  <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
+  <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
   <name>proto-google-cloud-resourcemanager-v3</name>
   <description>Proto library for google-cloud-resourcemanager</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-resourcemanager-parent</artifactId>
-    <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+    <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   </parent>
   <dependencies>
     <dependency>

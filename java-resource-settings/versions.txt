@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-resource-settings:1.4.0:1.4.1-SNAPSHOT
-grpc-google-cloud-resource-settings-v1:1.4.0:1.4.1-SNAPSHOT
-proto-google-cloud-resource-settings-v1:1.4.0:1.4.1-SNAPSHOT
+google-cloud-resource-settings:1.5.0:1.5.1-SNAPSHOT
+grpc-google-cloud-resource-settings-v1:1.5.0:1.5.1-SNAPSHOT
+proto-google-cloud-resource-settings-v1:1.5.0:1.5.1-SNAPSHOT

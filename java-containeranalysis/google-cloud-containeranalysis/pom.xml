@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-containeranalysis</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Container Analysis</name>
   <description>Java idiomatic client for Google Cloud Container Analysis</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-containeranalysis-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+    <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-containeranalysis</site.installationModule>

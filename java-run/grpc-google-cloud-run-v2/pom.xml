@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-run-v2</artifactId>
-  <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-run-v2:current} -->
+  <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-run-v2:current} -->
   <name>grpc-google-cloud-run-v2</name>
   <description>GRPC library for google-cloud-run</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-run-parent</artifactId>
-    <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-run:current} -->
+    <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-run:current} -->
   </parent>
   <dependencies>
     <dependency>

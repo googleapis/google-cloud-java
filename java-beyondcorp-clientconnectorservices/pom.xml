@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-clientconnectorservices-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
+  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
   <name>Google BeyondCorp ClientConnectorServices Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-beyondcorp-clientconnectorservices</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
+        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-beyondcorp-clientconnectorservices-v1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-clientconnectorservices-v1:current} -->
+        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-clientconnectorservices-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-beyondcorp-clientconnectorservices-v1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-clientconnectorservices-v1:current} -->
+        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-clientconnectorservices-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

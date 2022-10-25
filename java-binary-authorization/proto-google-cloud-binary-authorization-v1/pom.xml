@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-binary-authorization-v1</artifactId>
-  <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-binary-authorization-v1:current} -->
   <name>proto-google-cloud-binary-authorization-v1</name>
   <description>Proto library for google-cloud-binary-authorization</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-binary-authorization-parent</artifactId>
-    <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
   </parent>
   <dependencies>
     <dependency>

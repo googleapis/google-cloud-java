@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apigee-connect</artifactId>
-  <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-connect:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-connect:current} -->
   <packaging>jar</packaging>
   <name>Google Apigee Connect</name>
   <description>Apigee Connect allows the Apigee hybrid management plane to connect securely to the MART service in the runtime plane without requiring you to expose the MART endpoint on the internet.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apigee-connect-parent</artifactId>
-    <version>2.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-connect:current} -->
+    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-connect:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apigee-connect</site.installationModule>

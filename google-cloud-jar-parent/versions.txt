@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-jar-parent:0.1.0:0.1.1-SNAPSHOT
+google-cloud-jar-parent:0.2.0:0.2.1-SNAPSHOT

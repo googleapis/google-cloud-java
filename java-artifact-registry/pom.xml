@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-artifact-registry-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
   <name>Google Artifact Registry Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-artifact-registry</artifactId>
-        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-artifact-registry-v1</artifactId>
-        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-artifact-registry-v1</artifactId>
-        <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1:current} -->
+        <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-artifact-registry-v1beta2</artifactId>
-        <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1beta2:current} -->
+        <version>0.10.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-artifact-registry-v1beta2</artifactId>
-        <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1beta2:current} -->
+        <version>0.10.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1beta2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

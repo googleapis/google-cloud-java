@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-cloudcommerceconsumerprocurement</artifactId>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudcommerceconsumerprocurement:current} -->
+  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudcommerceconsumerprocurement:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Commerce Consumer Procurement</name>
   <description>Cloud Commerce Consumer Procurement Find top solutions integrated with Google Cloud to accelerate your digital transformation. Scale and simplify procurement for your organization with online discovery, flexible purchasing, and fulfillment of enterprise-grade cloud solutions.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-cloudcommerceconsumerprocurement-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudcommerceconsumerprocurement:current} -->
+    <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudcommerceconsumerprocurement:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-cloudcommerceconsumerprocurement</site.installationModule>

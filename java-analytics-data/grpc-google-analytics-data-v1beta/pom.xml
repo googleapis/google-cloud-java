@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-analytics-data-v1beta</artifactId>
-  <version>0.15.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
+  <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
   <name>grpc-google-analytics-data-v1beta</name>
   <description>GRPC library for grpc-google-analytics-data-v1beta</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-data-parent</artifactId>
-    <version>0.15.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
+    <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
   </parent>
   <dependencies>
     <dependency>

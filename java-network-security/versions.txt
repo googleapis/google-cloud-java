@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-network-security:0.7.0:0.7.1-SNAPSHOT
-grpc-google-cloud-network-security-v1beta1:0.7.0:0.7.1-SNAPSHOT
-proto-google-cloud-network-security-v1beta1:0.7.0:0.7.1-SNAPSHOT
-proto-google-cloud-network-security-v1:0.7.0:0.7.1-SNAPSHOT
-grpc-google-cloud-network-security-v1:0.7.0:0.7.1-SNAPSHOT
+google-cloud-network-security:0.8.0:0.8.1-SNAPSHOT
+grpc-google-cloud-network-security-v1beta1:0.8.0:0.8.1-SNAPSHOT
+proto-google-cloud-network-security-v1beta1:0.8.0:0.8.1-SNAPSHOT
+proto-google-cloud-network-security-v1:0.8.0:0.8.1-SNAPSHOT
+grpc-google-cloud-network-security-v1:0.8.0:0.8.1-SNAPSHOT

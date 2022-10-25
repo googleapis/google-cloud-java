@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-clientgateways-bom</artifactId>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
+  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-beyondcorp-clientgateways</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
+        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-beyondcorp-clientgateways-v1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-clientgateways-v1:current} -->
+        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-clientgateways-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-beyondcorp-clientgateways-v1</artifactId>
-        <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-clientgateways-v1:current} -->
+        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-clientgateways-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

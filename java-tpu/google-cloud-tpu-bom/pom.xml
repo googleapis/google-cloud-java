@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tpu-bom</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,27 +27,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-tpu</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+        <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tpu-v1</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v1:current} -->
+        <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tpu-v2alpha1</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v2alpha1:current} -->
+        <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v2alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tpu-v1</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tpu-v1:current} -->
+        <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tpu-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tpu-v2alpha1</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tpu-v2alpha1:current} -->
+        <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tpu-v2alpha1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

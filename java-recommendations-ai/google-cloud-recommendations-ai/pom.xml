@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommendations-ai</artifactId>
-  <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
+  <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
   <packaging>jar</packaging>
   <name>Google Recommendations AI</name>
   <description>delivers highly personalized product recommendations at scale.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-recommendations-ai-parent</artifactId>
-    <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
+    <version>0.12.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-recommendations-ai</site.installationModule>

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow</artifactId>
-  <version>4.10.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+  <version>4.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Dialog Flow API</name>
   <description>Java idiomatic client for Google Cloud Dialog Flow API</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-parent</artifactId>
-    <version>4.10.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+    <version>4.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dialogflow</site.installationModule>

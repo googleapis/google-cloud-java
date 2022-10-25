@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-beyondcorp-appconnectors-v1</artifactId>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-appconnectors-v1:current} -->
+  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-appconnectors-v1:current} -->
   <name>proto-google-cloud-beyondcorp-appconnectors-v1</name>
   <description>Proto library for google-cloud-beyondcorp-appconnectors</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-appconnectors-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnectors:current} -->
+    <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnectors:current} -->
   </parent>
   <dependencies>
     <dependency>

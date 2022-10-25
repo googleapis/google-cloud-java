@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring-bom</artifactId>
-  <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+  <version>3.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -23,17 +23,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring</artifactId>
-        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <version>3.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
+        <version>3.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-        <version>3.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
+        <version>3.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

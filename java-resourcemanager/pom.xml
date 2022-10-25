@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+  <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   <name>Google Resource Manager API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,18 +29,18 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
       </dependency>
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-resourcemanager-v3</artifactId>
-        <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
+        <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-resourcemanager-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-resourcemanager-v3</artifactId>
-        <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-resourcemanager-v3:current} -->
+        <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-resourcemanager-v3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

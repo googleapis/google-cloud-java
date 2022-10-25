@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-data-exchange</artifactId>
-  <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+  <version>2.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Hub</name>
   <description>Analytics Hub is a data exchange that allows you to efficiently and securely exchange data assets across organizations to address challenges of data reliability and cost.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-data-exchange-parent</artifactId>
-    <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+    <version>2.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery-data-exchange</site.installationModule>

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-binary-authorization</artifactId>
-  <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
   <packaging>jar</packaging>
   <name>Google Binary Authorization</name>
   <description>Binary Authorization  is a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-binary-authorization-parent</artifactId>
-    <version>1.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-binary-authorization</site.installationModule>

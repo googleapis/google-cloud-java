@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
   <packaging>jar</packaging>
-  <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+  <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   <name>Google Cloud Resource Manager</name>
   <description>
     Java idiomatic client for Google Cloud Resource Manager
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-resourcemanager-parent</artifactId>
-    <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+    <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
   </parent>
 
   <properties>
