@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1 (2022-10-24)
+
+### Fixes
+
+* MultiEndpoint: allow specifying protocol in the endpoint. (#151)
+
 ## 1.3.0 (2022-10-12)
 
 ### Features
