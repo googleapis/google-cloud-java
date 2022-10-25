@@ -184,6 +184,7 @@ public class ITSystemTest {
     SearchAgentsRequest request =
         SearchAgentsRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
     for (Agent actualAgent : agentsClient.searchAgents(request).iterateAll()) {
+      System.out.println("Agent display name: " + actualAgent.getDisplayName());
       assertEquals(PROJECT_NAME.toString(), actualAgent.getParent());
       assertEquals(DISPLAY_NAME, actualAgent.getDisplayName());
       assertEquals(DEFAULT_LANGUAGE_CODE, actualAgent.getDefaultLanguageCode());
@@ -199,6 +200,7 @@ public class ITSystemTest {
     GetAgentRequest request =
         GetAgentRequest.newBuilder().setParent(PROJECT_NAME.toString()).build();
     Agent actualAgent = agentsClient.getAgent(request);
+    System.out.println("Agent display name: " + actualAgent.getDisplayName());
     assertEquals(PROJECT_NAME.toString(), actualAgent.getParent());
     assertEquals(DISPLAY_NAME, actualAgent.getDisplayName());
     assertEquals(DEFAULT_LANGUAGE_CODE, actualAgent.getDefaultLanguageCode());
