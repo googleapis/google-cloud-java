@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow-bom</artifactId>
-  <version>4.11.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+  <version>4.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -23,27 +23,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
-        <version>4.11.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <version>4.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-v2</artifactId>
-        <version>4.11.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
+        <version>4.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2</artifactId>
-        <version>4.11.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
+        <version>4.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
