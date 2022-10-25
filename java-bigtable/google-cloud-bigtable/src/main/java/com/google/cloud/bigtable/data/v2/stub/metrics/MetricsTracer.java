@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.api.gax.tracing.SpanName;
 import com.google.common.base.Stopwatch;
@@ -165,6 +166,13 @@ class MetricsTracer extends BigtableTracer {
             .put(
                 RpcMeasureConstants.BIGTABLE_ATTEMPT_LATENCY,
                 attemptTimer.elapsed(TimeUnit.MILLISECONDS));
+
+    // Patch the throwable until it's fixed in gax. When an attempt failed,
+    // it'll throw a ServerStreamingAttemptException. Unwrap the exception
+    // so it could get processed by extractStatus
+    if (throwable instanceof ServerStreamingAttemptException) {
+      throwable = throwable.getCause();
+    }
 
     TagContextBuilder tagCtx =
         newTagCtxBuilder()

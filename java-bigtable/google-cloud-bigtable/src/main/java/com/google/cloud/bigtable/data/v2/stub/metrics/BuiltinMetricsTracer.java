@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 
+import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.tracing.SpanName;
 import com.google.cloud.bigtable.stats.StatsRecorderWrapper;
 import com.google.common.annotations.VisibleForTesting;
@@ -256,6 +257,14 @@ class BuiltinMetricsTracer extends BigtableTracer {
         serverLatencyTimerIsRunning = false;
       }
     }
+
+    // Patch the status until it's fixed in gax. When an attempt failed,
+    // it'll throw a ServerStreamingAttemptException. Unwrap the exception
+    // so it could get processed by extractStatus
+    if (status instanceof ServerStreamingAttemptException) {
+      status = status.getCause();
+    }
+
     recorder.putAttemptLatencies(attemptTimer.elapsed(TimeUnit.MILLISECONDS));
     recorder.recordAttempt(Util.extractStatus(status), tableId, zone, cluster);
   }
