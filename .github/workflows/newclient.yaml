@@ -37,8 +37,6 @@ jobs:
           key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
       - name: Install dependencies
         run: pip install -r generation/new_client/requirements.txt
-      - name: Remove other libraries
-        run: rm -rf java-*
       - name: Generate
         run: |
           python generation/new_client/new-client.py generate \
