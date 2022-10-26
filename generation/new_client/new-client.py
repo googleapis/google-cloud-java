@@ -218,6 +218,7 @@ def generate(
         cwd=workdir,
     )
     monorepo_root=(workdir / '..').resolve()
+    print("monorepo_root=",monorepo_root)
     print("Running the post-processor...")
     subprocess.check_call(
         [

@@ -22,6 +22,19 @@ jobs:
         with:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d' --utc)"
+      - uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+      - run: java -version
+      - uses: actions/cache@v3
+        id: mvn-cache
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
       - name: Install dependencies
         run: pip install -r generation/new_client/requirements.txt
       - name: Remove other libraries
@@ -44,6 +57,6 @@ jobs:
           git add --all
           git commit -m 'feat: added apikeys and removed others'
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git push -f monorepo newclient_output_${{ github.event_name }}
+          git push -q -f monorepo newclient_output_${{ github.event_name }}
       - name: Test
-        run: mvn install
+        run: mvn test -T C1 -B
