@@ -233,9 +233,6 @@ def generate(
         cwd=monorepo_root,
     )
 
-    subprocess.check_call(["rm", "-f", ".gitignore"],
-                          cwd=workdir)
-
     # Remove irrelevant files from templates
     subprocess.check_call(
         ["bash", "generation/update_owlbot_postprocessor_config.sh"],
