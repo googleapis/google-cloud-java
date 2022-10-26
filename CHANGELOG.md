@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.11.10](https://github.com/googleapis/java-logging/compare/v3.11.9...v3.11.10) (2022-10-26)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.5 ([#1156](https://github.com/googleapis/java-logging/issues/1156)) ([413fa54](https://github.com/googleapis/java-logging/commit/413fa54ee4f38d5c28e91f54f4a5cd8e0407b08a))
+* Update dependency org.easymock:easymock to v5.0.1 ([#1159](https://github.com/googleapis/java-logging/issues/1159)) ([df8bfbe](https://github.com/googleapis/java-logging/commit/df8bfbeca6827e7d124a7880ae13e8bf6ec9c24c))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.16 ([#1144](https://github.com/googleapis/java-logging/issues/1144)) ([4836c7e](https://github.com/googleapis/java-logging/commit/4836c7e037bf6b15cb87d96770a12197cae9e57b))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.16 ([#1154](https://github.com/googleapis/java-logging/issues/1154)) ([a13ef9f](https://github.com/googleapis/java-logging/commit/a13ef9fa9c7d59a719534881cb4a995ead7e827d))
+
 ## [3.11.9](https://github.com/googleapis/java-logging/compare/v3.11.8...v3.11.9) (2022-10-17)
 
 
