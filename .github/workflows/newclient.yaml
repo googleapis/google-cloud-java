@@ -42,6 +42,7 @@ jobs:
           [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"          
           git add --all
           git commit -m 'feat: added apikeys and removed others'
-          git push -f origin main:newclient_output_${{ github.event_name }}
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git push -f monorepo main:newclient_output_${{ github.event_name }}
       - name: Test
         run: mvn install
