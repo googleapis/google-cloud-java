@@ -52,9 +52,9 @@ jobs:
           [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
           [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
           git checkout -b newclient_output_${{ github.event_name }}
-          git add -q --all
-          git commit -q -m 'feat: added apikeys and removed others'
+          git add --all
+          git commit -m 'feat: added apikeys and removed others'
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
-          git push -q -f monorepo newclient_output_${{ github.event_name }}
+          git push -f monorepo newclient_output_${{ github.event_name }}
       - name: Test
         run: mvn test -T C1 -B
