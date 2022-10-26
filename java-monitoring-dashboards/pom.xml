@@ -50,4 +50,5 @@
     <module>proto-google-cloud-monitoring-dashboard-v1</module>
     <module>google-cloud-monitoring-dashboard-bom</module>
   </modules>
-</project>
+
+  </project>
