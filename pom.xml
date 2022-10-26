@@ -131,7 +131,7 @@
       <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
-        <version>2.9.1</version>
+        <version>2.10</version>
       </dependency>
 
       <!-- Used for Interval and Range types -->
