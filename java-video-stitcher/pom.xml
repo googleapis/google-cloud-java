@@ -50,4 +50,5 @@
     <module>proto-google-cloud-video-stitcher-v1</module>
     <module>google-cloud-video-stitcher-bom</module>
   </modules>
-</project>
+
+  </project>
