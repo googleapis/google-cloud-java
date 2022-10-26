@@ -35,6 +35,7 @@ jobs:
               --product-docs="https://cloud.google.com/api-keys/" \
               --api-description="API Keys lets you create and manage your API keys for your projects." \
               --googleapis-gen-url=https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
+        continue-on-error: true
       - name: Push to branch
         run: |
           [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
