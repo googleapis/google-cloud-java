@@ -24,23 +24,39 @@ locals {
     should_disable_apis_on_destroy = var.should_disable_apis_on_destroy
   }
 }
-module "project-services" {
-  source = "terraform-google-modules/project-factory/google//modules/project_services"
-
-  project_id                  = local.data.project_id
-  enable_apis                 = local.data.should_enable_apis_on_apply
-  disable_services_on_destroy = local.data.should_disable_apis_on_destroy
-  activate_apis               = [
-    "cloudresourcemanager.googleapis.com",
-    "iam.googleapis.com",
-    "iamcredentials.googleapis.com",
-    "serviceusage.googleapis.com",
-  ]
+resource "google_project_service" "cloudresourcemanager" {
+  service            = "cloudresourcemanager.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+}
+resource "google_project_service" "iam" {
+  service            = "iam.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+}
+resource "google_project_service" "iamcredentials" {
+  service            = "iamcredentials.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+}
+resource "google_project_service" "serviceusage" {
+  service            = "serviceusage.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
 }
 resource "time_sleep" "for_1m_allowBaseCloudApisToFullyEnable" {
   create_duration = "1m"
-  depends_on      = [module.project-services]
-  triggers        = {
+  depends_on      = [
+    google_project_service.cloudresourcemanager,
+    google_project_service.iam,
+    google_project_service.iamcredentials,
+    google_project_service.serviceusage
+  ]
+  triggers = {
     when_project_created = local.data.project_id
   }
 }

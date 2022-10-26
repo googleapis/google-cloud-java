@@ -5,15 +5,13 @@ terraform {
     }
   }
 }
-module "project-services" {
-  source = "terraform-google-modules/project-factory/google//modules/project_services"
-
-  project_id                  = var.inputs.project_id
-  enable_apis                 = var.inputs.should_enable_apis_on_apply
-  disable_services_on_destroy = var.inputs.should_disable_apis_on_destroy
-  activate_apis               = ["cloudtasks.googleapis.com"]
+resource "google_project_service" "cloudtasks" {
+  service            = "cloudtasks.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
 }
 resource "time_sleep" "for_90s_allowTasksToFullyEnable" {
-  depends_on      = [module.project-services]
+  depends_on      = [google_project_service.cloudtasks]
   create_duration = "90s"
 }

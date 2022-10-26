@@ -3,19 +3,25 @@ terraform {
     google = { source = "hashicorp/google" }
   }
 }
-module "project-services" {
-  source = "terraform-google-modules/project-factory/google//modules/project_services"
-
-  project_id                  = var.inputs.project_id
-  enable_apis                 = var.inputs.should_enable_apis_on_apply
-  disable_services_on_destroy = var.inputs.should_disable_apis_on_destroy
-  activate_apis               = [
-    "cloudasset.googleapis.com",
-    "cloudresourcemanager.googleapis.com",
-    "pubsub.googleapis.com",
-  ]
+resource "google_project_service" "cloudasset" {
+  service            = "cloudasset.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+}
+resource "google_project_service" "cloudresourcemanager" {
+  service            = "cloudresourcemanager.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+}
+resource "google_project_service" "pubsub" {
+  service            = "pubsub.googleapis.com"
+  project            = var.inputs.project_id
+  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
 }
 resource "time_sleep" "for_90s_allowPubsubToFullyEnable" {
-  depends_on      = [module.project-services]
+  depends_on      = [google_project_service.pubsub]
   create_duration = "90s"
 }
