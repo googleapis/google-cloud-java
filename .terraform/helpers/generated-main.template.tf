@@ -26,27 +26,27 @@ locals {
 }
 resource "google_project_service" "cloudresourcemanager" {
   service            = "cloudresourcemanager.googleapis.com"
-  project            = var.inputs.project_id
-  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
-  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+  project            = local.data.project_id
+  count              = local.data.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = local.data.should_disable_apis_on_destroy
 }
 resource "google_project_service" "iam" {
   service            = "iam.googleapis.com"
-  project            = var.inputs.project_id
-  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
-  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+  project            = local.data.project_id
+  count              = local.data.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = local.data.should_disable_apis_on_destroy
 }
 resource "google_project_service" "iamcredentials" {
   service            = "iamcredentials.googleapis.com"
-  project            = var.inputs.project_id
-  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
-  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+  project            = local.data.project_id
+  count              = local.data.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = local.data.should_disable_apis_on_destroy
 }
 resource "google_project_service" "serviceusage" {
   service            = "serviceusage.googleapis.com"
-  project            = var.inputs.project_id
-  count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
-  disable_on_destroy = var.inputs.should_disable_apis_on_destroy
+  project            = local.data.project_id
+  count              = local.data.should_enable_apis_on_apply ? 1 : 0
+  disable_on_destroy = local.data.should_disable_apis_on_destroy
 }
 resource "time_sleep" "for_1m_allowBaseCloudApisToFullyEnable" {
   create_duration = "1m"
