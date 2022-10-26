@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-connect-gateway-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.6.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
+  <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
   <name>Google Connect Gateway API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gke-connect-gateway</artifactId>
-        <version>0.6.0</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
+        <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-connect-gateway:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gke-connect-gateway-v1beta1</artifactId>
-        <version>0.6.0</version><!-- {x-version-update:grpc-google-cloud-gke-connect-gateway-v1beta1:current} -->
+        <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-connect-gateway-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gke-connect-gateway-v1beta1</artifactId>
-        <version>0.6.0</version><!-- {x-version-update:proto-google-cloud-gke-connect-gateway-v1beta1:current} -->
+        <version>0.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-connect-gateway-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

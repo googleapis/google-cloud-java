@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-translate-v3</artifactId>
-  <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-translate-v3:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-translate-v3:current} -->
   <name>proto-google-cloud-translate-v3</name>
   <description>PROTO library for proto-google-cloud-translate-v3</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-translate-parent</artifactId>
-    <version>2.5.0</version><!-- {x-version-update:google-cloud-translate:current} -->
+    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
   </parent>
   <dependencies>
     <dependency>

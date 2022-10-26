@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.9.0</version><!-- {x-version-update:google-cloud-asset:current} -->
+  <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
   <name>Google Cloud Asset Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,77 +29,77 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1</artifactId>
-        <version>3.9.0</version><!-- {x-version-update:proto-google-cloud-asset-v1:current} -->
+        <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p7beta1</artifactId>
-        <version>3.9.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p7beta1:current} -->
+        <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p7beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p7beta1</artifactId>
-        <version>3.9.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p7beta1:current} -->
+        <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p7beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p1beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p1beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p2beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p2beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1p5beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p5beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p5beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1</artifactId>
-        <version>3.9.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1:current} -->
+        <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p1beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p1beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p2beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p2beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-asset-v1p5beta1</artifactId>
-        <version>0.109.0</version><!-- {x-version-update:grpc-google-cloud-asset-v1p5beta1:current} -->
+        <version>0.109.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-asset-v1p5beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-asset</artifactId>
-        <version>3.9.0</version><!-- {x-version-update:google-cloud-asset:current} -->
+        <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-orgpolicy-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-orgpolicy-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-identity-accesscontextmanager-v1</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
+        <version>1.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-os-config-v1</artifactId>
-        <version>2.7.0</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
+        <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
-        <version>1.7.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <version>1.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
         <scope>test</scope>
       </dependency>
     </dependencies>

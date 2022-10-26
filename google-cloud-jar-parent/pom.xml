@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-jar-parent</artifactId>
   <groupId>com.google.cloud</groupId>
-  <version>0.2.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud JAR Parent</name>
   <description>
@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.2.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
   <properties>
@@ -135,6 +135,32 @@
           <scope>provided</scope>
         </dependency>
       </dependencies>
+    </profile>
+    <profile>
+      <id>java17</id>
+      <activation>
+        <jdk>[17,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <argLine>
+                --add-opens=java.base/java.time=ALL-UNNAMED
+                --add-opens=java.base/java.math=ALL-UNNAMED
+                --add-opens=java.base/sun.security.rsa=ALL-UNNAMED
+                --add-opens=java.base/sun.security.pkcs=ALL-UNNAMED
+                --add-opens=java.base/sun.security.x509=ALL-UNNAMED
+                --add-opens=java.base/sun.security.util=ALL-UNNAMED
+                --add-opens=java.base/java.security=ALL-UNNAMED
+                --add-opens=java.base/java.lang=ALL-UNNAMED
+              </argLine>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 
