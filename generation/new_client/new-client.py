@@ -162,7 +162,7 @@ def generate(
     )
 
     # get the sha256 digets for the owlbot image
-    subprocess.check_call(["docker", "pull", owlbot_image])
+    subprocess.check_call(["docker", "pull", "-q", owlbot_image])
     owlbot_image_digest = (
         subprocess.check_output(
             ["docker", "inspect", "--format='{{index .RepoDigests 0}}", owlbot_image,],
@@ -177,7 +177,7 @@ def generate(
 
     # run owlbot copy
     print("Cloning googleapis-gen...")
-    subprocess.check_call(["git", "clone", googleapis_gen_url, "./gen/googleapis-gen"], cwd=workdir)
+    subprocess.check_call(["git", "clone", "-q", googleapis_gen_url, "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
     copy_code_parameters = [
         "docker",
