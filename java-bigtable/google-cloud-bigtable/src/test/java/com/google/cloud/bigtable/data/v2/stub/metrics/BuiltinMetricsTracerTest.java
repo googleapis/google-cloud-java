@@ -313,10 +313,12 @@ public class BuiltinMetricsTracerTest {
     stub.mutateRowCallable()
         .call(RowMutation.create(TABLE_ID, "random-row").setCell("cf", "q", "value"));
 
-    // onOperationComplete() is called in TracerFinisher which will be called after the mutateRow
-    // call is returned. So there's a race between when the call returns and when the putRetryCount
-    // is called in onOperationCompletion().
-    verify(statsRecorderWrapper, timeout(20)).putRetryCount(retryCount.capture());
+    // In TracedUnaryCallable, we create a future and add a TraceFinisher to the callback. Main
+    // thread is blocked on waiting for the future to be completed. When onComplete is called on
+    // the grpc thread, the future is completed, however we might not have enough time for
+    // TraceFinisher to run. Add a 1 second time out to wait for the callback. This shouldn't have
+    // any impact on production code.
+    verify(statsRecorderWrapper, timeout(1000)).putRetryCount(retryCount.capture());
 
     assertThat(retryCount.getValue()).isEqualTo(fakeService.getAttemptCounter().get() - 1);
   }
