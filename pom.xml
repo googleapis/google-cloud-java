@@ -55,7 +55,7 @@
     <site.installationModule>google-cloud-bigquery-parent</site.installationModule>
     <google-api-services-bigquery.version>v2-rev20221015-2.0.0</google-api-services-bigquery.version>
     <google.cloud.shared-dependencies.version>3.0.5</google.cloud.shared-dependencies.version>
-    <arrow.version>9.0.0</arrow.version>
+    <arrow.version>10.0.0</arrow.version>
   </properties>
 
   <dependencyManagement>
