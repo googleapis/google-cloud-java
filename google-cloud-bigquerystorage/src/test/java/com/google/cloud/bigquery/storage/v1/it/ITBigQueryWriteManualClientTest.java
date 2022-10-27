@@ -243,16 +243,6 @@ public class ITBigQueryWriteManualClientTest {
         streamWriter.append(CreateProtoRows(new String[] {"ddd"}), 3);
     assertEquals(1, response1.get().getAppendResult().getOffset().getValue());
     assertEquals(3, response2.get().getAppendResult().getOffset().getValue());
-
-    TableResult result =
-        bigquery.listTableData(
-            tableInfoEU.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
-    Iterator<FieldValueList> iter = result.getValues().iterator();
-    assertEquals("aaa", iter.next().get(0).getStringValue());
-    assertEquals("bbb", iter.next().get(0).getStringValue());
-    assertEquals("ccc", iter.next().get(0).getStringValue());
-    assertEquals("ddd", iter.next().get(0).getStringValue());
-    assertEquals(false, iter.hasNext());
   }
 
   @Test
@@ -1255,5 +1245,55 @@ public class ITBigQueryWriteManualClientTest {
           streamWriter.append(CreateProtoRows(new String[] {"bbb"}), 1L);
       assertEquals(1L, response.get().getAppendResult().getOffset().getValue());
     }
+  }
+
+  @Test
+  public void testMultiplexingMixedLocation()
+      throws IOException, InterruptedException, ExecutionException {
+    ConnectionWorkerPool.setOptions(
+        ConnectionWorkerPool.Settings.builder()
+            .setMinConnectionsPerRegion(1)
+            .setMaxConnectionsPerRegion(2)
+            .build());
+    String defaultStream1 =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s/streams/_default",
+            ServiceOptions.getDefaultProjectId(), DATASET, TABLE);
+    String defaultStream2 =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s/streams/_default",
+            ServiceOptions.getDefaultProjectId(), DATASET, TABLE2);
+    String defaultStream3 =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s/streams/_default",
+            ServiceOptions.getDefaultProjectId(), DATASET_EU, TABLE);
+
+    StreamWriter streamWriter1 =
+        StreamWriter.newBuilder(defaultStream1)
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .setEnableConnectionPool(true)
+            .build();
+    StreamWriter streamWriter2 =
+        StreamWriter.newBuilder(defaultStream2)
+            .setWriterSchema(ProtoSchemaConverter.convert(ComplicateType.getDescriptor()))
+            .setEnableConnectionPool(true)
+            .build();
+    StreamWriter streamWriter3 =
+        StreamWriter.newBuilder(defaultStream3)
+            .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
+            .setEnableConnectionPool(true)
+            .build();
+    ApiFuture<AppendRowsResponse> response1 =
+        streamWriter1.append(CreateProtoRows(new String[] {"aaa"}));
+    ApiFuture<AppendRowsResponse> response2 =
+        streamWriter2.append(CreateProtoRowsComplex(new String[] {"aaa"}));
+    ApiFuture<AppendRowsResponse> response3 =
+        streamWriter3.append(CreateProtoRows(new String[] {"bbb"}));
+    assertEquals(0L, response1.get().getAppendResult().getOffset().getValue());
+    assertEquals(0L, response2.get().getAppendResult().getOffset().getValue());
+    assertEquals(0L, response3.get().getAppendResult().getOffset().getValue());
+    assertEquals("us", streamWriter1.getLocation());
+    assertEquals("us", streamWriter2.getLocation());
+    assertEquals("eu", streamWriter3.getLocation());
   }
 }

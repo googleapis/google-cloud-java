@@ -17,7 +17,6 @@ package com.google.cloud.bigquery.storage.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
-import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.common.base.Stopwatch;
@@ -25,7 +24,6 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -327,19 +325,6 @@ public class ConnectionWorkerPool {
     }
     // currently we use different header for the client in each connection worker to be different
     // as the backend require the header to have the same write_stream field as request body.
-    BigQueryWriteClient clientAfterModification = client;
-    if (ownsBigQueryWriteClient) {
-      BigQueryWriteSettings settings = client.getSettings();
-
-      // Every header to write api is required to set write_stream in the header to help routing
-      // the request to correct region.
-      HashMap<String, String> newHeaders = new HashMap<>();
-      newHeaders.putAll(settings.toBuilder().getHeaderProvider().getHeaders());
-      newHeaders.put("x-goog-request-params", "write_stream=" + streamName);
-      BigQueryWriteSettings stubSettings =
-          settings.toBuilder().setHeaderProvider(FixedHeaderProvider.create(newHeaders)).build();
-      clientAfterModification = BigQueryWriteClient.create(stubSettings);
-    }
     ConnectionWorker connectionWorker =
         new ConnectionWorker(
             streamName,
@@ -348,7 +333,7 @@ public class ConnectionWorkerPool {
             maxInflightBytes,
             limitExceededBehavior,
             traceId,
-            clientAfterModification,
+            client,
             ownsBigQueryWriteClient);
     connectionWorkerPool.add(connectionWorker);
     log.info(
