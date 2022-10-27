@@ -93,6 +93,7 @@ public class ParticipantsClientHttpJsonTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -146,6 +147,7 @@ public class ParticipantsClientHttpJsonTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -197,6 +199,7 @@ public class ParticipantsClientHttpJsonTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -250,6 +253,7 @@ public class ParticipantsClientHttpJsonTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -403,6 +407,7 @@ public class ParticipantsClientHttpJsonTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -414,6 +419,7 @@ public class ParticipantsClientHttpJsonTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -451,6 +457,7 @@ public class ParticipantsClientHttpJsonTest {
                           "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                       .toString())
               .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+              .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
               .putAllDocumentsMetadataFilters(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -679,6 +686,12 @@ public class ParticipantsClientHttpJsonTest {
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
+  }
+
+  @Test
+  public void streamingAnalyzeContentUnsupportedMethodTest() throws Exception {
+    // The streamingAnalyzeContent() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
   }
 
   @Test

@@ -102,7 +102,8 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListIntentsRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "intentView", request.getIntentView());
+                            serializer.putQueryParam(
+                                fields, "intentView", request.getIntentViewValue());
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
@@ -140,7 +141,8 @@ public class HttpJsonIntentsStub extends IntentsStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetIntentRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "intentView", request.getIntentView());
+                        serializer.putQueryParam(
+                            fields, "intentView", request.getIntentViewValue());
                         serializer.putQueryParam(fields, "languageCode", request.getLanguageCode());
                         return fields;
                       })
@@ -176,7 +178,8 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateIntentRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "intentView", request.getIntentView());
+                            serializer.putQueryParam(
+                                fields, "intentView", request.getIntentViewValue());
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
                             return fields;
@@ -218,7 +221,8 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateIntentRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "intentView", request.getIntentView());
+                            serializer.putQueryParam(
+                                fields, "intentView", request.getIntentViewValue());
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
