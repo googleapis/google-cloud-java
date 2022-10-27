@@ -54,6 +54,7 @@ jobs:
           git add --all
           git commit -m 'feat: re-generated apikeys'
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git fetch --unshallow monorepo -q
           git push -f monorepo newclient_output_${{ github.event_name }}
       - name: Test
         run: mvn test -T C1 -B
