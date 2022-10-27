@@ -43,8 +43,8 @@ jobs:
       - name: Remove Client
         run: |
           rm -rf java-${API_SHORT_NAME} || true
-          sed -i '/${API_SHORT_NAME}/d' pom.xml
-          sed -i '/${API_SHORT_NAME}/d' gapic-libraries-bom/pom.xml
+          sed -i "/${API_SHORT_NAME}/d" pom.xml
+          sed -i "/${API_SHORT_NAME}/d" gapic-libraries-bom/pom.xml
       - name: Verify Client Removal
         run: |
           test -d java-${API_SHORT_NAME} && echo "ERROR: Found java-${API_SHORT_NAME} directory" && exit 1
@@ -59,11 +59,6 @@ jobs:
               --product-docs="https://github.com/googleapis/google-cloud-java/tree/main/java-${API_SHORT_NAME}" \
               --api-description="${API_PRETTY_NAME} Client lets you use ${API_PRETTY_NAME} API." \
               --googleapis-gen-url=https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
-      - name: Verify Client Creation
-        run: |
-          ! test -d java-${API_SHORT_NAME} && echo "ERROR: Did not find java-${API_SHORT_NAME} directory" && exit 1
-          ! grep -q ${API_SHORT_NAME} pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in pom.xml" && exit 1
-          ! grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in gapic-libraries-bom/pom.xml" && exit 1
       - name: Push to branch
         run: |
           [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
@@ -74,5 +69,10 @@ jobs:
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
           git push -f monorepo newclient_output_${{ github.event_name }}
+      - name: Verify Client Creation
+        run: |
+          ! test -d java-${API_SHORT_NAME} && echo "ERROR: Did not find java-${API_SHORT_NAME} directory" && exit 1
+          ! grep -q ${API_SHORT_NAME} pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in pom.xml" && exit 1
+          ! grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in gapic-libraries-bom/pom.xml" && exit 1
       - name: Test
         run: mvn test -T C1 -B
