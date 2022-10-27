@@ -16,6 +16,9 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    env:
+        API_SHORT_NAME: apikeys
+        API_PRETTY_NAME: API Keys
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -37,22 +40,37 @@ jobs:
           key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
       - name: Install dependencies
         run: pip install -r generation/new_client/requirements.txt
+      - name: Remove Client
+        run: |
+          rm -rf java-${API_SHORT_NAME} || true
+          sed -i '/${API_SHORT_NAME}/d' pom.xml
+          sed -i '/${API_SHORT_NAME}/d' gapic-libraries-bom/pom.xml
+      - name: Verify Client Removal
+        run: |
+          test -d java-${API_SHORT_NAME} && echo "ERROR: Found java-${API_SHORT_NAME} directory" && exit 1
+          grep -q ${API_SHORT_NAME} pom.xml && echo "ERROR: Found ${API_SHORT_NAME} in pom.xml" && exit 1
+          grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml && echo "ERROR: Found ${API_SHORT_NAME} in gapic-libraries-bom/pom.xml" && exit 1
       - name: Generate
         run: |
           python generation/new_client/new-client.py generate \
-              --api_shortname=apikeys \
-              --proto-path=google/api/apikeys \
-              --name-pretty="API Keys API" \
-              --product-docs="https://cloud.google.com/api-keys/" \
-              --api-description="API Keys lets you create and manage your API keys for your projects." \
+              --api_shortname=${API_SHORT_NAME} \
+              --proto-path=google/api/${API_SHORT_NAME} \
+              --name-pretty="${API_PRETTY_NAME}" \
+              --product-docs="https://github.com/googleapis/google-cloud-java/tree/main/java-${API_SHORT_NAME}" \
+              --api-description="${API_PRETTY_NAME} Client lets you use ${API_PRETTY_NAME} API." \
               --googleapis-gen-url=https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
+      - name: Verify Client Creation
+        run: |
+          ! test -d java-${API_SHORT_NAME} && echo "ERROR: Did not find java-${API_SHORT_NAME} directory" && exit 1
+          ! grep -q ${API_SHORT_NAME} pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in pom.xml" && exit 1
+          ! grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in gapic-libraries-bom/pom.xml" && exit 1
       - name: Push to branch
         run: |
           [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
           [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
           git checkout -b newclient_output_${{ github.event_name }}
           git add --all
-          git commit -m 'feat: re-generated apikeys'
+          git commit -m 'feat: re-generated ${API_SHORT_NAME}'
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
           git push -f monorepo newclient_output_${{ github.event_name }}
