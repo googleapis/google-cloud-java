@@ -15,4 +15,4 @@
 # limitations under the License.
 #
 
-terraform state rm 'module.java_redis.google_compute_network.redis_vpc'
+#terraform state rm 'module.java_redis.google_compute_network.redis_vpc'

@@ -15,4 +15,4 @@
 # limitations under the License.
 #
 
-terraform state rm 'module.java_container.google_compute_network.java_container_network'
+#terraform state rm 'module.java_container.google_compute_network.java_container_network'
