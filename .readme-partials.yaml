@@ -91,6 +91,38 @@ custom_content: |
   > may lead to unexpected results such as absense of expected log entries or abnormal program execution.
   > To avoid these unexpected results, it is recommended to use synchronous mode.
   
+  #### Controlling the batching settings
+  As mentioned before, in the asynchronous mode the call(s) to Logging API takes place asynchronously and few calls to `write()` 
+  method may be batched together to compose a single call to Logging API. In order to control the batching settings, the `LoggingOptions`
+  is enhanced with `BatchingSettings` which can be set as shown in example below:
+
+  ```java
+  import com.google.api.gax.batching.BatchingSettings;
+  import com.google.api.gax.batching.FlowControlSettings;
+  import com.google.api.gax.batching.FlowController;
+
+  LoggingOptions actual =
+      LoggingOptions.newBuilder()
+          .setBatchingSettings(
+              BatchingSettings.newBuilder()
+                  .setIsEnabled(true)
+                  .setElementCountThreshold(1000L)
+                  .setRequestByteThreshold(1048576L)
+                  .setDelayThreshold(Duration.ofMillis(50L))
+                  .setFlowControlSettings(
+                      FlowControlSettings.newBuilder()
+                          .setMaxOutstandingElementCount(100000L)
+                          .setMaxOutstandingRequestBytes(10485760L)
+                          .setLimitExceededBehavior(
+                              FlowController.LimitExceededBehavior.ThrowException)
+                          .build())
+                  .build())
+          .setProjectId('Your project ID')
+          .build();  
+  ```
+
+  You can find more information about batching parameters see [BatchingSettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.batching.BatchingSettings).
+
   #### Listing log entries
   
   With Logging you can also list log entries that have been previously written. Add the following

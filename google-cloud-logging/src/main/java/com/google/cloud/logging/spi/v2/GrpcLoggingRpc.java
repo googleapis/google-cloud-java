@@ -167,20 +167,27 @@ public class GrpcLoggingRpc implements LoggingRpc {
       // TODO(pongad): Take advantage of
       // https://github.com/googleapis/gax-java/pull/452 when it's
       // released.
-      BatchingSettings oldBatchSettings =
+      BatchingSettings defaultBatchSettings =
           logBuilder.writeLogEntriesSettings().getBatchingSettings();
+
+      // The BatchingSettings from LoggingOptions should override
+      // ones provided in defaultBatchSettings
+      BatchingSettings batchingSettings = options.getBatchingSettings();
+
       logBuilder
           .writeLogEntriesSettings()
           .setBatchingSettings(
-              oldBatchSettings
-                  .toBuilder()
-                  .setFlowControlSettings(
-                      oldBatchSettings
-                          .getFlowControlSettings()
-                          .toBuilder()
-                          .setLimitExceededBehavior(LimitExceededBehavior.Block)
-                          .build())
-                  .build());
+              batchingSettings != null
+                  ? batchingSettings
+                  : defaultBatchSettings
+                      .toBuilder()
+                      .setFlowControlSettings(
+                          defaultBatchSettings
+                              .getFlowControlSettings()
+                              .toBuilder()
+                              .setLimitExceededBehavior(LimitExceededBehavior.Block)
+                              .build())
+                      .build());
 
       configClient = ConfigClient.create(confBuilder.build());
       loggingClient = LoggingClient.create(logBuilder.build());

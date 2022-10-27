@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.batching.BatchingSettings;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
@@ -40,6 +41,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   private static final long serialVersionUID = 5753499510627426717L;
 
   private Boolean autoPopulateMetadataOnWrite = null;
+  private BatchingSettings batchingSettings = null;
 
   public static class DefaultLoggingFactory implements LoggingFactory {
     private static final LoggingFactory INSTANCE = new DefaultLoggingFactory();
@@ -76,6 +78,7 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   public static class Builder extends ServiceOptions.Builder<Logging, LoggingOptions, Builder> {
 
     private Boolean autoPopulateMetadataOnWrite = true;
+    private BatchingSettings batchingSettings = null;
 
     private Builder() {}
 
@@ -98,6 +101,12 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
       return this;
     }
 
+    @CanIgnoreReturnValue
+    public Builder setBatchingSettings(BatchingSettings batchingSettings) {
+      this.batchingSettings = batchingSettings;
+      return this;
+    }
+
     @Override
     public LoggingOptions build() {
       return new LoggingOptions(this);
@@ -108,6 +117,8 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
   protected LoggingOptions(Builder builder) {
     super(LoggingFactory.class, LoggingRpcFactory.class, builder, new LoggingDefaults());
     this.autoPopulateMetadataOnWrite = builder.autoPopulateMetadataOnWrite;
+    this.batchingSettings =
+        builder.batchingSettings == null ? null : builder.batchingSettings.toBuilder().build();
   }
 
   @SuppressWarnings("serial")
@@ -144,6 +155,10 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
 
   public Boolean getAutoPopulateMetadata() {
     return this.autoPopulateMetadataOnWrite;
+  }
+
+  public BatchingSettings getBatchingSettings() {
+    return this.batchingSettings;
   }
 
   @Override
