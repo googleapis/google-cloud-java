@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.120.23](https://github.com/googleapis/java-pubsub/compare/v1.120.22...v1.120.23) (2022-10-27)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.8.22 ([#1361](https://github.com/googleapis/java-pubsub/issues/1361)) ([0355868](https://github.com/googleapis/java-pubsub/commit/03558680b9fb6493c2c3f1f4b65d8a35668b440f))
+* Update dependency com.google.cloud:google-cloud-core to v2.8.24 ([#1368](https://github.com/googleapis/java-pubsub/issues/1368)) ([9776aad](https://github.com/googleapis/java-pubsub/commit/9776aad7391544b1e0bd2fbe8576180206943bef))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.5 ([#1362](https://github.com/googleapis/java-pubsub/issues/1362)) ([d32c591](https://github.com/googleapis/java-pubsub/commit/d32c591af87b66d8ca9df599ad18183aae31bf15))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.8 ([#1356](https://github.com/googleapis/java-pubsub/issues/1356)) ([dc1e0ca](https://github.com/googleapis/java-pubsub/commit/dc1e0ca44c3668d7c9e780d50261dd81ce1d4ee9))
+* Update dependency org.easymock:easymock to v5.0.1 ([#1365](https://github.com/googleapis/java-pubsub/issues/1365)) ([2a807a5](https://github.com/googleapis/java-pubsub/commit/2a807a5b319ed3821da7dac84e4cb4923d07fed7))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.16 ([#1358](https://github.com/googleapis/java-pubsub/issues/1358)) ([226e105](https://github.com/googleapis/java-pubsub/commit/226e1050b0b643cea46bad7cf77d2a9e8857fb02))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.16 ([#1359](https://github.com/googleapis/java-pubsub/issues/1359)) ([3f10227](https://github.com/googleapis/java-pubsub/commit/3f10227cfd7d9029e92e7575771544c7e4b4dd67))
+
 ## [1.120.22](https://github.com/googleapis/java-pubsub/compare/v1.120.21...v1.120.22) (2022-10-18)
 
 
