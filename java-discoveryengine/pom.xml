@@ -50,4 +50,5 @@
     <module>proto-google-cloud-discoveryengine-v1beta</module>
     <module>google-cloud-discoveryengine-bom</module>
   </modules>
-</project>
+
+  </project>
