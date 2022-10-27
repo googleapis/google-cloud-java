@@ -47,9 +47,9 @@ jobs:
           sed -i "/${API_SHORT_NAME}/d" gapic-libraries-bom/pom.xml
       - name: Verify Client Removal
         run: |
-          test -d java-${API_SHORT_NAME} && echo "ERROR: Found java-${API_SHORT_NAME} directory" && exit 1
-          grep -q ${API_SHORT_NAME} pom.xml && echo "ERROR: Found ${API_SHORT_NAME} in pom.xml" && exit 1
-          grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml && echo "ERROR: Found ${API_SHORT_NAME} in gapic-libraries-bom/pom.xml" && exit 1
+          ! test -d java-${API_SHORT_NAME}
+          ! grep -q ${API_SHORT_NAME} pom.xml
+          ! grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml
       - name: Generate
         run: |
           python generation/new_client/new-client.py generate \
@@ -71,8 +71,8 @@ jobs:
           git push -f monorepo newclient_output_${{ github.event_name }}
       - name: Verify Client Creation
         run: |
-          ! test -d java-${API_SHORT_NAME} && echo "ERROR: Did not find java-${API_SHORT_NAME} directory" && exit 1
-          ! grep -q ${API_SHORT_NAME} pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in pom.xml" && exit 1
-          ! grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml && echo "ERROR: Did not find ${API_SHORT_NAME} in gapic-libraries-bom/pom.xml" && exit 1
+          test -d java-${API_SHORT_NAME}
+          grep -q ${API_SHORT_NAME} pom.xml
+          grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml
       - name: Test
         run: mvn test -T C1 -B
