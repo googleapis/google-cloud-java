@@ -39,6 +39,10 @@ public final class CdnKeysProto {
       internal_static_google_cloud_video_stitcher_v1_AkamaiCdnKey_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_stitcher_v1_AkamaiCdnKey_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -51,20 +55,24 @@ public final class CdnKeysProto {
       "\n-google/cloud/video/stitcher/v1/cdn_key"
           + "s.proto\022\036google.cloud.video.stitcher.v1\032"
           + "\037google/api/field_behavior.proto\032\031google"
-          + "/api/resource.proto\"\257\002\n\006CdnKey\022F\n\016google"
+          + "/api/resource.proto\"\365\002\n\006CdnKey\022F\n\016google"
           + "_cdn_key\030\005 \001(\0132,.google.cloud.video.stit"
           + "cher.v1.GoogleCdnKeyH\000\022F\n\016akamai_cdn_key"
           + "\030\006 \001(\0132,.google.cloud.video.stitcher.v1."
-          + "AkamaiCdnKeyH\000\022\014\n\004name\030\001 \001(\t\022\020\n\010hostname"
-          + "\030\004 \001(\t:c\352A`\n#videostitcher.googleapis.co"
-          + "m/CdnKey\0229projects/{project}/locations/{"
-          + "location}/cdnKeys/{cdn_key}B\020\n\016cdn_key_c"
-          + "onfig\":\n\014GoogleCdnKey\022\030\n\013private_key\030\001 \001"
-          + "(\014B\003\340A\004\022\020\n\010key_name\030\002 \001(\t\"&\n\014AkamaiCdnKe"
-          + "y\022\026\n\ttoken_key\030\001 \001(\014B\003\340A\004B|\n\"com.google."
-          + "cloud.video.stitcher.v1B\014CdnKeysProtoP\001Z"
-          + "Fgoogle.golang.org/genproto/googleapis/c"
-          + "loud/video/stitcher/v1;stitcherb\006proto3"
+          + "AkamaiCdnKeyH\000\022D\n\rmedia_cdn_key\030\010 \001(\0132+."
+          + "google.cloud.video.stitcher.v1.MediaCdnK"
+          + "eyH\000\022\014\n\004name\030\001 \001(\t\022\020\n\010hostname\030\004 \001(\t:c\352A"
+          + "`\n#videostitcher.googleapis.com/CdnKey\0229"
+          + "projects/{project}/locations/{location}/"
+          + "cdnKeys/{cdn_key}B\020\n\016cdn_key_config\":\n\014G"
+          + "oogleCdnKey\022\030\n\013private_key\030\001 \001(\014B\003\340A\004\022\020\n"
+          + "\010key_name\030\002 \001(\t\"&\n\014AkamaiCdnKey\022\026\n\ttoken"
+          + "_key\030\001 \001(\014B\003\340A\004\"9\n\013MediaCdnKey\022\030\n\013privat"
+          + "e_key\030\001 \001(\014B\003\340A\004\022\020\n\010key_name\030\002 \001(\tB|\n\"co"
+          + "m.google.cloud.video.stitcher.v1B\014CdnKey"
+          + "sProtoP\001ZFgoogle.golang.org/genproto/goo"
+          + "gleapis/cloud/video/stitcher/v1;stitcher"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -79,7 +87,7 @@ public final class CdnKeysProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_stitcher_v1_CdnKey_descriptor,
             new java.lang.String[] {
-              "GoogleCdnKey", "AkamaiCdnKey", "Name", "Hostname", "CdnKeyConfig",
+              "GoogleCdnKey", "AkamaiCdnKey", "MediaCdnKey", "Name", "Hostname", "CdnKeyConfig",
             });
     internal_static_google_cloud_video_stitcher_v1_GoogleCdnKey_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -96,6 +104,14 @@ public final class CdnKeysProto {
             internal_static_google_cloud_video_stitcher_v1_AkamaiCdnKey_descriptor,
             new java.lang.String[] {
               "TokenKey",
+            });
+    internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_stitcher_v1_MediaCdnKey_descriptor,
+            new java.lang.String[] {
+              "PrivateKey", "KeyName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -79,6 +79,7 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GOOGLE_CDN_KEY(5),
     AKAMAI_CDN_KEY(6),
+    MEDIA_CDN_KEY(8),
     CDNKEYCONFIG_NOT_SET(0);
     private final int value;
 
@@ -101,6 +102,8 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
           return GOOGLE_CDN_KEY;
         case 6:
           return AKAMAI_CDN_KEY;
+        case 8:
+          return MEDIA_CDN_KEY;
         case 0:
           return CDNKEYCONFIG_NOT_SET;
         default:
@@ -217,6 +220,57 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.video.stitcher.v1.AkamaiCdnKey) cdnKeyConfig_;
     }
     return com.google.cloud.video.stitcher.v1.AkamaiCdnKey.getDefaultInstance();
+  }
+
+  public static final int MEDIA_CDN_KEY_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a Media CDN key.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+   *
+   * @return Whether the mediaCdnKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasMediaCdnKey() {
+    return cdnKeyConfigCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a Media CDN key.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+   *
+   * @return The mediaCdnKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.stitcher.v1.MediaCdnKey getMediaCdnKey() {
+    if (cdnKeyConfigCase_ == 8) {
+      return (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_;
+    }
+    return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a Media CDN key.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.stitcher.v1.MediaCdnKeyOrBuilder getMediaCdnKeyOrBuilder() {
+    if (cdnKeyConfigCase_ == 8) {
+      return (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_;
+    }
+    return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -347,6 +401,9 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
     if (cdnKeyConfigCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.video.stitcher.v1.AkamaiCdnKey) cdnKeyConfig_);
     }
+    if (cdnKeyConfigCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -371,6 +428,11 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.video.stitcher.v1.AkamaiCdnKey) cdnKeyConfig_);
+    }
+    if (cdnKeyConfigCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -398,6 +460,9 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       case 6:
         if (!getAkamaiCdnKey().equals(other.getAkamaiCdnKey())) return false;
         break;
+      case 8:
+        if (!getMediaCdnKey().equals(other.getMediaCdnKey())) return false;
+        break;
       case 0:
       default:
     }
@@ -424,6 +489,10 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + AKAMAI_CDN_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getAkamaiCdnKey().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + MEDIA_CDN_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getMediaCdnKey().hashCode();
         break;
       case 0:
       default:
@@ -574,6 +643,9 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       if (akamaiCdnKeyBuilder_ != null) {
         akamaiCdnKeyBuilder_.clear();
       }
+      if (mediaCdnKeyBuilder_ != null) {
+        mediaCdnKeyBuilder_.clear();
+      }
       name_ = "";
 
       hostname_ = "";
@@ -619,6 +691,13 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
           result.cdnKeyConfig_ = cdnKeyConfig_;
         } else {
           result.cdnKeyConfig_ = akamaiCdnKeyBuilder_.build();
+        }
+      }
+      if (cdnKeyConfigCase_ == 8) {
+        if (mediaCdnKeyBuilder_ == null) {
+          result.cdnKeyConfig_ = cdnKeyConfig_;
+        } else {
+          result.cdnKeyConfig_ = mediaCdnKeyBuilder_.build();
         }
       }
       result.name_ = name_;
@@ -692,6 +771,11 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
             mergeAkamaiCdnKey(other.getAkamaiCdnKey());
             break;
           }
+        case MEDIA_CDN_KEY:
+          {
+            mergeMediaCdnKey(other.getMediaCdnKey());
+            break;
+          }
         case CDNKEYCONFIG_NOT_SET:
           {
             break;
@@ -747,6 +831,12 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
                 cdnKeyConfigCase_ = 6;
                 break;
               } // case 50
+            case 66:
+              {
+                input.readMessage(getMediaCdnKeyFieldBuilder().getBuilder(), extensionRegistry);
+                cdnKeyConfigCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1198,6 +1288,217 @@ public final class CdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return akamaiCdnKeyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.stitcher.v1.MediaCdnKey,
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder,
+            com.google.cloud.video.stitcher.v1.MediaCdnKeyOrBuilder>
+        mediaCdnKeyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     *
+     * @return Whether the mediaCdnKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasMediaCdnKey() {
+      return cdnKeyConfigCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     *
+     * @return The mediaCdnKey.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.stitcher.v1.MediaCdnKey getMediaCdnKey() {
+      if (mediaCdnKeyBuilder_ == null) {
+        if (cdnKeyConfigCase_ == 8) {
+          return (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_;
+        }
+        return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
+      } else {
+        if (cdnKeyConfigCase_ == 8) {
+          return mediaCdnKeyBuilder_.getMessage();
+        }
+        return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     */
+    public Builder setMediaCdnKey(com.google.cloud.video.stitcher.v1.MediaCdnKey value) {
+      if (mediaCdnKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cdnKeyConfig_ = value;
+        onChanged();
+      } else {
+        mediaCdnKeyBuilder_.setMessage(value);
+      }
+      cdnKeyConfigCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     */
+    public Builder setMediaCdnKey(
+        com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder builderForValue) {
+      if (mediaCdnKeyBuilder_ == null) {
+        cdnKeyConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        mediaCdnKeyBuilder_.setMessage(builderForValue.build());
+      }
+      cdnKeyConfigCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     */
+    public Builder mergeMediaCdnKey(com.google.cloud.video.stitcher.v1.MediaCdnKey value) {
+      if (mediaCdnKeyBuilder_ == null) {
+        if (cdnKeyConfigCase_ == 8
+            && cdnKeyConfig_
+                != com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance()) {
+          cdnKeyConfig_ =
+              com.google.cloud.video.stitcher.v1.MediaCdnKey.newBuilder(
+                      (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          cdnKeyConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (cdnKeyConfigCase_ == 8) {
+          mediaCdnKeyBuilder_.mergeFrom(value);
+        } else {
+          mediaCdnKeyBuilder_.setMessage(value);
+        }
+      }
+      cdnKeyConfigCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     */
+    public Builder clearMediaCdnKey() {
+      if (mediaCdnKeyBuilder_ == null) {
+        if (cdnKeyConfigCase_ == 8) {
+          cdnKeyConfigCase_ = 0;
+          cdnKeyConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (cdnKeyConfigCase_ == 8) {
+          cdnKeyConfigCase_ = 0;
+          cdnKeyConfig_ = null;
+        }
+        mediaCdnKeyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     */
+    public com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder getMediaCdnKeyBuilder() {
+      return getMediaCdnKeyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.stitcher.v1.MediaCdnKeyOrBuilder getMediaCdnKeyOrBuilder() {
+      if ((cdnKeyConfigCase_ == 8) && (mediaCdnKeyBuilder_ != null)) {
+        return mediaCdnKeyBuilder_.getMessageOrBuilder();
+      } else {
+        if (cdnKeyConfigCase_ == 8) {
+          return (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_;
+        }
+        return com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a Media CDN key.
+     * </pre>
+     *
+     * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.stitcher.v1.MediaCdnKey,
+            com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder,
+            com.google.cloud.video.stitcher.v1.MediaCdnKeyOrBuilder>
+        getMediaCdnKeyFieldBuilder() {
+      if (mediaCdnKeyBuilder_ == null) {
+        if (!(cdnKeyConfigCase_ == 8)) {
+          cdnKeyConfig_ = com.google.cloud.video.stitcher.v1.MediaCdnKey.getDefaultInstance();
+        }
+        mediaCdnKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.stitcher.v1.MediaCdnKey,
+                com.google.cloud.video.stitcher.v1.MediaCdnKey.Builder,
+                com.google.cloud.video.stitcher.v1.MediaCdnKeyOrBuilder>(
+                (com.google.cloud.video.stitcher.v1.MediaCdnKey) cdnKeyConfig_,
+                getParentForChildren(),
+                isClean());
+        cdnKeyConfig_ = null;
+      }
+      cdnKeyConfigCase_ = 8;
+      onChanged();
+      ;
+      return mediaCdnKeyBuilder_;
     }
 
     private java.lang.Object name_ = "";
