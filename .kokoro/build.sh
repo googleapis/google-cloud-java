@@ -61,15 +61,17 @@ integration)
       echo "${modified_module_list[*]}"
     )
 
-    terraform -version
-    source ./.terraform/helpers/init.sh "$module_list"
-    source ./.terraform/helpers/plan.sh
-    source ./.terraform/helpers/apply.sh
-    source ./.terraform/helpers/populate-env.sh
+    time ( \
+      terraform -version && \
+      source ./.terraform/helpers/init.sh "$module_list" && \
+      source ./.terraform/helpers/plan.sh && \
+      source ./.terraform/helpers/apply.sh && \
+      source ./.terraform/helpers/populate-env.sh \
+    )
 
     destroy() {
       arguments=$?
-      source ./.terraform/helpers/destroy.sh
+      time source ./.terraform/helpers/destroy.sh
       exit $arguments
     }
     trap destroy EXIT
