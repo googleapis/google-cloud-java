@@ -68,6 +68,7 @@ def main(ctx):
     "--owlbot-image", type=str, default="gcr.io/cloud-devrel-public-resources/owlbot-java"
 )
 @click.option("--library-type", type=str)
+@click.option("--googleapis-gen-url", type=str, default="https://github.com/googleapis/googleapis-gen.git")
 def generate(
     api_shortname,
     name_pretty,
@@ -85,6 +86,7 @@ def generate(
     group_id,
     owlbot_image,
     library_type,
+    googleapis_gen_url,
 ):
     cloud_prefix = "cloud-" if cloud_api else ""
 
@@ -160,7 +162,7 @@ def generate(
     )
 
     # get the sha256 digets for the owlbot image
-    subprocess.check_call(["docker", "pull", owlbot_image])
+    subprocess.check_call(["docker", "pull", "-q", owlbot_image])
     owlbot_image_digest = (
         subprocess.check_output(
             ["docker", "inspect", "--format='{{index .RepoDigests 0}}", owlbot_image,],
@@ -175,7 +177,7 @@ def generate(
 
     # run owlbot copy
     print("Cloning googleapis-gen...")
-    subprocess.check_call(["git", "clone", "https://github.com/googleapis/googleapis-gen.git", "./gen/googleapis-gen"], cwd=workdir)
+    subprocess.check_call(["git", "clone", "-q", googleapis_gen_url, "./gen/googleapis-gen"], cwd=workdir)
     subprocess.check_call(["docker", "pull", "gcr.io/cloud-devrel-public-resources/owlbot-cli:latest"])
     copy_code_parameters = [
         "docker",
@@ -216,6 +218,7 @@ def generate(
         cwd=workdir,
     )
     monorepo_root=(workdir / '..').resolve()
+    print("monorepo_root=",monorepo_root)
     print("Running the post-processor...")
     subprocess.check_call(
         [
@@ -230,9 +233,6 @@ def generate(
         ],
         cwd=monorepo_root,
     )
-
-    subprocess.check_call(["rm", "-f", ".gitignore"],
-                          cwd=workdir)
 
     # Remove irrelevant files from templates
     subprocess.check_call(
