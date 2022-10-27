@@ -78,6 +78,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     TIME_SERIES_FILTER(1),
     TIME_SERIES_FILTER_RATIO(2),
     TIME_SERIES_QUERY_LANGUAGE(3),
+    PROMETHEUS_QUERY(6),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
           return TIME_SERIES_FILTER_RATIO;
         case 3:
           return TIME_SERIES_QUERY_LANGUAGE;
+        case 6:
+          return PROMETHEUS_QUERY;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -230,7 +233,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A query used to fetch time series.
+   * A query used to fetch time series with MQL.
    * </pre>
    *
    * <code>string time_series_query_language = 3;</code>
@@ -244,7 +247,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A query used to fetch time series.
+   * A query used to fetch time series with MQL.
    * </pre>
    *
    * <code>string time_series_query_language = 3;</code>
@@ -271,7 +274,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A query used to fetch time series.
+   * A query used to fetch time series with MQL.
    * </pre>
    *
    * <code>string time_series_query_language = 3;</code>
@@ -287,6 +290,76 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (sourceCase_ == 3) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROMETHEUS_QUERY_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series with PromQL.
+   * </pre>
+   *
+   * <code>string prometheus_query = 6;</code>
+   *
+   * @return Whether the prometheusQuery field is set.
+   */
+  public boolean hasPrometheusQuery() {
+    return sourceCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series with PromQL.
+   * </pre>
+   *
+   * <code>string prometheus_query = 6;</code>
+   *
+   * @return The prometheusQuery.
+   */
+  public java.lang.String getPrometheusQuery() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 6) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 6) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A query used to fetch time series with PromQL.
+   * </pre>
+   *
+   * <code>string prometheus_query = 6;</code>
+   *
+   * @return The bytes for prometheusQuery.
+   */
+  public com.google.protobuf.ByteString getPrometheusQueryBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 6) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 6) {
         source_ = b;
       }
       return b;
@@ -378,6 +451,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unitOverride_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, unitOverride_);
     }
+    if (sourceCase_ == 6) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -402,6 +478,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unitOverride_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, unitOverride_);
+    }
+    if (sourceCase_ == 6) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -431,6 +510,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       case 3:
         if (!getTimeSeriesQueryLanguage().equals(other.getTimeSeriesQueryLanguage())) return false;
         break;
+      case 6:
+        if (!getPrometheusQuery().equals(other.getPrometheusQuery())) return false;
+        break;
       case 0:
       default:
     }
@@ -459,6 +541,10 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       case 3:
         hash = (37 * hash) + TIME_SERIES_QUERY_LANGUAGE_FIELD_NUMBER;
         hash = (53 * hash) + getTimeSeriesQueryLanguage().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + PROMETHEUS_QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getPrometheusQuery().hashCode();
         break;
       case 0:
       default:
@@ -656,6 +742,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       if (sourceCase_ == 3) {
         result.source_ = source_;
       }
+      if (sourceCase_ == 6) {
+        result.source_ = source_;
+      }
       result.unitOverride_ = unitOverride_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
@@ -730,6 +819,13 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
             onChanged();
             break;
           }
+        case PROMETHEUS_QUERY:
+          {
+            sourceCase_ = 6;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
         case SOURCE_NOT_SET:
           {
             break;
@@ -788,6 +884,13 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
 
                 break;
               } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 6;
+                source_ = s;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1261,7 +1364,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A query used to fetch time series.
+     * A query used to fetch time series with MQL.
      * </pre>
      *
      * <code>string time_series_query_language = 3;</code>
@@ -1276,7 +1379,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A query used to fetch time series.
+     * A query used to fetch time series with MQL.
      * </pre>
      *
      * <code>string time_series_query_language = 3;</code>
@@ -1304,7 +1407,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A query used to fetch time series.
+     * A query used to fetch time series with MQL.
      * </pre>
      *
      * <code>string time_series_query_language = 3;</code>
@@ -1332,7 +1435,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A query used to fetch time series.
+     * A query used to fetch time series with MQL.
      * </pre>
      *
      * <code>string time_series_query_language = 3;</code>
@@ -1353,7 +1456,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A query used to fetch time series.
+     * A query used to fetch time series with MQL.
      * </pre>
      *
      * <code>string time_series_query_language = 3;</code>
@@ -1372,7 +1475,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A query used to fetch time series.
+     * A query used to fetch time series with MQL.
      * </pre>
      *
      * <code>string time_series_query_language = 3;</code>
@@ -1386,6 +1489,140 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       sourceCase_ = 3;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series with PromQL.
+     * </pre>
+     *
+     * <code>string prometheus_query = 6;</code>
+     *
+     * @return Whether the prometheusQuery field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrometheusQuery() {
+      return sourceCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series with PromQL.
+     * </pre>
+     *
+     * <code>string prometheus_query = 6;</code>
+     *
+     * @return The prometheusQuery.
+     */
+    @java.lang.Override
+    public java.lang.String getPrometheusQuery() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 6) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 6) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series with PromQL.
+     * </pre>
+     *
+     * <code>string prometheus_query = 6;</code>
+     *
+     * @return The bytes for prometheusQuery.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPrometheusQueryBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 6) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 6) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series with PromQL.
+     * </pre>
+     *
+     * <code>string prometheus_query = 6;</code>
+     *
+     * @param value The prometheusQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrometheusQuery(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 6;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series with PromQL.
+     * </pre>
+     *
+     * <code>string prometheus_query = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrometheusQuery() {
+      if (sourceCase_ == 6) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A query used to fetch time series with PromQL.
+     * </pre>
+     *
+     * <code>string prometheus_query = 6;</code>
+     *
+     * @param value The bytes for prometheusQuery to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrometheusQueryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 6;
       source_ = value;
       onChanged();
       return this;
