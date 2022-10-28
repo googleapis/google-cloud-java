@@ -27,54 +27,74 @@ public interface TableDisplayOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Columns to display in the table. Leave empty to display all available
-   * columns. Note: This field is for future features and is not currently used.
+   * Optional. This field is unused and has been replaced by
+   * TimeSeriesTable.column_settings
    * </pre>
    *
-   * <code>repeated string shown_columns = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string shown_columns = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.monitoring.dashboard.v1.TableDisplayOptions.shown_columns is deprecated. See
+   *     google/monitoring/dashboard/v1/table_display_options.proto;l=32
    * @return A list containing the shownColumns.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getShownColumnsList();
   /**
    *
    *
    * <pre>
-   * Optional. Columns to display in the table. Leave empty to display all available
-   * columns. Note: This field is for future features and is not currently used.
+   * Optional. This field is unused and has been replaced by
+   * TimeSeriesTable.column_settings
    * </pre>
    *
-   * <code>repeated string shown_columns = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string shown_columns = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.monitoring.dashboard.v1.TableDisplayOptions.shown_columns is deprecated. See
+   *     google/monitoring/dashboard/v1/table_display_options.proto;l=32
    * @return The count of shownColumns.
    */
+  @java.lang.Deprecated
   int getShownColumnsCount();
   /**
    *
    *
    * <pre>
-   * Optional. Columns to display in the table. Leave empty to display all available
-   * columns. Note: This field is for future features and is not currently used.
+   * Optional. This field is unused and has been replaced by
+   * TimeSeriesTable.column_settings
    * </pre>
    *
-   * <code>repeated string shown_columns = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string shown_columns = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.monitoring.dashboard.v1.TableDisplayOptions.shown_columns is deprecated. See
+   *     google/monitoring/dashboard/v1/table_display_options.proto;l=32
    * @param index The index of the element to return.
    * @return The shownColumns at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getShownColumns(int index);
   /**
    *
    *
    * <pre>
-   * Optional. Columns to display in the table. Leave empty to display all available
-   * columns. Note: This field is for future features and is not currently used.
+   * Optional. This field is unused and has been replaced by
+   * TimeSeriesTable.column_settings
    * </pre>
    *
-   * <code>repeated string shown_columns = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string shown_columns = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.monitoring.dashboard.v1.TableDisplayOptions.shown_columns is deprecated. See
+   *     google/monitoring/dashboard/v1/table_display_options.proto;l=32
    * @param index The index of the value to return.
    * @return The bytes of the shownColumns at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getShownColumnsBytes(int index);
 }

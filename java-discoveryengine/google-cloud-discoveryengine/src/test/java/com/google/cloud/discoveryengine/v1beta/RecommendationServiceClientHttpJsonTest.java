@@ -95,6 +95,7 @@ public class RecommendationServiceClientHttpJsonTest {
             .setFilter("filter-1274492040")
             .setValidateOnly(true)
             .putAllParams(new HashMap<String, Value>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     RecommendResponse actualResponse = client.recommend(request);
@@ -134,6 +135,7 @@ public class RecommendationServiceClientHttpJsonTest {
               .setFilter("filter-1274492040")
               .setValidateOnly(true)
               .putAllParams(new HashMap<String, Value>())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.recommend(request);
       Assert.fail("No exception raised");

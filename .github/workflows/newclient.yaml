@@ -1,0 +1,78 @@
+name: New Client
+on:
+  schedule:
+    - cron: '0 2 * * *' # nightly at 2 am UTC
+  push:
+    branches: [ main ]
+    paths:
+      - generation/**
+  pull_request:
+    branches: [ main ]
+    paths:
+      - generation/**
+
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    env:
+        API_SHORT_NAME: apikeys
+        API_PRETTY_NAME: API Keys
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d' --utc)"
+      - uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 11
+      - run: java -version
+      - uses: actions/cache@v3
+        id: mvn-cache
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
+      - name: Install dependencies
+        run: pip install -r generation/new_client/requirements.txt
+      - name: Remove Client
+        run: |
+          rm -rf java-${API_SHORT_NAME} || true
+          sed -i "/${API_SHORT_NAME}/d" pom.xml
+          sed -i "/${API_SHORT_NAME}/d" gapic-libraries-bom/pom.xml
+      - name: Verify Client Removal
+        run: |
+          ! test -d java-${API_SHORT_NAME}
+          ! grep -q ${API_SHORT_NAME} pom.xml
+          ! grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml
+      - name: Generate
+        run: |
+          python generation/new_client/new-client.py generate \
+              --api_shortname=${API_SHORT_NAME} \
+              --proto-path=google/api/${API_SHORT_NAME} \
+              --name-pretty="${API_PRETTY_NAME}" \
+              --product-docs="https://github.com/googleapis/google-cloud-java/tree/main/java-${API_SHORT_NAME}" \
+              --api-description="${API_PRETTY_NAME} Client lets you use ${API_PRETTY_NAME} API." \
+              --googleapis-gen-url=https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
+      - name: Push to branch
+        run: |
+          [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
+          [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
+          git checkout -b newclient_output_${{ github.event_name }}
+          git add --all
+          git commit -m 'feat: re-generated ${API_SHORT_NAME}'
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git fetch -q --unshallow monorepo
+          git push -f monorepo newclient_output_${{ github.event_name }}
+      - name: Verify Client Creation
+        run: |
+          test -d java-${API_SHORT_NAME}
+          grep -q ${API_SHORT_NAME} pom.xml
+          grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml
+      - name: Test
+        run: mvn test -T C1 -B

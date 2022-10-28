@@ -466,6 +466,9 @@
             "ListParticipants": {
               "methods": ["listParticipants", "listParticipants", "listParticipants", "listParticipantsPagedCallable", "listParticipantsCallable"]
             },
+            "StreamingAnalyzeContent": {
+              "methods": ["streamingAnalyzeContentCallable"]
+            },
             "SuggestArticles": {
               "methods": ["suggestArticles", "suggestArticles", "suggestArticles", "suggestArticlesCallable"]
             },

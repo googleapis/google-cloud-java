@@ -24,8 +24,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -34,6 +38,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,6 +46,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -99,6 +105,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
@@ -147,6 +154,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
@@ -193,6 +201,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
@@ -240,6 +249,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
@@ -373,6 +383,7 @@ public class ParticipantsClientTest {
                         "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
                     .toString())
             .setSipRecordingMediaLabel("sipRecordingMediaLabel-1887770873")
+            .setObfuscatedExternalUserId("obfuscatedExternalUserId1778228693")
             .putAllDocumentsMetadataFilters(new HashMap<String, String>())
             .build();
     mockParticipants.addResponse(expectedResponse);
@@ -603,6 +614,86 @@ public class ParticipantsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamingAnalyzeContentTest() throws Exception {
+    StreamingAnalyzeContentResponse expectedResponse =
+        StreamingAnalyzeContentResponse.newBuilder()
+            .setRecognitionResult(StreamingRecognitionResult.newBuilder().build())
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+    StreamingAnalyzeContentRequest request =
+        StreamingAnalyzeContentRequest.newBuilder()
+            .setParticipant(
+                ParticipantName.ofProjectConversationParticipantName(
+                        "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                    .toString())
+            .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setQueryParams(QueryParameters.newBuilder().build())
+            .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
+            .setCxParameters(Struct.newBuilder().build())
+            .setEnablePartialAutomatedAgentReply(true)
+            .build();
+
+    MockStreamObserver<StreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
+        callable = client.streamingAnalyzeContentCallable();
+    ApiStreamObserver<StreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<StreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamingAnalyzeContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+    StreamingAnalyzeContentRequest request =
+        StreamingAnalyzeContentRequest.newBuilder()
+            .setParticipant(
+                ParticipantName.ofProjectConversationParticipantName(
+                        "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                    .toString())
+            .setReplyAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setQueryParams(QueryParameters.newBuilder().build())
+            .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
+            .setCxParameters(Struct.newBuilder().build())
+            .setEnablePartialAutomatedAgentReply(true)
+            .build();
+
+    MockStreamObserver<StreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
+        callable = client.streamingAnalyzeContentCallable();
+    ApiStreamObserver<StreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<StreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

@@ -51,6 +51,7 @@ import javax.annotation.Generated;
  *           .setFilter("filter-1274492040")
  *           .setValidateOnly(true)
  *           .putAllParams(new HashMap<String, Value>())
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   RecommendResponse response = recommendationServiceClient.recommend(request);
  * }
@@ -209,6 +210,7 @@ public class RecommendationServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setValidateOnly(true)
    *           .putAllParams(new HashMap<String, Value>())
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   RecommendResponse response = recommendationServiceClient.recommend(request);
    * }
@@ -246,6 +248,7 @@ public class RecommendationServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setValidateOnly(true)
    *           .putAllParams(new HashMap<String, Value>())
+   *           .putAllUserLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<RecommendResponse> future =
    *       recommendationServiceClient.recommendCallable().futureCall(request);

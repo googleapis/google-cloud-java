@@ -100,6 +100,7 @@ public class RecommendationServiceClientTest {
             .setFilter("filter-1274492040")
             .setValidateOnly(true)
             .putAllParams(new HashMap<String, Value>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
 
     RecommendResponse actualResponse = client.recommend(request);
@@ -115,6 +116,7 @@ public class RecommendationServiceClientTest {
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
     Assert.assertEquals(request.getParamsMap(), actualRequest.getParamsMap());
+    Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -138,6 +140,7 @@ public class RecommendationServiceClientTest {
               .setFilter("filter-1274492040")
               .setValidateOnly(true)
               .putAllParams(new HashMap<String, Value>())
+              .putAllUserLabels(new HashMap<String, String>())
               .build();
       client.recommend(request);
       Assert.fail("No exception raised");

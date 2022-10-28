@@ -36,6 +36,10 @@ public final class RecommendationServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_ParamsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_UserLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_UserLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_RecommendResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_RecommendResponse_fieldAccessorTable;
@@ -64,7 +68,7 @@ public final class RecommendationServiceProto {
           + "api/resource.proto\0322google/cloud/discove"
           + "ryengine/v1beta/document.proto\0324google/c"
           + "loud/discoveryengine/v1beta/user_event.p"
-          + "roto\032\034google/protobuf/struct.proto\"\375\002\n\020R"
+          + "roto\032\034google/protobuf/struct.proto\"\214\004\n\020R"
           + "ecommendRequest\022L\n\016serving_config\030\001 \001(\tB"
           + "4\340A\002\372A.\n,discoveryengine.googleapis.com/"
           + "ServingConfig\022G\n\nuser_event\030\002 \001(\0132..goog"
@@ -72,37 +76,40 @@ public final class RecommendationServiceProto {
           + "tB\003\340A\002\022\021\n\tpage_size\030\003 \001(\005\022\016\n\006filter\030\004 \001("
           + "\t\022\025\n\rvalidate_only\030\005 \001(\010\022Q\n\006params\030\006 \003(\013"
           + "2A.google.cloud.discoveryengine.v1beta.R"
-          + "ecommendRequest.ParamsEntry\032E\n\013ParamsEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google."
-          + "protobuf.Value:\0028\001\"\324\003\n\021RecommendResponse"
-          + "\022\\\n\007results\030\001 \003(\0132K.google.cloud.discove"
-          + "ryengine.v1beta.RecommendResponse.Recomm"
-          + "endationResult\022\031\n\021attribution_token\030\002 \001("
-          + "\t\022\023\n\013missing_ids\030\003 \003(\t\022\025\n\rvalidate_only\030"
-          + "\004 \001(\010\032\231\002\n\024RecommendationResult\022\n\n\002id\030\001 \001"
-          + "(\t\022?\n\010document\030\002 \001(\0132-.google.cloud.disc"
-          + "overyengine.v1beta.Document\022k\n\010metadata\030"
-          + "\003 \003(\0132Y.google.cloud.discoveryengine.v1b"
-          + "eta.RecommendResponse.RecommendationResu"
-          + "lt.MetadataEntry\032G\n\rMetadataEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf."
-          + "Value:\0028\0012\314\002\n\025RecommendationService\022\336\001\n\t"
-          + "Recommend\0225.google.cloud.discoveryengine"
-          + ".v1beta.RecommendRequest\0326.google.cloud."
-          + "discoveryengine.v1beta.RecommendResponse"
-          + "\"b\202\323\344\223\002\\\"W/v1beta/{serving_config=projec"
-          + "ts/*/locations/*/dataStores/*/servingCon"
-          + "figs/*}:recommend:\001*\032R\312A\036discoveryengine"
-          + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\242\002\n\'com.google."
-          + "cloud.discoveryengine.v1betaB\032Recommenda"
-          + "tionServiceProtoP\001ZRgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/discoveryengine/"
-          + "v1beta;discoveryengine\242\002\017DISCOVERYENGINE"
-          + "\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312\002"
-          + "#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&G"
-          + "oogle::Cloud::DiscoveryEngine::V1betab\006p"
-          + "roto3"
+          + "ecommendRequest.ParamsEntry\022Z\n\013user_labe"
+          + "ls\030\010 \003(\0132E.google.cloud.discoveryengine."
+          + "v1beta.RecommendRequest.UserLabelsEntry\032"
+          + "E\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001"
+          + "(\0132\026.google.protobuf.Value:\0028\001\0321\n\017UserLa"
+          + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001\"\324\003\n\021RecommendResponse\022\\\n\007results\030\001 \003(\013"
+          + "2K.google.cloud.discoveryengine.v1beta.R"
+          + "ecommendResponse.RecommendationResult\022\031\n"
+          + "\021attribution_token\030\002 \001(\t\022\023\n\013missing_ids\030"
+          + "\003 \003(\t\022\025\n\rvalidate_only\030\004 \001(\010\032\231\002\n\024Recomme"
+          + "ndationResult\022\n\n\002id\030\001 \001(\t\022?\n\010document\030\002 "
+          + "\001(\0132-.google.cloud.discoveryengine.v1bet"
+          + "a.Document\022k\n\010metadata\030\003 \003(\0132Y.google.cl"
+          + "oud.discoveryengine.v1beta.RecommendResp"
+          + "onse.RecommendationResult.MetadataEntry\032"
+          + "G\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002"
+          + " \001(\0132\026.google.protobuf.Value:\0028\0012\314\002\n\025Rec"
+          + "ommendationService\022\336\001\n\tRecommend\0225.googl"
+          + "e.cloud.discoveryengine.v1beta.Recommend"
+          + "Request\0326.google.cloud.discoveryengine.v"
+          + "1beta.RecommendResponse\"b\202\323\344\223\002\\\"W/v1beta"
+          + "/{serving_config=projects/*/locations/*/"
+          + "dataStores/*/servingConfigs/*}:recommend"
+          + ":\001*\032R\312A\036discoveryengine.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-p"
+          + "latformB\242\002\n\'com.google.cloud.discoveryen"
+          + "gine.v1betaB\032RecommendationServiceProtoP"
+          + "\001ZRgoogle.golang.org/genproto/googleapis"
+          + "/cloud/discoveryengine/v1beta;discoverye"
+          + "ngine\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.D"
+          + "iscoveryEngine.V1Beta\312\002#Google\\Cloud\\Dis"
+          + "coveryEngine\\V1beta\352\002&Google::Cloud::Dis"
+          + "coveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -122,7 +129,13 @@ public final class RecommendationServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_descriptor,
             new java.lang.String[] {
-              "ServingConfig", "UserEvent", "PageSize", "Filter", "ValidateOnly", "Params",
+              "ServingConfig",
+              "UserEvent",
+              "PageSize",
+              "Filter",
+              "ValidateOnly",
+              "Params",
+              "UserLabels",
             });
     internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_ParamsEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_descriptor
@@ -131,6 +144,16 @@ public final class RecommendationServiceProto {
     internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_ParamsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_ParamsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_UserLabelsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_UserLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_RecommendRequest_UserLabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

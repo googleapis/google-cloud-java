@@ -64,6 +64,7 @@
  *           .setFilter("filter-1274492040")
  *           .setValidateOnly(true)
  *           .putAllParams(new HashMap<String, Value>())
+ *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();
  *   RecommendResponse response = recommendationServiceClient.recommend(request);
  * }

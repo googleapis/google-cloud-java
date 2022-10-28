@@ -59,4 +59,41 @@ public interface SpeechToTextConfigOrBuilder
    * @return The speechModelVariant.
    */
   com.google.cloud.dialogflow.v2.SpeechModelVariant getSpeechModelVariant();
+
+  /**
+   *
+   *
+   * <pre>
+   * Which Speech model to select. Select the model best suited to your domain
+   * to get best results. If a model is not explicitly specified, then a default
+   * model is used.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+  /**
+   *
+   *
+   * <pre>
+   * Which Speech model to select. Select the model best suited to your domain
+   * to get best results. If a model is not explicitly specified, then a default
+   * model is used.
+   * Refer to
+   * [Cloud Speech API
+   * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
+   * for more details.
+   * </pre>
+   *
+   * <code>string model = 2;</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
 }

@@ -97,6 +97,41 @@ public interface CdnKeyOrBuilder
    *
    *
    * <pre>
+   * The configuration for a Media CDN key.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+   *
+   * @return Whether the mediaCdnKey field is set.
+   */
+  boolean hasMediaCdnKey();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a Media CDN key.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+   *
+   * @return The mediaCdnKey.
+   */
+  com.google.cloud.video.stitcher.v1.MediaCdnKey getMediaCdnKey();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a Media CDN key.
+   * </pre>
+   *
+   * <code>.google.cloud.video.stitcher.v1.MediaCdnKey media_cdn_key = 8;</code>
+   */
+  com.google.cloud.video.stitcher.v1.MediaCdnKeyOrBuilder getMediaCdnKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The resource name of the CDN key, in the form of
    * `projects/{project}/locations/{location}/cdnKeys/{id}`.
    * The name is ignored when creating a CDN key.
