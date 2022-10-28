@@ -92,15 +92,7 @@
         <version>${arrow.version}</version>
         <scope>runtime</scope>
       </dependency>
-
-      <dependency>
-         <groupId>com.google.cloud</groupId>
-         <artifactId>google-cloud-datacatalog-bom</artifactId>
-         <version>1.11.0</version>
-         <type>pom</type>
-         <scope>import</scope>
-       </dependency>
-
+      
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog-bom</artifactId>
@@ -126,14 +118,7 @@
         <artifactId>google-api-services-bigquery</artifactId>
         <version>${google-api-services-bigquery.version}</version>
       </dependency>
-
-      <!-- Used for Interval and Range types -->
-      <dependency>
-        <groupId>org.threeten</groupId>
-        <artifactId>threeten-extra</artifactId>
-        <version>1.7.1</version>
-      </dependency>
-
+      
       <!-- Used for Interval and Range types -->
       <dependency>
         <groupId>org.threeten</groupId>
