@@ -17,9 +17,10 @@ FROM ubuntu:22.10
 
 WORKDIR /workspace
 
-ADD bootstrap.sh /workspace
-ADD ../new-client.py /workspace
+ADD owlbot-bootstrapper-java.sh /workspace
+ADD new-client.py /workspace
+ADD templates /workspace
 
-ENTRYPOINT ["/workspace/bootstrap.sh"]
+ENTRYPOINT ["/workspace/owlbot-bootstrapper-java.sh"]
 
 

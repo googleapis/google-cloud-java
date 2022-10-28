@@ -167,6 +167,39 @@ The script should finish creating a pull request even when the newly created
 module fails to compile. This gives the user flexibility to fix things in the
 created pull request.
 
+# Dockerfile
+
+To onboard OwlBot Bootstrapper, this directory provides Dockerfile
+and the container will be published to gcr.io.
+
+Development:
+
+```
+suztomo@suztomo:~/google-cloud-java/generation/new_client$ docker build .
+Sending build context to Docker daemon  39.94kB
+Step 1/6 : FROM ubuntu:22.10
+...
+ ---> 31491ac60cdd
+Successfully built 31491ac60cdd
+
+```
+
+Then run bootstrapper specifying the container (`31491ac60cdd`):
+
+```
+bootstrapper run-trigger pre-process \
+  --apiId=required \
+  --language=required \
+  --languageContainer=31491ac60cdd \
+  --repoToClone=required \
+  --projectId=optional \
+  --triggerId=optional \
+  --installationId=optional \
+  --container=optional \
+  --monoRepoDir=optional \
+  --serviceConfigPath=optional \
+  --interContainerVarsPath=optional
+```
 
 
 
