@@ -462,6 +462,10 @@ public class Publisher implements PublisherInterface {
   }
 
   private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
+    if (outstandingBatch.size() == 0) {
+      logger.log(Level.WARNING, "Attempted to publish batch with zero messages.");
+      return;
+    }
     final ApiFutureCallback<PublishResponse> futureCallback =
         new ApiFutureCallback<PublishResponse>() {
           @Override
