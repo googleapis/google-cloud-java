@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.1](https://github.com/googleapis/java-bigquery/compare/v2.18.0...v2.18.1) (2022-10-28)
+
+
+### Dependencies
+
+* Remove version declaration for gson ([#2379](https://github.com/googleapis/java-bigquery/issues/2379)) ([0908652](https://github.com/googleapis/java-bigquery/commit/0908652a2e8baf46b142a8ba31c0967e593986d6))
+
 ## [2.18.0](https://github.com/googleapis/java-bigquery/compare/v2.17.1...v2.18.0) (2022-10-27)
 
 
