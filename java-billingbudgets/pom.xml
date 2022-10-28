@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-billingbudgets-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
   <name>Google Cloud Billing Budgets Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-billingbudgets-v1beta1</artifactId>
-        <version>0.14.0</version><!-- {x-version-update:proto-google-cloud-billingbudgets-v1beta1:current} -->
+        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-billingbudgets-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-billingbudgets-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-billingbudgets-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-billingbudgets-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-billingbudgets-v1beta1</artifactId>
-        <version>0.14.0</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1beta1:current} -->
+        <version>0.14.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-billingbudgets-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-billingbudgets</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
