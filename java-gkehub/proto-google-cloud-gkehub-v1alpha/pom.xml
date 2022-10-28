@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-gkehub-v1alpha</artifactId>
-  <version>0.11.0</version><!-- {x-version-update:proto-google-cloud-gkehub-v1alpha:current} -->
+  <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gkehub-v1alpha:current} -->
   <name>proto-google-cloud-gkehub-v1alpha</name>
   <description>Proto library for google-cloud-gkehub</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-gkehub-parent</artifactId>
-    <version>1.5.0</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+    <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
   </parent>
   <dependencies>
     <dependency>

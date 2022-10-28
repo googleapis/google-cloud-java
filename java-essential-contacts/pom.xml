@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-essential-contacts-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.5.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
+  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
   <name>Google Essential Contacts API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-essential-contacts</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-essential-contacts-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:grpc-google-cloud-essential-contacts-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-essential-contacts-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-essential-contacts-v1</artifactId>
-        <version>2.5.0</version><!-- {x-version-update:proto-google-cloud-essential-contacts-v1:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-essential-contacts-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
