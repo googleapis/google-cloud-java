@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.18.2](https://github.com/googleapis/java-bigquery/compare/v2.18.1...v2.18.2) (2022-10-28)
+
+
+### Dependencies
+
+* Remove duplicated deps in the pom. ([#2383](https://github.com/googleapis/java-bigquery/issues/2383)) ([fe164aa](https://github.com/googleapis/java-bigquery/commit/fe164aad572b74c21de2ce492f0f7c28bd07a7df))
+
 ## [2.18.1](https://github.com/googleapis/java-bigquery/compare/v2.18.0...v2.18.1) (2022-10-28)
 
 
