@@ -88,9 +88,8 @@ public class ITKmsTest {
             MetadataUtils.attachHeaders(kmsStub, requestParamsHeader);
         return stubForCreateKeyRing.createKeyRing(createKeyRingRequest);
       } else {
-        Assert.fail("Error creating or looking up key");
+        throw ex;
       }
     }
-    return null;
   }
 }
