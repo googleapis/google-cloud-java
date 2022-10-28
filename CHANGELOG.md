@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.24.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.24.1...v2.24.2) (2022-10-28)
+
+
+### Bug Fixes
+
+* Remove applying header for multiplexing client and add a unit test for multiplexing with different location ([df9b487](https://github.com/googleapis/java-bigquerystorage/commit/df9b4876f868d1e33a1c2273a83fc7bfcd3ddf27))
+
+
+### Dependencies
+
+* Revert dependency upgrade for protobuf to v3.20.2 ([#1659](https://github.com/googleapis/java-bigquerystorage/issues/1659)) ([#1856](https://github.com/googleapis/java-bigquerystorage/issues/1856)) ([df9b487](https://github.com/googleapis/java-bigquerystorage/commit/df9b4876f868d1e33a1c2273a83fc7bfcd3ddf27))
+* Update arrow.version to v10 (major) (https://togithub.com/googleapis/java-bigquerystorage/issues/1847) ([b0b5f06](https://togithub.com/googleapis/java-bigquerystorage/commit/b0b5f06de60bce556b813e91c7ac665d8f045906)) ([df9b487](https://github.com/googleapis/java-bigquerystorage/commit/df9b4876f868d1e33a1c2273a83fc7bfcd3ddf27))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.18.0 (https://togithub.com/googleapis/java-bigquerystorage/issues/1852) ([bb475bd](https://togithub.com/googleapis/java-bigquerystorage/commit/bb475bdbeb0749889fec32fcecf36d0b51fdd8ac)) ([df9b487](https://github.com/googleapis/java-bigquerystorage/commit/df9b4876f868d1e33a1c2273a83fc7bfcd3ddf27))
+* Update dependency org.apache.arrow:arrow-memory-netty to v10 (https://togithub.com/googleapis/java-bigquerystorage/issues/1848) ([d6d96ff](https://togithub.com/googleapis/java-bigquerystorage/commit/d6d96ffb58be65d2a06c4f02de351fadd08da8e4)) ([df9b487](https://github.com/googleapis/java-bigquerystorage/commit/df9b4876f868d1e33a1c2273a83fc7bfcd3ddf27))
+* Update dependency org.apache.arrow:arrow-vector to v10 (https://togithub.com/googleapis/java-bigquerystorage/issues/1849) ([66853c2](https://togithub.com/googleapis/java-bigquerystorage/commit/66853c216ed2887e2d56f987cfffcb10d616f4bb)) ([df9b487](https://github.com/googleapis/java-bigquerystorage/commit/df9b4876f868d1e33a1c2273a83fc7bfcd3ddf27))
+
 ## [2.24.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.24.0...v2.24.1) (2022-10-28)
 
 
