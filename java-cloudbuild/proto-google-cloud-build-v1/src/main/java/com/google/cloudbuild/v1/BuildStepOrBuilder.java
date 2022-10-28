@@ -658,6 +658,79 @@ public interface BuildStepOrBuilder
    *
    *
    * <pre>
+   * Allow this build step to fail without failing the entire build.
+   * If false, the entire build will fail if this step fails. Otherwise, the
+   * build will succeed, but this step will still have a failure status.
+   * Error information will be reported in the failure_detail field.
+   * </pre>
+   *
+   * <code>bool allow_failure = 14;</code>
+   *
+   * @return The allowFailure.
+   */
+  boolean getAllowFailure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Return code from running the step.
+   * </pre>
+   *
+   * <code>int32 exit_code = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The exitCode.
+   */
+  int getExitCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Allow this build step to fail without failing the entire build if and
+   * only if the exit code is one of the specified codes. If allow_failure
+   * is also specified, this field will take precedence.
+   * </pre>
+   *
+   * <code>repeated int32 allow_exit_codes = 18;</code>
+   *
+   * @return A list containing the allowExitCodes.
+   */
+  java.util.List<java.lang.Integer> getAllowExitCodesList();
+  /**
+   *
+   *
+   * <pre>
+   * Allow this build step to fail without failing the entire build if and
+   * only if the exit code is one of the specified codes. If allow_failure
+   * is also specified, this field will take precedence.
+   * </pre>
+   *
+   * <code>repeated int32 allow_exit_codes = 18;</code>
+   *
+   * @return The count of allowExitCodes.
+   */
+  int getAllowExitCodesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Allow this build step to fail without failing the entire build if and
+   * only if the exit code is one of the specified codes. If allow_failure
+   * is also specified, this field will take precedence.
+   * </pre>
+   *
+   * <code>repeated int32 allow_exit_codes = 18;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowExitCodes at the given index.
+   */
+  int getAllowExitCodes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * A shell script to be executed in the step.
    * When script is provided, the user cannot specify the entrypoint or args.
    * </pre>
