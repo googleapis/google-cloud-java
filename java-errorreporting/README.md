@@ -14,77 +14,28 @@ Java idiomatic client for [Error Reporting][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.3</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-errorreporting</artifactId>
-  </dependency>
-  <!-- START_EXCLUDE -->
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-core</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.13.2</version>
-    <scope>test</scope>
-  </dependency>
-  <dependency>
-    <groupId>com.google.truth</groupId>
-    <artifactId>truth</artifactId>
-    <version>1.1.3</version>
-    <scope>test</scope>
-  </dependency>
-  <!-- END_EXCLUDE -->
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.124.15-beta</version>
+  <version>0.126.0-beta</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.3')
-
-implementation 'com.google.cloud:google-cloud-errorreporting'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-errorreporting:0.124.15-beta'
+implementation 'com.google.cloud:google-cloud-errorreporting:0.126.0-beta'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.124.15-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.126.0-beta"
 ```
 
 ## Authentication
@@ -120,15 +71,6 @@ use this Error Reporting Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-errorreporting/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Quick Start | [source code](https://github.com/googleapis/java-errorreporting/blob/main/samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-errorreporting&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/errorreporting/QuickStart.java) |
 
 
 

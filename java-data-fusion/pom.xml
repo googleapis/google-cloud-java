@@ -62,4 +62,5 @@
     <module>proto-google-cloud-data-fusion-v1</module>
     <module>google-cloud-data-fusion-bom</module>
   </modules>
-</project>
+
+  </project>

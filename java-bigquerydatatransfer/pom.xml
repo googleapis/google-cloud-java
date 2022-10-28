@@ -52,4 +52,5 @@
     <module>proto-google-cloud-bigquerydatatransfer-v1</module>
     <module>google-cloud-bigquerydatatransfer-bom</module>
   </modules>
-</project>
+
+  </project>

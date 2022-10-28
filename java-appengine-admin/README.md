@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appengine-admin</artifactId>
-  <version>2.3.4</version>
+  <version>2.5.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-appengine-admin:2.3.4'
+implementation 'com.google.cloud:google-cloud-appengine-admin:2.5.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-appengine-admin" % "2.3.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-appengine-admin" % "2.5.0"
 ```
 
 ## Authentication

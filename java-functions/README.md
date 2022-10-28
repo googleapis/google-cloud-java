@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-functions</artifactId>
-  <version>2.5.4</version>
+  <version>2.7.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-functions:2.5.4'
+implementation 'com.google.cloud:google-cloud-functions:2.7.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-functions" % "2.5.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-functions" % "2.7.0"
 ```
 
 ## Authentication

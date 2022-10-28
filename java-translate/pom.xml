@@ -62,4 +62,5 @@
     <module>proto-google-cloud-translate-v3</module>
     <module>google-cloud-translate-bom</module>
   </modules>
-</project>
+
+  </project>

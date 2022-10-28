@@ -50,4 +50,5 @@
     <module>proto-google-cloud-gke-connect-gateway-v1beta1</module>
     <module>google-cloud-gke-connect-gateway-bom</module>
   </modules>
-</project>
+
+  </project>

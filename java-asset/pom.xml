@@ -119,4 +119,5 @@
     <module>proto-google-cloud-asset-v1p7beta1</module>
     <module>google-cloud-asset-bom</module>
   </modules>
-</project>
+
+  </project>

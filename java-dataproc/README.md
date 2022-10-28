@@ -11,59 +11,28 @@ Java idiomatic client for [Dataproc][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.3</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-dataproc</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc</artifactId>
-  <version>4.0.8</version>
+  <version>4.2.0</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.3')
-
-implementation 'com.google.cloud:google-cloud-dataproc'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dataproc:4.0.8'
+implementation 'com.google.cloud:google-cloud-dataproc:4.2.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "4.0.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-dataproc" % "4.2.0"
 ```
 
 ## Authentication
@@ -99,20 +68,6 @@ use this Dataproc Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-dataproc/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Create Cluster | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/CreateCluster.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateCluster.java) |
-| Create Cluster With Autoscaling | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/CreateClusterWithAutoscaling.java) |
-| Instantiate Inline Workflow Template | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/InstantiateInlineWorkflowTemplate.java) |
-| Quickstart | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/Quickstart.java) |
-| Submit Hadoop Fs Job | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/SubmitHadoopFsJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/SubmitHadoopFsJob.java) |
-| Submit Job | [source code](https://github.com/googleapis/java-dataproc/blob/main/samples/snippets/src/main/java/SubmitJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dataproc&page=editor&open_in_editor=samples/snippets/src/main/java/SubmitJob.java) |
 
 
 

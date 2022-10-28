@@ -50,4 +50,5 @@
     <module>proto-google-cloud-dataflow-v1beta3</module>
     <module>google-cloud-dataflow-bom</module>
   </modules>
-</project>
+
+  </project>

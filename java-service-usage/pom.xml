@@ -62,4 +62,5 @@
     <module>proto-google-cloud-service-usage-v1beta1</module>
     <module>google-cloud-service-usage-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -74,4 +74,5 @@
     <module>proto-google-cloud-os-config-v1beta</module>
     <module>google-cloud-os-config-bom</module>
   </modules>
-</project>
+
+  </project>

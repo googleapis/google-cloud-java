@@ -317,7 +317,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             ProtoRestSerializer<ListAccessLevelsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
-                                fields, "accessLevelFormat", request.getAccessLevelFormat());
+                                fields, "accessLevelFormat", request.getAccessLevelFormatValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             return fields;
@@ -355,7 +355,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             ProtoRestSerializer<GetAccessLevelRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
-                                fields, "accessLevelFormat", request.getAccessLevelFormat());
+                                fields, "accessLevelFormat", request.getAccessLevelFormatValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
