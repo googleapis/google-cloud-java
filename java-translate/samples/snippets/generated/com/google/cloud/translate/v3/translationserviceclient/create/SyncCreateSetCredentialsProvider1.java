@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_create_setcredentialsprovider1_sync]
+// [START translate_v3_generated_translationserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.translate.v3.TranslationServiceClient;
 import com.google.cloud.translate.v3.TranslationServiceSettings;
 
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider1 {
         TranslationServiceClient.create(translationServiceSettings);
   }
 }
-// [END translation_v3_generated_translationserviceclient_create_setcredentialsprovider1_sync]
+// [END translate_v3_generated_translationserviceclient_create_setcredentialsprovider1_sync]

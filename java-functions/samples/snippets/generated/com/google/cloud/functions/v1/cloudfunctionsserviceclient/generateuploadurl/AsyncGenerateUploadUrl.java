@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_async]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
 import com.google.cloud.functions.v1.CryptoKeyName;
@@ -51,4 +51,4 @@ public class AsyncGenerateUploadUrl {
     }
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_async]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_async]

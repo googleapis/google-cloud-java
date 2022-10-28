@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_listdeviceregistries_paged_async]
+// [START cloudiot_v1_generated_devicemanagerclient_listdeviceregistries_paged_async]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceRegistry;
 import com.google.cloud.iot.v1.ListDeviceRegistriesRequest;
@@ -59,4 +59,4 @@ public class AsyncListDeviceRegistriesPaged {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_listdeviceregistries_paged_async]
+// [END cloudiot_v1_generated_devicemanagerclient_listdeviceregistries_paged_async]

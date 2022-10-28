@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_generaterandombytes_stringintprotectionlevel_sync]
+// [START cloudkms_v1_generated_keymanagementserviceclient_generaterandombytes_stringintprotectionlevel_sync]
 import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.ProtectionLevel;
@@ -43,4 +43,4 @@ public class SyncGenerateRandomBytesStringIntProtectionlevel {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_generaterandombytes_stringintprotectionlevel_sync]
+// [END cloudkms_v1_generated_keymanagementserviceclient_generaterandombytes_stringintprotectionlevel_sync]

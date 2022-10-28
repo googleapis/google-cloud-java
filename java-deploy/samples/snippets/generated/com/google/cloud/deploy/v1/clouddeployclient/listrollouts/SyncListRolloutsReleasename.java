@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_listrollouts_releasename_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_listrollouts_releasename_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.ReleaseName;
 import com.google.cloud.deploy.v1.Rollout;
@@ -42,4 +42,4 @@ public class SyncListRolloutsReleasename {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_listrollouts_releasename_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_listrollouts_releasename_sync]

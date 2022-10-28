@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_cancellease_async]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_cancellease_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tasks.v2beta2.CancelLeaseRequest;
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
@@ -48,4 +48,4 @@ public class AsyncCancelLease {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_cancellease_async]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_cancellease_async]

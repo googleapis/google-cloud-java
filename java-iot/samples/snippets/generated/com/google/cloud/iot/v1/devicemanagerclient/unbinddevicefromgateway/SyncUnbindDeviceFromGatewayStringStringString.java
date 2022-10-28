@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_unbinddevicefromgateway_stringstringstring_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_unbinddevicefromgateway_stringstringstring_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.RegistryName;
 import com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse;
@@ -42,4 +42,4 @@ public class SyncUnbindDeviceFromGatewayStringStringString {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_unbinddevicefromgateway_stringstringstring_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_unbinddevicefromgateway_stringstringstring_sync]

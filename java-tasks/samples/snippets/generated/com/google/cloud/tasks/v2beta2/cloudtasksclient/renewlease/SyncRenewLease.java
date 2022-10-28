@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_renewlease_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_renewlease_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.RenewLeaseRequest;
 import com.google.cloud.tasks.v2beta2.Task;
@@ -47,4 +47,4 @@ public class SyncRenewLease {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_renewlease_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_renewlease_sync]

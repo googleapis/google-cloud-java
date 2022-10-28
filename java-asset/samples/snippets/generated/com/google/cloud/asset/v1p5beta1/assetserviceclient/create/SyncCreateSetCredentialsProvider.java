@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p5beta1.samples;
 
-// [START asset_v1p5beta1_generated_assetserviceclient_create_setcredentialsprovider_sync]
+// [START cloudasset_v1p5beta1_generated_assetserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.asset.v1p5beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p5beta1.AssetServiceSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
   }
 }
-// [END asset_v1p5beta1_generated_assetserviceclient_create_setcredentialsprovider_sync]
+// [END cloudasset_v1p5beta1_generated_assetserviceclient_create_setcredentialsprovider_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_listprojects_paged_async]
+// [START cloudresourcemanager_v3_generated_projectsclient_listprojects_paged_async]
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ListProjectsRequest;
 import com.google.cloud.resourcemanager.v3.ListProjectsResponse;
@@ -59,4 +59,4 @@ public class AsyncListProjectsPaged {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_listprojects_paged_async]
+// [END cloudresourcemanager_v3_generated_projectsclient_listprojects_paged_async]

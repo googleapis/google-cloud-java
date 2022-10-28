@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_tenantserviceclient_listtenants_paged_async]
+// [START jobs_v4beta1_generated_tenantserviceclient_listtenants_paged_async]
 import com.google.cloud.talent.v4beta1.ListTenantsRequest;
 import com.google.cloud.talent.v4beta1.ListTenantsResponse;
 import com.google.cloud.talent.v4beta1.ProjectName;
@@ -58,4 +58,4 @@ public class AsyncListTenantsPaged {
     }
   }
 }
-// [END talent_v4beta1_generated_tenantserviceclient_listtenants_paged_async]
+// [END jobs_v4beta1_generated_tenantserviceclient_listtenants_paged_async]

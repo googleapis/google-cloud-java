@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluesclient_getiampolicy_async]
+// [START cloudresourcemanager_v3_generated_tagvaluesclient_getiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.TagValueName;
 import com.google.cloud.resourcemanager.v3.TagValuesClient;
@@ -48,4 +48,4 @@ public class AsyncGetIamPolicy {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagvaluesclient_getiampolicy_async]
+// [END cloudresourcemanager_v3_generated_tagvaluesclient_getiampolicy_async]

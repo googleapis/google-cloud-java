@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_updatefolder_folderfieldmask_sync]
+// [START cloudresourcemanager_v3_generated_foldersclient_updatefolder_folderfieldmask_sync]
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
 import com.google.protobuf.FieldMask;
@@ -40,4 +40,4 @@ public class SyncUpdateFolderFolderFieldmask {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_updatefolder_folderfieldmask_sync]
+// [END cloudresourcemanager_v3_generated_foldersclient_updatefolder_folderfieldmask_sync]

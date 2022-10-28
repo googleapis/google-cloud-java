@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_leasetasks_queuenameduration_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_leasetasks_queuenameduration_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.LeaseTasksResponse;
 import com.google.cloud.tasks.v2beta2.QueueName;
@@ -41,4 +41,4 @@ public class SyncLeaseTasksQueuenameDuration {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_leasetasks_queuenameduration_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_leasetasks_queuenameduration_sync]

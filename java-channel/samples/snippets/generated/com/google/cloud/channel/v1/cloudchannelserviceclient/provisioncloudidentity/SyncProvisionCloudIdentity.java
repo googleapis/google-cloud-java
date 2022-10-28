@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_sync]
 import com.google.cloud.channel.v1.AdminUser;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CloudIdentityInfo;
@@ -48,4 +48,4 @@ public class SyncProvisionCloudIdentity {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_sync]

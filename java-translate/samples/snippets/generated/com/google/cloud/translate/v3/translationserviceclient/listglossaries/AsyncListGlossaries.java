@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_listglossaries_async]
+// [START translate_v3_generated_translationserviceclient_listglossaries_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.translate.v3.Glossary;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
@@ -52,4 +52,4 @@ public class AsyncListGlossaries {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_listglossaries_async]
+// [END translate_v3_generated_translationserviceclient_listglossaries_async]

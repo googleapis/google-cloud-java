@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_deletefolder_async]
+// [START cloudresourcemanager_v3_generated_foldersclient_deletefolder_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.DeleteFolderRequest;
 import com.google.cloud.resourcemanager.v3.FolderName;
@@ -44,4 +44,4 @@ public class AsyncDeleteFolder {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_deletefolder_async]
+// [END cloudresourcemanager_v3_generated_foldersclient_deletefolder_async]

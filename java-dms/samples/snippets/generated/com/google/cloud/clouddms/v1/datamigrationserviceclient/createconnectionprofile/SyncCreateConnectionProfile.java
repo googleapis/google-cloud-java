@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_createconnectionprofile_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_createconnectionprofile_sync]
 import com.google.cloud.clouddms.v1.ConnectionProfile;
 import com.google.cloud.clouddms.v1.ConnectionProfileName;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
@@ -50,4 +50,4 @@ public class SyncCreateConnectionProfile {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_createconnectionprofile_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_createconnectionprofile_sync]

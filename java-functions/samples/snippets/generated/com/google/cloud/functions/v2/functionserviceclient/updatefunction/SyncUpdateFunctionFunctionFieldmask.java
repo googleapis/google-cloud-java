@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_updatefunction_functionfieldmask_sync]
+// [START cloudfunctions_v2_generated_functionserviceclient_updatefunction_functionfieldmask_sync]
 import com.google.cloud.functions.v2.Function;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.protobuf.FieldMask;
@@ -40,4 +40,4 @@ public class SyncUpdateFunctionFunctionFieldmask {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_updatefunction_functionfieldmask_sync]
+// [END cloudfunctions_v2_generated_functionserviceclient_updatefunction_functionfieldmask_sync]

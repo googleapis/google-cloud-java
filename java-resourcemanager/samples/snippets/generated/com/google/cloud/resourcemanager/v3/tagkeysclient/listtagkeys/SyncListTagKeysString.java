@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_listtagkeys_string_sync]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_listtagkeys_string_sync]
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.TagKey;
 import com.google.cloud.resourcemanager.v3.TagKeysClient;
@@ -41,4 +41,4 @@ public class SyncListTagKeysString {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_listtagkeys_string_sync]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_listtagkeys_string_sync]

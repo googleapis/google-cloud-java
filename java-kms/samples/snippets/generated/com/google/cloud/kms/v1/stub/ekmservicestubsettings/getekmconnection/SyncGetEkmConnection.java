@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.stub.samples;
 
-// [START kms_v1_generated_ekmservicestubsettings_getekmconnection_sync]
+// [START cloudkms_v1_generated_ekmservicestubsettings_getekmconnection_sync]
 import com.google.cloud.kms.v1.stub.EkmServiceStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetEkmConnection {
     EkmServiceStubSettings ekmServiceSettings = ekmServiceSettingsBuilder.build();
   }
 }
-// [END kms_v1_generated_ekmservicestubsettings_getekmconnection_sync]
+// [END cloudkms_v1_generated_ekmservicestubsettings_getekmconnection_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_devicenamebytestring_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_devicenamebytestring_sync]
 import com.google.cloud.iot.v1.DeviceConfig;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceName;
@@ -41,4 +41,4 @@ public class SyncModifyCloudToDeviceConfigDevicenameBytestring {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_devicenamebytestring_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_devicenamebytestring_sync]

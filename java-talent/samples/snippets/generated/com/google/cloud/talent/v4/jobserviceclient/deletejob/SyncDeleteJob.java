@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_deletejob_sync]
+// [START jobs_v4_generated_jobserviceclient_deletejob_sync]
 import com.google.cloud.talent.v4.DeleteJobRequest;
 import com.google.cloud.talent.v4.JobName;
 import com.google.cloud.talent.v4.JobServiceClient;
@@ -43,4 +43,4 @@ public class SyncDeleteJob {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_deletejob_sync]
+// [END jobs_v4_generated_jobserviceclient_deletejob_sync]

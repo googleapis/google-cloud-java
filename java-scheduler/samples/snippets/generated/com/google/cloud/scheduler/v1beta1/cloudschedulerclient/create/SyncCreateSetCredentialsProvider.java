@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1beta1.samples;
 
-// [START scheduler_v1beta1_generated_cloudschedulerclient_create_setcredentialsprovider_sync]
+// [START cloudscheduler_v1beta1_generated_cloudschedulerclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create(cloudSchedulerSettings);
   }
 }
-// [END scheduler_v1beta1_generated_cloudschedulerclient_create_setcredentialsprovider_sync]
+// [END cloudscheduler_v1beta1_generated_cloudschedulerclient_create_setcredentialsprovider_sync]

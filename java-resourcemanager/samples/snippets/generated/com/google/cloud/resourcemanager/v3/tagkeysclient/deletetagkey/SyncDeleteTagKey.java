@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_deletetagkey_sync]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_deletetagkey_sync]
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.TagKey;
 import com.google.cloud.resourcemanager.v3.TagKeyName;
@@ -45,4 +45,4 @@ public class SyncDeleteTagKey {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_deletetagkey_sync]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_deletetagkey_sync]

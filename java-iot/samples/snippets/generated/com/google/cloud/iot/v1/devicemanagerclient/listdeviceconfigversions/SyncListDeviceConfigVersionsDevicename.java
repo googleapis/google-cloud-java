@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_listdeviceconfigversions_devicename_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_listdeviceconfigversions_devicename_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceName;
 import com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse;
@@ -40,4 +40,4 @@ public class SyncListDeviceConfigVersionsDevicename {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_listdeviceconfigversions_devicename_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_listdeviceconfigversions_devicename_sync]

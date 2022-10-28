@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.samples;
 
-// [START shell_v1_generated_cloudshellserviceclient_removepublickey_async]
+// [START cloudshell_v1_generated_cloudshellserviceclient_removepublickey_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.shell.v1.CloudShellServiceClient;
 import com.google.cloud.shell.v1.RemovePublicKeyRequest;
@@ -47,4 +47,4 @@ public class AsyncRemovePublicKey {
     }
   }
 }
-// [END shell_v1_generated_cloudshellserviceclient_removepublickey_async]
+// [END cloudshell_v1_generated_cloudshellserviceclient_removepublickey_async]

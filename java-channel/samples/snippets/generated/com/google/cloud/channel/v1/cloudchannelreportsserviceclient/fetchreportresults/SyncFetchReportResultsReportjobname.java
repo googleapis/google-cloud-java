@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_reportjobname_sync]
+// [START cloudchannel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_reportjobname_sync]
 import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.ReportJobName;
 import com.google.cloud.channel.v1.Row;
@@ -43,4 +43,4 @@ public class SyncFetchReportResultsReportjobname {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_reportjobname_sync]
+// [END cloudchannel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_reportjobname_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_deletetagbinding_async]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_deletetagbinding_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.TagBindingName;
@@ -47,4 +47,4 @@ public class AsyncDeleteTagBinding {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_deletetagbinding_async]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_deletetagbinding_async]

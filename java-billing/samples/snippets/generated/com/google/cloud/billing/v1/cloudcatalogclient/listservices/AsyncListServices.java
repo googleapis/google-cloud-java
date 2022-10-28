@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudcatalogclient_listservices_async]
+// [START cloudbilling_v1_generated_cloudcatalogclient_listservices_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.billing.v1.CloudCatalogClient;
 import com.google.cloud.billing.v1.ListServicesRequest;
@@ -49,4 +49,4 @@ public class AsyncListServices {
     }
   }
 }
-// [END billing_v1_generated_cloudcatalogclient_listservices_async]
+// [END cloudbilling_v1_generated_cloudcatalogclient_listservices_async]

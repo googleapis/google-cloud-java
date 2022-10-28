@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsserviceclient_listreports_async]
+// [START cloudchannel_v1_generated_cloudchannelreportsserviceclient_listreports_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.ListReportsRequest;
@@ -52,4 +52,4 @@ public class AsyncListReports {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelreportsserviceclient_listreports_async]
+// [END cloudchannel_v1_generated_cloudchannelreportsserviceclient_listreports_async]

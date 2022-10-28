@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_listdeviceregistries_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_listdeviceregistries_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceRegistry;
 import com.google.cloud.iot.v1.ListDeviceRegistriesRequest;
@@ -48,4 +48,4 @@ public class SyncListDeviceRegistries {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_listdeviceregistries_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_listdeviceregistries_sync]

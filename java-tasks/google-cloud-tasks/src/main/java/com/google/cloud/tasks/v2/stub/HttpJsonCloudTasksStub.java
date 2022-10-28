@@ -481,7 +481,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
-                                fields, "responseView", request.getResponseView());
+                                fields, "responseView", request.getResponseViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -514,7 +514,8 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetTaskRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "responseView", request.getResponseView());
+                        serializer.putQueryParam(
+                            fields, "responseView", request.getResponseViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)

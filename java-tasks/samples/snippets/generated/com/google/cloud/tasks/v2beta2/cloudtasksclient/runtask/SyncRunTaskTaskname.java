@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_runtask_taskname_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_runtask_taskname_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.Task;
 import com.google.cloud.tasks.v2beta2.TaskName;
@@ -39,4 +39,4 @@ public class SyncRunTaskTaskname {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_runtask_taskname_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_runtask_taskname_sync]

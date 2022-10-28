@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p2beta1.samples;
 
-// [START asset_v1p2beta1_generated_assetserviceclient_updatefeed_async]
+// [START cloudasset_v1p2beta1_generated_assetserviceclient_updatefeed_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1p2beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p2beta1.Feed;
@@ -47,4 +47,4 @@ public class AsyncUpdateFeed {
     }
   }
 }
-// [END asset_v1p2beta1_generated_assetserviceclient_updatefeed_async]
+// [END cloudasset_v1p2beta1_generated_assetserviceclient_updatefeed_async]

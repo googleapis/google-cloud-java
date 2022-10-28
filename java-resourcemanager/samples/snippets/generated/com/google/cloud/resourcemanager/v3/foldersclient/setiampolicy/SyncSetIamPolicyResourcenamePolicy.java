@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_setiampolicy_resourcenamepolicy_sync]
+// [START cloudresourcemanager_v3_generated_foldersclient_setiampolicy_resourcenamepolicy_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
@@ -41,4 +41,4 @@ public class SyncSetIamPolicyResourcenamePolicy {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_setiampolicy_resourcenamepolicy_sync]
+// [END cloudresourcemanager_v3_generated_foldersclient_setiampolicy_resourcenamepolicy_sync]

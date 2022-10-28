@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_create_setendpoint_sync]
+// [START jobs_v4_generated_jobserviceclient_create_setendpoint_sync]
 import com.google.cloud.talent.v4.JobServiceClient;
 import com.google.cloud.talent.v4.JobServiceSettings;
 import com.google.cloud.talent.v4.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     JobServiceClient jobServiceClient = JobServiceClient.create(jobServiceSettings);
   }
 }
-// [END talent_v4_generated_jobserviceclient_create_setendpoint_sync]
+// [END jobs_v4_generated_jobserviceclient_create_setendpoint_sync]

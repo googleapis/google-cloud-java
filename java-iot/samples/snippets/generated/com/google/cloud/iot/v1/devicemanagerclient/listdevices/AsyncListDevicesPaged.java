@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_listdevices_paged_async]
+// [START cloudiot_v1_generated_devicemanagerclient_listdevices_paged_async]
 import com.google.cloud.iot.v1.Device;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.GatewayListOptions;
@@ -65,4 +65,4 @@ public class AsyncListDevicesPaged {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_listdevices_paged_async]
+// [END cloudiot_v1_generated_devicemanagerclient_listdevices_paged_async]

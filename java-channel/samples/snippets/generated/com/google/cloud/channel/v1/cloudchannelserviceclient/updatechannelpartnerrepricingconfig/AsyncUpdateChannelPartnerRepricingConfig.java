@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_updatechannelpartnerrepricingconfig_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_updatechannelpartnerrepricingconfig_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.ChannelPartnerRepricingConfig;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -48,4 +48,4 @@ public class AsyncUpdateChannelPartnerRepricingConfig {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_updatechannelpartnerrepricingconfig_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_updatechannelpartnerrepricingconfig_async]

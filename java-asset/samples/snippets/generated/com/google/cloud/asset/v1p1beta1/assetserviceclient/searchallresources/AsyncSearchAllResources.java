@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p1beta1.samples;
 
-// [START asset_v1p1beta1_generated_assetserviceclient_searchallresources_async]
+// [START cloudasset_v1p1beta1_generated_assetserviceclient_searchallresources_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1p1beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest;
@@ -54,4 +54,4 @@ public class AsyncSearchAllResources {
     }
   }
 }
-// [END asset_v1p1beta1_generated_assetserviceclient_searchallresources_async]
+// [END cloudasset_v1p1beta1_generated_assetserviceclient_searchallresources_async]

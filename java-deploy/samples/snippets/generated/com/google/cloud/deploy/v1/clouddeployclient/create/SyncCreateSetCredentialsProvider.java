@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_create_setcredentialsprovider_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.CloudDeploySettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     CloudDeployClient cloudDeployClient = CloudDeployClient.create(cloudDeploySettings);
   }
 }
-// [END deploy_v1_generated_clouddeployclient_create_setcredentialsprovider_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_create_setcredentialsprovider_sync]

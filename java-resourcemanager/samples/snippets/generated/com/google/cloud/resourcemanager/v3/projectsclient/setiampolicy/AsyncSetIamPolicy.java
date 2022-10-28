@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_setiampolicy_async]
+// [START cloudresourcemanager_v3_generated_projectsclient_setiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.ProjectName;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
@@ -49,4 +49,4 @@ public class AsyncSetIamPolicy {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_setiampolicy_async]
+// [END cloudresourcemanager_v3_generated_projectsclient_setiampolicy_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listtransferableskus_paged_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listtransferableskus_paged_async]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
 import com.google.cloud.channel.v1.ListTransferableSkusResponse;
@@ -60,4 +60,4 @@ public class AsyncListTransferableSkusPaged {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listtransferableskus_paged_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listtransferableskus_paged_async]

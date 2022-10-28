@@ -510,7 +510,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -543,7 +543,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetVersionRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)

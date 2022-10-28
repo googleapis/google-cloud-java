@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_deletemigrationjob_migrationjobname_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_deletemigrationjob_migrationjobname_sync]
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.MigrationJobName;
 import com.google.protobuf.Empty;
@@ -40,4 +40,4 @@ public class SyncDeleteMigrationJobMigrationjobname {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_deletemigrationjob_migrationjobname_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_deletemigrationjob_migrationjobname_sync]

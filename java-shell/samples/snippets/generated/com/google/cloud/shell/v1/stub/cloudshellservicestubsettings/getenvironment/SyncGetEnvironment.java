@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.stub.samples;
 
-// [START shell_v1_generated_cloudshellservicestubsettings_getenvironment_sync]
+// [START cloudshell_v1_generated_cloudshellservicestubsettings_getenvironment_sync]
 import com.google.cloud.shell.v1.stub.CloudShellServiceStubSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncGetEnvironment {
         cloudShellServiceSettingsBuilder.build();
   }
 }
-// [END shell_v1_generated_cloudshellservicestubsettings_getenvironment_sync]
+// [END cloudshell_v1_generated_cloudshellservicestubsettings_getenvironment_sync]

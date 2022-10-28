@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_batchupdatejobs_sync]
+// [START jobs_v4_generated_jobserviceclient_batchupdatejobs_sync]
 import com.google.cloud.talent.v4.BatchUpdateJobsRequest;
 import com.google.cloud.talent.v4.BatchUpdateJobsResponse;
 import com.google.cloud.talent.v4.Job;
@@ -48,4 +48,4 @@ public class SyncBatchUpdateJobs {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_batchupdatejobs_sync]
+// [END jobs_v4_generated_jobserviceclient_batchupdatejobs_sync]

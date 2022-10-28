@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_updatemigrationjob_lro_async]
+// [START datamigration_v1_generated_datamigrationserviceclient_updatemigrationjob_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.MigrationJob;
@@ -51,4 +51,4 @@ public class AsyncUpdateMigrationJobLRO {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_updatemigrationjob_lro_async]
+// [END datamigration_v1_generated_datamigrationserviceclient_updatemigrationjob_lro_async]

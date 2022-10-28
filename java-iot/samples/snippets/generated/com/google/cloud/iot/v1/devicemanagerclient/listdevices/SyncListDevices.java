@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_listdevices_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_listdevices_sync]
 import com.google.cloud.iot.v1.Device;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.GatewayListOptions;
@@ -54,4 +54,4 @@ public class SyncListDevices {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_listdevices_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_listdevices_sync]

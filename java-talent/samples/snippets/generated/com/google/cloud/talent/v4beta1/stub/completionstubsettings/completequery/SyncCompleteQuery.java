@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.stub.samples;
 
-// [START talent_v4beta1_generated_completionstubsettings_completequery_sync]
+// [START jobs_v4beta1_generated_completionstubsettings_completequery_sync]
 import com.google.cloud.talent.v4beta1.stub.CompletionStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncCompleteQuery {
     CompletionStubSettings completionSettings = completionSettingsBuilder.build();
   }
 }
-// [END talent_v4beta1_generated_completionstubsettings_completequery_sync]
+// [END jobs_v4beta1_generated_completionstubsettings_completequery_sync]

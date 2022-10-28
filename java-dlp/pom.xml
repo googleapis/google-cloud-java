@@ -50,4 +50,5 @@
     <module>proto-google-cloud-dlp-v2</module>
     <module>google-cloud-dlp-bom</module>
   </modules>
-</project>
+
+  </project>

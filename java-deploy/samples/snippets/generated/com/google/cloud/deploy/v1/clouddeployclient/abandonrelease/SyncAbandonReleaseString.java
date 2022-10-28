@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_abandonrelease_string_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_abandonrelease_string_sync]
 import com.google.cloud.deploy.v1.AbandonReleaseResponse;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.ReleaseName;
@@ -40,4 +40,4 @@ public class SyncAbandonReleaseString {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_abandonrelease_string_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_abandonrelease_string_sync]

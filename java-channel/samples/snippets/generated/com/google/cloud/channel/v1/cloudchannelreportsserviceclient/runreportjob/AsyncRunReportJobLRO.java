@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsserviceclient_runreportjob_lro_async]
+// [START cloudchannel_v1_generated_cloudchannelreportsserviceclient_runreportjob_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.DateRange;
@@ -53,4 +53,4 @@ public class AsyncRunReportJobLRO {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelreportsserviceclient_runreportjob_lro_async]
+// [END cloudchannel_v1_generated_cloudchannelreportsserviceclient_runreportjob_lro_async]

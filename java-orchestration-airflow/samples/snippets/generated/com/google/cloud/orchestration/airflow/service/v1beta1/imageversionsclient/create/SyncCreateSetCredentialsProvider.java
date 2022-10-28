@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1beta1.samples;
 
-// [START service_v1beta1_generated_imageversionsclient_create_setcredentialsprovider_sync]
+// [START composer_v1beta1_generated_imageversionsclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersionsClient;
 import com.google.cloud.orchestration.airflow.service.v1beta1.ImageVersionsSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     ImageVersionsClient imageVersionsClient = ImageVersionsClient.create(imageVersionsSettings);
   }
 }
-// [END service_v1beta1_generated_imageversionsclient_create_setcredentialsprovider_sync]
+// [END composer_v1beta1_generated_imageversionsclient_create_setcredentialsprovider_sync]

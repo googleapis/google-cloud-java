@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_organizationsclient_getiampolicy_sync]
+// [START cloudresourcemanager_v3_generated_organizationsclient_getiampolicy_sync]
 import com.google.cloud.resourcemanager.v3.OrganizationName;
 import com.google.cloud.resourcemanager.v3.OrganizationsClient;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -45,4 +45,4 @@ public class SyncGetIamPolicy {
     }
   }
 }
-// [END resourcemanager_v3_generated_organizationsclient_getiampolicy_sync]
+// [END cloudresourcemanager_v3_generated_organizationsclient_getiampolicy_sync]

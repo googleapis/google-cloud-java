@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta3.samples;
 
-// [START tasks_v2beta3_generated_cloudtasksclient_setiampolicy_stringpolicy_sync]
+// [START cloudtasks_v2beta3_generated_cloudtasksclient_setiampolicy_stringpolicy_sync]
 import com.google.cloud.tasks.v2beta3.CloudTasksClient;
 import com.google.cloud.tasks.v2beta3.QueueName;
 import com.google.iam.v1.Policy;
@@ -40,4 +40,4 @@ public class SyncSetIamPolicyStringPolicy {
     }
   }
 }
-// [END tasks_v2beta3_generated_cloudtasksclient_setiampolicy_stringpolicy_sync]
+// [END cloudtasks_v2beta3_generated_cloudtasksclient_setiampolicy_stringpolicy_sync]

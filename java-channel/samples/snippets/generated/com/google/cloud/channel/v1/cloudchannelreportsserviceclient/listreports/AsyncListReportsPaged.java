@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsserviceclient_listreports_paged_async]
+// [START cloudchannel_v1_generated_cloudchannelreportsserviceclient_listreports_paged_async]
 import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.ListReportsRequest;
 import com.google.cloud.channel.v1.ListReportsResponse;
@@ -60,4 +60,4 @@ public class AsyncListReportsPaged {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelreportsserviceclient_listreports_paged_async]
+// [END cloudchannel_v1_generated_cloudchannelreportsserviceclient_listreports_paged_async]

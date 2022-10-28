@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_create_setendpoint_sync]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_create_setendpoint_sync]
 import com.google.cloud.resourcemanager.v3.TagBindingsClient;
 import com.google.cloud.resourcemanager.v3.TagBindingsSettings;
 import com.google.cloud.resourcemanager.v3.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     TagBindingsClient tagBindingsClient = TagBindingsClient.create(tagBindingsSettings);
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_create_setendpoint_sync]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_create_setendpoint_sync]

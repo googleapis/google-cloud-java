@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_analyzeiampolicylongrunning_lro_async]
+// [START cloudasset_v1_generated_assetserviceclient_analyzeiampolicylongrunning_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest;
@@ -52,4 +52,4 @@ public class AsyncAnalyzeIamPolicyLongrunningLRO {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_analyzeiampolicylongrunning_lro_async]
+// [END cloudasset_v1_generated_assetserviceclient_analyzeiampolicylongrunning_lro_async]

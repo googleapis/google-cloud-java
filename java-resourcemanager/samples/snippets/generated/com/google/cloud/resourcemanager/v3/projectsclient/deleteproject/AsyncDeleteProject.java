@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_deleteproject_async]
+// [START cloudresourcemanager_v3_generated_projectsclient_deleteproject_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.DeleteProjectRequest;
 import com.google.cloud.resourcemanager.v3.ProjectName;
@@ -44,4 +44,4 @@ public class AsyncDeleteProject {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_deleteproject_async]
+// [END cloudresourcemanager_v3_generated_projectsclient_deleteproject_async]

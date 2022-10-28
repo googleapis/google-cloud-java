@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_companyserviceclient_listcompanies_paged_async]
+// [START jobs_v4_generated_companyserviceclient_listcompanies_paged_async]
 import com.google.cloud.talent.v4.Company;
 import com.google.cloud.talent.v4.CompanyServiceClient;
 import com.google.cloud.talent.v4.ListCompaniesRequest;
@@ -59,4 +59,4 @@ public class AsyncListCompaniesPaged {
     }
   }
 }
-// [END talent_v4_generated_companyserviceclient_listcompanies_paged_async]
+// [END jobs_v4_generated_companyserviceclient_listcompanies_paged_async]

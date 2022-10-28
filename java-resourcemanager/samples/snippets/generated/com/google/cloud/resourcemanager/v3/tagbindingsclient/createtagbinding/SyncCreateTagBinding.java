@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_createtagbinding_sync]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_createtagbinding_sync]
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.TagBinding;
 import com.google.cloud.resourcemanager.v3.TagBindingsClient;
@@ -43,4 +43,4 @@ public class SyncCreateTagBinding {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_createtagbinding_sync]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_createtagbinding_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_ekmserviceclient_getlocation_async]
+// [START cloudkms_v1_generated_ekmserviceclient_getlocation_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.EkmServiceClient;
 import com.google.cloud.location.GetLocationRequest;
@@ -42,4 +42,4 @@ public class AsyncGetLocation {
     }
   }
 }
-// [END kms_v1_generated_ekmserviceclient_getlocation_async]
+// [END cloudkms_v1_generated_ekmserviceclient_getlocation_async]

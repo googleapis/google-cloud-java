@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_getrollout_string_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_getrollout_string_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.RolloutName;
@@ -41,4 +41,4 @@ public class SyncGetRolloutString {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_getrollout_string_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_getrollout_string_sync]

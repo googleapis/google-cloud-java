@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1beta1.samples;
 
-// [START filestore_v1beta1_generated_cloudfilestoremanagerclient_deleteinstance_lro_async]
+// [START file_v1beta1_generated_cloudfilestoremanagerclient_deleteinstance_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.common.OperationMetadata;
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient;
@@ -49,4 +49,4 @@ public class AsyncDeleteInstanceLRO {
     }
   }
 }
-// [END filestore_v1beta1_generated_cloudfilestoremanagerclient_deleteinstance_lro_async]
+// [END file_v1beta1_generated_cloudfilestoremanagerclient_deleteinstance_lro_async]

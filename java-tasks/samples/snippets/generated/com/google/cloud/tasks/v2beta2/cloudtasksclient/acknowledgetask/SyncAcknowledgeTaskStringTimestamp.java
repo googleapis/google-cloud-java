@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_acknowledgetask_stringtimestamp_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_acknowledgetask_stringtimestamp_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.TaskName;
 import com.google.protobuf.Empty;
@@ -41,4 +41,4 @@ public class SyncAcknowledgeTaskStringTimestamp {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_acknowledgetask_stringtimestamp_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_acknowledgetask_stringtimestamp_sync]

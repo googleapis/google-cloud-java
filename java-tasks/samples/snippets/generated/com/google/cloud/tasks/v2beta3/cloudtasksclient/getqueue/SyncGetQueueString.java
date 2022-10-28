@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta3.samples;
 
-// [START tasks_v2beta3_generated_cloudtasksclient_getqueue_string_sync]
+// [START cloudtasks_v2beta3_generated_cloudtasksclient_getqueue_string_sync]
 import com.google.cloud.tasks.v2beta3.CloudTasksClient;
 import com.google.cloud.tasks.v2beta3.Queue;
 import com.google.cloud.tasks.v2beta3.QueueName;
@@ -39,4 +39,4 @@ public class SyncGetQueueString {
     }
   }
 }
-// [END tasks_v2beta3_generated_cloudtasksclient_getqueue_string_sync]
+// [END cloudtasks_v2beta3_generated_cloudtasksclient_getqueue_string_sync]

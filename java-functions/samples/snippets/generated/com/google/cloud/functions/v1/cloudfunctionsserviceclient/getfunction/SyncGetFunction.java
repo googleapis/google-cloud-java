@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_getfunction_sync]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_getfunction_sync]
 import com.google.cloud.functions.v1.CloudFunction;
 import com.google.cloud.functions.v1.CloudFunctionName;
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
@@ -44,4 +44,4 @@ public class SyncGetFunction {
     }
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_getfunction_sync]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_getfunction_sync]

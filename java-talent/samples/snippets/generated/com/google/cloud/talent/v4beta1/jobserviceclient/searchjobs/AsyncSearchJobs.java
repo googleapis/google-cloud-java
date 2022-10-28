@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_jobserviceclient_searchjobs_async]
+// [START jobs_v4beta1_generated_jobserviceclient_searchjobs_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4beta1.HistogramQuery;
 import com.google.cloud.talent.v4beta1.JobQuery;
@@ -66,4 +66,4 @@ public class AsyncSearchJobs {
     }
   }
 }
-// [END talent_v4beta1_generated_jobserviceclient_searchjobs_async]
+// [END jobs_v4beta1_generated_jobserviceclient_searchjobs_async]

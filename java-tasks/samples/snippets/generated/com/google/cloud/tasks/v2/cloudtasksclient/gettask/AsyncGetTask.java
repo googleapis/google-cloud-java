@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_gettask_async]
+// [START cloudtasks_v2_generated_cloudtasksclient_gettask_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.GetTaskRequest;
@@ -46,4 +46,4 @@ public class AsyncGetTask {
     }
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_gettask_async]
+// [END cloudtasks_v2_generated_cloudtasksclient_gettask_async]

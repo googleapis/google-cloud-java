@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_create_setcredentialsprovider_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.DataMigrationServiceSettings;
@@ -42,4 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         DataMigrationServiceClient.create(dataMigrationServiceSettings);
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_create_setcredentialsprovider_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_create_setcredentialsprovider_sync]

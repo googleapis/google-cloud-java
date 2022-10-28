@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_environmentsclient_listenvironments_paged_async]
+// [START composer_v1_generated_environmentsclient_listenvironments_paged_async]
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
@@ -58,4 +58,4 @@ public class AsyncListEnvironmentsPaged {
     }
   }
 }
-// [END service_v1_generated_environmentsclient_listenvironments_paged_async]
+// [END composer_v1_generated_environmentsclient_listenvironments_paged_async]

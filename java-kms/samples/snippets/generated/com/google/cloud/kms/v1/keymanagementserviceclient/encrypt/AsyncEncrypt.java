@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_encrypt_async]
+// [START cloudkms_v1_generated_keymanagementserviceclient_encrypt_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.CryptoKeyName;
 import com.google.cloud.kms.v1.EncryptRequest;
@@ -56,4 +56,4 @@ public class AsyncEncrypt {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_encrypt_async]
+// [END cloudkms_v1_generated_keymanagementserviceclient_encrypt_async]

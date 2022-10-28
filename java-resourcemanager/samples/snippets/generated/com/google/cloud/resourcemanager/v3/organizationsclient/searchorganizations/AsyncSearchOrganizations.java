@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_organizationsclient_searchorganizations_async]
+// [START cloudresourcemanager_v3_generated_organizationsclient_searchorganizations_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.Organization;
 import com.google.cloud.resourcemanager.v3.OrganizationsClient;
@@ -50,4 +50,4 @@ public class AsyncSearchOrganizations {
     }
   }
 }
-// [END resourcemanager_v3_generated_organizationsclient_searchorganizations_async]
+// [END cloudresourcemanager_v3_generated_organizationsclient_searchorganizations_async]

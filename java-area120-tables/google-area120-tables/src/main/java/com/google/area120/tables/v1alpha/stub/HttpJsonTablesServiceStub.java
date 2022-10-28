@@ -227,7 +227,7 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetRowRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -264,7 +264,7 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -297,7 +297,7 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CreateRowRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(
@@ -369,7 +369,7 @@ public class HttpJsonTablesServiceStub extends TablesServiceStub {
                         ProtoRestSerializer<UpdateRowRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(

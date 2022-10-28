@@ -120,7 +120,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -375,7 +375,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CalculateCoverageRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "type", request.getType());
+                            serializer.putQueryParam(fields, "type", request.getTypeValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

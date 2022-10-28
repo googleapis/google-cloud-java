@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_updatecryptokeyversion_cryptokeyversionfieldmask_sync]
+// [START cloudkms_v1_generated_keymanagementserviceclient_updatecryptokeyversion_cryptokeyversionfieldmask_sync]
 import com.google.cloud.kms.v1.CryptoKeyVersion;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.protobuf.FieldMask;
@@ -42,4 +42,4 @@ public class SyncUpdateCryptoKeyVersionCryptokeyversionFieldmask {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_updatecryptokeyversion_cryptokeyversionfieldmask_sync]
+// [END cloudkms_v1_generated_keymanagementserviceclient_updatecryptokeyversion_cryptokeyversionfieldmask_sync]

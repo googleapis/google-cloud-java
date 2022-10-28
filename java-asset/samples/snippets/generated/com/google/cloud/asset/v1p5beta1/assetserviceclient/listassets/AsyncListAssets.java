@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p5beta1.samples;
 
-// [START asset_v1p5beta1_generated_assetserviceclient_listassets_async]
+// [START cloudasset_v1p5beta1_generated_assetserviceclient_listassets_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1p5beta1.Asset;
 import com.google.cloud.asset.v1p5beta1.AssetServiceClient;
@@ -55,4 +55,4 @@ public class AsyncListAssets {
     }
   }
 }
-// [END asset_v1p5beta1_generated_assetserviceclient_listassets_async]
+// [END cloudasset_v1p5beta1_generated_assetserviceclient_listassets_async]

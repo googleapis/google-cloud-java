@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_queryassets_sync]
+// [START cloudasset_v1_generated_assetserviceclient_queryassets_sync]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.FolderName;
 import com.google.cloud.asset.v1.QueryAssetsOutputConfig;
@@ -49,4 +49,4 @@ public class SyncQueryAssets {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_queryassets_sync]
+// [END cloudasset_v1_generated_assetserviceclient_queryassets_sync]

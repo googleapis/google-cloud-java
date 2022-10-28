@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudcatalogclient_listskus_sync]
+// [START cloudbilling_v1_generated_cloudcatalogclient_listskus_sync]
 import com.google.cloud.billing.v1.CloudCatalogClient;
 import com.google.cloud.billing.v1.ListSkusRequest;
 import com.google.cloud.billing.v1.ServiceName;
@@ -51,4 +51,4 @@ public class SyncListSkus {
     }
   }
 }
-// [END billing_v1_generated_cloudcatalogclient_listskus_sync]
+// [END cloudbilling_v1_generated_cloudcatalogclient_listskus_sync]

@@ -865,7 +865,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "type", request.getType());
+                            serializer.putQueryParam(fields, "type", request.getTypeValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1018,7 +1018,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "type", request.getType());
+                            serializer.putQueryParam(fields, "type", request.getTypeValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_getfolder_async]
+// [START cloudresourcemanager_v3_generated_foldersclient_getfolder_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FolderName;
@@ -44,4 +44,4 @@ public class AsyncGetFolder {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_getfolder_async]
+// [END cloudresourcemanager_v3_generated_foldersclient_getfolder_async]

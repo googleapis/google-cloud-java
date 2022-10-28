@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listcustomers_paged_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listcustomers_paged_async]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.Customer;
 import com.google.cloud.channel.v1.ListCustomersRequest;
@@ -59,4 +59,4 @@ public class AsyncListCustomersPaged {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listcustomers_paged_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listcustomers_paged_async]

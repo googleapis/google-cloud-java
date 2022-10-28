@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_completionclient_completequery_sync]
+// [START jobs_v4_generated_completionclient_completequery_sync]
 import com.google.cloud.talent.v4.CompanyName;
 import com.google.cloud.talent.v4.CompleteQueryRequest;
 import com.google.cloud.talent.v4.CompleteQueryResponse;
@@ -49,4 +49,4 @@ public class SyncCompleteQuery {
     }
   }
 }
-// [END talent_v4_generated_completionclient_completequery_sync]
+// [END jobs_v4_generated_completionclient_completequery_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkeconnect.gateway.v1beta1.samples;
 
-// [START gateway_v1beta1_generated_gatewayserviceclient_create_setcredentialsprovider_sync]
+// [START connectgateway_v1beta1_generated_gatewayserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.gkeconnect.gateway.v1beta1.GatewayServiceClient;
 import com.google.cloud.gkeconnect.gateway.v1beta1.GatewayServiceSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     GatewayServiceClient gatewayServiceClient = GatewayServiceClient.create(gatewayServiceSettings);
   }
 }
-// [END gateway_v1beta1_generated_gatewayserviceclient_create_setcredentialsprovider_sync]
+// [END connectgateway_v1beta1_generated_gatewayserviceclient_create_setcredentialsprovider_sync]

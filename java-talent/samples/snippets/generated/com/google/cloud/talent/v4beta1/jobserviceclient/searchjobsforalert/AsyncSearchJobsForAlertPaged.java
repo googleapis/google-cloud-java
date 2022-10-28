@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_jobserviceclient_searchjobsforalert_paged_async]
+// [START jobs_v4beta1_generated_jobserviceclient_searchjobsforalert_paged_async]
 import com.google.cloud.talent.v4beta1.HistogramQuery;
 import com.google.cloud.talent.v4beta1.JobQuery;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
@@ -72,4 +72,4 @@ public class AsyncSearchJobsForAlertPaged {
     }
   }
 }
-// [END talent_v4beta1_generated_jobserviceclient_searchjobsforalert_paged_async]
+// [END jobs_v4beta1_generated_jobserviceclient_searchjobsforalert_paged_async]

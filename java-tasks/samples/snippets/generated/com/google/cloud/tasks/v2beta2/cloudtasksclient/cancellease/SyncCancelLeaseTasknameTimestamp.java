@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_cancellease_tasknametimestamp_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_cancellease_tasknametimestamp_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.Task;
 import com.google.cloud.tasks.v2beta2.TaskName;
@@ -41,4 +41,4 @@ public class SyncCancelLeaseTasknameTimestamp {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_cancellease_tasknametimestamp_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_cancellease_tasknametimestamp_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listsubscribers_paged_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listsubscribers_paged_async]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.ListSubscribersRequest;
 import com.google.cloud.channel.v1.ListSubscribersResponse;
@@ -57,4 +57,4 @@ public class AsyncListSubscribersPaged {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listsubscribers_paged_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listsubscribers_paged_async]

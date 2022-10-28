@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_getrelease_releasename_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_getrelease_releasename_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.Release;
 import com.google.cloud.deploy.v1.ReleaseName;
@@ -40,4 +40,4 @@ public class SyncGetReleaseReleasename {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_getrelease_releasename_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_getrelease_releasename_sync]

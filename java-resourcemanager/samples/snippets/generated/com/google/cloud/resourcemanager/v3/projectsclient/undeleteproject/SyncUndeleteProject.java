@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_undeleteproject_sync]
+// [START cloudresourcemanager_v3_generated_projectsclient_undeleteproject_sync]
 import com.google.cloud.resourcemanager.v3.Project;
 import com.google.cloud.resourcemanager.v3.ProjectName;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
@@ -43,4 +43,4 @@ public class SyncUndeleteProject {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_undeleteproject_sync]
+// [END cloudresourcemanager_v3_generated_projectsclient_undeleteproject_sync]

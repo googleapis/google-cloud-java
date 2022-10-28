@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_companyserviceclient_create_setcredentialsprovider1_sync]
+// [START jobs_v4_generated_companyserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.talent.v4.CompanyServiceClient;
 import com.google.cloud.talent.v4.CompanyServiceSettings;
 
@@ -40,4 +40,4 @@ public class SyncCreateSetCredentialsProvider1 {
     CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
   }
 }
-// [END talent_v4_generated_companyserviceclient_create_setcredentialsprovider1_sync]
+// [END jobs_v4_generated_companyserviceclient_create_setcredentialsprovider1_sync]

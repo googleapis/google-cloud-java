@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1beta1.samples;
 
-// [START scheduler_v1beta1_generated_cloudschedulerclient_updatejob_sync]
+// [START cloudscheduler_v1beta1_generated_cloudschedulerclient_updatejob_sync]
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1beta1.Job;
 import com.google.cloud.scheduler.v1beta1.UpdateJobRequest;
@@ -44,4 +44,4 @@ public class SyncUpdateJob {
     }
   }
 }
-// [END scheduler_v1beta1_generated_cloudschedulerclient_updatejob_sync]
+// [END cloudscheduler_v1beta1_generated_cloudschedulerclient_updatejob_sync]

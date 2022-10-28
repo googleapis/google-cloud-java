@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_createproject_sync]
+// [START cloudresourcemanager_v3_generated_projectsclient_createproject_sync]
 import com.google.cloud.resourcemanager.v3.CreateProjectRequest;
 import com.google.cloud.resourcemanager.v3.Project;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
@@ -40,4 +40,4 @@ public class SyncCreateProject {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_createproject_sync]
+// [END cloudresourcemanager_v3_generated_projectsclient_createproject_sync]

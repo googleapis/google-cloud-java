@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.stub.samples;
 
-// [START kms_v1_generated_keymanagementservicestubsettings_getkeyring_sync]
+// [START cloudkms_v1_generated_keymanagementservicestubsettings_getkeyring_sync]
 import com.google.cloud.kms.v1.stub.KeyManagementServiceStubSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncGetKeyRing {
         keyManagementServiceSettingsBuilder.build();
   }
 }
-// [END kms_v1_generated_keymanagementservicestubsettings_getkeyring_sync]
+// [END cloudkms_v1_generated_keymanagementservicestubsettings_getkeyring_sync]

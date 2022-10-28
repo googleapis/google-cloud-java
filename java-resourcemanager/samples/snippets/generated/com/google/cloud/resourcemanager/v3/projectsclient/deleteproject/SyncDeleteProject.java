@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_deleteproject_sync]
+// [START cloudresourcemanager_v3_generated_projectsclient_deleteproject_sync]
 import com.google.cloud.resourcemanager.v3.DeleteProjectRequest;
 import com.google.cloud.resourcemanager.v3.Project;
 import com.google.cloud.resourcemanager.v3.ProjectName;
@@ -41,4 +41,4 @@ public class SyncDeleteProject {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_deleteproject_sync]
+// [END cloudresourcemanager_v3_generated_projectsclient_deleteproject_sync]

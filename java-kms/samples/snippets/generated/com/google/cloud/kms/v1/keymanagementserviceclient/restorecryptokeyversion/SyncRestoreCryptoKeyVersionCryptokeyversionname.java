@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_restorecryptokeyversion_cryptokeyversionname_sync]
+// [START cloudkms_v1_generated_keymanagementserviceclient_restorecryptokeyversion_cryptokeyversionname_sync]
 import com.google.cloud.kms.v1.CryptoKeyVersion;
 import com.google.cloud.kms.v1.CryptoKeyVersionName;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
@@ -42,4 +42,4 @@ public class SyncRestoreCryptoKeyVersionCryptokeyversionname {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_restorecryptokeyversion_cryptokeyversionname_sync]
+// [END cloudkms_v1_generated_keymanagementserviceclient_restorecryptokeyversion_cryptokeyversionname_sync]

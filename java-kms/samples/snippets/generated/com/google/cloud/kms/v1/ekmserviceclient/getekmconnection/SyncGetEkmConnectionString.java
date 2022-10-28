@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_ekmserviceclient_getekmconnection_string_sync]
+// [START cloudkms_v1_generated_ekmserviceclient_getekmconnection_string_sync]
 import com.google.cloud.kms.v1.EkmConnection;
 import com.google.cloud.kms.v1.EkmConnectionName;
 import com.google.cloud.kms.v1.EkmServiceClient;
@@ -39,4 +39,4 @@ public class SyncGetEkmConnectionString {
     }
   }
 }
-// [END kms_v1_generated_ekmserviceclient_getekmconnection_string_sync]
+// [END cloudkms_v1_generated_ekmserviceclient_getekmconnection_string_sync]

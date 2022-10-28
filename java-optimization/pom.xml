@@ -50,4 +50,5 @@
     <module>proto-google-cloud-optimization-v1</module>
     <module>google-cloud-optimization-bom</module>
   </modules>
-</project>
+
+  </project>

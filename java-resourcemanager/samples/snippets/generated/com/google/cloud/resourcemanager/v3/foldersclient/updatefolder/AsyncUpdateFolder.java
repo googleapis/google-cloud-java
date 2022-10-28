@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_updatefolder_async]
+// [START cloudresourcemanager_v3_generated_foldersclient_updatefolder_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
@@ -48,4 +48,4 @@ public class AsyncUpdateFolder {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_updatefolder_async]
+// [END cloudresourcemanager_v3_generated_foldersclient_updatefolder_async]

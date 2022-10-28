@@ -74,4 +74,5 @@
     <module>proto-google-cloud-tasks-v2</module>
     <module>google-cloud-tasks-bom</module>
   </modules>
-</project>
+
+  </project>

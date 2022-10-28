@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_setiampolicy_stringpolicy_sync]
+// [START cloudbilling_v1_generated_cloudbillingclient_setiampolicy_stringpolicy_sync]
 import com.google.cloud.billing.v1.BillingAccountName;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.iam.v1.Policy;
@@ -40,4 +40,4 @@ public class SyncSetIamPolicyStringPolicy {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_setiampolicy_stringpolicy_sync]
+// [END cloudbilling_v1_generated_cloudbillingclient_setiampolicy_stringpolicy_sync]

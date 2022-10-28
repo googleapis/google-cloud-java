@@ -16,7 +16,7 @@
 
 package com.google.cloud.privatecatalog.v1beta1.samples;
 
-// [START privatecatalog_v1beta1_generated_privatecatalogclient_searchversions_paged_async]
+// [START cloudprivatecatalog_v1beta1_generated_privatecatalogclient_searchversions_paged_async]
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogClient;
 import com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest;
 import com.google.cloud.privatecatalog.v1beta1.SearchVersionsResponse;
@@ -59,4 +59,4 @@ public class AsyncSearchVersionsPaged {
     }
   }
 }
-// [END privatecatalog_v1beta1_generated_privatecatalogclient_searchversions_paged_async]
+// [END cloudprivatecatalog_v1beta1_generated_privatecatalogclient_searchversions_paged_async]

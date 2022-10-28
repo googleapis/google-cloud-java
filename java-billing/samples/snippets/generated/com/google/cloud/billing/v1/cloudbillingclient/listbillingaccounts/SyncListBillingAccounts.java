@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_listbillingaccounts_sync]
+// [START cloudbilling_v1_generated_cloudbillingclient_listbillingaccounts_sync]
 import com.google.cloud.billing.v1.BillingAccount;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.ListBillingAccountsRequest;
@@ -46,4 +46,4 @@ public class SyncListBillingAccounts {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_listbillingaccounts_sync]
+// [END cloudbilling_v1_generated_cloudbillingclient_listbillingaccounts_sync]

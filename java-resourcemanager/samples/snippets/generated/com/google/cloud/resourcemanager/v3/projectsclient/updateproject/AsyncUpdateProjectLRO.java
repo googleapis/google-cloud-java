@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_updateproject_lro_async]
+// [START cloudresourcemanager_v3_generated_projectsclient_updateproject_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.resourcemanager.v3.Project;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
@@ -49,4 +49,4 @@ public class AsyncUpdateProjectLRO {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_updateproject_lro_async]
+// [END cloudresourcemanager_v3_generated_projectsclient_updateproject_lro_async]

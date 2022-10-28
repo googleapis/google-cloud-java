@@ -163,7 +163,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(
                                 fields, "assetTypes", request.getAssetTypesList());
                             serializer.putQueryParam(
-                                fields, "contentType", request.getContentType());
+                                fields, "contentType", request.getContentTypeValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "readTime", request.getReadTime());
@@ -207,7 +207,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(
                                 fields, "assetNames", request.getAssetNamesList());
                             serializer.putQueryParam(
-                                fields, "contentType", request.getContentType());
+                                fields, "contentType", request.getContentTypeValue());
                             serializer.putQueryParam(
                                 fields, "readTimeWindow", request.getReadTimeWindow());
                             serializer.putQueryParam(
@@ -579,7 +579,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "destinationParent", request.getDestinationParent());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

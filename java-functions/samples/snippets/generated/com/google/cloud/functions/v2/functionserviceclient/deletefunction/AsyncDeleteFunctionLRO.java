@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_deletefunction_lro_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_deletefunction_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.functions.v2.DeleteFunctionRequest;
 import com.google.cloud.functions.v2.FunctionName;
@@ -48,4 +48,4 @@ public class AsyncDeleteFunctionLRO {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_deletefunction_lro_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_deletefunction_lro_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.samples;
 
-// [START shell_v1_generated_cloudshellserviceclient_authorizeenvironment_lro_async]
+// [START cloudshell_v1_generated_cloudshellserviceclient_authorizeenvironment_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.shell.v1.AuthorizeEnvironmentMetadata;
 import com.google.cloud.shell.v1.AuthorizeEnvironmentRequest;
@@ -51,4 +51,4 @@ public class AsyncAuthorizeEnvironmentLRO {
     }
   }
 }
-// [END shell_v1_generated_cloudshellserviceclient_authorizeenvironment_lro_async]
+// [END cloudshell_v1_generated_cloudshellserviceclient_authorizeenvironment_lro_async]

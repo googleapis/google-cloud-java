@@ -16,7 +16,7 @@
 
 package com.google.cloud.privatecatalog.v1beta1.samples;
 
-// [START privatecatalog_v1beta1_generated_privatecatalogclient_searchproducts_async]
+// [START cloudprivatecatalog_v1beta1_generated_privatecatalogclient_searchproducts_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogClient;
 import com.google.cloud.privatecatalog.v1beta1.Product;
@@ -51,4 +51,4 @@ public class AsyncSearchProducts {
     }
   }
 }
-// [END privatecatalog_v1beta1_generated_privatecatalogclient_searchproducts_async]
+// [END cloudprivatecatalog_v1beta1_generated_privatecatalogclient_searchproducts_async]

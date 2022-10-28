@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_analyzeiampolicy_sync]
+// [START cloudasset_v1_generated_assetserviceclient_analyzeiampolicy_sync]
 import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.AssetServiceClient;
@@ -46,4 +46,4 @@ public class SyncAnalyzeIamPolicy {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_analyzeiampolicy_sync]
+// [END cloudasset_v1_generated_assetserviceclient_analyzeiampolicy_sync]

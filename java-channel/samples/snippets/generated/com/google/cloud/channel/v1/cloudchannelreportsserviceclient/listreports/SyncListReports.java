@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsserviceclient_listreports_sync]
+// [START cloudchannel_v1_generated_cloudchannelreportsserviceclient_listreports_sync]
 import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.ListReportsRequest;
 import com.google.cloud.channel.v1.Report;
@@ -48,4 +48,4 @@ public class SyncListReports {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelreportsserviceclient_listreports_sync]
+// [END cloudchannel_v1_generated_cloudchannelreportsserviceclient_listreports_sync]

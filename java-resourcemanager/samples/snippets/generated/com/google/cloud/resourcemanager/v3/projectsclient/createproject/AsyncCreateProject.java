@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_createproject_async]
+// [START cloudresourcemanager_v3_generated_projectsclient_createproject_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.CreateProjectRequest;
 import com.google.cloud.resourcemanager.v3.Project;
@@ -44,4 +44,4 @@ public class AsyncCreateProject {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_createproject_async]
+// [END cloudresourcemanager_v3_generated_projectsclient_createproject_async]

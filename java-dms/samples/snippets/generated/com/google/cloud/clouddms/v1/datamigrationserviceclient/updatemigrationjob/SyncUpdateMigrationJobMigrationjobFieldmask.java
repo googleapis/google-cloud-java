@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_updatemigrationjob_migrationjobfieldmask_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_updatemigrationjob_migrationjobfieldmask_sync]
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.protobuf.FieldMask;
@@ -42,4 +42,4 @@ public class SyncUpdateMigrationJobMigrationjobFieldmask {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_updatemigrationjob_migrationjobfieldmask_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_updatemigrationjob_migrationjobfieldmask_sync]

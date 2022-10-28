@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_imageversionsclient_create_setendpoint_sync]
+// [START composer_v1_generated_imageversionsclient_create_setendpoint_sync]
 import com.google.cloud.orchestration.airflow.service.v1.ImageVersionsClient;
 import com.google.cloud.orchestration.airflow.service.v1.ImageVersionsSettings;
 import com.google.cloud.orchestration.airflow.service.v1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     ImageVersionsClient imageVersionsClient = ImageVersionsClient.create(imageVersionsSettings);
   }
 }
-// [END service_v1_generated_imageversionsclient_create_setendpoint_sync]
+// [END composer_v1_generated_imageversionsclient_create_setendpoint_sync]

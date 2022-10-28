@@ -62,4 +62,5 @@
     <module>proto-google-cloud-trace-v2</module>
     <module>google-cloud-trace-bom</module>
   </modules>
-</project>
+
+  </project>

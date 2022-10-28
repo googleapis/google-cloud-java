@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_generatedownloadurl_sync]
+// [START cloudfunctions_v2_generated_functionserviceclient_generatedownloadurl_sync]
 import com.google.cloud.functions.v2.FunctionName;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.functions.v2.GenerateDownloadUrlRequest;
@@ -43,4 +43,4 @@ public class SyncGenerateDownloadUrl {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_generatedownloadurl_sync]
+// [END cloudfunctions_v2_generated_functionserviceclient_generatedownloadurl_sync]

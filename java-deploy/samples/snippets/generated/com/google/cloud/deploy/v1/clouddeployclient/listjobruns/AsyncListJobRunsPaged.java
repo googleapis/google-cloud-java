@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_listjobruns_paged_async]
+// [START clouddeploy_v1_generated_clouddeployclient_listjobruns_paged_async]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -67,4 +67,4 @@ public class AsyncListJobRunsPaged {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_listjobruns_paged_async]
+// [END clouddeploy_v1_generated_clouddeployclient_listjobruns_paged_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeyssettings_gettagkey_sync]
+// [START cloudresourcemanager_v3_generated_tagkeyssettings_gettagkey_sync]
 import com.google.cloud.resourcemanager.v3.TagKeysSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetTagKey {
     TagKeysSettings tagKeysSettings = tagKeysSettingsBuilder.build();
   }
 }
-// [END resourcemanager_v3_generated_tagkeyssettings_gettagkey_sync]
+// [END cloudresourcemanager_v3_generated_tagkeyssettings_gettagkey_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_renewlease_async]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_renewlease_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.RenewLeaseRequest;
@@ -50,4 +50,4 @@ public class AsyncRenewLease {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_renewlease_async]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_renewlease_async]

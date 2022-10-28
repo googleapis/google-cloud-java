@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_createtagbinding_async]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_createtagbinding_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.TagBinding;
@@ -48,4 +48,4 @@ public class AsyncCreateTagBinding {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_createtagbinding_async]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_createtagbinding_async]

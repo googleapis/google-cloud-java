@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1.samples;
 
-// [START scheduler_v1_generated_cloudschedulerclient_listjobs_paged_async]
+// [START cloudscheduler_v1_generated_cloudschedulerclient_listjobs_paged_async]
 import com.google.cloud.scheduler.v1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1.Job;
 import com.google.cloud.scheduler.v1.ListJobsRequest;
@@ -58,4 +58,4 @@ public class AsyncListJobsPaged {
     }
   }
 }
-// [END scheduler_v1_generated_cloudschedulerclient_listjobs_paged_async]
+// [END cloudscheduler_v1_generated_cloudschedulerclient_listjobs_paged_async]

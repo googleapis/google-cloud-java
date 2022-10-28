@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_environmentsclient_create_setcredentialsprovider_sync]
+// [START composer_v1_generated_environmentsclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient;
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     EnvironmentsClient environmentsClient = EnvironmentsClient.create(environmentsSettings);
   }
 }
-// [END service_v1_generated_environmentsclient_create_setcredentialsprovider_sync]
+// [END composer_v1_generated_environmentsclient_create_setcredentialsprovider_sync]

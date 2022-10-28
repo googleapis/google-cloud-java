@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_create_setendpoint_sync]
+// [START cloudkms_v1_generated_keymanagementserviceclient_create_setendpoint_sync]
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyManagementServiceSettings;
 import com.google.cloud.kms.v1.myEndpoint;
@@ -39,4 +39,4 @@ public class SyncCreateSetEndpoint {
         KeyManagementServiceClient.create(keyManagementServiceSettings);
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_create_setendpoint_sync]
+// [END cloudkms_v1_generated_keymanagementserviceclient_create_setendpoint_sync]

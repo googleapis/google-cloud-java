@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_updateconnectionprofile_connectionprofilefieldmask_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_updateconnectionprofile_connectionprofilefieldmask_sync]
 import com.google.cloud.clouddms.v1.ConnectionProfile;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.protobuf.FieldMask;
@@ -44,4 +44,4 @@ public class SyncUpdateConnectionProfileConnectionprofileFieldmask {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_updateconnectionprofile_connectionprofilefieldmask_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_updateconnectionprofile_connectionprofilefieldmask_sync]

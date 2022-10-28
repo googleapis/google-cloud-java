@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationservicesettings_getmigrationjob_sync]
+// [START datamigration_v1_generated_datamigrationservicesettings_getmigrationjob_sync]
 import com.google.cloud.clouddms.v1.DataMigrationServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetMigrationJob {
         dataMigrationServiceSettingsBuilder.build();
   }
 }
-// [END clouddms_v1_generated_datamigrationservicesettings_getmigrationjob_sync]
+// [END datamigration_v1_generated_datamigrationservicesettings_getmigrationjob_sync]

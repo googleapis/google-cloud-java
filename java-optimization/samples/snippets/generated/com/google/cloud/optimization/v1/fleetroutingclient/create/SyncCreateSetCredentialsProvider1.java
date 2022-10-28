@@ -16,7 +16,7 @@
 
 package com.google.cloud.optimization.v1.samples;
 
-// [START optimization_v1_generated_fleetroutingclient_create_setcredentialsprovider1_sync]
+// [START cloudoptimization_v1_generated_fleetroutingclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.optimization.v1.FleetRoutingClient;
 import com.google.cloud.optimization.v1.FleetRoutingSettings;
 
@@ -40,4 +40,4 @@ public class SyncCreateSetCredentialsProvider1 {
     FleetRoutingClient fleetRoutingClient = FleetRoutingClient.create(fleetRoutingSettings);
   }
 }
-// [END optimization_v1_generated_fleetroutingclient_create_setcredentialsprovider1_sync]
+// [END cloudoptimization_v1_generated_fleetroutingclient_create_setcredentialsprovider1_sync]

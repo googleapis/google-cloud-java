@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_imageversionssettings_listimageversions_sync]
+// [START composer_v1_generated_imageversionssettings_listimageversions_sync]
 import com.google.cloud.orchestration.airflow.service.v1.ImageVersionsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncListImageVersions {
     ImageVersionsSettings imageVersionsSettings = imageVersionsSettingsBuilder.build();
   }
 }
-// [END service_v1_generated_imageversionssettings_listimageversions_sync]
+// [END composer_v1_generated_imageversionssettings_listimageversions_sync]

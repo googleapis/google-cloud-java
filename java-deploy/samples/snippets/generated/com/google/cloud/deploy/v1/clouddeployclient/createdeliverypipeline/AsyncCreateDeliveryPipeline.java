@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_createdeliverypipeline_async]
+// [START clouddeploy_v1_generated_clouddeployclient_createdeliverypipeline_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
@@ -52,4 +52,4 @@ public class AsyncCreateDeliveryPipeline {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_createdeliverypipeline_async]
+// [END clouddeploy_v1_generated_clouddeployclient_createdeliverypipeline_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_companyserviceclient_getcompany_async]
+// [START jobs_v4_generated_companyserviceclient_getcompany_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4.Company;
 import com.google.cloud.talent.v4.CompanyName;
@@ -46,4 +46,4 @@ public class AsyncGetCompany {
     }
   }
 }
-// [END talent_v4_generated_companyserviceclient_getcompany_async]
+// [END jobs_v4_generated_companyserviceclient_getcompany_async]

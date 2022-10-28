@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_tenantserviceclient_updatetenant_async]
+// [START jobs_v4beta1_generated_tenantserviceclient_updatetenant_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4beta1.Tenant;
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
@@ -47,4 +47,4 @@ public class AsyncUpdateTenant {
     }
   }
 }
-// [END talent_v4beta1_generated_tenantserviceclient_updatetenant_async]
+// [END jobs_v4beta1_generated_tenantserviceclient_updatetenant_async]

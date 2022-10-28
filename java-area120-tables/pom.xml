@@ -50,4 +50,5 @@
     <module>proto-google-area120-tables-v1alpha1</module>
     <module>google-area120-tables-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.samples;
 
-// [START shell_v1_generated_cloudshellserviceclient_addpublickey_sync]
+// [START cloudshell_v1_generated_cloudshellserviceclient_addpublickey_sync]
 import com.google.cloud.shell.v1.AddPublicKeyRequest;
 import com.google.cloud.shell.v1.AddPublicKeyResponse;
 import com.google.cloud.shell.v1.CloudShellServiceClient;
@@ -43,4 +43,4 @@ public class SyncAddPublicKey {
     }
   }
 }
-// [END shell_v1_generated_cloudshellserviceclient_addpublickey_sync]
+// [END cloudshell_v1_generated_cloudshellserviceclient_addpublickey_sync]

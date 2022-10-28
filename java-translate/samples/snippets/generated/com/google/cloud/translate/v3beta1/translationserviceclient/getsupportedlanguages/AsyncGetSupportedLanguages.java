@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translation_v3beta1_generated_translationserviceclient_getsupportedlanguages_async]
+// [START translate_v3beta1_generated_translationserviceclient_getsupportedlanguages_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3beta1.LocationName;
@@ -49,4 +49,4 @@ public class AsyncGetSupportedLanguages {
     }
   }
 }
-// [END translation_v3beta1_generated_translationserviceclient_getsupportedlanguages_async]
+// [END translate_v3beta1_generated_translationserviceclient_getsupportedlanguages_async]

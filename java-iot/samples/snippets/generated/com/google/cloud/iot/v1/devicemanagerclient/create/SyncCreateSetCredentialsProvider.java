@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_create_setcredentialsprovider_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceManagerSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     DeviceManagerClient deviceManagerClient = DeviceManagerClient.create(deviceManagerSettings);
   }
 }
-// [END iot_v1_generated_devicemanagerclient_create_setcredentialsprovider_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_create_setcredentialsprovider_sync]

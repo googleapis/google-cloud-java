@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_listkeyrings_paged_async]
+// [START cloudkms_v1_generated_keymanagementserviceclient_listkeyrings_paged_async]
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
@@ -62,4 +62,4 @@ public class AsyncListKeyRingsPaged {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_listkeyrings_paged_async]
+// [END cloudkms_v1_generated_keymanagementserviceclient_listkeyrings_paged_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_batchdeletejobs_sync]
+// [START jobs_v4_generated_jobserviceclient_batchdeletejobs_sync]
 import com.google.cloud.talent.v4.BatchDeleteJobsRequest;
 import com.google.cloud.talent.v4.BatchDeleteJobsResponse;
 import com.google.cloud.talent.v4.JobServiceClient;
@@ -45,4 +45,4 @@ public class SyncBatchDeleteJobs {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_batchdeletejobs_sync]
+// [END jobs_v4_generated_jobserviceclient_batchdeletejobs_sync]

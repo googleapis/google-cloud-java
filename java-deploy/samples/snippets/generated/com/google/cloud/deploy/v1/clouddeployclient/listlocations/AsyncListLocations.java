@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_listlocations_async]
+// [START clouddeploy_v1_generated_clouddeployclient_listlocations_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.location.ListLocationsRequest;
@@ -51,4 +51,4 @@ public class AsyncListLocations {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_listlocations_async]
+// [END clouddeploy_v1_generated_clouddeployclient_listlocations_async]

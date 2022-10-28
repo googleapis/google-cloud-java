@@ -16,7 +16,7 @@
 
 package com.google.cloud.privatecatalog.v1beta1.samples;
 
-// [START privatecatalog_v1beta1_generated_privatecatalogclient_create_setendpoint_sync]
+// [START cloudprivatecatalog_v1beta1_generated_privatecatalogclient_create_setendpoint_sync]
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogClient;
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogSettings;
 import com.google.cloud.privatecatalog.v1beta1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     PrivateCatalogClient privateCatalogClient = PrivateCatalogClient.create(privateCatalogSettings);
   }
 }
-// [END privatecatalog_v1beta1_generated_privatecatalogclient_create_setendpoint_sync]
+// [END cloudprivatecatalog_v1beta1_generated_privatecatalogclient_create_setendpoint_sync]

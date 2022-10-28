@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_listbackups_sync]
+// [START file_v1_generated_cloudfilestoremanagerclient_listbackups_sync]
 import com.google.cloud.filestore.v1.Backup;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1.ListBackupsRequest;
@@ -50,4 +50,4 @@ public class SyncListBackups {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_listbackups_sync]
+// [END file_v1_generated_cloudfilestoremanagerclient_listbackups_sync]

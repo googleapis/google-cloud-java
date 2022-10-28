@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_listtagbindings_async]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_listtagbindings_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsRequest;
@@ -51,4 +51,4 @@ public class AsyncListTagBindings {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_listtagbindings_async]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_listtagbindings_async]

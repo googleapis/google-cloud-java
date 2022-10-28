@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta3.samples;
 
-// [START tasks_v2beta3_generated_cloudtasksclient_deletetask_taskname_sync]
+// [START cloudtasks_v2beta3_generated_cloudtasksclient_deletetask_taskname_sync]
 import com.google.cloud.tasks.v2beta3.CloudTasksClient;
 import com.google.cloud.tasks.v2beta3.TaskName;
 import com.google.protobuf.Empty;
@@ -39,4 +39,4 @@ public class SyncDeleteTaskTaskname {
     }
   }
 }
-// [END tasks_v2beta3_generated_cloudtasksclient_deletetask_taskname_sync]
+// [END cloudtasks_v2beta3_generated_cloudtasksclient_deletetask_taskname_sync]

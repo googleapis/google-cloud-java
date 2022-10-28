@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_setiampolicy_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_setiampolicy_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.iam.v1.Policy;
@@ -48,4 +48,4 @@ public class SyncSetIamPolicy {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_setiampolicy_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_setiampolicy_sync]

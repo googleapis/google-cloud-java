@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_listinstances_paged_async]
+// [START file_v1_generated_cloudfilestoremanagerclient_listinstances_paged_async]
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1.Instance;
 import com.google.cloud.filestore.v1.ListInstancesRequest;
@@ -62,4 +62,4 @@ public class AsyncListInstancesPaged {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_listinstances_paged_async]
+// [END file_v1_generated_cloudfilestoremanagerclient_listinstances_paged_async]

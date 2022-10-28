@@ -50,4 +50,5 @@
     <module>proto-google-cloud-api-gateway-v1</module>
     <module>google-cloud-api-gateway-bom</module>
   </modules>
-</project>
+
+  </project>

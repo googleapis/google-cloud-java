@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_tenantserviceclient_createtenant_stringtenant_sync]
+// [START jobs_v4beta1_generated_tenantserviceclient_createtenant_stringtenant_sync]
 import com.google.cloud.talent.v4beta1.ProjectName;
 import com.google.cloud.talent.v4beta1.Tenant;
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
@@ -40,4 +40,4 @@ public class SyncCreateTenantStringTenant {
     }
   }
 }
-// [END talent_v4beta1_generated_tenantserviceclient_createtenant_stringtenant_sync]
+// [END jobs_v4beta1_generated_tenantserviceclient_createtenant_stringtenant_sync]

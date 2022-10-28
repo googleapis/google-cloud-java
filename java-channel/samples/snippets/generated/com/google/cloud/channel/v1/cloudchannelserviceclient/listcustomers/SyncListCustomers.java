@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listcustomers_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listcustomers_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.Customer;
 import com.google.cloud.channel.v1.ListCustomersRequest;
@@ -47,4 +47,4 @@ public class SyncListCustomers {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listcustomers_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listcustomers_sync]

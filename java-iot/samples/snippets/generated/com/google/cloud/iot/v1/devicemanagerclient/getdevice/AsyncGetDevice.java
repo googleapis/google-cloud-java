@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_getdevice_async]
+// [START cloudiot_v1_generated_devicemanagerclient_getdevice_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iot.v1.Device;
 import com.google.cloud.iot.v1.DeviceManagerClient;
@@ -49,4 +49,4 @@ public class AsyncGetDevice {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_getdevice_async]
+// [END cloudiot_v1_generated_devicemanagerclient_getdevice_async]

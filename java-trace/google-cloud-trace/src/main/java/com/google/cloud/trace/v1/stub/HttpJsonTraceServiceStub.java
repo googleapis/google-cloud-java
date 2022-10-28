@@ -84,7 +84,7 @@ public class HttpJsonTraceServiceStub extends TraceServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "startTime", request.getStartTime());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

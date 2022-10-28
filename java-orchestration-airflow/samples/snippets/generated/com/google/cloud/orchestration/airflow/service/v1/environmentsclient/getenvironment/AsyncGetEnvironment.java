@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_environmentsclient_getenvironment_async]
+// [START composer_v1_generated_environmentsclient_getenvironment_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient;
@@ -44,4 +44,4 @@ public class AsyncGetEnvironment {
     }
   }
 }
-// [END service_v1_generated_environmentsclient_getenvironment_async]
+// [END composer_v1_generated_environmentsclient_getenvironment_async]

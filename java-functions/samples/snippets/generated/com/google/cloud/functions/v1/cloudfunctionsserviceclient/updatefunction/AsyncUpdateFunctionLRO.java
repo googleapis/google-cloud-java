@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_updatefunction_lro_async]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_updatefunction_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.functions.v1.CloudFunction;
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
@@ -50,4 +50,4 @@ public class AsyncUpdateFunctionLRO {
     }
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_updatefunction_lro_async]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_updatefunction_lro_async]

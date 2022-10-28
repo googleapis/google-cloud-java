@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_deletecustomer_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_deletecustomer_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CustomerName;
@@ -47,4 +47,4 @@ public class AsyncDeleteCustomer {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_deletecustomer_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_deletecustomer_async]

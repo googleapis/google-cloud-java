@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_tenantserviceclient_create_setcredentialsprovider1_sync]
+// [START jobs_v4beta1_generated_tenantserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
 import com.google.cloud.talent.v4beta1.TenantServiceSettings;
 
@@ -40,4 +40,4 @@ public class SyncCreateSetCredentialsProvider1 {
     TenantServiceClient tenantServiceClient = TenantServiceClient.create(tenantServiceSettings);
   }
 }
-// [END talent_v4beta1_generated_tenantserviceclient_create_setcredentialsprovider1_sync]
+// [END jobs_v4beta1_generated_tenantserviceclient_create_setcredentialsprovider1_sync]

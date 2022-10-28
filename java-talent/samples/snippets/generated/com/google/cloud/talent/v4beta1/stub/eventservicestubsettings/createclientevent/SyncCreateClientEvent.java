@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.stub.samples;
 
-// [START talent_v4beta1_generated_eventservicestubsettings_createclientevent_sync]
+// [START jobs_v4beta1_generated_eventservicestubsettings_createclientevent_sync]
 import com.google.cloud.talent.v4beta1.stub.EventServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateClientEvent {
     EventServiceStubSettings eventServiceSettings = eventServiceSettingsBuilder.build();
   }
 }
-// [END talent_v4beta1_generated_eventservicestubsettings_createclientevent_sync]
+// [END jobs_v4beta1_generated_eventservicestubsettings_createclientevent_sync]

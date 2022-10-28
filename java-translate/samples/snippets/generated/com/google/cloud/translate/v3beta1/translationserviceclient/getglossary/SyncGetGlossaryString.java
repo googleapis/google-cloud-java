@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translation_v3beta1_generated_translationserviceclient_getglossary_string_sync]
+// [START translate_v3beta1_generated_translationserviceclient_getglossary_string_sync]
 import com.google.cloud.translate.v3beta1.Glossary;
 import com.google.cloud.translate.v3beta1.GlossaryName;
 import com.google.cloud.translate.v3beta1.TranslationServiceClient;
@@ -39,4 +39,4 @@ public class SyncGetGlossaryString {
     }
   }
 }
-// [END translation_v3beta1_generated_translationserviceclient_getglossary_string_sync]
+// [END translate_v3beta1_generated_translationserviceclient_getglossary_string_sync]

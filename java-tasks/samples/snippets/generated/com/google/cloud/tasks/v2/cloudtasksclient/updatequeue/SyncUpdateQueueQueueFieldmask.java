@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_updatequeue_queuefieldmask_sync]
+// [START cloudtasks_v2_generated_cloudtasksclient_updatequeue_queuefieldmask_sync]
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.Queue;
 import com.google.protobuf.FieldMask;
@@ -40,4 +40,4 @@ public class SyncUpdateQueueQueueFieldmask {
     }
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_updatequeue_queuefieldmask_sync]
+// [END cloudtasks_v2_generated_cloudtasksclient_updatequeue_queuefieldmask_sync]

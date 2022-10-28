@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_listtagbindings_paged_async]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_listtagbindings_paged_async]
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsRequest;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsResponse;
@@ -59,4 +59,4 @@ public class AsyncListTagBindingsPaged {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_listtagbindings_paged_async]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_listtagbindings_paged_async]

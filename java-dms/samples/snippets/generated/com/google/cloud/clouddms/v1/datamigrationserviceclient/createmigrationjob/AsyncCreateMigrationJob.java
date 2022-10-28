@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_createmigrationjob_async]
+// [START datamigration_v1_generated_datamigrationserviceclient_createmigrationjob_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.clouddms.v1.CreateMigrationJobRequest;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
@@ -52,4 +52,4 @@ public class AsyncCreateMigrationJob {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_createmigrationjob_async]
+// [END datamigration_v1_generated_datamigrationserviceclient_createmigrationjob_async]

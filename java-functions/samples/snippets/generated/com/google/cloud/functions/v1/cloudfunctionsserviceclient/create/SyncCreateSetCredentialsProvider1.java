@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_create_setcredentialsprovider1_sync]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
 import com.google.cloud.functions.v1.CloudFunctionsServiceSettings;
 
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider1 {
         CloudFunctionsServiceClient.create(cloudFunctionsServiceSettings);
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_create_setcredentialsprovider1_sync]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_create_setcredentialsprovider1_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_getiampolicy_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_getiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2.FunctionName;
 import com.google.cloud.functions.v2.FunctionServiceClient;
@@ -48,4 +48,4 @@ public class AsyncGetIamPolicy {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_getiampolicy_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_getiampolicy_async]

@@ -79,7 +79,7 @@ public class HttpJsonMessagesV1Beta3Stub extends MessagesV1Beta3Stub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "endTime", request.getEndTime());
                             serializer.putQueryParam(
-                                fields, "minimumImportance", request.getMinimumImportance());
+                                fields, "minimumImportance", request.getMinimumImportanceValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "startTime", request.getStartTime());

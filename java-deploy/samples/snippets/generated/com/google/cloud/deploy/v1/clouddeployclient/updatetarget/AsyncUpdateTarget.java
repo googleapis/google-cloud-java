@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_updatetarget_async]
+// [START clouddeploy_v1_generated_clouddeployclient_updatetarget_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.Target;
@@ -51,4 +51,4 @@ public class AsyncUpdateTarget {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_updatetarget_async]
+// [END clouddeploy_v1_generated_clouddeployclient_updatetarget_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_eventserviceclient_createclientevent_projectnameclientevent_sync]
+// [START jobs_v4beta1_generated_eventserviceclient_createclientevent_projectnameclientevent_sync]
 import com.google.cloud.talent.v4beta1.ClientEvent;
 import com.google.cloud.talent.v4beta1.EventServiceClient;
 import com.google.cloud.talent.v4beta1.ProjectName;
@@ -40,4 +40,4 @@ public class SyncCreateClientEventProjectnameClientevent {
     }
   }
 }
-// [END talent_v4beta1_generated_eventserviceclient_createclientevent_projectnameclientevent_sync]
+// [END jobs_v4beta1_generated_eventserviceclient_createclientevent_projectnameclientevent_sync]

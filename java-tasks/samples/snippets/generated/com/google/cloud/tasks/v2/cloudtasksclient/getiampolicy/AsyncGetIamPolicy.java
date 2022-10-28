@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_getiampolicy_async]
+// [START cloudtasks_v2_generated_cloudtasksclient_getiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.QueueName;
@@ -48,4 +48,4 @@ public class AsyncGetIamPolicy {
     }
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_getiampolicy_async]
+// [END cloudtasks_v2_generated_cloudtasksclient_getiampolicy_async]

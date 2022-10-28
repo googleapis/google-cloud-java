@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_createbackup_lro_async]
+// [START file_v1_generated_cloudfilestoremanagerclient_createbackup_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.common.OperationMetadata;
 import com.google.cloud.filestore.v1.Backup;
@@ -51,4 +51,4 @@ public class AsyncCreateBackupLRO {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_createbackup_lro_async]
+// [END file_v1_generated_cloudfilestoremanagerclient_createbackup_lro_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_createbillingaccount_async]
+// [START cloudbilling_v1_generated_cloudbillingclient_createbillingaccount_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.billing.v1.BillingAccount;
 import com.google.cloud.billing.v1.CloudBillingClient;
@@ -46,4 +46,4 @@ public class AsyncCreateBillingAccount {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_createbillingaccount_async]
+// [END cloudbilling_v1_generated_cloudbillingclient_createbillingaccount_async]

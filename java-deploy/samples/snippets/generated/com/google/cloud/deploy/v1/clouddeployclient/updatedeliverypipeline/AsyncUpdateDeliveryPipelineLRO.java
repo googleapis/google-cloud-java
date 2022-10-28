@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_updatedeliverypipeline_lro_async]
+// [START clouddeploy_v1_generated_clouddeployclient_updatedeliverypipeline_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
@@ -52,4 +52,4 @@ public class AsyncUpdateDeliveryPipelineLRO {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_updatedeliverypipeline_lro_async]
+// [END clouddeploy_v1_generated_clouddeployclient_updatedeliverypipeline_lro_async]

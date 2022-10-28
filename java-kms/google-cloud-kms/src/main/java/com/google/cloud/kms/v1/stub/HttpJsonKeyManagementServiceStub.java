@@ -169,7 +169,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
-                                fields, "versionView", request.getVersionView());
+                                fields, "versionView", request.getVersionViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -209,7 +209,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

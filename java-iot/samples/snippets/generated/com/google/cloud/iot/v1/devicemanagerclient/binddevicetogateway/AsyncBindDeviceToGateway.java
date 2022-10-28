@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_binddevicetogateway_async]
+// [START cloudiot_v1_generated_devicemanagerclient_binddevicetogateway_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iot.v1.BindDeviceToGatewayRequest;
 import com.google.cloud.iot.v1.BindDeviceToGatewayResponse;
@@ -49,4 +49,4 @@ public class AsyncBindDeviceToGateway {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_binddevicetogateway_async]
+// [END cloudiot_v1_generated_devicemanagerclient_binddevicetogateway_async]

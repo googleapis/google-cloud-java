@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta3.samples;
 
-// [START tasks_v2beta3_generated_cloudtasksclient_listtasks_queuename_sync]
+// [START cloudtasks_v2beta3_generated_cloudtasksclient_listtasks_queuename_sync]
 import com.google.cloud.tasks.v2beta3.CloudTasksClient;
 import com.google.cloud.tasks.v2beta3.QueueName;
 import com.google.cloud.tasks.v2beta3.Task;
@@ -41,4 +41,4 @@ public class SyncListTasksQueuename {
     }
   }
 }
-// [END tasks_v2beta3_generated_cloudtasksclient_listtasks_queuename_sync]
+// [END cloudtasks_v2beta3_generated_cloudtasksclient_listtasks_queuename_sync]

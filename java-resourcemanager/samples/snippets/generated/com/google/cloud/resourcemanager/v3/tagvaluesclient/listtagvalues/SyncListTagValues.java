@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluesclient_listtagvalues_sync]
+// [START cloudresourcemanager_v3_generated_tagvaluesclient_listtagvalues_sync]
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ListTagValuesRequest;
 import com.google.cloud.resourcemanager.v3.TagValue;
@@ -47,4 +47,4 @@ public class SyncListTagValues {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagvaluesclient_listtagvalues_sync]
+// [END cloudresourcemanager_v3_generated_tagvaluesclient_listtagvalues_sync]

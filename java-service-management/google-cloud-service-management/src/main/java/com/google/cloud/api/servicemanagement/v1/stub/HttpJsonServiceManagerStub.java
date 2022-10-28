@@ -333,7 +333,7 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetServiceConfigRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

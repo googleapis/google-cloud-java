@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_callfunction_sync]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_callfunction_sync]
 import com.google.cloud.functions.v1.CallFunctionRequest;
 import com.google.cloud.functions.v1.CallFunctionResponse;
 import com.google.cloud.functions.v1.CloudFunctionName;
@@ -45,4 +45,4 @@ public class SyncCallFunction {
     }
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_callfunction_sync]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_callfunction_sync]

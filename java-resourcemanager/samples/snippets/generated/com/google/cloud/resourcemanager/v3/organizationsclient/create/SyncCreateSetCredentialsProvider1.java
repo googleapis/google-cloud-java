@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_organizationsclient_create_setcredentialsprovider1_sync]
+// [START cloudresourcemanager_v3_generated_organizationsclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.resourcemanager.v3.OrganizationsClient;
 import com.google.cloud.resourcemanager.v3.OrganizationsSettings;
 
@@ -40,4 +40,4 @@ public class SyncCreateSetCredentialsProvider1 {
     OrganizationsClient organizationsClient = OrganizationsClient.create(organizationsSettings);
   }
 }
-// [END resourcemanager_v3_generated_organizationsclient_create_setcredentialsprovider1_sync]
+// [END cloudresourcemanager_v3_generated_organizationsclient_create_setcredentialsprovider1_sync]

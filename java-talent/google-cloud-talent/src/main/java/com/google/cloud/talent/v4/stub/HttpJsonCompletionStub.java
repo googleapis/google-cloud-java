@@ -77,8 +77,8 @@ public class HttpJsonCompletionStub extends CompletionStub {
                                 fields, "languageCodes", request.getLanguageCodesList());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "query", request.getQuery());
-                            serializer.putQueryParam(fields, "scope", request.getScope());
-                            serializer.putQueryParam(fields, "type", request.getType());
+                            serializer.putQueryParam(fields, "scope", request.getScopeValue());
+                            serializer.putQueryParam(fields, "type", request.getTypeValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

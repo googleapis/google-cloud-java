@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_sync]
 import com.google.cloud.channel.v1.ChannelPartnerLink;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest;
@@ -43,4 +43,4 @@ public class SyncCreateChannelPartnerLink {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_sync]

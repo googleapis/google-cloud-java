@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_batchupdatejobs_lro_async]
+// [START jobs_v4_generated_jobserviceclient_batchupdatejobs_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.talent.v4.BatchOperationMetadata;
 import com.google.cloud.talent.v4.BatchUpdateJobsRequest;
@@ -53,4 +53,4 @@ public class AsyncBatchUpdateJobsLRO {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_batchupdatejobs_lro_async]
+// [END jobs_v4_generated_jobserviceclient_batchupdatejobs_lro_async]

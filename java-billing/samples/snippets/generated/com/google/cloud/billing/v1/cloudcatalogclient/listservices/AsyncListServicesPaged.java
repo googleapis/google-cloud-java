@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudcatalogclient_listservices_paged_async]
+// [START cloudbilling_v1_generated_cloudcatalogclient_listservices_paged_async]
 import com.google.cloud.billing.v1.CloudCatalogClient;
 import com.google.cloud.billing.v1.ListServicesRequest;
 import com.google.cloud.billing.v1.ListServicesResponse;
@@ -56,4 +56,4 @@ public class AsyncListServicesPaged {
     }
   }
 }
-// [END billing_v1_generated_cloudcatalogclient_listservices_paged_async]
+// [END cloudbilling_v1_generated_cloudcatalogclient_listservices_paged_async]

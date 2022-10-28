@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_getprojectbillinginfo_async]
+// [START cloudbilling_v1_generated_cloudbillingclient_getprojectbillinginfo_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.GetProjectBillingInfoRequest;
@@ -44,4 +44,4 @@ public class AsyncGetProjectBillingInfo {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_getprojectbillinginfo_async]
+// [END cloudbilling_v1_generated_cloudbillingclient_getprojectbillinginfo_async]

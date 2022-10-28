@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listentitlements_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listentitlements_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CustomerName;
 import com.google.cloud.channel.v1.Entitlement;
@@ -47,4 +47,4 @@ public class SyncListEntitlements {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listentitlements_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listentitlements_sync]

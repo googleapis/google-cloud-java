@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_deletetagbinding_sync]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_deletetagbinding_sync]
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.TagBindingName;
 import com.google.cloud.resourcemanager.v3.TagBindingsClient;
@@ -43,4 +43,4 @@ public class SyncDeleteTagBinding {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_deletetagbinding_sync]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_deletetagbinding_sync]

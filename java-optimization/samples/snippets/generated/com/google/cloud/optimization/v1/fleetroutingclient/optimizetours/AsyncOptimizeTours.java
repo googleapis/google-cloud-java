@@ -16,7 +16,7 @@
 
 package com.google.cloud.optimization.v1.samples;
 
-// [START optimization_v1_generated_fleetroutingclient_optimizetours_async]
+// [START cloudoptimization_v1_generated_fleetroutingclient_optimizetours_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.optimization.v1.FleetRoutingClient;
 import com.google.cloud.optimization.v1.InjectedSolutionConstraint;
@@ -66,4 +66,4 @@ public class AsyncOptimizeTours {
     }
   }
 }
-// [END optimization_v1_generated_fleetroutingclient_optimizetours_async]
+// [END cloudoptimization_v1_generated_fleetroutingclient_optimizetours_async]

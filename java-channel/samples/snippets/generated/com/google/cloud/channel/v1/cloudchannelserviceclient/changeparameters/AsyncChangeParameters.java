@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_changeparameters_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_changeparameters_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.ChangeParametersRequest;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -51,4 +51,4 @@ public class AsyncChangeParameters {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_changeparameters_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_changeparameters_async]

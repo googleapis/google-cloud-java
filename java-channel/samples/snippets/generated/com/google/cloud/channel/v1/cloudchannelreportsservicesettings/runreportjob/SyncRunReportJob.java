@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsservicesettings_runreportjob_sync]
+// [START cloudchannel_v1_generated_cloudchannelreportsservicesettings_runreportjob_sync]
 import com.google.cloud.channel.v1.CloudChannelReportsServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncRunReportJob {
         cloudChannelReportsServiceSettingsBuilder.build();
   }
 }
-// [END channel_v1_generated_cloudchannelreportsservicesettings_runreportjob_sync]
+// [END cloudchannel_v1_generated_cloudchannelreportsservicesettings_runreportjob_sync]

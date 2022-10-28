@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_deletebackup_async]
+// [START file_v1_generated_cloudfilestoremanagerclient_deletebackup_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.filestore.v1.BackupName;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
@@ -48,4 +48,4 @@ public class AsyncDeleteBackup {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_deletebackup_async]
+// [END file_v1_generated_cloudfilestoremanagerclient_deletebackup_async]

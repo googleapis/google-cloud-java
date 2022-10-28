@@ -99,7 +99,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                             serializer.putQueryParam(
                                 fields,
                                 "actionOnFailedPrimaryWorkers",
-                                request.getActionOnFailedPrimaryWorkers());
+                                request.getActionOnFailedPrimaryWorkersValue());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             return fields;
                           })

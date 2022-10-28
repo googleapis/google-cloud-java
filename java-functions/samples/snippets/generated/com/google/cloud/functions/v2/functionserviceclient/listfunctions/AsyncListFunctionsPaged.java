@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_listfunctions_paged_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_listfunctions_paged_async]
 import com.google.cloud.functions.v2.Function;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.functions.v2.ListFunctionsRequest;
@@ -61,4 +61,4 @@ public class AsyncListFunctionsPaged {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_listfunctions_paged_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_listfunctions_paged_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_jobserviceclient_listjobs_sync]
+// [START jobs_v4beta1_generated_jobserviceclient_listjobs_sync]
 import com.google.cloud.talent.v4beta1.Job;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.JobView;
@@ -50,4 +50,4 @@ public class SyncListJobs {
     }
   }
 }
-// [END talent_v4beta1_generated_jobserviceclient_listjobs_sync]
+// [END jobs_v4beta1_generated_jobserviceclient_listjobs_sync]

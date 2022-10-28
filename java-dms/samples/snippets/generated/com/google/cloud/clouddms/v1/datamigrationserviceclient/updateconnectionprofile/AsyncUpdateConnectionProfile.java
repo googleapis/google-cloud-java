@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_updateconnectionprofile_async]
+// [START datamigration_v1_generated_datamigrationserviceclient_updateconnectionprofile_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.clouddms.v1.ConnectionProfile;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
@@ -51,4 +51,4 @@ public class AsyncUpdateConnectionProfile {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_updateconnectionprofile_async]
+// [END datamigration_v1_generated_datamigrationserviceclient_updateconnectionprofile_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_getiampolicy_async]
+// [START clouddeploy_v1_generated_clouddeployclient_getiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
@@ -50,4 +50,4 @@ public class AsyncGetIamPolicy {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_getiampolicy_async]
+// [END clouddeploy_v1_generated_clouddeployclient_getiampolicy_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1beta1.samples;
 
-// [START service_v1beta1_generated_environmentsclient_restartwebserver_async]
+// [START composer_v1beta1_generated_environmentsclient_restartwebserver_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient;
 import com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest;
@@ -44,4 +44,4 @@ public class AsyncRestartWebServer {
     }
   }
 }
-// [END service_v1beta1_generated_environmentsclient_restartwebserver_async]
+// [END composer_v1beta1_generated_environmentsclient_restartwebserver_async]

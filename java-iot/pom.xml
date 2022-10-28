@@ -50,4 +50,5 @@
     <module>proto-google-cloud-iot-v1</module>
     <module>google-cloud-iot-bom</module>
   </modules>
-</project>
+
+  </project>

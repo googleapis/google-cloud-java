@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_createfunction_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_createfunction_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2.CreateFunctionRequest;
 import com.google.cloud.functions.v2.Function;
@@ -50,4 +50,4 @@ public class AsyncCreateFunction {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_createfunction_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_createfunction_async]

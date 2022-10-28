@@ -350,7 +350,7 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
                             ProtoRestSerializer<ListJobsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "jobView", request.getJobView());
+                            serializer.putQueryParam(fields, "jobView", request.getJobViewValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             return fields;

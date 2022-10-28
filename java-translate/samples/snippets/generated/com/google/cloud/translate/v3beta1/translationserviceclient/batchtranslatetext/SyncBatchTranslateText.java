@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translation_v3beta1_generated_translationserviceclient_batchtranslatetext_sync]
+// [START translate_v3beta1_generated_translationserviceclient_batchtranslatetext_sync]
 import com.google.cloud.translate.v3beta1.BatchTranslateResponse;
 import com.google.cloud.translate.v3beta1.BatchTranslateTextRequest;
 import com.google.cloud.translate.v3beta1.InputConfig;
@@ -56,4 +56,4 @@ public class SyncBatchTranslateText {
     }
   }
 }
-// [END translation_v3beta1_generated_translationserviceclient_batchtranslatetext_sync]
+// [END translate_v3beta1_generated_translationserviceclient_batchtranslatetext_sync]

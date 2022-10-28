@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_jobserviceclient_create_setcredentialsprovider_sync]
+// [START jobs_v4beta1_generated_jobserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
 import com.google.cloud.talent.v4beta1.JobServiceSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     JobServiceClient jobServiceClient = JobServiceClient.create(jobServiceSettings);
   }
 }
-// [END talent_v4beta1_generated_jobserviceclient_create_setcredentialsprovider_sync]
+// [END jobs_v4beta1_generated_jobserviceclient_create_setcredentialsprovider_sync]

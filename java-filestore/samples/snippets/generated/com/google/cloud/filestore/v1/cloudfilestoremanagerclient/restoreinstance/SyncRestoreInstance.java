@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_restoreinstance_sync]
+// [START file_v1_generated_cloudfilestoremanagerclient_restoreinstance_sync]
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1.Instance;
 import com.google.cloud.filestore.v1.InstanceName;
@@ -45,4 +45,4 @@ public class SyncRestoreInstance {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_restoreinstance_sync]
+// [END file_v1_generated_cloudfilestoremanagerclient_restoreinstance_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_testiampermissions_resourcenameliststring_sync]
+// [START cloudbilling_v1_generated_cloudbillingclient_testiampermissions_resourcenameliststring_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.billing.v1.BillingAccountName;
 import com.google.cloud.billing.v1.CloudBillingClient;
@@ -44,4 +44,4 @@ public class SyncTestIamPermissionsResourcenameListstring {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_testiampermissions_resourcenameliststring_sync]
+// [END cloudbilling_v1_generated_cloudbillingclient_testiampermissions_resourcenameliststring_sync]

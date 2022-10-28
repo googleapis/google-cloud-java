@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_deletetarget_targetname_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_deletetarget_targetname_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.TargetName;
 import com.google.protobuf.Empty;
@@ -39,4 +39,4 @@ public class SyncDeleteTargetTargetname {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_deletetarget_targetname_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_deletetarget_targetname_sync]

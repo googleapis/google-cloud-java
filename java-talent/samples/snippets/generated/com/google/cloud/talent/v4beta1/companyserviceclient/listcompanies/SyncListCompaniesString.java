@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_companyserviceclient_listcompanies_string_sync]
+// [START jobs_v4beta1_generated_companyserviceclient_listcompanies_string_sync]
 import com.google.cloud.talent.v4beta1.Company;
 import com.google.cloud.talent.v4beta1.CompanyServiceClient;
 import com.google.cloud.talent.v4beta1.TenantName;
@@ -41,4 +41,4 @@ public class SyncListCompaniesString {
     }
   }
 }
-// [END talent_v4beta1_generated_companyserviceclient_listcompanies_string_sync]
+// [END jobs_v4beta1_generated_companyserviceclient_listcompanies_string_sync]

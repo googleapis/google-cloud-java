@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_createjob_stringjob_sync]
+// [START jobs_v4_generated_jobserviceclient_createjob_stringjob_sync]
 import com.google.cloud.talent.v4.Job;
 import com.google.cloud.talent.v4.JobServiceClient;
 import com.google.cloud.talent.v4.TenantName;
@@ -40,4 +40,4 @@ public class SyncCreateJobStringJob {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_createjob_stringjob_sync]
+// [END jobs_v4_generated_jobserviceclient_createjob_stringjob_sync]

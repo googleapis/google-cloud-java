@@ -50,4 +50,5 @@
     <module>proto-google-cloud-vmmigration-v1</module>
     <module>google-cloud-vmmigration-bom</module>
   </modules>
-</project>
+
+  </project>

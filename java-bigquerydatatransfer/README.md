@@ -11,58 +11,28 @@ Java idiomatic client for [BigQuery Data Transfer Service][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.3</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  </dependency>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-  <version>2.3.17</version>
+  <version>2.5.0</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.3')
-
-implementation 'com.google.cloud:google-cloud-bigquerydatatransfer'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquerydatatransfer:2.3.17'
+implementation 'com.google.cloud:google-cloud-bigquerydatatransfer:2.5.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "2.3.17"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatatransfer" % "2.5.0"
 ```
 
 ## Authentication
@@ -98,40 +68,6 @@ use this BigQuery Data Transfer Service Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-bigquerydatatransfer/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Copy Dataset | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CopyDataset.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CopyDataset.java) |
-| Create Ad Manager Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateAdManagerTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateAdManagerTransfer.java) |
-| Create Ads Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateAdsTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateAdsTransfer.java) |
-| Create Amazon S3 Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateAmazonS3Transfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateAmazonS3Transfer.java) |
-| Create Campaignmanager Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateCampaignmanagerTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateCampaignmanagerTransfer.java) |
-| Create Cloud Storage Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateCloudStorageTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateCloudStorageTransfer.java) |
-| Create Play Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreatePlayTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreatePlayTransfer.java) |
-| Create Redshift Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateRedshiftTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateRedshiftTransfer.java) |
-| Create Scheduled Query | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateScheduledQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateScheduledQuery.java) |
-| Create Scheduled Query With Service Account | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateScheduledQueryWithServiceAccount.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateScheduledQueryWithServiceAccount.java) |
-| Create Teradata Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateTeradataTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateTeradataTransfer.java) |
-| Create Youtube Channel Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateYoutubeChannelTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateYoutubeChannelTransfer.java) |
-| Create Youtube Content Owner Transfer | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateYoutubeContentOwnerTransfer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/CreateYoutubeContentOwnerTransfer.java) |
-| Delete Scheduled Query | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/DeleteScheduledQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/DeleteScheduledQuery.java) |
-| Delete Transfer Config | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/DeleteTransferConfig.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/DeleteTransferConfig.java) |
-| Disable Transfer Config | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/DisableTransferConfig.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/DisableTransferConfig.java) |
-| Get Transfer Config Info | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/GetTransferConfigInfo.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/GetTransferConfigInfo.java) |
-| List Transfer Configs | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/ListTransferConfigs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/ListTransferConfigs.java) |
-| Quickstart Sample | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/QuickstartSample.java) |
-| Re Enable Transfer Config | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/ReEnableTransferConfig.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/ReEnableTransferConfig.java) |
-| Run Details | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunDetails.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunDetails.java) |
-| Run History | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunHistory.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunHistory.java) |
-| Run Notification | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunNotification.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/RunNotification.java) |
-| Schedule Back Fill | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/ScheduleBackFill.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/ScheduleBackFill.java) |
-| Update Credentials | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/UpdateCredentials.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/UpdateCredentials.java) |
-| Update Transfer Config | [source code](https://github.com/googleapis/java-bigquerydatatransfer/blob/main/samples/snippets/src/main/java/com/example/bigquerydatatransfer/UpdateTransferConfig.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-bigquerydatatransfer&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigquerydatatransfer/UpdateTransferConfig.java) |
 
 
 

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_undeletefolder_async]
+// [START cloudresourcemanager_v3_generated_foldersclient_undeletefolder_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
@@ -44,4 +44,4 @@ public class AsyncUndeleteFolder {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_undeletefolder_async]
+// [END cloudresourcemanager_v3_generated_foldersclient_undeletefolder_async]

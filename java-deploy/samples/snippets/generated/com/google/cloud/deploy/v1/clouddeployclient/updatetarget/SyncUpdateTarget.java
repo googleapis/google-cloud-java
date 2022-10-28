@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_updatetarget_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_updatetarget_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
@@ -47,4 +47,4 @@ public class SyncUpdateTarget {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_updatetarget_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_updatetarget_sync]

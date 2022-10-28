@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_deletetagkey_lro_async]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_deletetagkey_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest;
@@ -50,4 +50,4 @@ public class AsyncDeleteTagKeyLRO {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_deletetagkey_lro_async]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_deletetagkey_lro_async]
