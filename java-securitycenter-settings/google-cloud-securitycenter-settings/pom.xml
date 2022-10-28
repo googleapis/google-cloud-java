@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securitycenter-settings</artifactId>
-  <version>0.8.0</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+  <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
   <packaging>jar</packaging>
   <name>Google Security Command Center Settings API</name>
   <description>is the canonical security and data risk database for Google Cloud. Security Command Center enables you to understand your security and data attack surface by providing asset inventory, discovery, search, and management.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-securitycenter-settings-parent</artifactId>
-    <version>0.8.0</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+    <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-securitycenter-settings</site.installationModule>
