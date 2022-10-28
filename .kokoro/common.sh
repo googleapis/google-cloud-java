@@ -151,8 +151,7 @@ function generate_graalvm_modules_list() {
 
 function install_modules() {
   retry_with_backoff 3 10 \
-    mvn -B -pl "${module_list}" \
-      -amd \
+    mvn -B \
       -ntp \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
