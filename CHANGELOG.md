@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.12.0](https://github.com/googleapis/java-logging/compare/v3.11.10...v3.12.0) (2022-10-27)
+
+
+### Features
+
+* Add support for batching configuration ([#1164](https://github.com/googleapis/java-logging/issues/1164)) ([35be8d1](https://github.com/googleapis/java-logging/commit/35be8d1e931a8784c3263299033fc24d623087b5))
+
 ## [3.11.10](https://github.com/googleapis/java-logging/compare/v3.11.9...v3.11.10) (2022-10-26)
 
 
