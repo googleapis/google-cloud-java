@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.120.24](https://github.com/googleapis/java-pubsub/compare/v1.120.23...v1.120.24) (2022-10-28)
+
+
+### Bug Fixes
+
+* Adding an explicit check to prevent empty publishes ([#1376](https://github.com/googleapis/java-pubsub/issues/1376)) ([689d7da](https://github.com/googleapis/java-pubsub/commit/689d7da1fee7c7def401ba114feef3607cd12cf5))
+
 ## [1.120.23](https://github.com/googleapis/java-pubsub/compare/v1.120.22...v1.120.23) (2022-10-27)
 
 
