@@ -188,17 +188,10 @@ Then run bootstrapper specifying the container (`31491ac60cdd`):
 
 ```
 bootstrapper run-trigger pre-process \
-  --apiId=required \
-  --language=required \
+  --apiId=apikeys \
+  --language=java \
   --languageContainer=31491ac60cdd \
-  --repoToClone=required \
-  --projectId=optional \
-  --triggerId=optional \
-  --installationId=optional \
-  --container=optional \
-  --monoRepoDir=optional \
-  --serviceConfigPath=optional \
-  --interContainerVarsPath=optional
+  --repoToClone=git@github.com:googleapis/google-cloud-java.git \
 ```
 
 
