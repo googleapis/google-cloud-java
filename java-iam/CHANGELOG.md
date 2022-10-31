@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.6.7](https://github.com/googleapis/java-iam/compare/v1.6.6...v1.6.7) (2022-10-31)
+
+
+### Dependencies
+
+* Update dependency com.google.api:api-common to v2.2.2 ([#497](https://github.com/googleapis/java-iam/issues/497)) ([bfcb37f](https://github.com/googleapis/java-iam/commit/bfcb37f9d46553a13a51bc8c437b6af046cb3c6c))
+* Update dependency com.google.cloud:google-iam-policy to v1.6.6 ([#492](https://github.com/googleapis/java-iam/issues/492)) ([cb7b782](https://github.com/googleapis/java-iam/commit/cb7b782017eb0ecf4914e4a1de252706bec70d6f))
+* Update dependency com.google.http-client:google-http-client-jackson2 to v1.42.3 ([#498](https://github.com/googleapis/java-iam/issues/498)) ([002b226](https://github.com/googleapis/java-iam/commit/002b2266fd9db19bade62e219970e7050d2bbbc0))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.9 ([#495](https://github.com/googleapis/java-iam/issues/495)) ([ef4f95b](https://github.com/googleapis/java-iam/commit/ef4f95b393a02b96f41743b3bcd8349dda0f9822))
+* Update dependency com.google.protobuf:protobuf-java to v3.21.9 ([#493](https://github.com/googleapis/java-iam/issues/493)) ([fb776ce](https://github.com/googleapis/java-iam/commit/fb776ce04129a55ea9ff0b964df624b64b5865a4))
+
 ## [1.6.6](https://github.com/googleapis/java-iam/compare/v1.6.5...v1.6.6) (2022-10-25)
 
 
