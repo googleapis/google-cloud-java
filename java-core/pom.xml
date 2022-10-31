@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-core-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.8.25</version><!-- {x-version-update:google-cloud-core:current} -->
+  <version>2.8.26-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
   <name>Google Cloud Core Parent</name>
   <url>https://github.com/googleapis/java-core</url>
   <description>
