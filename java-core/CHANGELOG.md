@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.8.25](https://github.com/googleapis/java-core/compare/v2.8.24...v2.8.25) (2022-10-31)
+
+
+### Dependencies
+
+* Update dependency com.google.api:api-common to v2.2.2 ([#999](https://github.com/googleapis/java-core/issues/999)) ([e639a64](https://github.com/googleapis/java-core/commit/e639a641c3041c829b8e58eeed79df6352e1c7eb))
+* Update dependency com.google.http-client:google-http-client-bom to v1.42.3 ([#1001](https://github.com/googleapis/java-core/issues/1001)) ([8e35c4f](https://github.com/googleapis/java-core/commit/8e35c4ffe5c12f0e4e570b04d0563640c688eb91))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.9 ([#998](https://github.com/googleapis/java-core/issues/998)) ([ce2d265](https://github.com/googleapis/java-core/commit/ce2d265669cd8fb43d1de43f02c53384c1d73a0d))
+* Update dependency org.threeten:threetenbp to v1.6.4 ([#1003](https://github.com/googleapis/java-core/issues/1003)) ([a69f122](https://github.com/googleapis/java-core/commit/a69f122b6bd84f6a3ddb496f77a1aa1fba072d13))
+
 ## [2.8.24](https://github.com/googleapis/java-core/compare/v2.8.23...v2.8.24) (2022-10-26)
 
 
