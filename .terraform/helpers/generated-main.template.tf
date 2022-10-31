@@ -20,6 +20,7 @@ locals {
     project_id                     = var.project_id
     region                         = var.region
     zone                           = var.zone
+    should_create_networks         = var.should_create_networks
     should_enable_apis_on_apply    = var.should_enable_apis_on_apply
     should_disable_apis_on_destroy = var.should_disable_apis_on_destroy
   }

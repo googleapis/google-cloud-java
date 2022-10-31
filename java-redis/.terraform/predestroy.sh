@@ -15,4 +15,5 @@
 # limitations under the License.
 #
 
-terraform state rm 'module.java_redis.google_compute_network.redis_vpc'
+source helpers/common.sh
+allow_failure terraform state rm 'module.java_redis.google_compute_network.redis_vpc'

@@ -15,4 +15,5 @@
 # limitations under the License.
 #
 
-terraform state rm 'module.java_container.google_compute_network.java_container_network'
+source helpers/common.sh
+allow_failure terraform state rm 'module.java_container.google_compute_network.java_container_network'

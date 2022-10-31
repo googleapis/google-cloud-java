@@ -8,6 +8,11 @@ variable "region" {
   description = "GCP region used to deploy resources"
   default     = "us-central1" # NOTE: Some integration tests have hardcoded this region.
 }
+variable "should_create_networks" {
+  type        = bool
+  default     = false
+  description = "If true, networks will be created if needed."
+}
 variable "should_enable_apis_on_apply" {
   type        = bool
   default     = true

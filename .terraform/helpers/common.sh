@@ -15,6 +15,25 @@
 #
 set -eo pipefail
 
+function allow_failure () {
+  # store current flag state, then allow failures
+  flags=$-
+  set +e
+  unset IFS
+
+  command=( "$@" )
+  "${command[@]}"
+  exit_code=$?
+
+  # restore "e" flag
+  if [[ ${flags} =~ e ]]
+  then set -e
+  else set +e
+  fi
+
+  return $exit_code
+}
+
 # Find all directories starting with 'java-', sort them, then join
 # with ',' as the delimiter.
 function listAllModules() {
