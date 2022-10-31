@@ -17,14 +17,8 @@ resource "google_project_service" "container" {
   count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
   disable_on_destroy = var.inputs.should_disable_apis_on_destroy
 }
-resource "random_id" "id" {
-  byte_length = 3
-  keepers     = {
-    project_id = var.inputs.project_id
-  }
-}
 locals {
-  container_network_name = lower("java-container-network-${random_id.id.hex}")
+  container_network_name = "java-container-network"
 }
 resource "google_compute_network" "java_container_network" {
   name                    = local.container_network_name

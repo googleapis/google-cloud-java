@@ -17,11 +17,8 @@ resource "google_project_service" "redis" {
   count              = var.inputs.should_enable_apis_on_apply ? 1 : 0
   disable_on_destroy = var.inputs.should_disable_apis_on_destroy
 }
-resource "random_id" "id" {
-  byte_length = 3
-}
 locals {
-  redis_vpc_id = lower("redis-vpc-${random_id.id.hex}")
+  redis_vpc_id = "redis-vpc"
 }
 resource "google_compute_network" "redis_vpc" {
   name       = local.redis_vpc_id
