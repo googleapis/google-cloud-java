@@ -160,7 +160,8 @@ public class LoggingAppenderTest {
                     new ImmutableMap.Builder<String, String>()
                         .put("project_id", PROJECT_ID)
                         .build())
-                .build())
+                .build()),
+        WriteOption.partialSuccess(true),
       };
 
   @Test
@@ -168,7 +169,10 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.WARNING);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
     LoggingEvent loggingEvent = createLoggingEvent(Level.WARN, timestamp.getSeconds());
@@ -194,7 +198,10 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     expectLastCall().once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
@@ -215,12 +222,16 @@ public class LoggingAppenderTest {
   }
 
   @Test
-  public void testDefaultWriteOptionsHasExpectedDefaults() {
+  public void testPartialSuccessOverrideHasExpectedValue() {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<WriteOption> logNameArg = Capture.newInstance();
     Capture<WriteOption> resourceArg = Capture.newInstance();
+    Capture<WriteOption> partialSuccessArg = Capture.newInstance();
     logging.write(
-        EasyMock.<Iterable<LogEntry>>anyObject(), capture(logNameArg), capture(resourceArg));
+        EasyMock.<Iterable<LogEntry>>anyObject(),
+        capture(logNameArg),
+        capture(resourceArg),
+        capture(partialSuccessArg));
     expectLastCall().once();
     replay(logging);
     loggingAppender.start();
@@ -231,6 +242,26 @@ public class LoggingAppenderTest {
     assertThat(logNameArg.getValue()).isEqualTo(defaultWriteOptions[0]);
     // TODO(chingor): Fix this test to work on GCE and locally
     // assertThat(resourceArg.getValue()).isEqualTo(defaultWriteOptions[1]);
+    assertThat(partialSuccessArg.getValue()).isEqualTo(defaultWriteOptions[2]);
+  }
+
+  @Test
+  public void testDefaultWriteOptionsHasExpectedDefaults() {
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<WriteOption> partialSuccessArg = Capture.newInstance();
+    logging.write(
+        EasyMock.<Iterable<LogEntry>>anyObject(),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        capture(partialSuccessArg));
+    expectLastCall().once();
+    replay(logging);
+    loggingAppender.setPartialSuccess(false);
+    loggingAppender.start();
+    Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
+    LoggingEvent loggingEvent = createLoggingEvent(Level.ERROR, timestamp.getSeconds());
+    loggingAppender.doAppend(loggingEvent);
+    assertThat(partialSuccessArg.getValue()).isEqualTo(WriteOption.partialSuccess(false));
   }
 
   @Test
@@ -238,7 +269,10 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     expectLastCall().once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
@@ -294,7 +328,10 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     expectLastCall().once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
@@ -317,7 +354,10 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     expectLastCall().once();
     replay(logging);
     Timestamp timestamp = Timestamp.ofTimeSecondsAndNanos(100000, 0);
@@ -338,7 +378,10 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     expectLastCall().once();
     replay(logging);
     loggingAppender.addEnhancer(CustomLoggingEnhancer.class.getName());
@@ -358,6 +401,7 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     logging.write(
         EasyMock.<Iterable<LogEntry>>anyObject(),
+        anyObject(WriteOption.class),
         anyObject(WriteOption.class),
         anyObject(WriteOption.class));
     expectLastCall().times(2);
@@ -394,6 +438,7 @@ public class LoggingAppenderTest {
     // the arguments should be replaced with a single anyObject() matchers when the bug is fixed
     logging.write(
         EasyMock.<Iterable<LogEntry>>anyObject(),
+        anyObject(WriteOption.class),
         anyObject(WriteOption.class),
         anyObject(WriteOption.class));
     expectLastCall().once();
@@ -460,7 +505,10 @@ public class LoggingAppenderTest {
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.setFlushSeverity(Severity.ERROR);
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     replay(logging);
     LoggingEvent loggingEvent =
         createLoggingEvent(Level.ERROR, Timestamp.ofTimeSecondsAndNanos(100000, 0).getSeconds());
@@ -502,7 +550,10 @@ public class LoggingAppenderTest {
     logging.setFlushSeverity(Severity.ERROR);
     Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
     logging.write(
-        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+        capture(capturedArgument),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class),
+        anyObject(WriteOption.class));
     replay(logging);
     LoggingEvent loggingEvent =
         createLoggingEvent(Level.WARN, Timestamp.ofTimeSecondsAndNanos(100000, 0).getSeconds());

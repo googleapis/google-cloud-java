@@ -88,6 +88,9 @@ import java.util.Set;
  *         &lt;!-- Optional: add custom labels to log entries using {@link LoggingEnhancer} classes --&gt;
  *         &lt;enhancer&gt;com.example.enhancers.TestLoggingEnhancer&lt/enhancer&gt;
  *         &lt;enhancer&gt;com.example.enhancers.AnotherEnhancer&lt/enhancer&gt;
+ *
+ *         &lt;!-- Optional: specifies if a batch's valid entries should be written even if some other entry failed due to an error. Defaults to {@code true} --&gt;
+ *         &lt;partialSuccess&gt;true&lt;/partialSuccess&gt;
  *     &lt;/appender&gt;
  * </pre>
  */
@@ -118,6 +121,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private String logDestinationProjectId;
   private boolean autoPopulateMetadata = true;
   private boolean redirectToStdout = false;
+  private boolean partialSuccess = true;
   private Synchronicity writeSyncFlag = Synchronicity.ASYNC;
   private final Set<String> enhancerClassNames = new HashSet<>();
   private final Set<String> loggingEventEnhancerClassNames = new HashSet<>();
@@ -214,6 +218,18 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
     redirectToStdout = flag;
   }
 
+  /**
+   * Sets the flag indicating if a batch's valid entries should be written even if some other entry
+   * failed due to an error.
+   *
+   * <p>Default to {@code true}.
+   *
+   * @param flag the partialSuccess flag.
+   */
+  public void setPartialSuccess(boolean flag) {
+    partialSuccess = flag;
+  }
+
   /** Add extra labels using classes that implement {@link LoggingEnhancer}. */
   public void addEnhancer(String enhancerClassName) {
     this.enhancerClassNames.add(enhancerClassName);
@@ -298,7 +314,9 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
     defaultWriteOptions =
         new WriteOption[] {
-          WriteOption.logName(getLogName()), WriteOption.resource(monitoredResource)
+          WriteOption.logName(getLogName()),
+          WriteOption.resource(monitoredResource),
+          WriteOption.partialSuccess(partialSuccess)
         };
     Level flushLevel = getFlushLevel();
     if (flushLevel != Level.OFF) {

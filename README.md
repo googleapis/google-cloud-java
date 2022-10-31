@@ -111,6 +111,10 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
     <!-- Optional: add custom labels to log entries using LoggingEnhancer classes -->
     <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer>
     <enhancer>com.example.enhancers.AnotherEnhancer</enhancer>
+
+    <!-- Optional: specifies if a batch's valid entries should be written even if some other entry failed due to an error. Defaults to true 
+    See [partial_success](https://cloud.google.com/logging/docs/reference/v2/rest/v2/entries/write#body.request_body.FIELDS.partial_success) for more info -->
+    <partialSuccess>true</partialSuccess>      
   </appender>
 
   <root level="info">
