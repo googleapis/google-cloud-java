@@ -97,6 +97,8 @@ rm WORKSPACE.bak
 
 if grep PROTOBUF_MAVEN_ARTIFACTS WORKSPACE > /dev/null ; then
   echo "WORKSPACE file has maven_install section defined already."
+elif [[ "${PROTOBUF_VERSION}" < 3.19.0 ]]; then
+  echo "Protobuf${PROTOBUF_VERSION} does not require maven_install section"
 else
   echo "WORKSPACE file does not have maven_install section. Adding it."
   sed -i $'/_gax_java_version =/{e cat ../../hermetic_maven_install_protobuf_section.txt\n}' WORKSPACE
