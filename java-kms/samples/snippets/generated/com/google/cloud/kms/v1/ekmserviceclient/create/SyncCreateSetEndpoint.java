@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_ekmserviceclient_create_setendpoint_sync]
+// [START cloudkms_v1_generated_ekmserviceclient_create_setendpoint_sync]
 import com.google.cloud.kms.v1.EkmServiceClient;
 import com.google.cloud.kms.v1.EkmServiceSettings;
 import com.google.cloud.kms.v1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     EkmServiceClient ekmServiceClient = EkmServiceClient.create(ekmServiceSettings);
   }
 }
-// [END kms_v1_generated_ekmserviceclient_create_setendpoint_sync]
+// [END cloudkms_v1_generated_ekmserviceclient_create_setendpoint_sync]

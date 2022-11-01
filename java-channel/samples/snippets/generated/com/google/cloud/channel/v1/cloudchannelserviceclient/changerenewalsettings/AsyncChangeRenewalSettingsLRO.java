@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_changerenewalsettings_lro_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_changerenewalsettings_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.channel.v1.ChangeRenewalSettingsRequest;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -50,4 +50,4 @@ public class AsyncChangeRenewalSettingsLRO {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_changerenewalsettings_lro_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_changerenewalsettings_lro_async]

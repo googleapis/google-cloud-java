@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translation_v3beta1_generated_translationserviceclient_create_setcredentialsprovider_sync]
+// [START translate_v3beta1_generated_translationserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.translate.v3beta1.TranslationServiceClient;
 import com.google.cloud.translate.v3beta1.TranslationServiceSettings;
@@ -42,4 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         TranslationServiceClient.create(translationServiceSettings);
   }
 }
-// [END translation_v3beta1_generated_translationserviceclient_create_setcredentialsprovider_sync]
+// [END translate_v3beta1_generated_translationserviceclient_create_setcredentialsprovider_sync]

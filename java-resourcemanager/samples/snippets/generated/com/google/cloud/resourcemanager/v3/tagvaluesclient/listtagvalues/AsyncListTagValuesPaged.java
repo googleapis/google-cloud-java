@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluesclient_listtagvalues_paged_async]
+// [START cloudresourcemanager_v3_generated_tagvaluesclient_listtagvalues_paged_async]
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ListTagValuesRequest;
 import com.google.cloud.resourcemanager.v3.ListTagValuesResponse;
@@ -58,4 +58,4 @@ public class AsyncListTagValuesPaged {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagvaluesclient_listtagvalues_paged_async]
+// [END cloudresourcemanager_v3_generated_tagvaluesclient_listtagvalues_paged_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_sendcommandtodevice_stringbytestring_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_sendcommandtodevice_stringbytestring_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceName;
 import com.google.cloud.iot.v1.SendCommandToDeviceResponse;
@@ -42,4 +42,4 @@ public class SyncSendCommandToDeviceStringBytestring {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_sendcommandtodevice_stringbytestring_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_sendcommandtodevice_stringbytestring_sync]

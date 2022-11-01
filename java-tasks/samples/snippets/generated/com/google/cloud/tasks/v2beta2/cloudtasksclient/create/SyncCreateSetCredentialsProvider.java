@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_create_setcredentialsprovider_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.CloudTasksSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_create_setcredentialsprovider_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_create_setcredentialsprovider_sync]

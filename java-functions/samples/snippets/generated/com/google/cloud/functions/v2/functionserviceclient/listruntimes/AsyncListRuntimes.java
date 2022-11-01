@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_listruntimes_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_listruntimes_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.functions.v2.ListRuntimesRequest;
@@ -48,4 +48,4 @@ public class AsyncListRuntimes {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_listruntimes_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_listruntimes_async]

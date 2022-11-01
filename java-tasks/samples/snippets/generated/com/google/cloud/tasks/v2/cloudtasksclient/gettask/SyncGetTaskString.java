@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_gettask_string_sync]
+// [START cloudtasks_v2_generated_cloudtasksclient_gettask_string_sync]
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.Task;
 import com.google.cloud.tasks.v2.TaskName;
@@ -39,4 +39,4 @@ public class SyncGetTaskString {
     }
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_gettask_string_sync]
+// [END cloudtasks_v2_generated_cloudtasksclient_gettask_string_sync]

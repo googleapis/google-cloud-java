@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_updateconnectionprofile_lro_async]
+// [START datamigration_v1_generated_datamigrationserviceclient_updateconnectionprofile_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.clouddms.v1.ConnectionProfile;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
@@ -51,4 +51,4 @@ public class AsyncUpdateConnectionProfileLRO {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_updateconnectionprofile_lro_async]
+// [END datamigration_v1_generated_datamigrationserviceclient_updateconnectionprofile_lro_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_listlocations_paged_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_listlocations_paged_async]
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -59,4 +59,4 @@ public class AsyncListLocationsPaged {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_listlocations_paged_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_listlocations_paged_async]

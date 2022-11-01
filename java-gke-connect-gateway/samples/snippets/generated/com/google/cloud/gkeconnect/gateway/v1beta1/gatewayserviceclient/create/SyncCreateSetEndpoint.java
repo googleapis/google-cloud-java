@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkeconnect.gateway.v1beta1.samples;
 
-// [START gateway_v1beta1_generated_gatewayserviceclient_create_setendpoint_sync]
+// [START connectgateway_v1beta1_generated_gatewayserviceclient_create_setendpoint_sync]
 import com.google.cloud.gkeconnect.gateway.v1beta1.GatewayServiceClient;
 import com.google.cloud.gkeconnect.gateway.v1beta1.GatewayServiceSettings;
 import com.google.cloud.gkeconnect.gateway.v1beta1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     GatewayServiceClient gatewayServiceClient = GatewayServiceClient.create(gatewayServiceSettings);
   }
 }
-// [END gateway_v1beta1_generated_gatewayserviceclient_create_setendpoint_sync]
+// [END connectgateway_v1beta1_generated_gatewayserviceclient_create_setendpoint_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1beta1.samples;
 
-// [START scheduler_v1beta1_generated_cloudschedulerclient_resumejob_string_sync]
+// [START cloudscheduler_v1beta1_generated_cloudschedulerclient_resumejob_string_sync]
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1beta1.Job;
 import com.google.cloud.scheduler.v1beta1.JobName;
@@ -39,4 +39,4 @@ public class SyncResumeJobString {
     }
   }
 }
-// [END scheduler_v1beta1_generated_cloudschedulerclient_resumejob_string_sync]
+// [END cloudscheduler_v1beta1_generated_cloudschedulerclient_resumejob_string_sync]

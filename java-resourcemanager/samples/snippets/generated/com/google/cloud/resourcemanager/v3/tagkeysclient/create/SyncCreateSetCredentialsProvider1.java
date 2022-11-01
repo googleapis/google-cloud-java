@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_create_setcredentialsprovider1_sync]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.resourcemanager.v3.TagKeysClient;
 import com.google.cloud.resourcemanager.v3.TagKeysSettings;
 
@@ -40,4 +40,4 @@ public class SyncCreateSetCredentialsProvider1 {
     TagKeysClient tagKeysClient = TagKeysClient.create(tagKeysSettings);
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_create_setcredentialsprovider1_sync]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_create_setcredentialsprovider1_sync]

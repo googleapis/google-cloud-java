@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_deleteglossary_sync]
+// [START translate_v3_generated_translationserviceclient_deleteglossary_sync]
 import com.google.cloud.translate.v3.DeleteGlossaryRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryResponse;
 import com.google.cloud.translate.v3.GlossaryName;
@@ -43,4 +43,4 @@ public class SyncDeleteGlossary {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_deleteglossary_sync]
+// [END translate_v3_generated_translationserviceclient_deleteglossary_sync]

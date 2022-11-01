@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1beta1.samples;
 
-// [START service_v1beta1_generated_environmentsclient_updateenvironment_sync]
+// [START composer_v1beta1_generated_environmentsclient_updateenvironment_sync]
 import com.google.cloud.orchestration.airflow.service.v1beta1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient;
 import com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest;
@@ -45,4 +45,4 @@ public class SyncUpdateEnvironment {
     }
   }
 }
-// [END service_v1beta1_generated_environmentsclient_updateenvironment_sync]
+// [END composer_v1beta1_generated_environmentsclient_updateenvironment_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_generatesshscript_async]
+// [START datamigration_v1_generated_datamigrationserviceclient_generatesshscript_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.GenerateSshScriptRequest;
@@ -51,4 +51,4 @@ public class AsyncGenerateSshScript {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_generatesshscript_async]
+// [END datamigration_v1_generated_datamigrationserviceclient_generatesshscript_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluessettings_gettagvalue_sync]
+// [START cloudresourcemanager_v3_generated_tagvaluessettings_gettagvalue_sync]
 import com.google.cloud.resourcemanager.v3.TagValuesSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetTagValue {
     TagValuesSettings tagValuesSettings = tagValuesSettingsBuilder.build();
   }
 }
-// [END resourcemanager_v3_generated_tagvaluessettings_gettagvalue_sync]
+// [END cloudresourcemanager_v3_generated_tagvaluessettings_gettagvalue_sync]

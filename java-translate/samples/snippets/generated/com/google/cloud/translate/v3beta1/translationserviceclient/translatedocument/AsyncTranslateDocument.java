@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translation_v3beta1_generated_translationserviceclient_translatedocument_async]
+// [START translate_v3beta1_generated_translationserviceclient_translatedocument_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.translate.v3beta1.DocumentInputConfig;
 import com.google.cloud.translate.v3beta1.DocumentOutputConfig;
@@ -57,4 +57,4 @@ public class AsyncTranslateDocument {
     }
   }
 }
-// [END translation_v3beta1_generated_translationserviceclient_translatedocument_async]
+// [END translate_v3beta1_generated_translationserviceclient_translatedocument_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_updatejob_sync]
+// [START jobs_v4_generated_jobserviceclient_updatejob_sync]
 import com.google.cloud.talent.v4.Job;
 import com.google.cloud.talent.v4.JobServiceClient;
 import com.google.cloud.talent.v4.UpdateJobRequest;
@@ -44,4 +44,4 @@ public class SyncUpdateJob {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_updatejob_sync]
+// [END jobs_v4_generated_jobserviceclient_updatejob_sync]

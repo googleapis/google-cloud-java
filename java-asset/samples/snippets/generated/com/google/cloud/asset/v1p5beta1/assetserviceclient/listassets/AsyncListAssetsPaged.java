@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p5beta1.samples;
 
-// [START asset_v1p5beta1_generated_assetserviceclient_listassets_paged_async]
+// [START cloudasset_v1p5beta1_generated_assetserviceclient_listassets_paged_async]
 import com.google.cloud.asset.v1p5beta1.Asset;
 import com.google.cloud.asset.v1p5beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p5beta1.ContentType;
@@ -63,4 +63,4 @@ public class AsyncListAssetsPaged {
     }
   }
 }
-// [END asset_v1p5beta1_generated_assetserviceclient_listassets_paged_async]
+// [END cloudasset_v1p5beta1_generated_assetserviceclient_listassets_paged_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_getsavedquery_string_sync]
+// [START cloudasset_v1_generated_assetserviceclient_getsavedquery_string_sync]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.SavedQuery;
 import com.google.cloud.asset.v1.SavedQueryName;
@@ -39,4 +39,4 @@ public class SyncGetSavedQueryString {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_getsavedquery_string_sync]
+// [END cloudasset_v1_generated_assetserviceclient_getsavedquery_string_sync]

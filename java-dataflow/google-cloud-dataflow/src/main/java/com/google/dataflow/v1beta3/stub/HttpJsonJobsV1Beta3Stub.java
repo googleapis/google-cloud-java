@@ -83,7 +83,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                         ProtoRestSerializer<CreateJobRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "replaceJobId", request.getReplaceJobId());
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(
@@ -121,7 +121,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetJobRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -194,10 +194,10 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListJobsRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "filter", request.getFilterValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -231,11 +231,11 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListJobsRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "filter", request.getFilterValue());
                             serializer.putQueryParam(fields, "location", request.getLocation());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

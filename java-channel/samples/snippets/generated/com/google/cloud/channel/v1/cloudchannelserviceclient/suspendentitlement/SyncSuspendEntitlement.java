@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_suspendentitlement_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_suspendentitlement_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.SuspendEntitlementRequest;
@@ -43,4 +43,4 @@ public class SyncSuspendEntitlement {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_suspendentitlement_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_suspendentitlement_sync]

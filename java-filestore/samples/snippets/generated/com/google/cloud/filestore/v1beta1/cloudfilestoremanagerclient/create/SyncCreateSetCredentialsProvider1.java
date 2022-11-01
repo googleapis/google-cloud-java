@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1beta1.samples;
 
-// [START filestore_v1beta1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider1_sync]
+// [START file_v1beta1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerSettings;
 
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider1 {
         CloudFilestoreManagerClient.create(cloudFilestoreManagerSettings);
   }
 }
-// [END filestore_v1beta1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider1_sync]
+// [END file_v1beta1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider1_sync]

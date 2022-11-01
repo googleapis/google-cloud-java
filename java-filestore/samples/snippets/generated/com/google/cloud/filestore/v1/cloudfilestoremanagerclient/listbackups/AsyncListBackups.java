@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_listbackups_async]
+// [START file_v1_generated_cloudfilestoremanagerclient_listbackups_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.filestore.v1.Backup;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
@@ -54,4 +54,4 @@ public class AsyncListBackups {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_listbackups_async]
+// [END file_v1_generated_cloudfilestoremanagerclient_listbackups_async]

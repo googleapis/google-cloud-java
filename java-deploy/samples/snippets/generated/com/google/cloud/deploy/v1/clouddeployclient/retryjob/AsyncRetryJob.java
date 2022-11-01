@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_retryjob_async]
+// [START clouddeploy_v1_generated_clouddeployclient_retryjob_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.RetryJobRequest;
@@ -55,4 +55,4 @@ public class AsyncRetryJob {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_retryjob_async]
+// [END clouddeploy_v1_generated_clouddeployclient_retryjob_async]

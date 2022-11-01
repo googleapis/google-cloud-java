@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_listlocations_paged_async]
+// [START clouddeploy_v1_generated_clouddeployclient_listlocations_paged_async]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -58,4 +58,4 @@ public class AsyncListLocationsPaged {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_listlocations_paged_async]
+// [END clouddeploy_v1_generated_clouddeployclient_listlocations_paged_async]

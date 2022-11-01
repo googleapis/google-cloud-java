@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_listqueues_paged_async]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_listqueues_paged_async]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.ListQueuesRequest;
 import com.google.cloud.tasks.v2beta2.ListQueuesResponse;
@@ -61,4 +61,4 @@ public class AsyncListQueuesPaged {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_listqueues_paged_async]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_listqueues_paged_async]

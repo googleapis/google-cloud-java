@@ -81,11 +81,12 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListGroupStatsRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "alignment", request.getAlignment());
+                            serializer.putQueryParam(
+                                fields, "alignment", request.getAlignmentValue());
                             serializer.putQueryParam(
                                 fields, "alignmentTime", request.getAlignmentTime());
                             serializer.putQueryParam(fields, "groupId", request.getGroupIdList());
-                            serializer.putQueryParam(fields, "order", request.getOrder());
+                            serializer.putQueryParam(fields, "order", request.getOrderValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(

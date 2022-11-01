@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_testiampermissions_stringliststring_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_testiampermissions_stringliststring_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.QueueName;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -43,4 +43,4 @@ public class SyncTestIamPermissionsStringListstring {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_testiampermissions_stringliststring_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_testiampermissions_stringliststring_sync]

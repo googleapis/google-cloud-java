@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_create_setcredentialsprovider_sync]
+// [START cloudkms_v1_generated_keymanagementserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyManagementServiceSettings;
@@ -42,4 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         KeyManagementServiceClient.create(keyManagementServiceSettings);
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_create_setcredentialsprovider_sync]
+// [END cloudkms_v1_generated_keymanagementserviceclient_create_setcredentialsprovider_sync]

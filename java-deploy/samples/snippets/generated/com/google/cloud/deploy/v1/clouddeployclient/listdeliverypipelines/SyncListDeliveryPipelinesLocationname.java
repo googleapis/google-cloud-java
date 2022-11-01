@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_listdeliverypipelines_locationname_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_listdeliverypipelines_locationname_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.LocationName;
@@ -42,4 +42,4 @@ public class SyncListDeliveryPipelinesLocationname {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_listdeliverypipelines_locationname_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_listdeliverypipelines_locationname_sync]

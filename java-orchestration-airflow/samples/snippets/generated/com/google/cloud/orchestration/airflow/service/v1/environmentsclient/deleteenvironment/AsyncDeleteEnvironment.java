@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_environmentsclient_deleteenvironment_async]
+// [START composer_v1_generated_environmentsclient_deleteenvironment_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient;
@@ -44,4 +44,4 @@ public class AsyncDeleteEnvironment {
     }
   }
 }
-// [END service_v1_generated_environmentsclient_deleteenvironment_async]
+// [END composer_v1_generated_environmentsclient_deleteenvironment_async]

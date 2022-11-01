@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_tenantserviceclient_create_setcredentialsprovider_sync]
+// [START jobs_v4_generated_tenantserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.talent.v4.TenantServiceClient;
 import com.google.cloud.talent.v4.TenantServiceSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     TenantServiceClient tenantServiceClient = TenantServiceClient.create(tenantServiceSettings);
   }
 }
-// [END talent_v4_generated_tenantserviceclient_create_setcredentialsprovider_sync]
+// [END jobs_v4_generated_tenantserviceclient_create_setcredentialsprovider_sync]

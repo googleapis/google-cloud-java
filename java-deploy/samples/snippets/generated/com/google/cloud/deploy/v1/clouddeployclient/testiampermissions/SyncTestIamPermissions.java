@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_testiampermissions_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_testiampermissions_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -47,4 +47,4 @@ public class SyncTestIamPermissions {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_testiampermissions_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_testiampermissions_sync]

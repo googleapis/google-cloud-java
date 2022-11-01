@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_eventservicesettings_createclientevent_sync]
+// [START jobs_v4_generated_eventservicesettings_createclientevent_sync]
 import com.google.cloud.talent.v4.EventServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncCreateClientEvent {
     EventServiceSettings eventServiceSettings = eventServiceSettingsBuilder.build();
   }
 }
-// [END talent_v4_generated_eventservicesettings_createclientevent_sync]
+// [END jobs_v4_generated_eventservicesettings_createclientevent_sync]

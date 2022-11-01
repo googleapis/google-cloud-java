@@ -251,4 +251,108 @@ public interface ResultsOrBuilder
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
    */
   com.google.cloudbuild.v1.TimeSpanOrBuilder getArtifactTimingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage> getPythonPackagesList();
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  com.google.cloudbuild.v1.UploadedPythonPackage getPythonPackages(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  int getPythonPackagesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>
+      getPythonPackagesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder getPythonPackagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact> getMavenArtifactsList();
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  com.google.cloudbuild.v1.UploadedMavenArtifact getMavenArtifacts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  int getMavenArtifactsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>
+      getMavenArtifactsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder getMavenArtifactsOrBuilder(int index);
 }

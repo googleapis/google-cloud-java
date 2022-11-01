@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta3.samples;
 
-// [START tasks_v2beta3_generated_cloudtasksclient_deletetask_sync]
+// [START cloudtasks_v2beta3_generated_cloudtasksclient_deletetask_sync]
 import com.google.cloud.tasks.v2beta3.CloudTasksClient;
 import com.google.cloud.tasks.v2beta3.DeleteTaskRequest;
 import com.google.cloud.tasks.v2beta3.TaskName;
@@ -43,4 +43,4 @@ public class SyncDeleteTask {
     }
   }
 }
-// [END tasks_v2beta3_generated_cloudtasksclient_deletetask_sync]
+// [END cloudtasks_v2beta3_generated_cloudtasksclient_deletetask_sync]

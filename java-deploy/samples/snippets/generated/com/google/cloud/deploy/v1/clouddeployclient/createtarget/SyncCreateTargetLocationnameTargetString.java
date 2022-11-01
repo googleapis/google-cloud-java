@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_createtarget_locationnametargetstring_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_createtarget_locationnametargetstring_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.LocationName;
 import com.google.cloud.deploy.v1.Target;
@@ -41,4 +41,4 @@ public class SyncCreateTargetLocationnameTargetString {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_createtarget_locationnametargetstring_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_createtarget_locationnametargetstring_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1beta1.samples;
 
-// [START filestore_v1beta1_generated_cloudfilestoremanagerclient_updatebackup_backupfieldmask_sync]
+// [START file_v1beta1_generated_cloudfilestoremanagerclient_updatebackup_backupfieldmask_sync]
 import com.google.cloud.filestore.v1beta1.Backup;
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient;
 import com.google.protobuf.FieldMask;
@@ -41,4 +41,4 @@ public class SyncUpdateBackupBackupFieldmask {
     }
   }
 }
-// [END filestore_v1beta1_generated_cloudfilestoremanagerclient_updatebackup_backupfieldmask_sync]
+// [END file_v1beta1_generated_cloudfilestoremanagerclient_updatebackup_backupfieldmask_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listtransferableskus_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listtransferableskus_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
 import com.google.cloud.channel.v1.TransferableSku;
@@ -49,4 +49,4 @@ public class SyncListTransferableSkus {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listtransferableskus_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listtransferableskus_sync]

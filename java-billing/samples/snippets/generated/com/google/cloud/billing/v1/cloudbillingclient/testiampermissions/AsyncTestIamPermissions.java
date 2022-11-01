@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_testiampermissions_async]
+// [START cloudbilling_v1_generated_cloudbillingclient_testiampermissions_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.billing.v1.BillingAccountName;
 import com.google.cloud.billing.v1.CloudBillingClient;
@@ -49,4 +49,4 @@ public class AsyncTestIamPermissions {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_testiampermissions_async]
+// [END cloudbilling_v1_generated_cloudbillingclient_testiampermissions_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_deletecustomerrepricingconfig_string_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_deletecustomerrepricingconfig_string_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CustomerRepricingConfigName;
 import com.google.protobuf.Empty;
@@ -41,4 +41,4 @@ public class SyncDeleteCustomerRepricingConfigString {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_deletecustomerrepricingconfig_string_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_deletecustomerrepricingconfig_string_sync]

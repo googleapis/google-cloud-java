@@ -16,7 +16,7 @@
 
 package com.google.cloud.privatecatalog.v1beta1.samples;
 
-// [START privatecatalog_v1beta1_generated_privatecatalogclient_create_setcredentialsprovider_sync]
+// [START cloudprivatecatalog_v1beta1_generated_privatecatalogclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogClient;
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     PrivateCatalogClient privateCatalogClient = PrivateCatalogClient.create(privateCatalogSettings);
   }
 }
-// [END privatecatalog_v1beta1_generated_privatecatalogclient_create_setcredentialsprovider_sync]
+// [END cloudprivatecatalog_v1beta1_generated_privatecatalogclient_create_setcredentialsprovider_sync]

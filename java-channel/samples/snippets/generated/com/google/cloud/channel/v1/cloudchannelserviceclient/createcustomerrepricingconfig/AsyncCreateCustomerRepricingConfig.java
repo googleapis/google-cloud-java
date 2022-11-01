@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_createcustomerrepricingconfig_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_createcustomerrepricingconfig_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest;
@@ -48,4 +48,4 @@ public class AsyncCreateCustomerRepricingConfig {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_createcustomerrepricingconfig_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_createcustomerrepricingconfig_async]

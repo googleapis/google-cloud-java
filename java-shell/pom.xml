@@ -50,4 +50,5 @@
     <module>proto-google-cloud-shell-v1</module>
     <module>google-cloud-shell-bom</module>
   </modules>
-</project>
+
+  </project>

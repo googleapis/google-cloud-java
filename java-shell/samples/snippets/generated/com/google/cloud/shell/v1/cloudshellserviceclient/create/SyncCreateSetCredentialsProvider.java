@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.samples;
 
-// [START shell_v1_generated_cloudshellserviceclient_create_setcredentialsprovider_sync]
+// [START cloudshell_v1_generated_cloudshellserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.shell.v1.CloudShellServiceClient;
 import com.google.cloud.shell.v1.CloudShellServiceSettings;
@@ -42,4 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         CloudShellServiceClient.create(cloudShellServiceSettings);
   }
 }
-// [END shell_v1_generated_cloudshellserviceclient_create_setcredentialsprovider_sync]
+// [END cloudshell_v1_generated_cloudshellserviceclient_create_setcredentialsprovider_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_getimportjob_async]
+// [START cloudkms_v1_generated_keymanagementserviceclient_getimportjob_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.GetImportJobRequest;
 import com.google.cloud.kms.v1.ImportJob;
@@ -50,4 +50,4 @@ public class AsyncGetImportJob {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_getimportjob_async]
+// [END cloudkms_v1_generated_keymanagementserviceclient_getimportjob_async]

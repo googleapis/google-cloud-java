@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_testiampermissions_async]
+// [START cloudresourcemanager_v3_generated_foldersclient_testiampermissions_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
@@ -49,4 +49,4 @@ public class AsyncTestIamPermissions {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_testiampermissions_async]
+// [END cloudresourcemanager_v3_generated_foldersclient_testiampermissions_async]

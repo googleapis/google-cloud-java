@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_paged_async]
+// [START cloudchannel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_paged_async]
 import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.FetchReportResultsRequest;
 import com.google.cloud.channel.v1.FetchReportResultsResponse;
@@ -60,4 +60,4 @@ public class AsyncFetchReportResultsPaged {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_paged_async]
+// [END cloudchannel_v1_generated_cloudchannelreportsserviceclient_fetchreportresults_paged_async]

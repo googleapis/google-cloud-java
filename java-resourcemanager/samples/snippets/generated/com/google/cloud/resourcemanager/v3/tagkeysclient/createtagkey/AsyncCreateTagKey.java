@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_createtagkey_async]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_createtagkey_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.CreateTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.TagKey;
@@ -47,4 +47,4 @@ public class AsyncCreateTagKey {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_createtagkey_async]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_createtagkey_async]

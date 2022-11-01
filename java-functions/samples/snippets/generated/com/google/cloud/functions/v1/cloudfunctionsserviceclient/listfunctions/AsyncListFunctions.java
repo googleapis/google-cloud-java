@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_listfunctions_async]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_listfunctions_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v1.CloudFunction;
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
@@ -52,4 +52,4 @@ public class AsyncListFunctions {
     }
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_listfunctions_async]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_listfunctions_async]

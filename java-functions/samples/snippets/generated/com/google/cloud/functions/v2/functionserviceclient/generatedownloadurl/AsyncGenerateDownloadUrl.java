@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_generatedownloadurl_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_generatedownloadurl_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2.FunctionName;
 import com.google.cloud.functions.v2.FunctionServiceClient;
@@ -47,4 +47,4 @@ public class AsyncGenerateDownloadUrl {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_generatedownloadurl_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_generatedownloadurl_async]

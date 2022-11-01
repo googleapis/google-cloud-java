@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_listfunctions_locationname_sync]
+// [START cloudfunctions_v2_generated_functionserviceclient_listfunctions_locationname_sync]
 import com.google.cloud.functions.v2.Function;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.functions.v2.LocationName;
@@ -41,4 +41,4 @@ public class SyncListFunctionsLocationname {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_listfunctions_locationname_sync]
+// [END cloudfunctions_v2_generated_functionserviceclient_listfunctions_locationname_sync]

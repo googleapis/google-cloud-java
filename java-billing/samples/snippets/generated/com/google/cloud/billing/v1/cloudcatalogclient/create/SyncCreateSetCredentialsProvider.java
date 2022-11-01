@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudcatalogclient_create_setcredentialsprovider_sync]
+// [START cloudbilling_v1_generated_cloudcatalogclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.billing.v1.CloudCatalogClient;
 import com.google.cloud.billing.v1.CloudCatalogSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create(cloudCatalogSettings);
   }
 }
-// [END billing_v1_generated_cloudcatalogclient_create_setcredentialsprovider_sync]
+// [END cloudbilling_v1_generated_cloudcatalogclient_create_setcredentialsprovider_sync]

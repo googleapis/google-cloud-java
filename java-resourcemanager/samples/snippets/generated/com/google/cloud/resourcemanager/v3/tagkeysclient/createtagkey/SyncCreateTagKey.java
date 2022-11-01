@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_createtagkey_sync]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_createtagkey_sync]
 import com.google.cloud.resourcemanager.v3.CreateTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.TagKey;
 import com.google.cloud.resourcemanager.v3.TagKeysClient;
@@ -43,4 +43,4 @@ public class SyncCreateTagKey {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_createtagkey_sync]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_createtagkey_sync]

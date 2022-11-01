@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_getmigrationjob_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_getmigrationjob_sync]
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.GetMigrationJobRequest;
 import com.google.cloud.clouddms.v1.MigrationJob;
@@ -44,4 +44,4 @@ public class SyncGetMigrationJob {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_getmigrationjob_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_getmigrationjob_sync]

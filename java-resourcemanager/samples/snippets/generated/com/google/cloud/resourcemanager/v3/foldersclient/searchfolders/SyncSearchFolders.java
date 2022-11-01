@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_searchfolders_sync]
+// [START cloudresourcemanager_v3_generated_foldersclient_searchfolders_sync]
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
 import com.google.cloud.resourcemanager.v3.SearchFoldersRequest;
@@ -46,4 +46,4 @@ public class SyncSearchFolders {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_searchfolders_sync]
+// [END cloudresourcemanager_v3_generated_foldersclient_searchfolders_sync]

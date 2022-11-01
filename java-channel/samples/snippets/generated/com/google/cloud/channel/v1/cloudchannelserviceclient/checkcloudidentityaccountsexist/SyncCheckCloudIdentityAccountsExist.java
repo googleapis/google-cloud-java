@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_checkcloudidentityaccountsexist_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_checkcloudidentityaccountsexist_sync]
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest;
 import com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -44,4 +44,4 @@ public class SyncCheckCloudIdentityAccountsExist {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_checkcloudidentityaccountsexist_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_checkcloudidentityaccountsexist_sync]

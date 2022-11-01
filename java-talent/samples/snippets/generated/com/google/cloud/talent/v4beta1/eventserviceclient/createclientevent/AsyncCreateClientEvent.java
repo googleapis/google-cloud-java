@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_eventserviceclient_createclientevent_async]
+// [START jobs_v4beta1_generated_eventserviceclient_createclientevent_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4beta1.ClientEvent;
 import com.google.cloud.talent.v4beta1.CreateClientEventRequest;
@@ -48,4 +48,4 @@ public class AsyncCreateClientEvent {
     }
   }
 }
-// [END talent_v4beta1_generated_eventserviceclient_createclientevent_async]
+// [END jobs_v4beta1_generated_eventserviceclient_createclientevent_async]

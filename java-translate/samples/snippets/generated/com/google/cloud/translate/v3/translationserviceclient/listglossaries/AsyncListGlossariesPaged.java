@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_listglossaries_paged_async]
+// [START translate_v3_generated_translationserviceclient_listglossaries_paged_async]
 import com.google.cloud.translate.v3.Glossary;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
@@ -60,4 +60,4 @@ public class AsyncListGlossariesPaged {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_listglossaries_paged_async]
+// [END translate_v3_generated_translationserviceclient_listglossaries_paged_async]

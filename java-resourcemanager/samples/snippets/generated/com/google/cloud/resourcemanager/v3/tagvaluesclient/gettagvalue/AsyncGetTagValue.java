@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluesclient_gettagvalue_async]
+// [START cloudresourcemanager_v3_generated_tagvaluesclient_gettagvalue_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.GetTagValueRequest;
 import com.google.cloud.resourcemanager.v3.TagValue;
@@ -46,4 +46,4 @@ public class AsyncGetTagValue {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagvaluesclient_gettagvalue_async]
+// [END cloudresourcemanager_v3_generated_tagvaluesclient_gettagvalue_async]

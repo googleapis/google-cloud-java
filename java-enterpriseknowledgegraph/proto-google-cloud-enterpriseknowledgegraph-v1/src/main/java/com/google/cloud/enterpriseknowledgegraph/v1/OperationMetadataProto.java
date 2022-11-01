@@ -51,12 +51,15 @@ public final class OperationMetadataProto {
           + "me\030\003 \001(\0132\032.google.protobuf.Timestamp\"r\n\005"
           + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020"
           + "\001\022\016\n\nCANCELLING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAIL"
-          + "ED\020\004\022\r\n\tCANCELLED\020\005\022\013\n\007PENDING\020\006B\252\001\n,com"
+          + "ED\020\004\022\r\n\tCANCELLED\020\005\022\013\n\007PENDING\020\006B\256\002\n,com"
           + ".google.cloud.enterpriseknowledgegraph.v"
           + "1B\026OperationMetadataProtoP\001Z`google.gola"
           + "ng.org/genproto/googleapis/cloud/enterpr"
           + "iseknowledgegraph/v1;enterpriseknowledge"
-          + "graphb\006proto3"
+          + "graph\252\002(Google.Cloud.EnterpriseKnowledge"
+          + "Graph.V1\312\002(Google\\Cloud\\EnterpriseKnowle"
+          + "dgeGraph\\V1\352\002+Google::Cloud::EnterpriseK"
+          + "nowledgeGraph::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

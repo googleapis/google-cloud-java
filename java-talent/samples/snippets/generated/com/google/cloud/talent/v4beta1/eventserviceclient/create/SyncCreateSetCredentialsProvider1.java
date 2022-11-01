@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_eventserviceclient_create_setcredentialsprovider1_sync]
+// [START jobs_v4beta1_generated_eventserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.talent.v4beta1.EventServiceClient;
 import com.google.cloud.talent.v4beta1.EventServiceSettings;
 
@@ -40,4 +40,4 @@ public class SyncCreateSetCredentialsProvider1 {
     EventServiceClient eventServiceClient = EventServiceClient.create(eventServiceSettings);
   }
 }
-// [END talent_v4beta1_generated_eventserviceclient_create_setcredentialsprovider1_sync]
+// [END jobs_v4beta1_generated_eventserviceclient_create_setcredentialsprovider1_sync]

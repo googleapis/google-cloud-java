@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider1_sync]
+// [START cloudresourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.resourcemanager.v3.TagValuesClient;
 import com.google.cloud.resourcemanager.v3.TagValuesSettings;
 
@@ -40,4 +40,4 @@ public class SyncCreateSetCredentialsProvider1 {
     TagValuesClient tagValuesClient = TagValuesClient.create(tagValuesSettings);
   }
 }
-// [END resourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider1_sync]
+// [END cloudresourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider1_sync]

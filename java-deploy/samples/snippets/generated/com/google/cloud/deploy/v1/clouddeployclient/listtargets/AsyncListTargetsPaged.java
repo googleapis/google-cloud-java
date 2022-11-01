@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_listtargets_paged_async]
+// [START clouddeploy_v1_generated_clouddeployclient_listtargets_paged_async]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.ListTargetsRequest;
 import com.google.cloud.deploy.v1.ListTargetsResponse;
@@ -60,4 +60,4 @@ public class AsyncListTargetsPaged {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_listtargets_paged_async]
+// [END clouddeploy_v1_generated_clouddeployclient_listtargets_paged_async]

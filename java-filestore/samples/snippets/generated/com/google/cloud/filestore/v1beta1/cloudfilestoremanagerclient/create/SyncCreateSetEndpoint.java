@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1beta1.samples;
 
-// [START filestore_v1beta1_generated_cloudfilestoremanagerclient_create_setendpoint_sync]
+// [START file_v1beta1_generated_cloudfilestoremanagerclient_create_setendpoint_sync]
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerSettings;
 import com.google.cloud.filestore.v1beta1.myEndpoint;
@@ -39,4 +39,4 @@ public class SyncCreateSetEndpoint {
         CloudFilestoreManagerClient.create(cloudFilestoreManagerSettings);
   }
 }
-// [END filestore_v1beta1_generated_cloudfilestoremanagerclient_create_setendpoint_sync]
+// [END file_v1beta1_generated_cloudfilestoremanagerclient_create_setendpoint_sync]

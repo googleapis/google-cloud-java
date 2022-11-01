@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_deleteconnectionprofile_connectionprofilename_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_deleteconnectionprofile_connectionprofilename_sync]
 import com.google.cloud.clouddms.v1.ConnectionProfileName;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.protobuf.Empty;
@@ -41,4 +41,4 @@ public class SyncDeleteConnectionProfileConnectionprofilename {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_deleteconnectionprofile_connectionprofilename_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_deleteconnectionprofile_connectionprofilename_sync]

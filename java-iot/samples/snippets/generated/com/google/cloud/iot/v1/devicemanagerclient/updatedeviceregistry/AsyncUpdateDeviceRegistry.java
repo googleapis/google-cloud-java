@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_updatedeviceregistry_async]
+// [START cloudiot_v1_generated_devicemanagerclient_updatedeviceregistry_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.DeviceRegistry;
@@ -48,4 +48,4 @@ public class AsyncUpdateDeviceRegistry {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_updatedeviceregistry_async]
+// [END cloudiot_v1_generated_devicemanagerclient_updatedeviceregistry_async]

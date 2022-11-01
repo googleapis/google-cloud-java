@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_generateuploadurl_sync]
+// [START cloudfunctions_v2_generated_functionserviceclient_generateuploadurl_sync]
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.functions.v2.GenerateUploadUrlRequest;
 import com.google.cloud.functions.v2.GenerateUploadUrlResponse;
@@ -43,4 +43,4 @@ public class SyncGenerateUploadUrl {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_generateuploadurl_sync]
+// [END cloudfunctions_v2_generated_functionserviceclient_generateuploadurl_sync]

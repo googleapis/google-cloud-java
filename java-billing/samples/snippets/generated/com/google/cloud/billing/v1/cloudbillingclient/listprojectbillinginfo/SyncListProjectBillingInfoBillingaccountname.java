@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_listprojectbillinginfo_billingaccountname_sync]
+// [START cloudbilling_v1_generated_cloudbillingclient_listprojectbillinginfo_billingaccountname_sync]
 import com.google.cloud.billing.v1.BillingAccountName;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
@@ -42,4 +42,4 @@ public class SyncListProjectBillingInfoBillingaccountname {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_listprojectbillinginfo_billingaccountname_sync]
+// [END cloudbilling_v1_generated_cloudbillingclient_listprojectbillinginfo_billingaccountname_sync]

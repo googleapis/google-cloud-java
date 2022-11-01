@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_completionclient_completequery_async]
+// [START jobs_v4_generated_completionclient_completequery_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4.CompanyName;
 import com.google.cloud.talent.v4.CompleteQueryRequest;
@@ -53,4 +53,4 @@ public class AsyncCompleteQuery {
     }
   }
 }
-// [END talent_v4_generated_completionclient_completequery_async]
+// [END jobs_v4_generated_completionclient_completequery_async]

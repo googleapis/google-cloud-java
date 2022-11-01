@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_testiampermissions_resourcenameliststring_sync]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_testiampermissions_resourcenameliststring_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.resourcemanager.v3.TagKeyName;
 import com.google.cloud.resourcemanager.v3.TagKeysClient;
@@ -43,4 +43,4 @@ public class SyncTestIamPermissionsResourcenameListstring {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_testiampermissions_resourcenameliststring_sync]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_testiampermissions_resourcenameliststring_sync]

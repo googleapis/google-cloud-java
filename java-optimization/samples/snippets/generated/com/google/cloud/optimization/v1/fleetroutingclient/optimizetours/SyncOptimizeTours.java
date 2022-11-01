@@ -16,7 +16,7 @@
 
 package com.google.cloud.optimization.v1.samples;
 
-// [START optimization_v1_generated_fleetroutingclient_optimizetours_sync]
+// [START cloudoptimization_v1_generated_fleetroutingclient_optimizetours_sync]
 import com.google.cloud.optimization.v1.FleetRoutingClient;
 import com.google.cloud.optimization.v1.InjectedSolutionConstraint;
 import com.google.cloud.optimization.v1.OptimizeToursRequest;
@@ -62,4 +62,4 @@ public class SyncOptimizeTours {
     }
   }
 }
-// [END optimization_v1_generated_fleetroutingclient_optimizetours_sync]
+// [END cloudoptimization_v1_generated_fleetroutingclient_optimizetours_sync]

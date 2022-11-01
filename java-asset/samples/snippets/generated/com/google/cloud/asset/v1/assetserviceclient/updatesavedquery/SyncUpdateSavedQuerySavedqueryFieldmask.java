@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_updatesavedquery_savedqueryfieldmask_sync]
+// [START cloudasset_v1_generated_assetserviceclient_updatesavedquery_savedqueryfieldmask_sync]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.SavedQuery;
 import com.google.protobuf.FieldMask;
@@ -40,4 +40,4 @@ public class SyncUpdateSavedQuerySavedqueryFieldmask {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_updatesavedquery_savedqueryfieldmask_sync]
+// [END cloudasset_v1_generated_assetserviceclient_updatesavedquery_savedqueryfieldmask_sync]

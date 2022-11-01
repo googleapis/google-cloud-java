@@ -16,7 +16,7 @@
 
 package com.google.cloud.privatecatalog.v1beta1.samples;
 
-// [START privatecatalog_v1beta1_generated_privatecatalogclient_searchversions_sync]
+// [START cloudprivatecatalog_v1beta1_generated_privatecatalogclient_searchversions_sync]
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogClient;
 import com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest;
 import com.google.cloud.privatecatalog.v1beta1.Version;
@@ -47,4 +47,4 @@ public class SyncSearchVersions {
     }
   }
 }
-// [END privatecatalog_v1beta1_generated_privatecatalogclient_searchversions_sync]
+// [END cloudprivatecatalog_v1beta1_generated_privatecatalogclient_searchversions_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_deletedeviceregistry_registryname_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_deletedeviceregistry_registryname_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.RegistryName;
 import com.google.protobuf.Empty;
@@ -39,4 +39,4 @@ public class SyncDeleteDeviceRegistryRegistryname {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_deletedeviceregistry_registryname_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_deletedeviceregistry_registryname_sync]

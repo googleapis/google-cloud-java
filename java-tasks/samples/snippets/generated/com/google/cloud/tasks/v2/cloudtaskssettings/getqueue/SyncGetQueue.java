@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtaskssettings_getqueue_sync]
+// [START cloudtasks_v2_generated_cloudtaskssettings_getqueue_sync]
 import com.google.cloud.tasks.v2.CloudTasksSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetQueue {
     CloudTasksSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
   }
 }
-// [END tasks_v2_generated_cloudtaskssettings_getqueue_sync]
+// [END cloudtasks_v2_generated_cloudtaskssettings_getqueue_sync]

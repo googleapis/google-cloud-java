@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_deletedeliverypipeline_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_deletedeliverypipeline_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
@@ -50,4 +50,4 @@ public class SyncDeleteDeliveryPipeline {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_deletedeliverypipeline_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_deletedeliverypipeline_sync]

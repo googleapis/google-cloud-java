@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_tenantserviceclient_createtenant_async]
+// [START jobs_v4_generated_tenantserviceclient_createtenant_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4.CreateTenantRequest;
 import com.google.cloud.talent.v4.ProjectName;
@@ -47,4 +47,4 @@ public class AsyncCreateTenant {
     }
   }
 }
-// [END talent_v4_generated_tenantserviceclient_createtenant_async]
+// [END jobs_v4_generated_tenantserviceclient_createtenant_async]

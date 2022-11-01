@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_listinstances_async]
+// [START file_v1_generated_cloudfilestoremanagerclient_listinstances_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1.Instance;
@@ -54,4 +54,4 @@ public class AsyncListInstances {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_listinstances_async]
+// [END file_v1_generated_cloudfilestoremanagerclient_listinstances_async]

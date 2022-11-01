@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_create_setcredentialsprovider_sync]
+// [START cloudbilling_v1_generated_cloudbillingclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.CloudBillingSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     CloudBillingClient cloudBillingClient = CloudBillingClient.create(cloudBillingSettings);
   }
 }
-// [END billing_v1_generated_cloudbillingclient_create_setcredentialsprovider_sync]
+// [END cloudbilling_v1_generated_cloudbillingclient_create_setcredentialsprovider_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_deletefunction_sync]
+// [START cloudfunctions_v2_generated_functionserviceclient_deletefunction_sync]
 import com.google.cloud.functions.v2.DeleteFunctionRequest;
 import com.google.cloud.functions.v2.FunctionName;
 import com.google.cloud.functions.v2.FunctionServiceClient;
@@ -43,4 +43,4 @@ public class SyncDeleteFunction {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_deletefunction_sync]
+// [END cloudfunctions_v2_generated_functionserviceclient_deletefunction_sync]

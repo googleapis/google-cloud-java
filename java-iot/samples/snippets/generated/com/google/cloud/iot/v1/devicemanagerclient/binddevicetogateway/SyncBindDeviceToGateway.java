@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_binddevicetogateway_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_binddevicetogateway_sync]
 import com.google.cloud.iot.v1.BindDeviceToGatewayRequest;
 import com.google.cloud.iot.v1.BindDeviceToGatewayResponse;
 import com.google.cloud.iot.v1.DeviceManagerClient;
@@ -45,4 +45,4 @@ public class SyncBindDeviceToGateway {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_binddevicetogateway_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_binddevicetogateway_sync]

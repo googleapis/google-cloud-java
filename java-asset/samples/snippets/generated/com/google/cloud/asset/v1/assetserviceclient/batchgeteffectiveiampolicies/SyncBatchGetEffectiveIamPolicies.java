@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_batchgeteffectiveiampolicies_sync]
+// [START cloudasset_v1_generated_assetserviceclient_batchgeteffectiveiampolicies_sync]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse;
@@ -46,4 +46,4 @@ public class SyncBatchGetEffectiveIamPolicies {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_batchgeteffectiveiampolicies_sync]
+// [END cloudasset_v1_generated_assetserviceclient_batchgeteffectiveiampolicies_sync]

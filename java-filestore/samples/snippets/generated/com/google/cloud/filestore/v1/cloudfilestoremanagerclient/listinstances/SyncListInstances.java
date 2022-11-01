@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_listinstances_sync]
+// [START file_v1_generated_cloudfilestoremanagerclient_listinstances_sync]
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1.Instance;
 import com.google.cloud.filestore.v1.ListInstancesRequest;
@@ -50,4 +50,4 @@ public class SyncListInstances {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_listinstances_sync]
+// [END file_v1_generated_cloudfilestoremanagerclient_listinstances_sync]

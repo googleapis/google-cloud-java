@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listpurchasableoffers_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listpurchasableoffers_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CustomerName;
 import com.google.cloud.channel.v1.ListPurchasableOffersRequest;
@@ -49,4 +49,4 @@ public class SyncListPurchasableOffers {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listpurchasableoffers_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listpurchasableoffers_sync]

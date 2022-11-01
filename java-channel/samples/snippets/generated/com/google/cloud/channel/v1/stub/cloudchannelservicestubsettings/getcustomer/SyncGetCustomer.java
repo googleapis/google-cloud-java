@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.stub.samples;
 
-// [START channel_v1_generated_cloudchannelservicestubsettings_getcustomer_sync]
+// [START cloudchannel_v1_generated_cloudchannelservicestubsettings_getcustomer_sync]
 import com.google.cloud.channel.v1.stub.CloudChannelServiceStubSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncGetCustomer {
         cloudChannelServiceSettingsBuilder.build();
   }
 }
-// [END channel_v1_generated_cloudchannelservicestubsettings_getcustomer_sync]
+// [END cloudchannel_v1_generated_cloudchannelservicestubsettings_getcustomer_sync]

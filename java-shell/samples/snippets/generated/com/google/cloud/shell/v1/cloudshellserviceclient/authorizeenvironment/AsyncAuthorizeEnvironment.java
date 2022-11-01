@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.samples;
 
-// [START shell_v1_generated_cloudshellserviceclient_authorizeenvironment_async]
+// [START cloudshell_v1_generated_cloudshellserviceclient_authorizeenvironment_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.shell.v1.AuthorizeEnvironmentRequest;
 import com.google.cloud.shell.v1.CloudShellServiceClient;
@@ -50,4 +50,4 @@ public class AsyncAuthorizeEnvironment {
     }
   }
 }
-// [END shell_v1_generated_cloudshellserviceclient_authorizeenvironment_async]
+// [END cloudshell_v1_generated_cloudshellserviceclient_authorizeenvironment_async]

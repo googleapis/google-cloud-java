@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_create_setcredentialsprovider_sync]
+// [START cloudresourcemanager_v3_generated_projectsclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
 import com.google.cloud.resourcemanager.v3.ProjectsSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     ProjectsClient projectsClient = ProjectsClient.create(projectsSettings);
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_create_setcredentialsprovider_sync]
+// [END cloudresourcemanager_v3_generated_projectsclient_create_setcredentialsprovider_sync]

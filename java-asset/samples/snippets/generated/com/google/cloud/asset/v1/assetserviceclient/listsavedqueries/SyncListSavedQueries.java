@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_listsavedqueries_sync]
+// [START cloudasset_v1_generated_assetserviceclient_listsavedqueries_sync]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.ListSavedQueriesRequest;
 import com.google.cloud.asset.v1.ProjectName;
@@ -48,4 +48,4 @@ public class SyncListSavedQueries {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_listsavedqueries_sync]
+// [END cloudasset_v1_generated_assetserviceclient_listsavedqueries_sync]

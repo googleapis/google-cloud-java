@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider_sync]
+// [START file_v1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerSettings;
@@ -42,4 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         CloudFilestoreManagerClient.create(cloudFilestoreManagerSettings);
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider_sync]
+// [END file_v1_generated_cloudfilestoremanagerclient_create_setcredentialsprovider_sync]

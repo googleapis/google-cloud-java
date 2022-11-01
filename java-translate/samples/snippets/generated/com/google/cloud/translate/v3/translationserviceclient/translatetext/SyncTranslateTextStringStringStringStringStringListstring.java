@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_translatetext_stringstringstringstringstringliststring_sync]
+// [START translate_v3_generated_translationserviceclient_translatetext_stringstringstringstringstringliststring_sync]
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.TranslateTextResponse;
 import com.google.cloud.translate.v3.TranslationServiceClient;
@@ -48,4 +48,4 @@ public class SyncTranslateTextStringStringStringStringStringListstring {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_translatetext_stringstringstringstringstringliststring_sync]
+// [END translate_v3_generated_translationserviceclient_translatetext_stringstringstringstringstringliststring_sync]

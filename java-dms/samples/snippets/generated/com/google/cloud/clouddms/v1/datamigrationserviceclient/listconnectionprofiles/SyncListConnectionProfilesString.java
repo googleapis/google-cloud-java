@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_listconnectionprofiles_string_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_listconnectionprofiles_string_sync]
 import com.google.cloud.clouddms.v1.ConnectionProfile;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.LocationName;
@@ -43,4 +43,4 @@ public class SyncListConnectionProfilesString {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_listconnectionprofiles_string_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_listconnectionprofiles_string_sync]

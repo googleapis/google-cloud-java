@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudcatalogclient_create_setendpoint_sync]
+// [START cloudbilling_v1_generated_cloudcatalogclient_create_setendpoint_sync]
 import com.google.cloud.billing.v1.CloudCatalogClient;
 import com.google.cloud.billing.v1.CloudCatalogSettings;
 import com.google.cloud.billing.v1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create(cloudCatalogSettings);
   }
 }
-// [END billing_v1_generated_cloudcatalogclient_create_setendpoint_sync]
+// [END cloudbilling_v1_generated_cloudcatalogclient_create_setendpoint_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkeconnect.gateway.v1beta1.samples;
 
-// [START gateway_v1beta1_generated_gatewayserviceclient_deleteresource_async]
+// [START connectgateway_v1beta1_generated_gatewayserviceclient_deleteresource_async]
 import com.google.api.HttpBody;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.gkeconnect.gateway.v1beta1.GatewayServiceClient;
@@ -50,4 +50,4 @@ public class AsyncDeleteResource {
     }
   }
 }
-// [END gateway_v1beta1_generated_gatewayserviceclient_deleteresource_async]
+// [END connectgateway_v1beta1_generated_gatewayserviceclient_deleteresource_async]

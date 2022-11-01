@@ -159,7 +159,7 @@ public class HttpJsonDomainMappingsStub extends DomainMappingsStub {
                             ProtoRestSerializer<CreateDomainMappingRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
-                                fields, "overrideStrategy", request.getOverrideStrategy());
+                                fields, "overrideStrategy", request.getOverrideStrategyValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(

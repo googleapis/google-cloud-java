@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_testiampermissions_sync]
+// [START cloudfunctions_v2_generated_functionserviceclient_testiampermissions_sync]
 import com.google.cloud.functions.v2.FunctionName;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -45,4 +45,4 @@ public class SyncTestIamPermissions {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_testiampermissions_sync]
+// [END cloudfunctions_v2_generated_functionserviceclient_testiampermissions_sync]

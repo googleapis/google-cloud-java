@@ -50,4 +50,5 @@
     <module>proto-google-cloud-dataproc-v1</module>
     <module>google-cloud-dataproc-bom</module>
   </modules>
-</project>
+
+  </project>

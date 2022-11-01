@@ -67,4 +67,5 @@
     <module>proto-google-cloud-talent-v4beta1</module>
     <module>google-cloud-talent-bom</module>
   </modules>
-</project>
+
+  </project>

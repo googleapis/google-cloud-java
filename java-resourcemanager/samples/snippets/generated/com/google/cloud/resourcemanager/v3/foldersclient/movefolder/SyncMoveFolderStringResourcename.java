@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_movefolder_stringresourcename_sync]
+// [START cloudresourcemanager_v3_generated_foldersclient_movefolder_stringresourcename_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FolderName;
@@ -41,4 +41,4 @@ public class SyncMoveFolderStringResourcename {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_movefolder_stringresourcename_sync]
+// [END cloudresourcemanager_v3_generated_foldersclient_movefolder_stringresourcename_sync]

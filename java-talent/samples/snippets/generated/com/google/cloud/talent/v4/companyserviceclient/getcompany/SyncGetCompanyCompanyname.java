@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_companyserviceclient_getcompany_companyname_sync]
+// [START jobs_v4_generated_companyserviceclient_getcompany_companyname_sync]
 import com.google.cloud.talent.v4.Company;
 import com.google.cloud.talent.v4.CompanyName;
 import com.google.cloud.talent.v4.CompanyServiceClient;
@@ -39,4 +39,4 @@ public class SyncGetCompanyCompanyname {
     }
   }
 }
-// [END talent_v4_generated_companyserviceclient_getcompany_companyname_sync]
+// [END jobs_v4_generated_companyserviceclient_getcompany_companyname_sync]

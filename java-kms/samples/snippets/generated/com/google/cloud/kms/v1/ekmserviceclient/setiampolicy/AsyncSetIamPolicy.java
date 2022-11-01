@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_ekmserviceclient_setiampolicy_async]
+// [START cloudkms_v1_generated_ekmserviceclient_setiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.CryptoKeyName;
 import com.google.cloud.kms.v1.EkmServiceClient;
@@ -51,4 +51,4 @@ public class AsyncSetIamPolicy {
     }
   }
 }
-// [END kms_v1_generated_ekmserviceclient_setiampolicy_async]
+// [END cloudkms_v1_generated_ekmserviceclient_setiampolicy_async]

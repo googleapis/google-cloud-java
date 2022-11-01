@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_getjobrun_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_getjobrun_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.JobRun;
@@ -51,4 +51,4 @@ public class SyncGetJobRun {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_getjobrun_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_getjobrun_sync]

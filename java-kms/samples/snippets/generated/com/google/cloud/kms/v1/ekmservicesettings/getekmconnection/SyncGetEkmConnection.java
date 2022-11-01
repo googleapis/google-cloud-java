@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_ekmservicesettings_getekmconnection_sync]
+// [START cloudkms_v1_generated_ekmservicesettings_getekmconnection_sync]
 import com.google.cloud.kms.v1.EkmServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetEkmConnection {
     EkmServiceSettings ekmServiceSettings = ekmServiceSettingsBuilder.build();
   }
 }
-// [END kms_v1_generated_ekmservicesettings_getekmconnection_sync]
+// [END cloudkms_v1_generated_ekmservicesettings_getekmconnection_sync]

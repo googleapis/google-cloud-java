@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_ekmserviceclient_listekmconnections_async]
+// [START cloudkms_v1_generated_ekmserviceclient_listekmconnections_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.EkmConnection;
 import com.google.cloud.kms.v1.EkmServiceClient;
@@ -53,4 +53,4 @@ public class AsyncListEkmConnections {
     }
   }
 }
-// [END kms_v1_generated_ekmserviceclient_listekmconnections_async]
+// [END cloudkms_v1_generated_ekmserviceclient_listekmconnections_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_sync]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_sync]
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
 import com.google.cloud.functions.v1.CryptoKeyName;
 import com.google.cloud.functions.v1.GenerateUploadUrlRequest;
@@ -47,4 +47,4 @@ public class SyncGenerateUploadUrl {
     }
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_sync]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_generateuploadurl_sync]

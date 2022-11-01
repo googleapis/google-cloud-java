@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1.samples;
 
-// [START scheduler_v1_generated_cloudschedulerclient_createjob_sync]
+// [START cloudscheduler_v1_generated_cloudschedulerclient_createjob_sync]
 import com.google.cloud.scheduler.v1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1.CreateJobRequest;
 import com.google.cloud.scheduler.v1.Job;
@@ -44,4 +44,4 @@ public class SyncCreateJob {
     }
   }
 }
-// [END scheduler_v1_generated_cloudschedulerclient_createjob_sync]
+// [END cloudscheduler_v1_generated_cloudschedulerclient_createjob_sync]

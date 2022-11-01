@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_batchcreatejobs_tenantnamelistjob_sync]
+// [START jobs_v4_generated_jobserviceclient_batchcreatejobs_tenantnamelistjob_sync]
 import com.google.cloud.talent.v4.BatchCreateJobsResponse;
 import com.google.cloud.talent.v4.Job;
 import com.google.cloud.talent.v4.JobServiceClient;
@@ -43,4 +43,4 @@ public class SyncBatchCreateJobsTenantnameListjob {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_batchcreatejobs_tenantnamelistjob_sync]
+// [END jobs_v4_generated_jobserviceclient_batchcreatejobs_tenantnamelistjob_sync]

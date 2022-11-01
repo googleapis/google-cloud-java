@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_eventserviceclient_create_setendpoint_sync]
+// [START jobs_v4beta1_generated_eventserviceclient_create_setendpoint_sync]
 import com.google.cloud.talent.v4beta1.EventServiceClient;
 import com.google.cloud.talent.v4beta1.EventServiceSettings;
 import com.google.cloud.talent.v4beta1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     EventServiceClient eventServiceClient = EventServiceClient.create(eventServiceSettings);
   }
 }
-// [END talent_v4beta1_generated_eventserviceclient_create_setendpoint_sync]
+// [END jobs_v4beta1_generated_eventserviceclient_create_setendpoint_sync]

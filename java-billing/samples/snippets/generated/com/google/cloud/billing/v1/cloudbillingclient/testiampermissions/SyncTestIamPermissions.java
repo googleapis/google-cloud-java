@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_testiampermissions_sync]
+// [START cloudbilling_v1_generated_cloudbillingclient_testiampermissions_sync]
 import com.google.cloud.billing.v1.BillingAccountName;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -45,4 +45,4 @@ public class SyncTestIamPermissions {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_testiampermissions_sync]
+// [END cloudbilling_v1_generated_cloudbillingclient_testiampermissions_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.stub.samples;
 
-// [START asset_v1_generated_assetservicestubsettings_batchgetassetshistory_sync]
+// [START cloudasset_v1_generated_assetservicestubsettings_batchgetassetshistory_sync]
 import com.google.cloud.asset.v1.stub.AssetServiceStubSettings;
 import java.time.Duration;
 
@@ -46,4 +46,4 @@ public class SyncBatchGetAssetsHistory {
     AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
   }
 }
-// [END asset_v1_generated_assetservicestubsettings_batchgetassetshistory_sync]
+// [END cloudasset_v1_generated_assetservicestubsettings_batchgetassetshistory_sync]

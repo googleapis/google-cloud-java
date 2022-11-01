@@ -80,7 +80,8 @@ public class HttpJsonWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "constraints", request.getConstraints());
-                            serializer.putQueryParam(fields, "threatType", request.getThreatType());
+                            serializer.putQueryParam(
+                                fields, "threatType", request.getThreatTypeValue());
                             serializer.putQueryParam(
                                 fields, "versionToken", request.getVersionToken());
                             return fields;

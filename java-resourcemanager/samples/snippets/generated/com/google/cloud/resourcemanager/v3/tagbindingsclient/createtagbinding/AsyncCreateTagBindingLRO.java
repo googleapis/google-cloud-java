@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_createtagbinding_lro_async]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_createtagbinding_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
@@ -48,4 +48,4 @@ public class AsyncCreateTagBindingLRO {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_createtagbinding_lro_async]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_createtagbinding_lro_async]

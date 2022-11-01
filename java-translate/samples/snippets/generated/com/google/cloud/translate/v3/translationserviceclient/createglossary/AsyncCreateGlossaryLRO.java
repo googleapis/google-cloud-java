@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_createglossary_lro_async]
+// [START translate_v3_generated_translationserviceclient_createglossary_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.translate.v3.CreateGlossaryMetadata;
 import com.google.cloud.translate.v3.CreateGlossaryRequest;
@@ -49,4 +49,4 @@ public class AsyncCreateGlossaryLRO {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_createglossary_lro_async]
+// [END translate_v3_generated_translationserviceclient_createglossary_lro_async]

@@ -77,7 +77,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(
                                 fields, "assetTypes", request.getAssetTypesList());
                             serializer.putQueryParam(
-                                fields, "contentType", request.getContentType());
+                                fields, "contentType", request.getContentTypeValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "readTime", request.getReadTime());

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_listjobs_paged_async]
+// [START jobs_v4_generated_jobserviceclient_listjobs_paged_async]
 import com.google.cloud.talent.v4.Job;
 import com.google.cloud.talent.v4.JobServiceClient;
 import com.google.cloud.talent.v4.JobView;
@@ -61,4 +61,4 @@ public class AsyncListJobsPaged {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_listjobs_paged_async]
+// [END jobs_v4_generated_jobserviceclient_listjobs_paged_async]

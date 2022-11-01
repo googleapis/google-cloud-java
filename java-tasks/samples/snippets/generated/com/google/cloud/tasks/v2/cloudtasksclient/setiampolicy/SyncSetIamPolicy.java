@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_setiampolicy_sync]
+// [START cloudtasks_v2_generated_cloudtasksclient_setiampolicy_sync]
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.QueueName;
 import com.google.iam.v1.Policy;
@@ -46,4 +46,4 @@ public class SyncSetIamPolicy {
     }
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_setiampolicy_sync]
+// [END cloudtasks_v2_generated_cloudtasksclient_setiampolicy_sync]

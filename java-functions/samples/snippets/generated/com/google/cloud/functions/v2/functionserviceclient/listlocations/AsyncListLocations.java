@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_listlocations_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_listlocations_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.location.ListLocationsRequest;
@@ -51,4 +51,4 @@ public class AsyncListLocations {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_listlocations_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_listlocations_async]

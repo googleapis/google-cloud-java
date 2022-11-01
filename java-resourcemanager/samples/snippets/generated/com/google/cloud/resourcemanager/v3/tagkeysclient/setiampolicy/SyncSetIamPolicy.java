@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_setiampolicy_sync]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_setiampolicy_sync]
 import com.google.cloud.resourcemanager.v3.TagKeyName;
 import com.google.cloud.resourcemanager.v3.TagKeysClient;
 import com.google.iam.v1.Policy;
@@ -46,4 +46,4 @@ public class SyncSetIamPolicy {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_setiampolicy_sync]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_setiampolicy_sync]

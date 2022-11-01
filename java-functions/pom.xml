@@ -86,4 +86,5 @@
     <module>proto-google-cloud-functions-v2</module>
     <module>google-cloud-functions-bom</module>
   </modules>
-</project>
+
+  </project>

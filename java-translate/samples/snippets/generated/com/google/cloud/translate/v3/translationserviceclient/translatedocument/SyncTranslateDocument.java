@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_translatedocument_sync]
+// [START translate_v3_generated_translationserviceclient_translatedocument_sync]
 import com.google.cloud.translate.v3.DocumentInputConfig;
 import com.google.cloud.translate.v3.DocumentOutputConfig;
 import com.google.cloud.translate.v3.TranslateDocumentRequest;
@@ -53,4 +53,4 @@ public class SyncTranslateDocument {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_translatedocument_sync]
+// [END translate_v3_generated_translationserviceclient_translatedocument_sync]

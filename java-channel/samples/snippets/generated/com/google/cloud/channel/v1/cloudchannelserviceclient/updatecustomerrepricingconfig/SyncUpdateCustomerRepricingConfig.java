@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_updatecustomerrepricingconfig_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_updatecustomerrepricingconfig_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CustomerRepricingConfig;
 import com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest;
@@ -43,4 +43,4 @@ public class SyncUpdateCustomerRepricingConfig {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_updatecustomerrepricingconfig_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_updatecustomerrepricingconfig_sync]

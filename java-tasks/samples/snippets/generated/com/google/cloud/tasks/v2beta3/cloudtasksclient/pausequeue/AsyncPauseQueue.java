@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta3.samples;
 
-// [START tasks_v2beta3_generated_cloudtasksclient_pausequeue_async]
+// [START cloudtasks_v2beta3_generated_cloudtasksclient_pausequeue_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tasks.v2beta3.CloudTasksClient;
 import com.google.cloud.tasks.v2beta3.PauseQueueRequest;
@@ -46,4 +46,4 @@ public class AsyncPauseQueue {
     }
   }
 }
-// [END tasks_v2beta3_generated_cloudtasksclient_pausequeue_async]
+// [END cloudtasks_v2beta3_generated_cloudtasksclient_pausequeue_async]

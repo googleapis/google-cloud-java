@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_tenantserviceclient_deletetenant_tenantname_sync]
+// [START jobs_v4beta1_generated_tenantserviceclient_deletetenant_tenantname_sync]
 import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
 import com.google.protobuf.Empty;
@@ -39,4 +39,4 @@ public class SyncDeleteTenantTenantname {
     }
   }
 }
-// [END talent_v4beta1_generated_tenantserviceclient_deletetenant_tenantname_sync]
+// [END jobs_v4beta1_generated_tenantserviceclient_deletetenant_tenantname_sync]

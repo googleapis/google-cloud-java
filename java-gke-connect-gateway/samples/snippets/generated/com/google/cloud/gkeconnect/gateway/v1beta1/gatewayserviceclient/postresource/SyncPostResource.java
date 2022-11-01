@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkeconnect.gateway.v1beta1.samples;
 
-// [START gateway_v1beta1_generated_gatewayserviceclient_postresource_sync]
+// [START connectgateway_v1beta1_generated_gatewayserviceclient_postresource_sync]
 import com.google.api.HttpBody;
 import com.google.cloud.gkeconnect.gateway.v1beta1.GatewayServiceClient;
 import com.google.protobuf.Any;
@@ -46,4 +46,4 @@ public class SyncPostResource {
     }
   }
 }
-// [END gateway_v1beta1_generated_gatewayserviceclient_postresource_sync]
+// [END connectgateway_v1beta1_generated_gatewayserviceclient_postresource_sync]

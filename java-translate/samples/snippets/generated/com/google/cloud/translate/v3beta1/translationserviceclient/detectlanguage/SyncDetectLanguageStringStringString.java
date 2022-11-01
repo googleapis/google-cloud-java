@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translation_v3beta1_generated_translationserviceclient_detectlanguage_stringstringstring_sync]
+// [START translate_v3beta1_generated_translationserviceclient_detectlanguage_stringstringstring_sync]
 import com.google.cloud.translate.v3beta1.DetectLanguageResponse;
 import com.google.cloud.translate.v3beta1.LocationName;
 import com.google.cloud.translate.v3beta1.TranslationServiceClient;
@@ -42,4 +42,4 @@ public class SyncDetectLanguageStringStringString {
     }
   }
 }
-// [END translation_v3beta1_generated_translationserviceclient_detectlanguage_stringstringstring_sync]
+// [END translate_v3beta1_generated_translationserviceclient_detectlanguage_stringstringstring_sync]

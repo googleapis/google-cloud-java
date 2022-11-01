@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_jobserviceclient_updatejob_async]
+// [START jobs_v4beta1_generated_jobserviceclient_updatejob_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4beta1.Job;
 import com.google.cloud.talent.v4beta1.JobServiceClient;
@@ -47,4 +47,4 @@ public class AsyncUpdateJob {
     }
   }
 }
-// [END talent_v4beta1_generated_jobserviceclient_updatejob_async]
+// [END jobs_v4beta1_generated_jobserviceclient_updatejob_async]

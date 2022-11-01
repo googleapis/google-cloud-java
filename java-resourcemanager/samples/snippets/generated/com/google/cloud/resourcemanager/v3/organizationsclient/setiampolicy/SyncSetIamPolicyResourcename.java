@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_organizationsclient_setiampolicy_resourcename_sync]
+// [START cloudresourcemanager_v3_generated_organizationsclient_setiampolicy_resourcename_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.resourcemanager.v3.OrganizationName;
 import com.google.cloud.resourcemanager.v3.OrganizationsClient;
@@ -40,4 +40,4 @@ public class SyncSetIamPolicyResourcename {
     }
   }
 }
-// [END resourcemanager_v3_generated_organizationsclient_setiampolicy_resourcename_sync]
+// [END cloudresourcemanager_v3_generated_organizationsclient_setiampolicy_resourcename_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_searchallresources_sync]
+// [START cloudasset_v1_generated_assetserviceclient_searchallresources_sync]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.ResourceSearchResult;
 import com.google.cloud.asset.v1.SearchAllResourcesRequest;
@@ -53,4 +53,4 @@ public class SyncSearchAllResources {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_searchallresources_sync]
+// [END cloudasset_v1_generated_assetserviceclient_searchallresources_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_tenantserviceclient_listtenants_string_sync]
+// [START jobs_v4_generated_tenantserviceclient_listtenants_string_sync]
 import com.google.cloud.talent.v4.ProjectName;
 import com.google.cloud.talent.v4.Tenant;
 import com.google.cloud.talent.v4.TenantServiceClient;
@@ -41,4 +41,4 @@ public class SyncListTenantsString {
     }
   }
 }
-// [END talent_v4_generated_tenantserviceclient_listtenants_string_sync]
+// [END jobs_v4_generated_tenantserviceclient_listtenants_string_sync]

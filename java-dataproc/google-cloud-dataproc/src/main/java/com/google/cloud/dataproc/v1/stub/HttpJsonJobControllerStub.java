@@ -208,7 +208,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                                 fields, "clusterName", request.getClusterName());
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(
-                                fields, "jobStateMatcher", request.getJobStateMatcher());
+                                fields, "jobStateMatcher", request.getJobStateMatcherValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             return fields;

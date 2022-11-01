@@ -16,7 +16,7 @@
 
 package com.google.cloud.optimization.v1.samples;
 
-// [START optimization_v1_generated_fleetroutingclient_batchoptimizetours_lro_async]
+// [START cloudoptimization_v1_generated_fleetroutingclient_batchoptimizetours_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.optimization.v1.AsyncModelMetadata;
 import com.google.cloud.optimization.v1.BatchOptimizeToursRequest;
@@ -49,4 +49,4 @@ public class AsyncBatchOptimizeToursLRO {
     }
   }
 }
-// [END optimization_v1_generated_fleetroutingclient_batchoptimizetours_lro_async]
+// [END cloudoptimization_v1_generated_fleetroutingclient_batchoptimizetours_lro_async]

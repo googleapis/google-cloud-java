@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_testiampermissions_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_testiampermissions_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.RegistryName;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -45,4 +45,4 @@ public class SyncTestIamPermissions {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_testiampermissions_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_testiampermissions_sync]

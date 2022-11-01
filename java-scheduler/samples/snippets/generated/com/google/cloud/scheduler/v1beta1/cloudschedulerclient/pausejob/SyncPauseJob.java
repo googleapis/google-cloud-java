@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1beta1.samples;
 
-// [START scheduler_v1beta1_generated_cloudschedulerclient_pausejob_sync]
+// [START cloudscheduler_v1beta1_generated_cloudschedulerclient_pausejob_sync]
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1beta1.Job;
 import com.google.cloud.scheduler.v1beta1.JobName;
@@ -43,4 +43,4 @@ public class SyncPauseJob {
     }
   }
 }
-// [END scheduler_v1beta1_generated_cloudschedulerclient_pausejob_sync]
+// [END cloudscheduler_v1beta1_generated_cloudschedulerclient_pausejob_sync]

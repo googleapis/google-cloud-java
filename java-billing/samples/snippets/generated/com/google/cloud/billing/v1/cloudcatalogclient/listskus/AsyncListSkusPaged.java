@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudcatalogclient_listskus_paged_async]
+// [START cloudbilling_v1_generated_cloudcatalogclient_listskus_paged_async]
 import com.google.cloud.billing.v1.CloudCatalogClient;
 import com.google.cloud.billing.v1.ListSkusRequest;
 import com.google.cloud.billing.v1.ListSkusResponse;
@@ -62,4 +62,4 @@ public class AsyncListSkusPaged {
     }
   }
 }
-// [END billing_v1_generated_cloudcatalogclient_listskus_paged_async]
+// [END cloudbilling_v1_generated_cloudcatalogclient_listskus_paged_async]

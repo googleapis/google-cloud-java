@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_getconfig_string_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_getconfig_string_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.ConfigName;
@@ -39,4 +39,4 @@ public class SyncGetConfigString {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_getconfig_string_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_getconfig_string_sync]

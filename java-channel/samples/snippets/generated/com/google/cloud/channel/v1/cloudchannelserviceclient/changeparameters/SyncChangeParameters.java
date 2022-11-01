@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_changeparameters_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_changeparameters_sync]
 import com.google.cloud.channel.v1.ChangeParametersRequest;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.Entitlement;
@@ -47,4 +47,4 @@ public class SyncChangeParameters {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_changeparameters_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_changeparameters_sync]

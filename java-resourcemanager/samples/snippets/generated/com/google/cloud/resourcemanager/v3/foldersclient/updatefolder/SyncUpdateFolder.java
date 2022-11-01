@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_updatefolder_sync]
+// [START cloudresourcemanager_v3_generated_foldersclient_updatefolder_sync]
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
 import com.google.cloud.resourcemanager.v3.UpdateFolderRequest;
@@ -44,4 +44,4 @@ public class SyncUpdateFolder {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_updatefolder_sync]
+// [END cloudresourcemanager_v3_generated_foldersclient_updatefolder_sync]

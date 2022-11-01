@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_batchtranslatetext_async]
+// [START translate_v3_generated_translationserviceclient_batchtranslatetext_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
 import com.google.cloud.translate.v3.InputConfig;
@@ -59,4 +59,4 @@ public class AsyncBatchTranslateText {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_batchtranslatetext_async]
+// [END translate_v3_generated_translationserviceclient_batchtranslatetext_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_companyserviceclient_create_setcredentialsprovider_sync]
+// [START jobs_v4_generated_companyserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.talent.v4.CompanyServiceClient;
 import com.google.cloud.talent.v4.CompanyServiceSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
   }
 }
-// [END talent_v4_generated_companyserviceclient_create_setcredentialsprovider_sync]
+// [END jobs_v4_generated_companyserviceclient_create_setcredentialsprovider_sync]

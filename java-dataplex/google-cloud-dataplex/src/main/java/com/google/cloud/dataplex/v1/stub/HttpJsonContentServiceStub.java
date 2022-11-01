@@ -205,7 +205,7 @@ public class HttpJsonContentServiceStub extends ContentServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetContentRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)

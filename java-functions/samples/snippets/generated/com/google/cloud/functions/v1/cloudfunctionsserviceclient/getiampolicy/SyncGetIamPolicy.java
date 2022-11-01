@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_getiampolicy_sync]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_getiampolicy_sync]
 import com.google.cloud.functions.v1.CloudFunctionName;
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -46,4 +46,4 @@ public class SyncGetIamPolicy {
     }
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_getiampolicy_sync]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_getiampolicy_sync]

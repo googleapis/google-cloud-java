@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudcatalogclient_listservices_noargs_sync]
+// [START cloudbilling_v1_generated_cloudcatalogclient_listservices_noargs_sync]
 import com.google.cloud.billing.v1.CloudCatalogClient;
 import com.google.cloud.billing.v1.Service;
 
@@ -39,4 +39,4 @@ public class SyncListServicesNoargs {
     }
   }
 }
-// [END billing_v1_generated_cloudcatalogclient_listservices_noargs_sync]
+// [END cloudbilling_v1_generated_cloudcatalogclient_listservices_noargs_sync]

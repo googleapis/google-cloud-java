@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_environmentsclient_deleteenvironment_sync]
+// [START composer_v1_generated_environmentsclient_deleteenvironment_sync]
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient;
 import com.google.protobuf.Empty;
@@ -40,4 +40,4 @@ public class SyncDeleteEnvironment {
     }
   }
 }
-// [END service_v1_generated_environmentsclient_deleteenvironment_sync]
+// [END composer_v1_generated_environmentsclient_deleteenvironment_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_listprojects_resourcename_sync]
+// [START cloudresourcemanager_v3_generated_projectsclient_listprojects_resourcename_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.Project;
@@ -42,4 +42,4 @@ public class SyncListProjectsResourcename {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_listprojects_resourcename_sync]
+// [END cloudresourcemanager_v3_generated_projectsclient_listprojects_resourcename_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_createtask_async]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_createtask_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.CreateTaskRequest;
@@ -47,4 +47,4 @@ public class AsyncCreateTask {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_createtask_async]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_createtask_async]

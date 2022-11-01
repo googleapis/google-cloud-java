@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_setiampolicy_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_setiampolicy_sync]
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.RegistryName;
 import com.google.iam.v1.Policy;
@@ -46,4 +46,4 @@ public class SyncSetIamPolicy {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_setiampolicy_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_setiampolicy_sync]

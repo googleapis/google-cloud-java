@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_approverollout_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_approverollout_sync]
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
 import com.google.cloud.deploy.v1.CloudDeployClient;
@@ -51,4 +51,4 @@ public class SyncApproveRollout {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_approverollout_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_approverollout_sync]

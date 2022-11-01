@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_generaterandombytes_async]
+// [START cloudkms_v1_generated_keymanagementserviceclient_generaterandombytes_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
 import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
@@ -50,4 +50,4 @@ public class AsyncGenerateRandomBytes {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_generaterandombytes_async]
+// [END cloudkms_v1_generated_keymanagementserviceclient_generaterandombytes_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingsettings_getbillingaccount_sync]
+// [START cloudbilling_v1_generated_cloudbillingsettings_getbillingaccount_sync]
 import com.google.cloud.billing.v1.CloudBillingSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetBillingAccount {
     CloudBillingSettings cloudBillingSettings = cloudBillingSettingsBuilder.build();
   }
 }
-// [END billing_v1_generated_cloudbillingsettings_getbillingaccount_sync]
+// [END cloudbilling_v1_generated_cloudbillingsettings_getbillingaccount_sync]

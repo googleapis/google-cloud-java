@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_tenantservicesettings_createtenant_sync]
+// [START jobs_v4_generated_tenantservicesettings_createtenant_sync]
 import com.google.cloud.talent.v4.TenantServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncCreateTenant {
     TenantServiceSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
   }
 }
-// [END talent_v4_generated_tenantservicesettings_createtenant_sync]
+// [END jobs_v4_generated_tenantservicesettings_createtenant_sync]

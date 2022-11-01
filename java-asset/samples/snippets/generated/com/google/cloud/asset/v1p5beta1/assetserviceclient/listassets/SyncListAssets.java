@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p5beta1.samples;
 
-// [START asset_v1p5beta1_generated_assetserviceclient_listassets_sync]
+// [START cloudasset_v1p5beta1_generated_assetserviceclient_listassets_sync]
 import com.google.cloud.asset.v1p5beta1.Asset;
 import com.google.cloud.asset.v1p5beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p5beta1.ContentType;
@@ -52,4 +52,4 @@ public class SyncListAssets {
     }
   }
 }
-// [END asset_v1p5beta1_generated_assetserviceclient_listassets_sync]
+// [END cloudasset_v1p5beta1_generated_assetserviceclient_listassets_sync]

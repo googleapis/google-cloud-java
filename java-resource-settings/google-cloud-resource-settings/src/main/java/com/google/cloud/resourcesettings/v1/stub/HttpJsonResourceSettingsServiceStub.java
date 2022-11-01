@@ -82,7 +82,7 @@ public class HttpJsonResourceSettingsServiceStub extends ResourceSettingsService
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -117,7 +117,7 @@ public class HttpJsonResourceSettingsServiceStub extends ResourceSettingsService
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSettingRequest> serializer =
                             ProtoRestSerializer.create();
-                        serializer.putQueryParam(fields, "view", request.getView());
+                        serializer.putQueryParam(fields, "view", request.getViewValue());
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)

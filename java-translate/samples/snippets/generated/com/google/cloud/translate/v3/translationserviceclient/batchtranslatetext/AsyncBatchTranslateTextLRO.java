@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_batchtranslatetext_lro_async]
+// [START translate_v3_generated_translationserviceclient_batchtranslatetext_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
@@ -60,4 +60,4 @@ public class AsyncBatchTranslateTextLRO {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_batchtranslatetext_lro_async]
+// [END translate_v3_generated_translationserviceclient_batchtranslatetext_lro_async]

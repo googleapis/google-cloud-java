@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_unregistersubscriber_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_unregistersubscriber_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
 import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
@@ -44,4 +44,4 @@ public class SyncUnregisterSubscriber {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_unregistersubscriber_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_unregistersubscriber_sync]

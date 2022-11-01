@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_create_setcredentialsprovider_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.CloudChannelServiceSettings;
@@ -42,4 +42,4 @@ public class SyncCreateSetCredentialsProvider {
         CloudChannelServiceClient.create(cloudChannelServiceSettings);
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_create_setcredentialsprovider_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_create_setcredentialsprovider_sync]

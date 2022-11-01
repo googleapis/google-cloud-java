@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translation_v3beta1_generated_translationserviceclient_getsupportedlanguages_sync]
+// [START translate_v3beta1_generated_translationserviceclient_getsupportedlanguages_sync]
 import com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3beta1.LocationName;
 import com.google.cloud.translate.v3beta1.SupportedLanguages;
@@ -45,4 +45,4 @@ public class SyncGetSupportedLanguages {
     }
   }
 }
-// [END translation_v3beta1_generated_translationserviceclient_getsupportedlanguages_sync]
+// [END translate_v3beta1_generated_translationserviceclient_getsupportedlanguages_sync]

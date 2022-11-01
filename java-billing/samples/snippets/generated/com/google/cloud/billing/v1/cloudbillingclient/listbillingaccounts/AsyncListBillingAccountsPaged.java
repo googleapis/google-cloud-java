@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.samples;
 
-// [START billing_v1_generated_cloudbillingclient_listbillingaccounts_paged_async]
+// [START cloudbilling_v1_generated_cloudbillingclient_listbillingaccounts_paged_async]
 import com.google.cloud.billing.v1.BillingAccount;
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.ListBillingAccountsRequest;
@@ -58,4 +58,4 @@ public class AsyncListBillingAccountsPaged {
     }
   }
 }
-// [END billing_v1_generated_cloudbillingclient_listbillingaccounts_paged_async]
+// [END cloudbilling_v1_generated_cloudbillingclient_listbillingaccounts_paged_async]

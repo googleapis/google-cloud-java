@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_listmigrationjobs_paged_async]
+// [START datamigration_v1_generated_datamigrationserviceclient_listmigrationjobs_paged_async]
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.ListMigrationJobsRequest;
 import com.google.cloud.clouddms.v1.ListMigrationJobsResponse;
@@ -62,4 +62,4 @@ public class AsyncListMigrationJobsPaged {
     }
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_listmigrationjobs_paged_async]
+// [END datamigration_v1_generated_datamigrationserviceclient_listmigrationjobs_paged_async]

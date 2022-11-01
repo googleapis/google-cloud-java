@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_organizationsclient_getorganization_sync]
+// [START cloudresourcemanager_v3_generated_organizationsclient_getorganization_sync]
 import com.google.cloud.resourcemanager.v3.GetOrganizationRequest;
 import com.google.cloud.resourcemanager.v3.Organization;
 import com.google.cloud.resourcemanager.v3.OrganizationName;
@@ -43,4 +43,4 @@ public class SyncGetOrganization {
     }
   }
 }
-// [END resourcemanager_v3_generated_organizationsclient_getorganization_sync]
+// [END cloudresourcemanager_v3_generated_organizationsclient_getorganization_sync]

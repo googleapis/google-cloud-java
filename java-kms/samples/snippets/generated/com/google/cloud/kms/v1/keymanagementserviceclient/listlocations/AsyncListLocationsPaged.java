@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_listlocations_paged_async]
+// [START cloudkms_v1_generated_keymanagementserviceclient_listlocations_paged_async]
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -60,4 +60,4 @@ public class AsyncListLocationsPaged {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_listlocations_paged_async]
+// [END cloudkms_v1_generated_keymanagementserviceclient_listlocations_paged_async]

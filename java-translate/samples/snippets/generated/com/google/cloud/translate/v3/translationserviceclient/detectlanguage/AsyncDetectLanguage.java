@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START translation_v3_generated_translationserviceclient_detectlanguage_async]
+// [START translate_v3_generated_translationserviceclient_detectlanguage_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.translate.v3.DetectLanguageRequest;
 import com.google.cloud.translate.v3.DetectLanguageResponse;
@@ -51,4 +51,4 @@ public class AsyncDetectLanguage {
     }
   }
 }
-// [END translation_v3_generated_translationserviceclient_detectlanguage_async]
+// [END translate_v3_generated_translationserviceclient_detectlanguage_async]

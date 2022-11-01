@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_setiampolicy_async]
+// [START cloudiot_v1_generated_devicemanagerclient_setiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.cloud.iot.v1.RegistryName;
@@ -49,4 +49,4 @@ public class AsyncSetIamPolicy {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_setiampolicy_async]
+// [END cloudiot_v1_generated_devicemanagerclient_setiampolicy_async]

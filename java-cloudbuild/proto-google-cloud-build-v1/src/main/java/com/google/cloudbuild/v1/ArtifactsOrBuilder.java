@@ -149,4 +149,158 @@ public interface ArtifactsOrBuilder
    * <code>.google.devtools.cloudbuild.v1.Artifacts.ArtifactObjects objects = 2;</code>
    */
   com.google.cloudbuild.v1.Artifacts.ArtifactObjectsOrBuilder getObjectsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Maven artifacts to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Artifacts in the workspace matching specified paths globs will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any artifacts fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.MavenArtifact maven_artifacts = 3;
+   * </code>
+   */
+  java.util.List<com.google.cloudbuild.v1.Artifacts.MavenArtifact> getMavenArtifactsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of Maven artifacts to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Artifacts in the workspace matching specified paths globs will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any artifacts fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.MavenArtifact maven_artifacts = 3;
+   * </code>
+   */
+  com.google.cloudbuild.v1.Artifacts.MavenArtifact getMavenArtifacts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of Maven artifacts to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Artifacts in the workspace matching specified paths globs will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any artifacts fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.MavenArtifact maven_artifacts = 3;
+   * </code>
+   */
+  int getMavenArtifactsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of Maven artifacts to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Artifacts in the workspace matching specified paths globs will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any artifacts fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.MavenArtifact maven_artifacts = 3;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.Artifacts.MavenArtifactOrBuilder>
+      getMavenArtifactsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of Maven artifacts to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * Artifacts in the workspace matching specified paths globs will be uploaded
+   * to the specified Artifact Registry repository using the builder service
+   * account's credentials.
+   * If any artifacts fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.MavenArtifact maven_artifacts = 3;
+   * </code>
+   */
+  com.google.cloudbuild.v1.Artifacts.MavenArtifactOrBuilder getMavenArtifactsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of Python packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * The build service account credentials will be used to perform the upload.
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.PythonPackage python_packages = 5;
+   * </code>
+   */
+  java.util.List<com.google.cloudbuild.v1.Artifacts.PythonPackage> getPythonPackagesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of Python packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * The build service account credentials will be used to perform the upload.
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.PythonPackage python_packages = 5;
+   * </code>
+   */
+  com.google.cloudbuild.v1.Artifacts.PythonPackage getPythonPackages(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of Python packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * The build service account credentials will be used to perform the upload.
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.PythonPackage python_packages = 5;
+   * </code>
+   */
+  int getPythonPackagesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of Python packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * The build service account credentials will be used to perform the upload.
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.PythonPackage python_packages = 5;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.Artifacts.PythonPackageOrBuilder>
+      getPythonPackagesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of Python packages to be uploaded to Artifact Registry upon
+   * successful completion of all build steps.
+   * The build service account credentials will be used to perform the upload.
+   * If any objects fail to be pushed, the build is marked FAILURE.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.Artifacts.PythonPackage python_packages = 5;
+   * </code>
+   */
+  com.google.cloudbuild.v1.Artifacts.PythonPackageOrBuilder getPythonPackagesOrBuilder(int index);
 }

@@ -313,7 +313,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -348,7 +348,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetConsumerQuotaMetricRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -383,7 +383,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetConsumerQuotaLimitRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

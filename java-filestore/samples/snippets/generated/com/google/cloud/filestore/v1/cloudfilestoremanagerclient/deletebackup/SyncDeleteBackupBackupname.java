@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.samples;
 
-// [START filestore_v1_generated_cloudfilestoremanagerclient_deletebackup_backupname_sync]
+// [START file_v1_generated_cloudfilestoremanagerclient_deletebackup_backupname_sync]
 import com.google.cloud.filestore.v1.BackupName;
 import com.google.cloud.filestore.v1.CloudFilestoreManagerClient;
 import com.google.protobuf.Empty;
@@ -40,4 +40,4 @@ public class SyncDeleteBackupBackupname {
     }
   }
 }
-// [END filestore_v1_generated_cloudfilestoremanagerclient_deletebackup_backupname_sync]
+// [END file_v1_generated_cloudfilestoremanagerclient_deletebackup_backupname_sync]

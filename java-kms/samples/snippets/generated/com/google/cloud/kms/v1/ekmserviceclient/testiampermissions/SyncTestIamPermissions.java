@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_ekmserviceclient_testiampermissions_sync]
+// [START cloudkms_v1_generated_ekmserviceclient_testiampermissions_sync]
 import com.google.cloud.kms.v1.CryptoKeyName;
 import com.google.cloud.kms.v1.EkmServiceClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -47,4 +47,4 @@ public class SyncTestIamPermissions {
     }
   }
 }
-// [END kms_v1_generated_ekmserviceclient_testiampermissions_sync]
+// [END cloudkms_v1_generated_ekmserviceclient_testiampermissions_sync]

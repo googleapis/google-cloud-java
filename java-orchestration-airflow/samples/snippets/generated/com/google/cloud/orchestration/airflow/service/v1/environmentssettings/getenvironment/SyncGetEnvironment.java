@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_environmentssettings_getenvironment_sync]
+// [START composer_v1_generated_environmentssettings_getenvironment_sync]
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetEnvironment {
     EnvironmentsSettings environmentsSettings = environmentsSettingsBuilder.build();
   }
 }
-// [END service_v1_generated_environmentssettings_getenvironment_sync]
+// [END composer_v1_generated_environmentssettings_getenvironment_sync]

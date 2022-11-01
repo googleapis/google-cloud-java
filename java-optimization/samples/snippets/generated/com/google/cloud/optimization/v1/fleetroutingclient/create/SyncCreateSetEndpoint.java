@@ -16,7 +16,7 @@
 
 package com.google.cloud.optimization.v1.samples;
 
-// [START optimization_v1_generated_fleetroutingclient_create_setendpoint_sync]
+// [START cloudoptimization_v1_generated_fleetroutingclient_create_setendpoint_sync]
 import com.google.cloud.optimization.v1.FleetRoutingClient;
 import com.google.cloud.optimization.v1.FleetRoutingSettings;
 import com.google.cloud.optimization.v1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     FleetRoutingClient fleetRoutingClient = FleetRoutingClient.create(fleetRoutingSettings);
   }
 }
-// [END optimization_v1_generated_fleetroutingclient_create_setendpoint_sync]
+// [END cloudoptimization_v1_generated_fleetroutingclient_create_setendpoint_sync]

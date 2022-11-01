@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v1.samples;
 
-// [START functions_v1_generated_cloudfunctionsserviceclient_create_setendpoint_sync]
+// [START cloudfunctions_v1_generated_cloudfunctionsserviceclient_create_setendpoint_sync]
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
 import com.google.cloud.functions.v1.CloudFunctionsServiceSettings;
 import com.google.cloud.functions.v1.myEndpoint;
@@ -39,4 +39,4 @@ public class SyncCreateSetEndpoint {
         CloudFunctionsServiceClient.create(cloudFunctionsServiceSettings);
   }
 }
-// [END functions_v1_generated_cloudfunctionsserviceclient_create_setendpoint_sync]
+// [END cloudfunctions_v1_generated_cloudfunctionsserviceclient_create_setendpoint_sync]

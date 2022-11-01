@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_listchannelpartnerrepricingconfigs_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_listchannelpartnerrepricingconfigs_sync]
 import com.google.cloud.channel.v1.ChannelPartnerLinkName;
 import com.google.cloud.channel.v1.ChannelPartnerRepricingConfig;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -50,4 +50,4 @@ public class SyncListChannelPartnerRepricingConfigs {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_listchannelpartnerrepricingconfigs_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_listchannelpartnerrepricingconfigs_sync]

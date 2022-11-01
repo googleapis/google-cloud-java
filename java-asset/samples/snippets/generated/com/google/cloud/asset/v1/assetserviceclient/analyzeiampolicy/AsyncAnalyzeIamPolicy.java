@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_analyzeiampolicy_async]
+// [START cloudasset_v1_generated_assetserviceclient_analyzeiampolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
@@ -50,4 +50,4 @@ public class AsyncAnalyzeIamPolicy {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_analyzeiampolicy_async]
+// [END cloudasset_v1_generated_assetserviceclient_analyzeiampolicy_async]

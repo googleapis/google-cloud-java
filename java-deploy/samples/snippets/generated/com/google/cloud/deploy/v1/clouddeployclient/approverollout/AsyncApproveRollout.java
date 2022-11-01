@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_approverollout_async]
+// [START clouddeploy_v1_generated_clouddeployclient_approverollout_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
@@ -55,4 +55,4 @@ public class AsyncApproveRollout {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_approverollout_async]
+// [END clouddeploy_v1_generated_clouddeployclient_approverollout_async]

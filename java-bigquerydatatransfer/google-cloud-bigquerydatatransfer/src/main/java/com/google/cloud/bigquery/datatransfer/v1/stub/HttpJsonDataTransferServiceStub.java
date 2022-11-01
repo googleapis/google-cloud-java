@@ -529,7 +529,8 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "runAttempt", request.getRunAttempt());
+                            serializer.putQueryParam(
+                                fields, "runAttempt", request.getRunAttemptValue());
                             serializer.putQueryParam(fields, "states", request.getStatesList());
                             return fields;
                           })

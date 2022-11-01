@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_tenantserviceclient_listtenants_async]
+// [START jobs_v4beta1_generated_tenantserviceclient_listtenants_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4beta1.ListTenantsRequest;
 import com.google.cloud.talent.v4beta1.ProjectName;
@@ -50,4 +50,4 @@ public class AsyncListTenants {
     }
   }
 }
-// [END talent_v4beta1_generated_tenantserviceclient_listtenants_async]
+// [END jobs_v4beta1_generated_tenantserviceclient_listtenants_async]

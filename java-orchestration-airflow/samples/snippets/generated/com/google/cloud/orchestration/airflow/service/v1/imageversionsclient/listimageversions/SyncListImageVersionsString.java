@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_imageversionsclient_listimageversions_string_sync]
+// [START composer_v1_generated_imageversionsclient_listimageversions_string_sync]
 import com.google.cloud.orchestration.airflow.service.v1.ImageVersion;
 import com.google.cloud.orchestration.airflow.service.v1.ImageVersionsClient;
 
@@ -40,4 +40,4 @@ public class SyncListImageVersionsString {
     }
   }
 }
-// [END service_v1_generated_imageversionsclient_listimageversions_string_sync]
+// [END composer_v1_generated_imageversionsclient_listimageversions_string_sync]

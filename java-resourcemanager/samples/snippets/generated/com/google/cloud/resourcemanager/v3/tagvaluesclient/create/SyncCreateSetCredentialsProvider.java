@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider_sync]
+// [START cloudresourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.resourcemanager.v3.TagValuesClient;
 import com.google.cloud.resourcemanager.v3.TagValuesSettings;
@@ -41,4 +41,4 @@ public class SyncCreateSetCredentialsProvider {
     TagValuesClient tagValuesClient = TagValuesClient.create(tagValuesSettings);
   }
 }
-// [END resourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider_sync]
+// [END cloudresourcemanager_v3_generated_tagvaluesclient_create_setcredentialsprovider_sync]

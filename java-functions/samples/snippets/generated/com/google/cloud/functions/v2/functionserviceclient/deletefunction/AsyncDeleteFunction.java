@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START functions_v2_generated_functionserviceclient_deletefunction_async]
+// [START cloudfunctions_v2_generated_functionserviceclient_deletefunction_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2.DeleteFunctionRequest;
 import com.google.cloud.functions.v2.FunctionName;
@@ -47,4 +47,4 @@ public class AsyncDeleteFunction {
     }
   }
 }
-// [END functions_v2_generated_functionserviceclient_deletefunction_async]
+// [END cloudfunctions_v2_generated_functionserviceclient_deletefunction_async]

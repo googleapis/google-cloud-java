@@ -163,7 +163,7 @@ public class HttpJsonTemplatesServiceStub extends TemplatesServiceStub {
                             ProtoRestSerializer<GetTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "gcsPath", request.getGcsPath());
-                            serializer.putQueryParam(fields, "view", request.getView());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

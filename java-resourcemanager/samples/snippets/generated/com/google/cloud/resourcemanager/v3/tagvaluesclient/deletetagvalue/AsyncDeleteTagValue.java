@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagvaluesclient_deletetagvalue_async]
+// [START cloudresourcemanager_v3_generated_tagvaluesclient_deletetagvalue_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.resourcemanager.v3.DeleteTagValueRequest;
 import com.google.cloud.resourcemanager.v3.TagValueName;
@@ -48,4 +48,4 @@ public class AsyncDeleteTagValue {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagvaluesclient_deletetagvalue_async]
+// [END cloudresourcemanager_v3_generated_tagvaluesclient_deletetagvalue_async]

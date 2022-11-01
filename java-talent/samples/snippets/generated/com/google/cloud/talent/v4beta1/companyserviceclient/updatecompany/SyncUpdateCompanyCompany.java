@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.samples;
 
-// [START talent_v4beta1_generated_companyserviceclient_updatecompany_company_sync]
+// [START jobs_v4beta1_generated_companyserviceclient_updatecompany_company_sync]
 import com.google.cloud.talent.v4beta1.Company;
 import com.google.cloud.talent.v4beta1.CompanyServiceClient;
 
@@ -38,4 +38,4 @@ public class SyncUpdateCompanyCompany {
     }
   }
 }
-// [END talent_v4beta1_generated_companyserviceclient_updatecompany_company_sync]
+// [END jobs_v4beta1_generated_companyserviceclient_updatecompany_company_sync]

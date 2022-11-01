@@ -16,7 +16,7 @@
 
 package com.google.cloud.optimization.v1.samples;
 
-// [START optimization_v1_generated_fleetroutingclient_batchoptimizetours_async]
+// [START cloudoptimization_v1_generated_fleetroutingclient_batchoptimizetours_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.optimization.v1.BatchOptimizeToursRequest;
 import com.google.cloud.optimization.v1.FleetRoutingClient;
@@ -48,4 +48,4 @@ public class AsyncBatchOptimizeTours {
     }
   }
 }
-// [END optimization_v1_generated_fleetroutingclient_batchoptimizetours_async]
+// [END cloudoptimization_v1_generated_fleetroutingclient_batchoptimizetours_async]

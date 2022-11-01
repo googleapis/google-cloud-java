@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_deletesavedquery_string_sync]
+// [START cloudasset_v1_generated_assetserviceclient_deletesavedquery_string_sync]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.SavedQueryName;
 import com.google.protobuf.Empty;
@@ -39,4 +39,4 @@ public class SyncDeleteSavedQueryString {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_deletesavedquery_string_sync]
+// [END cloudasset_v1_generated_assetserviceclient_deletesavedquery_string_sync]

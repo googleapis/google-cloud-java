@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p2beta1.samples;
 
-// [START asset_v1p2beta1_generated_assetserviceclient_create_setendpoint_sync]
+// [START cloudasset_v1p2beta1_generated_assetserviceclient_create_setendpoint_sync]
 import com.google.cloud.asset.v1p2beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p2beta1.AssetServiceSettings;
 import com.google.cloud.asset.v1p2beta1.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     AssetServiceClient assetServiceClient = AssetServiceClient.create(assetServiceSettings);
   }
 }
-// [END asset_v1p2beta1_generated_assetserviceclient_create_setendpoint_sync]
+// [END cloudasset_v1p2beta1_generated_assetserviceclient_create_setendpoint_sync]

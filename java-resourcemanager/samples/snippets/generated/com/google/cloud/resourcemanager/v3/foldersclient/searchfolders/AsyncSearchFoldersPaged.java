@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_searchfolders_paged_async]
+// [START cloudresourcemanager_v3_generated_foldersclient_searchfolders_paged_async]
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
 import com.google.cloud.resourcemanager.v3.SearchFoldersRequest;
@@ -57,4 +57,4 @@ public class AsyncSearchFoldersPaged {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_searchfolders_paged_async]
+// [END cloudresourcemanager_v3_generated_foldersclient_searchfolders_paged_async]

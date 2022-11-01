@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1beta1.samples;
 
-// [START filestore_v1beta1_generated_cloudfilestoremanagerclient_getbackup_async]
+// [START file_v1beta1_generated_cloudfilestoremanagerclient_getbackup_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.filestore.v1beta1.Backup;
 import com.google.cloud.filestore.v1beta1.BackupName;
@@ -48,4 +48,4 @@ public class AsyncGetBackup {
     }
   }
 }
-// [END filestore_v1beta1_generated_cloudfilestoremanagerclient_getbackup_async]
+// [END file_v1beta1_generated_cloudfilestoremanagerclient_getbackup_async]

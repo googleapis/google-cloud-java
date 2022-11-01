@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.samples;
 
-// [START tasks_v2beta2_generated_cloudtasksclient_createqueue_sync]
+// [START cloudtasks_v2beta2_generated_cloudtasksclient_createqueue_sync]
 import com.google.cloud.tasks.v2beta2.CloudTasksClient;
 import com.google.cloud.tasks.v2beta2.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta2.LocationName;
@@ -44,4 +44,4 @@ public class SyncCreateQueue {
     }
   }
 }
-// [END tasks_v2beta2_generated_cloudtasksclient_createqueue_sync]
+// [END cloudtasks_v2beta2_generated_cloudtasksclient_createqueue_sync]

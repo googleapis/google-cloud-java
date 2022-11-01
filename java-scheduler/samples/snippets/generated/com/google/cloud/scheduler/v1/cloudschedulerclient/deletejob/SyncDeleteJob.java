@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1.samples;
 
-// [START scheduler_v1_generated_cloudschedulerclient_deletejob_sync]
+// [START cloudscheduler_v1_generated_cloudschedulerclient_deletejob_sync]
 import com.google.cloud.scheduler.v1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1.DeleteJobRequest;
 import com.google.cloud.scheduler.v1.JobName;
@@ -43,4 +43,4 @@ public class SyncDeleteJob {
     }
   }
 }
-// [END scheduler_v1_generated_cloudschedulerclient_deletejob_sync]
+// [END cloudscheduler_v1_generated_cloudschedulerclient_deletejob_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_create_setendpoint_sync]
+// [START cloudtasks_v2_generated_cloudtasksclient_create_setendpoint_sync]
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.CloudTasksSettings;
 import com.google.cloud.tasks.v2.myEndpoint;
@@ -38,4 +38,4 @@ public class SyncCreateSetEndpoint {
     CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_create_setendpoint_sync]
+// [END cloudtasks_v2_generated_cloudtasksclient_create_setendpoint_sync]

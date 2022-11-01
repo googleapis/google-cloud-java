@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.samples;
 
-// [START shell_v1_generated_cloudshellserviceclient_addpublickey_async]
+// [START cloudshell_v1_generated_cloudshellserviceclient_addpublickey_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.shell.v1.AddPublicKeyRequest;
 import com.google.cloud.shell.v1.CloudShellServiceClient;
@@ -47,4 +47,4 @@ public class AsyncAddPublicKey {
     }
   }
 }
-// [END shell_v1_generated_cloudshellserviceclient_addpublickey_async]
+// [END cloudshell_v1_generated_cloudshellserviceclient_addpublickey_async]

@@ -48,6 +48,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     secretEnv_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     volumes_ = java.util.Collections.emptyList();
     status_ = 0;
+    allowExitCodes_ = emptyIntList();
     script_ = "";
   }
 
@@ -908,6 +909,100 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloudbuild.v1.Build.Status.UNRECOGNIZED : result;
   }
 
+  public static final int ALLOW_FAILURE_FIELD_NUMBER = 14;
+  private boolean allowFailure_;
+  /**
+   *
+   *
+   * <pre>
+   * Allow this build step to fail without failing the entire build.
+   * If false, the entire build will fail if this step fails. Otherwise, the
+   * build will succeed, but this step will still have a failure status.
+   * Error information will be reported in the failure_detail field.
+   * </pre>
+   *
+   * <code>bool allow_failure = 14;</code>
+   *
+   * @return The allowFailure.
+   */
+  @java.lang.Override
+  public boolean getAllowFailure() {
+    return allowFailure_;
+  }
+
+  public static final int EXIT_CODE_FIELD_NUMBER = 16;
+  private int exitCode_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Return code from running the step.
+   * </pre>
+   *
+   * <code>int32 exit_code = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The exitCode.
+   */
+  @java.lang.Override
+  public int getExitCode() {
+    return exitCode_;
+  }
+
+  public static final int ALLOW_EXIT_CODES_FIELD_NUMBER = 18;
+  private com.google.protobuf.Internal.IntList allowExitCodes_;
+  /**
+   *
+   *
+   * <pre>
+   * Allow this build step to fail without failing the entire build if and
+   * only if the exit code is one of the specified codes. If allow_failure
+   * is also specified, this field will take precedence.
+   * </pre>
+   *
+   * <code>repeated int32 allow_exit_codes = 18;</code>
+   *
+   * @return A list containing the allowExitCodes.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAllowExitCodesList() {
+    return allowExitCodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allow this build step to fail without failing the entire build if and
+   * only if the exit code is one of the specified codes. If allow_failure
+   * is also specified, this field will take precedence.
+   * </pre>
+   *
+   * <code>repeated int32 allow_exit_codes = 18;</code>
+   *
+   * @return The count of allowExitCodes.
+   */
+  public int getAllowExitCodesCount() {
+    return allowExitCodes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Allow this build step to fail without failing the entire build if and
+   * only if the exit code is one of the specified codes. If allow_failure
+   * is also specified, this field will take precedence.
+   * </pre>
+   *
+   * <code>repeated int32 allow_exit_codes = 18;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowExitCodes at the given index.
+   */
+  public int getAllowExitCodes(int index) {
+    return allowExitCodes_.getInt(index);
+  }
+
+  private int allowExitCodesMemoizedSerializedSize = -1;
+
   public static final int SCRIPT_FIELD_NUMBER = 19;
   private volatile java.lang.Object script_;
   /**
@@ -973,6 +1068,7 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1011,6 +1107,19 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     if (pullTiming_ != null) {
       output.writeMessage(13, getPullTiming());
+    }
+    if (allowFailure_ != false) {
+      output.writeBool(14, allowFailure_);
+    }
+    if (exitCode_ != 0) {
+      output.writeInt32(16, exitCode_);
+    }
+    if (getAllowExitCodesList().size() > 0) {
+      output.writeUInt32NoTag(146);
+      output.writeUInt32NoTag(allowExitCodesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < allowExitCodes_.size(); i++) {
+      output.writeInt32NoTag(allowExitCodes_.getInt(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, script_);
@@ -1083,6 +1192,25 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     if (pullTiming_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getPullTiming());
     }
+    if (allowFailure_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, allowFailure_);
+    }
+    if (exitCode_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(16, exitCode_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < allowExitCodes_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(allowExitCodes_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAllowExitCodesList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      allowExitCodesMemoizedSerializedSize = dataSize;
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(script_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, script_);
     }
@@ -1123,6 +1251,9 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (!getTimeout().equals(other.getTimeout())) return false;
     }
     if (status_ != other.status_) return false;
+    if (getAllowFailure() != other.getAllowFailure()) return false;
+    if (getExitCode() != other.getExitCode()) return false;
+    if (!getAllowExitCodesList().equals(other.getAllowExitCodesList())) return false;
     if (!getScript().equals(other.getScript())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1177,6 +1308,14 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
+    hash = (37 * hash) + ALLOW_FAILURE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowFailure());
+    hash = (37 * hash) + EXIT_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getExitCode();
+    if (getAllowExitCodesCount() > 0) {
+      hash = (37 * hash) + ALLOW_EXIT_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowExitCodesList().hashCode();
+    }
     hash = (37 * hash) + SCRIPT_FIELD_NUMBER;
     hash = (53 * hash) + getScript().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1359,6 +1498,12 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       status_ = 0;
 
+      allowFailure_ = false;
+
+      exitCode_ = 0;
+
+      allowExitCodes_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000020);
       script_ = "";
 
       return this;
@@ -1437,6 +1582,13 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         result.timeout_ = timeoutBuilder_.build();
       }
       result.status_ = status_;
+      result.allowFailure_ = allowFailure_;
+      result.exitCode_ = exitCode_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        allowExitCodes_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.allowExitCodes_ = allowExitCodes_;
       result.script_ = script_;
       onBuilt();
       return result;
@@ -1582,6 +1734,22 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
+      if (other.getAllowFailure() != false) {
+        setAllowFailure(other.getAllowFailure());
+      }
+      if (other.getExitCode() != 0) {
+        setExitCode(other.getExitCode());
+      }
+      if (!other.allowExitCodes_.isEmpty()) {
+        if (allowExitCodes_.isEmpty()) {
+          allowExitCodes_ = other.allowExitCodes_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureAllowExitCodesIsMutable();
+          allowExitCodes_.addAll(other.allowExitCodes_);
+        }
+        onChanged();
+      }
       if (!other.getScript().isEmpty()) {
         script_ = other.script_;
         onChanged();
@@ -1700,6 +1868,36 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 106
+            case 112:
+              {
+                allowFailure_ = input.readBool();
+
+                break;
+              } // case 112
+            case 128:
+              {
+                exitCode_ = input.readInt32();
+
+                break;
+              } // case 128
+            case 144:
+              {
+                int v = input.readInt32();
+                ensureAllowExitCodesIsMutable();
+                allowExitCodes_.addInt(v);
+                break;
+              } // case 144
+            case 146:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAllowExitCodesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  allowExitCodes_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 146
             case 154:
               {
                 script_ = input.readStringRequireUtf8();
@@ -4187,6 +4385,259 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStatus() {
 
       status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowFailure_;
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build.
+     * If false, the entire build will fail if this step fails. Otherwise, the
+     * build will succeed, but this step will still have a failure status.
+     * Error information will be reported in the failure_detail field.
+     * </pre>
+     *
+     * <code>bool allow_failure = 14;</code>
+     *
+     * @return The allowFailure.
+     */
+    @java.lang.Override
+    public boolean getAllowFailure() {
+      return allowFailure_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build.
+     * If false, the entire build will fail if this step fails. Otherwise, the
+     * build will succeed, but this step will still have a failure status.
+     * Error information will be reported in the failure_detail field.
+     * </pre>
+     *
+     * <code>bool allow_failure = 14;</code>
+     *
+     * @param value The allowFailure to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowFailure(boolean value) {
+
+      allowFailure_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build.
+     * If false, the entire build will fail if this step fails. Otherwise, the
+     * build will succeed, but this step will still have a failure status.
+     * Error information will be reported in the failure_detail field.
+     * </pre>
+     *
+     * <code>bool allow_failure = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowFailure() {
+
+      allowFailure_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int exitCode_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Return code from running the step.
+     * </pre>
+     *
+     * <code>int32 exit_code = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The exitCode.
+     */
+    @java.lang.Override
+    public int getExitCode() {
+      return exitCode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Return code from running the step.
+     * </pre>
+     *
+     * <code>int32 exit_code = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The exitCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExitCode(int value) {
+
+      exitCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Return code from running the step.
+     * </pre>
+     *
+     * <code>int32 exit_code = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExitCode() {
+
+      exitCode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList allowExitCodes_ = emptyIntList();
+
+    private void ensureAllowExitCodesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        allowExitCodes_ = mutableCopy(allowExitCodes_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build if and
+     * only if the exit code is one of the specified codes. If allow_failure
+     * is also specified, this field will take precedence.
+     * </pre>
+     *
+     * <code>repeated int32 allow_exit_codes = 18;</code>
+     *
+     * @return A list containing the allowExitCodes.
+     */
+    public java.util.List<java.lang.Integer> getAllowExitCodesList() {
+      return ((bitField0_ & 0x00000020) != 0)
+          ? java.util.Collections.unmodifiableList(allowExitCodes_)
+          : allowExitCodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build if and
+     * only if the exit code is one of the specified codes. If allow_failure
+     * is also specified, this field will take precedence.
+     * </pre>
+     *
+     * <code>repeated int32 allow_exit_codes = 18;</code>
+     *
+     * @return The count of allowExitCodes.
+     */
+    public int getAllowExitCodesCount() {
+      return allowExitCodes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build if and
+     * only if the exit code is one of the specified codes. If allow_failure
+     * is also specified, this field will take precedence.
+     * </pre>
+     *
+     * <code>repeated int32 allow_exit_codes = 18;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowExitCodes at the given index.
+     */
+    public int getAllowExitCodes(int index) {
+      return allowExitCodes_.getInt(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build if and
+     * only if the exit code is one of the specified codes. If allow_failure
+     * is also specified, this field will take precedence.
+     * </pre>
+     *
+     * <code>repeated int32 allow_exit_codes = 18;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowExitCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowExitCodes(int index, int value) {
+      ensureAllowExitCodesIsMutable();
+      allowExitCodes_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build if and
+     * only if the exit code is one of the specified codes. If allow_failure
+     * is also specified, this field will take precedence.
+     * </pre>
+     *
+     * <code>repeated int32 allow_exit_codes = 18;</code>
+     *
+     * @param value The allowExitCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllowExitCodes(int value) {
+      ensureAllowExitCodesIsMutable();
+      allowExitCodes_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build if and
+     * only if the exit code is one of the specified codes. If allow_failure
+     * is also specified, this field will take precedence.
+     * </pre>
+     *
+     * <code>repeated int32 allow_exit_codes = 18;</code>
+     *
+     * @param values The allowExitCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAllowExitCodes(java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureAllowExitCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowExitCodes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allow this build step to fail without failing the entire build if and
+     * only if the exit code is one of the specified codes. If allow_failure
+     * is also specified, this field will take precedence.
+     * </pre>
+     *
+     * <code>repeated int32 allow_exit_codes = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowExitCodes() {
+      allowExitCodes_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

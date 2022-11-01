@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_cancelentitlement_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_cancelentitlement_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.CancelEntitlementRequest;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -47,4 +47,4 @@ public class AsyncCancelEntitlement {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_cancelentitlement_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_cancelentitlement_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.AdminUser;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -52,4 +52,4 @@ public class AsyncProvisionCloudIdentity {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_provisioncloudidentity_async]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagkeysclient_listtagkeys_paged_async]
+// [START cloudresourcemanager_v3_generated_tagkeysclient_listtagkeys_paged_async]
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.ListTagKeysRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysResponse;
@@ -58,4 +58,4 @@ public class AsyncListTagKeysPaged {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagkeysclient_listtagkeys_paged_async]
+// [END cloudresourcemanager_v3_generated_tagkeysclient_listtagkeys_paged_async]

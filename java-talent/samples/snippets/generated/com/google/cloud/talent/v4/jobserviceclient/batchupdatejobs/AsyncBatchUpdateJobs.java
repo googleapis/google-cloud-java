@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_batchupdatejobs_async]
+// [START jobs_v4_generated_jobserviceclient_batchupdatejobs_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.talent.v4.BatchUpdateJobsRequest;
 import com.google.cloud.talent.v4.Job;
@@ -51,4 +51,4 @@ public class AsyncBatchUpdateJobs {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_batchupdatejobs_async]
+// [END jobs_v4_generated_jobserviceclient_batchupdatejobs_async]

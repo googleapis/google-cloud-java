@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_jobserviceclient_searchjobs_sync]
+// [START jobs_v4_generated_jobserviceclient_searchjobs_sync]
 import com.google.cloud.talent.v4.HistogramQuery;
 import com.google.cloud.talent.v4.JobQuery;
 import com.google.cloud.talent.v4.JobServiceClient;
@@ -59,4 +59,4 @@ public class SyncSearchJobs {
     }
   }
 }
-// [END talent_v4_generated_jobserviceclient_searchjobs_sync]
+// [END jobs_v4_generated_jobserviceclient_searchjobs_sync]

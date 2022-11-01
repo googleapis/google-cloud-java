@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1.samples;
 
-// [START service_v1_generated_environmentsclient_updateenvironment_stringenvironmentfieldmask_sync]
+// [START composer_v1_generated_environmentsclient_updateenvironment_stringenvironmentfieldmask_sync]
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient;
 import com.google.protobuf.FieldMask;
@@ -42,4 +42,4 @@ public class SyncUpdateEnvironmentStringEnvironmentFieldmask {
     }
   }
 }
-// [END service_v1_generated_environmentsclient_updateenvironment_stringenvironmentfieldmask_sync]
+// [END composer_v1_generated_environmentsclient_updateenvironment_stringenvironmentfieldmask_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1beta1.samples;
 
-// [START scheduler_v1beta1_generated_cloudschedulerclient_updatejob_async]
+// [START cloudscheduler_v1beta1_generated_cloudschedulerclient_updatejob_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
 import com.google.cloud.scheduler.v1beta1.Job;
@@ -47,4 +47,4 @@ public class AsyncUpdateJob {
     }
   }
 }
-// [END scheduler_v1beta1_generated_cloudschedulerclient_updatejob_async]
+// [END cloudscheduler_v1beta1_generated_cloudschedulerclient_updatejob_async]

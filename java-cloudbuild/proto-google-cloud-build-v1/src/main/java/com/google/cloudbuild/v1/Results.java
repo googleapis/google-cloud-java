@@ -42,6 +42,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     buildStepImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     artifactManifest_ = "";
     buildStepOutputs_ = java.util.Collections.emptyList();
+    pythonPackages_ = java.util.Collections.emptyList();
+    mavenArtifacts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -377,6 +379,146 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     return getArtifactTiming();
   }
 
+  public static final int PYTHON_PACKAGES_FIELD_NUMBER = 8;
+  private java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage> pythonPackages_;
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage> getPythonPackagesList() {
+    return pythonPackages_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>
+      getPythonPackagesOrBuilderList() {
+    return pythonPackages_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  @java.lang.Override
+  public int getPythonPackagesCount() {
+    return pythonPackages_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedPythonPackage getPythonPackages(int index) {
+    return pythonPackages_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Python artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder getPythonPackagesOrBuilder(
+      int index) {
+    return pythonPackages_.get(index);
+  }
+
+  public static final int MAVEN_ARTIFACTS_FIELD_NUMBER = 9;
+  private java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact> mavenArtifacts_;
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact> getMavenArtifactsList() {
+    return mavenArtifacts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>
+      getMavenArtifactsOrBuilderList() {
+    return mavenArtifacts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  @java.lang.Override
+  public int getMavenArtifactsCount() {
+    return mavenArtifacts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedMavenArtifact getMavenArtifacts(int index) {
+    return mavenArtifacts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Maven artifacts uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder getMavenArtifactsOrBuilder(
+      int index) {
+    return mavenArtifacts_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -408,6 +550,12 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     }
     if (artifactTiming_ != null) {
       output.writeMessage(7, getArtifactTiming());
+    }
+    for (int i = 0; i < pythonPackages_.size(); i++) {
+      output.writeMessage(8, pythonPackages_.get(i));
+    }
+    for (int i = 0; i < mavenArtifacts_.size(); i++) {
+      output.writeMessage(9, mavenArtifacts_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -447,6 +595,12 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     if (artifactTiming_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getArtifactTiming());
     }
+    for (int i = 0; i < pythonPackages_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, pythonPackages_.get(i));
+    }
+    for (int i = 0; i < mavenArtifacts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, mavenArtifacts_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -471,6 +625,8 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     if (hasArtifactTiming()) {
       if (!getArtifactTiming().equals(other.getArtifactTiming())) return false;
     }
+    if (!getPythonPackagesList().equals(other.getPythonPackagesList())) return false;
+    if (!getMavenArtifactsList().equals(other.getMavenArtifactsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -501,6 +657,14 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
     if (hasArtifactTiming()) {
       hash = (37 * hash) + ARTIFACT_TIMING_FIELD_NUMBER;
       hash = (53 * hash) + getArtifactTiming().hashCode();
+    }
+    if (getPythonPackagesCount() > 0) {
+      hash = (37 * hash) + PYTHON_PACKAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getPythonPackagesList().hashCode();
+    }
+    if (getMavenArtifactsCount() > 0) {
+      hash = (37 * hash) + MAVEN_ARTIFACTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMavenArtifactsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -660,6 +824,20 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         artifactTiming_ = null;
         artifactTimingBuilder_ = null;
       }
+      if (pythonPackagesBuilder_ == null) {
+        pythonPackages_ = java.util.Collections.emptyList();
+      } else {
+        pythonPackages_ = null;
+        pythonPackagesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
+      if (mavenArtifactsBuilder_ == null) {
+        mavenArtifacts_ = java.util.Collections.emptyList();
+      } else {
+        mavenArtifacts_ = null;
+        mavenArtifactsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -712,6 +890,24 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         result.artifactTiming_ = artifactTiming_;
       } else {
         result.artifactTiming_ = artifactTimingBuilder_.build();
+      }
+      if (pythonPackagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          pythonPackages_ = java.util.Collections.unmodifiableList(pythonPackages_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.pythonPackages_ = pythonPackages_;
+      } else {
+        result.pythonPackages_ = pythonPackagesBuilder_.build();
+      }
+      if (mavenArtifactsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          mavenArtifacts_ = java.util.Collections.unmodifiableList(mavenArtifacts_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.mavenArtifacts_ = mavenArtifacts_;
+      } else {
+        result.mavenArtifacts_ = mavenArtifactsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -819,6 +1015,60 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
       if (other.hasArtifactTiming()) {
         mergeArtifactTiming(other.getArtifactTiming());
       }
+      if (pythonPackagesBuilder_ == null) {
+        if (!other.pythonPackages_.isEmpty()) {
+          if (pythonPackages_.isEmpty()) {
+            pythonPackages_ = other.pythonPackages_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensurePythonPackagesIsMutable();
+            pythonPackages_.addAll(other.pythonPackages_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.pythonPackages_.isEmpty()) {
+          if (pythonPackagesBuilder_.isEmpty()) {
+            pythonPackagesBuilder_.dispose();
+            pythonPackagesBuilder_ = null;
+            pythonPackages_ = other.pythonPackages_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            pythonPackagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPythonPackagesFieldBuilder()
+                    : null;
+          } else {
+            pythonPackagesBuilder_.addAllMessages(other.pythonPackages_);
+          }
+        }
+      }
+      if (mavenArtifactsBuilder_ == null) {
+        if (!other.mavenArtifacts_.isEmpty()) {
+          if (mavenArtifacts_.isEmpty()) {
+            mavenArtifacts_ = other.mavenArtifacts_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureMavenArtifactsIsMutable();
+            mavenArtifacts_.addAll(other.mavenArtifacts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.mavenArtifacts_.isEmpty()) {
+          if (mavenArtifactsBuilder_.isEmpty()) {
+            mavenArtifactsBuilder_.dispose();
+            mavenArtifactsBuilder_ = null;
+            mavenArtifacts_ = other.mavenArtifacts_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            mavenArtifactsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMavenArtifactsFieldBuilder()
+                    : null;
+          } else {
+            mavenArtifactsBuilder_.addAllMessages(other.mavenArtifacts_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -890,6 +1140,32 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 58
+            case 66:
+              {
+                com.google.cloudbuild.v1.UploadedPythonPackage m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.UploadedPythonPackage.parser(), extensionRegistry);
+                if (pythonPackagesBuilder_ == null) {
+                  ensurePythonPackagesIsMutable();
+                  pythonPackages_.add(m);
+                } else {
+                  pythonPackagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloudbuild.v1.UploadedMavenArtifact m =
+                    input.readMessage(
+                        com.google.cloudbuild.v1.UploadedMavenArtifact.parser(), extensionRegistry);
+                if (mavenArtifactsBuilder_ == null) {
+                  ensureMavenArtifactsIsMutable();
+                  mavenArtifacts_.add(m);
+                } else {
+                  mavenArtifactsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1938,6 +2214,762 @@ public final class Results extends com.google.protobuf.GeneratedMessageV3
         artifactTiming_ = null;
       }
       return artifactTimingBuilder_;
+    }
+
+    private java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage> pythonPackages_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePythonPackagesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        pythonPackages_ =
+            new java.util.ArrayList<com.google.cloudbuild.v1.UploadedPythonPackage>(
+                pythonPackages_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedPythonPackage,
+            com.google.cloudbuild.v1.UploadedPythonPackage.Builder,
+            com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>
+        pythonPackagesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage> getPythonPackagesList() {
+      if (pythonPackagesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(pythonPackages_);
+      } else {
+        return pythonPackagesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public int getPythonPackagesCount() {
+      if (pythonPackagesBuilder_ == null) {
+        return pythonPackages_.size();
+      } else {
+        return pythonPackagesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedPythonPackage getPythonPackages(int index) {
+      if (pythonPackagesBuilder_ == null) {
+        return pythonPackages_.get(index);
+      } else {
+        return pythonPackagesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder setPythonPackages(
+        int index, com.google.cloudbuild.v1.UploadedPythonPackage value) {
+      if (pythonPackagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePythonPackagesIsMutable();
+        pythonPackages_.set(index, value);
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder setPythonPackages(
+        int index, com.google.cloudbuild.v1.UploadedPythonPackage.Builder builderForValue) {
+      if (pythonPackagesBuilder_ == null) {
+        ensurePythonPackagesIsMutable();
+        pythonPackages_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder addPythonPackages(com.google.cloudbuild.v1.UploadedPythonPackage value) {
+      if (pythonPackagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePythonPackagesIsMutable();
+        pythonPackages_.add(value);
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder addPythonPackages(
+        int index, com.google.cloudbuild.v1.UploadedPythonPackage value) {
+      if (pythonPackagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePythonPackagesIsMutable();
+        pythonPackages_.add(index, value);
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder addPythonPackages(
+        com.google.cloudbuild.v1.UploadedPythonPackage.Builder builderForValue) {
+      if (pythonPackagesBuilder_ == null) {
+        ensurePythonPackagesIsMutable();
+        pythonPackages_.add(builderForValue.build());
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder addPythonPackages(
+        int index, com.google.cloudbuild.v1.UploadedPythonPackage.Builder builderForValue) {
+      if (pythonPackagesBuilder_ == null) {
+        ensurePythonPackagesIsMutable();
+        pythonPackages_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder addAllPythonPackages(
+        java.lang.Iterable<? extends com.google.cloudbuild.v1.UploadedPythonPackage> values) {
+      if (pythonPackagesBuilder_ == null) {
+        ensurePythonPackagesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pythonPackages_);
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder clearPythonPackages() {
+      if (pythonPackagesBuilder_ == null) {
+        pythonPackages_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public Builder removePythonPackages(int index) {
+      if (pythonPackagesBuilder_ == null) {
+        ensurePythonPackagesIsMutable();
+        pythonPackages_.remove(index);
+        onChanged();
+      } else {
+        pythonPackagesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedPythonPackage.Builder getPythonPackagesBuilder(
+        int index) {
+      return getPythonPackagesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder getPythonPackagesOrBuilder(
+        int index) {
+      if (pythonPackagesBuilder_ == null) {
+        return pythonPackages_.get(index);
+      } else {
+        return pythonPackagesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>
+        getPythonPackagesOrBuilderList() {
+      if (pythonPackagesBuilder_ != null) {
+        return pythonPackagesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(pythonPackages_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedPythonPackage.Builder addPythonPackagesBuilder() {
+      return getPythonPackagesFieldBuilder()
+          .addBuilder(com.google.cloudbuild.v1.UploadedPythonPackage.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedPythonPackage.Builder addPythonPackagesBuilder(
+        int index) {
+      return getPythonPackagesFieldBuilder()
+          .addBuilder(index, com.google.cloudbuild.v1.UploadedPythonPackage.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Python artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage.Builder>
+        getPythonPackagesBuilderList() {
+      return getPythonPackagesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedPythonPackage,
+            com.google.cloudbuild.v1.UploadedPythonPackage.Builder,
+            com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>
+        getPythonPackagesFieldBuilder() {
+      if (pythonPackagesBuilder_ == null) {
+        pythonPackagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloudbuild.v1.UploadedPythonPackage,
+                com.google.cloudbuild.v1.UploadedPythonPackage.Builder,
+                com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>(
+                pythonPackages_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        pythonPackages_ = null;
+      }
+      return pythonPackagesBuilder_;
+    }
+
+    private java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact> mavenArtifacts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMavenArtifactsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        mavenArtifacts_ =
+            new java.util.ArrayList<com.google.cloudbuild.v1.UploadedMavenArtifact>(
+                mavenArtifacts_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedMavenArtifact,
+            com.google.cloudbuild.v1.UploadedMavenArtifact.Builder,
+            com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>
+        mavenArtifactsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact> getMavenArtifactsList() {
+      if (mavenArtifactsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(mavenArtifacts_);
+      } else {
+        return mavenArtifactsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public int getMavenArtifactsCount() {
+      if (mavenArtifactsBuilder_ == null) {
+        return mavenArtifacts_.size();
+      } else {
+        return mavenArtifactsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedMavenArtifact getMavenArtifacts(int index) {
+      if (mavenArtifactsBuilder_ == null) {
+        return mavenArtifacts_.get(index);
+      } else {
+        return mavenArtifactsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder setMavenArtifacts(
+        int index, com.google.cloudbuild.v1.UploadedMavenArtifact value) {
+      if (mavenArtifactsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMavenArtifactsIsMutable();
+        mavenArtifacts_.set(index, value);
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder setMavenArtifacts(
+        int index, com.google.cloudbuild.v1.UploadedMavenArtifact.Builder builderForValue) {
+      if (mavenArtifactsBuilder_ == null) {
+        ensureMavenArtifactsIsMutable();
+        mavenArtifacts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder addMavenArtifacts(com.google.cloudbuild.v1.UploadedMavenArtifact value) {
+      if (mavenArtifactsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMavenArtifactsIsMutable();
+        mavenArtifacts_.add(value);
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder addMavenArtifacts(
+        int index, com.google.cloudbuild.v1.UploadedMavenArtifact value) {
+      if (mavenArtifactsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMavenArtifactsIsMutable();
+        mavenArtifacts_.add(index, value);
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder addMavenArtifacts(
+        com.google.cloudbuild.v1.UploadedMavenArtifact.Builder builderForValue) {
+      if (mavenArtifactsBuilder_ == null) {
+        ensureMavenArtifactsIsMutable();
+        mavenArtifacts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder addMavenArtifacts(
+        int index, com.google.cloudbuild.v1.UploadedMavenArtifact.Builder builderForValue) {
+      if (mavenArtifactsBuilder_ == null) {
+        ensureMavenArtifactsIsMutable();
+        mavenArtifacts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder addAllMavenArtifacts(
+        java.lang.Iterable<? extends com.google.cloudbuild.v1.UploadedMavenArtifact> values) {
+      if (mavenArtifactsBuilder_ == null) {
+        ensureMavenArtifactsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mavenArtifacts_);
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder clearMavenArtifacts() {
+      if (mavenArtifactsBuilder_ == null) {
+        mavenArtifacts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public Builder removeMavenArtifacts(int index) {
+      if (mavenArtifactsBuilder_ == null) {
+        ensureMavenArtifactsIsMutable();
+        mavenArtifacts_.remove(index);
+        onChanged();
+      } else {
+        mavenArtifactsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedMavenArtifact.Builder getMavenArtifactsBuilder(
+        int index) {
+      return getMavenArtifactsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder getMavenArtifactsOrBuilder(
+        int index) {
+      if (mavenArtifactsBuilder_ == null) {
+        return mavenArtifacts_.get(index);
+      } else {
+        return mavenArtifactsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>
+        getMavenArtifactsOrBuilderList() {
+      if (mavenArtifactsBuilder_ != null) {
+        return mavenArtifactsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(mavenArtifacts_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedMavenArtifact.Builder addMavenArtifactsBuilder() {
+      return getMavenArtifactsFieldBuilder()
+          .addBuilder(com.google.cloudbuild.v1.UploadedMavenArtifact.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public com.google.cloudbuild.v1.UploadedMavenArtifact.Builder addMavenArtifactsBuilder(
+        int index) {
+      return getMavenArtifactsFieldBuilder()
+          .addBuilder(index, com.google.cloudbuild.v1.UploadedMavenArtifact.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maven artifacts uploaded to Artifact Registry at the end of the build.
+     * </pre>
+     *
+     * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;
+     * </code>
+     */
+    public java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact.Builder>
+        getMavenArtifactsBuilderList() {
+      return getMavenArtifactsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloudbuild.v1.UploadedMavenArtifact,
+            com.google.cloudbuild.v1.UploadedMavenArtifact.Builder,
+            com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>
+        getMavenArtifactsFieldBuilder() {
+      if (mavenArtifactsBuilder_ == null) {
+        mavenArtifactsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloudbuild.v1.UploadedMavenArtifact,
+                com.google.cloudbuild.v1.UploadedMavenArtifact.Builder,
+                com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>(
+                mavenArtifacts_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        mavenArtifacts_ = null;
+      }
+      return mavenArtifactsBuilder_;
     }
 
     @java.lang.Override

@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START talent_v4_generated_tenantserviceclient_updatetenant_tenantfieldmask_sync]
+// [START jobs_v4_generated_tenantserviceclient_updatetenant_tenantfieldmask_sync]
 import com.google.cloud.talent.v4.Tenant;
 import com.google.cloud.talent.v4.TenantServiceClient;
 import com.google.protobuf.FieldMask;
@@ -40,4 +40,4 @@ public class SyncUpdateTenantTenantFieldmask {
     }
   }
 }
-// [END talent_v4_generated_tenantserviceclient_updatetenant_tenantfieldmask_sync]
+// [END jobs_v4_generated_tenantserviceclient_updatetenant_tenantfieldmask_sync]

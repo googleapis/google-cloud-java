@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_async]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.channel.v1.ChannelPartnerLink;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
@@ -47,4 +47,4 @@ public class AsyncCreateChannelPartnerLink {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_async]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_createchannelpartnerlink_async]

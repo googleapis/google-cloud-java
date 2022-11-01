@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_listsavedqueries_paged_async]
+// [START cloudasset_v1_generated_assetserviceclient_listsavedqueries_paged_async]
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.ListSavedQueriesRequest;
 import com.google.cloud.asset.v1.ListSavedQueriesResponse;
@@ -60,4 +60,4 @@ public class AsyncListSavedQueriesPaged {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_listsavedqueries_paged_async]
+// [END cloudasset_v1_generated_assetserviceclient_listsavedqueries_paged_async]

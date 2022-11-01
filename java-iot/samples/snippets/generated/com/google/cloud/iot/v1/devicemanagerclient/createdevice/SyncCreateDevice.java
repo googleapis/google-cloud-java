@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_createdevice_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_createdevice_sync]
 import com.google.cloud.iot.v1.CreateDeviceRequest;
 import com.google.cloud.iot.v1.Device;
 import com.google.cloud.iot.v1.DeviceManagerClient;
@@ -44,4 +44,4 @@ public class SyncCreateDevice {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_createdevice_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_createdevice_sync]

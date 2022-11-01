@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START deploy_v1_generated_clouddeployclient_getdeliverypipeline_deliverypipelinename_sync]
+// [START clouddeploy_v1_generated_clouddeployclient_getdeliverypipeline_deliverypipelinename_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
@@ -40,4 +40,4 @@ public class SyncGetDeliveryPipelineDeliverypipelinename {
     }
   }
 }
-// [END deploy_v1_generated_clouddeployclient_getdeliverypipeline_deliverypipelinename_sync]
+// [END clouddeploy_v1_generated_clouddeployclient_getdeliverypipeline_deliverypipelinename_sync]

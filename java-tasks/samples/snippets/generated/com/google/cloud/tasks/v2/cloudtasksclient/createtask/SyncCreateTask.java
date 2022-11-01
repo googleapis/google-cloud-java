@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_createtask_sync]
+// [START cloudtasks_v2_generated_cloudtasksclient_createtask_sync]
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.CreateTaskRequest;
 import com.google.cloud.tasks.v2.QueueName;
@@ -44,4 +44,4 @@ public class SyncCreateTask {
     }
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_createtask_sync]
+// [END cloudtasks_v2_generated_cloudtasksclient_createtask_sync]

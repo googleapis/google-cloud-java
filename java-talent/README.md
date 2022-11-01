@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent</artifactId>
-  <version>2.4.6</version>
+  <version>2.6.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-talent:2.4.6'
+implementation 'com.google.cloud:google-cloud-talent:2.6.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "2.4.6"
+libraryDependencies += "com.google.cloud" % "google-cloud-talent" % "2.6.0"
 ```
 
 ## Authentication
@@ -68,32 +68,6 @@ use this Talent Solution Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-talent/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Commute Search Jobs | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/CommuteSearchJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/CommuteSearchJobs.java) |
-| Custom Ranking Search Jobs | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/CustomRankingSearchJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/CustomRankingSearchJobs.java) |
-| Histogram Search Jobs | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/HistogramSearchJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/HistogramSearchJobs.java) |
-| Job Search Auto Complete Job Title | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchAutoCompleteJobTitle.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchAutoCompleteJobTitle.java) |
-| Job Search Create Client Event | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchCreateClientEvent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchCreateClientEvent.java) |
-| Job Search Create Company | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchCreateCompany.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchCreateCompany.java) |
-| Job Search Create Job | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchCreateJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchCreateJob.java) |
-| Job Search Create Job Custom Attributes | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchCreateJobCustomAttributes.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchCreateJobCustomAttributes.java) |
-| Job Search Create Tenant | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchCreateTenant.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchCreateTenant.java) |
-| Job Search Delete Company | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchDeleteCompany.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchDeleteCompany.java) |
-| Job Search Delete Job | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchDeleteJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchDeleteJob.java) |
-| Job Search Delete Tenant | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchDeleteTenant.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchDeleteTenant.java) |
-| Job Search Get Company | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchGetCompany.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchGetCompany.java) |
-| Job Search Get Job | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchGetJob.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchGetJob.java) |
-| Job Search Get Tenant | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchGetTenant.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchGetTenant.java) |
-| Job Search List Companies | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchListCompanies.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchListCompanies.java) |
-| Job Search List Jobs | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchListJobs.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchListJobs.java) |
-| Job Search List Tenants | [source code](https://github.com/googleapis/java-talent/blob/main/samples/snippets/src/main/java/com/example/jobs/JobSearchListTenants.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-talent&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/jobs/JobSearchListTenants.java) |
 
 
 

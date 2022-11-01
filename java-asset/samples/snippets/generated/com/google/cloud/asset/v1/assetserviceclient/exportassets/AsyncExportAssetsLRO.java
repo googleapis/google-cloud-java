@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_exportassets_lro_async]
+// [START cloudasset_v1_generated_assetserviceclient_exportassets_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.ContentType;
@@ -56,4 +56,4 @@ public class AsyncExportAssetsLRO {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_exportassets_lro_async]
+// [END cloudasset_v1_generated_assetserviceclient_exportassets_lro_async]

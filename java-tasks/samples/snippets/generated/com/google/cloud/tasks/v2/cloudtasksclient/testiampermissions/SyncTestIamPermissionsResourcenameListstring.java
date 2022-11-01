@@ -16,7 +16,7 @@
 
 package com.google.cloud.tasks.v2.samples;
 
-// [START tasks_v2_generated_cloudtasksclient_testiampermissions_resourcenameliststring_sync]
+// [START cloudtasks_v2_generated_cloudtasksclient_testiampermissions_resourcenameliststring_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.tasks.v2.CloudTasksClient;
 import com.google.cloud.tasks.v2.QueueName;
@@ -44,4 +44,4 @@ public class SyncTestIamPermissionsResourcenameListstring {
     }
   }
 }
-// [END tasks_v2_generated_cloudtasksclient_testiampermissions_resourcenameliststring_sync]
+// [END cloudtasks_v2_generated_cloudtasksclient_testiampermissions_resourcenameliststring_sync]

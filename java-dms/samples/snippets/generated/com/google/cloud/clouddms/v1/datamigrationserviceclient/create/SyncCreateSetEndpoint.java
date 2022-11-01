@@ -16,7 +16,7 @@
 
 package com.google.cloud.clouddms.v1.samples;
 
-// [START clouddms_v1_generated_datamigrationserviceclient_create_setendpoint_sync]
+// [START datamigration_v1_generated_datamigrationserviceclient_create_setendpoint_sync]
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.DataMigrationServiceSettings;
 import com.google.cloud.clouddms.v1.myEndpoint;
@@ -39,4 +39,4 @@ public class SyncCreateSetEndpoint {
         DataMigrationServiceClient.create(dataMigrationServiceSettings);
   }
 }
-// [END clouddms_v1_generated_datamigrationserviceclient_create_setendpoint_sync]
+// [END datamigration_v1_generated_datamigrationserviceclient_create_setendpoint_sync]

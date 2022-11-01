@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_analyzemove_sync]
+// [START cloudasset_v1_generated_assetserviceclient_analyzemove_sync]
 import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
 import com.google.cloud.asset.v1.AssetServiceClient;
@@ -43,4 +43,4 @@ public class SyncAnalyzeMove {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_analyzemove_sync]
+// [END cloudasset_v1_generated_assetserviceclient_analyzemove_sync]

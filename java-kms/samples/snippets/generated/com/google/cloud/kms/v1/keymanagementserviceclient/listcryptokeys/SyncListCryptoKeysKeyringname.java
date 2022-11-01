@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_listcryptokeys_keyringname_sync]
+// [START cloudkms_v1_generated_keymanagementserviceclient_listcryptokeys_keyringname_sync]
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.KeyRingName;
@@ -42,4 +42,4 @@ public class SyncListCryptoKeysKeyringname {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_listcryptokeys_keyringname_sync]
+// [END cloudkms_v1_generated_keymanagementserviceclient_listcryptokeys_keyringname_sync]

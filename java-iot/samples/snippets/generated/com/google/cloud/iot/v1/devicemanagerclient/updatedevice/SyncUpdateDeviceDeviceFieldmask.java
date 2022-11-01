@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_updatedevice_devicefieldmask_sync]
+// [START cloudiot_v1_generated_devicemanagerclient_updatedevice_devicefieldmask_sync]
 import com.google.cloud.iot.v1.Device;
 import com.google.cloud.iot.v1.DeviceManagerClient;
 import com.google.protobuf.FieldMask;
@@ -40,4 +40,4 @@ public class SyncUpdateDeviceDeviceFieldmask {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_updatedevice_devicefieldmask_sync]
+// [END cloudiot_v1_generated_devicemanagerclient_updatedevice_devicefieldmask_sync]

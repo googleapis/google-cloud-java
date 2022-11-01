@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_projectsclient_deleteproject_lro_async]
+// [START cloudresourcemanager_v3_generated_projectsclient_deleteproject_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.resourcemanager.v3.DeleteProjectMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteProjectRequest;
@@ -46,4 +46,4 @@ public class AsyncDeleteProjectLRO {
     }
   }
 }
-// [END resourcemanager_v3_generated_projectsclient_deleteproject_lro_async]
+// [END cloudresourcemanager_v3_generated_projectsclient_deleteproject_lro_async]

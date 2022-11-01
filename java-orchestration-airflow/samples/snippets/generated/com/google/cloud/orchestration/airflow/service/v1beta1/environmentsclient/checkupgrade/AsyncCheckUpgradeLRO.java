@@ -16,7 +16,7 @@
 
 package com.google.cloud.orchestration.airflow.service.v1beta1.samples;
 
-// [START service_v1beta1_generated_environmentsclient_checkupgrade_lro_async]
+// [START composer_v1beta1_generated_environmentsclient_checkupgrade_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse;
@@ -48,4 +48,4 @@ public class AsyncCheckUpgradeLRO {
     }
   }
 }
-// [END service_v1beta1_generated_environmentsclient_checkupgrade_lro_async]
+// [END composer_v1beta1_generated_environmentsclient_checkupgrade_lro_async]

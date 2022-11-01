@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_getcustomer_customername_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_getcustomer_customername_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.Customer;
 import com.google.cloud.channel.v1.CustomerName;
@@ -39,4 +39,4 @@ public class SyncGetCustomerCustomername {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_getcustomer_customername_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_getcustomer_customername_sync]

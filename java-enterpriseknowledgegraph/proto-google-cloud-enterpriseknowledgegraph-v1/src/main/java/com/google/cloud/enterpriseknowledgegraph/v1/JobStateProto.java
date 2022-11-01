@@ -44,12 +44,15 @@ public final class JobStateProto {
           + "_STATE_CANCELLED\020\004\022\"\n\036JOB_STATE_KNOWLEDG"
           + "E_EXTRACTION\020\005\022!\n\035JOB_STATE_RECON_PREPRO"
           + "CESSING\020\006\022\030\n\024JOB_STATE_CLUSTERING\020\007\022 \n\034J"
-          + "OB_STATE_EXPORTING_CLUSTERS\020\010B\241\001\n,com.go"
+          + "OB_STATE_EXPORTING_CLUSTERS\020\010B\245\002\n,com.go"
           + "ogle.cloud.enterpriseknowledgegraph.v1B\r"
           + "JobStateProtoP\001Z`google.golang.org/genpr"
           + "oto/googleapis/cloud/enterpriseknowledge"
-          + "graph/v1;enterpriseknowledgegraphb\006proto"
-          + "3"
+          + "graph/v1;enterpriseknowledgegraph\252\002(Goog"
+          + "le.Cloud.EnterpriseKnowledgeGraph.V1\312\002(G"
+          + "oogle\\Cloud\\EnterpriseKnowledgeGraph\\V1\352"
+          + "\002+Google::Cloud::EnterpriseKnowledgeGrap"
+          + "h::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

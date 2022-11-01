@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START asset_v1_generated_assetserviceclient_createsavedquery_async]
+// [START cloudasset_v1_generated_assetserviceclient_createsavedquery_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.CreateSavedQueryRequest;
@@ -49,4 +49,4 @@ public class AsyncCreateSavedQuery {
     }
   }
 }
-// [END asset_v1_generated_assetserviceclient_createsavedquery_async]
+// [END cloudasset_v1_generated_assetserviceclient_createsavedquery_async]

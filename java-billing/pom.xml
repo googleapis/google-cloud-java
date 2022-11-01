@@ -50,4 +50,5 @@
     <module>proto-google-cloud-billing-v1</module>
     <module>google-cloud-billing-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_foldersclient_getfolder_string_sync]
+// [START cloudresourcemanager_v3_generated_foldersclient_getfolder_string_sync]
 import com.google.cloud.resourcemanager.v3.Folder;
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.FoldersClient;
@@ -39,4 +39,4 @@ public class SyncGetFolderString {
     }
   }
 }
-// [END resourcemanager_v3_generated_foldersclient_getfolder_string_sync]
+// [END cloudresourcemanager_v3_generated_foldersclient_getfolder_string_sync]

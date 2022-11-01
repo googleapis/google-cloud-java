@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelserviceclient_registersubscriber_sync]
+// [START cloudchannel_v1_generated_cloudchannelserviceclient_registersubscriber_sync]
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
@@ -43,4 +43,4 @@ public class SyncRegisterSubscriber {
     }
   }
 }
-// [END channel_v1_generated_cloudchannelserviceclient_registersubscriber_sync]
+// [END cloudchannel_v1_generated_cloudchannelserviceclient_registersubscriber_sync]

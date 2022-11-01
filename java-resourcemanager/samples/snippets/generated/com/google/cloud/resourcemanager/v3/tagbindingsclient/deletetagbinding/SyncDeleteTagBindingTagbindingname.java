@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_tagbindingsclient_deletetagbinding_tagbindingname_sync]
+// [START cloudresourcemanager_v3_generated_tagbindingsclient_deletetagbinding_tagbindingname_sync]
 import com.google.cloud.resourcemanager.v3.TagBindingName;
 import com.google.cloud.resourcemanager.v3.TagBindingsClient;
 import com.google.protobuf.Empty;
@@ -39,4 +39,4 @@ public class SyncDeleteTagBindingTagbindingname {
     }
   }
 }
-// [END resourcemanager_v3_generated_tagbindingsclient_deletetagbinding_tagbindingname_sync]
+// [END cloudresourcemanager_v3_generated_tagbindingsclient_deletetagbinding_tagbindingname_sync]

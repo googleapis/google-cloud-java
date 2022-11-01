@@ -16,7 +16,7 @@
 
 package com.google.cloud.kms.v1.samples;
 
-// [START kms_v1_generated_keymanagementserviceclient_macsign_cryptokeyversionnamebytestring_sync]
+// [START cloudkms_v1_generated_keymanagementserviceclient_macsign_cryptokeyversionnamebytestring_sync]
 import com.google.cloud.kms.v1.CryptoKeyVersionName;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
 import com.google.cloud.kms.v1.MacSignResponse;
@@ -44,4 +44,4 @@ public class SyncMacSignCryptokeyversionnameBytestring {
     }
   }
 }
-// [END kms_v1_generated_keymanagementserviceclient_macsign_cryptokeyversionnamebytestring_sync]
+// [END cloudkms_v1_generated_keymanagementserviceclient_macsign_cryptokeyversionnamebytestring_sync]

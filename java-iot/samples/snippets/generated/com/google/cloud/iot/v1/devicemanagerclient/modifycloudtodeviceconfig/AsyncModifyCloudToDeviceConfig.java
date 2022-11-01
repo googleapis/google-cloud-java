@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.samples;
 
-// [START iot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_async]
+// [START cloudiot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.iot.v1.DeviceConfig;
 import com.google.cloud.iot.v1.DeviceManagerClient;
@@ -51,4 +51,4 @@ public class AsyncModifyCloudToDeviceConfig {
     }
   }
 }
-// [END iot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_async]
+// [END cloudiot_v1_generated_devicemanagerclient_modifycloudtodeviceconfig_async]

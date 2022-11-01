@@ -16,7 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START channel_v1_generated_cloudchannelreportsserviceclient_create_setendpoint_sync]
+// [START cloudchannel_v1_generated_cloudchannelreportsserviceclient_create_setendpoint_sync]
 import com.google.cloud.channel.v1.CloudChannelReportsServiceClient;
 import com.google.cloud.channel.v1.CloudChannelReportsServiceSettings;
 import com.google.cloud.channel.v1.myEndpoint;
@@ -39,4 +39,4 @@ public class SyncCreateSetEndpoint {
         CloudChannelReportsServiceClient.create(cloudChannelReportsServiceSettings);
   }
 }
-// [END channel_v1_generated_cloudchannelreportsserviceclient_create_setendpoint_sync]
+// [END cloudchannel_v1_generated_cloudchannelreportsserviceclient_create_setendpoint_sync]

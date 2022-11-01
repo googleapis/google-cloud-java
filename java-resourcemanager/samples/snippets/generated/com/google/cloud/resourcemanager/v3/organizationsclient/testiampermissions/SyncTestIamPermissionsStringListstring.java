@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START resourcemanager_v3_generated_organizationsclient_testiampermissions_stringliststring_sync]
+// [START cloudresourcemanager_v3_generated_organizationsclient_testiampermissions_stringliststring_sync]
 import com.google.cloud.resourcemanager.v3.FolderName;
 import com.google.cloud.resourcemanager.v3.OrganizationsClient;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -43,4 +43,4 @@ public class SyncTestIamPermissionsStringListstring {
     }
   }
 }
-// [END resourcemanager_v3_generated_organizationsclient_testiampermissions_stringliststring_sync]
+// [END cloudresourcemanager_v3_generated_organizationsclient_testiampermissions_stringliststring_sync]

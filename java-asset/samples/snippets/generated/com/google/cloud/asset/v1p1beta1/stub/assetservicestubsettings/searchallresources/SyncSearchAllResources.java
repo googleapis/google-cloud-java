@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p1beta1.stub.samples;
 
-// [START asset_v1p1beta1_generated_assetservicestubsettings_searchallresources_sync]
+// [START cloudasset_v1p1beta1_generated_assetservicestubsettings_searchallresources_sync]
 import com.google.cloud.asset.v1p1beta1.stub.AssetServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncSearchAllResources {
     AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
   }
 }
-// [END asset_v1p1beta1_generated_assetservicestubsettings_searchallresources_sync]
+// [END cloudasset_v1p1beta1_generated_assetservicestubsettings_searchallresources_sync]
