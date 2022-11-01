@@ -61,21 +61,21 @@ integration)
       echo "${modified_module_list[*]}"
     )
 
-    destroy() {
-      arguments=$?
-      time source ./.terraform/helpers/destroy.sh
-      exit $arguments
-    }
-
     gcloud config set project "$GOOGLE_CLOUD_PROJECT"
     time ( \
       terraform -version && \
       source ./.terraform/helpers/init.sh "$module_list" && \
       source ./.terraform/helpers/plan.sh "$module_list" && \
-      trap destroy EXIT \
       source ./.terraform/helpers/apply.sh && \
       source ./.terraform/helpers/populate-env.sh \
     )
+
+    destroy() {
+      arguments=$?
+      time source ./.terraform/helpers/destroy.sh
+      exit $arguments
+    }
+    trap destroy EXIT
 
     install_modules
     printf "Running Integration Tests for:\n%s\n" "${module_list}"
