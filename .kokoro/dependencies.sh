@@ -14,6 +14,7 @@
 # limitations under the License.
 
 set -eo pipefail
+shopt -s nullglob
 
 ## Get the directory of the build script
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
@@ -41,9 +42,9 @@ function determineMavenOpts() {
     then
       # MaxPermSize is no longer supported as of jdk 17
       echo -n "-Xmx1024m"
-    else
+  else
       echo -n "-Xmx1024m -XX:MaxPermSize=128m"
-    fi
+  fi
 }
 
 export MAVEN_OPTS=$(determineMavenOpts)
@@ -56,58 +57,3 @@ retry_with_backoff 3 10 \
     -Dclirr.skip=true
 
 mvn -B dependency:analyze -DfailOnWarning=true
-
-echo "****************** DEPENDENCY LIST COMPLETENESS CHECK *******************"
-## Run dependency list completeness check
-function completenessCheck() {
-  # Output dep list with compile scope generated using the original pom
-  # Running mvn dependency:list on Java versions that support modules will also include the module of the dependency.
-  # This is stripped from the output as it is not present in the flattened pom.
-  # Only dependencies with 'compile' or 'runtime' scope are included from original dependency list.
-  msg "Generating dependency list using original pom..."
-  # Excluding commons-codec,commons-logging from the comparison as a temp fix
-  # Explanation and issue filed in maven-dependency-plugin: https://issues.apache.org/jira/browse/MDEP-737
-  mvn dependency:list -f pom.xml -DexcludeArtifactIds=commons-codec,commons-logging,grpc-googleapis -DincludeScope=runtime -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' | sed -e s/\\s--\\smodule.*// >.org-list.txt
-
-  # Output dep list generated using the flattened pom (only 'compile' and 'runtime' scopes)
-  msg "Generating dependency list using flattened pom..."
-  # Excluding commons-codec,commons-logging from the comparison as a temp fix
-  # Explanation and issue filed in maven-dependency-plugin: https://issues.apache.org/jira/browse/MDEP-737
-  mvn dependency:list -f .flattened-pom.xml -DexcludeArtifactIds=commons-codec,commons-logging,grpc-googleapis -DincludeScope=runtime -Dsort=true | grep '\[INFO]    .*:.*:.*:.*:.*' >.new-list.txt
-
-  # Compare two dependency lists
-  msg "Comparing dependency lists..."
-  diff .org-list.txt .new-list.txt >.diff.txt
-  if [[ $? == 0 ]]
-    then
-      msg "Success. No diff!"
-  else
-    msg "Diff found. See below: "
-    msg "You can also check .diff.txt file located in $1."
-    cat .diff.txt
-    return 1
-  fi
-}
-
-# Allow failures to continue running the script
-set +e
-
-error_count=0
-for path in $(find -name ".flattened-pom.xml")
-do
-  # Check flattened pom in each dir that contains it for completeness
-  dir=$(dirname "$path")
-  pushd "$dir"
-  completenessCheck "$dir"
-  error_count=$(($error_count + $?))
-  popd
-done
-
-if [[ $error_count == 0 ]]
-then
-  msg "All checks passed."
-  exit 0
-else
-  msg "Errors found. See log statements above."
-  exit 1
-fi
