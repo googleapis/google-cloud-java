@@ -67,6 +67,7 @@ integration)
       exit $arguments
     }
 
+    gcloud config set project "$GOOGLE_CLOUD_PROJECT"
     time ( \
       terraform -version && \
       source ./.terraform/helpers/init.sh "$module_list" && \
