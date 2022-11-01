@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.1.3</version>
+      <version>26.1.4</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
