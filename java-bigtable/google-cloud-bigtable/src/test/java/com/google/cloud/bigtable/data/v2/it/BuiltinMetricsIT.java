@@ -48,7 +48,6 @@ public class BuiltinMetricsIT {
 
   public static String[] VIEWS = {
     "operation_latencies",
-    "retry_count",
     "attempt_latencies",
     "connectivity_error_count",
     "application_blocking_latencies"
