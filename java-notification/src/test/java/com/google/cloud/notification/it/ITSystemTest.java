@@ -45,6 +45,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -95,6 +96,7 @@ public class ITSystemTest {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
+  @Ignore
   @Test
   public void testNotifications() {
     // Use Pubsub to create a Topic.
@@ -127,8 +129,7 @@ public class ITSystemTest {
     NotificationInfo notification2 =
         notificationService.createNotification(
             BUCKET,
-            NotificationInfo.of(topic)
-                .toBuilder()
+            NotificationInfo.of(topic).toBuilder()
                 .setPayloadFormat(PayloadFormat.JSON_API_V1)
                 .build());
     assertEquals(topic, notification2.getTopic());
