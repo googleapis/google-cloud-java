@@ -96,7 +96,6 @@ public class ITSystemTest {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
-  @Ignore
   @Test
   public void testNotifications() {
     // Use Pubsub to create a Topic.
