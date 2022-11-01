@@ -64,7 +64,7 @@ integration)
     time ( \
       terraform -version && \
       source ./.terraform/helpers/init.sh "$module_list" && \
-      source ./.terraform/helpers/plan.sh && \
+      source ./.terraform/helpers/plan.sh "$module_list" && \
       source ./.terraform/helpers/apply.sh && \
       source ./.terraform/helpers/populate-env.sh \
     )

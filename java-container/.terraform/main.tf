@@ -21,7 +21,7 @@ locals {
   container_network_name = "java-container-network"
 }
 resource "google_compute_network" "java_container_network" {
-  count                   = var.inputs.should_create_networks ? 1 : 0
+  count                   = var.inputs.should_create_container_network ? 1 : 0
   name                    = local.container_network_name
   auto_create_subnetworks = true
   depends_on              = [
@@ -30,6 +30,6 @@ resource "google_compute_network" "java_container_network" {
   ]
 }
 data "google_compute_network" "existing_network" {
-  count = var.inputs.should_create_networks ? 0 : 1
+  count = var.inputs.should_create_container_network ? 0 : 1
   name  = local.container_network_name
 }

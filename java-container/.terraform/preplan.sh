@@ -1,3 +1,4 @@
+#!/bin/bash
 #
 # Copyright 2022 Google LLC
 #
@@ -13,16 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-set -exo pipefail
-
-scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null
-
-source ./helpers/init.sh "$1"
-source ./helpers/gcloud-login.sh
-source ./helpers/gcloud-create-project.sh
-source ./helpers/gcloud-create-service-account.sh
-source ./helpers/plan.sh "$1"
-source ./helpers/apply.sh
-
-popd >/dev/null
+if ! gcloud services list | grep -q 'compute.googleapis.com' ||
+   ! gcloud compute networks list | grep -q 'java-container-network'
+then
+    echo "should_create_container_network = true" >>"$1"
+fi

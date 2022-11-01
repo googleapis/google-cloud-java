@@ -1,8 +1,9 @@
 variable "inputs" {
   type = object({
-    project_id                     = string
-    should_create_networks         = bool
-    should_enable_apis_on_apply    = bool
-    should_disable_apis_on_destroy = bool
+    project_id                      = string
+    # If true, creates the compute network to be used for integration testing.
+    should_create_container_network = bool
+    should_enable_apis_on_apply     = bool
+    should_disable_apis_on_destroy  = bool
   })
 }

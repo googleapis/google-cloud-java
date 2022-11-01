@@ -17,12 +17,13 @@ locals {
   # So this 'data' object is a superset of key-value entries that may be
   # needed, and we pass it to every module.
   data = {
-    project_id                     = var.project_id
-    region                         = var.region
-    zone                           = var.zone
-    should_create_networks         = var.should_create_networks
-    should_enable_apis_on_apply    = var.should_enable_apis_on_apply
-    should_disable_apis_on_destroy = var.should_disable_apis_on_destroy
+    project_id                      = var.project_id
+    region                          = var.region
+    zone                            = var.zone
+    should_create_container_network = var.should_create_container_network
+    should_create_redis_network     = var.should_create_redis_network
+    should_enable_apis_on_apply     = var.should_enable_apis_on_apply
+    should_disable_apis_on_destroy  = var.should_disable_apis_on_destroy
   }
 }
 resource "google_project_service" "cloudresourcemanager" {

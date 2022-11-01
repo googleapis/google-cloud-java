@@ -15,11 +15,6 @@
 #
 set -eo pipefail
 
-# @returns exit code 0 if list $1 contains entry $2.
-function contains() {
-  echo "$1" | grep -w -q "$2"
-}
-
 function modifyEnvironment() {
   # Set module-specific environment variables for upcoming integration test(s)
   if [[ -f "../$1/.terraform/env.sh" ]]; then

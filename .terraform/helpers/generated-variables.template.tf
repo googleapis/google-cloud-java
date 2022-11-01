@@ -8,10 +8,15 @@ variable "region" {
   description = "GCP region used to deploy resources"
   default     = "us-central1" # NOTE: Some integration tests have hardcoded this region.
 }
-variable "should_create_networks" {
+variable "should_create_redis_network" {
   type        = bool
   default     = false
-  description = "If true, networks will be created if needed."
+  description = "If true, a Redis network will be created if needed during java-redis testing."
+}
+variable "should_create_container_network" {
+  type        = bool
+  default     = false
+  description = "If true, a container network will be created if needed during java-container testing."
 }
 variable "should_enable_apis_on_apply" {
   type        = bool

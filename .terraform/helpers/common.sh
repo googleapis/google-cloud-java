@@ -23,15 +23,13 @@ function allow_failure () {
 
   command=( "$@" )
   "${command[@]}"
-  exit_code=$?
+  export exit_code=$?
 
   # restore "e" flag
   if [[ ${flags} =~ e ]]
   then set -e
   else set +e
   fi
-
-  return $exit_code
 }
 
 # Find all directories starting with 'java-', sort them, then join

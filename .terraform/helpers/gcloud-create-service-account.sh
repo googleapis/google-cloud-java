@@ -32,6 +32,7 @@ source ./helpers/common.sh
 service_account_name=$(getTerraformServiceAccountName)
 service_account_email=$(getTerraformServiceAccountEmail)
 # If it doesn't already exist, create the service account.
+set +e
 gcloud iam service-accounts describe "$service_account_email" &>/dev/null
 if [[ $? -ne 0 ]]; then
   gcloud iam service-accounts create "$service_account_name"
@@ -39,6 +40,7 @@ if [[ $? -ne 0 ]]; then
 else
   createdServiceAccount=false
 fi
+set -e
 
 # Assign permissions to the service account.
 gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
