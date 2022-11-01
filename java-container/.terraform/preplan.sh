@@ -14,15 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-gcloud services list
-if gcloud services list | grep -q 'compute.googleapis.com'; then
-  echo "compute.googleapis.com enabled."
-fi
-gcloud compute networks list
-if gcloud compute networks list | grep -q 'java-container-network'; then
-  echo "Found network: java-container-network"
-fi
-
 if ! gcloud services list | grep -q 'compute.googleapis.com' ||
    ! gcloud compute networks list | grep -q 'java-container-network'
 then
