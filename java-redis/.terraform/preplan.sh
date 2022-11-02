@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-resourceToForget='module.java_redis.google_compute_network.redis_vpc'
-if terraform state list | grep -q $resourceToForget
+if ! gcloud services list | grep -q 'compute.googleapis.com' ||
+   ! gcloud compute networks list | grep -q 'redis-vpc'
 then
-  terraform state rm $resourceToForget
+    echo "should_create_redis_network = true" >>"$1"
 fi

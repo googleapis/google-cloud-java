@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-source helpers/common.sh
-allow_failure terraform state rm 'module.java_container.google_compute_network.java_container_network'
+resourceToForget='module.java_container.google_compute_network.java_container_network'
+if terraform state list | grep -q $resourceToForget
+then
+  terraform state rm $resourceToForget
+fi
