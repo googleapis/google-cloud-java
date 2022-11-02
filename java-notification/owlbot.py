@@ -18,7 +18,8 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-java.common_templates(excludes=[
+java.common_templates(monorepo=True,
+    excludes=[
     ".github/*",
     ".kokoro/*",
     "samples/*",
