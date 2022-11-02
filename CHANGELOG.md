@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.127.0](https://github.com/googleapis/java-logging-logback/compare/v0.126.17...v0.127.0) (2022-10-31)
+
+
+### Features
+
+* Add support for partialSuccess ([#908](https://github.com/googleapis/java-logging-logback/issues/908)) ([1699f70](https://github.com/googleapis/java-logging-logback/commit/1699f708994f462f263218ad32ca50654229e89c))
+
 ## [0.126.17](https://github.com/googleapis/java-logging-logback/compare/v0.126.16...v0.126.17) (2022-10-28)
 
 
