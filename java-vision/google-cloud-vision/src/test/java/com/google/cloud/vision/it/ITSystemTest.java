@@ -17,7 +17,6 @@ package com.google.cloud.vision.it;
 
 import static com.google.cloud.vision.v1.Feature.Type;
 import static com.google.common.truth.Truth.assertThat;
-import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.ServiceOptions;
