@@ -1851,6 +1851,7 @@ public class LoggingImplTest {
             .addAllEntries(
                 Iterables.transform(
                     ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
             .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.getDefaultInstance();
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
@@ -1869,6 +1870,7 @@ public class LoggingImplTest {
                     ImmutableList.of(
                         LOG_ENTRY1, LOG_ENTRY2.toBuilder().setSeverity(Severity.EMERGENCY).build()),
                     LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
             .build();
     ApiFuture<WriteLogEntriesResponse> apiFuture = SettableApiFuture.create();
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(apiFuture);
@@ -1886,6 +1888,7 @@ public class LoggingImplTest {
             .addAllEntries(
                 Iterables.transform(
                     ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
             .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.getDefaultInstance();
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
@@ -1934,6 +1937,7 @@ public class LoggingImplTest {
                     ImmutableList.of(
                         LOG_ENTRY1, LOG_ENTRY2, LOG_ENTRY_NO_DESTINATION, LOG_ENTRY_EMPTY),
                     LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
             .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.getDefaultInstance();
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
@@ -1955,6 +1959,7 @@ public class LoggingImplTest {
             .addAllEntries(
                 Iterables.transform(
                     ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
             .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.getDefaultInstance();
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
@@ -2229,6 +2234,7 @@ public class LoggingImplTest {
             .addAllEntries(
                 Iterables.transform(
                     ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
             .build();
     EasyMock.expect(loggingRpcMock.write(request)).andReturn(mockRpcResponse);
     EasyMock.replay(loggingRpcMock);
@@ -2264,6 +2270,7 @@ public class LoggingImplTest {
         WriteLogEntriesRequest.newBuilder()
             .addAllEntries(
                 Iterables.transform(ImmutableList.of(LOG_ENTRY1), LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
             .build();
 
     Thread[] threads = new Thread[100];
@@ -2302,6 +2309,22 @@ public class LoggingImplTest {
   @Test
   public void testDiagnosticInfoWithPartialSuccess() {
     testDiagnosticInfoGeneration(true);
+  }
+
+  @Test
+  public void testPartialSuccessNotOverridenIfPresent() {
+    WriteLogEntriesRequest request =
+        WriteLogEntriesRequest.newBuilder()
+            .addAllEntries(
+                Iterables.transform(
+                    ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(false)
+            .build();
+    WriteLogEntriesResponse response = WriteLogEntriesResponse.getDefaultInstance();
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), WriteOption.partialSuccess(false));
   }
 
   private void testDiagnosticInfoGeneration(boolean addPartialSuccessOption) {
@@ -2362,6 +2385,7 @@ public class LoggingImplTest {
                         LOG_ENTRY_NO_DESTINATION,
                         LOG_ENTRY_EMPTY),
                     LogEntry.toPbFunction(projectId)))
+            .setPartialSuccess(true)
             .build();
     WriteLogEntriesResponse response = WriteLogEntriesResponse.getDefaultInstance();
     EasyMock.expect(loggingRpcMock.write(expectedWriteLogEntriesRequest))

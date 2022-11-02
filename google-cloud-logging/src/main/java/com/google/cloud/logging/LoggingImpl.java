@@ -859,6 +859,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     try {
       final Map<Option.OptionType, ?> writeOptions = optionMap(options);
       final Boolean loggingOptionsPopulateFlag = getOptions().getAutoPopulateMetadata();
+      final Boolean writeOptionPartialSuccessFlag =
+          WriteOption.OptionType.PARTIAL_SUCCESS.get(writeOptions);
       final Boolean writeOptionPopulateFlag =
           WriteOption.OptionType.AUTO_POPULATE_METADATA.get(writeOptions);
       Tuple<Boolean, Iterable<LogEntry>> pair =
@@ -872,9 +874,14 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         logEntries =
             populateMetadata(logEntries, sharedResourceMetadata, this.getClass().getName());
       }
-      // Add partialSuccess option always for request containing instrumentation data
-      writeLogEntries(
-          logEntries, pair.x() ? Instrumentation.addPartialSuccessOption(options) : options);
+      // Add partialSuccess = true option always for request which does not have
+      // it set explicitly in options.
+      // For request containing instrumentation data (e.g. when pair.x() == true),
+      // always set or override partialSuccess with true.
+      if (pair.x() || writeOptionPartialSuccessFlag == null) {
+        options = Instrumentation.addPartialSuccessOption(options);
+      }
+      writeLogEntries(logEntries, options);
       if (flushSeverity != null) {
         for (LogEntry logEntry : logEntries) {
           // flush pending writes if log severity at or above flush severity
