@@ -39,7 +39,7 @@ jobs:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
       - name: Install dependencies
-        run: pip install -r generation/new_client/requirements.txt
+        run: pip install --require-hashes -r generation/new_client/requirements.txt
       - name: Remove Client
         run: |
           rm -rf java-${API_SHORT_NAME} || true
