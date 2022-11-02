@@ -17,6 +17,7 @@ package com.google.cloud.vision.it;
 
 import static com.google.cloud.vision.v1.Feature.Type;
 import static com.google.common.truth.Truth.assertThat;
+import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.ServiceOptions;
@@ -77,8 +78,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -313,22 +316,33 @@ public class ITSystemTest {
     AnnotateImageRequest request =
         AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
 
-    List<String> actual = new ArrayList<>();
-
-    int tryCount = 0;
     int maxTries = 3;
-
-    while (tryCount < maxTries) {
-      try {
-        actual = addResponsesToList(request);
-        break;
-      } catch (StatusRuntimeException ex) {
-        tryCount++;
-        System.out.println("retrying due to request throttling or DOS prevention...");
-        TimeUnit.SECONDS.sleep(30);
-      }
-    }
+    List<String> actual =
+        retryIfEmptyOrStatusRuntimeException(() -> addResponsesToList(request), maxTries);
     assertThat(actual).contains("Palace of Fine Arts");
+  }
+
+  private static List<String> retryIfEmptyOrStatusRuntimeException(
+      Callable<List<String>> callable, int retries) throws Exception {
+    Assert.assertTrue("No more retries available.", retries >= 0);
+
+    try {
+      List<String> result = callable.call();
+      if (result.isEmpty()) {
+        System.out.println("Retrying due to empty response list... ");
+        TimeUnit.SECONDS.sleep(30);
+        return retryIfEmptyOrStatusRuntimeException(callable, retries - 1);
+      }
+      return result;
+
+    } catch (StatusRuntimeException ex) {
+      if (retries == 0) {
+        throw ex;
+      }
+      System.out.println("Retrying due to request throttling or DOS prevention... ");
+      TimeUnit.SECONDS.sleep(30);
+      return retryIfEmptyOrStatusRuntimeException(callable, retries - 1);
+    }
   }
 
   private List<String> addResponsesToList(AnnotateImageRequest request) {
