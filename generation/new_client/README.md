@@ -187,11 +187,11 @@ Successfully built 31491ac60cdd
 Then run bootstrapper specifying the container (`31491ac60cdd`):
 
 ```
-bootstrapper run-trigger pre-process \
+C=31491ac60cdd; bootstrapper run-trigger pre-process \
   --apiId=apikeys \
   --language=java \
-  --languageContainer=31491ac60cdd \
-  --repoToClone=git@github.com:googleapis/google-cloud-java.git \
+  --languageContainer=$C \
+  --repoToClone=git@github.com:googleapis/google-cloud-java.git
 ```
 
 
