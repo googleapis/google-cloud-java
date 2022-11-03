@@ -1,0 +1,24 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.routing.v2",
+  "libraryPackage": "com.google.maps.routing.v2",
+  "services": {
+    "Routes": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RoutesClient",
+          "rpcs": {
+            "ComputeRouteMatrix": {
+              "methods": ["computeRouteMatrixCallable"]
+            },
+            "ComputeRoutes": {
+              "methods": ["computeRoutes", "computeRoutesCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

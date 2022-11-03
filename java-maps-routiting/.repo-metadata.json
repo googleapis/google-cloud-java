@@ -1,0 +1,15 @@
+{
+  "api_shortname": "maps-routiting",
+  "name_pretty": "Routes API",
+  "product_documentation": "https://developers.google.com/maps/documentation/routes",
+  "api_description": "Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-routes/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-maps-routiting",
+  "repo_short": "java-maps-routiting",
+  "distribution_name": "com.google.maps:google-maps-routes",
+  "api_id": "routes.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}
