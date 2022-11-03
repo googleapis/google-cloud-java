@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-network-security</artifactId>
-  <version>0.6.4</version>
+  <version>0.8.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-network-security:0.6.4'
+implementation 'com.google.cloud:google-cloud-network-security:0.8.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-network-security" % "0.6.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-network-security" % "0.8.0"
 ```
 
 ## Authentication

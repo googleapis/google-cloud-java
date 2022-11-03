@@ -62,4 +62,5 @@
     <module>proto-google-cloud-dataform-v1beta1</module>
     <module>google-cloud-dataform-bom</module>
   </modules>
-</project>
+
+  </project>

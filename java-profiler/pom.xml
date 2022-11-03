@@ -50,4 +50,5 @@
     <module>proto-google-cloud-profiler-v2</module>
     <module>google-cloud-profiler-bom</module>
   </modules>
-</project>
+
+  </project>

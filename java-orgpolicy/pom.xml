@@ -56,6 +56,5 @@
     <module>proto-google-cloud-orgpolicy-v2</module>
     <module>google-cloud-orgpolicy-bom</module>
   </modules>
-</project>
 
-
+  </project>

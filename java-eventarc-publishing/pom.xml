@@ -50,4 +50,5 @@
     <module>proto-google-cloud-eventarc-publishing-v1</module>
     <module>google-cloud-eventarc-publishing-bom</module>
   </modules>
-</project>
+
+  </project>

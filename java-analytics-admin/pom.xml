@@ -62,4 +62,5 @@
     <module>proto-google-analytics-admin-v1beta</module>
     <module>google-analytics-admin-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -62,4 +62,5 @@
     <module>proto-google-analytics-data-v1alpha</module>
     <module>google-analytics-data-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -62,4 +62,5 @@
     <module>proto-google-cloud-language-v1beta2</module>
     <module>google-cloud-language-bom</module>
   </modules>
-</project>
+
+  </project>

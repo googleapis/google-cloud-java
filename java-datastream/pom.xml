@@ -62,4 +62,5 @@
     <module>proto-google-cloud-datastream-v1</module>
     <module>google-cloud-datastream-bom</module>
   </modules>
-</project>
+
+  </project>

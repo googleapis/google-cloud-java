@@ -50,4 +50,5 @@
     <module>proto-google-cloud-essential-contacts-v1</module>
     <module>google-cloud-essential-contacts-bom</module>
   </modules>
-</project>
+
+  </project>

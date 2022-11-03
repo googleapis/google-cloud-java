@@ -62,4 +62,5 @@
     <module>proto-google-cloud-servicedirectory-v1</module>
     <module>google-cloud-servicedirectory-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -58,4 +58,5 @@
     <module>proto-google-cloud-contentwarehouse-v1</module>
     <module>google-cloud-contentwarehouse-bom</module>
   </modules>
-</project>
+
+  </project>

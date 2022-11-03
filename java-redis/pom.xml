@@ -62,4 +62,5 @@
     <module>proto-google-cloud-redis-v1beta1</module>
     <module>google-cloud-redis-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -74,4 +74,5 @@
     <module>proto-google-cloud-dataproc-metastore-v1</module>
     <module>google-cloud-dataproc-metastore-bom</module>
   </modules>
-</project>
+
+  </project>

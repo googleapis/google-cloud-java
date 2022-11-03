@@ -62,4 +62,5 @@
     <module>proto-google-cloud-bigquerymigration-v2</module>
     <module>google-cloud-bigquerymigration-bom</module>
   </modules>
-</project>
+
+  </project>

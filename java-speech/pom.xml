@@ -86,4 +86,5 @@
     <module>proto-google-cloud-speech-v2</module>
     <module>google-cloud-speech-bom</module>
   </modules>
-</project>
+
+  </project>

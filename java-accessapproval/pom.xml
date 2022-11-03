@@ -52,4 +52,5 @@
     <module>proto-google-cloud-accessapproval-v1</module>
     <module>google-cloud-accessapproval-bom</module>
   </modules>
-</project>
+
+  </project>

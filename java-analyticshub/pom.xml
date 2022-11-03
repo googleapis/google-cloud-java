@@ -50,4 +50,5 @@
     <module>proto-google-cloud-analyticshub-v1</module>
     <module>google-cloud-analyticshub-bom</module>
   </modules>
-</project>
+
+  </project>

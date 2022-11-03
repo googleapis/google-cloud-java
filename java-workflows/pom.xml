@@ -62,4 +62,5 @@
     <module>proto-google-cloud-workflows-v1</module>
     <module>google-cloud-workflows-bom</module>
   </modules>
-</project>
+
+  </project>
