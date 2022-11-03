@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.maps</groupId>
+  <artifactId>google-maps-routes-bom</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routes:current} -->
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
+  </parent>
+
+  <name>Google Routes API BOM</name>
+  <description>
+    BOM for Routes API
+  </description>
+
+  <properties>
+    <maven.antrun.skip>true</maven.antrun.skip>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.maps</groupId>
+        <artifactId>google-maps-routes</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routes:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-maps-routes-v2</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-routes-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-maps-routes-v2</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-routes-v2:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
