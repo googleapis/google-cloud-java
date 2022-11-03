@@ -131,11 +131,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * SessionsSettings sessionsSettings =
- *     SessionsSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             SessionsSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * SessionsSettings sessionsSettings = SessionsSettings.newHttpJsonBuilder().build();
  * SessionsClient sessionsClient = SessionsClient.create(sessionsSettings);
  * }</pre>
  *
