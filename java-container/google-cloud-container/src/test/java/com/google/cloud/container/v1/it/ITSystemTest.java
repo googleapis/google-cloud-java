@@ -184,9 +184,7 @@ public class ITSystemTest {
   }
 
   private static String getContainerNetworkName() {
-    String name =
-        System.getProperty(CONTAINER_NETWORK_ENV_NAME, System.getenv(CONTAINER_NETWORK_ENV_NAME));
-
+    String name = System.getenv(CONTAINER_NETWORK_ENV_NAME);
     if (name == null) {
       return DEFAULT_NETWORK;
     }
