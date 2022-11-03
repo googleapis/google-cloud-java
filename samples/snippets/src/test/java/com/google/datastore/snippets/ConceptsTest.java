@@ -1145,4 +1145,31 @@ public class ConceptsTest {
     // [END datastore_in_query_sorted]
     assertValidQueryRealBackend(query);
   }
+
+  @Test
+  public void testStaleReads() {
+    setUpQueryTestsRealBackend();
+    Datastore datastoreClient = datastoreRealBackend;
+    // [START datastore_stale_read]
+    Key taskKey =
+        datastoreClient
+            .newKeyFactory()
+            .setKind("Task")
+            .addAncestors(PathElement.of("TaskList", "default"))
+            .newKey("someTask");
+
+    Timestamp fifteenSecondsAgo =
+        Timestamp.ofTimeSecondsAndNanos(Timestamp.now().getSeconds() - 15L, 0);
+    // Create a readOption with read time fifteenSecondsAgo
+    ReadOption readOption = ReadOption.readTime(fifteenSecondsAgo);
+    // Use the readOption to Fetch entity
+    Entity entity = datastoreClient.get(taskKey, readOption);
+
+    // Use the readOption to Query kind Task
+    Query<Entity> query = Query.newEntityQueryBuilder().setKind("Task").setLimit(10).build();
+    QueryResults<Entity> results = datastoreClient.run(query, readOption);
+    Entity result = results.next();
+    // [END datastore_stale_read]
+    assertValidQueryRealBackend(query);
+  }
 }
