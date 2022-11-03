@@ -36,6 +36,49 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
+function perform_integration_tests() {
+  install_modules
+
+  printf "Running Integration Tests for:\n%s\n" "$1"
+  mvn -B ${INTEGRATION_TEST_ARGS} \
+    -pl "$1" \
+    -amd \
+    -ntp \
+    -Penable-integration-tests \
+    -DtrimStackTrace=false \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
+    -Dflatten.skip=true \
+    -Danimal.sniffer.skip=true \
+    -Djacoco.skip=true \
+    -DskipUnitTests=true \
+    -Dmaven.wagon.http.retryHandler.count=5 \
+    -fae \
+    -T 1C \
+    verify
+  RETURN_CODE=$?
+
+  printf "Finished Integration Tests for:\n%s\n" "${module_list}"
+}
+function setup_terraform() {
+  gcloud config set project "$GOOGLE_CLOUD_PROJECT"
+  time (
+    terraform -version &&
+      source ./.terraform/helpers/init.sh "$1" &&
+      source ./.terraform/helpers/plan.sh "$1" &&
+      source ./.terraform/helpers/apply.sh &&
+      source ./.terraform/helpers/populate-env.sh
+  )
+
+  destroy() {
+    arguments=$?
+    time source ./.terraform/helpers/destroy.sh
+    exit $arguments
+  }
+  trap destroy EXIT
+}
+
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
@@ -60,45 +103,20 @@ case ${JOB_TYPE} in
         IFS=,
         echo "${modified_module_list[*]}"
       )
-
-      gcloud config set project "$GOOGLE_CLOUD_PROJECT"
-      time (
-        terraform -version &&
-          source ./.terraform/helpers/init.sh "$module_list" &&
-          source ./.terraform/helpers/plan.sh "$module_list" &&
-          source ./.terraform/helpers/apply.sh &&
-          source ./.terraform/helpers/populate-env.sh
+      perform_integration_tests "$module_list"
+    else
+      echo "No Integration Tests to run"
+    fi
+    ;;
+  terraform-integration)
+    generate_modified_modules_list
+    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
+      module_list=$(
+        IFS=,
+        echo "${modified_module_list[*]}"
       )
-
-      destroy() {
-        arguments=$?
-        time source ./.terraform/helpers/destroy.sh
-        exit $arguments
-      }
-      trap destroy EXIT
-
-      install_modules
-      printf "Running Integration Tests for:\n%s\n" "${module_list}"
-      mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list}" \
-        -amd \
-        -ntp \
-        -Penable-integration-tests \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Djacoco.skip=true \
-        -DskipUnitTests=true \
-        -Dmaven.wagon.http.retryHandler.count=5 \
-        -fae \
-        -T 1C \
-        verify
-      RETURN_CODE=$?
-
-      printf "Finished Integration Tests for:\n%s\n" "${module_list}"
+      setup_terraform "$module_list"
+      perform_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
     fi
