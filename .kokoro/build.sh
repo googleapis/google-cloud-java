@@ -39,91 +39,91 @@ fi
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
-test)
-  retry_with_backoff 3 10 \
-    mvn -B -ntp \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Dmaven.wagon.http.retryHandler.count=5 \
-    -T 1C \
-    test
-  RETURN_CODE=$?
-  echo "Finished running unit tests"
-  ;;
-integration)
-  generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-    module_list=$(
-      IFS=,
-      echo "${modified_module_list[*]}"
-    )
-
-    gcloud config set project "$GOOGLE_CLOUD_PROJECT"
-    time ( \
-      terraform -version && \
-      source ./.terraform/helpers/init.sh "$module_list" && \
-      source ./.terraform/helpers/plan.sh "$module_list" && \
-      source ./.terraform/helpers/apply.sh && \
-      source ./.terraform/helpers/populate-env.sh \
-    )
-
-    destroy() {
-      arguments=$?
-      time source ./.terraform/helpers/destroy.sh
-      exit $arguments
-    }
-    trap destroy EXIT
-
-    install_modules
-    printf "Running Integration Tests for:\n%s\n" "${module_list}"
-    mvn -B ${INTEGRATION_TEST_ARGS} \
-      -pl "${module_list}" \
-      -amd \
-      -ntp \
-      -Penable-integration-tests \
-      -DtrimStackTrace=false \
+  test)
+    retry_with_backoff 3 10 \
+      mvn -B -ntp \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
       -Dcheckstyle.skip=true \
       -Dflatten.skip=true \
       -Danimal.sniffer.skip=true \
-      -Djacoco.skip=true \
-      -DskipUnitTests=true \
       -Dmaven.wagon.http.retryHandler.count=5 \
-      -fae \
       -T 1C \
-      verify
+      test
     RETURN_CODE=$?
+    echo "Finished running unit tests"
+    ;;
+  integration)
+    generate_modified_modules_list
+    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
+      module_list=$(
+        IFS=,
+        echo "${modified_module_list[*]}"
+      )
 
-    printf "Finished Integration Tests for:\n%s\n" "${module_list}"
-  else
-    echo "No Integration Tests to run"
-  fi
-  ;;
-graalvm)
-  generate_graalvm_modules_list
-  if [ ! -z "${module_list}" ]; then
-    printf "Running GraalVM checks for:\n%s\n" "${module_list}"
-    install_modules
-    run_graalvm_tests
-  else
-    echo "Not running GraalVM checks -- No changes in relevant modules"
-  fi
-  ;;
-graalvm17)
-  generate_graalvm_modules_list
-  if [ ! -z "${module_list}" ]; then
-    printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
-    install_modules
-    run_graalvm_tests
-  else
-    echo "Not running GraalVM 17 checks -- No changes in relevant modules"
-  fi
-  ;;
-*) ;;
+      gcloud config set project "$GOOGLE_CLOUD_PROJECT"
+      time (
+        terraform -version &&
+          source ./.terraform/helpers/init.sh "$module_list" &&
+          source ./.terraform/helpers/plan.sh "$module_list" &&
+          source ./.terraform/helpers/apply.sh &&
+          source ./.terraform/helpers/populate-env.sh
+      )
+
+      destroy() {
+        arguments=$?
+        time source ./.terraform/helpers/destroy.sh
+        exit $arguments
+      }
+      trap destroy EXIT
+
+      install_modules
+      printf "Running Integration Tests for:\n%s\n" "${module_list}"
+      mvn -B ${INTEGRATION_TEST_ARGS} \
+        -pl "${module_list}" \
+        -amd \
+        -ntp \
+        -Penable-integration-tests \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        -Djacoco.skip=true \
+        -DskipUnitTests=true \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -fae \
+        -T 1C \
+        verify
+      RETURN_CODE=$?
+
+      printf "Finished Integration Tests for:\n%s\n" "${module_list}"
+    else
+      echo "No Integration Tests to run"
+    fi
+    ;;
+  graalvm)
+    generate_graalvm_modules_list
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM checks -- No changes in relevant modules"
+    fi
+    ;;
+  graalvm17)
+    generate_graalvm_modules_list
+    if [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
+      install_modules
+      run_graalvm_tests
+    else
+      echo "Not running GraalVM 17 checks -- No changes in relevant modules"
+    fi
+    ;;
+  *) ;;
 
 esac
 
