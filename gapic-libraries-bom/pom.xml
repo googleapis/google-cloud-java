@@ -589,13 +589,6 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.maps</groupId>
-        <artifactId>google-maps-routes-bom</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routes:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-mediatranslation-bom</artifactId>
         <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-mediatranslation:current} -->

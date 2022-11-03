@@ -17,6 +17,11 @@ for bom_directory in $(find . -maxdepth 3 -name 'google-*-bom' | sort --dictiona
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
   version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
 
+  if [[ "$groupId_line" == *"com.google.maps"* ]]; then
+    # The gapic bom includes cloud libraries
+    continue
+  fi
+
   bom_lines+="      <dependency>\n\
       ${groupId_line}\n\
       ${artifactId_line}\n\
