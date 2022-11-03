@@ -242,6 +242,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -307,6 +308,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -548,6 +550,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -876,6 +879,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -944,6 +948,7 @@ public class ModelServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockModelService.addResponse(expectedResponse);
 
