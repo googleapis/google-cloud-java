@@ -16,7 +16,7 @@
 
 package com.google.cloud.workflows.v1.samples;
 
-// [START workflows_v1_generated_workflowssettings_getworkflow_sync]
+// [START workflows_v1_generated_WorkflowsSettings_GetWorkflow_sync]
 import com.google.cloud.workflows.v1.WorkflowsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetWorkflow {
     WorkflowsSettings workflowsSettings = workflowsSettingsBuilder.build();
   }
 }
-// [END workflows_v1_generated_workflowssettings_getworkflow_sync]
+// [END workflows_v1_generated_WorkflowsSettings_GetWorkflow_sync]

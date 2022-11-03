@@ -16,7 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.stub.samples;
 
-// [START privateca_v1beta1_generated_certificateauthorityservicestubsettings_createcertificate_sync]
+// [START privateca_v1beta1_generated_CertificateAuthorityServiceStubSettings_CreateCertificate_sync]
 import com.google.cloud.security.privateca.v1beta1.stub.CertificateAuthorityServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateCertificate {
         certificateAuthorityServiceSettingsBuilder.build();
   }
 }
-// [END privateca_v1beta1_generated_certificateauthorityservicestubsettings_createcertificate_sync]
+// [END privateca_v1beta1_generated_CertificateAuthorityServiceStubSettings_CreateCertificate_sync]

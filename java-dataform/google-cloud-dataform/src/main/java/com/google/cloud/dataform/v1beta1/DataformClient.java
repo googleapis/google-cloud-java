@@ -122,11 +122,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * DataformSettings dataformSettings =
- *     DataformSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             DataformSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * DataformSettings dataformSettings = DataformSettings.newHttpJsonBuilder().build();
  * DataformClient dataformClient = DataformClient.create(dataformSettings);
  * }</pre>
  *

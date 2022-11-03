@@ -50,4 +50,5 @@
     <module>proto-google-cloud-certificate-manager-v1</module>
     <module>google-cloud-certificate-manager-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START recommendationengine_v1beta1_generated_usereventservicesettings_writeuserevent_sync]
+// [START recommendationengine_v1beta1_generated_UserEventServiceSettings_WriteUserEvent_sync]
 import com.google.cloud.recommendationengine.v1beta1.UserEventServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncWriteUserEvent {
     UserEventServiceSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();
   }
 }
-// [END recommendationengine_v1beta1_generated_usereventservicesettings_writeuserevent_sync]
+// [END recommendationengine_v1beta1_generated_UserEventServiceSettings_WriteUserEvent_sync]

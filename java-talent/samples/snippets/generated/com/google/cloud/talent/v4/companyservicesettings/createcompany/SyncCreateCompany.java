@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.samples;
 
-// [START jobs_v4_generated_companyservicesettings_createcompany_sync]
+// [START jobs_v4_generated_CompanyServiceSettings_CreateCompany_sync]
 import com.google.cloud.talent.v4.CompanyServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateCompany {
     CompanyServiceSettings companyServiceSettings = companyServiceSettingsBuilder.build();
   }
 }
-// [END jobs_v4_generated_companyservicesettings_createcompany_sync]
+// [END jobs_v4_generated_CompanyServiceSettings_CreateCompany_sync]

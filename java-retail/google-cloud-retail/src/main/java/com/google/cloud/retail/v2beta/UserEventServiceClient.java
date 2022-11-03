@@ -120,10 +120,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * UserEventServiceSettings userEventServiceSettings =
- *     UserEventServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             UserEventServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     UserEventServiceSettings.newHttpJsonBuilder().build();
  * UserEventServiceClient userEventServiceClient =
  *     UserEventServiceClient.create(userEventServiceSettings);
  * }</pre>

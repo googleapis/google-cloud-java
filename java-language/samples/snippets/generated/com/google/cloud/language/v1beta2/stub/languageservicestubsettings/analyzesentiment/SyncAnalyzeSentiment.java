@@ -16,7 +16,7 @@
 
 package com.google.cloud.language.v1beta2.stub.samples;
 
-// [START language_v1beta2_generated_languageservicestubsettings_analyzesentiment_sync]
+// [START language_v1beta2_generated_LanguageServiceStubSettings_AnalyzeSentiment_sync]
 import com.google.cloud.language.v1beta2.stub.LanguageServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncAnalyzeSentiment {
     LanguageServiceStubSettings languageServiceSettings = languageServiceSettingsBuilder.build();
   }
 }
-// [END language_v1beta2_generated_languageservicestubsettings_analyzesentiment_sync]
+// [END language_v1beta2_generated_LanguageServiceStubSettings_AnalyzeSentiment_sync]

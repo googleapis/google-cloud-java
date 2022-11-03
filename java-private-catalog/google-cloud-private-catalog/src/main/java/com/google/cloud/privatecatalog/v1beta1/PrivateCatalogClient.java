@@ -139,10 +139,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PrivateCatalogSettings privateCatalogSettings =
- *     PrivateCatalogSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             PrivateCatalogSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     PrivateCatalogSettings.newHttpJsonBuilder().build();
  * PrivateCatalogClient privateCatalogClient = PrivateCatalogClient.create(privateCatalogSettings);
  * }</pre>
  *

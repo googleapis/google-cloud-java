@@ -16,7 +16,7 @@
 
 package com.google.cloud.notebooks.v1.samples;
 
-// [START notebooks_v1_generated_managednotebookservicesettings_getruntime_sync]
+// [START notebooks_v1_generated_ManagedNotebookServiceSettings_GetRuntime_sync]
 import com.google.cloud.notebooks.v1.ManagedNotebookServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetRuntime {
         managedNotebookServiceSettingsBuilder.build();
   }
 }
-// [END notebooks_v1_generated_managednotebookservicesettings_getruntime_sync]
+// [END notebooks_v1_generated_ManagedNotebookServiceSettings_GetRuntime_sync]

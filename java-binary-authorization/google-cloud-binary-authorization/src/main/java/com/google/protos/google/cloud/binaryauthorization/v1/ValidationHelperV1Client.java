@@ -117,10 +117,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ValidationHelperV1Settings validationHelperV1Settings =
- *     ValidationHelperV1Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             ValidationHelperV1Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     ValidationHelperV1Settings.newHttpJsonBuilder().build();
  * ValidationHelperV1Client validationHelperV1Client =
  *     ValidationHelperV1Client.create(validationHelperV1Settings);
  * }</pre>

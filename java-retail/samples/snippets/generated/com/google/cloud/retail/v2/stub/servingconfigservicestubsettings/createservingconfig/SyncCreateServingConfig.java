@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2.stub.samples;
 
-// [START retail_v2_generated_servingconfigservicestubsettings_createservingconfig_sync]
+// [START retail_v2_generated_ServingConfigServiceStubSettings_CreateServingConfig_sync]
 import com.google.cloud.retail.v2.stub.ServingConfigServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateServingConfig {
         servingConfigServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2_generated_servingconfigservicestubsettings_createservingconfig_sync]
+// [END retail_v2_generated_ServingConfigServiceStubSettings_CreateServingConfig_sync]

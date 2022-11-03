@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkemulticloud.v1.stub.samples;
 
-// [START gkemulticloud_v1_generated_awsclustersstubsettings_getawscluster_sync]
+// [START gkemulticloud_v1_generated_AwsClustersStubSettings_GetAwsCluster_sync]
 import com.google.cloud.gkemulticloud.v1.stub.AwsClustersStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetAwsCluster {
     AwsClustersStubSettings awsClustersSettings = awsClustersSettingsBuilder.build();
   }
 }
-// [END gkemulticloud_v1_generated_awsclustersstubsettings_getawscluster_sync]
+// [END gkemulticloud_v1_generated_AwsClustersStubSettings_GetAwsCluster_sync]

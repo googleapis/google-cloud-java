@@ -16,7 +16,7 @@
 
 package com.google.cloud.webrisk.v1.stub.samples;
 
-// [START webrisk_v1_generated_webriskservicestubsettings_computethreatlistdiff_sync]
+// [START webrisk_v1_generated_WebRiskServiceStubSettings_ComputeThreatListDiff_sync]
 import com.google.cloud.webrisk.v1.stub.WebRiskServiceStubSettings;
 import java.time.Duration;
 
@@ -46,4 +46,4 @@ public class SyncComputeThreatListDiff {
     WebRiskServiceStubSettings webRiskServiceSettings = webRiskServiceSettingsBuilder.build();
   }
 }
-// [END webrisk_v1_generated_webriskservicestubsettings_computethreatlistdiff_sync]
+// [END webrisk_v1_generated_WebRiskServiceStubSettings_ComputeThreatListDiff_sync]

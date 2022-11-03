@@ -16,7 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.stub.samples;
 
-// [START recommendationengine_v1beta1_generated_catalogservicestubsettings_createcatalogitem_sync]
+// [START recommendationengine_v1beta1_generated_CatalogServiceStubSettings_CreateCatalogItem_sync]
 import com.google.cloud.recommendationengine.v1beta1.stub.CatalogServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateCatalogItem {
     CatalogServiceStubSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
   }
 }
-// [END recommendationengine_v1beta1_generated_catalogservicestubsettings_createcatalogitem_sync]
+// [END recommendationengine_v1beta1_generated_CatalogServiceStubSettings_CreateCatalogItem_sync]

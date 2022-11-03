@@ -147,10 +147,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ServiceManagerSettings serviceManagerSettings =
- *     ServiceManagerSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             ServiceManagerSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     ServiceManagerSettings.newHttpJsonBuilder().build();
  * ServiceManagerClient serviceManagerClient = ServiceManagerClient.create(serviceManagerSettings);
  * }</pre>
  *

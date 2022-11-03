@@ -16,7 +16,7 @@
 
 package com.google.cloud.video.livestream.v1.stub.samples;
 
-// [START livestream_v1_generated_livestreamservicestubsettings_getchannel_sync]
+// [START livestream_v1_generated_LivestreamServiceStubSettings_GetChannel_sync]
 import com.google.cloud.video.livestream.v1.stub.LivestreamServiceStubSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncGetChannel {
         livestreamServiceSettingsBuilder.build();
   }
 }
-// [END livestream_v1_generated_livestreamservicestubsettings_getchannel_sync]
+// [END livestream_v1_generated_LivestreamServiceStubSettings_GetChannel_sync]

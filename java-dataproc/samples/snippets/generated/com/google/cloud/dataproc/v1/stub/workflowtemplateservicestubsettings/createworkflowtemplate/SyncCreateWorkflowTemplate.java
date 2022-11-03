@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataproc.v1.stub.samples;
 
-// [START dataproc_v1_generated_workflowtemplateservicestubsettings_createworkflowtemplate_sync]
+// [START dataproc_v1_generated_WorkflowTemplateServiceStubSettings_CreateWorkflowTemplate_sync]
 import com.google.cloud.dataproc.v1.stub.WorkflowTemplateServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateWorkflowTemplate {
         workflowTemplateServiceSettingsBuilder.build();
   }
 }
-// [END dataproc_v1_generated_workflowtemplateservicestubsettings_createworkflowtemplate_sync]
+// [END dataproc_v1_generated_WorkflowTemplateServiceStubSettings_CreateWorkflowTemplate_sync]

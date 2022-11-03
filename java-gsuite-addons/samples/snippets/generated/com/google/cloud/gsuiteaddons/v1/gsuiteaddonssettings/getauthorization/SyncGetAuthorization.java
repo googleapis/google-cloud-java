@@ -16,7 +16,7 @@
 
 package com.google.cloud.gsuiteaddons.v1.samples;
 
-// [START gsuiteaddons_v1_generated_gsuiteaddonssettings_getauthorization_sync]
+// [START gsuiteaddons_v1_generated_GSuiteAddOnsSettings_GetAuthorization_sync]
 import com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetAuthorization {
     GSuiteAddOnsSettings gSuiteAddOnsSettings = gSuiteAddOnsSettingsBuilder.build();
   }
 }
-// [END gsuiteaddons_v1_generated_gsuiteaddonssettings_getauthorization_sync]
+// [END gsuiteaddons_v1_generated_GSuiteAddOnsSettings_GetAuthorization_sync]

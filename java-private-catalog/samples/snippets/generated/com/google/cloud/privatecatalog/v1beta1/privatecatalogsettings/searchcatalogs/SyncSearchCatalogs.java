@@ -16,7 +16,7 @@
 
 package com.google.cloud.privatecatalog.v1beta1.samples;
 
-// [START cloudprivatecatalog_v1beta1_generated_privatecatalogsettings_searchcatalogs_sync]
+// [START cloudprivatecatalog_v1beta1_generated_PrivateCatalogSettings_SearchCatalogs_sync]
 import com.google.cloud.privatecatalog.v1beta1.PrivateCatalogSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncSearchCatalogs {
     PrivateCatalogSettings privateCatalogSettings = privateCatalogSettingsBuilder.build();
   }
 }
-// [END cloudprivatecatalog_v1beta1_generated_privatecatalogsettings_searchcatalogs_sync]
+// [END cloudprivatecatalog_v1beta1_generated_PrivateCatalogSettings_SearchCatalogs_sync]

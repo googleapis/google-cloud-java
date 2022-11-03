@@ -16,7 +16,7 @@
 
 package com.google.cloud.eventarc.v1.samples;
 
-// [START eventarc_v1_generated_eventarcsettings_gettrigger_sync]
+// [START eventarc_v1_generated_EventarcSettings_GetTrigger_sync]
 import com.google.cloud.eventarc.v1.EventarcSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetTrigger {
     EventarcSettings eventarcSettings = eventarcSettingsBuilder.build();
   }
 }
-// [END eventarc_v1_generated_eventarcsettings_gettrigger_sync]
+// [END eventarc_v1_generated_EventarcSettings_GetTrigger_sync]

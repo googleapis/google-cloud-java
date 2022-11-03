@@ -11,59 +11,28 @@ Java idiomatic client for [Secret Management][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>26.1.3</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-secretmanager</artifactId>
-  </dependency>
-</dependencies>
-
-```
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-secretmanager</artifactId>
-  <version>2.3.10</version>
+  <version>2.5.0</version>
 </dependency>
-
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies:
-
-```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.1.3')
-
-implementation 'com.google.cloud:google-cloud-secretmanager'
-```
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-secretmanager:2.3.10'
+implementation 'com.google.cloud:google-cloud-secretmanager:2.5.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "2.3.10"
+libraryDependencies += "com.google.cloud" % "google-cloud-secretmanager" % "2.5.0"
 ```
 
 ## Authentication
@@ -99,30 +68,6 @@ use this Secret Management Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-secretmanager/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Native Image Secret Manager Sample | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/native-image-sample/src/main/java/secretmanager/NativeImageSecretManagerSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/native-image-sample/src/main/java/secretmanager/NativeImageSecretManagerSample.java) |
-| Access Secret Version | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/AccessSecretVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/AccessSecretVersion.java) |
-| Add Secret Version | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/AddSecretVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/AddSecretVersion.java) |
-| Create Secret | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/CreateSecret.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/CreateSecret.java) |
-| Delete Secret | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/DeleteSecret.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/DeleteSecret.java) |
-| Destroy Secret Version | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/DestroySecretVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/DestroySecretVersion.java) |
-| Disable Secret Version | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/DisableSecretVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/DisableSecretVersion.java) |
-| Enable Secret Version | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/EnableSecretVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/EnableSecretVersion.java) |
-| Get Secret | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/GetSecret.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/GetSecret.java) |
-| Get Secret Version | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/GetSecretVersion.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/GetSecretVersion.java) |
-| Iam Grant Access | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/IamGrantAccess.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/IamGrantAccess.java) |
-| Iam Revoke Access | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/IamRevokeAccess.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/IamRevokeAccess.java) |
-| List Secret Versions | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/ListSecretVersions.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/ListSecretVersions.java) |
-| List Secrets | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/ListSecrets.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/ListSecrets.java) |
-| Quickstart | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/Quickstart.java) |
-| Update Secret | [source code](https://github.com/googleapis/java-secretmanager/blob/main/samples/snippets/src/main/java/secretmanager/UpdateSecret.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-secretmanager&page=editor&open_in_editor=samples/snippets/src/main/java/secretmanager/UpdateSecret.java) |
 
 
 

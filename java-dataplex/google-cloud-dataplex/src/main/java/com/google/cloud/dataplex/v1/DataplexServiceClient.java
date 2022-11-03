@@ -132,10 +132,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * DataplexServiceSettings dataplexServiceSettings =
- *     DataplexServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             DataplexServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     DataplexServiceSettings.newHttpJsonBuilder().build();
  * DataplexServiceClient dataplexServiceClient =
  *     DataplexServiceClient.create(dataplexServiceSettings);
  * }</pre>

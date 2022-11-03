@@ -126,10 +126,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GameServerConfigsServiceSettings gameServerConfigsServiceSettings =
- *     GameServerConfigsServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             GameServerConfigsServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     GameServerConfigsServiceSettings.newHttpJsonBuilder().build();
  * GameServerConfigsServiceClient gameServerConfigsServiceClient =
  *     GameServerConfigsServiceClient.create(gameServerConfigsServiceSettings);
  * }</pre>

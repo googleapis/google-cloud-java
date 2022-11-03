@@ -123,10 +123,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * JobControllerSettings jobControllerSettings =
- *     JobControllerSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             JobControllerSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     JobControllerSettings.newHttpJsonBuilder().build();
  * JobControllerClient jobControllerClient = JobControllerClient.create(jobControllerSettings);
  * }</pre>
  *

@@ -120,11 +120,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * RecaptchaEnterpriseServiceV1Beta1Settings recaptchaEnterpriseServiceV1Beta1Settings =
- *     RecaptchaEnterpriseServiceV1Beta1Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             RecaptchaEnterpriseServiceV1Beta1Settings.defaultHttpJsonTransportProviderBuilder()
- *                 .build())
- *         .build();
+ *     RecaptchaEnterpriseServiceV1Beta1Settings.newHttpJsonBuilder().build();
  * RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
  *     RecaptchaEnterpriseServiceV1Beta1Client.create(recaptchaEnterpriseServiceV1Beta1Settings);
  * }</pre>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.datafusion.v1.samples;
 
-// [START datafusion_v1_generated_datafusionsettings_getinstance_sync]
+// [START datafusion_v1_generated_DataFusionSettings_GetInstance_sync]
 import com.google.cloud.datafusion.v1.DataFusionSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetInstance {
     DataFusionSettings dataFusionSettings = dataFusionSettingsBuilder.build();
   }
 }
-// [END datafusion_v1_generated_datafusionsettings_getinstance_sync]
+// [END datafusion_v1_generated_DataFusionSettings_GetInstance_sync]

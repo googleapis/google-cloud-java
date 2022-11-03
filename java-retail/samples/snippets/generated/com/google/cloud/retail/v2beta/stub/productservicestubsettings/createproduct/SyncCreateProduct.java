@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2beta.stub.samples;
 
-// [START retail_v2beta_generated_productservicestubsettings_createproduct_sync]
+// [START retail_v2beta_generated_ProductServiceStubSettings_CreateProduct_sync]
 import com.google.cloud.retail.v2beta.stub.ProductServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateProduct {
     ProductServiceStubSettings productServiceSettings = productServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2beta_generated_productservicestubsettings_createproduct_sync]
+// [END retail_v2beta_generated_ProductServiceStubSettings_CreateProduct_sync]

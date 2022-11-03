@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.stub.samples;
 
-// [START cloudresourcemanager_v3_generated_foldersstubsettings_getfolder_sync]
+// [START cloudresourcemanager_v3_generated_FoldersStubSettings_GetFolder_sync]
 import com.google.cloud.resourcemanager.v3.stub.FoldersStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetFolder {
     FoldersStubSettings foldersSettings = foldersSettingsBuilder.build();
   }
 }
-// [END cloudresourcemanager_v3_generated_foldersstubsettings_getfolder_sync]
+// [END cloudresourcemanager_v3_generated_FoldersStubSettings_GetFolder_sync]

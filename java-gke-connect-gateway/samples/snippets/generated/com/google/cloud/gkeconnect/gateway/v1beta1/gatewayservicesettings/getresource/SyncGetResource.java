@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkeconnect.gateway.v1beta1.samples;
 
-// [START connectgateway_v1beta1_generated_gatewayservicesettings_getresource_sync]
+// [START connectgateway_v1beta1_generated_GatewayServiceSettings_GetResource_sync]
 import com.google.cloud.gkeconnect.gateway.v1beta1.GatewayServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetResource {
     GatewayServiceSettings gatewayServiceSettings = gatewayServiceSettingsBuilder.build();
   }
 }
-// [END connectgateway_v1beta1_generated_gatewayservicesettings_getresource_sync]
+// [END connectgateway_v1beta1_generated_GatewayServiceSettings_GetResource_sync]

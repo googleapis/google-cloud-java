@@ -16,7 +16,7 @@
 
 package com.google.cloud.speech.v1.samples;
 
-// [START speech_v1_generated_speechsettings_recognize_sync]
+// [START speech_v1_generated_SpeechSettings_Recognize_sync]
 import com.google.cloud.speech.v1.SpeechSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncRecognize {
     SpeechSettings speechSettings = speechSettingsBuilder.build();
   }
 }
-// [END speech_v1_generated_speechsettings_recognize_sync]
+// [END speech_v1_generated_SpeechSettings_Recognize_sync]

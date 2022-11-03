@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.stub.samples;
 
-// [START dialogflow_v2_generated_environmentsstubsettings_getenvironment_sync]
+// [START dialogflow_v2_generated_EnvironmentsStubSettings_GetEnvironment_sync]
 import com.google.cloud.dialogflow.v2.stub.EnvironmentsStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetEnvironment {
     EnvironmentsStubSettings environmentsSettings = environmentsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2_generated_environmentsstubsettings_getenvironment_sync]
+// [END dialogflow_v2_generated_EnvironmentsStubSettings_GetEnvironment_sync]

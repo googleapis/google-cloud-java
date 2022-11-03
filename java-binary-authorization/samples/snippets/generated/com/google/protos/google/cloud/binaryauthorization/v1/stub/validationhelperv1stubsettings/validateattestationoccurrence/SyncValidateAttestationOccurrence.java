@@ -16,7 +16,7 @@
 
 package com.google.protos.google.cloud.binaryauthorization.v1.stub.samples;
 
-// [START binaryauthorization_v1_generated_validationhelperv1stubsettings_validateattestationoccurrence_sync]
+// [START binaryauthorization_v1_generated_ValidationHelperV1StubSettings_ValidateAttestationOccurrence_sync]
 import com.google.protos.google.cloud.binaryauthorization.v1.stub.ValidationHelperV1StubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncValidateAttestationOccurrence {
         validationHelperV1SettingsBuilder.build();
   }
 }
-// [END binaryauthorization_v1_generated_validationhelperv1stubsettings_validateattestationoccurrence_sync]
+// [END binaryauthorization_v1_generated_ValidationHelperV1StubSettings_ValidateAttestationOccurrence_sync]

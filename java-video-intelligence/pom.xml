@@ -103,4 +103,5 @@
     <module>proto-google-cloud-video-intelligence-v1p2beta1</module>
     <module>google-cloud-video-intelligence-bom</module>
   </modules>
-</project>
+
+  </project>

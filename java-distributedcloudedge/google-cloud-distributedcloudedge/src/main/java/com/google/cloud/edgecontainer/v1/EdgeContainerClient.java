@@ -123,10 +123,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * EdgeContainerSettings edgeContainerSettings =
- *     EdgeContainerSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             EdgeContainerSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     EdgeContainerSettings.newHttpJsonBuilder().build();
  * EdgeContainerClient edgeContainerClient = EdgeContainerClient.create(edgeContainerSettings);
  * }</pre>
  *

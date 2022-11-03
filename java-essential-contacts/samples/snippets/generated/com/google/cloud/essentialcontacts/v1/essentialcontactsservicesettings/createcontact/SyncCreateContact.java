@@ -16,7 +16,7 @@
 
 package com.google.cloud.essentialcontacts.v1.samples;
 
-// [START essentialcontacts_v1_generated_essentialcontactsservicesettings_createcontact_sync]
+// [START essentialcontacts_v1_generated_EssentialContactsServiceSettings_CreateContact_sync]
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateContact {
         essentialContactsServiceSettingsBuilder.build();
   }
 }
-// [END essentialcontacts_v1_generated_essentialcontactsservicesettings_createcontact_sync]
+// [END essentialcontacts_v1_generated_EssentialContactsServiceSettings_CreateContact_sync]

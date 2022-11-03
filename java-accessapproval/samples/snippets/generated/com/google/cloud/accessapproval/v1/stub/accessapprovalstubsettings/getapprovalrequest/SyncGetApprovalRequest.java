@@ -16,7 +16,7 @@
 
 package com.google.cloud.accessapproval.v1.stub.samples;
 
-// [START accessapproval_v1_generated_accessapprovalstubsettings_getapprovalrequest_sync]
+// [START accessapproval_v1_generated_AccessApprovalStubSettings_GetApprovalRequest_sync]
 import com.google.cloud.accessapproval.v1.stub.AccessApprovalStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetApprovalRequest {
         accessApprovalAdminSettingsBuilder.build();
   }
 }
-// [END accessapproval_v1_generated_accessapprovalstubsettings_getapprovalrequest_sync]
+// [END accessapproval_v1_generated_AccessApprovalStubSettings_GetApprovalRequest_sync]

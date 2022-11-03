@@ -50,4 +50,5 @@
     <module>proto-google-cloud-life-sciences-v2beta</module>
     <module>google-cloud-life-sciences-bom</module>
   </modules>
-</project>
+
+  </project>

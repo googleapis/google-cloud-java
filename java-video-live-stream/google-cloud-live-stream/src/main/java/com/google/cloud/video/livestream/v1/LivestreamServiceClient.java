@@ -128,10 +128,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * LivestreamServiceSettings livestreamServiceSettings =
- *     LivestreamServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             LivestreamServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     LivestreamServiceSettings.newHttpJsonBuilder().build();
  * LivestreamServiceClient livestreamServiceClient =
  *     LivestreamServiceClient.create(livestreamServiceSettings);
  * }</pre>

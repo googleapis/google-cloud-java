@@ -50,4 +50,5 @@
     <module>proto-google-cloud-bare-metal-solution-v2</module>
     <module>google-cloud-bare-metal-solution-bom</module>
   </modules>
-</project>
+
+  </project>

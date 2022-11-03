@@ -125,10 +125,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ProductServiceSettings productServiceSettings =
- *     ProductServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             ProductServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     ProductServiceSettings.newHttpJsonBuilder().build();
  * ProductServiceClient productServiceClient = ProductServiceClient.create(productServiceSettings);
  * }</pre>
  *

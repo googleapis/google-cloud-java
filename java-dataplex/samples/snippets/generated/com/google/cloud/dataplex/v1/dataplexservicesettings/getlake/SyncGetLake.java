@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataplex.v1.samples;
 
-// [START dataplex_v1_generated_dataplexservicesettings_getlake_sync]
+// [START dataplex_v1_generated_DataplexServiceSettings_GetLake_sync]
 import com.google.cloud.dataplex.v1.DataplexServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetLake {
     DataplexServiceSettings dataplexServiceSettings = dataplexServiceSettingsBuilder.build();
   }
 }
-// [END dataplex_v1_generated_dataplexservicesettings_getlake_sync]
+// [END dataplex_v1_generated_DataplexServiceSettings_GetLake_sync]

@@ -1,6 +1,6 @@
-# Google API Keys Client for Java
+# Google API Keys API Client for Java
 
-Java idiomatic client for [API Keys][product-docs].
+Java idiomatic client for [API Keys API][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apikeys</artifactId>
-  <version>0.1.2</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-apikeys:0.1.2'
+implementation 'com.google.cloud:google-cloud-apikeys:0.3.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-apikeys" % "0.1.2"
+libraryDependencies += "com.google.cloud" % "google-cloud-apikeys" % "0.3.0"
 ```
 
 ## Authentication
@@ -44,14 +44,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired API Keys APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the API Keys API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired API Keys API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the API Keys API API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the API Keys [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google API Keys.
+You will need a [Google Cloud Platform Console][developer-console] project with the API Keys API [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google API Keys API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -61,13 +61,13 @@ You will need to [enable billing][enable-billing] to use Google API Keys.
 You'll need to obtain the `google-cloud-apikeys` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-apikeys` as a dependency in your code.
 
-## About API Keys
+## About API Keys API
 
 
-[API Keys][product-docs] manages the API keys associated with projects.
+[API Keys API][product-docs] API Keys lets you create and manage your API keys for your projects.
 
-See the [API Keys client library docs][javadocs] to learn how to
-use this API Keys Client Library.
+See the [API Keys API client library docs][javadocs] to learn how to
+use this API Keys API Client Library.
 
 
 
@@ -80,7 +80,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-API Keys uses gRPC for the transport layer.
+API Keys API uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -163,7 +163,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: cloud.google.com/api-keys/
+[product-docs]: https://cloud.google.com/api-keys/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-apikeys/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java7.html

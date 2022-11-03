@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.stub.samples;
 
-// [START dialogflow_v2_generated_contextsstubsettings_getcontext_sync]
+// [START dialogflow_v2_generated_ContextsStubSettings_GetContext_sync]
 import com.google.cloud.dialogflow.v2.stub.ContextsStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetContext {
     ContextsStubSettings contextsSettings = contextsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2_generated_contextsstubsettings_getcontext_sync]
+// [END dialogflow_v2_generated_ContextsStubSettings_GetContext_sync]

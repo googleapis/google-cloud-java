@@ -16,7 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.stub.samples;
 
-// [START recommendationengine_v1beta1_generated_predictionservicestubsettings_predict_sync]
+// [START recommendationengine_v1beta1_generated_PredictionServiceStubSettings_Predict_sync]
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionServiceStubSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncPredict {
         predictionServiceSettingsBuilder.build();
   }
 }
-// [END recommendationengine_v1beta1_generated_predictionservicestubsettings_predict_sync]
+// [END recommendationengine_v1beta1_generated_PredictionServiceStubSettings_Predict_sync]

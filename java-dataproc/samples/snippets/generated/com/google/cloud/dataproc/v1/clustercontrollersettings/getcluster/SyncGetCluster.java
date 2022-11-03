@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START dataproc_v1_generated_clustercontrollersettings_getcluster_sync]
+// [START dataproc_v1_generated_ClusterControllerSettings_GetCluster_sync]
 import com.google.cloud.dataproc.v1.ClusterControllerSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetCluster {
     ClusterControllerSettings clusterControllerSettings = clusterControllerSettingsBuilder.build();
   }
 }
-// [END dataproc_v1_generated_clustercontrollersettings_getcluster_sync]
+// [END dataproc_v1_generated_ClusterControllerSettings_GetCluster_sync]

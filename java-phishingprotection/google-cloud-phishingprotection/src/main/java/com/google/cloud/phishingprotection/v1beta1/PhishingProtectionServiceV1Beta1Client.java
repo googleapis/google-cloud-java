@@ -117,11 +117,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PhishingProtectionServiceV1Beta1Settings phishingProtectionServiceV1Beta1Settings =
- *     PhishingProtectionServiceV1Beta1Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             PhishingProtectionServiceV1Beta1Settings.defaultHttpJsonTransportProviderBuilder()
- *                 .build())
- *         .build();
+ *     PhishingProtectionServiceV1Beta1Settings.newHttpJsonBuilder().build();
  * PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client =
  *     PhishingProtectionServiceV1Beta1Client.create(phishingProtectionServiceV1Beta1Settings);
  * }</pre>

@@ -122,11 +122,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * AwsClustersSettings awsClustersSettings =
- *     AwsClustersSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             AwsClustersSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * AwsClustersSettings awsClustersSettings = AwsClustersSettings.newHttpJsonBuilder().build();
  * AwsClustersClient awsClustersClient = AwsClustersClient.create(awsClustersSettings);
  * }</pre>
  *

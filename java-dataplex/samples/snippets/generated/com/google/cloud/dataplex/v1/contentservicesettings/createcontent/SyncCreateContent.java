@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataplex.v1.samples;
 
-// [START dataplex_v1_generated_contentservicesettings_createcontent_sync]
+// [START dataplex_v1_generated_ContentServiceSettings_CreateContent_sync]
 import com.google.cloud.dataplex.v1.ContentServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateContent {
     ContentServiceSettings contentServiceSettings = contentServiceSettingsBuilder.build();
   }
 }
-// [END dataplex_v1_generated_contentservicesettings_createcontent_sync]
+// [END dataplex_v1_generated_ContentServiceSettings_CreateContent_sync]

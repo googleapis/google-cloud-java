@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataproc.v1.stub.samples;
 
-// [START dataproc_v1_generated_autoscalingpolicyservicestubsettings_createautoscalingpolicy_sync]
+// [START dataproc_v1_generated_AutoscalingPolicyServiceStubSettings_CreateAutoscalingPolicy_sync]
 import com.google.cloud.dataproc.v1.stub.AutoscalingPolicyServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateAutoscalingPolicy {
         autoscalingPolicyServiceSettingsBuilder.build();
   }
 }
-// [END dataproc_v1_generated_autoscalingpolicyservicestubsettings_createautoscalingpolicy_sync]
+// [END dataproc_v1_generated_AutoscalingPolicyServiceStubSettings_CreateAutoscalingPolicy_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataproc.v1.stub.samples;
 
-// [START dataproc_v1_generated_batchcontrollerstubsettings_getbatch_sync]
+// [START dataproc_v1_generated_BatchControllerStubSettings_GetBatch_sync]
 import com.google.cloud.dataproc.v1.stub.BatchControllerStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetBatch {
     BatchControllerStubSettings batchControllerSettings = batchControllerSettingsBuilder.build();
   }
 }
-// [END dataproc_v1_generated_batchcontrollerstubsettings_getbatch_sync]
+// [END dataproc_v1_generated_BatchControllerStubSettings_GetBatch_sync]

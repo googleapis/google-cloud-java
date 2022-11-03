@@ -50,4 +50,5 @@
     <module>proto-google-cloud-datalabeling-v1beta1</module>
     <module>google-cloud-datalabeling-bom</module>
   </modules>
-</project>
+
+  </project>

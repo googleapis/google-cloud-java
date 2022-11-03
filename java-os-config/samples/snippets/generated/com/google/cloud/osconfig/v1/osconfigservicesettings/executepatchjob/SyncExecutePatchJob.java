@@ -16,7 +16,7 @@
 
 package com.google.cloud.osconfig.v1.samples;
 
-// [START osconfig_v1_generated_osconfigservicesettings_executepatchjob_sync]
+// [START osconfig_v1_generated_OsConfigServiceSettings_ExecutePatchJob_sync]
 import com.google.cloud.osconfig.v1.OsConfigServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncExecutePatchJob {
     OsConfigServiceSettings osConfigServiceSettings = osConfigServiceSettingsBuilder.build();
   }
 }
-// [END osconfig_v1_generated_osconfigservicesettings_executepatchjob_sync]
+// [END osconfig_v1_generated_OsConfigServiceSettings_ExecutePatchJob_sync]

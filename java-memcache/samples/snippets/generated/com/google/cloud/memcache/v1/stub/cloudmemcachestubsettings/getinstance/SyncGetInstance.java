@@ -16,7 +16,7 @@
 
 package com.google.cloud.memcache.v1.stub.samples;
 
-// [START memcache_v1_generated_cloudmemcachestubsettings_getinstance_sync]
+// [START memcache_v1_generated_CloudMemcacheStubSettings_GetInstance_sync]
 import com.google.cloud.memcache.v1.stub.CloudMemcacheStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetInstance {
     CloudMemcacheStubSettings cloudMemcacheSettings = cloudMemcacheSettingsBuilder.build();
   }
 }
-// [END memcache_v1_generated_cloudmemcachestubsettings_getinstance_sync]
+// [END memcache_v1_generated_CloudMemcacheStubSettings_GetInstance_sync]

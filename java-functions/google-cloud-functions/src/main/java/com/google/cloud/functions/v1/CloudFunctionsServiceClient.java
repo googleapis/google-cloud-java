@@ -130,10 +130,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * CloudFunctionsServiceSettings cloudFunctionsServiceSettings =
- *     CloudFunctionsServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             CloudFunctionsServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     CloudFunctionsServiceSettings.newHttpJsonBuilder().build();
  * CloudFunctionsServiceClient cloudFunctionsServiceClient =
  *     CloudFunctionsServiceClient.create(cloudFunctionsServiceSettings);
  * }</pre>

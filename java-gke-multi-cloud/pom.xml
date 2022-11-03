@@ -50,4 +50,5 @@
     <module>proto-google-cloud-gke-multi-cloud-v1</module>
     <module>google-cloud-gke-multi-cloud-bom</module>
   </modules>
-</project>
+
+  </project>

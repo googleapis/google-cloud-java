@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_conversationprofilessettings_getconversationprofile_sync]
+// [START dialogflow_v2beta1_generated_ConversationProfilesSettings_GetConversationProfile_sync]
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetConversationProfile {
         conversationProfilesSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_conversationprofilessettings_getconversationprofile_sync]
+// [END dialogflow_v2beta1_generated_ConversationProfilesSettings_GetConversationProfile_sync]

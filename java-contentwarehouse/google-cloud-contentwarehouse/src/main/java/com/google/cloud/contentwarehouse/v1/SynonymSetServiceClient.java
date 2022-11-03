@@ -120,10 +120,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SynonymSetServiceSettings synonymSetServiceSettings =
- *     SynonymSetServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             SynonymSetServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     SynonymSetServiceSettings.newHttpJsonBuilder().build();
  * SynonymSetServiceClient synonymSetServiceClient =
  *     SynonymSetServiceClient.create(synonymSetServiceSettings);
  * }</pre>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START dialogflow_v2_generated_knowledgebasessettings_getknowledgebase_sync]
+// [START dialogflow_v2_generated_KnowledgeBasesSettings_GetKnowledgeBase_sync]
 import com.google.cloud.dialogflow.v2.KnowledgeBasesSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetKnowledgeBase {
     KnowledgeBasesSettings knowledgeBasesSettings = knowledgeBasesSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2_generated_knowledgebasessettings_getknowledgebase_sync]
+// [END dialogflow_v2_generated_KnowledgeBasesSettings_GetKnowledgeBase_sync]

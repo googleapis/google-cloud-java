@@ -16,7 +16,7 @@
 
 package com.google.cloud.iot.v1.stub.samples;
 
-// [START cloudiot_v1_generated_devicemanagerstubsettings_createdeviceregistry_sync]
+// [START cloudiot_v1_generated_DeviceManagerStubSettings_CreateDeviceRegistry_sync]
 import com.google.cloud.iot.v1.stub.DeviceManagerStubSettings;
 import java.time.Duration;
 
@@ -46,4 +46,4 @@ public class SyncCreateDeviceRegistry {
     DeviceManagerStubSettings deviceManagerSettings = deviceManagerSettingsBuilder.build();
   }
 }
-// [END cloudiot_v1_generated_devicemanagerstubsettings_createdeviceregistry_sync]
+// [END cloudiot_v1_generated_DeviceManagerStubSettings_CreateDeviceRegistry_sync]

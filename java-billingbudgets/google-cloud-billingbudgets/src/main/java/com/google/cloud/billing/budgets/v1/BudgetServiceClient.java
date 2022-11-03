@@ -119,10 +119,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BudgetServiceSettings budgetServiceSettings =
- *     BudgetServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             BudgetServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     BudgetServiceSettings.newHttpJsonBuilder().build();
  * BudgetServiceClient budgetServiceClient = BudgetServiceClient.create(budgetServiceSettings);
  * }</pre>
  *

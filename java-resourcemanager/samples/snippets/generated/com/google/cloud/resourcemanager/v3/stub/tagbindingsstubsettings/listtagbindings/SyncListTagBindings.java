@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.stub.samples;
 
-// [START cloudresourcemanager_v3_generated_tagbindingsstubsettings_listtagbindings_sync]
+// [START cloudresourcemanager_v3_generated_TagBindingsStubSettings_ListTagBindings_sync]
 import com.google.cloud.resourcemanager.v3.stub.TagBindingsStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncListTagBindings {
     TagBindingsStubSettings tagBindingsSettings = tagBindingsSettingsBuilder.build();
   }
 }
-// [END cloudresourcemanager_v3_generated_tagbindingsstubsettings_listtagbindings_sync]
+// [END cloudresourcemanager_v3_generated_TagBindingsStubSettings_ListTagBindings_sync]

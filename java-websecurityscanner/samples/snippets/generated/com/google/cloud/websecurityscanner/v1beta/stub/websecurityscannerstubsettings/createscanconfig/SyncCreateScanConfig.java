@@ -16,7 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1beta.stub.samples;
 
-// [START websecurityscanner_v1beta_generated_websecurityscannerstubsettings_createscanconfig_sync]
+// [START websecurityscanner_v1beta_generated_WebSecurityScannerStubSettings_CreateScanConfig_sync]
 import com.google.cloud.websecurityscanner.v1beta.stub.WebSecurityScannerStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateScanConfig {
         webSecurityScannerSettingsBuilder.build();
   }
 }
-// [END websecurityscanner_v1beta_generated_websecurityscannerstubsettings_createscanconfig_sync]
+// [END websecurityscanner_v1beta_generated_WebSecurityScannerStubSettings_CreateScanConfig_sync]

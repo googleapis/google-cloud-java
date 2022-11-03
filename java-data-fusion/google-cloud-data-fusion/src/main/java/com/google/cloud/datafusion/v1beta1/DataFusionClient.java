@@ -125,11 +125,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * DataFusionSettings dataFusionSettings =
- *     DataFusionSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             DataFusionSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * DataFusionSettings dataFusionSettings = DataFusionSettings.newHttpJsonBuilder().build();
  * DataFusionClient dataFusionClient = DataFusionClient.create(dataFusionSettings);
  * }</pre>
  *

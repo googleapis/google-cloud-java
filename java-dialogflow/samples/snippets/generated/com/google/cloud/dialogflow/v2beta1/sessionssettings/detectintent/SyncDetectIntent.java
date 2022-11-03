@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_sessionssettings_detectintent_sync]
+// [START dialogflow_v2beta1_generated_SessionsSettings_DetectIntent_sync]
 import com.google.cloud.dialogflow.v2beta1.SessionsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncDetectIntent {
     SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_sessionssettings_detectintent_sync]
+// [END dialogflow_v2beta1_generated_SessionsSettings_DetectIntent_sync]

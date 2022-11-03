@@ -16,7 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1.samples;
 
-// [START servicedirectory_v1_generated_lookupservicesettings_resolveservice_sync]
+// [START servicedirectory_v1_generated_LookupServiceSettings_ResolveService_sync]
 import com.google.cloud.servicedirectory.v1.LookupServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncResolveService {
     LookupServiceSettings lookupServiceSettings = lookupServiceSettingsBuilder.build();
   }
 }
-// [END servicedirectory_v1_generated_lookupservicesettings_resolveservice_sync]
+// [END servicedirectory_v1_generated_LookupServiceSettings_ResolveService_sync]

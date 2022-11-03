@@ -62,4 +62,5 @@
     <module>proto-google-cloud-network-security-v1</module>
     <module>google-cloud-network-security-bom</module>
   </modules>
-</project>
+
+  </project>

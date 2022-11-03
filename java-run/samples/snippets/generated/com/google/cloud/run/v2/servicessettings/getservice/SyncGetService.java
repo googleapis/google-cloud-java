@@ -16,7 +16,7 @@
 
 package com.google.cloud.run.v2.samples;
 
-// [START run_v2_generated_servicessettings_getservice_sync]
+// [START run_v2_generated_ServicesSettings_GetService_sync]
 import com.google.cloud.run.v2.ServicesSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetService {
     ServicesSettings servicesSettings = servicesSettingsBuilder.build();
   }
 }
-// [END run_v2_generated_servicessettings_getservice_sync]
+// [END run_v2_generated_ServicesSettings_GetService_sync]

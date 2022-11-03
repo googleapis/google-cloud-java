@@ -128,10 +128,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ContentServiceSettings contentServiceSettings =
- *     ContentServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             ContentServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     ContentServiceSettings.newHttpJsonBuilder().build();
  * ContentServiceClient contentServiceClient = ContentServiceClient.create(contentServiceSettings);
  * }</pre>
  *

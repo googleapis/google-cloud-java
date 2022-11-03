@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4.stub.samples;
 
-// [START jobs_v4_generated_tenantservicestubsettings_createtenant_sync]
+// [START jobs_v4_generated_TenantServiceStubSettings_CreateTenant_sync]
 import com.google.cloud.talent.v4.stub.TenantServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateTenant {
     TenantServiceStubSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
   }
 }
-// [END jobs_v4_generated_tenantservicestubsettings_createtenant_sync]
+// [END jobs_v4_generated_TenantServiceStubSettings_CreateTenant_sync]

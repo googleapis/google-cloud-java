@@ -86,4 +86,5 @@
     <module>proto-google-cloud-document-ai-v1</module>
     <module>google-cloud-document-ai-bom</module>
   </modules>
-</project>
+
+  </project>

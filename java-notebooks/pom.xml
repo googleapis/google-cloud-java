@@ -62,4 +62,5 @@
     <module>proto-google-cloud-notebooks-v1</module>
     <module>google-cloud-notebooks-bom</module>
   </modules>
-</project>
+
+  </project>

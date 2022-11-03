@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.stub.samples;
 
-// [START cloudbilling_v1_generated_cloudbillingstubsettings_getbillingaccount_sync]
+// [START cloudbilling_v1_generated_CloudBillingStubSettings_GetBillingAccount_sync]
 import com.google.cloud.billing.v1.stub.CloudBillingStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetBillingAccount {
     CloudBillingStubSettings cloudBillingSettings = cloudBillingSettingsBuilder.build();
   }
 }
-// [END cloudbilling_v1_generated_cloudbillingstubsettings_getbillingaccount_sync]
+// [END cloudbilling_v1_generated_CloudBillingStubSettings_GetBillingAccount_sync]

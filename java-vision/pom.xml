@@ -98,4 +98,5 @@
     <module>proto-google-cloud-vision-v1p2beta1</module>
     <module>google-cloud-vision-bom</module>
   </modules>
-</project>
+
+  </project>

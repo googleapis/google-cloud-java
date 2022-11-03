@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START dialogflow_v2_generated_conversationdatasetssettings_getconversationdataset_sync]
+// [START dialogflow_v2_generated_ConversationDatasetsSettings_GetConversationDataset_sync]
 import com.google.cloud.dialogflow.v2.ConversationDatasetsSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetConversationDataset {
         conversationDatasetsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2_generated_conversationdatasetssettings_getconversationdataset_sync]
+// [END dialogflow_v2_generated_ConversationDatasetsSettings_GetConversationDataset_sync]

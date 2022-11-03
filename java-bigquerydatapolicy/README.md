@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatapolicy</artifactId>
-  <version>0.0.0</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquerydatapolicy:0.0.0'
+implementation 'com.google.cloud:google-cloud-bigquerydatapolicy:0.2.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatapolicy" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerydatapolicy" % "0.2.0"
 ```
 
 ## Authentication
@@ -64,7 +64,7 @@ to add `google-cloud-bigquerydatapolicy` as a dependency in your code.
 ## About BigQuery DataPolicy API
 
 
-[BigQuery DataPolicy API][product-docs] Data Policy Service provides APIs for managing the label-policy bindings.
+[BigQuery DataPolicy API][product-docs] 
 
 See the [BigQuery DataPolicy API client library docs][javadocs] to learn how to
 use this BigQuery DataPolicy API Client Library.
@@ -163,7 +163,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: cloud.google.com/bigquery/docs/reference/datapolicy/
+[product-docs]: https://cloud.google.com/bigquery/docs/reference/datapolicy/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-bigquerydatapolicy/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquerydatapolicy/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-bigquerydatapolicy/java7.html

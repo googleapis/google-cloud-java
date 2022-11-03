@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1beta1.samples;
 
-// [START file_v1beta1_generated_cloudfilestoremanagersettings_getinstance_sync]
+// [START file_v1beta1_generated_CloudFilestoreManagerSettings_GetInstance_sync]
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetInstance {
         cloudFilestoreManagerSettingsBuilder.build();
   }
 }
-// [END file_v1beta1_generated_cloudfilestoremanagersettings_getinstance_sync]
+// [END file_v1beta1_generated_CloudFilestoreManagerSettings_GetInstance_sync]

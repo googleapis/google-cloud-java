@@ -16,7 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1.samples;
 
-// [START networkmanagement_v1_generated_reachabilityservicesettings_getconnectivitytest_sync]
+// [START networkmanagement_v1_generated_ReachabilityServiceSettings_GetConnectivityTest_sync]
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetConnectivityTest {
         reachabilityServiceSettingsBuilder.build();
   }
 }
-// [END networkmanagement_v1_generated_reachabilityservicesettings_getconnectivitytest_sync]
+// [END networkmanagement_v1_generated_ReachabilityServiceSettings_GetConnectivityTest_sync]

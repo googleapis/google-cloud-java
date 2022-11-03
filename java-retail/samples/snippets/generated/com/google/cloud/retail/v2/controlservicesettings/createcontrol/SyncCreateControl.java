@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2.samples;
 
-// [START retail_v2_generated_controlservicesettings_createcontrol_sync]
+// [START retail_v2_generated_ControlServiceSettings_CreateControl_sync]
 import com.google.cloud.retail.v2.ControlServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateControl {
     ControlServiceSettings controlServiceSettings = controlServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2_generated_controlservicesettings_createcontrol_sync]
+// [END retail_v2_generated_ControlServiceSettings_CreateControl_sync]

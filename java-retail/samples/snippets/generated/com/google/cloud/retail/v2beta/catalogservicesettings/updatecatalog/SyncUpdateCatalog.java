@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2beta.samples;
 
-// [START retail_v2beta_generated_catalogservicesettings_updatecatalog_sync]
+// [START retail_v2beta_generated_CatalogServiceSettings_UpdateCatalog_sync]
 import com.google.cloud.retail.v2beta.CatalogServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncUpdateCatalog {
     CatalogServiceSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2beta_generated_catalogservicesettings_updatecatalog_sync]
+// [END retail_v2beta_generated_CatalogServiceSettings_UpdateCatalog_sync]

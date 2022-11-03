@@ -16,7 +16,7 @@
 
 package com.google.cloud.policytroubleshooter.v1.samples;
 
-// [START policytroubleshooter_v1_generated_iamcheckersettings_troubleshootiampolicy_sync]
+// [START policytroubleshooter_v1_generated_IamCheckerSettings_TroubleshootIamPolicy_sync]
 import com.google.cloud.policytroubleshooter.v1.IamCheckerSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncTroubleshootIamPolicy {
     IamCheckerSettings iamCheckerSettings = iamCheckerSettingsBuilder.build();
   }
 }
-// [END policytroubleshooter_v1_generated_iamcheckersettings_troubleshootiampolicy_sync]
+// [END policytroubleshooter_v1_generated_IamCheckerSettings_TroubleshootIamPolicy_sync]

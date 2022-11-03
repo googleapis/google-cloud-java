@@ -16,7 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1beta1.samples;
 
-// [START assuredworkloads_v1beta1_generated_assuredworkloadsservicesettings_updateworkload_sync]
+// [START assuredworkloads_v1beta1_generated_AssuredWorkloadsServiceSettings_UpdateWorkload_sync]
 import com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncUpdateWorkload {
         assuredWorkloadsServiceSettingsBuilder.build();
   }
 }
-// [END assuredworkloads_v1beta1_generated_assuredworkloadsservicesettings_updateworkload_sync]
+// [END assuredworkloads_v1beta1_generated_AssuredWorkloadsServiceSettings_UpdateWorkload_sync]

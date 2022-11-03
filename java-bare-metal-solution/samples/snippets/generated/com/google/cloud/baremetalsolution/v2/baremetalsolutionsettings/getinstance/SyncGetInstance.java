@@ -16,7 +16,7 @@
 
 package com.google.cloud.baremetalsolution.v2.samples;
 
-// [START baremetalsolution_v2_generated_baremetalsolutionsettings_getinstance_sync]
+// [START baremetalsolution_v2_generated_BareMetalSolutionSettings_GetInstance_sync]
 import com.google.cloud.baremetalsolution.v2.BareMetalSolutionSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetInstance {
     BareMetalSolutionSettings bareMetalSolutionSettings = bareMetalSolutionSettingsBuilder.build();
   }
 }
-// [END baremetalsolution_v2_generated_baremetalsolutionsettings_getinstance_sync]
+// [END baremetalsolution_v2_generated_BareMetalSolutionSettings_GetInstance_sync]

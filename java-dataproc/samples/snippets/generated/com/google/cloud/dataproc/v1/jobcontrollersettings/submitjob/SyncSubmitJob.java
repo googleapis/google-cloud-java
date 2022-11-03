@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START dataproc_v1_generated_jobcontrollersettings_submitjob_sync]
+// [START dataproc_v1_generated_JobControllerSettings_SubmitJob_sync]
 import com.google.cloud.dataproc.v1.JobControllerSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncSubmitJob {
     JobControllerSettings jobControllerSettings = jobControllerSettingsBuilder.build();
   }
 }
-// [END dataproc_v1_generated_jobcontrollersettings_submitjob_sync]
+// [END dataproc_v1_generated_JobControllerSettings_SubmitJob_sync]

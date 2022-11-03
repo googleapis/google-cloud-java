@@ -16,7 +16,7 @@
 
 package com.google.cloud.video.transcoder.v1.samples;
 
-// [START transcoder_v1_generated_transcoderservicesettings_createjob_sync]
+// [START transcoder_v1_generated_TranscoderServiceSettings_CreateJob_sync]
 import com.google.cloud.video.transcoder.v1.TranscoderServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateJob {
     TranscoderServiceSettings transcoderServiceSettings = transcoderServiceSettingsBuilder.build();
   }
 }
-// [END transcoder_v1_generated_transcoderservicesettings_createjob_sync]
+// [END transcoder_v1_generated_TranscoderServiceSettings_CreateJob_sync]

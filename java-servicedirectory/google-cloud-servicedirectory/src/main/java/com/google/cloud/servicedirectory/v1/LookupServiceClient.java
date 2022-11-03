@@ -113,10 +113,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * LookupServiceSettings lookupServiceSettings =
- *     LookupServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             LookupServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     LookupServiceSettings.newHttpJsonBuilder().build();
  * LookupServiceClient lookupServiceClient = LookupServiceClient.create(lookupServiceSettings);
  * }</pre>
  *

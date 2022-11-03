@@ -126,10 +126,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WebRiskServiceV1Beta1Settings webRiskServiceV1Beta1Settings =
- *     WebRiskServiceV1Beta1Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             WebRiskServiceV1Beta1Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     WebRiskServiceV1Beta1Settings.newHttpJsonBuilder().build();
  * WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
  *     WebRiskServiceV1Beta1Client.create(webRiskServiceV1Beta1Settings);
  * }</pre>

@@ -62,4 +62,5 @@
     <module>proto-google-cloud-network-management-v1</module>
     <module>google-cloud-network-management-bom</module>
   </modules>
-</project>
+
+  </project>

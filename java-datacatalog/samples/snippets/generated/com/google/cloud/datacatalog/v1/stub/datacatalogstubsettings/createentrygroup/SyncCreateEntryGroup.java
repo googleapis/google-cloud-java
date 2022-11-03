@@ -16,7 +16,7 @@
 
 package com.google.cloud.datacatalog.v1.stub.samples;
 
-// [START datacatalog_v1_generated_datacatalogstubsettings_createentrygroup_sync]
+// [START datacatalog_v1_generated_DataCatalogStubSettings_CreateEntryGroup_sync]
 import com.google.cloud.datacatalog.v1.stub.DataCatalogStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateEntryGroup {
     DataCatalogStubSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
   }
 }
-// [END datacatalog_v1_generated_datacatalogstubsettings_createentrygroup_sync]
+// [END datacatalog_v1_generated_DataCatalogStubSettings_CreateEntryGroup_sync]

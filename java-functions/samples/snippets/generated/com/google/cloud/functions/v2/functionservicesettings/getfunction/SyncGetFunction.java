@@ -16,7 +16,7 @@
 
 package com.google.cloud.functions.v2.samples;
 
-// [START cloudfunctions_v2_generated_functionservicesettings_getfunction_sync]
+// [START cloudfunctions_v2_generated_FunctionServiceSettings_GetFunction_sync]
 import com.google.cloud.functions.v2.FunctionServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetFunction {
     FunctionServiceSettings functionServiceSettings = functionServiceSettingsBuilder.build();
   }
 }
-// [END cloudfunctions_v2_generated_functionservicesettings_getfunction_sync]
+// [END cloudfunctions_v2_generated_FunctionServiceSettings_GetFunction_sync]

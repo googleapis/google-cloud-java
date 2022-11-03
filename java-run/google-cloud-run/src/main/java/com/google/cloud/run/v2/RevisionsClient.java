@@ -119,11 +119,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * RevisionsSettings revisionsSettings =
- *     RevisionsSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             RevisionsSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * RevisionsSettings revisionsSettings = RevisionsSettings.newHttpJsonBuilder().build();
  * RevisionsClient revisionsClient = RevisionsClient.create(revisionsSettings);
  * }</pre>
  *

@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.stub.samples;
 
-// [START dialogflow_v2_generated_entitytypesstubsettings_getentitytype_sync]
+// [START dialogflow_v2_generated_EntityTypesStubSettings_GetEntityType_sync]
 import com.google.cloud.dialogflow.v2.stub.EntityTypesStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetEntityType {
     EntityTypesStubSettings entityTypesSettings = entityTypesSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2_generated_entitytypesstubsettings_getentitytype_sync]
+// [END dialogflow_v2_generated_EntityTypesStubSettings_GetEntityType_sync]

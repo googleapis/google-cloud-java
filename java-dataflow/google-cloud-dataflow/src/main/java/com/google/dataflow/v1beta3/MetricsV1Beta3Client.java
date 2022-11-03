@@ -122,10 +122,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * MetricsV1Beta3Settings metricsV1Beta3Settings =
- *     MetricsV1Beta3Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             MetricsV1Beta3Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     MetricsV1Beta3Settings.newHttpJsonBuilder().build();
  * MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create(metricsV1Beta3Settings);
  * }</pre>
  *

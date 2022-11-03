@@ -16,7 +16,7 @@
 
 package com.google.cloud.deploy.v1.stub.samples;
 
-// [START clouddeploy_v1_generated_clouddeploystubsettings_getdeliverypipeline_sync]
+// [START clouddeploy_v1_generated_CloudDeployStubSettings_GetDeliveryPipeline_sync]
 import com.google.cloud.deploy.v1.stub.CloudDeployStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetDeliveryPipeline {
     CloudDeployStubSettings cloudDeploySettings = cloudDeploySettingsBuilder.build();
   }
 }
-// [END clouddeploy_v1_generated_clouddeploystubsettings_getdeliverypipeline_sync]
+// [END clouddeploy_v1_generated_CloudDeployStubSettings_GetDeliveryPipeline_sync]

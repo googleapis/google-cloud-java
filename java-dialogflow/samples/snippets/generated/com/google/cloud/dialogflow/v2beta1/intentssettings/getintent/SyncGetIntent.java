@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_intentssettings_getintent_sync]
+// [START dialogflow_v2beta1_generated_IntentsSettings_GetIntent_sync]
 import com.google.cloud.dialogflow.v2beta1.IntentsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetIntent {
     IntentsSettings intentsSettings = intentsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_intentssettings_getintent_sync]
+// [END dialogflow_v2beta1_generated_IntentsSettings_GetIntent_sync]

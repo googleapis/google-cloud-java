@@ -151,10 +151,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TablesServiceSettings tablesServiceSettings =
- *     TablesServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             TablesServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     TablesServiceSettings.newHttpJsonBuilder().build();
  * TablesServiceClient tablesServiceClient = TablesServiceClient.create(tablesServiceSettings);
  * }</pre>
  *

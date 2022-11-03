@@ -69,4 +69,5 @@
     <module>proto-google-cloud-containeranalysis-v1beta1</module>
     <module>google-cloud-containeranalysis-bom</module>
   </modules>
-</project>
+
+  </project>

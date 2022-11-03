@@ -16,7 +16,7 @@
 
 package com.google.cloud.tpu.v2alpha1.samples;
 
-// [START tpu_v2alpha1_generated_tpusettings_getnode_sync]
+// [START tpu_v2alpha1_generated_TpuSettings_GetNode_sync]
 import com.google.cloud.tpu.v2alpha1.TpuSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetNode {
     TpuSettings tpuSettings = tpuSettingsBuilder.build();
   }
 }
-// [END tpu_v2alpha1_generated_tpusettings_getnode_sync]
+// [END tpu_v2alpha1_generated_TpuSettings_GetNode_sync]

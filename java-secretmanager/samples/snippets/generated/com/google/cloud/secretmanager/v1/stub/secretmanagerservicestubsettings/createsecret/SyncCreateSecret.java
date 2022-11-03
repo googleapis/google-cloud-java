@@ -16,7 +16,7 @@
 
 package com.google.cloud.secretmanager.v1.stub.samples;
 
-// [START secretmanager_v1_generated_secretmanagerservicestubsettings_createsecret_sync]
+// [START secretmanager_v1_generated_SecretManagerServiceStubSettings_CreateSecret_sync]
 import com.google.cloud.secretmanager.v1.stub.SecretManagerServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateSecret {
         secretManagerServiceSettingsBuilder.build();
   }
 }
-// [END secretmanager_v1_generated_secretmanagerservicestubsettings_createsecret_sync]
+// [END secretmanager_v1_generated_SecretManagerServiceStubSettings_CreateSecret_sync]

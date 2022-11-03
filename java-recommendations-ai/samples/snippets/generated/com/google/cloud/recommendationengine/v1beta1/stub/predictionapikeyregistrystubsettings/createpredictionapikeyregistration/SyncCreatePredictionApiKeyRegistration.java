@@ -16,7 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.stub.samples;
 
-// [START recommendationengine_v1beta1_generated_predictionapikeyregistrystubsettings_createpredictionapikeyregistration_sync]
+// [START recommendationengine_v1beta1_generated_PredictionApiKeyRegistryStubSettings_CreatePredictionApiKeyRegistration_sync]
 import com.google.cloud.recommendationengine.v1beta1.stub.PredictionApiKeyRegistryStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreatePredictionApiKeyRegistration {
         predictionApiKeyRegistrySettingsBuilder.build();
   }
 }
-// [END recommendationengine_v1beta1_generated_predictionapikeyregistrystubsettings_createpredictionapikeyregistration_sync]
+// [END recommendationengine_v1beta1_generated_PredictionApiKeyRegistryStubSettings_CreatePredictionApiKeyRegistration_sync]

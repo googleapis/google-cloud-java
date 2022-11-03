@@ -16,7 +16,7 @@
 
 package com.google.cloud.apigeeregistry.v1.stub.samples;
 
-// [START apigeeregistry_v1_generated_provisioningstubsettings_getinstance_sync]
+// [START apigeeregistry_v1_generated_ProvisioningStubSettings_GetInstance_sync]
 import com.google.cloud.apigeeregistry.v1.stub.ProvisioningStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetInstance {
     ProvisioningStubSettings provisioningSettings = provisioningSettingsBuilder.build();
   }
 }
-// [END apigeeregistry_v1_generated_provisioningstubsettings_getinstance_sync]
+// [END apigeeregistry_v1_generated_ProvisioningStubSettings_GetInstance_sync]

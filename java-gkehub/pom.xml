@@ -98,4 +98,5 @@
     <module>proto-google-cloud-gkehub-v1beta</module>
     <module>google-cloud-gkehub-bom</module>
   </modules>
-</project>
+
+  </project>

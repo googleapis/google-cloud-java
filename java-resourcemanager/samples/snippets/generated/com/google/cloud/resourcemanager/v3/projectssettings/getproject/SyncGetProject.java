@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START cloudresourcemanager_v3_generated_projectssettings_getproject_sync]
+// [START cloudresourcemanager_v3_generated_ProjectsSettings_GetProject_sync]
 import com.google.cloud.resourcemanager.v3.ProjectsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetProject {
     ProjectsSettings projectsSettings = projectsSettingsBuilder.build();
   }
 }
-// [END cloudresourcemanager_v3_generated_projectssettings_getproject_sync]
+// [END cloudresourcemanager_v3_generated_ProjectsSettings_GetProject_sync]

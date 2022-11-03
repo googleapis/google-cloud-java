@@ -50,4 +50,5 @@
     <module>proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1</module>
     <module>google-cloud-cloudcommerceconsumerprocurement-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1.samples;
 
-// [START cloudasset_v1_generated_assetservicesettings_batchgetassetshistory_sync]
+// [START cloudasset_v1_generated_AssetServiceSettings_BatchGetAssetsHistory_sync]
 import com.google.cloud.asset.v1.AssetServiceSettings;
 import java.time.Duration;
 
@@ -45,4 +45,4 @@ public class SyncBatchGetAssetsHistory {
     AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
   }
 }
-// [END cloudasset_v1_generated_assetservicesettings_batchgetassetshistory_sync]
+// [END cloudasset_v1_generated_AssetServiceSettings_BatchGetAssetsHistory_sync]
