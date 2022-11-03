@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.12.1](https://github.com/googleapis/java-logging/compare/v3.12.0...v3.12.1) (2022-11-02)
+
+
+### Bug Fixes
+
+* Make partialSuccess to be true by default ([#1173](https://github.com/googleapis/java-logging/issues/1173)) ([123960a](https://github.com/googleapis/java-logging/commit/123960ad31f9258d2dadd788029941bb984ae0fa))
+
 ## [3.12.0](https://github.com/googleapis/java-logging/compare/v3.11.10...v3.12.0) (2022-10-27)
 
 
