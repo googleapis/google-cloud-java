@@ -62,4 +62,5 @@
     <module>proto-google-cloud-networkconnectivity-v1</module>
     <module>google-cloud-networkconnectivity-bom</module>
   </modules>
-</project>
+
+  </project>

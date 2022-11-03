@@ -376,9 +376,9 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Output only. The Google-generated UUID for the spoke. This value is unique across all
-   * spoke resources. If a spoke is deleted and another with the same name is
-   * created, the new spoke is assigned a different unique_id.
+   * Output only. The Google-generated UUID for the spoke. This value is unique
+   * across all spoke resources. If a spoke is deleted and another with the same
+   * name is created, the new spoke is assigned a different unique_id.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -390,9 +390,9 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Output only. The Google-generated UUID for the spoke. This value is unique across all
-   * spoke resources. If a spoke is deleted and another with the same name is
-   * created, the new spoke is assigned a different unique_id.
+   * Output only. The Google-generated UUID for the spoke. This value is unique
+   * across all spoke resources. If a spoke is deleted and another with the same
+   * name is created, the new spoke is assigned a different unique_id.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

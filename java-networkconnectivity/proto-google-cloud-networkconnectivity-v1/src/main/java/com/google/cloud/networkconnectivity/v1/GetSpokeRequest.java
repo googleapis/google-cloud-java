@@ -22,7 +22,8 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * The request for [HubService.GetSpoke][google.cloud.networkconnectivity.v1.HubService.GetSpoke].
+ * The request for
+ * [HubService.GetSpoke][google.cloud.networkconnectivity.v1.HubService.GetSpoke].
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.GetSpokeRequest}
@@ -284,7 +285,8 @@ public final class GetSpokeRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request for [HubService.GetSpoke][google.cloud.networkconnectivity.v1.HubService.GetSpoke].
+   * The request for
+   * [HubService.GetSpoke][google.cloud.networkconnectivity.v1.HubService.GetSpoke].
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.GetSpokeRequest}
