@@ -99,7 +99,7 @@ use this Cloud Bigtable Client Library.
 
 ## About Cloud Bigtable
 
-[Cloud Bigtable][cloud-bigtable] is Google's NoSQL Big Data database service. It's
+[Cloud Bigtable][product-docs] is Google's NoSQL Big Data database service. It's
 the same database that powers many core Google services, including Search, Analytics, Maps, and
 Gmail.
 
