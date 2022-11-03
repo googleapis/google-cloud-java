@@ -45,7 +45,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -74,8 +73,7 @@ public class ITSystemTest {
     remoteStorageHelper = RemoteStorageHelper.create();
     topicAdminClient = TopicAdminClient.create();
     storageService = remoteStorageHelper.getOptions().getService();
-    notificationService =
-        new DefaultNotificationFactory().create(remoteStorageHelper.getOptions().getService());
+    notificationService = new DefaultNotificationFactory().create(storageService);
     storageService.create(BucketInfo.of(BUCKET));
     projectId = ServiceOptions.getDefaultProjectId();
   }
@@ -96,7 +94,6 @@ public class ITSystemTest {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
-  @Ignore
   @Test
   public void testNotifications() {
     // Use Pubsub to create a Topic.
@@ -106,11 +103,15 @@ public class ITSystemTest {
 
     Policy policy = topicAdminClient.getIamPolicy(topic.toString());
     Binding binding =
-        Binding.newBuilder().setRole("roles/owner").addMembers(STORAGE_SERVICE_AGENT).build();
+        Binding.newBuilder()
+            .setRole("roles/pubsub.publisher")
+            .addMembers(STORAGE_SERVICE_AGENT)
+            .build();
     Policy newPolicy =
         topicAdminClient.setIamPolicy(
             topic.toString(), policy.toBuilder().addBindings(binding).build());
     assertTrue(newPolicy.getBindingsList().contains(binding));
+
     String permissionName = "pubsub.topics.get";
     List<String> permissions =
         topicAdminClient
@@ -129,8 +130,7 @@ public class ITSystemTest {
     NotificationInfo notification2 =
         notificationService.createNotification(
             BUCKET,
-            NotificationInfo.of(topic)
-                .toBuilder()
+            NotificationInfo.of(topic).toBuilder()
                 .setPayloadFormat(PayloadFormat.JSON_API_V1)
                 .build());
     assertEquals(topic, notification2.getTopic());
