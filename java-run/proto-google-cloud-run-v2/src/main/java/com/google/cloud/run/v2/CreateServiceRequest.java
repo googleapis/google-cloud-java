@@ -74,7 +74,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The location and project in which this service should be created.
+   * Required. The location and project in which this service should be created.
    * Format: projects/{project}/locations/{location}
    * Only lowercase characters, digits, and hyphens.
    * </pre>
@@ -101,7 +101,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The location and project in which this service should be created.
+   * Required. The location and project in which this service should be created.
    * Format: projects/{project}/locations/{location}
    * Only lowercase characters, digits, and hyphens.
    * </pre>
@@ -657,7 +657,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location and project in which this service should be created.
+     * Required. The location and project in which this service should be created.
      * Format: projects/{project}/locations/{location}
      * Only lowercase characters, digits, and hyphens.
      * </pre>
@@ -683,7 +683,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location and project in which this service should be created.
+     * Required. The location and project in which this service should be created.
      * Format: projects/{project}/locations/{location}
      * Only lowercase characters, digits, and hyphens.
      * </pre>
@@ -709,7 +709,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location and project in which this service should be created.
+     * Required. The location and project in which this service should be created.
      * Format: projects/{project}/locations/{location}
      * Only lowercase characters, digits, and hyphens.
      * </pre>
@@ -734,7 +734,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location and project in which this service should be created.
+     * Required. The location and project in which this service should be created.
      * Format: projects/{project}/locations/{location}
      * Only lowercase characters, digits, and hyphens.
      * </pre>
@@ -755,7 +755,7 @@ public final class CreateServiceRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The location and project in which this service should be created.
+     * Required. The location and project in which this service should be created.
      * Format: projects/{project}/locations/{location}
      * Only lowercase characters, digits, and hyphens.
      * </pre>

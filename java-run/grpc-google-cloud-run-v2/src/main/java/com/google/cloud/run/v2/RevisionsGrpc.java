@@ -228,7 +228,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * List Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.
      * </pre>
      */
     public void listRevisions(
@@ -243,7 +243,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Delete a Revision.
+     * Deletes a Revision.
      * </pre>
      */
     public void deleteRevision(
@@ -316,7 +316,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * List Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.
      * </pre>
      */
     public void listRevisions(
@@ -333,7 +333,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Delete a Revision.
+     * Deletes a Revision.
      * </pre>
      */
     public void deleteRevision(
@@ -382,7 +382,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * List Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.
      * </pre>
      */
     public com.google.cloud.run.v2.ListRevisionsResponse listRevisions(
@@ -395,7 +395,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Delete a Revision.
+     * Deletes a Revision.
      * </pre>
      */
     public com.google.longrunning.Operation deleteRevision(
@@ -440,7 +440,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * List Revisions from a given Service, or from a given location.
+     * Lists Revisions from a given Service, or from a given location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -454,7 +454,7 @@ public final class RevisionsGrpc {
      *
      *
      * <pre>
-     * Delete a Revision.
+     * Deletes a Revision.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

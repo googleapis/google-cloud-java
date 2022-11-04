@@ -19,6 +19,42 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= ExecutionsClient =======================
+ *
+ * <p>Service Description: Cloud Run Execution Control Plane API.
+ *
+ * <p>Sample for ExecutionsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+ *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]");
+ *   Execution response = executionsClient.getExecution(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= JobsClient =======================
+ *
+ * <p>Service Description: Cloud Run Job Control Plane API.
+ *
+ * <p>Sample for JobsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (JobsClient jobsClient = JobsClient.create()) {
+ *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+ *   Job response = jobsClient.getJob(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= RevisionsClient =======================
  *
  * <p>Service Description: Cloud Run Revision Control Plane API.
@@ -52,6 +88,24 @@
  * try (ServicesClient servicesClient = ServicesClient.create()) {
  *   ServiceName name = ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]");
  *   Service response = servicesClient.getService(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= TasksClient =======================
+ *
+ * <p>Service Description: Cloud Run Task Control Plane API.
+ *
+ * <p>Sample for TasksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (TasksClient tasksClient = TasksClient.create()) {
+ *   TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]", "[TASK]");
+ *   Task response = tasksClient.getTask(name);
  * }
  * }</pre>
  */

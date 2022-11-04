@@ -27,7 +27,7 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The location and project in which this service should be created.
+   * Required. The location and project in which this service should be created.
    * Format: projects/{project}/locations/{location}
    * Only lowercase characters, digits, and hyphens.
    * </pre>
@@ -43,7 +43,7 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * The location and project in which this service should be created.
+   * Required. The location and project in which this service should be created.
    * Format: projects/{project}/locations/{location}
    * Only lowercase characters, digits, and hyphens.
    * </pre>
