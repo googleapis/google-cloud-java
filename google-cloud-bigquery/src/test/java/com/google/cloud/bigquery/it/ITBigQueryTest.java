@@ -2382,6 +2382,23 @@ public class ITBigQueryTest {
     }
   }
 
+  @Test
+  public void testTimestamp() throws InterruptedException {
+    String query = "SELECT TIMESTAMP '2022-01-24T23:54:25.095574Z'";
+    String timestampStringValueExpected = "2022-01-24T23:54:25.095574Z";
+
+    TableResult resultInteractive =
+        bigquery.query(
+            QueryJobConfiguration.newBuilder(query)
+                .setDefaultDataset(DatasetId.of(DATASET))
+                .build());
+    for (FieldValueList row : resultInteractive.getValues()) {
+      FieldValue timeStampCell = row.get(0);
+      Instant timestampStringValueActual = timeStampCell.getTimestampInstant();
+      assertEquals(timestampStringValueExpected, timestampStringValueActual.toString());
+    }
+  }
+
   /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   public void testQuery() throws InterruptedException {
