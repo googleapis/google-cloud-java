@@ -89,9 +89,9 @@ public interface ModelOrBuilder
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -109,9 +109,9 @@ public interface ModelOrBuilder
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -129,9 +129,9 @@ public interface ModelOrBuilder
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -150,9 +150,9 @@ public interface ModelOrBuilder
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -1511,4 +1511,33 @@ public interface ModelOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelSourceInfoOrBuilder getModelSourceInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Model. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadataArtifact.
+   */
+  java.lang.String getMetadataArtifact();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Model. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for metadataArtifact.
+   */
+  com.google.protobuf.ByteString getMetadataArtifactBytes();
 }

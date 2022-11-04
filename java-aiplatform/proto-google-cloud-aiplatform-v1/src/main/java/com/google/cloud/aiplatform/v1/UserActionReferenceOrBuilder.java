@@ -30,7 +30,7 @@ public interface UserActionReferenceOrBuilder
    * For API calls that return a long running operation.
    * Resource name of the long running operation.
    * Format:
-   * 'projects/{project}/locations/{location}/operations/{operation}'
+   * `projects/{project}/locations/{location}/operations/{operation}`
    * </pre>
    *
    * <code>string operation = 1;</code>
@@ -45,7 +45,7 @@ public interface UserActionReferenceOrBuilder
    * For API calls that return a long running operation.
    * Resource name of the long running operation.
    * Format:
-   * 'projects/{project}/locations/{location}/operations/{operation}'
+   * `projects/{project}/locations/{location}/operations/{operation}`
    * </pre>
    *
    * <code>string operation = 1;</code>
@@ -60,7 +60,7 @@ public interface UserActionReferenceOrBuilder
    * For API calls that return a long running operation.
    * Resource name of the long running operation.
    * Format:
-   * 'projects/{project}/locations/{location}/operations/{operation}'
+   * `projects/{project}/locations/{location}/operations/{operation}`
    * </pre>
    *
    * <code>string operation = 1;</code>
@@ -76,7 +76,7 @@ public interface UserActionReferenceOrBuilder
    * For API calls that start a LabelingJob.
    * Resource name of the LabelingJob.
    * Format:
-   * 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
+   * `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * </pre>
    *
    * <code>string data_labeling_job = 2;</code>
@@ -91,7 +91,7 @@ public interface UserActionReferenceOrBuilder
    * For API calls that start a LabelingJob.
    * Resource name of the LabelingJob.
    * Format:
-   * 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
+   * `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * </pre>
    *
    * <code>string data_labeling_job = 2;</code>
@@ -106,7 +106,7 @@ public interface UserActionReferenceOrBuilder
    * For API calls that start a LabelingJob.
    * Resource name of the LabelingJob.
    * Format:
-   * 'projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}'
+   * `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}`
    * </pre>
    *
    * <code>string data_labeling_job = 2;</code>

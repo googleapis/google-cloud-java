@@ -2057,7 +2057,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
-   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
    *     <p>The value must be unique within an EntityType.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2101,7 +2101,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
-   *     <p>This value may be up to 60 characters, and valid characters are `[a-z0-9_]`. The first
+   *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
    *     <p>The value must be unique within an EntityType.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3304,6 +3304,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .addAllPassThroughFields(
    *               new ArrayList<BatchReadFeatureValuesRequest.PassThroughField>())
    *           .addAllEntityTypeSpecs(new ArrayList<BatchReadFeatureValuesRequest.EntityTypeSpec>())
+   *           .setStartTime(Timestamp.newBuilder().build())
    *           .build();
    *   BatchReadFeatureValuesResponse response =
    *       featurestoreServiceClient.batchReadFeatureValuesAsync(request).get();
@@ -3344,6 +3345,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .addAllPassThroughFields(
    *               new ArrayList<BatchReadFeatureValuesRequest.PassThroughField>())
    *           .addAllEntityTypeSpecs(new ArrayList<BatchReadFeatureValuesRequest.EntityTypeSpec>())
+   *           .setStartTime(Timestamp.newBuilder().build())
    *           .build();
    *   OperationFuture<BatchReadFeatureValuesResponse, BatchReadFeatureValuesOperationMetadata>
    *       future =
@@ -3388,6 +3390,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .addAllPassThroughFields(
    *               new ArrayList<BatchReadFeatureValuesRequest.PassThroughField>())
    *           .addAllEntityTypeSpecs(new ArrayList<BatchReadFeatureValuesRequest.EntityTypeSpec>())
+   *           .setStartTime(Timestamp.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       featurestoreServiceClient.batchReadFeatureValuesCallable().futureCall(request);

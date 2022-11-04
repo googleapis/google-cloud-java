@@ -77,7 +77,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The resource name of the TensorboardTimeSeries to list Blobs.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The resource name of the TensorboardTimeSeries to list Blobs.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
    * <code>
@@ -570,7 +570,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the TensorboardTimeSeries to list Blobs.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
      * <code>
@@ -596,7 +596,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the TensorboardTimeSeries to list Blobs.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
      * <code>
@@ -622,7 +622,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the TensorboardTimeSeries to list Blobs.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
      * <code>
@@ -647,7 +647,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the TensorboardTimeSeries to list Blobs.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
      * <code>
@@ -668,7 +668,7 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the TensorboardTimeSeries to list Blobs.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
      * <code>

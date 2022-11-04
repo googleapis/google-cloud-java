@@ -105,7 +105,7 @@ public interface DeployedModelOrBuilder
    * <pre>
    * The resource name of the shared DeploymentResourcePool to deploy on.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -119,7 +119,7 @@ public interface DeployedModelOrBuilder
    * <pre>
    * The resource name of the shared DeploymentResourcePool to deploy on.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
@@ -133,7 +133,7 @@ public interface DeployedModelOrBuilder
    * <pre>
    * The resource name of the shared DeploymentResourcePool to deploy on.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>

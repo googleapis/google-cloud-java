@@ -79,7 +79,7 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    * <pre>
    * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * </pre>
    *
    * <code>
@@ -106,7 +106,7 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    * <pre>
    * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * </pre>
    *
    * <code>
@@ -818,7 +818,7 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
      * <code>
@@ -844,7 +844,7 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
      * <code>
@@ -870,7 +870,7 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
      * <code>
@@ -895,7 +895,7 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
      * <code>
@@ -916,7 +916,7 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
      * <code>

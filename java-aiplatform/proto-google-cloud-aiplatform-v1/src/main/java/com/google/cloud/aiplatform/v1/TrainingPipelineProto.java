@@ -104,7 +104,7 @@ public final class TrainingPipelineProto {
           + "A{\n*aiplatform.googleapis.com/TrainingPi"
           + "peline\022Mprojects/{project}/locations/{lo"
           + "cation}/trainingPipelines/{training_pipe"
-          + "line}\"\214\005\n\017InputDataConfig\022C\n\016fraction_sp"
+          + "line}\"\257\005\n\017InputDataConfig\022C\n\016fraction_sp"
           + "lit\030\002 \001(\0132).google.cloud.aiplatform.v1.F"
           + "ractionSplitH\000\022?\n\014filter_split\030\003 \001(\0132\'.g"
           + "oogle.cloud.aiplatform.v1.FilterSplitH\000\022"
@@ -119,25 +119,26 @@ public final class TrainingPipelineProto {
           + "google.cloud.aiplatform.v1.BigQueryDesti"
           + "nationH\001\022\027\n\ndataset_id\030\001 \001(\tB\003\340A\002\022\032\n\022ann"
           + "otations_filter\030\006 \001(\t\022\035\n\025annotation_sche"
-          + "ma_uri\030\t \001(\t\022\026\n\016saved_query_id\030\007 \001(\tB\007\n\005"
-          + "splitB\r\n\013destination\"^\n\rFractionSplit\022\031\n"
-          + "\021training_fraction\030\001 \001(\001\022\033\n\023validation_f"
-          + "raction\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\"e\n\013"
-          + "FilterSplit\022\034\n\017training_filter\030\001 \001(\tB\003\340A"
-          + "\002\022\036\n\021validation_filter\030\002 \001(\tB\003\340A\002\022\030\n\013tes"
-          + "t_filter\030\003 \001(\tB\003\340A\002\"#\n\017PredefinedSplit\022\020"
-          + "\n\003key\030\001 \001(\tB\003\340A\002\"q\n\016TimestampSplit\022\031\n\021tr"
-          + "aining_fraction\030\001 \001(\001\022\033\n\023validation_frac"
-          + "tion\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key"
-          + "\030\004 \001(\tB\003\340A\002\"r\n\017StratifiedSplit\022\031\n\021traini"
-          + "ng_fraction\030\001 \001(\001\022\033\n\023validation_fraction"
-          + "\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key\030\004 \001"
-          + "(\tB\003\340A\002B\331\001\n\036com.google.cloud.aiplatform."
-          + "v1B\025TrainingPipelineProtoP\001ZDgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1;aiplatform\252\002\032Google.Cloud.AIPlatf"
-          + "orm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Go"
-          + "ogle::Cloud::AIPlatform::V1b\006proto3"
+          + "ma_uri\030\t \001(\t\022\026\n\016saved_query_id\030\007 \001(\t\022!\n\031"
+          + "persist_ml_use_assignment\030\013 \001(\010B\007\n\005split"
+          + "B\r\n\013destination\"^\n\rFractionSplit\022\031\n\021trai"
+          + "ning_fraction\030\001 \001(\001\022\033\n\023validation_fracti"
+          + "on\030\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\"e\n\013Filte"
+          + "rSplit\022\034\n\017training_filter\030\001 \001(\tB\003\340A\002\022\036\n\021"
+          + "validation_filter\030\002 \001(\tB\003\340A\002\022\030\n\013test_fil"
+          + "ter\030\003 \001(\tB\003\340A\002\"#\n\017PredefinedSplit\022\020\n\003key"
+          + "\030\001 \001(\tB\003\340A\002\"q\n\016TimestampSplit\022\031\n\021trainin"
+          + "g_fraction\030\001 \001(\001\022\033\n\023validation_fraction\030"
+          + "\002 \001(\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key\030\004 \001("
+          + "\tB\003\340A\002\"r\n\017StratifiedSplit\022\031\n\021training_fr"
+          + "action\030\001 \001(\001\022\033\n\023validation_fraction\030\002 \001("
+          + "\001\022\025\n\rtest_fraction\030\003 \001(\001\022\020\n\003key\030\004 \001(\tB\003\340"
+          + "A\002B\331\001\n\036com.google.cloud.aiplatform.v1B\025T"
+          + "rainingPipelineProtoP\001ZDgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/aiplatform/v"
+          + "1;aiplatform\252\002\032Google.Cloud.AIPlatform.V"
+          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
+          + ":Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -204,6 +205,7 @@ public final class TrainingPipelineProto {
               "AnnotationsFilter",
               "AnnotationSchemaUri",
               "SavedQueryId",
+              "PersistMlUseAssignment",
               "Split",
               "Destination",
             });

@@ -78,7 +78,7 @@ public final class ListTensorboardRunsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public final class ListTensorboardRunsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
    * <code>
@@ -810,7 +810,7 @@ public final class ListTensorboardRunsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
      * <code>
@@ -836,7 +836,7 @@ public final class ListTensorboardRunsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
      * <code>
@@ -862,7 +862,7 @@ public final class ListTensorboardRunsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
      * <code>
@@ -887,7 +887,7 @@ public final class ListTensorboardRunsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
      * <code>
@@ -908,7 +908,7 @@ public final class ListTensorboardRunsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
      * Format:
-     * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
      * <code>

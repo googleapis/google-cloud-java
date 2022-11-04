@@ -62,4 +62,5 @@
     <module>proto-google-cloud-aiplatform-v1beta1</module>
     <module>google-cloud-aiplatform-bom</module>
   </modules>
-</project>
+
+  </project>

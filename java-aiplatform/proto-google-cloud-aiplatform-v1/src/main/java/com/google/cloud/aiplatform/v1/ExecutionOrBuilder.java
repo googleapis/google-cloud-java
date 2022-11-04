@@ -360,6 +360,7 @@ public interface ExecutionOrBuilder
    *
    * <pre>
    * Properties of the Execution.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *
@@ -373,6 +374,7 @@ public interface ExecutionOrBuilder
    *
    * <pre>
    * Properties of the Execution.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *
@@ -386,6 +388,7 @@ public interface ExecutionOrBuilder
    *
    * <pre>
    * Properties of the Execution.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *

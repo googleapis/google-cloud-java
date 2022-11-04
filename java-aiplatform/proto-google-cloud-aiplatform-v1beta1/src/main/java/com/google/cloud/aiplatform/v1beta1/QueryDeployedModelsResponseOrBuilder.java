@@ -179,4 +179,31 @@ public interface QueryDeployedModelsResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.DeployedModelRefOrBuilder getDeployedModelRefsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The total number of DeployedModels on this DeploymentResourcePool.
+   * </pre>
+   *
+   * <code>int32 total_deployed_model_count = 4;</code>
+   *
+   * @return The totalDeployedModelCount.
+   */
+  int getTotalDeployedModelCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The total number of Endpoints that have DeployedModels on this
+   * DeploymentResourcePool.
+   * </pre>
+   *
+   * <code>int32 total_endpoint_count = 5;</code>
+   *
+   * @return The totalEndpointCount.
+   */
+  int getTotalEndpointCount();
 }

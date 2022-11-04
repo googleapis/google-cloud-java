@@ -2838,6 +2838,61 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     return entityTypeSpecs_.get(index);
   }
 
+  public static final int START_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Excludes Feature values with feature generation timestamp before this
+   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Timestamp, if present, must not have higher than millisecond precision.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return startTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Excludes Feature values with feature generation timestamp before this
+   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Timestamp, if present, must not have higher than millisecond precision.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getStartTime() {
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Excludes Feature values with feature generation timestamp before this
+   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Timestamp, if present, must not have higher than millisecond precision.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+    return getStartTime();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2869,6 +2924,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     }
     for (int i = 0; i < passThroughFields_.size(); i++) {
       output.writeMessage(8, passThroughFields_.get(i));
+    }
+    if (startTime_ != null) {
+      output.writeMessage(11, getStartTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2902,6 +2960,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, passThroughFields_.get(i));
     }
+    if (startTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getStartTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2925,6 +2986,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     }
     if (!getPassThroughFieldsList().equals(other.getPassThroughFieldsList())) return false;
     if (!getEntityTypeSpecsList().equals(other.getEntityTypeSpecsList())) return false;
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
+    }
     if (!getReadOptionCase().equals(other.getReadOptionCase())) return false;
     switch (readOptionCase_) {
       case 3:
@@ -2960,6 +3025,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
     if (getEntityTypeSpecsCount() > 0) {
       hash = (37 * hash) + ENTITY_TYPE_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getEntityTypeSpecsList().hashCode();
+    }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
     }
     switch (readOptionCase_) {
       case 3:
@@ -3140,6 +3209,12 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         entityTypeSpecsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (startTimeBuilder_ == null) {
+        startTime_ = null;
+      } else {
+        startTime_ = null;
+        startTimeBuilder_ = null;
+      }
       readOptionCase_ = 0;
       readOption_ = null;
       return this;
@@ -3208,6 +3283,11 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         result.entityTypeSpecs_ = entityTypeSpecs_;
       } else {
         result.entityTypeSpecs_ = entityTypeSpecsBuilder_.build();
+      }
+      if (startTimeBuilder_ == null) {
+        result.startTime_ = startTime_;
+      } else {
+        result.startTime_ = startTimeBuilder_.build();
       }
       result.readOptionCase_ = readOptionCase_;
       onBuilt();
@@ -3322,6 +3402,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
           }
         }
       }
+      if (other.hasStartTime()) {
+        mergeStartTime(other.getStartTime());
+      }
       switch (other.getReadOptionCase()) {
         case CSV_READ_INSTANCES:
           {
@@ -3420,6 +3503,12 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
                 }
                 break;
               } // case 66
+            case 90:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5356,6 +5445,212 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
         entityTypeSpecs_ = null;
       }
       return entityTypeSpecsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp startTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return startTimeBuilder_ != null || startTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The startTime.
+     */
+    public com.google.protobuf.Timestamp getStartTime() {
+      if (startTimeBuilder_ == null) {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      } else {
+        return startTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startTime_ = value;
+        onChanged();
+      } else {
+        startTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (startTimeBuilder_ == null) {
+        startTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        startTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (startTime_ != null) {
+          startTime_ =
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        } else {
+          startTime_ = value;
+        }
+        onChanged();
+      } else {
+        startTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStartTime() {
+      if (startTimeBuilder_ == null) {
+        startTime_ = null;
+        onChanged();
+      } else {
+        startTime_ = null;
+        startTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+
+      onChanged();
+      return getStartTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      if (startTimeBuilder_ != null) {
+        return startTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getStartTimeFieldBuilder() {
+      if (startTimeBuilder_ == null) {
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
+        startTime_ = null;
+      }
+      return startTimeBuilder_;
     }
 
     @java.lang.Override

@@ -179,7 +179,8 @@ public final class QueryArtifactLineageSubgraphRequest
    *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
    *    For example: `metadata.field_1.number_value = 10.0`
    * Each of the above supported filter types can be combined together using
-   * logical operators (`AND` &amp; `OR`).
+   * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+   * is 5.
    * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
@@ -219,7 +220,8 @@ public final class QueryArtifactLineageSubgraphRequest
    *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
    *    For example: `metadata.field_1.number_value = 10.0`
    * Each of the above supported filter types can be combined together using
-   * logical operators (`AND` &amp; `OR`).
+   * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+   * is 5.
    * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
@@ -855,7 +857,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
      * Each of the above supported filter types can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -894,7 +897,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
      * Each of the above supported filter types can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -933,7 +937,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
      * Each of the above supported filter types can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -971,7 +976,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
      * Each of the above supported filter types can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -1005,7 +1011,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
      * Each of the above supported filter types can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *

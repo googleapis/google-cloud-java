@@ -494,8 +494,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Artifact resource id from MLMD. Which is the last portion of an
-       * artifact resource
-       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * artifact resource name:
+       * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
        * The artifact must stay within the same project, location and default
        * metadatastore as the pipeline.
        * </pre>
@@ -510,8 +510,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Artifact resource id from MLMD. Which is the last portion of an
-       * artifact resource
-       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * artifact resource name:
+       * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
        * The artifact must stay within the same project, location and default
        * metadatastore as the pipeline.
        * </pre>
@@ -526,8 +526,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Artifact resource id from MLMD. Which is the last portion of an
-       * artifact resource
-       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * artifact resource name:
+       * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
        * The artifact must stay within the same project, location and default
        * metadatastore as the pipeline.
        * </pre>
@@ -639,8 +639,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Artifact resource id from MLMD. Which is the last portion of an
-       * artifact resource
-       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * artifact resource name:
+       * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
        * The artifact must stay within the same project, location and default
        * metadatastore as the pipeline.
        * </pre>
@@ -657,8 +657,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Artifact resource id from MLMD. Which is the last portion of an
-       * artifact resource
-       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * artifact resource name:
+       * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
        * The artifact must stay within the same project, location and default
        * metadatastore as the pipeline.
        * </pre>
@@ -688,8 +688,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Artifact resource id from MLMD. Which is the last portion of an
-       * artifact resource
-       * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+       * artifact resource name:
+       * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
        * The artifact must stay within the same project, location and default
        * metadatastore as the pipeline.
        * </pre>
@@ -1114,8 +1114,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Artifact resource id from MLMD. Which is the last portion of an
-         * artifact resource
-         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * artifact resource name:
+         * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
          * The artifact must stay within the same project, location and default
          * metadatastore as the pipeline.
          * </pre>
@@ -1133,8 +1133,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Artifact resource id from MLMD. Which is the last portion of an
-         * artifact resource
-         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * artifact resource name:
+         * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
          * The artifact must stay within the same project, location and default
          * metadatastore as the pipeline.
          * </pre>
@@ -1165,8 +1165,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Artifact resource id from MLMD. Which is the last portion of an
-         * artifact resource
-         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * artifact resource name:
+         * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
          * The artifact must stay within the same project, location and default
          * metadatastore as the pipeline.
          * </pre>
@@ -1197,8 +1197,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Artifact resource id from MLMD. Which is the last portion of an
-         * artifact resource
-         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * artifact resource name:
+         * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
          * The artifact must stay within the same project, location and default
          * metadatastore as the pipeline.
          * </pre>
@@ -1222,8 +1222,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Artifact resource id from MLMD. Which is the last portion of an
-         * artifact resource
-         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * artifact resource name:
+         * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
          * The artifact must stay within the same project, location and default
          * metadatastore as the pipeline.
          * </pre>
@@ -1245,8 +1245,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Artifact resource id from MLMD. Which is the last portion of an
-         * artifact resource
-         * name(projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}).
+         * artifact resource name:
+         * `projects/{project}/locations/{location}/metadataStores/default/artifacts/{artifact_id}`.
          * The artifact must stay within the same project, location and default
          * metadatastore as the pipeline.
          * </pre>

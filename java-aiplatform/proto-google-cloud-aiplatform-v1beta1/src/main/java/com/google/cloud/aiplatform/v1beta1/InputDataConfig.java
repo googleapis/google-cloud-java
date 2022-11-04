@@ -900,6 +900,24 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int PERSIST_ML_USE_ASSIGNMENT_FIELD_NUMBER = 11;
+  private boolean persistMlUseAssignment_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to persist the ML use assignment to data item system labels.
+   * </pre>
+   *
+   * <code>bool persist_ml_use_assignment = 11;</code>
+   *
+   * @return The persistMlUseAssignment.
+   */
+  @java.lang.Override
+  public boolean getPersistMlUseAssignment() {
+    return persistMlUseAssignment_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -944,6 +962,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     if (destinationCase_ == 10) {
       output.writeMessage(
           10, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
+    }
+    if (persistMlUseAssignment_ != false) {
+      output.writeBool(11, persistMlUseAssignment_);
     }
     if (splitCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_);
@@ -999,6 +1020,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
     }
+    if (persistMlUseAssignment_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, persistMlUseAssignment_);
+    }
     if (splitCase_ == 12) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1024,6 +1048,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     if (!getAnnotationsFilter().equals(other.getAnnotationsFilter())) return false;
     if (!getAnnotationSchemaUri().equals(other.getAnnotationSchemaUri())) return false;
     if (!getSavedQueryId().equals(other.getSavedQueryId())) return false;
+    if (getPersistMlUseAssignment() != other.getPersistMlUseAssignment()) return false;
     if (!getSplitCase().equals(other.getSplitCase())) return false;
     switch (splitCase_) {
       case 2:
@@ -1074,6 +1099,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getAnnotationSchemaUri().hashCode();
     hash = (37 * hash) + SAVED_QUERY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSavedQueryId().hashCode();
+    hash = (37 * hash) + PERSIST_ML_USE_ASSIGNMENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPersistMlUseAssignment());
     switch (splitCase_) {
       case 2:
         hash = (37 * hash) + FRACTION_SPLIT_FIELD_NUMBER;
@@ -1278,6 +1305,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
 
       savedQueryId_ = "";
 
+      persistMlUseAssignment_ = false;
+
       splitCase_ = 0;
       split_ = null;
       destinationCase_ = 0;
@@ -1362,6 +1391,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       result.annotationsFilter_ = annotationsFilter_;
       result.annotationSchemaUri_ = annotationSchemaUri_;
       result.savedQueryId_ = savedQueryId_;
+      result.persistMlUseAssignment_ = persistMlUseAssignment_;
       result.splitCase_ = splitCase_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
@@ -1429,6 +1459,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       if (!other.getSavedQueryId().isEmpty()) {
         savedQueryId_ = other.savedQueryId_;
         onChanged();
+      }
+      if (other.getPersistMlUseAssignment() != false) {
+        setPersistMlUseAssignment(other.getPersistMlUseAssignment());
       }
       switch (other.getSplitCase()) {
         case FRACTION_SPLIT:
@@ -1564,6 +1597,12 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
                 destinationCase_ = 10;
                 break;
               } // case 82
+            case 88:
+              {
+                persistMlUseAssignment_ = input.readBool();
+
+                break;
+              } // case 88
             case 98:
               {
                 input.readMessage(getStratifiedSplitFieldBuilder().getBuilder(), extensionRegistry);
@@ -3989,6 +4028,58 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       savedQueryId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean persistMlUseAssignment_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to persist the ML use assignment to data item system labels.
+     * </pre>
+     *
+     * <code>bool persist_ml_use_assignment = 11;</code>
+     *
+     * @return The persistMlUseAssignment.
+     */
+    @java.lang.Override
+    public boolean getPersistMlUseAssignment() {
+      return persistMlUseAssignment_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to persist the ML use assignment to data item system labels.
+     * </pre>
+     *
+     * <code>bool persist_ml_use_assignment = 11;</code>
+     *
+     * @param value The persistMlUseAssignment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPersistMlUseAssignment(boolean value) {
+
+      persistMlUseAssignment_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to persist the ML use assignment to data item system labels.
+     * </pre>
+     *
+     * <code>bool persist_ml_use_assignment = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPersistMlUseAssignment() {
+
+      persistMlUseAssignment_ = false;
       onChanged();
       return this;
     }
