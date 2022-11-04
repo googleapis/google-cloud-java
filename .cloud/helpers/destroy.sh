@@ -29,9 +29,9 @@ for module in $allModules; do
     continue # Skip unless active.
   fi
 
-  if [[ -f "../$module/.terraform/predestroy.sh" ]]; then
+  if [[ -f "../$module/.cloud/predestroy.sh" ]]; then
     # shellcheck disable=SC1090
-    source "../$module/.terraform/predestroy.sh"
+    source "../$module/.cloud/predestroy.sh"
   fi
 done
 

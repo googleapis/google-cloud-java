@@ -43,10 +43,10 @@ if [ -n "$1" ]; then
 else
   modules=$(listAllModules)
 fi
-IFS=','
 echo "Planning around modules $modules"
+IFS=','
 for module in $modules; do
-  # Only include modules with a .terraform subdirectory in the generated config.
+  # Only include modules with a .cloud subdirectory in the generated config.
   if [ -f "../$module/.cloud/preplan.sh" ]; then
     # shellcheck disable=SC1090
     source "../$module/.cloud/preplan.sh" generated.auto.tfvars
