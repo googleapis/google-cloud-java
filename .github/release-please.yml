@@ -6,3 +6,5 @@ branches:
     handleGHRelease: true
     releaseType: java-yoshi
     branch: java7
+extraFiles:
+  - src/main/java/com/google/cloud/logging/logback/LoggingAppender.java
