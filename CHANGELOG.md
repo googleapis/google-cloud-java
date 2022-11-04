@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [0.128.0](https://github.com/googleapis/java-logging-logback/compare/v0.127.0...v0.128.0) (2022-11-04)
+
+
+### Features
+
+* Add support for instrumentation version annotations ([#916](https://github.com/googleapis/java-logging-logback/issues/916)) ([c721557](https://github.com/googleapis/java-logging-logback/commit/c721557f0963a487dfc6950241933752ae58e170))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.12.1 ([#913](https://github.com/googleapis/java-logging-logback/issues/913)) ([2281ada](https://github.com/googleapis/java-logging-logback/commit/2281ada7325d866430efcb0c08df014508c8e965))
+
 ## [0.127.0](https://github.com/googleapis/java-logging-logback/compare/v0.126.17...v0.127.0) (2022-10-31)
 
 
