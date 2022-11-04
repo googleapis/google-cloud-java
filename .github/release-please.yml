@@ -11,4 +11,4 @@ branches:
     releaseType: java-backport
     branch: 3.7.x
 extraFiles:
-  - src/main/java/com/google/cloud/logging/Instrumentation.java
+  - google-cloud-logging/src/main/java/com/google/cloud/logging/Instrumentation.java
