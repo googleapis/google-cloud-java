@@ -38,7 +38,7 @@ public final class Instrumentation {
   public static final String INSTRUMENTATION_VERSION_KEY = "version";
   public static final String JAVA_LIBRARY_NAME_PREFIX = "java";
   // {x-version-update-start:google-cloud-logging:current}
-  public static final String DEFAULT_INSTRUMENTATION_VERSION = "1.0.0";
+  public static final String DEFAULT_INSTRUMENTATION_VERSION = "3.13.0";
   // {x-version-update-end}
   public static final String INSTRUMENTATION_LOG_NAME = "diagnostic-log";
   public static final int MAX_DIAGNOSTIC_VALUE_LENGTH = 14;

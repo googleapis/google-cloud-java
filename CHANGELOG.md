@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.13.0](https://github.com/googleapis/java-logging/compare/v3.12.1...v3.13.0) (2022-11-04)
+
+
+### Features
+
+* Add support for instrumentation version annotations ([#1179](https://github.com/googleapis/java-logging/issues/1179)) ([0931446](https://github.com/googleapis/java-logging/commit/09314464f5170c5c261c3676c55bd28d9ee1b27f))
+* Update release-please.yml with correct path ([#1184](https://github.com/googleapis/java-logging/issues/1184)) ([9e75fe4](https://github.com/googleapis/java-logging/commit/9e75fe4c991db88a39cf5a865c2de081068a6f8f))
+
+
+### Dependencies
+
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.17 ([#1181](https://github.com/googleapis/java-logging/issues/1181)) ([1830525](https://github.com/googleapis/java-logging/commit/18305255917815a859e5957f1b835e7f6a919925))
+
 ## [3.12.1](https://github.com/googleapis/java-logging/compare/v3.12.0...v3.12.1) (2022-11-02)
 
 
