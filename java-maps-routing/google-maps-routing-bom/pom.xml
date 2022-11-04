@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
-  <artifactId>google-maps-routes-bom</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routes:current} -->
+  <artifactId>google-maps-routing-bom</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -26,18 +26,18 @@
     <dependencies>
       <dependency>
         <groupId>com.google.maps</groupId>
-        <artifactId>google-maps-routes</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routes:current} -->
+        <artifactId>google-maps-routing</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-maps-routes-v2</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-routes-v2:current} -->
+        <artifactId>grpc-google-maps-routing-v2</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-routing-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-maps-routes-v2</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-routes-v2:current} -->
+        <artifactId>proto-google-maps-routing-v2</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-routing-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

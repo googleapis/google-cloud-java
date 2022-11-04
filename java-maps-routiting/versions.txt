@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-maps-routes:0.0.0:0.0.1-SNAPSHOT
-proto-google-maps-routes-v2:0.0.0:0.0.1-SNAPSHOT
-grpc-google-maps-routes-v2:0.0.0:0.0.1-SNAPSHOT

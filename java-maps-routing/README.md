@@ -21,7 +21,7 @@ If you are using Maven, add this to your pom.xml file:
 ```xml
 <dependency>
   <groupId>com.google.maps</groupId>
-  <artifactId>google-maps-routes</artifactId>
+  <artifactId>google-maps-routing</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
@@ -29,13 +29,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.maps:google-maps-routes:0.0.0'
+implementation 'com.google.maps:google-maps-routing:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.maps" % "google-maps-routes" % "0.0.0"
+libraryDependencies += "com.google.maps" % "google-maps-routing" % "0.0.0"
 ```
 
 ## Authentication
@@ -51,15 +51,15 @@ The client application making API calls must be granted [authorization scopes][a
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Routes API [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Routes API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
 
-You'll need to obtain the `google-maps-routes` library.  See the [Quickstart](#quickstart) section
-to add `google-maps-routes` as a dependency in your code.
+You'll need to obtain the `google-maps-routing` library.  See the [Quickstart](#quickstart) section
+to add `google-maps-routing` as a dependency in your code.
 
 ## About Routes API
 
@@ -164,20 +164,20 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://developers.google.com/maps/documentation/routes
-[javadocs]: https://cloud.google.com/java/docs/reference/google-maps-routes/latest/overview
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routiting/java11.html
+[javadocs]: https://cloud.google.com/java/docs/reference/google-maps-routing/latest/overview
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.maps/google-maps-routes.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.maps%20AND%20a:google-maps-routes&core=gav
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.maps/google-maps-routing.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.maps%20AND%20a:google-maps-routing&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -186,10 +186,10 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-maps-routiting/blob/main/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-maps-routiting/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-maps-routiting/blob/main/LICENSE
-
+[contributing]: https://github.com/googleapis/java-maps-routing/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-maps-routing/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-maps-routing/blob/main/LICENSE
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=routes.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
