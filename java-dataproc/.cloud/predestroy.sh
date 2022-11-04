@@ -14,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-resourceToForget='module.java_container.google_compute_network.java_container_network'
+
+# The resource path is from the perspective of <root>/.cloud/generated-main.tf.
+resourceToForget='module.java_dataproc.google_project_iam_member.dataproc_iam'
 if terraform state list | grep -q $resourceToForget
 then
   terraform state rm $resourceToForget

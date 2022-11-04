@@ -14,8 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-if ! gcloud services list | grep -q 'compute.googleapis.com' ||
-   ! gcloud compute networks list | grep -q 'redis-vpc'
+
+# The resource path is from the perspective of <root>/.cloud/generated-main.tf.
+resourceToForget='module.java_dialogflow.google_dialogflow_agent.design_time_agent'
+if terraform state list | grep -q $resourceToForget
 then
-    echo "should_create_redis_network = true" >>"$1"
+  terraform state rm $resourceToForget
 fi

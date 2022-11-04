@@ -15,23 +15,6 @@
 #
 set -eo pipefail
 
-function allow_failure () {
-  # store current flag state, then allow failures
-  flags=$-
-  set +e
-  unset IFS
-
-  command=( "$@" )
-  "${command[@]}"
-  export exit_code=$?
-
-  # restore "e" flag
-  if [[ ${flags} =~ e ]]
-  then set -e
-  else set +e
-  fi
-}
-
 # Find all directories starting with 'java-', sort them, then join
 # with ',' as the delimiter.
 function listAllModules() {
@@ -70,7 +53,7 @@ function contains() {
   echo "$1" | grep -w -q "$2"
 }
 
-# @returns a new-line delimited list of active terraform modules
+# @returns a "new line"-delimited list of active terraform modules
 function getActiveTerraformModules() {
   terraform state list | awk -F'[/.]' '{print $2}' | uniq
 }

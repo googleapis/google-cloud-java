@@ -14,8 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-resourceToForget='module.java_dialogflow.google_dialogflow_agent.design_time_agent'
-if terraform state list | grep -q $resourceToForget
+
+# Only create the network if it doesn't already exist.
+# Initial check on compute API is required to prevent interactive prompt.
+if ! gcloud services list | grep -q 'compute.googleapis.com' ||
+   ! gcloud compute networks list | grep -q 'java-container-network'
 then
-  terraform state rm $resourceToForget
+    echo "should_create_container_network = true" >>"$1"
 fi

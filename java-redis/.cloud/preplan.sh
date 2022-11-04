@@ -14,8 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-resourceToForget='module.java_dataproc.google_project_iam_member.dataproc_iam'
-if terraform state list | grep -q $resourceToForget
+
+# Only create the network if it doesn't already exist.
+# Initial check on compute API is required to prevent interactive prompt.
+if ! gcloud services list | grep -q 'compute.googleapis.com' ||
+   ! gcloud compute networks list | grep -q 'redis-vpc'
 then
-  terraform state rm $resourceToForget
+    echo "should_create_redis_network = true" >>"$1"
 fi

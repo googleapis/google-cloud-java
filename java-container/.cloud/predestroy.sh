@@ -14,8 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-if ! gcloud services list | grep -q 'compute.googleapis.com' ||
-   ! gcloud compute networks list | grep -q 'java-container-network'
+
+# The resource path is from the perspective of <root>/.cloud/generated-main.tf.
+resourceToForget='module.java_container.google_compute_network.java_container_network'
+if terraform state list | grep -q $resourceToForget
 then
-    echo "should_create_container_network = true" >>"$1"
+  terraform state rm $resourceToForget
 fi

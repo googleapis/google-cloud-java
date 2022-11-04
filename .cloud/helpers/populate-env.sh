@@ -17,9 +17,9 @@ set -eo pipefail
 
 function modifyEnvironment() {
   # Set module-specific environment variables for upcoming integration test(s)
-  if [[ -f "../$1/.terraform/env.sh" ]]; then
+  if [[ -f "../$1/.cloud/env.sh" ]]; then
     # shellcheck disable=SC1090
-    source "../$1/.terraform/env.sh"
+    source "../$1/.cloud/env.sh"
   fi
 }
 

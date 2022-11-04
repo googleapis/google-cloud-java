@@ -95,8 +95,33 @@ function generate_modified_modules_list() {
   fi
 }
 
+function run_integration_tests() {
+  printf "Running Integration Tests for:\n%s\n" "$1"
+  mvn -B ${INTEGRATION_TEST_ARGS} \
+    -pl "$1" \
+    -amd \
+    -ntp \
+    -Penable-integration-tests \
+    -DtrimStackTrace=false \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
+    -Dflatten.skip=true \
+    -Danimal.sniffer.skip=true \
+    -Djacoco.skip=true \
+    -DskipUnitTests=true \
+    -Dmaven.wagon.http.retryHandler.count=5 \
+    -fae \
+    -T 1C \
+    verify
+
+  RETURN_CODE=$?
+  printf "Finished Integration Tests for:\n%s\n" "$1"
+}
+
 function run_graalvm_tests() {
   printf "Running GraalVM ITs on:\n%s\n" "${module_list[*]}"
+
   mvn -B ${INTEGRATION_TEST_ARGS} \
     -pl "${module_list}" \
     -amd \
@@ -110,6 +135,7 @@ function run_graalvm_tests() {
     -Pnative \
     -fae \
     test
+
   RETURN_CODE=$?
   printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "${module_list}"
 }

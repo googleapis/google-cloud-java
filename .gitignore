@@ -61,10 +61,10 @@ monorepo
 
 # Terraform
 *.hcl
-**/.terraform/.terraform/
-**/.terraform/plugins/
-**/.terraform/providers/
-**/.terraform/plugin_path
+**/.cloud/.terraform/
+**/.cloud/plugins/
+**/.cloud/providers/
+**/.cloud/plugin_path
 *.lock.
 *.tfstate
 *.tfstate.backup

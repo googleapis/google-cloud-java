@@ -27,7 +27,7 @@ function appendModule() {
   # Append the given module to the generated-main.tf configuration to be
   # included in the project's resources during 'terraform apply'.
   echo "module \"$friendlyName\" {
-    source = \"./../$1/.terraform\"
+    source = \"./../$1/.cloud\"
     inputs = local.data
     depends_on = [time_sleep.for_1m_allowBaseCloudApisToFullyEnable]
   }" >>generated-main.tf
@@ -50,14 +50,14 @@ function appendAllModules() {
   fi
   IFS=','
   for module in $modules; do
-    # Only include modules with a .terraform subdirectory in the generated config.
-    if [ -d "../$module/.terraform" ]; then
+    # Only include modules with a .cloud subdirectory in the generated config.
+    if [ -d "../$module/.cloud" ]; then
       appendModule "${module%/}" # Remove possible trailing '/'
     fi
   done
 }
 
-# Ensure current directory is <root>/.terraform.
+# Ensure current directory is <root>/.cloud
 generateDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 pushd "$generateDir/.." >/dev/null
 

@@ -36,44 +36,19 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
-function perform_integration_tests() {
-  install_modules
-
-  printf "Running Integration Tests for:\n%s\n" "$1"
-  mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "$1" \
-    -amd \
-    -ntp \
-    -Penable-integration-tests \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Djacoco.skip=true \
-    -DskipUnitTests=true \
-    -Dmaven.wagon.http.retryHandler.count=5 \
-    -fae \
-    -T 1C \
-    verify
-  RETURN_CODE=$?
-
-  printf "Finished Integration Tests for:\n%s\n" "${module_list}"
-}
-function setup_terraform() {
+function setup_cloud() {
   gcloud config set project "$GOOGLE_CLOUD_PROJECT"
   time (
     terraform -version &&
-      source ./.terraform/helpers/init.sh "$1" &&
-      source ./.terraform/helpers/plan.sh "$1" &&
-      source ./.terraform/helpers/apply.sh &&
-      source ./.terraform/helpers/populate-env.sh
+      source ./.cloud/helpers/init.sh "$1" &&
+      source ./.cloud/helpers/plan.sh "$1" &&
+      source ./.cloud/helpers/apply.sh &&
+      source ./.cloud/helpers/populate-env.sh
   )
 
   destroy() {
     arguments=$?
-    time source ./.terraform/helpers/destroy.sh
+    time source ./.cloud/helpers/destroy.sh
     exit $arguments
   }
   trap destroy EXIT
@@ -103,6 +78,7 @@ case ${JOB_TYPE} in
         IFS=,
         echo "${modified_module_list[*]}"
       )
+      install_modules
       perform_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
@@ -115,7 +91,8 @@ case ${JOB_TYPE} in
         IFS=,
         echo "${modified_module_list[*]}"
       )
-      setup_terraform "$module_list"
+      setup_cloud "$module_list"
+      install_modules
       perform_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"

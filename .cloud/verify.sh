@@ -14,49 +14,22 @@
 # limitations under the License.
 #
 set -eo pipefail
-
-function mvnVerify() {
-  mvn "$@" \
-    ${INTEGRATION_TEST_ARGS} \
-    -T 1C \
-    -B \
-    -ntp \
-    -Penable-integration-tests \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dcheckstyle.skip=true \
-    -fae \
-    verify
-}
-function testSingle() {
-  pushd "../$1" >/dev/null
-  mvnVerify
-  popd >/dev/null
-}
-function testAll() {
-  pushd "../" >/dev/null
-  mvnVerify -pl -:google-cloud-os-login,-:google-cloud-recommender,-:google-cloud-talent
-  popd >/dev/null
-}
-
-# Ensure current directory is script directory.
 scriptDir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-pushd "$scriptDir" >/dev/null
 
+# Prepare the environment
+pushd "$scriptDir" >/dev/null
 source ./helpers/gcloud-sync-env.sh
 source ./helpers/populate-env.sh
+popd >/dev/null
 
+# Perform integration testing using Kokoro's mvn syntax.
+pushd "$scriptDir/.." >/dev/null
+source ./.kokoro/common.sh
 if [ -n "$1" ]; then
   # If given a specific module list, only perform integration tests on those.
-  IFS=','
-  for module in $1; do
-    testSingle "$module" &
-  done
-  wait
+  run_integration_tests "$1"
 else
   # If not given an argument list, integration test the parent project.
-  testAll
+  run_integration_tests -:google-cloud-os-login,-:google-cloud-recommender,-:google-cloud-talent
 fi
-
 popd >/dev/null
