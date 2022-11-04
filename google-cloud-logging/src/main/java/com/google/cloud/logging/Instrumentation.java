@@ -37,7 +37,9 @@ public final class Instrumentation {
   public static final String INSTRUMENTATION_NAME_KEY = "name";
   public static final String INSTRUMENTATION_VERSION_KEY = "version";
   public static final String JAVA_LIBRARY_NAME_PREFIX = "java";
-  public static final String DEFAULT_INSTRUMENTATION_VERSION = "UNKNOWN";
+  // {x-version-update-start:google-cloud-logging:current}
+  public static final String DEFAULT_INSTRUMENTATION_VERSION = "1.0.0";
+  // {x-version-update-end}
   public static final String INSTRUMENTATION_LOG_NAME = "diagnostic-log";
   public static final int MAX_DIAGNOSTIC_VALUE_LENGTH = 14;
   public static final int MAX_DIAGNOSTIC_ENTIES = 3;
@@ -220,8 +222,8 @@ public final class Instrumentation {
    * Returns a library version associated with given class
    *
    * @param libraryClass {Class<?>} The class to be used to determine a library version
-   * @return The version number string for given class or "UNKNOWN" if class library version cannot
-   *     be detected
+   * @return The version number string for given class or DEFAULT_INSTRUMENTATION_VERSION if class
+   *     library version cannot be detected
    */
   public static String getLibraryVersion(Class<?> libraryClass) {
     String libraryVersion = GaxProperties.getLibraryVersion(libraryClass);

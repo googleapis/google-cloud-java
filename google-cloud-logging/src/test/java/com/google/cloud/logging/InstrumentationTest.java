@@ -41,7 +41,7 @@ public class InstrumentationTest {
   private static final LogEntry STRING_ENTRY = LogEntry.newBuilder(STRING_PAYLOAD).build();
   private static final String JAVA_OTHER_NAME = "java-other";
   private static final String JAVA_INVALID_NAME = "no-java-name";
-  private static final String JAVA_OTHER_VERSION = "1.0.0";
+  private static final String JAVA_OTHER_VERSION = "0.0.0";
 
   @Test
   public void testInstrumentationGenerated() {
