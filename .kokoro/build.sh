@@ -79,7 +79,7 @@ case ${JOB_TYPE} in
         echo "${modified_module_list[*]}"
       )
       install_modules
-      perform_integration_tests "$module_list"
+      run_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
     fi
@@ -93,7 +93,7 @@ case ${JOB_TYPE} in
       )
       setup_cloud "$module_list"
       install_modules
-      perform_integration_tests "$module_list"
+      run_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
     fi
