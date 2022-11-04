@@ -169,6 +169,118 @@ public class ConnectionWorkerTest {
     }
   }
 
+  @Test
+  public void testAppendInSameStream_switchSchema() throws Exception {
+    try (ConnectionWorker connectionWorker = createConnectionWorker()) {
+      long appendCount = 20;
+      for (long i = 0; i < appendCount; i++) {
+        testBigQueryWrite.addResponse(createAppendResponse(i));
+      }
+      List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+
+      // Schema1 and schema2 are the same content, but different instance.
+      ProtoSchema schema1 = createProtoSchema("foo");
+      ProtoSchema schema2 = createProtoSchema("foo");
+      // Schema3 is a different schema
+      ProtoSchema schema3 = createProtoSchema("bar");
+
+      // We do a pattern of:
+      // send to stream1, schema1
+      // send to stream1, schema2
+      // send to stream1, schema3
+      // send to stream1, schema3
+      // send to stream1, schema1
+      // ...
+      for (long i = 0; i < appendCount; i++) {
+        switch ((int) i % 4) {
+          case 0:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    TEST_STREAM_1,
+                    schema1,
+                    createFooProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 1:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    TEST_STREAM_1,
+                    schema2,
+                    createFooProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 2:
+          case 3:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    TEST_STREAM_1,
+                    schema3,
+                    createFooProtoRows(new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          default: // fall out
+            break;
+        }
+      }
+      // In the real world the response won't contain offset for default stream, but we use offset
+      // here just to test response.
+      for (int i = 0; i < appendCount; i++) {
+        Int64Value offset = futures.get(i).get().getAppendResult().getOffset();
+        assertThat(offset).isEqualTo(Int64Value.of(i));
+      }
+      assertThat(testBigQueryWrite.getAppendRequests().size()).isEqualTo(appendCount);
+      for (int i = 0; i < appendCount; i++) {
+        AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
+        assertThat(serverRequest.getProtoRows().getRows().getSerializedRowsCount())
+            .isGreaterThan(0);
+        assertThat(serverRequest.getOffset().getValue()).isEqualTo(i);
+
+        // We will get the request as the pattern of:
+        // (writer_stream: t1, schema: schema1)
+        // (writer_stream: _, schema: _)
+        // (writer_stream: _, schema: schema3)
+        // (writer_stream: _, schema: _)
+        // (writer_stream: _, schema: schema1)
+        // (writer_stream: _, schema: _)
+        switch (i % 4) {
+          case 0:
+            if (i == 0) {
+              assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            }
+            assertThat(
+                    serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
+                .isEqualTo("foo");
+            break;
+          case 1:
+            assertThat(serverRequest.getWriteStream()).isEmpty();
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
+            break;
+          case 2:
+            assertThat(serverRequest.getWriteStream()).isEmpty();
+            // Schema is populated after table switch.
+            assertThat(
+                    serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
+                .isEqualTo("bar");
+            break;
+          case 3:
+            assertThat(serverRequest.getWriteStream()).isEmpty();
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getProtoRows().hasWriterSchema()).isFalse();
+            break;
+          default: // fall out
+            break;
+        }
+      }
+
+      assertThat(connectionWorker.getLoad().destinationCount()).isEqualTo(1);
+      assertThat(connectionWorker.getLoad().inFlightRequestsBytes()).isEqualTo(0);
+    }
+  }
+
   private AppendRowsResponse createAppendResponse(long offset) {
     return AppendRowsResponse.newBuilder()
         .setAppendResult(

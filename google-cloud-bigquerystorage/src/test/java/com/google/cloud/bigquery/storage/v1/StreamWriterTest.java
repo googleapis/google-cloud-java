@@ -61,8 +61,8 @@ import org.threeten.bp.Duration;
 @RunWith(JUnit4.class)
 public class StreamWriterTest {
   private static final Logger log = Logger.getLogger(StreamWriterTest.class.getName());
-  private static final String TEST_STREAM_1 = "projects/p/datasets/d/tables/t/streams/s";
-  private static final String TEST_STREAM_2 = "projects/p/datasets/d/tables/t/streams/s";
+  private static final String TEST_STREAM_1 = "projects/p/datasets/d1/tables/t1/streams/s1";
+  private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/s2";
   private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
@@ -112,13 +112,17 @@ public class StreamWriterTest {
   }
 
   private ProtoSchema createProtoSchema() {
+    return createProtoSchema("foo");
+  }
+
+  private ProtoSchema createProtoSchema(String fieldName) {
     return ProtoSchema.newBuilder()
         .setProtoDescriptor(
             DescriptorProtos.DescriptorProto.newBuilder()
                 .setName("Message")
                 .addField(
                     DescriptorProtos.FieldDescriptorProto.newBuilder()
-                        .setName("foo")
+                        .setName(fieldName)
                         .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_STRING)
                         .setNumber(1)
                         .build())
@@ -558,6 +562,107 @@ public class StreamWriterTest {
     assertTrue(writer2.getInflightWaitSeconds() >= 1);
     assertEquals(0, appendFuture1.get().getAppendResult().getOffset().getValue());
     assertEquals(1, appendFuture2.get().getAppendResult().getOffset().getValue());
+    writer1.close();
+    writer2.close();
+  }
+
+  @Test
+  public void testProtoSchemaPiping_nonMultiplexingCase() throws Exception {
+    ProtoSchema protoSchema = createProtoSchema();
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(protoSchema)
+            .setMaxInflightBytes(1)
+            .build();
+    long appendCount = 5;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(writer.append(createProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+
+    for (int i = 0; i < appendCount; i++) {
+      assertEquals(i, futures.get(i).get().getAppendResult().getOffset().getValue());
+    }
+    assertEquals(appendCount, testBigQueryWrite.getAppendRequests().size());
+    for (int i = 0; i < appendCount; i++) {
+      AppendRowsRequest appendRowsRequest = testBigQueryWrite.getAppendRequests().get(i);
+      assertEquals(i, appendRowsRequest.getOffset().getValue());
+      if (i == 0) {
+        appendRowsRequest.getProtoRows().getWriterSchema().equals(protoSchema);
+        assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_1);
+      } else {
+        appendRowsRequest.getProtoRows().getWriterSchema().equals(ProtoSchema.getDefaultInstance());
+      }
+    }
+    writer.close();
+  }
+
+  @Test
+  public void testProtoSchemaPiping_multiplexingCase() throws Exception {
+    // Use the shared connection mode.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    ProtoSchema schema1 = createProtoSchema("Schema1");
+    ProtoSchema schema2 = createProtoSchema("Schema2");
+    StreamWriter writer1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setWriterSchema(schema1)
+            .setLocation("US")
+            .setEnableConnectionPool(true)
+            .setMaxInflightRequests(1)
+            .build();
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_2, client)
+            .setWriterSchema(schema2)
+            .setMaxInflightRequests(1)
+            .setEnableConnectionPool(true)
+            .setLocation("US")
+            .build();
+
+    long appendCountPerStream = 5;
+    for (int i = 0; i < appendCountPerStream * 4; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    // In total insert append `appendCountPerStream` * 4 requests.
+    // We insert using the pattern of streamWriter1, streamWriter1, streamWriter2, streamWriter2
+    for (int i = 0; i < appendCountPerStream; i++) {
+      futures.add(writer1.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4));
+      futures.add(writer1.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4 + 1));
+      futures.add(writer2.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4 + 2));
+      futures.add(writer2.append(createProtoRows(new String[] {String.valueOf(i)}), i * 4 + 3));
+    }
+
+    for (int i = 0; i < appendCountPerStream * 4; i++) {
+      AppendRowsRequest appendRowsRequest = testBigQueryWrite.getAppendRequests().get(i);
+      assertEquals(i, appendRowsRequest.getOffset().getValue());
+      if (i % 4 == 0) {
+        assertEquals(appendRowsRequest.getProtoRows().getWriterSchema(), schema1);
+        assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_1);
+      } else if (i % 4 == 1) {
+        assertEquals(
+            appendRowsRequest.getProtoRows().getWriterSchema(), ProtoSchema.getDefaultInstance());
+        // Before entering multiplexing (i == 1) case, the write stream won't be populated.
+        if (i == 1) {
+          assertEquals(appendRowsRequest.getWriteStream(), "");
+        } else {
+          assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_1);
+        }
+      } else if (i % 4 == 2) {
+        assertEquals(appendRowsRequest.getProtoRows().getWriterSchema(), schema2);
+        assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_2);
+      } else {
+        assertEquals(
+            appendRowsRequest.getProtoRows().getWriterSchema(), ProtoSchema.getDefaultInstance());
+        assertEquals(appendRowsRequest.getWriteStream(), TEST_STREAM_2);
+      }
+    }
+
     writer1.close();
     writer2.close();
   }

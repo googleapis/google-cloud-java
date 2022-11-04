@@ -457,7 +457,6 @@ public class ConnectionWorker implements AutoCloseable {
             && !streamName.isEmpty()
             && !originalRequest.getWriteStream().equals(streamName)) {
           streamName = originalRequest.getWriteStream();
-          writerSchema = originalRequest.getProtoRows().getWriterSchema();
           isMultiplexing = true;
           firstRequestForDestinationSwitch = true;
         }
@@ -470,17 +469,22 @@ public class ConnectionWorker implements AutoCloseable {
           if (this.traceId != null) {
             originalRequestBuilder.setTraceId(this.traceId);
           }
-          firstRequestForDestinationSwitch = false;
-        } else if (isMultiplexing) {
-          // If we are not at the first request after table switch, but we are in multiplexing
-          // mode, we only need the stream name but not the schema in the request.
-          originalRequestBuilder.getProtoRowsBuilder().clearWriterSchema();
-        } else {
-          // If we are not at the first request or in multiplexing, create request with no schema
-          // and no stream name.
+        } else if (!isMultiplexing) {
+          // If we are not in multiplexing and not in the first request, clear the stream name.
           originalRequestBuilder.clearWriteStream();
+        }
+
+        // We don't use message differencer to speed up the comparing process.
+        // `equals(...)` can bring us false positive, e.g. two repeated field can be considered the
+        // same but is not considered equals(). However as long as it's never provide false negative
+        // we will always correctly pass writer schema to backend.
+        if (firstRequestForDestinationSwitch
+            || !originalRequest.getProtoRows().getWriterSchema().equals(writerSchema)) {
+          writerSchema = originalRequest.getProtoRows().getWriterSchema();
+        } else {
           originalRequestBuilder.getProtoRowsBuilder().clearWriterSchema();
         }
+        firstRequestForDestinationSwitch = false;
 
         // Send should only throw an exception if there is a problem with the request. The catch
         // block will handle this case, and return the exception with the result.
