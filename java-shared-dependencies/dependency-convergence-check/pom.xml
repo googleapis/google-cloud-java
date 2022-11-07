@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>shared-dependencies-dependency-convergence-test</artifactId>
-  <version>3.0.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>3.0.6</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Dependency convergence test for certain artifacts in Google Cloud Shared Dependencies</name>
   <url>https://github.com/googleapis/java-shared-dependencies</url>
   <description>
@@ -46,7 +46,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.0.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <version>3.0.6</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
