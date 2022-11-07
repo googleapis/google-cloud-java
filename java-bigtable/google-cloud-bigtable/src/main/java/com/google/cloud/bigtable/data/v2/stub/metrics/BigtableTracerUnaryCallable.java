@@ -22,11 +22,8 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcResponseMetadata;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.v2.ResponseParams;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.protobuf.InvalidProtocolBufferException;
-import io.grpc.Metadata;
 import javax.annotation.Nonnull;
 
 /**
@@ -79,56 +76,12 @@ public class BigtableTracerUnaryCallable<RequestT, ResponseT>
 
     @Override
     public void onFailure(Throwable throwable) {
-      Metadata metadata = responseMetadata.getMetadata();
-      Long latency = Util.getGfeLatency(metadata);
-      tracer.recordGfeMetadata(latency, throwable);
-      try {
-        // Check both headers and trailers because in different environments the metadata
-        // could be returned in headers or trailers
-        if (metadata != null) {
-          byte[] trailers = metadata.get(Util.METADATA_KEY);
-          if (trailers == null) {
-            Metadata trailingMetadata = responseMetadata.getTrailingMetadata();
-            if (trailingMetadata != null) {
-              trailers = trailingMetadata.get(Util.METADATA_KEY);
-            }
-          }
-          // If the response is terminated abnormally and we didn't get location information in
-          // trailers or headers, skip setting the locations
-          if (trailers != null) {
-            ResponseParams decodedTrailers = ResponseParams.parseFrom(trailers);
-            tracer.setLocations(decodedTrailers.getZoneId(), decodedTrailers.getClusterId());
-          }
-        }
-      } catch (InvalidProtocolBufferException e) {
-      }
+      Util.recordMetricsFromMetadata(responseMetadata, tracer, throwable);
     }
 
     @Override
     public void onSuccess(ResponseT response) {
-      Metadata metadata = responseMetadata.getMetadata();
-      Long latency = Util.getGfeLatency(metadata);
-      tracer.recordGfeMetadata(latency, null);
-      try {
-        // Check both headers and trailers because in different environments the metadata
-        // could be returned in headers or trailers
-        if (metadata != null) {
-          byte[] trailers = metadata.get(Util.METADATA_KEY);
-          if (trailers == null) {
-            Metadata trailingMetadata = responseMetadata.getTrailingMetadata();
-            if (trailingMetadata != null) {
-              trailers = trailingMetadata.get(Util.METADATA_KEY);
-            }
-          }
-          // If the response is terminated abnormally and we didn't get location information in
-          // trailers or headers, skip setting the locations
-          if (trailers != null) {
-            ResponseParams decodedTrailers = ResponseParams.parseFrom(trailers);
-            tracer.setLocations(decodedTrailers.getZoneId(), decodedTrailers.getClusterId());
-          }
-        }
-      } catch (InvalidProtocolBufferException e) {
-      }
+      Util.recordMetricsFromMetadata(responseMetadata, tracer, null);
     }
   }
 }

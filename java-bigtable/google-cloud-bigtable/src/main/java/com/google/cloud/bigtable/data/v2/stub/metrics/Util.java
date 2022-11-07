@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.GrpcResponseMetadata;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
@@ -25,10 +26,12 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusException;
@@ -57,7 +60,7 @@ public class Util {
   private static final Metadata.Key<String> SERVER_TIMING_HEADER_KEY =
       Metadata.Key.of("server-timing", Metadata.ASCII_STRING_MARSHALLER);
   private static final Pattern SERVER_TIMING_HEADER_PATTERN = Pattern.compile(".*dur=(?<dur>\\d+)");
-  static final Metadata.Key<byte[]> METADATA_KEY =
+  static final Metadata.Key<byte[]> LOCATION_METADATA_KEY =
       Metadata.Key.of("x-goog-ext-425905942-bin", Metadata.BINARY_BYTE_MARSHALLER);
 
   /** Convert an exception into a value that can be used to create an OpenCensus tag value. */
@@ -136,16 +139,62 @@ public class Util {
     return headers.build();
   }
 
-  static Long getGfeLatency(Metadata metadata) {
-    if (metadata != null && metadata.get(SERVER_TIMING_HEADER_KEY) != null) {
-      String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
-      Matcher matcher = SERVER_TIMING_HEADER_PATTERN.matcher(serverTiming);
-      // this should always be true
-      if (matcher.find()) {
-        long latency = Long.valueOf(matcher.group("dur"));
-        return latency;
+  private static Long getGfeLatency(@Nullable Metadata metadata) {
+    if (metadata == null) {
+      return null;
+    }
+    String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
+    if (serverTiming == null) {
+      return null;
+    }
+    Matcher matcher = SERVER_TIMING_HEADER_PATTERN.matcher(serverTiming);
+    // this should always be true
+    if (matcher.find()) {
+      long latency = Long.valueOf(matcher.group("dur"));
+      return latency;
+    }
+    return null;
+  }
+
+  private static ResponseParams getResponseParams(@Nullable Metadata metadata) {
+    if (metadata == null) {
+      return null;
+    }
+    byte[] responseParams = metadata.get(Util.LOCATION_METADATA_KEY);
+    if (responseParams != null) {
+      try {
+        return ResponseParams.parseFrom(responseParams);
+      } catch (InvalidProtocolBufferException e) {
       }
     }
     return null;
+  }
+
+  static void recordMetricsFromMetadata(
+      GrpcResponseMetadata responseMetadata, BigtableTracer tracer, Throwable throwable) {
+    Metadata metadata = responseMetadata.getMetadata();
+
+    // Get the response params from the metadata. Check both headers and trailers
+    // because in different environments the metadata could be returned in headers or trailers
+    @Nullable ResponseParams responseParams = getResponseParams(responseMetadata.getMetadata());
+    if (responseParams == null) {
+      responseParams = getResponseParams(responseMetadata.getTrailingMetadata());
+    }
+    // Set tracer locations if response params is not null
+    if (responseParams != null) {
+      tracer.setLocations(responseParams.getZoneId(), responseParams.getClusterId());
+    }
+
+    // server-timing metric will be added through GrpcResponseMetadata#onHeaders(Metadata),
+    // so it's not checking trailing metadata here.
+    @Nullable Long latency = getGfeLatency(metadata);
+    // For direct path, we won't see GFE server-timing header. However, if we received the
+    // location info, we know that there isn't a connectivity issue. Set the latency to
+    // 0 so gfe missing header won't get incremented.
+    if (responseParams != null && latency == null) {
+      latency = 0L;
+    }
+    // Record gfe metrics
+    tracer.recordGfeMetadata(latency, throwable);
   }
 }
