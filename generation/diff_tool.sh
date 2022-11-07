@@ -136,6 +136,7 @@ for module in $(find . -mindepth 1 -maxdepth 3 -name pom.xml | sort | xargs dirn
 
 done
 
+
 cat modulesDiff.txt >>diffSummary.txt
 cat allDifferencesFound.txt >>diffSummary.txt
 rm -f modulesDiff.txt
