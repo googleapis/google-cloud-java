@@ -67,26 +67,30 @@ function generate_modified_modules_list() {
   modified_files=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}")
   printf "Modified files:\n%s\n" "${modified_files}"
 
+  # Generate the list of valid maven modules
+  maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+  maven_modules=()
+  for module in $maven_modules_list; do
+    if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
+      maven_modules+=("${module}")
+    fi
+  done
+
   modified_module_list=()
   # If either parent pom.xml is touched, run ITs on all the modules
   parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
   if [[ ( -n $parent_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
-    modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
-    for module in $modules; do
-      # Spaces are intentionally added -- Query is regex and array elements are space separated
-      # It tries to match the *exact* `module` text
-      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
-        modified_module_list+=("${module}")
-      fi
-    done
+    modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -e 'java-.*' || true)
+    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
       for module in $modules; do
-        modified_module_list+=("${module}")
+        if [[ ! " ${excluded_modules[*]} " =~ " ${module} " && " ${maven_modules[*]} " =~ " ${module} " ]]; then
+          modified_module_list+=("${module}")
+        fi
       done
     else
       echo "Found no changes in the java modules"
