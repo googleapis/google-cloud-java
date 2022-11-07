@@ -29,6 +29,7 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.tracing.SpanName;
@@ -72,6 +73,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -91,6 +93,8 @@ public class BuiltinMetricsTracerTest {
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
   private static final String TABLE_ID = "fake-table";
+
+  private static final String BAD_TABLE_ID = "non-exist-table";
   private static final String ZONE = "us-west-1";
   private static final String CLUSTER = "cluster-0";
   private static final long FAKE_SERVER_TIMING = 50;
@@ -438,6 +442,35 @@ public class BuiltinMetricsTracerTest {
     }
   }
 
+  @Test
+  public void testPermanentFailure() {
+    when(mockFactory.newTracer(any(), any(), any()))
+        .thenReturn(
+            new BuiltinMetricsTracer(
+                OperationType.ServerStreaming,
+                SpanName.of("Bigtable", "ReadRows"),
+                statsRecorderWrapper));
+
+    try {
+      Lists.newArrayList(stub.readRowsCallable().call(Query.create(BAD_TABLE_ID)).iterator());
+      Assert.fail("Request should throw not found error");
+    } catch (NotFoundException e) {
+    }
+
+    ArgumentCaptor<Long> attemptLatency = ArgumentCaptor.forClass(Long.class);
+    ArgumentCaptor<Long> operationLatency = ArgumentCaptor.forClass(Long.class);
+
+    verify(statsRecorderWrapper, timeout(50)).putAttemptLatencies(attemptLatency.capture());
+    verify(statsRecorderWrapper, timeout(50)).putOperationLatencies(operationLatency.capture());
+    verify(statsRecorderWrapper, timeout(50))
+        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+
+    assertThat(status.getValue()).isEqualTo("NOT_FOUND");
+    assertThat(tableId.getValue()).isEqualTo(BAD_TABLE_ID);
+    assertThat(cluster.getValue()).isEqualTo("unspecified");
+    assertThat(zone.getValue()).isEqualTo("global");
+  }
+
   private static class FakeService extends BigtableGrpc.BigtableImplBase {
 
     static List<ReadRowsResponse> createFakeResponse() {
@@ -468,6 +501,10 @@ public class BuiltinMetricsTracerTest {
     @Override
     public void readRows(
         ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
+      if (request.getTableName().contains(BAD_TABLE_ID)) {
+        responseObserver.onError(new StatusRuntimeException(Status.NOT_FOUND));
+        return;
+      }
       final AtomicBoolean done = new AtomicBoolean();
       final ServerCallStreamObserver<ReadRowsResponse> target =
           (ServerCallStreamObserver<ReadRowsResponse>) responseObserver;

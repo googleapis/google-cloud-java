@@ -144,6 +144,11 @@ class BuiltinMetricsTracer extends BigtableTracer {
   }
 
   @Override
+  public void attemptPermanentFailure(Throwable throwable) {
+    recordAttemptCompletion(throwable);
+  }
+
+  @Override
   public void onRequest(int requestCount) {
     requestLeft.accumulateAndGet(requestCount, IntMath::saturatedAdd);
     if (flowControlIsDisabled) {
