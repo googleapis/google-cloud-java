@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.19.0](https://github.com/googleapis/java-bigquery/compare/v2.18.2...v2.19.0) (2022-11-07)
+
+
+### Features
+
+* Add getTimestampInstant() method to FieldValue ([#2350](https://github.com/googleapis/java-bigquery/issues/2350)) ([113303f](https://github.com/googleapis/java-bigquery/commit/113303fb41ec4855bb81a5bd3c7f8984bc70da3e))
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20221028-2.0.0 ([#2393](https://github.com/googleapis/java-bigquery/issues/2393)) ([d3f6a6b](https://github.com/googleapis/java-bigquery/commit/d3f6a6bf55697541cfdc3bcdd2c441e8bd21dbc2))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.6 ([#2399](https://github.com/googleapis/java-bigquery/issues/2399)) ([9de9aa8](https://github.com/googleapis/java-bigquery/commit/9de9aa8f7eb2e21b88a13df23b65e2aaf6b749cf))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.17 ([#2396](https://github.com/googleapis/java-bigquery/issues/2396)) ([87f8cdd](https://github.com/googleapis/java-bigquery/commit/87f8cdd7b0b005430486e51e4c339a6de95b0011))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.17 ([#2397](https://github.com/googleapis/java-bigquery/issues/2397)) ([7927350](https://github.com/googleapis/java-bigquery/commit/7927350f562dbdef8774df82c9c0d528118d0213))
+
 ## [2.18.2](https://github.com/googleapis/java-bigquery/compare/v2.18.1...v2.18.2) (2022-10-28)
 
 
