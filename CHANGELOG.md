@@ -1,6 +1,19 @@
 # Changelog
 
 
+## [0.128.1](https://github.com/googleapis/java-logging-logback/compare/v0.128.0...v0.128.1) (2022-11-07)
+
+
+### Bug Fixes
+
+* Switch instrumentation code to return version stored in DEFAULT_INSTRUMENTATION_VERSION ([#918](https://github.com/googleapis/java-logging-logback/issues/918)) ([90b824a](https://github.com/googleapis/java-logging-logback/commit/90b824acee5052d17df8eb1b444044f774359353))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.13.0 ([#920](https://github.com/googleapis/java-logging-logback/issues/920)) ([3a46bf5](https://github.com/googleapis/java-logging-logback/commit/3a46bf542a22359ed04e384714a767dc1b4071cc))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.6 ([#923](https://github.com/googleapis/java-logging-logback/issues/923)) ([31a32db](https://github.com/googleapis/java-logging-logback/commit/31a32db7975f90d526acedd32a710dac6c463292))
+
 ## [0.128.0](https://github.com/googleapis/java-logging-logback/compare/v0.127.0...v0.128.0) (2022-11-04)
 
 
