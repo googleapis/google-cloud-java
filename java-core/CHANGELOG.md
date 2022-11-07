@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.8.26](https://github.com/googleapis/java-core/compare/v2.8.25...v2.8.26) (2022-11-07)
+
+
+### Dependencies
+
+* Update dependency com.google.api-client:google-api-client-bom to v2.0.1 ([#1011](https://github.com/googleapis/java-core/issues/1011)) ([e52b05c](https://github.com/googleapis/java-core/commit/e52b05c0b4973258d7d783af725182d5ba834c25))
+* Update dependency com.google.api.grpc:proto-google-common-protos to v2.10.0 ([#1010](https://github.com/googleapis/java-core/issues/1010)) ([db9d19e](https://github.com/googleapis/java-core/commit/db9d19e9e760bef0c543f7e5da6af172a7ceca06))
+* Update dependency com.google.api.grpc:proto-google-iam-v1 to v1.6.7 ([#1005](https://github.com/googleapis/java-core/issues/1005)) ([45513e6](https://github.com/googleapis/java-core/commit/45513e639543ca2025d4c4c4cd84f5735c067443))
+
 ## [2.8.25](https://github.com/googleapis/java-core/compare/v2.8.24...v2.8.25) (2022-10-31)
 
 
