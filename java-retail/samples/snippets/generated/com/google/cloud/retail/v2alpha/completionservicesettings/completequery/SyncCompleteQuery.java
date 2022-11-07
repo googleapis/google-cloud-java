@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2alpha.samples;
 
-// [START retail_v2alpha_generated_completionservicesettings_completequery_sync]
+// [START retail_v2alpha_generated_CompletionServiceSettings_CompleteQuery_sync]
 import com.google.cloud.retail.v2alpha.CompletionServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCompleteQuery {
     CompletionServiceSettings completionServiceSettings = completionServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2alpha_generated_completionservicesettings_completequery_sync]
+// [END retail_v2alpha_generated_CompletionServiceSettings_CompleteQuery_sync]

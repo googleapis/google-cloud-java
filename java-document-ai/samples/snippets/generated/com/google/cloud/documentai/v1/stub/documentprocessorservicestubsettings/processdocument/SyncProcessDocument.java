@@ -16,7 +16,7 @@
 
 package com.google.cloud.documentai.v1.stub.samples;
 
-// [START documentai_v1_generated_documentprocessorservicestubsettings_processdocument_sync]
+// [START documentai_v1_generated_DocumentProcessorServiceStubSettings_ProcessDocument_sync]
 import com.google.cloud.documentai.v1.stub.DocumentProcessorServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncProcessDocument {
         documentProcessorServiceSettingsBuilder.build();
   }
 }
-// [END documentai_v1_generated_documentprocessorservicestubsettings_processdocument_sync]
+// [END documentai_v1_generated_DocumentProcessorServiceStubSettings_ProcessDocument_sync]

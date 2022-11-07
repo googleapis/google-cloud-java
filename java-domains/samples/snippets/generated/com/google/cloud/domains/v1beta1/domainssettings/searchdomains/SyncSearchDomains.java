@@ -16,7 +16,7 @@
 
 package com.google.cloud.domains.v1beta1.samples;
 
-// [START domains_v1beta1_generated_domainssettings_searchdomains_sync]
+// [START domains_v1beta1_generated_DomainsSettings_SearchDomains_sync]
 import com.google.cloud.domains.v1beta1.DomainsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncSearchDomains {
     DomainsSettings domainsSettings = domainsSettingsBuilder.build();
   }
 }
-// [END domains_v1beta1_generated_domainssettings_searchdomains_sync]
+// [END domains_v1beta1_generated_DomainsSettings_SearchDomains_sync]

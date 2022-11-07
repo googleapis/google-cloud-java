@@ -22,8 +22,8 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * RoutingVPC contains information about the VPC networks that are associated
- * with a hub's spokes.
+ * RoutingVPC contains information about the VPC networks associated
+ * with the spokes of a Network Connectivity Center hub.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.RoutingVPC}
@@ -123,8 +123,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If true, indicates that this VPC network is currently associated with
-   * spokes that use the data transfer feature (spokes where the
+   * Output only. If true, indicates that this VPC network is currently
+   * associated with spokes that use the data transfer feature (spokes where the
    * site_to_site_data_transfer field is set to true). If you create new spokes
    * that use data transfer, they must be associated with this VPC network. At
    * most, one VPC network will have this field set to true.
@@ -319,8 +319,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * RoutingVPC contains information about the VPC networks that are associated
-   * with a hub's spokes.
+   * RoutingVPC contains information about the VPC networks associated
+   * with the spokes of a Network Connectivity Center hub.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.RoutingVPC}
@@ -612,8 +612,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If true, indicates that this VPC network is currently associated with
-     * spokes that use the data transfer feature (spokes where the
+     * Output only. If true, indicates that this VPC network is currently
+     * associated with spokes that use the data transfer feature (spokes where the
      * site_to_site_data_transfer field is set to true). If you create new spokes
      * that use data transfer, they must be associated with this VPC network. At
      * most, one VPC network will have this field set to true.
@@ -633,8 +633,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If true, indicates that this VPC network is currently associated with
-     * spokes that use the data transfer feature (spokes where the
+     * Output only. If true, indicates that this VPC network is currently
+     * associated with spokes that use the data transfer feature (spokes where the
      * site_to_site_data_transfer field is set to true). If you create new spokes
      * that use data transfer, they must be associated with this VPC network. At
      * most, one VPC network will have this field set to true.
@@ -657,8 +657,8 @@ public final class RoutingVPC extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If true, indicates that this VPC network is currently associated with
-     * spokes that use the data transfer feature (spokes where the
+     * Output only. If true, indicates that this VPC network is currently
+     * associated with spokes that use the data transfer feature (spokes where the
      * site_to_site_data_transfer field is set to true). If you create new spokes
      * that use data transfer, they must be associated with this VPC network. At
      * most, one VPC network will have this field set to true.

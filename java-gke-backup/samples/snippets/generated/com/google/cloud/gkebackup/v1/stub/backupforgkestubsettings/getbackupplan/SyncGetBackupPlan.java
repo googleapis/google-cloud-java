@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkebackup.v1.stub.samples;
 
-// [START gkebackup_v1_generated_backupforgkestubsettings_getbackupplan_sync]
+// [START gkebackup_v1_generated_BackupForGKEStubSettings_GetBackupPlan_sync]
 import com.google.cloud.gkebackup.v1.stub.BackupForGKEStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetBackupPlan {
     BackupForGKEStubSettings backupForGKESettings = backupForGKESettingsBuilder.build();
   }
 }
-// [END gkebackup_v1_generated_backupforgkestubsettings_getbackupplan_sync]
+// [END gkebackup_v1_generated_BackupForGKEStubSettings_GetBackupPlan_sync]

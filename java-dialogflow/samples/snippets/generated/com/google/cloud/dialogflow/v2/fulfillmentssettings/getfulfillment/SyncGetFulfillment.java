@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START dialogflow_v2_generated_fulfillmentssettings_getfulfillment_sync]
+// [START dialogflow_v2_generated_FulfillmentsSettings_GetFulfillment_sync]
 import com.google.cloud.dialogflow.v2.FulfillmentsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetFulfillment {
     FulfillmentsSettings fulfillmentsSettings = fulfillmentsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2_generated_fulfillmentssettings_getfulfillment_sync]
+// [END dialogflow_v2_generated_FulfillmentsSettings_GetFulfillment_sync]

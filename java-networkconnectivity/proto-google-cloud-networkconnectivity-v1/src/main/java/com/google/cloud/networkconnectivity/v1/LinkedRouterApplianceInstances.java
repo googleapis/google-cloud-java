@@ -43,6 +43,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
 
   private LinkedRouterApplianceInstances() {
     instances_ = java.util.Collections.emptyList();
+    vpcNetwork_ = "";
   }
 
   @java.lang.Override
@@ -169,6 +170,61 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     return siteToSiteDataTransfer_;
   }
 
+  public static final int VPC_NETWORK_FIELD_NUMBER = 3;
+  private volatile java.lang.Object vpcNetwork_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VPC network where these router appliance instances are
+   * located.
+   * </pre>
+   *
+   * <code>
+   * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The vpcNetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getVpcNetwork() {
+    java.lang.Object ref = vpcNetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vpcNetwork_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VPC network where these router appliance instances are
+   * located.
+   * </pre>
+   *
+   * <code>
+   * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for vpcNetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVpcNetworkBytes() {
+    java.lang.Object ref = vpcNetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      vpcNetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -189,6 +245,9 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     if (siteToSiteDataTransfer_ != false) {
       output.writeBool(2, siteToSiteDataTransfer_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNetwork_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, vpcNetwork_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -203,6 +262,9 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     }
     if (siteToSiteDataTransfer_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, siteToSiteDataTransfer_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vpcNetwork_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, vpcNetwork_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -222,6 +284,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
 
     if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (getSiteToSiteDataTransfer() != other.getSiteToSiteDataTransfer()) return false;
+    if (!getVpcNetwork().equals(other.getVpcNetwork())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -239,6 +302,8 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     }
     hash = (37 * hash) + SITE_TO_SITE_DATA_TRANSFER_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSiteToSiteDataTransfer());
+    hash = (37 * hash) + VPC_NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getVpcNetwork().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -392,6 +457,8 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       bitField0_ = (bitField0_ & ~0x00000001);
       siteToSiteDataTransfer_ = false;
 
+      vpcNetwork_ = "";
+
       return this;
     }
 
@@ -433,6 +500,7 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
         result.instances_ = instancesBuilder_.build();
       }
       result.siteToSiteDataTransfer_ = siteToSiteDataTransfer_;
+      result.vpcNetwork_ = vpcNetwork_;
       onBuilt();
       return result;
     }
@@ -516,6 +584,10 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
       if (other.getSiteToSiteDataTransfer() != false) {
         setSiteToSiteDataTransfer(other.getSiteToSiteDataTransfer());
       }
+      if (!other.getVpcNetwork().isEmpty()) {
+        vpcNetwork_ = other.vpcNetwork_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -562,6 +634,12 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
 
                 break;
               } // case 16
+            case 26:
+              {
+                vpcNetwork_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1021,6 +1099,127 @@ public final class LinkedRouterApplianceInstances extends com.google.protobuf.Ge
     public Builder clearSiteToSiteDataTransfer() {
 
       siteToSiteDataTransfer_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object vpcNetwork_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VPC network where these router appliance instances are
+     * located.
+     * </pre>
+     *
+     * <code>
+     * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The vpcNetwork.
+     */
+    public java.lang.String getVpcNetwork() {
+      java.lang.Object ref = vpcNetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vpcNetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VPC network where these router appliance instances are
+     * located.
+     * </pre>
+     *
+     * <code>
+     * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for vpcNetwork.
+     */
+    public com.google.protobuf.ByteString getVpcNetworkBytes() {
+      java.lang.Object ref = vpcNetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        vpcNetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VPC network where these router appliance instances are
+     * located.
+     * </pre>
+     *
+     * <code>
+     * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The vpcNetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVpcNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      vpcNetwork_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VPC network where these router appliance instances are
+     * located.
+     * </pre>
+     *
+     * <code>
+     * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVpcNetwork() {
+
+      vpcNetwork_ = getDefaultInstance().getVpcNetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VPC network where these router appliance instances are
+     * located.
+     * </pre>
+     *
+     * <code>
+     * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for vpcNetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVpcNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      vpcNetwork_ = value;
       onChanged();
       return this;
     }

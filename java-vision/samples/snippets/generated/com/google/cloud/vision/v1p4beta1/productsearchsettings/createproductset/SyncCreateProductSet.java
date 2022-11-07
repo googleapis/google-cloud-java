@@ -16,7 +16,7 @@
 
 package com.google.cloud.vision.v1p4beta1.samples;
 
-// [START vision_v1p4beta1_generated_productsearchsettings_createproductset_sync]
+// [START vision_v1p4beta1_generated_ProductSearchSettings_CreateProductSet_sync]
 import com.google.cloud.vision.v1p4beta1.ProductSearchSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncCreateProductSet {
     ProductSearchSettings productSearchSettings = productSearchSettingsBuilder.build();
   }
 }
-// [END vision_v1p4beta1_generated_productsearchsettings_createproductset_sync]
+// [END vision_v1p4beta1_generated_ProductSearchSettings_CreateProductSet_sync]

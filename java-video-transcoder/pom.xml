@@ -50,4 +50,5 @@
     <module>proto-google-cloud-video-transcoder-v1</module>
     <module>google-cloud-video-transcoder-bom</module>
   </modules>
-</project>
+
+  </project>

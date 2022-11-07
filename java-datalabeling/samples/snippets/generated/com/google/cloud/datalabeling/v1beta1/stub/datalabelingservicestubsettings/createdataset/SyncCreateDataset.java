@@ -16,7 +16,7 @@
 
 package com.google.cloud.datalabeling.v1beta1.stub.samples;
 
-// [START datalabeling_v1beta1_generated_datalabelingservicestubsettings_createdataset_sync]
+// [START datalabeling_v1beta1_generated_DataLabelingServiceStubSettings_CreateDataset_sync]
 import com.google.cloud.datalabeling.v1beta1.stub.DataLabelingServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateDataset {
         dataLabelingServiceSettingsBuilder.build();
   }
 }
-// [END datalabeling_v1beta1_generated_datalabelingservicestubsettings_createdataset_sync]
+// [END datalabeling_v1beta1_generated_DataLabelingServiceStubSettings_CreateDataset_sync]

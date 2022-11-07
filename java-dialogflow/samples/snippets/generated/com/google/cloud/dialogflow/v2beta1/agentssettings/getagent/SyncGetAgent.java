@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_agentssettings_getagent_sync]
+// [START dialogflow_v2beta1_generated_AgentsSettings_GetAgent_sync]
 import com.google.cloud.dialogflow.v2beta1.AgentsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetAgent {
     AgentsSettings agentsSettings = agentsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_agentssettings_getagent_sync]
+// [END dialogflow_v2beta1_generated_AgentsSettings_GetAgent_sync]

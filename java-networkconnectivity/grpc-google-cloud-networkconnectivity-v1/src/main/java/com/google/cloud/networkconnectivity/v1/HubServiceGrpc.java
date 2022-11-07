@@ -544,7 +544,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists hubs in a given project.
+     * Lists the Network Connectivity Center hubs associated with a given project.
      * </pre>
      */
     public void listHubs(
@@ -558,7 +558,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified hub.
+     * Gets details about a Network Connectivity Center hub.
      * </pre>
      */
     public void getHub(
@@ -571,7 +571,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new hub in the specified project.
+     * Creates a new Network Connectivity Center hub in the specified project.
      * </pre>
      */
     public void createHub(
@@ -584,7 +584,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the description and/or labels of the specified hub.
+     * Updates the description and/or labels of a Network Connectivity Center
+     * hub.
      * </pre>
      */
     public void updateHub(
@@ -597,7 +598,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified hub.
+     * Deletes a Network Connectivity Center hub.
      * </pre>
      */
     public void deleteHub(
@@ -610,7 +611,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists the spokes in the specified project and location.
+     * Lists the Network Connectivity Center spokes in a specified project and
+     * location.
      * </pre>
      */
     public void listSpokes(
@@ -624,7 +626,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified spoke.
+     * Gets details about a Network Connectivity Center spoke.
      * </pre>
      */
     public void getSpoke(
@@ -638,7 +640,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a spoke in the specified project and location.
+     * Creates a Network Connectivity Center spoke.
      * </pre>
      */
     public void createSpoke(
@@ -652,7 +654,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of the specified spoke.
+     * Updates the parameters of a Network Connectivity Center spoke.
      * </pre>
      */
     public void updateSpoke(
@@ -666,7 +668,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified spoke.
+     * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
     public void deleteSpoke(
@@ -768,7 +770,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists hubs in a given project.
+     * Lists the Network Connectivity Center hubs associated with a given project.
      * </pre>
      */
     public void listHubs(
@@ -783,7 +785,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified hub.
+     * Gets details about a Network Connectivity Center hub.
      * </pre>
      */
     public void getHub(
@@ -797,7 +799,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new hub in the specified project.
+     * Creates a new Network Connectivity Center hub in the specified project.
      * </pre>
      */
     public void createHub(
@@ -811,7 +813,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the description and/or labels of the specified hub.
+     * Updates the description and/or labels of a Network Connectivity Center
+     * hub.
      * </pre>
      */
     public void updateHub(
@@ -825,7 +828,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified hub.
+     * Deletes a Network Connectivity Center hub.
      * </pre>
      */
     public void deleteHub(
@@ -839,7 +842,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists the spokes in the specified project and location.
+     * Lists the Network Connectivity Center spokes in a specified project and
+     * location.
      * </pre>
      */
     public void listSpokes(
@@ -854,7 +858,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified spoke.
+     * Gets details about a Network Connectivity Center spoke.
      * </pre>
      */
     public void getSpoke(
@@ -869,7 +873,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a spoke in the specified project and location.
+     * Creates a Network Connectivity Center spoke.
      * </pre>
      */
     public void createSpoke(
@@ -885,7 +889,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of the specified spoke.
+     * Updates the parameters of a Network Connectivity Center spoke.
      * </pre>
      */
     public void updateSpoke(
@@ -901,7 +905,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified spoke.
+     * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
     public void deleteSpoke(
@@ -939,7 +943,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists hubs in a given project.
+     * Lists the Network Connectivity Center hubs associated with a given project.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ListHubsResponse listHubs(
@@ -952,7 +956,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified hub.
+     * Gets details about a Network Connectivity Center hub.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.Hub getHub(
@@ -965,7 +969,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new hub in the specified project.
+     * Creates a new Network Connectivity Center hub in the specified project.
      * </pre>
      */
     public com.google.longrunning.Operation createHub(
@@ -978,7 +982,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the description and/or labels of the specified hub.
+     * Updates the description and/or labels of a Network Connectivity Center
+     * hub.
      * </pre>
      */
     public com.google.longrunning.Operation updateHub(
@@ -991,7 +996,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified hub.
+     * Deletes a Network Connectivity Center hub.
      * </pre>
      */
     public com.google.longrunning.Operation deleteHub(
@@ -1004,7 +1009,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists the spokes in the specified project and location.
+     * Lists the Network Connectivity Center spokes in a specified project and
+     * location.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ListSpokesResponse listSpokes(
@@ -1017,7 +1023,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified spoke.
+     * Gets details about a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.Spoke getSpoke(
@@ -1030,7 +1036,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a spoke in the specified project and location.
+     * Creates a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.longrunning.Operation createSpoke(
@@ -1043,7 +1049,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of the specified spoke.
+     * Updates the parameters of a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.longrunning.Operation updateSpoke(
@@ -1056,7 +1062,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified spoke.
+     * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.longrunning.Operation deleteSpoke(
@@ -1090,7 +1096,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists hubs in a given project.
+     * Lists the Network Connectivity Center hubs associated with a given project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1104,7 +1110,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified hub.
+     * Gets details about a Network Connectivity Center hub.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1118,7 +1124,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new hub in the specified project.
+     * Creates a new Network Connectivity Center hub in the specified project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1131,7 +1137,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the description and/or labels of the specified hub.
+     * Updates the description and/or labels of a Network Connectivity Center
+     * hub.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1144,7 +1151,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified hub.
+     * Deletes a Network Connectivity Center hub.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1157,7 +1164,8 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Lists the spokes in the specified project and location.
+     * Lists the Network Connectivity Center spokes in a specified project and
+     * location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1171,7 +1179,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Gets details about the specified spoke.
+     * Gets details about a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1185,7 +1193,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a spoke in the specified project and location.
+     * Creates a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1198,7 +1206,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Updates the parameters of the specified spoke.
+     * Updates the parameters of a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1211,7 +1219,7 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
-     * Deletes the specified spoke.
+     * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.stub.samples;
 
-// [START securitycenter_v1p1beta1_generated_securitycenterstubsettings_createsource_sync]
+// [START securitycenter_v1p1beta1_generated_SecurityCenterStubSettings_CreateSource_sync]
 import com.google.cloud.securitycenter.v1p1beta1.stub.SecurityCenterStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateSource {
     SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();
   }
 }
-// [END securitycenter_v1p1beta1_generated_securitycenterstubsettings_createsource_sync]
+// [END securitycenter_v1p1beta1_generated_SecurityCenterStubSettings_CreateSource_sync]

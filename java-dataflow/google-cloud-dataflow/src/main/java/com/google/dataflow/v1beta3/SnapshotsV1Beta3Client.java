@@ -116,10 +116,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SnapshotsV1Beta3Settings snapshotsV1Beta3Settings =
- *     SnapshotsV1Beta3Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             SnapshotsV1Beta3Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     SnapshotsV1Beta3Settings.newHttpJsonBuilder().build();
  * SnapshotsV1Beta3Client snapshotsV1Beta3Client =
  *     SnapshotsV1Beta3Client.create(snapshotsV1Beta3Settings);
  * }</pre>

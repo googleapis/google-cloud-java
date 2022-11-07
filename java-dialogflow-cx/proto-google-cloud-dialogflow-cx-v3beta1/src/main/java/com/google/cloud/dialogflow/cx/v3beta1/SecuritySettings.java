@@ -2869,12 +2869,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Retains data in interaction logging for the specified number of days.
    * This does not apply to Cloud logging, which is owned by the user - not
    * Dialogflow.
-   * User must set a value lower than Dialogflow's default 365d TTL. Setting a
-   * value higher than that has no effect.
-   * A missing value or setting to 0 also means we use Dialogflow's default
-   * TTL.
-   * Note: Interaction logging is a limited access feature. Talk to your
-   * Google representative to check availability for you.
+   * User must set a value lower than Dialogflow's default 365d TTL (time to
+   * live). Setting a value higher than that has no effect. A missing value or
+   * setting to 0 also means we use Dialogflow's default TTL.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -2892,12 +2889,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    * Retains data in interaction logging for the specified number of days.
    * This does not apply to Cloud logging, which is owned by the user - not
    * Dialogflow.
-   * User must set a value lower than Dialogflow's default 365d TTL. Setting a
-   * value higher than that has no effect.
-   * A missing value or setting to 0 also means we use Dialogflow's default
-   * TTL.
-   * Note: Interaction logging is a limited access feature. Talk to your
-   * Google representative to check availability for you.
+   * User must set a value lower than Dialogflow's default 365d TTL (time to
+   * live). Setting a value higher than that has no effect. A missing value or
+   * setting to 0 also means we use Dialogflow's default TTL.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -4632,12 +4626,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Retains data in interaction logging for the specified number of days.
      * This does not apply to Cloud logging, which is owned by the user - not
      * Dialogflow.
-     * User must set a value lower than Dialogflow's default 365d TTL. Setting a
-     * value higher than that has no effect.
-     * A missing value or setting to 0 also means we use Dialogflow's default
-     * TTL.
-     * Note: Interaction logging is a limited access feature. Talk to your
-     * Google representative to check availability for you.
+     * User must set a value lower than Dialogflow's default 365d TTL (time to
+     * live). Setting a value higher than that has no effect. A missing value or
+     * setting to 0 also means we use Dialogflow's default TTL.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -4654,12 +4645,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Retains data in interaction logging for the specified number of days.
      * This does not apply to Cloud logging, which is owned by the user - not
      * Dialogflow.
-     * User must set a value lower than Dialogflow's default 365d TTL. Setting a
-     * value higher than that has no effect.
-     * A missing value or setting to 0 also means we use Dialogflow's default
-     * TTL.
-     * Note: Interaction logging is a limited access feature. Talk to your
-     * Google representative to check availability for you.
+     * User must set a value lower than Dialogflow's default 365d TTL (time to
+     * live). Setting a value higher than that has no effect. A missing value or
+     * setting to 0 also means we use Dialogflow's default TTL.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -4679,12 +4667,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Retains data in interaction logging for the specified number of days.
      * This does not apply to Cloud logging, which is owned by the user - not
      * Dialogflow.
-     * User must set a value lower than Dialogflow's default 365d TTL. Setting a
-     * value higher than that has no effect.
-     * A missing value or setting to 0 also means we use Dialogflow's default
-     * TTL.
-     * Note: Interaction logging is a limited access feature. Talk to your
-     * Google representative to check availability for you.
+     * User must set a value lower than Dialogflow's default 365d TTL (time to
+     * live). Setting a value higher than that has no effect. A missing value or
+     * setting to 0 also means we use Dialogflow's default TTL.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>
@@ -4705,12 +4690,9 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * Retains data in interaction logging for the specified number of days.
      * This does not apply to Cloud logging, which is owned by the user - not
      * Dialogflow.
-     * User must set a value lower than Dialogflow's default 365d TTL. Setting a
-     * value higher than that has no effect.
-     * A missing value or setting to 0 also means we use Dialogflow's default
-     * TTL.
-     * Note: Interaction logging is a limited access feature. Talk to your
-     * Google representative to check availability for you.
+     * User must set a value lower than Dialogflow's default 365d TTL (time to
+     * live). Setting a value higher than that has no effect. A missing value or
+     * setting to 0 also means we use Dialogflow's default TTL.
      * </pre>
      *
      * <code>int32 retention_window_days = 6;</code>

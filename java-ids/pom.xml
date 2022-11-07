@@ -50,4 +50,5 @@
     <module>proto-google-cloud-ids-v1</module>
     <module>google-cloud-ids-bom</module>
   </modules>
-</project>
+
+  </project>

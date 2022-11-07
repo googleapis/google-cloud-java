@@ -16,7 +16,7 @@
 
 package com.google.cloud.lifesciences.v2beta.samples;
 
-// [START lifesciences_v2beta_generated_workflowsservicev2betasettings_runpipeline_sync]
+// [START lifesciences_v2beta_generated_WorkflowsServiceV2BetaSettings_RunPipeline_sync]
 import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncRunPipeline {
         workflowsServiceV2BetaSettingsBuilder.build();
   }
 }
-// [END lifesciences_v2beta_generated_workflowsservicev2betasettings_runpipeline_sync]
+// [END lifesciences_v2beta_generated_WorkflowsServiceV2BetaSettings_RunPipeline_sync]

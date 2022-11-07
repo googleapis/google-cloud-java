@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataproc.v1.stub.samples;
 
-// [START dataproc_v1_generated_clustercontrollerstubsettings_getcluster_sync]
+// [START dataproc_v1_generated_ClusterControllerStubSettings_GetCluster_sync]
 import com.google.cloud.dataproc.v1.stub.ClusterControllerStubSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncGetCluster {
         clusterControllerSettingsBuilder.build();
   }
 }
-// [END dataproc_v1_generated_clustercontrollerstubsettings_getcluster_sync]
+// [END dataproc_v1_generated_ClusterControllerStubSettings_GetCluster_sync]

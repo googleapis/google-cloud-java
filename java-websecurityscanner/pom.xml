@@ -74,4 +74,5 @@
     <module>proto-google-cloud-websecurityscanner-v1</module>
     <module>google-cloud-websecurityscanner-bom</module>
   </modules>
-</project>
+
+  </project>

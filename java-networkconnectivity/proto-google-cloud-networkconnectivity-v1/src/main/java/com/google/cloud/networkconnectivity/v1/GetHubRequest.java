@@ -22,7 +22,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Request for [HubService.GetHub][google.cloud.networkconnectivity.v1.HubService.GetHub] method.
+ * Request for
+ * [HubService.GetHub][google.cloud.networkconnectivity.v1.HubService.GetHub]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.GetHubRequest}
@@ -284,7 +286,9 @@ public final class GetHubRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request for [HubService.GetHub][google.cloud.networkconnectivity.v1.HubService.GetHub] method.
+   * Request for
+   * [HubService.GetHub][google.cloud.networkconnectivity.v1.HubService.GetHub]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.GetHubRequest}

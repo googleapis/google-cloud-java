@@ -16,7 +16,7 @@
 
 package com.google.cloud.vpcaccess.v1.stub.samples;
 
-// [START vpcaccess_v1_generated_vpcaccessservicestubsettings_getconnector_sync]
+// [START vpcaccess_v1_generated_VpcAccessServiceStubSettings_GetConnector_sync]
 import com.google.cloud.vpcaccess.v1.stub.VpcAccessServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetConnector {
     VpcAccessServiceStubSettings vpcAccessServiceSettings = vpcAccessServiceSettingsBuilder.build();
   }
 }
-// [END vpcaccess_v1_generated_vpcaccessservicestubsettings_getconnector_sync]
+// [END vpcaccess_v1_generated_VpcAccessServiceStubSettings_GetConnector_sync]

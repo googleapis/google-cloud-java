@@ -126,10 +126,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AuthorizedCertificatesSettings authorizedCertificatesSettings =
- *     AuthorizedCertificatesSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             AuthorizedCertificatesSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     AuthorizedCertificatesSettings.newHttpJsonBuilder().build();
  * AuthorizedCertificatesClient authorizedCertificatesClient =
  *     AuthorizedCertificatesClient.create(authorizedCertificatesSettings);
  * }</pre>

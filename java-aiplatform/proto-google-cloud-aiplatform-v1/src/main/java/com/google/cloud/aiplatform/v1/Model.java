@@ -53,6 +53,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     deployedModels_ = java.util.Collections.emptyList();
     etag_ = "";
+    metadataArtifact_ = "";
   }
 
   @java.lang.Override
@@ -1834,9 +1835,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -1856,9 +1857,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -1878,9 +1879,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -1901,9 +1902,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * User provided version aliases so that a model version can be referenced via
    * alias (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
    * instead of auto-generated version id (i.e.
-   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
    * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
    * version_id. A default version alias will be created for the first version
    * of the model, and there must be exactly one default version alias for a
@@ -3683,6 +3684,59 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return getModelSourceInfo();
   }
 
+  public static final int METADATA_ARTIFACT_FIELD_NUMBER = 44;
+  private volatile java.lang.Object metadataArtifact_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Model. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadataArtifact.
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataArtifact() {
+    java.lang.Object ref = metadataArtifact_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadataArtifact_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Model. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for metadataArtifact.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMetadataArtifactBytes() {
+    java.lang.Object ref = metadataArtifact_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      metadataArtifact_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3780,6 +3834,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (modelSourceInfo_ != null) {
       output.writeMessage(38, getModelSourceInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 44, metadataArtifact_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3903,6 +3960,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (modelSourceInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getModelSourceInfo());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44, metadataArtifact_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3978,6 +4038,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (hasModelSourceInfo()) {
       if (!getModelSourceInfo().equals(other.getModelSourceInfo())) return false;
     }
+    if (!getMetadataArtifact().equals(other.getMetadataArtifact())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4075,6 +4136,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MODEL_SOURCE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getModelSourceInfo().hashCode();
     }
+    hash = (37 * hash) + METADATA_ARTIFACT_FIELD_NUMBER;
+    hash = (53 * hash) + getMetadataArtifact().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4333,6 +4396,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         modelSourceInfo_ = null;
         modelSourceInfoBuilder_ = null;
       }
+      metadataArtifact_ = "";
+
       return this;
     }
 
@@ -4460,6 +4525,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.modelSourceInfo_ = modelSourceInfoBuilder_.build();
       }
+      result.metadataArtifact_ = metadataArtifact_;
       onBuilt();
       return result;
     }
@@ -4669,6 +4735,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasModelSourceInfo()) {
         mergeModelSourceInfo(other.getModelSourceInfo());
+      }
+      if (!other.getMetadataArtifact().isEmpty()) {
+        metadataArtifact_ = other.metadataArtifact_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4891,6 +4961,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 306
+            case 354:
+              {
+                metadataArtifact_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 354
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5162,9 +5238,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5184,9 +5260,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5206,9 +5282,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5229,9 +5305,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5252,9 +5328,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5282,9 +5358,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5311,9 +5387,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5337,9 +5413,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -5362,9 +5438,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * User provided version aliases so that a model version can be referenced via
      * alias (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}`
      * instead of auto-generated version id (i.e.
-     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * `projects/{project}/locations/{location}/models/{model_id}&#64;{version_id})`.
      * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
      * version_id. A default version alias will be created for the first version
      * of the model, and there must be exactly one default version alias for a
@@ -10665,6 +10741,122 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         modelSourceInfo_ = null;
       }
       return modelSourceInfoBuilder_;
+    }
+
+    private java.lang.Object metadataArtifact_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Model. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The metadataArtifact.
+     */
+    public java.lang.String getMetadataArtifact() {
+      java.lang.Object ref = metadataArtifact_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataArtifact_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Model. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for metadataArtifact.
+     */
+    public com.google.protobuf.ByteString getMetadataArtifactBytes() {
+      java.lang.Object ref = metadataArtifact_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        metadataArtifact_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Model. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The metadataArtifact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataArtifact(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      metadataArtifact_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Model. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataArtifact() {
+
+      metadataArtifact_ = getDefaultInstance().getMetadataArtifact();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Model. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for metadataArtifact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataArtifactBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      metadataArtifact_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -16,7 +16,7 @@
 
 package com.google.cloud.workflows.v1beta.stub.samples;
 
-// [START workflows_v1beta_generated_workflowsstubsettings_getworkflow_sync]
+// [START workflows_v1beta_generated_WorkflowsStubSettings_GetWorkflow_sync]
 import com.google.cloud.workflows.v1beta.stub.WorkflowsStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetWorkflow {
     WorkflowsStubSettings workflowsSettings = workflowsSettingsBuilder.build();
   }
 }
-// [END workflows_v1beta_generated_workflowsstubsettings_getworkflow_sync]
+// [END workflows_v1beta_generated_WorkflowsStubSettings_GetWorkflow_sync]

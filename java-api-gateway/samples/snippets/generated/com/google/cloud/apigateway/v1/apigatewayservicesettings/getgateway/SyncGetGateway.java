@@ -16,7 +16,7 @@
 
 package com.google.cloud.apigateway.v1.samples;
 
-// [START apigateway_v1_generated_apigatewayservicesettings_getgateway_sync]
+// [START apigateway_v1_generated_ApiGatewayServiceSettings_GetGateway_sync]
 import com.google.cloud.apigateway.v1.ApiGatewayServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetGateway {
     ApiGatewayServiceSettings apiGatewayServiceSettings = apiGatewayServiceSettingsBuilder.build();
   }
 }
-// [END apigateway_v1_generated_apigatewayservicesettings_getgateway_sync]
+// [END apigateway_v1_generated_ApiGatewayServiceSettings_GetGateway_sync]

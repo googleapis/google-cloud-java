@@ -126,11 +126,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * TestCasesSettings testCasesSettings =
- *     TestCasesSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             TestCasesSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * TestCasesSettings testCasesSettings = TestCasesSettings.newHttpJsonBuilder().build();
  * TestCasesClient testCasesClient = TestCasesClient.create(testCasesSettings);
  * }</pre>
  *

@@ -50,4 +50,5 @@
     <module>proto-google-cloud-mediatranslation-v1beta1</module>
     <module>google-cloud-mediatranslation-bom</module>
   </modules>
-</project>
+
+  </project>

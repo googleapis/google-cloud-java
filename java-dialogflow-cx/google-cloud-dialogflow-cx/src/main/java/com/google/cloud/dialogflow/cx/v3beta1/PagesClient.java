@@ -120,11 +120,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * PagesSettings pagesSettings =
- *     PagesSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             PagesSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * PagesSettings pagesSettings = PagesSettings.newHttpJsonBuilder().build();
  * PagesClient pagesClient = PagesClient.create(pagesSettings);
  * }</pre>
  *

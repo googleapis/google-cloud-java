@@ -16,7 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START vmmigration_v1_generated_vmmigrationsettings_getsource_sync]
+// [START vmmigration_v1_generated_VmMigrationSettings_GetSource_sync]
 import com.google.cloud.vmmigration.v1.VmMigrationSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetSource {
     VmMigrationSettings vmMigrationSettings = vmMigrationSettingsBuilder.build();
   }
 }
-// [END vmmigration_v1_generated_vmmigrationsettings_getsource_sync]
+// [END vmmigration_v1_generated_VmMigrationSettings_GetSource_sync]

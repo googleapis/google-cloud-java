@@ -22,8 +22,8 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * A spoke represents a connection between your Google Cloud network resources
- * and a non-Google-Cloud network.
+ * A Network Connectivity Center spoke represents a connection between your
+ * Google Cloud network resources and a non-Google-Cloud network.
  * When you create a spoke, you associate it with a hub. You must also identify
  * a value for exactly one of the following fields:
  * * linked_vpn_tunnels
@@ -617,9 +617,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Google-generated UUID for the spoke. This value is unique across all
-   * spoke resources. If a spoke is deleted and another with the same name is
-   * created, the new spoke is assigned a different unique_id.
+   * Output only. The Google-generated UUID for the spoke. This value is unique
+   * across all spoke resources. If a spoke is deleted and another with the same
+   * name is created, the new spoke is assigned a different unique_id.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -642,9 +642,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Google-generated UUID for the spoke. This value is unique across all
-   * spoke resources. If a spoke is deleted and another with the same name is
-   * created, the new spoke is assigned a different unique_id.
+   * Output only. The Google-generated UUID for the spoke. This value is unique
+   * across all spoke resources. If a spoke is deleted and another with the same
+   * name is created, the new spoke is assigned a different unique_id.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -998,8 +998,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A spoke represents a connection between your Google Cloud network resources
-   * and a non-Google-Cloud network.
+   * A Network Connectivity Center spoke represents a connection between your
+   * Google Cloud network resources and a non-Google-Cloud network.
    * When you create a spoke, you associate it with a hub. You must also identify
    * a value for exactly one of the following fields:
    * * linked_vpn_tunnels
@@ -2900,9 +2900,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google-generated UUID for the spoke. This value is unique across all
-     * spoke resources. If a spoke is deleted and another with the same name is
-     * created, the new spoke is assigned a different unique_id.
+     * Output only. The Google-generated UUID for the spoke. This value is unique
+     * across all spoke resources. If a spoke is deleted and another with the same
+     * name is created, the new spoke is assigned a different unique_id.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2924,9 +2924,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google-generated UUID for the spoke. This value is unique across all
-     * spoke resources. If a spoke is deleted and another with the same name is
-     * created, the new spoke is assigned a different unique_id.
+     * Output only. The Google-generated UUID for the spoke. This value is unique
+     * across all spoke resources. If a spoke is deleted and another with the same
+     * name is created, the new spoke is assigned a different unique_id.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2948,9 +2948,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google-generated UUID for the spoke. This value is unique across all
-     * spoke resources. If a spoke is deleted and another with the same name is
-     * created, the new spoke is assigned a different unique_id.
+     * Output only. The Google-generated UUID for the spoke. This value is unique
+     * across all spoke resources. If a spoke is deleted and another with the same
+     * name is created, the new spoke is assigned a different unique_id.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2971,9 +2971,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google-generated UUID for the spoke. This value is unique across all
-     * spoke resources. If a spoke is deleted and another with the same name is
-     * created, the new spoke is assigned a different unique_id.
+     * Output only. The Google-generated UUID for the spoke. This value is unique
+     * across all spoke resources. If a spoke is deleted and another with the same
+     * name is created, the new spoke is assigned a different unique_id.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2990,9 +2990,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google-generated UUID for the spoke. This value is unique across all
-     * spoke resources. If a spoke is deleted and another with the same name is
-     * created, the new spoke is assigned a different unique_id.
+     * Output only. The Google-generated UUID for the spoke. This value is unique
+     * across all spoke resources. If a spoke is deleted and another with the same
+     * name is created, the new spoke is assigned a different unique_id.
      * </pre>
      *
      * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

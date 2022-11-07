@@ -16,7 +16,7 @@
 
 package com.google.cloud.managedidentities.v1beta1.samples;
 
-// [START managedidentities_v1beta1_generated_managedidentitiesservicesettings_resetadminpassword_sync]
+// [START managedidentities_v1beta1_generated_ManagedIdentitiesServiceSettings_ResetAdminPassword_sync]
 import com.google.cloud.managedidentities.v1beta1.ManagedIdentitiesServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncResetAdminPassword {
         managedIdentitiesServiceSettingsBuilder.build();
   }
 }
-// [END managedidentities_v1beta1_generated_managedidentitiesservicesettings_resetadminpassword_sync]
+// [END managedidentities_v1beta1_generated_ManagedIdentitiesServiceSettings_ResetAdminPassword_sync]

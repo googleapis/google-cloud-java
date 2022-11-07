@@ -16,7 +16,7 @@
 
 package com.google.cloud.datastream.v1alpha1.samples;
 
-// [START datastream_v1alpha1_generated_datastreamsettings_getconnectionprofile_sync]
+// [START datastream_v1alpha1_generated_DatastreamSettings_GetConnectionProfile_sync]
 import com.google.cloud.datastream.v1alpha1.DatastreamSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetConnectionProfile {
     DatastreamSettings datastreamSettings = datastreamSettingsBuilder.build();
   }
 }
-// [END datastream_v1alpha1_generated_datastreamsettings_getconnectionprofile_sync]
+// [END datastream_v1alpha1_generated_DatastreamSettings_GetConnectionProfile_sync]

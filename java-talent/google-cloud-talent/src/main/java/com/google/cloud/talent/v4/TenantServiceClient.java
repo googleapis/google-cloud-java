@@ -118,10 +118,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * TenantServiceSettings tenantServiceSettings =
- *     TenantServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             TenantServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     TenantServiceSettings.newHttpJsonBuilder().build();
  * TenantServiceClient tenantServiceClient = TenantServiceClient.create(tenantServiceSettings);
  * }</pre>
  *

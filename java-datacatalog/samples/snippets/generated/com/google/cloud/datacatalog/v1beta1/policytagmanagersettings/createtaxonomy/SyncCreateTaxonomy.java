@@ -16,7 +16,7 @@
 
 package com.google.cloud.datacatalog.v1beta1.samples;
 
-// [START datacatalog_v1beta1_generated_policytagmanagersettings_createtaxonomy_sync]
+// [START datacatalog_v1beta1_generated_PolicyTagManagerSettings_CreateTaxonomy_sync]
 import com.google.cloud.datacatalog.v1beta1.PolicyTagManagerSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateTaxonomy {
     PolicyTagManagerSettings policyTagManagerSettings = policyTagManagerSettingsBuilder.build();
   }
 }
-// [END datacatalog_v1beta1_generated_policytagmanagersettings_createtaxonomy_sync]
+// [END datacatalog_v1beta1_generated_PolicyTagManagerSettings_CreateTaxonomy_sync]

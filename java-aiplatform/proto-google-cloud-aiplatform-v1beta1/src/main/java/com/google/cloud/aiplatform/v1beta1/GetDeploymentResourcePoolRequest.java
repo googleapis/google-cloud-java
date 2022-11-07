@@ -76,7 +76,7 @@ public final class GetDeploymentResourcePoolRequest extends com.google.protobuf.
    * <pre>
    * Required. The name of the DeploymentResourcePool to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class GetDeploymentResourcePoolRequest extends com.google.protobuf.
    * <pre>
    * Required. The name of the DeploymentResourcePool to retrieve.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>
@@ -470,7 +470,7 @@ public final class GetDeploymentResourcePoolRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the DeploymentResourcePool to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -496,7 +496,7 @@ public final class GetDeploymentResourcePoolRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the DeploymentResourcePool to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -522,7 +522,7 @@ public final class GetDeploymentResourcePoolRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the DeploymentResourcePool to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -547,7 +547,7 @@ public final class GetDeploymentResourcePoolRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the DeploymentResourcePool to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -568,7 +568,7 @@ public final class GetDeploymentResourcePoolRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the DeploymentResourcePool to retrieve.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>

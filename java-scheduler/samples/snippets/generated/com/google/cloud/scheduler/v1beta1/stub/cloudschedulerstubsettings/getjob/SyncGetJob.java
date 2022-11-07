@@ -16,7 +16,7 @@
 
 package com.google.cloud.scheduler.v1beta1.stub.samples;
 
-// [START cloudscheduler_v1beta1_generated_cloudschedulerstubsettings_getjob_sync]
+// [START cloudscheduler_v1beta1_generated_CloudSchedulerStubSettings_GetJob_sync]
 import com.google.cloud.scheduler.v1beta1.stub.CloudSchedulerStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetJob {
     CloudSchedulerStubSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
   }
 }
-// [END cloudscheduler_v1beta1_generated_cloudschedulerstubsettings_getjob_sync]
+// [END cloudscheduler_v1beta1_generated_CloudSchedulerStubSettings_GetJob_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2alpha.stub.samples;
 
-// [START retail_v2alpha_generated_modelservicestubsettings_pausemodel_sync]
+// [START retail_v2alpha_generated_ModelServiceStubSettings_PauseModel_sync]
 import com.google.cloud.retail.v2alpha.stub.ModelServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncPauseModel {
     ModelServiceStubSettings modelServiceSettings = modelServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2alpha_generated_modelservicestubsettings_pausemodel_sync]
+// [END retail_v2alpha_generated_ModelServiceStubSettings_PauseModel_sync]

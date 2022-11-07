@@ -16,7 +16,7 @@
 
 package com.google.protos.google.cloud.binaryauthorization.v1.samples;
 
-// [START binaryauthorization_v1_generated_binauthzmanagementservicev1settings_getpolicy_sync]
+// [START binaryauthorization_v1_generated_BinauthzManagementServiceV1Settings_GetPolicy_sync]
 import com.google.protos.google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1Settings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetPolicy {
         binauthzManagementServiceV1SettingsBuilder.build();
   }
 }
-// [END binaryauthorization_v1_generated_binauthzmanagementservicev1settings_getpolicy_sync]
+// [END binaryauthorization_v1_generated_BinauthzManagementServiceV1Settings_GetPolicy_sync]

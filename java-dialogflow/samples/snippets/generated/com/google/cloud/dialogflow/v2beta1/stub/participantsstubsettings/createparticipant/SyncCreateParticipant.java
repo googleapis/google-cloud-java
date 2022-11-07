@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.stub.samples;
 
-// [START dialogflow_v2beta1_generated_participantsstubsettings_createparticipant_sync]
+// [START dialogflow_v2beta1_generated_ParticipantsStubSettings_CreateParticipant_sync]
 import com.google.cloud.dialogflow.v2beta1.stub.ParticipantsStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateParticipant {
     ParticipantsStubSettings participantsSettings = participantsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_participantsstubsettings_createparticipant_sync]
+// [END dialogflow_v2beta1_generated_ParticipantsStubSettings_CreateParticipant_sync]

@@ -151,10 +151,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * CloudFilestoreManagerSettings cloudFilestoreManagerSettings =
- *     CloudFilestoreManagerSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             CloudFilestoreManagerSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     CloudFilestoreManagerSettings.newHttpJsonBuilder().build();
  * CloudFilestoreManagerClient cloudFilestoreManagerClient =
  *     CloudFilestoreManagerClient.create(cloudFilestoreManagerSettings);
  * }</pre>

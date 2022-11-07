@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.stub.samples;
 
-// [START dialogflow_v2_generated_conversationmodelsstubsettings_getconversationmodel_sync]
+// [START dialogflow_v2_generated_ConversationModelsStubSettings_GetConversationModel_sync]
 import com.google.cloud.dialogflow.v2.stub.ConversationModelsStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetConversationModel {
         conversationModelsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2_generated_conversationmodelsstubsettings_getconversationmodel_sync]
+// [END dialogflow_v2_generated_ConversationModelsStubSettings_GetConversationModel_sync]

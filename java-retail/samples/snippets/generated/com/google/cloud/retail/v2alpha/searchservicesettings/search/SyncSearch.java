@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2alpha.samples;
 
-// [START retail_v2alpha_generated_searchservicesettings_search_sync]
+// [START retail_v2alpha_generated_SearchServiceSettings_Search_sync]
 import com.google.cloud.retail.v2alpha.SearchServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncSearch {
     SearchServiceSettings searchServiceSettings = searchServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2alpha_generated_searchservicesettings_search_sync]
+// [END retail_v2alpha_generated_SearchServiceSettings_Search_sync]

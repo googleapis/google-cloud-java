@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkehub.v1beta1.samples;
 
-// [START gkehub_v1beta1_generated_gkehubmembershipservicesettings_getmembership_sync]
+// [START gkehub_v1beta1_generated_GkeHubMembershipServiceSettings_GetMembership_sync]
 import com.google.cloud.gkehub.v1beta1.GkeHubMembershipServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetMembership {
         gkeHubMembershipServiceSettingsBuilder.build();
   }
 }
-// [END gkehub_v1beta1_generated_gkehubmembershipservicesettings_getmembership_sync]
+// [END gkehub_v1beta1_generated_GkeHubMembershipServiceSettings_GetMembership_sync]

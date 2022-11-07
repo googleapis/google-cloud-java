@@ -16,7 +16,7 @@
 
 package com.google.cloud.speech.v1.stub.samples;
 
-// [START speech_v1_generated_speechstubsettings_recognize_sync]
+// [START speech_v1_generated_SpeechStubSettings_Recognize_sync]
 import com.google.cloud.speech.v1.stub.SpeechStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncRecognize {
     SpeechStubSettings speechSettings = speechSettingsBuilder.build();
   }
 }
-// [END speech_v1_generated_speechstubsettings_recognize_sync]
+// [END speech_v1_generated_SpeechStubSettings_Recognize_sync]

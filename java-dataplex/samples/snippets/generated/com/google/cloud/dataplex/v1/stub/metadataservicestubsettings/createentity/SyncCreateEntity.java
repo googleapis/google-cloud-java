@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataplex.v1.stub.samples;
 
-// [START dataplex_v1_generated_metadataservicestubsettings_createentity_sync]
+// [START dataplex_v1_generated_MetadataServiceStubSettings_CreateEntity_sync]
 import com.google.cloud.dataplex.v1.stub.MetadataServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateEntity {
     MetadataServiceStubSettings metadataServiceSettings = metadataServiceSettingsBuilder.build();
   }
 }
-// [END dataplex_v1_generated_metadataservicestubsettings_createentity_sync]
+// [END dataplex_v1_generated_MetadataServiceStubSettings_CreateEntity_sync]

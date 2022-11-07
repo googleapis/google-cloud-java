@@ -16,7 +16,7 @@
 
 package com.google.cloud.gkemulticloud.v1.stub.samples;
 
-// [START gkemulticloud_v1_generated_azureclustersstubsettings_getazureclient_sync]
+// [START gkemulticloud_v1_generated_AzureClustersStubSettings_GetAzureClient_sync]
 import com.google.cloud.gkemulticloud.v1.stub.AzureClustersStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetAzureClient {
     AzureClustersStubSettings azureClustersSettings = azureClustersSettingsBuilder.build();
   }
 }
-// [END gkemulticloud_v1_generated_azureclustersstubsettings_getazureclient_sync]
+// [END gkemulticloud_v1_generated_AzureClustersStubSettings_GetAzureClient_sync]

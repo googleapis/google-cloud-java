@@ -21,4 +21,4 @@ for library in s.get_staging_dirs():
     s.move(library)
 
 s.remove_staging_dirs()
-{% if should_include_templates %}java.common_templates({% if template_excludes %}excludes={{ template_excludes }}{% endif %}){% endif %}
+{% if should_include_templates %}java.common_templates(monorepo=True, {% if template_excludes %}excludes={{ template_excludes }}{% endif %}){% endif %}

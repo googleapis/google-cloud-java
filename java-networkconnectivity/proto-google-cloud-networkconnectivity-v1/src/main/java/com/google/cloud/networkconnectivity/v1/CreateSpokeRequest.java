@@ -22,7 +22,8 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * The request for [HubService.CreateSpoke][google.cloud.networkconnectivity.v1.HubService.CreateSpoke].
+ * The request for
+ * [HubService.CreateSpoke][google.cloud.networkconnectivity.v1.HubService.CreateSpoke].
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.CreateSpokeRequest}
@@ -231,11 +232,11 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A unique request ID (optional). If you specify this ID, you can use it
-   * in cases when you need to retry your request. When you need to retry, this
-   * ID lets the server know that it can ignore the request if it has already
-   * been completed. The server guarantees that for at least 60 minutes after
-   * the first request.
+   * Optional. A unique request ID (optional). If you specify this ID, you can
+   * use it in cases when you need to retry your request. When you need to
+   * retry, this ID lets the server know that it can ignore the request if it
+   * has already been completed. The server guarantees that for at least 60
+   * minutes after the first request.
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check to see whether the original operation
@@ -265,11 +266,11 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A unique request ID (optional). If you specify this ID, you can use it
-   * in cases when you need to retry your request. When you need to retry, this
-   * ID lets the server know that it can ignore the request if it has already
-   * been completed. The server guarantees that for at least 60 minutes after
-   * the first request.
+   * Optional. A unique request ID (optional). If you specify this ID, you can
+   * use it in cases when you need to retry your request. When you need to
+   * retry, this ID lets the server know that it can ignore the request if it
+   * has already been completed. The server guarantees that for at least 60
+   * minutes after the first request.
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check to see whether the original operation
@@ -492,7 +493,8 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request for [HubService.CreateSpoke][google.cloud.networkconnectivity.v1.HubService.CreateSpoke].
+   * The request for
+   * [HubService.CreateSpoke][google.cloud.networkconnectivity.v1.HubService.CreateSpoke].
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.CreateSpokeRequest}
@@ -1135,11 +1137,11 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1168,11 +1170,11 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1201,11 +1203,11 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1233,11 +1235,11 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1261,11 +1263,11 @@ public final class CreateSpokeRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation

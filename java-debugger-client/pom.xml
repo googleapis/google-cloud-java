@@ -56,4 +56,5 @@
     <module>proto-google-devtools-source-protos</module>
     <module>google-cloud-debugger-client-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.documentai.v1beta1.stub.samples;
 
-// [START documentai_v1beta1_generated_documentunderstandingservicestubsettings_batchprocessdocuments_sync]
+// [START documentai_v1beta1_generated_DocumentUnderstandingServiceStubSettings_BatchProcessDocuments_sync]
 import com.google.cloud.documentai.v1beta1.stub.DocumentUnderstandingServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncBatchProcessDocuments {
         documentUnderstandingServiceSettingsBuilder.build();
   }
 }
-// [END documentai_v1beta1_generated_documentunderstandingservicestubsettings_batchprocessdocuments_sync]
+// [END documentai_v1beta1_generated_DocumentUnderstandingServiceStubSettings_BatchProcessDocuments_sync]

@@ -50,4 +50,5 @@
     <module>proto-google-cloud-publicca-v1beta1</module>
     <module>google-cloud-publicca-bom</module>
   </modules>
-</project>
+
+  </project>

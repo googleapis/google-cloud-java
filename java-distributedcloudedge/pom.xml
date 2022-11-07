@@ -50,4 +50,5 @@
     <module>proto-google-cloud-distributedcloudedge-v1</module>
     <module>google-cloud-distributedcloudedge-bom</module>
   </modules>
-</project>
+
+  </project>

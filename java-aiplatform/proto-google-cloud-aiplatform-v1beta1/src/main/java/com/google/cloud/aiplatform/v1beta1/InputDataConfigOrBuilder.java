@@ -539,6 +539,19 @@ public interface InputDataConfigOrBuilder
    */
   com.google.protobuf.ByteString getSavedQueryIdBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Whether to persist the ML use assignment to data item system labels.
+   * </pre>
+   *
+   * <code>bool persist_ml_use_assignment = 11;</code>
+   *
+   * @return The persistMlUseAssignment.
+   */
+  boolean getPersistMlUseAssignment();
+
   public com.google.cloud.aiplatform.v1beta1.InputDataConfig.SplitCase getSplitCase();
 
   public com.google.cloud.aiplatform.v1beta1.InputDataConfig.DestinationCase getDestinationCase();

@@ -64,4 +64,5 @@
     <module>proto-google-cloud-bigqueryconnection-v1beta1</module>
     <module>google-cloud-bigqueryconnection-bom</module>
   </modules>
-</project>
+
+  </project>

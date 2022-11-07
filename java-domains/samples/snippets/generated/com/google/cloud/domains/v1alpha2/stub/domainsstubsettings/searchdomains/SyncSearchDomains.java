@@ -16,7 +16,7 @@
 
 package com.google.cloud.domains.v1alpha2.stub.samples;
 
-// [START domains_v1alpha2_generated_domainsstubsettings_searchdomains_sync]
+// [START domains_v1alpha2_generated_DomainsStubSettings_SearchDomains_sync]
 import com.google.cloud.domains.v1alpha2.stub.DomainsStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncSearchDomains {
     DomainsStubSettings domainsSettings = domainsSettingsBuilder.build();
   }
 }
-// [END domains_v1alpha2_generated_domainsstubsettings_searchdomains_sync]
+// [END domains_v1alpha2_generated_DomainsStubSettings_SearchDomains_sync]

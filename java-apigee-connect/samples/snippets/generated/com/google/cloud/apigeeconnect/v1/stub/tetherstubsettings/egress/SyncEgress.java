@@ -16,7 +16,7 @@
 
 package com.google.cloud.apigeeconnect.v1.stub.samples;
 
-// [START apigeeconnect_v1_generated_tetherstubsettings_egress_sync]
+// [START apigeeconnect_v1_generated_TetherStubSettings_Egress_sync]
 import com.google.cloud.apigeeconnect.v1.stub.TetherStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncEgress {
     TetherStubSettings tetherSettings = tetherSettingsBuilder.build();
   }
 }
-// [END apigeeconnect_v1_generated_tetherstubsettings_egress_sync]
+// [END apigeeconnect_v1_generated_TetherStubSettings_Egress_sync]

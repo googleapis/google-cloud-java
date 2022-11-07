@@ -392,6 +392,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Properties of the Context.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *
@@ -405,6 +406,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Properties of the Context.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *
@@ -418,6 +420,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Properties of the Context.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *

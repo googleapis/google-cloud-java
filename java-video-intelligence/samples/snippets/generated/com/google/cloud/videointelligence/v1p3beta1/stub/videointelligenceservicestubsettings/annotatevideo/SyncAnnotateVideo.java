@@ -16,7 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p3beta1.stub.samples;
 
-// [START videointelligence_v1p3beta1_generated_videointelligenceservicestubsettings_annotatevideo_sync]
+// [START videointelligence_v1p3beta1_generated_VideoIntelligenceServiceStubSettings_AnnotateVideo_sync]
 import com.google.cloud.videointelligence.v1p3beta1.stub.VideoIntelligenceServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncAnnotateVideo {
         videoIntelligenceServiceSettingsBuilder.build();
   }
 }
-// [END videointelligence_v1p3beta1_generated_videointelligenceservicestubsettings_annotatevideo_sync]
+// [END videointelligence_v1p3beta1_generated_VideoIntelligenceServiceStubSettings_AnnotateVideo_sync]

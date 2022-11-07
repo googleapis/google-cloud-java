@@ -16,7 +16,7 @@
 
 package com.google.cloud.asset.v1p2beta1.samples;
 
-// [START cloudasset_v1p2beta1_generated_assetservicesettings_createfeed_sync]
+// [START cloudasset_v1p2beta1_generated_AssetServiceSettings_CreateFeed_sync]
 import com.google.cloud.asset.v1p2beta1.AssetServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncCreateFeed {
     AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
   }
 }
-// [END cloudasset_v1p2beta1_generated_assetservicesettings_createfeed_sync]
+// [END cloudasset_v1p2beta1_generated_AssetServiceSettings_CreateFeed_sync]

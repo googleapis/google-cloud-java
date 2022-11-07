@@ -140,10 +140,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * CloudChannelServiceSettings cloudChannelServiceSettings =
- *     CloudChannelServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             CloudChannelServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     CloudChannelServiceSettings.newHttpJsonBuilder().build();
  * CloudChannelServiceClient cloudChannelServiceClient =
  *     CloudChannelServiceClient.create(cloudChannelServiceSettings);
  * }</pre>

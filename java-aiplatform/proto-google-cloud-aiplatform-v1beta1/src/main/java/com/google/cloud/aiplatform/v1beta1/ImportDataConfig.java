@@ -64,6 +64,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 2:
         return internalGetDataItemLabels();
+      case 3:
+        return internalGetAnnotationLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -315,6 +317,131 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int ANNOTATION_LABELS_FIELD_NUMBER = 3;
+
+  private static final class AnnotationLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.DatasetProto
+                .internal_static_google_cloud_aiplatform_v1beta1_ImportDataConfig_AnnotationLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotationLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetAnnotationLabels() {
+    if (annotationLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AnnotationLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return annotationLabels_;
+  }
+
+  public int getAnnotationLabelsCount() {
+    return internalGetAnnotationLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels that will be applied to newly imported Annotations. If two
+   * Annotations are identical, one of them will be deduped. Two Annotations are
+   * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+   * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+   * These labels will be overridden by Annotation labels specified inside index
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+   */
+  @java.lang.Override
+  public boolean containsAnnotationLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAnnotationLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getAnnotationLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels() {
+    return getAnnotationLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels that will be applied to newly imported Annotations. If two
+   * Annotations are identical, one of them will be deduped. Two Annotations are
+   * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+   * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+   * These labels will be overridden by Annotation labels specified inside index
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap() {
+    return internalGetAnnotationLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels that will be applied to newly imported Annotations. If two
+   * Annotations are identical, one of them will be deduped. Two Annotations are
+   * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+   * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+   * These labels will be overridden by Annotation labels specified inside index
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getAnnotationLabelsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotationLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels that will be applied to newly imported Annotations. If two
+   * Annotations are identical, one of them will be deduped. Two Annotations are
+   * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+   * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+   * These labels will be overridden by Annotation labels specified inside index
+   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getAnnotationLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotationLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int IMPORT_SCHEMA_URI_FIELD_NUMBER = 4;
   private volatile java.lang.Object importSchemaUri_;
   /**
@@ -389,6 +516,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDataItemLabels(), DataItemLabelsDefaultEntryHolder.defaultEntry, 2);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAnnotationLabels(), AnnotationLabelsDefaultEntryHolder.defaultEntry, 3);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, importSchemaUri_);
     }
@@ -416,6 +545,16 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, dataItemLabels__);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAnnotationLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotationLabels__ =
+          AnnotationLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, annotationLabels__);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(importSchemaUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, importSchemaUri_);
     }
@@ -436,6 +575,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.aiplatform.v1beta1.ImportDataConfig) obj;
 
     if (!internalGetDataItemLabels().equals(other.internalGetDataItemLabels())) return false;
+    if (!internalGetAnnotationLabels().equals(other.internalGetAnnotationLabels())) return false;
     if (!getImportSchemaUri().equals(other.getImportSchemaUri())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
@@ -459,6 +599,10 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     if (!internalGetDataItemLabels().getMap().isEmpty()) {
       hash = (37 * hash) + DATA_ITEM_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDataItemLabels().hashCode();
+    }
+    if (!internalGetAnnotationLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + ANNOTATION_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAnnotationLabels().hashCode();
     }
     hash = (37 * hash) + IMPORT_SCHEMA_URI_FIELD_NUMBER;
     hash = (53 * hash) + getImportSchemaUri().hashCode();
@@ -594,6 +738,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 2:
           return internalGetDataItemLabels();
+        case 3:
+          return internalGetAnnotationLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -604,6 +750,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 2:
           return internalGetMutableDataItemLabels();
+        case 3:
+          return internalGetMutableAnnotationLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -633,6 +781,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
         gcsSourceBuilder_.clear();
       }
       internalGetMutableDataItemLabels().clear();
+      internalGetMutableAnnotationLabels().clear();
       importSchemaUri_ = "";
 
       sourceCase_ = 0;
@@ -674,6 +823,8 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       result.dataItemLabels_ = internalGetDataItemLabels();
       result.dataItemLabels_.makeImmutable();
+      result.annotationLabels_ = internalGetAnnotationLabels();
+      result.annotationLabels_.makeImmutable();
       result.importSchemaUri_ = importSchemaUri_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
@@ -727,6 +878,7 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.aiplatform.v1beta1.ImportDataConfig.getDefaultInstance())
         return this;
       internalGetMutableDataItemLabels().mergeFrom(other.internalGetDataItemLabels());
+      internalGetMutableAnnotationLabels().mergeFrom(other.internalGetAnnotationLabels());
       if (!other.getImportSchemaUri().isEmpty()) {
         importSchemaUri_ = other.importSchemaUri_;
         onChanged();
@@ -785,6 +937,18 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
                     .put(dataItemLabels__.getKey(), dataItemLabels__.getValue());
                 break;
               } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    annotationLabels__ =
+                        input.readMessage(
+                            AnnotationLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAnnotationLabels()
+                    .getMutableMap()
+                    .put(annotationLabels__.getKey(), annotationLabels__.getValue());
+                break;
+              } // case 26
             case 34:
               {
                 importSchemaUri_ = input.readStringRequireUtf8();
@@ -1262,6 +1426,213 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllDataItemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDataItemLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotationLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAnnotationLabels() {
+      if (annotationLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AnnotationLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return annotationLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAnnotationLabels() {
+      onChanged();
+      ;
+      if (annotationLabels_ == null) {
+        annotationLabels_ =
+            com.google.protobuf.MapField.newMapField(
+                AnnotationLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!annotationLabels_.isMutable()) {
+        annotationLabels_ = annotationLabels_.copy();
+      }
+      return annotationLabels_;
+    }
+
+    public int getAnnotationLabelsCount() {
+      return internalGetAnnotationLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that will be applied to newly imported Annotations. If two
+     * Annotations are identical, one of them will be deduped. Two Annotations are
+     * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+     * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+     * These labels will be overridden by Annotation labels specified inside index
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+     */
+    @java.lang.Override
+    public boolean containsAnnotationLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAnnotationLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getAnnotationLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels() {
+      return getAnnotationLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that will be applied to newly imported Annotations. If two
+     * Annotations are identical, one of them will be deduped. Two Annotations are
+     * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+     * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+     * These labels will be overridden by Annotation labels specified inside index
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap() {
+      return internalGetAnnotationLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that will be applied to newly imported Annotations. If two
+     * Annotations are identical, one of them will be deduped. Two Annotations are
+     * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+     * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+     * These labels will be overridden by Annotation labels specified inside index
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAnnotationLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that will be applied to newly imported Annotations. If two
+     * Annotations are identical, one of them will be deduped. Two Annotations are
+     * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+     * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+     * These labels will be overridden by Annotation labels specified inside index
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAnnotationLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAnnotationLabels() {
+      internalGetMutableAnnotationLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that will be applied to newly imported Annotations. If two
+     * Annotations are identical, one of them will be deduped. Two Annotations are
+     * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+     * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+     * These labels will be overridden by Annotation labels specified inside index
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+     */
+    public Builder removeAnnotationLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAnnotationLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotationLabels() {
+      return internalGetMutableAnnotationLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that will be applied to newly imported Annotations. If two
+     * Annotations are identical, one of them will be deduped. Two Annotations are
+     * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+     * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+     * These labels will be overridden by Annotation labels specified inside index
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+     */
+    public Builder putAnnotationLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableAnnotationLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels that will be applied to newly imported Annotations. If two
+     * Annotations are identical, one of them will be deduped. Two Annotations are
+     * considered identical if their [payload][google.cloud.aiplatform.v1beta1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1beta1.Annotation.payload_schema_uri] and all of their
+     * [labels][google.cloud.aiplatform.v1beta1.Annotation.labels] are the same.
+     * These labels will be overridden by Annotation labels specified inside index
+     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1beta1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
+     */
+    public Builder putAllAnnotationLabels(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAnnotationLabels().getMutableMap().putAll(values);
       return this;
     }
 

@@ -129,10 +129,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * VpcAccessServiceSettings vpcAccessServiceSettings =
- *     VpcAccessServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             VpcAccessServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     VpcAccessServiceSettings.newHttpJsonBuilder().build();
  * VpcAccessServiceClient vpcAccessServiceClient =
  *     VpcAccessServiceClient.create(vpcAccessServiceSettings);
  * }</pre>

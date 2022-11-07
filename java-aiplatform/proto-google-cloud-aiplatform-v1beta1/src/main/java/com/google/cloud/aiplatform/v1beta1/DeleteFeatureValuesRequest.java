@@ -985,7 +985,10 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
    * <pre>
    * Message to select time range and feature.
    * Values of the selected feature generated within an inclusive time range
-   * will be deleted.
+   * will be deleted. Using this option permanently deletes the feature values
+   * from the specified feature IDs within the specified time range.
+   * This might include data from the online storage. If you want to retain
+   * any deleted historical data in the online storage, you must re-ingest it.
    * </pre>
    *
    * Protobuf type {@code
@@ -1378,7 +1381,10 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      * <pre>
      * Message to select time range and feature.
      * Values of the selected feature generated within an inclusive time range
-     * will be deleted.
+     * will be deleted. Using this option permanently deletes the feature values
+     * from the specified feature IDs within the specified time range.
+     * This might include data from the online storage. If you want to retain
+     * any deleted historical data in the online storage, you must re-ingest it.
      * </pre>
      *
      * Protobuf type {@code

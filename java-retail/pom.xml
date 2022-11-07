@@ -74,4 +74,5 @@
     <module>proto-google-cloud-retail-v2beta</module>
     <module>google-cloud-retail-bom</module>
   </modules>
-</project>
+
+  </project>

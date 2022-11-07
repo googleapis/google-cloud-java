@@ -16,7 +16,7 @@
 
 package com.google.cloud.contactcenterinsights.v1.samples;
 
-// [START contactcenterinsights_v1_generated_contactcenterinsightssettings_createconversation_sync]
+// [START contactcenterinsights_v1_generated_ContactCenterInsightsSettings_CreateConversation_sync]
 import com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateConversation {
         contactCenterInsightsSettingsBuilder.build();
   }
 }
-// [END contactcenterinsights_v1_generated_contactcenterinsightssettings_createconversation_sync]
+// [END contactcenterinsights_v1_generated_ContactCenterInsightsSettings_CreateConversation_sync]

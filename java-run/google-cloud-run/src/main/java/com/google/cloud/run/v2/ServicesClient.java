@@ -124,11 +124,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * ServicesSettings servicesSettings =
- *     ServicesSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             ServicesSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * ServicesSettings servicesSettings = ServicesSettings.newHttpJsonBuilder().build();
  * ServicesClient servicesClient = ServicesClient.create(servicesSettings);
  * }</pre>
  *
@@ -227,8 +223,9 @@ public class ServicesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The location and project in which this service should be created. Format:
-   *     projects/{project}/locations/{location} Only lowercase characters, digits, and hyphens.
+   * @param parent Required. The location and project in which this service should be created.
+   *     Format: projects/{project}/locations/{location} Only lowercase characters, digits, and
+   *     hyphens.
    * @param service Required. The Service instance to create.
    * @param serviceId Required. The unique identifier for the Service. It must begin with letter,
    *     and may not end with hyphen; must contain fewer than 50 characters. The name of the service
@@ -266,8 +263,9 @@ public class ServicesClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The location and project in which this service should be created. Format:
-   *     projects/{project}/locations/{location} Only lowercase characters, digits, and hyphens.
+   * @param parent Required. The location and project in which this service should be created.
+   *     Format: projects/{project}/locations/{location} Only lowercase characters, digits, and
+   *     hyphens.
    * @param service Required. The Service instance to create.
    * @param serviceId Required. The unique identifier for the Service. It must begin with letter,
    *     and may not end with hyphen; must contain fewer than 50 characters. The name of the service
@@ -490,7 +488,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services.
+   * Lists Services.
    *
    * <p>Sample code:
    *
@@ -523,7 +521,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services.
+   * Lists Services.
    *
    * <p>Sample code:
    *
@@ -553,7 +551,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services.
+   * Lists Services.
    *
    * <p>Sample code:
    *
@@ -586,7 +584,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services.
+   * Lists Services.
    *
    * <p>Sample code:
    *
@@ -619,7 +617,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services.
+   * Lists Services.
    *
    * <p>Sample code:
    *
@@ -924,7 +922,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the IAM Access Control policy currently in effect for the given Cloud Run Service. This
+   * Gets the IAM Access Control policy currently in effect for the given Cloud Run Service. This
    * result does not include any inherited policies.
    *
    * <p>Sample code:
@@ -954,7 +952,7 @@ public class ServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the IAM Access Control policy currently in effect for the given Cloud Run Service. This
+   * Gets the IAM Access Control policy currently in effect for the given Cloud Run Service. This
    * result does not include any inherited policies.
    *
    * <p>Sample code:

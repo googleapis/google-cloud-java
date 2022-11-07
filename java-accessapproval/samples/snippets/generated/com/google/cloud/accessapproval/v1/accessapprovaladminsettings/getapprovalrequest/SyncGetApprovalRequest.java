@@ -16,7 +16,7 @@
 
 package com.google.cloud.accessapproval.v1.samples;
 
-// [START accessapproval_v1_generated_accessapprovaladminsettings_getapprovalrequest_sync]
+// [START accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]
 import com.google.cloud.accessapproval.v1.AccessApprovalAdminSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetApprovalRequest {
         accessApprovalAdminSettingsBuilder.build();
   }
 }
-// [END accessapproval_v1_generated_accessapprovaladminsettings_getapprovalrequest_sync]
+// [END accessapproval_v1_generated_AccessApprovalAdminSettings_GetApprovalRequest_sync]

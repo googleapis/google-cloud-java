@@ -22,7 +22,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Request for [HubService.UpdateHub][google.cloud.networkconnectivity.v1.HubService.UpdateHub] method.
+ * Request for
+ * [HubService.UpdateHub][google.cloud.networkconnectivity.v1.HubService.UpdateHub]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.UpdateHubRequest}
@@ -73,11 +75,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. In the case of an update to an existing hub, field mask is used to specify
-   * the fields to be overwritten. The fields specified in the update_mask are
-   * relative to the resource, not the full request. A field is overwritten if
-   * it is in the mask. If the user does not provide a mask, then all fields are
-   * overwritten.
+   * Optional. In the case of an update to an existing hub, field mask is used
+   * to specify the fields to be overwritten. The fields specified in the
+   * update_mask are relative to the resource, not the full request. A field is
+   * overwritten if it is in the mask. If the user does not provide a mask, then
+   * all fields are overwritten.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -93,11 +95,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. In the case of an update to an existing hub, field mask is used to specify
-   * the fields to be overwritten. The fields specified in the update_mask are
-   * relative to the resource, not the full request. A field is overwritten if
-   * it is in the mask. If the user does not provide a mask, then all fields are
-   * overwritten.
+   * Optional. In the case of an update to an existing hub, field mask is used
+   * to specify the fields to be overwritten. The fields specified in the
+   * update_mask are relative to the resource, not the full request. A field is
+   * overwritten if it is in the mask. If the user does not provide a mask, then
+   * all fields are overwritten.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -113,11 +115,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. In the case of an update to an existing hub, field mask is used to specify
-   * the fields to be overwritten. The fields specified in the update_mask are
-   * relative to the resource, not the full request. A field is overwritten if
-   * it is in the mask. If the user does not provide a mask, then all fields are
-   * overwritten.
+   * Optional. In the case of an update to an existing hub, field mask is used
+   * to specify the fields to be overwritten. The fields specified in the
+   * update_mask are relative to the resource, not the full request. A field is
+   * overwritten if it is in the mask. If the user does not provide a mask, then
+   * all fields are overwritten.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -186,11 +188,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique request ID (optional). If you specify this ID, you can use it
-   * in cases when you need to retry your request. When you need to retry, this
-   * ID lets the server know that it can ignore the request if it has already
-   * been completed. The server guarantees that for at least 60 minutes after
-   * the first request.
+   * Optional. A unique request ID (optional). If you specify this ID, you can
+   * use it in cases when you need to retry your request. When you need to
+   * retry, this ID lets the server know that it can ignore the request if it
+   * has already been completed. The server guarantees that for at least 60
+   * minutes after the first request.
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check to see whether the original operation
@@ -220,11 +222,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A unique request ID (optional). If you specify this ID, you can use it
-   * in cases when you need to retry your request. When you need to retry, this
-   * ID lets the server know that it can ignore the request if it has already
-   * been completed. The server guarantees that for at least 60 minutes after
-   * the first request.
+   * Optional. A unique request ID (optional). If you specify this ID, you can
+   * use it in cases when you need to retry your request. When you need to
+   * retry, this ID lets the server know that it can ignore the request if it
+   * has already been completed. The server guarantees that for at least 60
+   * minutes after the first request.
    * For example, consider a situation where you make an initial request and
    * the request times out. If you make the request again with the same request
    * ID, the server can check to see whether the original operation
@@ -443,7 +445,9 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request for [HubService.UpdateHub][google.cloud.networkconnectivity.v1.HubService.UpdateHub] method.
+   * Request for
+   * [HubService.UpdateHub][google.cloud.networkconnectivity.v1.HubService.UpdateHub]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.UpdateHubRequest}
@@ -660,11 +664,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -679,11 +683,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -704,11 +708,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -731,11 +735,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -755,11 +759,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -784,11 +788,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -809,11 +813,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -828,11 +832,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -851,11 +855,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. In the case of an update to an existing hub, field mask is used to specify
-     * the fields to be overwritten. The fields specified in the update_mask are
-     * relative to the resource, not the full request. A field is overwritten if
-     * it is in the mask. If the user does not provide a mask, then all fields are
-     * overwritten.
+     * Optional. In the case of an update to an existing hub, field mask is used
+     * to specify the fields to be overwritten. The fields specified in the
+     * update_mask are relative to the resource, not the full request. A field is
+     * overwritten if it is in the mask. If the user does not provide a mask, then
+     * all fields are overwritten.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -1086,11 +1090,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1119,11 +1123,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1152,11 +1156,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1184,11 +1188,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation
@@ -1212,11 +1216,11 @@ public final class UpdateHubRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A unique request ID (optional). If you specify this ID, you can use it
-     * in cases when you need to retry your request. When you need to retry, this
-     * ID lets the server know that it can ignore the request if it has already
-     * been completed. The server guarantees that for at least 60 minutes after
-     * the first request.
+     * Optional. A unique request ID (optional). If you specify this ID, you can
+     * use it in cases when you need to retry your request. When you need to
+     * retry, this ID lets the server know that it can ignore the request if it
+     * has already been completed. The server guarantees that for at least 60
+     * minutes after the first request.
      * For example, consider a situation where you make an initial request and
      * the request times out. If you make the request again with the same request
      * ID, the server can check to see whether the original operation

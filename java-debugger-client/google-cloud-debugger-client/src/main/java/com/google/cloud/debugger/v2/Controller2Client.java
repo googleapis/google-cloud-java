@@ -130,11 +130,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * Controller2Settings controller2Settings =
- *     Controller2Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             Controller2Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * Controller2Settings controller2Settings = Controller2Settings.newHttpJsonBuilder().build();
  * Controller2Client controller2Client = Controller2Client.create(controller2Settings);
  * }</pre>
  *

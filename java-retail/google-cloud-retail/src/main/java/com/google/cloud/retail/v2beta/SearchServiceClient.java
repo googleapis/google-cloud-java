@@ -144,10 +144,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SearchServiceSettings searchServiceSettings =
- *     SearchServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             SearchServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     SearchServiceSettings.newHttpJsonBuilder().build();
  * SearchServiceClient searchServiceClient = SearchServiceClient.create(searchServiceSettings);
  * }</pre>
  *

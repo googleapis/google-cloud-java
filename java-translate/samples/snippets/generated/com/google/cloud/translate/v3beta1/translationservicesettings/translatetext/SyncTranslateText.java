@@ -16,7 +16,7 @@
 
 package com.google.cloud.translate.v3beta1.samples;
 
-// [START translate_v3beta1_generated_translationservicesettings_translatetext_sync]
+// [START translate_v3beta1_generated_TranslationServiceSettings_TranslateText_sync]
 import com.google.cloud.translate.v3beta1.TranslationServiceSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncTranslateText {
         translationServiceSettingsBuilder.build();
   }
 }
-// [END translate_v3beta1_generated_translationservicesettings_translatetext_sync]
+// [END translate_v3beta1_generated_TranslationServiceSettings_TranslateText_sync]

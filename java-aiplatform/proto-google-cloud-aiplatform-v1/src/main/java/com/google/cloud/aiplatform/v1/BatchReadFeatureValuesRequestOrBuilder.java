@@ -395,6 +395,50 @@ public interface BatchReadFeatureValuesRequestOrBuilder
   com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.EntityTypeSpecOrBuilder
       getEntityTypeSpecsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Excludes Feature values with feature generation timestamp before this
+   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Timestamp, if present, must not have higher than millisecond precision.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  boolean hasStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Excludes Feature values with feature generation timestamp before this
+   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Timestamp, if present, must not have higher than millisecond precision.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  com.google.protobuf.Timestamp getStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Excludes Feature values with feature generation timestamp before this
+   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Timestamp, if present, must not have higher than millisecond precision.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
   public com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.ReadOptionCase
       getReadOptionCase();
 }

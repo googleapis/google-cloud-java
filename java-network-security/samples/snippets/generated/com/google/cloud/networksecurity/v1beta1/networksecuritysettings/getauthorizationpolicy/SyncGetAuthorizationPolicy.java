@@ -16,7 +16,7 @@
 
 package com.google.cloud.networksecurity.v1beta1.samples;
 
-// [START networksecurity_v1beta1_generated_networksecuritysettings_getauthorizationpolicy_sync]
+// [START networksecurity_v1beta1_generated_NetworkSecuritySettings_GetAuthorizationPolicy_sync]
 import com.google.cloud.networksecurity.v1beta1.NetworkSecuritySettings;
 import java.time.Duration;
 
@@ -46,4 +46,4 @@ public class SyncGetAuthorizationPolicy {
     NetworkSecuritySettings networkSecuritySettings = networkSecuritySettingsBuilder.build();
   }
 }
-// [END networksecurity_v1beta1_generated_networksecuritysettings_getauthorizationpolicy_sync]
+// [END networksecurity_v1beta1_generated_NetworkSecuritySettings_GetAuthorizationPolicy_sync]

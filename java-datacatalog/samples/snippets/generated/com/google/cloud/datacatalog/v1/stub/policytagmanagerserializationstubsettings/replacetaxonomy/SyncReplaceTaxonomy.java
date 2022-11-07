@@ -16,7 +16,7 @@
 
 package com.google.cloud.datacatalog.v1.stub.samples;
 
-// [START datacatalog_v1_generated_policytagmanagerserializationstubsettings_replacetaxonomy_sync]
+// [START datacatalog_v1_generated_PolicyTagManagerSerializationStubSettings_ReplaceTaxonomy_sync]
 import com.google.cloud.datacatalog.v1.stub.PolicyTagManagerSerializationStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncReplaceTaxonomy {
         policyTagManagerSerializationSettingsBuilder.build();
   }
 }
-// [END datacatalog_v1_generated_policytagmanagerserializationstubsettings_replacetaxonomy_sync]
+// [END datacatalog_v1_generated_PolicyTagManagerSerializationStubSettings_ReplaceTaxonomy_sync]

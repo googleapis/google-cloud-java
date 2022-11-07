@@ -16,7 +16,7 @@
 
 package com.google.cloud.vision.v1.stub.samples;
 
-// [START vision_v1_generated_imageannotatorstubsettings_batchannotateimages_sync]
+// [START vision_v1_generated_ImageAnnotatorStubSettings_BatchAnnotateImages_sync]
 import com.google.cloud.vision.v1.stub.ImageAnnotatorStubSettings;
 import java.time.Duration;
 
@@ -46,4 +46,4 @@ public class SyncBatchAnnotateImages {
     ImageAnnotatorStubSettings imageAnnotatorSettings = imageAnnotatorSettingsBuilder.build();
   }
 }
-// [END vision_v1_generated_imageannotatorstubsettings_batchannotateimages_sync]
+// [END vision_v1_generated_ImageAnnotatorStubSettings_BatchAnnotateImages_sync]

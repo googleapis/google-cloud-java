@@ -823,6 +823,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Properties of the Artifact.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *
@@ -839,6 +840,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Properties of the Artifact.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *
@@ -855,6 +857,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Properties of the Artifact.
+   * Top level metadata keys' heading and trailing spaces will be trimmed.
    * The size of this field should not exceed 200KB.
    * </pre>
    *
@@ -2945,6 +2948,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -2960,6 +2964,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -2979,6 +2984,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -3002,6 +3008,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -3022,6 +3029,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -3047,6 +3055,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -3068,6 +3077,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -3083,6 +3093,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *
@@ -3100,6 +3111,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Properties of the Artifact.
+     * Top level metadata keys' heading and trailing spaces will be trimmed.
      * The size of this field should not exceed 200KB.
      * </pre>
      *

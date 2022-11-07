@@ -231,7 +231,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    *    For example:
    *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
    * Each of the above supported filters can be combined together using
-   * logical operators (`AND` &amp; `OR`).
+   * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+   * is 5.
    * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
@@ -277,7 +278,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    *    For example:
    *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
    * Each of the above supported filters can be combined together using
-   * logical operators (`AND` &amp; `OR`).
+   * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+   * is 5.
    * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
@@ -1109,7 +1111,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *    For example:
      *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
      * Each of the above supported filters can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -1154,7 +1157,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *    For example:
      *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
      * Each of the above supported filters can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -1199,7 +1203,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *    For example:
      *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
      * Each of the above supported filters can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -1243,7 +1248,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *    For example:
      *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
      * Each of the above supported filters can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -1283,7 +1289,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      *    For example:
      *    `in_context("projects/&lt;project_number&gt;/locations/&lt;location&gt;/metadataStores/&lt;metadatastore_name&gt;/contexts/&lt;context-id&gt;")`
      * Each of the above supported filters can be combined together using
-     * logical operators (`AND` &amp; `OR`).
+     * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
+     * is 5.
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *

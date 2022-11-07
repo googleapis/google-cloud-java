@@ -16,7 +16,7 @@
 
 package com.google.cloud.automl.v1.stub.samples;
 
-// [START automl_v1_generated_predictionservicestubsettings_predict_sync]
+// [START automl_v1_generated_PredictionServiceStubSettings_Predict_sync]
 import com.google.cloud.automl.v1.stub.PredictionServiceStubSettings;
 import java.time.Duration;
 
@@ -44,4 +44,4 @@ public class SyncPredict {
         predictionServiceSettingsBuilder.build();
   }
 }
-// [END automl_v1_generated_predictionservicestubsettings_predict_sync]
+// [END automl_v1_generated_PredictionServiceStubSettings_Predict_sync]

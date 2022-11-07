@@ -16,7 +16,7 @@
 
 package com.google.cloud.recommender.v1beta1.samples;
 
-// [START recommender_v1beta1_generated_recommendersettings_getinsight_sync]
+// [START recommender_v1beta1_generated_RecommenderSettings_GetInsight_sync]
 import com.google.cloud.recommender.v1beta1.RecommenderSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetInsight {
     RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
   }
 }
-// [END recommender_v1beta1_generated_recommendersettings_getinsight_sync]
+// [END recommender_v1beta1_generated_RecommenderSettings_GetInsight_sync]

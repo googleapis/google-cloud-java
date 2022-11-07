@@ -29,7 +29,7 @@ public interface ListTensorboardExperimentsRequestOrBuilder
    * <pre>
    * Required. The resource name of the Tensorboard to list TensorboardExperiments.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListTensorboardExperimentsRequestOrBuilder
    * <pre>
    * Required. The resource name of the Tensorboard to list TensorboardExperiments.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * </pre>
    *
    * <code>

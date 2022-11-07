@@ -1312,7 +1312,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Tensorboard to list TensorboardExperiments.
-   *     Format: 'projects/{project}/locations/{location}/tensorboards/{tensorboard}'
+   *     Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardExperimentsPagedResponse listTensorboardExperiments(
@@ -1346,7 +1346,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the Tensorboard to list TensorboardExperiments.
-   *     Format: 'projects/{project}/locations/{location}/tensorboards/{tensorboard}'
+   *     Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardExperimentsPagedResponse listTensorboardExperiments(String parent) {
@@ -2178,7 +2178,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    *     Format:
-   *     'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardRunsPagedResponse listTensorboardRuns(
@@ -2215,7 +2215,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the TensorboardExperiment to list TensorboardRuns.
    *     Format:
-   *     'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}'
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardRunsPagedResponse listTensorboardRuns(String parent) {
@@ -3089,7 +3089,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
    *     Format:
-   *     'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardTimeSeriesPagedResponse listTensorboardTimeSeries(
@@ -3126,7 +3126,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
    *     Format:
-   *     'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardTimeSeriesPagedResponse listTensorboardTimeSeries(String parent) {

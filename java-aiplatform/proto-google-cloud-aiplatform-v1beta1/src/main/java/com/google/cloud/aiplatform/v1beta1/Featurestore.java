@@ -2213,8 +2213,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Config for online storage resources. If unset, the featurestore will
-   * not have an online store and cannot be used for online serving.
+   * Optional. Config for online storage resources. The field should not co-exist with the
+   * field of `OnlineStoreReplicationConfig`. If both of it and
+   * OnlineStoreReplicationConfig are unset, the feature store will not have an
+   * online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
@@ -2231,8 +2233,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Config for online storage resources. If unset, the featurestore will
-   * not have an online store and cannot be used for online serving.
+   * Optional. Config for online storage resources. The field should not co-exist with the
+   * field of `OnlineStoreReplicationConfig`. If both of it and
+   * OnlineStoreReplicationConfig are unset, the feature store will not have an
+   * online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
@@ -2252,8 +2256,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Config for online storage resources. If unset, the featurestore will
-   * not have an online store and cannot be used for online serving.
+   * Optional. Config for online storage resources. The field should not co-exist with the
+   * field of `OnlineStoreReplicationConfig`. If both of it and
+   * OnlineStoreReplicationConfig are unset, the feature store will not have an
+   * online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
@@ -3783,8 +3789,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3800,8 +3808,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3825,8 +3835,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3851,8 +3863,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3875,8 +3889,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3906,8 +3922,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3929,8 +3947,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3947,8 +3967,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3970,8 +3992,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. If unset, the featurestore will
-     * not have an online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not co-exist with the
+     * field of `OnlineStoreReplicationConfig`. If both of it and
+     * OnlineStoreReplicationConfig are unset, the feature store will not have an
+     * online store and cannot be used for online serving.
      * </pre>
      *
      * <code>

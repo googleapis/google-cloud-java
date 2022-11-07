@@ -16,7 +16,7 @@
 
 package com.google.cloud.datacatalog.v1beta1.stub.samples;
 
-// [START datacatalog_v1beta1_generated_policytagmanagerserializationstubsettings_importtaxonomies_sync]
+// [START datacatalog_v1beta1_generated_PolicyTagManagerSerializationStubSettings_ImportTaxonomies_sync]
 import com.google.cloud.datacatalog.v1beta1.stub.PolicyTagManagerSerializationStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncImportTaxonomies {
         policyTagManagerSerializationSettingsBuilder.build();
   }
 }
-// [END datacatalog_v1beta1_generated_policytagmanagerserializationstubsettings_importtaxonomies_sync]
+// [END datacatalog_v1beta1_generated_PolicyTagManagerSerializationStubSettings_ImportTaxonomies_sync]

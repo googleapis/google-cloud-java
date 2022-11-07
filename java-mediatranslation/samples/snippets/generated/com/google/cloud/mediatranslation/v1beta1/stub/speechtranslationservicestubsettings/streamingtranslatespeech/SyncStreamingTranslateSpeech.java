@@ -16,7 +16,7 @@
 
 package com.google.cloud.mediatranslation.v1beta1.stub.samples;
 
-// [START mediatranslation_v1beta1_generated_speechtranslationservicestubsettings_streamingtranslatespeech_sync]
+// [START mediatranslation_v1beta1_generated_SpeechTranslationServiceStubSettings_StreamingTranslateSpeech_sync]
 import com.google.cloud.mediatranslation.v1beta1.stub.SpeechTranslationServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncStreamingTranslateSpeech {
         speechTranslationServiceSettingsBuilder.build();
   }
 }
-// [END mediatranslation_v1beta1_generated_speechtranslationservicestubsettings_streamingtranslatespeech_sync]
+// [END mediatranslation_v1beta1_generated_SpeechTranslationServiceStubSettings_StreamingTranslateSpeech_sync]

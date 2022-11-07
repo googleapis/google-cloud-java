@@ -286,6 +286,43 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     return deployedModelRefs_.get(index);
   }
 
+  public static final int TOTAL_DEPLOYED_MODEL_COUNT_FIELD_NUMBER = 4;
+  private int totalDeployedModelCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The total number of DeployedModels on this DeploymentResourcePool.
+   * </pre>
+   *
+   * <code>int32 total_deployed_model_count = 4;</code>
+   *
+   * @return The totalDeployedModelCount.
+   */
+  @java.lang.Override
+  public int getTotalDeployedModelCount() {
+    return totalDeployedModelCount_;
+  }
+
+  public static final int TOTAL_ENDPOINT_COUNT_FIELD_NUMBER = 5;
+  private int totalEndpointCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The total number of Endpoints that have DeployedModels on this
+   * DeploymentResourcePool.
+   * </pre>
+   *
+   * <code>int32 total_endpoint_count = 5;</code>
+   *
+   * @return The totalEndpointCount.
+   */
+  @java.lang.Override
+  public int getTotalEndpointCount() {
+    return totalEndpointCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -309,6 +346,12 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     for (int i = 0; i < deployedModelRefs_.size(); i++) {
       output.writeMessage(3, deployedModelRefs_.get(i));
     }
+    if (totalDeployedModelCount_ != 0) {
+      output.writeInt32(4, totalDeployedModelCount_);
+    }
+    if (totalEndpointCount_ != 0) {
+      output.writeInt32(5, totalEndpointCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -327,6 +370,12 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     for (int i = 0; i < deployedModelRefs_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, deployedModelRefs_.get(i));
+    }
+    if (totalDeployedModelCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, totalDeployedModelCount_);
+    }
+    if (totalEndpointCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, totalEndpointCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -347,6 +396,8 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
     if (!getDeployedModelsList().equals(other.getDeployedModelsList())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!getDeployedModelRefsList().equals(other.getDeployedModelRefsList())) return false;
+    if (getTotalDeployedModelCount() != other.getTotalDeployedModelCount()) return false;
+    if (getTotalEndpointCount() != other.getTotalEndpointCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -368,6 +419,10 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
       hash = (37 * hash) + DEPLOYED_MODEL_REFS_FIELD_NUMBER;
       hash = (53 * hash) + getDeployedModelRefsList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_DEPLOYED_MODEL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalDeployedModelCount();
+    hash = (37 * hash) + TOTAL_ENDPOINT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalEndpointCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -523,6 +578,10 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
         deployedModelRefsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      totalDeployedModelCount_ = 0;
+
+      totalEndpointCount_ = 0;
+
       return this;
     }
 
@@ -571,6 +630,8 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
       } else {
         result.deployedModelRefs_ = deployedModelRefsBuilder_.build();
       }
+      result.totalDeployedModelCount_ = totalDeployedModelCount_;
+      result.totalEndpointCount_ = totalEndpointCount_;
       onBuilt();
       return result;
     }
@@ -681,6 +742,12 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
           }
         }
       }
+      if (other.getTotalDeployedModelCount() != 0) {
+        setTotalDeployedModelCount(other.getTotalDeployedModelCount());
+      }
+      if (other.getTotalEndpointCount() != 0) {
+        setTotalEndpointCount(other.getTotalEndpointCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -741,6 +808,18 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
                 }
                 break;
               } // case 26
+            case 32:
+              {
+                totalDeployedModelCount_ = input.readInt32();
+
+                break;
+              } // case 32
+            case 40:
+              {
+                totalEndpointCount_ = input.readInt32();
+
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1685,6 +1764,113 @@ public final class QueryDeployedModelsResponse extends com.google.protobuf.Gener
         deployedModelRefs_ = null;
       }
       return deployedModelRefsBuilder_;
+    }
+
+    private int totalDeployedModelCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The total number of DeployedModels on this DeploymentResourcePool.
+     * </pre>
+     *
+     * <code>int32 total_deployed_model_count = 4;</code>
+     *
+     * @return The totalDeployedModelCount.
+     */
+    @java.lang.Override
+    public int getTotalDeployedModelCount() {
+      return totalDeployedModelCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The total number of DeployedModels on this DeploymentResourcePool.
+     * </pre>
+     *
+     * <code>int32 total_deployed_model_count = 4;</code>
+     *
+     * @param value The totalDeployedModelCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalDeployedModelCount(int value) {
+
+      totalDeployedModelCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The total number of DeployedModels on this DeploymentResourcePool.
+     * </pre>
+     *
+     * <code>int32 total_deployed_model_count = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalDeployedModelCount() {
+
+      totalDeployedModelCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int totalEndpointCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The total number of Endpoints that have DeployedModels on this
+     * DeploymentResourcePool.
+     * </pre>
+     *
+     * <code>int32 total_endpoint_count = 5;</code>
+     *
+     * @return The totalEndpointCount.
+     */
+    @java.lang.Override
+    public int getTotalEndpointCount() {
+      return totalEndpointCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The total number of Endpoints that have DeployedModels on this
+     * DeploymentResourcePool.
+     * </pre>
+     *
+     * <code>int32 total_endpoint_count = 5;</code>
+     *
+     * @param value The totalEndpointCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalEndpointCount(int value) {
+
+      totalEndpointCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The total number of Endpoints that have DeployedModels on this
+     * DeploymentResourcePool.
+     * </pre>
+     *
+     * <code>int32 total_endpoint_count = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalEndpointCount() {
+
+      totalEndpointCount_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

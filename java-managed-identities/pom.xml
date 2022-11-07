@@ -50,4 +50,5 @@
     <module>proto-google-cloud-managed-identities-v1</module>
     <module>google-cloud-managed-identities-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.apigeeregistry.v1.samples;
 
-// [START apigeeregistry_v1_generated_registrysettings_getapi_sync]
+// [START apigeeregistry_v1_generated_RegistrySettings_GetApi_sync]
 import com.google.cloud.apigeeregistry.v1.RegistrySettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetApi {
     RegistrySettings registrySettings = registrySettingsBuilder.build();
   }
 }
-// [END apigeeregistry_v1_generated_registrysettings_getapi_sync]
+// [END apigeeregistry_v1_generated_RegistrySettings_GetApi_sync]

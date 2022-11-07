@@ -124,11 +124,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * TagBindingsSettings tagBindingsSettings =
- *     TagBindingsSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             TagBindingsSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * TagBindingsSettings tagBindingsSettings = TagBindingsSettings.newHttpJsonBuilder().build();
  * TagBindingsClient tagBindingsClient = TagBindingsClient.create(tagBindingsSettings);
  * }</pre>
  *

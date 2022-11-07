@@ -52,4 +52,5 @@
     <module>proto-google-cloud-bigqueryreservation-v1</module>
     <module>google-cloud-bigqueryreservation-bom</module>
   </modules>
-</project>
+
+  </project>

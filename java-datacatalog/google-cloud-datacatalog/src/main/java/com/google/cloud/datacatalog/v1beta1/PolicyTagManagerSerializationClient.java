@@ -117,11 +117,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PolicyTagManagerSerializationSettings policyTagManagerSerializationSettings =
- *     PolicyTagManagerSerializationSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             PolicyTagManagerSerializationSettings.defaultHttpJsonTransportProviderBuilder()
- *                 .build())
- *         .build();
+ *     PolicyTagManagerSerializationSettings.newHttpJsonBuilder().build();
  * PolicyTagManagerSerializationClient policyTagManagerSerializationClient =
  *     PolicyTagManagerSerializationClient.create(policyTagManagerSerializationSettings);
  * }</pre>

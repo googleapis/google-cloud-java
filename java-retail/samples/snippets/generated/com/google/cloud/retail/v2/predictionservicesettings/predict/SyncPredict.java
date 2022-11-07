@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2.samples;
 
-// [START retail_v2_generated_predictionservicesettings_predict_sync]
+// [START retail_v2_generated_PredictionServiceSettings_Predict_sync]
 import com.google.cloud.retail.v2.PredictionServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncPredict {
     PredictionServiceSettings predictionServiceSettings = predictionServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2_generated_predictionservicesettings_predict_sync]
+// [END retail_v2_generated_PredictionServiceSettings_Predict_sync]

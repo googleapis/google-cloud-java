@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2.stub.samples;
 
-// [START retail_v2_generated_usereventservicestubsettings_writeuserevent_sync]
+// [START retail_v2_generated_UserEventServiceStubSettings_WriteUserEvent_sync]
 import com.google.cloud.retail.v2.stub.UserEventServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncWriteUserEvent {
     UserEventServiceStubSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2_generated_usereventservicestubsettings_writeuserevent_sync]
+// [END retail_v2_generated_UserEventServiceStubSettings_WriteUserEvent_sync]

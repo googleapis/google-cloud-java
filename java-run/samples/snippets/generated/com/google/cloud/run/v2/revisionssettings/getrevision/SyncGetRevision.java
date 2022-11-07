@@ -16,7 +16,7 @@
 
 package com.google.cloud.run.v2.samples;
 
-// [START run_v2_generated_revisionssettings_getrevision_sync]
+// [START run_v2_generated_RevisionsSettings_GetRevision_sync]
 import com.google.cloud.run.v2.RevisionsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetRevision {
     RevisionsSettings revisionsSettings = revisionsSettingsBuilder.build();
   }
 }
-// [END run_v2_generated_revisionssettings_getrevision_sync]
+// [END run_v2_generated_RevisionsSettings_GetRevision_sync]

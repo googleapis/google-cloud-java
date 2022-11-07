@@ -16,7 +16,7 @@
 
 package com.google.cloud.apigeeconnect.v1.stub.samples;
 
-// [START apigeeconnect_v1_generated_connectionservicestubsettings_listconnections_sync]
+// [START apigeeconnect_v1_generated_ConnectionServiceStubSettings_ListConnections_sync]
 import com.google.cloud.apigeeconnect.v1.stub.ConnectionServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncListConnections {
         connectionServiceSettingsBuilder.build();
   }
 }
-// [END apigeeconnect_v1_generated_connectionservicestubsettings_listconnections_sync]
+// [END apigeeconnect_v1_generated_ConnectionServiceStubSettings_ListConnections_sync]

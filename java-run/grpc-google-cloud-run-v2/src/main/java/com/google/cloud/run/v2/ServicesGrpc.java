@@ -439,7 +439,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * List Services.
+     * Lists Services.
      * </pre>
      */
     public void listServices(
@@ -484,7 +484,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given
+     * Gets the IAM Access Control policy currently in effect for the given
      * Cloud Run Service. This result does not include any inherited policies.
      * </pre>
      */
@@ -633,7 +633,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * List Services.
+     * Lists Services.
      * </pre>
      */
     public void listServices(
@@ -684,7 +684,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given
+     * Gets the IAM Access Control policy currently in effect for the given
      * Cloud Run Service. This result does not include any inherited policies.
      * </pre>
      */
@@ -781,7 +781,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * List Services.
+     * Lists Services.
      * </pre>
      */
     public com.google.cloud.run.v2.ListServicesResponse listServices(
@@ -822,7 +822,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given
+     * Gets the IAM Access Control policy currently in effect for the given
      * Cloud Run Service. This result does not include any inherited policies.
      * </pre>
      */
@@ -907,7 +907,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * List Services.
+     * Lists Services.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -949,7 +949,7 @@ public final class ServicesGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given
+     * Gets the IAM Access Control policy currently in effect for the given
      * Cloud Run Service. This result does not include any inherited policies.
      * </pre>
      */

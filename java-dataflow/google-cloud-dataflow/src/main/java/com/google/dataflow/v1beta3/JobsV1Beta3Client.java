@@ -123,11 +123,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * JobsV1Beta3Settings jobsV1Beta3Settings =
- *     JobsV1Beta3Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             JobsV1Beta3Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * JobsV1Beta3Settings jobsV1Beta3Settings = JobsV1Beta3Settings.newHttpJsonBuilder().build();
  * JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create(jobsV1Beta3Settings);
  * }</pre>
  *

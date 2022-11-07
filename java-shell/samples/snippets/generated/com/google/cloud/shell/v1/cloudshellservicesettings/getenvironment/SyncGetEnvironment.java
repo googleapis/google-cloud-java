@@ -16,7 +16,7 @@
 
 package com.google.cloud.shell.v1.samples;
 
-// [START cloudshell_v1_generated_cloudshellservicesettings_getenvironment_sync]
+// [START cloudshell_v1_generated_CloudShellServiceSettings_GetEnvironment_sync]
 import com.google.cloud.shell.v1.CloudShellServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetEnvironment {
     CloudShellServiceSettings cloudShellServiceSettings = cloudShellServiceSettingsBuilder.build();
   }
 }
-// [END cloudshell_v1_generated_cloudshellservicesettings_getenvironment_sync]
+// [END cloudshell_v1_generated_CloudShellServiceSettings_GetEnvironment_sync]

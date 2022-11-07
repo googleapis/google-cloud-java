@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-life-sciences</artifactId>
-  <version>0.5.7</version>
+  <version>0.7.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-life-sciences:0.5.7'
+implementation 'com.google.cloud:google-cloud-life-sciences:0.7.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-life-sciences" % "0.5.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-life-sciences" % "0.7.0"
 ```
 
 ## Authentication

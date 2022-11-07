@@ -16,7 +16,7 @@
 
 package com.google.cloud.talent.v4beta1.stub.samples;
 
-// [START jobs_v4beta1_generated_jobservicestubsettings_createjob_sync]
+// [START jobs_v4beta1_generated_JobServiceStubSettings_CreateJob_sync]
 import com.google.cloud.talent.v4beta1.stub.JobServiceStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncCreateJob {
     JobServiceStubSettings jobServiceSettings = jobServiceSettingsBuilder.build();
   }
 }
-// [END jobs_v4beta1_generated_jobservicestubsettings_createjob_sync]
+// [END jobs_v4beta1_generated_JobServiceStubSettings_CreateJob_sync]

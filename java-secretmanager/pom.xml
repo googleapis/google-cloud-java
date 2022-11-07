@@ -62,4 +62,5 @@
     <module>proto-google-cloud-secretmanager-v1beta1</module>
     <module>google-cloud-secretmanager-bom</module>
   </modules>
-</project>
+
+  </project>

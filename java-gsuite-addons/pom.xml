@@ -56,4 +56,5 @@
     <module>proto-google-apps-script-type-protos</module>
     <module>google-cloud-gsuite-addons-bom</module>
   </modules>
-</project>
+
+  </project>

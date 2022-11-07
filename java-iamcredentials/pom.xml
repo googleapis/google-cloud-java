@@ -50,4 +50,5 @@
     <module>proto-google-cloud-iamcredentials-v1</module>
     <module>google-cloud-iamcredentials-bom</module>
   </modules>
-</project>
+
+  </project>

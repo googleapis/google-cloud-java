@@ -132,10 +132,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ReachabilityServiceSettings reachabilityServiceSettings =
- *     ReachabilityServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             ReachabilityServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     ReachabilityServiceSettings.newHttpJsonBuilder().build();
  * ReachabilityServiceClient reachabilityServiceClient =
  *     ReachabilityServiceClient.create(reachabilityServiceSettings);
  * }</pre>

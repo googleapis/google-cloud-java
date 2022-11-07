@@ -16,7 +16,7 @@
 
 package com.google.cloud.filestore.v1.stub.samples;
 
-// [START file_v1_generated_cloudfilestoremanagerstubsettings_getinstance_sync]
+// [START file_v1_generated_CloudFilestoreManagerStubSettings_GetInstance_sync]
 import com.google.cloud.filestore.v1.stub.CloudFilestoreManagerStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetInstance {
         cloudFilestoreManagerSettingsBuilder.build();
   }
 }
-// [END file_v1_generated_cloudfilestoremanagerstubsettings_getinstance_sync]
+// [END file_v1_generated_CloudFilestoreManagerStubSettings_GetInstance_sync]

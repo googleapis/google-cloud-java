@@ -132,11 +132,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * BatchServiceSettings batchServiceSettings =
- *     BatchServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             BatchServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * BatchServiceSettings batchServiceSettings = BatchServiceSettings.newHttpJsonBuilder().build();
  * BatchServiceClient batchServiceClient = BatchServiceClient.create(batchServiceSettings);
  * }</pre>
  *

@@ -16,7 +16,7 @@
 
 package com.google.cloud.phishingprotection.v1beta1.samples;
 
-// [START phishingprotection_v1beta1_generated_phishingprotectionservicev1beta1settings_reportphishing_sync]
+// [START phishingprotection_v1beta1_generated_PhishingProtectionServiceV1Beta1Settings_ReportPhishing_sync]
 import com.google.cloud.phishingprotection.v1beta1.PhishingProtectionServiceV1Beta1Settings;
 import java.time.Duration;
 
@@ -48,4 +48,4 @@ public class SyncReportPhishing {
         phishingProtectionServiceV1Beta1SettingsBuilder.build();
   }
 }
-// [END phishingprotection_v1beta1_generated_phishingprotectionservicev1beta1settings_reportphishing_sync]
+// [END phishingprotection_v1beta1_generated_PhishingProtectionServiceV1Beta1Settings_ReportPhishing_sync]

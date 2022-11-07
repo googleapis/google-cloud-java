@@ -76,7 +76,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The name of the target DeploymentResourcePool to query.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>string deployment_resource_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,7 +101,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The name of the target DeploymentResourcePool to query.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>string deployment_resource_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -580,7 +580,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the target DeploymentResourcePool to query.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>string deployment_resource_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -604,7 +604,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the target DeploymentResourcePool to query.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>string deployment_resource_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -628,7 +628,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the target DeploymentResourcePool to query.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>string deployment_resource_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -651,7 +651,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the target DeploymentResourcePool to query.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>string deployment_resource_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -670,7 +670,7 @@ public final class QueryDeployedModelsRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The name of the target DeploymentResourcePool to query.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>string deployment_resource_pool = 1 [(.google.api.field_behavior) = REQUIRED];</code>

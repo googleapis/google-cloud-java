@@ -118,11 +118,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * ChangelogsSettings changelogsSettings =
- *     ChangelogsSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             ChangelogsSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * ChangelogsSettings changelogsSettings = ChangelogsSettings.newHttpJsonBuilder().build();
  * ChangelogsClient changelogsClient = ChangelogsClient.create(changelogsSettings);
  * }</pre>
  *

@@ -16,7 +16,7 @@
 
 package com.google.cloud.billing.v1.stub.samples;
 
-// [START cloudbilling_v1_generated_cloudcatalogstubsettings_listservices_sync]
+// [START cloudbilling_v1_generated_CloudCatalogStubSettings_ListServices_sync]
 import com.google.cloud.billing.v1.stub.CloudCatalogStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncListServices {
     CloudCatalogStubSettings cloudCatalogSettings = cloudCatalogSettingsBuilder.build();
   }
 }
-// [END cloudbilling_v1_generated_cloudcatalogstubsettings_listservices_sync]
+// [END cloudbilling_v1_generated_CloudCatalogStubSettings_ListServices_sync]

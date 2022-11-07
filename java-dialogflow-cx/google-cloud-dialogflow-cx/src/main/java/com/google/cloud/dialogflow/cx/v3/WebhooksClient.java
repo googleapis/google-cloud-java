@@ -120,11 +120,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * WebhooksSettings webhooksSettings =
- *     WebhooksSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             WebhooksSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * WebhooksSettings webhooksSettings = WebhooksSettings.newHttpJsonBuilder().build();
  * WebhooksClient webhooksClient = WebhooksClient.create(webhooksSettings);
  * }</pre>
  *

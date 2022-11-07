@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_environmentssettings_getenvironment_sync]
+// [START dialogflow_v2beta1_generated_EnvironmentsSettings_GetEnvironment_sync]
 import com.google.cloud.dialogflow.v2beta1.EnvironmentsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetEnvironment {
     EnvironmentsSettings environmentsSettings = environmentsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_environmentssettings_getenvironment_sync]
+// [END dialogflow_v2beta1_generated_EnvironmentsSettings_GetEnvironment_sync]

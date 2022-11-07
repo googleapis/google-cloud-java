@@ -129,11 +129,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * BinauthzManagementServiceV1Beta1Settings binauthzManagementServiceV1Beta1Settings =
- *     BinauthzManagementServiceV1Beta1Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             BinauthzManagementServiceV1Beta1Settings.defaultHttpJsonTransportProviderBuilder()
- *                 .build())
- *         .build();
+ *     BinauthzManagementServiceV1Beta1Settings.newHttpJsonBuilder().build();
  * BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
  *     BinauthzManagementServiceV1Beta1Client.create(binauthzManagementServiceV1Beta1Settings);
  * }</pre>

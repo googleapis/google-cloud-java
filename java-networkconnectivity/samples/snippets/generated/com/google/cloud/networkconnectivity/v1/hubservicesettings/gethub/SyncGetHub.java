@@ -16,7 +16,7 @@
 
 package com.google.cloud.networkconnectivity.v1.samples;
 
-// [START networkconnectivity_v1_generated_hubservicesettings_gethub_sync]
+// [START networkconnectivity_v1_generated_HubServiceSettings_GetHub_sync]
 import com.google.cloud.networkconnectivity.v1.HubServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetHub {
     HubServiceSettings hubServiceSettings = hubServiceSettingsBuilder.build();
   }
 }
-// [END networkconnectivity_v1_generated_hubservicesettings_gethub_sync]
+// [END networkconnectivity_v1_generated_HubServiceSettings_GetHub_sync]

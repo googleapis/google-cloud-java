@@ -206,27 +206,28 @@ public final class Pipeline {
           + "NDING\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\022\n\016C"
           + "ANCEL_PENDING\020\004\022\016\n\nCANCELLING\020\005\022\r\n\tCANCE"
           + "LLED\020\006\022\n\n\006FAILED\020\007\022\013\n\007SKIPPED\020\010\022\021\n\rNOT_T"
-          + "RIGGERED\020\t\"\354\003\n\032PipelineTaskExecutorDetai"
+          + "RIGGERED\020\t\"\267\004\n\032PipelineTaskExecutorDetai"
           + "l\022g\n\020container_detail\030\001 \001(\0132F.google.clo"
           + "ud.aiplatform.v1.PipelineTaskExecutorDet"
           + "ail.ContainerDetailB\003\340A\003H\000\022j\n\021custom_job"
           + "_detail\030\002 \001(\0132F.google.cloud.aiplatform."
           + "v1.PipelineTaskExecutorDetail.CustomJobD"
-          + "etailB\005\030\001\340A\003H\000\032\234\001\n\017ContainerDetail\022=\n\010ma"
+          + "etailB\005\030\001\340A\003H\000\032\347\001\n\017ContainerDetail\022=\n\010ma"
           + "in_job\030\001 \001(\tB+\340A\003\372A%\n#aiplatform.googlea"
           + "pis.com/CustomJob\022J\n\025pre_caching_check_j"
           + "ob\030\002 \001(\tB+\340A\003\372A%\n#aiplatform.googleapis."
-          + "com/CustomJob\032O\n\017CustomJobDetail\0228\n\003job\030"
-          + "\001 \001(\tB+\340A\003\372A%\n#aiplatform.googleapis.com"
-          + "/CustomJob:\002\030\001B\t\n\007detailsB\235\002\n\036com.google"
-          + ".cloud.aiplatform.v1B\010PipelineP\001ZDgoogle"
-          + ".golang.org/genproto/googleapis/cloud/ai"
-          + "platform/v1;aiplatform\252\002\032Google.Cloud.AI"
-          + "Platform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1"
-          + "\352\002\035Google::Cloud::AIPlatform::V1\352AN\n\036com"
-          + "pute.googleapis.com/Network\022,projects/{p"
-          + "roject}/global/networks/{network}b\006proto"
-          + "3"
+          + "com/CustomJob\022\035\n\020failed_main_jobs\030\003 \003(\tB"
+          + "\003\340A\003\022*\n\035failed_pre_caching_check_jobs\030\004 "
+          + "\003(\tB\003\340A\003\032O\n\017CustomJobDetail\0228\n\003job\030\001 \001(\t"
+          + "B+\340A\003\372A%\n#aiplatform.googleapis.com/Cust"
+          + "omJob:\002\030\001B\t\n\007detailsB\235\002\n\036com.google.clou"
+          + "d.aiplatform.v1B\010PipelineP\001ZDgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/aiplatf"
+          + "orm/v1;aiplatform\252\002\032Google.Cloud.AIPlatf"
+          + "orm.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Go"
+          + "ogle::Cloud::AIPlatform::V1\352AN\n\036compute."
+          + "googleapis.com/Network\022,projects/{projec"
+          + "t}/global/networks/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -421,7 +422,7 @@ public final class Pipeline {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_PipelineTaskExecutorDetail_ContainerDetail_descriptor,
             new java.lang.String[] {
-              "MainJob", "PreCachingCheckJob",
+              "MainJob", "PreCachingCheckJob", "FailedMainJobs", "FailedPreCachingCheckJobs",
             });
     internal_static_google_cloud_aiplatform_v1_PipelineTaskExecutorDetail_CustomJobDetail_descriptor =
         internal_static_google_cloud_aiplatform_v1_PipelineTaskExecutorDetail_descriptor

@@ -16,7 +16,7 @@
 
 package com.google.cloud.redis.v1beta1.stub.samples;
 
-// [START redis_v1beta1_generated_cloudredisstubsettings_getinstance_sync]
+// [START redis_v1beta1_generated_CloudRedisStubSettings_GetInstance_sync]
 import com.google.cloud.redis.v1beta1.stub.CloudRedisStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetInstance {
     CloudRedisStubSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();
   }
 }
-// [END redis_v1beta1_generated_cloudredisstubsettings_getinstance_sync]
+// [END redis_v1beta1_generated_CloudRedisStubSettings_GetInstance_sync]

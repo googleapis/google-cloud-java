@@ -96,4 +96,35 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * @return The siteToSiteDataTransfer.
    */
   boolean getSiteToSiteDataTransfer();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VPC network where these router appliance instances are
+   * located.
+   * </pre>
+   *
+   * <code>
+   * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The vpcNetwork.
+   */
+  java.lang.String getVpcNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VPC network where these router appliance instances are
+   * located.
+   * </pre>
+   *
+   * <code>
+   * string vpc_network = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for vpcNetwork.
+   */
+  com.google.protobuf.ByteString getVpcNetworkBytes();
 }

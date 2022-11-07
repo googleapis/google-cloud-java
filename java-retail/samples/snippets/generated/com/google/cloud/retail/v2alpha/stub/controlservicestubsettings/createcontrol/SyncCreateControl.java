@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2alpha.stub.samples;
 
-// [START retail_v2alpha_generated_controlservicestubsettings_createcontrol_sync]
+// [START retail_v2alpha_generated_ControlServiceStubSettings_CreateControl_sync]
 import com.google.cloud.retail.v2alpha.stub.ControlServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateControl {
     ControlServiceStubSettings controlServiceSettings = controlServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2alpha_generated_controlservicestubsettings_createcontrol_sync]
+// [END retail_v2alpha_generated_ControlServiceStubSettings_CreateControl_sync]

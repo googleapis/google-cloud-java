@@ -128,10 +128,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SecuritySettingsServiceSettings securitySettingsServiceSettings =
- *     SecuritySettingsServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             SecuritySettingsServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     SecuritySettingsServiceSettings.newHttpJsonBuilder().build();
  * SecuritySettingsServiceClient securitySettingsServiceClient =
  *     SecuritySettingsServiceClient.create(securitySettingsServiceSettings);
  * }</pre>

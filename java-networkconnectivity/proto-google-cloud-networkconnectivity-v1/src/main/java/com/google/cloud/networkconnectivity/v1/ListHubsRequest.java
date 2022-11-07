@@ -22,7 +22,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Request for [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs] method.
+ * Request for
+ * [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.ListHubsRequest}
@@ -488,7 +490,9 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request for [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs] method.
+   * Request for
+   * [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.ListHubsRequest}

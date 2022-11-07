@@ -16,7 +16,7 @@
 
 package com.google.cloud.speech.v1.stub.samples;
 
-// [START speech_v1_generated_adaptationstubsettings_createphraseset_sync]
+// [START speech_v1_generated_AdaptationStubSettings_CreatePhraseSet_sync]
 import com.google.cloud.speech.v1.stub.AdaptationStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncCreatePhraseSet {
     AdaptationStubSettings adaptationSettings = adaptationSettingsBuilder.build();
   }
 }
-// [END speech_v1_generated_adaptationstubsettings_createphraseset_sync]
+// [END speech_v1_generated_AdaptationStubSettings_CreatePhraseSet_sync]

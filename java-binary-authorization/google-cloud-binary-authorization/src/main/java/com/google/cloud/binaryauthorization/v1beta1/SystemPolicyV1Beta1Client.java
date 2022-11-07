@@ -111,10 +111,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SystemPolicyV1Beta1Settings systemPolicyV1Beta1Settings =
- *     SystemPolicyV1Beta1Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             SystemPolicyV1Beta1Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     SystemPolicyV1Beta1Settings.newHttpJsonBuilder().build();
  * SystemPolicyV1Beta1Client systemPolicyV1Beta1Client =
  *     SystemPolicyV1Beta1Client.create(systemPolicyV1Beta1Settings);
  * }</pre>

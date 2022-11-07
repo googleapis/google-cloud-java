@@ -129,10 +129,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * PredictionApiKeyRegistrySettings predictionApiKeyRegistrySettings =
- *     PredictionApiKeyRegistrySettings.newBuilder()
- *         .setTransportChannelProvider(
- *             PredictionApiKeyRegistrySettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     PredictionApiKeyRegistrySettings.newHttpJsonBuilder().build();
  * PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
  *     PredictionApiKeyRegistryClient.create(predictionApiKeyRegistrySettings);
  * }</pre>

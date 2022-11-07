@@ -69,6 +69,16 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETING = 3;</code>
    */
   DELETING(3),
+  /**
+   *
+   *
+   * <pre>
+   * The resource's Update operation is in progress
+   * </pre>
+   *
+   * <code>UPDATING = 6;</code>
+   */
+  UPDATING(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -112,6 +122,16 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETING = 3;</code>
    */
   public static final int DELETING_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The resource's Update operation is in progress
+   * </pre>
+   *
+   * <code>UPDATING = 6;</code>
+   */
+  public static final int UPDATING_VALUE = 6;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -145,6 +165,8 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
         return ACTIVE;
       case 3:
         return DELETING;
+      case 6:
+        return UPDATING;
       default:
         return null;
     }
@@ -174,7 +196,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final State[] VALUES = values();

@@ -44,6 +44,10 @@ public final class DatasetProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ImportDataConfig_DataItemLabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_ImportDataConfig_AnnotationLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_ImportDataConfig_AnnotationLabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_ExportDataConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ExportDataConfig_fieldAccessorTable;
@@ -77,22 +81,26 @@ public final class DatasetProto {
           + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:b\352A_\n!aipla"
           + "tform.googleapis.com/Dataset\022:projects/{"
           + "project}/locations/{location}/datasets/{"
-          + "dataset}\"\214\002\n\020ImportDataConfig\022;\n\ngcs_sou"
+          + "dataset}\"\244\003\n\020ImportDataConfig\022;\n\ngcs_sou"
           + "rce\030\001 \001(\0132%.google.cloud.aiplatform.v1.G"
           + "csSourceH\000\022Z\n\020data_item_labels\030\002 \003(\0132@.g"
           + "oogle.cloud.aiplatform.v1.ImportDataConf"
-          + "ig.DataItemLabelsEntry\022\036\n\021import_schema_"
-          + "uri\030\004 \001(\tB\003\340A\002\0325\n\023DataItemLabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006source\""
-          + "\204\001\n\020ExportDataConfig\022E\n\017gcs_destination\030"
-          + "\001 \001(\0132*.google.cloud.aiplatform.v1.GcsDe"
-          + "stinationH\000\022\032\n\022annotations_filter\030\002 \001(\tB"
-          + "\r\n\013destinationB\320\001\n\036com.google.cloud.aipl"
-          + "atform.v1B\014DatasetProtoP\001ZDgoogle.golang"
-          + ".org/genproto/googleapis/cloud/aiplatfor"
-          + "m/v1;aiplatform\252\002\032Google.Cloud.AIPlatfor"
-          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
-          + "le::Cloud::AIPlatform::V1b\006proto3"
+          + "ig.DataItemLabelsEntry\022]\n\021annotation_lab"
+          + "els\030\003 \003(\0132B.google.cloud.aiplatform.v1.I"
+          + "mportDataConfig.AnnotationLabelsEntry\022\036\n"
+          + "\021import_schema_uri\030\004 \001(\tB\003\340A\002\0325\n\023DataIte"
+          + "mLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001\0327\n\025AnnotationLabelsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006source\"\204\001\n\020Expo"
+          + "rtDataConfig\022E\n\017gcs_destination\030\001 \001(\0132*."
+          + "google.cloud.aiplatform.v1.GcsDestinatio"
+          + "nH\000\022\032\n\022annotations_filter\030\002 \001(\tB\r\n\013desti"
+          + "nationB\320\001\n\036com.google.cloud.aiplatform.v"
+          + "1B\014DatasetProtoP\001ZDgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/aiplatform/v1;aip"
+          + "latform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -136,7 +144,7 @@ public final class DatasetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ImportDataConfig_descriptor,
             new java.lang.String[] {
-              "GcsSource", "DataItemLabels", "ImportSchemaUri", "Source",
+              "GcsSource", "DataItemLabels", "AnnotationLabels", "ImportSchemaUri", "Source",
             });
     internal_static_google_cloud_aiplatform_v1_ImportDataConfig_DataItemLabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_ImportDataConfig_descriptor
@@ -145,6 +153,16 @@ public final class DatasetProto {
     internal_static_google_cloud_aiplatform_v1_ImportDataConfig_DataItemLabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ImportDataConfig_DataItemLabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1_ImportDataConfig_AnnotationLabelsEntry_descriptor =
+        internal_static_google_cloud_aiplatform_v1_ImportDataConfig_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1_ImportDataConfig_AnnotationLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_ImportDataConfig_AnnotationLabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

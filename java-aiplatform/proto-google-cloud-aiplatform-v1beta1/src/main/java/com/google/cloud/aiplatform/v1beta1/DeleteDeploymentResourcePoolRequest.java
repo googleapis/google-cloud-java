@@ -77,7 +77,7 @@ public final class DeleteDeploymentResourcePoolRequest
    * <pre>
    * Required. The name of the DeploymentResourcePool to delete.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public final class DeleteDeploymentResourcePoolRequest
    * <pre>
    * Required. The name of the DeploymentResourcePool to delete.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>
@@ -474,7 +474,7 @@ public final class DeleteDeploymentResourcePoolRequest
      * <pre>
      * Required. The name of the DeploymentResourcePool to delete.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -500,7 +500,7 @@ public final class DeleteDeploymentResourcePoolRequest
      * <pre>
      * Required. The name of the DeploymentResourcePool to delete.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -526,7 +526,7 @@ public final class DeleteDeploymentResourcePoolRequest
      * <pre>
      * Required. The name of the DeploymentResourcePool to delete.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -551,7 +551,7 @@ public final class DeleteDeploymentResourcePoolRequest
      * <pre>
      * Required. The name of the DeploymentResourcePool to delete.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>
@@ -572,7 +572,7 @@ public final class DeleteDeploymentResourcePoolRequest
      * <pre>
      * Required. The name of the DeploymentResourcePool to delete.
      * Format:
-     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
      * </pre>
      *
      * <code>

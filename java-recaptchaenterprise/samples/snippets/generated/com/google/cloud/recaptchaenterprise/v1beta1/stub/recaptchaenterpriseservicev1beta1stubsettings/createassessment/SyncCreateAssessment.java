@@ -16,7 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1beta1.stub.samples;
 
-// [START recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1stubsettings_createassessment_sync]
+// [START recaptchaenterprise_v1beta1_generated_RecaptchaEnterpriseServiceV1Beta1StubSettings_CreateAssessment_sync]
 import com.google.cloud.recaptchaenterprise.v1beta1.stub.RecaptchaEnterpriseServiceV1Beta1StubSettings;
 import java.time.Duration;
 
@@ -48,4 +48,4 @@ public class SyncCreateAssessment {
         recaptchaEnterpriseServiceV1Beta1SettingsBuilder.build();
   }
 }
-// [END recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1stubsettings_createassessment_sync]
+// [END recaptchaenterprise_v1beta1_generated_RecaptchaEnterpriseServiceV1Beta1StubSettings_CreateAssessment_sync]

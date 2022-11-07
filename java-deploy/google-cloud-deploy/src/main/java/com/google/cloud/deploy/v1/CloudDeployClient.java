@@ -132,11 +132,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * CloudDeploySettings cloudDeploySettings =
- *     CloudDeploySettings.newBuilder()
- *         .setTransportChannelProvider(
- *             CloudDeploySettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * CloudDeploySettings cloudDeploySettings = CloudDeploySettings.newHttpJsonBuilder().build();
  * CloudDeployClient cloudDeployClient = CloudDeployClient.create(cloudDeploySettings);
  * }</pre>
  *

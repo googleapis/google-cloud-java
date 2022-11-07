@@ -22,7 +22,8 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * The response for [HubService.ListSpokes][google.cloud.networkconnectivity.v1.HubService.ListSpokes].
+ * The response for
+ * [HubService.ListSpokes][google.cloud.networkconnectivity.v1.HubService.ListSpokes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.ListSpokesResponse}
@@ -441,7 +442,8 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The response for [HubService.ListSpokes][google.cloud.networkconnectivity.v1.HubService.ListSpokes].
+   * The response for
+   * [HubService.ListSpokes][google.cloud.networkconnectivity.v1.HubService.ListSpokes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.ListSpokesResponse}

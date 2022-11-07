@@ -16,7 +16,7 @@
 
 package com.google.cloud.osconfig.v1alpha.samples;
 
-// [START osconfig_v1alpha_generated_osconfigzonalservicesettings_getospolicyassignment_sync]
+// [START osconfig_v1alpha_generated_OsConfigZonalServiceSettings_GetOSPolicyAssignment_sync]
 import com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetOSPolicyAssignment {
         osConfigZonalServiceSettingsBuilder.build();
   }
 }
-// [END osconfig_v1alpha_generated_osconfigzonalservicesettings_getospolicyassignment_sync]
+// [END osconfig_v1alpha_generated_OsConfigZonalServiceSettings_GetOSPolicyAssignment_sync]

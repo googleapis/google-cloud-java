@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2alpha.samples;
 
-// [START retail_v2alpha_generated_modelservicesettings_pausemodel_sync]
+// [START retail_v2alpha_generated_ModelServiceSettings_PauseModel_sync]
 import com.google.cloud.retail.v2alpha.ModelServiceSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncPauseModel {
     ModelServiceSettings modelServiceSettings = modelServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2alpha_generated_modelservicesettings_pausemodel_sync]
+// [END retail_v2alpha_generated_ModelServiceSettings_PauseModel_sync]

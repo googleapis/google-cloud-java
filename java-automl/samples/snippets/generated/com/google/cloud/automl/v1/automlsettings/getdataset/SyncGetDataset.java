@@ -16,7 +16,7 @@
 
 package com.google.cloud.automl.v1.samples;
 
-// [START automl_v1_generated_automlsettings_getdataset_sync]
+// [START automl_v1_generated_AutoMlSettings_GetDataset_sync]
 import com.google.cloud.automl.v1.AutoMlSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetDataset {
     AutoMlSettings autoMlSettings = autoMlSettingsBuilder.build();
   }
 }
-// [END automl_v1_generated_automlsettings_getdataset_sync]
+// [END automl_v1_generated_AutoMlSettings_GetDataset_sync]

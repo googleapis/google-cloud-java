@@ -124,11 +124,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * ParticipantsSettings participantsSettings =
- *     ParticipantsSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             ParticipantsSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * ParticipantsSettings participantsSettings = ParticipantsSettings.newHttpJsonBuilder().build();
  * ParticipantsClient participantsClient = ParticipantsClient.create(participantsSettings);
  * }</pre>
  *

@@ -226,9 +226,9 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Output only. The Google-generated UUID for the hub. This value is unique across all hub
-   * resources. If a hub is deleted and another with the same name is created,
-   * the new hub is assigned a different unique_id.
+   * Output only. The Google-generated UUID for the hub. This value is unique
+   * across all hub resources. If a hub is deleted and another with the same
+   * name is created, the new hub is assigned a different unique_id.
    * </pre>
    *
    * <code>string unique_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -240,9 +240,9 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Output only. The Google-generated UUID for the hub. This value is unique across all hub
-   * resources. If a hub is deleted and another with the same name is created,
-   * the new hub is assigned a different unique_id.
+   * Output only. The Google-generated UUID for the hub. This value is unique
+   * across all hub resources. If a hub is deleted and another with the same
+   * name is created, the new hub is assigned a different unique_id.
    * </pre>
    *
    * <code>string unique_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

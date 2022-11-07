@@ -133,6 +133,140 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * @return The bytes for preCachingCheckJob.
      */
     com.google.protobuf.ByteString getPreCachingCheckJobBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the failedMainJobs.
+     */
+    java.util.List<java.lang.String> getFailedMainJobsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of failedMainJobs.
+     */
+    int getFailedMainJobsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The failedMainJobs at the given index.
+     */
+    java.lang.String getFailedMainJobs(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the failedMainJobs at the given index.
+     */
+    com.google.protobuf.ByteString getFailedMainJobsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the failedPreCachingCheckJobs.
+     */
+    java.util.List<java.lang.String> getFailedPreCachingCheckJobsList();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of failedPreCachingCheckJobs.
+     */
+    int getFailedPreCachingCheckJobsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The failedPreCachingCheckJobs at the given index.
+     */
+    java.lang.String getFailedPreCachingCheckJobs(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the failedPreCachingCheckJobs at the given index.
+     */
+    com.google.protobuf.ByteString getFailedPreCachingCheckJobsBytes(int index);
   }
   /**
    *
@@ -157,6 +291,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
     private ContainerDetail() {
       mainJob_ = "";
       preCachingCheckJob_ = "";
+      failedMainJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      failedPreCachingCheckJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -298,6 +434,160 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       }
     }
 
+    public static final int FAILED_MAIN_JOBS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList failedMainJobs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the failedMainJobs.
+     */
+    public com.google.protobuf.ProtocolStringList getFailedMainJobsList() {
+      return failedMainJobs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of failedMainJobs.
+     */
+    public int getFailedMainJobsCount() {
+      return failedMainJobs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The failedMainJobs at the given index.
+     */
+    public java.lang.String getFailedMainJobs(int index) {
+      return failedMainJobs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+     * executions. The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the failedMainJobs at the given index.
+     */
+    public com.google.protobuf.ByteString getFailedMainJobsBytes(int index) {
+      return failedMainJobs_.getByteString(index);
+    }
+
+    public static final int FAILED_PRE_CACHING_CHECK_JOBS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList failedPreCachingCheckJobs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the failedPreCachingCheckJobs.
+     */
+    public com.google.protobuf.ProtocolStringList getFailedPreCachingCheckJobsList() {
+      return failedPreCachingCheckJobs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of failedPreCachingCheckJobs.
+     */
+    public int getFailedPreCachingCheckJobsCount() {
+      return failedPreCachingCheckJobs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The failedPreCachingCheckJobs at the given index.
+     */
+    public java.lang.String getFailedPreCachingCheckJobs(int index) {
+      return failedPreCachingCheckJobs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+     * pre-caching-check container executions. This job will be available if the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+     * the lifecycle events.
+     * The list includes the all attempts in chronological order.
+     * </pre>
+     *
+     * <code>
+     * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the failedPreCachingCheckJobs at the given index.
+     */
+    public com.google.protobuf.ByteString getFailedPreCachingCheckJobsBytes(int index) {
+      return failedPreCachingCheckJobs_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -318,6 +608,13 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preCachingCheckJob_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, preCachingCheckJob_);
       }
+      for (int i = 0; i < failedMainJobs_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, failedMainJobs_.getRaw(i));
+      }
+      for (int i = 0; i < failedPreCachingCheckJobs_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 4, failedPreCachingCheckJobs_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -332,6 +629,22 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(preCachingCheckJob_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, preCachingCheckJob_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < failedMainJobs_.size(); i++) {
+          dataSize += computeStringSizeNoTag(failedMainJobs_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFailedMainJobsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < failedPreCachingCheckJobs_.size(); i++) {
+          dataSize += computeStringSizeNoTag(failedPreCachingCheckJobs_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFailedPreCachingCheckJobsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -352,6 +665,9 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
 
       if (!getMainJob().equals(other.getMainJob())) return false;
       if (!getPreCachingCheckJob().equals(other.getPreCachingCheckJob())) return false;
+      if (!getFailedMainJobsList().equals(other.getFailedMainJobsList())) return false;
+      if (!getFailedPreCachingCheckJobsList().equals(other.getFailedPreCachingCheckJobsList()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -367,6 +683,14 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
       hash = (53 * hash) + getMainJob().hashCode();
       hash = (37 * hash) + PRE_CACHING_CHECK_JOB_FIELD_NUMBER;
       hash = (53 * hash) + getPreCachingCheckJob().hashCode();
+      if (getFailedMainJobsCount() > 0) {
+        hash = (37 * hash) + FAILED_MAIN_JOBS_FIELD_NUMBER;
+        hash = (53 * hash) + getFailedMainJobsList().hashCode();
+      }
+      if (getFailedPreCachingCheckJobsCount() > 0) {
+        hash = (37 * hash) + FAILED_PRE_CACHING_CHECK_JOBS_FIELD_NUMBER;
+        hash = (53 * hash) + getFailedPreCachingCheckJobsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -521,6 +845,10 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
 
         preCachingCheckJob_ = "";
 
+        failedMainJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        failedPreCachingCheckJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -552,8 +880,19 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           buildPartial() {
         com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.ContainerDetail result =
             new com.google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.ContainerDetail(this);
+        int from_bitField0_ = bitField0_;
         result.mainJob_ = mainJob_;
         result.preCachingCheckJob_ = preCachingCheckJob_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          failedMainJobs_ = failedMainJobs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.failedMainJobs_ = failedMainJobs_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          failedPreCachingCheckJobs_ = failedPreCachingCheckJobs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.failedPreCachingCheckJobs_ = failedPreCachingCheckJobs_;
         onBuilt();
         return result;
       }
@@ -618,6 +957,26 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
           preCachingCheckJob_ = other.preCachingCheckJob_;
           onChanged();
         }
+        if (!other.failedMainJobs_.isEmpty()) {
+          if (failedMainJobs_.isEmpty()) {
+            failedMainJobs_ = other.failedMainJobs_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFailedMainJobsIsMutable();
+            failedMainJobs_.addAll(other.failedMainJobs_);
+          }
+          onChanged();
+        }
+        if (!other.failedPreCachingCheckJobs_.isEmpty()) {
+          if (failedPreCachingCheckJobs_.isEmpty()) {
+            failedPreCachingCheckJobs_ = other.failedPreCachingCheckJobs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFailedPreCachingCheckJobsIsMutable();
+            failedPreCachingCheckJobs_.addAll(other.failedPreCachingCheckJobs_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -656,6 +1015,20 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
 
                   break;
                 } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFailedMainJobsIsMutable();
+                  failedMainJobs_.add(s);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFailedPreCachingCheckJobsIsMutable();
+                  failedPreCachingCheckJobs_.add(s);
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -672,6 +1045,8 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object mainJob_ = "";
       /**
@@ -916,6 +1291,415 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
         checkByteStringIsUtf8(value);
 
         preCachingCheckJob_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList failedMainJobs_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureFailedMainJobsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          failedMainJobs_ = new com.google.protobuf.LazyStringArrayList(failedMainJobs_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return A list containing the failedMainJobs.
+       */
+      public com.google.protobuf.ProtocolStringList getFailedMainJobsList() {
+        return failedMainJobs_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The count of failedMainJobs.
+       */
+      public int getFailedMainJobsCount() {
+        return failedMainJobs_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The failedMainJobs at the given index.
+       */
+      public java.lang.String getFailedMainJobs(int index) {
+        return failedMainJobs_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the failedMainJobs at the given index.
+       */
+      public com.google.protobuf.ByteString getFailedMainJobsBytes(int index) {
+        return failedMainJobs_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The failedMainJobs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailedMainJobs(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFailedMainJobsIsMutable();
+        failedMainJobs_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The failedMainJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFailedMainJobs(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFailedMainJobsIsMutable();
+        failedMainJobs_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param values The failedMainJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFailedMainJobs(java.lang.Iterable<java.lang.String> values) {
+        ensureFailedMainJobsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, failedMainJobs_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFailedMainJobs() {
+        failedMainJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the main container
+       * executions. The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>repeated string failed_main_jobs = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes of the failedMainJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFailedMainJobsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFailedMainJobsIsMutable();
+        failedMainJobs_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList failedPreCachingCheckJobs_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureFailedPreCachingCheckJobsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          failedPreCachingCheckJobs_ =
+              new com.google.protobuf.LazyStringArrayList(failedPreCachingCheckJobs_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return A list containing the failedPreCachingCheckJobs.
+       */
+      public com.google.protobuf.ProtocolStringList getFailedPreCachingCheckJobsList() {
+        return failedPreCachingCheckJobs_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The count of failedPreCachingCheckJobs.
+       */
+      public int getFailedPreCachingCheckJobsCount() {
+        return failedPreCachingCheckJobs_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The failedPreCachingCheckJobs at the given index.
+       */
+      public java.lang.String getFailedPreCachingCheckJobs(int index) {
+        return failedPreCachingCheckJobs_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the failedPreCachingCheckJobs at the given index.
+       */
+      public com.google.protobuf.ByteString getFailedPreCachingCheckJobsBytes(int index) {
+        return failedPreCachingCheckJobs_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The failedPreCachingCheckJobs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailedPreCachingCheckJobs(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFailedPreCachingCheckJobsIsMutable();
+        failedPreCachingCheckJobs_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The failedPreCachingCheckJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFailedPreCachingCheckJobs(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFailedPreCachingCheckJobsIsMutable();
+        failedPreCachingCheckJobs_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param values The failedPreCachingCheckJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFailedPreCachingCheckJobs(java.lang.Iterable<java.lang.String> values) {
+        ensureFailedPreCachingCheckJobsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, failedPreCachingCheckJobs_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFailedPreCachingCheckJobs() {
+        failedPreCachingCheckJobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The names of the previously failed [CustomJob][google.cloud.aiplatform.v1.CustomJob] for the
+       * pre-caching-check container executions. This job will be available if the
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] specifies the `pre_caching_check` hook in
+       * the lifecycle events.
+       * The list includes the all attempts in chronological order.
+       * </pre>
+       *
+       * <code>
+       * repeated string failed_pre_caching_check_jobs = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes of the failedPreCachingCheckJobs to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFailedPreCachingCheckJobsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFailedPreCachingCheckJobsIsMutable();
+        failedPreCachingCheckJobs_.add(value);
         onChanged();
         return this;
       }
@@ -1785,7 +2569,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=359
+   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=370
    * @return Whether the customJobDetail field is set.
    */
   @java.lang.Override
@@ -1805,7 +2589,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=359
+   *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=370
    * @return The customJobDetail.
    */
   @java.lang.Override
@@ -2519,7 +3303,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=359
+     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=370
      * @return Whether the customJobDetail field is set.
      */
     @java.lang.Override
@@ -2539,7 +3323,7 @@ public final class PipelineTaskExecutorDetail extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.PipelineTaskExecutorDetail.custom_job_detail is
-     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=359
+     *     deprecated. See google/cloud/aiplatform/v1/pipeline_job.proto;l=370
      * @return The customJobDetail.
      */
     @java.lang.Override

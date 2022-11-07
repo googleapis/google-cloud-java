@@ -16,7 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3.samples;
 
-// [START documentai_v1beta3_generated_documentprocessorservicesettings_processdocument_sync]
+// [START documentai_v1beta3_generated_DocumentProcessorServiceSettings_ProcessDocument_sync]
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncProcessDocument {
         documentProcessorServiceSettingsBuilder.build();
   }
 }
-// [END documentai_v1beta3_generated_documentprocessorservicesettings_processdocument_sync]
+// [END documentai_v1beta3_generated_DocumentProcessorServiceSettings_ProcessDocument_sync]

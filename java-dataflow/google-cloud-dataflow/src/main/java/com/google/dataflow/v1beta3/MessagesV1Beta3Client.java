@@ -132,10 +132,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * MessagesV1Beta3Settings messagesV1Beta3Settings =
- *     MessagesV1Beta3Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             MessagesV1Beta3Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     MessagesV1Beta3Settings.newHttpJsonBuilder().build();
  * MessagesV1Beta3Client messagesV1Beta3Client =
  *     MessagesV1Beta3Client.create(messagesV1Beta3Settings);
  * }</pre>

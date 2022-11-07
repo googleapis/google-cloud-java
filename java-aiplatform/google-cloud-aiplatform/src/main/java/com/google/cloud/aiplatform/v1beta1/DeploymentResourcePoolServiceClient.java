@@ -220,7 +220,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent location resource where this DeploymentResourcePool will be
-   *     created. Format: projects/{project}/locations/{location}
+   *     created. Format: `projects/{project}/locations/{location}`
    * @param deploymentResourcePool Required. The DeploymentResourcePool to create.
    * @param deploymentResourcePoolId Required. The ID to use for the DeploymentResourcePool, which
    *     will become the final component of the DeploymentResourcePool's resource name.
@@ -269,7 +269,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent location resource where this DeploymentResourcePool will be
-   *     created. Format: projects/{project}/locations/{location}
+   *     created. Format: `projects/{project}/locations/{location}`
    * @param deploymentResourcePool Required. The DeploymentResourcePool to create.
    * @param deploymentResourcePoolId Required. The ID to use for the DeploymentResourcePool, which
    *     will become the final component of the DeploymentResourcePool's resource name.
@@ -420,7 +420,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DeploymentResourcePool to retrieve. Format:
-   *     projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeploymentResourcePool getDeploymentResourcePool(DeploymentResourcePoolName name) {
@@ -454,7 +454,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DeploymentResourcePool to retrieve. Format:
-   *     projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeploymentResourcePool getDeploymentResourcePool(String name) {
@@ -555,7 +555,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent Location which owns this collection of
-   *     DeploymentResourcePools. Format: projects/{project}/locations/{location}
+   *     DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeploymentResourcePoolsPagedResponse listDeploymentResourcePools(
@@ -590,7 +590,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent Location which owns this collection of
-   *     DeploymentResourcePools. Format: projects/{project}/locations/{location}
+   *     DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeploymentResourcePoolsPagedResponse listDeploymentResourcePools(String parent) {
@@ -734,7 +734,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DeploymentResourcePool to delete. Format:
-   *     projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDeploymentResourcePoolAsync(
@@ -768,7 +768,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the DeploymentResourcePool to delete. Format:
-   *     projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDeploymentResourcePoolAsync(
@@ -908,7 +908,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    *
    * @param deploymentResourcePool Required. The name of the target DeploymentResourcePool to query.
    *     Format:
-   *     projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QueryDeployedModelsPagedResponse queryDeployedModels(String deploymentResourcePool) {

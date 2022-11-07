@@ -22,7 +22,9 @@ package com.google.cloud.networkconnectivity.v1;
  *
  *
  * <pre>
- * Response for [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs] method.
+ * Response for
+ * [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1.ListHubsResponse}
@@ -441,7 +443,9 @@ public final class ListHubsResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Response for [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs] method.
+   * Response for
+   * [HubService.ListHubs][google.cloud.networkconnectivity.v1.HubService.ListHubs]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.ListHubsResponse}

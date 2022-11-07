@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcesettings.v1.stub.samples;
 
-// [START resourcesettings_v1_generated_resourcesettingsservicestubsettings_getsetting_sync]
+// [START resourcesettings_v1_generated_ResourceSettingsServiceStubSettings_GetSetting_sync]
 import com.google.cloud.resourcesettings.v1.stub.ResourceSettingsServiceStubSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetSetting {
         resourceSettingsServiceSettingsBuilder.build();
   }
 }
-// [END resourcesettings_v1_generated_resourcesettingsservicestubsettings_getsetting_sync]
+// [END resourcesettings_v1_generated_ResourceSettingsServiceStubSettings_GetSetting_sync]

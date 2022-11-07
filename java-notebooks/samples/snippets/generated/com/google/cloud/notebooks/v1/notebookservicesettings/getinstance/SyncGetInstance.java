@@ -16,7 +16,7 @@
 
 package com.google.cloud.notebooks.v1.samples;
 
-// [START notebooks_v1_generated_notebookservicesettings_getinstance_sync]
+// [START notebooks_v1_generated_NotebookServiceSettings_GetInstance_sync]
 import com.google.cloud.notebooks.v1.NotebookServiceSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetInstance {
     NotebookServiceSettings notebookServiceSettings = notebookServiceSettingsBuilder.build();
   }
 }
-// [END notebooks_v1_generated_notebookservicesettings_getinstance_sync]
+// [END notebooks_v1_generated_NotebookServiceSettings_GetInstance_sync]

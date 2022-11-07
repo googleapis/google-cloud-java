@@ -16,7 +16,7 @@
 
 package com.google.cloud.optimization.v1.stub.samples;
 
-// [START cloudoptimization_v1_generated_fleetroutingstubsettings_optimizetours_sync]
+// [START cloudoptimization_v1_generated_FleetRoutingStubSettings_OptimizeTours_sync]
 import com.google.cloud.optimization.v1.stub.FleetRoutingStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncOptimizeTours {
     FleetRoutingStubSettings fleetRoutingSettings = fleetRoutingSettingsBuilder.build();
   }
 }
-// [END cloudoptimization_v1_generated_fleetroutingstubsettings_optimizetours_sync]
+// [END cloudoptimization_v1_generated_FleetRoutingStubSettings_OptimizeTours_sync]

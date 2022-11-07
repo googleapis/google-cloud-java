@@ -62,4 +62,5 @@
     <module>proto-google-cloud-automl-v1</module>
     <module>google-cloud-automl-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -16,7 +16,7 @@
 
 package com.google.cloud.texttospeech.v1.samples;
 
-// [START texttospeech_v1_generated_texttospeechsettings_listvoices_sync]
+// [START texttospeech_v1_generated_TextToSpeechSettings_ListVoices_sync]
 import com.google.cloud.texttospeech.v1.TextToSpeechSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncListVoices {
     TextToSpeechSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
   }
 }
-// [END texttospeech_v1_generated_texttospeechsettings_listvoices_sync]
+// [END texttospeech_v1_generated_TextToSpeechSettings_ListVoices_sync]

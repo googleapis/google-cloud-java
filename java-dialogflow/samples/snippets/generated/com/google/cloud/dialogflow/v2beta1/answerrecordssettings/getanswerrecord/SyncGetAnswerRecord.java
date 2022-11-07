@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START dialogflow_v2beta1_generated_answerrecordssettings_getanswerrecord_sync]
+// [START dialogflow_v2beta1_generated_AnswerRecordsSettings_GetAnswerRecord_sync]
 import com.google.cloud.dialogflow.v2beta1.AnswerRecordsSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetAnswerRecord {
     AnswerRecordsSettings answerRecordsSettings = answerRecordsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_answerrecordssettings_getanswerrecord_sync]
+// [END dialogflow_v2beta1_generated_AnswerRecordsSettings_GetAnswerRecord_sync]

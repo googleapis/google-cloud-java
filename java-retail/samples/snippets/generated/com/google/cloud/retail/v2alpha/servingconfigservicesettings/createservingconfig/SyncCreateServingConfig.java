@@ -16,7 +16,7 @@
 
 package com.google.cloud.retail.v2alpha.samples;
 
-// [START retail_v2alpha_generated_servingconfigservicesettings_createservingconfig_sync]
+// [START retail_v2alpha_generated_ServingConfigServiceSettings_CreateServingConfig_sync]
 import com.google.cloud.retail.v2alpha.ServingConfigServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateServingConfig {
         servingConfigServiceSettingsBuilder.build();
   }
 }
-// [END retail_v2alpha_generated_servingconfigservicesettings_createservingconfig_sync]
+// [END retail_v2alpha_generated_ServingConfigServiceSettings_CreateServingConfig_sync]

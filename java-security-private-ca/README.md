@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-security-private-ca</artifactId>
-  <version>2.5.4</version>
+  <version>2.7.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-security-private-ca:2.5.4'
+implementation 'com.google.cloud:google-cloud-security-private-ca:2.7.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-security-private-ca" % "2.5.4"
+libraryDependencies += "com.google.cloud" % "google-cloud-security-private-ca" % "2.7.0"
 ```
 
 ## Authentication
@@ -68,37 +68,6 @@ use this Certificate Authority Service Client Library.
 
 
 
-
-
-## Samples
-
-Samples are in the [`samples/`](https://github.com/googleapis/java-security-private-ca/tree/main/samples) directory.
-
-| Sample                      | Source Code                       | Try it |
-| --------------------------- | --------------------------------- | ------ |
-| Activate Subordinate Ca | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/ActivateSubordinateCa.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/ActivateSubordinateCa.java) |
-| Create Ca Pool | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/CreateCaPool.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/CreateCaPool.java) |
-| Create Certificate | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/CreateCertificate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/CreateCertificate.java) |
-| Create Certificate Authority | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/CreateCertificateAuthority.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/CreateCertificateAuthority.java) |
-| Create Certificate Template | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/CreateCertificateTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/CreateCertificateTemplate.java) |
-| Create Certificate_CSR | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/CreateCertificate_CSR.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/CreateCertificate_CSR.java) |
-| Create Subordinate Ca | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/CreateSubordinateCa.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/CreateSubordinateCa.java) |
-| Delete Ca Pool | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/DeleteCaPool.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/DeleteCaPool.java) |
-| Delete Certificate Authority | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/DeleteCertificateAuthority.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/DeleteCertificateAuthority.java) |
-| Delete Certificate Template | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/DeleteCertificateTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/DeleteCertificateTemplate.java) |
-| Disable Certificate Authority | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/DisableCertificateAuthority.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/DisableCertificateAuthority.java) |
-| Enable Certificate Authority | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/EnableCertificateAuthority.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/EnableCertificateAuthority.java) |
-| Filter Certificates | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/FilterCertificates.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/FilterCertificates.java) |
-| List Ca Pools | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/ListCaPools.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/ListCaPools.java) |
-| List Certificate Authorities | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/ListCertificateAuthorities.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/ListCertificateAuthorities.java) |
-| List Certificate Templates | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/ListCertificateTemplates.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/ListCertificateTemplates.java) |
-| List Certificates | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/ListCertificates.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/ListCertificates.java) |
-| Monitor Certificate Authority | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/MonitorCertificateAuthority.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/MonitorCertificateAuthority.java) |
-| Revoke Certificate | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/RevokeCertificate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/RevokeCertificate.java) |
-| Undelete Certificate Authority | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/UndeleteCertificateAuthority.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/UndeleteCertificateAuthority.java) |
-| Update Ca Pool_Issuance Policy | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/UpdateCaPool_IssuancePolicy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/UpdateCaPool_IssuancePolicy.java) |
-| Update Certificate Authority | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/UpdateCertificateAuthority.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/UpdateCertificateAuthority.java) |
-| Update Certificate Template | [source code](https://github.com/googleapis/java-security-private-ca/blob/main/samples/snippets/cloud-client/src/main/java/privateca/UpdateCertificateTemplate.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-security-private-ca&page=editor&open_in_editor=samples/snippets/cloud-client/src/main/java/privateca/UpdateCertificateTemplate.java) |
 
 
 

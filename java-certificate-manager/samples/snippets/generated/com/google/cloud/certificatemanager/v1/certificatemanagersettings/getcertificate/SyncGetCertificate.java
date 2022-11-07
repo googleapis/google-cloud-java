@@ -16,7 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START certificatemanager_v1_generated_certificatemanagersettings_getcertificate_sync]
+// [START certificatemanager_v1_generated_CertificateManagerSettings_GetCertificate_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncGetCertificate {
         certificateManagerSettingsBuilder.build();
   }
 }
-// [END certificatemanager_v1_generated_certificatemanagersettings_getcertificate_sync]
+// [END certificatemanager_v1_generated_CertificateManagerSettings_GetCertificate_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.apigeeregistry.v1.stub.samples;
 
-// [START apigeeregistry_v1_generated_registrystubsettings_getapi_sync]
+// [START apigeeregistry_v1_generated_RegistryStubSettings_GetApi_sync]
 import com.google.cloud.apigeeregistry.v1.stub.RegistryStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetApi {
     RegistryStubSettings registrySettings = registrySettingsBuilder.build();
   }
 }
-// [END apigeeregistry_v1_generated_registrystubsettings_getapi_sync]
+// [END apigeeregistry_v1_generated_RegistryStubSettings_GetApi_sync]

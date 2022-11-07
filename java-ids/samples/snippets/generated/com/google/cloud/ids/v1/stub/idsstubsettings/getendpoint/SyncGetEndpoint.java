@@ -16,7 +16,7 @@
 
 package com.google.cloud.ids.v1.stub.samples;
 
-// [START ids_v1_generated_idsstubsettings_getendpoint_sync]
+// [START ids_v1_generated_IDSStubSettings_GetEndpoint_sync]
 import com.google.cloud.ids.v1.stub.IDSStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetEndpoint {
     IDSStubSettings iDSSettings = iDSSettingsBuilder.build();
   }
 }
-// [END ids_v1_generated_idsstubsettings_getendpoint_sync]
+// [END ids_v1_generated_IDSStubSettings_GetEndpoint_sync]

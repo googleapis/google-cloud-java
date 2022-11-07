@@ -50,4 +50,5 @@
     <module>proto-google-cloud-os-login-v1</module>
     <module>google-cloud-os-login-bom</module>
   </modules>
-</project>
+
+  </project>

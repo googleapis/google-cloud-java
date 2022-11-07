@@ -16,7 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.stub.samples;
 
-// [START dialogflow_v2beta1_generated_documentsstubsettings_getdocument_sync]
+// [START dialogflow_v2beta1_generated_DocumentsStubSettings_GetDocument_sync]
 import com.google.cloud.dialogflow.v2beta1.stub.DocumentsStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetDocument {
     DocumentsStubSettings documentsSettings = documentsSettingsBuilder.build();
   }
 }
-// [END dialogflow_v2beta1_generated_documentsstubsettings_getdocument_sync]
+// [END dialogflow_v2beta1_generated_DocumentsStubSettings_GetDocument_sync]

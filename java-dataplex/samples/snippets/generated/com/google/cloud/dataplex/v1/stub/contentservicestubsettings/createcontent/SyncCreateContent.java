@@ -16,7 +16,7 @@
 
 package com.google.cloud.dataplex.v1.stub.samples;
 
-// [START dataplex_v1_generated_contentservicestubsettings_createcontent_sync]
+// [START dataplex_v1_generated_ContentServiceStubSettings_CreateContent_sync]
 import com.google.cloud.dataplex.v1.stub.ContentServiceStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncCreateContent {
     ContentServiceStubSettings contentServiceSettings = contentServiceSettingsBuilder.build();
   }
 }
-// [END dataplex_v1_generated_contentservicestubsettings_createcontent_sync]
+// [END dataplex_v1_generated_ContentServiceStubSettings_CreateContent_sync]

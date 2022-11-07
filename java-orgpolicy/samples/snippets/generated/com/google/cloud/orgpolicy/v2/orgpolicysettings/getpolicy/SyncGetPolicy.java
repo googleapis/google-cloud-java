@@ -16,7 +16,7 @@
 
 package com.google.cloud.orgpolicy.v2.samples;
 
-// [START orgpolicy_v2_generated_orgpolicysettings_getpolicy_sync]
+// [START orgpolicy_v2_generated_OrgPolicySettings_GetPolicy_sync]
 import com.google.cloud.orgpolicy.v2.OrgPolicySettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetPolicy {
     OrgPolicySettings orgPolicySettings = orgPolicySettingsBuilder.build();
   }
 }
-// [END orgpolicy_v2_generated_orgpolicysettings_getpolicy_sync]
+// [END orgpolicy_v2_generated_OrgPolicySettings_GetPolicy_sync]

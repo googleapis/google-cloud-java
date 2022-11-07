@@ -16,7 +16,7 @@
 
 package com.google.protos.google.cloud.binaryauthorization.v1.samples;
 
-// [START binaryauthorization_v1_generated_systempolicyv1settings_getsystempolicy_sync]
+// [START binaryauthorization_v1_generated_SystemPolicyV1Settings_GetSystemPolicy_sync]
 import com.google.protos.google.cloud.binaryauthorization.v1.SystemPolicyV1Settings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetSystemPolicy {
     SystemPolicyV1Settings systemPolicyV1Settings = systemPolicyV1SettingsBuilder.build();
   }
 }
-// [END binaryauthorization_v1_generated_systempolicyv1settings_getsystempolicy_sync]
+// [END binaryauthorization_v1_generated_SystemPolicyV1Settings_GetSystemPolicy_sync]

@@ -16,7 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.stub.samples;
 
-// [START cloudresourcemanager_v3_generated_organizationsstubsettings_getorganization_sync]
+// [START cloudresourcemanager_v3_generated_OrganizationsStubSettings_GetOrganization_sync]
 import com.google.cloud.resourcemanager.v3.stub.OrganizationsStubSettings;
 import java.time.Duration;
 
@@ -43,4 +43,4 @@ public class SyncGetOrganization {
     OrganizationsStubSettings organizationsSettings = organizationsSettingsBuilder.build();
   }
 }
-// [END cloudresourcemanager_v3_generated_organizationsstubsettings_getorganization_sync]
+// [END cloudresourcemanager_v3_generated_OrganizationsStubSettings_GetOrganization_sync]

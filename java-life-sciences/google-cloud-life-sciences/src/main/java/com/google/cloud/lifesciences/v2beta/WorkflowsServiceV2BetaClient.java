@@ -123,10 +123,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * WorkflowsServiceV2BetaSettings workflowsServiceV2BetaSettings =
- *     WorkflowsServiceV2BetaSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             WorkflowsServiceV2BetaSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     WorkflowsServiceV2BetaSettings.newHttpJsonBuilder().build();
  * WorkflowsServiceV2BetaClient workflowsServiceV2BetaClient =
  *     WorkflowsServiceV2BetaClient.create(workflowsServiceV2BetaSettings);
  * }</pre>

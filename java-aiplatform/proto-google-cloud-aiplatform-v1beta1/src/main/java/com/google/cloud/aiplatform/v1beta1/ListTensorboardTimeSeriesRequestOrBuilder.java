@@ -29,7 +29,7 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * <pre>
    * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListTensorboardTimeSeriesRequestOrBuilder
    * <pre>
    * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
    * Format:
-   * 'projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}'
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * </pre>
    *
    * <code>

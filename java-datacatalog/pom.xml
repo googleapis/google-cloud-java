@@ -62,4 +62,5 @@
     <module>proto-google-cloud-datacatalog-v1beta1</module>
     <module>google-cloud-datacatalog-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -68,4 +68,5 @@
     <module>proto-google-cloud-binary-authorization-v1</module>
     <module>google-cloud-binary-authorization-bom</module>
   </modules>
-</project>
+
+  </project>

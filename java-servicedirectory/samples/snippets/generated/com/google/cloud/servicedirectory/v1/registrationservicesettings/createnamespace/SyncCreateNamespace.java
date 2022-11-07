@@ -16,7 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1.samples;
 
-// [START servicedirectory_v1_generated_registrationservicesettings_createnamespace_sync]
+// [START servicedirectory_v1_generated_RegistrationServiceSettings_CreateNamespace_sync]
 import com.google.cloud.servicedirectory.v1.RegistrationServiceSettings;
 import java.time.Duration;
 
@@ -47,4 +47,4 @@ public class SyncCreateNamespace {
         registrationServiceSettingsBuilder.build();
   }
 }
-// [END servicedirectory_v1_generated_registrationservicesettings_createnamespace_sync]
+// [END servicedirectory_v1_generated_RegistrationServiceSettings_CreateNamespace_sync]

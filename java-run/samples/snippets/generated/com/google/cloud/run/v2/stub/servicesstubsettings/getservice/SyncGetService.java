@@ -16,7 +16,7 @@
 
 package com.google.cloud.run.v2.stub.samples;
 
-// [START run_v2_generated_servicesstubsettings_getservice_sync]
+// [START run_v2_generated_ServicesStubSettings_GetService_sync]
 import com.google.cloud.run.v2.stub.ServicesStubSettings;
 import java.time.Duration;
 
@@ -42,4 +42,4 @@ public class SyncGetService {
     ServicesStubSettings servicesSettings = servicesSettingsBuilder.build();
   }
 }
-// [END run_v2_generated_servicesstubsettings_getservice_sync]
+// [END run_v2_generated_ServicesStubSettings_GetService_sync]

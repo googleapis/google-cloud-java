@@ -77,7 +77,7 @@ public final class CreateDeploymentResourcePoolRequest
    *
    * <pre>
    * Required. The parent location resource where this DeploymentResourcePool will be
-   * created. Format: projects/{project}/locations/{location}
+   * created. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class CreateDeploymentResourcePoolRequest
    *
    * <pre>
    * Required. The parent location resource where this DeploymentResourcePool will be
-   * created. Format: projects/{project}/locations/{location}
+   * created. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -643,7 +643,7 @@ public final class CreateDeploymentResourcePoolRequest
      *
      * <pre>
      * Required. The parent location resource where this DeploymentResourcePool will be
-     * created. Format: projects/{project}/locations/{location}
+     * created. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -668,7 +668,7 @@ public final class CreateDeploymentResourcePoolRequest
      *
      * <pre>
      * Required. The parent location resource where this DeploymentResourcePool will be
-     * created. Format: projects/{project}/locations/{location}
+     * created. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -693,7 +693,7 @@ public final class CreateDeploymentResourcePoolRequest
      *
      * <pre>
      * Required. The parent location resource where this DeploymentResourcePool will be
-     * created. Format: projects/{project}/locations/{location}
+     * created. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -717,7 +717,7 @@ public final class CreateDeploymentResourcePoolRequest
      *
      * <pre>
      * Required. The parent location resource where this DeploymentResourcePool will be
-     * created. Format: projects/{project}/locations/{location}
+     * created. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -737,7 +737,7 @@ public final class CreateDeploymentResourcePoolRequest
      *
      * <pre>
      * Required. The parent location resource where this DeploymentResourcePool will be
-     * created. Format: projects/{project}/locations/{location}
+     * created. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

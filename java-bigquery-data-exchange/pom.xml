@@ -50,4 +50,5 @@
     <module>proto-google-cloud-bigquery-data-exchange-v1beta1</module>
     <module>google-cloud-bigquery-data-exchange-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -130,11 +130,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * Debugger2Settings debugger2Settings =
- *     Debugger2Settings.newBuilder()
- *         .setTransportChannelProvider(
- *             Debugger2Settings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * Debugger2Settings debugger2Settings = Debugger2Settings.newHttpJsonBuilder().build();
  * Debugger2Client debugger2Client = Debugger2Client.create(debugger2Settings);
  * }</pre>
  *

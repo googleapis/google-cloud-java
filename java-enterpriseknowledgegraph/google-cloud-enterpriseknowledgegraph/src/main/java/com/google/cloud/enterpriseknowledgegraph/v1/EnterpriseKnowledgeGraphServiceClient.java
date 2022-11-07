@@ -124,11 +124,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * EnterpriseKnowledgeGraphServiceSettings enterpriseKnowledgeGraphServiceSettings =
- *     EnterpriseKnowledgeGraphServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             EnterpriseKnowledgeGraphServiceSettings.defaultHttpJsonTransportProviderBuilder()
- *                 .build())
- *         .build();
+ *     EnterpriseKnowledgeGraphServiceSettings.newHttpJsonBuilder().build();
  * EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
  *     EnterpriseKnowledgeGraphServiceClient.create(enterpriseKnowledgeGraphServiceSettings);
  * }</pre>

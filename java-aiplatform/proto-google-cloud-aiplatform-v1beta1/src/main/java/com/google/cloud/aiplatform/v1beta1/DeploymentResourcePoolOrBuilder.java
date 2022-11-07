@@ -29,7 +29,7 @@ public interface DeploymentResourcePoolOrBuilder
    * <pre>
    * Output only. The resource name of the DeploymentResourcePool.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -43,7 +43,7 @@ public interface DeploymentResourcePoolOrBuilder
    * <pre>
    * Output only. The resource name of the DeploymentResourcePool.
    * Format:
-   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
