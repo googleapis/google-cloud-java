@@ -151,7 +151,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-core-parent</site.installationModule>
-    <gax.version>2.19.4</gax.version>
+    <gax.version>2.19.5</gax.version>
     <google.api-common.version>2.2.2</google.api-common.version>
     <google.common-protos.version>2.10.0</google.common-protos.version>
     <google.iam.version>1.6.7</google.iam.version>
