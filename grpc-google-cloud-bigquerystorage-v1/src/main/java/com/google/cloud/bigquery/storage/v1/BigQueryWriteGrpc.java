@@ -424,11 +424,6 @@ public final class BigQueryWriteGrpc {
      * * For PENDING streams, data is not made visible until the stream itself is
      * finalized (via the `FinalizeWriteStream` rpc), and the stream is explicitly
      * committed via the `BatchCommitWriteStreams` rpc.
-     * Note: For users coding against the gRPC api directly, it may be
-     * necessary to supply the x-goog-request-params system parameter
-     * with `write_stream=&lt;full_write_stream_name&gt;`.
-     * More information about system parameters:
-     * https://cloud.google.com/apis/docs/system-parameters
      * </pre>
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.AppendRowsRequest>
@@ -630,11 +625,6 @@ public final class BigQueryWriteGrpc {
      * * For PENDING streams, data is not made visible until the stream itself is
      * finalized (via the `FinalizeWriteStream` rpc), and the stream is explicitly
      * committed via the `BatchCommitWriteStreams` rpc.
-     * Note: For users coding against the gRPC api directly, it may be
-     * necessary to supply the x-goog-request-params system parameter
-     * with `write_stream=&lt;full_write_stream_name&gt;`.
-     * More information about system parameters:
-     * https://cloud.google.com/apis/docs/system-parameters
      * </pre>
      */
     public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.AppendRowsRequest>
