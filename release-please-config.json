@@ -262,8 +262,8 @@
     "java-managed-identities": {
       "component": "google-cloud-managed-identities"
     },
-    "java-maps-routiting": {
-      "component": "google-maps-routes"
+    "java-maps-routing": {
+      "component": "google-maps-routing"
     },
     "java-mediatranslation": {
       "component": "google-cloud-mediatranslation"

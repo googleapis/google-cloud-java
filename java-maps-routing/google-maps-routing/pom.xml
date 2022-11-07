@@ -2,18 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
-  <artifactId>google-maps-routes</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routes:current} -->
+  <artifactId>google-maps-routing</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
   <packaging>jar</packaging>
   <name>Google Routes API</name>
   <description>Routes API Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features.</description>
   <parent>
     <groupId>com.google.maps</groupId>
-    <artifactId>google-maps-routes-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routes:current} -->
+    <artifactId>google-maps-routing-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-routing:current} -->
   </parent>
   <properties>
-    <site.installationModule>google-maps-routes</site.installationModule>
+    <site.installationModule>google-maps-routing</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
@@ -43,7 +43,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-maps-routes-v2</artifactId>
+      <artifactId>proto-google-maps-routing-v2</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -87,7 +87,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-maps-routes-v2</artifactId>
+      <artifactId>grpc-google-maps-routing-v2</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->

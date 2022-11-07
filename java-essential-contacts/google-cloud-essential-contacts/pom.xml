@@ -62,10 +62,6 @@
       <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-httpjson</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
@@ -91,19 +87,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
-      <artifactId>gax</artifactId>
-      <classifier>testlib</classifier>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
-      <classifier>testlib</classifier>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
