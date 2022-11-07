@@ -2333,7 +2333,8 @@ public class LoggingImplTest {
         LogEntry.newBuilder(
                 InstrumentationTest.generateInstrumentationPayload(
                     Instrumentation.JAVA_LIBRARY_NAME_PREFIX,
-                    Instrumentation.getLibraryVersion(Instrumentation.class)))
+                    Instrumentation.truncateValue(
+                        Instrumentation.getLibraryVersion(Instrumentation.class))))
             .setLogName(Instrumentation.INSTRUMENTATION_LOG_NAME)
             .build();
     WriteLogEntriesRequest request =

@@ -171,7 +171,8 @@ public class LoggingHandlerTest {
       LogEntry.newBuilder(
               InstrumentationTest.generateInstrumentationPayload(
                   Instrumentation.JAVA_LIBRARY_NAME_PREFIX,
-                  Instrumentation.getLibraryVersion(Instrumentation.class)))
+                  Instrumentation.truncateValue(
+                      Instrumentation.getLibraryVersion(Instrumentation.class))))
           .setLogName(Instrumentation.INSTRUMENTATION_LOG_NAME)
           .build();
 

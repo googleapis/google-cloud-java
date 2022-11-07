@@ -37,6 +37,9 @@ public final class Instrumentation {
   public static final String INSTRUMENTATION_NAME_KEY = "name";
   public static final String INSTRUMENTATION_VERSION_KEY = "version";
   public static final String JAVA_LIBRARY_NAME_PREFIX = "java";
+  // Using release-please annotations to update DEFAULT_INSTRUMENTATION_VERSION with latest version.
+  // See
+  // https://github.com/googleapis/release-please/blob/main/docs/customizing.md#updating-arbitrary-files
   // {x-version-update-start:google-cloud-logging:current}
   public static final String DEFAULT_INSTRUMENTATION_VERSION = "3.13.0";
   // {x-version-update-end}
@@ -233,7 +236,13 @@ public final class Instrumentation {
     return libraryVersion;
   }
 
-  private static String truncateValue(String value) {
+  /**
+   * Trancates given string to MAX_DIAGNOSTIC_VALUE_LENGTH and adds "*" instead of reduced suffix
+   *
+   * @param value {String} Value to be truncated
+   * @return The truncated string
+   */
+  public static String truncateValue(String value) {
     if (Strings.isNullOrEmpty(value) || value.length() < MAX_DIAGNOSTIC_VALUE_LENGTH) {
       return value;
     }
