@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.12.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+  <version>2.12.4</version><!-- {x-version-update:google-cloud-datastore:current} -->
   <name>Google Cloud Datastore Parent</name>
   <url>https://github.com/googleapis/java-datastore</url>
   <description>
@@ -159,27 +159,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-admin-v1</artifactId>
-        <version>2.12.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-admin-v1:current} -->
+        <version>2.12.4</version><!-- {x-version-update:proto-google-cloud-datastore-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datastore-admin-v1</artifactId>
-        <version>2.12.4-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastore-admin-v1:current} -->
+        <version>2.12.4</version><!-- {x-version-update:grpc-google-cloud-datastore-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
-        <version>2.12.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+        <version>2.12.4</version><!-- {x-version-update:google-cloud-datastore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
-        <version>0.103.4-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
+        <version>0.103.4</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud.datastore</groupId>
         <artifactId>datastore-v1-proto-client</artifactId>
-        <version>2.12.4-SNAPSHOT</version><!-- {x-version-update:datastore-v1-proto-client:current} -->
+        <version>2.12.4</version><!-- {x-version-update:datastore-v1-proto-client:current} -->
         <exclusions>
           <exclusion>
             <groupId>com.google.api.grpc</groupId>
