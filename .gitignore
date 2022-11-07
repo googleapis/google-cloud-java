@@ -60,7 +60,6 @@ generation/new_client/workspace
 monorepo
 
 # Terraform
-*.hcl
 **/.cloud/.terraform/
 **/.cloud/plugins/
 **/.cloud/providers/
