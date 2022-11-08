@@ -33,6 +33,7 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.pubsub.v1.ProjectTopicName;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -107,9 +108,15 @@ public class ITSystemTest {
             .setRole("roles/pubsub.publisher")
             .addMembers(STORAGE_SERVICE_AGENT)
             .build();
-    Policy newPolicy =
-        topicAdminClient.setIamPolicy(
-            topic.toString(), policy.toBuilder().addBindings(binding).build());
+    Policy modifiedPolicy = policy.toBuilder().addBindings(binding).build();
+    Policy newPolicy;
+    try {
+      newPolicy = topicAdminClient.setIamPolicy(topic.toString(), modifiedPolicy);
+    } catch (StatusRuntimeException ex) {
+      System.out.println(
+          "Failed setIamPolicy request for " + topic.toString() + " : " + modifiedPolicy);
+      throw ex;
+    }
     assertTrue(newPolicy.getBindingsList().contains(binding));
 
     String permissionName = "pubsub.topics.get";
@@ -130,8 +137,7 @@ public class ITSystemTest {
     NotificationInfo notification2 =
         notificationService.createNotification(
             BUCKET,
-            NotificationInfo.of(topic)
-                .toBuilder()
+            NotificationInfo.of(topic).toBuilder()
                 .setPayloadFormat(PayloadFormat.JSON_API_V1)
                 .build());
     assertEquals(topic, notification2.getTopic());
