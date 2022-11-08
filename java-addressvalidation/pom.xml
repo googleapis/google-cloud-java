@@ -50,4 +50,5 @@
     <module>proto-google-cloud-addressvalidation-v1</module>
     <module>google-cloud-addressvalidation-bom</module>
   </modules>
-</project>
+
+  </project>
