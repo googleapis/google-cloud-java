@@ -161,6 +161,26 @@ Please create a pull request:
 
 Create a pull request from the change.
 
+## Advanced Options
+
+Sometimes, a library generation requires special handling for
+Maven coordinates or API ID, especially when the library is not
+specific to Google Cloud. Use the following example of Google
+Maps API to generate a module for such library:
+
+```
+~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \
+  --api_shortname=maps-routing \
+  --proto-path=google/maps/routing \
+  --name-pretty="Routes API" \
+  --product-docs="https://developers.google.com/maps/documentation/routes" \
+  --api-description="Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features." \
+  --api-id=routes.googleapis.com \
+  --cloud-api=false \
+  --requires-billing=true \
+  --distribution-name="com.google.maps:google-maps-routing"
+```
+
 # Principles
 
 The script should finish creating a pull request even when the newly created
