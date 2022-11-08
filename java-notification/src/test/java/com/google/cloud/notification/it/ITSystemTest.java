@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.notification.Notification;
 import com.google.cloud.notification.NotificationImpl.DefaultNotificationFactory;
@@ -112,7 +113,7 @@ public class ITSystemTest {
     Policy newPolicy;
     try {
       newPolicy = topicAdminClient.setIamPolicy(topic.toString(), modifiedPolicy);
-    } catch (StatusRuntimeException ex) {
+    } catch (StatusRuntimeException | FailedPreconditionException ex) {
       System.out.println(
           "Failed setIamPolicy request for " + topic.toString() + " : " + modifiedPolicy);
       throw ex;
@@ -137,8 +138,7 @@ public class ITSystemTest {
     NotificationInfo notification2 =
         notificationService.createNotification(
             BUCKET,
-            NotificationInfo.of(topic)
-                .toBuilder()
+            NotificationInfo.of(topic).toBuilder()
                 .setPayloadFormat(PayloadFormat.JSON_API_V1)
                 .build());
     assertEquals(topic, notification2.getTopic());
