@@ -83,27 +83,16 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
-@RunWith(Parameterized.class)
 public class ITSystemTest {
-
-  @Parameterized.Parameters
-  public static Object[][] parameters() {
-    return new Object[30][0];
-  }
 
   private static ImageAnnotatorClient imageAnnotatorClient;
   private static ProductSearchClient productSearchClient;
   private static Product product;
   private static String formatProductName;
-  private static String productName;
   private static ProductSet productSet;
-  private static String productSetName;
   private static String formatProductSetName;
   private static ReferenceImage referenceImage;
-  private static String referenceImageName;
   private static String formatReferenceImageName;
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
@@ -162,7 +151,7 @@ public class ITSystemTest {
             .setProduct(createProduct)
             .build();
     product = productSearchClient.createProduct(productRequest);
-    productName = getName(product.getName());
+    String productName = getName(product.getName());
     formatProductName = ProductName.of(PROJECT_ID, COMPUTE_REGION, productName).toString();
 
     /* create product set */
@@ -175,7 +164,7 @@ public class ITSystemTest {
             .setProductSetId(PRODUCT_SET_ID)
             .build();
     productSet = productSearchClient.createProductSet(productSetRequest);
-    productSetName = getName(productSet.getName());
+    String productSetName = getName(productSet.getName());
     formatProductSetName = ProductSetName.of(PROJECT_ID, COMPUTE_REGION, productSetName).toString();
 
     /* add product to product set */
@@ -195,7 +184,7 @@ public class ITSystemTest {
             .setReferenceImage(createReferenceImage)
             .build();
     referenceImage = productSearchClient.createReferenceImage(imageRequest);
-    referenceImageName = getName(referenceImage.getName());
+    String referenceImageName = getName(referenceImage.getName());
     formatReferenceImageName =
         ReferenceImageName.of(PROJECT_ID, COMPUTE_REGION, productName, referenceImageName)
             .toString();
