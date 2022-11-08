@@ -45,7 +45,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -95,7 +94,6 @@ public class ITSystemTest {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
-  @Ignore
   @Test
   public void testNotifications() {
     // Use Pubsub to create a Topic.
