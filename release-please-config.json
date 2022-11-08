@@ -19,6 +19,9 @@
     "java-accesscontextmanager": {
       "component": "google-identity-accesscontextmanager"
     },
+    "java-addressvalidation": {
+      "component": "google-cloud-addressvalidation"
+    },
     "java-aiplatform": {
       "component": "google-cloud-aiplatform"
     },

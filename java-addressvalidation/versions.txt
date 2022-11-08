@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-addressvalidation:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-addressvalidation-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-addressvalidation-v1:0.0.0:0.0.1-SNAPSHOT

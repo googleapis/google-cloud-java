@@ -4,6 +4,7 @@
   "google-cloud-pom-parent": "0.2.0",
   "java-accessapproval": "2.6.0",
   "java-accesscontextmanager": "1.6.0",
+  "java-addressvalidation": "0.0.0",
   "java-aiplatform": "3.6.0",
   "java-analytics-admin": "0.15.0",
   "java-analytics-data": "0.16.0",

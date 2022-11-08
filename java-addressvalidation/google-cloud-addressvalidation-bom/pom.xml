@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-addressvalidation-bom</artifactId>
+  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-addressvalidation:current} -->
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
+  </parent>
+
+  <name>Google Address Validation API BOM</name>
+  <description>
+    BOM for Address Validation API
+  </description>
+
+  <properties>
+    <maven.antrun.skip>true</maven.antrun.skip>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-addressvalidation</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-addressvalidation:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-addressvalidation-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-addressvalidation-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-addressvalidation-v1</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-addressvalidation-v1:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

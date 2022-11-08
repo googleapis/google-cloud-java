@@ -37,6 +37,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-addressvalidation-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-addressvalidation:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-aiplatform-bom</artifactId>
         <version>3.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
         <type>pom</type>

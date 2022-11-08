@@ -1,0 +1,16 @@
+{
+  "api_shortname": "addressvalidation",
+  "name_pretty": "Address Validation API",
+  "product_documentation": "https://developers.google.com/maps/documentation/address-validation/",
+  "api_description": "The Address Validation API allows developers to validate mailing addresses.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-addressvalidation/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-addressvalidation",
+  "repo_short": "java-addressvalidation",
+  "distribution_name": "com.google.cloud:google-cloud-addressvalidation",
+  "api_id": "addressvalidation.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
