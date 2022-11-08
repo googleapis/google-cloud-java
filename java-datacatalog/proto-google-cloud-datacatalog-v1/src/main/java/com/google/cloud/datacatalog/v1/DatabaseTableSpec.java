@@ -271,11 +271,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fields specific to a Dataplex table and present only in the Dataplex table
-   * entries.
+   * Output only. Fields specific to a Dataplex table and present only in the
+   * Dataplex table entries.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the dataplexTable field is set.
    */
@@ -287,11 +289,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fields specific to a Dataplex table and present only in the Dataplex table
-   * entries.
+   * Output only. Fields specific to a Dataplex table and present only in the
+   * Dataplex table entries.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The dataplexTable.
    */
@@ -305,11 +309,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fields specific to a Dataplex table and present only in the Dataplex table
-   * entries.
+   * Output only. Fields specific to a Dataplex table and present only in the
+   * Dataplex table entries.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder getDataplexTableOrBuilder() {
@@ -787,11 +793,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the dataplexTable field is set.
      */
@@ -802,11 +810,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The dataplexTable.
      */
@@ -823,11 +833,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDataplexTable(com.google.cloud.datacatalog.v1.DataplexTableSpec value) {
       if (dataplexTableBuilder_ == null) {
@@ -846,11 +858,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setDataplexTable(
         com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder builderForValue) {
@@ -867,11 +881,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeDataplexTable(com.google.cloud.datacatalog.v1.DataplexTableSpec value) {
       if (dataplexTableBuilder_ == null) {
@@ -894,11 +910,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearDataplexTable() {
       if (dataplexTableBuilder_ == null) {
@@ -915,11 +933,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder getDataplexTableBuilder() {
 
@@ -930,11 +950,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder getDataplexTableOrBuilder() {
       if (dataplexTableBuilder_ != null) {
@@ -949,11 +971,13 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fields specific to a Dataplex table and present only in the Dataplex table
-     * entries.
+     * Output only. Fields specific to a Dataplex table and present only in the
+     * Dataplex table entries.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.DataplexTableSpec dataplex_table = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.DataplexTableSpec,

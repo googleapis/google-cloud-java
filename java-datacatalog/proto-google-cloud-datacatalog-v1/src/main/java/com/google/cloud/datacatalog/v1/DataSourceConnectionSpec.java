@@ -24,6 +24,8 @@ package com.google.cloud.datacatalog.v1;
  * <pre>
  * Specification that applies to a data source connection. Valid only for
  * entries with the `DATA_SOURCE_CONNECTION` type.
+ * Only one of internal specs can be set at the time, and cannot
+ * be changed later.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.DataSourceConnectionSpec}
@@ -72,7 +74,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Fields specific to BigQuery connections.
+   * Output only. Fields specific to BigQuery connections.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;</code>
@@ -87,7 +89,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Fields specific to BigQuery connections.
+   * Output only. Fields specific to BigQuery connections.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;</code>
@@ -104,7 +106,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Fields specific to BigQuery connections.
+   * Output only. Fields specific to BigQuery connections.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;</code>
@@ -287,6 +289,8 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
    * <pre>
    * Specification that applies to a data source connection. Valid only for
    * entries with the `DATA_SOURCE_CONNECTION` type.
+   * Only one of internal specs can be set at the time, and cannot
+   * be changed later.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.DataSourceConnectionSpec}
@@ -471,7 +475,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -486,7 +490,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -507,7 +511,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -531,7 +535,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -552,7 +556,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -581,7 +585,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -602,7 +606,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -618,7 +622,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;
@@ -638,7 +642,7 @@ public final class DataSourceConnectionSpec extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Fields specific to BigQuery connections.
+     * Output only. Fields specific to BigQuery connections.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;

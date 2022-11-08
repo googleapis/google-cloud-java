@@ -401,11 +401,13 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. Valid only for
-   * entries with the `TABLE` type.
+   * Output only. Specification that applies to a BigQuery table. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the bigqueryTableSpec field is set.
    */
@@ -414,11 +416,13 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. Valid only for
-   * entries with the `TABLE` type.
+   * Output only. Specification that applies to a BigQuery table. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bigqueryTableSpec.
    */
@@ -427,11 +431,13 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. Valid only for
-   * entries with the `TABLE` type.
+   * Output only. Specification that applies to a BigQuery table. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.datacatalog.v1.BigQueryTableSpecOrBuilder getBigqueryTableSpecOrBuilder();
 
@@ -439,13 +445,14 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-   * name pattern.
+   * Output only. Specification for a group of BigQuery tables with
+   * the `[prefix]YYYYMMDD` name pattern.
    * For more information, see [Introduction to partitioned tables]
    * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the bigqueryDateShardedSpec field is set.
@@ -455,13 +462,14 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-   * name pattern.
+   * Output only. Specification for a group of BigQuery tables with
+   * the `[prefix]YYYYMMDD` name pattern.
    * For more information, see [Introduction to partitioned tables]
    * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The bigqueryDateShardedSpec.
@@ -471,13 +479,14 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-   * name pattern.
+   * Output only. Specification for a group of BigQuery tables with
+   * the `[prefix]YYYYMMDD` name pattern.
    * For more information, see [Introduction to partitioned tables]
    * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.datacatalog.v1.BigQueryDateShardedSpecOrBuilder
@@ -785,9 +794,9 @@ public interface EntryOrBuilder
    * <pre>
    * Timestamps from the underlying resource, not from the Data Catalog
    * entry.
-   * Output only when the entry has a type listed in the `EntryType` enum.
-   * For entries with `user_specified_type`, this field is optional and defaults
-   * to an empty timestamp.
+   * Output only when the entry has a system listed in the `IntegratedSystem`
+   * enum. For entries with `user_specified_system`, this field is optional
+   * and defaults to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -801,9 +810,9 @@ public interface EntryOrBuilder
    * <pre>
    * Timestamps from the underlying resource, not from the Data Catalog
    * entry.
-   * Output only when the entry has a type listed in the `EntryType` enum.
-   * For entries with `user_specified_type`, this field is optional and defaults
-   * to an empty timestamp.
+   * Output only when the entry has a system listed in the `IntegratedSystem`
+   * enum. For entries with `user_specified_system`, this field is optional
+   * and defaults to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -817,9 +826,9 @@ public interface EntryOrBuilder
    * <pre>
    * Timestamps from the underlying resource, not from the Data Catalog
    * entry.
-   * Output only when the entry has a type listed in the `EntryType` enum.
-   * For entries with `user_specified_type`, this field is optional and defaults
-   * to an empty timestamp.
+   * Output only when the entry has a system listed in the `IntegratedSystem`
+   * enum. For entries with `user_specified_system`, this field is optional
+   * and defaults to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -830,12 +839,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource usage statistics.
+   * Resource usage statistics.
    * </pre>
    *
-   * <code>
-   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
    *
    * @return Whether the usageSignal field is set.
    */
@@ -844,12 +851,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource usage statistics.
+   * Resource usage statistics.
    * </pre>
    *
-   * <code>
-   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
    *
    * @return The usageSignal.
    */
@@ -858,12 +863,10 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource usage statistics.
+   * Resource usage statistics.
    * </pre>
    *
-   * <code>
-   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
    */
   com.google.cloud.datacatalog.v1.UsageSignalOrBuilder getUsageSignalOrBuilder();
 

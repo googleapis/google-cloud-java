@@ -43,7 +43,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. The entry type that has a GoogleSQL schema, including
+   * The entry type that has a GoogleSQL schema, including
    * logical views.
    * </pre>
    *
@@ -171,7 +171,7 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Output only. The entry type that has a GoogleSQL schema, including
+   * The entry type that has a GoogleSQL schema, including
    * logical views.
    * </pre>
    *

@@ -49,32 +49,36 @@ public final class BigQueryProto {
   static {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/datacatalog/v1/bigquery.p"
-          + "roto\022\033google.cloud.datacatalog.v1\"\264\002\n\026Bi"
-          + "gQueryConnectionSpec\022[\n\017connection_type\030"
-          + "\001 \001(\0162B.google.cloud.datacatalog.v1.BigQ"
-          + "ueryConnectionSpec.ConnectionType\022P\n\tclo"
-          + "ud_sql\030\002 \001(\0132;.google.cloud.datacatalog."
-          + "v1.CloudSqlBigQueryConnectionSpecH\000\022\026\n\016h"
-          + "as_credential\030\003 \001(\010\"@\n\016ConnectionType\022\037\n"
-          + "\033CONNECTION_TYPE_UNSPECIFIED\020\000\022\r\n\tCLOUD_"
-          + "SQL\020\001B\021\n\017connection_spec\"\347\001\n\036CloudSqlBig"
-          + "QueryConnectionSpec\022\023\n\013instance_id\030\001 \001(\t"
-          + "\022\020\n\010database\030\002 \001(\t\022V\n\004type\030\003 \001(\0162H.googl"
-          + "e.cloud.datacatalog.v1.CloudSqlBigQueryC"
-          + "onnectionSpec.DatabaseType\"F\n\014DatabaseTy"
-          + "pe\022\035\n\031DATABASE_TYPE_UNSPECIFIED\020\000\022\014\n\010POS"
-          + "TGRES\020\001\022\t\n\005MYSQL\020\002\"1\n\023BigQueryRoutineSpe"
-          + "c\022\032\n\022imported_libraries\030\001 \003(\tB\332\001\n\037com.go"
-          + "ogle.cloud.datacatalog.v1B\rBigQueryProto"
-          + "P\001ZFgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/datacatalog/v1;datacatalog\370\001\001\252\002\033"
-          + "Google.Cloud.DataCatalog.V1\312\002\033Google\\Clo"
-          + "ud\\DataCatalog\\V1\352\002\036Google::Cloud::DataC"
-          + "atalog::V1b\006proto3"
+          + "roto\022\033google.cloud.datacatalog.v1\032\037googl"
+          + "e/api/field_behavior.proto\"\264\002\n\026BigQueryC"
+          + "onnectionSpec\022[\n\017connection_type\030\001 \001(\0162B"
+          + ".google.cloud.datacatalog.v1.BigQueryCon"
+          + "nectionSpec.ConnectionType\022P\n\tcloud_sql\030"
+          + "\002 \001(\0132;.google.cloud.datacatalog.v1.Clou"
+          + "dSqlBigQueryConnectionSpecH\000\022\026\n\016has_cred"
+          + "ential\030\003 \001(\010\"@\n\016ConnectionType\022\037\n\033CONNEC"
+          + "TION_TYPE_UNSPECIFIED\020\000\022\r\n\tCLOUD_SQL\020\001B\021"
+          + "\n\017connection_spec\"\347\001\n\036CloudSqlBigQueryCo"
+          + "nnectionSpec\022\023\n\013instance_id\030\001 \001(\t\022\020\n\010dat"
+          + "abase\030\002 \001(\t\022V\n\004type\030\003 \001(\0162H.google.cloud"
+          + ".datacatalog.v1.CloudSqlBigQueryConnecti"
+          + "onSpec.DatabaseType\"F\n\014DatabaseType\022\035\n\031D"
+          + "ATABASE_TYPE_UNSPECIFIED\020\000\022\014\n\010POSTGRES\020\001"
+          + "\022\t\n\005MYSQL\020\002\"1\n\023BigQueryRoutineSpec\022\032\n\022im"
+          + "ported_libraries\030\001 \003(\tB\332\001\n\037com.google.cl"
+          + "oud.datacatalog.v1B\rBigQueryProtoP\001ZFgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/datacatalog/v1;datacatalog\370\001\001\252\002\033Google."
+          + "Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\Data"
+          + "Catalog\\V1\352\002\036Google::Cloud::DataCatalog:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+            });
     internal_static_google_cloud_datacatalog_v1_BigQueryConnectionSpec_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_datacatalog_v1_BigQueryConnectionSpec_fieldAccessorTable =
@@ -99,6 +103,7 @@ public final class BigQueryProto {
             new java.lang.String[] {
               "ImportedLibraries",
             });
+    com.google.api.FieldBehaviorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

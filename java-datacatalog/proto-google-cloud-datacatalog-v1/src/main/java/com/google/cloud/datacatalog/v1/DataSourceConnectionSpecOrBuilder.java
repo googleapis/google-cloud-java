@@ -27,7 +27,7 @@ public interface DataSourceConnectionSpecOrBuilder
    *
    *
    * <pre>
-   * Fields specific to BigQuery connections.
+   * Output only. Fields specific to BigQuery connections.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;</code>
@@ -39,7 +39,7 @@ public interface DataSourceConnectionSpecOrBuilder
    *
    *
    * <pre>
-   * Fields specific to BigQuery connections.
+   * Output only. Fields specific to BigQuery connections.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;</code>
@@ -51,7 +51,7 @@ public interface DataSourceConnectionSpecOrBuilder
    *
    *
    * <pre>
-   * Fields specific to BigQuery connections.
+   * Output only. Fields specific to BigQuery connections.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryConnectionSpec bigquery_connection_spec = 1;</code>

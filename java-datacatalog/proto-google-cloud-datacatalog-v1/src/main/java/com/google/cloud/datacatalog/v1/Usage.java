@@ -49,29 +49,31 @@ public final class Usage {
   static {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/datacatalog/v1/usage.prot"
-          + "o\022\033google.cloud.datacatalog.v1\032\037google/p"
-          + "rotobuf/timestamp.proto\"\221\001\n\nUsageStats\022\031"
-          + "\n\021total_completions\030\001 \001(\002\022\026\n\016total_failu"
-          + "res\030\002 \001(\002\022\033\n\023total_cancellations\030\003 \001(\002\0223"
-          + "\n+total_execution_time_for_completions_m"
-          + "illis\030\004 \001(\002\"\211\002\n\013UsageSignal\022/\n\013update_ti"
-          + "me\030\001 \001(\0132\032.google.protobuf.Timestamp\022c\n\027"
-          + "usage_within_time_range\030\002 \003(\0132B.google.c"
-          + "loud.datacatalog.v1.UsageSignal.UsageWit"
-          + "hinTimeRangeEntry\032d\n\031UsageWithinTimeRang"
-          + "eEntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.goo"
-          + "gle.cloud.datacatalog.v1.UsageStats:\0028\001B"
-          + "\313\001\n\037com.google.cloud.datacatalog.v1P\001ZFg"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/datacatalog/v1;datacatalog\370\001\001\252\002\033Googl"
-          + "e.Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\Da"
-          + "taCatalog\\V1\352\002\036Google::Cloud::DataCatalo"
-          + "g::V1b\006proto3"
+          + "o\022\033google.cloud.datacatalog.v1\032\037google/a"
+          + "pi/field_behavior.proto\032\037google/protobuf"
+          + "/timestamp.proto\"\221\001\n\nUsageStats\022\031\n\021total"
+          + "_completions\030\001 \001(\002\022\026\n\016total_failures\030\002 \001"
+          + "(\002\022\033\n\023total_cancellations\030\003 \001(\002\0223\n+total"
+          + "_execution_time_for_completions_millis\030\004"
+          + " \001(\002\"\216\002\n\013UsageSignal\022/\n\013update_time\030\001 \001("
+          + "\0132\032.google.protobuf.Timestamp\022h\n\027usage_w"
+          + "ithin_time_range\030\002 \003(\0132B.google.cloud.da"
+          + "tacatalog.v1.UsageSignal.UsageWithinTime"
+          + "RangeEntryB\003\340A\003\032d\n\031UsageWithinTimeRangeE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\0226\n\005value\030\002 \001(\0132\'.googl"
+          + "e.cloud.datacatalog.v1.UsageStats:\0028\001B\313\001"
+          + "\n\037com.google.cloud.datacatalog.v1P\001ZFgoo"
+          + "gle.golang.org/genproto/googleapis/cloud"
+          + "/datacatalog/v1;datacatalog\370\001\001\252\002\033Google."
+          + "Cloud.DataCatalog.V1\312\002\033Google\\Cloud\\Data"
+          + "Catalog\\V1\352\002\036Google::Cloud::DataCatalog:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_datacatalog_v1_UsageStats_descriptor =
@@ -101,6 +103,12 @@ public final class Usage {
             new java.lang.String[] {
               "Key", "Value",
             });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

@@ -854,11 +854,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. Valid only for
-   * entries with the `TABLE` type.
+   * Output only. Specification that applies to a BigQuery table. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the bigqueryTableSpec field is set.
    */
@@ -870,11 +872,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. Valid only for
-   * entries with the `TABLE` type.
+   * Output only. Specification that applies to a BigQuery table. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bigqueryTableSpec.
    */
@@ -889,11 +893,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specification that applies to a BigQuery table. Valid only for
-   * entries with the `TABLE` type.
+   * Output only. Specification that applies to a BigQuery table. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.BigQueryTableSpecOrBuilder
@@ -909,13 +915,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-   * name pattern.
+   * Output only. Specification for a group of BigQuery tables with
+   * the `[prefix]YYYYMMDD` name pattern.
    * For more information, see [Introduction to partitioned tables]
    * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the bigqueryDateShardedSpec field is set.
@@ -928,13 +935,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-   * name pattern.
+   * Output only. Specification for a group of BigQuery tables with
+   * the `[prefix]YYYYMMDD` name pattern.
    * For more information, see [Introduction to partitioned tables]
    * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The bigqueryDateShardedSpec.
@@ -950,13 +958,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-   * name pattern.
+   * Output only. Specification for a group of BigQuery tables with
+   * the `[prefix]YYYYMMDD` name pattern.
    * For more information, see [Introduction to partitioned tables]
    * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
-   * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+   * <code>
+   * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -1409,9 +1418,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Timestamps from the underlying resource, not from the Data Catalog
    * entry.
-   * Output only when the entry has a type listed in the `EntryType` enum.
-   * For entries with `user_specified_type`, this field is optional and defaults
-   * to an empty timestamp.
+   * Output only when the entry has a system listed in the `IntegratedSystem`
+   * enum. For entries with `user_specified_system`, this field is optional
+   * and defaults to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1428,9 +1437,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Timestamps from the underlying resource, not from the Data Catalog
    * entry.
-   * Output only when the entry has a type listed in the `EntryType` enum.
-   * For entries with `user_specified_type`, this field is optional and defaults
-   * to an empty timestamp.
+   * Output only when the entry has a system listed in the `IntegratedSystem`
+   * enum. For entries with `user_specified_system`, this field is optional
+   * and defaults to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1449,9 +1458,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Timestamps from the underlying resource, not from the Data Catalog
    * entry.
-   * Output only when the entry has a type listed in the `EntryType` enum.
-   * For entries with `user_specified_type`, this field is optional and defaults
-   * to an empty timestamp.
+   * Output only when the entry has a system listed in the `IntegratedSystem`
+   * enum. For entries with `user_specified_system`, this field is optional
+   * and defaults to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1468,12 +1477,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource usage statistics.
+   * Resource usage statistics.
    * </pre>
    *
-   * <code>
-   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
    *
    * @return Whether the usageSignal field is set.
    */
@@ -1485,12 +1492,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource usage statistics.
+   * Resource usage statistics.
    * </pre>
    *
-   * <code>
-   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
    *
    * @return The usageSignal.
    */
@@ -1504,12 +1509,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource usage statistics.
+   * Resource usage statistics.
    * </pre>
    *
-   * <code>
-   * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.UsageSignalOrBuilder getUsageSignalOrBuilder() {
@@ -4215,11 +4218,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the bigqueryTableSpec field is set.
      */
@@ -4231,11 +4236,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bigqueryTableSpec.
      */
@@ -4257,11 +4264,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBigqueryTableSpec(com.google.cloud.datacatalog.v1.BigQueryTableSpec value) {
       if (bigqueryTableSpecBuilder_ == null) {
@@ -4280,11 +4289,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBigqueryTableSpec(
         com.google.cloud.datacatalog.v1.BigQueryTableSpec.Builder builderForValue) {
@@ -4301,11 +4312,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeBigqueryTableSpec(com.google.cloud.datacatalog.v1.BigQueryTableSpec value) {
       if (bigqueryTableSpecBuilder_ == null) {
@@ -4335,11 +4348,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearBigqueryTableSpec() {
       if (bigqueryTableSpecBuilder_ == null) {
@@ -4361,11 +4376,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.BigQueryTableSpec.Builder getBigqueryTableSpecBuilder() {
       return getBigqueryTableSpecFieldBuilder().getBuilder();
@@ -4374,11 +4391,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.BigQueryTableSpecOrBuilder
@@ -4396,11 +4415,13 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification that applies to a BigQuery table. Valid only for
-     * entries with the `TABLE` type.
+     * Output only. Specification that applies to a BigQuery table. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.BigQueryTableSpec,
@@ -4436,13 +4457,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the bigqueryDateShardedSpec field is set.
@@ -4455,13 +4477,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The bigqueryDateShardedSpec.
@@ -4484,13 +4507,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setBigqueryDateShardedSpec(
@@ -4511,13 +4535,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setBigqueryDateShardedSpec(
@@ -4535,13 +4560,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeBigqueryDateShardedSpec(
@@ -4573,13 +4599,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearBigqueryDateShardedSpec() {
@@ -4602,13 +4629,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec.Builder
@@ -4619,13 +4647,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -4644,13 +4673,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
-     * name pattern.
+     * Output only. Specification for a group of BigQuery tables with
+     * the `[prefix]YYYYMMDD` name pattern.
      * For more information, see [Introduction to partitioned tables]
      * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
-     * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;
+     * <code>
+     * .google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6214,9 +6244,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6232,9 +6262,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6256,9 +6286,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6283,9 +6313,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6307,9 +6337,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6338,9 +6368,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6362,9 +6392,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6381,9 +6411,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6404,9 +6434,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Timestamps from the underlying resource, not from the Data Catalog
      * entry.
-     * Output only when the entry has a type listed in the `EntryType` enum.
-     * For entries with `user_specified_type`, this field is optional and defaults
-     * to an empty timestamp.
+     * Output only when the entry has a system listed in the `IntegratedSystem`
+     * enum. For entries with `user_specified_system`, this field is optional
+     * and defaults to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -6438,12 +6468,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      *
      * @return Whether the usageSignal field is set.
      */
@@ -6454,12 +6482,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      *
      * @return The usageSignal.
      */
@@ -6476,12 +6502,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public Builder setUsageSignal(com.google.cloud.datacatalog.v1.UsageSignal value) {
       if (usageSignalBuilder_ == null) {
@@ -6500,12 +6524,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public Builder setUsageSignal(
         com.google.cloud.datacatalog.v1.UsageSignal.Builder builderForValue) {
@@ -6522,12 +6544,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public Builder mergeUsageSignal(com.google.cloud.datacatalog.v1.UsageSignal value) {
       if (usageSignalBuilder_ == null) {
@@ -6550,12 +6570,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public Builder clearUsageSignal() {
       if (usageSignalBuilder_ == null) {
@@ -6572,12 +6590,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public com.google.cloud.datacatalog.v1.UsageSignal.Builder getUsageSignalBuilder() {
 
@@ -6588,12 +6604,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public com.google.cloud.datacatalog.v1.UsageSignalOrBuilder getUsageSignalOrBuilder() {
       if (usageSignalBuilder_ != null) {
@@ -6608,12 +6622,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource usage statistics.
+     * Resource usage statistics.
      * </pre>
      *
-     * <code>
-     * .google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.UsageSignal,

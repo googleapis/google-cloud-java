@@ -159,11 +159,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -184,11 +185,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -200,11 +202,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -221,11 +224,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Usage statistics over each of the predefined time ranges.
+   * Output only. BigQuery usage statistics over each of the predefined time ranges.
    * Supported time ranges are `{"24H", "7D", "30D"}`.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+   * <code>
+   * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -867,11 +871,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -892,11 +897,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -908,11 +914,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -929,11 +936,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     @java.lang.Override
@@ -958,11 +966,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder removeUsageWithinTimeRange(java.lang.String key) {
@@ -982,11 +991,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder putUsageWithinTimeRange(
@@ -1005,11 +1015,12 @@ public final class UsageSignal extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Usage statistics over each of the predefined time ranges.
+     * Output only. BigQuery usage statistics over each of the predefined time ranges.
      * Supported time ranges are `{"24H", "7D", "30D"}`.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2;
+     * <code>
+     * map&lt;string, .google.cloud.datacatalog.v1.UsageStats&gt; usage_within_time_range = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder putAllUsageWithinTimeRange(
