@@ -28,7 +28,8 @@ public interface VpcAccessOrBuilder
    *
    * <pre>
    * VPC Access connector name.
-   * Format: projects/{project}/locations/{location}/connectors/{connector}
+   * Format: projects/{project}/locations/{location}/connectors/{connector},
+   * where {project} can be project id or number.
    * </pre>
    *
    * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -41,7 +42,8 @@ public interface VpcAccessOrBuilder
    *
    * <pre>
    * VPC Access connector name.
-   * Format: projects/{project}/locations/{location}/connectors/{connector}
+   * Format: projects/{project}/locations/{location}/connectors/{connector},
+   * where {project} can be project id or number.
    * </pre>
    *
    * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>

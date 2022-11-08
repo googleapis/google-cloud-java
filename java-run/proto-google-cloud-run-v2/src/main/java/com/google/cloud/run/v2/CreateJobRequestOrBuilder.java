@@ -28,7 +28,8 @@ public interface CreateJobRequestOrBuilder
    *
    * <pre>
    * Required. The location and project in which this Job should be created.
-   * Format: projects/{project}/locations/{location}
+   * Format: projects/{project}/locations/{location}, where {project} can be
+   * project id or number.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface CreateJobRequestOrBuilder
    *
    * <pre>
    * Required. The location and project in which this Job should be created.
-   * Format: projects/{project}/locations/{location}
+   * Format: projects/{project}/locations/{location}, where {project} can be
+   * project id or number.
    * </pre>
    *
    * <code>

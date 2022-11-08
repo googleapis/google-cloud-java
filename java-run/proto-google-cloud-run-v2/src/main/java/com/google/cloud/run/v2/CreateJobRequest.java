@@ -75,7 +75,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The location and project in which this Job should be created.
-   * Format: projects/{project}/locations/{location}
+   * Format: projects/{project}/locations/{location}, where {project} can be
+   * project id or number.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The location and project in which this Job should be created.
-   * Format: projects/{project}/locations/{location}
+   * Format: projects/{project}/locations/{location}, where {project} can be
+   * project id or number.
    * </pre>
    *
    * <code>
@@ -650,7 +652,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The location and project in which this Job should be created.
-     * Format: projects/{project}/locations/{location}
+     * Format: projects/{project}/locations/{location}, where {project} can be
+     * project id or number.
      * </pre>
      *
      * <code>
@@ -675,7 +678,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The location and project in which this Job should be created.
-     * Format: projects/{project}/locations/{location}
+     * Format: projects/{project}/locations/{location}, where {project} can be
+     * project id or number.
      * </pre>
      *
      * <code>
@@ -700,7 +704,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The location and project in which this Job should be created.
-     * Format: projects/{project}/locations/{location}
+     * Format: projects/{project}/locations/{location}, where {project} can be
+     * project id or number.
      * </pre>
      *
      * <code>
@@ -724,7 +729,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The location and project in which this Job should be created.
-     * Format: projects/{project}/locations/{location}
+     * Format: projects/{project}/locations/{location}, where {project} can be
+     * project id or number.
      * </pre>
      *
      * <code>
@@ -744,7 +750,8 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The location and project in which this Job should be created.
-     * Format: projects/{project}/locations/{location}
+     * Format: projects/{project}/locations/{location}, where {project} can be
+     * project id or number.
      * </pre>
      *
      * <code>

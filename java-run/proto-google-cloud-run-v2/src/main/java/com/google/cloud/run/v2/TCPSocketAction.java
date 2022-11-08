@@ -72,6 +72,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Port number to access on the container. Must be in the range 1 to 65535.
+   * If not specified, defaults to 8080.
    * </pre>
    *
    * <code>int32 port = 1;</code>
@@ -416,6 +417,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Port number to access on the container. Must be in the range 1 to 65535.
+     * If not specified, defaults to 8080.
      * </pre>
      *
      * <code>int32 port = 1;</code>
@@ -431,6 +433,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Port number to access on the container. Must be in the range 1 to 65535.
+     * If not specified, defaults to 8080.
      * </pre>
      *
      * <code>int32 port = 1;</code>
@@ -449,6 +452,7 @@ public final class TCPSocketAction extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Port number to access on the container. Must be in the range 1 to 65535.
+     * If not specified, defaults to 8080.
      * </pre>
      *
      * <code>int32 port = 1;</code>

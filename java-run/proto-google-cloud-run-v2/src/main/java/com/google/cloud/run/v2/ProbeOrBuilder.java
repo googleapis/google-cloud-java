@@ -93,7 +93,7 @@ public interface ProbeOrBuilder
    *
    * <pre>
    * HTTPGet specifies the http request to perform.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -106,7 +106,7 @@ public interface ProbeOrBuilder
    *
    * <pre>
    * HTTPGet specifies the http request to perform.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -119,7 +119,7 @@ public interface ProbeOrBuilder
    *
    * <pre>
    * HTTPGet specifies the http request to perform.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -131,7 +131,7 @@ public interface ProbeOrBuilder
    *
    * <pre>
    * TCPSocket specifies an action involving a TCP port.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -144,7 +144,7 @@ public interface ProbeOrBuilder
    *
    * <pre>
    * TCPSocket specifies an action involving a TCP port.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -157,12 +157,50 @@ public interface ProbeOrBuilder
    *
    * <pre>
    * TCPSocket specifies an action involving a TCP port.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
    */
   com.google.cloud.run.v2.TCPSocketActionOrBuilder getTcpSocketOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * GRPC specifies an action involving a gRPC port.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   *
+   * @return Whether the grpc field is set.
+   */
+  boolean hasGrpc();
+  /**
+   *
+   *
+   * <pre>
+   * GRPC specifies an action involving a gRPC port.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   *
+   * @return The grpc.
+   */
+  com.google.cloud.run.v2.GRPCAction getGrpc();
+  /**
+   *
+   *
+   * <pre>
+   * GRPC specifies an action involving a gRPC port.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   */
+  com.google.cloud.run.v2.GRPCActionOrBuilder getGrpcOrBuilder();
 
   public com.google.cloud.run.v2.Probe.ProbeTypeCase getProbeTypeCase();
 }

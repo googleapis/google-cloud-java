@@ -73,6 +73,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     HTTP_GET(5),
     TCP_SOCKET(6),
+    GRPC(7),
     PROBETYPE_NOT_SET(0);
     private final int value;
 
@@ -95,6 +96,8 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
           return HTTP_GET;
         case 6:
           return TCP_SOCKET;
+        case 7:
+          return GRPC;
         case 0:
           return PROBETYPE_NOT_SET;
         default:
@@ -202,7 +205,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTPGet specifies the http request to perform.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -218,7 +221,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTPGet specifies the http request to perform.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -237,7 +240,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * HTTPGet specifies the http request to perform.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -256,7 +259,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * TCPSocket specifies an action involving a TCP port.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -272,7 +275,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * TCPSocket specifies an action involving a TCP port.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -291,7 +294,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * TCPSocket specifies an action involving a TCP port.
-   * Exactly one of HTTPGet or TCPSocket must be specified.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
    * </pre>
    *
    * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -302,6 +305,60 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.run.v2.TCPSocketAction) probeType_;
     }
     return com.google.cloud.run.v2.TCPSocketAction.getDefaultInstance();
+  }
+
+  public static final int GRPC_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * GRPC specifies an action involving a gRPC port.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   *
+   * @return Whether the grpc field is set.
+   */
+  @java.lang.Override
+  public boolean hasGrpc() {
+    return probeTypeCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GRPC specifies an action involving a gRPC port.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   *
+   * @return The grpc.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.GRPCAction getGrpc() {
+    if (probeTypeCase_ == 7) {
+      return (com.google.cloud.run.v2.GRPCAction) probeType_;
+    }
+    return com.google.cloud.run.v2.GRPCAction.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GRPC specifies an action involving a gRPC port.
+   * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.GRPCActionOrBuilder getGrpcOrBuilder() {
+    if (probeTypeCase_ == 7) {
+      return (com.google.cloud.run.v2.GRPCAction) probeType_;
+    }
+    return com.google.cloud.run.v2.GRPCAction.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -336,6 +393,9 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
     if (probeTypeCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.run.v2.TCPSocketAction) probeType_);
     }
+    if (probeTypeCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.run.v2.GRPCAction) probeType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -367,6 +427,11 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.run.v2.TCPSocketAction) probeType_);
     }
+    if (probeTypeCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.run.v2.GRPCAction) probeType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -393,6 +458,9 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
         break;
       case 6:
         if (!getTcpSocket().equals(other.getTcpSocket())) return false;
+        break;
+      case 7:
+        if (!getGrpc().equals(other.getGrpc())) return false;
         break;
       case 0:
       default:
@@ -424,6 +492,10 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + TCP_SOCKET_FIELD_NUMBER;
         hash = (53 * hash) + getTcpSocket().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + GRPC_FIELD_NUMBER;
+        hash = (53 * hash) + getGrpc().hashCode();
         break;
       case 0:
       default:
@@ -579,6 +651,9 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       if (tcpSocketBuilder_ != null) {
         tcpSocketBuilder_.clear();
       }
+      if (grpcBuilder_ != null) {
+        grpcBuilder_.clear();
+      }
       probeTypeCase_ = 0;
       probeType_ = null;
       return this;
@@ -623,6 +698,13 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
           result.probeType_ = probeType_;
         } else {
           result.probeType_ = tcpSocketBuilder_.build();
+        }
+      }
+      if (probeTypeCase_ == 7) {
+        if (grpcBuilder_ == null) {
+          result.probeType_ = probeType_;
+        } else {
+          result.probeType_ = grpcBuilder_.build();
         }
       }
       result.probeTypeCase_ = probeTypeCase_;
@@ -698,6 +780,11 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
             mergeTcpSocket(other.getTcpSocket());
             break;
           }
+        case GRPC:
+          {
+            mergeGrpc(other.getGrpc());
+            break;
+          }
         case PROBETYPE_NOT_SET:
           {
             break;
@@ -765,6 +852,12 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
                 probeTypeCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getGrpcFieldBuilder().getBuilder(), extensionRegistry);
+                probeTypeCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1053,7 +1146,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1069,7 +1162,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1095,7 +1188,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1118,7 +1211,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1138,7 +1231,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1171,7 +1264,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1197,7 +1290,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1210,7 +1303,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1231,7 +1324,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * HTTPGet specifies the http request to perform.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.HTTPGetAction http_get = 5;</code>
@@ -1271,7 +1364,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1287,7 +1380,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1313,7 +1406,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1336,7 +1429,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1356,7 +1449,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1389,7 +1482,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1415,7 +1508,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1428,7 +1521,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1449,7 +1542,7 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TCPSocket specifies an action involving a TCP port.
-     * Exactly one of HTTPGet or TCPSocket must be specified.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
      * </pre>
      *
      * <code>.google.cloud.run.v2.TCPSocketAction tcp_socket = 6;</code>
@@ -1477,6 +1570,222 @@ public final class Probe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return tcpSocketBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.GRPCAction,
+            com.google.cloud.run.v2.GRPCAction.Builder,
+            com.google.cloud.run.v2.GRPCActionOrBuilder>
+        grpcBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     *
+     * @return Whether the grpc field is set.
+     */
+    @java.lang.Override
+    public boolean hasGrpc() {
+      return probeTypeCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     *
+     * @return The grpc.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.GRPCAction getGrpc() {
+      if (grpcBuilder_ == null) {
+        if (probeTypeCase_ == 7) {
+          return (com.google.cloud.run.v2.GRPCAction) probeType_;
+        }
+        return com.google.cloud.run.v2.GRPCAction.getDefaultInstance();
+      } else {
+        if (probeTypeCase_ == 7) {
+          return grpcBuilder_.getMessage();
+        }
+        return com.google.cloud.run.v2.GRPCAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     */
+    public Builder setGrpc(com.google.cloud.run.v2.GRPCAction value) {
+      if (grpcBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        probeType_ = value;
+        onChanged();
+      } else {
+        grpcBuilder_.setMessage(value);
+      }
+      probeTypeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     */
+    public Builder setGrpc(com.google.cloud.run.v2.GRPCAction.Builder builderForValue) {
+      if (grpcBuilder_ == null) {
+        probeType_ = builderForValue.build();
+        onChanged();
+      } else {
+        grpcBuilder_.setMessage(builderForValue.build());
+      }
+      probeTypeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     */
+    public Builder mergeGrpc(com.google.cloud.run.v2.GRPCAction value) {
+      if (grpcBuilder_ == null) {
+        if (probeTypeCase_ == 7
+            && probeType_ != com.google.cloud.run.v2.GRPCAction.getDefaultInstance()) {
+          probeType_ =
+              com.google.cloud.run.v2.GRPCAction.newBuilder(
+                      (com.google.cloud.run.v2.GRPCAction) probeType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          probeType_ = value;
+        }
+        onChanged();
+      } else {
+        if (probeTypeCase_ == 7) {
+          grpcBuilder_.mergeFrom(value);
+        } else {
+          grpcBuilder_.setMessage(value);
+        }
+      }
+      probeTypeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     */
+    public Builder clearGrpc() {
+      if (grpcBuilder_ == null) {
+        if (probeTypeCase_ == 7) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+          onChanged();
+        }
+      } else {
+        if (probeTypeCase_ == 7) {
+          probeTypeCase_ = 0;
+          probeType_ = null;
+        }
+        grpcBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     */
+    public com.google.cloud.run.v2.GRPCAction.Builder getGrpcBuilder() {
+      return getGrpcFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.GRPCActionOrBuilder getGrpcOrBuilder() {
+      if ((probeTypeCase_ == 7) && (grpcBuilder_ != null)) {
+        return grpcBuilder_.getMessageOrBuilder();
+      } else {
+        if (probeTypeCase_ == 7) {
+          return (com.google.cloud.run.v2.GRPCAction) probeType_;
+        }
+        return com.google.cloud.run.v2.GRPCAction.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GRPC specifies an action involving a gRPC port.
+     * Exactly one of httpGet, tcpSocket, or grpc must be specified.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GRPCAction grpc = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.GRPCAction,
+            com.google.cloud.run.v2.GRPCAction.Builder,
+            com.google.cloud.run.v2.GRPCActionOrBuilder>
+        getGrpcFieldBuilder() {
+      if (grpcBuilder_ == null) {
+        if (!(probeTypeCase_ == 7)) {
+          probeType_ = com.google.cloud.run.v2.GRPCAction.getDefaultInstance();
+        }
+        grpcBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.GRPCAction,
+                com.google.cloud.run.v2.GRPCAction.Builder,
+                com.google.cloud.run.v2.GRPCActionOrBuilder>(
+                (com.google.cloud.run.v2.GRPCAction) probeType_, getParentForChildren(), isClean());
+        probeType_ = null;
+      }
+      probeTypeCase_ = 7;
+      onChanged();
+      ;
+      return grpcBuilder_;
     }
 
     @java.lang.Override

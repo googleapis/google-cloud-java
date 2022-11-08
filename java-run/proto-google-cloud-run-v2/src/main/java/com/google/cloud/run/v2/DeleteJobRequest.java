@@ -75,7 +75,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The full name of the Job.
-   * Format: projects/{project}/locations/{location}/jobs/{job}
+   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+   * can be project id or number.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The full name of the Job.
-   * Format: projects/{project}/locations/{location}/jobs/{job}
+   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+   * can be project id or number.
    * </pre>
    *
    * <code>
@@ -570,7 +572,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -595,7 +598,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -620,7 +624,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -644,7 +649,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -664,7 +670,8 @@ public final class DeleteJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>

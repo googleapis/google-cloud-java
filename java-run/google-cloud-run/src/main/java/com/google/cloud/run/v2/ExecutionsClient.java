@@ -217,7 +217,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Execution. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}
+   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
+   *     can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Execution getExecution(ExecutionName name) {
@@ -245,7 +246,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Execution. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}
+   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
+   *     can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Execution getExecution(String name) {
@@ -332,7 +334,8 @@ public class ExecutionsClient implements BackgroundResource {
    *
    * @param parent Required. The Execution from which the Executions should be listed. To list all
    *     Executions across Jobs, use "-" instead of Job name. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExecutionsPagedResponse listExecutions(JobName parent) {
@@ -365,7 +368,8 @@ public class ExecutionsClient implements BackgroundResource {
    *
    * @param parent Required. The Execution from which the Executions should be listed. To list all
    *     Executions across Jobs, use "-" instead of Job name. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExecutionsPagedResponse listExecutions(String parent) {
@@ -499,7 +503,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the Execution to delete. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}
+   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
+   *     can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, Execution> deleteExecutionAsync(ExecutionName name) {
@@ -527,7 +532,8 @@ public class ExecutionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the Execution to delete. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}
+   *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project}
+   *     can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, Execution> deleteExecutionAsync(String name) {

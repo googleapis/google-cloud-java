@@ -224,11 +224,11 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project in which this service should be created.
-   *     Format: projects/{project}/locations/{location} Only lowercase characters, digits, and
-   *     hyphens.
+   *     Format: projects/{project}/locations/{location}, where {project} can be project id or
+   *     number. Only lowercase characters, digits, and hyphens.
    * @param service Required. The Service instance to create.
    * @param serviceId Required. The unique identifier for the Service. It must begin with letter,
-   *     and may not end with hyphen; must contain fewer than 50 characters. The name of the service
+   *     and cannot end with hyphen; must contain fewer than 50 characters. The name of the service
    *     becomes {parent}/services/{service_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -264,11 +264,11 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project in which this service should be created.
-   *     Format: projects/{project}/locations/{location} Only lowercase characters, digits, and
-   *     hyphens.
+   *     Format: projects/{project}/locations/{location}, where {project} can be project id or
+   *     number. Only lowercase characters, digits, and hyphens.
    * @param service Required. The Service instance to create.
    * @param serviceId Required. The unique identifier for the Service. It must begin with letter,
-   *     and may not end with hyphen; must contain fewer than 50 characters. The name of the service
+   *     and cannot end with hyphen; must contain fewer than 50 characters. The name of the service
    *     becomes {parent}/services/{service_id}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -395,7 +395,8 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Service. Format:
-   *     projects/{project}/locations/{location}/services/{service}
+   *     projects/{project}/locations/{location}/services/{service}, where {project} can be project
+   *     id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(ServiceName name) {
@@ -423,7 +424,8 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Service. Format:
-   *     projects/{project}/locations/{location}/services/{service}
+   *     projects/{project}/locations/{location}/services/{service}, where {project} can be project
+   *     id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(String name) {
@@ -507,8 +509,8 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project to list resources on. Location must be a valid
-   *     GCP region, and may not be the "-" wildcard. Format:
-   *     projects/{project}/locations/{location}
+   *     GCP region, and cannot be the "-" wildcard. Format:
+   *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(LocationName parent) {
@@ -540,8 +542,8 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project to list resources on. Location must be a valid
-   *     GCP region, and may not be the "-" wildcard. Format:
-   *     projects/{project}/locations/{location}
+   *     GCP region, and cannot be the "-" wildcard. Format:
+   *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(String parent) {
@@ -790,7 +792,8 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Service. Format:
-   *     projects/{project}/locations/{location}/services/{service}
+   *     projects/{project}/locations/{location}/services/{service}, where {project} can be project
+   *     id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, Service> deleteServiceAsync(ServiceName name) {
@@ -819,7 +822,8 @@ public class ServicesClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Service. Format:
-   *     projects/{project}/locations/{location}/services/{service}
+   *     projects/{project}/locations/{location}/services/{service}, where {project} can be project
+   *     id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, Service> deleteServiceAsync(String name) {

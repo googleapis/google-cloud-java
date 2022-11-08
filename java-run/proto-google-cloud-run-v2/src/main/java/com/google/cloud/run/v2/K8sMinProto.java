@@ -91,6 +91,10 @@ public final class K8sMinProto {
       internal_static_google_cloud_run_v2_TCPSocketAction_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_TCPSocketAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_GRPCAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_GRPCAction_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -138,30 +142,33 @@ public final class K8sMinProto {
           + ".v2.VersionToPath\022\024\n\014default_mode\030\003 \001(\005\""
           + "A\n\rVersionToPath\022\021\n\004path\030\001 \001(\tB\003\340A\002\022\017\n\007v"
           + "ersion\030\002 \001(\t\022\014\n\004mode\030\003 \001(\005\"%\n\020CloudSqlIn"
-          + "stance\022\021\n\tinstances\030\001 \003(\t\"\364\001\n\005Probe\022\035\n\025i"
+          + "stance\022\021\n\tinstances\030\001 \003(\t\"\245\002\n\005Probe\022\035\n\025i"
           + "nitial_delay_seconds\030\001 \001(\005\022\027\n\017timeout_se"
           + "conds\030\002 \001(\005\022\026\n\016period_seconds\030\003 \001(\005\022\031\n\021f"
           + "ailure_threshold\030\004 \001(\005\0226\n\010http_get\030\005 \001(\013"
           + "2\".google.cloud.run.v2.HTTPGetActionH\000\022:"
           + "\n\ntcp_socket\030\006 \001(\0132$.google.cloud.run.v2"
-          + ".TCPSocketActionH\000B\014\n\nprobe_type\"T\n\rHTTP"
-          + "GetAction\022\014\n\004path\030\001 \001(\t\0225\n\014http_headers\030"
-          + "\004 \003(\0132\037.google.cloud.run.v2.HTTPHeader\"."
-          + "\n\nHTTPHeader\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\r\n\005value"
-          + "\030\002 \001(\t\"\037\n\017TCPSocketAction\022\014\n\004port\030\001 \001(\005B"
-          + "\366\003\n\027com.google.cloud.run.v2B\013K8sMinProto"
-          + "P\001Z6google.golang.org/genproto/googleapi"
-          + "s/cloud/run/v2;run\352Ax\n!cloudkms.googleap"
-          + "is.com/CryptoKey\022Sprojects/{project}/loc"
-          + "ations/{location}/keyRings/{key_ring}/cr"
-          + "yptoKeys/{crypto_key}\352AJ\n#secretmanager."
-          + "googleapis.com/Secret\022#projects/{project"
-          + "}/secrets/{secret}\352Ad\n*secretmanager.goo"
-          + "gleapis.com/SecretVersion\0226projects/{pro"
-          + "ject}/secrets/{secret}/versions/{version"
-          + "}\352Ad\n\"vpcaccess.googleapis.com/Connector"
-          + "\022>projects/{project}/locations/{location"
-          + "}/connectors/{connector}b\006proto3"
+          + ".TCPSocketActionH\000\022/\n\004grpc\030\007 \001(\0132\037.googl"
+          + "e.cloud.run.v2.GRPCActionH\000B\014\n\nprobe_typ"
+          + "e\"T\n\rHTTPGetAction\022\014\n\004path\030\001 \001(\t\0225\n\014http"
+          + "_headers\030\004 \003(\0132\037.google.cloud.run.v2.HTT"
+          + "PHeader\".\n\nHTTPHeader\022\021\n\004name\030\001 \001(\tB\003\340A\002"
+          + "\022\r\n\005value\030\002 \001(\t\"\037\n\017TCPSocketAction\022\014\n\004po"
+          + "rt\030\001 \001(\005\"+\n\nGRPCAction\022\014\n\004port\030\001 \001(\005\022\017\n\007"
+          + "service\030\002 \001(\tB\366\003\n\027com.google.cloud.run.v"
+          + "2B\013K8sMinProtoP\001Z6google.golang.org/genp"
+          + "roto/googleapis/cloud/run/v2;run\352Ax\n!clo"
+          + "udkms.googleapis.com/CryptoKey\022Sprojects"
+          + "/{project}/locations/{location}/keyRings"
+          + "/{key_ring}/cryptoKeys/{crypto_key}\352AJ\n#"
+          + "secretmanager.googleapis.com/Secret\022#pro"
+          + "jects/{project}/secrets/{secret}\352Ad\n*sec"
+          + "retmanager.googleapis.com/SecretVersion\022"
+          + "6projects/{project}/secrets/{secret}/ver"
+          + "sions/{version}\352Ad\n\"vpcaccess.googleapis"
+          + ".com/Connector\022>projects/{project}/locat"
+          + "ions/{location}/connectors/{connector}b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -288,6 +295,7 @@ public final class K8sMinProto {
               "FailureThreshold",
               "HttpGet",
               "TcpSocket",
+              "Grpc",
               "ProbeType",
             });
     internal_static_google_cloud_run_v2_HTTPGetAction_descriptor =
@@ -313,6 +321,14 @@ public final class K8sMinProto {
             internal_static_google_cloud_run_v2_TCPSocketAction_descriptor,
             new java.lang.String[] {
               "Port",
+            });
+    internal_static_google_cloud_run_v2_GRPCAction_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_run_v2_GRPCAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_GRPCAction_descriptor,
+            new java.lang.String[] {
+              "Port", "Service",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -75,7 +75,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The full name of the Job.
-   * Format: projects/{project}/locations/{location}/jobs/{job}
+   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+   * can be project id or number.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The full name of the Job.
-   * Format: projects/{project}/locations/{location}/jobs/{job}
+   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+   * can be project id or number.
    * </pre>
    *
    * <code>
@@ -569,7 +571,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -594,7 +597,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -619,7 +623,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -643,7 +648,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>
@@ -663,7 +669,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The full name of the Job.
-     * Format: projects/{project}/locations/{location}/jobs/{job}
+     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
+     * can be project id or number.
      * </pre>
      *
      * <code>

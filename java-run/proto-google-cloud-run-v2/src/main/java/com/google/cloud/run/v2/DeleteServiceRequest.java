@@ -75,7 +75,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The full name of the Service.
-   * Format: projects/{project}/locations/{location}/services/{service}
+   * Format: projects/{project}/locations/{location}/services/{service}, where
+   * {project} can be project id or number.
    * </pre>
    *
    * <code>
@@ -101,7 +102,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The full name of the Service.
-   * Format: projects/{project}/locations/{location}/services/{service}
+   * Format: projects/{project}/locations/{location}/services/{service}, where
+   * {project} can be project id or number.
    * </pre>
    *
    * <code>
@@ -571,7 +573,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The full name of the Service.
-     * Format: projects/{project}/locations/{location}/services/{service}
+     * Format: projects/{project}/locations/{location}/services/{service}, where
+     * {project} can be project id or number.
      * </pre>
      *
      * <code>
@@ -596,7 +599,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The full name of the Service.
-     * Format: projects/{project}/locations/{location}/services/{service}
+     * Format: projects/{project}/locations/{location}/services/{service}, where
+     * {project} can be project id or number.
      * </pre>
      *
      * <code>
@@ -621,7 +625,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The full name of the Service.
-     * Format: projects/{project}/locations/{location}/services/{service}
+     * Format: projects/{project}/locations/{location}/services/{service}, where
+     * {project} can be project id or number.
      * </pre>
      *
      * <code>
@@ -645,7 +650,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The full name of the Service.
-     * Format: projects/{project}/locations/{location}/services/{service}
+     * Format: projects/{project}/locations/{location}/services/{service}, where
+     * {project} can be project id or number.
      * </pre>
      *
      * <code>
@@ -665,7 +671,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The full name of the Service.
-     * Format: projects/{project}/locations/{location}/services/{service}
+     * Format: projects/{project}/locations/{location}/services/{service}, where
+     * {project} can be project id or number.
      * </pre>
      *
      * <code>

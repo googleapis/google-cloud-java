@@ -223,7 +223,7 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project in which this Job should be created. Format:
-   *     projects/{project}/locations/{location}
+   *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @param job Required. The Job instance to create.
    * @param jobId Required. The unique identifier for the Job. The name of the job becomes
    *     {parent}/jobs/{job_id}.
@@ -261,7 +261,7 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project in which this Job should be created. Format:
-   *     projects/{project}/locations/{location}
+   *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @param job Required. The Job instance to create.
    * @param jobId Required. The unique identifier for the Job. The name of the job becomes
    *     {parent}/jobs/{job_id}.
@@ -384,7 +384,8 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Job. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(JobName name) {
@@ -412,7 +413,8 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Job. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String name) {
@@ -496,7 +498,7 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project to list resources on. Format:
-   *     projects/{project}/locations/{location}
+   *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(LocationName parent) {
@@ -526,7 +528,7 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location and project to list resources on. Format:
-   *     projects/{project}/locations/{location}
+   *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String parent) {
@@ -772,7 +774,8 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Job. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Job, Job> deleteJobAsync(JobName name) {
@@ -800,7 +803,8 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Job. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Job, Job> deleteJobAsync(String name) {
@@ -916,7 +920,8 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Job. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, Execution> runJobAsync(JobName name) {
@@ -944,7 +949,8 @@ public class JobsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the Job. Format:
-   *     projects/{project}/locations/{location}/jobs/{job}
+   *     projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or
+   *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, Execution> runJobAsync(String name) {
@@ -1043,7 +1049,7 @@ public class JobsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the IAM Access Control policy currently in effect for the given Job. This result does not
+   * Gets the IAM Access Control policy currently in effect for the given Job. This result does not
    * include any inherited policies.
    *
    * <p>Sample code:
@@ -1073,7 +1079,7 @@ public class JobsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the IAM Access Control policy currently in effect for the given Job. This result does not
+   * Gets the IAM Access Control policy currently in effect for the given Job. This result does not
    * include any inherited policies.
    *
    * <p>Sample code:

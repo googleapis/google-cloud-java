@@ -523,7 +523,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given Job.
+     * Gets the IAM Access Control policy currently in effect for the given Job.
      * This result does not include any inherited policies.
      * </pre>
      */
@@ -732,7 +732,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given Job.
+     * Gets the IAM Access Control policy currently in effect for the given Job.
      * This result does not include any inherited policies.
      * </pre>
      */
@@ -879,7 +879,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given Job.
+     * Gets the IAM Access Control policy currently in effect for the given Job.
      * This result does not include any inherited policies.
      * </pre>
      */
@@ -1016,7 +1016,7 @@ public final class JobsGrpc {
      *
      *
      * <pre>
-     * Get the IAM Access Control policy currently in effect for the given Job.
+     * Gets the IAM Access Control policy currently in effect for the given Job.
      * This result does not include any inherited policies.
      * </pre>
      */
