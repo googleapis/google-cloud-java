@@ -87,6 +87,7 @@ public class PublisherClientTest {
         PublishChannelConnectionEventsRequest.newBuilder()
             .setChannelConnection("channelConnection-1932021695")
             .addAllEvents(new ArrayList<Any>())
+            .addAllTextEvents(new ArrayList<String>())
             .build();
 
     PublishChannelConnectionEventsResponse actualResponse =
@@ -100,6 +101,7 @@ public class PublisherClientTest {
 
     Assert.assertEquals(request.getChannelConnection(), actualRequest.getChannelConnection());
     Assert.assertEquals(request.getEventsList(), actualRequest.getEventsList());
+    Assert.assertEquals(request.getTextEventsList(), actualRequest.getTextEventsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -116,6 +118,7 @@ public class PublisherClientTest {
           PublishChannelConnectionEventsRequest.newBuilder()
               .setChannelConnection("channelConnection-1932021695")
               .addAllEvents(new ArrayList<Any>())
+              .addAllTextEvents(new ArrayList<String>())
               .build();
       client.publishChannelConnectionEvents(request);
       Assert.fail("No exception raised");
@@ -133,6 +136,7 @@ public class PublisherClientTest {
         PublishEventsRequest.newBuilder()
             .setChannel("channel738950403")
             .addAllEvents(new ArrayList<Any>())
+            .addAllTextEvents(new ArrayList<String>())
             .build();
 
     PublishEventsResponse actualResponse = client.publishEvents(request);
@@ -144,6 +148,7 @@ public class PublisherClientTest {
 
     Assert.assertEquals(request.getChannel(), actualRequest.getChannel());
     Assert.assertEquals(request.getEventsList(), actualRequest.getEventsList());
+    Assert.assertEquals(request.getTextEventsList(), actualRequest.getTextEventsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -160,6 +165,7 @@ public class PublisherClientTest {
           PublishEventsRequest.newBuilder()
               .setChannel("channel738950403")
               .addAllEvents(new ArrayList<Any>())
+              .addAllTextEvents(new ArrayList<String>())
               .build();
       client.publishEvents(request);
       Assert.fail("No exception raised");

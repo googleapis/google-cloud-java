@@ -56,35 +56,36 @@ public final class PublisherProto {
           + "blisher.proto\022#google.cloud.eventarc.pub"
           + "lishing.v1\032\034google/api/annotations.proto"
           + "\032\027google/api/client.proto\032\031google/protob"
-          + "uf/any.proto\"i\n%PublishChannelConnection"
+          + "uf/any.proto\"~\n%PublishChannelConnection"
           + "EventsRequest\022\032\n\022channel_connection\030\001 \001("
-          + "\t\022$\n\006events\030\002 \003(\0132\024.google.protobuf.Any\""
-          + "(\n&PublishChannelConnectionEventsRespons"
-          + "e\"M\n\024PublishEventsRequest\022\017\n\007channel\030\001 \001"
-          + "(\t\022$\n\006events\030\002 \003(\0132\024.google.protobuf.Any"
-          + "\"\027\n\025PublishEventsResponse2\320\004\n\tPublisher\022"
-          + "\230\002\n\036PublishChannelConnectionEvents\022J.goo"
-          + "gle.cloud.eventarc.publishing.v1.Publish"
-          + "ChannelConnectionEventsRequest\032K.google."
-          + "cloud.eventarc.publishing.v1.PublishChan"
-          + "nelConnectionEventsResponse\"]\202\323\344\223\002W\"R/v1"
-          + "/{channel_connection=projects/*/location"
-          + "s/*/channelConnections/*}:publishEvents:"
-          + "\001*\022\320\001\n\rPublishEvents\0229.google.cloud.even"
-          + "tarc.publishing.v1.PublishEventsRequest\032"
-          + ":.google.cloud.eventarc.publishing.v1.Pu"
-          + "blishEventsResponse\"H\202\323\344\223\002B\"=/v1/{channe"
-          + "l=projects/*/locations/*/channels/*}:pub"
-          + "lishEvents:\001*\032U\312A!eventarcpublishing.goo"
-          + "gleapis.com\322A.https://www.googleapis.com"
-          + "/auth/cloud-platformB\377\001\n\'com.google.clou"
-          + "d.eventarc.publishing.v1B\016PublisherProto"
-          + "P\001ZLgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/eventarc/publishing/v1;publisher"
-          + "\252\002#Google.Cloud.Eventarc.Publishing.V1\312\002"
-          + "#Google\\Cloud\\Eventarc\\Publishing\\V1\352\002\'G"
-          + "oogle::Cloud::Eventarc::Publishing::V1b\006"
-          + "proto3"
+          + "\t\022$\n\006events\030\002 \003(\0132\024.google.protobuf.Any\022"
+          + "\023\n\013text_events\030\003 \003(\t\"(\n&PublishChannelCo"
+          + "nnectionEventsResponse\"b\n\024PublishEventsR"
+          + "equest\022\017\n\007channel\030\001 \001(\t\022$\n\006events\030\002 \003(\0132"
+          + "\024.google.protobuf.Any\022\023\n\013text_events\030\003 \003"
+          + "(\t\"\027\n\025PublishEventsResponse2\320\004\n\tPublishe"
+          + "r\022\230\002\n\036PublishChannelConnectionEvents\022J.g"
+          + "oogle.cloud.eventarc.publishing.v1.Publi"
+          + "shChannelConnectionEventsRequest\032K.googl"
+          + "e.cloud.eventarc.publishing.v1.PublishCh"
+          + "annelConnectionEventsResponse\"]\202\323\344\223\002W\"R/"
+          + "v1/{channel_connection=projects/*/locati"
+          + "ons/*/channelConnections/*}:publishEvent"
+          + "s:\001*\022\320\001\n\rPublishEvents\0229.google.cloud.ev"
+          + "entarc.publishing.v1.PublishEventsReques"
+          + "t\032:.google.cloud.eventarc.publishing.v1."
+          + "PublishEventsResponse\"H\202\323\344\223\002B\"=/v1/{chan"
+          + "nel=projects/*/locations/*/channels/*}:p"
+          + "ublishEvents:\001*\032U\312A!eventarcpublishing.g"
+          + "oogleapis.com\322A.https://www.googleapis.c"
+          + "om/auth/cloud-platformB\377\001\n\'com.google.cl"
+          + "oud.eventarc.publishing.v1B\016PublisherPro"
+          + "toP\001ZLgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/eventarc/publishing/v1;publish"
+          + "er\252\002#Google.Cloud.Eventarc.Publishing.V1"
+          + "\312\002#Google\\Cloud\\Eventarc\\Publishing\\V1\352\002"
+          + "\'Google::Cloud::Eventarc::Publishing::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -100,7 +101,7 @@ public final class PublisherProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_publishing_v1_PublishChannelConnectionEventsRequest_descriptor,
             new java.lang.String[] {
-              "ChannelConnection", "Events",
+              "ChannelConnection", "Events", "TextEvents",
             });
     internal_static_google_cloud_eventarc_publishing_v1_PublishChannelConnectionEventsResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -114,7 +115,7 @@ public final class PublisherProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_publishing_v1_PublishEventsRequest_descriptor,
             new java.lang.String[] {
-              "Channel", "Events",
+              "Channel", "Events", "TextEvents",
             });
     internal_static_google_cloud_eventarc_publishing_v1_PublishEventsResponse_descriptor =
         getDescriptor().getMessageTypes().get(3);

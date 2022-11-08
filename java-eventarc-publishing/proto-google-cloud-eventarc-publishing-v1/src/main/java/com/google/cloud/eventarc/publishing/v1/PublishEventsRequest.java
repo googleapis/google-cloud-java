@@ -40,6 +40,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   private PublishEventsRequest() {
     channel_ = "";
     events_ = java.util.Collections.emptyList();
+    textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -126,6 +127,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The CloudEvents v1.0 events to publish. No other types are allowed.
+   * If this field is set, then the `text_events` fields must not be set.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -139,6 +141,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The CloudEvents v1.0 events to publish. No other types are allowed.
+   * If this field is set, then the `text_events` fields must not be set.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -152,6 +155,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The CloudEvents v1.0 events to publish. No other types are allowed.
+   * If this field is set, then the `text_events` fields must not be set.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -165,6 +169,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The CloudEvents v1.0 events to publish. No other types are allowed.
+   * If this field is set, then the `text_events` fields must not be set.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -178,6 +183,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The CloudEvents v1.0 events to publish. No other types are allowed.
+   * If this field is set, then the `text_events` fields must not be set.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -185,6 +191,83 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.protobuf.AnyOrBuilder getEventsOrBuilder(int index) {
     return events_.get(index);
+  }
+
+  public static final int TEXT_EVENTS_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList textEvents_;
+  /**
+   *
+   *
+   * <pre>
+   * The text representation of events to publish.
+   * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+   * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+   * for specification.
+   * If this field is set, then the `events` fields must not be set.
+   * </pre>
+   *
+   * <code>repeated string text_events = 3;</code>
+   *
+   * @return A list containing the textEvents.
+   */
+  public com.google.protobuf.ProtocolStringList getTextEventsList() {
+    return textEvents_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The text representation of events to publish.
+   * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+   * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+   * for specification.
+   * If this field is set, then the `events` fields must not be set.
+   * </pre>
+   *
+   * <code>repeated string text_events = 3;</code>
+   *
+   * @return The count of textEvents.
+   */
+  public int getTextEventsCount() {
+    return textEvents_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The text representation of events to publish.
+   * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+   * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+   * for specification.
+   * If this field is set, then the `events` fields must not be set.
+   * </pre>
+   *
+   * <code>repeated string text_events = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The textEvents at the given index.
+   */
+  public java.lang.String getTextEvents(int index) {
+    return textEvents_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The text representation of events to publish.
+   * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+   * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+   * for specification.
+   * If this field is set, then the `events` fields must not be set.
+   * </pre>
+   *
+   * <code>repeated string text_events = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the textEvents at the given index.
+   */
+  public com.google.protobuf.ByteString getTextEventsBytes(int index) {
+    return textEvents_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -207,6 +290,9 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < events_.size(); i++) {
       output.writeMessage(2, events_.get(i));
     }
+    for (int i = 0; i < textEvents_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, textEvents_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -221,6 +307,14 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     }
     for (int i = 0; i < events_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, events_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < textEvents_.size(); i++) {
+        dataSize += computeStringSizeNoTag(textEvents_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTextEventsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -240,6 +334,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
 
     if (!getChannel().equals(other.getChannel())) return false;
     if (!getEventsList().equals(other.getEventsList())) return false;
+    if (!getTextEventsList().equals(other.getTextEventsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -256,6 +351,10 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
     if (getEventsCount() > 0) {
       hash = (37 * hash) + EVENTS_FIELD_NUMBER;
       hash = (53 * hash) + getEventsList().hashCode();
+    }
+    if (getTextEventsCount() > 0) {
+      hash = (37 * hash) + TEXT_EVENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTextEventsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -405,6 +504,8 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         eventsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -444,6 +545,11 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
       } else {
         result.events_ = eventsBuilder_.build();
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        textEvents_ = textEvents_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.textEvents_ = textEvents_;
       onBuilt();
       return result;
     }
@@ -526,6 +632,16 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
           }
         }
       }
+      if (!other.textEvents_.isEmpty()) {
+        if (textEvents_.isEmpty()) {
+          textEvents_ = other.textEvents_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureTextEventsIsMutable();
+          textEvents_.addAll(other.textEvents_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -570,6 +686,13 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTextEventsIsMutable();
+                textEvents_.add(s);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -720,6 +843,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -736,6 +860,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -752,6 +877,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -768,6 +894,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -790,6 +917,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -809,6 +937,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -831,6 +960,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -853,6 +983,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -872,6 +1003,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -891,6 +1023,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -910,6 +1043,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -929,6 +1063,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -948,6 +1083,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -960,6 +1096,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -976,6 +1113,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -992,6 +1130,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -1004,6 +1143,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -1017,6 +1157,7 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The CloudEvents v1.0 events to publish. No other types are allowed.
+     * If this field is set, then the `text_events` fields must not be set.
      * </pre>
      *
      * <code>repeated .google.protobuf.Any events = 2;</code>
@@ -1040,6 +1181,210 @@ public final class PublishEventsRequest extends com.google.protobuf.GeneratedMes
         events_ = null;
       }
       return eventsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList textEvents_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureTextEventsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        textEvents_ = new com.google.protobuf.LazyStringArrayList(textEvents_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @return A list containing the textEvents.
+     */
+    public com.google.protobuf.ProtocolStringList getTextEventsList() {
+      return textEvents_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @return The count of textEvents.
+     */
+    public int getTextEventsCount() {
+      return textEvents_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The textEvents at the given index.
+     */
+    public java.lang.String getTextEvents(int index) {
+      return textEvents_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the textEvents at the given index.
+     */
+    public com.google.protobuf.ByteString getTextEventsBytes(int index) {
+      return textEvents_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The textEvents to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTextEvents(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTextEventsIsMutable();
+      textEvents_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @param value The textEvents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTextEvents(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTextEventsIsMutable();
+      textEvents_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @param values The textEvents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTextEvents(java.lang.Iterable<java.lang.String> values) {
+      ensureTextEventsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, textEvents_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTextEvents() {
+      textEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The text representation of events to publish.
+     * CloudEvent v1.0 in JSON format is the only allowed type. Refer to
+     * https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/formats/json-format.md
+     * for specification.
+     * If this field is set, then the `events` fields must not be set.
+     * </pre>
+     *
+     * <code>repeated string text_events = 3;</code>
+     *
+     * @param value The bytes of the textEvents to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTextEventsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTextEventsIsMutable();
+      textEvents_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

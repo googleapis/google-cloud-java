@@ -62,6 +62,7 @@ import javax.annotation.Generated;
  *       PublishChannelConnectionEventsRequest.newBuilder()
  *           .setChannelConnection("channelConnection-1932021695")
  *           .addAllEvents(new ArrayList<Any>())
+ *           .addAllTextEvents(new ArrayList<String>())
  *           .build();
  *   PublishChannelConnectionEventsResponse response =
  *       publisherClient.publishChannelConnectionEvents(request);
@@ -202,6 +203,7 @@ public class PublisherClient implements BackgroundResource {
    *       PublishChannelConnectionEventsRequest.newBuilder()
    *           .setChannelConnection("channelConnection-1932021695")
    *           .addAllEvents(new ArrayList<Any>())
+   *           .addAllTextEvents(new ArrayList<String>())
    *           .build();
    *   PublishChannelConnectionEventsResponse response =
    *       publisherClient.publishChannelConnectionEvents(request);
@@ -233,6 +235,7 @@ public class PublisherClient implements BackgroundResource {
    *       PublishChannelConnectionEventsRequest.newBuilder()
    *           .setChannelConnection("channelConnection-1932021695")
    *           .addAllEvents(new ArrayList<Any>())
+   *           .addAllTextEvents(new ArrayList<String>())
    *           .build();
    *   ApiFuture<PublishChannelConnectionEventsResponse> future =
    *       publisherClient.publishChannelConnectionEventsCallable().futureCall(request);
@@ -264,6 +267,7 @@ public class PublisherClient implements BackgroundResource {
    *       PublishEventsRequest.newBuilder()
    *           .setChannel("channel738950403")
    *           .addAllEvents(new ArrayList<Any>())
+   *           .addAllTextEvents(new ArrayList<String>())
    *           .build();
    *   PublishEventsResponse response = publisherClient.publishEvents(request);
    * }
@@ -293,6 +297,7 @@ public class PublisherClient implements BackgroundResource {
    *       PublishEventsRequest.newBuilder()
    *           .setChannel("channel738950403")
    *           .addAllEvents(new ArrayList<Any>())
+   *           .addAllTextEvents(new ArrayList<String>())
    *           .build();
    *   ApiFuture<PublishEventsResponse> future =
    *       publisherClient.publishEventsCallable().futureCall(request);

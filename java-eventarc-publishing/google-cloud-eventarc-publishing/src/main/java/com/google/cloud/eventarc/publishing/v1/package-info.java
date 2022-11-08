@@ -56,6 +56,7 @@
  *       PublishChannelConnectionEventsRequest.newBuilder()
  *           .setChannelConnection("channelConnection-1932021695")
  *           .addAllEvents(new ArrayList<Any>())
+ *           .addAllTextEvents(new ArrayList<String>())
  *           .build();
  *   PublishChannelConnectionEventsResponse response =
  *       publisherClient.publishChannelConnectionEvents(request);

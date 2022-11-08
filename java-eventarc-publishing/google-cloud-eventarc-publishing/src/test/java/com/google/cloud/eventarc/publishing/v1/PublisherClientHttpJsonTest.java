@@ -83,6 +83,7 @@ public class PublisherClientHttpJsonTest {
             .setChannelConnection(
                 "projects/project-748/locations/location-748/channelConnections/channelConnection-748")
             .addAllEvents(new ArrayList<Any>())
+            .addAllTextEvents(new ArrayList<String>())
             .build();
 
     PublishChannelConnectionEventsResponse actualResponse =
@@ -117,6 +118,7 @@ public class PublisherClientHttpJsonTest {
               .setChannelConnection(
                   "projects/project-748/locations/location-748/channelConnections/channelConnection-748")
               .addAllEvents(new ArrayList<Any>())
+              .addAllTextEvents(new ArrayList<String>())
               .build();
       client.publishChannelConnectionEvents(request);
       Assert.fail("No exception raised");
@@ -134,6 +136,7 @@ public class PublisherClientHttpJsonTest {
         PublishEventsRequest.newBuilder()
             .setChannel("projects/project-2616/locations/location-2616/channels/channel-2616")
             .addAllEvents(new ArrayList<Any>())
+            .addAllTextEvents(new ArrayList<String>())
             .build();
 
     PublishEventsResponse actualResponse = client.publishEvents(request);
@@ -166,6 +169,7 @@ public class PublisherClientHttpJsonTest {
           PublishEventsRequest.newBuilder()
               .setChannel("projects/project-2616/locations/location-2616/channels/channel-2616")
               .addAllEvents(new ArrayList<Any>())
+              .addAllTextEvents(new ArrayList<String>())
               .build();
       client.publishEvents(request);
       Assert.fail("No exception raised");
