@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.25.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.24.2...v2.25.0) (2022-11-08)
+
+
+### Features
+
+* Add schema comparision to the main request loop for multiplexing to correctly update schema  ([#1865](https://github.com/googleapis/java-bigquerystorage/issues/1865)) ([cb18d28](https://github.com/googleapis/java-bigquerystorage/commit/cb18d288f78773af60b9fddc583f46a571cbc3f4))
+
+
+### Documentation
+
+* Remove stale header guidance for AppendRows ([#1866](https://github.com/googleapis/java-bigquerystorage/issues/1866)) ([1de23be](https://github.com/googleapis/java-bigquerystorage/commit/1de23be7fe84747a4e7ca5b511458a5b378a1170))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.18.2 ([#1862](https://github.com/googleapis/java-bigquerystorage/issues/1862)) ([ca2cafe](https://github.com/googleapis/java-bigquerystorage/commit/ca2cafe095eca8b610ec8ca1acf95cf7a561af61))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.19.0 ([#1871](https://github.com/googleapis/java-bigquerystorage/issues/1871)) ([4aa967a](https://github.com/googleapis/java-bigquerystorage/commit/4aa967a0a30db0037a04b6b47646ae79dfffaead))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.6 ([#1870](https://github.com/googleapis/java-bigquerystorage/issues/1870)) ([17b2a80](https://github.com/googleapis/java-bigquerystorage/commit/17b2a8036cf5706cb753f7116b1fa424a661ba39))
+* Update dependency kr.motd.maven:os-maven-plugin to v1.7.1 ([#1868](https://github.com/googleapis/java-bigquerystorage/issues/1868)) ([08b8468](https://github.com/googleapis/java-bigquerystorage/commit/08b8468dc31fe654f5f7a345377b14f51f19eeea))
+
 ## [2.24.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.24.1...v2.24.2) (2022-10-28)
 
 
