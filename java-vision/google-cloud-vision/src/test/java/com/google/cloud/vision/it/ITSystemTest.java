@@ -220,7 +220,7 @@ public class ITSystemTest {
     imageAnnotatorClient.close();
   }
 
-  private static AnnotateImageResponse getResponsesList(String image, Type type, boolean isGcs)
+  private static AnnotateImageResponse requestAnnotatedImage(String image, Type type, boolean isGcs)
       throws IOException {
     ImageSource imgSource;
     Image img;
@@ -290,7 +290,7 @@ public class ITSystemTest {
   @Test
   public void detectFacesTest() throws IOException {
     AnnotateImageResponse res =
-        getResponsesList("face_no_surprise.jpg", Type.FACE_DETECTION, false);
+        requestAnnotatedImage("face_no_surprise.jpg", Type.FACE_DETECTION, false);
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
       assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
@@ -301,7 +301,7 @@ public class ITSystemTest {
   @Test
   public void detectFacesGcsTest() throws IOException {
     AnnotateImageResponse res =
-        getResponsesList("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);
+        requestAnnotatedImage("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
       assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
@@ -311,7 +311,7 @@ public class ITSystemTest {
 
   @Test
   public void detectLabelsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("wakeupcat.jpg", Type.LABEL_DETECTION, false);
+    AnnotateImageResponse res = requestAnnotatedImage("wakeupcat.jpg", Type.LABEL_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLabelAnnotationsList())) {
       actual.add(annotation.getDescription());
@@ -321,7 +321,8 @@ public class ITSystemTest {
 
   @Test
   public void detectLabelsGcsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("label/wakeupcat.jpg", Type.LABEL_DETECTION, true);
+    AnnotateImageResponse res =
+        requestAnnotatedImage("label/wakeupcat.jpg", Type.LABEL_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLabelAnnotationsList())) {
       actual.add(annotation.getDescription());
@@ -331,7 +332,8 @@ public class ITSystemTest {
 
   @Test
   public void detectLandmarksTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("landmark.jpg", Type.LANDMARK_DETECTION, false);
+    AnnotateImageResponse res =
+        requestAnnotatedImage("landmark.jpg", Type.LANDMARK_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLandmarkAnnotationsList())) {
       actual.add(annotation.getDescription());
@@ -359,7 +361,7 @@ public class ITSystemTest {
   @Test
   public void detectLandmarksGcsTest() throws IOException {
     AnnotateImageResponse res =
-        getResponsesList("landmark/pofa.jpg", Type.LANDMARK_DETECTION, true);
+        requestAnnotatedImage("landmark/pofa.jpg", Type.LANDMARK_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLandmarkAnnotationsList())) {
       actual.add(annotation.getDescription());
@@ -369,7 +371,7 @@ public class ITSystemTest {
 
   @Test
   public void detectLogosTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("logos.png", Type.LOGO_DETECTION, false);
+    AnnotateImageResponse res = requestAnnotatedImage("logos.png", Type.LOGO_DETECTION, false);
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLogoAnnotationsList())) {
       assertEquals("Google", annotation.getDescription());
     }
@@ -377,7 +379,8 @@ public class ITSystemTest {
 
   @Test
   public void detectLogosGcsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("logo/logo_google.png", Type.LOGO_DETECTION, true);
+    AnnotateImageResponse res =
+        requestAnnotatedImage("logo/logo_google.png", Type.LOGO_DETECTION, true);
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLogoAnnotationsList())) {
       assertEquals("Google", annotation.getDescription());
     }
@@ -385,7 +388,7 @@ public class ITSystemTest {
 
   @Test
   public void detectTextTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("text.jpg", Type.TEXT_DETECTION, false);
+    AnnotateImageResponse res = requestAnnotatedImage("text.jpg", Type.TEXT_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getTextAnnotationsList())) {
       actual.add(annotation.getDescription());
@@ -395,7 +398,7 @@ public class ITSystemTest {
 
   @Test
   public void detectTextGcsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("text/screen.jpg", Type.TEXT_DETECTION, true);
+    AnnotateImageResponse res = requestAnnotatedImage("text/screen.jpg", Type.TEXT_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getTextAnnotationsList())) {
       actual.add(annotation.getDescription());
@@ -406,7 +409,7 @@ public class ITSystemTest {
 
   @Test
   public void detectPropertiesTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("landmark.jpg", Type.IMAGE_PROPERTIES, false);
+    AnnotateImageResponse res = requestAnnotatedImage("landmark.jpg", Type.IMAGE_PROPERTIES, false);
     List<Float> actual = new ArrayList<>();
     DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
     for (ColorInfo color : assertNotEmpty(res, colors.getColorsList())) {
@@ -417,7 +420,8 @@ public class ITSystemTest {
 
   @Test
   public void detectPropertiesGcsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("landmark/pofa.jpg", Type.IMAGE_PROPERTIES, true);
+    AnnotateImageResponse res =
+        requestAnnotatedImage("landmark/pofa.jpg", Type.IMAGE_PROPERTIES, true);
     List<Float> actual = new ArrayList<>();
     DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
     for (ColorInfo color : assertNotEmpty(res, colors.getColorsList())) {
@@ -429,7 +433,7 @@ public class ITSystemTest {
   @Test
   public void detectSafeSearchTest() throws IOException {
     AnnotateImageResponse res =
-        getResponsesList("wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, false);
+        requestAnnotatedImage("wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, false);
     SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
@@ -437,7 +441,7 @@ public class ITSystemTest {
 
   @Test
   public void detectWebEntitiesTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("city.jpg", Type.WEB_DETECTION, false);
+    AnnotateImageResponse res = requestAnnotatedImage("city.jpg", Type.WEB_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (WebDetection.WebEntity entity :
         assertNotEmpty(res, res.getWebDetection().getWebEntitiesList())) {
@@ -449,7 +453,7 @@ public class ITSystemTest {
   @Test
   public void detectSafeSearchGcsTest() throws IOException {
     AnnotateImageResponse res =
-        getResponsesList("label/wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, true);
+        requestAnnotatedImage("label/wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, true);
     SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
     assertEquals(Likelihood.VERY_UNLIKELY, annotation.getRacy());
@@ -532,7 +536,7 @@ public class ITSystemTest {
 
   @Test
   public void detectCropHintsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("wakeupcat.jpg", Type.CROP_HINTS, false);
+    AnnotateImageResponse res = requestAnnotatedImage("wakeupcat.jpg", Type.CROP_HINTS, false);
     List<Integer> actual = new ArrayList<>();
     CropHintsAnnotation annotation = res.getCropHintsAnnotation();
     for (CropHint hint : assertNotEmpty(res, annotation.getCropHintsList())) {
@@ -545,7 +549,7 @@ public class ITSystemTest {
 
   @Test
   public void detectCropHintsGcsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("label/wakeupcat.jpg", Type.CROP_HINTS, true);
+    AnnotateImageResponse res = requestAnnotatedImage("label/wakeupcat.jpg", Type.CROP_HINTS, true);
     List<Integer> actual = new ArrayList<>();
     CropHintsAnnotation annotation = res.getCropHintsAnnotation();
     for (CropHint hint : assertNotEmpty(res, annotation.getCropHintsList())) {
@@ -558,26 +562,26 @@ public class ITSystemTest {
 
   @Test
   public void detectDocumentTextTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("text.jpg", Type.DOCUMENT_TEXT_DETECTION, false);
-    String actual = "";
+    AnnotateImageResponse res =
+        requestAnnotatedImage("text.jpg", Type.DOCUMENT_TEXT_DETECTION, false);
     TextAnnotation annotation = res.getFullTextAnnotation();
-    actual = annotation.getText();
+    String actual = annotation.getText();
     assertThat(actual).contains("After preparation is complete");
   }
 
   @Test
   public void detectDocumentTextGcs() throws IOException {
     AnnotateImageResponse res =
-        getResponsesList("text/screen.jpg", Type.DOCUMENT_TEXT_DETECTION, true);
-    String actual = "";
+        requestAnnotatedImage("text/screen.jpg", Type.DOCUMENT_TEXT_DETECTION, true);
     TextAnnotation annotation = res.getFullTextAnnotation();
-    actual = annotation.getText();
+    String actual = annotation.getText();
     assertThat(actual).contains("After preparation is complete");
   }
 
   @Test
   public void detectLocalizedObjectsTest() throws IOException {
-    AnnotateImageResponse res = getResponsesList("puppies.jpg", Type.OBJECT_LOCALIZATION, false);
+    AnnotateImageResponse res =
+        requestAnnotatedImage("puppies.jpg", Type.OBJECT_LOCALIZATION, false);
     List<String> actual = new ArrayList<>();
     for (LocalizedObjectAnnotation entity :
         assertNotEmpty(res, res.getLocalizedObjectAnnotationsList())) {
@@ -609,7 +613,7 @@ public class ITSystemTest {
   @Test
   public void detectLocalizedObjectsGcsTest() throws IOException {
     AnnotateImageResponse res =
-        getResponsesList("object_localization/puppies.jpg", Type.OBJECT_LOCALIZATION, true);
+        requestAnnotatedImage("object_localization/puppies.jpg", Type.OBJECT_LOCALIZATION, true);
     List<String> actual = new ArrayList<>();
     for (LocalizedObjectAnnotation entity :
         assertNotEmpty(res, res.getLocalizedObjectAnnotationsList())) {
