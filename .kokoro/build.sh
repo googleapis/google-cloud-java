@@ -36,20 +36,38 @@ if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secr
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
 
+function setup_cloud() {
+  gcloud config set project "$GOOGLE_CLOUD_PROJECT"
+  time (
+    terraform -version &&
+      source ./.cloud/helpers/init.sh "$1" &&
+      source ./.cloud/helpers/plan.sh "$1" &&
+      source ./.cloud/helpers/apply.sh &&
+      source ./.cloud/helpers/populate-env.sh
+  )
+
+  destroy() {
+    arguments=$?
+    time source ./.cloud/helpers/destroy.sh
+    exit $arguments
+  }
+  trap destroy EXIT
+}
+
 RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
     retry_with_backoff 3 10 \
       mvn -B -ntp \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C \
-        test
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      -Dflatten.skip=true \
+      -Danimal.sniffer.skip=true \
+      -Dmaven.wagon.http.retryHandler.count=5 \
+      -T 1C \
+      test
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
@@ -61,26 +79,21 @@ case ${JOB_TYPE} in
         echo "${modified_module_list[*]}"
       )
       install_modules
-      printf "Running Integration Tests for:\n%s\n" "${module_list}"
-      mvn -B ${INTEGRATION_TEST_ARGS} \
-        -pl "${module_list}" \
-        -amd \
-        -ntp \
-        -Penable-integration-tests \
-        -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Djacoco.skip=true \
-        -DskipUnitTests=true \
-        -Dmaven.wagon.http.retryHandler.count=5 \
-        -fae \
-        -T 1C \
-        verify
-      RETURN_CODE=$?
-      printf "Finished Integration Tests for:\n%s\n" "${module_list}"
+      run_integration_tests "$module_list"
+    else
+      echo "No Integration Tests to run"
+    fi
+    ;;
+  terraform-integration)
+    generate_modified_modules_list
+    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
+      module_list=$(
+        IFS=,
+        echo "${modified_module_list[*]}"
+      )
+      setup_cloud "$module_list"
+      install_modules
+      run_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
     fi

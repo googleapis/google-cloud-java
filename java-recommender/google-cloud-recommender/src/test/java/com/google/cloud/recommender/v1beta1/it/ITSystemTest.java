@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.util.List;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -58,14 +59,16 @@ public class ITSystemTest {
     client.close();
   }
 
+  @Ignore("Recommendations are not available for brand-new GCP projects.")
   @Test
   public void listRecommendationsTest() {
     ListRecommendationsRequest request =
         ListRecommendationsRequest.newBuilder().setParent(FORMATTED_PARENT).setFilter("").build();
     List<Recommendation> recommendations =
         Lists.newArrayList(client.listRecommendations(request).iterateAll());
-    assertThat(recommendations.size() > 0).isTrue();
-    assertThat(recommendations.contains(null)).isFalse();
+
+    assertThat(recommendations).isNotEmpty();
+    assertThat(recommendations).doesNotContain(null);
   }
 
   @Test(expected = InvalidArgumentException.class)

@@ -58,3 +58,14 @@ generation/new_client/workspace
 
 # Monorepo repository generation
 monorepo
+
+# Terraform
+**/.cloud/.terraform/
+**/.cloud/plugins/
+**/.cloud/providers/
+**/.cloud/plugin_path
+*.lock.
+*.tfstate
+*.tfstate.backup
+*.tfstate.*.backup
+*.tfstate.lock.info

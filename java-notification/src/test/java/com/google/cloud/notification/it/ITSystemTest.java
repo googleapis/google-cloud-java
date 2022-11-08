@@ -38,12 +38,14 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -56,6 +58,10 @@ public class ITSystemTest {
   private static Storage storageService;
 
   private static final Logger log = Logger.getLogger(ITSystemTest.class.getName());
+  private static final String STORAGE_SERVICE_AGENT =
+      Optional.ofNullable(System.getenv("GOOGLE_STORAGE_SERVICE_AGENT"))
+          .map(agent -> "serviceAccount:" + agent)
+          .orElse("allAuthenticatedUsers");
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
   private static String projectId;
@@ -68,8 +74,7 @@ public class ITSystemTest {
     remoteStorageHelper = RemoteStorageHelper.create();
     topicAdminClient = TopicAdminClient.create();
     storageService = remoteStorageHelper.getOptions().getService();
-    notificationService =
-        new DefaultNotificationFactory().create(remoteStorageHelper.getOptions().getService());
+    notificationService = new DefaultNotificationFactory().create(storageService);
     storageService.create(BucketInfo.of(BUCKET));
     projectId = ServiceOptions.getDefaultProjectId();
   }
@@ -90,6 +95,7 @@ public class ITSystemTest {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
+  @Ignore
   @Test
   public void testNotifications() {
     // Use Pubsub to create a Topic.
@@ -99,11 +105,15 @@ public class ITSystemTest {
 
     Policy policy = topicAdminClient.getIamPolicy(topic.toString());
     Binding binding =
-        Binding.newBuilder().setRole("roles/owner").addMembers("allAuthenticatedUsers").build();
+        Binding.newBuilder()
+            .setRole("roles/pubsub.publisher")
+            .addMembers(STORAGE_SERVICE_AGENT)
+            .build();
     Policy newPolicy =
         topicAdminClient.setIamPolicy(
             topic.toString(), policy.toBuilder().addBindings(binding).build());
     assertTrue(newPolicy.getBindingsList().contains(binding));
+
     String permissionName = "pubsub.topics.get";
     List<String> permissions =
         topicAdminClient

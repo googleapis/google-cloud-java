@@ -19,6 +19,7 @@ package com.google.cloud.scheduler.v1.it;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.ResourceExhaustedException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.scheduler.v1.CloudSchedulerClient;
@@ -33,6 +34,8 @@ import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -145,12 +148,36 @@ public class ITSystemTest {
   @Test
   public void runJobTest() throws Exception {
     RunJobRequest jobRequest = RunJobRequest.newBuilder().setName(JOB_NAME).build();
-    ApiFuture<Job> job = client.runJobCallable().futureCall(jobRequest);
-    while (true) {
-      if (job.isDone()) {
-        assertJobDetails(job.get());
-        break;
+
+    // In a new project, the scheduler queue can take a couple of minutes to initialize
+    // after the first job is created before it is ready to accept tasks.
+    retryTwiceIfResourceExhausted(
+        () -> {
+          ApiFuture<Job> job = client.runJobCallable().futureCall(jobRequest);
+          while (true) {
+            if (job.isDone()) {
+              assertJobDetails(job.get());
+              break;
+            }
+          }
+          return null;
+        });
+  }
+
+  private static void retryTwiceIfResourceExhausted(Callable<Void> callable) throws Exception {
+    retryIfResourceExhausted(callable, 2);
+  }
+
+  private static void retryIfResourceExhausted(Callable<Void> callable, int retries)
+      throws Exception {
+    try {
+      callable.call();
+    } catch (ResourceExhaustedException ex) {
+      if (retries == 0) {
+        throw ex;
       }
+      TimeUnit.SECONDS.sleep(60);
+      retryIfResourceExhausted(callable, retries - 1);
     }
   }
 }

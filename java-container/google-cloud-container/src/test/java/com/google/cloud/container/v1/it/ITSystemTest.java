@@ -57,7 +57,9 @@ public class ITSystemTest {
           + "/zones/us-central1-a/clusters/"
           + CLUSTER_NAME;
   private static final String NODE_POOL_SEL_LINK = SELF_LINK + "/nodePools/" + NODE_POOL_NAME;
-  private static final String NETWORK = "java-container-network";
+  private static final String CONTAINER_NETWORK_ENV_NAME = "CONTAINER_NETWORK_NAME";
+  private static final String DEFAULT_NETWORK = "java-container-network";
+  private static final String NETWORK = getContainerNetworkName();
   private static final int INITIAL_NODE_COUNT = 1;
 
   @BeforeClass
@@ -179,5 +181,13 @@ public class ITSystemTest {
         assertEquals(NODE_POOL_SEL_LINK, nodePool.getSelfLink());
       }
     }
+  }
+
+  private static String getContainerNetworkName() {
+    String name = System.getenv(CONTAINER_NETWORK_ENV_NAME);
+    if (name == null) {
+      return DEFAULT_NETWORK;
+    }
+    return name;
   }
 }
