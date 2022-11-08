@@ -146,4 +146,29 @@ public interface LinuxNodeConfigOrBuilder
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
    */
   java.lang.String getSysctlsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * cgroup_mode specifies the cgroup mode to be used on the node.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+   *
+   * @return The enum numeric value on the wire for cgroupMode.
+   */
+  int getCgroupModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * cgroup_mode specifies the cgroup mode to be used on the node.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+   *
+   * @return The cgroupMode.
+   */
+  com.google.container.v1.LinuxNodeConfig.CgroupMode getCgroupMode();
 }

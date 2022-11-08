@@ -89,6 +89,7 @@ import com.google.container.v1.Operation;
 import com.google.container.v1.OperationProgress;
 import com.google.container.v1.PrivateClusterConfig;
 import com.google.container.v1.ReleaseChannel;
+import com.google.container.v1.ResourceLabels;
 import com.google.container.v1.ResourceUsageExportConfig;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.ServerConfig;
@@ -717,6 +718,7 @@ public class ClusterManagerClientTest {
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
+            .setResourceLabels(ResourceLabels.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -747,6 +749,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getConfidentialNodes(), actualRequest.getConfidentialNodes());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
+    Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -781,6 +784,7 @@ public class ClusterManagerClientTest {
               .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
+              .setResourceLabels(ResourceLabels.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

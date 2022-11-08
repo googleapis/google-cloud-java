@@ -74,7 +74,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Percentage of the bool pool nodes to drain in a batch.
+     * Percentage of the blue pool nodes to drain in a batch.
      * The range of this field should be (0.0, 1.0].
      * </pre>
      *
@@ -87,7 +87,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Percentage of the bool pool nodes to drain in a batch.
+     * Percentage of the blue pool nodes to drain in a batch.
      * The range of this field should be (0.0, 1.0].
      * </pre>
      *
@@ -260,7 +260,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Percentage of the bool pool nodes to drain in a batch.
+     * Percentage of the blue pool nodes to drain in a batch.
      * The range of this field should be (0.0, 1.0].
      * </pre>
      *
@@ -276,7 +276,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Percentage of the bool pool nodes to drain in a batch.
+     * Percentage of the blue pool nodes to drain in a batch.
      * The range of this field should be (0.0, 1.0].
      * </pre>
      *
@@ -845,7 +845,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Percentage of the bool pool nodes to drain in a batch.
+       * Percentage of the blue pool nodes to drain in a batch.
        * The range of this field should be (0.0, 1.0].
        * </pre>
        *
@@ -860,7 +860,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Percentage of the bool pool nodes to drain in a batch.
+       * Percentage of the blue pool nodes to drain in a batch.
        * The range of this field should be (0.0, 1.0].
        * </pre>
        *
@@ -878,7 +878,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Percentage of the bool pool nodes to drain in a batch.
+       * Percentage of the blue pool nodes to drain in a batch.
        * The range of this field should be (0.0, 1.0].
        * </pre>
        *
@@ -897,7 +897,7 @@ public final class BlueGreenSettings extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Percentage of the bool pool nodes to drain in a batch.
+       * Percentage of the blue pool nodes to drain in a batch.
        * The range of this field should be (0.0, 1.0].
        * </pre>
        *

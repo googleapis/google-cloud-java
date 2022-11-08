@@ -921,6 +921,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     }
   }
 
+  private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_;
   /**
@@ -1028,6 +1029,39 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     return cidrBlocks_.get(index);
   }
 
+  public static final int GCP_PUBLIC_CIDRS_ACCESS_ENABLED_FIELD_NUMBER = 3;
+  private boolean gcpPublicCidrsAccessEnabled_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * </pre>
+   *
+   * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+   *
+   * @return Whether the gcpPublicCidrsAccessEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcpPublicCidrsAccessEnabled() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * </pre>
+   *
+   * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+   *
+   * @return The gcpPublicCidrsAccessEnabled.
+   */
+  @java.lang.Override
+  public boolean getGcpPublicCidrsAccessEnabled() {
+    return gcpPublicCidrsAccessEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1048,6 +1082,9 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     for (int i = 0; i < cidrBlocks_.size(); i++) {
       output.writeMessage(2, cidrBlocks_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(3, gcpPublicCidrsAccessEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1062,6 +1099,10 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     }
     for (int i = 0; i < cidrBlocks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, cidrBlocks_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(3, gcpPublicCidrsAccessEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1081,6 +1122,10 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
 
     if (getEnabled() != other.getEnabled()) return false;
     if (!getCidrBlocksList().equals(other.getCidrBlocksList())) return false;
+    if (hasGcpPublicCidrsAccessEnabled() != other.hasGcpPublicCidrsAccessEnabled()) return false;
+    if (hasGcpPublicCidrsAccessEnabled()) {
+      if (getGcpPublicCidrsAccessEnabled() != other.getGcpPublicCidrsAccessEnabled()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1097,6 +1142,11 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
     if (getCidrBlocksCount() > 0) {
       hash = (37 * hash) + CIDR_BLOCKS_FIELD_NUMBER;
       hash = (53 * hash) + getCidrBlocksList().hashCode();
+    }
+    if (hasGcpPublicCidrsAccessEnabled()) {
+      hash = (37 * hash) + GCP_PUBLIC_CIDRS_ACCESS_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGcpPublicCidrsAccessEnabled());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1249,6 +1299,8 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         cidrBlocksBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      gcpPublicCidrsAccessEnabled_ = false;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1277,6 +1329,7 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       com.google.container.v1beta1.MasterAuthorizedNetworksConfig result =
           new com.google.container.v1beta1.MasterAuthorizedNetworksConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.enabled_ = enabled_;
       if (cidrBlocksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -1287,6 +1340,11 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
       } else {
         result.cidrBlocks_ = cidrBlocksBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gcpPublicCidrsAccessEnabled_ = gcpPublicCidrsAccessEnabled_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -1367,6 +1425,9 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
           }
         }
       }
+      if (other.hasGcpPublicCidrsAccessEnabled()) {
+        setGcpPublicCidrsAccessEnabled(other.getGcpPublicCidrsAccessEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1414,6 +1475,12 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
                 }
                 break;
               } // case 18
+            case 24:
+              {
+                gcpPublicCidrsAccessEnabled_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1913,6 +1980,73 @@ public final class MasterAuthorizedNetworksConfig extends com.google.protobuf.Ge
         cidrBlocks_ = null;
       }
       return cidrBlocksBuilder_;
+    }
+
+    private boolean gcpPublicCidrsAccessEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether master is accessbile via Google Compute Engine Public IP addresses.
+     * </pre>
+     *
+     * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+     *
+     * @return Whether the gcpPublicCidrsAccessEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcpPublicCidrsAccessEnabled() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether master is accessbile via Google Compute Engine Public IP addresses.
+     * </pre>
+     *
+     * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+     *
+     * @return The gcpPublicCidrsAccessEnabled.
+     */
+    @java.lang.Override
+    public boolean getGcpPublicCidrsAccessEnabled() {
+      return gcpPublicCidrsAccessEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether master is accessbile via Google Compute Engine Public IP addresses.
+     * </pre>
+     *
+     * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+     *
+     * @param value The gcpPublicCidrsAccessEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGcpPublicCidrsAccessEnabled(boolean value) {
+      bitField0_ |= 0x00000002;
+      gcpPublicCidrsAccessEnabled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether master is accessbile via Google Compute Engine Public IP addresses.
+     * </pre>
+     *
+     * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGcpPublicCidrsAccessEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      gcpPublicCidrsAccessEnabled_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

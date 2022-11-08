@@ -36,7 +36,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=2530
+   *     See google/container/v1beta1/cluster_service.proto;l=2563
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=2530
+   *     See google/container/v1beta1/cluster_service.proto;l=2563
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2539
+   *     google/container/v1beta1/cluster_service.proto;l=2572
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2539
+   *     google/container/v1beta1/cluster_service.proto;l=2572
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=2546
+   *     See google/container/v1beta1/cluster_service.proto;l=2579
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=2546
+   *     See google/container/v1beta1/cluster_service.proto;l=2579
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=2553
+   *     See google/container/v1beta1/cluster_service.proto;l=2586
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface SetNodePoolAutoscalingRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=2553
+   *     See google/container/v1beta1/cluster_service.proto;l=2586
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated

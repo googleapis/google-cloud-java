@@ -62,4 +62,5 @@
     <module>proto-google-cloud-container-v1beta1</module>
     <module>google-cloud-container-bom</module>
   </modules>
-</project>
+
+  </project>

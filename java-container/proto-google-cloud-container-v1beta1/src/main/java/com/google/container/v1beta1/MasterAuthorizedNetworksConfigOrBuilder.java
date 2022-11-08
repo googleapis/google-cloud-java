@@ -105,4 +105,29 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    */
   com.google.container.v1beta1.MasterAuthorizedNetworksConfig.CidrBlockOrBuilder
       getCidrBlocksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * </pre>
+   *
+   * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+   *
+   * @return Whether the gcpPublicCidrsAccessEnabled field is set.
+   */
+  boolean hasGcpPublicCidrsAccessEnabled();
+  /**
+   *
+   *
+   * <pre>
+   * Whether master is accessbile via Google Compute Engine Public IP addresses.
+   * </pre>
+   *
+   * <code>optional bool gcp_public_cidrs_access_enabled = 3;</code>
+   *
+   * @return The gcpPublicCidrsAccessEnabled.
+   */
+  boolean getGcpPublicCidrsAccessEnabled();
 }

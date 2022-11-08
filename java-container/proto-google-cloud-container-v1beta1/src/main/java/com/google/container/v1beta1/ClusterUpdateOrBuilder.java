@@ -1550,6 +1550,31 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Enable/Disable private endpoint for the cluster's master.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_private_endpoint = 71;</code>
+   *
+   * @return Whether the desiredEnablePrivateEndpoint field is set.
+   */
+  boolean hasDesiredEnablePrivateEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable private endpoint for the cluster's master.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_private_endpoint = 71;</code>
+   *
+   * @return The desiredEnablePrivateEndpoint.
+   */
+  boolean getDesiredEnablePrivateEndpoint();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired network tags that apply to all auto-provisioned node pools
    * in autopilot clusters and node auto-provisioning enabled clusters.
    * </pre>
@@ -1622,6 +1647,41 @@ public interface ClusterUpdateOrBuilder
    * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
    */
   com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired config of Gateway API on this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+   *
+   * @return Whether the desiredGatewayApiConfig field is set.
+   */
+  boolean hasDesiredGatewayApiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired config of Gateway API on this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+   *
+   * @return The desiredGatewayApiConfig.
+   */
+  com.google.container.v1beta1.GatewayAPIConfig getDesiredGatewayApiConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired config of Gateway API on this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+   */
+  com.google.container.v1beta1.GatewayAPIConfigOrBuilder getDesiredGatewayApiConfigOrBuilder();
 
   /**
    *

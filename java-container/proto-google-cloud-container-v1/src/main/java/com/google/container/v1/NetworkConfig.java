@@ -450,6 +450,57 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return getServiceExternalIpsConfig();
   }
 
+  public static final int GATEWAY_API_CONFIG_FIELD_NUMBER = 16;
+  private com.google.container.v1.GatewayAPIConfig gatewayApiConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * GatewayAPIConfig contains the desired config of Gateway API on this
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+   *
+   * @return Whether the gatewayApiConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGatewayApiConfig() {
+    return gatewayApiConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GatewayAPIConfig contains the desired config of Gateway API on this
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+   *
+   * @return The gatewayApiConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GatewayAPIConfig getGatewayApiConfig() {
+    return gatewayApiConfig_ == null
+        ? com.google.container.v1.GatewayAPIConfig.getDefaultInstance()
+        : gatewayApiConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * GatewayAPIConfig contains the desired config of Gateway API on this
+   * cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GatewayAPIConfigOrBuilder getGatewayApiConfigOrBuilder() {
+    return getGatewayApiConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -494,6 +545,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (serviceExternalIpsConfig_ != null) {
       output.writeMessage(15, getServiceExternalIpsConfig());
     }
+    if (gatewayApiConfig_ != null) {
+      output.writeMessage(16, getGatewayApiConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -535,6 +589,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getServiceExternalIpsConfig());
     }
+    if (gatewayApiConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getGatewayApiConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -567,6 +624,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasServiceExternalIpsConfig() != other.hasServiceExternalIpsConfig()) return false;
     if (hasServiceExternalIpsConfig()) {
       if (!getServiceExternalIpsConfig().equals(other.getServiceExternalIpsConfig())) return false;
+    }
+    if (hasGatewayApiConfig() != other.hasGatewayApiConfig()) return false;
+    if (hasGatewayApiConfig()) {
+      if (!getGatewayApiConfig().equals(other.getGatewayApiConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -602,6 +663,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasServiceExternalIpsConfig()) {
       hash = (37 * hash) + SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getServiceExternalIpsConfig().hashCode();
+    }
+    if (hasGatewayApiConfig()) {
+      hash = (37 * hash) + GATEWAY_API_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayApiConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -770,6 +835,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         serviceExternalIpsConfig_ = null;
         serviceExternalIpsConfigBuilder_ = null;
       }
+      if (gatewayApiConfigBuilder_ == null) {
+        gatewayApiConfig_ = null;
+      } else {
+        gatewayApiConfig_ = null;
+        gatewayApiConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -817,6 +888,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         result.serviceExternalIpsConfig_ = serviceExternalIpsConfig_;
       } else {
         result.serviceExternalIpsConfig_ = serviceExternalIpsConfigBuilder_.build();
+      }
+      if (gatewayApiConfigBuilder_ == null) {
+        result.gatewayApiConfig_ = gatewayApiConfig_;
+      } else {
+        result.gatewayApiConfig_ = gatewayApiConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -895,6 +971,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasServiceExternalIpsConfig()) {
         mergeServiceExternalIpsConfig(other.getServiceExternalIpsConfig());
+      }
+      if (other.hasGatewayApiConfig()) {
+        mergeGatewayApiConfig(other.getGatewayApiConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -978,6 +1057,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    getGatewayApiConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2137,6 +2223,201 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         serviceExternalIpsConfig_ = null;
       }
       return serviceExternalIpsConfigBuilder_;
+    }
+
+    private com.google.container.v1.GatewayAPIConfig gatewayApiConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GatewayAPIConfig,
+            com.google.container.v1.GatewayAPIConfig.Builder,
+            com.google.container.v1.GatewayAPIConfigOrBuilder>
+        gatewayApiConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     *
+     * @return Whether the gatewayApiConfig field is set.
+     */
+    public boolean hasGatewayApiConfig() {
+      return gatewayApiConfigBuilder_ != null || gatewayApiConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     *
+     * @return The gatewayApiConfig.
+     */
+    public com.google.container.v1.GatewayAPIConfig getGatewayApiConfig() {
+      if (gatewayApiConfigBuilder_ == null) {
+        return gatewayApiConfig_ == null
+            ? com.google.container.v1.GatewayAPIConfig.getDefaultInstance()
+            : gatewayApiConfig_;
+      } else {
+        return gatewayApiConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     */
+    public Builder setGatewayApiConfig(com.google.container.v1.GatewayAPIConfig value) {
+      if (gatewayApiConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gatewayApiConfig_ = value;
+        onChanged();
+      } else {
+        gatewayApiConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     */
+    public Builder setGatewayApiConfig(
+        com.google.container.v1.GatewayAPIConfig.Builder builderForValue) {
+      if (gatewayApiConfigBuilder_ == null) {
+        gatewayApiConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gatewayApiConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     */
+    public Builder mergeGatewayApiConfig(com.google.container.v1.GatewayAPIConfig value) {
+      if (gatewayApiConfigBuilder_ == null) {
+        if (gatewayApiConfig_ != null) {
+          gatewayApiConfig_ =
+              com.google.container.v1.GatewayAPIConfig.newBuilder(gatewayApiConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gatewayApiConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gatewayApiConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     */
+    public Builder clearGatewayApiConfig() {
+      if (gatewayApiConfigBuilder_ == null) {
+        gatewayApiConfig_ = null;
+        onChanged();
+      } else {
+        gatewayApiConfig_ = null;
+        gatewayApiConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     */
+    public com.google.container.v1.GatewayAPIConfig.Builder getGatewayApiConfigBuilder() {
+
+      onChanged();
+      return getGatewayApiConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     */
+    public com.google.container.v1.GatewayAPIConfigOrBuilder getGatewayApiConfigOrBuilder() {
+      if (gatewayApiConfigBuilder_ != null) {
+        return gatewayApiConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gatewayApiConfig_ == null
+            ? com.google.container.v1.GatewayAPIConfig.getDefaultInstance()
+            : gatewayApiConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * GatewayAPIConfig contains the desired config of Gateway API on this
+     * cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GatewayAPIConfig,
+            com.google.container.v1.GatewayAPIConfig.Builder,
+            com.google.container.v1.GatewayAPIConfigOrBuilder>
+        getGatewayApiConfigFieldBuilder() {
+      if (gatewayApiConfigBuilder_ == null) {
+        gatewayApiConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GatewayAPIConfig,
+                com.google.container.v1.GatewayAPIConfig.Builder,
+                com.google.container.v1.GatewayAPIConfigOrBuilder>(
+                getGatewayApiConfig(), getParentForChildren(), isClean());
+        gatewayApiConfig_ = null;
+      }
+      return gatewayApiConfigBuilder_;
     }
 
     @java.lang.Override

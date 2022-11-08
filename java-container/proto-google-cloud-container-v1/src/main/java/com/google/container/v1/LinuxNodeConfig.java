@@ -37,7 +37,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     super(builder);
   }
 
-  private LinuxNodeConfig() {}
+  private LinuxNodeConfig() {
+    cgroupMode_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -74,6 +76,169 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.LinuxNodeConfig.class,
             com.google.container.v1.LinuxNodeConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible cgroup modes that can be used.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.LinuxNodeConfig.CgroupMode}
+   */
+  public enum CgroupMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_UNSPECIFIED is when unspecified cgroup configuration is used.
+     * The default for the GKE node OS image will be used.
+     * </pre>
+     *
+     * <code>CGROUP_MODE_UNSPECIFIED = 0;</code>
+     */
+    CGROUP_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V1 specifies to use cgroupv1 for the cgroup configuration on
+     * the node image.
+     * </pre>
+     *
+     * <code>CGROUP_MODE_V1 = 1;</code>
+     */
+    CGROUP_MODE_V1(1),
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V2 specifies to use cgroupv2 for the cgroup configuration on
+     * the node image.
+     * </pre>
+     *
+     * <code>CGROUP_MODE_V2 = 2;</code>
+     */
+    CGROUP_MODE_V2(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_UNSPECIFIED is when unspecified cgroup configuration is used.
+     * The default for the GKE node OS image will be used.
+     * </pre>
+     *
+     * <code>CGROUP_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CGROUP_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V1 specifies to use cgroupv1 for the cgroup configuration on
+     * the node image.
+     * </pre>
+     *
+     * <code>CGROUP_MODE_V1 = 1;</code>
+     */
+    public static final int CGROUP_MODE_V1_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * CGROUP_MODE_V2 specifies to use cgroupv2 for the cgroup configuration on
+     * the node image.
+     * </pre>
+     *
+     * <code>CGROUP_MODE_V2 = 2;</code>
+     */
+    public static final int CGROUP_MODE_V2_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CgroupMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CgroupMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CGROUP_MODE_UNSPECIFIED;
+        case 1:
+          return CGROUP_MODE_V1;
+        case 2:
+          return CGROUP_MODE_V2;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CgroupMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CgroupMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CgroupMode>() {
+          public CgroupMode findValueByNumber(int number) {
+            return CgroupMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.LinuxNodeConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CgroupMode[] VALUES = values();
+
+    public static CgroupMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CgroupMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.LinuxNodeConfig.CgroupMode)
   }
 
   public static final int SYSCTLS_FIELD_NUMBER = 1;
@@ -226,6 +391,44 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     return map.get(key);
   }
 
+  public static final int CGROUP_MODE_FIELD_NUMBER = 2;
+  private int cgroupMode_;
+  /**
+   *
+   *
+   * <pre>
+   * cgroup_mode specifies the cgroup mode to be used on the node.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+   *
+   * @return The enum numeric value on the wire for cgroupMode.
+   */
+  @java.lang.Override
+  public int getCgroupModeValue() {
+    return cgroupMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * cgroup_mode specifies the cgroup mode to be used on the node.
+   * </pre>
+   *
+   * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+   *
+   * @return The cgroupMode.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.CgroupMode getCgroupMode() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.LinuxNodeConfig.CgroupMode result =
+        com.google.container.v1.LinuxNodeConfig.CgroupMode.valueOf(cgroupMode_);
+    return result == null
+        ? com.google.container.v1.LinuxNodeConfig.CgroupMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -242,6 +445,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSysctls(), SysctlsDefaultEntryHolder.defaultEntry, 1);
+    if (cgroupMode_
+        != com.google.container.v1.LinuxNodeConfig.CgroupMode.CGROUP_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, cgroupMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -261,6 +468,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, sysctls__);
     }
+    if (cgroupMode_
+        != com.google.container.v1.LinuxNodeConfig.CgroupMode.CGROUP_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, cgroupMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -277,6 +488,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     com.google.container.v1.LinuxNodeConfig other = (com.google.container.v1.LinuxNodeConfig) obj;
 
     if (!internalGetSysctls().equals(other.internalGetSysctls())) return false;
+    if (cgroupMode_ != other.cgroupMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -292,6 +504,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + SYSCTLS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSysctls().hashCode();
     }
+    hash = (37 * hash) + CGROUP_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + cgroupMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -451,6 +665,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       internalGetMutableSysctls().clear();
+      cgroupMode_ = 0;
+
       return this;
     }
 
@@ -481,6 +697,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       int from_bitField0_ = bitField0_;
       result.sysctls_ = internalGetSysctls();
       result.sysctls_.makeImmutable();
+      result.cgroupMode_ = cgroupMode_;
       onBuilt();
       return result;
     }
@@ -531,6 +748,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.container.v1.LinuxNodeConfig other) {
       if (other == com.google.container.v1.LinuxNodeConfig.getDefaultInstance()) return this;
       internalGetMutableSysctls().mergeFrom(other.internalGetSysctls());
+      if (other.cgroupMode_ != 0) {
+        setCgroupModeValue(other.getCgroupModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -568,6 +788,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
                     .put(sysctls__.getKey(), sysctls__.getValue());
                 break;
               } // case 10
+            case 16:
+              {
+                cgroupMode_ = input.readEnum();
+
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -833,6 +1059,99 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllSysctls(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSysctls().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private int cgroupMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * cgroup_mode specifies the cgroup mode to be used on the node.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+     *
+     * @return The enum numeric value on the wire for cgroupMode.
+     */
+    @java.lang.Override
+    public int getCgroupModeValue() {
+      return cgroupMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * cgroup_mode specifies the cgroup mode to be used on the node.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+     *
+     * @param value The enum numeric value on the wire for cgroupMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCgroupModeValue(int value) {
+
+      cgroupMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * cgroup_mode specifies the cgroup mode to be used on the node.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+     *
+     * @return The cgroupMode.
+     */
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.CgroupMode getCgroupMode() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.LinuxNodeConfig.CgroupMode result =
+          com.google.container.v1.LinuxNodeConfig.CgroupMode.valueOf(cgroupMode_);
+      return result == null
+          ? com.google.container.v1.LinuxNodeConfig.CgroupMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * cgroup_mode specifies the cgroup mode to be used on the node.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+     *
+     * @param value The cgroupMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCgroupMode(com.google.container.v1.LinuxNodeConfig.CgroupMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cgroupMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * cgroup_mode specifies the cgroup mode to be used on the node.
+     * </pre>
+     *
+     * <code>.google.container.v1.LinuxNodeConfig.CgroupMode cgroup_mode = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCgroupMode() {
+
+      cgroupMode_ = 0;
+      onChanged();
       return this;
     }
 

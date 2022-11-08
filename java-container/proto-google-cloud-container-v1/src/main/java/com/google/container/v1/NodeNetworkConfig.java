@@ -1061,6 +1061,43 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int ENABLE_PRIVATE_NODES_FIELD_NUMBER = 9;
+  private boolean enablePrivateNodes_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether nodes have internal IP addresses only.
+   * If enable_private_nodes is not specified, then the value is derived from
+   * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+   * </pre>
+   *
+   * <code>optional bool enable_private_nodes = 9;</code>
+   *
+   * @return Whether the enablePrivateNodes field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnablePrivateNodes() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Whether nodes have internal IP addresses only.
+   * If enable_private_nodes is not specified, then the value is derived from
+   * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+   * </pre>
+   *
+   * <code>optional bool enable_private_nodes = 9;</code>
+   *
+   * @return The enablePrivateNodes.
+   */
+  @java.lang.Override
+  public boolean getEnablePrivateNodes() {
+    return enablePrivateNodes_;
+  }
+
   public static final int NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER = 11;
   private com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig
       networkPerformanceConfig_;
@@ -1079,7 +1116,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasNetworkPerformanceConfig() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -1144,6 +1181,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, podIpv4CidrBlock_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(9, enablePrivateNodes_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getNetworkPerformanceConfig());
     }
     getUnknownFields().writeTo(output);
@@ -1165,6 +1205,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, podIpv4CidrBlock_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, enablePrivateNodes_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, getNetworkPerformanceConfig());
@@ -1188,6 +1231,10 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (getCreatePodRange() != other.getCreatePodRange()) return false;
     if (!getPodRange().equals(other.getPodRange())) return false;
     if (!getPodIpv4CidrBlock().equals(other.getPodIpv4CidrBlock())) return false;
+    if (hasEnablePrivateNodes() != other.hasEnablePrivateNodes()) return false;
+    if (hasEnablePrivateNodes()) {
+      if (getEnablePrivateNodes() != other.getEnablePrivateNodes()) return false;
+    }
     if (hasNetworkPerformanceConfig() != other.hasNetworkPerformanceConfig()) return false;
     if (hasNetworkPerformanceConfig()) {
       if (!getNetworkPerformanceConfig().equals(other.getNetworkPerformanceConfig())) return false;
@@ -1209,6 +1256,10 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getPodRange().hashCode();
     hash = (37 * hash) + POD_IPV4_CIDR_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getPodIpv4CidrBlock().hashCode();
+    if (hasEnablePrivateNodes()) {
+      hash = (37 * hash) + ENABLE_PRIVATE_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePrivateNodes());
+    }
     if (hasNetworkPerformanceConfig()) {
       hash = (37 * hash) + NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkPerformanceConfig().hashCode();
@@ -1366,12 +1417,14 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
 
       podIpv4CidrBlock_ = "";
 
+      enablePrivateNodes_ = false;
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (networkPerformanceConfigBuilder_ == null) {
         networkPerformanceConfig_ = null;
       } else {
         networkPerformanceConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1405,12 +1458,16 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       result.podRange_ = podRange_;
       result.podIpv4CidrBlock_ = podIpv4CidrBlock_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enablePrivateNodes_ = enablePrivateNodes_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         if (networkPerformanceConfigBuilder_ == null) {
           result.networkPerformanceConfig_ = networkPerformanceConfig_;
         } else {
           result.networkPerformanceConfig_ = networkPerformanceConfigBuilder_.build();
         }
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1473,6 +1530,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         podIpv4CidrBlock_ = other.podIpv4CidrBlock_;
         onChanged();
       }
+      if (other.hasEnablePrivateNodes()) {
+        setEnablePrivateNodes(other.getEnablePrivateNodes());
+      }
       if (other.hasNetworkPerformanceConfig()) {
         mergeNetworkPerformanceConfig(other.getNetworkPerformanceConfig());
       }
@@ -1520,11 +1580,17 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
 
                 break;
               } // case 50
+            case 72:
+              {
+                enablePrivateNodes_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
             case 90:
               {
                 input.readMessage(
                     getNetworkPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 90
             default:
@@ -1901,6 +1967,81 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private boolean enablePrivateNodes_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether nodes have internal IP addresses only.
+     * If enable_private_nodes is not specified, then the value is derived from
+     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * </pre>
+     *
+     * <code>optional bool enable_private_nodes = 9;</code>
+     *
+     * @return Whether the enablePrivateNodes field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnablePrivateNodes() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether nodes have internal IP addresses only.
+     * If enable_private_nodes is not specified, then the value is derived from
+     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * </pre>
+     *
+     * <code>optional bool enable_private_nodes = 9;</code>
+     *
+     * @return The enablePrivateNodes.
+     */
+    @java.lang.Override
+    public boolean getEnablePrivateNodes() {
+      return enablePrivateNodes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether nodes have internal IP addresses only.
+     * If enable_private_nodes is not specified, then the value is derived from
+     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * </pre>
+     *
+     * <code>optional bool enable_private_nodes = 9;</code>
+     *
+     * @param value The enablePrivateNodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnablePrivateNodes(boolean value) {
+      bitField0_ |= 0x00000001;
+      enablePrivateNodes_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether nodes have internal IP addresses only.
+     * If enable_private_nodes is not specified, then the value is derived from
+     * [cluster.privateClusterConfig.enablePrivateNodes][google.container.v1beta1.PrivateClusterConfig.enablePrivateNodes]
+     * </pre>
+     *
+     * <code>optional bool enable_private_nodes = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnablePrivateNodes() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      enablePrivateNodes_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig
         networkPerformanceConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1922,7 +2063,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the networkPerformanceConfig field is set.
      */
     public boolean hasNetworkPerformanceConfig() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1970,7 +2111,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       } else {
         networkPerformanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1993,7 +2134,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       } else {
         networkPerformanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2010,7 +2151,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     public Builder mergeNetworkPerformanceConfig(
         com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig value) {
       if (networkPerformanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && networkPerformanceConfig_ != null
             && networkPerformanceConfig_
                 != com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig
@@ -2027,7 +2168,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       } else {
         networkPerformanceConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2048,7 +2189,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       } else {
         networkPerformanceConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
     /**
@@ -2064,7 +2205,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      */
     public com.google.container.v1.NodeNetworkConfig.NetworkPerformanceConfig.Builder
         getNetworkPerformanceConfigBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNetworkPerformanceConfigFieldBuilder().getBuilder();
     }

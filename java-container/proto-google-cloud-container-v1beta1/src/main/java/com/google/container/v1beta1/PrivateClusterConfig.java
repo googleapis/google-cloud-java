@@ -42,6 +42,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     privateEndpoint_ = "";
     publicEndpoint_ = "";
     peeringName_ = "";
+    privateEndpointSubnetwork_ = "";
   }
 
   @java.lang.Override
@@ -367,6 +368,57 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     return getMasterGlobalAccessConfig();
   }
 
+  public static final int PRIVATE_ENDPOINT_SUBNETWORK_FIELD_NUMBER = 10;
+  private volatile java.lang.Object privateEndpointSubnetwork_;
+  /**
+   *
+   *
+   * <pre>
+   * Subnet to provision the master's private endpoint during cluster creation.
+   * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+   * </pre>
+   *
+   * <code>string private_endpoint_subnetwork = 10;</code>
+   *
+   * @return The privateEndpointSubnetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getPrivateEndpointSubnetwork() {
+    java.lang.Object ref = privateEndpointSubnetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      privateEndpointSubnetwork_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Subnet to provision the master's private endpoint during cluster creation.
+   * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+   * </pre>
+   *
+   * <code>string private_endpoint_subnetwork = 10;</code>
+   *
+   * @return The bytes for privateEndpointSubnetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPrivateEndpointSubnetworkBytes() {
+    java.lang.Object ref = privateEndpointSubnetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      privateEndpointSubnetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -402,6 +454,9 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (masterGlobalAccessConfig_ != null) {
       output.writeMessage(8, getMasterGlobalAccessConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateEndpointSubnetwork_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, privateEndpointSubnetwork_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -434,6 +489,10 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getMasterGlobalAccessConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(privateEndpointSubnetwork_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(10, privateEndpointSubnetwork_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -460,6 +519,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     if (hasMasterGlobalAccessConfig()) {
       if (!getMasterGlobalAccessConfig().equals(other.getMasterGlobalAccessConfig())) return false;
     }
+    if (!getPrivateEndpointSubnetwork().equals(other.getPrivateEndpointSubnetwork())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -487,6 +547,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + MASTER_GLOBAL_ACCESS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMasterGlobalAccessConfig().hashCode();
     }
+    hash = (37 * hash) + PRIVATE_ENDPOINT_SUBNETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getPrivateEndpointSubnetwork().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -643,6 +705,8 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         masterGlobalAccessConfig_ = null;
         masterGlobalAccessConfigBuilder_ = null;
       }
+      privateEndpointSubnetwork_ = "";
+
       return this;
     }
 
@@ -681,6 +745,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       } else {
         result.masterGlobalAccessConfig_ = masterGlobalAccessConfigBuilder_.build();
       }
+      result.privateEndpointSubnetwork_ = privateEndpointSubnetwork_;
       onBuilt();
       return result;
     }
@@ -756,6 +821,10 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       if (other.hasMasterGlobalAccessConfig()) {
         mergeMasterGlobalAccessConfig(other.getMasterGlobalAccessConfig());
       }
+      if (!other.getPrivateEndpointSubnetwork().isEmpty()) {
+        privateEndpointSubnetwork_ = other.privateEndpointSubnetwork_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -825,6 +894,12 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
                 break;
               } // case 66
+            case 82:
+              {
+                privateEndpointSubnetwork_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1603,6 +1678,117 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         masterGlobalAccessConfig_ = null;
       }
       return masterGlobalAccessConfigBuilder_;
+    }
+
+    private java.lang.Object privateEndpointSubnetwork_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Subnet to provision the master's private endpoint during cluster creation.
+     * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     * </pre>
+     *
+     * <code>string private_endpoint_subnetwork = 10;</code>
+     *
+     * @return The privateEndpointSubnetwork.
+     */
+    public java.lang.String getPrivateEndpointSubnetwork() {
+      java.lang.Object ref = privateEndpointSubnetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privateEndpointSubnetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subnet to provision the master's private endpoint during cluster creation.
+     * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     * </pre>
+     *
+     * <code>string private_endpoint_subnetwork = 10;</code>
+     *
+     * @return The bytes for privateEndpointSubnetwork.
+     */
+    public com.google.protobuf.ByteString getPrivateEndpointSubnetworkBytes() {
+      java.lang.Object ref = privateEndpointSubnetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        privateEndpointSubnetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subnet to provision the master's private endpoint during cluster creation.
+     * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     * </pre>
+     *
+     * <code>string private_endpoint_subnetwork = 10;</code>
+     *
+     * @param value The privateEndpointSubnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateEndpointSubnetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      privateEndpointSubnetwork_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subnet to provision the master's private endpoint during cluster creation.
+     * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     * </pre>
+     *
+     * <code>string private_endpoint_subnetwork = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrivateEndpointSubnetwork() {
+
+      privateEndpointSubnetwork_ = getDefaultInstance().getPrivateEndpointSubnetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subnet to provision the master's private endpoint during cluster creation.
+     * Specified in projects/&#42;&#47;regions/&#42;&#47;subnetworks/&#42; format.
+     * </pre>
+     *
+     * <code>string private_endpoint_subnetwork = 10;</code>
+     *
+     * @param value The bytes for privateEndpointSubnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateEndpointSubnetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      privateEndpointSubnetwork_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

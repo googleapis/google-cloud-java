@@ -77,6 +77,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.ClusterUpdate.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DESIRED_NODE_VERSION_FIELD_NUMBER = 4;
   private volatile java.lang.Object desiredNodeVersion_;
   /**
@@ -1736,6 +1737,39 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredServiceExternalIpsConfig();
   }
 
+  public static final int DESIRED_ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER = 71;
+  private boolean desiredEnablePrivateEndpoint_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable private endpoint for the cluster's master.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_private_endpoint = 71;</code>
+   *
+   * @return Whether the desiredEnablePrivateEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredEnablePrivateEndpoint() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable private endpoint for the cluster's master.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_private_endpoint = 71;</code>
+   *
+   * @return The desiredEnablePrivateEndpoint.
+   */
+  @java.lang.Override
+  public boolean getDesiredEnablePrivateEndpoint() {
+    return desiredEnablePrivateEndpoint_;
+  }
+
   public static final int DESIRED_MASTER_VERSION_FIELD_NUMBER = 100;
   private volatile java.lang.Object desiredMasterVersion_;
   /**
@@ -1897,6 +1931,54 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1.NetworkTagsOrBuilder
       getDesiredNodePoolAutoConfigNetworkTagsOrBuilder() {
     return getDesiredNodePoolAutoConfigNetworkTags();
+  }
+
+  public static final int DESIRED_GATEWAY_API_CONFIG_FIELD_NUMBER = 114;
+  private com.google.container.v1.GatewayAPIConfig desiredGatewayApiConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired config of Gateway API on this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+   *
+   * @return Whether the desiredGatewayApiConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredGatewayApiConfig() {
+    return desiredGatewayApiConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired config of Gateway API on this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+   *
+   * @return The desiredGatewayApiConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GatewayAPIConfig getDesiredGatewayApiConfig() {
+    return desiredGatewayApiConfig_ == null
+        ? com.google.container.v1.GatewayAPIConfig.getDefaultInstance()
+        : desiredGatewayApiConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired config of Gateway API on this cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GatewayAPIConfigOrBuilder getDesiredGatewayApiConfigOrBuilder() {
+    return getDesiredGatewayApiConfig();
   }
 
   public static final int DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER = 116;
@@ -2061,6 +2143,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredMeshCertificates_ != null) {
       output.writeMessage(67, getDesiredMeshCertificates());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(71, desiredEnablePrivateEndpoint_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desiredMasterVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, desiredMasterVersion_);
     }
@@ -2069,6 +2154,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredNodePoolAutoConfigNetworkTags_ != null) {
       output.writeMessage(110, getDesiredNodePoolAutoConfigNetworkTags());
+    }
+    if (desiredGatewayApiConfig_ != null) {
+      output.writeMessage(114, getDesiredGatewayApiConfig());
     }
     if (desiredNodePoolLoggingConfig_ != null) {
       output.writeMessage(116, getDesiredNodePoolLoggingConfig());
@@ -2230,6 +2318,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               67, getDesiredMeshCertificates());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(71, desiredEnablePrivateEndpoint_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desiredMasterVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, desiredMasterVersion_);
     }
@@ -2240,6 +2332,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               110, getDesiredNodePoolAutoConfigNetworkTags());
+    }
+    if (desiredGatewayApiConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              114, getDesiredGatewayApiConfig());
     }
     if (desiredNodePoolLoggingConfig_ != null) {
       size +=
@@ -2388,6 +2485,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getDesiredServiceExternalIpsConfig().equals(other.getDesiredServiceExternalIpsConfig()))
         return false;
     }
+    if (hasDesiredEnablePrivateEndpoint() != other.hasDesiredEnablePrivateEndpoint()) return false;
+    if (hasDesiredEnablePrivateEndpoint()) {
+      if (getDesiredEnablePrivateEndpoint() != other.getDesiredEnablePrivateEndpoint())
+        return false;
+    }
     if (!getDesiredMasterVersion().equals(other.getDesiredMasterVersion())) return false;
     if (hasDesiredGcfsConfig() != other.hasDesiredGcfsConfig()) return false;
     if (hasDesiredGcfsConfig()) {
@@ -2398,6 +2500,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredNodePoolAutoConfigNetworkTags()) {
       if (!getDesiredNodePoolAutoConfigNetworkTags()
           .equals(other.getDesiredNodePoolAutoConfigNetworkTags())) return false;
+    }
+    if (hasDesiredGatewayApiConfig() != other.hasDesiredGatewayApiConfig()) return false;
+    if (hasDesiredGatewayApiConfig()) {
+      if (!getDesiredGatewayApiConfig().equals(other.getDesiredGatewayApiConfig())) return false;
     }
     if (hasDesiredNodePoolLoggingConfig() != other.hasDesiredNodePoolLoggingConfig()) return false;
     if (hasDesiredNodePoolLoggingConfig()) {
@@ -2529,6 +2635,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredServiceExternalIpsConfig().hashCode();
     }
+    if (hasDesiredEnablePrivateEndpoint()) {
+      hash = (37 * hash) + DESIRED_ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDesiredEnablePrivateEndpoint());
+    }
     hash = (37 * hash) + DESIRED_MASTER_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDesiredMasterVersion().hashCode();
     if (hasDesiredGcfsConfig()) {
@@ -2538,6 +2649,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredNodePoolAutoConfigNetworkTags()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_NETWORK_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodePoolAutoConfigNetworkTags().hashCode();
+    }
+    if (hasDesiredGatewayApiConfig()) {
+      hash = (37 * hash) + DESIRED_GATEWAY_API_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredGatewayApiConfig().hashCode();
     }
     if (hasDesiredNodePoolLoggingConfig()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER;
@@ -2842,6 +2957,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredServiceExternalIpsConfig_ = null;
         desiredServiceExternalIpsConfigBuilder_ = null;
       }
+      desiredEnablePrivateEndpoint_ = false;
+      bitField0_ = (bitField0_ & ~0x00000002);
       desiredMasterVersion_ = "";
 
       if (desiredGcfsConfigBuilder_ == null) {
@@ -2855,6 +2972,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         desiredNodePoolAutoConfigNetworkTags_ = null;
         desiredNodePoolAutoConfigNetworkTagsBuilder_ = null;
+      }
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        desiredGatewayApiConfig_ = null;
+      } else {
+        desiredGatewayApiConfig_ = null;
+        desiredGatewayApiConfigBuilder_ = null;
       }
       if (desiredNodePoolLoggingConfigBuilder_ == null) {
         desiredNodePoolLoggingConfig_ = null;
@@ -2890,6 +3013,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       com.google.container.v1.ClusterUpdate result =
           new com.google.container.v1.ClusterUpdate(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.desiredNodeVersion_ = desiredNodeVersion_;
       result.desiredMonitoringService_ = desiredMonitoringService_;
       if (desiredAddonsConfigBuilder_ == null) {
@@ -3023,6 +3147,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredServiceExternalIpsConfig_ = desiredServiceExternalIpsConfigBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.desiredEnablePrivateEndpoint_ = desiredEnablePrivateEndpoint_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.desiredMasterVersion_ = desiredMasterVersion_;
       if (desiredGcfsConfigBuilder_ == null) {
         result.desiredGcfsConfig_ = desiredGcfsConfig_;
@@ -3035,11 +3163,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredNodePoolAutoConfigNetworkTags_ =
             desiredNodePoolAutoConfigNetworkTagsBuilder_.build();
       }
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        result.desiredGatewayApiConfig_ = desiredGatewayApiConfig_;
+      } else {
+        result.desiredGatewayApiConfig_ = desiredGatewayApiConfigBuilder_.build();
+      }
       if (desiredNodePoolLoggingConfigBuilder_ == null) {
         result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfig_;
       } else {
         result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfigBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3198,6 +3332,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredServiceExternalIpsConfig()) {
         mergeDesiredServiceExternalIpsConfig(other.getDesiredServiceExternalIpsConfig());
       }
+      if (other.hasDesiredEnablePrivateEndpoint()) {
+        setDesiredEnablePrivateEndpoint(other.getDesiredEnablePrivateEndpoint());
+      }
       if (!other.getDesiredMasterVersion().isEmpty()) {
         desiredMasterVersion_ = other.desiredMasterVersion_;
         onChanged();
@@ -3207,6 +3344,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredNodePoolAutoConfigNetworkTags()) {
         mergeDesiredNodePoolAutoConfigNetworkTags(other.getDesiredNodePoolAutoConfigNetworkTags());
+      }
+      if (other.hasDesiredGatewayApiConfig()) {
+        mergeDesiredGatewayApiConfig(other.getDesiredGatewayApiConfig());
       }
       if (other.hasDesiredNodePoolLoggingConfig()) {
         mergeDesiredNodePoolLoggingConfig(other.getDesiredNodePoolLoggingConfig());
@@ -3459,6 +3599,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 538
+            case 568:
+              {
+                desiredEnablePrivateEndpoint_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 568
             case 802:
               {
                 desiredMasterVersion_ = input.readStringRequireUtf8();
@@ -3480,6 +3626,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 882
+            case 914:
+              {
+                input.readMessage(
+                    getDesiredGatewayApiConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 914
             case 930:
               {
                 input.readMessage(
@@ -9263,6 +9416,73 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredServiceExternalIpsConfigBuilder_;
     }
 
+    private boolean desiredEnablePrivateEndpoint_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable private endpoint for the cluster's master.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_private_endpoint = 71;</code>
+     *
+     * @return Whether the desiredEnablePrivateEndpoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasDesiredEnablePrivateEndpoint() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable private endpoint for the cluster's master.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_private_endpoint = 71;</code>
+     *
+     * @return The desiredEnablePrivateEndpoint.
+     */
+    @java.lang.Override
+    public boolean getDesiredEnablePrivateEndpoint() {
+      return desiredEnablePrivateEndpoint_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable private endpoint for the cluster's master.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_private_endpoint = 71;</code>
+     *
+     * @param value The desiredEnablePrivateEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredEnablePrivateEndpoint(boolean value) {
+      bitField0_ |= 0x00000002;
+      desiredEnablePrivateEndpoint_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable private endpoint for the cluster's master.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_private_endpoint = 71;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredEnablePrivateEndpoint() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      desiredEnablePrivateEndpoint_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object desiredMasterVersion_ = "";
     /**
      *
@@ -9797,6 +10017,192 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoConfigNetworkTags_ = null;
       }
       return desiredNodePoolAutoConfigNetworkTagsBuilder_;
+    }
+
+    private com.google.container.v1.GatewayAPIConfig desiredGatewayApiConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GatewayAPIConfig,
+            com.google.container.v1.GatewayAPIConfig.Builder,
+            com.google.container.v1.GatewayAPIConfigOrBuilder>
+        desiredGatewayApiConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     *
+     * @return Whether the desiredGatewayApiConfig field is set.
+     */
+    public boolean hasDesiredGatewayApiConfig() {
+      return desiredGatewayApiConfigBuilder_ != null || desiredGatewayApiConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     *
+     * @return The desiredGatewayApiConfig.
+     */
+    public com.google.container.v1.GatewayAPIConfig getDesiredGatewayApiConfig() {
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        return desiredGatewayApiConfig_ == null
+            ? com.google.container.v1.GatewayAPIConfig.getDefaultInstance()
+            : desiredGatewayApiConfig_;
+      } else {
+        return desiredGatewayApiConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     */
+    public Builder setDesiredGatewayApiConfig(com.google.container.v1.GatewayAPIConfig value) {
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredGatewayApiConfig_ = value;
+        onChanged();
+      } else {
+        desiredGatewayApiConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     */
+    public Builder setDesiredGatewayApiConfig(
+        com.google.container.v1.GatewayAPIConfig.Builder builderForValue) {
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        desiredGatewayApiConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredGatewayApiConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     */
+    public Builder mergeDesiredGatewayApiConfig(com.google.container.v1.GatewayAPIConfig value) {
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        if (desiredGatewayApiConfig_ != null) {
+          desiredGatewayApiConfig_ =
+              com.google.container.v1.GatewayAPIConfig.newBuilder(desiredGatewayApiConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredGatewayApiConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredGatewayApiConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     */
+    public Builder clearDesiredGatewayApiConfig() {
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        desiredGatewayApiConfig_ = null;
+        onChanged();
+      } else {
+        desiredGatewayApiConfig_ = null;
+        desiredGatewayApiConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     */
+    public com.google.container.v1.GatewayAPIConfig.Builder getDesiredGatewayApiConfigBuilder() {
+
+      onChanged();
+      return getDesiredGatewayApiConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     */
+    public com.google.container.v1.GatewayAPIConfigOrBuilder getDesiredGatewayApiConfigOrBuilder() {
+      if (desiredGatewayApiConfigBuilder_ != null) {
+        return desiredGatewayApiConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredGatewayApiConfig_ == null
+            ? com.google.container.v1.GatewayAPIConfig.getDefaultInstance()
+            : desiredGatewayApiConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired config of Gateway API on this cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.GatewayAPIConfig desired_gateway_api_config = 114;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GatewayAPIConfig,
+            com.google.container.v1.GatewayAPIConfig.Builder,
+            com.google.container.v1.GatewayAPIConfigOrBuilder>
+        getDesiredGatewayApiConfigFieldBuilder() {
+      if (desiredGatewayApiConfigBuilder_ == null) {
+        desiredGatewayApiConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.GatewayAPIConfig,
+                com.google.container.v1.GatewayAPIConfig.Builder,
+                com.google.container.v1.GatewayAPIConfigOrBuilder>(
+                getDesiredGatewayApiConfig(), getParentForChildren(), isClean());
+        desiredGatewayApiConfig_ = null;
+      }
+      return desiredGatewayApiConfigBuilder_;
     }
 
     private com.google.container.v1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;

@@ -35,7 +35,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2155
+   *     google/container/v1/cluster_service.proto;l=2202
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2155
+   *     google/container/v1/cluster_service.proto;l=2202
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2161
+   *     google/container/v1/cluster_service.proto;l=2208
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2161
+   *     google/container/v1/cluster_service.proto;l=2208
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2165
+   *     google/container/v1/cluster_service.proto;l=2212
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2165
+   *     google/container/v1/cluster_service.proto;l=2212
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2169
+   *     google/container/v1/cluster_service.proto;l=2216
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -155,7 +155,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2169
+   *     google/container/v1/cluster_service.proto;l=2216
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -763,4 +763,42 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 32;</code>
    */
   com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceLabels resource_labels = 33;</code>
+   *
+   * @return Whether the resourceLabels field is set.
+   */
+  boolean hasResourceLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceLabels resource_labels = 33;</code>
+   *
+   * @return The resourceLabels.
+   */
+  com.google.container.v1.ResourceLabels getResourceLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceLabels resource_labels = 33;</code>
+   */
+  com.google.container.v1.ResourceLabelsOrBuilder getResourceLabelsOrBuilder();
 }

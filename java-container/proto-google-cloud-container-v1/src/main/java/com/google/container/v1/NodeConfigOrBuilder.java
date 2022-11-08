@@ -1236,6 +1236,70 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  int getResourceLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  boolean containsResourceLabels(java.lang.String key);
+  /** Use {@link #getResourceLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getResourceLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+
+  /* nullable */
+  java.lang.String getResourceLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  java.lang.String getResourceLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * Logging configuration.
    * </pre>
    *

@@ -684,6 +684,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
+   *           .setResourceLabels(ResourceLabels.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -731,6 +732,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
+   *           .setResourceLabels(ResourceLabels.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);

@@ -79,6 +79,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         return internalGetMetadata();
       case 6:
         return internalGetLabels();
+      case 37:
+        return internalGetResourceLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1722,6 +1724,111 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return getConfidentialNodes();
   }
 
+  public static final int RESOURCE_LABELS_FIELD_NUMBER = 37;
+
+  private static final class ResourceLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.container.v1.ClusterServiceProto
+                .internal_static_google_container_v1_NodeConfig_ResourceLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResourceLabels() {
+    if (resourceLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ResourceLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return resourceLabels_;
+  }
+
+  public int getResourceLabelsCount() {
+    return internalGetResourceLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  @java.lang.Override
+  public boolean containsResourceLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetResourceLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getResourceLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
+    return getResourceLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
+    return internalGetResourceLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceLabelsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource labels for the node pool to use to annotate any related
+   * Google Compute Engine resources.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 38;
   private com.google.container.v1.NodePoolLoggingConfig loggingConfig_;
   /**
@@ -1863,6 +1970,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (confidentialNodes_ != null) {
       output.writeMessage(35, getConfidentialNodes());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 37);
     if (loggingConfig_ != null) {
       output.writeMessage(38, getLoggingConfig());
     }
@@ -1985,6 +2094,16 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (confidentialNodes_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getConfidentialNodes());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetResourceLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
+          ResourceLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, resourceLabels__);
+    }
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getLoggingConfig());
     }
@@ -2060,6 +2179,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfidentialNodes()) {
       if (!getConfidentialNodes().equals(other.getConfidentialNodes())) return false;
     }
+    if (!internalGetResourceLabels().equals(other.internalGetResourceLabels())) return false;
     if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
@@ -2160,6 +2280,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfidentialNodes()) {
       hash = (37 * hash) + CONFIDENTIAL_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getConfidentialNodes().hashCode();
+    }
+    if (!internalGetResourceLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + RESOURCE_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetResourceLabels().hashCode();
     }
     if (hasLoggingConfig()) {
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
@@ -2293,6 +2417,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           return internalGetMetadata();
         case 6:
           return internalGetLabels();
+        case 37:
+          return internalGetResourceLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2305,6 +2431,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableMetadata();
         case 6:
           return internalGetMutableLabels();
+        case 37:
+          return internalGetMutableResourceLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2432,6 +2560,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         confidentialNodes_ = null;
         confidentialNodesBuilder_ = null;
       }
+      internalGetMutableResourceLabels().clear();
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
       } else {
@@ -2558,6 +2687,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.confidentialNodes_ = confidentialNodesBuilder_.build();
       }
+      result.resourceLabels_ = internalGetResourceLabels();
+      result.resourceLabels_.makeImmutable();
       if (loggingConfigBuilder_ == null) {
         result.loggingConfig_ = loggingConfig_;
       } else {
@@ -2758,6 +2889,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasConfidentialNodes()) {
         mergeConfidentialNodes(other.getConfidentialNodes());
       }
+      internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
@@ -2980,6 +3112,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 282
+            case 298:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
+                    input.readMessage(
+                        ResourceLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableResourceLabels()
+                    .getMutableMap()
+                    .put(resourceLabels__.getKey(), resourceLabels__.getValue());
+                break;
+              } // case 298
             case 306:
               {
                 input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
@@ -7768,6 +7911,174 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         confidentialNodes_ = null;
       }
       return confidentialNodesBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResourceLabels() {
+      if (resourceLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourceLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return resourceLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResourceLabels() {
+      onChanged();
+      ;
+      if (resourceLabels_ == null) {
+        resourceLabels_ =
+            com.google.protobuf.MapField.newMapField(ResourceLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!resourceLabels_.isMutable()) {
+        resourceLabels_ = resourceLabels_.copy();
+      }
+      return resourceLabels_;
+    }
+
+    public int getResourceLabelsCount() {
+      return internalGetResourceLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource labels for the node pool to use to annotate any related
+     * Google Compute Engine resources.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+     */
+    @java.lang.Override
+    public boolean containsResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetResourceLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getResourceLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getResourceLabels() {
+      return getResourceLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource labels for the node pool to use to annotate any related
+     * Google Compute Engine resources.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap() {
+      return internalGetResourceLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource labels for the node pool to use to annotate any related
+     * Google Compute Engine resources.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource labels for the node pool to use to annotate any related
+     * Google Compute Engine resources.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearResourceLabels() {
+      internalGetMutableResourceLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource labels for the node pool to use to annotate any related
+     * Google Compute Engine resources.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+     */
+    public Builder removeResourceLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableResourceLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabels() {
+      return internalGetMutableResourceLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource labels for the node pool to use to annotate any related
+     * Google Compute Engine resources.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+     */
+    public Builder putResourceLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableResourceLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource labels for the node pool to use to annotate any related
+     * Google Compute Engine resources.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_labels = 37;</code>
+     */
+    public Builder putAllResourceLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableResourceLabels().getMutableMap().putAll(values);
+      return this;
     }
 
     private com.google.container.v1.NodePoolLoggingConfig loggingConfig_;
