@@ -211,8 +211,8 @@ public interface SearchJobsRequestOrBuilder
    * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4.Job.employment_types], for example,
    *   "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
-   * "MEDIUM", "BIG".
+   * * company_size (DEPRECATED): histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example,
+   * "SMALL", "MEDIUM", "BIG".
    * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in days.
    *   Must specify list of numeric buckets in spec.
@@ -303,8 +303,8 @@ public interface SearchJobsRequestOrBuilder
    * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4.Job.employment_types], for example,
    *   "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
-   * "MEDIUM", "BIG".
+   * * company_size (DEPRECATED): histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example,
+   * "SMALL", "MEDIUM", "BIG".
    * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in days.
    *   Must specify list of numeric buckets in spec.
@@ -395,8 +395,8 @@ public interface SearchJobsRequestOrBuilder
    * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4.Job.employment_types], for example,
    *   "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
-   * "MEDIUM", "BIG".
+   * * company_size (DEPRECATED): histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example,
+   * "SMALL", "MEDIUM", "BIG".
    * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in days.
    *   Must specify list of numeric buckets in spec.
@@ -487,8 +487,8 @@ public interface SearchJobsRequestOrBuilder
    * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4.Job.employment_types], for example,
    *   "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
-   * "MEDIUM", "BIG".
+   * * company_size (DEPRECATED): histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example,
+   * "SMALL", "MEDIUM", "BIG".
    * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in days.
    *   Must specify list of numeric buckets in spec.
@@ -580,8 +580,8 @@ public interface SearchJobsRequestOrBuilder
    * * company_display_name: histogram by [Job.company_display_name][google.cloud.talent.v4.Job.company_display_name].
    * * employment_type: histogram by [Job.employment_types][google.cloud.talent.v4.Job.employment_types], for example,
    *   "FULL_TIME", "PART_TIME".
-   * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
-   * "MEDIUM", "BIG".
+   * * company_size (DEPRECATED): histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example,
+   * "SMALL", "MEDIUM", "BIG".
    * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in days.
    *   Must specify list of numeric buckets in spec.

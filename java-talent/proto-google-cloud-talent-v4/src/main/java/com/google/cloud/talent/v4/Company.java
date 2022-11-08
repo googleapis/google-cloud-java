@@ -1312,6 +1312,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * This field is deprecated. Please set the searchability of the custom
+   * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
    * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
    * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1320,10 +1322,13 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * and those keyword queries must be surrounded by quotes.
    * </pre>
    *
-   * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+   *     deprecated. See google/cloud/talent/v4/company.proto;l=107
    * @return A list containing the keywordSearchableJobCustomAttributes.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getKeywordSearchableJobCustomAttributesList() {
     return keywordSearchableJobCustomAttributes_;
   }
@@ -1331,6 +1336,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * This field is deprecated. Please set the searchability of the custom
+   * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
    * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
    * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1339,10 +1346,13 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * and those keyword queries must be surrounded by quotes.
    * </pre>
    *
-   * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+   *     deprecated. See google/cloud/talent/v4/company.proto;l=107
    * @return The count of keywordSearchableJobCustomAttributes.
    */
+  @java.lang.Deprecated
   public int getKeywordSearchableJobCustomAttributesCount() {
     return keywordSearchableJobCustomAttributes_.size();
   }
@@ -1350,6 +1360,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * This field is deprecated. Please set the searchability of the custom
+   * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
    * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
    * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1358,11 +1370,14 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * and those keyword queries must be surrounded by quotes.
    * </pre>
    *
-   * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+   *     deprecated. See google/cloud/talent/v4/company.proto;l=107
    * @param index The index of the element to return.
    * @return The keywordSearchableJobCustomAttributes at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getKeywordSearchableJobCustomAttributes(int index) {
     return keywordSearchableJobCustomAttributes_.get(index);
   }
@@ -1370,6 +1385,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * This field is deprecated. Please set the searchability of the custom
+   * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
    * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
    * corresponding `string_values` are used in keyword searches. Jobs with
    * `string_values` under these specified field keys are returned if any
@@ -1378,11 +1395,14 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * and those keyword queries must be surrounded by quotes.
    * </pre>
    *
-   * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+   * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+   *     deprecated. See google/cloud/talent/v4/company.proto;l=107
    * @param index The index of the value to return.
    * @return The bytes of the keywordSearchableJobCustomAttributes at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getKeywordSearchableJobCustomAttributesBytes(int index) {
     return keywordSearchableJobCustomAttributes_.getByteString(index);
   }
@@ -3177,6 +3197,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3185,10 +3207,14 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @return A list containing the keywordSearchableJobCustomAttributes.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getKeywordSearchableJobCustomAttributesList() {
       return keywordSearchableJobCustomAttributes_.getUnmodifiableView();
     }
@@ -3196,6 +3222,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3204,10 +3232,14 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @return The count of keywordSearchableJobCustomAttributes.
      */
+    @java.lang.Deprecated
     public int getKeywordSearchableJobCustomAttributesCount() {
       return keywordSearchableJobCustomAttributes_.size();
     }
@@ -3215,6 +3247,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3223,11 +3257,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @param index The index of the element to return.
      * @return The keywordSearchableJobCustomAttributes at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getKeywordSearchableJobCustomAttributes(int index) {
       return keywordSearchableJobCustomAttributes_.get(index);
     }
@@ -3235,6 +3273,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3243,11 +3283,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @param index The index of the value to return.
      * @return The bytes of the keywordSearchableJobCustomAttributes at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getKeywordSearchableJobCustomAttributesBytes(int index) {
       return keywordSearchableJobCustomAttributes_.getByteString(index);
     }
@@ -3255,6 +3299,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3263,12 +3309,16 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @param index The index to set the value at.
      * @param value The keywordSearchableJobCustomAttributes to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setKeywordSearchableJobCustomAttributes(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3282,6 +3332,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3290,11 +3342,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @param value The keywordSearchableJobCustomAttributes to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addKeywordSearchableJobCustomAttributes(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3308,6 +3364,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3316,11 +3374,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @param values The keywordSearchableJobCustomAttributes to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllKeywordSearchableJobCustomAttributes(
         java.lang.Iterable<java.lang.String> values) {
       ensureKeywordSearchableJobCustomAttributesIsMutable();
@@ -3333,6 +3395,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3341,10 +3405,14 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearKeywordSearchableJobCustomAttributes() {
       keywordSearchableJobCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -3355,6 +3423,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * This field is deprecated. Please set the searchability of the custom
+     * attribute in the [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes] going forward.
      * A list of keys of filterable [Job.custom_attributes][google.cloud.talent.v4.Job.custom_attributes], whose
      * corresponding `string_values` are used in keyword searches. Jobs with
      * `string_values` under these specified field keys are returned if any
@@ -3363,11 +3433,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * and those keyword queries must be surrounded by quotes.
      * </pre>
      *
-     * <code>repeated string keyword_searchable_job_custom_attributes = 11;</code>
+     * <code>repeated string keyword_searchable_job_custom_attributes = 11 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.talent.v4.Company.keyword_searchable_job_custom_attributes is
+     *     deprecated. See google/cloud/talent/v4/company.proto;l=107
      * @param value The bytes of the keywordSearchableJobCustomAttributes to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addKeywordSearchableJobCustomAttributesBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
