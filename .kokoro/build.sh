@@ -47,6 +47,7 @@ function setup_cloud() {
   )
 
   echo "Value of GOOGLE_STORAGE_SERVICE_AGENT=$GOOGLE_STORAGE_SERVICE_AGENT"
+  echo "Value of MY_SQL_DATABASE=$MY_SQL_DATABASE"
 
   destroy() {
     arguments=$?
