@@ -1,8 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-analytics-data:0.16.0:0.16.1-SNAPSHOT
-grpc-google-analytics-data-v1beta:0.16.0:0.16.1-SNAPSHOT
-proto-google-analytics-data-v1beta:0.16.0:0.16.1-SNAPSHOT
-proto-google-analytics-data-v1alpha:0.16.0:0.16.1-SNAPSHOT
-grpc-google-analytics-data-v1alpha:0.16.0:0.16.1-SNAPSHOT

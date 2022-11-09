@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-vmmigration:1.5.0:1.5.1-SNAPSHOT
-grpc-google-cloud-vmmigration-v1:1.5.0:1.5.1-SNAPSHOT
-proto-google-cloud-vmmigration-v1:1.5.0:1.5.1-SNAPSHOT
