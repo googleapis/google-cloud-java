@@ -24,3 +24,6 @@ export GOOGLE_STORAGE_SERVICE_AGENT
 
 MY_SQL_DATABASE="unique-name"
 export MY_SQL_DATABASE
+
+# Output all environment variable names
+env -0 | tr '\n\0' '.\n' | sed 's/=.*//'
