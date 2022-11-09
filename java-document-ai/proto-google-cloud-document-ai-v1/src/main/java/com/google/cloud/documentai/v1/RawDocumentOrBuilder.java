@@ -41,7 +41,7 @@ public interface RawDocumentOrBuilder
    *
    * <pre>
    * An IANA MIME type (RFC6838) indicating the nature and format of the
-   * [content].
+   * [content][google.cloud.documentai.v1.RawDocument.content].
    * </pre>
    *
    * <code>string mime_type = 2;</code>
@@ -54,7 +54,7 @@ public interface RawDocumentOrBuilder
    *
    * <pre>
    * An IANA MIME type (RFC6838) indicating the nature and format of the
-   * [content].
+   * [content][google.cloud.documentai.v1.RawDocument.content].
    * </pre>
    *
    * <code>string mime_type = 2;</code>

@@ -65,31 +65,36 @@ public final class DocumentIoProto {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/documentai/v1/document_io"
-          + ".proto\022\032google.cloud.documentai.v1\"1\n\013Ra"
-          + "wDocument\022\017\n\007content\030\001 \001(\014\022\021\n\tmime_type\030"
-          + "\002 \001(\t\"1\n\013GcsDocument\022\017\n\007gcs_uri\030\001 \001(\t\022\021\n"
-          + "\tmime_type\030\002 \001(\t\"J\n\014GcsDocuments\022:\n\tdocu"
-          + "ments\030\001 \003(\0132\'.google.cloud.documentai.v1"
-          + ".GcsDocument\"#\n\tGcsPrefix\022\026\n\016gcs_uri_pre"
-          + "fix\030\001 \001(\t\"\245\001\n\031BatchDocumentsInputConfig\022"
-          + ";\n\ngcs_prefix\030\001 \001(\0132%.google.cloud.docum"
-          + "entai.v1.GcsPrefixH\000\022A\n\rgcs_documents\030\002 "
-          + "\001(\0132(.google.cloud.documentai.v1.GcsDocu"
-          + "mentsH\000B\010\n\006source\"\250\001\n\024DocumentOutputConf"
-          + "ig\022]\n\021gcs_output_config\030\001 \001(\0132@.google.c"
-          + "loud.documentai.v1.DocumentOutputConfig."
-          + "GcsOutputConfigH\000\032\"\n\017GcsOutputConfig\022\017\n\007"
-          + "gcs_uri\030\001 \001(\tB\r\n\013destinationB\323\001\n\036com.goo"
-          + "gle.cloud.documentai.v1B\017DocumentIoProto"
-          + "P\001ZDgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/documentai/v1;documentai\252\002\032Googl"
-          + "e.Cloud.DocumentAI.V1\312\002\032Google\\Cloud\\Doc"
-          + "umentAI\\V1\352\002\035Google::Cloud::DocumentAI::"
-          + "V1b\006proto3"
+          + ".proto\022\032google.cloud.documentai.v1\032 goog"
+          + "le/protobuf/field_mask.proto\"1\n\013RawDocum"
+          + "ent\022\017\n\007content\030\001 \001(\014\022\021\n\tmime_type\030\002 \001(\t\""
+          + "1\n\013GcsDocument\022\017\n\007gcs_uri\030\001 \001(\t\022\021\n\tmime_"
+          + "type\030\002 \001(\t\"J\n\014GcsDocuments\022:\n\tdocuments\030"
+          + "\001 \003(\0132\'.google.cloud.documentai.v1.GcsDo"
+          + "cument\"#\n\tGcsPrefix\022\026\n\016gcs_uri_prefix\030\001 "
+          + "\001(\t\"\245\001\n\031BatchDocumentsInputConfig\022;\n\ngcs"
+          + "_prefix\030\001 \001(\0132%.google.cloud.documentai."
+          + "v1.GcsPrefixH\000\022A\n\rgcs_documents\030\002 \001(\0132(."
+          + "google.cloud.documentai.v1.GcsDocumentsH"
+          + "\000B\010\n\006source\"\330\001\n\024DocumentOutputConfig\022]\n\021"
+          + "gcs_output_config\030\001 \001(\0132@.google.cloud.d"
+          + "ocumentai.v1.DocumentOutputConfig.GcsOut"
+          + "putConfigH\000\032R\n\017GcsOutputConfig\022\017\n\007gcs_ur"
+          + "i\030\001 \001(\t\022.\n\nfield_mask\030\002 \001(\0132\032.google.pro"
+          + "tobuf.FieldMaskB\r\n\013destinationB\323\001\n\036com.g"
+          + "oogle.cloud.documentai.v1B\017DocumentIoPro"
+          + "toP\001ZDgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/documentai/v1;documentai\252\002\032Goo"
+          + "gle.Cloud.DocumentAI.V1\312\002\032Google\\Cloud\\D"
+          + "ocumentAI\\V1\352\002\035Google::Cloud::DocumentAI"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+            });
     internal_static_google_cloud_documentai_v1_RawDocument_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_documentai_v1_RawDocument_fieldAccessorTable =
@@ -146,8 +151,9 @@ public final class DocumentIoProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_descriptor,
             new java.lang.String[] {
-              "GcsUri",
+              "GcsUri", "FieldMask",
             });
+    com.google.protobuf.FieldMaskProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

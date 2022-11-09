@@ -151,6 +151,8 @@ public interface ProcessRequestOrBuilder
    *
    * <pre>
    * Specifies which fields to include in ProcessResponse's document.
+   * Only supports top level document and pages field so it must be in the form
+   * of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -163,6 +165,8 @@ public interface ProcessRequestOrBuilder
    *
    * <pre>
    * Specifies which fields to include in ProcessResponse's document.
+   * Only supports top level document and pages field so it must be in the form
+   * of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -175,6 +179,8 @@ public interface ProcessRequestOrBuilder
    *
    * <pre>
    * Specifies which fields to include in ProcessResponse's document.
+   * Only supports top level document and pages field so it must be in the form
+   * of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
