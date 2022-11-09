@@ -30,5 +30,5 @@ zipp==3.6.0
 rsa==4.9
 six==1.16.0
 attrs==22.1.0
-google-auth==2.14.0
+google-auth==2.14.1
 idna==3.4
