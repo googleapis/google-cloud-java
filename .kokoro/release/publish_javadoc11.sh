@@ -32,7 +32,10 @@ python3 --version
 # install docuploader package
 python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
-doclet_name="java-docfx-doclet-${DOCLET_VERSION}.jar"
+# If DOCLET_VERSION is passed in (overriding version in shared-config)
+if [ -n "${DOCLET_VERSION}" ]; then
+  doclet_name="java-docfx-doclet-${DOCLET_VERSION}.jar"
+fi
 
 mvn -B -ntp \
   -DtrimStackTrace=false \
@@ -67,16 +70,27 @@ for module in "${modules[@]}"; do
     VERSION=$(grep "^${NAME}:" versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
     echo "Running for ${NAME}-${VERSION}"
 
-    # cloud RAD generation
-    mvn clean -B -ntp \
-      -P docFX \
-      -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name} \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      javadoc:aggregate
+    # Cloud RAD generation
+    if [ -z "${doclet_name}" ]; then
+      mvn clean -B -ntp \
+        -P docFX \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        javadoc:aggregate
+    else
+      mvn clean -B -ntp \
+        -P docFX \
+        -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name} \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -Dcheckstyle.skip=true \
+        -Dflatten.skip=true \
+        -Danimal.sniffer.skip=true \
+        javadoc:aggregate
+    fi
 
     if [ "$?" -ne "0" ]; then
       failed_modules+=("${module}")
