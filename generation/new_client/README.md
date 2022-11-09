@@ -163,10 +163,64 @@ Create a pull request from the change.
 
 ## Advanced Options
 
+For the explanation of the available parameters, run:
+`python3.9 generation/new_client/new-client.py generate  --help`.
+
+```
+suztomo@suztomo2:~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate  --help
+/usr/local/google/home/suztomo/google-cloud-java/generation/new_client
+Usage: new-client.py generate [OPTIONS]
+
+Options:
+  --api_shortname TEXT            Name for the new directory name and
+                                  (default) artifact name  [required]
+  --name-pretty TEXT              The human-friendly name that appears in
+                                  README.md  [required]
+  --product-docs TEXT             Documentation URL that appears in README.md
+                                  [required]
+  --api-description TEXT          Description that appears in README.md
+                                  [required]
+  --release-level [stable|preview]
+                                  A label that appears in repo-metadata.json.
+                                  The first library generation is always
+                                  'preview'.
+  --transport [grpc|http|both]    A label that appears in repo-metadata.json
+  --language TEXT
+  --distribution-name TEXT        Maven coordinates of the generated library.
+                                  By default it's com.google.cloud:google-
+                                  cloud-<api_shortname>
+  --api-id TEXT                   The value of the apiid parameter used in
+                                  README.md It has link to https://console.clo
+                                  ud.google.com/flows/enableapi?apiid=<api_id>
+  --requires-billing BOOLEAN      Based on this value, README.md explains
+                                  whether billing setup is needed or not.
+  --destination-name TEXT         The directory name of the new library. By
+                                  default it's java-<api_shortname>
+  --proto-path TEXT               Path to proto file from the root of the
+                                  googleapis repository to thedirectory that
+                                  contains the proto files (without the
+                                  version).For example, to generate the
+                                  library for 'google/maps/routing/v2', then
+                                  you specify this value as
+                                  'google/maps/routing'  [required]
+  --cloud-api BOOLEAN             If true, the artifact ID of the library is
+                                  'google-cloud-'; otherwise 'google-'
+  --group-id TEXT                 The group ID of the artifact when
+                                  distribution name is not set
+  --owlbot-image TEXT             The owlbot container image used in
+                                  OwlBot.yaml
+  --library-type TEXT             A label that appear in repo-metadata.json to
+                                  tell how the library is maintained or
+                                  generated
+  --googleapis-gen-url TEXT       The URL of the repository that has generated
+                                  Java code from proto service definition
+  --help                          Show this message and exit.
+```
+
 Sometimes, a library generation requires special handling for
 Maven coordinates or API ID, especially when the library is not
-specific to Google Cloud. Use the following example of Google
-Maps API to generate a module for such library:
+specific to Google Cloud. Refer to the following command example when we
+generated Google Maps Routes API Java client library.
 
 ```
 ~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \

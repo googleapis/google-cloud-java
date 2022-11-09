@@ -30,45 +30,118 @@ def main(ctx):
     pass
 
 @main.command()
-@click.option("--api_shortname", required=True, type=str, prompt="Service name? (e.g. automl)")
+@click.option(
+    "--api_shortname",
+    required=True,
+    type=str,
+    prompt="Service name? (e.g. automl)",
+    help="Name for the new directory name and (default) artifact name"
+)
 @click.option(
     "--name-pretty",
     required=True,
     type=str,
     prompt="Pretty name? (e.g. 'Cloud AutoML')",
+    help="The human-friendly name that appears in README.md"
 )
 @click.option(
-    "--product-docs", required=True, type=str, prompt="Product Documentation URL"
+    "--product-docs",
+    required=True,
+    type=str,
+    prompt="Product Documentation URL",
+    help="Documentation URL that appears in README.md"
 )
 @click.option(
     "--api-description",
     required=True,
     type=str,
-    prompt="Description for README. The first sentence is prefixed by the pretty name",
+    prompt="Description for README. The first sentence is prefixed by the "
+           "pretty name",
+    help="Description that appears in README.md"
 )
 @click.option(
     "--release-level",
     type=click.Choice(["stable", "preview"]),
     default="preview",
+    help="A label that appears in repo-metadata.json. The first library "
+         "generation is always 'preview'."
 )
 @click.option(
     "--transport",
     type=click.Choice(["grpc", "http", "both"]),
     default="grpc",
+    help="A label that appears in repo-metadata.json"
 )
 @click.option("--language", type=str, default="java")
-@click.option("--distribution-name", type=str)
-@click.option("--api-id", type=str)
-@click.option("--requires-billing", type=bool, default=True)
-@click.option("--destination-name", type=str, default=None)
-@click.option("--proto-path", required=True, type=str, default=None)
-@click.option("--cloud-api", type=bool, default=True)
-@click.option("--group-id", type=str, default="com.google.cloud")
 @click.option(
-    "--owlbot-image", type=str, default="gcr.io/cloud-devrel-public-resources/owlbot-java"
+    "--distribution-name",
+    type=str,
+    help="Maven coordinates of the generated library. By default it's "
+         "com.google.cloud:google-cloud-<api_shortname>"
 )
-@click.option("--library-type", type=str)
-@click.option("--googleapis-gen-url", type=str, default="https://github.com/googleapis/googleapis-gen.git")
+@click.option(
+    "--api-id",
+    type=str,
+    help="The value of the apiid parameter used in README.md It has link to "
+         "https://console.cloud.google.com/flows/enableapi?apiid=<api_id>"
+)
+@click.option(
+    "--requires-billing",
+    type=bool,
+    default=True,
+    help="Based on this value, README.md explains whether billing setup is "
+         "needed or not."
+)
+@click.option(
+    "--destination-name",
+    type=str,
+    default=None,
+    help="The directory name of the new library. By default it's "
+         "java-<api_shortname>"
+)
+@click.option(
+    "--proto-path",
+    required=True,
+    type=str,
+    default=None,
+    help="Path to proto file from the root of the googleapis repository to the"
+         "directory that contains the proto files (without the version)."
+         "For example, to generate the library for 'google/maps/routing/v2', "
+         "then you specify this value as 'google/maps/routing'"
+)
+@click.option(
+    "--cloud-api",
+    type=bool,
+    default=True,
+    help="If true, the artifact ID of the library is 'google-cloud-'; "
+         "otherwise 'google-'"
+)
+@click.option(
+    "--group-id",
+    type=str,
+    default="com.google.cloud",
+    help="The group ID of the artifact when distribution name is not set"
+)
+@click.option(
+    "--owlbot-image",
+    type=str,
+    default="gcr.io/cloud-devrel-public-resources/owlbot-java",
+    help="The owlbot container image used in OwlBot.yaml"
+)
+@click.option(
+    "--library-type",
+    type=str,
+    default="GAPIC_AUTO",
+    help="A label that appear in repo-metadata.json to tell how the library is "
+         "maintained or generated"
+)
+@click.option(
+    "--googleapis-gen-url",
+    type=str,
+    default="https://github.com/googleapis/googleapis-gen.git",
+    help="The URL of the repository that has generated Java code from proto "
+         "service definition"
+)
 def generate(
     api_shortname,
     name_pretty,
@@ -98,9 +171,6 @@ def generate(
 
     if api_id is None:
         api_id = f"{api_shortname}.googleapis.com"
-
-    if library_type is None:
-        library_type = "GAPIC_AUTO"
 
     if not product_docs.startswith("https"):
         sys.exit("product_docs must starts with 'https://'")
