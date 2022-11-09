@@ -21,9 +21,3 @@ source ./helpers/common.sh
 GOOGLE_STORAGE_SERVICE_AGENT=$(getModuleOutput java-notification storage_service_agent)
 echo "Setting environment variable GOOGLE_STORAGE_SERVICE_AGENT=$GOOGLE_STORAGE_SERVICE_AGENT"
 export GOOGLE_STORAGE_SERVICE_AGENT
-
-MY_SQL_DATABASE="unique-name"
-export MY_SQL_DATABASE
-
-# Output all environment variable names
-env -0 | tr '\n\0' '.\n' | sed 's/=.*//'

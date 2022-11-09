@@ -38,18 +38,12 @@ fi
 
 function setup_cloud() {
   gcloud config set project "$GOOGLE_CLOUD_PROJECT"
-  #time (
-    terraform -version &&
-      source ./.cloud/helpers/init.sh "$1" &&
-      source ./.cloud/helpers/plan.sh "$1" &&
-      source ./.cloud/helpers/apply.sh &&
-      source ./.cloud/helpers/populate-env.sh
-  #)
 
-  echo "Value of GOOGLE_STORAGE_SERVICE_AGENT=$GOOGLE_STORAGE_SERVICE_AGENT"
-  echo "Value of MY_SQL_DATABASE=$MY_SQL_DATABASE"
-  # Output all environment variable names
-  env -0 | tr '\n\0' '.\n' | sed 's/=.*//'
+  terraform -version &&
+    source ./.cloud/helpers/init.sh "$1" &&
+    source ./.cloud/helpers/plan.sh "$1" &&
+    source ./.cloud/helpers/apply.sh &&
+    source ./.cloud/helpers/populate-env.sh
 
   destroy() {
     arguments=$?

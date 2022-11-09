@@ -56,10 +56,8 @@ public class ITSystemTest {
   private static Storage storageService;
 
   private static final Logger log = Logger.getLogger(ITSystemTest.class.getName());
-  private static final String GOOGLE_STORAGE_SERVICE_AGENT =
-      System.getenv("GOOGLE_STORAGE_SERVICE_AGENT");
   private static final String STORAGE_SERVICE_AGENT =
-      Optional.ofNullable(GOOGLE_STORAGE_SERVICE_AGENT)
+      Optional.ofNullable(System.getenv("GOOGLE_STORAGE_SERVICE_AGENT"))
           .map(agent -> "serviceAccount:" + agent)
           .orElse("allAuthenticatedUsers");
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
@@ -102,9 +100,6 @@ public class ITSystemTest {
     topicAdminClient.createTopic(topic);
 
     Policy policy = topicAdminClient.getIamPolicy(topic.toString());
-    System.out.println("com.google.cloud.notification.it.ITSystemTest:");
-    System.out.println("  Value of GOOGLE_STORAGE_SERVICE_AGENT=" + GOOGLE_STORAGE_SERVICE_AGENT);
-    System.out.println("  Value of STORAGE_SERVICE_AGENT=" + STORAGE_SERVICE_AGENT);
     Binding binding =
         Binding.newBuilder()
             .setRole("roles/pubsub.publisher")
@@ -112,7 +107,6 @@ public class ITSystemTest {
             .build();
     Policy modifiedPolicy = policy.toBuilder().addBindings(binding).build();
     Policy newPolicy;
-
     try {
       newPolicy = topicAdminClient.setIamPolicy(topic.toString(), modifiedPolicy);
     } catch (StatusRuntimeException | FailedPreconditionException ex) {
@@ -140,8 +134,7 @@ public class ITSystemTest {
     NotificationInfo notification2 =
         notificationService.createNotification(
             BUCKET,
-            NotificationInfo.of(topic)
-                .toBuilder()
+            NotificationInfo.of(topic).toBuilder()
                 .setPayloadFormat(PayloadFormat.JSON_API_V1)
                 .build());
     assertEquals(topic, notification2.getTopic());
