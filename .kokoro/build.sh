@@ -46,6 +46,8 @@ function setup_cloud() {
       source ./.cloud/helpers/populate-env.sh
   )
 
+  echo "Value of GOOGLE_STORAGE_SERVICE_AGENT=$GOOGLE_STORAGE_SERVICE_AGENT"
+
   destroy() {
     arguments=$?
     time source ./.cloud/helpers/destroy.sh
