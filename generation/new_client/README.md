@@ -48,7 +48,7 @@ Logout the shell and login again.
 Confirm pyenv installation succeeded:
 
 ```
-suztomo@suztomo:~$ pyenv
+~$ pyenv
 pyenv 2.3.4
 Usage: pyenv <command> [<args>]
 
@@ -62,7 +62,7 @@ Some useful pyenv commands are:
 ### Install Python 3.9 via pyenv
 
 ```
-suztomo@suztomo:~$ pyenv install 3.9.13
+~$ pyenv install 3.9.13
 Downloading Python-3.9.13.tar.xz...
 -> https://www.python.org/ftp/python/3.9.13/Python-3.9.13.tar.xz
 Installing Python-3.9.13...
@@ -167,7 +167,7 @@ For the explanation of the available parameters, run:
 `python3.9 generation/new_client/new-client.py generate  --help`.
 
 ```
-suztomo@suztomo2:~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate  --help
+~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate  --help
 /usr/local/google/home/suztomo/google-cloud-java/generation/new_client
 Usage: new-client.py generate [OPTIONS]
 
