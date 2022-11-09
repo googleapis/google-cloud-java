@@ -4,6 +4,8 @@ set -e
 
 GENERATION_DIR=$(dirname -- "$0")
 
+rm -f versions.txt
+
 echo "# Format:" >> versions.txt
 echo "# module:released-version:current-version" >> versions.txt
 
