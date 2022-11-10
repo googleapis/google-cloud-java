@@ -1,0 +1,6 @@
+# Format:
+# module:released-version:current-version
+
+google-maps-addressvalidation:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-addressvalidation-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-addressvalidation-v1:0.0.0:0.0.1-SNAPSHOT
