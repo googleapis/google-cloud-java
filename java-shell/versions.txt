@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-shell:2.4.0:2.4.1-SNAPSHOT
-grpc-google-cloud-shell-v1:2.4.0:2.4.1-SNAPSHOT
-proto-google-cloud-shell-v1:2.4.0:2.4.1-SNAPSHOT

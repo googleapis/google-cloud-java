@@ -1,4 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-dns:2.3.0:2.3.1-SNAPSHOT

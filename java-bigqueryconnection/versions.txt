@@ -1,8 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-bigqueryconnection:2.7.0:2.7.1-SNAPSHOT
-grpc-google-cloud-bigqueryconnection-v1:2.7.0:2.7.1-SNAPSHOT
-grpc-google-cloud-bigqueryconnection-v1beta1:0.15.0:0.15.1-SNAPSHOT
-proto-google-cloud-bigqueryconnection-v1:2.7.0:2.7.1-SNAPSHOT
-proto-google-cloud-bigqueryconnection-v1beta1:0.15.0:0.15.1-SNAPSHOT

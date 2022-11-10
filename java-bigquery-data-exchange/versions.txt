@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-bigquery-data-exchange:2.0.0:2.0.1-SNAPSHOT
-proto-google-cloud-bigquery-data-exchange-v1beta1:2.0.0:2.0.1-SNAPSHOT
-grpc-google-cloud-bigquery-data-exchange-v1beta1:2.0.0:2.0.1-SNAPSHOT
