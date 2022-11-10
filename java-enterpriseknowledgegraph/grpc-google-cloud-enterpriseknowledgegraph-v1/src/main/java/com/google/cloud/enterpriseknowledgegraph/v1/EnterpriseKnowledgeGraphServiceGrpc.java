@@ -311,6 +311,200 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
     return getDeleteEntityReconciliationJobMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
+      getLookupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Lookup",
+      requestType = com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest.class,
+      responseType = com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
+      getLookupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest,
+            com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
+        getLookupMethod;
+    if ((getLookupMethod = EnterpriseKnowledgeGraphServiceGrpc.getLookupMethod) == null) {
+      synchronized (EnterpriseKnowledgeGraphServiceGrpc.class) {
+        if ((getLookupMethod = EnterpriseKnowledgeGraphServiceGrpc.getLookupMethod) == null) {
+          EnterpriseKnowledgeGraphServiceGrpc.getLookupMethod =
+              getLookupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest,
+                          com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Lookup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnterpriseKnowledgeGraphServiceMethodDescriptorSupplier("Lookup"))
+                      .build();
+        }
+      }
+    }
+    return getLookupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
+      getSearchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Search",
+      requestType = com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest.class,
+      responseType = com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
+      getSearchMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest,
+            com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
+        getSearchMethod;
+    if ((getSearchMethod = EnterpriseKnowledgeGraphServiceGrpc.getSearchMethod) == null) {
+      synchronized (EnterpriseKnowledgeGraphServiceGrpc.class) {
+        if ((getSearchMethod = EnterpriseKnowledgeGraphServiceGrpc.getSearchMethod) == null) {
+          EnterpriseKnowledgeGraphServiceGrpc.getSearchMethod =
+              getSearchMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest,
+                          com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Search"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnterpriseKnowledgeGraphServiceMethodDescriptorSupplier("Search"))
+                      .build();
+        }
+      }
+    }
+    return getSearchMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
+      getLookupPublicKgMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LookupPublicKg",
+      requestType = com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest.class,
+      responseType = com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
+      getLookupPublicKgMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest,
+            com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
+        getLookupPublicKgMethod;
+    if ((getLookupPublicKgMethod = EnterpriseKnowledgeGraphServiceGrpc.getLookupPublicKgMethod)
+        == null) {
+      synchronized (EnterpriseKnowledgeGraphServiceGrpc.class) {
+        if ((getLookupPublicKgMethod = EnterpriseKnowledgeGraphServiceGrpc.getLookupPublicKgMethod)
+            == null) {
+          EnterpriseKnowledgeGraphServiceGrpc.getLookupPublicKgMethod =
+              getLookupPublicKgMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest,
+                          com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LookupPublicKg"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnterpriseKnowledgeGraphServiceMethodDescriptorSupplier(
+                              "LookupPublicKg"))
+                      .build();
+        }
+      }
+    }
+    return getLookupPublicKgMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
+      getSearchPublicKgMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchPublicKg",
+      requestType = com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest.class,
+      responseType = com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest,
+          com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
+      getSearchPublicKgMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest,
+            com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
+        getSearchPublicKgMethod;
+    if ((getSearchPublicKgMethod = EnterpriseKnowledgeGraphServiceGrpc.getSearchPublicKgMethod)
+        == null) {
+      synchronized (EnterpriseKnowledgeGraphServiceGrpc.class) {
+        if ((getSearchPublicKgMethod = EnterpriseKnowledgeGraphServiceGrpc.getSearchPublicKgMethod)
+            == null) {
+          EnterpriseKnowledgeGraphServiceGrpc.getSearchPublicKgMethod =
+              getSearchPublicKgMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest,
+                          com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchPublicKg"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EnterpriseKnowledgeGraphServiceMethodDescriptorSupplier(
+                              "SearchPublicKg"))
+                      .build();
+        }
+      }
+    }
+    return getSearchPublicKgMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EnterpriseKnowledgeGraphServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EnterpriseKnowledgeGraphServiceStub> factory =
@@ -443,6 +637,66 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
           getDeleteEntityReconciliationJobMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Finds the Cloud KG entities with CKG ID(s).
+     * </pre>
+     */
+    public void lookup(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLookupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the Cloud KG entities with entity name.
+     * </pre>
+     */
+    public void search(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the public KG entities with public KG ID(s).
+     * </pre>
+     */
+    public void lookupPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLookupPublicKgMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the public KG entities with entity name.
+     * </pre>
+     */
+    public void searchPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchPublicKgMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -485,6 +739,34 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
                       com.google.cloud.enterpriseknowledgegraph.v1
                           .DeleteEntityReconciliationJobRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ENTITY_RECONCILIATION_JOB)))
+          .addMethod(
+              getLookupMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest,
+                      com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>(
+                      this, METHODID_LOOKUP)))
+          .addMethod(
+              getSearchMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest,
+                      com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>(
+                      this, METHODID_SEARCH)))
+          .addMethod(
+              getLookupPublicKgMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest,
+                      com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>(
+                      this, METHODID_LOOKUP_PUBLIC_KG)))
+          .addMethod(
+              getSearchPublicKgMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest,
+                      com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>(
+                      this, METHODID_SEARCH_PUBLIC_KG)))
           .build();
     }
   }
@@ -598,6 +880,72 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the Cloud KG entities with CKG ID(s).
+     * </pre>
+     */
+    public void lookup(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLookupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the Cloud KG entities with entity name.
+     * </pre>
+     */
+    public void search(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the public KG entities with public KG ID(s).
+     * </pre>
+     */
+    public void lookupPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLookupPublicKgMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the public KG entities with entity name.
+     * </pre>
+     */
+    public void searchPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchPublicKgMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -693,6 +1041,58 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
         com.google.cloud.enterpriseknowledgegraph.v1.DeleteEntityReconciliationJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEntityReconciliationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the Cloud KG entities with CKG ID(s).
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse lookup(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the Cloud KG entities with entity name.
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse search(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the public KG entities with public KG ID(s).
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse lookupPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupPublicKgMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the public KG entities with entity name.
+     * </pre>
+     */
+    public com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse searchPublicKg(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchPublicKgMethod(), getCallOptions(), request);
     }
   }
 
@@ -800,6 +1200,62 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
           getChannel().newCall(getDeleteEntityReconciliationJobMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the Cloud KG entities with CKG ID(s).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
+        lookup(com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLookupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the Cloud KG entities with entity name.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
+        search(com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds the public KG entities with public KG ID(s).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
+        lookupPublicKg(com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLookupPublicKgMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches the public KG entities with entity name.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
+        searchPublicKg(com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchPublicKgMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENTITY_RECONCILIATION_JOB = 0;
@@ -807,6 +1263,10 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
   private static final int METHODID_LIST_ENTITY_RECONCILIATION_JOBS = 2;
   private static final int METHODID_CANCEL_ENTITY_RECONCILIATION_JOB = 3;
   private static final int METHODID_DELETE_ENTITY_RECONCILIATION_JOB = 4;
+  private static final int METHODID_LOOKUP = 5;
+  private static final int METHODID_SEARCH = 6;
+  private static final int METHODID_LOOKUP_PUBLIC_KG = 7;
+  private static final int METHODID_SEARCH_PUBLIC_KG = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -861,6 +1321,34 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
               (com.google.cloud.enterpriseknowledgegraph.v1.DeleteEntityReconciliationJobRequest)
                   request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LOOKUP:
+          serviceImpl.lookup(
+              (com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH:
+          serviceImpl.search(
+              (com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LOOKUP_PUBLIC_KG:
+          serviceImpl.lookupPublicKg(
+              (com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_PUBLIC_KG:
+          serviceImpl.searchPublicKg(
+              (com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -932,6 +1420,10 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
                       .addMethod(getListEntityReconciliationJobsMethod())
                       .addMethod(getCancelEntityReconciliationJobMethod())
                       .addMethod(getDeleteEntityReconciliationJobMethod())
+                      .addMethod(getLookupMethod())
+                      .addMethod(getSearchMethod())
+                      .addMethod(getLookupPublicKgMethod())
+                      .addMethod(getSearchPublicKgMethod())
                       .build();
         }
       }

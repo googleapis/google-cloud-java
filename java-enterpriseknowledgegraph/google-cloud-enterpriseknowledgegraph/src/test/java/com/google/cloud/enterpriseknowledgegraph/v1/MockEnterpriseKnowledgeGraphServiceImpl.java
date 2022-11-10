@@ -167,4 +167,86 @@ public class MockEnterpriseKnowledgeGraphServiceImpl
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void lookup(LookupRequest request, StreamObserver<LookupResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LookupResponse) {
+      requests.add(request);
+      responseObserver.onNext(((LookupResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Lookup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LookupResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void search(SearchRequest request, StreamObserver<SearchResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Search, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void lookupPublicKg(
+      LookupPublicKgRequest request, StreamObserver<LookupPublicKgResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof LookupPublicKgResponse) {
+      requests.add(request);
+      responseObserver.onNext(((LookupPublicKgResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LookupPublicKg, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  LookupPublicKgResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchPublicKg(
+      SearchPublicKgRequest request, StreamObserver<SearchPublicKgResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchPublicKgResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchPublicKgResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchPublicKg, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchPublicKgResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -24,6 +24,18 @@
             },
             "ListEntityReconciliationJobs": {
               "methods": ["listEntityReconciliationJobs", "listEntityReconciliationJobs", "listEntityReconciliationJobs", "listEntityReconciliationJobsPagedCallable", "listEntityReconciliationJobsCallable"]
+            },
+            "Lookup": {
+              "methods": ["lookup", "lookup", "lookup", "lookupCallable"]
+            },
+            "LookupPublicKg": {
+              "methods": ["lookupPublicKg", "lookupPublicKg", "lookupPublicKg", "lookupPublicKgCallable"]
+            },
+            "Search": {
+              "methods": ["search", "search", "search", "searchCallable"]
+            },
+            "SearchPublicKg": {
+              "methods": ["searchPublicKg", "searchPublicKg", "searchPublicKg", "searchPublicKgCallable"]
             }
           }
         }

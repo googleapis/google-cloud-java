@@ -30,9 +30,12 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.enterpriseknowledgegraph.v1.stub.HttpJsonEnterpriseKnowledgeGraphServiceStub;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ListValue;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.Value;
 import com.google.rpc.Status;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -576,6 +579,390 @@ public class EnterpriseKnowledgeGraphServiceClientHttpJsonTest {
       String name =
           "projects/project-4188/locations/location-4188/entityReconciliationJobs/entityReconciliationJob-4188";
       client.deleteEntityReconciliationJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupTest() throws Exception {
+    LookupResponse expectedResponse =
+        LookupResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> ids = new ArrayList<>();
+
+    LookupResponse actualResponse = client.lookup(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void lookupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> ids = new ArrayList<>();
+      client.lookup(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupTest2() throws Exception {
+    LookupResponse expectedResponse =
+        LookupResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    List<String> ids = new ArrayList<>();
+
+    LookupResponse actualResponse = client.lookup(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void lookupExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      List<String> ids = new ArrayList<>();
+      client.lookup(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchTest() throws Exception {
+    SearchResponse expectedResponse =
+        SearchResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String query = "query107944136";
+
+    SearchResponse actualResponse = client.search(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String query = "query107944136";
+      client.search(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchTest2() throws Exception {
+    SearchResponse expectedResponse =
+        SearchResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String query = "query107944136";
+
+    SearchResponse actualResponse = client.search(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String query = "query107944136";
+      client.search(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupPublicKgTest() throws Exception {
+    LookupPublicKgResponse expectedResponse =
+        LookupPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> ids = new ArrayList<>();
+
+    LookupPublicKgResponse actualResponse = client.lookupPublicKg(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void lookupPublicKgExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> ids = new ArrayList<>();
+      client.lookupPublicKg(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupPublicKgTest2() throws Exception {
+    LookupPublicKgResponse expectedResponse =
+        LookupPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    List<String> ids = new ArrayList<>();
+
+    LookupPublicKgResponse actualResponse = client.lookupPublicKg(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void lookupPublicKgExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      List<String> ids = new ArrayList<>();
+      client.lookupPublicKg(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchPublicKgTest() throws Exception {
+    SearchPublicKgResponse expectedResponse =
+        SearchPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String query = "query107944136";
+
+    SearchPublicKgResponse actualResponse = client.searchPublicKg(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchPublicKgExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String query = "query107944136";
+      client.searchPublicKg(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchPublicKgTest2() throws Exception {
+    SearchPublicKgResponse expectedResponse =
+        SearchPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String query = "query107944136";
+
+    SearchPublicKgResponse actualResponse = client.searchPublicKg(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void searchPublicKgExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String query = "query107944136";
+      client.searchPublicKg(parent, query);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
