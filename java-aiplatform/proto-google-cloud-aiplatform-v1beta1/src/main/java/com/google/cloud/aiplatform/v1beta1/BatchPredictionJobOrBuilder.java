@@ -238,6 +238,48 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
+   * Configuration for how to convert batch prediction input instances to the
+   * prediction instances that are sent to the Model.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+   * </code>
+   *
+   * @return Whether the instanceConfig field is set.
+   */
+  boolean hasInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for how to convert batch prediction input instances to the
+   * prediction instances that are sent to the Model.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+   * </code>
+   *
+   * @return The instanceConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig getInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for how to convert batch prediction input instances to the
+   * prediction instances that are sent to the Model.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfigOrBuilder
+      getInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The parameters that govern the predictions. The schema of the parameters
    * may be specified via the [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]

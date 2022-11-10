@@ -36,6 +36,10 @@ public final class BatchPredictionJobProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InputConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputConfig_fieldAccessorTable;
@@ -76,7 +80,7 @@ public final class BatchPredictionJobProto {
           + "tform/v1beta1/unmanaged_container_model."
           + "proto\032\034google/protobuf/struct.proto\032\037goo"
           + "gle/protobuf/timestamp.proto\032\027google/rpc"
-          + "/status.proto\"\237\024\n\022BatchPredictionJob\022\021\n\004"
+          + "/status.proto\"\352\025\n\022BatchPredictionJob\022\021\n\004"
           + "name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340"
           + "A\002\0223\n\005model\030\003 \001(\tB$\372A!\n\037aiplatform.googl"
           + "eapis.com/Model\022\035\n\020model_version_id\030\036 \001("
@@ -84,70 +88,75 @@ public final class BatchPredictionJobProto {
           + "\01328.google.cloud.aiplatform.v1beta1.Unma"
           + "nagedContainerModel\022Z\n\014input_config\030\004 \001("
           + "\0132?.google.cloud.aiplatform.v1beta1.Batc"
-          + "hPredictionJob.InputConfigB\003\340A\002\0220\n\020model"
-          + "_parameters\030\005 \001(\0132\026.google.protobuf.Valu"
-          + "e\022\\\n\routput_config\030\006 \001(\0132@.google.cloud."
-          + "aiplatform.v1beta1.BatchPredictionJob.Ou"
-          + "tputConfigB\003\340A\002\022U\n\023dedicated_resources\030\007"
-          + " \001(\01328.google.cloud.aiplatform.v1beta1.B"
-          + "atchDedicatedResources\022\027\n\017service_accoun"
-          + "t\030\035 \001(\t\022i\n\036manual_batch_tuning_parameter"
-          + "s\030\010 \001(\0132<.google.cloud.aiplatform.v1beta"
-          + "1.ManualBatchTuningParametersB\003\340A\005\022\034\n\024ge"
-          + "nerate_explanation\030\027 \001(\010\022J\n\020explanation_"
-          + "spec\030\031 \001(\01320.google.cloud.aiplatform.v1b"
-          + "eta1.ExplanationSpec\022X\n\013output_info\030\t \001("
-          + "\0132>.google.cloud.aiplatform.v1beta1.Batc"
-          + "hPredictionJob.OutputInfoB\003\340A\003\022=\n\005state\030"
-          + "\n \001(\0162).google.cloud.aiplatform.v1beta1."
-          + "JobStateB\003\340A\003\022&\n\005error\030\013 \001(\0132\022.google.rp"
-          + "c.StatusB\003\340A\003\0221\n\020partial_failures\030\014 \003(\0132"
-          + "\022.google.rpc.StatusB\003\340A\003\022S\n\022resources_co"
-          + "nsumed\030\r \001(\01322.google.cloud.aiplatform.v"
-          + "1beta1.ResourcesConsumedB\003\340A\003\022O\n\020complet"
-          + "ion_stats\030\016 \001(\01320.google.cloud.aiplatfor"
-          + "m.v1beta1.CompletionStatsB\003\340A\003\0224\n\013create"
-          + "_time\030\017 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0223\n\nstart_time\030\020 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\0221\n\010end_time\030\021 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
-          + "ime\030\022 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\022O\n\006labels\030\023 \003(\0132?.google.cloud.aiplat"
-          + "form.v1beta1.BatchPredictionJob.LabelsEn"
-          + "try\022H\n\017encryption_spec\030\030 \001(\0132/.google.cl"
-          + "oud.aiplatform.v1beta1.EncryptionSpec\022W\n"
-          + "\027model_monitoring_config\030\032 \001(\01326.google."
-          + "cloud.aiplatform.v1beta1.ModelMonitoring"
-          + "Config\022h\n model_monitoring_stats_anomali"
-          + "es\030\037 \003(\0132>.google.cloud.aiplatform.v1bet"
-          + "a1.ModelMonitoringStatsAnomalies\0228\n\027mode"
-          + "l_monitoring_status\030  \001(\0132\022.google.rpc.S"
-          + "tatusB\003\340A\003\032\304\001\n\013InputConfig\022@\n\ngcs_source"
-          + "\030\002 \001(\0132*.google.cloud.aiplatform.v1beta1"
-          + ".GcsSourceH\000\022J\n\017bigquery_source\030\003 \001(\0132/."
-          + "google.cloud.aiplatform.v1beta1.BigQuery"
-          + "SourceH\000\022\035\n\020instances_format\030\001 \001(\tB\003\340A\002B"
-          + "\010\n\006source\032\340\001\n\014OutputConfig\022J\n\017gcs_destin"
-          + "ation\030\002 \001(\0132/.google.cloud.aiplatform.v1"
-          + "beta1.GcsDestinationH\000\022T\n\024bigquery_desti"
-          + "nation\030\003 \001(\01324.google.cloud.aiplatform.v"
-          + "1beta1.BigQueryDestinationH\000\022\037\n\022predicti"
-          + "ons_format\030\001 \001(\tB\003\340A\002B\r\n\013destination\032\220\001\n"
-          + "\nOutputInfo\022#\n\024gcs_output_directory\030\001 \001("
-          + "\tB\003\340A\003H\000\022&\n\027bigquery_output_dataset\030\002 \001("
-          + "\tB\003\340A\003H\000\022\"\n\025bigquery_output_table\030\004 \001(\tB"
-          + "\003\340A\003B\021\n\017output_location\032-\n\013LabelsEntry\022\013"
-          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\206\001\352A\202\001\n,a"
-          + "iplatform.googleapis.com/BatchPrediction"
-          + "Job\022Rprojects/{project}/locations/{locat"
-          + "ion}/batchPredictionJobs/{batch_predicti"
-          + "on_job}B\364\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B\027BatchPredictionJobProtoP\001ZIgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "aiplatform/v1beta1;aiplatform\252\002\037Google.C"
-          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
-          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
-          + "tform::V1beta1b\006proto3"
+          + "hPredictionJob.InputConfigB\003\340A\002\022[\n\017insta"
+          + "nce_config\030\033 \001(\0132B.google.cloud.aiplatfo"
+          + "rm.v1beta1.BatchPredictionJob.InstanceCo"
+          + "nfig\0220\n\020model_parameters\030\005 \001(\0132\026.google."
+          + "protobuf.Value\022\\\n\routput_config\030\006 \001(\0132@."
+          + "google.cloud.aiplatform.v1beta1.BatchPre"
+          + "dictionJob.OutputConfigB\003\340A\002\022U\n\023dedicate"
+          + "d_resources\030\007 \001(\01328.google.cloud.aiplatf"
+          + "orm.v1beta1.BatchDedicatedResources\022\027\n\017s"
+          + "ervice_account\030\035 \001(\t\022i\n\036manual_batch_tun"
+          + "ing_parameters\030\010 \001(\0132<.google.cloud.aipl"
+          + "atform.v1beta1.ManualBatchTuningParamete"
+          + "rsB\003\340A\005\022\034\n\024generate_explanation\030\027 \001(\010\022J\n"
+          + "\020explanation_spec\030\031 \001(\01320.google.cloud.a"
+          + "iplatform.v1beta1.ExplanationSpec\022X\n\013out"
+          + "put_info\030\t \001(\0132>.google.cloud.aiplatform"
+          + ".v1beta1.BatchPredictionJob.OutputInfoB\003"
+          + "\340A\003\022=\n\005state\030\n \001(\0162).google.cloud.aiplat"
+          + "form.v1beta1.JobStateB\003\340A\003\022&\n\005error\030\013 \001("
+          + "\0132\022.google.rpc.StatusB\003\340A\003\0221\n\020partial_fa"
+          + "ilures\030\014 \003(\0132\022.google.rpc.StatusB\003\340A\003\022S\n"
+          + "\022resources_consumed\030\r \001(\01322.google.cloud"
+          + ".aiplatform.v1beta1.ResourcesConsumedB\003\340"
+          + "A\003\022O\n\020completion_stats\030\016 \001(\01320.google.cl"
+          + "oud.aiplatform.v1beta1.CompletionStatsB\003"
+          + "\340A\003\0224\n\013create_time\030\017 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\0223\n\nstart_time\030\020 \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\0221\n\010end_ti"
+          + "me\030\021 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0224\n\013update_time\030\022 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022O\n\006labels\030\023 \003(\0132?.google"
+          + ".cloud.aiplatform.v1beta1.BatchPredictio"
+          + "nJob.LabelsEntry\022H\n\017encryption_spec\030\030 \001("
+          + "\0132/.google.cloud.aiplatform.v1beta1.Encr"
+          + "yptionSpec\022W\n\027model_monitoring_config\030\032 "
+          + "\001(\01326.google.cloud.aiplatform.v1beta1.Mo"
+          + "delMonitoringConfig\022h\n model_monitoring_"
+          + "stats_anomalies\030\037 \003(\0132>.google.cloud.aip"
+          + "latform.v1beta1.ModelMonitoringStatsAnom"
+          + "alies\0228\n\027model_monitoring_status\030  \001(\0132\022"
+          + ".google.rpc.StatusB\003\340A\003\032\304\001\n\013InputConfig\022"
+          + "@\n\ngcs_source\030\002 \001(\0132*.google.cloud.aipla"
+          + "tform.v1beta1.GcsSourceH\000\022J\n\017bigquery_so"
+          + "urce\030\003 \001(\0132/.google.cloud.aiplatform.v1b"
+          + "eta1.BigQuerySourceH\000\022\035\n\020instances_forma"
+          + "t\030\001 \001(\tB\003\340A\002B\010\n\006source\032l\n\016InstanceConfig"
+          + "\022\025\n\rinstance_type\030\001 \001(\t\022\021\n\tkey_field\030\002 \001"
+          + "(\t\022\027\n\017included_fields\030\003 \003(\t\022\027\n\017excluded_"
+          + "fields\030\004 \003(\t\032\340\001\n\014OutputConfig\022J\n\017gcs_des"
+          + "tination\030\002 \001(\0132/.google.cloud.aiplatform"
+          + ".v1beta1.GcsDestinationH\000\022T\n\024bigquery_de"
+          + "stination\030\003 \001(\01324.google.cloud.aiplatfor"
+          + "m.v1beta1.BigQueryDestinationH\000\022\037\n\022predi"
+          + "ctions_format\030\001 \001(\tB\003\340A\002B\r\n\013destination\032"
+          + "\220\001\n\nOutputInfo\022#\n\024gcs_output_directory\030\001"
+          + " \001(\tB\003\340A\003H\000\022&\n\027bigquery_output_dataset\030\002"
+          + " \001(\tB\003\340A\003H\000\022\"\n\025bigquery_output_table\030\004 \001"
+          + "(\tB\003\340A\003B\021\n\017output_location\032-\n\013LabelsEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\206\001\352A\202\001"
+          + "\n,aiplatform.googleapis.com/BatchPredict"
+          + "ionJob\022Rprojects/{project}/locations/{lo"
+          + "cation}/batchPredictionJobs/{batch_predi"
+          + "ction_job}B\364\001\n#com.google.cloud.aiplatfo"
+          + "rm.v1beta1B\027BatchPredictionJobProtoP\001ZIg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/aiplatform/v1beta1;aiplatform\252\002\037Googl"
+          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
+          + "Platform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -181,6 +190,7 @@ public final class BatchPredictionJobProto {
               "ModelVersionId",
               "UnmanagedContainerModel",
               "InputConfig",
+              "InstanceConfig",
               "ModelParameters",
               "OutputConfig",
               "DedicatedResources",
@@ -214,10 +224,20 @@ public final class BatchPredictionJobProto {
             new java.lang.String[] {
               "GcsSource", "BigquerySource", "InstancesFormat", "Source",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputConfig_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor
             .getNestedTypes()
             .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_descriptor,
+            new java.lang.String[] {
+              "InstanceType", "KeyField", "IncludedFields", "ExcludedFields",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputConfig_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor
+            .getNestedTypes()
+            .get(2);
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputConfig_descriptor,
@@ -227,7 +247,7 @@ public final class BatchPredictionJobProto {
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputInfo_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor
             .getNestedTypes()
-            .get(2);
+            .get(3);
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_OutputInfo_descriptor,
@@ -240,7 +260,7 @@ public final class BatchPredictionJobProto {
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_descriptor
             .getNestedTypes()
-            .get(3);
+            .get(4);
     internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_LabelsEntry_descriptor,
