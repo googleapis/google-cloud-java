@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.notification.Notification;
 import com.google.cloud.notification.NotificationImpl.DefaultNotificationFactory;
@@ -33,9 +34,8 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.pubsub.v1.ProjectTopicName;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -45,14 +45,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
 public class ITSystemTest {
 
-  private static RemoteStorageHelper remoteStorageHelper;
   private static TopicAdminClient topicAdminClient;
   private static Notification notificationService;
   private static Storage storageService;
@@ -69,9 +67,8 @@ public class ITSystemTest {
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
-  public static void beforeClass()
-      throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
-    remoteStorageHelper = RemoteStorageHelper.create();
+  public static void beforeClass() throws IOException {
+    RemoteStorageHelper remoteStorageHelper = RemoteStorageHelper.create();
     topicAdminClient = TopicAdminClient.create();
     storageService = remoteStorageHelper.getOptions().getService();
     notificationService = new DefaultNotificationFactory().create(storageService);
@@ -95,7 +92,6 @@ public class ITSystemTest {
     return resourceName + "-" + NAME_SUFFIX;
   }
 
-  @Ignore
   @Test
   public void testNotifications() {
     // Use Pubsub to create a Topic.
@@ -109,9 +105,15 @@ public class ITSystemTest {
             .setRole("roles/pubsub.publisher")
             .addMembers(STORAGE_SERVICE_AGENT)
             .build();
-    Policy newPolicy =
-        topicAdminClient.setIamPolicy(
-            topic.toString(), policy.toBuilder().addBindings(binding).build());
+    Policy modifiedPolicy = policy.toBuilder().addBindings(binding).build();
+    Policy newPolicy;
+    try {
+      newPolicy = topicAdminClient.setIamPolicy(topic.toString(), modifiedPolicy);
+    } catch (StatusRuntimeException | FailedPreconditionException ex) {
+      System.out.println(
+          "Failed setIamPolicy request for " + topic.toString() + " : " + modifiedPolicy);
+      throw ex;
+    }
     assertTrue(newPolicy.getBindingsList().contains(binding));
 
     String permissionName = "pubsub.topics.get";

@@ -38,13 +38,12 @@ fi
 
 function setup_cloud() {
   gcloud config set project "$GOOGLE_CLOUD_PROJECT"
-  time (
-    terraform -version &&
-      source ./.cloud/helpers/init.sh "$1" &&
-      source ./.cloud/helpers/plan.sh "$1" &&
-      source ./.cloud/helpers/apply.sh &&
-      source ./.cloud/helpers/populate-env.sh
-  )
+
+  terraform -version &&
+    source ./.cloud/helpers/init.sh "$1" &&
+    source ./.cloud/helpers/plan.sh "$1" &&
+    source ./.cloud/helpers/apply.sh &&
+    source ./.cloud/helpers/populate-env.sh
 
   destroy() {
     arguments=$?
