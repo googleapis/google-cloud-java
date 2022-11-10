@@ -15,6 +15,7 @@
 
 deep-remove-regex:
 - "/java-accesscontextmanager/proto-google-.*/src"
+- "/java-accesscontextmanager/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-accesscontextmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,8 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-accesscontextmanager/$1/google-identity-accesscontextmanager/src"
 - source: "/google/identity/accesscontextmanager/type/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-accesscontextmanager/type/proto-google-identity-accesscontextmanager-type/src"
+- source: "/google/identity/accesscontextmanager/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-accesscontextmanager/$1/samples/snippets/generated"
+
 
 api-name: accesscontextmanager

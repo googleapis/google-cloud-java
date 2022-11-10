@@ -42,3 +42,6 @@ sed -i.bak "s|\"/samples|\"/${module_name}/samples|" "${OWLBOT_FILE}" && rm "${O
 if grep --quiet 'owl-bot-staging/$1' "${OWLBOT_FILE}"; then
   sed -i.bak "s|owl-bot-staging|owl-bot-staging/${module_name}|" "${OWLBOT_FILE}" && rm "${OWLBOT_FILE}".bak
 fi
+
+# TODO: If generated samples directory doesn't exist yet, add it to the owlbot config
+
