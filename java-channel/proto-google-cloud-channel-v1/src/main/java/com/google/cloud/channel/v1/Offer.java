@@ -43,6 +43,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     priceByResources_ = java.util.Collections.emptyList();
     parameterDefinitions_ = java.util.Collections.emptyList();
+    dealCode_ = "";
   }
 
   @java.lang.Override
@@ -546,6 +547,55 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     return parameterDefinitions_.get(index);
   }
 
+  public static final int DEAL_CODE_FIELD_NUMBER = 12;
+  private volatile java.lang.Object dealCode_;
+  /**
+   *
+   *
+   * <pre>
+   * The deal code of the offer to get a special promotion or discount.
+   * </pre>
+   *
+   * <code>string deal_code = 12;</code>
+   *
+   * @return The dealCode.
+   */
+  @java.lang.Override
+  public java.lang.String getDealCode() {
+    java.lang.Object ref = dealCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dealCode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The deal code of the offer to get a special promotion or discount.
+   * </pre>
+   *
+   * <code>string deal_code = 12;</code>
+   *
+   * @return The bytes for dealCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDealCodeBytes() {
+    java.lang.Object ref = dealCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dealCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -587,6 +637,9 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < parameterDefinitions_.size(); i++) {
       output.writeMessage(9, parameterDefinitions_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dealCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, dealCode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -623,6 +676,9 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < parameterDefinitions_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, parameterDefinitions_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dealCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, dealCode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -666,6 +722,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (!getParameterDefinitionsList().equals(other.getParameterDefinitionsList())) return false;
+    if (!getDealCode().equals(other.getDealCode())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -711,6 +768,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PARAMETER_DEFINITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getParameterDefinitionsList().hashCode();
     }
+    hash = (37 * hash) + DEAL_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getDealCode().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -902,6 +961,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         parameterDefinitionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      dealCode_ = "";
+
       return this;
     }
 
@@ -978,6 +1039,7 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.parameterDefinitions_ = parameterDefinitionsBuilder_.build();
       }
+      result.dealCode_ = dealCode_;
       onBuilt();
       return result;
     }
@@ -1103,6 +1165,10 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getDealCode().isEmpty()) {
+        dealCode_ = other.dealCode_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1198,6 +1264,12 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 74
+            case 98:
+              {
+                dealCode_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3142,6 +3214,112 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
         parameterDefinitions_ = null;
       }
       return parameterDefinitionsBuilder_;
+    }
+
+    private java.lang.Object dealCode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The deal code of the offer to get a special promotion or discount.
+     * </pre>
+     *
+     * <code>string deal_code = 12;</code>
+     *
+     * @return The dealCode.
+     */
+    public java.lang.String getDealCode() {
+      java.lang.Object ref = dealCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dealCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deal code of the offer to get a special promotion or discount.
+     * </pre>
+     *
+     * <code>string deal_code = 12;</code>
+     *
+     * @return The bytes for dealCode.
+     */
+    public com.google.protobuf.ByteString getDealCodeBytes() {
+      java.lang.Object ref = dealCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dealCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deal code of the offer to get a special promotion or discount.
+     * </pre>
+     *
+     * <code>string deal_code = 12;</code>
+     *
+     * @param value The dealCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDealCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      dealCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deal code of the offer to get a special promotion or discount.
+     * </pre>
+     *
+     * <code>string deal_code = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDealCode() {
+
+      dealCode_ = getDefaultInstance().getDealCode();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The deal code of the offer to get a special promotion or discount.
+     * </pre>
+     *
+     * <code>string deal_code = 12;</code>
+     *
+     * @param value The bytes for dealCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDealCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      dealCode_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
