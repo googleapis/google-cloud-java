@@ -2,5 +2,5 @@ primaryBranch: main
 releaseType: java-yoshi
 versioning: always-bump-patch
 handleGHRelease: true
-
+bootstrap-sha: b2a5f7207e9f9b2f933e75ef4fd44973a234326f
 
