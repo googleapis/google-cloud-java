@@ -3,7 +3,7 @@
     "name_pretty": "Identity Access Context Manager",
     "product_documentation": "n/a",
     "api_description": "n/a",
-    "client_documentation": "https://googleapis.dev/java/proto-google-identity-accesscontextmanager-v1/latest/index.html",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-identity-accesscontextmanager/latest/history",
     "release_level": "stable",
     "transport": "grpc",
     "requires_billing": true,
