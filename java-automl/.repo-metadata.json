@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559744",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-automl",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-automl",
     "distribution_name": "com.google.cloud:google-cloud-automl",
     "api_id": "automl.googleapis.com",

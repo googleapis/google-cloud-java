@@ -7,7 +7,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-dlp",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-dlp",
     "distribution_name": "com.google.cloud:google-cloud-dlp",
     "api_id": "dlp.googleapis.com",

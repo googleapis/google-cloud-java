@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-eventarc",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-eventarc",
   "distribution_name": "com.google.cloud:google-cloud-eventarc",
   "api_id": "eventarc.googleapis.com",

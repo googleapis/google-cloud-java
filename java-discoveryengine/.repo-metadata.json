@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-discoveryengine",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-discoveryengine",
   "distribution_name": "com.google.cloud:google-cloud-discoveryengine",
   "api_id": "discoveryengine.googleapis.com",

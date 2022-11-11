@@ -7,7 +7,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-billingbudgets",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-billingbudgets",
     "distribution_name": "com.google.cloud:google-cloud-billingbudgets",
     "api_id": "billingbudgets.googleapis.com",

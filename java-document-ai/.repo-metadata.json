@@ -7,7 +7,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559755",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-document-ai",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-document-ai",
     "distribution_name": "com.google.cloud:google-cloud-document-ai",
     "api_id": "documentai.googleapis.com",

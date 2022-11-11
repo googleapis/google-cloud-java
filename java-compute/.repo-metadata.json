@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "http",
   "language": "java",
-  "repo": "googleapis/java-compute",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-compute",
   "distribution_name": "com.google.cloud:google-cloud-compute",
   "api_id": "compute.googleapis.com",

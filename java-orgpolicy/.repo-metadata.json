@@ -8,7 +8,7 @@
   "transport": "grpc",
   "requires_billing": true,
   "language": "java",
-  "repo": "googleapis/java-orgpolicy",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-orgpolicy",
   "library_type": "GAPIC_AUTO",
   "distribution_name": "com.google.cloud:google-cloud-orgpolicy"

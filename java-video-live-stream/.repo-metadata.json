@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-video-live-stream",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-video-live-stream",
   "distribution_name": "com.google.cloud:google-cloud-live-stream",
   "api_id": "livestream.googleapis.com",

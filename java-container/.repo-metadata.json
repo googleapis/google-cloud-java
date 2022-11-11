@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-container",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-container",
     "distribution_name": "com.google.cloud:google-cloud-container",
     "codeowner_team": "@googleapis/yoshi-java",

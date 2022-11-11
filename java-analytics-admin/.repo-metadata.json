@@ -7,7 +7,7 @@
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-analytics-admin",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-analytics-admin",
     "distribution_name": "com.google.analytics:google-analytics-admin",
     "api_id": "analyticsadmin.googleapis.com",

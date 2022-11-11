@@ -6,7 +6,7 @@
     "issue_tracker": "",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-datacatalog",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-datacatalog",
     "distribution_name": "com.google.cloud:google-cloud-datacatalog",
     "api_id": "datacatalog.googleapis.com",

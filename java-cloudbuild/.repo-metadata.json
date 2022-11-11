@@ -8,7 +8,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-cloudbuild",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-cloudbuild",
     "distribution_name": "com.google.cloud:google-cloud-build",
     "codeowner_team": "@googleapis/aap-dpes",

@@ -7,7 +7,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-trace",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-trace",
     "distribution_name": "com.google.cloud:google-cloud-trace",
     "api_id": "cloudtrace.googleapis.com",

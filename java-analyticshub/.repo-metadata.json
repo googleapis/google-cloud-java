@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-analyticshub",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-analyticshub",
   "distribution_name": "com.google.cloud:google-cloud-analyticshub",
   "api_id": "analyticshub.googleapis.com",

@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-enterpriseknowledgegraph",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-enterpriseknowledgegraph",
   "distribution_name": "com.google.cloud:google-cloud-enterpriseknowledgegraph",
   "api_id": "enterpriseknowledgegraph.googleapis.com",

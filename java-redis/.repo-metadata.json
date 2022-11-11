@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5169231",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-redis",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-redis",
     "distribution_name": "com.google.cloud:google-cloud-redis",
     "api_id": "redis.googleapis.com",

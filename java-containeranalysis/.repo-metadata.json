@@ -6,7 +6,7 @@
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
   "release_level": "stable",
   "language": "java",
-  "repo": "googleapis/java-containeranalysis",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-containeranalysis",
   "distribution_name": "com.google.cloud:google-cloud-containeranalysis",
   "codeowner_team": "@googleapis/aap-dpes",  

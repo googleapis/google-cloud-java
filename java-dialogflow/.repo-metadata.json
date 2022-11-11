@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5300385",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-dialogflow",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-dialogflow",
     "distribution_name": "com.google.cloud:google-cloud-dialogflow",
     "api_id": "dialogflow.googleapis.com",

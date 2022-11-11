@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-ids",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-ids",
   "distribution_name": "com.google.cloud:google-cloud-ids",
   "api_id": "ids.googleapis.com",

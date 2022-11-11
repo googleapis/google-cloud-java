@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-distributedcloudedge",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-distributedcloudedge",
   "distribution_name": "com.google.cloud:google-cloud-distributedcloudedge",
   "api_id": "distributedcloudedge.googleapis.com",

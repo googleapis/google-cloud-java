@@ -8,7 +8,7 @@
     "release_level": "preview",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-datalabeling",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-datalabeling",
     "distribution_name": "com.google.cloud:google-cloud-datalabeling",
     "api_id": "datalabeling.googleapis.com",

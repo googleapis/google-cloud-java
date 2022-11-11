@@ -8,7 +8,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-webrisk",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-webrisk",
     "distribution_name": "com.google.cloud:google-cloud-webrisk",
     "api_id": "webrisk.googleapis.com",

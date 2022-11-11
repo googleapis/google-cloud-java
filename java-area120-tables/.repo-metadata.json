@@ -7,7 +7,7 @@
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-area120-tables",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-area120-tables",
     "distribution_name": "com.google.area120:google-area120-tables",
     "api_id": "area120tables.googleapis.com",

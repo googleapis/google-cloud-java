@@ -10,7 +10,7 @@
     "transport": "grpc",
     "requires_billing": true,
     "language": "java",
-    "repo": "googleapis/java-asset",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-asset",
     "distribution_name": "com.google.cloud:google-cloud-asset",
     "api_id": "cloudasset.googleapis.com",

@@ -8,7 +8,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-texttospeech",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-texttospeech",
     "distribution_name": "com.google.cloud:google-cloud-texttospeech",
     "api_id": "texttospeech.googleapis.com",

@@ -7,7 +7,7 @@
     "release_level": "stable",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-gkehub",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-gkehub",
     "distribution_name": "com.google.cloud:google-cloud-gkehub",
     "api_id": "gkehub.googleapis.com",
