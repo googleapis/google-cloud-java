@@ -180,6 +180,7 @@ public class ITBigQueryTest {
   private static final Long EXPIRATION_MS = 86400000L;
   private static final Logger LOG = Logger.getLogger(ITBigQueryTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
+  private static final String UK_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String MODEL_DATASET = RemoteBigQueryHelper.generateDatasetName();
@@ -533,6 +534,8 @@ public class ITBigQueryTest {
   private static final TableId TABLE_ID = TableId.of(DATASET, "testing_table");
   private static final TableId TABLE_ID_DDL = TableId.of(DATASET, "ddl_testing_table");
   private static final TableId TABLE_ID_FASTQUERY = TableId.of(DATASET, "fastquery_testing_table");
+  private static final TableId TABLE_ID_FASTQUERY_UK =
+      TableId.of(UK_DATASET, "fastquery_testing_table");
   private static final TableId TABLE_ID_LARGE = TableId.of(DATASET, "large_data_testing_table");
   private static final TableId TABLE_ID_FASTQUERY_BQ_RESULTSET =
       TableId.of(DATASET, "fastquery_testing_bq_resultset");
@@ -717,6 +720,7 @@ public class ITBigQueryTest {
     DatasetInfo info3 =
         DatasetInfo.newBuilder(ROUTINE_DATASET).setDescription("java routine lifecycle").build();
     bigquery.create(info3);
+
     LoadJobConfiguration configuration =
         LoadJobConfiguration.newBuilder(
                 TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
@@ -781,6 +785,7 @@ public class ITBigQueryTest {
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
+      RemoteBigQueryHelper.forceDelete(bigquery, UK_DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, ROUTINE_DATASET);
     }
@@ -3281,6 +3286,86 @@ public class ITBigQueryTest {
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
       assertEquals(false, booleanCell.getBooleanValue());
+    }
+  }
+
+  @Test
+  public void testProjectIDFastSQLQueryWithJobId() throws InterruptedException {
+    String random_project_id = "RANDOM_PROJECT_" + UUID.randomUUID().toString().replace('-', '_');
+    System.out.println(random_project_id);
+    String query =
+        "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID_FASTQUERY.getTable();
+    // With incorrect projectID in jobid
+    // The job will be created with the specified(incorrect) projectID
+    // hence failing the operation
+    JobId jobIdWithProjectId = JobId.newBuilder().setProject(random_project_id).build();
+    QueryJobConfiguration configSelect =
+        QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
+    try {
+      bigquery.query(configSelect, jobIdWithProjectId);
+    } catch (Exception exception) {
+      // error message for non-existent project
+      assertTrue(exception.getMessage().contains("Cannot parse  as CloudRegion"));
+      assertEquals(BigQueryException.class, exception.getClass());
+    }
+  }
+
+  @Test
+  public void testLocationFastSQLQueryWithJobId() throws InterruptedException {
+    DatasetInfo infoUK =
+        DatasetInfo.newBuilder(UK_DATASET)
+            .setDescription(DESCRIPTION)
+            .setLocation("europe-west1")
+            .setLabels(LABELS)
+            .build();
+    bigquery.create(infoUK);
+
+    TableDefinition tableDefinition = StandardTableDefinition.of(SIMPLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.newBuilder(TABLE_ID_FASTQUERY_UK, tableDefinition).build();
+    bigquery.create(tableInfo);
+
+    String insert =
+        "INSERT " + UK_DATASET + "." + TABLE_ID_FASTQUERY_UK.getTable() + " VALUES('Anna');";
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(insert)
+            .setDefaultDataset(DatasetId.of(UK_DATASET))
+            .build();
+    TableResult result = bigquery.query(config);
+    assertEquals(SIMPLE_SCHEMA, result.getSchema());
+    assertEquals(1, result.getTotalRows());
+    assertNull(result.getNextPage());
+    assertNull(result.getNextPageToken());
+    assertFalse(result.hasNextPage());
+    // Verify correctness of table content
+    for (FieldValueList row : result.getValues()) {
+      FieldValue stringCell = row.get(0);
+      assertEquals(stringCell, row.get("StringField"));
+      assertEquals("Anna", stringCell.getStringValue());
+    }
+    // With incorrect location in jobid
+    // The job will be created with the specified(incorrect) location
+    // hence failing the operation
+    String query = "SELECT StringField FROM " + TABLE_ID_FASTQUERY_UK.getTable();
+    JobId jobIdWithLocation = JobId.newBuilder().setLocation("us-west1").build();
+    QueryJobConfiguration configSelect =
+        QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(UK_DATASET)).build();
+    try {
+      bigquery.query(configSelect, jobIdWithLocation);
+    } catch (BigQueryException exception) {
+      assertTrue(exception.getMessage().contains("Not found"));
+      assertEquals(BigQueryException.class, exception.getClass());
+    }
+
+    // Without location in jobID, the query job defaults to the location of the dataset
+    JobId jobIdNoLocation = JobId.newBuilder().build();
+    QueryJobConfiguration configNoLocation =
+        QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(UK_DATASET)).build();
+    TableResult resultNoLocation = bigquery.query(configNoLocation, jobIdNoLocation);
+    for (FieldValueList row : resultNoLocation.getValues()) {
+      FieldValue stringCell = row.get(0);
+      assertEquals(stringCell, row.get("StringField"));
+      assertEquals("Anna", stringCell.getStringValue());
     }
   }
 

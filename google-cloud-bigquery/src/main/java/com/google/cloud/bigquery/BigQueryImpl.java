@@ -1300,7 +1300,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // If all parameters passed in configuration are supported by the query() method on the backend,
     // put on fast path
     QueryRequestInfo requestInfo = new QueryRequestInfo(configuration);
-    if (requestInfo.isFastQuerySupported()) {
+    if (requestInfo.isFastQuerySupported(null)) {
       String projectId = getOptions().getProjectId();
       QueryRequest content = requestInfo.toPb();
       return queryRpc(projectId, content, options);
@@ -1385,6 +1385,27 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public TableResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException, JobException {
     Job.checkNotDryRun(configuration, "query");
+    // If all parameters passed in configuration are supported by the query() method on the backend,
+    // put on fast path
+    QueryRequestInfo requestInfo = new QueryRequestInfo(configuration);
+    if (requestInfo.isFastQuerySupported(jobId)) {
+      // Be careful when setting the projectID in JobId, if a projectID is specified in the JobId,
+      // the job created by the query method will use that project. This may cause the query to
+      // fail with "Access denied" if the project do not have enough permissions to run the job.
+
+      String projectId =
+          jobId.getProject() != null ? jobId.getProject() : getOptions().getProjectId();
+      QueryRequest content = requestInfo.toPb();
+      // Be careful when setting the location in JobId, if a location is specified in the JobId,
+      // the job created by the query method will be in that location, even if the table to be
+      // queried is in a different location. This may cause the query to fail with
+      // "BigQueryException: Not found"
+      if (jobId.getLocation() != null) {
+        content.setLocation(jobId.getLocation());
+      }
+
+      return queryRpc(projectId, content, options);
+    }
     return create(JobInfo.of(jobId, configuration), options).getQueryResults();
   }
 

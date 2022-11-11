@@ -57,7 +57,15 @@ final class QueryRequestInfo {
     this.useQueryCache = config.useQueryCache();
   }
 
-  boolean isFastQuerySupported() {
+  boolean isFastQuerySupported(JobId jobId) {
+    // Fast query path is not possible if job is specified in the JobID object
+    // Respect Job field value in JobId specified by user.
+    // Specifying it will force the query to take the slower path.
+    if (jobId != null) {
+      if (jobId.getJob() != null) {
+        return false;
+      }
+    }
     return config.getClustering() == null
         && config.getCreateDisposition() == null
         && config.getDestinationEncryptionConfiguration() == null
