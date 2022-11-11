@@ -2,7 +2,7 @@
     "api_shortname": "secretmanager",
     "name_pretty": "Secret Management",
     "product_documentation": "https://cloud.google.com/solutions/secrets-management/",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/overview",
     "release_level": "stable",
     "language": "java",
     "repo": "googleapis/java-secretmanager",

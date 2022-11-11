@@ -3,7 +3,7 @@
   "name_pretty": "Database Migration Service",
   "product_documentation": "https://cloud.google.com/database-migration/docs",
   "api_description": "makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dms/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dms/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",

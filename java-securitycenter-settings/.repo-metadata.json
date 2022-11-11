@@ -3,7 +3,7 @@
     "name_pretty": "Security Command Center Settings API",
     "product_documentation": "https://cloud.google.com/security-command-center/",
     "api_description": "is the canonical security and data risk database for Google Cloud. Security Command Center enables you to understand your security and data attack surface by providing asset inventory, discovery, search, and management.",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-securitycenter-settings/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-securitycenter-settings/latest/overview",
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",
