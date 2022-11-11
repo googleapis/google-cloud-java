@@ -27,80 +27,39 @@ public interface RequestStatsOrBuilder
    *
    *
    * <pre>
-   * Available with the
-   * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-   * package google.bigtable.v2.
+   * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+   * view, see package google.bigtable.v2.
    * </pre>
    *
-   * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+   * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
    *
-   * @return Whether the readEfficiencyStats field is set.
+   * @return Whether the fullReadStatsView field is set.
    */
-  boolean hasReadEfficiencyStats();
+  boolean hasFullReadStatsView();
   /**
    *
    *
    * <pre>
-   * Available with the
-   * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-   * package google.bigtable.v2.
+   * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+   * view, see package google.bigtable.v2.
    * </pre>
    *
-   * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+   * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
    *
-   * @return The readEfficiencyStats.
+   * @return The fullReadStatsView.
    */
-  com.google.bigtable.v2.ReadEfficiencyStats getReadEfficiencyStats();
+  com.google.bigtable.v2.FullReadStatsView getFullReadStatsView();
   /**
    *
    *
    * <pre>
-   * Available with the
-   * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-   * package google.bigtable.v2.
+   * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+   * view, see package google.bigtable.v2.
    * </pre>
    *
-   * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+   * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
    */
-  com.google.bigtable.v2.ReadEfficiencyStatsOrBuilder getReadEfficiencyStatsOrBuilder();
+  com.google.bigtable.v2.FullReadStatsViewOrBuilder getFullReadStatsViewOrBuilder();
 
-  /**
-   *
-   *
-   * <pre>
-   * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-   * view, see package google.bigtable.v2.
-   * </pre>
-   *
-   * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-   *
-   * @return Whether the allReadStats field is set.
-   */
-  boolean hasAllReadStats();
-  /**
-   *
-   *
-   * <pre>
-   * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-   * view, see package google.bigtable.v2.
-   * </pre>
-   *
-   * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-   *
-   * @return The allReadStats.
-   */
-  com.google.bigtable.v2.AllReadStats getAllReadStats();
-  /**
-   *
-   *
-   * <pre>
-   * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-   * view, see package google.bigtable.v2.
-   * </pre>
-   *
-   * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-   */
-  com.google.bigtable.v2.AllReadStatsOrBuilder getAllReadStatsOrBuilder();
-
-  public com.google.bigtable.v2.RequestStats.StatsCase getStatsCase();
+  public com.google.bigtable.v2.RequestStats.StatsViewCase getStatsViewCase();
 }

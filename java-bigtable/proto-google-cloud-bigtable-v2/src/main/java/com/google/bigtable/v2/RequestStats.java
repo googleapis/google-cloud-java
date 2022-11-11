@@ -68,19 +68,18 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.RequestStats.Builder.class);
   }
 
-  private int statsCase_ = 0;
-  private java.lang.Object stats_;
+  private int statsViewCase_ = 0;
+  private java.lang.Object statsView_;
 
-  public enum StatsCase
+  public enum StatsViewCase
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    READ_EFFICIENCY_STATS(1),
-    ALL_READ_STATS(2),
-    STATS_NOT_SET(0);
+    FULL_READ_STATS_VIEW(1),
+    STATSVIEW_NOT_SET(0);
     private final int value;
 
-    private StatsCase(int value) {
+    private StatsViewCase(int value) {
       this.value = value;
     }
     /**
@@ -89,18 +88,16 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static StatsCase valueOf(int value) {
+    public static StatsViewCase valueOf(int value) {
       return forNumber(value);
     }
 
-    public static StatsCase forNumber(int value) {
+    public static StatsViewCase forNumber(int value) {
       switch (value) {
         case 1:
-          return READ_EFFICIENCY_STATS;
-        case 2:
-          return ALL_READ_STATS;
+          return FULL_READ_STATS_VIEW;
         case 0:
-          return STATS_NOT_SET;
+          return STATSVIEW_NOT_SET;
         default:
           return null;
       }
@@ -111,68 +108,11 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     }
   };
 
-  public StatsCase getStatsCase() {
-    return StatsCase.forNumber(statsCase_);
+  public StatsViewCase getStatsViewCase() {
+    return StatsViewCase.forNumber(statsViewCase_);
   }
 
-  public static final int READ_EFFICIENCY_STATS_FIELD_NUMBER = 1;
-  /**
-   *
-   *
-   * <pre>
-   * Available with the
-   * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-   * package google.bigtable.v2.
-   * </pre>
-   *
-   * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
-   *
-   * @return Whether the readEfficiencyStats field is set.
-   */
-  @java.lang.Override
-  public boolean hasReadEfficiencyStats() {
-    return statsCase_ == 1;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Available with the
-   * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-   * package google.bigtable.v2.
-   * </pre>
-   *
-   * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
-   *
-   * @return The readEfficiencyStats.
-   */
-  @java.lang.Override
-  public com.google.bigtable.v2.ReadEfficiencyStats getReadEfficiencyStats() {
-    if (statsCase_ == 1) {
-      return (com.google.bigtable.v2.ReadEfficiencyStats) stats_;
-    }
-    return com.google.bigtable.v2.ReadEfficiencyStats.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Available with the
-   * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-   * package google.bigtable.v2.
-   * </pre>
-   *
-   * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
-   */
-  @java.lang.Override
-  public com.google.bigtable.v2.ReadEfficiencyStatsOrBuilder getReadEfficiencyStatsOrBuilder() {
-    if (statsCase_ == 1) {
-      return (com.google.bigtable.v2.ReadEfficiencyStats) stats_;
-    }
-    return com.google.bigtable.v2.ReadEfficiencyStats.getDefaultInstance();
-  }
-
-  public static final int ALL_READ_STATS_FIELD_NUMBER = 2;
+  public static final int FULL_READ_STATS_VIEW_FIELD_NUMBER = 1;
   /**
    *
    *
@@ -181,13 +121,13 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
    * view, see package google.bigtable.v2.
    * </pre>
    *
-   * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
+   * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
    *
-   * @return Whether the allReadStats field is set.
+   * @return Whether the fullReadStatsView field is set.
    */
   @java.lang.Override
-  public boolean hasAllReadStats() {
-    return statsCase_ == 2;
+  public boolean hasFullReadStatsView() {
+    return statsViewCase_ == 1;
   }
   /**
    *
@@ -197,16 +137,16 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
    * view, see package google.bigtable.v2.
    * </pre>
    *
-   * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
+   * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
    *
-   * @return The allReadStats.
+   * @return The fullReadStatsView.
    */
   @java.lang.Override
-  public com.google.bigtable.v2.AllReadStats getAllReadStats() {
-    if (statsCase_ == 2) {
-      return (com.google.bigtable.v2.AllReadStats) stats_;
+  public com.google.bigtable.v2.FullReadStatsView getFullReadStatsView() {
+    if (statsViewCase_ == 1) {
+      return (com.google.bigtable.v2.FullReadStatsView) statsView_;
     }
-    return com.google.bigtable.v2.AllReadStats.getDefaultInstance();
+    return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
   }
   /**
    *
@@ -216,14 +156,14 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
    * view, see package google.bigtable.v2.
    * </pre>
    *
-   * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
+   * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
    */
   @java.lang.Override
-  public com.google.bigtable.v2.AllReadStatsOrBuilder getAllReadStatsOrBuilder() {
-    if (statsCase_ == 2) {
-      return (com.google.bigtable.v2.AllReadStats) stats_;
+  public com.google.bigtable.v2.FullReadStatsViewOrBuilder getFullReadStatsViewOrBuilder() {
+    if (statsViewCase_ == 1) {
+      return (com.google.bigtable.v2.FullReadStatsView) statsView_;
     }
-    return com.google.bigtable.v2.AllReadStats.getDefaultInstance();
+    return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -240,11 +180,8 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (statsCase_ == 1) {
-      output.writeMessage(1, (com.google.bigtable.v2.ReadEfficiencyStats) stats_);
-    }
-    if (statsCase_ == 2) {
-      output.writeMessage(2, (com.google.bigtable.v2.AllReadStats) stats_);
+    if (statsViewCase_ == 1) {
+      output.writeMessage(1, (com.google.bigtable.v2.FullReadStatsView) statsView_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -255,15 +192,10 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (statsCase_ == 1) {
+    if (statsViewCase_ == 1) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              1, (com.google.bigtable.v2.ReadEfficiencyStats) stats_);
-    }
-    if (statsCase_ == 2) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              2, (com.google.bigtable.v2.AllReadStats) stats_);
+              1, (com.google.bigtable.v2.FullReadStatsView) statsView_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -280,13 +212,10 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.bigtable.v2.RequestStats other = (com.google.bigtable.v2.RequestStats) obj;
 
-    if (!getStatsCase().equals(other.getStatsCase())) return false;
-    switch (statsCase_) {
+    if (!getStatsViewCase().equals(other.getStatsViewCase())) return false;
+    switch (statsViewCase_) {
       case 1:
-        if (!getReadEfficiencyStats().equals(other.getReadEfficiencyStats())) return false;
-        break;
-      case 2:
-        if (!getAllReadStats().equals(other.getAllReadStats())) return false;
+        if (!getFullReadStatsView().equals(other.getFullReadStatsView())) return false;
         break;
       case 0:
       default:
@@ -302,14 +231,10 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    switch (statsCase_) {
+    switch (statsViewCase_) {
       case 1:
-        hash = (37 * hash) + READ_EFFICIENCY_STATS_FIELD_NUMBER;
-        hash = (53 * hash) + getReadEfficiencyStats().hashCode();
-        break;
-      case 2:
-        hash = (37 * hash) + ALL_READ_STATS_FIELD_NUMBER;
-        hash = (53 * hash) + getAllReadStats().hashCode();
+        hash = (37 * hash) + FULL_READ_STATS_VIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getFullReadStatsView().hashCode();
         break;
       case 0:
       default:
@@ -454,14 +379,11 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (readEfficiencyStatsBuilder_ != null) {
-        readEfficiencyStatsBuilder_.clear();
+      if (fullReadStatsViewBuilder_ != null) {
+        fullReadStatsViewBuilder_.clear();
       }
-      if (allReadStatsBuilder_ != null) {
-        allReadStatsBuilder_.clear();
-      }
-      statsCase_ = 0;
-      stats_ = null;
+      statsViewCase_ = 0;
+      statsView_ = null;
       return this;
     }
 
@@ -488,21 +410,14 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.bigtable.v2.RequestStats buildPartial() {
       com.google.bigtable.v2.RequestStats result = new com.google.bigtable.v2.RequestStats(this);
-      if (statsCase_ == 1) {
-        if (readEfficiencyStatsBuilder_ == null) {
-          result.stats_ = stats_;
+      if (statsViewCase_ == 1) {
+        if (fullReadStatsViewBuilder_ == null) {
+          result.statsView_ = statsView_;
         } else {
-          result.stats_ = readEfficiencyStatsBuilder_.build();
+          result.statsView_ = fullReadStatsViewBuilder_.build();
         }
       }
-      if (statsCase_ == 2) {
-        if (allReadStatsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = allReadStatsBuilder_.build();
-        }
-      }
-      result.statsCase_ = statsCase_;
+      result.statsViewCase_ = statsViewCase_;
       onBuilt();
       return result;
     }
@@ -552,18 +467,13 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.bigtable.v2.RequestStats other) {
       if (other == com.google.bigtable.v2.RequestStats.getDefaultInstance()) return this;
-      switch (other.getStatsCase()) {
-        case READ_EFFICIENCY_STATS:
+      switch (other.getStatsViewCase()) {
+        case FULL_READ_STATS_VIEW:
           {
-            mergeReadEfficiencyStats(other.getReadEfficiencyStats());
+            mergeFullReadStatsView(other.getFullReadStatsView());
             break;
           }
-        case ALL_READ_STATS:
-          {
-            mergeAllReadStats(other.getAllReadStats());
-            break;
-          }
-        case STATS_NOT_SET:
+        case STATSVIEW_NOT_SET:
           {
             break;
           }
@@ -597,16 +507,10 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(
-                    getReadEfficiencyStatsFieldBuilder().getBuilder(), extensionRegistry);
-                statsCase_ = 1;
+                    getFullReadStatsViewFieldBuilder().getBuilder(), extensionRegistry);
+                statsViewCase_ = 1;
                 break;
               } // case 10
-            case 18:
-              {
-                input.readMessage(getAllReadStatsFieldBuilder().getBuilder(), extensionRegistry);
-                statsCase_ = 2;
-                break;
-              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -624,173 +528,167 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int statsCase_ = 0;
-    private java.lang.Object stats_;
+    private int statsViewCase_ = 0;
+    private java.lang.Object statsView_;
 
-    public StatsCase getStatsCase() {
-      return StatsCase.forNumber(statsCase_);
+    public StatsViewCase getStatsViewCase() {
+      return StatsViewCase.forNumber(statsViewCase_);
     }
 
-    public Builder clearStats() {
-      statsCase_ = 0;
-      stats_ = null;
+    public Builder clearStatsView() {
+      statsViewCase_ = 0;
+      statsView_ = null;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.v2.ReadEfficiencyStats,
-            com.google.bigtable.v2.ReadEfficiencyStats.Builder,
-            com.google.bigtable.v2.ReadEfficiencyStatsOrBuilder>
-        readEfficiencyStatsBuilder_;
+            com.google.bigtable.v2.FullReadStatsView,
+            com.google.bigtable.v2.FullReadStatsView.Builder,
+            com.google.bigtable.v2.FullReadStatsViewOrBuilder>
+        fullReadStatsViewBuilder_;
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      *
-     * @return Whether the readEfficiencyStats field is set.
+     * @return Whether the fullReadStatsView field is set.
      */
     @java.lang.Override
-    public boolean hasReadEfficiencyStats() {
-      return statsCase_ == 1;
+    public boolean hasFullReadStatsView() {
+      return statsViewCase_ == 1;
     }
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      *
-     * @return The readEfficiencyStats.
+     * @return The fullReadStatsView.
      */
     @java.lang.Override
-    public com.google.bigtable.v2.ReadEfficiencyStats getReadEfficiencyStats() {
-      if (readEfficiencyStatsBuilder_ == null) {
-        if (statsCase_ == 1) {
-          return (com.google.bigtable.v2.ReadEfficiencyStats) stats_;
+    public com.google.bigtable.v2.FullReadStatsView getFullReadStatsView() {
+      if (fullReadStatsViewBuilder_ == null) {
+        if (statsViewCase_ == 1) {
+          return (com.google.bigtable.v2.FullReadStatsView) statsView_;
         }
-        return com.google.bigtable.v2.ReadEfficiencyStats.getDefaultInstance();
+        return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
       } else {
-        if (statsCase_ == 1) {
-          return readEfficiencyStatsBuilder_.getMessage();
+        if (statsViewCase_ == 1) {
+          return fullReadStatsViewBuilder_.getMessage();
         }
-        return com.google.bigtable.v2.ReadEfficiencyStats.getDefaultInstance();
+        return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      */
-    public Builder setReadEfficiencyStats(com.google.bigtable.v2.ReadEfficiencyStats value) {
-      if (readEfficiencyStatsBuilder_ == null) {
+    public Builder setFullReadStatsView(com.google.bigtable.v2.FullReadStatsView value) {
+      if (fullReadStatsViewBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        stats_ = value;
+        statsView_ = value;
         onChanged();
       } else {
-        readEfficiencyStatsBuilder_.setMessage(value);
+        fullReadStatsViewBuilder_.setMessage(value);
       }
-      statsCase_ = 1;
+      statsViewCase_ = 1;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      */
-    public Builder setReadEfficiencyStats(
-        com.google.bigtable.v2.ReadEfficiencyStats.Builder builderForValue) {
-      if (readEfficiencyStatsBuilder_ == null) {
-        stats_ = builderForValue.build();
+    public Builder setFullReadStatsView(
+        com.google.bigtable.v2.FullReadStatsView.Builder builderForValue) {
+      if (fullReadStatsViewBuilder_ == null) {
+        statsView_ = builderForValue.build();
         onChanged();
       } else {
-        readEfficiencyStatsBuilder_.setMessage(builderForValue.build());
+        fullReadStatsViewBuilder_.setMessage(builderForValue.build());
       }
-      statsCase_ = 1;
+      statsViewCase_ = 1;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      */
-    public Builder mergeReadEfficiencyStats(com.google.bigtable.v2.ReadEfficiencyStats value) {
-      if (readEfficiencyStatsBuilder_ == null) {
-        if (statsCase_ == 1
-            && stats_ != com.google.bigtable.v2.ReadEfficiencyStats.getDefaultInstance()) {
-          stats_ =
-              com.google.bigtable.v2.ReadEfficiencyStats.newBuilder(
-                      (com.google.bigtable.v2.ReadEfficiencyStats) stats_)
+    public Builder mergeFullReadStatsView(com.google.bigtable.v2.FullReadStatsView value) {
+      if (fullReadStatsViewBuilder_ == null) {
+        if (statsViewCase_ == 1
+            && statsView_ != com.google.bigtable.v2.FullReadStatsView.getDefaultInstance()) {
+          statsView_ =
+              com.google.bigtable.v2.FullReadStatsView.newBuilder(
+                      (com.google.bigtable.v2.FullReadStatsView) statsView_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          stats_ = value;
+          statsView_ = value;
         }
         onChanged();
       } else {
-        if (statsCase_ == 1) {
-          readEfficiencyStatsBuilder_.mergeFrom(value);
+        if (statsViewCase_ == 1) {
+          fullReadStatsViewBuilder_.mergeFrom(value);
         } else {
-          readEfficiencyStatsBuilder_.setMessage(value);
+          fullReadStatsViewBuilder_.setMessage(value);
         }
       }
-      statsCase_ = 1;
+      statsViewCase_ = 1;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      */
-    public Builder clearReadEfficiencyStats() {
-      if (readEfficiencyStatsBuilder_ == null) {
-        if (statsCase_ == 1) {
-          statsCase_ = 0;
-          stats_ = null;
+    public Builder clearFullReadStatsView() {
+      if (fullReadStatsViewBuilder_ == null) {
+        if (statsViewCase_ == 1) {
+          statsViewCase_ = 0;
+          statsView_ = null;
           onChanged();
         }
       } else {
-        if (statsCase_ == 1) {
-          statsCase_ = 0;
-          stats_ = null;
+        if (statsViewCase_ == 1) {
+          statsViewCase_ = 0;
+          statsView_ = null;
         }
-        readEfficiencyStatsBuilder_.clear();
+        fullReadStatsViewBuilder_.clear();
       }
       return this;
     }
@@ -798,287 +696,69 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      */
-    public com.google.bigtable.v2.ReadEfficiencyStats.Builder getReadEfficiencyStatsBuilder() {
-      return getReadEfficiencyStatsFieldBuilder().getBuilder();
+    public com.google.bigtable.v2.FullReadStatsView.Builder getFullReadStatsViewBuilder() {
+      return getFullReadStatsViewFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      */
     @java.lang.Override
-    public com.google.bigtable.v2.ReadEfficiencyStatsOrBuilder getReadEfficiencyStatsOrBuilder() {
-      if ((statsCase_ == 1) && (readEfficiencyStatsBuilder_ != null)) {
-        return readEfficiencyStatsBuilder_.getMessageOrBuilder();
+    public com.google.bigtable.v2.FullReadStatsViewOrBuilder getFullReadStatsViewOrBuilder() {
+      if ((statsViewCase_ == 1) && (fullReadStatsViewBuilder_ != null)) {
+        return fullReadStatsViewBuilder_.getMessageOrBuilder();
       } else {
-        if (statsCase_ == 1) {
-          return (com.google.bigtable.v2.ReadEfficiencyStats) stats_;
+        if (statsViewCase_ == 1) {
+          return (com.google.bigtable.v2.FullReadStatsView) statsView_;
         }
-        return com.google.bigtable.v2.ReadEfficiencyStats.getDefaultInstance();
+        return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * Available with the
-     * ReadRowsRequest.RequestStatsView.REQUEST_STATS_EFFICIENCY view, see
-     * package google.bigtable.v2.
+     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
+     * view, see package google.bigtable.v2.
      * </pre>
      *
-     * <code>.google.bigtable.v2.ReadEfficiencyStats read_efficiency_stats = 1;</code>
+     * <code>.google.bigtable.v2.FullReadStatsView full_read_stats_view = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.v2.ReadEfficiencyStats,
-            com.google.bigtable.v2.ReadEfficiencyStats.Builder,
-            com.google.bigtable.v2.ReadEfficiencyStatsOrBuilder>
-        getReadEfficiencyStatsFieldBuilder() {
-      if (readEfficiencyStatsBuilder_ == null) {
-        if (!(statsCase_ == 1)) {
-          stats_ = com.google.bigtable.v2.ReadEfficiencyStats.getDefaultInstance();
+            com.google.bigtable.v2.FullReadStatsView,
+            com.google.bigtable.v2.FullReadStatsView.Builder,
+            com.google.bigtable.v2.FullReadStatsViewOrBuilder>
+        getFullReadStatsViewFieldBuilder() {
+      if (fullReadStatsViewBuilder_ == null) {
+        if (!(statsViewCase_ == 1)) {
+          statsView_ = com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
         }
-        readEfficiencyStatsBuilder_ =
+        fullReadStatsViewBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.bigtable.v2.ReadEfficiencyStats,
-                com.google.bigtable.v2.ReadEfficiencyStats.Builder,
-                com.google.bigtable.v2.ReadEfficiencyStatsOrBuilder>(
-                (com.google.bigtable.v2.ReadEfficiencyStats) stats_,
+                com.google.bigtable.v2.FullReadStatsView,
+                com.google.bigtable.v2.FullReadStatsView.Builder,
+                com.google.bigtable.v2.FullReadStatsViewOrBuilder>(
+                (com.google.bigtable.v2.FullReadStatsView) statsView_,
                 getParentForChildren(),
                 isClean());
-        stats_ = null;
+        statsView_ = null;
       }
-      statsCase_ = 1;
+      statsViewCase_ = 1;
       onChanged();
       ;
-      return readEfficiencyStatsBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.v2.AllReadStats,
-            com.google.bigtable.v2.AllReadStats.Builder,
-            com.google.bigtable.v2.AllReadStatsOrBuilder>
-        allReadStatsBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     *
-     * @return Whether the allReadStats field is set.
-     */
-    @java.lang.Override
-    public boolean hasAllReadStats() {
-      return statsCase_ == 2;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     *
-     * @return The allReadStats.
-     */
-    @java.lang.Override
-    public com.google.bigtable.v2.AllReadStats getAllReadStats() {
-      if (allReadStatsBuilder_ == null) {
-        if (statsCase_ == 2) {
-          return (com.google.bigtable.v2.AllReadStats) stats_;
-        }
-        return com.google.bigtable.v2.AllReadStats.getDefaultInstance();
-      } else {
-        if (statsCase_ == 2) {
-          return allReadStatsBuilder_.getMessage();
-        }
-        return com.google.bigtable.v2.AllReadStats.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     */
-    public Builder setAllReadStats(com.google.bigtable.v2.AllReadStats value) {
-      if (allReadStatsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        stats_ = value;
-        onChanged();
-      } else {
-        allReadStatsBuilder_.setMessage(value);
-      }
-      statsCase_ = 2;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     */
-    public Builder setAllReadStats(com.google.bigtable.v2.AllReadStats.Builder builderForValue) {
-      if (allReadStatsBuilder_ == null) {
-        stats_ = builderForValue.build();
-        onChanged();
-      } else {
-        allReadStatsBuilder_.setMessage(builderForValue.build());
-      }
-      statsCase_ = 2;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     */
-    public Builder mergeAllReadStats(com.google.bigtable.v2.AllReadStats value) {
-      if (allReadStatsBuilder_ == null) {
-        if (statsCase_ == 2 && stats_ != com.google.bigtable.v2.AllReadStats.getDefaultInstance()) {
-          stats_ =
-              com.google.bigtable.v2.AllReadStats.newBuilder(
-                      (com.google.bigtable.v2.AllReadStats) stats_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          stats_ = value;
-        }
-        onChanged();
-      } else {
-        if (statsCase_ == 2) {
-          allReadStatsBuilder_.mergeFrom(value);
-        } else {
-          allReadStatsBuilder_.setMessage(value);
-        }
-      }
-      statsCase_ = 2;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     */
-    public Builder clearAllReadStats() {
-      if (allReadStatsBuilder_ == null) {
-        if (statsCase_ == 2) {
-          statsCase_ = 0;
-          stats_ = null;
-          onChanged();
-        }
-      } else {
-        if (statsCase_ == 2) {
-          statsCase_ = 0;
-          stats_ = null;
-        }
-        allReadStatsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     */
-    public com.google.bigtable.v2.AllReadStats.Builder getAllReadStatsBuilder() {
-      return getAllReadStatsFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     */
-    @java.lang.Override
-    public com.google.bigtable.v2.AllReadStatsOrBuilder getAllReadStatsOrBuilder() {
-      if ((statsCase_ == 2) && (allReadStatsBuilder_ != null)) {
-        return allReadStatsBuilder_.getMessageOrBuilder();
-      } else {
-        if (statsCase_ == 2) {
-          return (com.google.bigtable.v2.AllReadStats) stats_;
-        }
-        return com.google.bigtable.v2.AllReadStats.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Available with the ReadRowsRequest.RequestStatsView.REQUEST_STATS_FULL
-     * view, see package google.bigtable.v2.
-     * </pre>
-     *
-     * <code>.google.bigtable.v2.AllReadStats all_read_stats = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.v2.AllReadStats,
-            com.google.bigtable.v2.AllReadStats.Builder,
-            com.google.bigtable.v2.AllReadStatsOrBuilder>
-        getAllReadStatsFieldBuilder() {
-      if (allReadStatsBuilder_ == null) {
-        if (!(statsCase_ == 2)) {
-          stats_ = com.google.bigtable.v2.AllReadStats.getDefaultInstance();
-        }
-        allReadStatsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.bigtable.v2.AllReadStats,
-                com.google.bigtable.v2.AllReadStats.Builder,
-                com.google.bigtable.v2.AllReadStatsOrBuilder>(
-                (com.google.bigtable.v2.AllReadStats) stats_, getParentForChildren(), isClean());
-        stats_ = null;
-      }
-      statsCase_ = 2;
-      onChanged();
-      ;
-      return allReadStatsBuilder_;
+      return fullReadStatsViewBuilder_;
     }
 
     @java.lang.Override

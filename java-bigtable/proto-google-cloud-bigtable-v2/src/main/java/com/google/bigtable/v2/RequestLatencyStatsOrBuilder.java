@@ -36,6 +36,12 @@ public interface RequestLatencyStatsOrBuilder
    * (https://cloud.google.com/bigtable/docs/monitoring-instance) as this value
    * needs to be sent in the response before the latency measurement including
    * that transmission is finalized.
+   * Note: This value includes the end-to-end latency of contacting nodes in
+   * the targeted cluster, e.g. measuring from when the first byte arrives at
+   * the frontend server, to when this value is sent back as the last value in
+   * the response, including any latency incurred by contacting nodes, waiting
+   * for results from nodes, and finally sending results from nodes back to the
+   * caller.
    * </pre>
    *
    * <code>.google.protobuf.Duration frontend_server_latency = 1;</code>
@@ -56,6 +62,12 @@ public interface RequestLatencyStatsOrBuilder
    * (https://cloud.google.com/bigtable/docs/monitoring-instance) as this value
    * needs to be sent in the response before the latency measurement including
    * that transmission is finalized.
+   * Note: This value includes the end-to-end latency of contacting nodes in
+   * the targeted cluster, e.g. measuring from when the first byte arrives at
+   * the frontend server, to when this value is sent back as the last value in
+   * the response, including any latency incurred by contacting nodes, waiting
+   * for results from nodes, and finally sending results from nodes back to the
+   * caller.
    * </pre>
    *
    * <code>.google.protobuf.Duration frontend_server_latency = 1;</code>
@@ -76,6 +88,12 @@ public interface RequestLatencyStatsOrBuilder
    * (https://cloud.google.com/bigtable/docs/monitoring-instance) as this value
    * needs to be sent in the response before the latency measurement including
    * that transmission is finalized.
+   * Note: This value includes the end-to-end latency of contacting nodes in
+   * the targeted cluster, e.g. measuring from when the first byte arrives at
+   * the frontend server, to when this value is sent back as the last value in
+   * the response, including any latency incurred by contacting nodes, waiting
+   * for results from nodes, and finally sending results from nodes back to the
+   * caller.
    * </pre>
    *
    * <code>.google.protobuf.Duration frontend_server_latency = 1;</code>

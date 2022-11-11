@@ -18,9 +18,9 @@
 
 package com.google.bigtable.v2;
 
-public interface ReadEfficiencyStatsOrBuilder
+public interface FullReadStatsViewOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadEfficiencyStats)
+    // @@protoc_insertion_point(interface_extends:google.bigtable.v2.FullReadStatsView)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -33,11 +33,11 @@ public interface ReadEfficiencyStatsOrBuilder
    * better).
    * </pre>
    *
-   * <code>.google.bigtable.v2.ReadIteratorStats read_iterator_stats = 1;</code>
+   * <code>.google.bigtable.v2.ReadIterationStats read_iteration_stats = 1;</code>
    *
-   * @return Whether the readIteratorStats field is set.
+   * @return Whether the readIterationStats field is set.
    */
-  boolean hasReadIteratorStats();
+  boolean hasReadIterationStats();
   /**
    *
    *
@@ -48,11 +48,11 @@ public interface ReadEfficiencyStatsOrBuilder
    * better).
    * </pre>
    *
-   * <code>.google.bigtable.v2.ReadIteratorStats read_iterator_stats = 1;</code>
+   * <code>.google.bigtable.v2.ReadIterationStats read_iteration_stats = 1;</code>
    *
-   * @return The readIteratorStats.
+   * @return The readIterationStats.
    */
-  com.google.bigtable.v2.ReadIteratorStats getReadIteratorStats();
+  com.google.bigtable.v2.ReadIterationStats getReadIterationStats();
   /**
    *
    *
@@ -63,9 +63,9 @@ public interface ReadEfficiencyStatsOrBuilder
    * better).
    * </pre>
    *
-   * <code>.google.bigtable.v2.ReadIteratorStats read_iterator_stats = 1;</code>
+   * <code>.google.bigtable.v2.ReadIterationStats read_iteration_stats = 1;</code>
    */
-  com.google.bigtable.v2.ReadIteratorStatsOrBuilder getReadIteratorStatsOrBuilder();
+  com.google.bigtable.v2.ReadIterationStatsOrBuilder getReadIterationStatsOrBuilder();
 
   /**
    *

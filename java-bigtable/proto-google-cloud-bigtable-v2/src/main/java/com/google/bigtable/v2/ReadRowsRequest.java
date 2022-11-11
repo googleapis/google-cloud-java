@@ -105,23 +105,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Include stats related to the efficiency of the read.
-     * </pre>
-     *
-     * <code>REQUEST_STATS_EFFICIENCY = 2;</code>
-     */
-    REQUEST_STATS_EFFICIENCY(2),
-    /**
-     *
-     *
-     * <pre>
      * Include the full set of available RequestStats in the response,
      * applicable to this read.
      * </pre>
      *
-     * <code>REQUEST_STATS_FULL = 3;</code>
+     * <code>REQUEST_STATS_FULL = 2;</code>
      */
-    REQUEST_STATS_FULL(3),
+    REQUEST_STATS_FULL(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -150,23 +140,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Include stats related to the efficiency of the read.
-     * </pre>
-     *
-     * <code>REQUEST_STATS_EFFICIENCY = 2;</code>
-     */
-    public static final int REQUEST_STATS_EFFICIENCY_VALUE = 2;
-    /**
-     *
-     *
-     * <pre>
      * Include the full set of available RequestStats in the response,
      * applicable to this read.
      * </pre>
      *
-     * <code>REQUEST_STATS_FULL = 3;</code>
+     * <code>REQUEST_STATS_FULL = 2;</code>
      */
-    public static final int REQUEST_STATS_FULL_VALUE = 3;
+    public static final int REQUEST_STATS_FULL_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -197,8 +177,6 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
         case 1:
           return REQUEST_STATS_NONE;
         case 2:
-          return REQUEST_STATS_EFFICIENCY;
-        case 3:
           return REQUEST_STATS_FULL;
         default:
           return null;

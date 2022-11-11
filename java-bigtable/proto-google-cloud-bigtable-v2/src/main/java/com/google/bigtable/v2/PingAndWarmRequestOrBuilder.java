@@ -27,9 +27,8 @@ public interface PingAndWarmRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the instance to check permissions for as well
-   * as respond. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance to check permissions for as well as
+   * respond. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface PingAndWarmRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the instance to check permissions for as well
-   * as respond. Values are of the form
-   * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * Required. The unique name of the instance to check permissions for as well as
+   * respond. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * </pre>
    *
    * <code>

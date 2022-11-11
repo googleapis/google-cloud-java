@@ -18,9 +18,9 @@
 
 package com.google.bigtable.v2;
 
-public interface ReadIteratorStatsOrBuilder
+public interface ReadIterationStatsOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadIteratorStats)
+    // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadIterationStats)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -76,17 +76,4 @@ public interface ReadIteratorStatsOrBuilder
    * @return The cellsReturnedCount.
    */
   long getCellsReturnedCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * The deletes seen as part of the request.
-   * </pre>
-   *
-   * <code>int64 deletes_seen_count = 5;</code>
-   *
-   * @return The deletesSeenCount.
-   */
-  long getDeletesSeenCount();
 }

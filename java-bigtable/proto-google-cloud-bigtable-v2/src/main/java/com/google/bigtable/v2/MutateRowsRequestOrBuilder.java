@@ -27,8 +27,7 @@ public interface MutateRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the mutations should be
-   * applied.
+   * Required. The unique name of the table to which the mutations should be applied.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface MutateRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the mutations should be
-   * applied.
+   * Required. The unique name of the table to which the mutations should be applied.
    * </pre>
    *
    * <code>
