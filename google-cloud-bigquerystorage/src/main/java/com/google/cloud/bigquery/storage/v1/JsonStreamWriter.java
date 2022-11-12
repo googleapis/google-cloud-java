@@ -21,7 +21,6 @@ import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
-import com.google.cloud.bigquery.storage.v1.StreamWriter.SingleConnectionOrConnectionPool.Kind;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
@@ -186,9 +185,8 @@ public class JsonStreamWriter implements AutoCloseable {
       throws IOException, DescriptorValidationException {
     // Handle schema updates in a Thread-safe way by locking down the operation
     synchronized (this) {
-      // Update schema only work when connection pool is not enabled.
-      if (this.streamWriter.getConnectionOperationType() == Kind.CONNECTION_WORKER
-          && this.streamWriter.getUpdatedSchema() != null) {
+      // Create a new stream writer internally if a new updated schema is reported from backend.
+      if (this.streamWriter.getUpdatedSchema() != null) {
         refreshWriter(this.streamWriter.getUpdatedSchema());
       }
 

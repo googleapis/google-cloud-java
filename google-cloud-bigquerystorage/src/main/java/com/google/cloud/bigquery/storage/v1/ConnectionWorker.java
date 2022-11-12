@@ -31,6 +31,7 @@ import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
@@ -159,7 +160,7 @@ public class ConnectionWorker implements AutoCloseable {
    * Contains the updated TableSchema.
    */
   @GuardedBy("lock")
-  private TableSchema updatedSchema;
+  private TableSchemaAndTimestamp updatedSchema;
 
   /*
    * A client used to interact with BigQuery.
@@ -608,7 +609,8 @@ public class ConnectionWorker implements AutoCloseable {
     AppendRequestAndResponse requestWrapper;
     this.lock.lock();
     if (response.hasUpdatedSchema()) {
-      this.updatedSchema = response.getUpdatedSchema();
+      this.updatedSchema =
+          TableSchemaAndTimestamp.create(Instant.now(), response.getUpdatedSchema());
     }
     try {
       // Had a successful connection with at least one result, reset retries.
@@ -720,7 +722,7 @@ public class ConnectionWorker implements AutoCloseable {
   }
 
   /** Thread-safe getter of updated TableSchema */
-  public synchronized TableSchema getUpdatedSchema() {
+  synchronized TableSchemaAndTimestamp getUpdatedSchema() {
     return this.updatedSchema;
   }
 
@@ -816,6 +818,19 @@ public class ConnectionWorker implements AutoCloseable {
     @VisibleForTesting
     public static void setOverwhelmedCountsThreshold(double newThreshold) {
       overwhelmedInflightCount = newThreshold;
+    }
+  }
+
+  @AutoValue
+  abstract static class TableSchemaAndTimestamp {
+    // Shows the timestamp updated schema is reported from response
+    abstract Instant updateTimeStamp();
+
+    // The updated schema returned from server.
+    abstract TableSchema updatedSchema();
+
+    static TableSchemaAndTimestamp create(Instant updateTimeStamp, TableSchema updatedSchema) {
+      return new AutoValue_ConnectionWorker_TableSchemaAndTimestamp(updateTimeStamp, updatedSchema);
     }
   }
 }

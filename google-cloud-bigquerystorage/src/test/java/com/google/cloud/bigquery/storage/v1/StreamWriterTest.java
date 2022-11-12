@@ -36,6 +36,7 @@ import com.google.common.base.Strings;
 import com.google.protobuf.Any;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Descriptors;
+import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -68,6 +69,31 @@ public class StreamWriterTest {
   private FakeBigQueryWrite testBigQueryWrite;
   private static MockServiceHelper serviceHelper;
   private BigQueryWriteClient client;
+  private final TableFieldSchema FOO =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.STRING)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("foo")
+          .build();
+  private final TableFieldSchema BAR =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.STRING)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("bar")
+          .build();
+  private final TableSchema TABLE_SCHEMA = TableSchema.newBuilder().addFields(0, FOO).build();
+  private final ProtoSchema PROTO_SCHEMA =
+      ProtoSchemaConverter.convert(
+          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(TABLE_SCHEMA));
+
+  private final TableSchema UPDATED_TABLE_SCHEMA =
+      TableSchema.newBuilder().addFields(0, FOO).addFields(1, BAR).build();
+  private final ProtoSchema UPDATED_PROTO_SCHEMA =
+      ProtoSchemaConverter.convert(
+          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(
+              UPDATED_TABLE_SCHEMA));
+
+  public StreamWriterTest() throws DescriptorValidationException {}
 
   @Before
   public void setUp() throws Exception {
@@ -249,6 +275,52 @@ public class StreamWriterTest {
     verifyAppendRequests(appendCount);
 
     writer.close();
+  }
+
+  @Test
+  public void testUpdatedSchemaFetch_multiplexing() throws Exception {
+    testUpdatedSchemaFetch(/*enableMultiplexing=*/ true);
+  }
+
+  @Test
+  public void testUpdatedSchemaFetch_nonMultiplexing() throws Exception {
+    testUpdatedSchemaFetch(/*enableMultiplexing=*/ false);
+  }
+
+  private void testUpdatedSchemaFetch(boolean enableMultiplexing)
+      throws IOException, ExecutionException, InterruptedException {
+    StreamWriter writer =
+        StreamWriter.newBuilder(TEST_STREAM_1)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setWriterSchema(PROTO_SCHEMA)
+            .setEnableConnectionPool(enableMultiplexing)
+            .setLocation("us")
+            .build();
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .setUpdatedSchema(UPDATED_TABLE_SCHEMA)
+            .setWriteStream(TEST_STREAM_1)
+            .build());
+
+    assertEquals(writer.getUpdatedSchema(), null);
+    AppendRowsResponse response =
+        writer.append(createProtoRows(new String[] {String.valueOf(0)}), 0).get();
+    assertEquals(writer.getUpdatedSchema(), UPDATED_TABLE_SCHEMA);
+
+    // Create another writer, although it's the same stream name but the time stamp is newer, thus
+    // the old updated schema won't get returned.
+    StreamWriter writer2 =
+        StreamWriter.newBuilder(TEST_STREAM_1)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setChannelProvider(serviceHelper.createChannelProvider())
+            .setWriterSchema(PROTO_SCHEMA)
+            .setEnableConnectionPool(enableMultiplexing)
+            .setLocation("us")
+            .build();
+    assertEquals(writer2.getUpdatedSchema(), null);
   }
 
   @Test

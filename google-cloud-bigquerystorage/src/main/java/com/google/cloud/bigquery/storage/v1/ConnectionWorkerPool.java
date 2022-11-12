@@ -16,12 +16,17 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimestamp;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -33,10 +38,15 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.annotation.concurrent.GuardedBy;
 
 /** Pool of connections to accept appends and distirbute to different connections. */
 public class ConnectionWorkerPool {
+  static final Pattern STREAM_NAME_PATTERN =
+      Pattern.compile("projects/([^/]+)/datasets/([^/]+)/tables/([^/]+)/streams/([^/]+)");
+
   private static final Logger log = Logger.getLogger(ConnectionWorkerPool.class.getName());
   /*
    * Max allowed inflight requests in the stream. Method append is blocked at this.
@@ -64,6 +74,11 @@ public class ConnectionWorkerPool {
   /** Collection of all the created connections. */
   private final Set<ConnectionWorker> connectionWorkerPool =
       Collections.synchronizedSet(new HashSet<>());
+
+  /*
+   * Contains the mapping from stream name to updated schema.
+   */
+  private Map<String, TableSchemaAndTimestamp> tableNameToUpdatedSchema = new ConcurrentHashMap<>();
 
   /** Enable test related logic. */
   private static boolean enableTesting = false;
@@ -246,7 +261,18 @@ public class ConnectionWorkerPool {
     ApiFuture<AppendRowsResponse> responseFuture =
         connectionWorker.append(
             streamWriter.getStreamName(), streamWriter.getProtoSchema(), rows, offset);
-    return responseFuture;
+    return ApiFutures.transform(
+        responseFuture,
+        // Add callback for update schema
+        (response) -> {
+          if (response.getWriteStream() != "" && response.hasUpdatedSchema()) {
+            tableNameToUpdatedSchema.put(
+                response.getWriteStream(),
+                TableSchemaAndTimestamp.create(Instant.now(), response.getUpdatedSchema()));
+          }
+          return response;
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
@@ -392,6 +418,10 @@ public class ConnectionWorkerPool {
     }
   }
 
+  TableSchemaAndTimestamp getUpdatedSchema(StreamWriter streamWriter) {
+    return tableNameToUpdatedSchema.getOrDefault(streamWriter.getStreamName(), null);
+  }
+
   /** Enable Test related logic. */
   public static void enableTestingLogic() {
     enableTesting = true;
@@ -420,5 +450,16 @@ public class ConnectionWorkerPool {
 
   BigQueryWriteClient bigQueryWriteClient() {
     return client;
+  }
+
+  static String toTableName(String streamName) {
+    Matcher matcher = STREAM_NAME_PATTERN.matcher(streamName);
+    Preconditions.checkArgument(matcher.matches(), "Invalid stream name: %s.", streamName);
+    return "projects/"
+        + matcher.group(1)
+        + "/datasets/"
+        + matcher.group(2)
+        + "/tables/"
+        + matcher.group(3);
   }
 }

@@ -22,12 +22,14 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auto.value.AutoOneOf;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimestamp;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
@@ -84,6 +86,9 @@ public class StreamWriter implements AutoCloseable {
    */
   private static final Map<ConnectionPoolKey, ConnectionWorkerPool> connectionPoolMap =
       new ConcurrentHashMap<>();
+
+  /** Creation timestamp of this streamwriter */
+  private final Instant creationTimestamp;
 
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
@@ -147,11 +152,11 @@ public class StreamWriter implements AutoCloseable {
       return connectionWorker().getInflightWaitSeconds();
     }
 
-    TableSchema getUpdatedSchema() {
+    TableSchemaAndTimestamp getUpdatedSchema(StreamWriter streamWriter) {
       if (getKind() == Kind.CONNECTION_WORKER_POOL) {
-        // TODO(gaole): implement updated schema support for multiplexing.
-        throw new IllegalStateException("getUpdatedSchema is not implemented for multiplexing.");
+        return connectionWorkerPool().getUpdatedSchema(streamWriter);
       }
+      // Always populate MIN timestamp to w
       return connectionWorker().getUpdatedSchema();
     }
 
@@ -255,6 +260,7 @@ public class StreamWriter implements AutoCloseable {
         client.close();
       }
     }
+    this.creationTimestamp = Instant.now();
   }
 
   @VisibleForTesting
@@ -396,9 +402,25 @@ public class StreamWriter implements AutoCloseable {
     return new StreamWriter.Builder(streamName);
   }
 
-  /** Thread-safe getter of updated TableSchema */
+  /**
+   * Thread-safe getter of updated TableSchema.
+   *
+   * <p>This will return the updated schema only when the creation timestamp of this writer is older
+   * than the updated schema.
+   */
   public synchronized TableSchema getUpdatedSchema() {
-    return singleConnectionOrConnectionPool.getUpdatedSchema();
+    TableSchemaAndTimestamp tableSchemaAndTimestamp =
+        singleConnectionOrConnectionPool.getUpdatedSchema(this);
+    if (tableSchemaAndTimestamp == null) {
+      return null;
+    }
+    return creationTimestamp.compareTo(tableSchemaAndTimestamp.updateTimeStamp()) < 0
+        ? tableSchemaAndTimestamp.updatedSchema()
+        : null;
+  }
+
+  Instant getCreationTimestamp() {
+    return creationTimestamp;
   }
 
   @VisibleForTesting

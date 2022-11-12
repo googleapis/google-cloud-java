@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
@@ -309,6 +310,16 @@ public class ConnectionWorkerPoolTest {
     // 5. Close write stream 2, all should be closed.
     connectionWorkerPool.close(writeStream2);
     assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void testToTableName() {
+    assertThat(ConnectionWorkerPool.toTableName("projects/p/datasets/d/tables/t/streams/s"))
+        .isEqualTo("projects/p/datasets/d/tables/t");
+
+    IllegalArgumentException ex =
+        assertThrows(
+            IllegalArgumentException.class, () -> ConnectionWorkerPool.toTableName("projects/p/"));
   }
 
   private AppendRowsResponse createAppendResponse(long offset) {

@@ -19,6 +19,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
@@ -33,6 +34,7 @@ import com.google.cloud.bigquery.storage.test.SchemaTest;
 import com.google.cloud.bigquery.storage.test.Test.FlexibleType;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
+import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema.Mode;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
@@ -62,6 +64,7 @@ import org.threeten.bp.LocalTime;
 public class JsonStreamWriterTest {
   private static final Logger LOG = Logger.getLogger(JsonStreamWriterTest.class.getName());
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/s";
+  private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/s2";
   private static final String TEST_TABLE = "projects/p/datasets/d/tables/t";
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
@@ -77,8 +80,6 @@ public class JsonStreamWriterTest {
           .setMode(TableFieldSchema.Mode.NULLABLE)
           .setName("foo")
           .build();
-  private final TableSchema TABLE_SCHEMA = TableSchema.newBuilder().addFields(0, FOO).build();
-
   private final TableFieldSchema BAR =
       TableFieldSchema.newBuilder()
           .setType(TableFieldSchema.Type.STRING)
@@ -91,10 +92,24 @@ public class JsonStreamWriterTest {
           .setMode(TableFieldSchema.Mode.NULLABLE)
           .setName("baz")
           .build();
+
+  private final TableSchema TABLE_SCHEMA = TableSchema.newBuilder().addFields(0, FOO).build();
+  private final TableSchema TABLE_SCHEMA_2 = TableSchema.newBuilder().addFields(0, BAZ).build();
+
   private final TableSchema UPDATED_TABLE_SCHEMA =
       TableSchema.newBuilder().addFields(0, FOO).addFields(1, BAR).build();
   private final TableSchema UPDATED_TABLE_SCHEMA_2 =
       TableSchema.newBuilder().addFields(0, FOO).addFields(1, BAR).addFields(2, BAZ).build();
+  private final ProtoSchema PROTO_SCHEMA =
+      ProtoSchemaConverter.convert(
+          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(TABLE_SCHEMA));
+  private final ProtoSchema PROTO_SCHEMA_2 =
+      ProtoSchemaConverter.convert(
+          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(TABLE_SCHEMA_2));
+  private final ProtoSchema UPDATED_PROTO_SCHEMA =
+      ProtoSchemaConverter.convert(
+          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(
+              UPDATED_TABLE_SCHEMA));
 
   private final TableFieldSchema TEST_INT =
       TableFieldSchema.newBuilder()
@@ -108,6 +123,8 @@ public class JsonStreamWriterTest {
           .setMode(TableFieldSchema.Mode.REPEATED)
           .setName("test_string")
           .build();
+
+  public JsonStreamWriterTest() throws DescriptorValidationException {}
 
   @Before
   public void setUp() throws Exception {
@@ -128,6 +145,7 @@ public class JsonStreamWriterTest {
     Instant time = Instant.now();
     Timestamp timestamp =
         Timestamp.newBuilder().setSeconds(time.getEpochSecond()).setNanos(time.getNano()).build();
+    StreamWriter.cleanUp();
   }
 
   @After
@@ -518,21 +536,9 @@ public class JsonStreamWriterTest {
                   AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
               .setUpdatedSchema(UPDATED_TABLE_SCHEMA)
               .build());
-      testBigQueryWrite.addResponse(
-          AppendRowsResponse.newBuilder()
-              .setAppendResult(
-                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
-              .build());
-      testBigQueryWrite.addResponse(
-          AppendRowsResponse.newBuilder()
-              .setAppendResult(
-                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(2)).build())
-              .build());
-      testBigQueryWrite.addResponse(
-          AppendRowsResponse.newBuilder()
-              .setAppendResult(
-                  AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(3)).build())
-              .build());
+      testBigQueryWrite.addResponse(createAppendResponse(1));
+      testBigQueryWrite.addResponse(createAppendResponse(2));
+      testBigQueryWrite.addResponse(createAppendResponse(3));
       // First append
       JSONObject foo = new JSONObject();
       foo.put("foo", "aaa");
@@ -685,6 +691,252 @@ public class JsonStreamWriterTest {
       ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
       appendFuture.get();
     }
+  }
+
+  @Test
+  public void testSchemaUpdateInMultiplexing_singleConnection() throws Exception {
+    // Set min connection count to be 1 to force sharing connection.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    // The following two writers have different stream name and schema, but will share the same
+    // connection .
+    JsonStreamWriter writer1 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+    JsonStreamWriter writer2 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM_2, TABLE_SCHEMA_2)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .setUpdatedSchema(UPDATED_TABLE_SCHEMA)
+            .setWriteStream(TEST_STREAM)
+            .build());
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+    testBigQueryWrite.addResponse(createAppendResponse(2));
+    testBigQueryWrite.addResponse(createAppendResponse(3));
+    // Append request with old schema for writer 1.
+    JSONObject foo = new JSONObject();
+    foo.put("foo", "aaa");
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+
+    // Append request with old schema for writer 2.
+    JSONObject baz = new JSONObject();
+    baz.put("baz", "bbb");
+    JSONArray jsonArr2 = new JSONArray();
+    jsonArr2.put(baz);
+
+    // Append request with new schema.
+    JSONObject updatedFoo = new JSONObject();
+    updatedFoo.put("foo", "aaa");
+    updatedFoo.put("bar", "bbb");
+    JSONArray updatedJsonArr = new JSONArray();
+    updatedJsonArr.put(updatedFoo);
+
+    // This append will trigger new schema update.
+    ApiFuture<AppendRowsResponse> appendFuture1 = writer1.append(jsonArr);
+    // This append be put onto the same connection as the first one.
+    ApiFuture<AppendRowsResponse> appendFuture2 = writer2.append(jsonArr2);
+
+    // Sleep for a small period of time to make sure the updated schema is stored.
+    Sleeper.DEFAULT.sleep(300);
+    // Back to writer1 here, we are expected to use the updated schema already.
+    // Both of the following append will be parsed correctly.
+    ApiFuture<AppendRowsResponse> appendFuture3 = writer1.append(updatedJsonArr);
+    ApiFuture<AppendRowsResponse> appendFuture4 = writer1.append(jsonArr);
+
+    assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
+    assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
+    assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
+
+    // The 1st schema comes from writer1's initial schema
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(0).getProtoRows().getWriterSchema(),
+        PROTO_SCHEMA);
+    // The 2nd schema comes from writer2's initial schema
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(1).getProtoRows().getWriterSchema(),
+        PROTO_SCHEMA_2);
+    // The 3rd schema comes from writer1's updated schema
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(2).getProtoRows().getWriterSchema(),
+        UPDATED_PROTO_SCHEMA);
+    // The 4th schema should be empty as schema update is already done for writer 1.
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(3).getProtoRows().getWriterSchema(),
+        ProtoSchema.getDefaultInstance());
+    writer1.close();
+    writer2.close();
+  }
+
+  @Test
+  public void testSchemaUpdateInMultiplexing_multipleWriterForSameStreamName() throws Exception {
+    // Set min connection count to be 1 to force sharing connection.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+
+    // Create two writers writing to the same stream.
+    JsonStreamWriter writer1 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+    JsonStreamWriter writer2 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+
+    // Trigger schema update in the second request.
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
+            .setUpdatedSchema(UPDATED_TABLE_SCHEMA)
+            .setWriteStream(TEST_STREAM)
+            .build());
+    testBigQueryWrite.addResponse(createAppendResponse(2));
+    testBigQueryWrite.addResponse(createAppendResponse(3));
+    // Append request with old schema.
+    JSONObject foo = new JSONObject();
+    foo.put("foo", "aaa");
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+
+    // Append request with new schema.
+    JSONObject updatedFoo = new JSONObject();
+    updatedFoo.put("foo", "aaa");
+    updatedFoo.put("bar", "bbb");
+    JSONArray updatedJsonArr = new JSONArray();
+    updatedJsonArr.put(updatedFoo);
+
+    // Normal append, nothing happens
+    ApiFuture<AppendRowsResponse> appendFuture1 = writer1.append(jsonArr);
+    // This append triggers updated schema
+    ApiFuture<AppendRowsResponse> appendFuture2 = writer2.append(jsonArr);
+
+    // Sleep for a small period of time to make sure the updated schema is stored.
+    Sleeper.DEFAULT.sleep(300);
+    // From now on everyone should be able to use the new schema.
+    ApiFuture<AppendRowsResponse> appendFuture3 = writer1.append(updatedJsonArr);
+    ApiFuture<AppendRowsResponse> appendFuture4 = writer2.append(updatedJsonArr);
+
+    assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
+    assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
+    assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
+
+    // The 1st schema comes from writer1's initial schema
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(0).getProtoRows().getWriterSchema(),
+        PROTO_SCHEMA);
+    // The 2nd append trigger no schema change.
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(1).getProtoRows().getWriterSchema(),
+        ProtoSchema.getDefaultInstance());
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(2).getProtoRows().getWriterSchema(),
+        UPDATED_PROTO_SCHEMA);
+    // The next request after schema update will back to empty.
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(3).getProtoRows().getWriterSchema(),
+        ProtoSchema.getDefaultInstance());
+    writer1.close();
+    writer2.close();
+  }
+
+  @Test
+  public void testSchemaUpdateInMultiplexing_IgnoreUpdateIfTimeStampNewer() throws Exception {
+    // Set min connection count to be 1 to force sharing connection.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder().setMinConnectionsPerRegion(1).setMaxConnectionsPerRegion(1).build());
+    // The following two writers have different stream name and schema, but will share the same
+    // connection .
+    JsonStreamWriter writer1 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
+            .setUpdatedSchema(UPDATED_TABLE_SCHEMA)
+            .setWriteStream(TEST_STREAM)
+            .build());
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+    testBigQueryWrite.addResponse(createAppendResponse(2));
+    testBigQueryWrite.addResponse(createAppendResponse(3));
+    // Append request with old schema for writer 1.
+    JSONObject foo = new JSONObject();
+    foo.put("foo", "aaa");
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+
+    // Append request with old schema for writer 2.
+    JSONObject baz = new JSONObject();
+    baz.put("baz", "bbb");
+    JSONArray jsonArr2 = new JSONArray();
+    jsonArr2.put(baz);
+
+    // Append request with new schema.
+    JSONObject updatedFoo = new JSONObject();
+    updatedFoo.put("foo", "aaa");
+    updatedFoo.put("bar", "bbb");
+    JSONArray updatedJsonArr = new JSONArray();
+    updatedJsonArr.put(updatedFoo);
+
+    // This append will trigger new schema update.
+    ApiFuture<AppendRowsResponse> appendFuture1 = writer1.append(jsonArr);
+    // Sleep for a small period of time to make sure the updated schema is stored.
+    Sleeper.DEFAULT.sleep(300);
+    // Write to writer 1 again, new schema should be used.
+    // The following two append will succeeds.
+    ApiFuture<AppendRowsResponse> appendFuture2 = writer1.append(updatedJsonArr);
+    ApiFuture<AppendRowsResponse> appendFuture3 = writer1.append(jsonArr);
+
+    // Second phase of the test: create another writer.
+    // Expect the append went through without using the updated schema
+    JsonStreamWriter writer2 =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA_2)
+            .setEnableConnectionPool(true)
+            .setLocation("us")
+            .build();
+    ApiFuture<AppendRowsResponse> appendFuture4 = writer2.append(jsonArr2);
+
+    assertEquals(0L, appendFuture1.get().getAppendResult().getOffset().getValue());
+    assertEquals(1L, appendFuture2.get().getAppendResult().getOffset().getValue());
+    assertEquals(2L, appendFuture3.get().getAppendResult().getOffset().getValue());
+    assertEquals(3L, appendFuture4.get().getAppendResult().getOffset().getValue());
+
+    // The 1st schema comes from writer1's initial schema
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(0).getProtoRows().getWriterSchema(),
+        PROTO_SCHEMA);
+    // The 2nd schema comes from updated schema
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(1).getProtoRows().getWriterSchema(),
+        UPDATED_PROTO_SCHEMA);
+    // No new schema.
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(2).getProtoRows().getWriterSchema(),
+        ProtoSchema.getDefaultInstance());
+    // The 4th schema come from the
+    assertEquals(
+        testBigQueryWrite.getAppendRequests().get(3).getProtoRows().getWriterSchema(),
+        PROTO_SCHEMA_2);
+    writer1.close();
+    writer2.close();
   }
 
   @Test
@@ -885,5 +1137,12 @@ public class JsonStreamWriterTest {
     JsonStreamWriter writer2 = getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build();
     Assert.assertFalse(writer2.getWriterId().isEmpty());
     Assert.assertNotEquals(writer1.getWriterId(), writer2.getWriterId());
+  }
+
+  private AppendRowsResponse createAppendResponse(long offset) {
+    return AppendRowsResponse.newBuilder()
+        .setAppendResult(
+            AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(offset)).build())
+        .build();
   }
 }
