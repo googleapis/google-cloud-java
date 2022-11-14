@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.10](https://github.com/googleapis/java-iam/compare/v1.6.9...v1.6.10) (2022-11-14)
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20221108-2.0.0 ([#514](https://github.com/googleapis/java-iam/issues/514)) ([c754e5a](https://github.com/googleapis/java-iam/commit/c754e5af64a4e67c9fd8b3db8019e208f39da3ba))
+* Update dependency com.google.cloud:google-iam-policy to v1.6.9 ([#513](https://github.com/googleapis/java-iam/issues/513)) ([e7e1836](https://github.com/googleapis/java-iam/commit/e7e18368d573f333057faead618bc24ad2199e6c))
+
 ## [1.6.9](https://github.com/googleapis/java-iam/compare/v1.6.8...v1.6.9) (2022-11-09)
 
 
