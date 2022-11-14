@@ -329,9 +329,6 @@ proto-google-cloud-life-sciences-v2beta:0.7.0:0.7.1-SNAPSHOT
 google-cloud-managed-identities:1.3.0:1.3.1-SNAPSHOT
 grpc-google-cloud-managed-identities-v1:1.3.0:1.3.1-SNAPSHOT
 proto-google-cloud-managed-identities-v1:1.3.0:1.3.1-SNAPSHOT
-google-maps-routing:0.0.0:0.0.1-SNAPSHOT
-proto-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
-grpc-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
 google-cloud-mediatranslation:0.11.0:0.11.1-SNAPSHOT
 grpc-google-cloud-mediatranslation-v1beta1:0.11.0:0.11.1-SNAPSHOT
 proto-google-cloud-mediatranslation-v1beta1:0.11.0:0.11.1-SNAPSHOT
