@@ -1,6 +1,4 @@
 primaryBranch: main
 releaseType: java-yoshi
-versioning: always-bump-patch
+versioning: always-bump-minor
 handleGHRelease: true
-
-
