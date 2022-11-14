@@ -158,7 +158,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://cloud.google.com/web-risk/docs/
-[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-webrisk/latest/history
+[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-webrisk/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-webrisk/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-webrisk/java7.html
 [kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-webrisk/java8.svg

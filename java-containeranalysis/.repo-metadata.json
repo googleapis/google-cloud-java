@@ -2,7 +2,7 @@
   "api_shortname": "containeranalysis",
   "name_pretty": "Cloud Container Analysis",
   "product_documentation": "https://cloud.google.com/container-registry/docs/container-analysis",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-containeranalysis/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-containeranalysis/latest/overview",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
   "release_level": "stable",
   "language": "java",

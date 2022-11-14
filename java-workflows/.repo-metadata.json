@@ -3,7 +3,7 @@
     "name_pretty": "Cloud Workflows",
     "product_documentation": "https://cloud.google.com/workflows",
     "api_description": "allows you to ochestrate and automate Google Cloud and HTTP-based API services with serverless workflows.",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-workflows/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-workflows/latest/overview",
     "release_level": "stable",
     "transport": "grpc",
     "language": "java",
