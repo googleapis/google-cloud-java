@@ -23,10 +23,13 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.Exceptions;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.cloud.bigquery.storage.v1.Exceptions.StorageException;
 import com.google.cloud.bigquery.storage.v1.JsonStreamWriter;
 import com.google.cloud.bigquery.storage.v1.TableName;
@@ -37,6 +40,7 @@ import com.google.protobuf.Descriptors.DescriptorValidationException;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.Phaser;
 import javax.annotation.concurrent.GuardedBy;
 import org.json.JSONArray;
@@ -69,7 +73,11 @@ public class WriteToDefaultStream {
       JSONArray jsonArr = new JSONArray();
       for (int j = 0; j < 10; j++) {
         JSONObject record = new JSONObject();
-        record.put("test_string", String.format("record %03d-%03d", i, j));
+        StringBuilder sbSuffix = new StringBuilder();
+        for (int k = 0; k < j; k++) {
+          sbSuffix.append(k);
+        }
+        record.put("test_string", String.format("record %03d-%03d %s", i, j, sbSuffix.toString()));
         jsonArr.put(record);
       }
 
@@ -78,7 +86,29 @@ public class WriteToDefaultStream {
 
     // Final cleanup for the stream during worker teardown.
     writer.cleanup();
+    verifyExpectedRowCount(parentTable, 12);
     System.out.println("Appended records successfully.");
+  }
+
+  private static void verifyExpectedRowCount(TableName parentTable, int expectedRowCount)
+      throws InterruptedException {
+    String queryRowCount =
+        "SELECT COUNT(*) FROM `"
+            + parentTable.getProject()
+            + "."
+            + parentTable.getDataset()
+            + "."
+            + parentTable.getTable()
+            + "`";
+    QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(queryRowCount).build();
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    TableResult results = bigquery.query(queryConfig);
+    int countRowsActual =
+        Integer.parseInt(results.getValues().iterator().next().get("f0_").getStringValue());
+    if (countRowsActual != expectedRowCount) {
+      throw new RuntimeException(
+          "Unexpected row count. Expected: " + expectedRowCount + ". Actual: " + countRowsActual);
+    }
   }
 
   private static class AppendContext {
@@ -170,7 +200,7 @@ public class WriteToDefaultStream {
       }
 
       public void onSuccess(AppendRowsResponse response) {
-        System.out.format("Append success\n");
+        System.out.format("Append success%n");
         done();
       }
 
@@ -182,16 +212,56 @@ public class WriteToDefaultStream {
         if (appendContext.retryCount < MAX_RETRY_COUNT
             && RETRIABLE_ERROR_CODES.contains(status.getCode())) {
           appendContext.retryCount++;
-          try {
-            // Since default stream appends are not ordered, we can simply retry the appends.
-            // Retrying with exclusive streams requires more careful consideration.
-            this.parent.append(appendContext);
-            // Mark the existing attempt as done since it's being retried.
+          // Use a separate thread to avoid potentially blocking while we are in a callback.
+          new Thread(
+                  () -> {
+                    try {
+                      // Since default stream appends are not ordered, we can simply retry the
+                      // appends.
+                      // Retrying with exclusive streams requires more careful consideration.
+                      this.parent.append(appendContext);
+                    } catch (Exception e) {
+                      // Fall through to return error.
+                      System.out.format("Failed to retry append: %s%n", e);
+                    }
+                  })
+              .start();
+          // Mark the existing attempt as done since it's being retried.
+          done();
+          return;
+        }
+
+        if (throwable instanceof AppendSerializtionError) {
+          AppendSerializtionError ase = (AppendSerializtionError) throwable;
+          Map<Integer, String> rowIndexToErrorMessage = ase.getRowIndexToErrorMessage();
+          if (rowIndexToErrorMessage.size() > 0) {
+            // Omit the faulty rows
+            JSONArray dataNew = new JSONArray();
+            for (int i = 0; i < appendContext.data.length(); i++) {
+              if (!rowIndexToErrorMessage.containsKey(i)) {
+                dataNew.put(appendContext.data.get(i));
+              } else {
+                // process faulty rows by placing them on a dead-letter-queue, for instance
+              }
+            }
+
+            // Mark the existing attempt as done since we got a response for it
             done();
+
+            // Retry the remaining valid rows, but using a separate thread to
+            // avoid potentially blocking while we are in a callback.
+            if (dataNew.length() > 0) {
+              new Thread(
+                      () -> {
+                        try {
+                          this.parent.append(new AppendContext(dataNew, 0));
+                        } catch (Exception e2) {
+                          System.out.format("Failed to retry append with filtered rows: %s%n", e2);
+                        }
+                      })
+                  .start();
+            }
             return;
-          } catch (Exception e) {
-            // Fall through to return error.
-            System.out.format("Failed to retry append: %s\n", e);
           }
         }
 
@@ -202,7 +272,7 @@ public class WriteToDefaultStream {
                 (storageException != null) ? storageException : new RuntimeException(throwable);
           }
         }
-        System.out.format("Error: %s\n", throwable);
+        System.out.format("Error that arrived: %s%n", throwable);
         done();
       }
 
