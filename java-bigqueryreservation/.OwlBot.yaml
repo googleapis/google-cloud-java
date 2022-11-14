@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-bigqueryreservation/grpc-google-.*/src"
 - "/java-bigqueryreservation/proto-google-.*/src"
 - "/java-bigqueryreservation/google-.*/src"
+- "/java-bigqueryreservation/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-bigqueryreservation/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-bigqueryreservation/$1/grpc-google-cloud-bigqueryreservation-$1/src"
 - source: "/google/cloud/bigquery/reservation/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigqueryreservation/$1/google-cloud-bigqueryreservation/src"
+- source: "/google/cloud/./java-bigqueryreservation/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-bigqueryreservation/$1/samples/snippets/generated"
 
 api-name: bigqueryreservation

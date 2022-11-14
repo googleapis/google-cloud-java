@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-area120-tables/grpc-google-.*/src"
 - "/java-area120-tables/proto-google-.*/src"
 - "/java-area120-tables/google-.*/src"
+- "/java-area120-tables/samples/snippets/generated"
 
 deep-copy-regex:
 - source: "/google/area120/tables/(v.*)/.*-java/proto-google-.*/src"
@@ -25,5 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-area120-tables/$1/grpc-google-area120-tables-$1/src"
 - source: "/google/area120/tables/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-area120-tables/$1/google-area120-tables/src"
+- source: "/google/cloud/./java-area120-tables/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-area120-tables/$1/samples/snippets/generated"
 
 api-name: area120tables

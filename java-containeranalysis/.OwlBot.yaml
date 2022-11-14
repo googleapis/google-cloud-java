@@ -12,12 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
 deep-remove-regex:
 - "/java-containeranalysis/grpc-google-cloud-containeranalysis-v1/src"
 - "/java-containeranalysis/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1"
+- "/java-containeranalysis/samples/snippets/generated"
 - "/java-containeranalysis/proto-google-cloud-containeranalysis-v1/src"
-
 # TODO: remove resource name classes in next major update
+
 deep-preserve-regex:
 - "/java-containeranalysis/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-containeranalysis/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1beta1"
@@ -32,4 +34,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-containeranalysis/v1/grpc-google-cloud-containeranalysis-v1/src"
 - source: "/google/devtools/containeranalysis/v1/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-containeranalysis/v1/google-cloud-containeranalysis/src"
+
 api-name: containeranalysis

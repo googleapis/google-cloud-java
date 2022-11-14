@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-bigqueryconnection/grpc-google-.*/src"
 - "/java-bigqueryconnection/proto-google-.*/src"
 - "/java-bigqueryconnection/google-.*/src"
+- "/java-bigqueryconnection/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-bigqueryconnection/google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java"
@@ -30,5 +31,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-bigqueryconnection/$1/grpc-google-cloud-bigqueryconnection-$1/src"
 - source: "/google/cloud/bigquery/connection/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigqueryconnection/$1/google-cloud-bigqueryconnection/src"
+- source: "/google/cloud/./java-bigqueryconnection/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-bigqueryconnection/$1/samples/snippets/generated"
 
 api-name: bigqueryconnection

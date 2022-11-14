@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-bigquery-data-exchange/grpc-google-.*/src"
 - "/java-bigquery-data-exchange/proto-google-.*/src"
 - "/java-bigquery-data-exchange/google-.*/src"
+- "/java-bigquery-data-exchange/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-bigquery-data-exchange/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-bigquery-data-exchange/$1/grpc-google-cloud-bigquery-data-exchange-$1/src"
 - source: "/google/cloud/bigquery/dataexchange/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigquery-data-exchange/$1/google-cloud-bigquery-data-exchange/src"
+- source: "/google/cloud/./java-bigquery-data-exchange/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-bigquery-data-exchange/$1/samples/snippets/generated"
 
 api-name: analyticshub

@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-beyondcorp-clientgateways/grpc-google-.*/src"
 - "/java-beyondcorp-clientgateways/proto-google-.*/src"
 - "/java-beyondcorp-clientgateways/google-.*/src"
+- "/java-beyondcorp-clientgateways/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-beyondcorp-clientgateways/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-beyondcorp-clientgateways/$1/grpc-google-cloud-beyondcorp-clientgateways-$1/src"
 - source: "/google/cloud/beyondcorp/clientgateways/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-beyondcorp-clientgateways/$1/google-cloud-beyondcorp-clientgateways/src"
+- source: "/google/cloud/./java-beyondcorp-clientgateways/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-beyondcorp-clientgateways/$1/samples/snippets/generated"
 
 api-name: beyondcorp-clientgateways

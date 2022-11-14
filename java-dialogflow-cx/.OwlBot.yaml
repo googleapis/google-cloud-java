@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-dialogflow-cx/grpc-google-.*/src"
 - "/java-dialogflow-cx/proto-google-.*/src"
 - "/java-dialogflow-cx/google-.*/src"
+- "/java-dialogflow-cx/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-dialogflow-cx/google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-dialogflow-cx/$1/grpc-google-cloud-dialogflow-cx-$1/src"
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-dialogflow-cx/$1/google-cloud-dialogflow-cx/src"
+- source: "/google/cloud/./java-dialogflow-cx/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-dialogflow-cx/$1/samples/snippets/generated"
 
 api-name: dialogflow-cx

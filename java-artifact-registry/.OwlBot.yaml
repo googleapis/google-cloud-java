@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-artifact-registry/grpc-google-.*/src"
 - "/java-artifact-registry/proto-google-.*/src"
 - "/java-artifact-registry/google-.*/src"
+- "/java-artifact-registry/samples/snippets/generated"
 
 deep-copy-regex:
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/proto-google-.*/src"
@@ -25,5 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-artifact-registry/$1/grpc-google-cloud-artifact-registry-$1/src"
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-artifact-registry/$1/google-cloud-artifact-registry/src"
+- source: "/google/cloud/./java-artifact-registry/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-artifact-registry/$1/samples/snippets/generated"
 
 api-name: artifactregistry

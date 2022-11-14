@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-workflow-executions/grpc-google-.*/src"
 - "/java-workflow-executions/proto-google-.*/src"
 - "/java-workflow-executions/google-.*/src"
+- "/java-workflow-executions/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-workflow-executions/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-workflow-executions/$1/grpc-google-cloud-workflow-executions-$1/src"
 - source: "/google/cloud/workflows/executions/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-workflow-executions/$1/google-cloud-workflow-executions/src"
+- source: "/google/cloud/./java-workflow-executions/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-workflow-executions/$1/samples/snippets/generated"
 
 api-name: workflowexecutions

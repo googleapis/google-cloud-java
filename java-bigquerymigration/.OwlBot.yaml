@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-bigquerymigration/grpc-google-.*/src"
 - "/java-bigquerymigration/proto-google-.*/src"
 - "/java-bigquerymigration/google-.*/src"
+- "/java-bigquerymigration/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-bigquerymigration/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-bigquerymigration/$1/grpc-google-cloud-bigquerymigration-$1/src"
 - source: "/google/cloud/bigquery/migration/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigquerymigration/$1/google-cloud-bigquerymigration/src"
+- source: "/google/cloud/./java-bigquerymigration/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-bigquerymigration/$1/samples/snippets/generated"
 
 api-name: bigquerymigration

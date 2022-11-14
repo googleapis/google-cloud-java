@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-enterpriseknowledgegraph/grpc-google-.*/src"
 - "/java-enterpriseknowledgegraph/proto-google-.*/src"
 - "/java-enterpriseknowledgegraph/google-.*/src"
+- "/java-enterpriseknowledgegraph/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-enterpriseknowledgegraph/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,6 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-enterpriseknowledgegraph/$1/grpc-google-cloud-enterpriseknowledgegraph-$1/src"
 - source: "/google/cloud/enterpriseknowledgegraph/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-enterpriseknowledgegraph/$1/google-cloud-enterpriseknowledgegraph/src"
-
+- source: "/google/cloud/./java-enterpriseknowledgegraph/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-enterpriseknowledgegraph/$1/samples/snippets/generated"
 
 api-name: java-enterpriseknowledgegraph

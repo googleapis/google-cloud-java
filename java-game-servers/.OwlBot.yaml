@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-game-servers/grpc-google-.*/src"
 - "/java-game-servers/proto-google-.*/src"
 - "/java-game-servers/google-.*/src"
+- "/java-game-servers/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-game-servers/google-cloud-game-servers/src/test/java/com/google/cloud/gaming/v.*/it/ITSystemTest.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-game-servers/$1/grpc-google-cloud-game-servers-$1/src"
 - source: "/google/cloud/gaming/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-game-servers/$1/google-cloud-game-servers/src"
+- source: "/google/cloud/./java-game-servers/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-game-servers/$1/samples/snippets/generated"
 
 api-name: gameservices

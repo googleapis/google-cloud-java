@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-service-usage/grpc-google-.*/src"
 - "/java-service-usage/proto-google-.*/src"
 - "/java-service-usage/google-.*/src"
+- "/java-service-usage/samples/snippets/generated"
 
 deep-copy-regex:
 - source: "/google/api/serviceusage/(v.*)/.*-java/proto-google-.*/src"
@@ -25,4 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-service-usage/$1/grpc-google-cloud-service-usage-$1/src"
 - source: "/google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-service-usage/$1/google-cloud-service-usage/src"
+- source: "/google/cloud/./java-service-usage/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-service-usage/$1/samples/snippets/generated"
+
 api-name: serviceusage

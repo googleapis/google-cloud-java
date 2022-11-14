@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-aiplatform/grpc-google-.*/src"
 - "/java-aiplatform/proto-google-.*/src"
 - "/java-aiplatform/google-.*/src/main/java/com/google/cloud/aiplatform/v1"
+- "/java-aiplatform/samples/snippets/generated"
 - "/java-aiplatform/google-.*/src/main/java/com/google/cloud/aiplatform/v1beta1"
 
 deep-copy-regex:
@@ -26,5 +27,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-aiplatform/$1/grpc-google-cloud-aiplatform-$1/src"
 - source: "/google/cloud/aiplatform/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-aiplatform/$1/google-cloud-aiplatform/src"
+- source: "/google/cloud/./java-aiplatform/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-aiplatform/$1/samples/snippets/generated"
 
 api-name: aiplatform

@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-maps-routing/grpc-google-.*/src"
 - "/java-maps-routing/proto-google-.*/src"
 - "/java-maps-routing/google-.*/src"
+- "/java-maps-routing/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-maps-routing/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,6 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-maps-routing/$1/grpc-google-maps-routing-$1/src"
 - source: "/google/maps/routing/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-maps-routing/$1/google-maps-routing/src"
-
+- source: "/google/cloud/./java-maps-routing/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-maps-routing/$1/samples/snippets/generated"
 
 api-name: java-maps-routing

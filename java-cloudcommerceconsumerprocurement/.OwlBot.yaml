@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-cloudcommerceconsumerprocurement/grpc-google-.*/src"
 - "/java-cloudcommerceconsumerprocurement/proto-google-.*/src"
 - "/java-cloudcommerceconsumerprocurement/google-.*/src"
+- "/java-cloudcommerceconsumerprocurement/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-cloudcommerceconsumerprocurement/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/grpc-google-cloud-cloudcommerceconsumerprocurement-$1/src"
 - source: "/google/cloud/commerce/consumer/procurement/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/google-cloud-cloudcommerceconsumerprocurement/src"
+- source: "/google/cloud/./java-cloudcommerceconsumerprocurement/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-cloudcommerceconsumerprocurement/$1/samples/snippets/generated"
 
 api-name: cloudcommerceconsumerprocurement

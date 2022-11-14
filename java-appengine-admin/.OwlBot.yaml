@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-appengine-admin/grpc-google-.*/src"
 - "/java-appengine-admin/proto-google-.*/src"
 - "/java-appengine-admin/google-.*/src"
+- "/java-appengine-admin/samples/snippets/generated"
 
 deep-copy-regex:
 - source: "/google/appengine/(v.*)/.*-java/proto-google-.*/src"
@@ -25,5 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-appengine-admin/$1/grpc-google-cloud-appengine-admin-$1/src"
 - source: "/google/appengine/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-appengine-admin/$1/google-cloud-appengine-admin/src"
+- source: "/google/cloud/./java-appengine-admin/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-appengine-admin/$1/samples/snippets/generated"
 
 api-name: appengine

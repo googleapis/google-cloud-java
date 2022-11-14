@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-video-stitcher/grpc-google-.*/src"
 - "/java-video-stitcher/proto-google-.*/src"
 - "/java-video-stitcher/google-.*/src"
+- "/java-video-stitcher/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-video-stitcher/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-video-stitcher/$1/grpc-google-cloud-video-stitcher-$1/src"
 - source: "/google/cloud/video/stitcher/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-video-stitcher/$1/google-cloud-video-stitcher/src"
+- source: "/google/cloud/./java-video-stitcher/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-video-stitcher/$1/samples/snippets/generated"
 
 api-name: videostitcher

@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-dataflow/grpc-google-.*/src"
 - "/java-dataflow/proto-google-.*/src"
 - "/java-dataflow/google-.*/src"
+- "/java-dataflow/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-dataflow/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,4 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-dataflow/$1/grpc-google-cloud-dataflow-$1/src"
 - source: "/google/dataflow/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-dataflow/$1/google-cloud-dataflow/src"
+- source: "/google/cloud/./java-dataflow/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-dataflow/$1/samples/snippets/generated"
+
 api-name: dataflow

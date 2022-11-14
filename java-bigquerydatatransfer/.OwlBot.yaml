@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-bigquerydatatransfer/grpc-google-.*/src"
 - "/java-bigquerydatatransfer/proto-google-.*/src"
 - "/java-bigquerydatatransfer/google-.*/src"
+- "/java-bigquerydatatransfer/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-bigquerydatatransfer/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -73,5 +74,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/grpc-google-cloud-bigquerydatatransfer-$1/src"
 - source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/google-cloud-bigquerydatatransfer/src"
+- source: "/google/cloud/./java-bigquerydatatransfer/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-bigquerydatatransfer/$1/samples/snippets/generated"
 
 api-name: bigquerydatatransfer

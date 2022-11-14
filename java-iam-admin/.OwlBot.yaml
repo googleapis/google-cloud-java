@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-iam-admin/grpc-google-.*/src"
 - "/java-iam-admin/proto-google-.*/src"
 - "/java-iam-admin/google-.*/src"
+- "/java-iam-admin/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-iam-admin/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-iam-admin/$1/grpc-google-iam-admin-$1/src"
 - source: "/google/iam/admin/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-iam-admin/$1/google-iam-admin/src"
+- source: "/google/cloud/./java-iam-admin/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-iam-admin/$1/samples/snippets/generated"
 
 api-name: iam-admin

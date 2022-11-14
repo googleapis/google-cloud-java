@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-beyondcorp-appconnections/grpc-google-.*/src"
 - "/java-beyondcorp-appconnections/proto-google-.*/src"
 - "/java-beyondcorp-appconnections/google-.*/src"
+- "/java-beyondcorp-appconnections/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-beyondcorp-appconnections/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-beyondcorp-appconnections/$1/grpc-google-cloud-beyondcorp-appconnections-$1/src"
 - source: "/google/cloud/beyondcorp/appconnections/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-beyondcorp-appconnections/$1/google-cloud-beyondcorp-appconnections/src"
+- source: "/google/cloud/./java-beyondcorp-appconnections/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-beyondcorp-appconnections/$1/samples/snippets/generated"
 
 api-name: beyondcorp-appconnections

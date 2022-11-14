@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-profiler/grpc-google-.*/src"
 - "/java-profiler/proto-google-.*/src"
 - "/java-profiler/google-.*/src"
+- "/java-profiler/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-profiler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-profiler/$1/grpc-google-cloud-profiler-$1/src"
 - source: "/google/devtools/cloudprofiler/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-profiler/$1/google-cloud-profiler/src"
+- source: "/google/cloud/./java-profiler/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-profiler/$1/samples/snippets/generated"
 
 api-name: cloudprofiler
