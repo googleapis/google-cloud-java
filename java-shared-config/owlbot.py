@@ -28,5 +28,6 @@ java.common_templates(
         ".github/workflows/auto-release.yaml",
         ".github/workflows/samples.yaml",
         "samples/*",
+        "renovate.json"
     ]
 )

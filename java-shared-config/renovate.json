@@ -68,6 +68,12 @@
         "^com.fasterxml.jackson.core"
       ],
       "groupName": "jackson dependencies"
+    },
+    {
+      "packagePatterns": [
+        "^org.graalvm.buildtools"
+      ],
+      "groupName": "GraalVM native-image dependencies"
     }
   ],
   "semanticCommits": true,
