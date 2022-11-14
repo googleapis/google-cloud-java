@@ -3,7 +3,7 @@
   "name_pretty": "Network Management API",
   "product_documentation": "https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/",
   "api_description": "provides a collection of network performance monitoring and diagnostic capabilities.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-network-management/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-network-management/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",

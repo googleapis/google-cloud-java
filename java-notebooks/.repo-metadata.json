@@ -3,7 +3,7 @@
     "name_pretty": "AI Platform Notebooks",
     "product_documentation": "https://cloud.google.com/ai-platform-notebooks",
     "api_description": "is a managed service that offers an integrated and secure JupyterLab environment for data scientists and machine learning developers to experiment, develop, and deploy models into production. Users can create instances running JupyterLab that come pre-installed with the latest data science and machine learning frameworks in a single click.",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-notebooks/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-notebooks/latest/overview",
     "release_level": "stable",
     "transport": "grpc",
     "language": "java",

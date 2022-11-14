@@ -3,7 +3,7 @@
   "name_pretty": "Certificate Manager",
   "product_documentation": "https://cloud.google.com/certificate-manager/docs",
   "api_description": "lets you acquire and manage TLS (SSL) certificates for use with Cloud Load Balancing.",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-certificate-manager/latest/index.html",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-certificate-manager/latest/overview",
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",

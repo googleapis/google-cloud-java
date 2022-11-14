@@ -3,7 +3,7 @@
   "name_pretty": "Binary Authorization",
   "product_documentation": "https://cloud.google.com/binary-authorization/docs",
   "api_description": " is a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-binary-authorization/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-binary-authorization/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",

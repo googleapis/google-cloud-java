@@ -2,7 +2,7 @@
     "api_shortname": "bigquerydatatransfer",
     "name_pretty": "BigQuery Data Transfer Service",
     "product_documentation": "https://cloud.google.com/bigquery/transfer/",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigquerydatatransfer/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigquerydatatransfer/latest/overview",
     "api_description": "transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559654",
     "release_level": "stable",

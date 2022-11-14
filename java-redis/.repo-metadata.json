@@ -2,7 +2,7 @@
     "api_shortname": "redis",
     "name_pretty": "Cloud Redis",
     "product_documentation": "https://cloud.google.com/memorystore/docs/redis/",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-redis/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-redis/latest/overview",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5169231",
     "release_level": "stable",
     "language": "java",

@@ -3,7 +3,7 @@
   "name_pretty": "BigQuery Migration",
   "product_documentation": "https://cloud.google.com/bigquery/docs",
   "api_description": "BigQuery Migration API",
-  "client_documentation": "https://googleapis.dev/java/google-cloud-bigquerymigration/latest/index.html",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-bigquerymigration/latest/overview",
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",

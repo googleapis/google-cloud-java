@@ -3,7 +3,7 @@
     "name_pretty": "Access Approval",
     "product_documentation": "https://cloud.google.com/access-approval/docs/",
     "api_description": "enables controlling access to your organization's data by Google personnel.",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-accessapproval/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-accessapproval/latest/overview",
     "release_level": "stable",
     "transport": "grpc",
     "requires_billing": true,

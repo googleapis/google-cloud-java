@@ -3,7 +3,7 @@
   "name_pretty": "Cloud Debugger",
   "product_documentation": "https://cloud.google.com/debugger/docs",
   "api_description": "is a feature of Google Cloud Platform that lets you inspect the state of an application, at any code location, without stopping or slowing down the running app. Cloud Debugger makes it easier to view the application state without adding logging statements.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-debugger-client/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-debugger-client/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",

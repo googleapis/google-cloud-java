@@ -3,7 +3,7 @@
   "name_pretty": "Storage Transfer Service",
   "product_documentation": "https://cloud.google.com/storage-transfer-service",
   "api_description": "Secure, low-cost services for transferring data from cloud or on-premises sources.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storage-transfer/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storage-transfer/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",

@@ -3,7 +3,7 @@
     "name_pretty": "Recommendations AI",
     "product_documentation": "https://cloud.google.com/recommendations-ai/",
     "api_description": "delivers highly personalized product recommendations at scale.",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-recommendations-ai/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-recommendations-ai/latest/overview",
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",

@@ -3,7 +3,7 @@
     "name_pretty": "Area 120 Tables",
     "product_documentation": "https://area120.google.com/",
     "api_description": "provides programmatic methods to the Area 120 Tables API.",
-    "client_documentation": "https://googleapis.dev/java/google-area120-tables/latest/index.html",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-area120-tables/latest/overview",
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",

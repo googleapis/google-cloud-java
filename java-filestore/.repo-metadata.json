@@ -3,7 +3,7 @@
   "name_pretty": "Cloud Filestore API",
   "product_documentation": "https://cloud.google.com/filestore/docs",
   "api_description": "instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.",
-  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-filestore/latest/history",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview",
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",

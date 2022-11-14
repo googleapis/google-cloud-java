@@ -2,7 +2,7 @@
     "api_shortname": "jobs",
     "name_pretty": "Talent Solution",
     "product_documentation": "https://cloud.google.com/solutions/talent-solution/",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-talent/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-talent/latest/overview",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559664",
     "release_level": "stable",
     "language": "java",

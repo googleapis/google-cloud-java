@@ -2,7 +2,7 @@
     "api_shortname": "cloudbilling",
     "name_pretty": "Cloud Billing",
     "product_documentation": "https://cloud.google.com/billing/docs",
-    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-billing/latest/history",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-billing/latest/overview",
     "api_description": "allows developers to manage their billing accounts or browse the catalog of SKUs and pricing.",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559770",
     "release_level": "stable",
