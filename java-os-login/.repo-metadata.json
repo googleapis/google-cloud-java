@@ -8,7 +8,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-os-login",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-os-login",
     "distribution_name": "com.google.cloud:google-cloud-os-login",
     "api_id": "oslogin.googleapis.com",

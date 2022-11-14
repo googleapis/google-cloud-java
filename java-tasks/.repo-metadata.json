@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5433985",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-tasks",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-tasks",
     "distribution_name": "com.google.cloud:google-cloud-tasks",
     "api_id": "cloudtasks.googleapis.com",

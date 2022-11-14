@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-appengine-admin",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-appengine-admin",
   "distribution_name": "com.google.cloud:google-cloud-appengine-admin",
   "api_id": "appengine.googleapis.com",

@@ -7,7 +7,7 @@
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-securitycenter-settings",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-securitycenter-settings",
     "distribution_name": "com.google.cloud:google-cloud-securitycenter-settings",
     "api_id": "securitycenter-settings.googleapis.com",

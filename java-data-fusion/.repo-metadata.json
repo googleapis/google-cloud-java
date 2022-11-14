@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-data-fusion",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-data-fusion",
   "distribution_name": "com.google.cloud:google-cloud-data-fusion",
   "api_id": "datafusion.googleapis.com",

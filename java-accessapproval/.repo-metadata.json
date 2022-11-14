@@ -8,7 +8,7 @@
     "transport": "grpc",
     "requires_billing": true,
     "language": "java",
-    "repo": "googleapis/java-accessapproval",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-accessapproval",
     "distribution_name": "com.google.cloud:google-cloud-accessapproval",
     "api_id": "accessapproval.googleapis.com",

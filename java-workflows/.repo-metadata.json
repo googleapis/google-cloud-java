@@ -7,7 +7,7 @@
     "release_level": "stable",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-workflows",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-workflows",
     "distribution_name": "com.google.cloud:google-cloud-workflows",
     "api_id": "workflows.googleapis.com",

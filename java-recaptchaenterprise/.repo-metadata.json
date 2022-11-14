@@ -6,7 +6,7 @@
     "issue_tracker": "",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-recaptchaenterprise",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-recaptchaenterprise",
     "distribution_name": "com.google.cloud:google-cloud-recaptchaenterprise",
     "api_id": "recaptchaenterprise.googleapis.com",

@@ -101,8 +101,7 @@ def client_for_repo(repo_slug) -> Optional[CloudClient]:
 def client_for_module(module) -> Optional[CloudClient]:
   with open ('%s/.repo-metadata.json' % module, "r") as metadata_file:
     data = json.load(metadata_file)
-    monorepo_module = data['repo'].replace('googleapis/', '')
-    data['repo'] = 'googleapis/google-cloud-java/tree/main/%s' % monorepo_module
+    data['repo'] = 'googleapis/google-cloud-java/tree/main/%s' % module
     return CloudClient(data)
 
 # These repositories are not meant as shown as Cloud SDK for Java

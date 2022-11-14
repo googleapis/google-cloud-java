@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-private-catalog",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-private-catalog",
   "distribution_name": "com.google.cloud:google-cloud-private-catalog",
   "api_id": "privatecatalog.googleapis.com",

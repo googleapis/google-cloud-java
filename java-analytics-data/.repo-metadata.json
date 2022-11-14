@@ -7,7 +7,7 @@
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-analytics-data",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-analytics-data",
     "distribution_name": "com.google.analytics:google-analytics-data",
     "api_id": "analytics-data.googleapis.com",

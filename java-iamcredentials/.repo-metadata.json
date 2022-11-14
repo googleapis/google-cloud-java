@@ -8,7 +8,7 @@
     "release_level": "stable",
     "language": "java",
     "transport": "grpc",
-    "repo": "googleapis/java-iamcredentials",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-iamcredentials",
     "distribution_name": "com.google.cloud:google-cloud-iamcredentials",
     "api_id": "iamcredentials.googleapis.com",

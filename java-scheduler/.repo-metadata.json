@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5411429",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-scheduler",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-scheduler",
     "distribution_name": "com.google.cloud:google-cloud-scheduler",
     "api_id": "cloudscheduler.googleapis.com",

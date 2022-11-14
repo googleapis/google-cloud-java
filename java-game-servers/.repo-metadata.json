@@ -6,7 +6,7 @@
     "issue_tracker": "",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-game-servers",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-game-servers",
     "distribution_name": "com.google.cloud:google-cloud-game-servers",
     "api_id": "gameservices.googleapis.com",

@@ -7,7 +7,7 @@
     "api_description": "n/a",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-grafeas",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-grafeas",
     "distribution_name": "io.grafeas:grafeas",
     "api_id": "",
