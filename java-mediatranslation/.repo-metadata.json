@@ -7,7 +7,7 @@
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-mediatranslation",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-mediatranslation",
     "distribution_name": "com.google.cloud:google-cloud-mediatranslation",
     "api_id": "mediatranslation.googleapis.com",

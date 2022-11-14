@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-aiplatform",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-aiplatform",
   "distribution_name": "com.google.cloud:google-cloud-aiplatform",
   "api_id": "aiplatform.googleapis.com",

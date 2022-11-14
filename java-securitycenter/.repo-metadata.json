@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559748",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-securitycenter",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-securitycenter",
     "distribution_name": "com.google.cloud:google-cloud-securitycenter",
     "api_id": "securitycenter.googleapis.com",

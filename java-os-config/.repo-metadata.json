@@ -7,7 +7,7 @@
     "release_level": "stable",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-os-config",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-os-config",
     "distribution_name": "com.google.cloud:google-cloud-os-config",
     "api_id": "os-config.googleapis.com",

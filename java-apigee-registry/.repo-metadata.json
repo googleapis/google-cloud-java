@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-apigee-registry",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-apigee-registry",
   "distribution_name": "com.google.cloud:google-cloud-apigee-registry",
   "api_id": "apigeeregistry.googleapis.com",

@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-bare-metal-solution",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-bare-metal-solution",
   "distribution_name": "com.google.cloud:google-cloud-bare-metal-solution",
   "api_id": "baremetalsolution.googleapis.com",

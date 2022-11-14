@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-network-management",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-network-management",
   "distribution_name": "com.google.cloud:google-cloud-network-management",
   "api_id": "networkmanagement.googleapis.com",

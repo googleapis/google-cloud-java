@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-beyondcorp-appgateways",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-beyondcorp-appgateways",
   "distribution_name": "com.google.cloud:google-cloud-beyondcorp-appgateways",
   "api_id": "beyondcorp.googleapis.com",

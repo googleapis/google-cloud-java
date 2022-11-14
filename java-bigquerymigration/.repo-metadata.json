@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-bigquerymigration",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-bigquerymigration",
   "distribution_name": "com.google.cloud:google-cloud-bigquerymigration",
   "api_id": "bigquerymigration.googleapis.com",

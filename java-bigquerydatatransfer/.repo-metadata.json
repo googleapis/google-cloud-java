@@ -7,7 +7,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559654",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-bigquerydatatransfer",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-bigquerydatatransfer",
     "distribution_name": "com.google.cloud:google-cloud-bigquerydatatransfer",
     "api_id": "bigquerydatatransfer.googleapis.com",

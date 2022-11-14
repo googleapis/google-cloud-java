@@ -7,7 +7,7 @@
     "release_level": "preview",
     "transport": "grpc",
     "language": "java",
-    "repo": "googleapis/java-recommendations-ai",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-recommendations-ai",
     "distribution_name": "com.google.cloud:google-cloud-recommendations-ai",
     "api_id": "recommendationengine.googleapis.com",

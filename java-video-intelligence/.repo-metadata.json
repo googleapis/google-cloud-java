@@ -7,7 +7,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5084810",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-video-intelligence",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-video-intelligence",
     "distribution_name": "com.google.cloud:google-cloud-video-intelligence",
     "api_id": "videointelligence.googleapis.com",

@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559745",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-dataproc",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-dataproc",
     "distribution_name": "com.google.cloud:google-cloud-dataproc",
     "codeowner_team": "@googleapis/api-dataproc",

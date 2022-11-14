@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-life-sciences",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-life-sciences",
   "distribution_name": "com.google.cloud:google-cloud-life-sciences",
   "api_id": "lifesciences.googleapis.com",

@@ -7,7 +7,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559770",
     "release_level": "stable",
     "language": "java",
-    "repo": "googleapis/java-billing",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-billing",
     "distribution_name": "com.google.cloud:google-cloud-billing",
     "api_id": "cloudbilling.googleapis.com",

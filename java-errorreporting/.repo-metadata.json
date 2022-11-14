@@ -6,7 +6,7 @@
     "issue_tracker": "https://issuetracker.google.com/savedsearches/559780",
     "release_level": "preview",
     "language": "java",
-    "repo": "googleapis/java-errorreporting",
+    "repo": "googleapis/google-cloud-java",
     "repo_short": "java-errorreporting",
     "distribution_name": "com.google.cloud:google-cloud-errorreporting",
     "api_id": "clouderrorreporting.googleapis.com",

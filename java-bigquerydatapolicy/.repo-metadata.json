@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-bigquerydatapolicy",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-bigquerydatapolicy",
   "distribution_name": "com.google.cloud:google-cloud-bigquerydatapolicy",
   "api_id": "bigquerydatapolicy.googleapis.com",

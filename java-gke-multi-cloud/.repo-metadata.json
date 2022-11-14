@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-gke-multi-cloud",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-gke-multi-cloud",
   "distribution_name": "com.google.cloud:google-cloud-gke-multi-cloud",
   "api_id": "gkemulticloud.googleapis.com",
