@@ -31,10 +31,28 @@ import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
 import com.google.common.collect.Sets;
+import java.util.Iterator;
 import java.util.Set;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ITSinkTest extends BaseSystemTest {
+
+  @BeforeClass
+  public static void setUp() {
+    // Cleanup all stucked sinks if any
+    Logging.ListOption[] options = {Logging.ListOption.pageSize(50)};
+    Page<Sink> sinkPage = logging.listSinks(options);
+    Iterator<Sink> iterator = sinkPage.iterateAll().iterator();
+    while (iterator.hasNext()) {
+      Sink sink = iterator.next();
+      try {
+        sink.delete();
+      } catch (Exception ex) {
+        System.err.println("ERROR: Failed to delete a " + sink.getName() + " sink, error: " + ex);
+      }
+    }
+  }
 
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
