@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-eventarc</artifactId>
-  <version>1.6.0</version><!-- {x-version-update:google-cloud-eventarc:current} -->
+  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc:current} -->
   <packaging>jar</packaging>
   <name>Google Eventarc</name>
   <description>Eventarc lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-eventarc-parent</artifactId>
-    <version>1.6.0</version><!-- {x-version-update:google-cloud-eventarc:current} -->
+    <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-eventarc</site.installationModule>
