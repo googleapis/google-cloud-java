@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-tpu-v1</artifactId>
-  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tpu-v1:current} -->
+  <version>2.7.0</version><!-- {x-version-update:proto-google-cloud-tpu-v1:current} -->
   <name>proto-google-cloud-tpu-v1</name>
   <description>Proto library for google-cloud-tpu</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-tpu-parent</artifactId>
-    <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+    <version>2.7.0</version><!-- {x-version-update:google-cloud-tpu:current} -->
   </parent>
   <dependencies>
     <dependency>
