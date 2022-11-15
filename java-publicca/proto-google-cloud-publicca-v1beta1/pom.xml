@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-publicca-v1beta1</artifactId>
-  <version>0.3.0</version><!-- {x-version-update:proto-google-cloud-publicca-v1beta1:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-publicca-v1beta1:current} -->
   <name>proto-google-cloud-publicca-v1beta1</name>
   <description>Proto library for google-cloud-publicca</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-publicca-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-cloud-publicca:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
   </parent>
   <dependencies>
     <dependency>
