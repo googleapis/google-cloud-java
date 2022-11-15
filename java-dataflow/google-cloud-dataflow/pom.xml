@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataflow</artifactId>
-  <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+  <version>0.10.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   <packaging>jar</packaging>
   <name>Google Dataflow</name>
   <description>Dataflow is a managed service for executing a wide variety of data processing patterns.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataflow-parent</artifactId>
-    <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataflow:current} -->
+    <version>0.10.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataflow</site.installationModule>
