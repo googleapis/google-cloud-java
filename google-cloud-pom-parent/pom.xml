@@ -3,8 +3,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" child.project.url.inherit.append.path="false">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>google-cloud-pom-parent</artifactId>
   <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-pom-parent</artifactId>
   <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
   <packaging>pom</packaging>
   <name>Google Cloud POM Parent</name>
