@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatapolicy</artifactId>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+  <version>0.3.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   <packaging>jar</packaging>
   <name>Google BigQuery DataPolicy API</name>
   <description>BigQuery DataPolicy API </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerydatapolicy-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerydatapolicy</site.installationModule>

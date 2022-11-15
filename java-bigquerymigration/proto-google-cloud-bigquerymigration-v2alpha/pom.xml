@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-bigquerymigration-v2alpha</artifactId>
-  <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
+  <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
   <name>proto-google-cloud-bigquerymigration-v2alpha</name>
   <description>Proto library for google-cloud-bigquerymigration</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerymigration-parent</artifactId>
-    <version>0.8.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
+    <version>0.9.0</version><!-- {x-version-update:google-cloud-bigquerymigration:current} -->
   </parent>
   <dependencies>
     <dependency>
