@@ -18,10 +18,21 @@ on:
     branches:
     - main
   pull_request:
-name: unmanaged versions check
+name: versions check
 jobs:
-  check:
+  unmanaged-versions-check:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - run: ./generation/check_non_release_please_versions.sh
+
+  # For Release Please pull requests, the artifacts being published must not
+  # have the duplicate versions in Maven Central
+  existing-versions-check:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
+    steps:
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - uses: actions/checkout@v3
+    - run: ./generation/check_existing_release_versions.sh
