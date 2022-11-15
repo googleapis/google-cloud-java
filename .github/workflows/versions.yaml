@@ -30,7 +30,7 @@ jobs:
   # have the duplicate versions in Maven Central
   existing-versions-check:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
+#    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
     steps:
     - uses: actions/checkout@v3
     - run: ./generation/check_existing_release_versions.sh
