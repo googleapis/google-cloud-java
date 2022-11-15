@@ -23,7 +23,7 @@ function find_existing_version_pom() {
     exit 1
   fi
   echo -n "Checking ${group_id}:${artifact_id}:${version}:"
-  if [[ "${version}" == *SNAPSHOT* ]]; then
+  if [[ "${version}" == *SNAPSHOT* ]] && [ "${artifact_id}" != "google-cloud-java" ]; then
     echo "Release Please pull request contains SNAPSHOT version"
     exit 1
   fi
@@ -42,7 +42,7 @@ function find_existing_version_pom() {
 
 return_code=0
 
-for pom_file in $(find . -maxdepth 3 -name pom.xml); do
+for pom_file in $(find . -maxdepth 3 -name pom.xml|sort --dictionary-order); do
   find_existing_version_pom "${pom_file}"
 done
 
