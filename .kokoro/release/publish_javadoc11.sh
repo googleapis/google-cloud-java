@@ -27,6 +27,8 @@ fi
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
+root_dir=$(pwd)
+
 python3 --version
 
 # install docuploader package
@@ -66,8 +68,8 @@ for module in "${modules[@]}"; do
     pushd $module
     # Extract Cloud RAD module name from `distribution_name` in .repo-metadata.json
     NAME=$(grep -o '"distribution_name": "[^"]*' .repo-metadata.json | grep -o '[^"]*$' | cut -d ':' -f 2)
-    # Extract (current) version from versions.txt and remove `-SNAPSHOT`
-    VERSION=$(grep "^${NAME}:" versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
+    # Extract (current) version from root `versions.txt` file and remove `-SNAPSHOT`
+    VERSION=$(grep "^${NAME}:" "${root_dir}/versions.txt" | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
     echo "Running for ${NAME}-${VERSION}"
 
     # Cloud RAD generation
