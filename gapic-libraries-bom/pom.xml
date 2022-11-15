@@ -984,7 +984,7 @@
         <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
       </dependency>
       <dependency>
-          <groupId>com.google.cloud</groupId>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-notification</artifactId>
         <version>0.123.22-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
       </dependency>
