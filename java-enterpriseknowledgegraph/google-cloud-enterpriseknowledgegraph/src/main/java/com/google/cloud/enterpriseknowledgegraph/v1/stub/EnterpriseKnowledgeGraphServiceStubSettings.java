@@ -50,6 +50,14 @@ import com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob;
 import com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -120,6 +128,12 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
       cancelEntityReconciliationJobSettings;
   private final UnaryCallSettings<DeleteEntityReconciliationJobRequest, Empty>
       deleteEntityReconciliationJobSettings;
+  private final UnaryCallSettings<LookupRequest, LookupResponse> lookupSettings;
+  private final UnaryCallSettings<SearchRequest, SearchResponse> searchSettings;
+  private final UnaryCallSettings<LookupPublicKgRequest, LookupPublicKgResponse>
+      lookupPublicKgSettings;
+  private final UnaryCallSettings<SearchPublicKgRequest, SearchPublicKgResponse>
+      searchPublicKgSettings;
 
   private static final PagedListDescriptor<
           ListEntityReconciliationJobsRequest,
@@ -233,6 +247,26 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
   public UnaryCallSettings<DeleteEntityReconciliationJobRequest, Empty>
       deleteEntityReconciliationJobSettings() {
     return deleteEntityReconciliationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to lookup. */
+  public UnaryCallSettings<LookupRequest, LookupResponse> lookupSettings() {
+    return lookupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to search. */
+  public UnaryCallSettings<SearchRequest, SearchResponse> searchSettings() {
+    return searchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to lookupPublicKg. */
+  public UnaryCallSettings<LookupPublicKgRequest, LookupPublicKgResponse> lookupPublicKgSettings() {
+    return lookupPublicKgSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchPublicKg. */
+  public UnaryCallSettings<SearchPublicKgRequest, SearchPublicKgResponse> searchPublicKgSettings() {
+    return searchPublicKgSettings;
   }
 
   public EnterpriseKnowledgeGraphServiceStub createStub() throws IOException {
@@ -354,6 +388,10 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
         settingsBuilder.cancelEntityReconciliationJobSettings().build();
     deleteEntityReconciliationJobSettings =
         settingsBuilder.deleteEntityReconciliationJobSettings().build();
+    lookupSettings = settingsBuilder.lookupSettings().build();
+    searchSettings = settingsBuilder.searchSettings().build();
+    lookupPublicKgSettings = settingsBuilder.lookupPublicKgSettings().build();
+    searchPublicKgSettings = settingsBuilder.searchPublicKgSettings().build();
   }
 
   /** Builder for EnterpriseKnowledgeGraphServiceStubSettings. */
@@ -375,6 +413,12 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
         cancelEntityReconciliationJobSettings;
     private final UnaryCallSettings.Builder<DeleteEntityReconciliationJobRequest, Empty>
         deleteEntityReconciliationJobSettings;
+    private final UnaryCallSettings.Builder<LookupRequest, LookupResponse> lookupSettings;
+    private final UnaryCallSettings.Builder<SearchRequest, SearchResponse> searchSettings;
+    private final UnaryCallSettings.Builder<LookupPublicKgRequest, LookupPublicKgResponse>
+        lookupPublicKgSettings;
+    private final UnaryCallSettings.Builder<SearchPublicKgRequest, SearchPublicKgResponse>
+        searchPublicKgSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -386,6 +430,7 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -413,6 +458,8 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -429,6 +476,10 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
           PagedCallSettings.newBuilder(LIST_ENTITY_RECONCILIATION_JOBS_PAGE_STR_FACT);
       cancelEntityReconciliationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEntityReconciliationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      lookupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      lookupPublicKgSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchPublicKgSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -436,7 +487,11 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
               getEntityReconciliationJobSettings,
               listEntityReconciliationJobsSettings,
               cancelEntityReconciliationJobSettings,
-              deleteEntityReconciliationJobSettings);
+              deleteEntityReconciliationJobSettings,
+              lookupSettings,
+              searchSettings,
+              lookupPublicKgSettings,
+              searchPublicKgSettings);
       initDefaults(this);
     }
 
@@ -452,6 +507,10 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
           settings.cancelEntityReconciliationJobSettings.toBuilder();
       deleteEntityReconciliationJobSettings =
           settings.deleteEntityReconciliationJobSettings.toBuilder();
+      lookupSettings = settings.lookupSettings.toBuilder();
+      searchSettings = settings.searchSettings.toBuilder();
+      lookupPublicKgSettings = settings.lookupPublicKgSettings.toBuilder();
+      searchPublicKgSettings = settings.searchPublicKgSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -459,7 +518,11 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
               getEntityReconciliationJobSettings,
               listEntityReconciliationJobsSettings,
               cancelEntityReconciliationJobSettings,
-              deleteEntityReconciliationJobSettings);
+              deleteEntityReconciliationJobSettings,
+              lookupSettings,
+              searchSettings,
+              lookupPublicKgSettings,
+              searchPublicKgSettings);
     }
 
     private static Builder createDefault() {
@@ -514,6 +577,26 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .lookupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .searchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .lookupPublicKgSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .searchPublicKgSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -563,6 +646,28 @@ public class EnterpriseKnowledgeGraphServiceStubSettings
     public UnaryCallSettings.Builder<DeleteEntityReconciliationJobRequest, Empty>
         deleteEntityReconciliationJobSettings() {
       return deleteEntityReconciliationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to lookup. */
+    public UnaryCallSettings.Builder<LookupRequest, LookupResponse> lookupSettings() {
+      return lookupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to search. */
+    public UnaryCallSettings.Builder<SearchRequest, SearchResponse> searchSettings() {
+      return searchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to lookupPublicKg. */
+    public UnaryCallSettings.Builder<LookupPublicKgRequest, LookupPublicKgResponse>
+        lookupPublicKgSettings() {
+      return lookupPublicKgSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchPublicKg. */
+    public UnaryCallSettings.Builder<SearchPublicKgRequest, SearchPublicKgResponse>
+        searchPublicKgSettings() {
+      return searchPublicKgSettings;
     }
 
     @Override

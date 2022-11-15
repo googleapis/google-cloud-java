@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-monitoring-dashboard:2.7.0:2.7.1-SNAPSHOT
-grpc-google-cloud-monitoring-dashboard-v1:2.7.0:2.7.1-SNAPSHOT
-proto-google-cloud-monitoring-dashboard-v1:2.7.0:2.7.1-SNAPSHOT

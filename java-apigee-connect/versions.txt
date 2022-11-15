@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-apigee-connect:2.5.0:2.5.1-SNAPSHOT
-grpc-google-cloud-apigee-connect-v1:2.5.0:2.5.1-SNAPSHOT
-proto-google-cloud-apigee-connect-v1:2.5.0:2.5.1-SNAPSHOT

@@ -31,6 +31,14 @@ import com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob;
 import com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -111,6 +119,48 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<LookupRequest, LookupResponse> lookupMethodDescriptor =
+      MethodDescriptor.<LookupRequest, LookupResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/Lookup")
+          .setRequestMarshaller(ProtoUtils.marshaller(LookupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(LookupResponse.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<SearchRequest, SearchResponse> searchMethodDescriptor =
+      MethodDescriptor.<SearchRequest, SearchResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/Search")
+          .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<LookupPublicKgRequest, LookupPublicKgResponse>
+      lookupPublicKgMethodDescriptor =
+          MethodDescriptor.<LookupPublicKgRequest, LookupPublicKgResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/LookupPublicKg")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(LookupPublicKgRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(LookupPublicKgResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SearchPublicKgRequest, SearchPublicKgResponse>
+      searchPublicKgMethodDescriptor =
+          MethodDescriptor.<SearchPublicKgRequest, SearchPublicKgResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/SearchPublicKg")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchPublicKgRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchPublicKgResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateEntityReconciliationJobRequest, EntityReconciliationJob>
       createEntityReconciliationJobCallable;
   private final UnaryCallable<GetEntityReconciliationJobRequest, EntityReconciliationJob>
@@ -125,6 +175,10 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
       cancelEntityReconciliationJobCallable;
   private final UnaryCallable<DeleteEntityReconciliationJobRequest, Empty>
       deleteEntityReconciliationJobCallable;
+  private final UnaryCallable<LookupRequest, LookupResponse> lookupCallable;
+  private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;
+  private final UnaryCallable<LookupPublicKgRequest, LookupPublicKgResponse> lookupPublicKgCallable;
+  private final UnaryCallable<SearchPublicKgRequest, SearchPublicKgResponse> searchPublicKgCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -232,6 +286,48 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<LookupRequest, LookupResponse> lookupTransportSettings =
+        GrpcCallSettings.<LookupRequest, LookupResponse>newBuilder()
+            .setMethodDescriptor(lookupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<SearchRequest, SearchResponse> searchTransportSettings =
+        GrpcCallSettings.<SearchRequest, SearchResponse>newBuilder()
+            .setMethodDescriptor(searchMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<LookupPublicKgRequest, LookupPublicKgResponse>
+        lookupPublicKgTransportSettings =
+            GrpcCallSettings.<LookupPublicKgRequest, LookupPublicKgResponse>newBuilder()
+                .setMethodDescriptor(lookupPublicKgMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<SearchPublicKgRequest, SearchPublicKgResponse>
+        searchPublicKgTransportSettings =
+            GrpcCallSettings.<SearchPublicKgRequest, SearchPublicKgResponse>newBuilder()
+                .setMethodDescriptor(searchPublicKgMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
 
     this.createEntityReconciliationJobCallable =
         callableFactory.createUnaryCallable(
@@ -263,6 +359,18 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
             deleteEntityReconciliationJobTransportSettings,
             settings.deleteEntityReconciliationJobSettings(),
             clientContext);
+    this.lookupCallable =
+        callableFactory.createUnaryCallable(
+            lookupTransportSettings, settings.lookupSettings(), clientContext);
+    this.searchCallable =
+        callableFactory.createUnaryCallable(
+            searchTransportSettings, settings.searchSettings(), clientContext);
+    this.lookupPublicKgCallable =
+        callableFactory.createUnaryCallable(
+            lookupPublicKgTransportSettings, settings.lookupPublicKgSettings(), clientContext);
+    this.searchPublicKgCallable =
+        callableFactory.createUnaryCallable(
+            searchPublicKgTransportSettings, settings.searchPublicKgSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -307,6 +415,26 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
   public UnaryCallable<DeleteEntityReconciliationJobRequest, Empty>
       deleteEntityReconciliationJobCallable() {
     return deleteEntityReconciliationJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupRequest, LookupResponse> lookupCallable() {
+    return lookupCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchRequest, SearchResponse> searchCallable() {
+    return searchCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupPublicKgRequest, LookupPublicKgResponse> lookupPublicKgCallable() {
+    return lookupPublicKgCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchPublicKgRequest, SearchPublicKgResponse> searchPublicKgCallable() {
+    return searchPublicKgCallable;
   }
 
   @Override

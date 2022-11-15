@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-maps-routing:0.0.0:0.0.1-SNAPSHOT
-proto-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
-grpc-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT

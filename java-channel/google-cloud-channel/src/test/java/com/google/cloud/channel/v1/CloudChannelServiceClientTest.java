@@ -2576,6 +2576,7 @@ public class CloudChannelServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .addAllParameterDefinitions(new ArrayList<ParameterDefinition>())
+            .setDealCode("dealCode509806713")
             .build();
     mockCloudChannelService.addResponse(expectedResponse);
 

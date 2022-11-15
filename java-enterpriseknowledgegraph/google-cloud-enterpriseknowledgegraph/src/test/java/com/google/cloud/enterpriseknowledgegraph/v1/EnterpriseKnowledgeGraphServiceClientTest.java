@@ -28,10 +28,13 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ListValue;
 import com.google.protobuf.Timestamp;
+import com.google.protobuf.Value;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -526,6 +529,350 @@ public class EnterpriseKnowledgeGraphServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteEntityReconciliationJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupTest() throws Exception {
+    LookupResponse expectedResponse =
+        LookupResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> ids = new ArrayList<>();
+
+    LookupResponse actualResponse = client.lookup(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupRequest actualRequest = ((LookupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(ids, actualRequest.getIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> ids = new ArrayList<>();
+      client.lookup(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupTest2() throws Exception {
+    LookupResponse expectedResponse =
+        LookupResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<String> ids = new ArrayList<>();
+
+    LookupResponse actualResponse = client.lookup(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupRequest actualRequest = ((LookupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(ids, actualRequest.getIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> ids = new ArrayList<>();
+      client.lookup(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchTest() throws Exception {
+    SearchResponse expectedResponse =
+        SearchResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String query = "query107944136";
+
+    SearchResponse actualResponse = client.search(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchRequest actualRequest = ((SearchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String query = "query107944136";
+      client.search(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchTest2() throws Exception {
+    SearchResponse expectedResponse =
+        SearchResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String query = "query107944136";
+
+    SearchResponse actualResponse = client.search(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchRequest actualRequest = ((SearchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String query = "query107944136";
+      client.search(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupPublicKgTest() throws Exception {
+    LookupPublicKgResponse expectedResponse =
+        LookupPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> ids = new ArrayList<>();
+
+    LookupPublicKgResponse actualResponse = client.lookupPublicKg(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupPublicKgRequest actualRequest = ((LookupPublicKgRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(ids, actualRequest.getIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupPublicKgExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> ids = new ArrayList<>();
+      client.lookupPublicKg(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lookupPublicKgTest2() throws Exception {
+    LookupPublicKgResponse expectedResponse =
+        LookupPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<String> ids = new ArrayList<>();
+
+    LookupPublicKgResponse actualResponse = client.lookupPublicKg(parent, ids);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LookupPublicKgRequest actualRequest = ((LookupPublicKgRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(ids, actualRequest.getIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lookupPublicKgExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> ids = new ArrayList<>();
+      client.lookupPublicKg(parent, ids);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchPublicKgTest() throws Exception {
+    SearchPublicKgResponse expectedResponse =
+        SearchPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String query = "query107944136";
+
+    SearchPublicKgResponse actualResponse = client.searchPublicKg(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchPublicKgRequest actualRequest = ((SearchPublicKgRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchPublicKgExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String query = "query107944136";
+      client.searchPublicKg(parent, query);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchPublicKgTest2() throws Exception {
+    SearchPublicKgResponse expectedResponse =
+        SearchPublicKgResponse.newBuilder()
+            .setContext(Value.newBuilder().setBoolValue(true).build())
+            .setType(Value.newBuilder().setBoolValue(true).build())
+            .setItemListElement(ListValue.newBuilder().build())
+            .build();
+    mockEnterpriseKnowledgeGraphService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String query = "query107944136";
+
+    SearchPublicKgResponse actualResponse = client.searchPublicKg(parent, query);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnterpriseKnowledgeGraphService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchPublicKgRequest actualRequest = ((SearchPublicKgRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(query, actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchPublicKgExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnterpriseKnowledgeGraphService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String query = "query107944136";
+      client.searchPublicKg(parent, query);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

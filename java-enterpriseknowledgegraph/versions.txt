@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-enterpriseknowledgegraph:0.1.0:0.1.1-SNAPSHOT
-proto-google-cloud-enterpriseknowledgegraph-v1:0.1.0:0.1.1-SNAPSHOT
-grpc-google-cloud-enterpriseknowledgegraph-v1:0.1.0:0.1.1-SNAPSHOT

@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-dlp:3.9.0:3.9.1-SNAPSHOT
-grpc-google-cloud-dlp-v2:3.9.0:3.9.1-SNAPSHOT
-proto-google-cloud-dlp-v2:3.9.0:3.9.1-SNAPSHOT
