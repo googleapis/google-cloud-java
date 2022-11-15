@@ -5,6 +5,5 @@
   "include-component-in-tag": false,
   "packages": {
     ".": {}
-  },
-  "plugins": ["maven-workspace"]
+  }
 }
