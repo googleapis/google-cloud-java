@@ -30,7 +30,7 @@ jobs:
   # have the duplicate versions in Maven Central
   existing-versions-check:
     runs-on: ubuntu-latest
-#    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
+    if: github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main'
     steps:
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
