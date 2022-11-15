@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-appengine-admin-v1</artifactId>
-  <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-appengine-admin-v1:current} -->
+  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-appengine-admin-v1:current} -->
   <name>proto-google-cloud-appengine-admin-v1</name>
   <description>Proto library for google-cloud-appengine-admin</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-appengine-admin-parent</artifactId>
-    <version>2.6.0</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+    <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
   </parent>
   <dependencies>
     <dependency>

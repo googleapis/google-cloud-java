@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables-bom</artifactId>
-  <version>0.10.0</version><!-- {x-version-update:google-area120-tables:current} -->
+  <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.area120</groupId>
         <artifactId>google-area120-tables</artifactId>
-        <version>0.10.0</version><!-- {x-version-update:google-area120-tables:current} -->
+        <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-area120-tables-v1alpha1</artifactId>
-        <version>0.10.0</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
+        <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-area120-tables-v1alpha1</artifactId>
-        <version>0.10.0</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
+        <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
