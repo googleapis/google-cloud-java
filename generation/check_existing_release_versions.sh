@@ -10,14 +10,12 @@ function find_existing_version_pom() {
     echo "Empty pom file name"
     exit 1
   fi
-  local gav=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="groupId"]/text()
-      | /*[local-name()="project"]/*[local-name()="artifactId"]/text()
-      | /*[local-name()="project"]/*[local-name()="version"]/text()' \
+  local group_id=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="groupId"]/text()' \
       "${pom_file}")
-  local items=(${gav//\\n/ })
-  local group_id=${items[0]}
-  local artifact_id=${items[1]}
-  local version=${items[2]}
+  local artifact_id=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="artifactId"]/text()' \
+      "${pom_file}")
+  local version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' \
+      "${pom_file}")
   if [ -z "$version" ]; then
     echo "Couldn't parse the pom file: $pom_file"
     exit 1
