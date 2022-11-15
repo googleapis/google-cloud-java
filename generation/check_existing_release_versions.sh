@@ -1,29 +1,49 @@
 #!/bin/bash
 
-return_code=0
+# Using Google Mirror to avoid unnecessary load to https://repo1.maven.org/maven2
+MAVEN_SITE=https://maven-central.storage-download.googleapis.com/maven2
 
-function find_existing_version() {
-  local artifact_id=$1
-  local version=$2
-  if [[ $artifact_id == grpc-* ]] || [[ $artifact_id == proto-* ]]; then
-    group_id="com.google.api.grpc"
-  else
-    group_id="com.google.cloud"
+
+function find_existing_version_pom() {  
+  local pom_file=$1
+  if [ -z "${pom_file}" ]; then
+    echo "Empty pom file name"
+    exit 1
+  fi
+  local gav=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="groupId"]/text()
+      | /*[local-name()="project"]/*[local-name()="artifactId"]/text()
+      | /*[local-name()="project"]/*[local-name()="version"]/text()' \
+      "${pom_file}")
+  local items=(${gav//\\n/ })
+  local group_id=${items[0]}
+  local artifact_id=${items[1]}
+  local version=${items[2]}
+  if [ -z "$version" ]; then
+    echo "Couldn't parse the pom file: $pom_file"
+    exit 1
   fi
   echo -n "Checking ${group_id}:${artifact_id}:${version}:"
+  if [[ "${version}" == *SNAPSHOT* ]]; then
+    echo "Release Please pull request contains SNAPSHOT version"
+    exit 1
+  fi
   local group_id_dir="${group_id//\.//}"
-  local URL="https://repo1.maven.org/maven2/${group_id_dir}/${artifact_id}/${version}"
-  local status_code=$(curl --silent -o /dev/null -w "%{http_code}" $URL)
+  local URL="${MAVEN_SITE}/${group_id_dir}/${artifact_id}/${version}/${artifact_id}-${version}.pom"
+  local status_code=$(curl --silent --head -o /dev/null -w "%{http_code}" $URL)
   if [ "${status_code}" == "404" ]; then
     echo " The version does not exists. Good"
-  else 
+  else
     echo " The version already exists at ${URL}. Please investigate."
     # global
     return_code=1
   fi
+
 }
 
-find_existing_version proto-google-cloud-accessapproval-v1 2.7.0
+return_code=0
 
+for pom_file in $(find . -maxdepth 3 -name pom.xml); do
+  find_existing_version_pom "${pom_file}"
+done
 
 exit ${return_code}
