@@ -22,8 +22,8 @@ function find_existing_version_pom() {
   fi
   echo -n "Checking ${group_id}:${artifact_id}:${version}:"
   if [[ "${version}" == *SNAPSHOT* ]] && [ "${artifact_id}" != "google-cloud-java" ]; then
-    echo "Release Please pull request contains SNAPSHOT version"
-    exit 1
+    echo " Release Please pull request contains SNAPSHOT version. Please investigate."
+    return_code=1
   fi
   local group_id_dir="${group_id//\.//}"
   local URL="${MAVEN_SITE}/${group_id_dir}/${artifact_id}/${version}/${artifact_id}-${version}.pom"
@@ -32,7 +32,6 @@ function find_existing_version_pom() {
     echo " The version does not exists. Good"
   else
     echo " The version already exists at ${URL}. Please investigate."
-    # global
     return_code=1
   fi
 
