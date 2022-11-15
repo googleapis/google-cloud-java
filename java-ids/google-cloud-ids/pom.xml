@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-ids</artifactId>
-  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
+  <version>1.5.0</version><!-- {x-version-update:google-cloud-ids:current} -->
   <packaging>jar</packaging>
   <name>Google Intrusion Detection System</name>
   <description>Intrusion Detection System  monitors your networks, and it alerts you when it detects malicious activity. Cloud IDS is powered by Palo Alto Networks.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-ids-parent</artifactId>
-    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-ids:current} -->
+    <version>1.5.0</version><!-- {x-version-update:google-cloud-ids:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-ids</site.installationModule>
