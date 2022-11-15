@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-storage-transfer/grpc-google-.*/src"
 - "/java-storage-transfer/proto-google-.*/src"
 - "/java-storage-transfer/google-.*/src"
+- "/java-storage-transfer/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-storage-transfer/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,4 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-storage-transfer/$1/grpc-google-cloud-storage-transfer-$1/src"
 - source: "/google/storagetransfer/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-storage-transfer/$1/google-cloud-storage-transfer/src"
+- source: "/google/storagetransfer/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-storage-transfer/$1/samples/snippets/generated"
+
 api-name: storagetransfer

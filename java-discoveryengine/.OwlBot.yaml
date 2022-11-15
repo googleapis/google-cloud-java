@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-discoveryengine/grpc-google-.*/src"
 - "/java-discoveryengine/proto-google-.*/src"
 - "/java-discoveryengine/google-.*/src"
+- "/java-discoveryengine/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-discoveryengine/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,6 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-discoveryengine/$1/grpc-google-cloud-discoveryengine-$1/src"
 - source: "/google/cloud/discoveryengine/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-discoveryengine/$1/google-cloud-discoveryengine/src"
-
+- source: "/google/cloud/discoveryengine/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-discoveryengine/$1/samples/snippets/generated"
 
 api-name: java-discoveryengine

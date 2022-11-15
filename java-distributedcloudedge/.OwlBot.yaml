@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-distributedcloudedge/grpc-google-.*/src"
 - "/java-distributedcloudedge/proto-google-.*/src"
 - "/java-distributedcloudedge/google-.*/src"
+- "/java-distributedcloudedge/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-distributedcloudedge/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-distributedcloudedge/$1/grpc-google-cloud-distributedcloudedge-$1/src"
 - source: "/google/cloud/edgecontainer/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-distributedcloudedge/$1/google-cloud-distributedcloudedge/src"
+- source: "/google/cloud/edgecontainer/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-distributedcloudedge/$1/samples/snippets/generated"
 
 api-name: distributedcloudedge
