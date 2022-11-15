@@ -98,8 +98,8 @@ jobs:
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
-      - run: java -version
-      - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+    - run: java -version
+    - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
