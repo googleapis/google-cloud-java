@@ -3,6 +3,7 @@
 # Using Google Mirror to avoid unnecessary load to https://repo1.maven.org/maven2
 MAVEN_SITE=https://maven-central.storage-download.googleapis.com/maven2
 
+set -e
 
 function find_existing_version_pom() {  
   local pom_file=$1
@@ -16,7 +17,7 @@ function find_existing_version_pom() {
       "${pom_file}")
   local version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' \
       "${pom_file}")
-  if [ -z "$version" ]; then
+  if [ -z "${group_id}" ] || [ -z "${group_id}" ] || [ -z "${artifact_id}" ]; then
     echo "Couldn't parse the pom file: $pom_file"
     exit 1
   fi
