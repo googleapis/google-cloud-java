@@ -41,7 +41,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-iam-policy</artifactId>
-      <version>1.6.10</version>
+      <version>1.6.11</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
