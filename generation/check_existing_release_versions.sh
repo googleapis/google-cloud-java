@@ -17,11 +17,11 @@ function find_existing_version_pom() {
       "${pom_file}")
   local version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' \
       "${pom_file}")
-  if [ -z "${group_id}" ] || [ -z "${group_id}" ] || [ -z "${artifact_id}" ]; then
+  echo -n "Checking ${group_id}:${artifact_id}:${version}:"
+  if [ -z "${group_id}" ] || [ -z "${artifact_id}" ] || [ -z "${version}" ]; then
     echo "Couldn't parse the pom file: $pom_file"
     exit 1
   fi
-  echo -n "Checking ${group_id}:${artifact_id}:${version}:"
   if [[ "${version}" == *SNAPSHOT* ]] && [ "${artifact_id}" != "google-cloud-java" ]; then
     echo " Release Please pull request contains SNAPSHOT version. Please investigate."
     return_code=1
