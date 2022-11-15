@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-admin</artifactId>
-  <version>3.1.0</version><!-- {x-version-update:google-iam-admin:current} -->
+  <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
   <packaging>jar</packaging>
   <name>Google IAM Admin API</name>
   <description>IAM Admin API you to manage your Service Accounts and IAM bindings.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-iam-admin-parent</artifactId>
-    <version>3.1.0</version><!-- {x-version-update:google-iam-admin:current} -->
+    <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
   </parent>
   <properties>
     <site.installationModule>google-iam-admin</site.installationModule>
