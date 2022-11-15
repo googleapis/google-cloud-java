@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-asset-v1p7beta1</artifactId>
-  <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-asset-v1p7beta1:current} -->
+  <version>3.10.0</version><!-- {x-version-update:proto-google-cloud-asset-v1p7beta1:current} -->
   <name>proto-google-cloud-asset-v1p7beta1</name>
   <description>Proto library for google-cloud-asset</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-asset-parent</artifactId>
-    <version>3.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-asset:current} -->
+    <version>3.10.0</version><!-- {x-version-update:google-cloud-asset:current} -->
   </parent>
   <dependencies>
     <dependency>

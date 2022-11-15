@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tasks-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+  <version>2.6.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
   <name>Google Cloud Tasks Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,37 +29,37 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2beta3</artifactId>
-        <version>0.95.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta3:current} -->
+        <version>0.96.0</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2beta2</artifactId>
-        <version>0.95.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:current} -->
+        <version>0.96.0</version><!-- {x-version-update:proto-google-cloud-tasks-v2beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-tasks-v2:current} -->
+        <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-tasks-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tasks-v2beta3</artifactId>
-        <version>0.95.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta3:current} -->
+        <version>0.96.0</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tasks-v2beta2</artifactId>
-        <version>0.95.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
+        <version>0.96.0</version><!-- {x-version-update:grpc-google-cloud-tasks-v2beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-tasks-v2</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tasks-v2:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-tasks-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-tasks</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

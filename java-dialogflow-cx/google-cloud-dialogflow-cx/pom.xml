@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow-cx</artifactId>
-  <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+  <version>0.17.0</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   <packaging>jar</packaging>
   <name>Google Dialogflow CX</name>
   <description>provides a new way of designing agents, taking a state machine approach to agent design. This gives you clear and explicit control over a conversation, a better end-user experience, and a better development workflow.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-cx-parent</artifactId>
-    <version>0.16.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+    <version>0.17.0</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dialogflow-cx</site.installationModule>

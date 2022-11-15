@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-datastream-v1alpha1</artifactId>
-  <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastream-v1alpha1:current} -->
+  <version>0.10.0</version><!-- {x-version-update:grpc-google-cloud-datastream-v1alpha1:current} -->
   <name>grpc-google-cloud-datastream-v1alpha1</name>
   <description>GRPC library for google-cloud-datastream</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastream-parent</artifactId>
-    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastream:current} -->
+    <version>1.5.0</version><!-- {x-version-update:google-cloud-datastream:current} -->
   </parent>
   <dependencies>
     <dependency>

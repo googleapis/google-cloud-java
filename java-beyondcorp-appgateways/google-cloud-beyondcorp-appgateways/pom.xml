@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-appgateways</artifactId>
-  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
+  <version>0.4.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
   <packaging>jar</packaging>
   <name>Google BeyondCorp AppGateways</name>
   <description>BeyondCorp AppGateways A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-appgateways-parent</artifactId>
-    <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
+    <version>0.4.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-beyondcorp-appgateways</site.installationModule>

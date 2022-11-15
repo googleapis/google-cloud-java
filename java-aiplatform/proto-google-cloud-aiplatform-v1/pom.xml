@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-aiplatform-v1</artifactId>
-  <version>3.6.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
+  <version>3.7.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1:current} -->
   <name>proto-google-cloud-aiplatform-v1</name>
   <description>Proto library for google-cloud-aiplatform</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-aiplatform-parent</artifactId>
-    <version>3.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+    <version>3.7.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   </parent>
   <dependencies>
     <dependency>

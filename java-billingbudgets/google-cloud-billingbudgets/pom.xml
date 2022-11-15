@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-billingbudgets</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+  <version>2.6.0</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud billingbudgets</name>
   <description>Java idiomatic client for Google Cloud billingbudgets</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-billingbudgets-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+    <version>2.6.0</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-billingbudgets</site.installationModule>

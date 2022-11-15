@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-service-usage-v1</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-usage-v1:current} -->
+  <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-service-usage-v1:current} -->
   <name>proto-google-cloud-service-usage-v1</name>
   <description>Proto library for google-cloud-service-usage</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-service-usage-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+    <version>2.6.0</version><!-- {x-version-update:google-cloud-service-usage:current} -->
   </parent>
   <dependencies>
     <dependency>

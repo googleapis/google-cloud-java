@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-trace-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+  <version>2.6.0</version><!-- {x-version-update:google-cloud-trace:current} -->
   <name>Google Cloud Trace Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v1</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
+        <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-trace</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+        <version>2.6.0</version><!-- {x-version-update:google-cloud-trace:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
+        <version>2.6.0</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v1</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v2</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
+        <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

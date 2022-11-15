@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-service-control-v2</artifactId>
-  <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-control-v2:current} -->
+  <version>1.6.0</version><!-- {x-version-update:proto-google-cloud-service-control-v2:current} -->
   <name>proto-google-cloud-service-control-v2</name>
   <description>Proto library for google-cloud-service-control</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-service-control-parent</artifactId>
-    <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
+    <version>1.6.0</version><!-- {x-version-update:google-cloud-service-control:current} -->
   </parent>
   <dependencies>
     <dependency>

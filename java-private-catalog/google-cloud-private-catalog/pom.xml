@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-private-catalog</artifactId>
-  <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-private-catalog:current} -->
+  <version>0.8.0</version><!-- {x-version-update:google-cloud-private-catalog:current} -->
   <packaging>jar</packaging>
   <name>Google Private Catalog</name>
   <description>Private Catalog allows developers and cloud admins to make their solutions discoverable to their internal enterprise users. Cloud admins can manage their solutions and ensure their users are always launching the latest versions.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-private-catalog-parent</artifactId>
-    <version>0.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-private-catalog:current} -->
+    <version>0.8.0</version><!-- {x-version-update:google-cloud-private-catalog:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-private-catalog</site.installationModule>

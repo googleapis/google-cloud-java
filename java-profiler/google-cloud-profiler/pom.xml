@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-profiler</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-profiler:current} -->
+  <version>2.6.0</version><!-- {x-version-update:google-cloud-profiler:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Profiler</name>
   <description>is a statistical, low-overhead profiler that continuously gathers CPU usage and memory-allocation information from your production applications. It attributes that information to the application's source code, helping you identify the parts of the application consuming the most resources, and otherwise illuminating the performance characteristics of the code.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-profiler-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-profiler:current} -->
+    <version>2.6.0</version><!-- {x-version-update:google-cloud-profiler:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-profiler</site.installationModule>

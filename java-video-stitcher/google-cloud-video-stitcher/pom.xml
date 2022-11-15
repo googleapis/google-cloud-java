@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-stitcher</artifactId>
-  <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
+  <version>0.6.0</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
   <packaging>jar</packaging>
   <name>Google Video Stitcher API</name>
   <description>Video Stitcher API allows you to manipulate video content to dynamically insert ads prior to delivery to client devices.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-stitcher-parent</artifactId>
-    <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-cloud-video-stitcher:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-video-stitcher</site.installationModule>

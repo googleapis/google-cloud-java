@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
+  <version>0.10.0</version><!-- {x-version-update:google-area120-tables:current} -->
   <packaging>jar</packaging>
   <name>Google Area 120 Tables</name>
   <description>provides programmatic methods to the Area 120 Tables API.</description>
   <parent>
     <groupId>com.google.area120</groupId>
     <artifactId>google-area120-tables-parent</artifactId>
-    <version>0.9.1-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
+    <version>0.10.0</version><!-- {x-version-update:google-area120-tables:current} -->
   </parent>
   <properties>
     <site.installationModule>google-area120-tables</site.installationModule>

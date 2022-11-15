@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iamcredentials-v1:current} -->
+  <version>2.6.0</version><!-- {x-version-update:grpc-google-cloud-iamcredentials-v1:current} -->
   <name>grpc-google-cloud-iamcredentials-v1</name>
   <description>GRPC library for grpc-google-cloud-iamcredentials-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-iamcredentials-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+    <version>2.6.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   </parent>
   <dependencies>
     <dependency>

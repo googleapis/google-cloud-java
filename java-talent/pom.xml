@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-talent-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.6.1-SNAPSHOT</version> <!-- {x-version-update:google-cloud-talent:current} -->
+  <version>2.7.0</version> <!-- {x-version-update:google-cloud-talent:current} -->
   <name>Google Cloud Talent Solution Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.3.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
-        <version>0.49.1-SNAPSHOT</version> <!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
+        <version>0.50.0</version> <!-- {x-version-update:proto-google-cloud-talent-v4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-talent-v4</artifactId>
-        <version>2.6.1-SNAPSHOT</version> <!-- {x-version-update:proto-google-cloud-talent-v4:current} -->
+        <version>2.7.0</version> <!-- {x-version-update:proto-google-cloud-talent-v4:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
-        <version>0.49.1-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
+        <version>0.50.0</version> <!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-talent-v4</artifactId>
-        <version>2.6.1-SNAPSHOT</version> <!-- {x-version-update:grpc-google-cloud-talent-v4:current} -->
+        <version>2.7.0</version> <!-- {x-version-update:grpc-google-cloud-talent-v4:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-talent</artifactId>
-        <version>2.6.1-SNAPSHOT</version> <!-- {x-version-update:google-cloud-talent:current} -->
+        <version>2.7.0</version> <!-- {x-version-update:google-cloud-talent:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>

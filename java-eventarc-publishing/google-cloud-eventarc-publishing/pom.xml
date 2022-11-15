@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-eventarc-publishing</artifactId>
-  <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+  <version>0.6.0</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
   <packaging>jar</packaging>
   <name>Google Eventarc Publishing</name>
   <description>Eventarc Publishing lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-eventarc-publishing-parent</artifactId>
-    <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
+    <version>0.6.0</version><!-- {x-version-update:google-cloud-eventarc-publishing:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-eventarc-publishing</site.installationModule>

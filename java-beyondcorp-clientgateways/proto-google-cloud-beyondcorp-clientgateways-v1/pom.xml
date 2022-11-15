@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-beyondcorp-clientgateways-v1</artifactId>
-  <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-beyondcorp-clientgateways-v1:current} -->
+  <version>0.4.0</version><!-- {x-version-update:proto-google-cloud-beyondcorp-clientgateways-v1:current} -->
   <name>proto-google-cloud-beyondcorp-clientgateways-v1</name>
   <description>Proto library for google-cloud-beyondcorp-clientgateways</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-clientgateways-parent</artifactId>
-    <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
+    <version>0.4.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
   </parent>
   <dependencies>
     <dependency>

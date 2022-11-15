@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-discoveryengine-v1beta</artifactId>
-  <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-discoveryengine-v1beta:current} -->
+  <version>0.2.0</version><!-- {x-version-update:grpc-google-cloud-discoveryengine-v1beta:current} -->
   <name>grpc-google-cloud-discoveryengine-v1beta</name>
   <description>GRPC library for google-cloud-discoveryengine</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-discoveryengine-parent</artifactId>
-    <version>0.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
   </parent>
   <dependencies>
     <dependency>
