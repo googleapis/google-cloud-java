@@ -82,6 +82,11 @@ jobs:
           java-version: 11
       - run: java -version
       - run: mvn enforcer:enforce@enforce -T 1C
+  requirements:
+    runs-on: gcr.io/cloud-devrel-public-resources/java8
+    steps:
+      - uses: actions/checkout@v3
+      - run: python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
