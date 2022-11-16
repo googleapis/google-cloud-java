@@ -100,6 +100,7 @@ cp ../../gapic_bom_versions.txt gapic-libraries-bom/versions.txt
 git add --all
 git commit -am 'chore: delete non-auto-generated samples'
 
+../../generate_root_versions_txt.sh
 ../../update_versions.sh -s
 ../../apply_current_versions.sh
 
