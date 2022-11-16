@@ -1,0 +1,87 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.documentai.v1beta3",
+  "libraryPackage": "com.google.cloud.documentai.v1beta3",
+  "services": {
+    "DocumentProcessorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentProcessorServiceClient",
+          "rpcs": {
+            "BatchProcessDocuments": {
+              "methods": ["batchProcessDocumentsAsync", "batchProcessDocumentsAsync", "batchProcessDocumentsAsync", "batchProcessDocumentsOperationCallable", "batchProcessDocumentsCallable"]
+            },
+            "CreateProcessor": {
+              "methods": ["createProcessor", "createProcessor", "createProcessor", "createProcessorCallable"]
+            },
+            "DeleteProcessor": {
+              "methods": ["deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorAsync", "deleteProcessorOperationCallable", "deleteProcessorCallable"]
+            },
+            "DeleteProcessorVersion": {
+              "methods": ["deleteProcessorVersionAsync", "deleteProcessorVersionAsync", "deleteProcessorVersionAsync", "deleteProcessorVersionOperationCallable", "deleteProcessorVersionCallable"]
+            },
+            "DeployProcessorVersion": {
+              "methods": ["deployProcessorVersionAsync", "deployProcessorVersionAsync", "deployProcessorVersionAsync", "deployProcessorVersionOperationCallable", "deployProcessorVersionCallable"]
+            },
+            "DisableProcessor": {
+              "methods": ["disableProcessorAsync", "disableProcessorOperationCallable", "disableProcessorCallable"]
+            },
+            "EnableProcessor": {
+              "methods": ["enableProcessorAsync", "enableProcessorOperationCallable", "enableProcessorCallable"]
+            },
+            "EvaluateProcessorVersion": {
+              "methods": ["evaluateProcessorVersionAsync", "evaluateProcessorVersionAsync", "evaluateProcessorVersionAsync", "evaluateProcessorVersionOperationCallable", "evaluateProcessorVersionCallable"]
+            },
+            "FetchProcessorTypes": {
+              "methods": ["fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypesCallable"]
+            },
+            "GetEvaluation": {
+              "methods": ["getEvaluation", "getEvaluation", "getEvaluation", "getEvaluationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetProcessor": {
+              "methods": ["getProcessor", "getProcessor", "getProcessor", "getProcessorCallable"]
+            },
+            "GetProcessorVersion": {
+              "methods": ["getProcessorVersion", "getProcessorVersion", "getProcessorVersion", "getProcessorVersionCallable"]
+            },
+            "ListEvaluations": {
+              "methods": ["listEvaluations", "listEvaluations", "listEvaluations", "listEvaluationsPagedCallable", "listEvaluationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListProcessorTypes": {
+              "methods": ["listProcessorTypes", "listProcessorTypes", "listProcessorTypes", "listProcessorTypesPagedCallable", "listProcessorTypesCallable"]
+            },
+            "ListProcessorVersions": {
+              "methods": ["listProcessorVersions", "listProcessorVersions", "listProcessorVersions", "listProcessorVersionsPagedCallable", "listProcessorVersionsCallable"]
+            },
+            "ListProcessors": {
+              "methods": ["listProcessors", "listProcessors", "listProcessors", "listProcessorsPagedCallable", "listProcessorsCallable"]
+            },
+            "ProcessDocument": {
+              "methods": ["processDocument", "processDocument", "processDocument", "processDocumentCallable"]
+            },
+            "ReviewDocument": {
+              "methods": ["reviewDocumentAsync", "reviewDocumentAsync", "reviewDocumentAsync", "reviewDocumentOperationCallable", "reviewDocumentCallable"]
+            },
+            "SetDefaultProcessorVersion": {
+              "methods": ["setDefaultProcessorVersionAsync", "setDefaultProcessorVersionOperationCallable", "setDefaultProcessorVersionCallable"]
+            },
+            "TrainProcessorVersion": {
+              "methods": ["trainProcessorVersionAsync", "trainProcessorVersionAsync", "trainProcessorVersionAsync", "trainProcessorVersionOperationCallable", "trainProcessorVersionCallable"]
+            },
+            "UndeployProcessorVersion": {
+              "methods": ["undeployProcessorVersionAsync", "undeployProcessorVersionAsync", "undeployProcessorVersionAsync", "undeployProcessorVersionOperationCallable", "undeployProcessorVersionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
