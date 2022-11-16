@@ -54,5 +54,6 @@ done
 mkdir -p gapic-libraries-bom
 
 GENERATION_DIR=$(dirname -- "$0");
-awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
-    "${GENERATION_DIR}/bom.pom.xml" > gapic-libraries-bom/pom.xml
+perl -0pe 's/<dependencies>.*<\/dependencies>/<dependencies>\nBOM_ARTIFACT_LIST\n    <\/dependencies>/s' ${GENERATION_DIR}/../gapic-libraries-bom/pom.xml \
+    | awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
+    > gapic-libraries-bom/pom.xml.new && rm gapic-libraries-bom/pom.xml && mv gapic-libraries-bom/pom.xml.new gapic-libraries-bom/pom.xml
