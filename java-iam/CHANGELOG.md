@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.12](https://github.com/googleapis/java-iam/compare/v1.6.11...v1.6.12) (2022-11-16)
+
+
+### Dependencies
+
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.13.0 ([#522](https://github.com/googleapis/java-iam/issues/522)) ([37e4984](https://github.com/googleapis/java-iam/commit/37e4984d96e78117225ccccaf807386f6b699e04))
+* Update dependency com.google.cloud:google-iam-policy to v1.6.11 ([#521](https://github.com/googleapis/java-iam/issues/521)) ([dd07607](https://github.com/googleapis/java-iam/commit/dd07607d4de0dfb6b1f0852fcaf18c9c035c5467))
+
 ## [1.6.11](https://github.com/googleapis/java-iam/compare/v1.6.10...v1.6.11) (2022-11-15)
 
 
