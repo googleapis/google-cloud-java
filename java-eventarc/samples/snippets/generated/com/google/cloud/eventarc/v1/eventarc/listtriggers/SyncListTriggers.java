@@ -41,6 +41,7 @@ public class SyncListTriggers {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
+              .setFilter("filter-1274492040")
               .build();
       for (Trigger element : eventarcClient.listTriggers(request).iterateAll()) {
         // doThingsWith(element);

@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -38,8 +39,10 @@ import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.GoogleChannelConfig;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
@@ -52,8 +55,18 @@ import com.google.cloud.eventarc.v1.OperationMetadata;
 import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
+import com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -228,6 +241,74 @@ public class GrpcEventarcStub extends EventarcStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigMethodDescriptor =
+          MethodDescriptor.<GetGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetGoogleChannelConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGoogleChannelConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GoogleChannelConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigMethodDescriptor =
+          MethodDescriptor.<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/UpdateGoogleChannelConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGoogleChannelConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GoogleChannelConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetTriggerRequest, Trigger> getTriggerCallable;
   private final UnaryCallable<ListTriggersRequest, ListTriggersResponse> listTriggersCallable;
   private final UnaryCallable<ListTriggersRequest, ListTriggersPagedResponse>
@@ -274,6 +355,18 @@ public class GrpcEventarcStub extends EventarcStub {
   private final OperationCallable<
           DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
       deleteChannelConnectionOperationCallable;
+  private final UnaryCallable<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigCallable;
+  private final UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -479,6 +572,81 @@ public class GrpcEventarcStub extends EventarcStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+        getGoogleChannelConfigTransportSettings =
+            GrpcCallSettings.<GetGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+                .setMethodDescriptor(getGoogleChannelConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+        updateGoogleChannelConfigTransportSettings =
+            GrpcCallSettings.<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+                .setMethodDescriptor(updateGoogleChannelConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "google_channel_config.name",
+                          String.valueOf(request.getGoogleChannelConfig().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
+                    })
+                .build();
 
     this.getTriggerCallable =
         callableFactory.createUnaryCallable(
@@ -598,6 +766,36 @@ public class GrpcEventarcStub extends EventarcStub {
             settings.deleteChannelConnectionOperationSettings(),
             clientContext,
             operationsStub);
+    this.getGoogleChannelConfigCallable =
+        callableFactory.createUnaryCallable(
+            getGoogleChannelConfigTransportSettings,
+            settings.getGoogleChannelConfigSettings(),
+            clientContext);
+    this.updateGoogleChannelConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateGoogleChannelConfigTransportSettings,
+            settings.updateGoogleChannelConfigSettings(),
+            clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -759,6 +957,50 @@ public class GrpcEventarcStub extends EventarcStub {
   public OperationCallable<DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
       deleteChannelConnectionOperationCallable() {
     return deleteChannelConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigCallable() {
+    return getGoogleChannelConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigCallable() {
+    return updateGoogleChannelConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

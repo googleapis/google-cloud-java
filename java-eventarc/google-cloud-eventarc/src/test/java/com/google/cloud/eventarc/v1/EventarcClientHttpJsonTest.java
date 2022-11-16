@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -31,9 +32,22 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.eventarc.v1.stub.HttpJsonEventarcStub;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
@@ -98,6 +112,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -152,6 +167,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -306,6 +322,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -369,6 +386,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -432,6 +450,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -454,6 +473,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -497,6 +517,7 @@ public class EventarcClientHttpJsonTest {
               .setTransport(Transport.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setChannel("channel738950403")
+              .putAllConditions(new HashMap<String, StateCondition>())
               .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -521,6 +542,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -582,6 +604,7 @@ public class EventarcClientHttpJsonTest {
             .setTransport(Transport.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setChannel("channel738950403")
+            .putAllConditions(new HashMap<String, StateCondition>())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -639,6 +662,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -688,6 +712,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -837,6 +862,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -895,6 +921,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -953,6 +980,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -970,6 +998,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1007,6 +1036,7 @@ public class EventarcClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setProvider("provider-987494927")
               .setActivationToken("activationToken1276937859")
+              .setCryptoKeyName("cryptoKeyName1447084425")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateChannelAsync(channel, updateMask).get();
@@ -1025,6 +1055,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1079,6 +1110,7 @@ public class EventarcClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setProvider("provider-987494927")
             .setActivationToken("activationToken1276937859")
+            .setCryptoKeyName("cryptoKeyName1447084425")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1756,6 +1788,435 @@ public class EventarcClientHttpJsonTest {
       client.deleteChannelConnectionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getGoogleChannelConfigTest() throws Exception {
+    GoogleChannelConfig expectedResponse =
+        GoogleChannelConfig.newBuilder()
+            .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GoogleChannelConfigName name = GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]");
+
+    GoogleChannelConfig actualResponse = client.getGoogleChannelConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoogleChannelConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoogleChannelConfigName name = GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getGoogleChannelConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoogleChannelConfigTest2() throws Exception {
+    GoogleChannelConfig expectedResponse =
+        GoogleChannelConfig.newBuilder()
+            .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-4921/locations/location-4921/googleChannelConfig";
+
+    GoogleChannelConfig actualResponse = client.getGoogleChannelConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGoogleChannelConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4921/locations/location-4921/googleChannelConfig";
+      client.getGoogleChannelConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGoogleChannelConfigTest() throws Exception {
+    GoogleChannelConfig expectedResponse =
+        GoogleChannelConfig.newBuilder()
+            .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GoogleChannelConfig googleChannelConfig =
+        GoogleChannelConfig.newBuilder()
+            .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GoogleChannelConfig actualResponse =
+        client.updateGoogleChannelConfig(googleChannelConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateGoogleChannelConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GoogleChannelConfig googleChannelConfig =
+          GoogleChannelConfig.newBuilder()
+              .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setCryptoKeyName("cryptoKeyName1447084425")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGoogleChannelConfig(googleChannelConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("projects/project-3664")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("projects/project-3664")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

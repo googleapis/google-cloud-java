@@ -34,6 +34,15 @@
             "GetChannelConnection": {
               "methods": ["getChannelConnection", "getChannelConnection", "getChannelConnection", "getChannelConnectionCallable"]
             },
+            "GetGoogleChannelConfig": {
+              "methods": ["getGoogleChannelConfig", "getGoogleChannelConfig", "getGoogleChannelConfig", "getGoogleChannelConfigCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetProvider": {
               "methods": ["getProvider", "getProvider", "getProvider", "getProviderCallable"]
             },
@@ -46,14 +55,26 @@
             "ListChannels": {
               "methods": ["listChannels", "listChannels", "listChannels", "listChannelsPagedCallable", "listChannelsCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "ListProviders": {
               "methods": ["listProviders", "listProviders", "listProviders", "listProvidersPagedCallable", "listProvidersCallable"]
             },
             "ListTriggers": {
               "methods": ["listTriggers", "listTriggers", "listTriggers", "listTriggersPagedCallable", "listTriggersCallable"]
             },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
             "UpdateChannel": {
               "methods": ["updateChannelAsync", "updateChannelAsync", "updateChannelOperationCallable", "updateChannelCallable"]
+            },
+            "UpdateGoogleChannelConfig": {
+              "methods": ["updateGoogleChannelConfig", "updateGoogleChannelConfig", "updateGoogleChannelConfigCallable"]
             },
             "UpdateTrigger": {
               "methods": ["updateTriggerAsync", "updateTriggerAsync", "updateTriggerOperationCallable", "updateTriggerCallable"]

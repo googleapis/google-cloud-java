@@ -75,6 +75,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     CLOUD_RUN(1),
     CLOUD_FUNCTION(2),
     GKE(3),
+    WORKFLOW(4),
     DESCRIPTOR_NOT_SET(0);
     private final int value;
 
@@ -99,6 +100,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_FUNCTION;
         case 3:
           return GKE;
+        case 4:
+          return WORKFLOW;
         case 0:
           return DESCRIPTOR_NOT_SET;
         default:
@@ -296,6 +299,85 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
   }
 
+  public static final int WORKFLOW_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Workflow whose Executions are triggered by
+   * the events. The Workflow resource should be deployed in the same project
+   * as the trigger.
+   * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+   * </pre>
+   *
+   * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the workflow field is set.
+   */
+  public boolean hasWorkflow() {
+    return descriptorCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Workflow whose Executions are triggered by
+   * the events. The Workflow resource should be deployed in the same project
+   * as the trigger.
+   * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+   * </pre>
+   *
+   * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The workflow.
+   */
+  public java.lang.String getWorkflow() {
+    java.lang.Object ref = "";
+    if (descriptorCase_ == 4) {
+      ref = descriptor_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (descriptorCase_ == 4) {
+        descriptor_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Workflow whose Executions are triggered by
+   * the events. The Workflow resource should be deployed in the same project
+   * as the trigger.
+   * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+   * </pre>
+   *
+   * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for workflow.
+   */
+  public com.google.protobuf.ByteString getWorkflowBytes() {
+    java.lang.Object ref = "";
+    if (descriptorCase_ == 4) {
+      ref = descriptor_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (descriptorCase_ == 4) {
+        descriptor_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -319,6 +401,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     if (descriptorCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.eventarc.v1.GKE) descriptor_);
     }
+    if (descriptorCase_ == 4) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, descriptor_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -340,6 +425,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.eventarc.v1.GKE) descriptor_);
+    }
+    if (descriptorCase_ == 4) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, descriptor_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -367,6 +455,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       case 3:
         if (!getGke().equals(other.getGke())) return false;
         break;
+      case 4:
+        if (!getWorkflow().equals(other.getWorkflow())) return false;
+        break;
       case 0:
       default:
     }
@@ -393,6 +484,10 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + GKE_FIELD_NUMBER;
         hash = (53 * hash) + getGke().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + WORKFLOW_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflow().hashCode();
         break;
       case 0:
       default:
@@ -587,6 +682,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
           result.descriptor_ = gkeBuilder_.build();
         }
       }
+      if (descriptorCase_ == 4) {
+        result.descriptor_ = descriptor_;
+      }
       result.descriptorCase_ = descriptorCase_;
       onBuilt();
       return result;
@@ -655,6 +753,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             mergeGke(other.getGke());
             break;
           }
+        case WORKFLOW:
+          {
+            descriptorCase_ = 4;
+            descriptor_ = other.descriptor_;
+            onChanged();
+            break;
+          }
         case DESCRIPTOR_NOT_SET:
           {
             break;
@@ -705,6 +810,13 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
                 descriptorCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                descriptorCase_ = 4;
+                descriptor_ = s;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1312,6 +1424,158 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return gkeBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Workflow whose Executions are triggered by
+     * the events. The Workflow resource should be deployed in the same project
+     * as the trigger.
+     * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+     * </pre>
+     *
+     * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the workflow field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkflow() {
+      return descriptorCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Workflow whose Executions are triggered by
+     * the events. The Workflow resource should be deployed in the same project
+     * as the trigger.
+     * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+     * </pre>
+     *
+     * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The workflow.
+     */
+    @java.lang.Override
+    public java.lang.String getWorkflow() {
+      java.lang.Object ref = "";
+      if (descriptorCase_ == 4) {
+        ref = descriptor_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (descriptorCase_ == 4) {
+          descriptor_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Workflow whose Executions are triggered by
+     * the events. The Workflow resource should be deployed in the same project
+     * as the trigger.
+     * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+     * </pre>
+     *
+     * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for workflow.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getWorkflowBytes() {
+      java.lang.Object ref = "";
+      if (descriptorCase_ == 4) {
+        ref = descriptor_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (descriptorCase_ == 4) {
+          descriptor_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Workflow whose Executions are triggered by
+     * the events. The Workflow resource should be deployed in the same project
+     * as the trigger.
+     * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+     * </pre>
+     *
+     * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The workflow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflow(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      descriptorCase_ = 4;
+      descriptor_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Workflow whose Executions are triggered by
+     * the events. The Workflow resource should be deployed in the same project
+     * as the trigger.
+     * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+     * </pre>
+     *
+     * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflow() {
+      if (descriptorCase_ == 4) {
+        descriptorCase_ = 0;
+        descriptor_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the Workflow whose Executions are triggered by
+     * the events. The Workflow resource should be deployed in the same project
+     * as the trigger.
+     * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+     * </pre>
+     *
+     * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for workflow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      descriptorCase_ = 4;
+      descriptor_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

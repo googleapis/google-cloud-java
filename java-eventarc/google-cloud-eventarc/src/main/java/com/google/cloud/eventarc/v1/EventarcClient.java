@@ -30,7 +30,16 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.eventarc.v1.stub.EventarcStub;
 import com.google.cloud.eventarc.v1.stub.EventarcStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -386,6 +395,7 @@ public class EventarcClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Trigger element : eventarcClient.listTriggers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -419,6 +429,7 @@ public class EventarcClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Trigger> future = eventarcClient.listTriggersPagedCallable().futureCall(request);
    *   // Do something.
@@ -452,6 +463,7 @@ public class EventarcClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListTriggersResponse response = eventarcClient.listTriggersCallable().call(request);
@@ -2521,6 +2533,560 @@ public class EventarcClient implements BackgroundResource {
     return stub.deleteChannelConnectionCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GoogleChannelConfig
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GoogleChannelConfigName name = GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]");
+   *   GoogleChannelConfig response = eventarcClient.getGoogleChannelConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the config to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleChannelConfig getGoogleChannelConfig(GoogleChannelConfigName name) {
+    GetGoogleChannelConfigRequest request =
+        GetGoogleChannelConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getGoogleChannelConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GoogleChannelConfig
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String name = GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   GoogleChannelConfig response = eventarcClient.getGoogleChannelConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the config to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleChannelConfig getGoogleChannelConfig(String name) {
+    GetGoogleChannelConfigRequest request =
+        GetGoogleChannelConfigRequest.newBuilder().setName(name).build();
+    return getGoogleChannelConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GoogleChannelConfig
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetGoogleChannelConfigRequest request =
+   *       GetGoogleChannelConfigRequest.newBuilder()
+   *           .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   GoogleChannelConfig response = eventarcClient.getGoogleChannelConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleChannelConfig getGoogleChannelConfig(GetGoogleChannelConfigRequest request) {
+    return getGoogleChannelConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a GoogleChannelConfig
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetGoogleChannelConfigRequest request =
+   *       GetGoogleChannelConfigRequest.newBuilder()
+   *           .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<GoogleChannelConfig> future =
+   *       eventarcClient.getGoogleChannelConfigCallable().futureCall(request);
+   *   // Do something.
+   *   GoogleChannelConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigCallable() {
+    return stub.getGoogleChannelConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single GoogleChannelConfig
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GoogleChannelConfig googleChannelConfig = GoogleChannelConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GoogleChannelConfig response =
+   *       eventarcClient.updateGoogleChannelConfig(googleChannelConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param googleChannelConfig Required. The config to be updated.
+   * @param updateMask The fields to be updated; only fields explicitly provided are updated. If no
+   *     field mask is provided, all provided fields in the request are updated. To update all
+   *     fields, provide a field mask of "&#42;".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleChannelConfig updateGoogleChannelConfig(
+      GoogleChannelConfig googleChannelConfig, FieldMask updateMask) {
+    UpdateGoogleChannelConfigRequest request =
+        UpdateGoogleChannelConfigRequest.newBuilder()
+            .setGoogleChannelConfig(googleChannelConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateGoogleChannelConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single GoogleChannelConfig
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   UpdateGoogleChannelConfigRequest request =
+   *       UpdateGoogleChannelConfigRequest.newBuilder()
+   *           .setGoogleChannelConfig(GoogleChannelConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   GoogleChannelConfig response = eventarcClient.updateGoogleChannelConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GoogleChannelConfig updateGoogleChannelConfig(
+      UpdateGoogleChannelConfigRequest request) {
+    return updateGoogleChannelConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a single GoogleChannelConfig
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   UpdateGoogleChannelConfigRequest request =
+   *       UpdateGoogleChannelConfigRequest.newBuilder()
+   *           .setGoogleChannelConfig(GoogleChannelConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GoogleChannelConfig> future =
+   *       eventarcClient.updateGoogleChannelConfigCallable().futureCall(request);
+   *   // Do something.
+   *   GoogleChannelConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigCallable() {
+    return stub.updateGoogleChannelConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : eventarcClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future = eventarcClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response = eventarcClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = eventarcClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = eventarcClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = eventarcClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = eventarcClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = eventarcClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = eventarcClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = eventarcClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       eventarcClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2862,6 +3428,82 @@ public class EventarcClient implements BackgroundResource {
     protected ListChannelConnectionsFixedSizeCollection createCollection(
         List<ListChannelConnectionsPage> pages, int collectionSize) {
       return new ListChannelConnectionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }
