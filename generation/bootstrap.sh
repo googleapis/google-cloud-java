@@ -106,12 +106,6 @@ git commit -am 'chore: delete non-auto-generated samples'
 git add --all
 git commit -am 'chore: update versions to latest in maven'
 
-# Generate Release Please configuration files
-bash ../../generate_release_please_config.sh
-
-git add --all
-git commit -am 'chore: create release please configuration'
-
 ../../update_owlbot_postprocessor_config.sh
 
 git add --all
