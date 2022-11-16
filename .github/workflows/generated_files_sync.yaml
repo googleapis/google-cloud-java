@@ -27,7 +27,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Generate root pom.xml file
       run: |
-        bash qgeneration/generate_root_pom.sh
+        bash generation/generate_root_pom.sh
     - name: Apply versions from versions.txt files
       run: |
         bash generation/apply_current_versions.sh
