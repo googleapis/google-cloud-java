@@ -255,15 +255,8 @@ def generate(
     print("Regenerating root pom.xml")
 
     # This script takes care of updating the root pom.xml
-    os.system(f"cd {monorepo_root} && generation/print_root_pom.sh > pom.xml")
+    os.system(f"cd {monorepo_root} && generation/generate_root_pom.sh")
 
-    print("Regenerating Release Please config files")
-    subprocess.check_call(
-        [
-            "bash", "generation/generate_release_please_config.sh"
-        ],
-        cwd=monorepo_root,
-    )
     print("Consolidating configurations")
     subprocess.check_call(
         [
