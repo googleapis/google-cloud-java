@@ -26,7 +26,6 @@ import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
-import java.time.Instant;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -268,7 +267,7 @@ public class ConnectionWorkerPool {
           if (response.getWriteStream() != "" && response.hasUpdatedSchema()) {
             tableNameToUpdatedSchema.put(
                 response.getWriteStream(),
-                TableSchemaAndTimestamp.create(Instant.now(), response.getUpdatedSchema()));
+                TableSchemaAndTimestamp.create(System.nanoTime(), response.getUpdatedSchema()));
           }
           return response;
         },

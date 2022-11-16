@@ -29,7 +29,6 @@ import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.time.Instant;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
@@ -88,7 +87,7 @@ public class StreamWriter implements AutoCloseable {
       new ConcurrentHashMap<>();
 
   /** Creation timestamp of this streamwriter */
-  private final Instant creationTimestamp;
+  private final long creationTimestamp;
 
   /** The maximum size of one request. Defined by the API. */
   public static long getApiMaxRequestBytes() {
@@ -260,7 +259,7 @@ public class StreamWriter implements AutoCloseable {
         client.close();
       }
     }
-    this.creationTimestamp = Instant.now();
+    this.creationTimestamp = System.nanoTime();
   }
 
   @VisibleForTesting
@@ -414,12 +413,12 @@ public class StreamWriter implements AutoCloseable {
     if (tableSchemaAndTimestamp == null) {
       return null;
     }
-    return creationTimestamp.compareTo(tableSchemaAndTimestamp.updateTimeStamp()) < 0
+    return creationTimestamp < tableSchemaAndTimestamp.updateTimeStamp()
         ? tableSchemaAndTimestamp.updatedSchema()
         : null;
   }
 
-  Instant getCreationTimestamp() {
+  long getCreationTimestamp() {
     return creationTimestamp;
   }
 
