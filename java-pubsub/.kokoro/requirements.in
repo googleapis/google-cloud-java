@@ -1,4 +1,4 @@
-gcp-docuploader==0.6.4
+gcp-docuploader==0.6.3
 google-crc32c==1.3.0
 googleapis-common-protos==1.56.3
 gcp-releasetool==1.9.1
