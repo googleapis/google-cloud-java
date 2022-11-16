@@ -69,7 +69,7 @@ cp -R ../../../google-cloud-pom-parent google-cloud-pom-parent
 git add --all
 git commit -m 'chore: add template files'
 
-../../print_root_pom.sh > pom.xml
+../../generate_root_pom.sh
 
 git add pom.xml
 git commit -am 'chore: create aggregator pom'
@@ -88,7 +88,7 @@ git commit -am 'chore: consolidate config to parent'
 ../../generate_gapic_bom.sh
 
 # add the gapic bom module to root pom.xml by regenerating aggregator pom
-../../print_root_pom.sh > pom.xml
+../../generate_root_pom.sh
 
 git add gapic-libraries-bom/pom.xml
 git commit -am 'chore: create gapic-libraries-bom'
