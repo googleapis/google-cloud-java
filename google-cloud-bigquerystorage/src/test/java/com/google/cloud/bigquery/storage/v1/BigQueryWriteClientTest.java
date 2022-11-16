@@ -34,6 +34,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -188,6 +189,8 @@ public class BigQueryWriteClientTest {
                 WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString())
             .setOffset(Int64Value.newBuilder().build())
             .setTraceId("traceId-1067401920")
+            .putAllMissingValueInterpretations(
+                new HashMap<String, AppendRowsRequest.MissingValueInterpretation>())
             .build();
 
     MockStreamObserver<AppendRowsResponse> responseObserver = new MockStreamObserver<>();
@@ -215,6 +218,8 @@ public class BigQueryWriteClientTest {
                 WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString())
             .setOffset(Int64Value.newBuilder().build())
             .setTraceId("traceId-1067401920")
+            .putAllMissingValueInterpretations(
+                new HashMap<String, AppendRowsRequest.MissingValueInterpretation>())
             .build();
 
     MockStreamObserver<AppendRowsResponse> responseObserver = new MockStreamObserver<>();

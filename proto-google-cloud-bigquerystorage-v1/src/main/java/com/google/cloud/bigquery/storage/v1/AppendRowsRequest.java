@@ -63,6 +63,17 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         .internal_static_google_cloud_bigquery_storage_v1_AppendRowsRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 7:
+        return internalGetMissingValueInterpretations();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -71,6 +82,176 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.cloud.bigquery.storage.v1.AppendRowsRequest.class,
             com.google.cloud.bigquery.storage.v1.AppendRowsRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An enum to indicate how to interpret missing values. Missing values are
+   * fields present in user schema but missing in rows. A missing value can
+   * represent a NULL or a column default value defined in BigQuery table
+   * schema.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation}
+   */
+  public enum MissingValueInterpretation implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Invalid missing value interpretation. Requests with this value will be
+     * rejected.
+     * </pre>
+     *
+     * <code>MISSING_VALUE_INTERPRETATION_UNSPECIFIED = 0;</code>
+     */
+    MISSING_VALUE_INTERPRETATION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Missing value is interpreted as NULL.
+     * </pre>
+     *
+     * <code>NULL_VALUE = 1;</code>
+     */
+    NULL_VALUE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Missing value is interpreted as column default value if declared in the
+     * table schema, NULL otherwise.
+     * </pre>
+     *
+     * <code>DEFAULT_VALUE = 2;</code>
+     */
+    DEFAULT_VALUE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Invalid missing value interpretation. Requests with this value will be
+     * rejected.
+     * </pre>
+     *
+     * <code>MISSING_VALUE_INTERPRETATION_UNSPECIFIED = 0;</code>
+     */
+    public static final int MISSING_VALUE_INTERPRETATION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Missing value is interpreted as NULL.
+     * </pre>
+     *
+     * <code>NULL_VALUE = 1;</code>
+     */
+    public static final int NULL_VALUE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Missing value is interpreted as column default value if declared in the
+     * table schema, NULL otherwise.
+     * </pre>
+     *
+     * <code>DEFAULT_VALUE = 2;</code>
+     */
+    public static final int DEFAULT_VALUE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MissingValueInterpretation valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MissingValueInterpretation forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
+        case 1:
+          return NULL_VALUE;
+        case 2:
+          return DEFAULT_VALUE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MissingValueInterpretation>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MissingValueInterpretation>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MissingValueInterpretation>() {
+              public MissingValueInterpretation findValueByNumber(int number) {
+                return MissingValueInterpretation.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1.AppendRowsRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final MissingValueInterpretation[] VALUES = values();
+
+    public static MissingValueInterpretation valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MissingValueInterpretation(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation)
   }
 
   public interface ProtoDataOrBuilder
@@ -1475,6 +1656,312 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int MISSING_VALUE_INTERPRETATIONS_FIELD_NUMBER = 7;
+
+  private static final class MissingValueInterpretationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Integer>newDefaultInstance(
+            com.google.cloud.bigquery.storage.v1.StorageProto
+                .internal_static_google_cloud_bigquery_storage_v1_AppendRowsRequest_MissingValueInterpretationsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.ENUM,
+            com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+                .MISSING_VALUE_INTERPRETATION_UNSPECIFIED
+                .getNumber());
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      missingValueInterpretations_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetMissingValueInterpretations() {
+    if (missingValueInterpretations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MissingValueInterpretationsDefaultEntryHolder.defaultEntry);
+    }
+    return missingValueInterpretations_;
+  }
+
+  private static final com.google.protobuf.Internal.MapAdapter.Converter<
+          java.lang.Integer,
+          com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+      missingValueInterpretationsValueConverter =
+          com.google.protobuf.Internal.MapAdapter.newEnumConverter(
+              com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+                  .internalGetValueMap(),
+              com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+                  .UNRECOGNIZED);
+
+  private static final java.util.Map<
+          java.lang.String,
+          com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+      internalGetAdaptedMissingValueInterpretationsMap(
+          java.util.Map<java.lang.String, java.lang.Integer> map) {
+    return new com.google.protobuf.Internal.MapAdapter<
+        java.lang.String,
+        com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation,
+        java.lang.Integer>(map, missingValueInterpretationsValueConverter);
+  }
+
+  public int getMissingValueInterpretationsCount() {
+    return internalGetMissingValueInterpretations().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map to indicate how to interpret missing value for some fields. Missing
+   * values are fields present in user schema but missing in rows. The key is
+   * the field name. The value is the interpretation of missing values for the
+   * field.
+   * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+   * missing values in field foo are interpreted as NULL, all missing values in
+   * field bar are interpreted as the default value of field bar in table
+   * schema.
+   * If a field is not in this map and has missing values, the missing values
+   * in this field are interpreted as NULL.
+   * This field only applies to the current request, it won't affect other
+   * requests on the connection.
+   * Currently, field name can only be top-level column name, can't be a struct
+   * field path like 'foo.bar'.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsMissingValueInterpretations(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetMissingValueInterpretations().getMap().containsKey(key);
+  }
+  /** Use {@link #getMissingValueInterpretationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String,
+          com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+      getMissingValueInterpretations() {
+    return getMissingValueInterpretationsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map to indicate how to interpret missing value for some fields. Missing
+   * values are fields present in user schema but missing in rows. The key is
+   * the field name. The value is the interpretation of missing values for the
+   * field.
+   * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+   * missing values in field foo are interpreted as NULL, all missing values in
+   * field bar are interpreted as the default value of field bar in table
+   * schema.
+   * If a field is not in this map and has missing values, the missing values
+   * in this field are interpreted as NULL.
+   * This field only applies to the current request, it won't affect other
+   * requests on the connection.
+   * Currently, field name can only be top-level column name, can't be a struct
+   * field path like 'foo.bar'.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String,
+          com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+      getMissingValueInterpretationsMap() {
+    return internalGetAdaptedMissingValueInterpretationsMap(
+        internalGetMissingValueInterpretations().getMap());
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map to indicate how to interpret missing value for some fields. Missing
+   * values are fields present in user schema but missing in rows. The key is
+   * the field name. The value is the interpretation of missing values for the
+   * field.
+   * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+   * missing values in field foo are interpreted as NULL, all missing values in
+   * field bar are interpreted as the default value of field bar in table
+   * schema.
+   * If a field is not in this map and has missing values, the missing values
+   * in this field are interpreted as NULL.
+   * This field only applies to the current request, it won't affect other
+   * requests on the connection.
+   * Currently, field name can only be top-level column name, can't be a struct
+   * field path like 'foo.bar'.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.bigquery.storage.v1.AppendRowsRequest
+          .MissingValueInterpretation
+      getMissingValueInterpretationsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+              defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetMissingValueInterpretations().getMap();
+    return map.containsKey(key)
+        ? missingValueInterpretationsValueConverter.doForward(map.get(key))
+        : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map to indicate how to interpret missing value for some fields. Missing
+   * values are fields present in user schema but missing in rows. The key is
+   * the field name. The value is the interpretation of missing values for the
+   * field.
+   * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+   * missing values in field foo are interpreted as NULL, all missing values in
+   * field bar are interpreted as the default value of field bar in table
+   * schema.
+   * If a field is not in this map and has missing values, the missing values
+   * in this field are interpreted as NULL.
+   * This field only applies to the current request, it won't affect other
+   * requests on the connection.
+   * Currently, field name can only be top-level column name, can't be a struct
+   * field path like 'foo.bar'.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+      getMissingValueInterpretationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetMissingValueInterpretations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return missingValueInterpretationsValueConverter.doForward(map.get(key));
+  }
+  /** Use {@link #getMissingValueInterpretationsValueMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Integer> getMissingValueInterpretationsValue() {
+    return getMissingValueInterpretationsValueMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map to indicate how to interpret missing value for some fields. Missing
+   * values are fields present in user schema but missing in rows. The key is
+   * the field name. The value is the interpretation of missing values for the
+   * field.
+   * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+   * missing values in field foo are interpreted as NULL, all missing values in
+   * field bar are interpreted as the default value of field bar in table
+   * schema.
+   * If a field is not in this map and has missing values, the missing values
+   * in this field are interpreted as NULL.
+   * This field only applies to the current request, it won't affect other
+   * requests on the connection.
+   * Currently, field name can only be top-level column name, can't be a struct
+   * field path like 'foo.bar'.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Integer>
+      getMissingValueInterpretationsValueMap() {
+    return internalGetMissingValueInterpretations().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map to indicate how to interpret missing value for some fields. Missing
+   * values are fields present in user schema but missing in rows. The key is
+   * the field name. The value is the interpretation of missing values for the
+   * field.
+   * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+   * missing values in field foo are interpreted as NULL, all missing values in
+   * field bar are interpreted as the default value of field bar in table
+   * schema.
+   * If a field is not in this map and has missing values, the missing values
+   * in this field are interpreted as NULL.
+   * This field only applies to the current request, it won't affect other
+   * requests on the connection.
+   * Currently, field name can only be top-level column name, can't be a struct
+   * field path like 'foo.bar'.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public int getMissingValueInterpretationsValueOrDefault(java.lang.String key, int defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetMissingValueInterpretations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map to indicate how to interpret missing value for some fields. Missing
+   * values are fields present in user schema but missing in rows. The key is
+   * the field name. The value is the interpretation of missing values for the
+   * field.
+   * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+   * missing values in field foo are interpreted as NULL, all missing values in
+   * field bar are interpreted as the default value of field bar in table
+   * schema.
+   * If a field is not in this map and has missing values, the missing values
+   * in this field are interpreted as NULL.
+   * This field only applies to the current request, it won't affect other
+   * requests on the connection.
+   * Currently, field name can only be top-level column name, can't be a struct
+   * field path like 'foo.bar'.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public int getMissingValueInterpretationsValueOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetMissingValueInterpretations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1508,6 +1995,11 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, traceId_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetMissingValueInterpretations(),
+        MissingValueInterpretationsDefaultEntryHolder.defaultEntry,
+        7);
     getUnknownFields().writeTo(output);
   }
 
@@ -1531,6 +2023,19 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, traceId_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry :
+        internalGetMissingValueInterpretations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+          missingValueInterpretations__ =
+              MissingValueInterpretationsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, missingValueInterpretations__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1553,6 +2058,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       if (!getOffset().equals(other.getOffset())) return false;
     }
     if (!getTraceId().equals(other.getTraceId())) return false;
+    if (!internalGetMissingValueInterpretations()
+        .equals(other.internalGetMissingValueInterpretations())) return false;
     if (!getRowsCase().equals(other.getRowsCase())) return false;
     switch (rowsCase_) {
       case 4:
@@ -1580,6 +2087,10 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + TRACE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTraceId().hashCode();
+    if (!internalGetMissingValueInterpretations().getMap().isEmpty()) {
+      hash = (37 * hash) + MISSING_VALUE_INTERPRETATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMissingValueInterpretations().hashCode();
+    }
     switch (rowsCase_) {
       case 4:
         hash = (37 * hash) + PROTO_ROWS_FIELD_NUMBER;
@@ -1712,6 +2223,26 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           .internal_static_google_cloud_bigquery_storage_v1_AppendRowsRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 7:
+          return internalGetMissingValueInterpretations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableMissingValueInterpretations();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1745,6 +2276,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       }
       traceId_ = "";
 
+      internalGetMutableMissingValueInterpretations().clear();
       rowsCase_ = 0;
       rows_ = null;
       return this;
@@ -1774,6 +2306,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.bigquery.storage.v1.AppendRowsRequest buildPartial() {
       com.google.cloud.bigquery.storage.v1.AppendRowsRequest result =
           new com.google.cloud.bigquery.storage.v1.AppendRowsRequest(this);
+      int from_bitField0_ = bitField0_;
       result.writeStream_ = writeStream_;
       if (offsetBuilder_ == null) {
         result.offset_ = offset_;
@@ -1788,6 +2321,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         }
       }
       result.traceId_ = traceId_;
+      result.missingValueInterpretations_ = internalGetMissingValueInterpretations();
+      result.missingValueInterpretations_.makeImmutable();
       result.rowsCase_ = rowsCase_;
       onBuilt();
       return result;
@@ -1850,6 +2385,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         traceId_ = other.traceId_;
         onChanged();
       }
+      internalGetMutableMissingValueInterpretations()
+          .mergeFrom(other.internalGetMissingValueInterpretations());
       switch (other.getRowsCase()) {
         case PROTO_ROWS:
           {
@@ -1916,6 +2453,21 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
 
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+                    missingValueInterpretations__ =
+                        input.readMessage(
+                            MissingValueInterpretationsDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableMissingValueInterpretations()
+                    .getMutableMap()
+                    .put(
+                        missingValueInterpretations__.getKey(),
+                        missingValueInterpretations__.getValue());
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1946,6 +2498,8 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object writeStream_ = "";
     /**
@@ -2632,6 +3186,475 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
 
       traceId_ = value;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        missingValueInterpretations_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetMissingValueInterpretations() {
+      if (missingValueInterpretations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MissingValueInterpretationsDefaultEntryHolder.defaultEntry);
+      }
+      return missingValueInterpretations_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetMutableMissingValueInterpretations() {
+      onChanged();
+      ;
+      if (missingValueInterpretations_ == null) {
+        missingValueInterpretations_ =
+            com.google.protobuf.MapField.newMapField(
+                MissingValueInterpretationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!missingValueInterpretations_.isMutable()) {
+        missingValueInterpretations_ = missingValueInterpretations_.copy();
+      }
+      return missingValueInterpretations_;
+    }
+
+    public int getMissingValueInterpretationsCount() {
+      return internalGetMissingValueInterpretations().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsMissingValueInterpretations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetMissingValueInterpretations().getMap().containsKey(key);
+    }
+    /** Use {@link #getMissingValueInterpretationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+        getMissingValueInterpretations() {
+      return getMissingValueInterpretationsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+        getMissingValueInterpretationsMap() {
+      return internalGetAdaptedMissingValueInterpretationsMap(
+          internalGetMissingValueInterpretations().getMap());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.bigquery.storage.v1.AppendRowsRequest
+            .MissingValueInterpretation
+        getMissingValueInterpretationsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+                defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetMissingValueInterpretations().getMap();
+      return map.containsKey(key)
+          ? missingValueInterpretationsValueConverter.doForward(map.get(key))
+          : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
+        getMissingValueInterpretationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetMissingValueInterpretations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return missingValueInterpretationsValueConverter.doForward(map.get(key));
+    }
+    /** Use {@link #getMissingValueInterpretationsValueMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer>
+        getMissingValueInterpretationsValue() {
+      return getMissingValueInterpretationsValueMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Integer>
+        getMissingValueInterpretationsValueMap() {
+      return internalGetMissingValueInterpretations().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public int getMissingValueInterpretationsValueOrDefault(
+        java.lang.String key, int defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetMissingValueInterpretations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public int getMissingValueInterpretationsValueOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetMissingValueInterpretations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMissingValueInterpretations() {
+      internalGetMutableMissingValueInterpretations().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    public Builder removeMissingValueInterpretations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableMissingValueInterpretations().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+        getMutableMissingValueInterpretations() {
+      return internalGetAdaptedMissingValueInterpretationsMap(
+          internalGetMutableMissingValueInterpretations().getMutableMap());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    public Builder putMissingValueInterpretations(
+        java.lang.String key,
+        com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableMissingValueInterpretations()
+          .getMutableMap()
+          .put(key, missingValueInterpretationsValueConverter.doBackward(value));
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    public Builder putAllMissingValueInterpretations(
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
+            values) {
+      internalGetAdaptedMissingValueInterpretationsMap(
+              internalGetMutableMissingValueInterpretations().getMutableMap())
+          .putAll(values);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer>
+        getMutableMissingValueInterpretationsValue() {
+      return internalGetMutableMissingValueInterpretations().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    public Builder putMissingValueInterpretationsValue(java.lang.String key, int value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableMissingValueInterpretations().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map to indicate how to interpret missing value for some fields. Missing
+     * values are fields present in user schema but missing in rows. The key is
+     * the field name. The value is the interpretation of missing values for the
+     * field.
+     * For example, a map {'foo': NULL_VALUE, 'bar': DEFAULT_VALUE} means all
+     * missing values in field foo are interpreted as NULL, all missing values in
+     * field bar are interpreted as the default value of field bar in table
+     * schema.
+     * If a field is not in this map and has missing values, the missing values
+     * in this field are interpreted as NULL.
+     * This field only applies to the current request, it won't affect other
+     * requests on the connection.
+     * Currently, field name can only be top-level column name, can't be a struct
+     * field path like 'foo.bar'.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation&gt; missing_value_interpretations = 7;
+     * </code>
+     */
+    public Builder putAllMissingValueInterpretationsValue(
+        java.util.Map<java.lang.String, java.lang.Integer> values) {
+      internalGetMutableMissingValueInterpretations().getMutableMap().putAll(values);
       return this;
     }
 

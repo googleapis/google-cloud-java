@@ -342,6 +342,8 @@ public class BigQueryWriteClient implements BackgroundResource {
    *               WriteStreamName.of("[PROJECT]", "[DATASET]", "[TABLE]", "[STREAM]").toString())
    *           .setOffset(Int64Value.newBuilder().build())
    *           .setTraceId("traceId-1067401920")
+   *           .putAllMissingValueInterpretations(
+   *               new HashMap<String, AppendRowsRequest.MissingValueInterpretation>())
    *           .build();
    *   bidiStream.send(request);
    *   for (AppendRowsResponse response : bidiStream) {
