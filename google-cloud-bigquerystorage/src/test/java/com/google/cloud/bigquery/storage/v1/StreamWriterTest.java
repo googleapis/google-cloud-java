@@ -20,6 +20,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -309,6 +310,8 @@ public class StreamWriterTest {
     AppendRowsResponse response =
         writer.append(createProtoRows(new String[] {String.valueOf(0)}), 0).get();
     assertEquals(writer.getUpdatedSchema(), UPDATED_TABLE_SCHEMA);
+    // Sleep for a short period to make sure the creation timestamp is older.
+    Sleeper.DEFAULT.sleep(200);
 
     // Create another writer, although it's the same stream name but the time stamp is newer, thus
     // the old updated schema won't get returned.

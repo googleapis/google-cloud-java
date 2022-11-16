@@ -530,6 +530,8 @@ public class JsonStreamWriterTest {
   public void testSimpleSchemaUpdate() throws Exception {
     try (JsonStreamWriter writer =
         getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build()) {
+      // Sleep for a short period to make sure the creation timestamp is older.
+      Sleeper.DEFAULT.sleep(200);
       testBigQueryWrite.addResponse(
           AppendRowsResponse.newBuilder()
               .setAppendResult(
