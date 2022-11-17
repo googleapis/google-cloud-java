@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+  <version>1.6.13</version><!-- {x-version-update:proto-google-iam-v1:current} -->
   <name>Google IAM Parent</name>
   <url>https://github.com/googleapis/java-iam</url>
   <description>
@@ -87,37 +87,37 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-v2</artifactId>
-        <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v2:current} -->
+        <version>1.6.13</version><!-- {x-version-update:proto-google-iam-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-v2</artifactId>
-        <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v2:current} -->
+        <version>1.6.13</version><!-- {x-version-update:grpc-google-iam-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-iam-policy</artifactId>
-        <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+        <version>1.6.13</version><!-- {x-version-update:google-iam-policy:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-v2beta</artifactId>
-        <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v2beta:current} -->
+        <version>1.6.13</version><!-- {x-version-update:proto-google-iam-v2beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-v1</artifactId>
-        <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v1:current} -->
+        <version>1.6.13</version><!-- {x-version-update:grpc-google-iam-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-v2beta</artifactId>
-        <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v2beta:current} -->
+        <version>1.6.13</version><!-- {x-version-update:grpc-google-iam-v2beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-v1</artifactId>
-        <version>1.6.13-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+        <version>1.6.13</version><!-- {x-version-update:proto-google-iam-v1:current} -->
       </dependency>
 
       <dependency>
