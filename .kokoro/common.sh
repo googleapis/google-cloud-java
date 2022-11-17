@@ -124,10 +124,10 @@ function run_integration_tests() {
 }
 
 function run_graalvm_tests() {
-  printf "Running GraalVM ITs on:\n%s\n" "${module_list[*]}"
+  printf "Running GraalVM ITs on:\n%s\n" "$1"
 
   mvn -B ${INTEGRATION_TEST_ARGS} \
-    -pl "${module_list}" \
+    -pl "$1" \
     -amd \
     -ntp \
     -DtrimStackTrace=false \
@@ -141,7 +141,7 @@ function run_graalvm_tests() {
     test
 
   RETURN_CODE=$?
-  printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "${module_list}"
+  printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
 }
 
 function generate_graalvm_modules_list() {
