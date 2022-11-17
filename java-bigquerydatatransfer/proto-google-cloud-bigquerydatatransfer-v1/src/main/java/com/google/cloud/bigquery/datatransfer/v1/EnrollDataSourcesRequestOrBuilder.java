@@ -27,8 +27,7 @@ public interface EnrollDataSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the project resource in the form:
-   * `projects/{project_id}`
+   * The name of the project resource in the form: `projects/{project_id}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -40,8 +39,7 @@ public interface EnrollDataSourcesRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the project resource in the form:
-   * `projects/{project_id}`
+   * The name of the project resource in the form: `projects/{project_id}`
    * </pre>
    *
    * <code>string name = 1;</code>
