@@ -5268,1725 +5268,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
   }
 
-  public interface EgressToOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @return A list containing the resources.
-     */
-    java.util.List<java.lang.String> getResourcesList();
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @return The count of resources.
-     */
-    int getResourcesCount();
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The resources at the given index.
-     */
-    java.lang.String getResources(int index);
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the resources at the given index.
-     */
-    com.google.protobuf.ByteString getResourcesBytes(int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
-        getOperationsList();
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation getOperations(
-        int index);
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    int getOperationsCount();
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    java.util.List<
-            ? extends
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                    .ApiOperationOrBuilder>
-        getOperationsOrBuilderList();
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperationOrBuilder
-        getOperationsOrBuilder(int index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Defines the conditions under which an [EgressPolicy]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
-   * matches a request. Conditions are based on information about the
-   * [ApiOperation]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-   * intended to be performed on the `resources` specified. Note that if the
-   * destination of the request is also protected by a [ServicePerimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
-   * [ServicePerimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
-   * an [IngressPolicy]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
-   * which allows access in order for this request to succeed. The request must
-   * match `operations` AND `resources` fields in order to be allowed egress out
-   * of the perimeter.
-   * </pre>
-   *
-   * Protobuf type {@code google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo}
-   */
-  public static final class EgressTo extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
-      EgressToOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use EgressTo.newBuilder() to construct.
-    private EgressTo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private EgressTo() {
-      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      operations_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new EgressTo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.class,
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.Builder
-                  .class);
-    }
-
-    public static final int RESOURCES_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList resources_;
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @return A list containing the resources.
-     */
-    public com.google.protobuf.ProtocolStringList getResourcesList() {
-      return resources_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @return The count of resources.
-     */
-    public int getResourcesCount() {
-      return resources_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The resources at the given index.
-     */
-    public java.lang.String getResources(int index) {
-      return resources_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of resources, currently only projects in the form
-     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-     * defined in the corresponding [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it contains a resource in this list.  If `*` is
-     * specified for `resources`, then this [EgressTo]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-     * rule will authorize access to all resources outside the perimeter.
-     * </pre>
-     *
-     * <code>repeated string resources = 1;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the resources at the given index.
-     */
-    public com.google.protobuf.ByteString getResourcesBytes(int index) {
-      return resources_.getByteString(index);
-    }
-
-    public static final int OPERATIONS_FIELD_NUMBER = 2;
-    private java.util.List<
-            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
-        operations_;
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    @java.lang.Override
-    public java.util.List<
-            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
-        getOperationsList() {
-      return operations_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    @java.lang.Override
-    public java.util.List<
-            ? extends
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                    .ApiOperationOrBuilder>
-        getOperationsOrBuilderList() {
-      return operations_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    @java.lang.Override
-    public int getOperationsCount() {
-      return operations_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-        getOperations(int index) {
-      return operations_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of [ApiOperations]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * allowed to be performed by the sources specified in the corresponding
-     * [EgressFrom]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-     * A request matches if it uses an operation/service in this list.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperationOrBuilder
-        getOperationsOrBuilder(int index) {
-      return operations_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      for (int i = 0; i < resources_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resources_.getRaw(i));
-      }
-      for (int i = 0; i < operations_.size(); i++) {
-        output.writeMessage(2, operations_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < resources_.size(); i++) {
-          dataSize += computeStringSizeNoTag(resources_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getResourcesList().size();
-      }
-      for (int i = 0; i < operations_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, operations_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)) {
-        return super.equals(obj);
-      }
-      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo other =
-          (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo) obj;
-
-      if (!getResourcesList().equals(other.getResourcesList())) return false;
-      if (!getOperationsList().equals(other.getOperationsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getResourcesCount() > 0) {
-        hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
-        hash = (53 * hash) + getResourcesList().hashCode();
-      }
-      if (getOperationsCount() > 0) {
-        hash = (37 * hash) + OPERATIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getOperationsList().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Defines the conditions under which an [EgressPolicy]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
-     * matches a request. Conditions are based on information about the
-     * [ApiOperation]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-     * intended to be performed on the `resources` specified. Note that if the
-     * destination of the request is also protected by a [ServicePerimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
-     * [ServicePerimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
-     * an [IngressPolicy]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
-     * which allows access in order for this request to succeed. The request must
-     * match `operations` AND `resources` fields in order to be allowed egress out
-     * of the perimeter.
-     * </pre>
-     *
-     * Protobuf type {@code google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressToOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.class,
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.Builder
-                    .class);
-      }
-
-      // Construct using
-      // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (operationsBuilder_ == null) {
-          operations_ = java.util.Collections.emptyList();
-        } else {
-          operations_ = null;
-          operationsBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-          getDefaultInstanceForType() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo build() {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo result =
-            buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-          buildPartial() {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo result =
-            new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          resources_ = resources_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.resources_ = resources_;
-        if (operationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            operations_ = java.util.Collections.unmodifiableList(operations_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.operations_ = operations_;
-        } else {
-          result.operations_ = operationsBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof
-            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo) {
-          return mergeFrom(
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo other) {
-        if (other
-            == com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-                .getDefaultInstance()) return this;
-        if (!other.resources_.isEmpty()) {
-          if (resources_.isEmpty()) {
-            resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureResourcesIsMutable();
-            resources_.addAll(other.resources_);
-          }
-          onChanged();
-        }
-        if (operationsBuilder_ == null) {
-          if (!other.operations_.isEmpty()) {
-            if (operations_.isEmpty()) {
-              operations_ = other.operations_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureOperationsIsMutable();
-              operations_.addAll(other.operations_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.operations_.isEmpty()) {
-            if (operationsBuilder_.isEmpty()) {
-              operationsBuilder_.dispose();
-              operationsBuilder_ = null;
-              operations_ = other.operations_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              operationsBuilder_ =
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                      ? getOperationsFieldBuilder()
-                      : null;
-            } else {
-              operationsBuilder_.addAllMessages(other.operations_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  ensureResourcesIsMutable();
-                  resources_.add(s);
-                  break;
-                } // case 10
-              case 18:
-                {
-                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-                      m =
-                          input.readMessage(
-                              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                                  .ApiOperation.parser(),
-                              extensionRegistry);
-                  if (operationsBuilder_ == null) {
-                    ensureOperationsIsMutable();
-                    operations_.add(m);
-                  } else {
-                    operationsBuilder_.addMessage(m);
-                  }
-                  break;
-                } // case 18
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private com.google.protobuf.LazyStringList resources_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
-
-      private void ensureResourcesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          resources_ = new com.google.protobuf.LazyStringArrayList(resources_);
-          bitField0_ |= 0x00000001;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @return A list containing the resources.
-       */
-      public com.google.protobuf.ProtocolStringList getResourcesList() {
-        return resources_.getUnmodifiableView();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @return The count of resources.
-       */
-      public int getResourcesCount() {
-        return resources_.size();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @param index The index of the element to return.
-       * @return The resources at the given index.
-       */
-      public java.lang.String getResources(int index) {
-        return resources_.get(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @param index The index of the value to return.
-       * @return The bytes of the resources at the given index.
-       */
-      public com.google.protobuf.ByteString getResourcesBytes(int index) {
-        return resources_.getByteString(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @param index The index to set the value at.
-       * @param value The resources to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResources(int index, java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureResourcesIsMutable();
-        resources_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @param value The resources to add.
-       * @return This builder for chaining.
-       */
-      public Builder addResources(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureResourcesIsMutable();
-        resources_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @param values The resources to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllResources(java.lang.Iterable<java.lang.String> values) {
-        ensureResourcesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resources_);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearResources() {
-        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of resources, currently only projects in the form
-       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
-       * defined in the corresponding [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it contains a resource in this list.  If `*` is
-       * specified for `resources`, then this [EgressTo]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
-       * rule will authorize access to all resources outside the perimeter.
-       * </pre>
-       *
-       * <code>repeated string resources = 1;</code>
-       *
-       * @param value The bytes of the resources to add.
-       * @return This builder for chaining.
-       */
-      public Builder addResourcesBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        ensureResourcesIsMutable();
-        resources_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
-          operations_ = java.util.Collections.emptyList();
-
-      private void ensureOperationsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          operations_ =
-              new java.util.ArrayList<
-                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>(
-                  operations_);
-          bitField0_ |= 0x00000002;
-        }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation,
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-                  .Builder,
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                  .ApiOperationOrBuilder>
-          operationsBuilder_;
-
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public java.util.List<
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
-          getOperationsList() {
-        if (operationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(operations_);
-        } else {
-          return operationsBuilder_.getMessageList();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public int getOperationsCount() {
-        if (operationsBuilder_ == null) {
-          return operations_.size();
-        } else {
-          return operationsBuilder_.getCount();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-          getOperations(int index) {
-        if (operationsBuilder_ == null) {
-          return operations_.get(index);
-        } else {
-          return operationsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder setOperations(
-          int index,
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation value) {
-        if (operationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOperationsIsMutable();
-          operations_.set(index, value);
-          onChanged();
-        } else {
-          operationsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder setOperations(
-          int index,
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
-              builderForValue) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          operationsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder addOperations(
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation value) {
-        if (operationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOperationsIsMutable();
-          operations_.add(value);
-          onChanged();
-        } else {
-          operationsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder addOperations(
-          int index,
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation value) {
-        if (operationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOperationsIsMutable();
-          operations_.add(index, value);
-          onChanged();
-        } else {
-          operationsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder addOperations(
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
-              builderForValue) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.add(builderForValue.build());
-          onChanged();
-        } else {
-          operationsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder addOperations(
-          int index,
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
-              builderForValue) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          operationsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder addAllOperations(
-          java.lang.Iterable<
-                  ? extends
-                      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                          .ApiOperation>
-              values) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, operations_);
-          onChanged();
-        } else {
-          operationsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder clearOperations() {
-        if (operationsBuilder_ == null) {
-          operations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          operationsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public Builder removeOperations(int index) {
-        if (operationsBuilder_ == null) {
-          ensureOperationsIsMutable();
-          operations_.remove(index);
-          onChanged();
-        } else {
-          operationsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
-          getOperationsBuilder(int index) {
-        return getOperationsFieldBuilder().getBuilder(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-              .ApiOperationOrBuilder
-          getOperationsOrBuilder(int index) {
-        if (operationsBuilder_ == null) {
-          return operations_.get(index);
-        } else {
-          return operationsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public java.util.List<
-              ? extends
-                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                      .ApiOperationOrBuilder>
-          getOperationsOrBuilderList() {
-        if (operationsBuilder_ != null) {
-          return operationsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(operations_);
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
-          addOperationsBuilder() {
-        return getOperationsFieldBuilder()
-            .addBuilder(
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-                    .getDefaultInstance());
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
-          addOperationsBuilder(int index) {
-        return getOperationsFieldBuilder()
-            .addBuilder(
-                index,
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-                    .getDefaultInstance());
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of [ApiOperations]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
-       * allowed to be performed by the sources specified in the corresponding
-       * [EgressFrom]
-       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
-       * A request matches if it uses an operation/service in this list.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
-       * </code>
-       */
-      public java.util.List<
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-                  .Builder>
-          getOperationsBuilderList() {
-        return getOperationsFieldBuilder().getBuilderList();
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation,
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-                  .Builder,
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                  .ApiOperationOrBuilder>
-          getOperationsFieldBuilder() {
-        if (operationsBuilder_ == null) {
-          operationsBuilder_ =
-              new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation,
-                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
-                      .Builder,
-                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-                      .ApiOperationOrBuilder>(
-                  operations_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
-          operations_ = null;
-        }
-        return operationsBuilder_;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
-    private static final com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo();
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<EgressTo> PARSER =
-        new com.google.protobuf.AbstractParser<EgressTo>() {
-          @java.lang.Override
-          public EgressTo parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<EgressTo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EgressTo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
   public interface IngressFromOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressFrom)
@@ -11792,6 +10073,3194 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface EgressFromOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @return A list containing the identities.
+     */
+    java.util.List<java.lang.String> getIdentitiesList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @return The count of identities.
+     */
+    int getIdentitiesCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The identities at the given index.
+     */
+    java.lang.String getIdentities(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the identities at the given index.
+     */
+    com.google.protobuf.ByteString getIdentitiesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of identities that are allowed access to outside the
+     * perimeter. If left unspecified, then members of `identities` field will
+     * be allowed access.
+     * </pre>
+     *
+     * <code>
+     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for identityType.
+     */
+    int getIdentityTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of identities that are allowed access to outside the
+     * perimeter. If left unspecified, then members of `identities` field will
+     * be allowed access.
+     * </pre>
+     *
+     * <code>
+     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+     * </code>
+     *
+     * @return The identityType.
+     */
+    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
+        getIdentityType();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines the conditions under which an [EgressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * matches a request. Conditions based on information about the source of the
+   * request. Note that if the destination of the request is also protected by a
+   * [ServicePerimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
+   * [ServicePerimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
+   * an [IngressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * which allows access in order for this request to succeed.
+   * </pre>
+   *
+   * Protobuf type {@code google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom}
+   */
+  public static final class EgressFrom extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
+      EgressFromOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EgressFrom.newBuilder() to construct.
+    private EgressFrom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EgressFrom() {
+      identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      identityType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EgressFrom();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.class,
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.Builder
+                  .class);
+    }
+
+    public static final int IDENTITIES_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList identities_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @return A list containing the identities.
+     */
+    public com.google.protobuf.ProtocolStringList getIdentitiesList() {
+      return identities_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @return The count of identities.
+     */
+    public int getIdentitiesCount() {
+      return identities_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The identities at the given index.
+     */
+    public java.lang.String getIdentities(int index) {
+      return identities_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of identities that are allowed access through this [EgressPolicy].
+     * Should be in the format of email address. The email address should
+     * represent individual user or service account only.
+     * </pre>
+     *
+     * <code>repeated string identities = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the identities at the given index.
+     */
+    public com.google.protobuf.ByteString getIdentitiesBytes(int index) {
+      return identities_.getByteString(index);
+    }
+
+    public static final int IDENTITY_TYPE_FIELD_NUMBER = 2;
+    private int identityType_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of identities that are allowed access to outside the
+     * perimeter. If left unspecified, then members of `identities` field will
+     * be allowed access.
+     * </pre>
+     *
+     * <code>
+     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for identityType.
+     */
+    @java.lang.Override
+    public int getIdentityTypeValue() {
+      return identityType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of identities that are allowed access to outside the
+     * perimeter. If left unspecified, then members of `identities` field will
+     * be allowed access.
+     * </pre>
+     *
+     * <code>
+     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+     * </code>
+     *
+     * @return The identityType.
+     */
+    @java.lang.Override
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
+        getIdentityType() {
+      @SuppressWarnings("deprecation")
+      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType result =
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType.valueOf(
+              identityType_);
+      return result == null
+          ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < identities_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identities_.getRaw(i));
+      }
+      if (identityType_
+          != com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
+              .IDENTITY_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, identityType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < identities_.size(); i++) {
+          dataSize += computeStringSizeNoTag(identities_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getIdentitiesList().size();
+      }
+      if (identityType_
+          != com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
+              .IDENTITY_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, identityType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)) {
+        return super.equals(obj);
+      }
+      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom other =
+          (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom) obj;
+
+      if (!getIdentitiesList().equals(other.getIdentitiesList())) return false;
+      if (identityType_ != other.identityType_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getIdentitiesCount() > 0) {
+        hash = (37 * hash) + IDENTITIES_FIELD_NUMBER;
+        hash = (53 * hash) + getIdentitiesList().hashCode();
+      }
+      hash = (37 * hash) + IDENTITY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + identityType_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines the conditions under which an [EgressPolicy]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+     * matches a request. Conditions based on information about the source of the
+     * request. Note that if the destination of the request is also protected by a
+     * [ServicePerimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
+     * [ServicePerimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
+     * an [IngressPolicy]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+     * which allows access in order for this request to succeed.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFromOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.class,
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        identityType_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+          getDefaultInstanceForType() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom build() {
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+          buildPartial() {
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom result =
+            new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          identities_ = identities_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.identities_ = identities_;
+        result.identityType_ = identityType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom) {
+          return mergeFrom(
+              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom other) {
+        if (other
+            == com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+                .getDefaultInstance()) return this;
+        if (!other.identities_.isEmpty()) {
+          if (identities_.isEmpty()) {
+            identities_ = other.identities_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureIdentitiesIsMutable();
+            identities_.addAll(other.identities_);
+          }
+          onChanged();
+        }
+        if (other.identityType_ != 0) {
+          setIdentityTypeValue(other.getIdentityTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureIdentitiesIsMutable();
+                  identities_.add(s);
+                  break;
+                } // case 10
+              case 16:
+                {
+                  identityType_ = input.readEnum();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList identities_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureIdentitiesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          identities_ = new com.google.protobuf.LazyStringArrayList(identities_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @return A list containing the identities.
+       */
+      public com.google.protobuf.ProtocolStringList getIdentitiesList() {
+        return identities_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @return The count of identities.
+       */
+      public int getIdentitiesCount() {
+        return identities_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The identities at the given index.
+       */
+      public java.lang.String getIdentities(int index) {
+        return identities_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the identities at the given index.
+       */
+      public com.google.protobuf.ByteString getIdentitiesBytes(int index) {
+        return identities_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The identities to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentities(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIdentitiesIsMutable();
+        identities_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @param value The identities to add.
+       * @return This builder for chaining.
+       */
+      public Builder addIdentities(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIdentitiesIsMutable();
+        identities_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @param values The identities to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllIdentities(java.lang.Iterable<java.lang.String> values) {
+        ensureIdentitiesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, identities_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIdentities() {
+        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of identities that are allowed access through this [EgressPolicy].
+       * Should be in the format of email address. The email address should
+       * represent individual user or service account only.
+       * </pre>
+       *
+       * <code>repeated string identities = 1;</code>
+       *
+       * @param value The bytes of the identities to add.
+       * @return This builder for chaining.
+       */
+      public Builder addIdentitiesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureIdentitiesIsMutable();
+        identities_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private int identityType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the type of identities that are allowed access to outside the
+       * perimeter. If left unspecified, then members of `identities` field will
+       * be allowed access.
+       * </pre>
+       *
+       * <code>
+       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for identityType.
+       */
+      @java.lang.Override
+      public int getIdentityTypeValue() {
+        return identityType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the type of identities that are allowed access to outside the
+       * perimeter. If left unspecified, then members of `identities` field will
+       * be allowed access.
+       * </pre>
+       *
+       * <code>
+       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for identityType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentityTypeValue(int value) {
+
+        identityType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the type of identities that are allowed access to outside the
+       * perimeter. If left unspecified, then members of `identities` field will
+       * be allowed access.
+       * </pre>
+       *
+       * <code>
+       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+       * </code>
+       *
+       * @return The identityType.
+       */
+      @java.lang.Override
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
+          getIdentityType() {
+        @SuppressWarnings("deprecation")
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType result =
+            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType.valueOf(
+                identityType_);
+        return result == null
+            ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the type of identities that are allowed access to outside the
+       * perimeter. If left unspecified, then members of `identities` field will
+       * be allowed access.
+       * </pre>
+       *
+       * <code>
+       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+       * </code>
+       *
+       * @param value The identityType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdentityType(
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        identityType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the type of identities that are allowed access to outside the
+       * perimeter. If left unspecified, then members of `identities` field will
+       * be allowed access.
+       * </pre>
+       *
+       * <code>
+       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIdentityType() {
+
+        identityType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
+    private static final com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+            .EgressFrom
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom();
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EgressFrom> PARSER =
+        new com.google.protobuf.AbstractParser<EgressFrom>() {
+          @java.lang.Override
+          public EgressFrom parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EgressFrom> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EgressFrom> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface EgressToOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @return A list containing the resources.
+     */
+    java.util.List<java.lang.String> getResourcesList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @return The count of resources.
+     */
+    int getResourcesCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resources at the given index.
+     */
+    java.lang.String getResources(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resources at the given index.
+     */
+    com.google.protobuf.ByteString getResourcesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    java.util.List<com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
+        getOperationsList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation getOperations(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    int getOperationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                    .ApiOperationOrBuilder>
+        getOperationsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperationOrBuilder
+        getOperationsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @return A list containing the externalResources.
+     */
+    java.util.List<java.lang.String> getExternalResourcesList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @return The count of externalResources.
+     */
+    int getExternalResourcesCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The externalResources at the given index.
+     */
+    java.lang.String getExternalResources(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the externalResources at the given index.
+     */
+    com.google.protobuf.ByteString getExternalResourcesBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Defines the conditions under which an [EgressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+   * matches a request. Conditions are based on information about the
+   * [ApiOperation]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+   * intended to be performed on the `resources` specified. Note that if the
+   * destination of the request is also protected by a [ServicePerimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
+   * [ServicePerimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
+   * an [IngressPolicy]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+   * which allows access in order for this request to succeed. The request must
+   * match `operations` AND `resources` fields in order to be allowed egress out
+   * of the perimeter.
+   * </pre>
+   *
+   * Protobuf type {@code google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo}
+   */
+  public static final class EgressTo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
+      EgressToOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EgressTo.newBuilder() to construct.
+    private EgressTo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EgressTo() {
+      resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      operations_ = java.util.Collections.emptyList();
+      externalResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EgressTo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.class,
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.Builder
+                  .class);
+    }
+
+    public static final int RESOURCES_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList resources_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @return A list containing the resources.
+     */
+    public com.google.protobuf.ProtocolStringList getResourcesList() {
+      return resources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @return The count of resources.
+     */
+    public int getResourcesCount() {
+      return resources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The resources at the given index.
+     */
+    public java.lang.String getResources(int index) {
+      return resources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of resources, currently only projects in the form
+     * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+     * defined in the corresponding [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it contains a resource in this list.  If `*` is
+     * specified for `resources`, then this [EgressTo]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+     * rule will authorize access to all resources outside the perimeter.
+     * </pre>
+     *
+     * <code>repeated string resources = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resources at the given index.
+     */
+    public com.google.protobuf.ByteString getResourcesBytes(int index) {
+      return resources_.getByteString(index);
+    }
+
+    public static final int OPERATIONS_FIELD_NUMBER = 2;
+    private java.util.List<
+            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
+        operations_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
+        getOperationsList() {
+      return operations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                    .ApiOperationOrBuilder>
+        getOperationsOrBuilderList() {
+      return operations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getOperationsCount() {
+      return operations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+        getOperations(int index) {
+      return operations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of [ApiOperations]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * allowed to be performed by the sources specified in the corresponding
+     * [EgressFrom]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+     * A request matches if it uses an operation/service in this list.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperationOrBuilder
+        getOperationsOrBuilder(int index) {
+      return operations_.get(index);
+    }
+
+    public static final int EXTERNAL_RESOURCES_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList externalResources_;
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @return A list containing the externalResources.
+     */
+    public com.google.protobuf.ProtocolStringList getExternalResourcesList() {
+      return externalResources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @return The count of externalResources.
+     */
+    public int getExternalResourcesCount() {
+      return externalResources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The externalResources at the given index.
+     */
+    public java.lang.String getExternalResources(int index) {
+      return externalResources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of external resources that are allowed to be accessed. Only AWS
+     * and Azure resources are supported. For Amazon S3, the supported format is
+     * s3://BUCKET_NAME. For Azure Storage, the supported format is
+     * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+     * if it contains an external resource in this list (Example:
+     * s3://bucket/path). Currently '*' is not allowed.
+     * </pre>
+     *
+     * <code>repeated string external_resources = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the externalResources at the given index.
+     */
+    public com.google.protobuf.ByteString getExternalResourcesBytes(int index) {
+      return externalResources_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < resources_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resources_.getRaw(i));
+      }
+      for (int i = 0; i < operations_.size(); i++) {
+        output.writeMessage(2, operations_.get(i));
+      }
+      for (int i = 0; i < externalResources_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, externalResources_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < resources_.size(); i++) {
+          dataSize += computeStringSizeNoTag(resources_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getResourcesList().size();
+      }
+      for (int i = 0; i < operations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, operations_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < externalResources_.size(); i++) {
+          dataSize += computeStringSizeNoTag(externalResources_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExternalResourcesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)) {
+        return super.equals(obj);
+      }
+      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo other =
+          (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo) obj;
+
+      if (!getResourcesList().equals(other.getResourcesList())) return false;
+      if (!getOperationsList().equals(other.getOperationsList())) return false;
+      if (!getExternalResourcesList().equals(other.getExternalResourcesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getResourcesCount() > 0) {
+        hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getResourcesList().hashCode();
+      }
+      if (getOperationsCount() > 0) {
+        hash = (37 * hash) + OPERATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOperationsList().hashCode();
+      }
+      if (getExternalResourcesCount() > 0) {
+        hash = (37 * hash) + EXTERNAL_RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getExternalResourcesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Defines the conditions under which an [EgressPolicy]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
+     * matches a request. Conditions are based on information about the
+     * [ApiOperation]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+     * intended to be performed on the `resources` specified. Note that if the
+     * destination of the request is also protected by a [ServicePerimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
+     * [ServicePerimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
+     * an [IngressPolicy]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
+     * which allows access in order for this request to succeed. The request must
+     * match `operations` AND `resources` fields in order to be allowed egress out
+     * of the perimeter.
+     * </pre>
+     *
+     * Protobuf type {@code google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressToOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.class,
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (operationsBuilder_ == null) {
+          operations_ = java.util.Collections.emptyList();
+        } else {
+          operations_ = null;
+          operationsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        externalResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
+            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+          getDefaultInstanceForType() {
+        return com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo build() {
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+          buildPartial() {
+        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo result =
+            new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          resources_ = resources_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.resources_ = resources_;
+        if (operationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            operations_ = java.util.Collections.unmodifiableList(operations_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.operations_ = operations_;
+        } else {
+          result.operations_ = operationsBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          externalResources_ = externalResources_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.externalResources_ = externalResources_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo) {
+          return mergeFrom(
+              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo other) {
+        if (other
+            == com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+                .getDefaultInstance()) return this;
+        if (!other.resources_.isEmpty()) {
+          if (resources_.isEmpty()) {
+            resources_ = other.resources_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureResourcesIsMutable();
+            resources_.addAll(other.resources_);
+          }
+          onChanged();
+        }
+        if (operationsBuilder_ == null) {
+          if (!other.operations_.isEmpty()) {
+            if (operations_.isEmpty()) {
+              operations_ = other.operations_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureOperationsIsMutable();
+              operations_.addAll(other.operations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.operations_.isEmpty()) {
+            if (operationsBuilder_.isEmpty()) {
+              operationsBuilder_.dispose();
+              operationsBuilder_ = null;
+              operations_ = other.operations_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              operationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getOperationsFieldBuilder()
+                      : null;
+            } else {
+              operationsBuilder_.addAllMessages(other.operations_);
+            }
+          }
+        }
+        if (!other.externalResources_.isEmpty()) {
+          if (externalResources_.isEmpty()) {
+            externalResources_ = other.externalResources_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureExternalResourcesIsMutable();
+            externalResources_.addAll(other.externalResources_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureResourcesIsMutable();
+                  resources_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                      m =
+                          input.readMessage(
+                              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                                  .ApiOperation.parser(),
+                              extensionRegistry);
+                  if (operationsBuilder_ == null) {
+                    ensureOperationsIsMutable();
+                    operations_.add(m);
+                  } else {
+                    operationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExternalResourcesIsMutable();
+                  externalResources_.add(s);
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList resources_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureResourcesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          resources_ = new com.google.protobuf.LazyStringArrayList(resources_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @return A list containing the resources.
+       */
+      public com.google.protobuf.ProtocolStringList getResourcesList() {
+        return resources_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @return The count of resources.
+       */
+      public int getResourcesCount() {
+        return resources_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The resources at the given index.
+       */
+      public java.lang.String getResources(int index) {
+        return resources_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the resources at the given index.
+       */
+      public com.google.protobuf.ByteString getResourcesBytes(int index) {
+        return resources_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The resources to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResources(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourcesIsMutable();
+        resources_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @param value The resources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addResources(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourcesIsMutable();
+        resources_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @param values The resources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllResources(java.lang.Iterable<java.lang.String> values) {
+        ensureResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resources_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResources() {
+        resources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of resources, currently only projects in the form
+       * `projects/&lt;projectnumber&gt;`, that are allowed to be accessed by sources
+       * defined in the corresponding [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it contains a resource in this list.  If `*` is
+       * specified for `resources`, then this [EgressTo]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo]
+       * rule will authorize access to all resources outside the perimeter.
+       * </pre>
+       *
+       * <code>repeated string resources = 1;</code>
+       *
+       * @param value The bytes of the resources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addResourcesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureResourcesIsMutable();
+        resources_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
+          operations_ = java.util.Collections.emptyList();
+
+      private void ensureOperationsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          operations_ =
+              new java.util.ArrayList<
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>(
+                  operations_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation,
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                  .Builder,
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                  .ApiOperationOrBuilder>
+          operationsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation>
+          getOperationsList() {
+        if (operationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(operations_);
+        } else {
+          return operationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public int getOperationsCount() {
+        if (operationsBuilder_ == null) {
+          return operations_.size();
+        } else {
+          return operationsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+          getOperations(int index) {
+        if (operationsBuilder_ == null) {
+          return operations_.get(index);
+        } else {
+          return operationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder setOperations(
+          int index,
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation value) {
+        if (operationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOperationsIsMutable();
+          operations_.set(index, value);
+          onChanged();
+        } else {
+          operationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder setOperations(
+          int index,
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
+              builderForValue) {
+        if (operationsBuilder_ == null) {
+          ensureOperationsIsMutable();
+          operations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          operationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder addOperations(
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation value) {
+        if (operationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOperationsIsMutable();
+          operations_.add(value);
+          onChanged();
+        } else {
+          operationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder addOperations(
+          int index,
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation value) {
+        if (operationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOperationsIsMutable();
+          operations_.add(index, value);
+          onChanged();
+        } else {
+          operationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder addOperations(
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
+              builderForValue) {
+        if (operationsBuilder_ == null) {
+          ensureOperationsIsMutable();
+          operations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          operationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder addOperations(
+          int index,
+          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
+              builderForValue) {
+        if (operationsBuilder_ == null) {
+          ensureOperationsIsMutable();
+          operations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          operationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder addAllOperations(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                          .ApiOperation>
+              values) {
+        if (operationsBuilder_ == null) {
+          ensureOperationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, operations_);
+          onChanged();
+        } else {
+          operationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder clearOperations() {
+        if (operationsBuilder_ == null) {
+          operations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          operationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public Builder removeOperations(int index) {
+        if (operationsBuilder_ == null) {
+          ensureOperationsIsMutable();
+          operations_.remove(index);
+          onChanged();
+        } else {
+          operationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
+          getOperationsBuilder(int index) {
+        return getOperationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+              .ApiOperationOrBuilder
+          getOperationsOrBuilder(int index) {
+        if (operationsBuilder_ == null) {
+          return operations_.get(index);
+        } else {
+          return operationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                      .ApiOperationOrBuilder>
+          getOperationsOrBuilderList() {
+        if (operationsBuilder_ != null) {
+          return operationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(operations_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
+          addOperationsBuilder() {
+        return getOperationsFieldBuilder()
+            .addBuilder(
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation.Builder
+          addOperationsBuilder(int index) {
+        return getOperationsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of [ApiOperations]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation]
+       * allowed to be performed by the sources specified in the corresponding
+       * [EgressFrom]
+       * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom].
+       * A request matches if it uses an operation/service in this list.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation operations = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                  .Builder>
+          getOperationsBuilderList() {
+        return getOperationsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation,
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                  .Builder,
+              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                  .ApiOperationOrBuilder>
+          getOperationsFieldBuilder() {
+        if (operationsBuilder_ == null) {
+          operationsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation,
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.ApiOperation
+                      .Builder,
+                  com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                      .ApiOperationOrBuilder>(
+                  operations_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+          operations_ = null;
+        }
+        return operationsBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList externalResources_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureExternalResourcesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          externalResources_ = new com.google.protobuf.LazyStringArrayList(externalResources_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @return A list containing the externalResources.
+       */
+      public com.google.protobuf.ProtocolStringList getExternalResourcesList() {
+        return externalResources_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @return The count of externalResources.
+       */
+      public int getExternalResourcesCount() {
+        return externalResources_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The externalResources at the given index.
+       */
+      public java.lang.String getExternalResources(int index) {
+        return externalResources_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the externalResources at the given index.
+       */
+      public com.google.protobuf.ByteString getExternalResourcesBytes(int index) {
+        return externalResources_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The externalResources to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExternalResources(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExternalResourcesIsMutable();
+        externalResources_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @param value The externalResources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExternalResources(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExternalResourcesIsMutable();
+        externalResources_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @param values The externalResources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExternalResources(java.lang.Iterable<java.lang.String> values) {
+        ensureExternalResourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, externalResources_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExternalResources() {
+        externalResources_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of external resources that are allowed to be accessed. Only AWS
+       * and Azure resources are supported. For Amazon S3, the supported format is
+       * s3://BUCKET_NAME. For Azure Storage, the supported format is
+       * azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches
+       * if it contains an external resource in this list (Example:
+       * s3://bucket/path). Currently '*' is not allowed.
+       * </pre>
+       *
+       * <code>repeated string external_resources = 3;</code>
+       *
+       * @param value The bytes of the externalResources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExternalResourcesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExternalResourcesIsMutable();
+        externalResources_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo)
+    private static final com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo();
+    }
+
+    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EgressTo> PARSER =
+        new com.google.protobuf.AbstractParser<EgressTo>() {
+          @java.lang.Override
+          public EgressTo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EgressTo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EgressTo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressTo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface EgressPolicyOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy)
@@ -13079,1069 +14548,6 @@ public final class ServicePerimeterConfig extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
-  public interface EgressFromOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @return A list containing the identities.
-     */
-    java.util.List<java.lang.String> getIdentitiesList();
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @return The count of identities.
-     */
-    int getIdentitiesCount();
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The identities at the given index.
-     */
-    java.lang.String getIdentities(int index);
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the identities at the given index.
-     */
-    com.google.protobuf.ByteString getIdentitiesBytes(int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the type of identities that are allowed access to outside the
-     * perimeter. If left unspecified, then members of `identities` field will
-     * be allowed access.
-     * </pre>
-     *
-     * <code>
-     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-     * </code>
-     *
-     * @return The enum numeric value on the wire for identityType.
-     */
-    int getIdentityTypeValue();
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the type of identities that are allowed access to outside the
-     * perimeter. If left unspecified, then members of `identities` field will
-     * be allowed access.
-     * </pre>
-     *
-     * <code>
-     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-     * </code>
-     *
-     * @return The identityType.
-     */
-    com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
-        getIdentityType();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Defines the conditions under which an [EgressPolicy]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
-   * matches a request. Conditions based on information about the source of the
-   * request. Note that if the destination of the request is also protected by a
-   * [ServicePerimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
-   * [ServicePerimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
-   * an [IngressPolicy]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
-   * which allows access in order for this request to succeed.
-   * </pre>
-   *
-   * Protobuf type {@code google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom}
-   */
-  public static final class EgressFrom extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
-      EgressFromOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use EgressFrom.newBuilder() to construct.
-    private EgressFrom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private EgressFrom() {
-      identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      identityType_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new EgressFrom();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-          .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.class,
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.Builder
-                  .class);
-    }
-
-    public static final int IDENTITIES_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList identities_;
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @return A list containing the identities.
-     */
-    public com.google.protobuf.ProtocolStringList getIdentitiesList() {
-      return identities_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @return The count of identities.
-     */
-    public int getIdentitiesCount() {
-      return identities_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The identities at the given index.
-     */
-    public java.lang.String getIdentities(int index) {
-      return identities_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * A list of identities that are allowed access through this [EgressPolicy].
-     * Should be in the format of email address. The email address should
-     * represent individual user or service account only.
-     * </pre>
-     *
-     * <code>repeated string identities = 1;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the identities at the given index.
-     */
-    public com.google.protobuf.ByteString getIdentitiesBytes(int index) {
-      return identities_.getByteString(index);
-    }
-
-    public static final int IDENTITY_TYPE_FIELD_NUMBER = 2;
-    private int identityType_;
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the type of identities that are allowed access to outside the
-     * perimeter. If left unspecified, then members of `identities` field will
-     * be allowed access.
-     * </pre>
-     *
-     * <code>
-     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-     * </code>
-     *
-     * @return The enum numeric value on the wire for identityType.
-     */
-    @java.lang.Override
-    public int getIdentityTypeValue() {
-      return identityType_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the type of identities that are allowed access to outside the
-     * perimeter. If left unspecified, then members of `identities` field will
-     * be allowed access.
-     * </pre>
-     *
-     * <code>
-     * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-     * </code>
-     *
-     * @return The identityType.
-     */
-    @java.lang.Override
-    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
-        getIdentityType() {
-      @SuppressWarnings("deprecation")
-      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType result =
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType.valueOf(
-              identityType_);
-      return result == null
-          ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
-              .UNRECOGNIZED
-          : result;
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      for (int i = 0; i < identities_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, identities_.getRaw(i));
-      }
-      if (identityType_
-          != com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
-              .IDENTITY_TYPE_UNSPECIFIED
-              .getNumber()) {
-        output.writeEnum(2, identityType_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < identities_.size(); i++) {
-          dataSize += computeStringSizeNoTag(identities_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getIdentitiesList().size();
-      }
-      if (identityType_
-          != com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
-              .IDENTITY_TYPE_UNSPECIFIED
-              .getNumber()) {
-        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, identityType_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)) {
-        return super.equals(obj);
-      }
-      com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom other =
-          (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom) obj;
-
-      if (!getIdentitiesList().equals(other.getIdentitiesList())) return false;
-      if (identityType_ != other.identityType_) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getIdentitiesCount() > 0) {
-        hash = (37 * hash) + IDENTITIES_FIELD_NUMBER;
-        hash = (53 * hash) + getIdentitiesList().hashCode();
-      }
-      hash = (37 * hash) + IDENTITY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + identityType_;
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Defines the conditions under which an [EgressPolicy]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressPolicy]
-     * matches a request. Conditions based on information about the source of the
-     * request. Note that if the destination of the request is also protected by a
-     * [ServicePerimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter], then that
-     * [ServicePerimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] must have
-     * an [IngressPolicy]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IngressPolicy]
-     * which allows access in order for this request to succeed.
-     * </pre>
-     *
-     * Protobuf type {@code
-     * google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFromOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.class,
-                com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-                    .Builder.class);
-      }
-
-      // Construct using
-      // com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        identityType_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterProto
-            .internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-          getDefaultInstanceForType() {
-        return com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom build() {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom result =
-            buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-          buildPartial() {
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom result =
-            new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          identities_ = identities_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.identities_ = identities_;
-        result.identityType_ = identityType_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof
-            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom) {
-          return mergeFrom(
-              (com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
-                  other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom other) {
-        if (other
-            == com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-                .getDefaultInstance()) return this;
-        if (!other.identities_.isEmpty()) {
-          if (identities_.isEmpty()) {
-            identities_ = other.identities_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureIdentitiesIsMutable();
-            identities_.addAll(other.identities_);
-          }
-          onChanged();
-        }
-        if (other.identityType_ != 0) {
-          setIdentityTypeValue(other.getIdentityTypeValue());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  ensureIdentitiesIsMutable();
-                  identities_.add(s);
-                  break;
-                } // case 10
-              case 16:
-                {
-                  identityType_ = input.readEnum();
-
-                  break;
-                } // case 16
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private com.google.protobuf.LazyStringList identities_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
-
-      private void ensureIdentitiesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          identities_ = new com.google.protobuf.LazyStringArrayList(identities_);
-          bitField0_ |= 0x00000001;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @return A list containing the identities.
-       */
-      public com.google.protobuf.ProtocolStringList getIdentitiesList() {
-        return identities_.getUnmodifiableView();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @return The count of identities.
-       */
-      public int getIdentitiesCount() {
-        return identities_.size();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @param index The index of the element to return.
-       * @return The identities at the given index.
-       */
-      public java.lang.String getIdentities(int index) {
-        return identities_.get(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @param index The index of the value to return.
-       * @return The bytes of the identities at the given index.
-       */
-      public com.google.protobuf.ByteString getIdentitiesBytes(int index) {
-        return identities_.getByteString(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @param index The index to set the value at.
-       * @param value The identities to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdentities(int index, java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIdentitiesIsMutable();
-        identities_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @param value The identities to add.
-       * @return This builder for chaining.
-       */
-      public Builder addIdentities(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIdentitiesIsMutable();
-        identities_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @param values The identities to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllIdentities(java.lang.Iterable<java.lang.String> values) {
-        ensureIdentitiesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, identities_);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearIdentities() {
-        identities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A list of identities that are allowed access through this [EgressPolicy].
-       * Should be in the format of email address. The email address should
-       * represent individual user or service account only.
-       * </pre>
-       *
-       * <code>repeated string identities = 1;</code>
-       *
-       * @param value The bytes of the identities to add.
-       * @return This builder for chaining.
-       */
-      public Builder addIdentitiesBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        ensureIdentitiesIsMutable();
-        identities_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private int identityType_ = 0;
-      /**
-       *
-       *
-       * <pre>
-       * Specifies the type of identities that are allowed access to outside the
-       * perimeter. If left unspecified, then members of `identities` field will
-       * be allowed access.
-       * </pre>
-       *
-       * <code>
-       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-       * </code>
-       *
-       * @return The enum numeric value on the wire for identityType.
-       */
-      @java.lang.Override
-      public int getIdentityTypeValue() {
-        return identityType_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Specifies the type of identities that are allowed access to outside the
-       * perimeter. If left unspecified, then members of `identities` field will
-       * be allowed access.
-       * </pre>
-       *
-       * <code>
-       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-       * </code>
-       *
-       * @param value The enum numeric value on the wire for identityType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdentityTypeValue(int value) {
-
-        identityType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Specifies the type of identities that are allowed access to outside the
-       * perimeter. If left unspecified, then members of `identities` field will
-       * be allowed access.
-       * </pre>
-       *
-       * <code>
-       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-       * </code>
-       *
-       * @return The identityType.
-       */
-      @java.lang.Override
-      public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
-          getIdentityType() {
-        @SuppressWarnings("deprecation")
-        com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType result =
-            com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType.valueOf(
-                identityType_);
-        return result == null
-            ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType
-                .UNRECOGNIZED
-            : result;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Specifies the type of identities that are allowed access to outside the
-       * perimeter. If left unspecified, then members of `identities` field will
-       * be allowed access.
-       * </pre>
-       *
-       * <code>
-       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-       * </code>
-       *
-       * @param value The identityType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdentityType(
-          com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        identityType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Specifies the type of identities that are allowed access to outside the
-       * perimeter. If left unspecified, then members of `identities` field will
-       * be allowed access.
-       * </pre>
-       *
-       * <code>
-       * .google.identity.accesscontextmanager.v1.ServicePerimeterConfig.IdentityType identity_type = 2;
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearIdentityType() {
-
-        identityType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom)
-    private static final com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
-            .EgressFrom
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom();
-    }
-
-    public static com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<EgressFrom> PARSER =
-        new com.google.protobuf.AbstractParser<EgressFrom>() {
-          @java.lang.Override
-          public EgressFrom parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<EgressFrom> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EgressFrom> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.EgressFrom
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }

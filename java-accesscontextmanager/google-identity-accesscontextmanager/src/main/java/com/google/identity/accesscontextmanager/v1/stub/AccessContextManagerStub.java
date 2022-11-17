@@ -24,6 +24,11 @@ import static com.google.identity.accesscontextmanager.v1.AccessContextManagerCl
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata;
 import com.google.identity.accesscontextmanager.v1.AccessLevel;
 import com.google.identity.accesscontextmanager.v1.AccessPolicy;
@@ -318,6 +323,19 @@ public abstract class AccessContextManagerStub implements BackgroundResource {
       deleteGcpUserAccessBindingCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteGcpUserAccessBindingCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

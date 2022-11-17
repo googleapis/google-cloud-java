@@ -31,6 +31,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-iam-v1</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-identity-accesscontextmanager-type</artifactId>
       <version>1.7.0</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-v1:current} -->
     </dependency>

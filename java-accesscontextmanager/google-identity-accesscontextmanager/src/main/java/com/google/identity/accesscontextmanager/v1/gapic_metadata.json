@@ -46,6 +46,9 @@
             "GetGcpUserAccessBinding": {
               "methods": ["getGcpUserAccessBinding", "getGcpUserAccessBinding", "getGcpUserAccessBinding", "getGcpUserAccessBindingCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetServicePerimeter": {
               "methods": ["getServicePerimeter", "getServicePerimeter", "getServicePerimeter", "getServicePerimeterCallable"]
             },
@@ -66,6 +69,12 @@
             },
             "ReplaceServicePerimeters": {
               "methods": ["replaceServicePerimetersAsync", "replaceServicePerimetersOperationCallable", "replaceServicePerimetersCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateAccessLevel": {
               "methods": ["updateAccessLevelAsync", "updateAccessLevelAsync", "updateAccessLevelOperationCallable", "updateAccessLevelCallable"]

@@ -34,6 +34,11 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.identity.accesscontextmanager.v1.stub.AccessContextManagerStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -352,6 +357,22 @@ public class AccessContextManagerSettings extends ClientSettings<AccessContextMa
       deleteGcpUserAccessBindingOperationSettings() {
     return ((AccessContextManagerStubSettings) getStubSettings())
         .deleteGcpUserAccessBindingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((AccessContextManagerStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((AccessContextManagerStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((AccessContextManagerStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final AccessContextManagerSettings create(AccessContextManagerStubSettings stub)
@@ -727,6 +748,22 @@ public class AccessContextManagerSettings extends ClientSettings<AccessContextMa
             DeleteGcpUserAccessBindingRequest, Empty, GcpUserAccessBindingOperationMetadata>
         deleteGcpUserAccessBindingOperationSettings() {
       return getStubSettingsBuilder().deleteGcpUserAccessBindingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

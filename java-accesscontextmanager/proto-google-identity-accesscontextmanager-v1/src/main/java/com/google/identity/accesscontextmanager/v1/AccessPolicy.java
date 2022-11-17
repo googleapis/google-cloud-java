@@ -45,6 +45,7 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     parent_ = "";
     title_ = "";
+    scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     etag_ = "";
   }
 
@@ -227,6 +228,119 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SCOPES_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList scopes_;
+  /**
+   *
+   *
+   * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @return A list containing the scopes.
+   */
+  public com.google.protobuf.ProtocolStringList getScopesList() {
+    return scopes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @return The count of scopes.
+   */
+  public int getScopesCount() {
+    return scopes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
+   */
+  public java.lang.String getScopes(int index) {
+    return scopes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  public com.google.protobuf.ByteString getScopesBytes(int index) {
+    return scopes_.getByteString(index);
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -406,6 +520,9 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, etag_);
     }
+    for (int i = 0; i < scopes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, scopes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -433,6 +550,14 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, etag_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < scopes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(scopes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getScopesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -452,6 +577,7 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getParent().equals(other.getParent())) return false;
     if (!getTitle().equals(other.getTitle())) return false;
+    if (!getScopesList().equals(other.getScopesList())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -478,6 +604,10 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getTitle().hashCode();
+    if (getScopesCount() > 0) {
+      hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getScopesList().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -637,6 +767,8 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
 
       title_ = "";
 
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -678,9 +810,15 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.identity.accesscontextmanager.v1.AccessPolicy buildPartial() {
       com.google.identity.accesscontextmanager.v1.AccessPolicy result =
           new com.google.identity.accesscontextmanager.v1.AccessPolicy(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.parent_ = parent_;
       result.title_ = title_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        scopes_ = scopes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.scopes_ = scopes_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -752,6 +890,16 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        onChanged();
+      }
+      if (!other.scopes_.isEmpty()) {
+        if (scopes_.isEmpty()) {
+          scopes_ = other.scopes_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureScopesIsMutable();
+          scopes_.addAll(other.scopes_);
+        }
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -826,6 +974,13 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureScopesIsMutable();
+                scopes_.add(s);
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -842,6 +997,8 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1172,6 +1329,291 @@ public final class AccessPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       title_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList scopes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureScopesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @return A list containing the scopes.
+     */
+    public com.google.protobuf.ProtocolStringList getScopesList() {
+      return scopes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @return The count of scopes.
+     */
+    public int getScopesCount() {
+      return scopes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The scopes at the given index.
+     */
+    public java.lang.String getScopes(int index) {
+      return scopes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the scopes at the given index.
+     */
+    public com.google.protobuf.ByteString getScopesBytes(int index) {
+      return scopes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The scopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScopes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureScopesIsMutable();
+      scopes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @param value The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureScopesIsMutable();
+      scopes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @param values The scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
+      ensureScopesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scopes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScopes() {
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scopes of a policy define which resources an ACM policy can restrict,
+     * and where ACM resources can be referenced.
+     * For example, a policy with scopes=["folders/123"] has the following
+     * behavior:
+     * - vpcsc perimeters can only restrict projects within folders/123
+     * - access levels can only be referenced by resources within folders/123.
+     * If empty, there are no limitations on which resources can be restricted by
+     * an ACM policy, and there are no limitations on where ACM resources can be
+     * referenced.
+     * Only one policy can include a given scope (attempting to create a second
+     * policy which includes "folders/123" will result in an error).
+     * Currently, scopes cannot be modified after a policy is created.
+     * Currently, policies can only have a single scope.
+     * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+     * </pre>
+     *
+     * <code>repeated string scopes = 7;</code>
+     *
+     * @param value The bytes of the scopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addScopesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureScopesIsMutable();
+      scopes_.add(value);
       onChanged();
       return this;
     }

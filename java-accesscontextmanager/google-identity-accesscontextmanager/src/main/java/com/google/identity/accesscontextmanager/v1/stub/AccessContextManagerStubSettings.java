@@ -54,6 +54,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata;
 import com.google.identity.accesscontextmanager.v1.AccessLevel;
 import com.google.identity.accesscontextmanager.v1.AccessPolicy;
@@ -243,6 +248,10 @@ public class AccessContextManagerStubSettings
   private final OperationCallSettings<
           DeleteGcpUserAccessBindingRequest, Empty, GcpUserAccessBindingOperationMetadata>
       deleteGcpUserAccessBindingOperationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy>
@@ -755,6 +764,22 @@ public class AccessContextManagerStubSettings
     return deleteGcpUserAccessBindingOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public AccessContextManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -917,6 +942,9 @@ public class AccessContextManagerStubSettings
         settingsBuilder.deleteGcpUserAccessBindingSettings().build();
     deleteGcpUserAccessBindingOperationSettings =
         settingsBuilder.deleteGcpUserAccessBindingOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for AccessContextManagerStubSettings. */
@@ -1031,6 +1059,10 @@ public class AccessContextManagerStubSettings
     private final OperationCallSettings.Builder<
             DeleteGcpUserAccessBindingRequest, Empty, GcpUserAccessBindingOperationMetadata>
         deleteGcpUserAccessBindingOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1105,6 +1137,9 @@ public class AccessContextManagerStubSettings
       updateGcpUserAccessBindingOperationSettings = OperationCallSettings.newBuilder();
       deleteGcpUserAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGcpUserAccessBindingOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1130,7 +1165,10 @@ public class AccessContextManagerStubSettings
               getGcpUserAccessBindingSettings,
               createGcpUserAccessBindingSettings,
               updateGcpUserAccessBindingSettings,
-              deleteGcpUserAccessBindingSettings);
+              deleteGcpUserAccessBindingSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -1187,6 +1225,9 @@ public class AccessContextManagerStubSettings
       deleteGcpUserAccessBindingSettings = settings.deleteGcpUserAccessBindingSettings.toBuilder();
       deleteGcpUserAccessBindingOperationSettings =
           settings.deleteGcpUserAccessBindingOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1212,7 +1253,10 @@ public class AccessContextManagerStubSettings
               getGcpUserAccessBindingSettings,
               createGcpUserAccessBindingSettings,
               updateGcpUserAccessBindingSettings,
-              deleteGcpUserAccessBindingSettings);
+              deleteGcpUserAccessBindingSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -1354,6 +1398,21 @@ public class AccessContextManagerStubSettings
 
       builder
           .deleteGcpUserAccessBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -2042,6 +2101,22 @@ public class AccessContextManagerStubSettings
             DeleteGcpUserAccessBindingRequest, Empty, GcpUserAccessBindingOperationMetadata>
         deleteGcpUserAccessBindingOperationSettings() {
       return deleteGcpUserAccessBindingOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

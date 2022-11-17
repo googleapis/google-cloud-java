@@ -15,16 +15,18 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Access Context Manager API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= AccessContextManagerClient =======================
  *
- * <p>Service Description: API for setting [Access Levels]
- * [google.identity.accesscontextmanager.v1.AccessLevel] and [Service Perimeters]
- * [google.identity.accesscontextmanager.v1.ServicePerimeter] for Google Cloud Projects. Each
- * organization has one [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]
- * containing the [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] and [Service
- * Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]. This [AccessPolicy]
+ * <p>Service Description: API for setting [access levels]
+ * [google.identity.accesscontextmanager.v1.AccessLevel] and [service perimeters]
+ * [google.identity.accesscontextmanager.v1.ServicePerimeter] for Google Cloud projects. Each
+ * organization has one [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] that
+ * contains the [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+ * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]. This [access policy]
  * [google.identity.accesscontextmanager.v1.AccessPolicy] is applicable to all resources in the
  * organization. AccessPolicies
  *
