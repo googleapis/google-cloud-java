@@ -81,6 +81,94 @@ public class OsLoginServiceClientTest {
   }
 
   @Test
+  public void createSshPublicKeyTest() throws Exception {
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
+    mockOsLoginService.addResponse(expectedResponse);
+
+    UserName parent = UserName.of("[USER]");
+    OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+
+    OsLoginProto.SshPublicKey actualResponse = client.createSshPublicKey(parent, sshPublicKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSshPublicKeyRequest actualRequest = ((CreateSshPublicKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(sshPublicKey, actualRequest.getSshPublicKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSshPublicKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsLoginService.addException(exception);
+
+    try {
+      UserName parent = UserName.of("[USER]");
+      OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+      client.createSshPublicKey(parent, sshPublicKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSshPublicKeyTest2() throws Exception {
+    OsLoginProto.SshPublicKey expectedResponse =
+        OsLoginProto.SshPublicKey.newBuilder()
+            .setKey("key106079")
+            .setExpirationTimeUsec(-2058878882)
+            .setFingerprint("fingerprint-1375934236")
+            .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+            .build();
+    mockOsLoginService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+
+    OsLoginProto.SshPublicKey actualResponse = client.createSshPublicKey(parent, sshPublicKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOsLoginService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSshPublicKeyRequest actualRequest = ((CreateSshPublicKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(sshPublicKey, actualRequest.getSshPublicKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSshPublicKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOsLoginService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+      client.createSshPublicKey(parent, sshPublicKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deletePosixAccountTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockOsLoginService.addResponse(expectedResponse);
@@ -383,6 +471,7 @@ public class OsLoginServiceClientTest {
     ImportSshPublicKeyResponse expectedResponse =
         ImportSshPublicKeyResponse.newBuilder()
             .setLoginProfile(LoginProfile.newBuilder().build())
+            .setDetails("details1557721666")
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
@@ -424,6 +513,7 @@ public class OsLoginServiceClientTest {
     ImportSshPublicKeyResponse expectedResponse =
         ImportSshPublicKeyResponse.newBuilder()
             .setLoginProfile(LoginProfile.newBuilder().build())
+            .setDetails("details1557721666")
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
@@ -465,6 +555,7 @@ public class OsLoginServiceClientTest {
     ImportSshPublicKeyResponse expectedResponse =
         ImportSshPublicKeyResponse.newBuilder()
             .setLoginProfile(LoginProfile.newBuilder().build())
+            .setDetails("details1557721666")
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 
@@ -510,6 +601,7 @@ public class OsLoginServiceClientTest {
     ImportSshPublicKeyResponse expectedResponse =
         ImportSshPublicKeyResponse.newBuilder()
             .setLoginProfile(LoginProfile.newBuilder().build())
+            .setDetails("details1557721666")
             .build();
     mockOsLoginService.addResponse(expectedResponse);
 

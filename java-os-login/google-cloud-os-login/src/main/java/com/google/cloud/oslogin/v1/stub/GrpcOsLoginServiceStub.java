@@ -23,6 +23,7 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto;
+import com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.DeletePosixAccountRequest;
 import com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.GetLoginProfileRequest;
@@ -48,6 +49,17 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
+  private static final MethodDescriptor<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyMethodDescriptor =
+          MethodDescriptor.<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oslogin.v1.OsLoginService/CreateSshPublicKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSshPublicKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(OsLoginProto.SshPublicKey.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeletePosixAccountRequest, Empty>
       deletePosixAccountMethodDescriptor =
           MethodDescriptor.<DeletePosixAccountRequest, Empty>newBuilder()
@@ -111,6 +123,8 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                   ProtoUtils.marshaller(OsLoginProto.SshPublicKey.getDefaultInstance()))
               .build();
 
+  private final UnaryCallable<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyCallable;
   private final UnaryCallable<DeletePosixAccountRequest, Empty> deletePosixAccountCallable;
   private final UnaryCallable<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyCallable;
   private final UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable;
@@ -165,6 +179,17 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+        createSshPublicKeyTransportSettings =
+            GrpcCallSettings.<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>newBuilder()
+                .setMethodDescriptor(createSshPublicKeyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
         GrpcCallSettings.<DeletePosixAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePosixAccountMethodDescriptor)
@@ -229,6 +254,11 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
                     })
                 .build();
 
+    this.createSshPublicKeyCallable =
+        callableFactory.createUnaryCallable(
+            createSshPublicKeyTransportSettings,
+            settings.createSshPublicKeySettings(),
+            clientContext);
     this.deletePosixAccountCallable =
         callableFactory.createUnaryCallable(
             deletePosixAccountTransportSettings,
@@ -262,6 +292,12 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyCallable() {
+    return createSshPublicKeyCallable;
   }
 
   @Override
