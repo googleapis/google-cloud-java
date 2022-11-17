@@ -22,8 +22,8 @@
  * <p>The first snippet shows how to create a zone resource. The complete source code can be found
  * on <a href=
  * "https://github.com/googleapis/google-cloud-java/blob/main/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java">
- * CreateZone.java</a>. Note that you need to replace the {@code domainName} with a domain
- * name that you own and the ownership of which you verified with Google.
+ * CreateZone.java</a>. Note that you need to replace the {@code domainName} with a domain name that
+ * you own and the ownership of which you verified with Google.
  *
  * <pre>{@code
  * Dns dns = DnsOptions.getDefaultInstance().getService();
