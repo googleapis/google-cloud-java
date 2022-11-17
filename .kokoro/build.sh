@@ -77,19 +77,6 @@ case ${JOB_TYPE} in
         IFS=,
         echo "${modified_module_list[*]}"
       )
-      install_modules
-      run_integration_tests "$module_list"
-    else
-      echo "No Integration Tests to run"
-    fi
-    ;;
-  terraform-integration)
-    generate_modified_modules_list
-    if [[ ${#modified_module_list[@]} -gt 0 ]]; then
-      module_list=$(
-        IFS=,
-        echo "${modified_module_list[*]}"
-      )
       setup_cloud "$module_list"
       install_modules
       run_integration_tests "$module_list"
