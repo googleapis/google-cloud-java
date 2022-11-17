@@ -48,11 +48,11 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: ## API Overview
+ * Service Description: API Overview:
  *
  * <p>The `beyondcorp.googleapis.com` service implements the Google Cloud BeyondCorp API.
  *
- * <p>## Data Model
+ * <p>Data Model:
  *
  * <p>The AppGatewaysService exposes the following resources:
  *
