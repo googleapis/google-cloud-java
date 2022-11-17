@@ -18,6 +18,8 @@ package com.google.cloud.filestore.v1beta1;
 
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListBackupsPagedResponse;
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSharesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -129,6 +131,18 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
         .restoreInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public UnaryCallSettings<RevertInstanceRequest, Operation> revertInstanceSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).revertInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings())
+        .revertInstanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return ((CloudFilestoreManagerStubSettings) getStubSettings()).deleteInstanceSettings();
@@ -139,6 +153,53 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
       deleteInstanceOperationSettings() {
     return ((CloudFilestoreManagerStubSettings) getStubSettings())
         .deleteInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSnapshots. */
+  public PagedCallSettings<ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      listSnapshotsSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).listSnapshotsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSnapshot. */
+  public UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).getSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSnapshot. */
+  public UnaryCallSettings<CreateSnapshotRequest, Operation> createSnapshotSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).createSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSnapshot. */
+  public OperationCallSettings<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings())
+        .createSnapshotOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSnapshot. */
+  public UnaryCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).deleteSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSnapshot. */
+  public OperationCallSettings<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings())
+        .deleteSnapshotOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSnapshot. */
+  public UnaryCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).updateSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSnapshot. */
+  public OperationCallSettings<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings())
+        .updateSnapshotOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listBackups. */
@@ -183,6 +244,50 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
   public OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationSettings() {
     return ((CloudFilestoreManagerStubSettings) getStubSettings()).updateBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listShares. */
+  public PagedCallSettings<ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>
+      listSharesSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).listSharesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getShare. */
+  public UnaryCallSettings<GetShareRequest, Share> getShareSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).getShareSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createShare. */
+  public UnaryCallSettings<CreateShareRequest, Operation> createShareSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).createShareSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createShare. */
+  public OperationCallSettings<CreateShareRequest, Share, OperationMetadata>
+      createShareOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).createShareOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteShare. */
+  public UnaryCallSettings<DeleteShareRequest, Operation> deleteShareSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).deleteShareSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteShare. */
+  public OperationCallSettings<DeleteShareRequest, Empty, OperationMetadata>
+      deleteShareOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).deleteShareOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateShare. */
+  public UnaryCallSettings<UpdateShareRequest, Operation> updateShareSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).updateShareSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateShare. */
+  public OperationCallSettings<UpdateShareRequest, Share, OperationMetadata>
+      updateShareOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).updateShareOperationSettings();
   }
 
   public static final CloudFilestoreManagerSettings create(CloudFilestoreManagerStubSettings stub)
@@ -346,6 +451,17 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
       return getStubSettingsBuilder().restoreInstanceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    public UnaryCallSettings.Builder<RevertInstanceRequest, Operation> revertInstanceSettings() {
+      return getStubSettingsBuilder().revertInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    public OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
+        revertInstanceOperationSettings() {
+      return getStubSettingsBuilder().revertInstanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteInstance. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
       return getStubSettingsBuilder().deleteInstanceSettings();
@@ -355,6 +471,51 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSnapshots. */
+    public PagedCallSettings.Builder<
+            ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+        listSnapshotsSettings() {
+      return getStubSettingsBuilder().listSnapshotsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSnapshot. */
+    public UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+      return getStubSettingsBuilder().getSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSnapshot. */
+    public UnaryCallSettings.Builder<CreateSnapshotRequest, Operation> createSnapshotSettings() {
+      return getStubSettingsBuilder().createSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSnapshot. */
+    public OperationCallSettings.Builder<CreateSnapshotRequest, Snapshot, OperationMetadata>
+        createSnapshotOperationSettings() {
+      return getStubSettingsBuilder().createSnapshotOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSnapshot. */
+    public UnaryCallSettings.Builder<DeleteSnapshotRequest, Operation> deleteSnapshotSettings() {
+      return getStubSettingsBuilder().deleteSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSnapshot. */
+    public OperationCallSettings.Builder<DeleteSnapshotRequest, Empty, OperationMetadata>
+        deleteSnapshotOperationSettings() {
+      return getStubSettingsBuilder().deleteSnapshotOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSnapshot. */
+    public UnaryCallSettings.Builder<UpdateSnapshotRequest, Operation> updateSnapshotSettings() {
+      return getStubSettingsBuilder().updateSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSnapshot. */
+    public OperationCallSettings.Builder<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+        updateSnapshotOperationSettings() {
+      return getStubSettingsBuilder().updateSnapshotOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listBackups. */
@@ -400,6 +561,50 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return getStubSettingsBuilder().updateBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listShares. */
+    public PagedCallSettings.Builder<ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>
+        listSharesSettings() {
+      return getStubSettingsBuilder().listSharesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getShare. */
+    public UnaryCallSettings.Builder<GetShareRequest, Share> getShareSettings() {
+      return getStubSettingsBuilder().getShareSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createShare. */
+    public UnaryCallSettings.Builder<CreateShareRequest, Operation> createShareSettings() {
+      return getStubSettingsBuilder().createShareSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createShare. */
+    public OperationCallSettings.Builder<CreateShareRequest, Share, OperationMetadata>
+        createShareOperationSettings() {
+      return getStubSettingsBuilder().createShareOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteShare. */
+    public UnaryCallSettings.Builder<DeleteShareRequest, Operation> deleteShareSettings() {
+      return getStubSettingsBuilder().deleteShareSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteShare. */
+    public OperationCallSettings.Builder<DeleteShareRequest, Empty, OperationMetadata>
+        deleteShareOperationSettings() {
+      return getStubSettingsBuilder().deleteShareOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateShare. */
+    public UnaryCallSettings.Builder<UpdateShareRequest, Operation> updateShareSettings() {
+      return getStubSettingsBuilder().updateShareSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateShare. */
+    public OperationCallSettings.Builder<UpdateShareRequest, Share, OperationMetadata>
+        updateShareOperationSettings() {
+      return getStubSettingsBuilder().updateShareOperationSettings();
     }
 
     @Override

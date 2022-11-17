@@ -22,7 +22,7 @@ package com.google.cloud.filestore.v1beta1;
  *
  *
  * <pre>
- * RestoreInstanceRequest restores an existing instances's file share from a
+ * RestoreInstanceRequest restores an existing instance's file share from a
  * snapshot or backup.
  * </pre>
  *
@@ -177,7 +177,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the snapshot
+   * Required. Name of the file share in the Filestore instance that the snapshot
    * is being restored to.
    * </pre>
    *
@@ -201,7 +201,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the file share in the Cloud Filestore instance that the snapshot
+   * Required. Name of the file share in the Filestore instance that the snapshot
    * is being restored to.
    * </pre>
    *
@@ -576,7 +576,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * RestoreInstanceRequest restores an existing instances's file share from a
+   * RestoreInstanceRequest restores an existing instance's file share from a
    * snapshot or backup.
    * </pre>
    *
@@ -940,7 +940,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the snapshot
      * is being restored to.
      * </pre>
      *
@@ -963,7 +963,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the snapshot
      * is being restored to.
      * </pre>
      *
@@ -986,7 +986,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the snapshot
      * is being restored to.
      * </pre>
      *
@@ -1008,7 +1008,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the snapshot
      * is being restored to.
      * </pre>
      *
@@ -1026,7 +1026,7 @@ public final class RestoreInstanceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the file share in the Cloud Filestore instance that the snapshot
+     * Required. Name of the file share in the Filestore instance that the snapshot
      * is being restored to.
      * </pre>
      *

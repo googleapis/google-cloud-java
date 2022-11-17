@@ -78,7 +78,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The project and location for which to retrieve backup information,
    * in the format `projects/{project_id}/locations/{location}`.
-   * In Cloud Filestore, backup locations map to GCP regions,
+   * In Filestore, backup locations map to GCP regions,
    * for example **us-west1**.
    * To retrieve backup information for all locations, use "-" for the
    * `{location}` value.
@@ -108,7 +108,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The project and location for which to retrieve backup information,
    * in the format `projects/{project_id}/locations/{location}`.
-   * In Cloud Filestore, backup locations map to GCP regions,
+   * In Filestore, backup locations map to GCP regions,
    * for example **us-west1**.
    * To retrieve backup information for all locations, use "-" for the
    * `{location}` value.
@@ -725,7 +725,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The project and location for which to retrieve backup information,
      * in the format `projects/{project_id}/locations/{location}`.
-     * In Cloud Filestore, backup locations map to GCP regions,
+     * In Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
      * `{location}` value.
@@ -754,7 +754,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The project and location for which to retrieve backup information,
      * in the format `projects/{project_id}/locations/{location}`.
-     * In Cloud Filestore, backup locations map to GCP regions,
+     * In Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
      * `{location}` value.
@@ -783,7 +783,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The project and location for which to retrieve backup information,
      * in the format `projects/{project_id}/locations/{location}`.
-     * In Cloud Filestore, backup locations map to GCP regions,
+     * In Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
      * `{location}` value.
@@ -811,7 +811,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The project and location for which to retrieve backup information,
      * in the format `projects/{project_id}/locations/{location}`.
-     * In Cloud Filestore, backup locations map to GCP regions,
+     * In Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
      * `{location}` value.
@@ -835,7 +835,7 @@ public final class ListBackupsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The project and location for which to retrieve backup information,
      * in the format `projects/{project_id}/locations/{location}`.
-     * In Cloud Filestore, backup locations map to GCP regions,
+     * In Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
      * `{location}` value.

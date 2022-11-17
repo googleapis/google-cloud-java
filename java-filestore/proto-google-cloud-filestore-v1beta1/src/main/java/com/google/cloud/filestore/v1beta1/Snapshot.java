@@ -22,7 +22,7 @@ package com.google.cloud.filestore.v1beta1;
  *
  *
  * <pre>
- * A Cloud Filestore snapshot.
+ * A Filestore snapshot.
  * </pre>
  *
  * Protobuf type {@code google.cloud.filestore.v1beta1.Snapshot}
@@ -787,7 +787,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Filestore snapshot.
+   * A Filestore snapshot.
    * </pre>
    *
    * Protobuf type {@code google.cloud.filestore.v1beta1.Snapshot}

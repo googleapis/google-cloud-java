@@ -432,4 +432,172 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.protobuf.BoolValueOrBuilder getSatisfiesPzsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 14;</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 14;</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the suspensionReasons.
+   */
+  java.util.List<com.google.cloud.filestore.v1beta1.Instance.SuspensionReason>
+      getSuspensionReasonsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of suspensionReasons.
+   */
+  int getSuspensionReasonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The suspensionReasons at the given index.
+   */
+  com.google.cloud.filestore.v1beta1.Instance.SuspensionReason getSuspensionReasons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for suspensionReasons.
+   */
+  java.util.List<java.lang.Integer> getSuspensionReasonsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of suspensionReasons at the given index.
+   */
+  int getSuspensionReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The max capacity of the instance.
+   * </pre>
+   *
+   * <code>int64 max_capacity_gb = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The maxCapacityGb.
+   */
+  long getMaxCapacityGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The increase/decrease capacity step size.
+   * </pre>
+   *
+   * <code>int64 capacity_step_size_gb = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The capacityStepSizeGb.
+   */
+  long getCapacityStepSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The max number of shares allowed.
+   * </pre>
+   *
+   * <code>int64 max_share_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The maxShareCount.
+   */
+  long getMaxShareCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The storage capacity of the instance in gigabytes (GB = 1024^3 bytes).
+   * This capacity can be increased up to `max_capacity_gb` GB in multipliers
+   * of `capacity_step_size_gb` GB.
+   * </pre>
+   *
+   * <code>int64 capacity_gb = 19;</code>
+   *
+   * @return The capacityGb.
+   */
+  long getCapacityGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether this instance uses a multi-share configuration with which
+   * it can have more than one file-share or none at all. File-shares are added,
+   * updated and removed through the separate file-share APIs.
+   * </pre>
+   *
+   * <code>bool multi_share_enabled = 20;</code>
+   *
+   * @return The multiShareEnabled.
+   */
+  boolean getMultiShareEnabled();
 }

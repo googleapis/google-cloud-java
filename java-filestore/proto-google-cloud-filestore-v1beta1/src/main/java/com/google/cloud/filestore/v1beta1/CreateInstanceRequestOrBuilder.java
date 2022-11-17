@@ -28,7 +28,7 @@ public interface CreateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The instance's project and location, in the format
-   * `projects/{project_id}/locations/{location}`. In Cloud Filestore,
+   * `projects/{project_id}/locations/{location}`. In Filestore,
    * locations map to GCP zones, for example **us-west1-b**.
    * </pre>
    *
@@ -44,7 +44,7 @@ public interface CreateInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The instance's project and location, in the format
-   * `projects/{project_id}/locations/{location}`. In Cloud Filestore,
+   * `projects/{project_id}/locations/{location}`. In Filestore,
    * locations map to GCP zones, for example **us-west1-b**.
    * </pre>
    *

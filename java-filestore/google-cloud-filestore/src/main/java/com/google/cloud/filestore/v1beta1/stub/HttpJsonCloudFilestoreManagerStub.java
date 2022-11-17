@@ -18,6 +18,8 @@ package com.google.cloud.filestore.v1beta1.stub;
 
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListBackupsPagedResponse;
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSharesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -38,18 +40,33 @@ import com.google.cloud.common.OperationMetadata;
 import com.google.cloud.filestore.v1beta1.Backup;
 import com.google.cloud.filestore.v1beta1.CreateBackupRequest;
 import com.google.cloud.filestore.v1beta1.CreateInstanceRequest;
+import com.google.cloud.filestore.v1beta1.CreateShareRequest;
+import com.google.cloud.filestore.v1beta1.CreateSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.DeleteBackupRequest;
 import com.google.cloud.filestore.v1beta1.DeleteInstanceRequest;
+import com.google.cloud.filestore.v1beta1.DeleteShareRequest;
+import com.google.cloud.filestore.v1beta1.DeleteSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.GetBackupRequest;
 import com.google.cloud.filestore.v1beta1.GetInstanceRequest;
+import com.google.cloud.filestore.v1beta1.GetShareRequest;
+import com.google.cloud.filestore.v1beta1.GetSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.Instance;
 import com.google.cloud.filestore.v1beta1.ListBackupsRequest;
 import com.google.cloud.filestore.v1beta1.ListBackupsResponse;
 import com.google.cloud.filestore.v1beta1.ListInstancesRequest;
 import com.google.cloud.filestore.v1beta1.ListInstancesResponse;
+import com.google.cloud.filestore.v1beta1.ListSharesRequest;
+import com.google.cloud.filestore.v1beta1.ListSharesResponse;
+import com.google.cloud.filestore.v1beta1.ListSnapshotsRequest;
+import com.google.cloud.filestore.v1beta1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1beta1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1beta1.RevertInstanceRequest;
+import com.google.cloud.filestore.v1beta1.Share;
+import com.google.cloud.filestore.v1beta1.Snapshot;
 import com.google.cloud.filestore.v1beta1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1beta1.UpdateInstanceRequest;
+import com.google.cloud.filestore.v1beta1.UpdateShareRequest;
+import com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -73,7 +90,9 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(Share.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(Snapshot.getDescriptor())
           .add(Instance.getDescriptor())
           .add(Backup.getDescriptor())
           .build();
@@ -272,6 +291,46 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<RevertInstanceRequest, Operation>
+      revertInstanceMethodDescriptor =
+          ApiMethodDescriptor.<RevertInstanceRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.filestore.v1beta1.CloudFilestoreManager/RevertInstance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RevertInstanceRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/instances/*}:revert",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RevertInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RevertInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RevertInstanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteInstanceRequest, Operation>
       deleteInstanceMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceRequest, Operation>newBuilder()
@@ -295,6 +354,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -306,6 +366,197 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteInstanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
+      listSnapshotsMethodDescriptor =
+          ApiMethodDescriptor.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.filestore.v1beta1.CloudFilestoreManager/ListSnapshots")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSnapshotsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/instances/*}/snapshots",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSnapshotsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSnapshotsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSnapshotsResponse>newBuilder()
+                      .setDefaultInstance(ListSnapshotsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetSnapshotRequest, Snapshot>
+      getSnapshotMethodDescriptor =
+          ApiMethodDescriptor.<GetSnapshotRequest, Snapshot>newBuilder()
+              .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetSnapshot")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/instances/*/snapshots/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Snapshot>newBuilder()
+                      .setDefaultInstance(Snapshot.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateSnapshotRequest, Operation>
+      createSnapshotMethodDescriptor =
+          ApiMethodDescriptor.<CreateSnapshotRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.filestore.v1beta1.CloudFilestoreManager/CreateSnapshot")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/instances/*}/snapshots",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "snapshotId", request.getSnapshotId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("snapshot", request.getSnapshot(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateSnapshotRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSnapshotRequest, Operation>
+      deleteSnapshotMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSnapshotRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.filestore.v1beta1.CloudFilestoreManager/DeleteSnapshot")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/instances/*/snapshots/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteSnapshotRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSnapshotRequest, Operation>
+      updateSnapshotMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSnapshotRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.filestore.v1beta1.CloudFilestoreManager/UpdateSnapshot")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{snapshot.name=projects/*/locations/*/instances/*/snapshots/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "snapshot.name", request.getSnapshot().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("snapshot", request.getSnapshot(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateSnapshotRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -498,6 +749,192 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListSharesRequest, ListSharesResponse>
+      listSharesMethodDescriptor =
+          ApiMethodDescriptor.<ListSharesRequest, ListSharesResponse>newBuilder()
+              .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/ListShares")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSharesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/instances/*}/shares",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSharesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSharesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSharesResponse>newBuilder()
+                      .setDefaultInstance(ListSharesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetShareRequest, Share> getShareMethodDescriptor =
+      ApiMethodDescriptor.<GetShareRequest, Share>newBuilder()
+          .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/GetShare")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetShareRequest>newBuilder()
+                  .setPath(
+                      "/v1beta1/{name=projects/*/locations/*/instances/*/shares/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetShareRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetShareRequest> serializer =
+                            ProtoRestSerializer.create();
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Share>newBuilder()
+                  .setDefaultInstance(Share.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<CreateShareRequest, Operation>
+      createShareMethodDescriptor =
+          ApiMethodDescriptor.<CreateShareRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/CreateShare")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateShareRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/instances/*}/shares",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateShareRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateShareRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "shareId", request.getShareId());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("share", request.getShare(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateShareRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteShareRequest, Operation>
+      deleteShareMethodDescriptor =
+          ApiMethodDescriptor.<DeleteShareRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/DeleteShare")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteShareRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/instances/*/shares/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteShareRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteShareRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteShareRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateShareRequest, Operation>
+      updateShareMethodDescriptor =
+          ApiMethodDescriptor.<UpdateShareRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.filestore.v1beta1.CloudFilestoreManager/UpdateShare")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateShareRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{share.name=projects/*/locations/*/instances/*/shares/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateShareRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "share.name", request.getShare().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateShareRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("share", request.getShare(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateShareRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
@@ -511,9 +948,25 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   private final UnaryCallable<RestoreInstanceRequest, Operation> restoreInstanceCallable;
   private final OperationCallable<RestoreInstanceRequest, Instance, OperationMetadata>
       restoreInstanceOperationCallable;
+  private final UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable;
+  private final OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable;
+  private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable;
+  private final UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable;
+  private final UnaryCallable<CreateSnapshotRequest, Operation> createSnapshotCallable;
+  private final OperationCallable<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationCallable;
+  private final UnaryCallable<DeleteSnapshotRequest, Operation> deleteSnapshotCallable;
+  private final OperationCallable<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationCallable;
+  private final UnaryCallable<UpdateSnapshotRequest, Operation> updateSnapshotCallable;
+  private final OperationCallable<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
@@ -527,6 +980,18 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   private final UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable;
   private final OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationCallable;
+  private final UnaryCallable<ListSharesRequest, ListSharesResponse> listSharesCallable;
+  private final UnaryCallable<ListSharesRequest, ListSharesPagedResponse> listSharesPagedCallable;
+  private final UnaryCallable<GetShareRequest, Share> getShareCallable;
+  private final UnaryCallable<CreateShareRequest, Operation> createShareCallable;
+  private final OperationCallable<CreateShareRequest, Share, OperationMetadata>
+      createShareOperationCallable;
+  private final UnaryCallable<DeleteShareRequest, Operation> deleteShareCallable;
+  private final OperationCallable<DeleteShareRequest, Empty, OperationMetadata>
+      deleteShareOperationCallable;
+  private final UnaryCallable<UpdateShareRequest, Operation> updateShareCallable;
+  private final OperationCallable<UpdateShareRequest, Share, OperationMetadata>
+      updateShareOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -601,9 +1066,40 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
             .setMethodDescriptor(restoreInstanceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<RevertInstanceRequest, Operation> revertInstanceTransportSettings =
+        HttpJsonCallSettings.<RevertInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(revertInstanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListSnapshotsRequest, ListSnapshotsResponse>
+        listSnapshotsTransportSettings =
+            HttpJsonCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
+                .setMethodDescriptor(listSnapshotsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
+        HttpJsonCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
+            .setMethodDescriptor(getSnapshotMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<CreateSnapshotRequest, Operation> createSnapshotTransportSettings =
+        HttpJsonCallSettings.<CreateSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(createSnapshotMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotTransportSettings =
+        HttpJsonCallSettings.<DeleteSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSnapshotMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotTransportSettings =
+        HttpJsonCallSettings.<UpdateSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateSnapshotMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
@@ -629,6 +1125,31 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
     HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
         HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
             .setMethodDescriptor(updateBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<ListSharesRequest, ListSharesResponse> listSharesTransportSettings =
+        HttpJsonCallSettings.<ListSharesRequest, ListSharesResponse>newBuilder()
+            .setMethodDescriptor(listSharesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<GetShareRequest, Share> getShareTransportSettings =
+        HttpJsonCallSettings.<GetShareRequest, Share>newBuilder()
+            .setMethodDescriptor(getShareMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<CreateShareRequest, Operation> createShareTransportSettings =
+        HttpJsonCallSettings.<CreateShareRequest, Operation>newBuilder()
+            .setMethodDescriptor(createShareMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<DeleteShareRequest, Operation> deleteShareTransportSettings =
+        HttpJsonCallSettings.<DeleteShareRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteShareMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<UpdateShareRequest, Operation> updateShareTransportSettings =
+        HttpJsonCallSettings.<UpdateShareRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateShareMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
 
@@ -668,6 +1189,15 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
             settings.restoreInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.revertInstanceCallable =
+        callableFactory.createUnaryCallable(
+            revertInstanceTransportSettings, settings.revertInstanceSettings(), clientContext);
+    this.revertInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            revertInstanceTransportSettings,
+            settings.revertInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -675,6 +1205,42 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
         callableFactory.createOperationCallable(
             deleteInstanceTransportSettings,
             settings.deleteInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listSnapshotsCallable =
+        callableFactory.createUnaryCallable(
+            listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
+    this.listSnapshotsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
+    this.getSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            getSnapshotTransportSettings, settings.getSnapshotSettings(), clientContext);
+    this.createSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            createSnapshotTransportSettings, settings.createSnapshotSettings(), clientContext);
+    this.createSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            createSnapshotTransportSettings,
+            settings.createSnapshotOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            deleteSnapshotTransportSettings, settings.deleteSnapshotSettings(), clientContext);
+    this.deleteSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSnapshotTransportSettings,
+            settings.deleteSnapshotOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            updateSnapshotTransportSettings, settings.updateSnapshotSettings(), clientContext);
+    this.updateSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSnapshotTransportSettings,
+            settings.updateSnapshotOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.listBackupsCallable =
@@ -713,6 +1279,42 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
             settings.updateBackupOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listSharesCallable =
+        callableFactory.createUnaryCallable(
+            listSharesTransportSettings, settings.listSharesSettings(), clientContext);
+    this.listSharesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSharesTransportSettings, settings.listSharesSettings(), clientContext);
+    this.getShareCallable =
+        callableFactory.createUnaryCallable(
+            getShareTransportSettings, settings.getShareSettings(), clientContext);
+    this.createShareCallable =
+        callableFactory.createUnaryCallable(
+            createShareTransportSettings, settings.createShareSettings(), clientContext);
+    this.createShareOperationCallable =
+        callableFactory.createOperationCallable(
+            createShareTransportSettings,
+            settings.createShareOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteShareCallable =
+        callableFactory.createUnaryCallable(
+            deleteShareTransportSettings, settings.deleteShareSettings(), clientContext);
+    this.deleteShareOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteShareTransportSettings,
+            settings.deleteShareOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateShareCallable =
+        callableFactory.createUnaryCallable(
+            updateShareTransportSettings, settings.updateShareSettings(), clientContext);
+    this.updateShareOperationCallable =
+        callableFactory.createOperationCallable(
+            updateShareTransportSettings,
+            settings.updateShareOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -726,12 +1328,23 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
     methodDescriptors.add(createInstanceMethodDescriptor);
     methodDescriptors.add(updateInstanceMethodDescriptor);
     methodDescriptors.add(restoreInstanceMethodDescriptor);
+    methodDescriptors.add(revertInstanceMethodDescriptor);
     methodDescriptors.add(deleteInstanceMethodDescriptor);
+    methodDescriptors.add(listSnapshotsMethodDescriptor);
+    methodDescriptors.add(getSnapshotMethodDescriptor);
+    methodDescriptors.add(createSnapshotMethodDescriptor);
+    methodDescriptors.add(deleteSnapshotMethodDescriptor);
+    methodDescriptors.add(updateSnapshotMethodDescriptor);
     methodDescriptors.add(listBackupsMethodDescriptor);
     methodDescriptors.add(getBackupMethodDescriptor);
     methodDescriptors.add(createBackupMethodDescriptor);
     methodDescriptors.add(deleteBackupMethodDescriptor);
     methodDescriptors.add(updateBackupMethodDescriptor);
+    methodDescriptors.add(listSharesMethodDescriptor);
+    methodDescriptors.add(getShareMethodDescriptor);
+    methodDescriptors.add(createShareMethodDescriptor);
+    methodDescriptors.add(deleteShareMethodDescriptor);
+    methodDescriptors.add(updateShareMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -789,6 +1402,17 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   }
 
   @Override
+  public UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable() {
+    return revertInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable() {
+    return revertInstanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
   }
@@ -797,6 +1421,55 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
+    return listSnapshotsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
+    return listSnapshotsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    return getSnapshotCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSnapshotRequest, Operation> createSnapshotCallable() {
+    return createSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationCallable() {
+    return createSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSnapshotRequest, Operation> deleteSnapshotCallable() {
+    return deleteSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationCallable() {
+    return deleteSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSnapshotRequest, Operation> updateSnapshotCallable() {
+    return updateSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationCallable() {
+    return updateSnapshotOperationCallable;
   }
 
   @Override
@@ -845,6 +1518,54 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
   public OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationCallable() {
     return updateBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSharesRequest, ListSharesResponse> listSharesCallable() {
+    return listSharesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSharesRequest, ListSharesPagedResponse> listSharesPagedCallable() {
+    return listSharesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetShareRequest, Share> getShareCallable() {
+    return getShareCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateShareRequest, Operation> createShareCallable() {
+    return createShareCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateShareRequest, Share, OperationMetadata>
+      createShareOperationCallable() {
+    return createShareOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteShareRequest, Operation> deleteShareCallable() {
+    return deleteShareCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteShareRequest, Empty, OperationMetadata>
+      deleteShareOperationCallable() {
+    return deleteShareOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateShareRequest, Operation> updateShareCallable() {
+    return updateShareCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateShareRequest, Share, OperationMetadata>
+      updateShareOperationCallable() {
+    return updateShareOperationCallable;
   }
 
   @Override

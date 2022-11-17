@@ -234,7 +234,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * The resource name of the source Cloud Filestore instance, in the format
+   * The resource name of the source Filestore instance, in the format
    * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
    * used to create this backup.
    * </pre>
@@ -248,7 +248,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * The resource name of the source Cloud Filestore instance, in the format
+   * The resource name of the source Filestore instance, in the format
    * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
    * used to create this backup.
    * </pre>
@@ -263,7 +263,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Name of the file share in the source Cloud Filestore instance that the
+   * Name of the file share in the source Filestore instance that the
    * backup is created from.
    * </pre>
    *
@@ -276,7 +276,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Name of the file share in the source Cloud Filestore instance that the
+   * Name of the file share in the source Filestore instance that the
    * backup is created from.
    * </pre>
    *
@@ -290,7 +290,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
+   * Output only. The service tier of the source Filestore instance that this backup
    * is created from.
    * </pre>
    *
@@ -305,7 +305,7 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that this backup
+   * Output only. The service tier of the source Filestore instance that this backup
    * is created from.
    * </pre>
    *
@@ -370,4 +370,29 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.protobuf.BoolValueOrBuilder getSatisfiesPzsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
 }

@@ -122,6 +122,25 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 2;
+  private boolean force_;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, any snapshots of the instance will also be deleted.
+   * (Otherwise, the request will only work if the instance has no snapshots.)
+   * </pre>
+   *
+   * <code>bool force = 2;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -139,6 +158,9 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(2, force_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -150,6 +172,9 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, force_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -168,6 +193,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         (com.google.cloud.filestore.v1beta1.DeleteInstanceRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -181,6 +207,8 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -322,6 +350,8 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       name_ = "";
 
+      force_ = false;
+
       return this;
     }
 
@@ -350,6 +380,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       com.google.cloud.filestore.v1beta1.DeleteInstanceRequest result =
           new com.google.cloud.filestore.v1beta1.DeleteInstanceRequest(this);
       result.name_ = name_;
+      result.force_ = force_;
       onBuilt();
       return result;
     }
@@ -404,6 +435,9 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         name_ = other.name_;
         onChanged();
       }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -436,6 +470,12 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
 
                 break;
               } // case 10
+            case 16:
+              {
+                force_ = input.readBool();
+
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -570,6 +610,61 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, any snapshots of the instance will also be deleted.
+     * (Otherwise, the request will only work if the instance has no snapshots.)
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, any snapshots of the instance will also be deleted.
+     * (Otherwise, the request will only work if the instance has no snapshots.)
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, any snapshots of the instance will also be deleted.
+     * (Otherwise, the request will only work if the instance has no snapshots.)
+     * </pre>
+     *
+     * <code>bool force = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+
+      force_ = false;
       onChanged();
       return this;
     }

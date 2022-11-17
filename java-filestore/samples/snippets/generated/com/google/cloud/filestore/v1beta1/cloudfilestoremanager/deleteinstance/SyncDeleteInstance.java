@@ -39,6 +39,7 @@ public class SyncDeleteInstance {
       DeleteInstanceRequest request =
           DeleteInstanceRequest.newBuilder()
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setForce(true)
               .build();
       cloudFilestoreManagerClient.deleteInstanceAsync(request).get();
     }
