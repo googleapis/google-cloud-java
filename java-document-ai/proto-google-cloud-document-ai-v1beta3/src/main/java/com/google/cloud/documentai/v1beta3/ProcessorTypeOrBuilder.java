@@ -28,7 +28,7 @@ public interface ProcessorTypeOrBuilder
    *
    * <pre>
    * The resource name of the processor type.
-   * Format: projects/{project}/processorTypes/{processor_type}
+   * Format: `projects/{project}/processorTypes/{processor_type}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -41,7 +41,7 @@ public interface ProcessorTypeOrBuilder
    *
    * <pre>
    * The resource name of the processor type.
-   * Format: projects/{project}/processorTypes/{processor_type}
+   * Format: `projects/{project}/processorTypes/{processor_type}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -54,7 +54,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The type of the processor, e.g., "invoice_parsing".
+   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -66,7 +66,7 @@ public interface ProcessorTypeOrBuilder
    *
    *
    * <pre>
-   * The type of the processor, e.g., "invoice_parsing".
+   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
    * </pre>
    *
    * <code>string type = 2;</code>

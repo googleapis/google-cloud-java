@@ -95,6 +95,47 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * @return The bytes for gcsUri.
      */
     com.google.protobuf.ByteString getGcsUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in the output documents.
+     * Only supports top level document and pages field so it must be in the
+     * form of `{document_field_name}` or `pages.{page_field_name}`.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     *
+     * @return Whether the fieldMask field is set.
+     */
+    boolean hasFieldMask();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in the output documents.
+     * Only supports top level document and pages field so it must be in the
+     * form of `{document_field_name}` or `pages.{page_field_name}`.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     *
+     * @return The fieldMask.
+     */
+    com.google.protobuf.FieldMask getFieldMask();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in the output documents.
+     * Only supports top level document and pages field so it must be in the
+     * form of `{document_field_name}` or `pages.{page_field_name}`.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
   }
   /**
    *
@@ -195,6 +236,58 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
     }
 
+    public static final int FIELD_MASK_FIELD_NUMBER = 2;
+    private com.google.protobuf.FieldMask fieldMask_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in the output documents.
+     * Only supports top level document and pages field so it must be in the
+     * form of `{document_field_name}` or `pages.{page_field_name}`.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     *
+     * @return Whether the fieldMask field is set.
+     */
+    @java.lang.Override
+    public boolean hasFieldMask() {
+      return fieldMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in the output documents.
+     * Only supports top level document and pages field so it must be in the
+     * form of `{document_field_name}` or `pages.{page_field_name}`.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     *
+     * @return The fieldMask.
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMask getFieldMask() {
+      return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which fields to include in the output documents.
+     * Only supports top level document and pages field so it must be in the
+     * form of `{document_field_name}` or `pages.{page_field_name}`.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
+      return getFieldMask();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -212,6 +305,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, gcsUri_);
       }
+      if (fieldMask_ != null) {
+        output.writeMessage(2, getFieldMask());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -223,6 +319,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, gcsUri_);
+      }
+      if (fieldMask_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFieldMask());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -242,6 +341,10 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           (com.google.cloud.documentai.v1beta3.DocumentOutputConfig.GcsOutputConfig) obj;
 
       if (!getGcsUri().equals(other.getGcsUri())) return false;
+      if (hasFieldMask() != other.hasFieldMask()) return false;
+      if (hasFieldMask()) {
+        if (!getFieldMask().equals(other.getFieldMask())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -255,6 +358,10 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GCS_URI_FIELD_NUMBER;
       hash = (53 * hash) + getGcsUri().hashCode();
+      if (hasFieldMask()) {
+        hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
+        hash = (53 * hash) + getFieldMask().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -406,6 +513,12 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         super.clear();
         gcsUri_ = "";
 
+        if (fieldMaskBuilder_ == null) {
+          fieldMask_ = null;
+        } else {
+          fieldMask_ = null;
+          fieldMaskBuilder_ = null;
+        }
         return this;
       }
 
@@ -438,6 +551,11 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.documentai.v1beta3.DocumentOutputConfig.GcsOutputConfig result =
             new com.google.cloud.documentai.v1beta3.DocumentOutputConfig.GcsOutputConfig(this);
         result.gcsUri_ = gcsUri_;
+        if (fieldMaskBuilder_ == null) {
+          result.fieldMask_ = fieldMask_;
+        } else {
+          result.fieldMask_ = fieldMaskBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -498,6 +616,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           gcsUri_ = other.gcsUri_;
           onChanged();
         }
+        if (other.hasFieldMask()) {
+          mergeFieldMask(other.getFieldMask());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -530,6 +651,12 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
 
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(getFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -651,6 +778,209 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         gcsUri_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.FieldMask fieldMask_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          fieldMaskBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       *
+       * @return Whether the fieldMask field is set.
+       */
+      public boolean hasFieldMask() {
+        return fieldMaskBuilder_ != null || fieldMask_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       *
+       * @return The fieldMask.
+       */
+      public com.google.protobuf.FieldMask getFieldMask() {
+        if (fieldMaskBuilder_ == null) {
+          return fieldMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : fieldMask_;
+        } else {
+          return fieldMaskBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       */
+      public Builder setFieldMask(com.google.protobuf.FieldMask value) {
+        if (fieldMaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fieldMask_ = value;
+          onChanged();
+        } else {
+          fieldMaskBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       */
+      public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+        if (fieldMaskBuilder_ == null) {
+          fieldMask_ = builderForValue.build();
+          onChanged();
+        } else {
+          fieldMaskBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       */
+      public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
+        if (fieldMaskBuilder_ == null) {
+          if (fieldMask_ != null) {
+            fieldMask_ =
+                com.google.protobuf.FieldMask.newBuilder(fieldMask_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            fieldMask_ = value;
+          }
+          onChanged();
+        } else {
+          fieldMaskBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       */
+      public Builder clearFieldMask() {
+        if (fieldMaskBuilder_ == null) {
+          fieldMask_ = null;
+          onChanged();
+        } else {
+          fieldMask_ = null;
+          fieldMaskBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       */
+      public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
+
+        onChanged();
+        return getFieldMaskFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       */
+      public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
+        if (fieldMaskBuilder_ != null) {
+          return fieldMaskBuilder_.getMessageOrBuilder();
+        } else {
+          return fieldMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : fieldMask_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies which fields to include in the output documents.
+       * Only supports top level document and pages field so it must be in the
+       * form of `{document_field_name}` or `pages.{page_field_name}`.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask field_mask = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          getFieldMaskFieldBuilder() {
+        if (fieldMaskBuilder_ == null) {
+          fieldMaskBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.FieldMask,
+                  com.google.protobuf.FieldMask.Builder,
+                  com.google.protobuf.FieldMaskOrBuilder>(
+                  getFieldMask(), getParentForChildren(), isClean());
+          fieldMask_ = null;
+        }
+        return fieldMaskBuilder_;
       }
 
       @java.lang.Override

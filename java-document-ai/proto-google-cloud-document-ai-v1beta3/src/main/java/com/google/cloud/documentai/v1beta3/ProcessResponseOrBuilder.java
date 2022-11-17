@@ -74,7 +74,7 @@ public interface ProcessResponseOrBuilder
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=333
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
    * @return The humanReviewOperation.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface ProcessResponseOrBuilder
    * <code>string human_review_operation = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessResponse.human_review_operation is
-   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=333
+   *     deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
    * @return The bytes for humanReviewOperation.
    */
   @java.lang.Deprecated

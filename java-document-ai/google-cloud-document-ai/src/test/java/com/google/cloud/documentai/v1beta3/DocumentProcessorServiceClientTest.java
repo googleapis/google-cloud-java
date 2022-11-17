@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListEvaluationsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
@@ -610,6 +611,108 @@ public class DocumentProcessorServiceClientTest {
   }
 
   @Test
+  public void trainProcessorVersionTest() throws Exception {
+    TrainProcessorVersionResponse expectedResponse =
+        TrainProcessorVersionResponse.newBuilder()
+            .setProcessorVersion("processorVersion-1941143578")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("trainProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentProcessorService.addResponse(resultOperation);
+
+    ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+    ProcessorVersion processorVersion = ProcessorVersion.newBuilder().build();
+
+    TrainProcessorVersionResponse actualResponse =
+        client.trainProcessorVersionAsync(parent, processorVersion).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TrainProcessorVersionRequest actualRequest =
+        ((TrainProcessorVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(processorVersion, actualRequest.getProcessorVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void trainProcessorVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      ProcessorVersion processorVersion = ProcessorVersion.newBuilder().build();
+      client.trainProcessorVersionAsync(parent, processorVersion).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void trainProcessorVersionTest2() throws Exception {
+    TrainProcessorVersionResponse expectedResponse =
+        TrainProcessorVersionResponse.newBuilder()
+            .setProcessorVersion("processorVersion-1941143578")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("trainProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentProcessorService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    ProcessorVersion processorVersion = ProcessorVersion.newBuilder().build();
+
+    TrainProcessorVersionResponse actualResponse =
+        client.trainProcessorVersionAsync(parent, processorVersion).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TrainProcessorVersionRequest actualRequest =
+        ((TrainProcessorVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(processorVersion, actualRequest.getProcessorVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void trainProcessorVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ProcessorVersion processorVersion = ProcessorVersion.newBuilder().build();
+      client.trainProcessorVersionAsync(parent, processorVersion).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getProcessorVersionTest() throws Exception {
     ProcessorVersion expectedResponse =
         ProcessorVersion.newBuilder()
@@ -618,6 +721,7 @@ public class DocumentProcessorServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
                     .toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentSchema(DocumentSchema.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
@@ -667,6 +771,7 @@ public class DocumentProcessorServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
                     .toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentSchema(DocumentSchema.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
             .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
@@ -1506,6 +1611,296 @@ public class DocumentProcessorServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void evaluateProcessorVersionTest() throws Exception {
+    EvaluateProcessorVersionResponse expectedResponse =
+        EvaluateProcessorVersionResponse.newBuilder().setEvaluation("evaluation858523452").build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("evaluateProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentProcessorService.addResponse(resultOperation);
+
+    ProcessorVersionName processorVersion =
+        ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+
+    EvaluateProcessorVersionResponse actualResponse =
+        client.evaluateProcessorVersionAsync(processorVersion).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EvaluateProcessorVersionRequest actualRequest =
+        ((EvaluateProcessorVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(processorVersion.toString(), actualRequest.getProcessorVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void evaluateProcessorVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      ProcessorVersionName processorVersion =
+          ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+      client.evaluateProcessorVersionAsync(processorVersion).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void evaluateProcessorVersionTest2() throws Exception {
+    EvaluateProcessorVersionResponse expectedResponse =
+        EvaluateProcessorVersionResponse.newBuilder().setEvaluation("evaluation858523452").build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("evaluateProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentProcessorService.addResponse(resultOperation);
+
+    String processorVersion = "processorVersion-1941143578";
+
+    EvaluateProcessorVersionResponse actualResponse =
+        client.evaluateProcessorVersionAsync(processorVersion).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EvaluateProcessorVersionRequest actualRequest =
+        ((EvaluateProcessorVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(processorVersion, actualRequest.getProcessorVersion());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void evaluateProcessorVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      String processorVersion = "processorVersion-1941143578";
+      client.evaluateProcessorVersionAsync(processorVersion).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getEvaluationTest() throws Exception {
+    Evaluation expectedResponse =
+        Evaluation.newBuilder()
+            .setName(
+                EvaluationName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PROCESSOR]",
+                        "[PROCESSOR_VERSION]",
+                        "[EVALUATION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentCounters(Evaluation.Counters.newBuilder().build())
+            .setAllEntitiesMetrics(Evaluation.MultiConfidenceMetrics.newBuilder().build())
+            .putAllEntityMetrics(new HashMap<String, Evaluation.MultiConfidenceMetrics>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .build();
+    mockDocumentProcessorService.addResponse(expectedResponse);
+
+    EvaluationName name =
+        EvaluationName.of(
+            "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]");
+
+    Evaluation actualResponse = client.getEvaluation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEvaluationRequest actualRequest = ((GetEvaluationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEvaluationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      EvaluationName name =
+          EvaluationName.of(
+              "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]");
+      client.getEvaluation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEvaluationTest2() throws Exception {
+    Evaluation expectedResponse =
+        Evaluation.newBuilder()
+            .setName(
+                EvaluationName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[PROCESSOR]",
+                        "[PROCESSOR_VERSION]",
+                        "[EVALUATION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentCounters(Evaluation.Counters.newBuilder().build())
+            .setAllEntitiesMetrics(Evaluation.MultiConfidenceMetrics.newBuilder().build())
+            .putAllEntityMetrics(new HashMap<String, Evaluation.MultiConfidenceMetrics>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .build();
+    mockDocumentProcessorService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Evaluation actualResponse = client.getEvaluation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEvaluationRequest actualRequest = ((GetEvaluationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEvaluationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEvaluation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEvaluationsTest() throws Exception {
+    Evaluation responsesElement = Evaluation.newBuilder().build();
+    ListEvaluationsResponse expectedResponse =
+        ListEvaluationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEvaluations(Arrays.asList(responsesElement))
+            .build();
+    mockDocumentProcessorService.addResponse(expectedResponse);
+
+    ProcessorVersionName parent =
+        ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+
+    ListEvaluationsPagedResponse pagedListResponse = client.listEvaluations(parent);
+
+    List<Evaluation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEvaluationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEvaluationsRequest actualRequest = ((ListEvaluationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEvaluationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      ProcessorVersionName parent =
+          ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+      client.listEvaluations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEvaluationsTest2() throws Exception {
+    Evaluation responsesElement = Evaluation.newBuilder().build();
+    ListEvaluationsResponse expectedResponse =
+        ListEvaluationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEvaluations(Arrays.asList(responsesElement))
+            .build();
+    mockDocumentProcessorService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEvaluationsPagedResponse pagedListResponse = client.listEvaluations(parent);
+
+    List<Evaluation> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEvaluationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEvaluationsRequest actualRequest = ((ListEvaluationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEvaluationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEvaluations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
