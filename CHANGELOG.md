@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.13.1](https://github.com/googleapis/java-logging/compare/v3.13.0...v3.13.1) (2022-11-16)
+
+
+### Bug Fixes
+
+* Fix failing instrumentation test preventing release ([#1187](https://github.com/googleapis/java-logging/issues/1187)) ([04bb6c0](https://github.com/googleapis/java-logging/commit/04bb6c013f9e6f61976df43d6ebfc679524221af))
+* Test failures due to RESOURCE_EXHAUSTED ([#1197](https://github.com/googleapis/java-logging/issues/1197)) ([f74b86d](https://github.com/googleapis/java-logging/commit/f74b86d69db714884959dee7c1f4851df0a0c916))
+* Wrong order of libraries info in instrumentation ([#1196](https://github.com/googleapis/java-logging/issues/1196)) ([c3942ea](https://github.com/googleapis/java-logging/commit/c3942ea6a7ba3fe094e7971010cd30840675aacf))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.0.6 ([#1190](https://github.com/googleapis/java-logging/issues/1190)) ([01ebe33](https://github.com/googleapis/java-logging/commit/01ebe33363c9dd131de8ff90b87552934dfdd5a6))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.17 ([#1182](https://github.com/googleapis/java-logging/issues/1182)) ([d4f17ab](https://github.com/googleapis/java-logging/commit/d4f17ab247a9761632eb4b7503be3376c7353a29))
+
 ## [3.13.0](https://github.com/googleapis/java-logging/compare/v3.12.1...v3.13.0) (2022-11-04)
 
 
