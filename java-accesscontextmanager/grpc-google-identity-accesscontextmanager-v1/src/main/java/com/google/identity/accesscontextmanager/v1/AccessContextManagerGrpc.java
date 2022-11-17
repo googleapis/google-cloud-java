@@ -21,15 +21,15 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * API for setting [Access Levels]
- * [google.identity.accesscontextmanager.v1.AccessLevel] and [Service
- * Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
- * for Google Cloud Projects. Each organization has one [AccessPolicy]
- * [google.identity.accesscontextmanager.v1.AccessPolicy] containing the
- * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel]
- * and [Service Perimeters]
+ * API for setting [access levels]
+ * [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+ * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+ * for Google Cloud projects. Each organization has one [access policy]
+ * [google.identity.accesscontextmanager.v1.AccessPolicy] that contains the
+ * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel]
+ * and [service perimeters]
  * [google.identity.accesscontextmanager.v1.ServicePerimeter]. This
- * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
+ * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
  * applicable to all resources in the organization.
  * AccessPolicies
  * </pre>
@@ -1209,6 +1209,129 @@ public final class AccessContextManagerGrpc {
     return getDeleteGcpUserAccessBindingMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyMethod;
+    if ((getSetIamPolicyMethod = AccessContextManagerGrpc.getSetIamPolicyMethod) == null) {
+      synchronized (AccessContextManagerGrpc.class) {
+        if ((getSetIamPolicyMethod = AccessContextManagerGrpc.getSetIamPolicyMethod) == null) {
+          AccessContextManagerGrpc.getSetIamPolicyMethod =
+              getSetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AccessContextManagerMethodDescriptorSupplier("SetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyMethod;
+    if ((getGetIamPolicyMethod = AccessContextManagerGrpc.getGetIamPolicyMethod) == null) {
+      synchronized (AccessContextManagerGrpc.class) {
+        if ((getGetIamPolicyMethod = AccessContextManagerGrpc.getGetIamPolicyMethod) == null) {
+          AccessContextManagerGrpc.getGetIamPolicyMethod =
+              getGetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AccessContextManagerMethodDescriptorSupplier("GetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestIamPermissions",
+      requestType = com.google.iam.v1.TestIamPermissionsRequest.class,
+      responseType = com.google.iam.v1.TestIamPermissionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.iam.v1.TestIamPermissionsRequest,
+            com.google.iam.v1.TestIamPermissionsResponse>
+        getTestIamPermissionsMethod;
+    if ((getTestIamPermissionsMethod = AccessContextManagerGrpc.getTestIamPermissionsMethod)
+        == null) {
+      synchronized (AccessContextManagerGrpc.class) {
+        if ((getTestIamPermissionsMethod = AccessContextManagerGrpc.getTestIamPermissionsMethod)
+            == null) {
+          AccessContextManagerGrpc.getTestIamPermissionsMethod =
+              getTestIamPermissionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.TestIamPermissionsRequest,
+                          com.google.iam.v1.TestIamPermissionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestIamPermissions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AccessContextManagerMethodDescriptorSupplier("TestIamPermissions"))
+                      .build();
+        }
+      }
+    }
+    return getTestIamPermissionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AccessContextManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AccessContextManagerStub> factory =
@@ -1254,15 +1377,15 @@ public final class AccessContextManagerGrpc {
    *
    *
    * <pre>
-   * API for setting [Access Levels]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] and [Service
-   * Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * for Google Cloud Projects. Each organization has one [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] containing the
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel]
-   * and [Service Perimeters]
+   * API for setting [access levels]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * for Google Cloud projects. Each organization has one [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] that contains the
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel]
+   * and [service perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter]. This
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
+   * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
    * applicable to all resources in the organization.
    * AccessPolicies
    * </pre>
@@ -1273,9 +1396,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [AccessPolicies]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] under a
-     * container.
+     * Lists all [access policies]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+     * organization.
      * </pre>
      */
     public void listAccessPolicies(
@@ -1291,8 +1414,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+     * Returns an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the name.
      * </pre>
      */
     public void getAccessPolicy(
@@ -1307,10 +1430,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an `AccessPolicy`. Fails if this organization already has a
-     * `AccessPolicy`. The longrunning Operation will have a successful status
-     * once the `AccessPolicy` has propagated to long-lasting storage.
-     * Syntactic and basic semantic errors will be returned in `metadata` as a
+     * Creates an access policy. This method fails if the organization already has
+     * an access policy. The long-running operation has a successful status
+     * after the access policy propagates to long-lasting storage.
+     * Syntactic and basic semantic errors are returned in `metadata` as a
      * BadRequest proto.
      * </pre>
      */
@@ -1325,13 +1448,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [AccessPolicy]
+     * Updates an [access policy]
      * [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-     * longrunning Operation from this RPC will have a successful status once the
-     * changes to the [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated
-     * to long-lasting storage. Syntactic and basic semantic errors will be
-     * returned in `metadata` as a BadRequest proto.
+     * long-running operation from this RPC has a successful status after the
+     * changes to the [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] propagate
+     * to long-lasting storage.
      * </pre>
      */
     public void updateAccessPolicy(
@@ -1345,11 +1467,11 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-     * name. The longrunning Operation will have a successful status once the
-     * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * has been removed from long-lasting storage.
+     * Deletes an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+     * resource name. The long-running operation has a successful status after the
+     * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
+     * is removed from long-lasting storage.
      * </pre>
      */
     public void deleteAccessPolicy(
@@ -1363,7 +1485,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Access Levels]
+     * Lists all [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] for an access
      * policy.
      * </pre>
@@ -1381,8 +1503,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
+     * Gets an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
      * name.
      * </pre>
      */
@@ -1398,13 +1520,13 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the [Access
-     * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has
-     * propagated to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Creates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the [access
+     * level] [google.identity.accesscontextmanager.v1.AccessLevel]
+     * propagates to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void createAccessLevel(
@@ -1418,14 +1540,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the changes to
-     * the [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated
-     * to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Updates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the changes to
+     * the [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] propagate
+     * to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void updateAccessLevel(
@@ -1439,10 +1561,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Access Level]
+     * Deletes an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
+     * name. The long-running operation from this RPC has a successful status
+     * after the [access level]
      * [google.identity.accesscontextmanager.v1.AccessLevel] has been removed
      * from long-lasting storage.
      * </pre>
@@ -1458,22 +1580,22 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [Access
-     * Policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
-     * the [Access Levels]
+     * Replaces all existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
+     * the [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] provided. This
-     * is done atomically. The longrunning operation from this RPC will have a
-     * successful status once all replacements have propagated to long-lasting
-     * storage. Replacements containing errors will result in an error response
-     * for the first error encountered.  Replacement will be cancelled on error,
-     * existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] will not be
-     * affected. Operation.response field will contain
-     * ReplaceAccessLevelsResponse. Removing [Access Levels]
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting
+     * storage. If the replacement contains errors, an error response is returned
+     * for the first error encountered.  Upon error, the replacement is cancelled,
+     * and existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] are not
+     * affected. The Operation.response field contains
+     * ReplaceAccessLevelsResponse. Removing [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
-     * [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will result in
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an
      * error.
      * </pre>
      */
@@ -1488,7 +1610,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Service Perimeters]
+     * Lists all [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
      * access policy.
      * </pre>
@@ -1506,9 +1628,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name.
+     * Gets a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name.
      * </pre>
      */
     public void getServicePerimeter(
@@ -1523,14 +1645,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create a [Service Perimeter]
+     * Creates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has
-     * propagated to long-lasting storage. [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void createServicePerimeter(
@@ -1544,14 +1666,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update a [Service Perimeter]
+     * Updates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * changes to the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] have
-     * propagated to long-lasting storage. [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void updateServicePerimeter(
@@ -1565,12 +1687,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has been
-     * removed from long-lasting storage.
+     * Deletes a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name. The long-running operation from this RPC has a successful
+     * status after the [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed from
+     * long-lasting storage.
      * </pre>
      */
     public void deleteServicePerimeter(
@@ -1584,18 +1706,18 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * with the [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided.
-     * This is done atomically. The longrunning operation from this
-     * RPC will have a successful status once all replacements have propagated to
-     * long-lasting storage. Replacements containing errors will result in an
-     * error response for the first error encountered. Replacement will be
-     * cancelled on error, existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will not be
-     * affected. Operation.response field will contain
+     * Replace all existing [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting storage.
+     * Replacements containing errors result in an error response for the first
+     * error encountered. Upon an error, replacement are cancelled and existing
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] are not
+     * affected. The Operation.response field contains
      * ReplaceServicePerimetersResponse.
      * </pre>
      */
@@ -1610,21 +1732,21 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Commit the dry-run spec for all the [Service Perimeters]
+     * Commits the dry-run specification for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy][google.identity.accesscontextmanager.v1.AccessPolicy].
-     * A commit operation on a Service Perimeter involves copying its `spec` field
-     * to that Service Perimeter's `status` field. Only [Service Perimeters]
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * A commit operation on a service perimeter involves copying its `spec` field
+     * to the `status` field of the service perimeter. Only [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] with
      * `use_explicit_dry_run_spec` field set to true are affected by a commit
-     * operation. The longrunning operation from this RPC will have a successful
-     * status once the dry-run specs for all the [Service Perimeters]
+     * operation. The long-running operation from this RPC has a successful
+     * status after the dry-run specifications for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] have been
-     * committed. If a commit fails, it will cause the longrunning operation to
-     * return an error response and the entire commit operation will be cancelled.
-     * When successful, Operation.response field will contain
-     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will
-     * be cleared after a successful commit operation.
+     * committed. If a commit fails, it causes the long-running operation to
+     * return an error response and the entire commit operation is cancelled.
+     * When successful, the Operation.response field contains
+     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are
+     * cleared after a successful commit operation.
      * </pre>
      */
     public void commitServicePerimeters(
@@ -1678,7 +1800,7 @@ public final class AccessContextManagerGrpc {
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the
      * client specifies a [name]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name],
-     * the server will ignore it. Fails if a resource already exists with the same
+     * the server ignores it. Fails if a resource already exists with the same
      * [group_key]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key].
      * Completion of this long-running operation does not necessarily signify that
@@ -1727,6 +1849,60 @@ public final class AccessContextManagerGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteGcpUserAccessBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * This method replaces the existing IAM policy on the access policy. The IAM
+     * policy controls the set of users who can perform specific operations on the
+     * Access Context Manager [access
+     * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the IAM permissions that the caller has on the specified Access
+     * Context Manager resource. The resource can be an
+     * [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy],
+     * [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or
+     * [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter
+     * ]. This method does not support other resources.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -1882,6 +2058,25 @@ public final class AccessContextManagerGrpc {
                       com.google.identity.accesscontextmanager.v1.DeleteGcpUserAccessBindingRequest,
                       com.google.longrunning.Operation>(
                       this, METHODID_DELETE_GCP_USER_ACCESS_BINDING)))
+          .addMethod(
+              getSetIamPolicyMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_SET_IAM_POLICY)))
+          .addMethod(
+              getGetIamPolicyMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_GET_IAM_POLICY)))
+          .addMethod(
+              getTestIamPermissionsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.TestIamPermissionsRequest,
+                      com.google.iam.v1.TestIamPermissionsResponse>(
+                      this, METHODID_TEST_IAM_PERMISSIONS)))
           .build();
     }
   }
@@ -1890,15 +2085,15 @@ public final class AccessContextManagerGrpc {
    *
    *
    * <pre>
-   * API for setting [Access Levels]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] and [Service
-   * Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * for Google Cloud Projects. Each organization has one [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] containing the
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel]
-   * and [Service Perimeters]
+   * API for setting [access levels]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * for Google Cloud projects. Each organization has one [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] that contains the
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel]
+   * and [service perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter]. This
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
+   * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
    * applicable to all resources in the organization.
    * AccessPolicies
    * </pre>
@@ -1919,9 +2114,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [AccessPolicies]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] under a
-     * container.
+     * Lists all [access policies]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+     * organization.
      * </pre>
      */
     public void listAccessPolicies(
@@ -1939,8 +2134,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+     * Returns an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the name.
      * </pre>
      */
     public void getAccessPolicy(
@@ -1957,10 +2152,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an `AccessPolicy`. Fails if this organization already has a
-     * `AccessPolicy`. The longrunning Operation will have a successful status
-     * once the `AccessPolicy` has propagated to long-lasting storage.
-     * Syntactic and basic semantic errors will be returned in `metadata` as a
+     * Creates an access policy. This method fails if the organization already has
+     * an access policy. The long-running operation has a successful status
+     * after the access policy propagates to long-lasting storage.
+     * Syntactic and basic semantic errors are returned in `metadata` as a
      * BadRequest proto.
      * </pre>
      */
@@ -1977,13 +2172,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [AccessPolicy]
+     * Updates an [access policy]
      * [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-     * longrunning Operation from this RPC will have a successful status once the
-     * changes to the [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated
-     * to long-lasting storage. Syntactic and basic semantic errors will be
-     * returned in `metadata` as a BadRequest proto.
+     * long-running operation from this RPC has a successful status after the
+     * changes to the [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] propagate
+     * to long-lasting storage.
      * </pre>
      */
     public void updateAccessPolicy(
@@ -1999,11 +2193,11 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-     * name. The longrunning Operation will have a successful status once the
-     * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * has been removed from long-lasting storage.
+     * Deletes an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+     * resource name. The long-running operation has a successful status after the
+     * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
+     * is removed from long-lasting storage.
      * </pre>
      */
     public void deleteAccessPolicy(
@@ -2019,7 +2213,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Access Levels]
+     * Lists all [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] for an access
      * policy.
      * </pre>
@@ -2039,8 +2233,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
+     * Gets an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
      * name.
      * </pre>
      */
@@ -2058,13 +2252,13 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the [Access
-     * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has
-     * propagated to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Creates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the [access
+     * level] [google.identity.accesscontextmanager.v1.AccessLevel]
+     * propagates to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void createAccessLevel(
@@ -2080,14 +2274,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the changes to
-     * the [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated
-     * to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Updates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the changes to
+     * the [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] propagate
+     * to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void updateAccessLevel(
@@ -2103,10 +2297,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Access Level]
+     * Deletes an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
+     * name. The long-running operation from this RPC has a successful status
+     * after the [access level]
      * [google.identity.accesscontextmanager.v1.AccessLevel] has been removed
      * from long-lasting storage.
      * </pre>
@@ -2124,22 +2318,22 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [Access
-     * Policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
-     * the [Access Levels]
+     * Replaces all existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
+     * the [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] provided. This
-     * is done atomically. The longrunning operation from this RPC will have a
-     * successful status once all replacements have propagated to long-lasting
-     * storage. Replacements containing errors will result in an error response
-     * for the first error encountered.  Replacement will be cancelled on error,
-     * existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] will not be
-     * affected. Operation.response field will contain
-     * ReplaceAccessLevelsResponse. Removing [Access Levels]
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting
+     * storage. If the replacement contains errors, an error response is returned
+     * for the first error encountered.  Upon error, the replacement is cancelled,
+     * and existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] are not
+     * affected. The Operation.response field contains
+     * ReplaceAccessLevelsResponse. Removing [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
-     * [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will result in
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an
      * error.
      * </pre>
      */
@@ -2156,7 +2350,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Service Perimeters]
+     * Lists all [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
      * access policy.
      * </pre>
@@ -2176,9 +2370,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name.
+     * Gets a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name.
      * </pre>
      */
     public void getServicePerimeter(
@@ -2195,14 +2389,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create a [Service Perimeter]
+     * Creates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has
-     * propagated to long-lasting storage. [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void createServicePerimeter(
@@ -2218,14 +2412,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update a [Service Perimeter]
+     * Updates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * changes to the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] have
-     * propagated to long-lasting storage. [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public void updateServicePerimeter(
@@ -2241,12 +2435,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has been
-     * removed from long-lasting storage.
+     * Deletes a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name. The long-running operation from this RPC has a successful
+     * status after the [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed from
+     * long-lasting storage.
      * </pre>
      */
     public void deleteServicePerimeter(
@@ -2262,18 +2456,18 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * with the [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided.
-     * This is done atomically. The longrunning operation from this
-     * RPC will have a successful status once all replacements have propagated to
-     * long-lasting storage. Replacements containing errors will result in an
-     * error response for the first error encountered. Replacement will be
-     * cancelled on error, existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will not be
-     * affected. Operation.response field will contain
+     * Replace all existing [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting storage.
+     * Replacements containing errors result in an error response for the first
+     * error encountered. Upon an error, replacement are cancelled and existing
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] are not
+     * affected. The Operation.response field contains
      * ReplaceServicePerimetersResponse.
      * </pre>
      */
@@ -2290,21 +2484,21 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Commit the dry-run spec for all the [Service Perimeters]
+     * Commits the dry-run specification for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy][google.identity.accesscontextmanager.v1.AccessPolicy].
-     * A commit operation on a Service Perimeter involves copying its `spec` field
-     * to that Service Perimeter's `status` field. Only [Service Perimeters]
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * A commit operation on a service perimeter involves copying its `spec` field
+     * to the `status` field of the service perimeter. Only [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] with
      * `use_explicit_dry_run_spec` field set to true are affected by a commit
-     * operation. The longrunning operation from this RPC will have a successful
-     * status once the dry-run specs for all the [Service Perimeters]
+     * operation. The long-running operation from this RPC has a successful
+     * status after the dry-run specifications for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] have been
-     * committed. If a commit fails, it will cause the longrunning operation to
-     * return an error response and the entire commit operation will be cancelled.
-     * When successful, Operation.response field will contain
-     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will
-     * be cleared after a successful commit operation.
+     * committed. If a commit fails, it causes the long-running operation to
+     * return an error response and the entire commit operation is cancelled.
+     * When successful, the Operation.response field contains
+     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are
+     * cleared after a successful commit operation.
      * </pre>
      */
     public void commitServicePerimeters(
@@ -2364,7 +2558,7 @@ public final class AccessContextManagerGrpc {
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the
      * client specifies a [name]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name],
-     * the server will ignore it. Fails if a resource already exists with the same
+     * the server ignores it. Fails if a resource already exists with the same
      * [group_key]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key].
      * Completion of this long-running operation does not necessarily signify that
@@ -2420,21 +2614,81 @@ public final class AccessContextManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * This method replaces the existing IAM policy on the access policy. The IAM
+     * policy controls the set of users who can perform specific operations on the
+     * Access Context Manager [access
+     * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the IAM permissions that the caller has on the specified Access
+     * Context Manager resource. The resource can be an
+     * [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy],
+     * [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or
+     * [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter
+     * ]. This method does not support other resources.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    *
    *
    * <pre>
-   * API for setting [Access Levels]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] and [Service
-   * Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * for Google Cloud Projects. Each organization has one [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] containing the
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel]
-   * and [Service Perimeters]
+   * API for setting [access levels]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * for Google Cloud projects. Each organization has one [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] that contains the
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel]
+   * and [service perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter]. This
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
+   * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
    * applicable to all resources in the organization.
    * AccessPolicies
    * </pre>
@@ -2456,9 +2710,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [AccessPolicies]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] under a
-     * container.
+     * Lists all [access policies]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+     * organization.
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.ListAccessPoliciesResponse
@@ -2472,8 +2726,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+     * Returns an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the name.
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.AccessPolicy getAccessPolicy(
@@ -2486,10 +2740,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an `AccessPolicy`. Fails if this organization already has a
-     * `AccessPolicy`. The longrunning Operation will have a successful status
-     * once the `AccessPolicy` has propagated to long-lasting storage.
-     * Syntactic and basic semantic errors will be returned in `metadata` as a
+     * Creates an access policy. This method fails if the organization already has
+     * an access policy. The long-running operation has a successful status
+     * after the access policy propagates to long-lasting storage.
+     * Syntactic and basic semantic errors are returned in `metadata` as a
      * BadRequest proto.
      * </pre>
      */
@@ -2503,13 +2757,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [AccessPolicy]
+     * Updates an [access policy]
      * [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-     * longrunning Operation from this RPC will have a successful status once the
-     * changes to the [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated
-     * to long-lasting storage. Syntactic and basic semantic errors will be
-     * returned in `metadata` as a BadRequest proto.
+     * long-running operation from this RPC has a successful status after the
+     * changes to the [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] propagate
+     * to long-lasting storage.
      * </pre>
      */
     public com.google.longrunning.Operation updateAccessPolicy(
@@ -2522,11 +2775,11 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-     * name. The longrunning Operation will have a successful status once the
-     * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * has been removed from long-lasting storage.
+     * Deletes an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+     * resource name. The long-running operation has a successful status after the
+     * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
+     * is removed from long-lasting storage.
      * </pre>
      */
     public com.google.longrunning.Operation deleteAccessPolicy(
@@ -2539,7 +2792,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Access Levels]
+     * Lists all [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] for an access
      * policy.
      * </pre>
@@ -2554,8 +2807,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
+     * Gets an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
      * name.
      * </pre>
      */
@@ -2569,13 +2822,13 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the [Access
-     * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has
-     * propagated to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Creates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the [access
+     * level] [google.identity.accesscontextmanager.v1.AccessLevel]
+     * propagates to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.longrunning.Operation createAccessLevel(
@@ -2588,14 +2841,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the changes to
-     * the [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated
-     * to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Updates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the changes to
+     * the [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] propagate
+     * to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.longrunning.Operation updateAccessLevel(
@@ -2608,10 +2861,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Access Level]
+     * Deletes an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
+     * name. The long-running operation from this RPC has a successful status
+     * after the [access level]
      * [google.identity.accesscontextmanager.v1.AccessLevel] has been removed
      * from long-lasting storage.
      * </pre>
@@ -2626,22 +2879,22 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [Access
-     * Policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
-     * the [Access Levels]
+     * Replaces all existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
+     * the [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] provided. This
-     * is done atomically. The longrunning operation from this RPC will have a
-     * successful status once all replacements have propagated to long-lasting
-     * storage. Replacements containing errors will result in an error response
-     * for the first error encountered.  Replacement will be cancelled on error,
-     * existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] will not be
-     * affected. Operation.response field will contain
-     * ReplaceAccessLevelsResponse. Removing [Access Levels]
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting
+     * storage. If the replacement contains errors, an error response is returned
+     * for the first error encountered.  Upon error, the replacement is cancelled,
+     * and existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] are not
+     * affected. The Operation.response field contains
+     * ReplaceAccessLevelsResponse. Removing [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
-     * [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will result in
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an
      * error.
      * </pre>
      */
@@ -2655,7 +2908,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Service Perimeters]
+     * Lists all [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
      * access policy.
      * </pre>
@@ -2671,9 +2924,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name.
+     * Gets a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name.
      * </pre>
      */
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter(
@@ -2686,14 +2939,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create a [Service Perimeter]
+     * Creates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has
-     * propagated to long-lasting storage. [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.longrunning.Operation createServicePerimeter(
@@ -2706,14 +2959,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update a [Service Perimeter]
+     * Updates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * changes to the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] have
-     * propagated to long-lasting storage. [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.longrunning.Operation updateServicePerimeter(
@@ -2726,12 +2979,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has been
-     * removed from long-lasting storage.
+     * Deletes a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name. The long-running operation from this RPC has a successful
+     * status after the [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed from
+     * long-lasting storage.
      * </pre>
      */
     public com.google.longrunning.Operation deleteServicePerimeter(
@@ -2744,18 +2997,18 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * with the [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided.
-     * This is done atomically. The longrunning operation from this
-     * RPC will have a successful status once all replacements have propagated to
-     * long-lasting storage. Replacements containing errors will result in an
-     * error response for the first error encountered. Replacement will be
-     * cancelled on error, existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will not be
-     * affected. Operation.response field will contain
+     * Replace all existing [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting storage.
+     * Replacements containing errors result in an error response for the first
+     * error encountered. Upon an error, replacement are cancelled and existing
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] are not
+     * affected. The Operation.response field contains
      * ReplaceServicePerimetersResponse.
      * </pre>
      */
@@ -2769,21 +3022,21 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Commit the dry-run spec for all the [Service Perimeters]
+     * Commits the dry-run specification for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy][google.identity.accesscontextmanager.v1.AccessPolicy].
-     * A commit operation on a Service Perimeter involves copying its `spec` field
-     * to that Service Perimeter's `status` field. Only [Service Perimeters]
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * A commit operation on a service perimeter involves copying its `spec` field
+     * to the `status` field of the service perimeter. Only [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] with
      * `use_explicit_dry_run_spec` field set to true are affected by a commit
-     * operation. The longrunning operation from this RPC will have a successful
-     * status once the dry-run specs for all the [Service Perimeters]
+     * operation. The long-running operation from this RPC has a successful
+     * status after the dry-run specifications for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] have been
-     * committed. If a commit fails, it will cause the longrunning operation to
-     * return an error response and the entire commit operation will be cancelled.
-     * When successful, Operation.response field will contain
-     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will
-     * be cleared after a successful commit operation.
+     * committed. If a commit fails, it causes the long-running operation to
+     * return an error response and the entire commit operation is cancelled.
+     * When successful, the Operation.response field contains
+     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are
+     * cleared after a successful commit operation.
      * </pre>
      */
     public com.google.longrunning.Operation commitServicePerimeters(
@@ -2831,7 +3084,7 @@ public final class AccessContextManagerGrpc {
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the
      * client specifies a [name]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name],
-     * the server will ignore it. Fails if a resource already exists with the same
+     * the server ignores it. Fails if a resource already exists with the same
      * [group_key]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key].
      * Completion of this long-running operation does not necessarily signify that
@@ -2878,21 +3131,69 @@ public final class AccessContextManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteGcpUserAccessBindingMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * This method replaces the existing IAM policy on the access policy. The IAM
+     * policy controls the set of users who can perform specific operations on the
+     * Access Context Manager [access
+     * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the IAM permissions that the caller has on the specified Access
+     * Context Manager resource. The resource can be an
+     * [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy],
+     * [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or
+     * [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter
+     * ]. This method does not support other resources.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    *
    *
    * <pre>
-   * API for setting [Access Levels]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] and [Service
-   * Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * for Google Cloud Projects. Each organization has one [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] containing the
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel]
-   * and [Service Perimeters]
+   * API for setting [access levels]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * for Google Cloud projects. Each organization has one [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] that contains the
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel]
+   * and [service perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter]. This
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
+   * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
    * applicable to all resources in the organization.
    * AccessPolicies
    * </pre>
@@ -2914,9 +3215,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [AccessPolicies]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] under a
-     * container.
+     * Lists all [access policies]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+     * organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2931,8 +3232,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+     * Returns an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the name.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2947,10 +3248,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an `AccessPolicy`. Fails if this organization already has a
-     * `AccessPolicy`. The longrunning Operation will have a successful status
-     * once the `AccessPolicy` has propagated to long-lasting storage.
-     * Syntactic and basic semantic errors will be returned in `metadata` as a
+     * Creates an access policy. This method fails if the organization already has
+     * an access policy. The long-running operation has a successful status
+     * after the access policy propagates to long-lasting storage.
+     * Syntactic and basic semantic errors are returned in `metadata` as a
      * BadRequest proto.
      * </pre>
      */
@@ -2964,13 +3265,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [AccessPolicy]
+     * Updates an [access policy]
      * [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-     * longrunning Operation from this RPC will have a successful status once the
-     * changes to the [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated
-     * to long-lasting storage. Syntactic and basic semantic errors will be
-     * returned in `metadata` as a BadRequest proto.
+     * long-running operation from this RPC has a successful status after the
+     * changes to the [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] propagate
+     * to long-lasting storage.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2984,11 +3284,11 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [AccessPolicy]
-     * [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-     * name. The longrunning Operation will have a successful status once the
-     * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * has been removed from long-lasting storage.
+     * Deletes an [access policy]
+     * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+     * resource name. The long-running operation has a successful status after the
+     * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
+     * is removed from long-lasting storage.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3002,7 +3302,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Access Levels]
+     * Lists all [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] for an access
      * policy.
      * </pre>
@@ -3019,8 +3319,8 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
+     * Gets an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
      * name.
      * </pre>
      */
@@ -3035,13 +3335,13 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the [Access
-     * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has
-     * propagated to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Creates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the [access
+     * level] [google.identity.accesscontextmanager.v1.AccessLevel]
+     * propagates to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3055,14 +3355,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-     * operation from this RPC will have a successful status once the changes to
-     * the [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated
-     * to long-lasting storage. [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] containing
-     * errors will result in an error response for the first error encountered.
+     * Updates an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel]. The long-running
+     * operation from this RPC has a successful status after the changes to
+     * the [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] propagate
+     * to long-lasting storage. If [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] contain
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3076,10 +3376,10 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete an [Access Level]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Access Level]
+     * Deletes an [access level]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] based on the resource
+     * name. The long-running operation from this RPC has a successful status
+     * after the [access level]
      * [google.identity.accesscontextmanager.v1.AccessLevel] has been removed
      * from long-lasting storage.
      * </pre>
@@ -3095,22 +3395,22 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [Access
-     * Policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
-     * the [Access Levels]
+     * Replaces all existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with
+     * the [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] provided. This
-     * is done atomically. The longrunning operation from this RPC will have a
-     * successful status once all replacements have propagated to long-lasting
-     * storage. Replacements containing errors will result in an error response
-     * for the first error encountered.  Replacement will be cancelled on error,
-     * existing [Access Levels]
-     * [google.identity.accesscontextmanager.v1.AccessLevel] will not be
-     * affected. Operation.response field will contain
-     * ReplaceAccessLevelsResponse. Removing [Access Levels]
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting
+     * storage. If the replacement contains errors, an error response is returned
+     * for the first error encountered.  Upon error, the replacement is cancelled,
+     * and existing [access levels]
+     * [google.identity.accesscontextmanager.v1.AccessLevel] are not
+     * affected. The Operation.response field contains
+     * ReplaceAccessLevelsResponse. Removing [access levels]
      * [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
-     * [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will result in
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an
      * error.
      * </pre>
      */
@@ -3125,7 +3425,7 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * List all [Service Perimeters]
+     * Lists all [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
      * access policy.
      * </pre>
@@ -3142,9 +3442,9 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Get a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name.
+     * Gets a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3159,14 +3459,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Create a [Service Perimeter]
+     * Creates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has
-     * propagated to long-lasting storage. [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3180,14 +3480,14 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Update a [Service Perimeter]
+     * Updates a [service perimeter]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-     * longrunning operation from this RPC will have a successful status once the
-     * changes to the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] have
-     * propagated to long-lasting storage. [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing
-     * errors will result in an error response for the first error encountered.
+     * long-running operation from this RPC has a successful status after the
+     * [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter]
+     * propagates to long-lasting storage. If a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+     * errors, an error response is returned for the first error encountered.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3201,12 +3501,12 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Delete a [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] by resource
-     * name. The longrunning operation from this RPC will have a successful status
-     * once the [Service Perimeter]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] has been
-     * removed from long-lasting storage.
+     * Deletes a [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] based on the
+     * resource name. The long-running operation from this RPC has a successful
+     * status after the [service perimeter]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed from
+     * long-lasting storage.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3220,18 +3520,18 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Replace all existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy] [google.identity.accesscontextmanager.v1.AccessPolicy]
-     * with the [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided.
-     * This is done atomically. The longrunning operation from this
-     * RPC will have a successful status once all replacements have propagated to
-     * long-lasting storage. Replacements containing errors will result in an
-     * error response for the first error encountered. Replacement will be
-     * cancelled on error, existing [Service Perimeters]
-     * [google.identity.accesscontextmanager.v1.ServicePerimeter] will not be
-     * affected. Operation.response field will contain
+     * Replace all existing [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+     * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This
+     * is done atomically. The long-running operation from this RPC has a
+     * successful status after all replacements propagate to long-lasting storage.
+     * Replacements containing errors result in an error response for the first
+     * error encountered. Upon an error, replacement are cancelled and existing
+     * [service perimeters]
+     * [google.identity.accesscontextmanager.v1.ServicePerimeter] are not
+     * affected. The Operation.response field contains
      * ReplaceServicePerimetersResponse.
      * </pre>
      */
@@ -3246,21 +3546,21 @@ public final class AccessContextManagerGrpc {
      *
      *
      * <pre>
-     * Commit the dry-run spec for all the [Service Perimeters]
+     * Commits the dry-run specification for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an
-     * [Access Policy][google.identity.accesscontextmanager.v1.AccessPolicy].
-     * A commit operation on a Service Perimeter involves copying its `spec` field
-     * to that Service Perimeter's `status` field. Only [Service Perimeters]
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * A commit operation on a service perimeter involves copying its `spec` field
+     * to the `status` field of the service perimeter. Only [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] with
      * `use_explicit_dry_run_spec` field set to true are affected by a commit
-     * operation. The longrunning operation from this RPC will have a successful
-     * status once the dry-run specs for all the [Service Perimeters]
+     * operation. The long-running operation from this RPC has a successful
+     * status after the dry-run specifications for all the [service perimeters]
      * [google.identity.accesscontextmanager.v1.ServicePerimeter] have been
-     * committed. If a commit fails, it will cause the longrunning operation to
-     * return an error response and the entire commit operation will be cancelled.
-     * When successful, Operation.response field will contain
-     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will
-     * be cleared after a successful commit operation.
+     * committed. If a commit fails, it causes the long-running operation to
+     * return an error response and the entire commit operation is cancelled.
+     * When successful, the Operation.response field contains
+     * CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are
+     * cleared after a successful commit operation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -3312,7 +3612,7 @@ public final class AccessContextManagerGrpc {
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the
      * client specifies a [name]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name],
-     * the server will ignore it. Fails if a resource already exists with the same
+     * the server ignores it. Fails if a resource already exists with the same
      * [group_key]
      * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key].
      * Completion of this long-running operation does not necessarily signify that
@@ -3362,6 +3662,57 @@ public final class AccessContextManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteGcpUserAccessBindingMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * This method replaces the existing IAM policy on the access policy. The IAM
+     * policy controls the set of users who can perform specific operations on the
+     * Access Context Manager [access
+     * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy for the specified Access Context Manager
+     * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the IAM permissions that the caller has on the specified Access
+     * Context Manager resource. The resource can be an
+     * [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy],
+     * [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or
+     * [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter
+     * ]. This method does not support other resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.iam.v1.TestIamPermissionsResponse>
+        testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ACCESS_POLICIES = 0;
@@ -3387,6 +3738,9 @@ public final class AccessContextManagerGrpc {
   private static final int METHODID_CREATE_GCP_USER_ACCESS_BINDING = 20;
   private static final int METHODID_UPDATE_GCP_USER_ACCESS_BINDING = 21;
   private static final int METHODID_DELETE_GCP_USER_ACCESS_BINDING = 22;
+  private static final int METHODID_SET_IAM_POLICY = 23;
+  private static final int METHODID_GET_IAM_POLICY = 24;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3540,6 +3894,22 @@ public final class AccessContextManagerGrpc {
                   request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_SET_IAM_POLICY:
+          serviceImpl.setIamPolicy(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_GET_IAM_POLICY:
+          serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_TEST_IAM_PERMISSIONS:
+          serviceImpl.testIamPermissions(
+              (com.google.iam.v1.TestIamPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3627,6 +3997,9 @@ public final class AccessContextManagerGrpc {
                       .addMethod(getCreateGcpUserAccessBindingMethod())
                       .addMethod(getUpdateGcpUserAccessBindingMethod())
                       .addMethod(getDeleteGcpUserAccessBindingMethod())
+                      .addMethod(getSetIamPolicyMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getTestIamPermissionsMethod())
                       .build();
         }
       }
