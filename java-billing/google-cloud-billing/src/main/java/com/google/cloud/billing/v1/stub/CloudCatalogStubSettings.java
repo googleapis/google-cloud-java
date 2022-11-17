@@ -97,7 +97,11 @@ import org.threeten.bp.Duration;
 public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-billing")
+          .add("https://www.googleapis.com/auth/cloud-billing.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final PagedCallSettings<
           ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
