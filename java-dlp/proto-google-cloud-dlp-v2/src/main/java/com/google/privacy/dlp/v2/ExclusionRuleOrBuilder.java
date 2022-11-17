@@ -132,6 +132,44 @@ public interface ExclusionRuleOrBuilder
    *
    *
    * <pre>
+   * Drop if the hotword rule is contained in the proximate context. For
+   * tabular data, the context includes the column name.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+   *
+   * @return Whether the excludeByHotword field is set.
+   */
+  boolean hasExcludeByHotword();
+  /**
+   *
+   *
+   * <pre>
+   * Drop if the hotword rule is contained in the proximate context. For
+   * tabular data, the context includes the column name.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+   *
+   * @return The excludeByHotword.
+   */
+  com.google.privacy.dlp.v2.ExcludeByHotword getExcludeByHotword();
+  /**
+   *
+   *
+   * <pre>
+   * Drop if the hotword rule is contained in the proximate context. For
+   * tabular data, the context includes the column name.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+   */
+  com.google.privacy.dlp.v2.ExcludeByHotwordOrBuilder getExcludeByHotwordOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * How the rule is applied, see MatchingType documentation for details.
    * </pre>
    *
