@@ -50,4 +50,5 @@
     <module>proto-google-maps-routing-v2</module>
     <module>google-maps-routing-bom</module>
   </modules>
-</project>
+
+  </project>
