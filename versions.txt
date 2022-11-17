@@ -586,3 +586,6 @@ grpc-google-cloud-workflows-v1:2.6.0:2.6.0
 proto-google-cloud-workflows-v1beta:0.12.0:0.12.0
 proto-google-cloud-workflows-v1:2.6.0:2.6.0
 google-cloud-dns:2.4.0:2.4.0
+google-maps-routing:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
