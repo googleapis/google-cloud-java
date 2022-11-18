@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-servicedirectory-v1beta1</artifactId>
-  <version>0.15.0</version><!-- {x-version-update:grpc-google-cloud-servicedirectory-v1beta1:current} -->
+  <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-servicedirectory-v1beta1:current} -->
   <name>grpc-google-cloud-servicedirectory-v1beta1</name>
   <description>GRPC library for grpc-google-cloud-servicedirectory-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-servicedirectory-parent</artifactId>
-    <version>2.7.0</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+    <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   </parent>
   <dependencies>
     <dependency>

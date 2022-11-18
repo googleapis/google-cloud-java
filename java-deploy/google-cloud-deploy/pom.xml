@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-deploy</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-deploy:current} -->
+  <version>1.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
   <packaging>jar</packaging>
   <name>Google Google CLoud Deploy</name>
   <description>Google CLoud Deploy is a service that automates delivery of your applications to a series of target environments in a defined sequence</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-deploy-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-deploy:current} -->
+    <version>1.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-deploy</site.installationModule>
