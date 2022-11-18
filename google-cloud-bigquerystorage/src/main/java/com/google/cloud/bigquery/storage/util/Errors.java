@@ -76,6 +76,8 @@ public class Errors {
             || description.contains(" Rst ")
             || description.contains("Rst Stream")
             || description.contains("RST_STREAM")
+            || description.contains(
+                "INTERNAL: A retriable error could not be retried due to Extensible Stubs memory limits for streams")
             || description.contains("Connection closed with unknown cause")
             || description.contains("HTTP/2 error code: INTERNAL_ERROR"));
   }

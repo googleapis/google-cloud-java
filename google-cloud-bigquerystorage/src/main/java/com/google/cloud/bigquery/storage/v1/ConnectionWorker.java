@@ -689,7 +689,7 @@ public class ConnectionWorker implements AutoCloseable {
         // If the error can be retried, don't set it here, let it try to retry later on.
         if (isRetriableError(finalStatus) && !userClosed) {
           this.conectionRetryCountWithoutCallback++;
-          log.fine(
+          log.info(
               "Retriable error "
                   + finalStatus.toString()
                   + " received, retry count "
