@@ -21,9 +21,9 @@
  *
  * <p>The first snippet shows how to create a zone resource. The complete source code can be found
  * on <a href=
- * "https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListZones.java">
- * CreateAndListZones.java</a>. Note that you need to replace the {@code domainName} with a domain
- * name that you own and the ownership of which you verified with Google.
+ * "https://github.com/googleapis/google-cloud-java/blob/main/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java">
+ * CreateZone.java</a>. Note that you need to replace the {@code domainName} with a domain name that
+ * you own and the ownership of which you verified with Google.
  *
  * <pre>{@code
  * Dns dns = DnsOptions.getDefaultInstance().getService();
@@ -36,8 +36,8 @@
  *
  * <p>The second example shows how to create records inside a zone. The complete code can be found
  * on <a href=
- * "https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListDnsRecords.java">
- * CreateAndListDnsRecords.java</a>.
+ * "https://github.com/googleapis/google-cloud-java/blob/main/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java">
+ * CreateOrUpdateRecordSets.java</a>.
  *
  * <pre>{@code
  * Dns dns = DnsOptions.getDefaultInstance().getService();
