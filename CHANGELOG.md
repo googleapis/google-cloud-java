@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.26.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.25.0...v2.26.0) (2022-11-18)
+
+
+### Features
+
+* Add missing_value_interpretations to AppendRowsRequest ([#1885](https://github.com/googleapis/java-bigquerystorage/issues/1885)) ([0def62f](https://github.com/googleapis/java-bigquerystorage/commit/0def62fb6375d35e753f60dc2ac3b102e15ef336))
+* Add update schema support for multiplexing ([#1867](https://github.com/googleapis/java-bigquerystorage/issues/1867)) ([2adf81b](https://github.com/googleapis/java-bigquerystorage/commit/2adf81b70da043c6a66e38dbd52ef7aae9cffb9e))
+* Fix windows build failure by using nanoSeconds instead of Instant for better accuracy. ([#1887](https://github.com/googleapis/java-bigquerystorage/issues/1887)) ([e5cd7df](https://github.com/googleapis/java-bigquerystorage/commit/e5cd7df54e2f6af12c240268a91e0afc2ec27a8a))
+* Next release from main branch is 2.26.0 ([#1874](https://github.com/googleapis/java-bigquerystorage/issues/1874)) ([589dd63](https://github.com/googleapis/java-bigquerystorage/commit/589dd637dfc16fb9bd3655a0d98115f601983997))
+* Provide sample code for row-level error handling ([#1863](https://github.com/googleapis/java-bigquerystorage/issues/1863)) ([027c5bb](https://github.com/googleapis/java-bigquerystorage/commit/027c5bb7cc27234bc1e3a552b4896b919921dc71))
+
+
+### Bug Fixes
+
+* Fix window build bug caused by Instant resolution. ([#1884](https://github.com/googleapis/java-bigquerystorage/issues/1884)) ([2332dc1](https://github.com/googleapis/java-bigquerystorage/commit/2332dc13bb45c7377722a3a289d66a4cf73bb79d))
+
+
+### Dependencies
+
+* Update dependency com.google.auto.value:auto-value to v1.10.1 ([#1888](https://github.com/googleapis/java-bigquerystorage/issues/1888)) ([9546298](https://github.com/googleapis/java-bigquerystorage/commit/954629811d0b9e942f23e0cb0d1935cd38e4b30b))
+* Update dependency com.google.auto.value:auto-value-annotations to v1.10.1 ([#1889](https://github.com/googleapis/java-bigquerystorage/issues/1889)) ([b4eec03](https://github.com/googleapis/java-bigquerystorage/commit/b4eec032706f2ed7039b3ad9bfd81b8dea536008))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.19.1 ([#1878](https://github.com/googleapis/java-bigquerystorage/issues/1878)) ([4b1989b](https://github.com/googleapis/java-bigquerystorage/commit/4b1989b51d18b081c8e980a59bd6117230c11a9d))
+
 ## [2.25.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.24.2...v2.25.0) (2022-11-08)
 
 
