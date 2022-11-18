@@ -219,7 +219,7 @@ public interface DataSourceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
-   *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
+   *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=377
    * @return The enum numeric value on the wire for transferType.
    */
   @java.lang.Deprecated
@@ -236,7 +236,7 @@ public interface DataSourceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.transfer_type is deprecated. See
-   *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=375
+   *     google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=377
    * @return The transferType.
    */
   @java.lang.Deprecated
@@ -252,7 +252,7 @@ public interface DataSourceOrBuilder
    * <code>bool supports_multiple_transfers = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.bigquery.datatransfer.v1.DataSource.supports_multiple_transfers is
-   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=378
+   *     deprecated. See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=380
    * @return The supportsMultipleTransfers.
    */
   @java.lang.Deprecated

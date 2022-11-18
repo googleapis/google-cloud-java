@@ -461,6 +461,54 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int GEO_TAXONOMY_FIELD_NUMBER = 8;
+  private com.google.cloud.billing.v1.GeoTaxonomy geoTaxonomy_;
+  /**
+   *
+   *
+   * <pre>
+   * The geographic taxonomy for this sku.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+   *
+   * @return Whether the geoTaxonomy field is set.
+   */
+  @java.lang.Override
+  public boolean hasGeoTaxonomy() {
+    return geoTaxonomy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic taxonomy for this sku.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+   *
+   * @return The geoTaxonomy.
+   */
+  @java.lang.Override
+  public com.google.cloud.billing.v1.GeoTaxonomy getGeoTaxonomy() {
+    return geoTaxonomy_ == null
+        ? com.google.cloud.billing.v1.GeoTaxonomy.getDefaultInstance()
+        : geoTaxonomy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The geographic taxonomy for this sku.
+   * </pre>
+   *
+   * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.billing.v1.GeoTaxonomyOrBuilder getGeoTaxonomyOrBuilder() {
+    return getGeoTaxonomy();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -495,6 +543,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceProviderName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, serviceProviderName_);
+    }
+    if (geoTaxonomy_ != null) {
+      output.writeMessage(8, getGeoTaxonomy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -531,6 +582,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceProviderName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, serviceProviderName_);
     }
+    if (geoTaxonomy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getGeoTaxonomy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -556,6 +610,10 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceRegionsList().equals(other.getServiceRegionsList())) return false;
     if (!getPricingInfoList().equals(other.getPricingInfoList())) return false;
     if (!getServiceProviderName().equals(other.getServiceProviderName())) return false;
+    if (hasGeoTaxonomy() != other.hasGeoTaxonomy()) return false;
+    if (hasGeoTaxonomy()) {
+      if (!getGeoTaxonomy().equals(other.getGeoTaxonomy())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -587,6 +645,10 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SERVICE_PROVIDER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getServiceProviderName().hashCode();
+    if (hasGeoTaxonomy()) {
+      hash = (37 * hash) + GEO_TAXONOMY_FIELD_NUMBER;
+      hash = (53 * hash) + getGeoTaxonomy().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -746,6 +808,12 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       serviceProviderName_ = "";
 
+      if (geoTaxonomyBuilder_ == null) {
+        geoTaxonomy_ = null;
+      } else {
+        geoTaxonomy_ = null;
+        geoTaxonomyBuilder_ = null;
+      }
       return this;
     }
 
@@ -796,6 +864,11 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         result.pricingInfo_ = pricingInfoBuilder_.build();
       }
       result.serviceProviderName_ = serviceProviderName_;
+      if (geoTaxonomyBuilder_ == null) {
+        result.geoTaxonomy_ = geoTaxonomy_;
+      } else {
+        result.geoTaxonomy_ = geoTaxonomyBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -901,6 +974,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         serviceProviderName_ = other.serviceProviderName_;
         onChanged();
       }
+      if (other.hasGeoTaxonomy()) {
+        mergeGeoTaxonomy(other.getGeoTaxonomy());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -977,6 +1053,12 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getGeoTaxonomyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2159,6 +2241,191 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       serviceProviderName_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.billing.v1.GeoTaxonomy geoTaxonomy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.billing.v1.GeoTaxonomy,
+            com.google.cloud.billing.v1.GeoTaxonomy.Builder,
+            com.google.cloud.billing.v1.GeoTaxonomyOrBuilder>
+        geoTaxonomyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     *
+     * @return Whether the geoTaxonomy field is set.
+     */
+    public boolean hasGeoTaxonomy() {
+      return geoTaxonomyBuilder_ != null || geoTaxonomy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     *
+     * @return The geoTaxonomy.
+     */
+    public com.google.cloud.billing.v1.GeoTaxonomy getGeoTaxonomy() {
+      if (geoTaxonomyBuilder_ == null) {
+        return geoTaxonomy_ == null
+            ? com.google.cloud.billing.v1.GeoTaxonomy.getDefaultInstance()
+            : geoTaxonomy_;
+      } else {
+        return geoTaxonomyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     */
+    public Builder setGeoTaxonomy(com.google.cloud.billing.v1.GeoTaxonomy value) {
+      if (geoTaxonomyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        geoTaxonomy_ = value;
+        onChanged();
+      } else {
+        geoTaxonomyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     */
+    public Builder setGeoTaxonomy(com.google.cloud.billing.v1.GeoTaxonomy.Builder builderForValue) {
+      if (geoTaxonomyBuilder_ == null) {
+        geoTaxonomy_ = builderForValue.build();
+        onChanged();
+      } else {
+        geoTaxonomyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     */
+    public Builder mergeGeoTaxonomy(com.google.cloud.billing.v1.GeoTaxonomy value) {
+      if (geoTaxonomyBuilder_ == null) {
+        if (geoTaxonomy_ != null) {
+          geoTaxonomy_ =
+              com.google.cloud.billing.v1.GeoTaxonomy.newBuilder(geoTaxonomy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          geoTaxonomy_ = value;
+        }
+        onChanged();
+      } else {
+        geoTaxonomyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     */
+    public Builder clearGeoTaxonomy() {
+      if (geoTaxonomyBuilder_ == null) {
+        geoTaxonomy_ = null;
+        onChanged();
+      } else {
+        geoTaxonomy_ = null;
+        geoTaxonomyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     */
+    public com.google.cloud.billing.v1.GeoTaxonomy.Builder getGeoTaxonomyBuilder() {
+
+      onChanged();
+      return getGeoTaxonomyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     */
+    public com.google.cloud.billing.v1.GeoTaxonomyOrBuilder getGeoTaxonomyOrBuilder() {
+      if (geoTaxonomyBuilder_ != null) {
+        return geoTaxonomyBuilder_.getMessageOrBuilder();
+      } else {
+        return geoTaxonomy_ == null
+            ? com.google.cloud.billing.v1.GeoTaxonomy.getDefaultInstance()
+            : geoTaxonomy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The geographic taxonomy for this sku.
+     * </pre>
+     *
+     * <code>.google.cloud.billing.v1.GeoTaxonomy geo_taxonomy = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.billing.v1.GeoTaxonomy,
+            com.google.cloud.billing.v1.GeoTaxonomy.Builder,
+            com.google.cloud.billing.v1.GeoTaxonomyOrBuilder>
+        getGeoTaxonomyFieldBuilder() {
+      if (geoTaxonomyBuilder_ == null) {
+        geoTaxonomyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.billing.v1.GeoTaxonomy,
+                com.google.cloud.billing.v1.GeoTaxonomy.Builder,
+                com.google.cloud.billing.v1.GeoTaxonomyOrBuilder>(
+                getGeoTaxonomy(), getParentForChildren(), isClean());
+        geoTaxonomy_ = null;
+      }
+      return geoTaxonomyBuilder_;
     }
 
     @java.lang.Override

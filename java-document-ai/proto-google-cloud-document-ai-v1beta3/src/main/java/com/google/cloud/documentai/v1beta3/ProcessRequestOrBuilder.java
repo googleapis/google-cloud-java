@@ -142,7 +142,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=277
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -157,7 +157,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=277
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
    * @return The document.
    */
   @java.lang.Deprecated
@@ -193,6 +193,8 @@ public interface ProcessRequestOrBuilder
    *
    * <pre>
    * Specifies which fields to include in ProcessResponse's document.
+   * Only supports top level document and pages field so it must be in the form
+   * of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -205,6 +207,8 @@ public interface ProcessRequestOrBuilder
    *
    * <pre>
    * Specifies which fields to include in ProcessResponse's document.
+   * Only supports top level document and pages field so it must be in the form
+   * of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -217,6 +221,8 @@ public interface ProcessRequestOrBuilder
    *
    * <pre>
    * Specifies which fields to include in ProcessResponse's document.
+   * Only supports top level document and pages field so it must be in the form
+   * of `{document_field_name}` or `pages.{page_field_name}`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>

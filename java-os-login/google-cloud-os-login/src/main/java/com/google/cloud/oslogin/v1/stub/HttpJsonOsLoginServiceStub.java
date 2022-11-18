@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto;
+import com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.DeletePosixAccountRequest;
 import com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.GetLoginProfileRequest;
@@ -57,6 +58,42 @@ import javax.annotation.Generated;
 @BetaApi
 public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyMethodDescriptor =
+          ApiMethodDescriptor.<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>newBuilder()
+              .setFullMethodName("google.cloud.oslogin.v1.OsLoginService/CreateSshPublicKey")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSshPublicKeyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=users/*}/sshPublicKeys",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSshPublicKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSshPublicKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("sshPublicKey", request.getSshPublicKey(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<OsLoginProto.SshPublicKey>newBuilder()
+                      .setDefaultInstance(OsLoginProto.SshPublicKey.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<DeletePosixAccountRequest, Empty>
       deletePosixAccountMethodDescriptor =
@@ -266,6 +303,8 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                       .build())
               .build();
 
+  private final UnaryCallable<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyCallable;
   private final UnaryCallable<DeletePosixAccountRequest, Empty> deletePosixAccountCallable;
   private final UnaryCallable<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyCallable;
   private final UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable;
@@ -318,6 +357,12 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
 
+    HttpJsonCallSettings<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+        createSshPublicKeyTransportSettings =
+            HttpJsonCallSettings.<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>newBuilder()
+                .setMethodDescriptor(createSshPublicKeyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
         HttpJsonCallSettings.<DeletePosixAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePosixAccountMethodDescriptor)
@@ -352,6 +397,11 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                 .setTypeRegistry(typeRegistry)
                 .build();
 
+    this.createSshPublicKeyCallable =
+        callableFactory.createUnaryCallable(
+            createSshPublicKeyTransportSettings,
+            settings.createSshPublicKeySettings(),
+            clientContext);
     this.deletePosixAccountCallable =
         callableFactory.createUnaryCallable(
             deletePosixAccountTransportSettings,
@@ -386,6 +436,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(createSshPublicKeyMethodDescriptor);
     methodDescriptors.add(deletePosixAccountMethodDescriptor);
     methodDescriptors.add(deleteSshPublicKeyMethodDescriptor);
     methodDescriptors.add(getLoginProfileMethodDescriptor);
@@ -393,6 +444,12 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
     methodDescriptors.add(importSshPublicKeyMethodDescriptor);
     methodDescriptors.add(updateSshPublicKeyMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyCallable() {
+    return createSshPublicKeyCallable;
   }
 
   @Override

@@ -37,7 +37,9 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     super(builder);
   }
 
-  private ImportSshPublicKeyResponse() {}
+  private ImportSshPublicKeyResponse() {
+    details_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -113,6 +115,55 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     return getLoginProfile();
   }
 
+  public static final int DETAILS_FIELD_NUMBER = 2;
+  private volatile java.lang.Object details_;
+  /**
+   *
+   *
+   * <pre>
+   * Detailed information about import results.
+   * </pre>
+   *
+   * <code>string details = 2;</code>
+   *
+   * @return The details.
+   */
+  @java.lang.Override
+  public java.lang.String getDetails() {
+    java.lang.Object ref = details_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      details_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Detailed information about import results.
+   * </pre>
+   *
+   * <code>string details = 2;</code>
+   *
+   * @return The bytes for details.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDetailsBytes() {
+    java.lang.Object ref = details_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      details_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -130,6 +181,9 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     if (loginProfile_ != null) {
       output.writeMessage(1, getLoginProfile());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, details_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -141,6 +195,9 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     size = 0;
     if (loginProfile_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getLoginProfile());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(details_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, details_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -162,6 +219,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
     if (hasLoginProfile()) {
       if (!getLoginProfile().equals(other.getLoginProfile())) return false;
     }
+    if (!getDetails().equals(other.getDetails())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -177,6 +235,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
       hash = (37 * hash) + LOGIN_PROFILE_FIELD_NUMBER;
       hash = (53 * hash) + getLoginProfile().hashCode();
     }
+    hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+    hash = (53 * hash) + getDetails().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -322,6 +382,8 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
         loginProfile_ = null;
         loginProfileBuilder_ = null;
       }
+      details_ = "";
+
       return this;
     }
 
@@ -354,6 +416,7 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
       } else {
         result.loginProfile_ = loginProfileBuilder_.build();
       }
+      result.details_ = details_;
       onBuilt();
       return result;
     }
@@ -407,6 +470,10 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
       if (other.hasLoginProfile()) {
         mergeLoginProfile(other.getLoginProfile());
       }
+      if (!other.getDetails().isEmpty()) {
+        details_ = other.details_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -439,6 +506,12 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
 
                 break;
               } // case 10
+            case 18:
+              {
+                details_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -640,6 +713,112 @@ public final class ImportSshPublicKeyResponse extends com.google.protobuf.Genera
         loginProfile_ = null;
       }
       return loginProfileBuilder_;
+    }
+
+    private java.lang.Object details_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Detailed information about import results.
+     * </pre>
+     *
+     * <code>string details = 2;</code>
+     *
+     * @return The details.
+     */
+    public java.lang.String getDetails() {
+      java.lang.Object ref = details_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        details_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed information about import results.
+     * </pre>
+     *
+     * <code>string details = 2;</code>
+     *
+     * @return The bytes for details.
+     */
+    public com.google.protobuf.ByteString getDetailsBytes() {
+      java.lang.Object ref = details_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        details_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed information about import results.
+     * </pre>
+     *
+     * <code>string details = 2;</code>
+     *
+     * @param value The details to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDetails(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      details_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed information about import results.
+     * </pre>
+     *
+     * <code>string details = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDetails() {
+
+      details_ = getDefaultInstance().getDetails();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Detailed information about import results.
+     * </pre>
+     *
+     * <code>string details = 2;</code>
+     *
+     * @param value The bytes for details to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDetailsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      details_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

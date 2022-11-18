@@ -3,6 +3,7 @@
   "name_pretty": "Cloud DNS",
   "product_documentation": "https://cloud.google.com/dns",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dns/latest/overview",
+  "api_description": "provides methods that you can use to manage DNS for your applications.",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559772",
   "release_level": "stable",
   "language": "java",

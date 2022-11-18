@@ -21,10 +21,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * ## API Overview
+ * API Overview:
  * The `beyondcorp.googleapis.com` service implements the Google Cloud
  * BeyondCorp API.
- * ## Data Model
+ * Data Model:
  * The AppGatewaysService exposes the following resources:
  * * AppGateways, named as follows:
  *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
@@ -277,10 +277,10 @@ public final class AppGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The AppGatewaysService exposes the following resources:
    * * AppGateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
@@ -386,10 +386,10 @@ public final class AppGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The AppGatewaysService exposes the following resources:
    * * AppGateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
@@ -481,10 +481,10 @@ public final class AppGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The AppGatewaysService exposes the following resources:
    * * AppGateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
@@ -562,10 +562,10 @@ public final class AppGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The AppGatewaysService exposes the following resources:
    * * AppGateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.

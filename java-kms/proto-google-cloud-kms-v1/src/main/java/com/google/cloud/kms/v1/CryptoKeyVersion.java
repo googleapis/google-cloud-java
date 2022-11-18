@@ -368,6 +368,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * HMAC-SHA1 signing with a 160 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA1 = 33;</code>
+     */
+    HMAC_SHA1(33),
+    /**
+     *
+     *
+     * <pre>
+     * HMAC-SHA384 signing with a 384 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA384 = 34;</code>
+     */
+    HMAC_SHA384(34),
+    /**
+     *
+     *
+     * <pre>
+     * HMAC-SHA512 signing with a 512 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA512 = 35;</code>
+     */
+    HMAC_SHA512(35),
+    /**
+     *
+     *
+     * <pre>
+     * HMAC-SHA224 signing with a 224 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA224 = 36;</code>
+     */
+    HMAC_SHA224(36),
+    /**
+     *
+     *
+     * <pre>
      * Algorithm representing symmetric encryption by an external key manager.
      * </pre>
      *
@@ -622,6 +662,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * HMAC-SHA1 signing with a 160 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA1 = 33;</code>
+     */
+    public static final int HMAC_SHA1_VALUE = 33;
+    /**
+     *
+     *
+     * <pre>
+     * HMAC-SHA384 signing with a 384 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA384 = 34;</code>
+     */
+    public static final int HMAC_SHA384_VALUE = 34;
+    /**
+     *
+     *
+     * <pre>
+     * HMAC-SHA512 signing with a 512 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA512 = 35;</code>
+     */
+    public static final int HMAC_SHA512_VALUE = 35;
+    /**
+     *
+     *
+     * <pre>
+     * HMAC-SHA224 signing with a 224 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA224 = 36;</code>
+     */
+    public static final int HMAC_SHA224_VALUE = 36;
+    /**
+     *
+     *
+     * <pre>
      * Algorithm representing symmetric encryption by an external key manager.
      * </pre>
      *
@@ -701,6 +781,14 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return EC_SIGN_SECP256K1_SHA256;
         case 32:
           return HMAC_SHA256;
+        case 33:
+          return HMAC_SHA1;
+        case 34:
+          return HMAC_SHA384;
+        case 35:
+          return HMAC_SHA512;
+        case 36:
+          return HMAC_SHA224;
         case 18:
           return EXTERNAL_SYMMETRIC_ENCRYPTION;
         default:

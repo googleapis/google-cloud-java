@@ -707,7 +707,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * For integer and double values specifies maxminum allowed value.
+   * For integer and double values specifies maximum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -722,7 +722,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * For integer and double values specifies maxminum allowed value.
+   * For integer and double values specifies maximum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -737,7 +737,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * For integer and double values specifies maxminum allowed value.
+   * For integer and double values specifies maximum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2705,7 +2705,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2719,7 +2719,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2737,7 +2737,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2759,7 +2759,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2778,7 +2778,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2802,7 +2802,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2822,7 +2822,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2836,7 +2836,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2852,7 +2852,7 @@ public final class DataSourceParameter extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * For integer and double values specifies maxminum allowed value.
+     * For integer and double values specifies maximum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>

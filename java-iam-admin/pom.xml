@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-admin-parent</artifactId>
   <packaging>pom</packaging>
-  <version>3.1.0</version><!-- {x-version-update:google-iam-admin:current} -->
+  <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
   <name>Google IAM Admin API Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-jar-parent:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-iam-admin</artifactId>
-        <version>3.1.0</version><!-- {x-version-update:google-iam-admin:current} -->
+        <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-iam-admin-v1</artifactId>
-        <version>3.1.0</version><!-- {x-version-update:grpc-google-iam-admin-v1:current} -->
+        <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-admin-v1</artifactId>
-        <version>3.1.0</version><!-- {x-version-update:proto-google-iam-admin-v1:current} -->
+        <version>3.2.0-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-admin-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

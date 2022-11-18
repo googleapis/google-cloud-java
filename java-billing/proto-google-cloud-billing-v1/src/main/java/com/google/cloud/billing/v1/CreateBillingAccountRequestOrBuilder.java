@@ -29,7 +29,7 @@ public interface CreateBillingAccountRequestOrBuilder
    * <pre>
    * Required. The billing account resource to create.
    * Currently CreateBillingAccount only supports subaccount creation, so
-   * any created billing accounts must be under a provided master billing
+   * any created billing accounts must be under a provided parent billing
    * account.
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface CreateBillingAccountRequestOrBuilder
    * <pre>
    * Required. The billing account resource to create.
    * Currently CreateBillingAccount only supports subaccount creation, so
-   * any created billing accounts must be under a provided master billing
+   * any created billing accounts must be under a provided parent billing
    * account.
    * </pre>
    *
@@ -63,7 +63,7 @@ public interface CreateBillingAccountRequestOrBuilder
    * <pre>
    * Required. The billing account resource to create.
    * Currently CreateBillingAccount only supports subaccount creation, so
-   * any created billing accounts must be under a provided master billing
+   * any created billing accounts must be under a provided parent billing
    * account.
    * </pre>
    *

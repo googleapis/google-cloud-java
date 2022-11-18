@@ -15,11 +15,14 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Cloud Billing API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= CloudBillingClient =======================
  *
- * <p>Service Description: Retrieves GCP Console billing accounts and associates them with projects.
+ * <p>Service Description: Retrieves the Google Cloud Console billing accounts and associates them
+ * with projects.
  *
  * <p>Sample for CloudBillingClient:
  *

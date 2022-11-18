@@ -855,6 +855,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
      */
     ABUSE_ELEVATION_CONTROL_MECHANISM(34),
+    /**
+     *
+     *
+     * <pre>
+     * T1078.001
+     * </pre>
+     *
+     * <code>DEFAULT_ACCOUNTS = 35;</code>
+     */
+    DEFAULT_ACCOUNTS(35),
     UNRECOGNIZED(-1),
     ;
 
@@ -1208,6 +1218,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
      */
     public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_VALUE = 34;
+    /**
+     *
+     *
+     * <pre>
+     * T1078.001
+     * </pre>
+     *
+     * <code>DEFAULT_ACCOUNTS = 35;</code>
+     */
+    public static final int DEFAULT_ACCOUNTS_VALUE = 35;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1303,6 +1323,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return ACCESS_TOKEN_MANIPULATION;
         case 34:
           return ABUSE_ELEVATION_CONTROL_MECHANISM;
+        case 35:
+          return DEFAULT_ACCOUNTS;
         default:
           return null;
       }

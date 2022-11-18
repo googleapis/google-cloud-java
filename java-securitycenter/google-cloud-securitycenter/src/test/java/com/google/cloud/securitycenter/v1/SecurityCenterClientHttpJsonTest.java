@@ -324,6 +324,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -403,6 +404,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3125,6 +3127,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3206,6 +3209,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3285,6 +3289,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3364,6 +3369,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3693,6 +3699,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3730,6 +3737,7 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .addAllFiles(new ArrayList<File>())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -3792,6 +3800,7 @@ public class SecurityCenterClientHttpJsonTest {
               .addAllContainers(new ArrayList<Container>())
               .setKubernetes(Kubernetes.newBuilder().build())
               .setDatabase(Database.newBuilder().build())
+              .addAllFiles(new ArrayList<File>())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");

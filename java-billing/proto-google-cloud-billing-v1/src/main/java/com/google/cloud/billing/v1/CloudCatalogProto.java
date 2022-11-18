@@ -56,6 +56,10 @@ public final class CloudCatalogProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_billing_v1_AggregationInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_billing_v1_GeoTaxonomy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_billing_v1_GeoTaxonomy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_billing_v1_ListServicesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_billing_v1_ListServicesRequest_fieldAccessorTable;
@@ -90,67 +94,75 @@ public final class CloudCatalogProto {
           + "_id\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\022\034\n\024busin"
           + "ess_entity_name\030\004 \001(\t:<\352A9\n#cloudbilling"
           + ".googleapis.com/Service\022\022services/{servi"
-          + "ce}\"\246\002\n\003Sku\022\014\n\004name\030\001 \001(\t\022\016\n\006sku_id\030\002 \001("
+          + "ce}\"\342\002\n\003Sku\022\014\n\004name\030\001 \001(\t\022\016\n\006sku_id\030\002 \001("
           + "\t\022\023\n\013description\030\003 \001(\t\0223\n\010category\030\004 \001(\013"
           + "2!.google.cloud.billing.v1.Category\022\027\n\017s"
           + "ervice_regions\030\005 \003(\t\022:\n\014pricing_info\030\006 \003"
           + "(\0132$.google.cloud.billing.v1.PricingInfo"
-          + "\022\035\n\025service_provider_name\030\007 \001(\t:C\352A@\n\037cl"
-          + "oudbilling.googleapis.com/Sku\022\035services/"
-          + "{service}/skus/{sku}\"m\n\010Category\022\034\n\024serv"
-          + "ice_display_name\030\001 \001(\t\022\027\n\017resource_famil"
-          + "y\030\002 \001(\t\022\026\n\016resource_group\030\003 \001(\t\022\022\n\nusage"
-          + "_type\030\004 \001(\t\"\200\002\n\013PricingInfo\0222\n\016effective"
-          + "_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "\017\n\007summary\030\002 \001(\t\022F\n\022pricing_expression\030\003"
-          + " \001(\0132*.google.cloud.billing.v1.PricingEx"
-          + "pression\022B\n\020aggregation_info\030\004 \001(\0132(.goo"
-          + "gle.cloud.billing.v1.AggregationInfo\022 \n\030"
-          + "currency_conversion_rate\030\005 \001(\001\"\323\002\n\021Prici"
-          + "ngExpression\022\022\n\nusage_unit\030\001 \001(\t\022\036\n\026usag"
-          + "e_unit_description\030\004 \001(\t\022\021\n\tbase_unit\030\005 "
-          + "\001(\t\022\035\n\025base_unit_description\030\006 \001(\t\022#\n\033ba"
-          + "se_unit_conversion_factor\030\007 \001(\001\022\030\n\020displ"
-          + "ay_quantity\030\002 \001(\001\022I\n\014tiered_rates\030\003 \003(\0132"
-          + "3.google.cloud.billing.v1.PricingExpress"
-          + "ion.TierRate\032N\n\010TierRate\022\032\n\022start_usage_"
-          + "amount\030\001 \001(\001\022&\n\nunit_price\030\002 \001(\0132\022.googl"
-          + "e.type.Money\"\204\003\n\017AggregationInfo\022T\n\021aggr"
-          + "egation_level\030\001 \001(\01629.google.cloud.billi"
-          + "ng.v1.AggregationInfo.AggregationLevel\022Z"
-          + "\n\024aggregation_interval\030\002 \001(\0162<.google.cl"
-          + "oud.billing.v1.AggregationInfo.Aggregati"
-          + "onInterval\022\031\n\021aggregation_count\030\003 \001(\005\"O\n"
-          + "\020AggregationLevel\022!\n\035AGGREGATION_LEVEL_U"
-          + "NSPECIFIED\020\000\022\013\n\007ACCOUNT\020\001\022\013\n\007PROJECT\020\002\"S"
-          + "\n\023AggregationInterval\022$\n AGGREGATION_INT"
-          + "ERVAL_UNSPECIFIED\020\000\022\t\n\005DAILY\020\001\022\013\n\007MONTHL"
-          + "Y\020\002\"<\n\023ListServicesRequest\022\021\n\tpage_size\030"
-          + "\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\"c\n\024ListService"
-          + "sResponse\0222\n\010services\030\001 \003(\0132 .google.clo"
-          + "ud.billing.v1.Service\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"\352\001\n\017ListSkusRequest\022;\n\006parent\030\001 \001"
-          + "(\tB+\340A\002\372A%\n#cloudbilling.googleapis.com/"
-          + "Service\022.\n\nstart_time\030\002 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\022,\n\010end_time\030\003 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\022\025\n\rcurrency_code\030\004"
-          + " \001(\t\022\021\n\tpage_size\030\005 \001(\005\022\022\n\npage_token\030\006 "
-          + "\001(\t\"W\n\020ListSkusResponse\022*\n\004skus\030\001 \003(\0132\034."
-          + "google.cloud.billing.v1.Sku\022\027\n\017next_page"
-          + "_token\030\002 \001(\t2\367\002\n\014CloudCatalog\022\204\001\n\014ListSe"
-          + "rvices\022,.google.cloud.billing.v1.ListSer"
-          + "vicesRequest\032-.google.cloud.billing.v1.L"
-          + "istServicesResponse\"\027\202\323\344\223\002\016\022\014/v1/service"
-          + "s\332A\000\022\216\001\n\010ListSkus\022(.google.cloud.billing"
-          + ".v1.ListSkusRequest\032).google.cloud.billi"
-          + "ng.v1.ListSkusResponse\"-\202\323\344\223\002\036\022\034/v1/{par"
-          + "ent=services/*}/skus\332A\006parent\032O\312A\033cloudb"
-          + "illing.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformB\226\001\n\033com.g"
-          + "oogle.cloud.billing.v1B\021CloudCatalogProt"
-          + "oP\001Z>google.golang.org/genproto/googleap"
-          + "is/cloud/billing/v1;billing\242\002\007CLDCTLG\252\002\027"
-          + "Google.Cloud.Billing.V1b\006proto3"
+          + "\022\035\n\025service_provider_name\030\007 \001(\t\022:\n\014geo_t"
+          + "axonomy\030\010 \001(\0132$.google.cloud.billing.v1."
+          + "GeoTaxonomy:C\352A@\n\037cloudbilling.googleapi"
+          + "s.com/Sku\022\035services/{service}/skus/{sku}"
+          + "\"m\n\010Category\022\034\n\024service_display_name\030\001 \001"
+          + "(\t\022\027\n\017resource_family\030\002 \001(\t\022\026\n\016resource_"
+          + "group\030\003 \001(\t\022\022\n\nusage_type\030\004 \001(\t\"\200\002\n\013Pric"
+          + "ingInfo\0222\n\016effective_time\030\001 \001(\0132\032.google"
+          + ".protobuf.Timestamp\022\017\n\007summary\030\002 \001(\t\022F\n\022"
+          + "pricing_expression\030\003 \001(\0132*.google.cloud."
+          + "billing.v1.PricingExpression\022B\n\020aggregat"
+          + "ion_info\030\004 \001(\0132(.google.cloud.billing.v1"
+          + ".AggregationInfo\022 \n\030currency_conversion_"
+          + "rate\030\005 \001(\001\"\323\002\n\021PricingExpression\022\022\n\nusag"
+          + "e_unit\030\001 \001(\t\022\030\n\020display_quantity\030\002 \001(\001\022I"
+          + "\n\014tiered_rates\030\003 \003(\01323.google.cloud.bill"
+          + "ing.v1.PricingExpression.TierRate\022\036\n\026usa"
+          + "ge_unit_description\030\004 \001(\t\022\021\n\tbase_unit\030\005"
+          + " \001(\t\022\035\n\025base_unit_description\030\006 \001(\t\022#\n\033b"
+          + "ase_unit_conversion_factor\030\007 \001(\001\032N\n\010Tier"
+          + "Rate\022\032\n\022start_usage_amount\030\001 \001(\001\022&\n\nunit"
+          + "_price\030\002 \001(\0132\022.google.type.Money\"\204\003\n\017Agg"
+          + "regationInfo\022T\n\021aggregation_level\030\001 \001(\0162"
+          + "9.google.cloud.billing.v1.AggregationInf"
+          + "o.AggregationLevel\022Z\n\024aggregation_interv"
+          + "al\030\002 \001(\0162<.google.cloud.billing.v1.Aggre"
+          + "gationInfo.AggregationInterval\022\031\n\021aggreg"
+          + "ation_count\030\003 \001(\005\"O\n\020AggregationLevel\022!\n"
+          + "\035AGGREGATION_LEVEL_UNSPECIFIED\020\000\022\013\n\007ACCO"
+          + "UNT\020\001\022\013\n\007PROJECT\020\002\"S\n\023AggregationInterva"
+          + "l\022$\n AGGREGATION_INTERVAL_UNSPECIFIED\020\000\022"
+          + "\t\n\005DAILY\020\001\022\013\n\007MONTHLY\020\002\"\243\001\n\013GeoTaxonomy\022"
+          + "7\n\004type\030\001 \001(\0162).google.cloud.billing.v1."
+          + "GeoTaxonomy.Type\022\017\n\007regions\030\002 \003(\t\"J\n\004Typ"
+          + "e\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006GLOBAL\020\001\022\014\n\010R"
+          + "EGIONAL\020\002\022\022\n\016MULTI_REGIONAL\020\003\"<\n\023ListSer"
+          + "vicesRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_"
+          + "token\030\002 \001(\t\"c\n\024ListServicesResponse\0222\n\010s"
+          + "ervices\030\001 \003(\0132 .google.cloud.billing.v1."
+          + "Service\022\027\n\017next_page_token\030\002 \001(\t\"\352\001\n\017Lis"
+          + "tSkusRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#cl"
+          + "oudbilling.googleapis.com/Service\022.\n\nsta"
+          + "rt_time\030\002 \001(\0132\032.google.protobuf.Timestam"
+          + "p\022,\n\010end_time\030\003 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp\022\025\n\rcurrency_code\030\004 \001(\t\022\021\n\tpage_s"
+          + "ize\030\005 \001(\005\022\022\n\npage_token\030\006 \001(\t\"W\n\020ListSku"
+          + "sResponse\022*\n\004skus\030\001 \003(\0132\034.google.cloud.b"
+          + "illing.v1.Sku\022\027\n\017next_page_token\030\002 \001(\t2\336"
+          + "\003\n\014CloudCatalog\022\204\001\n\014ListServices\022,.googl"
+          + "e.cloud.billing.v1.ListServicesRequest\032-"
+          + ".google.cloud.billing.v1.ListServicesRes"
+          + "ponse\"\027\202\323\344\223\002\016\022\014/v1/services\332A\000\022\216\001\n\010ListS"
+          + "kus\022(.google.cloud.billing.v1.ListSkusRe"
+          + "quest\032).google.cloud.billing.v1.ListSkus"
+          + "Response\"-\202\323\344\223\002\036\022\034/v1/{parent=services/*"
+          + "}/skus\332A\006parent\032\265\001\312A\033cloudbilling.google"
+          + "apis.com\322A\223\001https://www.googleapis.com/a"
+          + "uth/cloud-billing,https://www.googleapis"
+          + ".com/auth/cloud-billing.readonly,https:/"
+          + "/www.googleapis.com/auth/cloud-platformB"
+          + "\226\001\n\033com.google.cloud.billing.v1B\021CloudCa"
+          + "talogProtoP\001Z>google.golang.org/genproto"
+          + "/googleapis/cloud/billing/v1;billing\242\002\007C"
+          + "LDCTLG\252\002\027Google.Cloud.Billing.V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,6 +196,7 @@ public final class CloudCatalogProto {
               "ServiceRegions",
               "PricingInfo",
               "ServiceProviderName",
+              "GeoTaxonomy",
             });
     internal_static_google_cloud_billing_v1_Category_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -212,12 +225,12 @@ public final class CloudCatalogProto {
             internal_static_google_cloud_billing_v1_PricingExpression_descriptor,
             new java.lang.String[] {
               "UsageUnit",
+              "DisplayQuantity",
+              "TieredRates",
               "UsageUnitDescription",
               "BaseUnit",
               "BaseUnitDescription",
               "BaseUnitConversionFactor",
-              "DisplayQuantity",
-              "TieredRates",
             });
     internal_static_google_cloud_billing_v1_PricingExpression_TierRate_descriptor =
         internal_static_google_cloud_billing_v1_PricingExpression_descriptor
@@ -237,8 +250,16 @@ public final class CloudCatalogProto {
             new java.lang.String[] {
               "AggregationLevel", "AggregationInterval", "AggregationCount",
             });
-    internal_static_google_cloud_billing_v1_ListServicesRequest_descriptor =
+    internal_static_google_cloud_billing_v1_GeoTaxonomy_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_billing_v1_GeoTaxonomy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_billing_v1_GeoTaxonomy_descriptor,
+            new java.lang.String[] {
+              "Type", "Regions",
+            });
+    internal_static_google_cloud_billing_v1_ListServicesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_billing_v1_ListServicesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_v1_ListServicesRequest_descriptor,
@@ -246,7 +267,7 @@ public final class CloudCatalogProto {
               "PageSize", "PageToken",
             });
     internal_static_google_cloud_billing_v1_ListServicesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_billing_v1_ListServicesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_v1_ListServicesResponse_descriptor,
@@ -254,7 +275,7 @@ public final class CloudCatalogProto {
               "Services", "NextPageToken",
             });
     internal_static_google_cloud_billing_v1_ListSkusRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_billing_v1_ListSkusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_v1_ListSkusRequest_descriptor,
@@ -262,7 +283,7 @@ public final class CloudCatalogProto {
               "Parent", "StartTime", "EndTime", "CurrencyCode", "PageSize", "PageToken",
             });
     internal_static_google_cloud_billing_v1_ListSkusResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_billing_v1_ListSkusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_billing_v1_ListSkusResponse_descriptor,

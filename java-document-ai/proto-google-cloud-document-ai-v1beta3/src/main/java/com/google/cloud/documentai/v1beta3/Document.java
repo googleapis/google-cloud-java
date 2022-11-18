@@ -1054,6 +1054,33 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document.Style.FontSize font_size = 7;</code>
      */
     com.google.cloud.documentai.v1beta3.Document.Style.FontSizeOrBuilder getFontSizeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Font family such as `Arial`, `Times New Roman`.
+     * https://www.w3schools.com/cssref/pr_font_font-family.asp
+     * </pre>
+     *
+     * <code>string font_family = 8;</code>
+     *
+     * @return The fontFamily.
+     */
+    java.lang.String getFontFamily();
+    /**
+     *
+     *
+     * <pre>
+     * Font family such as `Arial`, `Times New Roman`.
+     * https://www.w3schools.com/cssref/pr_font_font-family.asp
+     * </pre>
+     *
+     * <code>string font_family = 8;</code>
+     *
+     * @return The bytes for fontFamily.
+     */
+    com.google.protobuf.ByteString getFontFamilyBytes();
   }
   /**
    *
@@ -1079,6 +1106,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       fontWeight_ = "";
       textStyle_ = "";
       textDecoration_ = "";
+      fontFamily_ = "";
     }
 
     @java.lang.Override
@@ -2198,6 +2226,57 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return getFontSize();
     }
 
+    public static final int FONT_FAMILY_FIELD_NUMBER = 8;
+    private volatile java.lang.Object fontFamily_;
+    /**
+     *
+     *
+     * <pre>
+     * Font family such as `Arial`, `Times New Roman`.
+     * https://www.w3schools.com/cssref/pr_font_font-family.asp
+     * </pre>
+     *
+     * <code>string font_family = 8;</code>
+     *
+     * @return The fontFamily.
+     */
+    @java.lang.Override
+    public java.lang.String getFontFamily() {
+      java.lang.Object ref = fontFamily_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fontFamily_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Font family such as `Arial`, `Times New Roman`.
+     * https://www.w3schools.com/cssref/pr_font_font-family.asp
+     * </pre>
+     *
+     * <code>string font_family = 8;</code>
+     *
+     * @return The bytes for fontFamily.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFontFamilyBytes() {
+      java.lang.Object ref = fontFamily_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fontFamily_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2233,6 +2312,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (fontSize_ != null) {
         output.writeMessage(7, getFontSize());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fontFamily_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, fontFamily_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2262,6 +2344,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (fontSize_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFontSize());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fontFamily_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, fontFamily_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2298,6 +2383,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (hasFontSize()) {
         if (!getFontSize().equals(other.getFontSize())) return false;
       }
+      if (!getFontFamily().equals(other.getFontFamily())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2331,6 +2417,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FONT_SIZE_FIELD_NUMBER;
         hash = (53 * hash) + getFontSize().hashCode();
       }
+      hash = (37 * hash) + FONT_FAMILY_FIELD_NUMBER;
+      hash = (53 * hash) + getFontFamily().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2502,6 +2590,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           fontSize_ = null;
           fontSizeBuilder_ = null;
         }
+        fontFamily_ = "";
+
         return this;
       }
 
@@ -2552,6 +2642,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.fontSize_ = fontSizeBuilder_.build();
         }
+        result.fontFamily_ = fontFamily_;
         onBuilt();
         return result;
       }
@@ -2628,6 +2719,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (other.hasFontSize()) {
           mergeFontSize(other.getFontSize());
         }
+        if (!other.getFontFamily().isEmpty()) {
+          fontFamily_ = other.fontFamily_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2697,6 +2792,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
                   break;
                 } // case 58
+              case 66:
+                {
+                  fontFamily_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3783,6 +3884,117 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return fontSizeBuilder_;
       }
 
+      private java.lang.Object fontFamily_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Font family such as `Arial`, `Times New Roman`.
+       * https://www.w3schools.com/cssref/pr_font_font-family.asp
+       * </pre>
+       *
+       * <code>string font_family = 8;</code>
+       *
+       * @return The fontFamily.
+       */
+      public java.lang.String getFontFamily() {
+        java.lang.Object ref = fontFamily_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fontFamily_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Font family such as `Arial`, `Times New Roman`.
+       * https://www.w3schools.com/cssref/pr_font_font-family.asp
+       * </pre>
+       *
+       * <code>string font_family = 8;</code>
+       *
+       * @return The bytes for fontFamily.
+       */
+      public com.google.protobuf.ByteString getFontFamilyBytes() {
+        java.lang.Object ref = fontFamily_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fontFamily_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Font family such as `Arial`, `Times New Roman`.
+       * https://www.w3schools.com/cssref/pr_font_font-family.asp
+       * </pre>
+       *
+       * <code>string font_family = 8;</code>
+       *
+       * @param value The fontFamily to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFontFamily(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        fontFamily_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Font family such as `Arial`, `Times New Roman`.
+       * https://www.w3schools.com/cssref/pr_font_font-family.asp
+       * </pre>
+       *
+       * <code>string font_family = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFontFamily() {
+
+        fontFamily_ = getDefaultInstance().getFontFamily();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Font family such as `Arial`, `Times New Roman`.
+       * https://www.w3schools.com/cssref/pr_font_font-family.asp
+       * </pre>
+       *
+       * <code>string font_family = 8;</code>
+       *
+       * @param value The bytes for fontFamily to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFontFamilyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        fontFamily_ = value;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4639,13 +4851,60 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Image Quality Scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+     * </code>
+     *
+     * @return Whether the imageQualityScores field is set.
+     */
+    boolean hasImageQualityScores();
+    /**
+     *
+     *
+     * <pre>
+     * Image Quality Scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+     * </code>
+     *
+     * @return The imageQualityScores.
+     */
+    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores getImageQualityScores();
+    /**
+     *
+     *
+     * <pre>
+     * Image Quality Scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScoresOrBuilder
+        getImageQualityScoresOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * The history of this page.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
+     *     google/cloud/documentai/v1beta3/document.proto;l=463
      * @return Whether the provenance field is set.
      */
+    @java.lang.Deprecated
     boolean hasProvenance();
     /**
      *
@@ -4654,10 +4913,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this page.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
+     *     google/cloud/documentai/v1beta3/document.proto;l=463
      * @return The provenance.
      */
+    @java.lang.Deprecated
     com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance();
     /**
      *
@@ -4666,8 +4930,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this page.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
   }
   /**
@@ -7443,7 +7710,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Confidence of the current [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within context of the object this
        * layout is for. e.g. confidence can be for a single token, a table,
-       * a visual element, etc. depending on context. Range [0, 1].
+       * a visual element, etc. depending on context. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -7832,7 +8099,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Confidence of the current [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within context of the object this
        * layout is for. e.g. confidence can be for a single token, a table,
-       * a visual element, etc. depending on context. Range [0, 1].
+       * a visual element, etc. depending on context. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -8563,7 +8830,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Confidence of the current [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within context of the object this
          * layout is for. e.g. confidence can be for a single token, a table,
-         * a visual element, etc. depending on context. Range [0, 1].
+         * a visual element, etc. depending on context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -8580,7 +8847,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Confidence of the current [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within context of the object this
          * layout is for. e.g. confidence can be for a single token, a table,
-         * a visual element, etc. depending on context. Range [0, 1].
+         * a visual element, etc. depending on context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -8600,7 +8867,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Confidence of the current [Layout][google.cloud.documentai.v1beta3.Document.Page.Layout] within context of the object this
          * layout is for. e.g. confidence can be for a single token, a table,
-         * a visual element, etc. depending on context. Range [0, 1].
+         * a visual element, etc. depending on context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -9080,10 +9347,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=195
        * @return Whether the provenance field is set.
        */
+      @java.lang.Deprecated
       boolean hasProvenance();
       /**
        *
@@ -9092,10 +9364,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=195
        * @return The provenance.
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance();
       /**
        *
@@ -9104,8 +9381,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
     }
     /**
@@ -9300,11 +9580,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=195
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasProvenance() {
         return provenance_ != null;
       }
@@ -9315,11 +9600,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=195
        * @return The provenance.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
         return provenance_ == null
             ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
@@ -9332,9 +9622,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
           getProvenanceOrBuilder() {
         return getProvenance();
@@ -10412,10 +10705,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
+         *     See google/cloud/documentai/v1beta3/document.proto;l=195
          * @return Whether the provenance field is set.
          */
+        @java.lang.Deprecated
         public boolean hasProvenance() {
           return provenanceBuilder_ != null || provenance_ != null;
         }
@@ -10426,10 +10724,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Block.provenance is deprecated.
+         *     See google/cloud/documentai/v1beta3/document.proto;l=195
          * @return The provenance.
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
           if (provenanceBuilder_ == null) {
             return provenance_ == null
@@ -10446,8 +10749,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -10469,8 +10775,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
           if (provenanceBuilder_ == null) {
@@ -10489,8 +10798,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder mergeProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -10516,8 +10828,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder clearProvenance() {
           if (provenanceBuilder_ == null) {
             provenance_ = null;
@@ -10536,8 +10851,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
             getProvenanceBuilder() {
 
@@ -10551,8 +10869,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
             getProvenanceOrBuilder() {
           if (provenanceBuilder_ != null) {
@@ -10570,7 +10891,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.documentai.v1beta3.Document.Provenance,
@@ -10766,10 +11089,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=207
        * @return Whether the provenance field is set.
        */
+      @java.lang.Deprecated
       boolean hasProvenance();
       /**
        *
@@ -10778,10 +11106,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=207
        * @return The provenance.
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance();
       /**
        *
@@ -10790,8 +11123,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
     }
     /**
@@ -10985,11 +11321,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=207
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasProvenance() {
         return provenance_ != null;
       }
@@ -11000,11 +11341,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=207
        * @return The provenance.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
         return provenance_ == null
             ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
@@ -11017,9 +11363,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
           getProvenanceOrBuilder() {
         return getProvenance();
@@ -12099,10 +12448,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=207
          * @return Whether the provenance field is set.
          */
+        @java.lang.Deprecated
         public boolean hasProvenance() {
           return provenanceBuilder_ != null || provenance_ != null;
         }
@@ -12113,10 +12467,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Paragraph.provenance is
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=207
          * @return The provenance.
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
           if (provenanceBuilder_ == null) {
             return provenance_ == null
@@ -12133,8 +12492,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -12156,8 +12518,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
           if (provenanceBuilder_ == null) {
@@ -12176,8 +12541,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder mergeProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -12203,8 +12571,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder clearProvenance() {
           if (provenanceBuilder_ == null) {
             provenance_ = null;
@@ -12223,8 +12594,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
             getProvenanceBuilder() {
 
@@ -12238,8 +12612,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
             getProvenanceOrBuilder() {
           if (provenanceBuilder_ != null) {
@@ -12257,7 +12634,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.documentai.v1beta3.Document.Provenance,
@@ -12456,10 +12835,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=220
        * @return Whether the provenance field is set.
        */
+      @java.lang.Deprecated
       boolean hasProvenance();
       /**
        *
@@ -12468,10 +12852,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=220
        * @return The provenance.
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance();
       /**
        *
@@ -12480,8 +12869,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
     }
     /**
@@ -12676,11 +13068,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=220
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasProvenance() {
         return provenance_ != null;
       }
@@ -12691,11 +13088,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=220
        * @return The provenance.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
         return provenance_ == null
             ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
@@ -12708,9 +13110,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The  history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
           getProvenanceOrBuilder() {
         return getProvenance();
@@ -13788,10 +14193,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
+         *     See google/cloud/documentai/v1beta3/document.proto;l=220
          * @return Whether the provenance field is set.
          */
+        @java.lang.Deprecated
         public boolean hasProvenance() {
           return provenanceBuilder_ != null || provenance_ != null;
         }
@@ -13802,10 +14212,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Line.provenance is deprecated.
+         *     See google/cloud/documentai/v1beta3/document.proto;l=220
          * @return The provenance.
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
           if (provenanceBuilder_ == null) {
             return provenance_ == null
@@ -13822,8 +14237,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -13845,8 +14263,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
           if (provenanceBuilder_ == null) {
@@ -13865,8 +14286,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder mergeProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -13892,8 +14316,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder clearProvenance() {
           if (provenanceBuilder_ == null) {
             provenance_ = null;
@@ -13912,8 +14339,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
             getProvenanceBuilder() {
 
@@ -13927,8 +14357,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
             getProvenanceOrBuilder() {
           if (provenanceBuilder_ != null) {
@@ -13946,7 +14379,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * The  history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.documentai.v1beta3.Document.Provenance,
@@ -14181,35 +14616,48 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The  history of this annotation.
+       * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=256
        * @return Whether the provenance field is set.
        */
+      @java.lang.Deprecated
       boolean hasProvenance();
       /**
        *
        *
        * <pre>
-       * The  history of this annotation.
+       * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=256
        * @return The provenance.
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance();
       /**
        *
        *
        * <pre>
-       * The  history of this annotation.
+       * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
     }
     /**
@@ -15298,14 +15746,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The  history of this annotation.
+       * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=256
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean hasProvenance() {
         return provenance_ != null;
       }
@@ -15313,14 +15766,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The  history of this annotation.
+       * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
+       *     See google/cloud/documentai/v1beta3/document.proto;l=256
        * @return The provenance.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
         return provenance_ == null
             ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
@@ -15330,12 +15788,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The  history of this annotation.
+       * The history of this annotation.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+       * </code>
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
           getProvenanceOrBuilder() {
         return getProvenance();
@@ -16658,13 +17119,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
+         *     See google/cloud/documentai/v1beta3/document.proto;l=256
          * @return Whether the provenance field is set.
          */
+        @java.lang.Deprecated
         public boolean hasProvenance() {
           return provenanceBuilder_ != null || provenance_ != null;
         }
@@ -16672,13 +17138,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          *
+         * @deprecated google.cloud.documentai.v1beta3.Document.Page.Token.provenance is deprecated.
+         *     See google/cloud/documentai/v1beta3/document.proto;l=256
          * @return The provenance.
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
           if (provenanceBuilder_ == null) {
             return provenance_ == null
@@ -16692,11 +17163,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -16715,11 +17189,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder setProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
           if (provenanceBuilder_ == null) {
@@ -16735,11 +17212,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder mergeProvenance(
             com.google.cloud.documentai.v1beta3.Document.Provenance value) {
           if (provenanceBuilder_ == null) {
@@ -16762,11 +17242,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public Builder clearProvenance() {
           if (provenanceBuilder_ == null) {
             provenance_ = null;
@@ -16782,11 +17265,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
             getProvenanceBuilder() {
 
@@ -16797,11 +17283,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          */
+        @java.lang.Deprecated
         public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
             getProvenanceOrBuilder() {
           if (provenanceBuilder_ != null) {
@@ -16816,10 +17305,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The  history of this annotation.
+         * The history of this annotation.
          * </pre>
          *
-         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 4;</code>
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 4 [deprecated = true];
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.documentai.v1beta3.Document.Provenance,
@@ -20103,6 +20594,41 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.documentai.v1beta3.Document.Page.DetectedLanguageOrBuilder
           getDetectedLanguagesOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The history of this table.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+       *
+       * @return Whether the provenance field is set.
+       */
+      boolean hasProvenance();
+      /**
+       *
+       *
+       * <pre>
+       * The history of this table.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+       *
+       * @return The provenance.
+       */
+      com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance();
+      /**
+       *
+       *
+       * <pre>
+       * The history of this table.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder();
     }
     /**
      *
@@ -23126,6 +23652,55 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return detectedLanguages_.get(index);
       }
 
+      public static final int PROVENANCE_FIELD_NUMBER = 5;
+      private com.google.cloud.documentai.v1beta3.Document.Provenance provenance_;
+      /**
+       *
+       *
+       * <pre>
+       * The history of this table.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+       *
+       * @return Whether the provenance field is set.
+       */
+      @java.lang.Override
+      public boolean hasProvenance() {
+        return provenance_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The history of this table.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+       *
+       * @return The provenance.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
+        return provenance_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
+            : provenance_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The history of this table.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
+          getProvenanceOrBuilder() {
+        return getProvenance();
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -23152,6 +23727,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < detectedLanguages_.size(); i++) {
           output.writeMessage(4, detectedLanguages_.get(i));
         }
+        if (provenance_ != null) {
+          output.writeMessage(5, getProvenance());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -23174,6 +23752,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(
                   4, detectedLanguages_.get(i));
+        }
+        if (provenance_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getProvenance());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -23198,6 +23779,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!getHeaderRowsList().equals(other.getHeaderRowsList())) return false;
         if (!getBodyRowsList().equals(other.getBodyRowsList())) return false;
         if (!getDetectedLanguagesList().equals(other.getDetectedLanguagesList())) return false;
+        if (hasProvenance() != other.hasProvenance()) return false;
+        if (hasProvenance()) {
+          if (!getProvenance().equals(other.getProvenance())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -23224,6 +23809,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (getDetectedLanguagesCount() > 0) {
           hash = (37 * hash) + DETECTED_LANGUAGES_FIELD_NUMBER;
           hash = (53 * hash) + getDetectedLanguagesList().hashCode();
+        }
+        if (hasProvenance()) {
+          hash = (37 * hash) + PROVENANCE_FIELD_NUMBER;
+          hash = (53 * hash) + getProvenance().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -23393,6 +23982,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             detectedLanguagesBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000004);
+          if (provenanceBuilder_ == null) {
+            provenance_ = null;
+          } else {
+            provenance_ = null;
+            provenanceBuilder_ = null;
+          }
           return this;
         }
 
@@ -23452,6 +24047,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             result.detectedLanguages_ = detectedLanguages_;
           } else {
             result.detectedLanguages_ = detectedLanguagesBuilder_.build();
+          }
+          if (provenanceBuilder_ == null) {
+            result.provenance_ = provenance_;
+          } else {
+            result.provenance_ = provenanceBuilder_.build();
           }
           onBuilt();
           return result;
@@ -23589,6 +24189,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               }
             }
           }
+          if (other.hasProvenance()) {
+            mergeProvenance(other.getProvenance());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -23666,6 +24269,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                     }
                     break;
                   } // case 34
+                case 42:
+                  {
+                    input.readMessage(getProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -25111,6 +25720,196 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             detectedLanguages_ = null;
           }
           return detectedLanguagesBuilder_;
+        }
+
+        private com.google.cloud.documentai.v1beta3.Document.Provenance provenance_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.Provenance,
+                com.google.cloud.documentai.v1beta3.Document.Provenance.Builder,
+                com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>
+            provenanceBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         *
+         * @return Whether the provenance field is set.
+         */
+        public boolean hasProvenance() {
+          return provenanceBuilder_ != null || provenance_ != null;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         *
+         * @return The provenance.
+         */
+        public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
+          if (provenanceBuilder_ == null) {
+            return provenance_ == null
+                ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
+                : provenance_;
+          } else {
+            return provenanceBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         */
+        public Builder setProvenance(
+            com.google.cloud.documentai.v1beta3.Document.Provenance value) {
+          if (provenanceBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            provenance_ = value;
+            onChanged();
+          } else {
+            provenanceBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         */
+        public Builder setProvenance(
+            com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
+          if (provenanceBuilder_ == null) {
+            provenance_ = builderForValue.build();
+            onChanged();
+          } else {
+            provenanceBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         */
+        public Builder mergeProvenance(
+            com.google.cloud.documentai.v1beta3.Document.Provenance value) {
+          if (provenanceBuilder_ == null) {
+            if (provenance_ != null) {
+              provenance_ =
+                  com.google.cloud.documentai.v1beta3.Document.Provenance.newBuilder(provenance_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              provenance_ = value;
+            }
+            onChanged();
+          } else {
+            provenanceBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         */
+        public Builder clearProvenance() {
+          if (provenanceBuilder_ == null) {
+            provenance_ = null;
+            onChanged();
+          } else {
+            provenance_ = null;
+            provenanceBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
+            getProvenanceBuilder() {
+
+          onChanged();
+          return getProvenanceFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
+            getProvenanceOrBuilder() {
+          if (provenanceBuilder_ != null) {
+            return provenanceBuilder_.getMessageOrBuilder();
+          } else {
+            return provenance_ == null
+                ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
+                : provenance_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The history of this table.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 5;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.Provenance,
+                com.google.cloud.documentai.v1beta3.Document.Provenance.Builder,
+                com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>
+            getProvenanceFieldBuilder() {
+          if (provenanceBuilder_ == null) {
+            provenanceBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.Document.Provenance,
+                    com.google.cloud.documentai.v1beta3.Document.Provenance.Builder,
+                    com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>(
+                    getProvenance(), getParentForChildren(), isClean());
+            provenance_ = null;
+          }
+          return provenanceBuilder_;
         }
 
         @java.lang.Override
@@ -29573,7 +30372,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
        * information, see
        * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * </pre>
@@ -29587,7 +30386,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
        * information, see
        * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * </pre>
@@ -29602,7 +30401,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Confidence of detected language. Range [0, 1].
+       * Confidence of detected language. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -29666,7 +30465,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
        * information, see
        * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * </pre>
@@ -29691,7 +30490,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
        * information, see
        * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * </pre>
@@ -29719,7 +30518,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Confidence of detected language. Range [0, 1].
+       * Confidence of detected language. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -30102,7 +30901,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
          * information, see
          * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
          * </pre>
@@ -30126,7 +30925,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
          * information, see
          * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
          * </pre>
@@ -30150,7 +30949,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
          * information, see
          * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
          * </pre>
@@ -30173,7 +30972,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
          * information, see
          * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
          * </pre>
@@ -30192,7 +30991,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+         * The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
          * information, see
          * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
          * </pre>
@@ -30218,7 +31017,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of detected language. Range [0, 1].
+         * Confidence of detected language. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -30233,7 +31032,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of detected language. Range [0, 1].
+         * Confidence of detected language. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -30251,7 +31050,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of detected language. Range [0, 1].
+         * Confidence of detected language. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -30327,6 +31126,2108 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.cloud.documentai.v1beta3.Document.Page.DetectedLanguage
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ImageQualityScoresOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+       * </pre>
+       *
+       * <code>float quality_score = 1;</code>
+       *
+       * @return The qualityScore.
+       */
+      float getQualityScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect>
+          getDetectedDefectsList();
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+          getDetectedDefects(int index);
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      int getDetectedDefectsCount();
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                      .DetectedDefectOrBuilder>
+          getDetectedDefectsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefectOrBuilder
+          getDetectedDefectsOrBuilder(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Image Quality Scores for the page image
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores}
+     */
+    public static final class ImageQualityScores extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores)
+        ImageQualityScoresOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ImageQualityScores.newBuilder() to construct.
+      private ImageQualityScores(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ImageQualityScores() {
+        detectedDefects_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ImageQualityScores();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.class,
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.Builder.class);
+      }
+
+      public interface DetectedDefectOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the defect type. Supported values are:
+         * - `quality/defect_blurry`
+         * - `quality/defect_noisy`
+         * - `quality/defect_dark`
+         * - `quality/defect_faint`
+         * - `quality/defect_text_too_small`
+         * - `quality/defect_document_cutoff`
+         * - `quality/defect_text_cutoff`
+         * - `quality/defect_glare`
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The type.
+         */
+        java.lang.String getType();
+        /**
+         *
+         *
+         * <pre>
+         * Name of the defect type. Supported values are:
+         * - `quality/defect_blurry`
+         * - `quality/defect_noisy`
+         * - `quality/defect_dark`
+         * - `quality/defect_faint`
+         * - `quality/defect_text_too_small`
+         * - `quality/defect_document_cutoff`
+         * - `quality/defect_text_cutoff`
+         * - `quality/defect_glare`
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The bytes for type.
+         */
+        com.google.protobuf.ByteString getTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Confidence of detected defect. Range `[0, 1]` where 1 indicates
+         * strong confidence of that the defect exists.
+         * </pre>
+         *
+         * <code>float confidence = 2;</code>
+         *
+         * @return The confidence.
+         */
+        float getConfidence();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Defects
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect}
+       */
+      public static final class DetectedDefect extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect)
+          DetectedDefectOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use DetectedDefect.newBuilder() to construct.
+        private DetectedDefect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private DetectedDefect() {
+          type_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new DetectedDefect();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+          return this.unknownFields;
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_DetectedDefect_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_DetectedDefect_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                      .DetectedDefect.class,
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                      .DetectedDefect.Builder.class);
+        }
+
+        public static final int TYPE_FIELD_NUMBER = 1;
+        private volatile java.lang.Object type_;
+        /**
+         *
+         *
+         * <pre>
+         * Name of the defect type. Supported values are:
+         * - `quality/defect_blurry`
+         * - `quality/defect_noisy`
+         * - `quality/defect_dark`
+         * - `quality/defect_faint`
+         * - `quality/defect_text_too_small`
+         * - `quality/defect_document_cutoff`
+         * - `quality/defect_text_cutoff`
+         * - `quality/defect_glare`
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The type.
+         */
+        @java.lang.Override
+        public java.lang.String getType() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            type_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Name of the defect type. Supported values are:
+         * - `quality/defect_blurry`
+         * - `quality/defect_noisy`
+         * - `quality/defect_dark`
+         * - `quality/defect_faint`
+         * - `quality/defect_text_too_small`
+         * - `quality/defect_document_cutoff`
+         * - `quality/defect_text_cutoff`
+         * - `quality/defect_glare`
+         * </pre>
+         *
+         * <code>string type = 1;</code>
+         *
+         * @return The bytes for type.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTypeBytes() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            type_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int CONFIDENCE_FIELD_NUMBER = 2;
+        private float confidence_;
+        /**
+         *
+         *
+         * <pre>
+         * Confidence of detected defect. Range `[0, 1]` where 1 indicates
+         * strong confidence of that the defect exists.
+         * </pre>
+         *
+         * <code>float confidence = 2;</code>
+         *
+         * @return The confidence.
+         */
+        @java.lang.Override
+        public float getConfidence() {
+          return confidence_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+          }
+          if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
+            output.writeFloat(2, confidence_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+          }
+          if (java.lang.Float.floatToRawIntBits(confidence_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                  .DetectedDefect)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                          .DetectedDefect)
+                      obj;
+
+          if (!getType().equals(other.getType())) return false;
+          if (java.lang.Float.floatToIntBits(getConfidence())
+              != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getType().hashCode();
+          hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Image Quality Defects
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect)
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefectOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_DetectedDefect_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_DetectedDefect_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefect.class,
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefect.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            type_ = "";
+
+            confidence_ = 0F;
+
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_DetectedDefect_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefect(this);
+            result.type_ = type_;
+            result.confidence_ = confidence_;
+            onBuilt();
+            return result;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                    .DetectedDefect) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                          .DetectedDefect)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                    .DetectedDefect.getDefaultInstance()) return this;
+            if (!other.getType().isEmpty()) {
+              type_ = other.type_;
+              onChanged();
+            }
+            if (other.getConfidence() != 0F) {
+              setConfidence(other.getConfidence());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      type_ = input.readStringRequireUtf8();
+
+                      break;
+                    } // case 10
+                  case 21:
+                    {
+                      confidence_ = input.readFloat();
+
+                      break;
+                    } // case 21
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private java.lang.Object type_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Name of the defect type. Supported values are:
+           * - `quality/defect_blurry`
+           * - `quality/defect_noisy`
+           * - `quality/defect_dark`
+           * - `quality/defect_faint`
+           * - `quality/defect_text_too_small`
+           * - `quality/defect_document_cutoff`
+           * - `quality/defect_text_cutoff`
+           * - `quality/defect_glare`
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @return The type.
+           */
+          public java.lang.String getType() {
+            java.lang.Object ref = type_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              type_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the defect type. Supported values are:
+           * - `quality/defect_blurry`
+           * - `quality/defect_noisy`
+           * - `quality/defect_dark`
+           * - `quality/defect_faint`
+           * - `quality/defect_text_too_small`
+           * - `quality/defect_document_cutoff`
+           * - `quality/defect_text_cutoff`
+           * - `quality/defect_glare`
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @return The bytes for type.
+           */
+          public com.google.protobuf.ByteString getTypeBytes() {
+            java.lang.Object ref = type_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              type_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the defect type. Supported values are:
+           * - `quality/defect_blurry`
+           * - `quality/defect_noisy`
+           * - `quality/defect_dark`
+           * - `quality/defect_faint`
+           * - `quality/defect_text_too_small`
+           * - `quality/defect_document_cutoff`
+           * - `quality/defect_text_cutoff`
+           * - `quality/defect_glare`
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @param value The type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+
+            type_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the defect type. Supported values are:
+           * - `quality/defect_blurry`
+           * - `quality/defect_noisy`
+           * - `quality/defect_dark`
+           * - `quality/defect_faint`
+           * - `quality/defect_text_too_small`
+           * - `quality/defect_document_cutoff`
+           * - `quality/defect_text_cutoff`
+           * - `quality/defect_glare`
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearType() {
+
+            type_ = getDefaultInstance().getType();
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Name of the defect type. Supported values are:
+           * - `quality/defect_blurry`
+           * - `quality/defect_noisy`
+           * - `quality/defect_dark`
+           * - `quality/defect_faint`
+           * - `quality/defect_text_too_small`
+           * - `quality/defect_document_cutoff`
+           * - `quality/defect_text_cutoff`
+           * - `quality/defect_glare`
+           * </pre>
+           *
+           * <code>string type = 1;</code>
+           *
+           * @param value The bytes for type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+
+            type_ = value;
+            onChanged();
+            return this;
+          }
+
+          private float confidence_;
+          /**
+           *
+           *
+           * <pre>
+           * Confidence of detected defect. Range `[0, 1]` where 1 indicates
+           * strong confidence of that the defect exists.
+           * </pre>
+           *
+           * <code>float confidence = 2;</code>
+           *
+           * @return The confidence.
+           */
+          @java.lang.Override
+          public float getConfidence() {
+            return confidence_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Confidence of detected defect. Range `[0, 1]` where 1 indicates
+           * strong confidence of that the defect exists.
+           * </pre>
+           *
+           * <code>float confidence = 2;</code>
+           *
+           * @param value The confidence to set.
+           * @return This builder for chaining.
+           */
+          public Builder setConfidence(float value) {
+
+            confidence_ = value;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Confidence of detected defect. Range `[0, 1]` where 1 indicates
+           * strong confidence of that the defect exists.
+           * </pre>
+           *
+           * <code>float confidence = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearConfidence() {
+
+            confidence_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect)
+        private static final com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                  .DetectedDefect();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefect
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<DetectedDefect> PARSER =
+            new com.google.protobuf.AbstractParser<DetectedDefect>() {
+              @java.lang.Override
+              public DetectedDefect parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<DetectedDefect> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<DetectedDefect> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public static final int QUALITY_SCORE_FIELD_NUMBER = 1;
+      private float qualityScore_;
+      /**
+       *
+       *
+       * <pre>
+       * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+       * </pre>
+       *
+       * <code>float quality_score = 1;</code>
+       *
+       * @return The qualityScore.
+       */
+      @java.lang.Override
+      public float getQualityScore() {
+        return qualityScore_;
+      }
+
+      public static final int DETECTED_DEFECTS_FIELD_NUMBER = 2;
+      private java.util.List<
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect>
+          detectedDefects_;
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect>
+          getDetectedDefectsList() {
+        return detectedDefects_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                      .DetectedDefectOrBuilder>
+          getDetectedDefectsOrBuilderList() {
+        return detectedDefects_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public int getDetectedDefectsCount() {
+        return detectedDefects_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+          getDetectedDefects(int index) {
+        return detectedDefects_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of detected defects.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+              .DetectedDefectOrBuilder
+          getDetectedDefectsOrBuilder(int index) {
+        return detectedDefects_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (java.lang.Float.floatToRawIntBits(qualityScore_) != 0) {
+          output.writeFloat(1, qualityScore_);
+        }
+        for (int i = 0; i < detectedDefects_.size(); i++) {
+          output.writeMessage(2, detectedDefects_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (java.lang.Float.floatToRawIntBits(qualityScore_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, qualityScore_);
+        }
+        for (int i = 0; i < detectedDefects_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(2, detectedDefects_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores other =
+            (com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores) obj;
+
+        if (java.lang.Float.floatToIntBits(getQualityScore())
+            != java.lang.Float.floatToIntBits(other.getQualityScore())) return false;
+        if (!getDetectedDefectsList().equals(other.getDetectedDefectsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + QUALITY_SCORE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getQualityScore());
+        if (getDetectedDefectsCount() > 0) {
+          hash = (37 * hash) + DETECTED_DEFECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getDetectedDefectsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores for the page image
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores)
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScoresOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.class,
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          qualityScore_ = 0F;
+
+          if (detectedDefectsBuilder_ == null) {
+            detectedDefects_ = java.util.Collections.emptyList();
+          } else {
+            detectedDefects_ = null;
+            detectedDefectsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_Page_ImageQualityScores_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores build() {
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores buildPartial() {
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores result =
+              new com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores(this);
+          int from_bitField0_ = bitField0_;
+          result.qualityScore_ = qualityScore_;
+          if (detectedDefectsBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              detectedDefects_ = java.util.Collections.unmodifiableList(detectedDefects_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.detectedDefects_ = detectedDefects_;
+          } else {
+            result.detectedDefects_ = detectedDefectsBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores other) {
+          if (other
+              == com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                  .getDefaultInstance()) return this;
+          if (other.getQualityScore() != 0F) {
+            setQualityScore(other.getQualityScore());
+          }
+          if (detectedDefectsBuilder_ == null) {
+            if (!other.detectedDefects_.isEmpty()) {
+              if (detectedDefects_.isEmpty()) {
+                detectedDefects_ = other.detectedDefects_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureDetectedDefectsIsMutable();
+                detectedDefects_.addAll(other.detectedDefects_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.detectedDefects_.isEmpty()) {
+              if (detectedDefectsBuilder_.isEmpty()) {
+                detectedDefectsBuilder_.dispose();
+                detectedDefectsBuilder_ = null;
+                detectedDefects_ = other.detectedDefects_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                detectedDefectsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getDetectedDefectsFieldBuilder()
+                        : null;
+              } else {
+                detectedDefectsBuilder_.addAllMessages(other.detectedDefects_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 13:
+                  {
+                    qualityScore_ = input.readFloat();
+
+                    break;
+                  } // case 13
+                case 18:
+                  {
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                            .DetectedDefect
+                        m =
+                            input.readMessage(
+                                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                                    .DetectedDefect.parser(),
+                                extensionRegistry);
+                    if (detectedDefectsBuilder_ == null) {
+                      ensureDetectedDefectsIsMutable();
+                      detectedDefects_.add(m);
+                    } else {
+                      detectedDefectsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private float qualityScore_;
+        /**
+         *
+         *
+         * <pre>
+         * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+         * </pre>
+         *
+         * <code>float quality_score = 1;</code>
+         *
+         * @return The qualityScore.
+         */
+        @java.lang.Override
+        public float getQualityScore() {
+          return qualityScore_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+         * </pre>
+         *
+         * <code>float quality_score = 1;</code>
+         *
+         * @param value The qualityScore to set.
+         * @return This builder for chaining.
+         */
+        public Builder setQualityScore(float value) {
+
+          qualityScore_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+         * </pre>
+         *
+         * <code>float quality_score = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearQualityScore() {
+
+          qualityScore_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect>
+            detectedDefects_ = java.util.Collections.emptyList();
+
+        private void ensureDetectedDefectsIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            detectedDefects_ =
+                new java.util.ArrayList<
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefect>(detectedDefects_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect,
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                    .Builder,
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                    .DetectedDefectOrBuilder>
+            detectedDefectsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect>
+            getDetectedDefectsList() {
+          if (detectedDefectsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(detectedDefects_);
+          } else {
+            return detectedDefectsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public int getDetectedDefectsCount() {
+          if (detectedDefectsBuilder_ == null) {
+            return detectedDefects_.size();
+          } else {
+            return detectedDefectsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+            getDetectedDefects(int index) {
+          if (detectedDefectsBuilder_ == null) {
+            return detectedDefects_.get(index);
+          } else {
+            return detectedDefectsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder setDetectedDefects(
+            int index,
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                value) {
+          if (detectedDefectsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureDetectedDefectsIsMutable();
+            detectedDefects_.set(index, value);
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder setDetectedDefects(
+            int index,
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                    .Builder
+                builderForValue) {
+          if (detectedDefectsBuilder_ == null) {
+            ensureDetectedDefectsIsMutable();
+            detectedDefects_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder addDetectedDefects(
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                value) {
+          if (detectedDefectsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureDetectedDefectsIsMutable();
+            detectedDefects_.add(value);
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder addDetectedDefects(
+            int index,
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                value) {
+          if (detectedDefectsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureDetectedDefectsIsMutable();
+            detectedDefects_.add(index, value);
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder addDetectedDefects(
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                    .Builder
+                builderForValue) {
+          if (detectedDefectsBuilder_ == null) {
+            ensureDetectedDefectsIsMutable();
+            detectedDefects_.add(builderForValue.build());
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder addDetectedDefects(
+            int index,
+            com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                    .Builder
+                builderForValue) {
+          if (detectedDefectsBuilder_ == null) {
+            ensureDetectedDefectsIsMutable();
+            detectedDefects_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder addAllDetectedDefects(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                            .DetectedDefect>
+                values) {
+          if (detectedDefectsBuilder_ == null) {
+            ensureDetectedDefectsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, detectedDefects_);
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder clearDetectedDefects() {
+          if (detectedDefectsBuilder_ == null) {
+            detectedDefects_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public Builder removeDetectedDefects(int index) {
+          if (detectedDefectsBuilder_ == null) {
+            ensureDetectedDefectsIsMutable();
+            detectedDefects_.remove(index);
+            onChanged();
+          } else {
+            detectedDefectsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                .Builder
+            getDetectedDefectsBuilder(int index) {
+          return getDetectedDefectsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                .DetectedDefectOrBuilder
+            getDetectedDefectsOrBuilder(int index) {
+          if (detectedDefectsBuilder_ == null) {
+            return detectedDefects_.get(index);
+          } else {
+            return detectedDefectsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefectOrBuilder>
+            getDetectedDefectsOrBuilderList() {
+          if (detectedDefectsBuilder_ != null) {
+            return detectedDefectsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(detectedDefects_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                .Builder
+            addDetectedDefectsBuilder() {
+          return getDetectedDefectsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                      .DetectedDefect.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                .Builder
+            addDetectedDefectsBuilder(int index) {
+          return getDetectedDefectsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                      .DetectedDefect.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list of detected defects.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect detected_defects = 2;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                    .Builder>
+            getDetectedDefectsBuilderList() {
+          return getDetectedDefectsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect,
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.DetectedDefect
+                    .Builder,
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                    .DetectedDefectOrBuilder>
+            getDetectedDefectsFieldBuilder() {
+          if (detectedDefectsBuilder_ == null) {
+            detectedDefectsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefect,
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefect.Builder,
+                    com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                        .DetectedDefectOrBuilder>(
+                    detectedDefects_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            detectedDefects_ = null;
+          }
+          return detectedDefectsBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores)
+      private static final com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores();
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ImageQualityScores> PARSER =
+          new com.google.protobuf.AbstractParser<ImageQualityScores>() {
+            @java.lang.Override
+            public ImageQualityScores parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ImageQualityScores> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ImageQualityScores> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
           getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -31366,6 +34267,64 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return detectedBarcodes_.get(index);
     }
 
+    public static final int IMAGE_QUALITY_SCORES_FIELD_NUMBER = 17;
+    private com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+        imageQualityScores_;
+    /**
+     *
+     *
+     * <pre>
+     * Image Quality Scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+     * </code>
+     *
+     * @return Whether the imageQualityScores field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageQualityScores() {
+      return imageQualityScores_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Image Quality Scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+     * </code>
+     *
+     * @return The imageQualityScores.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+        getImageQualityScores() {
+      return imageQualityScores_ == null
+          ? com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+              .getDefaultInstance()
+          : imageQualityScores_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Image Quality Scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScoresOrBuilder
+        getImageQualityScoresOrBuilder() {
+      return getImageQualityScores();
+    }
+
     public static final int PROVENANCE_FIELD_NUMBER = 16;
     private com.google.cloud.documentai.v1beta3.Document.Provenance provenance_;
     /**
@@ -31375,11 +34334,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this page.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
+     *     google/cloud/documentai/v1beta3/document.proto;l=463
      * @return Whether the provenance field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasProvenance() {
       return provenance_ != null;
     }
@@ -31390,11 +34354,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this page.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
+     *     google/cloud/documentai/v1beta3/document.proto;l=463
      * @return The provenance.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
       return provenance_ == null
           ? com.google.cloud.documentai.v1beta3.Document.Provenance.getDefaultInstance()
@@ -31407,9 +34376,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this page.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
         getProvenanceOrBuilder() {
       return getProvenance();
@@ -31477,6 +34449,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (provenance_ != null) {
         output.writeMessage(16, getProvenance());
       }
+      if (imageQualityScores_ != null) {
+        output.writeMessage(17, getImageQualityScores());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -31536,6 +34511,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (provenance_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getProvenance());
       }
+      if (imageQualityScores_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(17, getImageQualityScores());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -31576,6 +34555,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!getFormFieldsList().equals(other.getFormFieldsList())) return false;
       if (!getSymbolsList().equals(other.getSymbolsList())) return false;
       if (!getDetectedBarcodesList().equals(other.getDetectedBarcodesList())) return false;
+      if (hasImageQualityScores() != other.hasImageQualityScores()) return false;
+      if (hasImageQualityScores()) {
+        if (!getImageQualityScores().equals(other.getImageQualityScores())) return false;
+      }
       if (hasProvenance() != other.hasProvenance()) return false;
       if (hasProvenance()) {
         if (!getProvenance().equals(other.getProvenance())) return false;
@@ -31648,6 +34631,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (getDetectedBarcodesCount() > 0) {
         hash = (37 * hash) + DETECTED_BARCODES_FIELD_NUMBER;
         hash = (53 * hash) + getDetectedBarcodesList().hashCode();
+      }
+      if (hasImageQualityScores()) {
+        hash = (37 * hash) + IMAGE_QUALITY_SCORES_FIELD_NUMBER;
+        hash = (53 * hash) + getImageQualityScores().hashCode();
       }
       if (hasProvenance()) {
         hash = (37 * hash) + PROVENANCE_FIELD_NUMBER;
@@ -31890,6 +34877,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           detectedBarcodesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000400);
+        if (imageQualityScoresBuilder_ == null) {
+          imageQualityScores_ = null;
+        } else {
+          imageQualityScores_ = null;
+          imageQualityScoresBuilder_ = null;
+        }
         if (provenanceBuilder_ == null) {
           provenance_ = null;
         } else {
@@ -32038,6 +35031,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           result.detectedBarcodes_ = detectedBarcodes_;
         } else {
           result.detectedBarcodes_ = detectedBarcodesBuilder_.build();
+        }
+        if (imageQualityScoresBuilder_ == null) {
+          result.imageQualityScores_ = imageQualityScores_;
+        } else {
+          result.imageQualityScores_ = imageQualityScoresBuilder_.build();
         }
         if (provenanceBuilder_ == null) {
           result.provenance_ = provenance_;
@@ -32405,6 +35403,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (other.hasImageQualityScores()) {
+          mergeImageQualityScores(other.getImageQualityScores());
+        }
         if (other.hasProvenance()) {
           mergeProvenance(other.getProvenance());
         }
@@ -32620,6 +35621,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
                   break;
                 } // case 130
+              case 138:
+                {
+                  input.readMessage(
+                      getImageQualityScoresFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 138
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -37603,6 +40611,220 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return detectedBarcodesBuilder_;
       }
 
+      private com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+          imageQualityScores_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores,
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.Builder,
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScoresOrBuilder>
+          imageQualityScoresBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       *
+       * @return Whether the imageQualityScores field is set.
+       */
+      public boolean hasImageQualityScores() {
+        return imageQualityScoresBuilder_ != null || imageQualityScores_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       *
+       * @return The imageQualityScores.
+       */
+      public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+          getImageQualityScores() {
+        if (imageQualityScoresBuilder_ == null) {
+          return imageQualityScores_ == null
+              ? com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                  .getDefaultInstance()
+              : imageQualityScores_;
+        } else {
+          return imageQualityScoresBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       */
+      public Builder setImageQualityScores(
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores value) {
+        if (imageQualityScoresBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          imageQualityScores_ = value;
+          onChanged();
+        } else {
+          imageQualityScoresBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       */
+      public Builder setImageQualityScores(
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.Builder
+              builderForValue) {
+        if (imageQualityScoresBuilder_ == null) {
+          imageQualityScores_ = builderForValue.build();
+          onChanged();
+        } else {
+          imageQualityScoresBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       */
+      public Builder mergeImageQualityScores(
+          com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores value) {
+        if (imageQualityScoresBuilder_ == null) {
+          if (imageQualityScores_ != null) {
+            imageQualityScores_ =
+                com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.newBuilder(
+                        imageQualityScores_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            imageQualityScores_ = value;
+          }
+          onChanged();
+        } else {
+          imageQualityScoresBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       */
+      public Builder clearImageQualityScores() {
+        if (imageQualityScoresBuilder_ == null) {
+          imageQualityScores_ = null;
+          onChanged();
+        } else {
+          imageQualityScores_ = null;
+          imageQualityScoresBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.Builder
+          getImageQualityScoresBuilder() {
+
+        onChanged();
+        return getImageQualityScoresFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScoresOrBuilder
+          getImageQualityScoresOrBuilder() {
+        if (imageQualityScoresBuilder_ != null) {
+          return imageQualityScoresBuilder_.getMessageOrBuilder();
+        } else {
+          return imageQualityScores_ == null
+              ? com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores
+                  .getDefaultInstance()
+              : imageQualityScores_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Image Quality Scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores image_quality_scores = 17;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores,
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.Builder,
+              com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScoresOrBuilder>
+          getImageQualityScoresFieldBuilder() {
+        if (imageQualityScoresBuilder_ == null) {
+          imageQualityScoresBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores,
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScores.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.Page.ImageQualityScoresOrBuilder>(
+                  getImageQualityScores(), getParentForChildren(), isClean());
+          imageQualityScores_ = null;
+        }
+        return imageQualityScoresBuilder_;
+      }
+
       private com.google.cloud.documentai.v1beta3.Document.Provenance provenance_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.documentai.v1beta3.Document.Provenance,
@@ -37616,10 +40838,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
+       *     google/cloud/documentai/v1beta3/document.proto;l=463
        * @return Whether the provenance field is set.
        */
+      @java.lang.Deprecated
       public boolean hasProvenance() {
         return provenanceBuilder_ != null || provenance_ != null;
       }
@@ -37630,10 +40857,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        *
+       * @deprecated google.cloud.documentai.v1beta3.Document.Page.provenance is deprecated. See
+       *     google/cloud/documentai/v1beta3/document.proto;l=463
        * @return The provenance.
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance() {
         if (provenanceBuilder_ == null) {
           return provenance_ == null
@@ -37650,8 +40882,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder setProvenance(com.google.cloud.documentai.v1beta3.Document.Provenance value) {
         if (provenanceBuilder_ == null) {
           if (value == null) {
@@ -37672,8 +40907,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder setProvenance(
           com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
         if (provenanceBuilder_ == null) {
@@ -37692,8 +40930,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder mergeProvenance(
           com.google.cloud.documentai.v1beta3.Document.Provenance value) {
         if (provenanceBuilder_ == null) {
@@ -37719,8 +40960,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder clearProvenance() {
         if (provenanceBuilder_ == null) {
           provenance_ = null;
@@ -37739,8 +40983,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
           getProvenanceBuilder() {
 
@@ -37754,8 +41001,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
           getProvenanceOrBuilder() {
         if (provenanceBuilder_ != null) {
@@ -37773,7 +41023,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this page.
        * </pre>
        *
-       * <code>.google.cloud.documentai.v1beta3.Document.Provenance provenance = 16;</code>
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.Provenance provenance = 16 [deprecated = true];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.documentai.v1beta3.Document.Provenance,
@@ -37934,8 +41186,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-     * is not present in the document, this field will be empty.
+     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -37947,8 +41198,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-     * is not present in the document, this field will be empty.
+     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -37986,7 +41236,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Confidence of detected Schema entity. Range [0, 1].
+     * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
      * </pre>
      *
      * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41079,8 +44329,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-     * is not present in the document, this field will be empty.
+     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41103,8 +44352,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-     * is not present in the document, this field will be empty.
+     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41179,7 +44427,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Confidence of detected Schema entity. Range [0, 1].
+     * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
      * </pre>
      *
      * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42504,8 +45752,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-       * is not present in the document, this field will be empty.
+       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42527,8 +45774,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-       * is not present in the document, this field will be empty.
+       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42550,8 +45796,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-       * is not present in the document, this field will be empty.
+       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42572,8 +45817,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-       * is not present in the document, this field will be empty.
+       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42590,8 +45834,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Text value in the document e.g. `1600 Amphitheatre Pkwy`. If the entity
-       * is not present in the document, this field will be empty.
+       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42721,7 +45964,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Confidence of detected Schema entity. Range [0, 1].
+       * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42736,7 +45979,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Confidence of detected Schema entity. Range [0, 1].
+       * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42754,7 +45997,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Confidence of detected Schema entity. Range [0, 1].
+       * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -47241,7 +50484,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -47257,7 +50500,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -47308,7 +50551,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+       * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -47717,7 +50960,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
        * @return The layoutId.
        */
       @java.lang.Override
@@ -47744,7 +50987,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+       *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -47821,7 +51064,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+       * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -48461,7 +51704,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -48487,7 +51730,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -48513,7 +51756,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -48538,7 +51781,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -48559,7 +51802,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=599
+         *     deprecated. See google/cloud/documentai/v1beta3/document.proto;l=637
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -48785,7 +52028,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -48800,7 +52043,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -48818,7 +52061,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Confidence of detected page element, if applicable. Range [0, 1].
+         * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49845,7 +53088,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=663
+     *     google/cloud/documentai/v1beta3/document.proto;l=701
      * @return The id.
      */
     @java.lang.Deprecated
@@ -50281,7 +53524,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=629
+       *     See google/cloud/documentai/v1beta3/document.proto;l=667
        * @return The id.
        */
       @java.lang.Deprecated
@@ -50384,7 +53627,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-       *     See google/cloud/documentai/v1beta3/document.proto;l=629
+       *     See google/cloud/documentai/v1beta3/document.proto;l=667
        * @return The id.
        */
       @java.lang.Override
@@ -50896,7 +54139,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=629
+         *     See google/cloud/documentai/v1beta3/document.proto;l=667
          * @return The id.
          */
         @java.lang.Override
@@ -50914,7 +54157,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=629
+         *     See google/cloud/documentai/v1beta3/document.proto;l=667
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -50935,7 +54178,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.Parent.id is deprecated.
-         *     See google/cloud/documentai/v1beta3/document.proto;l=629
+         *     See google/cloud/documentai/v1beta3/document.proto;l=667
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -51044,7 +54287,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=663
+     *     google/cloud/documentai/v1beta3/document.proto;l=701
      * @return The id.
      */
     @java.lang.Override
@@ -51686,7 +54929,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=663
+       *     google/cloud/documentai/v1beta3/document.proto;l=701
        * @return The id.
        */
       @java.lang.Override
@@ -51705,7 +54948,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=663
+       *     google/cloud/documentai/v1beta3/document.proto;l=701
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -51727,7 +54970,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=663
+       *     google/cloud/documentai/v1beta3/document.proto;l=701
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -52406,7 +55649,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=701
+     *     google/cloud/documentai/v1beta3/document.proto;l=739
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -52423,7 +55666,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=701
+     *     google/cloud/documentai/v1beta3/document.proto;l=739
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -52440,7 +55683,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=701
+     *     google/cloud/documentai/v1beta3/document.proto;l=739
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -53742,7 +56985,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=701
+     *     google/cloud/documentai/v1beta3/document.proto;l=739
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -53762,7 +57005,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=701
+     *     google/cloud/documentai/v1beta3/document.proto;l=739
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -53781,7 +57024,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1beta3/document.proto;l=701
+     *     google/cloud/documentai/v1beta3/document.proto;l=739
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -54961,7 +58204,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=701
+       *     google/cloud/documentai/v1beta3/document.proto;l=739
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -54982,7 +58225,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=701
+       *     google/cloud/documentai/v1beta3/document.proto;l=739
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -55001,7 +58244,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=701
+       *     google/cloud/documentai/v1beta3/document.proto;l=739
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -55021,7 +58264,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=701
+       *     google/cloud/documentai/v1beta3/document.proto;l=739
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -55045,7 +58288,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=701
+       *     google/cloud/documentai/v1beta3/document.proto;l=739
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -55068,7 +58311,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=701
+       *     google/cloud/documentai/v1beta3/document.proto;l=739
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -55091,7 +58334,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1beta3.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1beta3/document.proto;l=701
+       *     google/cloud/documentai/v1beta3/document.proto;l=739
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -55824,8 +59067,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     java.util.List<com.google.cloud.documentai.v1beta3.Document.Provenance> getProvenanceList();
     /**
      *
@@ -55834,8 +59080,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance(int index);
     /**
      *
@@ -55844,8 +59093,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     int getProvenanceCount();
     /**
      *
@@ -55854,8 +59106,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>
         getProvenanceOrBuilderList();
     /**
@@ -55865,8 +59120,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder(
         int index);
   }
@@ -56039,9 +59297,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.documentai.v1beta3.Document.Provenance>
         getProvenanceList() {
       return provenance_;
@@ -56053,9 +59314,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.util.List<
             ? extends com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>
         getProvenanceOrBuilderList() {
@@ -56068,9 +59332,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getProvenanceCount() {
       return provenance_.size();
     }
@@ -56081,9 +59348,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance(int index) {
       return provenance_.get(index);
     }
@@ -56094,9 +59364,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * The history of this annotation.
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder getProvenanceOrBuilder(
         int index) {
       return provenance_.get(index);
@@ -56898,8 +60171,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public java.util.List<com.google.cloud.documentai.v1beta3.Document.Provenance>
           getProvenanceList() {
         if (provenanceBuilder_ == null) {
@@ -56915,8 +60191,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public int getProvenanceCount() {
         if (provenanceBuilder_ == null) {
           return provenance_.size();
@@ -56931,8 +60210,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance getProvenance(int index) {
         if (provenanceBuilder_ == null) {
           return provenance_.get(index);
@@ -56947,8 +60229,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder setProvenance(
           int index, com.google.cloud.documentai.v1beta3.Document.Provenance value) {
         if (provenanceBuilder_ == null) {
@@ -56970,8 +60255,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder setProvenance(
           int index,
           com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
@@ -56991,8 +60279,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder addProvenance(com.google.cloud.documentai.v1beta3.Document.Provenance value) {
         if (provenanceBuilder_ == null) {
           if (value == null) {
@@ -57013,8 +60304,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder addProvenance(
           int index, com.google.cloud.documentai.v1beta3.Document.Provenance value) {
         if (provenanceBuilder_ == null) {
@@ -57036,8 +60330,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder addProvenance(
           com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
         if (provenanceBuilder_ == null) {
@@ -57056,8 +60353,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder addProvenance(
           int index,
           com.google.cloud.documentai.v1beta3.Document.Provenance.Builder builderForValue) {
@@ -57077,8 +60377,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder addAllProvenance(
           java.lang.Iterable<? extends com.google.cloud.documentai.v1beta3.Document.Provenance>
               values) {
@@ -57098,8 +60401,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder clearProvenance() {
         if (provenanceBuilder_ == null) {
           provenance_ = java.util.Collections.emptyList();
@@ -57117,8 +60423,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public Builder removeProvenance(int index) {
         if (provenanceBuilder_ == null) {
           ensureProvenanceIsMutable();
@@ -57136,8 +60445,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder getProvenanceBuilder(
           int index) {
         return getProvenanceFieldBuilder().getBuilder(index);
@@ -57149,8 +60461,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder
           getProvenanceOrBuilder(int index) {
         if (provenanceBuilder_ == null) {
@@ -57166,8 +60481,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public java.util.List<
               ? extends com.google.cloud.documentai.v1beta3.Document.ProvenanceOrBuilder>
           getProvenanceOrBuilderList() {
@@ -57184,8 +60502,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder
           addProvenanceBuilder() {
         return getProvenanceFieldBuilder()
@@ -57199,8 +60520,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public com.google.cloud.documentai.v1beta3.Document.Provenance.Builder addProvenanceBuilder(
           int index) {
         return getProvenanceFieldBuilder()
@@ -57215,8 +60539,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * The history of this annotation.
        * </pre>
        *
-       * <code>repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3;</code>
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.Provenance provenance = 3 [deprecated = true];
+       * </code>
        */
+      @java.lang.Deprecated
       public java.util.List<com.google.cloud.documentai.v1beta3.Document.Provenance.Builder>
           getProvenanceBuilderList() {
         return getProvenanceFieldBuilder().getBuilderList();
@@ -57871,9 +61198,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -57887,9 +61214,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -57903,9 +61230,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -57918,9 +61245,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -57933,9 +61260,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -60992,9 +64319,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61011,9 +64338,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61029,9 +64356,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61047,9 +64374,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61072,9 +64399,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61095,9 +64422,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61119,9 +64446,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61144,9 +64471,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61166,9 +64493,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61189,9 +64516,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61212,9 +64539,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61233,9 +64560,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61254,9 +64581,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61269,9 +64596,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61288,9 +64615,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61308,9 +64635,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61323,9 +64650,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
@@ -61340,9 +64667,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text].  This is
-     * usually used for annotating corrections to OCR mistakes.  Text changes for
-     * a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1beta3.Document.text].  This
+     * is usually used for annotating corrections to OCR mistakes.  Text changes
+     * for a given revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>

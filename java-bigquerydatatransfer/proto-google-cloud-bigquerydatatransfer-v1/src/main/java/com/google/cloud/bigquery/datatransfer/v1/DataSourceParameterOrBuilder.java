@@ -264,7 +264,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * For integer and double values specifies maxminum allowed value.
+   * For integer and double values specifies maximum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -276,7 +276,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * For integer and double values specifies maxminum allowed value.
+   * For integer and double values specifies maximum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -288,7 +288,7 @@ public interface DataSourceParameterOrBuilder
    *
    *
    * <pre>
-   * For integer and double values specifies maxminum allowed value.
+   * For integer and double values specifies maximum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>

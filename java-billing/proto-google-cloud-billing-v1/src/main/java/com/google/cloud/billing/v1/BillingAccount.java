@@ -22,8 +22,9 @@ package com.google.cloud.billing.v1;
  *
  *
  * <pre>
- * A billing account in [GCP Console](https://console.cloud.google.com/).
- * You can assign a billing account to one or more projects.
+ * A billing account in the
+ * [Google Cloud Console](https://console.cloud.google.com/). You can assign a
+ * billing account to one or more projects.
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.v1.BillingAccount}
@@ -76,13 +77,15 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the billing account. The resource name has the form
+   * Output only. The resource name of the billing account. The resource name has the form
    * `billingAccounts/{billing_account_id}`. For example,
    * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
    * billing account `012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -102,13 +105,15 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the billing account. The resource name has the form
+   * Output only. The resource name of the billing account. The resource name has the form
    * `billingAccounts/{billing_account_id}`. For example,
    * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
    * billing account `012345-567890-ABCDEF`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -152,7 +157,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The display name given to the billing account, such as `My Billing
-   * Account`. This name is displayed in the GCP Console.
+   * Account`. This name is displayed in the Google Cloud Console.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -176,7 +181,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The display name given to the billing account, such as `My Billing
-   * Account`. This name is displayed in the GCP Console.
+   * Account`. This name is displayed in the Google Cloud Console.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -204,7 +209,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If this account is a
    * [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-   * will be the resource name of the master billing account that it is being
+   * will be the resource name of the parent billing account that it is being
    * resold through.
    * Otherwise this will be empty.
    * </pre>
@@ -231,7 +236,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * If this account is a
    * [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-   * will be the resource name of the master billing account that it is being
+   * will be the resource name of the parent billing account that it is being
    * resold through.
    * Otherwise this will be empty.
    * </pre>
@@ -443,8 +448,9 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A billing account in [GCP Console](https://console.cloud.google.com/).
-   * You can assign a billing account to one or more projects.
+   * A billing account in the
+   * [Google Cloud Console](https://console.cloud.google.com/). You can assign a
+   * billing account to one or more projects.
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.v1.BillingAccount}
@@ -653,13 +659,15 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the billing account. The resource name has the form
+     * Output only. The resource name of the billing account. The resource name has the form
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
      * billing account `012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -678,13 +686,15 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the billing account. The resource name has the form
+     * Output only. The resource name of the billing account. The resource name has the form
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
      * billing account `012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -703,13 +713,15 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the billing account. The resource name has the form
+     * Output only. The resource name of the billing account. The resource name has the form
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
      * billing account `012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -727,13 +739,15 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the billing account. The resource name has the form
+     * Output only. The resource name of the billing account. The resource name has the form
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
      * billing account `012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -747,13 +761,15 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the billing account. The resource name has the form
+     * Output only. The resource name of the billing account. The resource name has the form
      * `billingAccounts/{billing_account_id}`. For example,
      * `billingAccounts/012345-567890-ABCDEF` would be the resource name for
      * billing account `012345-567890-ABCDEF`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -833,7 +849,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name given to the billing account, such as `My Billing
-     * Account`. This name is displayed in the GCP Console.
+     * Account`. This name is displayed in the Google Cloud Console.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -856,7 +872,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name given to the billing account, such as `My Billing
-     * Account`. This name is displayed in the GCP Console.
+     * Account`. This name is displayed in the Google Cloud Console.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -879,7 +895,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name given to the billing account, such as `My Billing
-     * Account`. This name is displayed in the GCP Console.
+     * Account`. This name is displayed in the Google Cloud Console.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -901,7 +917,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name given to the billing account, such as `My Billing
-     * Account`. This name is displayed in the GCP Console.
+     * Account`. This name is displayed in the Google Cloud Console.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -919,7 +935,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name given to the billing account, such as `My Billing
-     * Account`. This name is displayed in the GCP Console.
+     * Account`. This name is displayed in the Google Cloud Console.
      * </pre>
      *
      * <code>string display_name = 3;</code>
@@ -945,7 +961,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this account is a
      * [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-     * will be the resource name of the master billing account that it is being
+     * will be the resource name of the parent billing account that it is being
      * resold through.
      * Otherwise this will be empty.
      * </pre>
@@ -971,7 +987,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this account is a
      * [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-     * will be the resource name of the master billing account that it is being
+     * will be the resource name of the parent billing account that it is being
      * resold through.
      * Otherwise this will be empty.
      * </pre>
@@ -997,7 +1013,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this account is a
      * [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-     * will be the resource name of the master billing account that it is being
+     * will be the resource name of the parent billing account that it is being
      * resold through.
      * Otherwise this will be empty.
      * </pre>
@@ -1022,7 +1038,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this account is a
      * [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-     * will be the resource name of the master billing account that it is being
+     * will be the resource name of the parent billing account that it is being
      * resold through.
      * Otherwise this will be empty.
      * </pre>
@@ -1043,7 +1059,7 @@ public final class BillingAccount extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * If this account is a
      * [subaccount](https://cloud.google.com/billing/docs/concepts), then this
-     * will be the resource name of the master billing account that it is being
+     * will be the resource name of the parent billing account that it is being
      * resold through.
      * Otherwise this will be empty.
      * </pre>

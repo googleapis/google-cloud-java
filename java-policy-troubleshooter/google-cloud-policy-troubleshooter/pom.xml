@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-policy-troubleshooter</artifactId>
-  <version>1.5.0</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
+  <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
   <packaging>jar</packaging>
   <name>Google IAM Policy Troubleshooter API</name>
   <description>makes it easier to understand why a user has access to a resource or doesn't have permission to call an API. Given an email, resource, and permission, Policy Troubleshooter examines all Identity and Access Management (IAM) policies that apply to the resource. It then reveals whether the member's roles include the permission on that resource and, if so, which policies bind the member to those roles.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-policy-troubleshooter-parent</artifactId>
-    <version>1.5.0</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
+    <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-policy-troubleshooter</site.installationModule>

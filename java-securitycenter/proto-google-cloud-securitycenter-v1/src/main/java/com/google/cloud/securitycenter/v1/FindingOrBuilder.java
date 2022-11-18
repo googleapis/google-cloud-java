@@ -1438,4 +1438,56 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
    */
   com.google.cloud.securitycenter.v1.DatabaseOrBuilder getDatabaseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.File> getFilesList();
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  com.google.cloud.securitycenter.v1.File getFiles(int index);
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  int getFilesCount();
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.FileOrBuilder>
+      getFilesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  com.google.cloud.securitycenter.v1.FileOrBuilder getFilesOrBuilder(int index);
 }

@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for listing  BigQuery exports at a given scope e.g.
+ * Request message for listing BigQuery exports at a given scope e.g.
  * organization, folder or project.
  * </pre>
  *
@@ -384,7 +384,7 @@ public final class ListBigQueryExportsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for listing  BigQuery exports at a given scope e.g.
+   * Request message for listing BigQuery exports at a given scope e.g.
    * organization, folder or project.
    * </pre>
    *

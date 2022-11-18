@@ -35,7 +35,6 @@ branchProtectionRules:
       - enforcer
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
-      - 'Kokoro - Test: Terraform Integration'
       - 'Kokoro - Test: Java 17 GraalVM Native Image - AI Platform'
       - 'Kokoro - Test: Java 17 GraalVM Native Image - Compute'
       - 'Kokoro - Test: Java GraalVM Native Image - AI Platform'

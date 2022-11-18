@@ -2049,6 +2049,7 @@ public class ClusterManagerClientTest {
             .addAllConditions(new ArrayList<StatusCondition>())
             .setPodIpv4CidrSize(1098768716)
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+            .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
@@ -2102,6 +2103,7 @@ public class ClusterManagerClientTest {
             .addAllConditions(new ArrayList<StatusCondition>())
             .setPodIpv4CidrSize(1098768716)
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+            .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
