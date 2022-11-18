@@ -35,7 +35,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3528
+   *     google/container/v1/cluster_service.proto;l=3548
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3528
+   *     google/container/v1/cluster_service.proto;l=3548
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3534
+   *     google/container/v1/cluster_service.proto;l=3554
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3534
+   *     google/container/v1/cluster_service.proto;l=3554
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3538
+   *     google/container/v1/cluster_service.proto;l=3558
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3538
+   *     google/container/v1/cluster_service.proto;l=3558
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

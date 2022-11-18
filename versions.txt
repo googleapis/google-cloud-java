@@ -1,5 +1,6 @@
 # Format:
 # module:released-version:current-version
+
 gapic-libraries-bom:0.3.0:0.4.0-SNAPSHOT
 google-cloud-jar-parent:0.3.0:0.4.0-SNAPSHOT
 google-cloud-pom-parent:0.3.0:0.4.0-SNAPSHOT

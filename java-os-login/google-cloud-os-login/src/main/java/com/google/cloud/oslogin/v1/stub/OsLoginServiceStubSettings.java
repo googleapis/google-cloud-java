@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.oslogin.common.OsLoginProto;
+import com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.DeletePosixAccountRequest;
 import com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.GetLoginProfileRequest;
@@ -68,7 +69,7 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deletePosixAccount to 30 seconds:
+ * <p>For example, to set the total timeout of createSshPublicKey to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -79,10 +80,10 @@ import org.threeten.bp.Duration;
  * OsLoginServiceStubSettings.Builder osLoginServiceSettingsBuilder =
  *     OsLoginServiceStubSettings.newBuilder();
  * osLoginServiceSettingsBuilder
- *     .deletePosixAccountSettings()
+ *     .createSshPublicKeySettings()
  *     .setRetrySettings(
  *         osLoginServiceSettingsBuilder
- *             .deletePosixAccountSettings()
+ *             .createSshPublicKeySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -96,9 +97,13 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .add("https://www.googleapis.com/auth/compute")
+          .add("https://www.googleapis.com/auth/compute.readonly")
           .build();
 
+  private final UnaryCallSettings<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeySettings;
   private final UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings;
   private final UnaryCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeySettings;
   private final UnaryCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileSettings;
@@ -108,6 +113,12 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
       importSshPublicKeySettings;
   private final UnaryCallSettings<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
       updateSshPublicKeySettings;
+
+  /** Returns the object with the settings used for calls to createSshPublicKey. */
+  public UnaryCallSettings<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeySettings() {
+    return createSshPublicKeySettings;
+  }
 
   /** Returns the object with the settings used for calls to deletePosixAccount. */
   public UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings() {
@@ -248,6 +259,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
   protected OsLoginServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    createSshPublicKeySettings = settingsBuilder.createSshPublicKeySettings().build();
     deletePosixAccountSettings = settingsBuilder.deletePosixAccountSettings().build();
     deleteSshPublicKeySettings = settingsBuilder.deleteSshPublicKeySettings().build();
     getLoginProfileSettings = settingsBuilder.getLoginProfileSettings().build();
@@ -259,6 +271,8 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
   /** Builder for OsLoginServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<OsLoginServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+        createSshPublicKeySettings;
     private final UnaryCallSettings.Builder<DeletePosixAccountRequest, Empty>
         deletePosixAccountSettings;
     private final UnaryCallSettings.Builder<DeleteSshPublicKeyRequest, Empty>
@@ -277,6 +291,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
@@ -290,6 +305,8 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -311,6 +328,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      createSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deletePosixAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSshPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getLoginProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -320,6 +338,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createSshPublicKeySettings,
               deletePosixAccountSettings,
               deleteSshPublicKeySettings,
               getLoginProfileSettings,
@@ -332,6 +351,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     protected Builder(OsLoginServiceStubSettings settings) {
       super(settings);
 
+      createSshPublicKeySettings = settings.createSshPublicKeySettings.toBuilder();
       deletePosixAccountSettings = settings.deletePosixAccountSettings.toBuilder();
       deleteSshPublicKeySettings = settings.deleteSshPublicKeySettings.toBuilder();
       getLoginProfileSettings = settings.getLoginProfileSettings.toBuilder();
@@ -341,6 +361,7 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createSshPublicKeySettings,
               deletePosixAccountSettings,
               deleteSshPublicKeySettings,
               getLoginProfileSettings,
@@ -376,6 +397,11 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .createSshPublicKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       builder
           .deletePosixAccountSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
@@ -422,6 +448,12 @@ public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to createSshPublicKey. */
+    public UnaryCallSettings.Builder<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+        createSshPublicKeySettings() {
+      return createSshPublicKeySettings;
     }
 
     /** Returns the builder for the settings used for calls to deletePosixAccount. */

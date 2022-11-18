@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -46,8 +47,10 @@ import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.GoogleChannelConfig;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
@@ -60,7 +63,17 @@ import com.google.cloud.eventarc.v1.OperationMetadata;
 import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
+import com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -142,6 +155,7 @@ public class HttpJsonEventarcStub extends EventarcStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListTriggersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
@@ -693,6 +707,262 @@ public class HttpJsonEventarcStub extends EventarcStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetGoogleChannelConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetGoogleChannelConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/googleChannelConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoogleChannelConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetGoogleChannelConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GoogleChannelConfig>newBuilder()
+                      .setDefaultInstance(GoogleChannelConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/UpdateGoogleChannelConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateGoogleChannelConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{googleChannelConfig.name=projects/*/locations/*/googleChannelConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoogleChannelConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "googleChannelConfig.name",
+                                request.getGoogleChannelConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateGoogleChannelConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "googleChannelConfig",
+                                      request.getGoogleChannelConfig(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GoogleChannelConfig>newBuilder()
+                      .setDefaultInstance(GoogleChannelConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLocationRequest, Location>
+      getLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetLocationRequest, Location>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/GetLocation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Location>newBuilder()
+                      .setDefaultInstance(Location.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/triggers/*}:setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/channels/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/channelConnections/*}:setIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/triggers/*}:getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/channels/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/channelConnections/*}:getIamPolicy")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{resource=projects/*/locations/*/triggers/*}:testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{resource=projects/*/locations/*/channels/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/channelConnections/*}:testIamPermissions")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestIamPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetTriggerRequest, Trigger> getTriggerCallable;
   private final UnaryCallable<ListTriggersRequest, ListTriggersResponse> listTriggersCallable;
   private final UnaryCallable<ListTriggersRequest, ListTriggersPagedResponse>
@@ -739,6 +1009,18 @@ public class HttpJsonEventarcStub extends EventarcStub {
   private final OperationCallable<
           DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
       deleteChannelConnectionOperationCallable;
+  private final UnaryCallable<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigCallable;
+  private final UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -870,6 +1152,45 @@ public class HttpJsonEventarcStub extends EventarcStub {
                 .setMethodDescriptor(deleteChannelConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+        getGoogleChannelConfigTransportSettings =
+            HttpJsonCallSettings.<GetGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+                .setMethodDescriptor(getGoogleChannelConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+        updateGoogleChannelConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>newBuilder()
+                .setMethodDescriptor(updateGoogleChannelConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.getTriggerCallable =
         callableFactory.createUnaryCallable(
@@ -989,6 +1310,36 @@ public class HttpJsonEventarcStub extends EventarcStub {
             settings.deleteChannelConnectionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getGoogleChannelConfigCallable =
+        callableFactory.createUnaryCallable(
+            getGoogleChannelConfigTransportSettings,
+            settings.getGoogleChannelConfigSettings(),
+            clientContext);
+    this.updateGoogleChannelConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateGoogleChannelConfigTransportSettings,
+            settings.updateGoogleChannelConfigSettings(),
+            clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1013,6 +1364,13 @@ public class HttpJsonEventarcStub extends EventarcStub {
     methodDescriptors.add(listChannelConnectionsMethodDescriptor);
     methodDescriptors.add(createChannelConnectionMethodDescriptor);
     methodDescriptors.add(deleteChannelConnectionMethodDescriptor);
+    methodDescriptors.add(getGoogleChannelConfigMethodDescriptor);
+    methodDescriptors.add(updateGoogleChannelConfigMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
+    methodDescriptors.add(getLocationMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1172,6 +1530,50 @@ public class HttpJsonEventarcStub extends EventarcStub {
   public OperationCallable<DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
       deleteChannelConnectionOperationCallable() {
     return deleteChannelConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigCallable() {
+    return getGoogleChannelConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigCallable() {
+    return updateGoogleChannelConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

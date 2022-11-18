@@ -29,6 +29,11 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.identity.accesscontextmanager.v1.stub.AccessContextManagerStub;
 import com.google.identity.accesscontextmanager.v1.stub.AccessContextManagerStubSettings;
 import com.google.longrunning.Operation;
@@ -41,12 +46,12 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: API for setting [Access Levels]
- * [google.identity.accesscontextmanager.v1.AccessLevel] and [Service Perimeters]
- * [google.identity.accesscontextmanager.v1.ServicePerimeter] for Google Cloud Projects. Each
- * organization has one [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]
- * containing the [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] and [Service
- * Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]. This [AccessPolicy]
+ * Service Description: API for setting [access levels]
+ * [google.identity.accesscontextmanager.v1.AccessLevel] and [service perimeters]
+ * [google.identity.accesscontextmanager.v1.ServicePerimeter] for Google Cloud projects. Each
+ * organization has one [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] that
+ * contains the [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+ * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]. This [access policy]
  * [google.identity.accesscontextmanager.v1.AccessPolicy] is applicable to all resources in the
  * organization. AccessPolicies
  *
@@ -217,8 +222,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [AccessPolicies] [google.identity.accesscontextmanager.v1.AccessPolicy] under a
-   * container.
+   * Lists all [access policies] [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -253,8 +258,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [AccessPolicies] [google.identity.accesscontextmanager.v1.AccessPolicy] under a
-   * container.
+   * Lists all [access policies] [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -288,8 +293,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [AccessPolicies] [google.identity.accesscontextmanager.v1.AccessPolicy] under a
-   * container.
+   * Lists all [access policies] [google.identity.accesscontextmanager.v1.AccessPolicy] in an
+   * organization.
    *
    * <p>Sample code:
    *
@@ -330,7 +335,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+   * Returns an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * name.
    *
    * <p>Sample code:
    *
@@ -359,7 +365,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+   * Returns an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * name.
    *
    * <p>Sample code:
    *
@@ -387,7 +394,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+   * Returns an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * name.
    *
    * <p>Sample code:
    *
@@ -416,7 +424,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by name.
+   * Returns an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * name.
    *
    * <p>Sample code:
    *
@@ -445,9 +454,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an `AccessPolicy`. Fails if this organization already has a `AccessPolicy`. The
-   * longrunning Operation will have a successful status once the `AccessPolicy` has propagated to
-   * long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a
+   * Creates an access policy. This method fails if the organization already has an access policy.
+   * The long-running operation has a successful status after the access policy propagates to
+   * long-lasting storage. Syntactic and basic semantic errors are returned in `metadata` as a
    * BadRequest proto.
    *
    * <p>Sample code:
@@ -465,6 +474,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *           .setName(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setParent("parent-995424086")
    *           .setTitle("title110371416")
+   *           .addAllScopes(new ArrayList<String>())
    *           .setCreateTime(Timestamp.newBuilder().build())
    *           .setUpdateTime(Timestamp.newBuilder().build())
    *           .setEtag("etag3123477")
@@ -483,9 +493,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an `AccessPolicy`. Fails if this organization already has a `AccessPolicy`. The
-   * longrunning Operation will have a successful status once the `AccessPolicy` has propagated to
-   * long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a
+   * Creates an access policy. This method fails if the organization already has an access policy.
+   * The long-running operation has a successful status after the access policy propagates to
+   * long-lasting storage. Syntactic and basic semantic errors are returned in `metadata` as a
    * BadRequest proto.
    *
    * <p>Sample code:
@@ -503,6 +513,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *           .setName(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setParent("parent-995424086")
    *           .setTitle("title110371416")
+   *           .addAllScopes(new ArrayList<String>())
    *           .setCreateTime(Timestamp.newBuilder().build())
    *           .setUpdateTime(Timestamp.newBuilder().build())
    *           .setEtag("etag3123477")
@@ -521,9 +532,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an `AccessPolicy`. Fails if this organization already has a `AccessPolicy`. The
-   * longrunning Operation will have a successful status once the `AccessPolicy` has propagated to
-   * long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a
+   * Creates an access policy. This method fails if the organization already has an access policy.
+   * The long-running operation has a successful status after the access policy propagates to
+   * long-lasting storage. Syntactic and basic semantic errors are returned in `metadata` as a
    * BadRequest proto.
    *
    * <p>Sample code:
@@ -541,6 +552,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *           .setName(AccessPolicyName.of("[ACCESS_POLICY]").toString())
    *           .setParent("parent-995424086")
    *           .setTitle("title110371416")
+   *           .addAllScopes(new ArrayList<String>())
    *           .setCreateTime(Timestamp.newBuilder().build())
    *           .setUpdateTime(Timestamp.newBuilder().build())
    *           .setEtag("etag3123477")
@@ -558,11 +570,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-   * longrunning Operation from this RPC will have a successful status once the changes to the
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated to
-   * long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a
-   * BadRequest proto.
+   * Updates an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] propagate to long-lasting
+   * storage.
    *
    * <p>Sample code:
    *
@@ -594,11 +605,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-   * longrunning Operation from this RPC will have a successful status once the changes to the
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated to
-   * long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a
-   * BadRequest proto.
+   * Updates an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] propagate to long-lasting
+   * storage.
    *
    * <p>Sample code:
    *
@@ -629,11 +639,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-   * longrunning Operation from this RPC will have a successful status once the changes to the
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated to
-   * long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a
-   * BadRequest proto.
+   * Updates an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] propagate to long-lasting
+   * storage.
    *
    * <p>Sample code:
    *
@@ -665,11 +674,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
-   * longrunning Operation from this RPC will have a successful status once the changes to the
-   * [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] have propagated to
-   * long-lasting storage. Syntactic and basic semantic errors will be returned in `metadata` as a
-   * BadRequest proto.
+   * Updates an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * policy] [google.identity.accesscontextmanager.v1.AccessPolicy] propagate to long-lasting
+   * storage.
    *
    * <p>Sample code:
    *
@@ -699,10 +707,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-   * name. The longrunning Operation will have a successful status once the [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] has been removed from long-lasting
-   * storage.
+   * Deletes an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * resource name. The long-running operation has a successful status after the [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] is removed from long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -734,10 +741,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-   * name. The longrunning Operation will have a successful status once the [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] has been removed from long-lasting
-   * storage.
+   * Deletes an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * resource name. The long-running operation has a successful status after the [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] is removed from long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -767,10 +773,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-   * name. The longrunning Operation will have a successful status once the [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] has been removed from long-lasting
-   * storage.
+   * Deletes an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * resource name. The long-running operation has a successful status after the [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] is removed from long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -800,10 +805,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-   * name. The longrunning Operation will have a successful status once the [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] has been removed from long-lasting
-   * storage.
+   * Deletes an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * resource name. The long-running operation has a successful status after the [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] is removed from long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -834,10 +838,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [AccessPolicy] [google.identity.accesscontextmanager.v1.AccessPolicy] by resource
-   * name. The longrunning Operation will have a successful status once the [AccessPolicy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] has been removed from long-lasting
-   * storage.
+   * Deletes an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] based on the
+   * resource name. The long-running operation has a successful status after the [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] is removed from long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -866,7 +869,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
+   * Lists all [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
    * policy.
    *
    * <p>Sample code:
@@ -901,7 +904,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
+   * Lists all [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
    * policy.
    *
    * <p>Sample code:
@@ -934,7 +937,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
+   * Lists all [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
    * policy.
    *
    * <p>Sample code:
@@ -970,7 +973,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
+   * Lists all [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
    * policy.
    *
    * <p>Sample code:
@@ -1006,7 +1009,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
+   * Lists all [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] for an access
    * policy.
    *
    * <p>Sample code:
@@ -1049,7 +1052,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource name.
+   * Gets an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name.
    *
    * <p>Sample code:
    *
@@ -1079,7 +1083,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource name.
+   * Gets an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name.
    *
    * <p>Sample code:
    *
@@ -1108,7 +1113,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource name.
+   * Gets an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name.
    *
    * <p>Sample code:
    *
@@ -1138,7 +1144,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource name.
+   * Gets an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name.
    *
    * <p>Sample code:
    *
@@ -1168,11 +1175,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] has propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Creates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the [access level]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] propagates to long-lasting storage. If
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an error
+   * response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1212,11 +1219,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] has propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Creates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the [access level]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] propagates to long-lasting storage. If
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an error
+   * response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1253,11 +1260,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] has propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Creates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the [access level]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] propagates to long-lasting storage. If
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an error
+   * response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1288,11 +1295,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] has propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Creates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the [access level]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] propagates to long-lasting storage. If
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an error
+   * response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1324,11 +1331,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] has propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Creates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the [access level]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] propagates to long-lasting storage. If
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an error
+   * response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1358,11 +1365,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the changes to the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Updates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * level] [google.identity.accesscontextmanager.v1.AccessLevel] propagate to long-lasting storage.
+   * If [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an
+   * error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1400,11 +1407,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the changes to the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Updates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * level] [google.identity.accesscontextmanager.v1.AccessLevel] propagate to long-lasting storage.
+   * If [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an
+   * error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1435,11 +1442,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the changes to the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Updates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * level] [google.identity.accesscontextmanager.v1.AccessLevel] propagate to long-lasting storage.
+   * If [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an
+   * error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1471,11 +1478,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel]. The longrunning
-   * operation from this RPC will have a successful status once the changes to the [Access Level]
-   * [google.identity.accesscontextmanager.v1.AccessLevel] have propagated to long-lasting storage.
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] containing errors will
-   * result in an error response for the first error encountered.
+   * Updates an [access level] [google.identity.accesscontextmanager.v1.AccessLevel]. The
+   * long-running operation from this RPC has a successful status after the changes to the [access
+   * level] [google.identity.accesscontextmanager.v1.AccessLevel] propagate to long-lasting storage.
+   * If [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] contain errors, an
+   * error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -1505,10 +1512,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-   * name. The longrunning operation from this RPC will have a successful status once the [Access
-   * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from long-lasting
-   * storage.
+   * Deletes an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name. The long-running operation from this RPC has a successful status after the
+   * [access level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from
+   * long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -1541,10 +1548,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-   * name. The longrunning operation from this RPC will have a successful status once the [Access
-   * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from long-lasting
-   * storage.
+   * Deletes an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name. The long-running operation from this RPC has a successful status after the
+   * [access level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from
+   * long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -1574,10 +1581,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-   * name. The longrunning operation from this RPC will have a successful status once the [Access
-   * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from long-lasting
-   * storage.
+   * Deletes an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name. The long-running operation from this RPC has a successful status after the
+   * [access level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from
+   * long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -1607,10 +1614,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-   * name. The longrunning operation from this RPC will have a successful status once the [Access
-   * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from long-lasting
-   * storage.
+   * Deletes an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name. The long-running operation from this RPC has a successful status after the
+   * [access level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from
+   * long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -1641,10 +1648,10 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete an [Access Level] [google.identity.accesscontextmanager.v1.AccessLevel] by resource
-   * name. The longrunning operation from this RPC will have a successful status once the [Access
-   * Level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from long-lasting
-   * storage.
+   * Deletes an [access level] [google.identity.accesscontextmanager.v1.AccessLevel] based on the
+   * resource name. The long-running operation from this RPC has a successful status after the
+   * [access level] [google.identity.accesscontextmanager.v1.AccessLevel] has been removed from
+   * long-lasting storage.
    *
    * <p>Sample code:
    *
@@ -1673,17 +1680,16 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Replace all existing [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] in
-   * an [Access Policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [Access
-   * Levels] [google.identity.accesscontextmanager.v1.AccessLevel] provided. This is done
-   * atomically. The longrunning operation from this RPC will have a successful status once all
-   * replacements have propagated to long-lasting storage. Replacements containing errors will
-   * result in an error response for the first error encountered. Replacement will be cancelled on
-   * error, existing [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] will not
-   * be affected. Operation.response field will contain ReplaceAccessLevelsResponse. Removing
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] will result in
-   * error.
+   * Replaces all existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] in
+   * an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [access
+   * levels] [google.identity.accesscontextmanager.v1.AccessLevel] provided. This is done
+   * atomically. The long-running operation from this RPC has a successful status after all
+   * replacements propagate to long-lasting storage. If the replacement contains errors, an error
+   * response is returned for the first error encountered. Upon error, the replacement is cancelled,
+   * and existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] are not
+   * affected. The Operation.response field contains ReplaceAccessLevelsResponse. Removing [access
+   * levels] [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an error.
    *
    * <p>Sample code:
    *
@@ -1716,17 +1722,16 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Replace all existing [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] in
-   * an [Access Policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [Access
-   * Levels] [google.identity.accesscontextmanager.v1.AccessLevel] provided. This is done
-   * atomically. The longrunning operation from this RPC will have a successful status once all
-   * replacements have propagated to long-lasting storage. Replacements containing errors will
-   * result in an error response for the first error encountered. Replacement will be cancelled on
-   * error, existing [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] will not
-   * be affected. Operation.response field will contain ReplaceAccessLevelsResponse. Removing
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] will result in
-   * error.
+   * Replaces all existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] in
+   * an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [access
+   * levels] [google.identity.accesscontextmanager.v1.AccessLevel] provided. This is done
+   * atomically. The long-running operation from this RPC has a successful status after all
+   * replacements propagate to long-lasting storage. If the replacement contains errors, an error
+   * response is returned for the first error encountered. Upon error, the replacement is cancelled,
+   * and existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] are not
+   * affected. The Operation.response field contains ReplaceAccessLevelsResponse. Removing [access
+   * levels] [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an error.
    *
    * <p>Sample code:
    *
@@ -1761,17 +1766,16 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Replace all existing [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] in
-   * an [Access Policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [Access
-   * Levels] [google.identity.accesscontextmanager.v1.AccessLevel] provided. This is done
-   * atomically. The longrunning operation from this RPC will have a successful status once all
-   * replacements have propagated to long-lasting storage. Replacements containing errors will
-   * result in an error response for the first error encountered. Replacement will be cancelled on
-   * error, existing [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] will not
-   * be affected. Operation.response field will contain ReplaceAccessLevelsResponse. Removing
-   * [Access Levels] [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] will result in
-   * error.
+   * Replaces all existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] in
+   * an [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] with the [access
+   * levels] [google.identity.accesscontextmanager.v1.AccessLevel] provided. This is done
+   * atomically. The long-running operation from this RPC has a successful status after all
+   * replacements propagate to long-lasting storage. If the replacement contains errors, an error
+   * response is returned for the first error encountered. Upon error, the replacement is cancelled,
+   * and existing [access levels] [google.identity.accesscontextmanager.v1.AccessLevel] are not
+   * affected. The Operation.response field contains ReplaceAccessLevelsResponse. Removing [access
+   * levels] [google.identity.accesscontextmanager.v1.AccessLevel] contained in existing [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] result in an error.
    *
    * <p>Sample code:
    *
@@ -1802,8 +1806,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
-   * access policy.
+   * Lists all [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for
+   * an access policy.
    *
    * <p>Sample code:
    *
@@ -1838,8 +1842,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
-   * access policy.
+   * Lists all [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for
+   * an access policy.
    *
    * <p>Sample code:
    *
@@ -1872,8 +1876,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
-   * access policy.
+   * Lists all [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for
+   * an access policy.
    *
    * <p>Sample code:
    *
@@ -1908,8 +1912,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
-   * access policy.
+   * Lists all [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for
+   * an access policy.
    *
    * <p>Sample code:
    *
@@ -1943,8 +1947,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for an
-   * access policy.
+   * Lists all [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] for
+   * an access policy.
    *
    * <p>Sample code:
    *
@@ -1985,8 +1989,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name.
+   * Gets a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based on
+   * the resource name.
    *
    * <p>Sample code:
    *
@@ -2018,8 +2022,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name.
+   * Gets a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based on
+   * the resource name.
    *
    * <p>Sample code:
    *
@@ -2049,8 +2053,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name.
+   * Gets a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based on
+   * the resource name.
    *
    * <p>Sample code:
    *
@@ -2079,8 +2083,8 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name.
+   * Gets a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based on
+   * the resource name.
    *
    * <p>Sample code:
    *
@@ -2110,11 +2114,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] has propagated to long-lasting
-   * storage. [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * containing errors will result in an error response for the first error encountered.
+   * Creates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2154,11 +2158,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] has propagated to long-lasting
-   * storage. [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * containing errors will result in an error response for the first error encountered.
+   * Creates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2198,11 +2202,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] has propagated to long-lasting
-   * storage. [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * containing errors will result in an error response for the first error encountered.
+   * Creates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2234,11 +2238,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] has propagated to long-lasting
-   * storage. [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * containing errors will result in an error response for the first error encountered.
+   * Creates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2270,11 +2274,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] has propagated to long-lasting
-   * storage. [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
-   * containing errors will result in an error response for the first error encountered.
+   * Creates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2305,12 +2309,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the changes to the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] have propagated
-   * to long-lasting storage. [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing errors will result in an
-   * error response for the first error encountered.
+   * Updates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2348,12 +2351,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the changes to the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] have propagated
-   * to long-lasting storage. [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing errors will result in an
-   * error response for the first error encountered.
+   * Updates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2385,12 +2387,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the changes to the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] have propagated
-   * to long-lasting storage. [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing errors will result in an
-   * error response for the first error encountered.
+   * Updates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2422,12 +2423,11 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
-   * longrunning operation from this RPC will have a successful status once the changes to the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] have propagated
-   * to long-lasting storage. [Service Perimeter]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] containing errors will result in an
-   * error response for the first error encountered.
+   * Updates a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter]. The
+   * long-running operation from this RPC has a successful status after the [service perimeter]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] propagates to long-lasting storage.
+   * If a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] contains
+   * errors, an error response is returned for the first error encountered.
    *
    * <p>Sample code:
    *
@@ -2458,9 +2458,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name. The longrunning operation from this RPC will have a successful status once the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] has been removed
+   * Deletes a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based
+   * on the resource name. The long-running operation from this RPC has a successful status after
+   * the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed
    * from long-lasting storage.
    *
    * <p>Sample code:
@@ -2494,9 +2494,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name. The longrunning operation from this RPC will have a successful status once the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] has been removed
+   * Deletes a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based
+   * on the resource name. The long-running operation from this RPC has a successful status after
+   * the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed
    * from long-lasting storage.
    *
    * <p>Sample code:
@@ -2528,9 +2528,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name. The longrunning operation from this RPC will have a successful status once the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] has been removed
+   * Deletes a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based
+   * on the resource name. The long-running operation from this RPC has a successful status after
+   * the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed
    * from long-lasting storage.
    *
    * <p>Sample code:
@@ -2561,9 +2561,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name. The longrunning operation from this RPC will have a successful status once the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] has been removed
+   * Deletes a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based
+   * on the resource name. The long-running operation from this RPC has a successful status after
+   * the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed
    * from long-lasting storage.
    *
    * <p>Sample code:
@@ -2595,9 +2595,9 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] by
-   * resource name. The longrunning operation from this RPC will have a successful status once the
-   * [Service Perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] has been removed
+   * Deletes a [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] based
+   * on the resource name. The long-running operation from this RPC has a successful status after
+   * the [service perimeter] [google.identity.accesscontextmanager.v1.ServicePerimeter] is removed
    * from long-lasting storage.
    *
    * <p>Sample code:
@@ -2628,15 +2628,15 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Replace all existing [Service Perimeters]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [Access Policy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] with the [Service Perimeters]
+   * Replace all existing [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] with the [service perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This is done atomically.
-   * The longrunning operation from this RPC will have a successful status once all replacements
-   * have propagated to long-lasting storage. Replacements containing errors will result in an error
-   * response for the first error encountered. Replacement will be cancelled on error, existing
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] will not be
-   * affected. Operation.response field will contain ReplaceServicePerimetersResponse.
+   * The long-running operation from this RPC has a successful status after all replacements
+   * propagate to long-lasting storage. Replacements containing errors result in an error response
+   * for the first error encountered. Upon an error, replacement are cancelled and existing [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] are not affected. The
+   * Operation.response field contains ReplaceServicePerimetersResponse.
    *
    * <p>Sample code:
    *
@@ -2670,15 +2670,15 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Replace all existing [Service Perimeters]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [Access Policy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] with the [Service Perimeters]
+   * Replace all existing [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] with the [service perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This is done atomically.
-   * The longrunning operation from this RPC will have a successful status once all replacements
-   * have propagated to long-lasting storage. Replacements containing errors will result in an error
-   * response for the first error encountered. Replacement will be cancelled on error, existing
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] will not be
-   * affected. Operation.response field will contain ReplaceServicePerimetersResponse.
+   * The long-running operation from this RPC has a successful status after all replacements
+   * propagate to long-lasting storage. Replacements containing errors result in an error response
+   * for the first error encountered. Upon an error, replacement are cancelled and existing [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] are not affected. The
+   * Operation.response field contains ReplaceServicePerimetersResponse.
    *
    * <p>Sample code:
    *
@@ -2716,15 +2716,15 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Replace all existing [Service Perimeters]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [Access Policy]
-   * [google.identity.accesscontextmanager.v1.AccessPolicy] with the [Service Perimeters]
+   * Replace all existing [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] with the [service perimeters]
    * [google.identity.accesscontextmanager.v1.ServicePerimeter] provided. This is done atomically.
-   * The longrunning operation from this RPC will have a successful status once all replacements
-   * have propagated to long-lasting storage. Replacements containing errors will result in an error
-   * response for the first error encountered. Replacement will be cancelled on error, existing
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] will not be
-   * affected. Operation.response field will contain ReplaceServicePerimetersResponse.
+   * The long-running operation from this RPC has a successful status after all replacements
+   * propagate to long-lasting storage. Replacements containing errors result in an error response
+   * for the first error encountered. Upon an error, replacement are cancelled and existing [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] are not affected. The
+   * Operation.response field contains ReplaceServicePerimetersResponse.
    *
    * <p>Sample code:
    *
@@ -2756,18 +2756,18 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Commit the dry-run spec for all the [Service Perimeters]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [Access
-   * Policy][google.identity.accesscontextmanager.v1.AccessPolicy]. A commit operation on a Service
-   * Perimeter involves copying its `spec` field to that Service Perimeter's `status` field. Only
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] with
+   * Commits the dry-run specification for all the [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy]. A commit operation on a service
+   * perimeter involves copying its `spec` field to the `status` field of the service perimeter.
+   * Only [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] with
    * `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The
-   * longrunning operation from this RPC will have a successful status once the dry-run specs for
-   * all the [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] have
-   * been committed. If a commit fails, it will cause the longrunning operation to return an error
-   * response and the entire commit operation will be cancelled. When successful, Operation.response
-   * field will contain CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will be
-   * cleared after a successful commit operation.
+   * long-running operation from this RPC has a successful status after the dry-run specifications
+   * for all the [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * have been committed. If a commit fails, it causes the long-running operation to return an error
+   * response and the entire commit operation is cancelled. When successful, the Operation.response
+   * field contains CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are cleared
+   * after a successful commit operation.
    *
    * <p>Sample code:
    *
@@ -2800,18 +2800,18 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Commit the dry-run spec for all the [Service Perimeters]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [Access
-   * Policy][google.identity.accesscontextmanager.v1.AccessPolicy]. A commit operation on a Service
-   * Perimeter involves copying its `spec` field to that Service Perimeter's `status` field. Only
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] with
+   * Commits the dry-run specification for all the [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy]. A commit operation on a service
+   * perimeter involves copying its `spec` field to the `status` field of the service perimeter.
+   * Only [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] with
    * `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The
-   * longrunning operation from this RPC will have a successful status once the dry-run specs for
-   * all the [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] have
-   * been committed. If a commit fails, it will cause the longrunning operation to return an error
-   * response and the entire commit operation will be cancelled. When successful, Operation.response
-   * field will contain CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will be
-   * cleared after a successful commit operation.
+   * long-running operation from this RPC has a successful status after the dry-run specifications
+   * for all the [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * have been committed. If a commit fails, it causes the long-running operation to return an error
+   * response and the entire commit operation is cancelled. When successful, the Operation.response
+   * field contains CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are cleared
+   * after a successful commit operation.
    *
    * <p>Sample code:
    *
@@ -2848,18 +2848,18 @@ public class AccessContextManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Commit the dry-run spec for all the [Service Perimeters]
-   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [Access
-   * Policy][google.identity.accesscontextmanager.v1.AccessPolicy]. A commit operation on a Service
-   * Perimeter involves copying its `spec` field to that Service Perimeter's `status` field. Only
-   * [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] with
+   * Commits the dry-run specification for all the [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter] in an [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy]. A commit operation on a service
+   * perimeter involves copying its `spec` field to the `status` field of the service perimeter.
+   * Only [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] with
    * `use_explicit_dry_run_spec` field set to true are affected by a commit operation. The
-   * longrunning operation from this RPC will have a successful status once the dry-run specs for
-   * all the [Service Perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter] have
-   * been committed. If a commit fails, it will cause the longrunning operation to return an error
-   * response and the entire commit operation will be cancelled. When successful, Operation.response
-   * field will contain CommitServicePerimetersResponse. The `dry_run` and the `spec` fields will be
-   * cleared after a successful commit operation.
+   * long-running operation from this RPC has a successful status after the dry-run specifications
+   * for all the [service perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * have been committed. If a commit fails, it causes the long-running operation to return an error
+   * response and the entire commit operation is cancelled. When successful, the Operation.response
+   * field contains CommitServicePerimetersResponse. The `dry_run` and the `spec` fields are cleared
+   * after a successful commit operation.
    *
    * <p>Sample code:
    *
@@ -3201,8 +3201,8 @@ public class AccessContextManagerClient implements BackgroundResource {
   /**
    * Creates a [GcpUserAccessBinding]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the client specifies a
-   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server will
-   * ignore it. Fails if a resource already exists with the same [group_key]
+   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server ignores
+   * it. Fails if a resource already exists with the same [group_key]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key]. Completion of this
    * long-running operation does not necessarily signify that the new binding is deployed onto all
    * affected users, which may take more time.
@@ -3246,8 +3246,8 @@ public class AccessContextManagerClient implements BackgroundResource {
   /**
    * Creates a [GcpUserAccessBinding]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the client specifies a
-   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server will
-   * ignore it. Fails if a resource already exists with the same [group_key]
+   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server ignores
+   * it. Fails if a resource already exists with the same [group_key]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key]. Completion of this
    * long-running operation does not necessarily signify that the new binding is deployed onto all
    * affected users, which may take more time.
@@ -3290,8 +3290,8 @@ public class AccessContextManagerClient implements BackgroundResource {
   /**
    * Creates a [GcpUserAccessBinding]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the client specifies a
-   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server will
-   * ignore it. Fails if a resource already exists with the same [group_key]
+   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server ignores
+   * it. Fails if a resource already exists with the same [group_key]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key]. Completion of this
    * long-running operation does not necessarily signify that the new binding is deployed onto all
    * affected users, which may take more time.
@@ -3328,8 +3328,8 @@ public class AccessContextManagerClient implements BackgroundResource {
   /**
    * Creates a [GcpUserAccessBinding]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the client specifies a
-   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server will
-   * ignore it. Fails if a resource already exists with the same [group_key]
+   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server ignores
+   * it. Fails if a resource already exists with the same [group_key]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key]. Completion of this
    * long-running operation does not necessarily signify that the new binding is deployed onto all
    * affected users, which may take more time.
@@ -3370,8 +3370,8 @@ public class AccessContextManagerClient implements BackgroundResource {
   /**
    * Creates a [GcpUserAccessBinding]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]. If the client specifies a
-   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server will
-   * ignore it. Fails if a resource already exists with the same [group_key]
+   * [name] [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.name], the server ignores
+   * it. Fails if a resource already exists with the same [group_key]
    * [google.identity.accesscontextmanager.v1.GcpUserAccessBinding.group_key]. Completion of this
    * long-running operation does not necessarily signify that the new binding is deployed onto all
    * affected users, which may take more time.
@@ -3729,6 +3729,209 @@ public class AccessContextManagerClient implements BackgroundResource {
   public final UnaryCallable<DeleteGcpUserAccessBindingRequest, Operation>
       deleteGcpUserAccessBindingCallable() {
     return stub.deleteGcpUserAccessBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM policy for the specified Access Context Manager [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy]. This method replaces the
+   * existing IAM policy on the access policy. The IAM policy controls the set of users who can
+   * perform specific operations on the Access Context Manager [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AccessContextManagerClient accessContextManagerClient =
+   *     AccessContextManagerClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = accessContextManagerClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM policy for the specified Access Context Manager [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy]. This method replaces the
+   * existing IAM policy on the access policy. The IAM policy controls the set of users who can
+   * perform specific operations on the Access Context Manager [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AccessContextManagerClient accessContextManagerClient =
+   *     AccessContextManagerClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       accessContextManagerClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM policy for the specified Access Context Manager [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AccessContextManagerClient accessContextManagerClient =
+   *     AccessContextManagerClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = accessContextManagerClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM policy for the specified Access Context Manager [access
+   * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AccessContextManagerClient accessContextManagerClient =
+   *     AccessContextManagerClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(AccessPolicyName.of("[ACCESS_POLICY]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       accessContextManagerClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the IAM permissions that the caller has on the specified Access Context Manager
+   * resource. The resource can be an
+   * [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy],
+   * [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or
+   * [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter ]. This method does
+   * not support other resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AccessContextManagerClient accessContextManagerClient =
+   *     AccessContextManagerClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = accessContextManagerClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the IAM permissions that the caller has on the specified Access Context Manager
+   * resource. The resource can be an
+   * [AccessPolicy][google.identity.accesscontextmanager.v1.AccessPolicy],
+   * [AccessLevel][google.identity.accesscontextmanager.v1.AccessLevel], or
+   * [ServicePerimeter][google.identity.accesscontextmanager.v1.ServicePerimeter ]. This method does
+   * not support other resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AccessContextManagerClient accessContextManagerClient =
+   *     AccessContextManagerClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(AccessLevelName.of("[ACCESS_POLICY]", "[ACCESS_LEVEL]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       accessContextManagerClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

@@ -22,9 +22,9 @@ package com.google.cloud.billing.v1;
  *
  *
  * <pre>
- * Encapsulation of billing information for a GCP Console project. A project
- * has at most one associated billing account at a time (but a billing account
- * can be assigned to multiple projects).
+ * Encapsulation of billing information for a Google Cloud Console project. A
+ * project has at most one associated billing account at a time (but a billing
+ * account can be assigned to multiple projects).
  * </pre>
  *
  * Protobuf type {@code google.cloud.billing.v1.ProjectBillingInfo}
@@ -441,9 +441,9 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Encapsulation of billing information for a GCP Console project. A project
-   * has at most one associated billing account at a time (but a billing account
-   * can be assigned to multiple projects).
+   * Encapsulation of billing information for a Google Cloud Console project. A
+   * project has at most one associated billing account at a time (but a billing
+   * account can be assigned to multiple projects).
    * </pre>
    *
    * Protobuf type {@code google.cloud.billing.v1.ProjectBillingInfo}

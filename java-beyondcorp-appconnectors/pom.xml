@@ -50,4 +50,5 @@
     <module>proto-google-cloud-beyondcorp-appconnectors-v1</module>
     <module>google-cloud-beyondcorp-appconnectors-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -61,6 +61,28 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   }
 
   @Override
+  public void createSshPublicKey(
+      CreateSshPublicKeyRequest request,
+      StreamObserver<OsLoginProto.SshPublicKey> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OsLoginProto.SshPublicKey) {
+      requests.add(request);
+      responseObserver.onNext(((OsLoginProto.SshPublicKey) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSshPublicKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OsLoginProto.SshPublicKey.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deletePosixAccount(
       DeletePosixAccountRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();

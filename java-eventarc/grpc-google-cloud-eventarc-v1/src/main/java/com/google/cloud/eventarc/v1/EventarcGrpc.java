@@ -743,6 +743,105 @@ public final class EventarcGrpc {
     return getDeleteChannelConnectionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest,
+          com.google.cloud.eventarc.v1.GoogleChannelConfig>
+      getGetGoogleChannelConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetGoogleChannelConfig",
+      requestType = com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest.class,
+      responseType = com.google.cloud.eventarc.v1.GoogleChannelConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest,
+          com.google.cloud.eventarc.v1.GoogleChannelConfig>
+      getGetGoogleChannelConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest,
+            com.google.cloud.eventarc.v1.GoogleChannelConfig>
+        getGetGoogleChannelConfigMethod;
+    if ((getGetGoogleChannelConfigMethod = EventarcGrpc.getGetGoogleChannelConfigMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetGoogleChannelConfigMethod = EventarcGrpc.getGetGoogleChannelConfigMethod)
+            == null) {
+          EventarcGrpc.getGetGoogleChannelConfigMethod =
+              getGetGoogleChannelConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest,
+                          com.google.cloud.eventarc.v1.GoogleChannelConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetGoogleChannelConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GoogleChannelConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("GetGoogleChannelConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetGoogleChannelConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest,
+          com.google.cloud.eventarc.v1.GoogleChannelConfig>
+      getUpdateGoogleChannelConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGoogleChannelConfig",
+      requestType = com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest.class,
+      responseType = com.google.cloud.eventarc.v1.GoogleChannelConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest,
+          com.google.cloud.eventarc.v1.GoogleChannelConfig>
+      getUpdateGoogleChannelConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest,
+            com.google.cloud.eventarc.v1.GoogleChannelConfig>
+        getUpdateGoogleChannelConfigMethod;
+    if ((getUpdateGoogleChannelConfigMethod = EventarcGrpc.getUpdateGoogleChannelConfigMethod)
+        == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getUpdateGoogleChannelConfigMethod = EventarcGrpc.getUpdateGoogleChannelConfigMethod)
+            == null) {
+          EventarcGrpc.getUpdateGoogleChannelConfigMethod =
+              getUpdateGoogleChannelConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest,
+                          com.google.cloud.eventarc.v1.GoogleChannelConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateGoogleChannelConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GoogleChannelConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EventarcMethodDescriptorSupplier("UpdateGoogleChannelConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGoogleChannelConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EventarcStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EventarcStub> factory =
@@ -1020,6 +1119,36 @@ public final class EventarcGrpc {
           getDeleteChannelConnectionMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Get a GoogleChannelConfig
+     * </pre>
+     */
+    public void getGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleChannelConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGoogleChannelConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleChannelConfig
+     * </pre>
+     */
+    public void updateGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleChannelConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGoogleChannelConfigMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1124,6 +1253,20 @@ public final class EventarcGrpc {
                   new MethodHandlers<
                       com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_CHANNEL_CONNECTION)))
+          .addMethod(
+              getGetGoogleChannelConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest,
+                      com.google.cloud.eventarc.v1.GoogleChannelConfig>(
+                      this, METHODID_GET_GOOGLE_CHANNEL_CONFIG)))
+          .addMethod(
+              getUpdateGoogleChannelConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest,
+                      com.google.cloud.eventarc.v1.GoogleChannelConfig>(
+                      this, METHODID_UPDATE_GOOGLE_CHANNEL_CONFIG)))
           .build();
     }
   }
@@ -1402,6 +1545,40 @@ public final class EventarcGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GoogleChannelConfig
+     * </pre>
+     */
+    public void getGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleChannelConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetGoogleChannelConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleChannelConfig
+     * </pre>
+     */
+    public void updateGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleChannelConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGoogleChannelConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1629,6 +1806,32 @@ public final class EventarcGrpc {
         com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteChannelConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GoogleChannelConfig
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.GoogleChannelConfig getGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGoogleChannelConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleChannelConfig
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.GoogleChannelConfig updateGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleChannelConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -1865,6 +2068,35 @@ public final class EventarcGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteChannelConnectionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GoogleChannelConfig
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.GoogleChannelConfig>
+        getGoogleChannelConfig(com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetGoogleChannelConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleChannelConfig
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.GoogleChannelConfig>
+        updateGoogleChannelConfig(
+            com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGoogleChannelConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_TRIGGER = 0;
@@ -1883,6 +2115,8 @@ public final class EventarcGrpc {
   private static final int METHODID_LIST_CHANNEL_CONNECTIONS = 13;
   private static final int METHODID_CREATE_CHANNEL_CONNECTION = 14;
   private static final int METHODID_DELETE_CHANNEL_CONNECTION = 15;
+  private static final int METHODID_GET_GOOGLE_CHANNEL_CONFIG = 16;
+  private static final int METHODID_UPDATE_GOOGLE_CHANNEL_CONFIG = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1988,6 +2222,18 @@ public final class EventarcGrpc {
               (com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_GET_GOOGLE_CHANNEL_CONFIG:
+          serviceImpl.getGoogleChannelConfig(
+              (com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleChannelConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_GOOGLE_CHANNEL_CONFIG:
+          serviceImpl.updateGoogleChannelConfig(
+              (com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.GoogleChannelConfig>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2066,6 +2312,8 @@ public final class EventarcGrpc {
                       .addMethod(getListChannelConnectionsMethod())
                       .addMethod(getCreateChannelConnectionMethod())
                       .addMethod(getDeleteChannelConnectionMethod())
+                      .addMethod(getGetGoogleChannelConfigMethod())
+                      .addMethod(getUpdateGoogleChannelConfigMethod())
                       .build();
         }
       }

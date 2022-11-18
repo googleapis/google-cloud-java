@@ -75,8 +75,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The name of the project resource in the form:
-   * `projects/{project_id}`
+   * The name of the project resource in the form: `projects/{project_id}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -99,8 +98,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The name of the project resource in the form:
-   * `projects/{project_id}`
+   * The name of the project resource in the form: `projects/{project_id}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -572,8 +570,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the project resource in the form:
-     * `projects/{project_id}`
+     * The name of the project resource in the form: `projects/{project_id}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -595,8 +592,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the project resource in the form:
-     * `projects/{project_id}`
+     * The name of the project resource in the form: `projects/{project_id}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -618,8 +614,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the project resource in the form:
-     * `projects/{project_id}`
+     * The name of the project resource in the form: `projects/{project_id}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -640,8 +635,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the project resource in the form:
-     * `projects/{project_id}`
+     * The name of the project resource in the form: `projects/{project_id}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -658,8 +652,7 @@ public final class EnrollDataSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name of the project resource in the form:
-     * `projects/{project_id}`
+     * The name of the project resource in the form: `projects/{project_id}`
      * </pre>
      *
      * <code>string name = 1;</code>

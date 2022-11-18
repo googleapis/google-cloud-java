@@ -31,7 +31,7 @@ public interface InfoTypeOrBuilder
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
    * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
-   * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
+   * names should conform to the pattern `[A-Za-z0-9$_-]{1,64}`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,7 +47,7 @@ public interface InfoTypeOrBuilder
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
    * a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
-   * names should conform to the pattern `[A-Za-z0-9$-_]{1,64}`.
+   * names should conform to the pattern `[A-Za-z0-9$_-]{1,64}`.
    * </pre>
    *
    * <code>string name = 1;</code>

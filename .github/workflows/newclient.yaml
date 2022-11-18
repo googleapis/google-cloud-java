@@ -25,9 +25,9 @@ jobs:
         with:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
-      - name: Get current date
+      - name: Get current week within the year
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d' --utc)"
+        run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
       - uses: actions/setup-java@v3
         with:
           distribution: zulu
@@ -37,7 +37,7 @@ jobs:
         id: mvn-cache
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
+          key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
       - name: Install dependencies
         run: pip install --require-hashes -r generation/new_client/requirements.txt
       - name: Remove Client
@@ -59,7 +59,7 @@ jobs:
               --product-docs="https://github.com/googleapis/google-cloud-java/tree/main/java-${API_SHORT_NAME}" \
               --api-description="${API_PRETTY_NAME} Client lets you use ${API_PRETTY_NAME} API." \
               --googleapis-gen-url=https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
-      - name: Push to branch
+      - name: Push to branch (helpful for troubleshooting)
         run: |
           [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
           [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
@@ -75,4 +75,4 @@ jobs:
           grep -q ${API_SHORT_NAME} pom.xml
           grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml
       - name: Test
-        run: mvn test -T C1 -B
+        run: mvn -B -ntp test -T C1

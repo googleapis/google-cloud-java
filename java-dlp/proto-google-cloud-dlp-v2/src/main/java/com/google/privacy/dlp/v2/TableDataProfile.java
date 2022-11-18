@@ -1129,6 +1129,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Number of rows in the table when the profile was generated.
+   * This will not be populated for BigLake tables.
    * </pre>
    *
    * <code>int64 row_count = 13;</code>
@@ -5342,6 +5343,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Number of rows in the table when the profile was generated.
+     * This will not be populated for BigLake tables.
      * </pre>
      *
      * <code>int64 row_count = 13;</code>
@@ -5357,6 +5359,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Number of rows in the table when the profile was generated.
+     * This will not be populated for BigLake tables.
      * </pre>
      *
      * <code>int64 row_count = 13;</code>
@@ -5375,6 +5378,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Number of rows in the table when the profile was generated.
+     * This will not be populated for BigLake tables.
      * </pre>
      *
      * <code>int64 row_count = 13;</code>

@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -34,8 +35,10 @@ import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.GoogleChannelConfig;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
@@ -48,7 +51,17 @@ import com.google.cloud.eventarc.v1.OperationMetadata;
 import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
+import com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
@@ -197,6 +210,42 @@ public abstract class EventarcStub implements BackgroundResource {
   public UnaryCallable<DeleteChannelConnectionRequest, Operation>
       deleteChannelConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteChannelConnectionCallable()");
+  }
+
+  public UnaryCallable<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGoogleChannelConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateGoogleChannelConfigCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

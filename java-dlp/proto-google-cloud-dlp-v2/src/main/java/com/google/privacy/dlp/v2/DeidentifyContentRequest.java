@@ -256,6 +256,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * The item to de-identify. Will be treated as text.
+   * This value must be of type
+   * [Table][google.privacy.dlp.v2.Table] if your
+   * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+   * is a
+   * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+   * object.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -271,6 +277,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * The item to de-identify. Will be treated as text.
+   * This value must be of type
+   * [Table][google.privacy.dlp.v2.Table] if your
+   * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+   * is a
+   * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+   * object.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -286,6 +298,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * The item to de-identify. Will be treated as text.
+   * This value must be of type
+   * [Table][google.privacy.dlp.v2.Table] if your
+   * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+   * is a
+   * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+   * object.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1537,6 +1555,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1551,6 +1575,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1569,6 +1599,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1591,6 +1627,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1610,6 +1652,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1636,6 +1684,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1656,6 +1710,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1670,6 +1730,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
@@ -1686,6 +1752,12 @@ public final class DeidentifyContentRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * The item to de-identify. Will be treated as text.
+     * This value must be of type
+     * [Table][google.privacy.dlp.v2.Table] if your
+     * [deidentify_config][google.privacy.dlp.v2.DeidentifyContentRequest.deidentify_config]
+     * is a
+     * [RecordTransformations][google.privacy.dlp.v2.RecordTransformations]
+     * object.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>

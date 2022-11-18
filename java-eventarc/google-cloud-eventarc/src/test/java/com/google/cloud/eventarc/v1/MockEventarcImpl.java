@@ -392,4 +392,47 @@ public class MockEventarcImpl extends EventarcImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getGoogleChannelConfig(
+      GetGoogleChannelConfigRequest request, StreamObserver<GoogleChannelConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoogleChannelConfig) {
+      requests.add(request);
+      responseObserver.onNext(((GoogleChannelConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoogleChannelConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoogleChannelConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateGoogleChannelConfig(
+      UpdateGoogleChannelConfigRequest request,
+      StreamObserver<GoogleChannelConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoogleChannelConfig) {
+      requests.add(request);
+      responseObserver.onNext(((GoogleChannelConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGoogleChannelConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoogleChannelConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

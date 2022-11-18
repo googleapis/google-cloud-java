@@ -41,6 +41,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
     parent_ = "";
     pageToken_ = "";
     orderBy_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -251,6 +252,59 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 5;
+  private volatile java.lang.Object filter_;
+  /**
+   *
+   *
+   * <pre>
+   * Filter field. Used to filter the Triggers to be listed. Possible filters
+   * are described in https://google.aip.dev/160. For example, using
+   * "?filter=destination:gke" would list only Triggers with a gke destination.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Filter field. Used to filter the Triggers to be listed. Possible filters
+   * are described in https://google.aip.dev/160. For example, using
+   * "?filter=destination:gke" would list only Triggers with a gke destination.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -277,6 +331,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orderBy_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -298,6 +355,9 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orderBy_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -318,6 +378,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +398,8 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -483,6 +546,8 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
 
       orderBy_ = "";
 
+      filter_ = "";
+
       return this;
     }
 
@@ -514,6 +579,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       result.orderBy_ = orderBy_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
@@ -579,6 +645,10 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
         orderBy_ = other.orderBy_;
         onChanged();
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -629,6 +699,12 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
 
                 break;
               } // case 34
+            case 42:
+              {
+                filter_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1055,6 +1131,122 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
 
       orderBy_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Filter field. Used to filter the Triggers to be listed. Possible filters
+     * are described in https://google.aip.dev/160. For example, using
+     * "?filter=destination:gke" would list only Triggers with a gke destination.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filter field. Used to filter the Triggers to be listed. Possible filters
+     * are described in https://google.aip.dev/160. For example, using
+     * "?filter=destination:gke" would list only Triggers with a gke destination.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filter field. Used to filter the Triggers to be listed. Possible filters
+     * are described in https://google.aip.dev/160. For example, using
+     * "?filter=destination:gke" would list only Triggers with a gke destination.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filter field. Used to filter the Triggers to be listed. Possible filters
+     * are described in https://google.aip.dev/160. For example, using
+     * "?filter=destination:gke" would list only Triggers with a gke destination.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Filter field. Used to filter the Triggers to be listed. Possible filters
+     * are described in https://google.aip.dev/160. For example, using
+     * "?filter=destination:gke" would list only Triggers with a gke destination.
+     * </pre>
+     *
+     * <code>string filter = 5;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
       onChanged();
       return this;
     }

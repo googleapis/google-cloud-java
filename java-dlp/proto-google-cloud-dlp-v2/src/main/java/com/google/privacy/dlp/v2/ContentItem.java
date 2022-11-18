@@ -18,15 +18,7 @@
 
 package com.google.privacy.dlp.v2;
 
-/**
- *
- *
- * <pre>
- * Container structure for the content to inspect.
- * </pre>
- *
- * Protobuf type {@code google.privacy.dlp.v2.ContentItem}
- */
+/** Protobuf type {@code google.privacy.dlp.v2.ContentItem} */
 public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ContentItem)
@@ -493,15 +485,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   *
-   *
-   * <pre>
-   * Container structure for the content to inspect.
-   * </pre>
-   *
-   * Protobuf type {@code google.privacy.dlp.v2.ContentItem}
-   */
+  /** Protobuf type {@code google.privacy.dlp.v2.ContentItem} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.ContentItem)

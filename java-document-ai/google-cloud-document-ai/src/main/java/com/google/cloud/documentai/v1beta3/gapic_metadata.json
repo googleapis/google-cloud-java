@@ -31,8 +31,14 @@
             "EnableProcessor": {
               "methods": ["enableProcessorAsync", "enableProcessorOperationCallable", "enableProcessorCallable"]
             },
+            "EvaluateProcessorVersion": {
+              "methods": ["evaluateProcessorVersionAsync", "evaluateProcessorVersionAsync", "evaluateProcessorVersionAsync", "evaluateProcessorVersionOperationCallable", "evaluateProcessorVersionCallable"]
+            },
             "FetchProcessorTypes": {
               "methods": ["fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypes", "fetchProcessorTypesCallable"]
+            },
+            "GetEvaluation": {
+              "methods": ["getEvaluation", "getEvaluation", "getEvaluation", "getEvaluationCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -42,6 +48,9 @@
             },
             "GetProcessorVersion": {
               "methods": ["getProcessorVersion", "getProcessorVersion", "getProcessorVersion", "getProcessorVersionCallable"]
+            },
+            "ListEvaluations": {
+              "methods": ["listEvaluations", "listEvaluations", "listEvaluations", "listEvaluationsPagedCallable", "listEvaluationsCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
@@ -63,6 +72,9 @@
             },
             "SetDefaultProcessorVersion": {
               "methods": ["setDefaultProcessorVersionAsync", "setDefaultProcessorVersionOperationCallable", "setDefaultProcessorVersionCallable"]
+            },
+            "TrainProcessorVersion": {
+              "methods": ["trainProcessorVersionAsync", "trainProcessorVersionAsync", "trainProcessorVersionAsync", "trainProcessorVersionOperationCallable", "trainProcessorVersionCallable"]
             },
             "UndeployProcessorVersion": {
               "methods": ["undeployProcessorVersionAsync", "undeployProcessorVersionAsync", "undeployProcessorVersionAsync", "undeployProcessorVersionOperationCallable", "undeployProcessorVersionCallable"]

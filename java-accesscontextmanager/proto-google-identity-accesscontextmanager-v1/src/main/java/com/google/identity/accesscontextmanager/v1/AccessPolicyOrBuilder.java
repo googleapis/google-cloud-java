@@ -108,6 +108,109 @@ public interface AccessPolicyOrBuilder
    *
    *
    * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @return A list containing the scopes.
+   */
+  java.util.List<java.lang.String> getScopesList();
+  /**
+   *
+   *
+   * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @return The count of scopes.
+   */
+  int getScopesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The scopes at the given index.
+   */
+  java.lang.String getScopes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The scopes of a policy define which resources an ACM policy can restrict,
+   * and where ACM resources can be referenced.
+   * For example, a policy with scopes=["folders/123"] has the following
+   * behavior:
+   * - vpcsc perimeters can only restrict projects within folders/123
+   * - access levels can only be referenced by resources within folders/123.
+   * If empty, there are no limitations on which resources can be restricted by
+   * an ACM policy, and there are no limitations on where ACM resources can be
+   * referenced.
+   * Only one policy can include a given scope (attempting to create a second
+   * policy which includes "folders/123" will result in an error).
+   * Currently, scopes cannot be modified after a policy is created.
+   * Currently, policies can only have a single scope.
+   * Format: list of `folders/{folder_number}` or `projects/{project_number}`
+   * </pre>
+   *
+   * <code>repeated string scopes = 7;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the scopes at the given index.
+   */
+  com.google.protobuf.ByteString getScopesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time the `AccessPolicy` was created in UTC.
    * </pre>
    *

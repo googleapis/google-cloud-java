@@ -370,7 +370,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3043
+   *     google/container/v1/cluster_service.proto;l=3060
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -387,7 +387,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3043
+   *     google/container/v1/cluster_service.proto;l=3060
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -603,6 +603,41 @@ public interface NodePoolOrBuilder
    * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
    */
   com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node placement policy.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.PlacementPolicy placement_policy = 108;</code>
+   *
+   * @return Whether the placementPolicy field is set.
+   */
+  boolean hasPlacementPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node placement policy.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.PlacementPolicy placement_policy = 108;</code>
+   *
+   * @return The placementPolicy.
+   */
+  com.google.container.v1.NodePool.PlacementPolicy getPlacementPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the node placement policy.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePool.PlacementPolicy placement_policy = 108;</code>
+   */
+  com.google.container.v1.NodePool.PlacementPolicyOrBuilder getPlacementPolicyOrBuilder();
 
   /**
    *

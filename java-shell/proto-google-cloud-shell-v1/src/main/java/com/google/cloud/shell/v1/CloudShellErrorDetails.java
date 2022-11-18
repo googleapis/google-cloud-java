@@ -132,6 +132,17 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * <code>QUOTA_EXCEEDED = 5;</code>
      */
     QUOTA_EXCEEDED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Shell environment is unavailable and cannot be connected to at
+     * the moment.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_UNAVAILABLE = 6;</code>
+     */
+    ENVIRONMENT_UNAVAILABLE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -189,6 +200,17 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * <code>QUOTA_EXCEEDED = 5;</code>
      */
     public static final int QUOTA_EXCEEDED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Shell environment is unavailable and cannot be connected to at
+     * the moment.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_UNAVAILABLE = 6;</code>
+     */
+    public static final int ENVIRONMENT_UNAVAILABLE_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -224,6 +246,8 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
           return TOS_VIOLATION;
         case 5:
           return QUOTA_EXCEEDED;
+        case 6:
+          return ENVIRONMENT_UNAVAILABLE;
         default:
           return null;
       }

@@ -53,4 +53,18 @@ public interface DeleteInstanceRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, any snapshots of the instance will also be deleted.
+   * (Otherwise, the request will only work if the instance has no snapshots.)
+   * </pre>
+   *
+   * <code>bool force = 2;</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

@@ -18,6 +18,8 @@ package com.google.cloud.filestore.v1beta1.stub;
 
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListBackupsPagedResponse;
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSharesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -27,18 +29,33 @@ import com.google.cloud.common.OperationMetadata;
 import com.google.cloud.filestore.v1beta1.Backup;
 import com.google.cloud.filestore.v1beta1.CreateBackupRequest;
 import com.google.cloud.filestore.v1beta1.CreateInstanceRequest;
+import com.google.cloud.filestore.v1beta1.CreateShareRequest;
+import com.google.cloud.filestore.v1beta1.CreateSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.DeleteBackupRequest;
 import com.google.cloud.filestore.v1beta1.DeleteInstanceRequest;
+import com.google.cloud.filestore.v1beta1.DeleteShareRequest;
+import com.google.cloud.filestore.v1beta1.DeleteSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.GetBackupRequest;
 import com.google.cloud.filestore.v1beta1.GetInstanceRequest;
+import com.google.cloud.filestore.v1beta1.GetShareRequest;
+import com.google.cloud.filestore.v1beta1.GetSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.Instance;
 import com.google.cloud.filestore.v1beta1.ListBackupsRequest;
 import com.google.cloud.filestore.v1beta1.ListBackupsResponse;
 import com.google.cloud.filestore.v1beta1.ListInstancesRequest;
 import com.google.cloud.filestore.v1beta1.ListInstancesResponse;
+import com.google.cloud.filestore.v1beta1.ListSharesRequest;
+import com.google.cloud.filestore.v1beta1.ListSharesResponse;
+import com.google.cloud.filestore.v1beta1.ListSnapshotsRequest;
+import com.google.cloud.filestore.v1beta1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1beta1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1beta1.RevertInstanceRequest;
+import com.google.cloud.filestore.v1beta1.Share;
+import com.google.cloud.filestore.v1beta1.Snapshot;
 import com.google.cloud.filestore.v1beta1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1beta1.UpdateInstanceRequest;
+import com.google.cloud.filestore.v1beta1.UpdateShareRequest;
+import com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -102,6 +119,15 @@ public abstract class CloudFilestoreManagerStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: restoreInstanceCallable()");
   }
 
+  public OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: revertInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: revertInstanceCallable()");
+  }
+
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceOperationCallable()");
@@ -109,6 +135,46 @@ public abstract class CloudFilestoreManagerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
+  }
+
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSnapshotsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSnapshotsCallable()");
+  }
+
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSnapshotCallable()");
+  }
+
+  public OperationCallable<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<CreateSnapshotRequest, Operation> createSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSnapshotCallable()");
+  }
+
+  public OperationCallable<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSnapshotRequest, Operation> deleteSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSnapshotCallable()");
+  }
+
+  public OperationCallable<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateSnapshotRequest, Operation> updateSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSnapshotCallable()");
   }
 
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
@@ -148,6 +214,45 @@ public abstract class CloudFilestoreManagerStub implements BackgroundResource {
 
   public UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable() {
     throw new UnsupportedOperationException("Not implemented: updateBackupCallable()");
+  }
+
+  public UnaryCallable<ListSharesRequest, ListSharesPagedResponse> listSharesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSharesPagedCallable()");
+  }
+
+  public UnaryCallable<ListSharesRequest, ListSharesResponse> listSharesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSharesCallable()");
+  }
+
+  public UnaryCallable<GetShareRequest, Share> getShareCallable() {
+    throw new UnsupportedOperationException("Not implemented: getShareCallable()");
+  }
+
+  public OperationCallable<CreateShareRequest, Share, OperationMetadata>
+      createShareOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createShareOperationCallable()");
+  }
+
+  public UnaryCallable<CreateShareRequest, Operation> createShareCallable() {
+    throw new UnsupportedOperationException("Not implemented: createShareCallable()");
+  }
+
+  public OperationCallable<DeleteShareRequest, Empty, OperationMetadata>
+      deleteShareOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteShareOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteShareRequest, Operation> deleteShareCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteShareCallable()");
+  }
+
+  public OperationCallable<UpdateShareRequest, Share, OperationMetadata>
+      updateShareOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateShareOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateShareRequest, Operation> updateShareCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateShareCallable()");
   }
 
   @Override

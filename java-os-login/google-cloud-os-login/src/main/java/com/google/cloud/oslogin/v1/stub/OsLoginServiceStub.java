@@ -19,6 +19,7 @@ package com.google.cloud.oslogin.v1.stub;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.oslogin.common.OsLoginProto;
+import com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.DeletePosixAccountRequest;
 import com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest;
 import com.google.cloud.oslogin.v1.GetLoginProfileRequest;
@@ -38,6 +39,11 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class OsLoginServiceStub implements BackgroundResource {
+
+  public UnaryCallable<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSshPublicKeyCallable()");
+  }
 
   public UnaryCallable<DeletePosixAccountRequest, Empty> deletePosixAccountCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePosixAccountCallable()");

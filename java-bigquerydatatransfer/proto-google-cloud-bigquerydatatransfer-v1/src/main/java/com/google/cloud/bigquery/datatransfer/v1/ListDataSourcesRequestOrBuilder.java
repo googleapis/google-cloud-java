@@ -29,7 +29,7 @@ public interface ListDataSourcesRequestOrBuilder
    * <pre>
    * Required. The BigQuery project id for which data sources should be returned.
    * Must be in the form: `projects/{project_id}` or
-   * `projects/{project_id}/locations/{location_id}
+   * `projects/{project_id}/locations/{location_id}`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListDataSourcesRequestOrBuilder
    * <pre>
    * Required. The BigQuery project id for which data sources should be returned.
    * Must be in the form: `projects/{project_id}` or
-   * `projects/{project_id}/locations/{location_id}
+   * `projects/{project_id}/locations/{location_id}`
    * </pre>
    *
    * <code>

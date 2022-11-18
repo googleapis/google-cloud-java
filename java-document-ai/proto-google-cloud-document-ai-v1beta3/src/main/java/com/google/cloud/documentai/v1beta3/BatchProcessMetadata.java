@@ -428,7 +428,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
      * @return The humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -447,7 +447,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Deprecated
@@ -710,7 +710,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
      * @return The humanReviewOperation.
      */
     @java.lang.Override
@@ -740,7 +740,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
-     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+     *     is deprecated. See google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Override
@@ -1700,7 +1700,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
        * @return The humanReviewOperation.
        */
       @java.lang.Deprecated
@@ -1730,7 +1730,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
        * @return The bytes for humanReviewOperation.
        */
       @java.lang.Deprecated
@@ -1760,7 +1760,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
        * @param value The humanReviewOperation to set.
        * @return This builder for chaining.
        */
@@ -1789,7 +1789,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1814,7 +1814,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * @deprecated
        *     google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus.human_review_operation
        *     is deprecated. See
-       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=417
+       *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=465
        * @param value The bytes for humanReviewOperation to set.
        * @return This builder for chaining.
        */

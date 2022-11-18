@@ -50,4 +50,5 @@
     <module>proto-google-cloud-beyondcorp-appgateways-v1</module>
     <module>google-cloud-beyondcorp-appgateways-bom</module>
   </modules>
-</project>
+
+  </project>

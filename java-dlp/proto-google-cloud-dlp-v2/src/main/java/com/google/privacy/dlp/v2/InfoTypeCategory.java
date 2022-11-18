@@ -488,6 +488,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL = 40;</code>
      */
     INTERNAL(40),
+    /**
+     *
+     *
+     * <pre>
+     * The infoType is typically used in New Zealand.
+     * </pre>
+     *
+     * <code>NEW_ZEALAND = 41;</code>
+     */
+    NEW_ZEALAND(41),
     UNRECOGNIZED(-1),
     ;
 
@@ -902,6 +912,16 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL = 40;</code>
      */
     public static final int INTERNAL_VALUE = 40;
+    /**
+     *
+     *
+     * <pre>
+     * The infoType is typically used in New Zealand.
+     * </pre>
+     *
+     * <code>NEW_ZEALAND = 41;</code>
+     */
+    public static final int NEW_ZEALAND_VALUE = 41;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1009,6 +1029,8 @@ public final class InfoTypeCategory extends com.google.protobuf.GeneratedMessage
           return VENEZUELA;
         case 40:
           return INTERNAL;
+        case 41:
+          return NEW_ZEALAND;
         default:
           return null;
       }

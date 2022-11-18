@@ -18,6 +18,8 @@ package com.google.cloud.filestore.v1beta1.stub;
 
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListBackupsPagedResponse;
 import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSharesPagedResponse;
+import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -52,18 +54,33 @@ import com.google.cloud.common.OperationMetadata;
 import com.google.cloud.filestore.v1beta1.Backup;
 import com.google.cloud.filestore.v1beta1.CreateBackupRequest;
 import com.google.cloud.filestore.v1beta1.CreateInstanceRequest;
+import com.google.cloud.filestore.v1beta1.CreateShareRequest;
+import com.google.cloud.filestore.v1beta1.CreateSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.DeleteBackupRequest;
 import com.google.cloud.filestore.v1beta1.DeleteInstanceRequest;
+import com.google.cloud.filestore.v1beta1.DeleteShareRequest;
+import com.google.cloud.filestore.v1beta1.DeleteSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.GetBackupRequest;
 import com.google.cloud.filestore.v1beta1.GetInstanceRequest;
+import com.google.cloud.filestore.v1beta1.GetShareRequest;
+import com.google.cloud.filestore.v1beta1.GetSnapshotRequest;
 import com.google.cloud.filestore.v1beta1.Instance;
 import com.google.cloud.filestore.v1beta1.ListBackupsRequest;
 import com.google.cloud.filestore.v1beta1.ListBackupsResponse;
 import com.google.cloud.filestore.v1beta1.ListInstancesRequest;
 import com.google.cloud.filestore.v1beta1.ListInstancesResponse;
+import com.google.cloud.filestore.v1beta1.ListSharesRequest;
+import com.google.cloud.filestore.v1beta1.ListSharesResponse;
+import com.google.cloud.filestore.v1beta1.ListSnapshotsRequest;
+import com.google.cloud.filestore.v1beta1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1beta1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1beta1.RevertInstanceRequest;
+import com.google.cloud.filestore.v1beta1.Share;
+import com.google.cloud.filestore.v1beta1.Snapshot;
 import com.google.cloud.filestore.v1beta1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1beta1.UpdateInstanceRequest;
+import com.google.cloud.filestore.v1beta1.UpdateShareRequest;
+import com.google.cloud.filestore.v1beta1.UpdateSnapshotRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -134,9 +151,25 @@ public class CloudFilestoreManagerStubSettings
   private final UnaryCallSettings<RestoreInstanceRequest, Operation> restoreInstanceSettings;
   private final OperationCallSettings<RestoreInstanceRequest, Instance, OperationMetadata>
       restoreInstanceOperationSettings;
+  private final UnaryCallSettings<RevertInstanceRequest, Operation> revertInstanceSettings;
+  private final OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings;
+  private final PagedCallSettings<
+          ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      listSnapshotsSettings;
+  private final UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings;
+  private final UnaryCallSettings<CreateSnapshotRequest, Operation> createSnapshotSettings;
+  private final OperationCallSettings<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationSettings;
+  private final UnaryCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotSettings;
+  private final OperationCallSettings<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationSettings;
+  private final UnaryCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotSettings;
+  private final OperationCallSettings<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationSettings;
   private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
       listBackupsSettings;
   private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
@@ -149,6 +182,18 @@ public class CloudFilestoreManagerStubSettings
   private final UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings;
   private final OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationSettings;
+  private final PagedCallSettings<ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>
+      listSharesSettings;
+  private final UnaryCallSettings<GetShareRequest, Share> getShareSettings;
+  private final UnaryCallSettings<CreateShareRequest, Operation> createShareSettings;
+  private final OperationCallSettings<CreateShareRequest, Share, OperationMetadata>
+      createShareOperationSettings;
+  private final UnaryCallSettings<DeleteShareRequest, Operation> deleteShareSettings;
+  private final OperationCallSettings<DeleteShareRequest, Empty, OperationMetadata>
+      deleteShareOperationSettings;
+  private final UnaryCallSettings<UpdateShareRequest, Operation> updateShareSettings;
+  private final OperationCallSettings<UpdateShareRequest, Share, OperationMetadata>
+      updateShareOperationSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -183,6 +228,42 @@ public class CloudFilestoreManagerStubSettings
               return payload.getInstancesList() == null
                   ? ImmutableList.<Instance>of()
                   : payload.getInstancesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>
+      LIST_SNAPSHOTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSnapshotsRequest injectToken(ListSnapshotsRequest payload, String token) {
+              return ListSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSnapshotsRequest injectPageSize(ListSnapshotsRequest payload, int pageSize) {
+              return ListSnapshotsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSnapshotsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSnapshotsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
+              return payload.getSnapshotsList() == null
+                  ? ImmutableList.<Snapshot>of()
+                  : payload.getSnapshotsList();
             }
           };
 
@@ -222,6 +303,42 @@ public class CloudFilestoreManagerStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListSharesRequest, ListSharesResponse, Share>
+      LIST_SHARES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSharesRequest, ListSharesResponse, Share>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSharesRequest injectToken(ListSharesRequest payload, String token) {
+              return ListSharesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSharesRequest injectPageSize(ListSharesRequest payload, int pageSize) {
+              return ListSharesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSharesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSharesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Share> extractResources(ListSharesResponse payload) {
+              return payload.getSharesList() == null
+                  ? ImmutableList.<Share>of()
+                  : payload.getSharesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       LIST_INSTANCES_PAGE_STR_FACT =
@@ -240,6 +357,23 @@ public class CloudFilestoreManagerStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      LIST_SNAPSHOTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSnapshotsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> callable,
+                ListSnapshotsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSnapshotsResponse> futureResponse) {
+              PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> pageContext =
+                  PageContext.create(callable, LIST_SNAPSHOTS_PAGE_STR_DESC, request, context);
+              return ListSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
       LIST_BACKUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -253,6 +387,23 @@ public class CloudFilestoreManagerStubSettings
               PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
                   PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
               return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>
+      LIST_SHARES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>() {
+            @Override
+            public ApiFuture<ListSharesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSharesRequest, ListSharesResponse> callable,
+                ListSharesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSharesResponse> futureResponse) {
+              PageContext<ListSharesRequest, ListSharesResponse, Share> pageContext =
+                  PageContext.create(callable, LIST_SHARES_PAGE_STR_DESC, request, context);
+              return ListSharesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -300,6 +451,17 @@ public class CloudFilestoreManagerStubSettings
     return restoreInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public UnaryCallSettings<RevertInstanceRequest, Operation> revertInstanceSettings() {
+    return revertInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationSettings() {
+    return revertInstanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return deleteInstanceSettings;
@@ -309,6 +471,50 @@ public class CloudFilestoreManagerStubSettings
   public OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings() {
     return deleteInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSnapshots. */
+  public PagedCallSettings<ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+      listSnapshotsSettings() {
+    return listSnapshotsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSnapshot. */
+  public UnaryCallSettings<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+    return getSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSnapshot. */
+  public UnaryCallSettings<CreateSnapshotRequest, Operation> createSnapshotSettings() {
+    return createSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSnapshot. */
+  public OperationCallSettings<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationSettings() {
+    return createSnapshotOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSnapshot. */
+  public UnaryCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotSettings() {
+    return deleteSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSnapshot. */
+  public OperationCallSettings<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationSettings() {
+    return deleteSnapshotOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSnapshot. */
+  public UnaryCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotSettings() {
+    return updateSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSnapshot. */
+  public OperationCallSettings<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationSettings() {
+    return updateSnapshotOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listBackups. */
@@ -353,6 +559,50 @@ public class CloudFilestoreManagerStubSettings
   public OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
       updateBackupOperationSettings() {
     return updateBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listShares. */
+  public PagedCallSettings<ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>
+      listSharesSettings() {
+    return listSharesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getShare. */
+  public UnaryCallSettings<GetShareRequest, Share> getShareSettings() {
+    return getShareSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createShare. */
+  public UnaryCallSettings<CreateShareRequest, Operation> createShareSettings() {
+    return createShareSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createShare. */
+  public OperationCallSettings<CreateShareRequest, Share, OperationMetadata>
+      createShareOperationSettings() {
+    return createShareOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteShare. */
+  public UnaryCallSettings<DeleteShareRequest, Operation> deleteShareSettings() {
+    return deleteShareSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteShare. */
+  public OperationCallSettings<DeleteShareRequest, Empty, OperationMetadata>
+      deleteShareOperationSettings() {
+    return deleteShareOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateShare. */
+  public UnaryCallSettings<UpdateShareRequest, Operation> updateShareSettings() {
+    return updateShareSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateShare. */
+  public OperationCallSettings<UpdateShareRequest, Share, OperationMetadata>
+      updateShareOperationSettings() {
+    return updateShareOperationSettings;
   }
 
   public CloudFilestoreManagerStub createStub() throws IOException {
@@ -469,8 +719,18 @@ public class CloudFilestoreManagerStubSettings
     updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
     restoreInstanceSettings = settingsBuilder.restoreInstanceSettings().build();
     restoreInstanceOperationSettings = settingsBuilder.restoreInstanceOperationSettings().build();
+    revertInstanceSettings = settingsBuilder.revertInstanceSettings().build();
+    revertInstanceOperationSettings = settingsBuilder.revertInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
+    listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
+    getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
+    createSnapshotSettings = settingsBuilder.createSnapshotSettings().build();
+    createSnapshotOperationSettings = settingsBuilder.createSnapshotOperationSettings().build();
+    deleteSnapshotSettings = settingsBuilder.deleteSnapshotSettings().build();
+    deleteSnapshotOperationSettings = settingsBuilder.deleteSnapshotOperationSettings().build();
+    updateSnapshotSettings = settingsBuilder.updateSnapshotSettings().build();
+    updateSnapshotOperationSettings = settingsBuilder.updateSnapshotOperationSettings().build();
     listBackupsSettings = settingsBuilder.listBackupsSettings().build();
     getBackupSettings = settingsBuilder.getBackupSettings().build();
     createBackupSettings = settingsBuilder.createBackupSettings().build();
@@ -479,6 +739,14 @@ public class CloudFilestoreManagerStubSettings
     deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
     updateBackupSettings = settingsBuilder.updateBackupSettings().build();
     updateBackupOperationSettings = settingsBuilder.updateBackupOperationSettings().build();
+    listSharesSettings = settingsBuilder.listSharesSettings().build();
+    getShareSettings = settingsBuilder.getShareSettings().build();
+    createShareSettings = settingsBuilder.createShareSettings().build();
+    createShareOperationSettings = settingsBuilder.createShareOperationSettings().build();
+    deleteShareSettings = settingsBuilder.deleteShareSettings().build();
+    deleteShareOperationSettings = settingsBuilder.deleteShareOperationSettings().build();
+    updateShareSettings = settingsBuilder.updateShareSettings().build();
+    updateShareOperationSettings = settingsBuilder.updateShareOperationSettings().build();
   }
 
   /** Builder for CloudFilestoreManagerStubSettings. */
@@ -501,10 +769,30 @@ public class CloudFilestoreManagerStubSettings
         restoreInstanceSettings;
     private final OperationCallSettings.Builder<RestoreInstanceRequest, Instance, OperationMetadata>
         restoreInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<RevertInstanceRequest, Operation>
+        revertInstanceSettings;
+    private final OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
+        revertInstanceOperationSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+        listSnapshotsSettings;
+    private final UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings;
+    private final UnaryCallSettings.Builder<CreateSnapshotRequest, Operation>
+        createSnapshotSettings;
+    private final OperationCallSettings.Builder<CreateSnapshotRequest, Snapshot, OperationMetadata>
+        createSnapshotOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteSnapshotRequest, Operation>
+        deleteSnapshotSettings;
+    private final OperationCallSettings.Builder<DeleteSnapshotRequest, Empty, OperationMetadata>
+        deleteSnapshotOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateSnapshotRequest, Operation>
+        updateSnapshotSettings;
+    private final OperationCallSettings.Builder<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+        updateSnapshotOperationSettings;
     private final PagedCallSettings.Builder<
             ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
         listBackupsSettings;
@@ -518,6 +806,19 @@ public class CloudFilestoreManagerStubSettings
     private final UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings;
     private final OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>
+        listSharesSettings;
+    private final UnaryCallSettings.Builder<GetShareRequest, Share> getShareSettings;
+    private final UnaryCallSettings.Builder<CreateShareRequest, Operation> createShareSettings;
+    private final OperationCallSettings.Builder<CreateShareRequest, Share, OperationMetadata>
+        createShareOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteShareRequest, Operation> deleteShareSettings;
+    private final OperationCallSettings.Builder<DeleteShareRequest, Empty, OperationMetadata>
+        deleteShareOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateShareRequest, Operation> updateShareSettings;
+    private final OperationCallSettings.Builder<UpdateShareRequest, Share, OperationMetadata>
+        updateShareOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -531,6 +832,7 @@ public class CloudFilestoreManagerStubSettings
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -568,6 +870,8 @@ public class CloudFilestoreManagerStubSettings
               .setTotalTimeout(Duration.ofMillis(14400000L))
               .build();
       definitions.put("no_retry_2_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(600000L))
@@ -594,8 +898,18 @@ public class CloudFilestoreManagerStubSettings
       updateInstanceOperationSettings = OperationCallSettings.newBuilder();
       restoreInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreInstanceOperationSettings = OperationCallSettings.newBuilder();
+      revertInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      revertInstanceOperationSettings = OperationCallSettings.newBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
+      listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
+      getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSnapshotOperationSettings = OperationCallSettings.newBuilder();
+      deleteSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSnapshotOperationSettings = OperationCallSettings.newBuilder();
+      updateSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSnapshotOperationSettings = OperationCallSettings.newBuilder();
       listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
       getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -604,6 +918,14 @@ public class CloudFilestoreManagerStubSettings
       deleteBackupOperationSettings = OperationCallSettings.newBuilder();
       updateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBackupOperationSettings = OperationCallSettings.newBuilder();
+      listSharesSettings = PagedCallSettings.newBuilder(LIST_SHARES_PAGE_STR_FACT);
+      getShareSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createShareSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createShareOperationSettings = OperationCallSettings.newBuilder();
+      deleteShareSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteShareOperationSettings = OperationCallSettings.newBuilder();
+      updateShareSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateShareOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -612,12 +934,23 @@ public class CloudFilestoreManagerStubSettings
               createInstanceSettings,
               updateInstanceSettings,
               restoreInstanceSettings,
+              revertInstanceSettings,
               deleteInstanceSettings,
+              listSnapshotsSettings,
+              getSnapshotSettings,
+              createSnapshotSettings,
+              deleteSnapshotSettings,
+              updateSnapshotSettings,
               listBackupsSettings,
               getBackupSettings,
               createBackupSettings,
               deleteBackupSettings,
-              updateBackupSettings);
+              updateBackupSettings,
+              listSharesSettings,
+              getShareSettings,
+              createShareSettings,
+              deleteShareSettings,
+              updateShareSettings);
       initDefaults(this);
     }
 
@@ -632,8 +965,18 @@ public class CloudFilestoreManagerStubSettings
       updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
       restoreInstanceSettings = settings.restoreInstanceSettings.toBuilder();
       restoreInstanceOperationSettings = settings.restoreInstanceOperationSettings.toBuilder();
+      revertInstanceSettings = settings.revertInstanceSettings.toBuilder();
+      revertInstanceOperationSettings = settings.revertInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
+      listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
+      getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
+      createSnapshotSettings = settings.createSnapshotSettings.toBuilder();
+      createSnapshotOperationSettings = settings.createSnapshotOperationSettings.toBuilder();
+      deleteSnapshotSettings = settings.deleteSnapshotSettings.toBuilder();
+      deleteSnapshotOperationSettings = settings.deleteSnapshotOperationSettings.toBuilder();
+      updateSnapshotSettings = settings.updateSnapshotSettings.toBuilder();
+      updateSnapshotOperationSettings = settings.updateSnapshotOperationSettings.toBuilder();
       listBackupsSettings = settings.listBackupsSettings.toBuilder();
       getBackupSettings = settings.getBackupSettings.toBuilder();
       createBackupSettings = settings.createBackupSettings.toBuilder();
@@ -642,6 +985,14 @@ public class CloudFilestoreManagerStubSettings
       deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
       updateBackupSettings = settings.updateBackupSettings.toBuilder();
       updateBackupOperationSettings = settings.updateBackupOperationSettings.toBuilder();
+      listSharesSettings = settings.listSharesSettings.toBuilder();
+      getShareSettings = settings.getShareSettings.toBuilder();
+      createShareSettings = settings.createShareSettings.toBuilder();
+      createShareOperationSettings = settings.createShareOperationSettings.toBuilder();
+      deleteShareSettings = settings.deleteShareSettings.toBuilder();
+      deleteShareOperationSettings = settings.deleteShareOperationSettings.toBuilder();
+      updateShareSettings = settings.updateShareSettings.toBuilder();
+      updateShareOperationSettings = settings.updateShareOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -650,12 +1001,23 @@ public class CloudFilestoreManagerStubSettings
               createInstanceSettings,
               updateInstanceSettings,
               restoreInstanceSettings,
+              revertInstanceSettings,
               deleteInstanceSettings,
+              listSnapshotsSettings,
+              getSnapshotSettings,
+              createSnapshotSettings,
+              deleteSnapshotSettings,
+              updateSnapshotSettings,
               listBackupsSettings,
               getBackupSettings,
               createBackupSettings,
               deleteBackupSettings,
-              updateBackupSettings);
+              updateBackupSettings,
+              listSharesSettings,
+              getShareSettings,
+              createShareSettings,
+              deleteShareSettings,
+              updateShareSettings);
     }
 
     private static Builder createDefault() {
@@ -711,7 +1073,37 @@ public class CloudFilestoreManagerStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .revertInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .listSnapshotsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .deleteSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .updateSnapshotSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
 
@@ -739,6 +1131,31 @@ public class CloudFilestoreManagerStubSettings
           .updateBackupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
+          .listSharesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getShareSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createShareSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteShareSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateShareSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createInstanceOperationSettings()
@@ -813,6 +1230,30 @@ public class CloudFilestoreManagerStubSettings
                       .build()));
 
       builder
+          .revertInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RevertInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteInstanceOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -834,6 +1275,78 @@ public class CloudFilestoreManagerStubSettings
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(1200000L))
+                      .build()));
+
+      builder
+          .createSnapshotOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Snapshot.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(10000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(660000L))
+                      .build()));
+
+      builder
+          .deleteSnapshotOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(7200000L))
+                      .build()));
+
+      builder
+          .updateSnapshotOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Snapshot.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(10000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(660000L))
                       .build()));
 
       builder
@@ -908,6 +1421,75 @@ public class CloudFilestoreManagerStubSettings
                       .setTotalTimeout(Duration.ofMillis(660000L))
                       .build()));
 
+      builder
+          .createShareOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateShareRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Share.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteShareOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteShareRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateShareOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UpdateShareRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Share.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -977,6 +1559,19 @@ public class CloudFilestoreManagerStubSettings
       return restoreInstanceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    public UnaryCallSettings.Builder<RevertInstanceRequest, Operation> revertInstanceSettings() {
+      return revertInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
+        revertInstanceOperationSettings() {
+      return revertInstanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteInstance. */
     public UnaryCallSettings.Builder<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
       return deleteInstanceSettings;
@@ -988,6 +1583,57 @@ public class CloudFilestoreManagerStubSettings
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSnapshots. */
+    public PagedCallSettings.Builder<
+            ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
+        listSnapshotsSettings() {
+      return listSnapshotsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSnapshot. */
+    public UnaryCallSettings.Builder<GetSnapshotRequest, Snapshot> getSnapshotSettings() {
+      return getSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSnapshot. */
+    public UnaryCallSettings.Builder<CreateSnapshotRequest, Operation> createSnapshotSettings() {
+      return createSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSnapshot. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateSnapshotRequest, Snapshot, OperationMetadata>
+        createSnapshotOperationSettings() {
+      return createSnapshotOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSnapshot. */
+    public UnaryCallSettings.Builder<DeleteSnapshotRequest, Operation> deleteSnapshotSettings() {
+      return deleteSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSnapshot. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteSnapshotRequest, Empty, OperationMetadata>
+        deleteSnapshotOperationSettings() {
+      return deleteSnapshotOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSnapshot. */
+    public UnaryCallSettings.Builder<UpdateSnapshotRequest, Operation> updateSnapshotSettings() {
+      return updateSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSnapshot. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+        updateSnapshotOperationSettings() {
+      return updateSnapshotOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listBackups. */
@@ -1039,6 +1685,56 @@ public class CloudFilestoreManagerStubSettings
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return updateBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listShares. */
+    public PagedCallSettings.Builder<ListSharesRequest, ListSharesResponse, ListSharesPagedResponse>
+        listSharesSettings() {
+      return listSharesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getShare. */
+    public UnaryCallSettings.Builder<GetShareRequest, Share> getShareSettings() {
+      return getShareSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createShare. */
+    public UnaryCallSettings.Builder<CreateShareRequest, Operation> createShareSettings() {
+      return createShareSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createShare. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateShareRequest, Share, OperationMetadata>
+        createShareOperationSettings() {
+      return createShareOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteShare. */
+    public UnaryCallSettings.Builder<DeleteShareRequest, Operation> deleteShareSettings() {
+      return deleteShareSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteShare. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteShareRequest, Empty, OperationMetadata>
+        deleteShareOperationSettings() {
+      return deleteShareOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateShare. */
+    public UnaryCallSettings.Builder<UpdateShareRequest, Operation> updateShareSettings() {
+      return updateShareSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateShare. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateShareRequest, Share, OperationMetadata>
+        updateShareOperationSettings() {
+      return updateShareOperationSettings;
     }
 
     @Override

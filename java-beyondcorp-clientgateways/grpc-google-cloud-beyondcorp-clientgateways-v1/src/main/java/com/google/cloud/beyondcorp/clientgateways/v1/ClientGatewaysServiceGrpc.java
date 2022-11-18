@@ -21,10 +21,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * ## API Overview
+ * API Overview:
  * The `beyondcorp.googleapis.com` service implements the Google Cloud
  * BeyondCorp API.
- * ## Data Model
+ * Data Model:
  * The ClientGatewaysService exposes the following resources:
  * * Client Gateways, named as follows:
  *   `projects/{project_id}/locations/{location_id}/clientGateways/{client_gateway_id}`.
@@ -282,10 +282,10 @@ public final class ClientGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The ClientGatewaysService exposes the following resources:
    * * Client Gateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/clientGateways/{client_gateway_id}`.
@@ -389,10 +389,10 @@ public final class ClientGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The ClientGatewaysService exposes the following resources:
    * * Client Gateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/clientGateways/{client_gateway_id}`.
@@ -482,10 +482,10 @@ public final class ClientGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The ClientGatewaysService exposes the following resources:
    * * Client Gateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/clientGateways/{client_gateway_id}`.
@@ -562,10 +562,10 @@ public final class ClientGatewaysServiceGrpc {
    *
    *
    * <pre>
-   * ## API Overview
+   * API Overview:
    * The `beyondcorp.googleapis.com` service implements the Google Cloud
    * BeyondCorp API.
-   * ## Data Model
+   * Data Model:
    * The ClientGatewaysService exposes the following resources:
    * * Client Gateways, named as follows:
    *   `projects/{project_id}/locations/{location_id}/clientGateways/{client_gateway_id}`.

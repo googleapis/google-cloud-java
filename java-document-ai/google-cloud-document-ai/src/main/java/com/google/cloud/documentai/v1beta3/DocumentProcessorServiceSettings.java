@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListEvaluationsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
@@ -129,6 +130,23 @@ public class DocumentProcessorServiceSettings
   /** Returns the object with the settings used for calls to getProcessor. */
   public UnaryCallSettings<GetProcessorRequest, Processor> getProcessorSettings() {
     return ((DocumentProcessorServiceStubSettings) getStubSettings()).getProcessorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to trainProcessorVersion. */
+  public UnaryCallSettings<TrainProcessorVersionRequest, Operation>
+      trainProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .trainProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to trainProcessorVersion. */
+  public OperationCallSettings<
+          TrainProcessorVersionRequest,
+          TrainProcessorVersionResponse,
+          TrainProcessorVersionMetadata>
+      trainProcessorVersionOperationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .trainProcessorVersionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getProcessorVersion. */
@@ -266,6 +284,35 @@ public class DocumentProcessorServiceSettings
       reviewDocumentOperationSettings() {
     return ((DocumentProcessorServiceStubSettings) getStubSettings())
         .reviewDocumentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to evaluateProcessorVersion. */
+  public UnaryCallSettings<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .evaluateProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to evaluateProcessorVersion. */
+  public OperationCallSettings<
+          EvaluateProcessorVersionRequest,
+          EvaluateProcessorVersionResponse,
+          EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionOperationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .evaluateProcessorVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluation. */
+  public UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).getEvaluationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEvaluations. */
+  public PagedCallSettings<
+          ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
+      listEvaluationsSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings()).listEvaluationsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -438,6 +485,21 @@ public class DocumentProcessorServiceSettings
       return getStubSettingsBuilder().getProcessorSettings();
     }
 
+    /** Returns the builder for the settings used for calls to trainProcessorVersion. */
+    public UnaryCallSettings.Builder<TrainProcessorVersionRequest, Operation>
+        trainProcessorVersionSettings() {
+      return getStubSettingsBuilder().trainProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to trainProcessorVersion. */
+    public OperationCallSettings.Builder<
+            TrainProcessorVersionRequest,
+            TrainProcessorVersionResponse,
+            TrainProcessorVersionMetadata>
+        trainProcessorVersionOperationSettings() {
+      return getStubSettingsBuilder().trainProcessorVersionOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getProcessorVersion. */
     public UnaryCallSettings.Builder<GetProcessorVersionRequest, ProcessorVersion>
         getProcessorVersionSettings() {
@@ -562,6 +624,33 @@ public class DocumentProcessorServiceSettings
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings() {
       return getStubSettingsBuilder().reviewDocumentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateProcessorVersion. */
+    public UnaryCallSettings.Builder<EvaluateProcessorVersionRequest, Operation>
+        evaluateProcessorVersionSettings() {
+      return getStubSettingsBuilder().evaluateProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateProcessorVersion. */
+    public OperationCallSettings.Builder<
+            EvaluateProcessorVersionRequest,
+            EvaluateProcessorVersionResponse,
+            EvaluateProcessorVersionMetadata>
+        evaluateProcessorVersionOperationSettings() {
+      return getStubSettingsBuilder().evaluateProcessorVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEvaluation. */
+    public UnaryCallSettings.Builder<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+      return getStubSettingsBuilder().getEvaluationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEvaluations. */
+    public PagedCallSettings.Builder<
+            ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
+        listEvaluationsSettings() {
+      return getStubSettingsBuilder().listEvaluationsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

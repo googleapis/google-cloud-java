@@ -42,19 +42,19 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Configures and manages Cloud Filestore resources.
+ * Service Description: Configures and manages Filestore resources.
  *
- * <p>Cloud Filestore Manager v1beta1.
+ * <p>Filestore Manager v1beta1.
  *
- * <p>The `file.googleapis.com` service implements the Cloud Filestore API and defines the following
- * model for managing resources:
+ * <p>The `file.googleapis.com` service implements the Filestore API and defines the following model
+ * for managing resources:
  *
  * <ul>
  *   <li>The service works with a collection of cloud projects, named: `/projects/&#42;`
  *   <li>Each project has a collection of available locations, named: `/locations/&#42;`
  *   <li>Each location has a collection of instances and backups, named: `/instances/&#42;` and
  *       `/backups/&#42;` respectively.
- *   <li>As such, Cloud Filestore instances are resources of the form:
+ *   <li>As such, Filestore instances are resources of the form:
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}` backups are
  *       resources of the form: `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
  * </ul>
@@ -554,8 +554,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map to GCP
-   *     zones, for example &#42;&#42;us-west1-b&#42;&#42;.
+   *     `projects/{project_id}/locations/{location}`. In Filestore, locations map to GCP zones, for
+   *     example &#42;&#42;us-west1-b&#42;&#42;.
    * @param instance Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
    * @param instanceId Required. The ID of the instance to create. The ID must be unique within the
    *     specified project and location.
@@ -599,8 +599,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The instance's project and location, in the format
-   *     `projects/{project_id}/locations/{location}`. In Cloud Filestore, locations map to GCP
-   *     zones, for example &#42;&#42;us-west1-b&#42;&#42;.
+   *     `projects/{project_id}/locations/{location}`. In Filestore, locations map to GCP zones, for
+   *     example &#42;&#42;us-west1-b&#42;&#42;.
    * @param instance Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
    * @param instanceId Required. The ID of the instance to create. The ID must be unique within the
    *     specified project and location.
@@ -954,6 +954,98 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Revert an existing instance's file system to a specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   RevertInstanceRequest request =
+   *       RevertInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTargetSnapshotId("targetSnapshotId-2099459472")
+   *           .build();
+   *   Instance response = cloudFilestoreManagerClient.revertInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> revertInstanceAsync(
+      RevertInstanceRequest request) {
+    return revertInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revert an existing instance's file system to a specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   RevertInstanceRequest request =
+   *       RevertInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTargetSnapshotId("targetSnapshotId-2099459472")
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.revertInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable() {
+    return stub.revertInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revert an existing instance's file system to a specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   RevertInstanceRequest request =
+   *       RevertInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTargetSnapshotId("targetSnapshotId-2099459472")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.revertInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable() {
+    return stub.revertInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes an instance.
    *
    * <p>Sample code:
@@ -1026,6 +1118,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setForce(true)
    *           .build();
    *   cloudFilestoreManagerClient.deleteInstanceAsync(request).get();
    * }
@@ -1056,6 +1149,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       cloudFilestoreManagerClient.deleteInstanceOperationCallable().futureCall(request);
@@ -1086,6 +1180,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       cloudFilestoreManagerClient.deleteInstanceCallable().futureCall(request);
@@ -1096,6 +1191,754 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all snapshots in a project for either a specified location or for all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   for (Snapshot element : cloudFilestoreManagerClient.listSnapshots(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The instance for which to retrieve snapshot information, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSnapshotsPagedResponse listSnapshots(InstanceName parent) {
+    ListSnapshotsRequest request =
+        ListSnapshotsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSnapshots(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all snapshots in a project for either a specified location or for all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   for (Snapshot element : cloudFilestoreManagerClient.listSnapshots(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The instance for which to retrieve snapshot information, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSnapshotsPagedResponse listSnapshots(String parent) {
+    ListSnapshotsRequest request = ListSnapshotsRequest.newBuilder().setParent(parent).build();
+    return listSnapshots(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all snapshots in a project for either a specified location or for all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ListSnapshotsRequest request =
+   *       ListSnapshotsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Snapshot element : cloudFilestoreManagerClient.listSnapshots(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSnapshotsPagedResponse listSnapshots(ListSnapshotsRequest request) {
+    return listSnapshotsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all snapshots in a project for either a specified location or for all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ListSnapshotsRequest request =
+   *       ListSnapshotsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Snapshot> future =
+   *       cloudFilestoreManagerClient.listSnapshotsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Snapshot element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
+    return stub.listSnapshotsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all snapshots in a project for either a specified location or for all locations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ListSnapshotsRequest request =
+   *       ListSnapshotsRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListSnapshotsResponse response =
+   *         cloudFilestoreManagerClient.listSnapshotsCallable().call(request);
+   *     for (Snapshot element : response.getSnapshotsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
+    return stub.listSnapshotsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   SnapshotName name = SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]");
+   *   Snapshot response = cloudFilestoreManagerClient.getSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The snapshot resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Snapshot getSnapshot(SnapshotName name) {
+    GetSnapshotRequest request =
+        GetSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String name =
+   *       SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString();
+   *   Snapshot response = cloudFilestoreManagerClient.getSnapshot(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The snapshot resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Snapshot getSnapshot(String name) {
+    GetSnapshotRequest request = GetSnapshotRequest.newBuilder().setName(name).build();
+    return getSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   GetSnapshotRequest request =
+   *       GetSnapshotRequest.newBuilder()
+   *           .setName(
+   *               SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+   *           .build();
+   *   Snapshot response = cloudFilestoreManagerClient.getSnapshot(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Snapshot getSnapshot(GetSnapshotRequest request) {
+    return getSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   GetSnapshotRequest request =
+   *       GetSnapshotRequest.newBuilder()
+   *           .setName(
+   *               SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+   *           .build();
+   *   ApiFuture<Snapshot> future =
+   *       cloudFilestoreManagerClient.getSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   Snapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    return stub.getSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Snapshot snapshot = Snapshot.newBuilder().build();
+   *   String snapshotId = "snapshotId-1113817601";
+   *   Snapshot response =
+   *       cloudFilestoreManagerClient.createSnapshotAsync(parent, snapshot, snapshotId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Filestore Instance to create the snapshots of, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
+   * @param snapshot Required. A snapshot resource
+   * @param snapshotId Required. The ID to use for the snapshot. The ID must be unique within the
+   *     specified instance.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
+      InstanceName parent, Snapshot snapshot, String snapshotId) {
+    CreateSnapshotRequest request =
+        CreateSnapshotRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSnapshot(snapshot)
+            .setSnapshotId(snapshotId)
+            .build();
+    return createSnapshotAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   Snapshot snapshot = Snapshot.newBuilder().build();
+   *   String snapshotId = "snapshotId-1113817601";
+   *   Snapshot response =
+   *       cloudFilestoreManagerClient.createSnapshotAsync(parent, snapshot, snapshotId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Filestore Instance to create the snapshots of, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
+   * @param snapshot Required. A snapshot resource
+   * @param snapshotId Required. The ID to use for the snapshot. The ID must be unique within the
+   *     specified instance.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
+      String parent, Snapshot snapshot, String snapshotId) {
+    CreateSnapshotRequest request =
+        CreateSnapshotRequest.newBuilder()
+            .setParent(parent)
+            .setSnapshot(snapshot)
+            .setSnapshotId(snapshotId)
+            .build();
+    return createSnapshotAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   CreateSnapshotRequest request =
+   *       CreateSnapshotRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setSnapshotId("snapshotId-1113817601")
+   *           .setSnapshot(Snapshot.newBuilder().build())
+   *           .build();
+   *   Snapshot response = cloudFilestoreManagerClient.createSnapshotAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
+      CreateSnapshotRequest request) {
+    return createSnapshotOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   CreateSnapshotRequest request =
+   *       CreateSnapshotRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setSnapshotId("snapshotId-1113817601")
+   *           .setSnapshot(Snapshot.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Snapshot, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.createSnapshotOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Snapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationCallable() {
+    return stub.createSnapshotOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   CreateSnapshotRequest request =
+   *       CreateSnapshotRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setSnapshotId("snapshotId-1113817601")
+   *           .setSnapshot(Snapshot.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.createSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSnapshotRequest, Operation> createSnapshotCallable() {
+    return stub.createSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   SnapshotName name = SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]");
+   *   cloudFilestoreManagerClient.deleteSnapshotAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The snapshot resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSnapshotAsync(SnapshotName name) {
+    DeleteSnapshotRequest request =
+        DeleteSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteSnapshotAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String name =
+   *       SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString();
+   *   cloudFilestoreManagerClient.deleteSnapshotAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The snapshot resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSnapshotAsync(String name) {
+    DeleteSnapshotRequest request = DeleteSnapshotRequest.newBuilder().setName(name).build();
+    return deleteSnapshotAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   DeleteSnapshotRequest request =
+   *       DeleteSnapshotRequest.newBuilder()
+   *           .setName(
+   *               SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+   *           .build();
+   *   cloudFilestoreManagerClient.deleteSnapshotAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSnapshotAsync(
+      DeleteSnapshotRequest request) {
+    return deleteSnapshotOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   DeleteSnapshotRequest request =
+   *       DeleteSnapshotRequest.newBuilder()
+   *           .setName(
+   *               SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.deleteSnapshotOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationCallable() {
+    return stub.deleteSnapshotOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   DeleteSnapshotRequest request =
+   *       DeleteSnapshotRequest.newBuilder()
+   *           .setName(
+   *               SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.deleteSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSnapshotRequest, Operation> deleteSnapshotCallable() {
+    return stub.deleteSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   Snapshot snapshot = Snapshot.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Snapshot response =
+   *       cloudFilestoreManagerClient.updateSnapshotAsync(snapshot, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param snapshot Required. A snapshot resource
+   * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
+   *     this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Snapshot, OperationMetadata> updateSnapshotAsync(
+      Snapshot snapshot, FieldMask updateMask) {
+    UpdateSnapshotRequest request =
+        UpdateSnapshotRequest.newBuilder().setSnapshot(snapshot).setUpdateMask(updateMask).build();
+    return updateSnapshotAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   UpdateSnapshotRequest request =
+   *       UpdateSnapshotRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSnapshot(Snapshot.newBuilder().build())
+   *           .build();
+   *   Snapshot response = cloudFilestoreManagerClient.updateSnapshotAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Snapshot, OperationMetadata> updateSnapshotAsync(
+      UpdateSnapshotRequest request) {
+    return updateSnapshotOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   UpdateSnapshotRequest request =
+   *       UpdateSnapshotRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSnapshot(Snapshot.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Snapshot, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.updateSnapshotOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Snapshot response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationCallable() {
+    return stub.updateSnapshotOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   UpdateSnapshotRequest request =
+   *       UpdateSnapshotRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSnapshot(Snapshot.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.updateSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSnapshotRequest, Operation> updateSnapshotCallable() {
+    return stub.updateSnapshotCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1120,9 +1963,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve backup information, in
-   *     the format `projects/{project_id}/locations/{location}`. In Cloud Filestore, backup
-   *     locations map to GCP regions, for example &#42;&#42;us-west1&#42;&#42;. To retrieve backup
-   *     information for all locations, use "-" for the `{location}` value.
+   *     the format `projects/{project_id}/locations/{location}`. In Filestore, backup locations map
+   *     to GCP regions, for example &#42;&#42;us-west1&#42;&#42;. To retrieve backup information
+   *     for all locations, use "-" for the `{location}` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupsPagedResponse listBackups(LocationName parent) {
@@ -1155,9 +1998,9 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The project and location for which to retrieve backup information, in
-   *     the format `projects/{project_id}/locations/{location}`. In Cloud Filestore, backup
-   *     locations map to GCP regions, for example &#42;&#42;us-west1&#42;&#42;. To retrieve backup
-   *     information for all locations, use "-" for the `{location}` value.
+   *     the format `projects/{project_id}/locations/{location}`. In Filestore, backup locations map
+   *     to GCP regions, for example &#42;&#42;us-west1&#42;&#42;. To retrieve backup information
+   *     for all locations, use "-" for the `{location}` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupsPagedResponse listBackups(String parent) {
@@ -1416,8 +2259,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The backup's project and location, in the format
-   *     `projects/{project_id}/locations/{location}`. In Cloud Filestore, backup locations map to
-   *     GCP regions, for example &#42;&#42;us-west1&#42;&#42;.
+   *     `projects/{project_id}/locations/{location}`. In Filestore, backup locations map to GCP
+   *     regions, for example &#42;&#42;us-west1&#42;&#42;.
    * @param backup Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
    *     specified project and location.
@@ -1459,8 +2302,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The backup's project and location, in the format
-   *     `projects/{project_id}/locations/{location}`. In Cloud Filestore, backup locations map to
-   *     GCP regions, for example &#42;&#42;us-west1&#42;&#42;.
+   *     `projects/{project_id}/locations/{location}`. In Filestore, backup locations map to GCP
+   *     regions, for example &#42;&#42;us-west1&#42;&#42;.
    * @param backup Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
    * @param backupId Required. The ID to use for the backup. The ID must be unique within the
    *     specified project and location.
@@ -1844,6 +2687,747 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
     return stub.updateBackupCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all shares for a specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   for (Share element : cloudFilestoreManagerClient.listShares(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The instance for which to retrieve share information, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSharesPagedResponse listShares(InstanceName parent) {
+    ListSharesRequest request =
+        ListSharesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listShares(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all shares for a specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   for (Share element : cloudFilestoreManagerClient.listShares(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The instance for which to retrieve share information, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSharesPagedResponse listShares(String parent) {
+    ListSharesRequest request = ListSharesRequest.newBuilder().setParent(parent).build();
+    return listShares(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all shares for a specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ListSharesRequest request =
+   *       ListSharesRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Share element : cloudFilestoreManagerClient.listShares(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSharesPagedResponse listShares(ListSharesRequest request) {
+    return listSharesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all shares for a specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ListSharesRequest request =
+   *       ListSharesRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Share> future =
+   *       cloudFilestoreManagerClient.listSharesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Share element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSharesRequest, ListSharesPagedResponse> listSharesPagedCallable() {
+    return stub.listSharesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all shares for a specified instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ListSharesRequest request =
+   *       ListSharesRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListSharesResponse response =
+   *         cloudFilestoreManagerClient.listSharesCallable().call(request);
+   *     for (Share element : response.getSharesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSharesRequest, ListSharesResponse> listSharesCallable() {
+    return stub.listSharesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ShareName name = ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]");
+   *   Share response = cloudFilestoreManagerClient.getShare(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The share resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/shares/{share_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Share getShare(ShareName name) {
+    GetShareRequest request =
+        GetShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getShare(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String name = ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]").toString();
+   *   Share response = cloudFilestoreManagerClient.getShare(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The share resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/shares/{share_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Share getShare(String name) {
+    GetShareRequest request = GetShareRequest.newBuilder().setName(name).build();
+    return getShare(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   GetShareRequest request =
+   *       GetShareRequest.newBuilder()
+   *           .setName(ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]").toString())
+   *           .build();
+   *   Share response = cloudFilestoreManagerClient.getShare(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Share getShare(GetShareRequest request) {
+    return getShareCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   GetShareRequest request =
+   *       GetShareRequest.newBuilder()
+   *           .setName(ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]").toString())
+   *           .build();
+   *   ApiFuture<Share> future = cloudFilestoreManagerClient.getShareCallable().futureCall(request);
+   *   // Do something.
+   *   Share response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetShareRequest, Share> getShareCallable() {
+    return stub.getShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Share share = Share.newBuilder().build();
+   *   String shareId = "shareId2054217050";
+   *   Share response = cloudFilestoreManagerClient.createShareAsync(parent, share, shareId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Filestore Instance to create the share for, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
+   * @param share Required. A share resource
+   * @param shareId Required. The ID to use for the share. The ID must be unique within the
+   *     specified instance.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Share, OperationMetadata> createShareAsync(
+      InstanceName parent, Share share, String shareId) {
+    CreateShareRequest request =
+        CreateShareRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setShare(share)
+            .setShareId(shareId)
+            .build();
+    return createShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   Share share = Share.newBuilder().build();
+   *   String shareId = "shareId2054217050";
+   *   Share response = cloudFilestoreManagerClient.createShareAsync(parent, share, shareId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The Filestore Instance to create the share for, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
+   * @param share Required. A share resource
+   * @param shareId Required. The ID to use for the share. The ID must be unique within the
+   *     specified instance.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Share, OperationMetadata> createShareAsync(
+      String parent, Share share, String shareId) {
+    CreateShareRequest request =
+        CreateShareRequest.newBuilder()
+            .setParent(parent)
+            .setShare(share)
+            .setShareId(shareId)
+            .build();
+    return createShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   CreateShareRequest request =
+   *       CreateShareRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setShareId("shareId2054217050")
+   *           .setShare(Share.newBuilder().build())
+   *           .build();
+   *   Share response = cloudFilestoreManagerClient.createShareAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Share, OperationMetadata> createShareAsync(
+      CreateShareRequest request) {
+    return createShareOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   CreateShareRequest request =
+   *       CreateShareRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setShareId("shareId2054217050")
+   *           .setShare(Share.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Share, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.createShareOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Share response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateShareRequest, Share, OperationMetadata>
+      createShareOperationCallable() {
+    return stub.createShareOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   CreateShareRequest request =
+   *       CreateShareRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setShareId("shareId2054217050")
+   *           .setShare(Share.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.createShareCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateShareRequest, Operation> createShareCallable() {
+    return stub.createShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   ShareName name = ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]");
+   *   cloudFilestoreManagerClient.deleteShareAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The share resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/share/{share_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteShareAsync(ShareName name) {
+    DeleteShareRequest request =
+        DeleteShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   String name = ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]").toString();
+   *   cloudFilestoreManagerClient.deleteShareAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The share resource name, in the format
+   *     `projects/{project_id}/locations/{location}/instances/{instance_id}/share/{share_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteShareAsync(String name) {
+    DeleteShareRequest request = DeleteShareRequest.newBuilder().setName(name).build();
+    return deleteShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   DeleteShareRequest request =
+   *       DeleteShareRequest.newBuilder()
+   *           .setName(ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]").toString())
+   *           .build();
+   *   cloudFilestoreManagerClient.deleteShareAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteShareAsync(
+      DeleteShareRequest request) {
+    return deleteShareOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   DeleteShareRequest request =
+   *       DeleteShareRequest.newBuilder()
+   *           .setName(ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.deleteShareOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteShareRequest, Empty, OperationMetadata>
+      deleteShareOperationCallable() {
+    return stub.deleteShareOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   DeleteShareRequest request =
+   *       DeleteShareRequest.newBuilder()
+   *           .setName(ShareName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SHARE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.deleteShareCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteShareRequest, Operation> deleteShareCallable() {
+    return stub.deleteShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   Share share = Share.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Share response = cloudFilestoreManagerClient.updateShareAsync(share, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param share Required. A share resource. Only fields specified in update_mask are updated.
+   * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
+   *     this field. The elements of the repeated paths field may only include these fields:
+   *     <ul>
+   *       <li>"description"
+   *       <li>"capacity_gb"
+   *       <li>"labels"
+   *       <li>"nfs_export_options"
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Share, OperationMetadata> updateShareAsync(
+      Share share, FieldMask updateMask) {
+    UpdateShareRequest request =
+        UpdateShareRequest.newBuilder().setShare(share).setUpdateMask(updateMask).build();
+    return updateShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   UpdateShareRequest request =
+   *       UpdateShareRequest.newBuilder()
+   *           .setShare(Share.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Share response = cloudFilestoreManagerClient.updateShareAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Share, OperationMetadata> updateShareAsync(
+      UpdateShareRequest request) {
+    return updateShareOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   UpdateShareRequest request =
+   *       UpdateShareRequest.newBuilder()
+   *           .setShare(Share.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Share, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.updateShareOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Share response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateShareRequest, Share, OperationMetadata>
+      updateShareOperationCallable() {
+    return stub.updateShareOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   UpdateShareRequest request =
+   *       UpdateShareRequest.newBuilder()
+   *           .setShare(Share.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.updateShareCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateShareRequest, Operation> updateShareCallable() {
+    return stub.updateShareCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1950,6 +3534,82 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
     }
   }
 
+  public static class ListSnapshotsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSnapshotsRequest,
+          ListSnapshotsResponse,
+          Snapshot,
+          ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
+
+    public static ApiFuture<ListSnapshotsPagedResponse> createAsync(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ApiFuture<ListSnapshotsResponse> futureResponse) {
+      ApiFuture<ListSnapshotsPage> futurePage =
+          ListSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSnapshotsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSnapshotsPagedResponse(ListSnapshotsPage page) {
+      super(page, ListSnapshotsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSnapshotsPage
+      extends AbstractPage<
+          ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage> {
+
+    private ListSnapshotsPage(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ListSnapshotsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSnapshotsPage createEmptyPage() {
+      return new ListSnapshotsPage(null, null);
+    }
+
+    @Override
+    protected ListSnapshotsPage createPage(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ListSnapshotsResponse response) {
+      return new ListSnapshotsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSnapshotsPage> createPageAsync(
+        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        ApiFuture<ListSnapshotsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSnapshotsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSnapshotsRequest,
+          ListSnapshotsResponse,
+          Snapshot,
+          ListSnapshotsPage,
+          ListSnapshotsFixedSizeCollection> {
+
+    private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSnapshotsFixedSizeCollection createEmptyCollection() {
+      return new ListSnapshotsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSnapshotsFixedSizeCollection createCollection(
+        List<ListSnapshotsPage> pages, int collectionSize) {
+      return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListBackupsPagedResponse
       extends AbstractPagedListResponse<
           ListBackupsRequest,
@@ -2020,6 +3680,79 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
     protected ListBackupsFixedSizeCollection createCollection(
         List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSharesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSharesRequest,
+          ListSharesResponse,
+          Share,
+          ListSharesPage,
+          ListSharesFixedSizeCollection> {
+
+    public static ApiFuture<ListSharesPagedResponse> createAsync(
+        PageContext<ListSharesRequest, ListSharesResponse, Share> context,
+        ApiFuture<ListSharesResponse> futureResponse) {
+      ApiFuture<ListSharesPage> futurePage =
+          ListSharesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListSharesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListSharesPagedResponse(ListSharesPage page) {
+      super(page, ListSharesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSharesPage
+      extends AbstractPage<ListSharesRequest, ListSharesResponse, Share, ListSharesPage> {
+
+    private ListSharesPage(
+        PageContext<ListSharesRequest, ListSharesResponse, Share> context,
+        ListSharesResponse response) {
+      super(context, response);
+    }
+
+    private static ListSharesPage createEmptyPage() {
+      return new ListSharesPage(null, null);
+    }
+
+    @Override
+    protected ListSharesPage createPage(
+        PageContext<ListSharesRequest, ListSharesResponse, Share> context,
+        ListSharesResponse response) {
+      return new ListSharesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSharesPage> createPageAsync(
+        PageContext<ListSharesRequest, ListSharesResponse, Share> context,
+        ApiFuture<ListSharesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSharesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSharesRequest,
+          ListSharesResponse,
+          Share,
+          ListSharesPage,
+          ListSharesFixedSizeCollection> {
+
+    private ListSharesFixedSizeCollection(List<ListSharesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSharesFixedSizeCollection createEmptyCollection() {
+      return new ListSharesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSharesFixedSizeCollection createCollection(
+        List<ListSharesPage> pages, int collectionSize) {
+      return new ListSharesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

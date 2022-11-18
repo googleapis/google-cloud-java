@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -60,8 +61,10 @@ import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.GoogleChannelConfig;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
@@ -74,11 +77,21 @@ import com.google.cloud.eventarc.v1.OperationMetadata;
 import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
+import com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
@@ -171,6 +184,18 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
   private final OperationCallSettings<
           DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
       deleteChannelConnectionOperationSettings;
+  private final UnaryCallSettings<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigSettings;
+  private final UnaryCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListTriggersRequest, ListTriggersResponse, Trigger>
       LIST_TRIGGERS_PAGE_STR_DESC =
@@ -323,6 +348,42 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListTriggersRequest, ListTriggersResponse, ListTriggersPagedResponse>
       LIST_TRIGGERS_PAGE_STR_FACT =
@@ -398,6 +459,23 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
                       PageContext.create(
                           callable, LIST_CHANNEL_CONNECTIONS_PAGE_STR_DESC, request, context);
               return ListChannelConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -539,6 +617,45 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     return deleteChannelConnectionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getGoogleChannelConfig. */
+  public UnaryCallSettings<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigSettings() {
+    return getGoogleChannelConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleChannelConfig. */
+  public UnaryCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigSettings() {
+    return updateGoogleChannelConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public EventarcStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -669,6 +786,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     deleteChannelConnectionSettings = settingsBuilder.deleteChannelConnectionSettings().build();
     deleteChannelConnectionOperationSettings =
         settingsBuilder.deleteChannelConnectionOperationSettings().build();
+    getGoogleChannelConfigSettings = settingsBuilder.getGoogleChannelConfigSettings().build();
+    updateGoogleChannelConfigSettings = settingsBuilder.updateGoogleChannelConfigSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for EventarcStubSettings. */
@@ -721,6 +845,18 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     private final OperationCallSettings.Builder<
             DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
         deleteChannelConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+        getGoogleChannelConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+        updateGoogleChannelConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -773,6 +909,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       createChannelConnectionOperationSettings = OperationCallSettings.newBuilder();
       deleteChannelConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteChannelConnectionOperationSettings = OperationCallSettings.newBuilder();
+      getGoogleChannelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGoogleChannelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -791,7 +934,14 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               getChannelConnectionSettings,
               listChannelConnectionsSettings,
               createChannelConnectionSettings,
-              deleteChannelConnectionSettings);
+              deleteChannelConnectionSettings,
+              getGoogleChannelConfigSettings,
+              updateGoogleChannelConfigSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -824,6 +974,13 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       deleteChannelConnectionSettings = settings.deleteChannelConnectionSettings.toBuilder();
       deleteChannelConnectionOperationSettings =
           settings.deleteChannelConnectionOperationSettings.toBuilder();
+      getGoogleChannelConfigSettings = settings.getGoogleChannelConfigSettings.toBuilder();
+      updateGoogleChannelConfigSettings = settings.updateGoogleChannelConfigSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -842,7 +999,14 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               getChannelConnectionSettings,
               listChannelConnectionsSettings,
               createChannelConnectionSettings,
-              deleteChannelConnectionSettings);
+              deleteChannelConnectionSettings,
+              getGoogleChannelConfigSettings,
+              updateGoogleChannelConfigSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -949,6 +1113,41 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
 
       builder
           .deleteChannelConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getGoogleChannelConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateGoogleChannelConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1319,6 +1518,46 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
             DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
         deleteChannelConnectionOperationSettings() {
       return deleteChannelConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGoogleChannelConfig. */
+    public UnaryCallSettings.Builder<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+        getGoogleChannelConfigSettings() {
+      return getGoogleChannelConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleChannelConfig. */
+    public UnaryCallSettings.Builder<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+        updateGoogleChannelConfigSettings() {
+      return updateGoogleChannelConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

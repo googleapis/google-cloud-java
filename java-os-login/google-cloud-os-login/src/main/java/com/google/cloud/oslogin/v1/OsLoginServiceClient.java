@@ -44,8 +44,10 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
- *   ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
- *   osLoginServiceClient.deletePosixAccount(name);
+ *   UserName parent = UserName.of("[USER]");
+ *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+ *   OsLoginProto.SshPublicKey response =
+ *       osLoginServiceClient.createSshPublicKey(parent, sshPublicKey);
  * }
  * }</pre>
  *
@@ -167,6 +169,133 @@ public class OsLoginServiceClient implements BackgroundResource {
 
   public OsLoginServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an SSH public key
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName parent = UserName.of("[USER]");
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   OsLoginProto.SshPublicKey response =
+   *       osLoginServiceClient.createSshPublicKey(parent, sshPublicKey);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique ID for the user in format `users/{user}`.
+   * @param sshPublicKey Required. The SSH public key and expiration time.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OsLoginProto.SshPublicKey createSshPublicKey(
+      UserName parent, OsLoginProto.SshPublicKey sshPublicKey) {
+    CreateSshPublicKeyRequest request =
+        CreateSshPublicKeyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSshPublicKey(sshPublicKey)
+            .build();
+    return createSshPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an SSH public key
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String parent = UserName.of("[USER]").toString();
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   OsLoginProto.SshPublicKey response =
+   *       osLoginServiceClient.createSshPublicKey(parent, sshPublicKey);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique ID for the user in format `users/{user}`.
+   * @param sshPublicKey Required. The SSH public key and expiration time.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OsLoginProto.SshPublicKey createSshPublicKey(
+      String parent, OsLoginProto.SshPublicKey sshPublicKey) {
+    CreateSshPublicKeyRequest request =
+        CreateSshPublicKeyRequest.newBuilder()
+            .setParent(parent)
+            .setSshPublicKey(sshPublicKey)
+            .build();
+    return createSshPublicKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an SSH public key
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   CreateSshPublicKeyRequest request =
+   *       CreateSshPublicKeyRequest.newBuilder()
+   *           .setParent(UserName.of("[USER]").toString())
+   *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
+   *           .build();
+   *   OsLoginProto.SshPublicKey response = osLoginServiceClient.createSshPublicKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OsLoginProto.SshPublicKey createSshPublicKey(CreateSshPublicKeyRequest request) {
+    return createSshPublicKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an SSH public key
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   CreateSshPublicKeyRequest request =
+   *       CreateSshPublicKeyRequest.newBuilder()
+   *           .setParent(UserName.of("[USER]").toString())
+   *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
+   *           .build();
+   *   ApiFuture<OsLoginProto.SshPublicKey> future =
+   *       osLoginServiceClient.createSshPublicKeyCallable().futureCall(request);
+   *   // Do something.
+   *   OsLoginProto.SshPublicKey response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeyCallable() {
+    return stub.createSshPublicKeyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
