@@ -2898,7 +2898,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A new or an existing persistent disk or a local ssd attached to a VM
+   * A new or an existing persistent disk (PD) or a local ssd attached to a VM
    * instance.
    * </pre>
    *
@@ -3349,7 +3349,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A new or an existing persistent disk or a local ssd attached to a VM
+     * A new or an existing persistent disk (PD) or a local ssd attached to a VM
      * instance.
      * </pre>
      *
@@ -4108,7 +4108,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Accelerator describes Compute Engine accelerators to be attached to VMs.
+   * Accelerator describes Compute Engine accelerators to be attached to the VM.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1.AllocationPolicy.Accelerator}
@@ -4426,7 +4426,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Accelerator describes Compute Engine accelerators to be attached to VMs.
+     * Accelerator describes Compute Engine accelerators to be attached to the VM.
      * </pre>
      *
      * Protobuf type {@code google.cloud.batch.v1.AllocationPolicy.Accelerator}
@@ -5001,7 +5001,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5012,7 +5011,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5023,7 +5021,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5034,7 +5031,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5046,7 +5042,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5059,7 +5054,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5070,7 +5065,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5081,7 +5076,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5092,7 +5087,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5104,7 +5099,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5316,7 +5311,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5331,7 +5325,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5346,7 +5339,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5360,7 +5352,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5374,7 +5365,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
-     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5392,7 +5382,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5406,7 +5396,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5422,7 +5412,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5436,7 +5426,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -5450,7 +5440,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Non-boot disks to be attached for each VM created by this InstancePolicy.
-     * New disks will be deleted when the attached VM is deleted.
+     * New disks will be deleted when the VM is deleted.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6335,7 +6325,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6353,7 +6342,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6370,7 +6358,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6387,7 +6374,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6411,7 +6397,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6433,7 +6418,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6456,7 +6440,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6480,7 +6463,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6501,7 +6483,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6523,7 +6504,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6545,7 +6525,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6565,7 +6544,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6585,7 +6563,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6599,7 +6576,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6617,7 +6593,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6636,7 +6611,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6652,7 +6626,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6668,7 +6641,6 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
-       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6721,7 +6693,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6739,7 +6711,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6756,7 +6728,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6773,7 +6745,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6797,7 +6769,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6819,7 +6791,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6842,7 +6814,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6866,7 +6838,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6887,7 +6859,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6909,7 +6881,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6931,7 +6903,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6951,7 +6923,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6971,7 +6943,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -6985,7 +6957,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -7003,7 +6975,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -7022,7 +6994,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -7037,7 +7009,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
@@ -7054,7 +7026,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Non-boot disks to be attached for each VM created by this InstancePolicy.
-       * New disks will be deleted when the attached VM is deleted.
+       * New disks will be deleted when the VM is deleted.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>

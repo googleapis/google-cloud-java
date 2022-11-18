@@ -237,9 +237,9 @@ public class BatchServiceClient implements BackgroundResource {
    *     "projects/{project}/locations/{location}"
    * @param job Required. The Job to create.
    * @param jobId ID used to uniquely identify the Job within its parent scope. This field should
-   *     contain at most 63 characters. Only alphanumeric characters or '-' are accepted. The '-'
-   *     character cannot be the first or the last one. A system generated ID will be used if the
-   *     field is not set.
+   *     contain at most 63 characters and must start with lowercase characters. Only lowercase
+   *     characters, numbers and '-' are accepted. The '-' character cannot be the first or the last
+   *     one. A system generated ID will be used if the field is not set.
    *     <p>The job.name field in the request will be ignored and the created resource name of the
    *     Job will be "{parent}/jobs/{job_id}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -278,9 +278,9 @@ public class BatchServiceClient implements BackgroundResource {
    *     "projects/{project}/locations/{location}"
    * @param job Required. The Job to create.
    * @param jobId ID used to uniquely identify the Job within its parent scope. This field should
-   *     contain at most 63 characters. Only alphanumeric characters or '-' are accepted. The '-'
-   *     character cannot be the first or the last one. A system generated ID will be used if the
-   *     field is not set.
+   *     contain at most 63 characters and must start with lowercase characters. Only lowercase
+   *     characters, numbers and '-' are accepted. The '-' character cannot be the first or the last
+   *     one. A system generated ID will be used if the field is not set.
    *     <p>The job.name field in the request will be ignored and the created resource name of the
    *     Job will be "{parent}/jobs/{job_id}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
