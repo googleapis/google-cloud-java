@@ -136,7 +136,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @return A list containing the scopes.
    */
   @java.lang.Deprecated
@@ -154,7 +154,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @return The count of scopes.
    */
   @java.lang.Deprecated
@@ -172,7 +172,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
@@ -191,7 +191,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @param index The index of the value to return.
    * @return The bytes of the scopes at the given index.
    */
@@ -713,7 +713,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @return A list containing the scopes.
      */
     @java.lang.Deprecated
@@ -731,7 +731,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @return The count of scopes.
      */
     @java.lang.Deprecated
@@ -749,7 +749,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param index The index of the element to return.
      * @return The scopes at the given index.
      */
@@ -768,7 +768,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param index The index of the value to return.
      * @return The bytes of the scopes at the given index.
      */
@@ -787,7 +787,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param index The index to set the value at.
      * @param value The scopes to set.
      * @return This builder for chaining.
@@ -813,7 +813,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param value The scopes to add.
      * @return This builder for chaining.
      */
@@ -838,7 +838,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param values The scopes to add.
      * @return This builder for chaining.
      */
@@ -860,7 +860,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -881,7 +881,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated string scopes = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=562
+     *     google/cloud/batch/v1alpha/job.proto;l=564
      * @param value The bytes of the scopes to add.
      * @return This builder for chaining.
      */

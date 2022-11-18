@@ -65,7 +65,7 @@ public interface ServiceAccountOrBuilder
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @return A list containing the scopes.
    */
   @java.lang.Deprecated
@@ -81,7 +81,7 @@ public interface ServiceAccountOrBuilder
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @return The count of scopes.
    */
   @java.lang.Deprecated
@@ -97,7 +97,7 @@ public interface ServiceAccountOrBuilder
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @param index The index of the element to return.
    * @return The scopes at the given index.
    */
@@ -114,7 +114,7 @@ public interface ServiceAccountOrBuilder
    * <code>repeated string scopes = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.ServiceAccount.scopes is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=562
+   *     google/cloud/batch/v1alpha/job.proto;l=564
    * @param index The index of the value to return.
    * @return The bytes of the scopes at the given index.
    */
