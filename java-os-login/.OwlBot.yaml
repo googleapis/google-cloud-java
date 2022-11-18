@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-os-login/grpc-google-.*/src"
 - "/java-os-login/proto-google-.*/src"
 - "/java-os-login/google-.*/src"
+- "/java-os-login/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-os-login/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -34,5 +35,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-os-login/$1/grpc-google-cloud-os-login-$1/src"
 - source: "/google/cloud/oslogin/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-os-login/$1/google-cloud-os-login/src"
+- source: "/google/cloud/oslogin/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-os-login/$1/samples/snippets/generated"
 
 api-name: oslogin

@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-debugger-client/grpc-google-.*/src"
 - "/java-debugger-client/proto-google-cloud.*/src"
 - "/java-debugger-client/google-.*/src"
+- "/java-debugger-client/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-debugger-client/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,6 +29,9 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-debugger-client/$1/grpc-google-cloud-debugger-client-$1/src"
 - source: "/google/devtools/clouddebugger/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-debugger-client/$1/google-cloud-debugger-client/src"
+- source: "/google/devtools/clouddebugger/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-debugger-client/$1/samples/snippets/generated"
 - source: "/google/devtools/source/v1/google-devtools-source-v1-java/proto-google-devtools-source-v1-java/src"
   dest: "/owl-bot-staging/java-debugger-client/v1/proto-google-devtools-source-protos/src"
+
 api-name: clouddebugger

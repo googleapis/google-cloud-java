@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-analytics-data/grpc-google-.*/src"
 - "/java-analytics-data/proto-google-.*/src"
 - "/java-analytics-data/google-.*/src"
+- "/java-analytics-data/samples/snippets/generated"
 
 deep-copy-regex:
 - source: "/google/analytics/data/(v.*)/.*-java/proto-google-.*/src"
@@ -25,5 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-analytics-data/$1/grpc-google-analytics-data-$1/src"
 - source: "/google/analytics/data/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-analytics-data/$1/google-analytics-data/src"
+- source: "/google/analytics/data/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-analytics-data/$1/samples/snippets/generated"
 
 api-name: analyticsdata

@@ -16,6 +16,7 @@
 deep-remove-regex:
 - "/java-compute/proto-google-.*/src"
 - "/java-compute/google-.*/src"
+- "/java-compute/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-compute/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -26,5 +27,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-compute/$1/proto-google-cloud-compute-$1/src"
 - source: "/google/cloud/compute/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-compute/$1/google-cloud-compute/src"
+- source: "/google/cloud/compute/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-compute/$1/samples/snippets/generated"
 
 api-name: compute

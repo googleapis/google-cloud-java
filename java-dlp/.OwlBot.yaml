@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-dlp/grpc-google-.*/src"
 - "/java-dlp/proto-google-.*/src"
 - "/java-dlp/google-.*/src"
+- "/java-dlp/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-dlp/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -35,7 +36,6 @@ deep-preserve-regex:
 - "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java"
 - "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java"
 
-
 deep-copy-regex:
 - source: "/google/privacy/dlp/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-dlp/$1/proto-google-cloud-dlp-$1/src"
@@ -43,5 +43,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-dlp/$1/grpc-google-cloud-dlp-$1/src"
 - source: "/google/privacy/dlp/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-dlp/$1/google-cloud-dlp/src"
+- source: "/google/privacy/dlp/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-dlp/$1/samples/snippets/generated"
 
 api-name: dlp
