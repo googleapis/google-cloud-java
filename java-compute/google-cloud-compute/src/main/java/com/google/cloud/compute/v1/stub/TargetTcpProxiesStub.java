@@ -16,11 +16,13 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetTcpProxiesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetTcpProxiesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListTargetTcpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.GetTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetTcpProxyRequest;
@@ -29,6 +31,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetBackendServiceTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.TargetTcpProxy;
+import com.google.cloud.compute.v1.TargetTcpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
 import javax.annotation.Generated;
 
@@ -40,6 +43,16 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class TargetTcpProxiesStub implements BackgroundResource {
+
+  public UnaryCallable<AggregatedListTargetTcpProxiesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
 
   public OperationCallable<DeleteTargetTcpProxyRequest, Operation, Operation>
       deleteOperationCallable() {

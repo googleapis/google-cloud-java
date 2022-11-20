@@ -299,7 +299,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Share-settings for shared-reservation
+   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -311,7 +311,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Share-settings for shared-reservation
+   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -323,7 +323,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Share-settings for shared-reservation
+   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>

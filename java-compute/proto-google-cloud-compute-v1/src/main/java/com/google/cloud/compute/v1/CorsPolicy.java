@@ -233,7 +233,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -247,7 +247,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -261,7 +261,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -276,7 +276,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1494,7 +1494,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1508,7 +1508,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1522,7 +1522,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1537,7 +1537,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1552,7 +1552,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1574,7 +1574,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1595,7 +1595,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1613,7 +1613,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -1630,7 +1630,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+     * Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string allow_origin_regexes = 215385810;</code>

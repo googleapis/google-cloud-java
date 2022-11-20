@@ -1001,7 +1001,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+   * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
    * </pre>
    *
    * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -1016,7 +1016,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+   * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
    * </pre>
    *
    * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -1738,7 +1738,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The interface ID of the VPN gateway with which this VPN tunnel is associated.
+   * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
    * </pre>
    *
    * <code>optional int32 vpn_gateway_interface = 95979123;</code>
@@ -1753,7 +1753,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The interface ID of the VPN gateway with which this VPN tunnel is associated.
+   * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
    * </pre>
    *
    * <code>optional int32 vpn_gateway_interface = 95979123;</code>
@@ -3804,7 +3804,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
      * </pre>
      *
      * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -3819,7 +3819,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
      * </pre>
      *
      * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -3834,7 +3834,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
      * </pre>
      *
      * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -3852,7 +3852,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
+     * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
      * </pre>
      *
      * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -5246,7 +5246,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the VPN gateway with which this VPN tunnel is associated.
+     * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
      * </pre>
      *
      * <code>optional int32 vpn_gateway_interface = 95979123;</code>
@@ -5261,7 +5261,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the VPN gateway with which this VPN tunnel is associated.
+     * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
      * </pre>
      *
      * <code>optional int32 vpn_gateway_interface = 95979123;</code>
@@ -5276,7 +5276,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the VPN gateway with which this VPN tunnel is associated.
+     * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
      * </pre>
      *
      * <code>optional int32 vpn_gateway_interface = 95979123;</code>
@@ -5294,7 +5294,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interface ID of the VPN gateway with which this VPN tunnel is associated.
+     * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
      * </pre>
      *
      * <code>optional int32 vpn_gateway_interface = 95979123;</code>
