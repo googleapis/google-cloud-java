@@ -16,35 +16,32 @@
 
 package com.google.cloud.lifesciences.v2beta.samples;
 
-// [START lifesciences_v2beta_generated_WorkflowsServiceV2BetaSettings_RunPipeline_sync]
-import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaSettings;
-import java.time.Duration;
+// [START lifesciences_v2beta_generated_WorkflowsServiceV2Beta_GetLocation_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaClient;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.Location;
 
-public class SyncRunPipeline {
+public class AsyncGetLocation {
 
   public static void main(String[] args) throws Exception {
-    syncRunPipeline();
+    asyncGetLocation();
   }
 
-  public static void syncRunPipeline() throws Exception {
+  public static void asyncGetLocation() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    WorkflowsServiceV2BetaSettings.Builder workflowsServiceV2BetaSettingsBuilder =
-        WorkflowsServiceV2BetaSettings.newBuilder();
-    workflowsServiceV2BetaSettingsBuilder
-        .runPipelineSettings()
-        .setRetrySettings(
-            workflowsServiceV2BetaSettingsBuilder
-                .runPipelineSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    WorkflowsServiceV2BetaSettings workflowsServiceV2BetaSettings =
-        workflowsServiceV2BetaSettingsBuilder.build();
+    try (WorkflowsServiceV2BetaClient workflowsServiceV2BetaClient =
+        WorkflowsServiceV2BetaClient.create()) {
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      ApiFuture<Location> future =
+          workflowsServiceV2BetaClient.getLocationCallable().futureCall(request);
+      // Do something.
+      Location response = future.get();
+    }
   }
 }
-// [END lifesciences_v2beta_generated_WorkflowsServiceV2BetaSettings_RunPipeline_sync]
+// [END lifesciences_v2beta_generated_WorkflowsServiceV2Beta_GetLocation_async]

@@ -303,6 +303,69 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int ENCRYPTED_ENVIRONMENT_FIELD_NUMBER = 5;
+  private com.google.cloud.lifesciences.v2beta.Secret encryptedEnvironment_;
+  /**
+   *
+   *
+   * <pre>
+   * The encrypted environment to pass into every action. Each action can also
+   * specify its own encrypted environment.
+   * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+   * serve as environment variable names and their values. The decoded
+   * environment variables can overwrite the values specified by the
+   * `environment` field.
+   * </pre>
+   *
+   * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+   *
+   * @return Whether the encryptedEnvironment field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptedEnvironment() {
+    return encryptedEnvironment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The encrypted environment to pass into every action. Each action can also
+   * specify its own encrypted environment.
+   * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+   * serve as environment variable names and their values. The decoded
+   * environment variables can overwrite the values specified by the
+   * `environment` field.
+   * </pre>
+   *
+   * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+   *
+   * @return The encryptedEnvironment.
+   */
+  @java.lang.Override
+  public com.google.cloud.lifesciences.v2beta.Secret getEncryptedEnvironment() {
+    return encryptedEnvironment_ == null
+        ? com.google.cloud.lifesciences.v2beta.Secret.getDefaultInstance()
+        : encryptedEnvironment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The encrypted environment to pass into every action. Each action can also
+   * specify its own encrypted environment.
+   * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+   * serve as environment variable names and their values. The decoded
+   * environment variables can overwrite the values specified by the
+   * `environment` field.
+   * </pre>
+   *
+   * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.lifesciences.v2beta.SecretOrBuilder getEncryptedEnvironmentOrBuilder() {
+    return getEncryptedEnvironment();
+  }
+
   public static final int TIMEOUT_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration timeout_;
   /**
@@ -386,6 +449,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     if (timeout_ != null) {
       output.writeMessage(4, getTimeout());
     }
+    if (encryptedEnvironment_ != null) {
+      output.writeMessage(5, getEncryptedEnvironment());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -414,6 +480,10 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     if (timeout_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeout());
     }
+    if (encryptedEnvironment_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEncryptedEnvironment());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -436,6 +506,10 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       if (!getResources().equals(other.getResources())) return false;
     }
     if (!internalGetEnvironment().equals(other.internalGetEnvironment())) return false;
+    if (hasEncryptedEnvironment() != other.hasEncryptedEnvironment()) return false;
+    if (hasEncryptedEnvironment()) {
+      if (!getEncryptedEnvironment().equals(other.getEncryptedEnvironment())) return false;
+    }
     if (hasTimeout() != other.hasTimeout()) return false;
     if (hasTimeout()) {
       if (!getTimeout().equals(other.getTimeout())) return false;
@@ -462,6 +536,10 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetEnvironment().getMap().isEmpty()) {
       hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
       hash = (53 * hash) + internalGetEnvironment().hashCode();
+    }
+    if (hasEncryptedEnvironment()) {
+      hash = (37 * hash) + ENCRYPTED_ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptedEnvironment().hashCode();
     }
     if (hasTimeout()) {
       hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
@@ -639,6 +717,12 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         resourcesBuilder_ = null;
       }
       internalGetMutableEnvironment().clear();
+      if (encryptedEnvironmentBuilder_ == null) {
+        encryptedEnvironment_ = null;
+      } else {
+        encryptedEnvironment_ = null;
+        encryptedEnvironmentBuilder_ = null;
+      }
       if (timeoutBuilder_ == null) {
         timeout_ = null;
       } else {
@@ -689,6 +773,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       result.environment_ = internalGetEnvironment();
       result.environment_.makeImmutable();
+      if (encryptedEnvironmentBuilder_ == null) {
+        result.encryptedEnvironment_ = encryptedEnvironment_;
+      } else {
+        result.encryptedEnvironment_ = encryptedEnvironmentBuilder_.build();
+      }
       if (timeoutBuilder_ == null) {
         result.timeout_ = timeout_;
       } else {
@@ -774,6 +863,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         mergeResources(other.getResources());
       }
       internalGetMutableEnvironment().mergeFrom(other.internalGetEnvironment());
+      if (other.hasEncryptedEnvironment()) {
+        mergeEncryptedEnvironment(other.getEncryptedEnvironment());
+      }
       if (other.hasTimeout()) {
         mergeTimeout(other.getTimeout());
       }
@@ -839,6 +931,13 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getEncryptedEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1566,6 +1665,237 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllEnvironment(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironment().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.cloud.lifesciences.v2beta.Secret encryptedEnvironment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.lifesciences.v2beta.Secret,
+            com.google.cloud.lifesciences.v2beta.Secret.Builder,
+            com.google.cloud.lifesciences.v2beta.SecretOrBuilder>
+        encryptedEnvironmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     *
+     * @return Whether the encryptedEnvironment field is set.
+     */
+    public boolean hasEncryptedEnvironment() {
+      return encryptedEnvironmentBuilder_ != null || encryptedEnvironment_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     *
+     * @return The encryptedEnvironment.
+     */
+    public com.google.cloud.lifesciences.v2beta.Secret getEncryptedEnvironment() {
+      if (encryptedEnvironmentBuilder_ == null) {
+        return encryptedEnvironment_ == null
+            ? com.google.cloud.lifesciences.v2beta.Secret.getDefaultInstance()
+            : encryptedEnvironment_;
+      } else {
+        return encryptedEnvironmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     */
+    public Builder setEncryptedEnvironment(com.google.cloud.lifesciences.v2beta.Secret value) {
+      if (encryptedEnvironmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptedEnvironment_ = value;
+        onChanged();
+      } else {
+        encryptedEnvironmentBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     */
+    public Builder setEncryptedEnvironment(
+        com.google.cloud.lifesciences.v2beta.Secret.Builder builderForValue) {
+      if (encryptedEnvironmentBuilder_ == null) {
+        encryptedEnvironment_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptedEnvironmentBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     */
+    public Builder mergeEncryptedEnvironment(com.google.cloud.lifesciences.v2beta.Secret value) {
+      if (encryptedEnvironmentBuilder_ == null) {
+        if (encryptedEnvironment_ != null) {
+          encryptedEnvironment_ =
+              com.google.cloud.lifesciences.v2beta.Secret.newBuilder(encryptedEnvironment_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          encryptedEnvironment_ = value;
+        }
+        onChanged();
+      } else {
+        encryptedEnvironmentBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     */
+    public Builder clearEncryptedEnvironment() {
+      if (encryptedEnvironmentBuilder_ == null) {
+        encryptedEnvironment_ = null;
+        onChanged();
+      } else {
+        encryptedEnvironment_ = null;
+        encryptedEnvironmentBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     */
+    public com.google.cloud.lifesciences.v2beta.Secret.Builder getEncryptedEnvironmentBuilder() {
+
+      onChanged();
+      return getEncryptedEnvironmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     */
+    public com.google.cloud.lifesciences.v2beta.SecretOrBuilder getEncryptedEnvironmentOrBuilder() {
+      if (encryptedEnvironmentBuilder_ != null) {
+        return encryptedEnvironmentBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptedEnvironment_ == null
+            ? com.google.cloud.lifesciences.v2beta.Secret.getDefaultInstance()
+            : encryptedEnvironment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The encrypted environment to pass into every action. Each action can also
+     * specify its own encrypted environment.
+     * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+     * serve as environment variable names and their values. The decoded
+     * environment variables can overwrite the values specified by the
+     * `environment` field.
+     * </pre>
+     *
+     * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.lifesciences.v2beta.Secret,
+            com.google.cloud.lifesciences.v2beta.Secret.Builder,
+            com.google.cloud.lifesciences.v2beta.SecretOrBuilder>
+        getEncryptedEnvironmentFieldBuilder() {
+      if (encryptedEnvironmentBuilder_ == null) {
+        encryptedEnvironmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.lifesciences.v2beta.Secret,
+                com.google.cloud.lifesciences.v2beta.Secret.Builder,
+                com.google.cloud.lifesciences.v2beta.SecretOrBuilder>(
+                getEncryptedEnvironment(), getParentForChildren(), isClean());
+        encryptedEnvironment_ = null;
+      }
+      return encryptedEnvironmentBuilder_;
     }
 
     private com.google.protobuf.Duration timeout_;

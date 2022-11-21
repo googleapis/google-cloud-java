@@ -16,6 +16,8 @@
 
 package com.google.cloud.lifesciences.v2beta;
 
+import static com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -26,9 +28,14 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.lifesciences.v2beta.stub.WorkflowsServiceV2BetaStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
@@ -49,7 +56,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runPipeline to 30 seconds:
+ * <p>For example, to set the total timeout of getLocation to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -60,10 +67,10 @@ import javax.annotation.Generated;
  * WorkflowsServiceV2BetaSettings.Builder workflowsServiceV2BetaSettingsBuilder =
  *     WorkflowsServiceV2BetaSettings.newBuilder();
  * workflowsServiceV2BetaSettingsBuilder
- *     .runPipelineSettings()
+ *     .getLocationSettings()
  *     .setRetrySettings(
  *         workflowsServiceV2BetaSettingsBuilder
- *             .runPipelineSettings()
+ *             .getLocationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -85,6 +92,17 @@ public class WorkflowsServiceV2BetaSettings extends ClientSettings<WorkflowsServ
   public OperationCallSettings<RunPipelineRequest, RunPipelineResponse, Metadata>
       runPipelineOperationSettings() {
     return ((WorkflowsServiceV2BetaStubSettings) getStubSettings()).runPipelineOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((WorkflowsServiceV2BetaStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((WorkflowsServiceV2BetaStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final WorkflowsServiceV2BetaSettings create(WorkflowsServiceV2BetaStubSettings stub)
@@ -212,6 +230,18 @@ public class WorkflowsServiceV2BetaSettings extends ClientSettings<WorkflowsServ
     public OperationCallSettings.Builder<RunPipelineRequest, RunPipelineResponse, Metadata>
         runPipelineOperationSettings() {
       return getStubSettingsBuilder().runPipelineOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

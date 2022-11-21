@@ -14,37 +14,38 @@
  * limitations under the License.
  */
 
-package com.google.cloud.lifesciences.v2beta.stub.samples;
+package com.google.cloud.lifesciences.v2beta.samples;
 
-// [START lifesciences_v2beta_generated_WorkflowsServiceV2BetaStubSettings_RunPipeline_sync]
-import com.google.cloud.lifesciences.v2beta.stub.WorkflowsServiceV2BetaStubSettings;
-import java.time.Duration;
+// [START lifesciences_v2beta_generated_WorkflowsServiceV2Beta_ListLocations_sync]
+import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaClient;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.Location;
 
-public class SyncRunPipeline {
+public class SyncListLocations {
 
   public static void main(String[] args) throws Exception {
-    syncRunPipeline();
+    syncListLocations();
   }
 
-  public static void syncRunPipeline() throws Exception {
+  public static void syncListLocations() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    WorkflowsServiceV2BetaStubSettings.Builder workflowsServiceV2BetaSettingsBuilder =
-        WorkflowsServiceV2BetaStubSettings.newBuilder();
-    workflowsServiceV2BetaSettingsBuilder
-        .runPipelineSettings()
-        .setRetrySettings(
-            workflowsServiceV2BetaSettingsBuilder
-                .runPipelineSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    WorkflowsServiceV2BetaStubSettings workflowsServiceV2BetaSettings =
-        workflowsServiceV2BetaSettingsBuilder.build();
+    try (WorkflowsServiceV2BetaClient workflowsServiceV2BetaClient =
+        WorkflowsServiceV2BetaClient.create()) {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      for (Location element : workflowsServiceV2BetaClient.listLocations(request).iterateAll()) {
+        // doThingsWith(element);
+      }
+    }
   }
 }
-// [END lifesciences_v2beta_generated_WorkflowsServiceV2BetaStubSettings_RunPipeline_sync]
+// [END lifesciences_v2beta_generated_WorkflowsServiceV2Beta_ListLocations_sync]

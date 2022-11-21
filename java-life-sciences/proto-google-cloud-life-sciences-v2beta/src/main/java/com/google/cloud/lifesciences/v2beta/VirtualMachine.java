@@ -46,6 +46,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     nvidiaDriverVersion_ = "";
     dockerCacheImages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     volumes_ = java.util.Collections.emptyList();
+    reservation_ = "";
   }
 
   @java.lang.Override
@@ -691,7 +692,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
    * @return The nvidiaDriverVersion.
    */
   @java.lang.Override
@@ -720,7 +721,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
    * @return The bytes for nvidiaDriverVersion.
    */
   @java.lang.Override
@@ -922,6 +923,57 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     return volumes_.get(index);
   }
 
+  public static final int RESERVATION_FIELD_NUMBER = 15;
+  private volatile java.lang.Object reservation_;
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the VM will only be allocated inside the matching
+   * reservation. It will fail if the VM parameters don't match the reservation.
+   * </pre>
+   *
+   * <code>string reservation = 15;</code>
+   *
+   * @return The reservation.
+   */
+  @java.lang.Override
+  public java.lang.String getReservation() {
+    java.lang.Object ref = reservation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reservation_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the VM will only be allocated inside the matching
+   * reservation. It will fail if the VM parameters don't match the reservation.
+   * </pre>
+   *
+   * <code>string reservation = 15;</code>
+   *
+   * @return The bytes for reservation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReservationBytes() {
+    java.lang.Object ref = reservation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      reservation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -976,6 +1028,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < volumes_.size(); i++) {
       output.writeMessage(14, volumes_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservation_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, reservation_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1041,6 +1096,9 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < volumes_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, volumes_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservation_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, reservation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1077,6 +1135,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     if (getEnableStackdriverMonitoring() != other.getEnableStackdriverMonitoring()) return false;
     if (!getDockerCacheImagesList().equals(other.getDockerCacheImagesList())) return false;
     if (!getVolumesList().equals(other.getVolumesList())) return false;
+    if (!getReservation().equals(other.getReservation())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1130,6 +1189,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + VOLUMES_FIELD_NUMBER;
       hash = (53 * hash) + getVolumesList().hashCode();
     }
+    hash = (37 * hash) + RESERVATION_FIELD_NUMBER;
+    hash = (53 * hash) + getReservation().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1338,6 +1399,8 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         volumesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      reservation_ = "";
+
       return this;
     }
 
@@ -1417,6 +1480,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.volumes_ = volumesBuilder_.build();
       }
+      result.reservation_ = reservation_;
       onBuilt();
       return result;
     }
@@ -1590,6 +1654,10 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getReservation().isEmpty()) {
+        reservation_ = other.reservation_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1728,6 +1796,12 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 114
+            case 122:
+              {
+                reservation_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3597,7 +3671,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
      * @return The nvidiaDriverVersion.
      */
     @java.lang.Deprecated
@@ -3625,7 +3699,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
      * @return The bytes for nvidiaDriverVersion.
      */
     @java.lang.Deprecated
@@ -3653,7 +3727,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
      * @param value The nvidiaDriverVersion to set.
      * @return This builder for chaining.
      */
@@ -3680,7 +3754,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3703,7 +3777,7 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
      * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+     *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
      * @param value The bytes for nvidiaDriverVersion to set.
      * @return This builder for chaining.
      */
@@ -4376,6 +4450,117 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         volumes_ = null;
       }
       return volumesBuilder_;
+    }
+
+    private java.lang.Object reservation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the VM will only be allocated inside the matching
+     * reservation. It will fail if the VM parameters don't match the reservation.
+     * </pre>
+     *
+     * <code>string reservation = 15;</code>
+     *
+     * @return The reservation.
+     */
+    public java.lang.String getReservation() {
+      java.lang.Object ref = reservation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the VM will only be allocated inside the matching
+     * reservation. It will fail if the VM parameters don't match the reservation.
+     * </pre>
+     *
+     * <code>string reservation = 15;</code>
+     *
+     * @return The bytes for reservation.
+     */
+    public com.google.protobuf.ByteString getReservationBytes() {
+      java.lang.Object ref = reservation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reservation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the VM will only be allocated inside the matching
+     * reservation. It will fail if the VM parameters don't match the reservation.
+     * </pre>
+     *
+     * <code>string reservation = 15;</code>
+     *
+     * @param value The reservation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      reservation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the VM will only be allocated inside the matching
+     * reservation. It will fail if the VM parameters don't match the reservation.
+     * </pre>
+     *
+     * <code>string reservation = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservation() {
+
+      reservation_ = getDefaultInstance().getReservation();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, the VM will only be allocated inside the matching
+     * reservation. It will fail if the VM parameters don't match the reservation.
+     * </pre>
+     *
+     * <code>string reservation = 15;</code>
+     *
+     * @param value The bytes for reservation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      reservation_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

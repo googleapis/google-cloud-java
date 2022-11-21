@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Cloud Life Sciences API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= WorkflowsServiceV2BetaClient =======================
  *
@@ -32,14 +34,8 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (WorkflowsServiceV2BetaClient workflowsServiceV2BetaClient =
  *     WorkflowsServiceV2BetaClient.create()) {
- *   RunPipelineRequest request =
- *       RunPipelineRequest.newBuilder()
- *           .setParent("parent-995424086")
- *           .setPipeline(Pipeline.newBuilder().build())
- *           .putAllLabels(new HashMap<String, String>())
- *           .setPubSubTopic("pubSubTopic320524524")
- *           .build();
- *   RunPipelineResponse response = workflowsServiceV2BetaClient.runPipelineAsync(request).get();
+ *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+ *   Location response = workflowsServiceV2BetaClient.getLocation(request);
  * }
  * }</pre>
  */
