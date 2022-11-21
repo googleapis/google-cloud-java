@@ -1,10 +1,10 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-iam-v1:1.6.16:1.6.17-SNAPSHOT
-grpc-google-iam-v1:1.6.16:1.6.17-SNAPSHOT
-proto-google-iam-v2beta:1.6.16:1.6.17-SNAPSHOT
-grpc-google-iam-v2beta:1.6.16:1.6.17-SNAPSHOT
-google-iam-policy:1.6.16:1.6.17-SNAPSHOT
-proto-google-iam-v2:1.6.16:1.6.17-SNAPSHOT
-grpc-google-iam-v2:1.6.16:1.6.17-SNAPSHOT
+proto-google-iam-v1:1.6.17:1.6.17
+grpc-google-iam-v1:1.6.17:1.6.17
+proto-google-iam-v2beta:1.6.17:1.6.17
+grpc-google-iam-v2beta:1.6.17:1.6.17
+google-iam-policy:1.6.17:1.6.17
+proto-google-iam-v2:1.6.17:1.6.17
+grpc-google-iam-v2:1.6.17:1.6.17
