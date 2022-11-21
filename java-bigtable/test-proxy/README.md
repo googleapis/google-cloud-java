@@ -15,7 +15,9 @@ git clone https://github.com/googleapis/cloud-bigtable-clients-test.git
 Build the proxy with the latest version of the client
 
 ```
-cd java-bigtable/test-proxy
+cd java-bigtable
+mvn clean install -DskipTests
+cd test-proxy
 mvn clean install
 ```
 
