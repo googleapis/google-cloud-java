@@ -909,6 +909,49 @@ public final class NotebookServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.DiagnoseInstanceRequest, com.google.longrunning.Operation>
+      getDiagnoseInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DiagnoseInstance",
+      requestType = com.google.cloud.notebooks.v1.DiagnoseInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.DiagnoseInstanceRequest, com.google.longrunning.Operation>
+      getDiagnoseInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.notebooks.v1.DiagnoseInstanceRequest, com.google.longrunning.Operation>
+        getDiagnoseInstanceMethod;
+    if ((getDiagnoseInstanceMethod = NotebookServiceGrpc.getDiagnoseInstanceMethod) == null) {
+      synchronized (NotebookServiceGrpc.class) {
+        if ((getDiagnoseInstanceMethod = NotebookServiceGrpc.getDiagnoseInstanceMethod) == null) {
+          NotebookServiceGrpc.getDiagnoseInstanceMethod =
+              getDiagnoseInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.notebooks.v1.DiagnoseInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DiagnoseInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.DiagnoseInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NotebookServiceMethodDescriptorSupplier("DiagnoseInstance"))
+                      .build();
+        }
+      }
+    }
+    return getDiagnoseInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest,
           com.google.longrunning.Operation>
       getUpgradeInstanceInternalMethod;
@@ -1869,6 +1912,20 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given an Instance.
+     * </pre>
+     */
+    public void diagnoseInstance(
+        com.google.cloud.notebooks.v1.DiagnoseInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDiagnoseInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Allows notebook instances to
      * call this endpoint to upgrade themselves. Do not use this method directly.
      * </pre>
@@ -2187,6 +2244,12 @@ public final class NotebookServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.notebooks.v1.RollbackInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_ROLLBACK_INSTANCE)))
+          .addMethod(
+              getDiagnoseInstanceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.notebooks.v1.DiagnoseInstanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DIAGNOSE_INSTANCE)))
           .addMethod(
               getUpgradeInstanceInternalMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2607,6 +2670,22 @@ public final class NotebookServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRollbackInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given an Instance.
+     * </pre>
+     */
+    public void diagnoseInstance(
+        com.google.cloud.notebooks.v1.DiagnoseInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDiagnoseInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3117,6 +3196,19 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given an Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation diagnoseInstance(
+        com.google.cloud.notebooks.v1.DiagnoseInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDiagnoseInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Allows notebook instances to
      * call this endpoint to upgrade themselves. Do not use this method directly.
      * </pre>
@@ -3582,6 +3674,19 @@ public final class NotebookServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given an Instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        diagnoseInstance(com.google.cloud.notebooks.v1.DiagnoseInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDiagnoseInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Allows notebook instances to
      * call this endpoint to upgrade themselves. Do not use this method directly.
      * </pre>
@@ -3788,20 +3893,21 @@ public final class NotebookServiceGrpc {
   private static final int METHODID_GET_INSTANCE_HEALTH = 16;
   private static final int METHODID_UPGRADE_INSTANCE = 17;
   private static final int METHODID_ROLLBACK_INSTANCE = 18;
-  private static final int METHODID_UPGRADE_INSTANCE_INTERNAL = 19;
-  private static final int METHODID_LIST_ENVIRONMENTS = 20;
-  private static final int METHODID_GET_ENVIRONMENT = 21;
-  private static final int METHODID_CREATE_ENVIRONMENT = 22;
-  private static final int METHODID_DELETE_ENVIRONMENT = 23;
-  private static final int METHODID_LIST_SCHEDULES = 24;
-  private static final int METHODID_GET_SCHEDULE = 25;
-  private static final int METHODID_DELETE_SCHEDULE = 26;
-  private static final int METHODID_CREATE_SCHEDULE = 27;
-  private static final int METHODID_TRIGGER_SCHEDULE = 28;
-  private static final int METHODID_LIST_EXECUTIONS = 29;
-  private static final int METHODID_GET_EXECUTION = 30;
-  private static final int METHODID_DELETE_EXECUTION = 31;
-  private static final int METHODID_CREATE_EXECUTION = 32;
+  private static final int METHODID_DIAGNOSE_INSTANCE = 19;
+  private static final int METHODID_UPGRADE_INSTANCE_INTERNAL = 20;
+  private static final int METHODID_LIST_ENVIRONMENTS = 21;
+  private static final int METHODID_GET_ENVIRONMENT = 22;
+  private static final int METHODID_CREATE_ENVIRONMENT = 23;
+  private static final int METHODID_DELETE_ENVIRONMENT = 24;
+  private static final int METHODID_LIST_SCHEDULES = 25;
+  private static final int METHODID_GET_SCHEDULE = 26;
+  private static final int METHODID_DELETE_SCHEDULE = 27;
+  private static final int METHODID_CREATE_SCHEDULE = 28;
+  private static final int METHODID_TRIGGER_SCHEDULE = 29;
+  private static final int METHODID_LIST_EXECUTIONS = 30;
+  private static final int METHODID_GET_EXECUTION = 31;
+  private static final int METHODID_DELETE_EXECUTION = 32;
+  private static final int METHODID_CREATE_EXECUTION = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3920,6 +4026,11 @@ public final class NotebookServiceGrpc {
         case METHODID_ROLLBACK_INSTANCE:
           serviceImpl.rollbackInstance(
               (com.google.cloud.notebooks.v1.RollbackInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DIAGNOSE_INSTANCE:
+          serviceImpl.diagnoseInstance(
+              (com.google.cloud.notebooks.v1.DiagnoseInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_UPGRADE_INSTANCE_INTERNAL:
@@ -4081,6 +4192,7 @@ public final class NotebookServiceGrpc {
                       .addMethod(getGetInstanceHealthMethod())
                       .addMethod(getUpgradeInstanceMethod())
                       .addMethod(getRollbackInstanceMethod())
+                      .addMethod(getDiagnoseInstanceMethod())
                       .addMethod(getUpgradeInstanceInternalMethod())
                       .addMethod(getListEnvironmentsMethod())
                       .addMethod(getGetEnvironmentMethod())

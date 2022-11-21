@@ -19,6 +19,7 @@ package com.google.cloud.notebooks.v1;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListExecutionsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListInstancesPagedResponse;
+import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListSchedulesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -33,7 +34,16 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1.stub.NotebookServiceStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -267,6 +277,17 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     return ((NotebookServiceStubSettings) getStubSettings()).rollbackInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to diagnoseInstance. */
+  public UnaryCallSettings<DiagnoseInstanceRequest, Operation> diagnoseInstanceSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).diagnoseInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to diagnoseInstance. */
+  public OperationCallSettings<DiagnoseInstanceRequest, Instance, OperationMetadata>
+      diagnoseInstanceOperationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).diagnoseInstanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to upgradeInstanceInternal. */
   public UnaryCallSettings<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalSettings() {
@@ -390,6 +411,33 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   public OperationCallSettings<CreateExecutionRequest, Execution, OperationMetadata>
       createExecutionOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).createExecutionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final NotebookServiceSettings create(NotebookServiceStubSettings stub)
@@ -683,6 +731,18 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       return getStubSettingsBuilder().rollbackInstanceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to diagnoseInstance. */
+    public UnaryCallSettings.Builder<DiagnoseInstanceRequest, Operation>
+        diagnoseInstanceSettings() {
+      return getStubSettingsBuilder().diagnoseInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to diagnoseInstance. */
+    public OperationCallSettings.Builder<DiagnoseInstanceRequest, Instance, OperationMetadata>
+        diagnoseInstanceOperationSettings() {
+      return getStubSettingsBuilder().diagnoseInstanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to upgradeInstanceInternal. */
     public UnaryCallSettings.Builder<UpgradeInstanceInternalRequest, Operation>
         upgradeInstanceInternalSettings() {
@@ -809,6 +869,34 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     public OperationCallSettings.Builder<CreateExecutionRequest, Execution, OperationMetadata>
         createExecutionOperationSettings() {
       return getStubSettingsBuilder().createExecutionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

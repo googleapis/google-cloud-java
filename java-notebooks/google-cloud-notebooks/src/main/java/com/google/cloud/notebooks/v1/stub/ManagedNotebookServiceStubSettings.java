@@ -16,6 +16,7 @@
 
 package com.google.cloud.notebooks.v1.stub;
 
+import static com.google.cloud.notebooks.v1.ManagedNotebookServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.notebooks.v1.ManagedNotebookServiceClient.ListRuntimesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,8 +45,13 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1.CreateRuntimeRequest;
 import com.google.cloud.notebooks.v1.DeleteRuntimeRequest;
+import com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest;
 import com.google.cloud.notebooks.v1.GetRuntimeRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesResponse;
@@ -58,10 +64,17 @@ import com.google.cloud.notebooks.v1.Runtime;
 import com.google.cloud.notebooks.v1.StartRuntimeRequest;
 import com.google.cloud.notebooks.v1.StopRuntimeRequest;
 import com.google.cloud.notebooks.v1.SwitchRuntimeRequest;
+import com.google.cloud.notebooks.v1.UpdateRuntimeRequest;
+import com.google.cloud.notebooks.v1.UpgradeRuntimeRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -121,6 +134,9 @@ public class ManagedNotebookServiceStubSettings
   private final UnaryCallSettings<CreateRuntimeRequest, Operation> createRuntimeSettings;
   private final OperationCallSettings<CreateRuntimeRequest, Runtime, OperationMetadata>
       createRuntimeOperationSettings;
+  private final UnaryCallSettings<UpdateRuntimeRequest, Operation> updateRuntimeSettings;
+  private final OperationCallSettings<UpdateRuntimeRequest, Runtime, OperationMetadata>
+      updateRuntimeOperationSettings;
   private final UnaryCallSettings<DeleteRuntimeRequest, Operation> deleteRuntimeSettings;
   private final OperationCallSettings<DeleteRuntimeRequest, Empty, OperationMetadata>
       deleteRuntimeOperationSettings;
@@ -136,12 +152,26 @@ public class ManagedNotebookServiceStubSettings
   private final UnaryCallSettings<ResetRuntimeRequest, Operation> resetRuntimeSettings;
   private final OperationCallSettings<ResetRuntimeRequest, Runtime, OperationMetadata>
       resetRuntimeOperationSettings;
+  private final UnaryCallSettings<UpgradeRuntimeRequest, Operation> upgradeRuntimeSettings;
+  private final OperationCallSettings<UpgradeRuntimeRequest, Runtime, OperationMetadata>
+      upgradeRuntimeOperationSettings;
   private final UnaryCallSettings<ReportRuntimeEventRequest, Operation> reportRuntimeEventSettings;
   private final OperationCallSettings<ReportRuntimeEventRequest, Runtime, OperationMetadata>
       reportRuntimeEventOperationSettings;
   private final UnaryCallSettings<
           RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
       refreshRuntimeTokenInternalSettings;
+  private final UnaryCallSettings<DiagnoseRuntimeRequest, Operation> diagnoseRuntimeSettings;
+  private final OperationCallSettings<DiagnoseRuntimeRequest, Runtime, OperationMetadata>
+      diagnoseRuntimeOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListRuntimesRequest, ListRuntimesResponse, Runtime>
       LIST_RUNTIMES_PAGE_STR_DESC =
@@ -179,6 +209,42 @@ public class ManagedNotebookServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListRuntimesRequest, ListRuntimesResponse, ListRuntimesPagedResponse>
       LIST_RUNTIMES_PAGE_STR_FACT =
@@ -193,6 +259,23 @@ public class ManagedNotebookServiceStubSettings
               PageContext<ListRuntimesRequest, ListRuntimesResponse, Runtime> pageContext =
                   PageContext.create(callable, LIST_RUNTIMES_PAGE_STR_DESC, request, context);
               return ListRuntimesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -216,6 +299,17 @@ public class ManagedNotebookServiceStubSettings
   public OperationCallSettings<CreateRuntimeRequest, Runtime, OperationMetadata>
       createRuntimeOperationSettings() {
     return createRuntimeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRuntime. */
+  public UnaryCallSettings<UpdateRuntimeRequest, Operation> updateRuntimeSettings() {
+    return updateRuntimeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRuntime. */
+  public OperationCallSettings<UpdateRuntimeRequest, Runtime, OperationMetadata>
+      updateRuntimeOperationSettings() {
+    return updateRuntimeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteRuntime. */
@@ -273,6 +367,17 @@ public class ManagedNotebookServiceStubSettings
     return resetRuntimeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to upgradeRuntime. */
+  public UnaryCallSettings<UpgradeRuntimeRequest, Operation> upgradeRuntimeSettings() {
+    return upgradeRuntimeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to upgradeRuntime. */
+  public OperationCallSettings<UpgradeRuntimeRequest, Runtime, OperationMetadata>
+      upgradeRuntimeOperationSettings() {
+    return upgradeRuntimeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to reportRuntimeEvent. */
   public UnaryCallSettings<ReportRuntimeEventRequest, Operation> reportRuntimeEventSettings() {
     return reportRuntimeEventSettings;
@@ -288,6 +393,44 @@ public class ManagedNotebookServiceStubSettings
   public UnaryCallSettings<RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
       refreshRuntimeTokenInternalSettings() {
     return refreshRuntimeTokenInternalSettings;
+  }
+
+  /** Returns the object with the settings used for calls to diagnoseRuntime. */
+  public UnaryCallSettings<DiagnoseRuntimeRequest, Operation> diagnoseRuntimeSettings() {
+    return diagnoseRuntimeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to diagnoseRuntime. */
+  public OperationCallSettings<DiagnoseRuntimeRequest, Runtime, OperationMetadata>
+      diagnoseRuntimeOperationSettings() {
+    return diagnoseRuntimeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public ManagedNotebookServiceStub createStub() throws IOException {
@@ -369,6 +512,8 @@ public class ManagedNotebookServiceStubSettings
     getRuntimeSettings = settingsBuilder.getRuntimeSettings().build();
     createRuntimeSettings = settingsBuilder.createRuntimeSettings().build();
     createRuntimeOperationSettings = settingsBuilder.createRuntimeOperationSettings().build();
+    updateRuntimeSettings = settingsBuilder.updateRuntimeSettings().build();
+    updateRuntimeOperationSettings = settingsBuilder.updateRuntimeOperationSettings().build();
     deleteRuntimeSettings = settingsBuilder.deleteRuntimeSettings().build();
     deleteRuntimeOperationSettings = settingsBuilder.deleteRuntimeOperationSettings().build();
     startRuntimeSettings = settingsBuilder.startRuntimeSettings().build();
@@ -379,11 +524,20 @@ public class ManagedNotebookServiceStubSettings
     switchRuntimeOperationSettings = settingsBuilder.switchRuntimeOperationSettings().build();
     resetRuntimeSettings = settingsBuilder.resetRuntimeSettings().build();
     resetRuntimeOperationSettings = settingsBuilder.resetRuntimeOperationSettings().build();
+    upgradeRuntimeSettings = settingsBuilder.upgradeRuntimeSettings().build();
+    upgradeRuntimeOperationSettings = settingsBuilder.upgradeRuntimeOperationSettings().build();
     reportRuntimeEventSettings = settingsBuilder.reportRuntimeEventSettings().build();
     reportRuntimeEventOperationSettings =
         settingsBuilder.reportRuntimeEventOperationSettings().build();
     refreshRuntimeTokenInternalSettings =
         settingsBuilder.refreshRuntimeTokenInternalSettings().build();
+    diagnoseRuntimeSettings = settingsBuilder.diagnoseRuntimeSettings().build();
+    diagnoseRuntimeOperationSettings = settingsBuilder.diagnoseRuntimeOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for ManagedNotebookServiceStubSettings. */
@@ -397,6 +551,9 @@ public class ManagedNotebookServiceStubSettings
     private final UnaryCallSettings.Builder<CreateRuntimeRequest, Operation> createRuntimeSettings;
     private final OperationCallSettings.Builder<CreateRuntimeRequest, Runtime, OperationMetadata>
         createRuntimeOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateRuntimeRequest, Operation> updateRuntimeSettings;
+    private final OperationCallSettings.Builder<UpdateRuntimeRequest, Runtime, OperationMetadata>
+        updateRuntimeOperationSettings;
     private final UnaryCallSettings.Builder<DeleteRuntimeRequest, Operation> deleteRuntimeSettings;
     private final OperationCallSettings.Builder<DeleteRuntimeRequest, Empty, OperationMetadata>
         deleteRuntimeOperationSettings;
@@ -412,6 +569,10 @@ public class ManagedNotebookServiceStubSettings
     private final UnaryCallSettings.Builder<ResetRuntimeRequest, Operation> resetRuntimeSettings;
     private final OperationCallSettings.Builder<ResetRuntimeRequest, Runtime, OperationMetadata>
         resetRuntimeOperationSettings;
+    private final UnaryCallSettings.Builder<UpgradeRuntimeRequest, Operation>
+        upgradeRuntimeSettings;
+    private final OperationCallSettings.Builder<UpgradeRuntimeRequest, Runtime, OperationMetadata>
+        upgradeRuntimeOperationSettings;
     private final UnaryCallSettings.Builder<ReportRuntimeEventRequest, Operation>
         reportRuntimeEventSettings;
     private final OperationCallSettings.Builder<
@@ -420,6 +581,18 @@ public class ManagedNotebookServiceStubSettings
     private final UnaryCallSettings.Builder<
             RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
         refreshRuntimeTokenInternalSettings;
+    private final UnaryCallSettings.Builder<DiagnoseRuntimeRequest, Operation>
+        diagnoseRuntimeSettings;
+    private final OperationCallSettings.Builder<DiagnoseRuntimeRequest, Runtime, OperationMetadata>
+        diagnoseRuntimeOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -472,6 +645,8 @@ public class ManagedNotebookServiceStubSettings
       getRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRuntimeOperationSettings = OperationCallSettings.newBuilder();
+      updateRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRuntimeOperationSettings = OperationCallSettings.newBuilder();
       deleteRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRuntimeOperationSettings = OperationCallSettings.newBuilder();
       startRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -482,22 +657,39 @@ public class ManagedNotebookServiceStubSettings
       switchRuntimeOperationSettings = OperationCallSettings.newBuilder();
       resetRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetRuntimeOperationSettings = OperationCallSettings.newBuilder();
+      upgradeRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      upgradeRuntimeOperationSettings = OperationCallSettings.newBuilder();
       reportRuntimeEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reportRuntimeEventOperationSettings = OperationCallSettings.newBuilder();
       refreshRuntimeTokenInternalSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      diagnoseRuntimeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      diagnoseRuntimeOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listRuntimesSettings,
               getRuntimeSettings,
               createRuntimeSettings,
+              updateRuntimeSettings,
               deleteRuntimeSettings,
               startRuntimeSettings,
               stopRuntimeSettings,
               switchRuntimeSettings,
               resetRuntimeSettings,
+              upgradeRuntimeSettings,
               reportRuntimeEventSettings,
-              refreshRuntimeTokenInternalSettings);
+              refreshRuntimeTokenInternalSettings,
+              diagnoseRuntimeSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -508,6 +700,8 @@ public class ManagedNotebookServiceStubSettings
       getRuntimeSettings = settings.getRuntimeSettings.toBuilder();
       createRuntimeSettings = settings.createRuntimeSettings.toBuilder();
       createRuntimeOperationSettings = settings.createRuntimeOperationSettings.toBuilder();
+      updateRuntimeSettings = settings.updateRuntimeSettings.toBuilder();
+      updateRuntimeOperationSettings = settings.updateRuntimeOperationSettings.toBuilder();
       deleteRuntimeSettings = settings.deleteRuntimeSettings.toBuilder();
       deleteRuntimeOperationSettings = settings.deleteRuntimeOperationSettings.toBuilder();
       startRuntimeSettings = settings.startRuntimeSettings.toBuilder();
@@ -518,24 +712,41 @@ public class ManagedNotebookServiceStubSettings
       switchRuntimeOperationSettings = settings.switchRuntimeOperationSettings.toBuilder();
       resetRuntimeSettings = settings.resetRuntimeSettings.toBuilder();
       resetRuntimeOperationSettings = settings.resetRuntimeOperationSettings.toBuilder();
+      upgradeRuntimeSettings = settings.upgradeRuntimeSettings.toBuilder();
+      upgradeRuntimeOperationSettings = settings.upgradeRuntimeOperationSettings.toBuilder();
       reportRuntimeEventSettings = settings.reportRuntimeEventSettings.toBuilder();
       reportRuntimeEventOperationSettings =
           settings.reportRuntimeEventOperationSettings.toBuilder();
       refreshRuntimeTokenInternalSettings =
           settings.refreshRuntimeTokenInternalSettings.toBuilder();
+      diagnoseRuntimeSettings = settings.diagnoseRuntimeSettings.toBuilder();
+      diagnoseRuntimeOperationSettings = settings.diagnoseRuntimeOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listRuntimesSettings,
               getRuntimeSettings,
               createRuntimeSettings,
+              updateRuntimeSettings,
               deleteRuntimeSettings,
               startRuntimeSettings,
               stopRuntimeSettings,
               switchRuntimeSettings,
               resetRuntimeSettings,
+              upgradeRuntimeSettings,
               reportRuntimeEventSettings,
-              refreshRuntimeTokenInternalSettings);
+              refreshRuntimeTokenInternalSettings,
+              diagnoseRuntimeSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -568,6 +779,11 @@ public class ManagedNotebookServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateRuntimeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteRuntimeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -593,6 +809,11 @@ public class ManagedNotebookServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .upgradeRuntimeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .reportRuntimeEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -603,10 +824,64 @@ public class ManagedNotebookServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .diagnoseRuntimeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .createRuntimeOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateRuntimeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Runtime.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateRuntimeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRuntimeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -746,10 +1021,58 @@ public class ManagedNotebookServiceStubSettings
                       .build()));
 
       builder
+          .upgradeRuntimeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpgradeRuntimeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Runtime.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .reportRuntimeEventOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ReportRuntimeEventRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Runtime.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .diagnoseRuntimeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DiagnoseRuntimeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -810,6 +1133,19 @@ public class ManagedNotebookServiceStubSettings
     public OperationCallSettings.Builder<CreateRuntimeRequest, Runtime, OperationMetadata>
         createRuntimeOperationSettings() {
       return createRuntimeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRuntime. */
+    public UnaryCallSettings.Builder<UpdateRuntimeRequest, Operation> updateRuntimeSettings() {
+      return updateRuntimeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRuntime. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateRuntimeRequest, Runtime, OperationMetadata>
+        updateRuntimeOperationSettings() {
+      return updateRuntimeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteRuntime. */
@@ -877,6 +1213,19 @@ public class ManagedNotebookServiceStubSettings
       return resetRuntimeOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to upgradeRuntime. */
+    public UnaryCallSettings.Builder<UpgradeRuntimeRequest, Operation> upgradeRuntimeSettings() {
+      return upgradeRuntimeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeRuntime. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpgradeRuntimeRequest, Runtime, OperationMetadata>
+        upgradeRuntimeOperationSettings() {
+      return upgradeRuntimeOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to reportRuntimeEvent. */
     public UnaryCallSettings.Builder<ReportRuntimeEventRequest, Operation>
         reportRuntimeEventSettings() {
@@ -896,6 +1245,47 @@ public class ManagedNotebookServiceStubSettings
             RefreshRuntimeTokenInternalRequest, RefreshRuntimeTokenInternalResponse>
         refreshRuntimeTokenInternalSettings() {
       return refreshRuntimeTokenInternalSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to diagnoseRuntime. */
+    public UnaryCallSettings.Builder<DiagnoseRuntimeRequest, Operation> diagnoseRuntimeSettings() {
+      return diagnoseRuntimeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to diagnoseRuntime. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DiagnoseRuntimeRequest, Runtime, OperationMetadata>
+        diagnoseRuntimeOperationSettings() {
+      return diagnoseRuntimeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -52,6 +52,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     kmsKey_ = "";
     network_ = "";
     subnet_ = "";
+    nicType_ = 0;
   }
 
   @java.lang.Override
@@ -148,7 +149,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P_4.
+     * Accelerator type is Nvidia Tesla P4.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4 = 4;</code>
@@ -188,7 +189,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is NVIDIA Tesla P_4 Virtual Workstations.
+     * Accelerator type is NVIDIA Tesla P4 Virtual Workstations.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4_VWS = 10;</code>
@@ -261,7 +262,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is Nvidia Tesla P_4.
+     * Accelerator type is Nvidia Tesla P4.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4 = 4;</code>
@@ -301,7 +302,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Accelerator type is NVIDIA Tesla P_4 Virtual Workstations.
+     * Accelerator type is NVIDIA Tesla P4 Virtual Workstations.
      * </pre>
      *
      * <code>NVIDIA_TESLA_P4_VWS = 10;</code>
@@ -540,6 +541,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>REGISTERING = 9;</code>
      */
     REGISTERING(9),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 10;</code>
+     */
+    SUSPENDING(10),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 11;</code>
+     */
+    SUSPENDED(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -644,6 +665,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>REGISTERING = 9;</code>
      */
     public static final int REGISTERING_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 10;</code>
+     */
+    public static final int SUSPENDING_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 11;</code>
+     */
+    public static final int SUSPENDED_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -689,6 +730,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return INITIALIZING;
         case 9:
           return REGISTERING;
+        case 10:
+          return SUSPENDING;
+        case 11:
+          return SUSPENDED;
         default:
           return null;
       }
@@ -1076,6 +1121,165 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.notebooks.v1beta1.Instance.DiskEncryption)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of vNIC driver.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.notebooks.v1beta1.Instance.NicType}
+   */
+  public enum NicType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No type specified. Default should be UNSPECIFIED_NIC_TYPE.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_NIC_TYPE = 0;</code>
+     */
+    UNSPECIFIED_NIC_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * VIRTIO. Default in Notebooks DLVM.
+     * </pre>
+     *
+     * <code>VIRTIO_NET = 1;</code>
+     */
+    VIRTIO_NET(1),
+    /**
+     *
+     *
+     * <pre>
+     * GVNIC. Alternative to VIRTIO.
+     * https://github.com/GoogleCloudPlatform/compute-virtual-ethernet-linux
+     * </pre>
+     *
+     * <code>GVNIC = 2;</code>
+     */
+    GVNIC(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No type specified. Default should be UNSPECIFIED_NIC_TYPE.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_NIC_TYPE = 0;</code>
+     */
+    public static final int UNSPECIFIED_NIC_TYPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * VIRTIO. Default in Notebooks DLVM.
+     * </pre>
+     *
+     * <code>VIRTIO_NET = 1;</code>
+     */
+    public static final int VIRTIO_NET_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * GVNIC. Alternative to VIRTIO.
+     * https://github.com/GoogleCloudPlatform/compute-virtual-ethernet-linux
+     * </pre>
+     *
+     * <code>GVNIC = 2;</code>
+     */
+    public static final int GVNIC_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static NicType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static NicType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNSPECIFIED_NIC_TYPE;
+        case 1:
+          return VIRTIO_NET;
+        case 2:
+          return GVNIC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<NicType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<NicType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<NicType>() {
+          public NicType findValueByNumber(int number) {
+            return NicType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.notebooks.v1beta1.Instance.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final NicType[] VALUES = values();
+
+    public static NicType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private NicType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.notebooks.v1beta1.Instance.NicType)
   }
 
   public interface AcceleratorConfigOrBuilder
@@ -2016,7 +2220,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Path to a Bash script that automatically runs after a notebook instance
    * fully boots up. The path must be a URL or
-   * Cloud Storage path (`gs://path-to-file/file-name`).
+   * Cloud Storage path (gs://path-to-file/file-name).
    * </pre>
    *
    * <code>string post_startup_script = 4;</code>
@@ -2041,7 +2245,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Path to a Bash script that automatically runs after a notebook instance
    * fully boots up. The path must be a URL or
-   * Cloud Storage path (`gs://path-to-file/file-name`).
+   * Cloud Storage path (gs://path-to-file/file-name).
    * </pre>
    *
    * <code>string post_startup_script = 4;</code>
@@ -2067,8 +2271,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The proxy endpoint that is used to access the Jupyter
-   * notebook.
+   * Output only. The proxy endpoint that is used to access the Jupyter notebook.
    * </pre>
    *
    * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2091,8 +2294,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The proxy endpoint that is used to access the Jupyter
-   * notebook.
+   * Output only. The proxy endpoint that is used to access the Jupyter notebook.
    * </pre>
    *
    * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2118,8 +2320,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format:
-   * `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2136,8 +2337,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format:
-   * `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2154,8 +2354,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format:
-   * `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2173,8 +2372,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The owner of this instance after creation. Format:
-   * `alias&#64;example.com`
+   * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
    * Currently supports one owner only. If not specified, all of the service
    * account users of your VM instance's service account can use
    * the instance.
@@ -2256,8 +2454,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine
-   * type](https://cloud.google.com/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -2281,8 +2478,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine
-   * type](https://cloud.google.com/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -2312,7 +2508,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
    * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+   * have selected](/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -2330,7 +2526,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
    * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+   * have selected](/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -2350,7 +2546,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
    * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+   * have selected](/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -2479,8 +2675,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The type of the boot disk attached to this instance, defaults
-   * to standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the boot disk attached to this instance, defaults to
+   * standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -2497,8 +2693,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The type of the boot disk attached to this instance, defaults
-   * to standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the boot disk attached to this instance, defaults to
+   * standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -2523,9 +2719,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The size of the boot disk in GB attached to this instance, up
-   * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value
-   * is 100&amp;nbsp;GB. If not specified, this defaults to 100.
+   * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
+   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
+   * 100&amp;nbsp;GB. If not specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2543,8 +2739,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The type of the data disk attached to this instance, defaults
-   * to standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the data disk attached to this instance, defaults to
+   * standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -2561,8 +2757,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The type of the data disk attached to this instance, defaults
-   * to standard persistent disk (`PD_STANDARD`).
+   * Input only. The type of the data disk attached to this instance, defaults to
+   * standard persistent disk (`PD_STANDARD`).
    * </pre>
    *
    * <code>
@@ -2587,10 +2783,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The size of the data disk in GB attached to this instance, up
-   * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the
-   * data disk based on how big your notebooks and data are. If not specified,
-   * this defaults to 100.
+   * Input only. The size of the data disk in GB attached to this instance, up to a maximum
+   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
+   * based on how big your notebooks and data are. If not specified, this
+   * defaults to 100.
    * </pre>
    *
    * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2608,8 +2804,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. If true, the data disk will not be auto deleted when deleting
-   * the instance.
+   * Input only. If true, the data disk will not be auto deleted when deleting the instance.
    * </pre>
    *
    * <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2627,8 +2822,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Disk encryption method used on the boot and data disks,
-   * defaults to GMEK.
+   * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
    * </pre>
    *
    * <code>
@@ -2645,8 +2839,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Disk encryption method used on the boot and data disks,
-   * defaults to GMEK.
+   * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
    * </pre>
    *
    * <code>
@@ -2671,11 +2864,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The KMS key used to encrypt the disks, only applicable if
-   * disk_encryption is CMEK. Format:
+   * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
+   * is CMEK.
+   * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   * Learn more about [using your own encryption keys](
-   * https://cloud.google.com/kms/docs/quickstart).
+   * Learn more about [using your own encryption keys](/kms/docs/quickstart).
    * </pre>
    *
    * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2698,11 +2891,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The KMS key used to encrypt the disks, only applicable if
-   * disk_encryption is CMEK. Format:
+   * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
+   * is CMEK.
+   * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   * Learn more about [using your own encryption keys](
-   * https://cloud.google.com/kms/docs/quickstart).
+   * Learn more about [using your own encryption keys](/kms/docs/quickstart).
    * </pre>
    *
    * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3065,6 +3258,133 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int NIC_TYPE_FIELD_NUMBER = 28;
+  private int nicType_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of vNIC to be used on this interface. This may be gVNIC or
+   * VirtioNet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1beta1.Instance.NicType nic_type = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for nicType.
+   */
+  @java.lang.Override
+  public int getNicTypeValue() {
+    return nicType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of vNIC to be used on this interface. This may be gVNIC or
+   * VirtioNet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1beta1.Instance.NicType nic_type = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nicType.
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1beta1.Instance.NicType getNicType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.notebooks.v1beta1.Instance.NicType result =
+        com.google.cloud.notebooks.v1beta1.Instance.NicType.valueOf(nicType_);
+    return result == null
+        ? com.google.cloud.notebooks.v1beta1.Instance.NicType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 29;
+  private com.google.cloud.notebooks.v1beta1.ReservationAffinity reservationAffinity_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional reservation affinity. Setting this field will apply
+   * the specified [Zonal Compute
+   * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+   * to this notebook instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the reservationAffinity field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationAffinity() {
+    return reservationAffinity_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional reservation affinity. Setting this field will apply
+   * the specified [Zonal Compute
+   * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+   * to this notebook instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The reservationAffinity.
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1beta1.ReservationAffinity getReservationAffinity() {
+    return reservationAffinity_ == null
+        ? com.google.cloud.notebooks.v1beta1.ReservationAffinity.getDefaultInstance()
+        : reservationAffinity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The optional reservation affinity. Setting this field will apply
+   * the specified [Zonal Compute
+   * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+   * to this notebook instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1beta1.ReservationAffinityOrBuilder
+      getReservationAffinityOrBuilder() {
+    return getReservationAffinity();
+  }
+
+  public static final int CAN_IP_FORWARD_FIELD_NUMBER = 31;
+  private boolean canIpForward_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag to enable ip forwarding or not, default false/off.
+   * https://cloud.google.com/vpc/docs/using-routes#canipforward
+   * </pre>
+   *
+   * <code>bool can_ip_forward = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The canIpForward.
+   */
+  @java.lang.Override
+  public boolean getCanIpForward() {
+    return canIpForward_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 23;
   private com.google.protobuf.Timestamp createTime_;
   /**
@@ -3260,6 +3580,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (noRemoveDataDisk_ != false) {
       output.writeBool(27, noRemoveDataDisk_);
     }
+    if (nicType_
+        != com.google.cloud.notebooks.v1beta1.Instance.NicType.UNSPECIFIED_NIC_TYPE.getNumber()) {
+      output.writeEnum(28, nicType_);
+    }
+    if (reservationAffinity_ != null) {
+      output.writeMessage(29, getReservationAffinity());
+    }
+    if (canIpForward_ != false) {
+      output.writeBool(31, canIpForward_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3377,6 +3707,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (noRemoveDataDisk_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, noRemoveDataDisk_);
     }
+    if (nicType_
+        != com.google.cloud.notebooks.v1beta1.Instance.NicType.UNSPECIFIED_NIC_TYPE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(28, nicType_);
+    }
+    if (reservationAffinity_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(29, getReservationAffinity());
+    }
+    if (canIpForward_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(31, canIpForward_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3419,6 +3760,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getSubnet().equals(other.getSubnet())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
+    if (nicType_ != other.nicType_) return false;
+    if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
+    if (hasReservationAffinity()) {
+      if (!getReservationAffinity().equals(other.getReservationAffinity())) return false;
+    }
+    if (getCanIpForward() != other.getCanIpForward()) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -3503,6 +3850,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
     }
+    hash = (37 * hash) + NIC_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + nicType_;
+    if (hasReservationAffinity()) {
+      hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationAffinity().hashCode();
+    }
+    hash = (37 * hash) + CAN_IP_FORWARD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCanIpForward());
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -3739,6 +4094,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       internalGetMutableLabels().clear();
       internalGetMutableMetadata().clear();
+      nicType_ = 0;
+
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinity_ = null;
+      } else {
+        reservationAffinity_ = null;
+        reservationAffinityBuilder_ = null;
+      }
+      canIpForward_ = false;
+
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -3828,6 +4193,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       result.labels_.makeImmutable();
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
+      result.nicType_ = nicType_;
+      if (reservationAffinityBuilder_ == null) {
+        result.reservationAffinity_ = reservationAffinity_;
+      } else {
+        result.reservationAffinity_ = reservationAffinityBuilder_.build();
+      }
+      result.canIpForward_ = canIpForward_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -3969,6 +4341,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      if (other.nicType_ != 0) {
+        setNicTypeValue(other.getNicTypeValue());
+      }
+      if (other.hasReservationAffinity()) {
+        mergeReservationAffinity(other.getReservationAffinity());
+      }
+      if (other.getCanIpForward() != false) {
+        setCanIpForward(other.getCanIpForward());
+      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -4191,6 +4572,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 216
+            case 224:
+              {
+                nicType_ = input.readEnum();
+
+                break;
+              } // case 224
+            case 234:
+              {
+                input.readMessage(
+                    getReservationAffinityFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 234
+            case 248:
+              {
+                canIpForward_ = input.readBool();
+
+                break;
+              } // case 248
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4762,7 +5162,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (`gs://path-to-file/file-name`).
+     * Cloud Storage path (gs://path-to-file/file-name).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -4786,7 +5186,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (`gs://path-to-file/file-name`).
+     * Cloud Storage path (gs://path-to-file/file-name).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -4810,7 +5210,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (`gs://path-to-file/file-name`).
+     * Cloud Storage path (gs://path-to-file/file-name).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -4833,7 +5233,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (`gs://path-to-file/file-name`).
+     * Cloud Storage path (gs://path-to-file/file-name).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -4852,7 +5252,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (`gs://path-to-file/file-name`).
+     * Cloud Storage path (gs://path-to-file/file-name).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -4876,8 +5276,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The proxy endpoint that is used to access the Jupyter
-     * notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
      * </pre>
      *
      * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4899,8 +5298,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The proxy endpoint that is used to access the Jupyter
-     * notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
      * </pre>
      *
      * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4922,8 +5320,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The proxy endpoint that is used to access the Jupyter
-     * notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
      * </pre>
      *
      * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4944,8 +5341,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The proxy endpoint that is used to access the Jupyter
-     * notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
      * </pre>
      *
      * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4962,8 +5358,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The proxy endpoint that is used to access the Jupyter
-     * notebook.
+     * Output only. The proxy endpoint that is used to access the Jupyter notebook.
      * </pre>
      *
      * <code>string proxy_uri = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4995,8 +5390,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5013,8 +5407,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5031,8 +5424,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5050,8 +5442,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5069,8 +5460,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5095,8 +5485,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5120,8 +5509,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5142,8 +5530,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5163,8 +5550,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The owner of this instance after creation. Format:
-     * `alias&#64;example.com`
+     * Input only. The owner of this instance after creation. Format: `alias&#64;example.com`
      * Currently supports one owner only. If not specified, all of the service
      * account users of your VM instance's service account can use
      * the instance.
@@ -5327,8 +5713,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5351,8 +5736,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5375,8 +5759,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5398,8 +5781,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5417,8 +5799,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine
-     * type](https://cloud.google.com/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5451,7 +5832,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5469,7 +5850,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5493,7 +5874,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5520,7 +5901,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5544,7 +5925,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5576,7 +5957,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5600,7 +5981,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5619,7 +6000,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5642,7 +6023,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
      * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+     * have selected](/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5945,8 +6326,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the boot disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -5963,8 +6344,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the boot disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -5984,8 +6365,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the boot disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6007,8 +6388,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the boot disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6031,8 +6412,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the boot disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the boot disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6053,9 +6434,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The size of the boot disk in GB attached to this instance, up
-     * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value
-     * is 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
+     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
+     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6070,9 +6451,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The size of the boot disk in GB attached to this instance, up
-     * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value
-     * is 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
+     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
+     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6090,9 +6471,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The size of the boot disk in GB attached to this instance, up
-     * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value
-     * is 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
+     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
+     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6111,8 +6492,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the data disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6129,8 +6510,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the data disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6150,8 +6531,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the data disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6173,8 +6554,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the data disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6197,8 +6578,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The type of the data disk attached to this instance, defaults
-     * to standard persistent disk (`PD_STANDARD`).
+     * Input only. The type of the data disk attached to this instance, defaults to
+     * standard persistent disk (`PD_STANDARD`).
      * </pre>
      *
      * <code>
@@ -6219,10 +6600,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The size of the data disk in GB attached to this instance, up
-     * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the
-     * data disk based on how big your notebooks and data are. If not specified,
-     * this defaults to 100.
+     * Input only. The size of the data disk in GB attached to this instance, up to a maximum
+     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
+     * based on how big your notebooks and data are. If not specified, this
+     * defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6237,10 +6618,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The size of the data disk in GB attached to this instance, up
-     * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the
-     * data disk based on how big your notebooks and data are. If not specified,
-     * this defaults to 100.
+     * Input only. The size of the data disk in GB attached to this instance, up to a maximum
+     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
+     * based on how big your notebooks and data are. If not specified, this
+     * defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6258,10 +6639,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The size of the data disk in GB attached to this instance, up
-     * to a maximum of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the
-     * data disk based on how big your notebooks and data are. If not specified,
-     * this defaults to 100.
+     * Input only. The size of the data disk in GB attached to this instance, up to a maximum
+     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
+     * based on how big your notebooks and data are. If not specified, this
+     * defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6280,8 +6661,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. If true, the data disk will not be auto deleted when deleting
-     * the instance.
+     * Input only. If true, the data disk will not be auto deleted when deleting the instance.
      * </pre>
      *
      * <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6296,8 +6676,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. If true, the data disk will not be auto deleted when deleting
-     * the instance.
+     * Input only. If true, the data disk will not be auto deleted when deleting the instance.
      * </pre>
      *
      * <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6315,8 +6694,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. If true, the data disk will not be auto deleted when deleting
-     * the instance.
+     * Input only. If true, the data disk will not be auto deleted when deleting the instance.
      * </pre>
      *
      * <code>bool no_remove_data_disk = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6335,8 +6713,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Disk encryption method used on the boot and data disks,
-     * defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
      * </pre>
      *
      * <code>
@@ -6353,8 +6730,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Disk encryption method used on the boot and data disks,
-     * defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
      * </pre>
      *
      * <code>
@@ -6374,8 +6750,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Disk encryption method used on the boot and data disks,
-     * defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
      * </pre>
      *
      * <code>
@@ -6397,8 +6772,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Disk encryption method used on the boot and data disks,
-     * defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
      * </pre>
      *
      * <code>
@@ -6422,8 +6796,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Disk encryption method used on the boot and data disks,
-     * defaults to GMEK.
+     * Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
      * </pre>
      *
      * <code>
@@ -6444,11 +6817,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The KMS key used to encrypt the disks, only applicable if
-     * disk_encryption is CMEK. Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
+     * is CMEK.
+     * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](
-     * https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6470,11 +6843,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The KMS key used to encrypt the disks, only applicable if
-     * disk_encryption is CMEK. Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
+     * is CMEK.
+     * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](
-     * https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6496,11 +6869,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The KMS key used to encrypt the disks, only applicable if
-     * disk_encryption is CMEK. Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
+     * is CMEK.
+     * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](
-     * https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6521,11 +6894,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The KMS key used to encrypt the disks, only applicable if
-     * disk_encryption is CMEK. Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
+     * is CMEK.
+     * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](
-     * https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6542,11 +6915,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The KMS key used to encrypt the disks, only applicable if
-     * disk_encryption is CMEK. Format:
+     * Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption
+     * is CMEK.
+     * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](
-     * https://cloud.google.com/kms/docs/quickstart).
+     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -7222,6 +7595,405 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private int nicType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.Instance.NicType nic_type = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for nicType.
+     */
+    @java.lang.Override
+    public int getNicTypeValue() {
+      return nicType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.Instance.NicType nic_type = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for nicType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNicTypeValue(int value) {
+
+      nicType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.Instance.NicType nic_type = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nicType.
+     */
+    @java.lang.Override
+    public com.google.cloud.notebooks.v1beta1.Instance.NicType getNicType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.notebooks.v1beta1.Instance.NicType result =
+          com.google.cloud.notebooks.v1beta1.Instance.NicType.valueOf(nicType_);
+      return result == null
+          ? com.google.cloud.notebooks.v1beta1.Instance.NicType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.Instance.NicType nic_type = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The nicType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNicType(com.google.cloud.notebooks.v1beta1.Instance.NicType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      nicType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of vNIC to be used on this interface. This may be gVNIC or
+     * VirtioNet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.Instance.NicType nic_type = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNicType() {
+
+      nicType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.notebooks.v1beta1.ReservationAffinity reservationAffinity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.notebooks.v1beta1.ReservationAffinity,
+            com.google.cloud.notebooks.v1beta1.ReservationAffinity.Builder,
+            com.google.cloud.notebooks.v1beta1.ReservationAffinityOrBuilder>
+        reservationAffinityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the reservationAffinity field is set.
+     */
+    public boolean hasReservationAffinity() {
+      return reservationAffinityBuilder_ != null || reservationAffinity_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The reservationAffinity.
+     */
+    public com.google.cloud.notebooks.v1beta1.ReservationAffinity getReservationAffinity() {
+      if (reservationAffinityBuilder_ == null) {
+        return reservationAffinity_ == null
+            ? com.google.cloud.notebooks.v1beta1.ReservationAffinity.getDefaultInstance()
+            : reservationAffinity_;
+      } else {
+        return reservationAffinityBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReservationAffinity(
+        com.google.cloud.notebooks.v1beta1.ReservationAffinity value) {
+      if (reservationAffinityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reservationAffinity_ = value;
+        onChanged();
+      } else {
+        reservationAffinityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReservationAffinity(
+        com.google.cloud.notebooks.v1beta1.ReservationAffinity.Builder builderForValue) {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinity_ = builderForValue.build();
+        onChanged();
+      } else {
+        reservationAffinityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeReservationAffinity(
+        com.google.cloud.notebooks.v1beta1.ReservationAffinity value) {
+      if (reservationAffinityBuilder_ == null) {
+        if (reservationAffinity_ != null) {
+          reservationAffinity_ =
+              com.google.cloud.notebooks.v1beta1.ReservationAffinity.newBuilder(
+                      reservationAffinity_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reservationAffinity_ = value;
+        }
+        onChanged();
+      } else {
+        reservationAffinityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearReservationAffinity() {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinity_ = null;
+        onChanged();
+      } else {
+        reservationAffinity_ = null;
+        reservationAffinityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1beta1.ReservationAffinity.Builder
+        getReservationAffinityBuilder() {
+
+      onChanged();
+      return getReservationAffinityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.notebooks.v1beta1.ReservationAffinityOrBuilder
+        getReservationAffinityOrBuilder() {
+      if (reservationAffinityBuilder_ != null) {
+        return reservationAffinityBuilder_.getMessageOrBuilder();
+      } else {
+        return reservationAffinity_ == null
+            ? com.google.cloud.notebooks.v1beta1.ReservationAffinity.getDefaultInstance()
+            : reservationAffinity_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The optional reservation affinity. Setting this field will apply
+     * the specified [Zonal Compute
+     * Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
+     * to this notebook instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1beta1.ReservationAffinity reservation_affinity = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.notebooks.v1beta1.ReservationAffinity,
+            com.google.cloud.notebooks.v1beta1.ReservationAffinity.Builder,
+            com.google.cloud.notebooks.v1beta1.ReservationAffinityOrBuilder>
+        getReservationAffinityFieldBuilder() {
+      if (reservationAffinityBuilder_ == null) {
+        reservationAffinityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.notebooks.v1beta1.ReservationAffinity,
+                com.google.cloud.notebooks.v1beta1.ReservationAffinity.Builder,
+                com.google.cloud.notebooks.v1beta1.ReservationAffinityOrBuilder>(
+                getReservationAffinity(), getParentForChildren(), isClean());
+        reservationAffinity_ = null;
+      }
+      return reservationAffinityBuilder_;
+    }
+
+    private boolean canIpForward_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag to enable ip forwarding or not, default false/off.
+     * https://cloud.google.com/vpc/docs/using-routes#canipforward
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The canIpForward.
+     */
+    @java.lang.Override
+    public boolean getCanIpForward() {
+      return canIpForward_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag to enable ip forwarding or not, default false/off.
+     * https://cloud.google.com/vpc/docs/using-routes#canipforward
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The canIpForward to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanIpForward(boolean value) {
+
+      canIpForward_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag to enable ip forwarding or not, default false/off.
+     * https://cloud.google.com/vpc/docs/using-routes#canipforward
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanIpForward() {
+
+      canIpForward_ = false;
+      onChanged();
       return this;
     }
 

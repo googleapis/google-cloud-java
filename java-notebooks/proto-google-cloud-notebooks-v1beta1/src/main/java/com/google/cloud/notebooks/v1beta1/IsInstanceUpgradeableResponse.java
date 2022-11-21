@@ -40,6 +40,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
   private IsInstanceUpgradeableResponse() {
     upgradeVersion_ = "";
     upgradeInfo_ = "";
+    upgradeImage_ = "";
   }
 
   @java.lang.Override
@@ -186,6 +187,59 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     }
   }
 
+  public static final int UPGRADE_IMAGE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object upgradeImage_;
+  /**
+   *
+   *
+   * <pre>
+   * The new image self link this instance will be upgraded to if calling the
+   * upgrade endpoint. This field will only be populated if field upgradeable
+   * is true.
+   * </pre>
+   *
+   * <code>string upgrade_image = 4;</code>
+   *
+   * @return The upgradeImage.
+   */
+  @java.lang.Override
+  public java.lang.String getUpgradeImage() {
+    java.lang.Object ref = upgradeImage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      upgradeImage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The new image self link this instance will be upgraded to if calling the
+   * upgrade endpoint. This field will only be populated if field upgradeable
+   * is true.
+   * </pre>
+   *
+   * <code>string upgrade_image = 4;</code>
+   *
+   * @return The bytes for upgradeImage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUpgradeImageBytes() {
+    java.lang.Object ref = upgradeImage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      upgradeImage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -209,6 +263,9 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeInfo_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, upgradeInfo_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeImage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, upgradeImage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -226,6 +283,9 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeInfo_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, upgradeInfo_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upgradeImage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, upgradeImage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -246,6 +306,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     if (getUpgradeable() != other.getUpgradeable()) return false;
     if (!getUpgradeVersion().equals(other.getUpgradeVersion())) return false;
     if (!getUpgradeInfo().equals(other.getUpgradeInfo())) return false;
+    if (!getUpgradeImage().equals(other.getUpgradeImage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -263,6 +324,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
     hash = (53 * hash) + getUpgradeVersion().hashCode();
     hash = (37 * hash) + UPGRADE_INFO_FIELD_NUMBER;
     hash = (53 * hash) + getUpgradeInfo().hashCode();
+    hash = (37 * hash) + UPGRADE_IMAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getUpgradeImage().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -408,6 +471,8 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
 
       upgradeInfo_ = "";
 
+      upgradeImage_ = "";
+
       return this;
     }
 
@@ -439,6 +504,7 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       result.upgradeable_ = upgradeable_;
       result.upgradeVersion_ = upgradeVersion_;
       result.upgradeInfo_ = upgradeInfo_;
+      result.upgradeImage_ = upgradeImage_;
       onBuilt();
       return result;
     }
@@ -502,6 +568,10 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
         upgradeInfo_ = other.upgradeInfo_;
         onChanged();
       }
+      if (!other.getUpgradeImage().isEmpty()) {
+        upgradeImage_ = other.upgradeImage_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -546,6 +616,12 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
 
                 break;
               } // case 26
+            case 34:
+              {
+                upgradeImage_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -828,6 +904,122 @@ public final class IsInstanceUpgradeableResponse extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
 
       upgradeInfo_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object upgradeImage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The new image self link this instance will be upgraded to if calling the
+     * upgrade endpoint. This field will only be populated if field upgradeable
+     * is true.
+     * </pre>
+     *
+     * <code>string upgrade_image = 4;</code>
+     *
+     * @return The upgradeImage.
+     */
+    public java.lang.String getUpgradeImage() {
+      java.lang.Object ref = upgradeImage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        upgradeImage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The new image self link this instance will be upgraded to if calling the
+     * upgrade endpoint. This field will only be populated if field upgradeable
+     * is true.
+     * </pre>
+     *
+     * <code>string upgrade_image = 4;</code>
+     *
+     * @return The bytes for upgradeImage.
+     */
+    public com.google.protobuf.ByteString getUpgradeImageBytes() {
+      java.lang.Object ref = upgradeImage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        upgradeImage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The new image self link this instance will be upgraded to if calling the
+     * upgrade endpoint. This field will only be populated if field upgradeable
+     * is true.
+     * </pre>
+     *
+     * <code>string upgrade_image = 4;</code>
+     *
+     * @param value The upgradeImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpgradeImage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      upgradeImage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The new image self link this instance will be upgraded to if calling the
+     * upgrade endpoint. This field will only be populated if field upgradeable
+     * is true.
+     * </pre>
+     *
+     * <code>string upgrade_image = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpgradeImage() {
+
+      upgradeImage_ = getDefaultInstance().getUpgradeImage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The new image self link this instance will be upgraded to if calling the
+     * upgrade endpoint. This field will only be populated if field upgradeable
+     * is true.
+     * </pre>
+     *
+     * <code>string upgrade_image = 4;</code>
+     *
+     * @param value The bytes for upgradeImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpgradeImageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      upgradeImage_ = value;
       onChanged();
       return this;
     }

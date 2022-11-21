@@ -18,11 +18,16 @@ package com.google.cloud.notebooks.v1beta1.stub;
 
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListInstancesPagedResponse;
+import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1beta1.CreateEnvironmentRequest;
 import com.google.cloud.notebooks.v1beta1.CreateInstanceRequest;
 import com.google.cloud.notebooks.v1beta1.DeleteEnvironmentRequest;
@@ -48,6 +53,11 @@ import com.google.cloud.notebooks.v1beta1.StartInstanceRequest;
 import com.google.cloud.notebooks.v1beta1.StopInstanceRequest;
 import com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest;
 import com.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -174,26 +184,31 @@ public abstract class NotebookServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: reportInstanceInfoCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
       isInstanceUpgradeableCallable() {
     throw new UnsupportedOperationException("Not implemented: isInstanceUpgradeableCallable()");
   }
 
+  @Deprecated
   public OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
       upgradeInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: upgradeInstanceOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: upgradeInstanceCallable()");
   }
 
+  @Deprecated
   public OperationCallable<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
       upgradeInstanceInternalOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: upgradeInstanceInternalOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalCallable() {
     throw new UnsupportedOperationException("Not implemented: upgradeInstanceInternalCallable()");
@@ -231,6 +246,32 @@ public abstract class NotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEnvironmentCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

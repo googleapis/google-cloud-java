@@ -18,6 +18,7 @@ package com.google.cloud.notebooks.v1beta1;
 
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListInstancesPagedResponse;
+import static com.google.cloud.notebooks.v1beta1.NotebookServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -31,7 +32,16 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1beta1.stub.NotebookServiceStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -201,30 +211,55 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     return ((NotebookServiceStubSettings) getStubSettings()).reportInstanceInfoOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to isInstanceUpgradeable. */
+  /**
+   * Returns the object with the settings used for calls to isInstanceUpgradeable.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
       isInstanceUpgradeableSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).isInstanceUpgradeableSettings();
   }
 
-  /** Returns the object with the settings used for calls to upgradeInstance. */
+  /**
+   * Returns the object with the settings used for calls to upgradeInstance.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).upgradeInstanceSettings();
   }
 
-  /** Returns the object with the settings used for calls to upgradeInstance. */
+  /**
+   * Returns the object with the settings used for calls to upgradeInstance.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<UpgradeInstanceRequest, Instance, OperationMetadata>
       upgradeInstanceOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).upgradeInstanceOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to upgradeInstanceInternal. */
+  /**
+   * Returns the object with the settings used for calls to upgradeInstanceInternal.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).upgradeInstanceInternalSettings();
   }
 
-  /** Returns the object with the settings used for calls to upgradeInstanceInternal. */
+  /**
+   * Returns the object with the settings used for calls to upgradeInstanceInternal.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
       upgradeInstanceInternalOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings())
@@ -263,6 +298,33 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   public OperationCallSettings<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationSettings() {
     return ((NotebookServiceStubSettings) getStubSettings()).deleteEnvironmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((NotebookServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final NotebookServiceSettings create(NotebookServiceStubSettings stub)
@@ -489,30 +551,55 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       return getStubSettingsBuilder().reportInstanceInfoOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to isInstanceUpgradeable. */
+    /**
+     * Returns the builder for the settings used for calls to isInstanceUpgradeable.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
         isInstanceUpgradeableSettings() {
       return getStubSettingsBuilder().isInstanceUpgradeableSettings();
     }
 
-    /** Returns the builder for the settings used for calls to upgradeInstance. */
+    /**
+     * Returns the builder for the settings used for calls to upgradeInstance.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpgradeInstanceRequest, Operation> upgradeInstanceSettings() {
       return getStubSettingsBuilder().upgradeInstanceSettings();
     }
 
-    /** Returns the builder for the settings used for calls to upgradeInstance. */
+    /**
+     * Returns the builder for the settings used for calls to upgradeInstance.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<UpgradeInstanceRequest, Instance, OperationMetadata>
         upgradeInstanceOperationSettings() {
       return getStubSettingsBuilder().upgradeInstanceOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to upgradeInstanceInternal. */
+    /**
+     * Returns the builder for the settings used for calls to upgradeInstanceInternal.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpgradeInstanceInternalRequest, Operation>
         upgradeInstanceInternalSettings() {
       return getStubSettingsBuilder().upgradeInstanceInternalSettings();
     }
 
-    /** Returns the builder for the settings used for calls to upgradeInstanceInternal. */
+    /**
+     * Returns the builder for the settings used for calls to upgradeInstanceInternal.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             UpgradeInstanceInternalRequest, Instance, OperationMetadata>
         upgradeInstanceInternalOperationSettings() {
@@ -553,6 +640,34 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return getStubSettingsBuilder().deleteEnvironmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

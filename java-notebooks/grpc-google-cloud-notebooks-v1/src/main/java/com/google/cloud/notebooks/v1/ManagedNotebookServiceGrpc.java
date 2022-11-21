@@ -168,6 +168,49 @@ public final class ManagedNotebookServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.UpdateRuntimeRequest, com.google.longrunning.Operation>
+      getUpdateRuntimeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRuntime",
+      requestType = com.google.cloud.notebooks.v1.UpdateRuntimeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.UpdateRuntimeRequest, com.google.longrunning.Operation>
+      getUpdateRuntimeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.notebooks.v1.UpdateRuntimeRequest, com.google.longrunning.Operation>
+        getUpdateRuntimeMethod;
+    if ((getUpdateRuntimeMethod = ManagedNotebookServiceGrpc.getUpdateRuntimeMethod) == null) {
+      synchronized (ManagedNotebookServiceGrpc.class) {
+        if ((getUpdateRuntimeMethod = ManagedNotebookServiceGrpc.getUpdateRuntimeMethod) == null) {
+          ManagedNotebookServiceGrpc.getUpdateRuntimeMethod =
+              getUpdateRuntimeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.notebooks.v1.UpdateRuntimeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRuntime"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.UpdateRuntimeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ManagedNotebookServiceMethodDescriptorSupplier("UpdateRuntime"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRuntimeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.notebooks.v1.DeleteRuntimeRequest, com.google.longrunning.Operation>
       getDeleteRuntimeMethod;
 
@@ -383,6 +426,50 @@ public final class ManagedNotebookServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.UpgradeRuntimeRequest, com.google.longrunning.Operation>
+      getUpgradeRuntimeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpgradeRuntime",
+      requestType = com.google.cloud.notebooks.v1.UpgradeRuntimeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.UpgradeRuntimeRequest, com.google.longrunning.Operation>
+      getUpgradeRuntimeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.notebooks.v1.UpgradeRuntimeRequest, com.google.longrunning.Operation>
+        getUpgradeRuntimeMethod;
+    if ((getUpgradeRuntimeMethod = ManagedNotebookServiceGrpc.getUpgradeRuntimeMethod) == null) {
+      synchronized (ManagedNotebookServiceGrpc.class) {
+        if ((getUpgradeRuntimeMethod = ManagedNotebookServiceGrpc.getUpgradeRuntimeMethod)
+            == null) {
+          ManagedNotebookServiceGrpc.getUpgradeRuntimeMethod =
+              getUpgradeRuntimeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.notebooks.v1.UpgradeRuntimeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpgradeRuntime"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.UpgradeRuntimeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ManagedNotebookServiceMethodDescriptorSupplier("UpgradeRuntime"))
+                      .build();
+        }
+      }
+    }
+    return getUpgradeRuntimeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.notebooks.v1.ReportRuntimeEventRequest, com.google.longrunning.Operation>
       getReportRuntimeEventMethod;
 
@@ -479,6 +566,50 @@ public final class ManagedNotebookServiceGrpc {
       }
     }
     return getRefreshRuntimeTokenInternalMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest, com.google.longrunning.Operation>
+      getDiagnoseRuntimeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DiagnoseRuntime",
+      requestType = com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest, com.google.longrunning.Operation>
+      getDiagnoseRuntimeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest, com.google.longrunning.Operation>
+        getDiagnoseRuntimeMethod;
+    if ((getDiagnoseRuntimeMethod = ManagedNotebookServiceGrpc.getDiagnoseRuntimeMethod) == null) {
+      synchronized (ManagedNotebookServiceGrpc.class) {
+        if ((getDiagnoseRuntimeMethod = ManagedNotebookServiceGrpc.getDiagnoseRuntimeMethod)
+            == null) {
+          ManagedNotebookServiceGrpc.getDiagnoseRuntimeMethod =
+              getDiagnoseRuntimeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DiagnoseRuntime"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ManagedNotebookServiceMethodDescriptorSupplier("DiagnoseRuntime"))
+                      .build();
+        }
+      }
+    }
+    return getDiagnoseRuntimeMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -578,6 +709,20 @@ public final class ManagedNotebookServiceGrpc {
      *
      *
      * <pre>
+     * Update Notebook Runtime configuration.
+     * </pre>
+     */
+    public void updateRuntime(
+        com.google.cloud.notebooks.v1.UpdateRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRuntimeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Runtime.
      * </pre>
      */
@@ -656,6 +801,20 @@ public final class ManagedNotebookServiceGrpc {
      *
      *
      * <pre>
+     * Upgrades a Managed Notebook Runtime to the latest version.
+     * </pre>
+     */
+    public void upgradeRuntime(
+        com.google.cloud.notebooks.v1.UpgradeRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpgradeRuntimeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report and process a runtime event.
      * </pre>
      */
@@ -683,6 +842,20 @@ public final class ManagedNotebookServiceGrpc {
           getRefreshRuntimeTokenInternalMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+     * </pre>
+     */
+    public void diagnoseRuntime(
+        com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDiagnoseRuntimeMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -705,6 +878,12 @@ public final class ManagedNotebookServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.notebooks.v1.CreateRuntimeRequest,
                       com.google.longrunning.Operation>(this, METHODID_CREATE_RUNTIME)))
+          .addMethod(
+              getUpdateRuntimeMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.notebooks.v1.UpdateRuntimeRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_RUNTIME)))
           .addMethod(
               getDeleteRuntimeMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -736,6 +915,12 @@ public final class ManagedNotebookServiceGrpc {
                       com.google.cloud.notebooks.v1.ResetRuntimeRequest,
                       com.google.longrunning.Operation>(this, METHODID_RESET_RUNTIME)))
           .addMethod(
+              getUpgradeRuntimeMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.notebooks.v1.UpgradeRuntimeRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPGRADE_RUNTIME)))
+          .addMethod(
               getReportRuntimeEventMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -748,6 +933,12 @@ public final class ManagedNotebookServiceGrpc {
                       com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
                       com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>(
                       this, METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL)))
+          .addMethod(
+              getDiagnoseRuntimeMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DIAGNOSE_RUNTIME)))
           .build();
     }
   }
@@ -815,6 +1006,22 @@ public final class ManagedNotebookServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateRuntimeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update Notebook Runtime configuration.
+     * </pre>
+     */
+    public void updateRuntime(
+        com.google.cloud.notebooks.v1.UpdateRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRuntimeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -911,6 +1118,22 @@ public final class ManagedNotebookServiceGrpc {
      *
      *
      * <pre>
+     * Upgrades a Managed Notebook Runtime to the latest version.
+     * </pre>
+     */
+    public void upgradeRuntime(
+        com.google.cloud.notebooks.v1.UpgradeRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpgradeRuntimeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report and process a runtime event.
      * </pre>
      */
@@ -938,6 +1161,22 @@ public final class ManagedNotebookServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRefreshRuntimeTokenInternalMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+     * </pre>
+     */
+    public void diagnoseRuntime(
+        com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDiagnoseRuntimeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1001,6 +1240,19 @@ public final class ManagedNotebookServiceGrpc {
         com.google.cloud.notebooks.v1.CreateRuntimeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update Notebook Runtime configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRuntime(
+        com.google.cloud.notebooks.v1.UpdateRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRuntimeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1080,6 +1332,19 @@ public final class ManagedNotebookServiceGrpc {
      *
      *
      * <pre>
+     * Upgrades a Managed Notebook Runtime to the latest version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeRuntime(
+        com.google.cloud.notebooks.v1.UpgradeRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpgradeRuntimeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report and process a runtime event.
      * </pre>
      */
@@ -1102,6 +1367,19 @@ public final class ManagedNotebookServiceGrpc {
             com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRefreshRuntimeTokenInternalMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+     * </pre>
+     */
+    public com.google.longrunning.Operation diagnoseRuntime(
+        com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDiagnoseRuntimeMethod(), getCallOptions(), request);
     }
   }
 
@@ -1164,6 +1442,19 @@ public final class ManagedNotebookServiceGrpc {
         createRuntime(com.google.cloud.notebooks.v1.CreateRuntimeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateRuntimeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update Notebook Runtime configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateRuntime(com.google.cloud.notebooks.v1.UpdateRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRuntimeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1243,6 +1534,19 @@ public final class ManagedNotebookServiceGrpc {
      *
      *
      * <pre>
+     * Upgrades a Managed Notebook Runtime to the latest version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        upgradeRuntime(com.google.cloud.notebooks.v1.UpgradeRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpgradeRuntimeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report and process a runtime event.
      * </pre>
      */
@@ -1267,18 +1571,34 @@ public final class ManagedNotebookServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRefreshRuntimeTokenInternalMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        diagnoseRuntime(com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDiagnoseRuntimeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_RUNTIMES = 0;
   private static final int METHODID_GET_RUNTIME = 1;
   private static final int METHODID_CREATE_RUNTIME = 2;
-  private static final int METHODID_DELETE_RUNTIME = 3;
-  private static final int METHODID_START_RUNTIME = 4;
-  private static final int METHODID_STOP_RUNTIME = 5;
-  private static final int METHODID_SWITCH_RUNTIME = 6;
-  private static final int METHODID_RESET_RUNTIME = 7;
-  private static final int METHODID_REPORT_RUNTIME_EVENT = 8;
-  private static final int METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL = 9;
+  private static final int METHODID_UPDATE_RUNTIME = 3;
+  private static final int METHODID_DELETE_RUNTIME = 4;
+  private static final int METHODID_START_RUNTIME = 5;
+  private static final int METHODID_STOP_RUNTIME = 6;
+  private static final int METHODID_SWITCH_RUNTIME = 7;
+  private static final int METHODID_RESET_RUNTIME = 8;
+  private static final int METHODID_UPGRADE_RUNTIME = 9;
+  private static final int METHODID_REPORT_RUNTIME_EVENT = 10;
+  private static final int METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL = 11;
+  private static final int METHODID_DIAGNOSE_RUNTIME = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1314,6 +1634,11 @@ public final class ManagedNotebookServiceGrpc {
               (com.google.cloud.notebooks.v1.CreateRuntimeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_RUNTIME:
+          serviceImpl.updateRuntime(
+              (com.google.cloud.notebooks.v1.UpdateRuntimeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_RUNTIME:
           serviceImpl.deleteRuntime(
               (com.google.cloud.notebooks.v1.DeleteRuntimeRequest) request,
@@ -1339,6 +1664,11 @@ public final class ManagedNotebookServiceGrpc {
               (com.google.cloud.notebooks.v1.ResetRuntimeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPGRADE_RUNTIME:
+          serviceImpl.upgradeRuntime(
+              (com.google.cloud.notebooks.v1.UpgradeRuntimeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_REPORT_RUNTIME_EVENT:
           serviceImpl.reportRuntimeEvent(
               (com.google.cloud.notebooks.v1.ReportRuntimeEventRequest) request,
@@ -1350,6 +1680,11 @@ public final class ManagedNotebookServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>)
                   responseObserver);
+          break;
+        case METHODID_DIAGNOSE_RUNTIME:
+          serviceImpl.diagnoseRuntime(
+              (com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1418,13 +1753,16 @@ public final class ManagedNotebookServiceGrpc {
                       .addMethod(getListRuntimesMethod())
                       .addMethod(getGetRuntimeMethod())
                       .addMethod(getCreateRuntimeMethod())
+                      .addMethod(getUpdateRuntimeMethod())
                       .addMethod(getDeleteRuntimeMethod())
                       .addMethod(getStartRuntimeMethod())
                       .addMethod(getStopRuntimeMethod())
                       .addMethod(getSwitchRuntimeMethod())
                       .addMethod(getResetRuntimeMethod())
+                      .addMethod(getUpgradeRuntimeMethod())
                       .addMethod(getReportRuntimeEventMethod())
                       .addMethod(getRefreshRuntimeTokenInternalMethod())
+                      .addMethod(getDiagnoseRuntimeMethod())
                       .build();
         }
       }

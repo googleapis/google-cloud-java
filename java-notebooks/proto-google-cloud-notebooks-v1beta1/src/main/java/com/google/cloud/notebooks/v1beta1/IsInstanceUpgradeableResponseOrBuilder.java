@@ -87,4 +87,33 @@ public interface IsInstanceUpgradeableResponseOrBuilder
    * @return The bytes for upgradeInfo.
    */
   com.google.protobuf.ByteString getUpgradeInfoBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The new image self link this instance will be upgraded to if calling the
+   * upgrade endpoint. This field will only be populated if field upgradeable
+   * is true.
+   * </pre>
+   *
+   * <code>string upgrade_image = 4;</code>
+   *
+   * @return The upgradeImage.
+   */
+  java.lang.String getUpgradeImage();
+  /**
+   *
+   *
+   * <pre>
+   * The new image self link this instance will be upgraded to if calling the
+   * upgrade endpoint. This field will only be populated if field upgradeable
+   * is true.
+   * </pre>
+   *
+   * <code>string upgrade_image = 4;</code>
+   *
+   * @return The bytes for upgradeImage.
+   */
+  com.google.protobuf.ByteString getUpgradeImageBytes();
 }
