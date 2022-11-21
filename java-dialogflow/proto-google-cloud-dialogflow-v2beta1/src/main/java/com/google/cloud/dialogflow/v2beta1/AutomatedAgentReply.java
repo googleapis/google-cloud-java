@@ -40,6 +40,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   private AutomatedAgentReply() {
     responseMessages_ = java.util.Collections.emptyList();
     automatedAgentReplyType_ = 0;
+    cxCurrentPage_ = "";
   }
 
   @java.lang.Override
@@ -796,6 +797,59 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     return allowCancellation_;
   }
 
+  public static final int CX_CURRENT_PAGE_FIELD_NUMBER = 11;
+  private volatile java.lang.Object cxCurrentPage_;
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the current Dialogflow CX conversation page.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * </pre>
+   *
+   * <code>string cx_current_page = 11;</code>
+   *
+   * @return The cxCurrentPage.
+   */
+  @java.lang.Override
+  public java.lang.String getCxCurrentPage() {
+    java.lang.Object ref = cxCurrentPage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cxCurrentPage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the current Dialogflow CX conversation page.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * </pre>
+   *
+   * <code>string cx_current_page = 11;</code>
+   *
+   * @return The bytes for cxCurrentPage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCxCurrentPageBytes() {
+    java.lang.Object ref = cxCurrentPage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cxCurrentPage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -840,6 +894,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (parameters_ != null) {
       output.writeMessage(10, getParameters());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cxCurrentPage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -881,6 +938,9 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (parameters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getParameters());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cxCurrentPage_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -910,6 +970,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     }
     if (automatedAgentReplyType_ != other.automatedAgentReplyType_) return false;
     if (getAllowCancellation() != other.getAllowCancellation()) return false;
+    if (!getCxCurrentPage().equals(other.getCxCurrentPage())) return false;
     if (!getResponseCase().equals(other.getResponseCase())) return false;
     switch (responseCase_) {
       case 1:
@@ -958,6 +1019,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + automatedAgentReplyType_;
     hash = (37 * hash) + ALLOW_CANCELLATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCancellation());
+    hash = (37 * hash) + CX_CURRENT_PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getCxCurrentPage().hashCode();
     switch (responseCase_) {
       case 1:
         hash = (37 * hash) + DETECT_INTENT_RESPONSE_FIELD_NUMBER;
@@ -1145,6 +1208,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
 
       allowCancellation_ = false;
 
+      cxCurrentPage_ = "";
+
       responseCase_ = 0;
       response_ = null;
       matchCase_ = 0;
@@ -1212,6 +1277,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       result.automatedAgentReplyType_ = automatedAgentReplyType_;
       result.allowCancellation_ = allowCancellation_;
+      result.cxCurrentPage_ = cxCurrentPage_;
       result.responseCase_ = responseCase_;
       result.matchCase_ = matchCase_;
       onBuilt();
@@ -1305,6 +1371,10 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       if (other.getAllowCancellation() != false) {
         setAllowCancellation(other.getAllowCancellation());
+      }
+      if (!other.getCxCurrentPage().isEmpty()) {
+        cxCurrentPage_ = other.cxCurrentPage_;
+        onChanged();
       }
       switch (other.getResponseCase()) {
         case DETECT_INTENT_RESPONSE:
@@ -1429,6 +1499,12 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
 
                 break;
               } // case 82
+            case 90:
+              {
+                cxCurrentPage_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2977,6 +3053,122 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder clearAllowCancellation() {
 
       allowCancellation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cxCurrentPage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the current Dialogflow CX conversation page.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * </pre>
+     *
+     * <code>string cx_current_page = 11;</code>
+     *
+     * @return The cxCurrentPage.
+     */
+    public java.lang.String getCxCurrentPage() {
+      java.lang.Object ref = cxCurrentPage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cxCurrentPage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the current Dialogflow CX conversation page.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * </pre>
+     *
+     * <code>string cx_current_page = 11;</code>
+     *
+     * @return The bytes for cxCurrentPage.
+     */
+    public com.google.protobuf.ByteString getCxCurrentPageBytes() {
+      java.lang.Object ref = cxCurrentPage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cxCurrentPage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the current Dialogflow CX conversation page.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * </pre>
+     *
+     * <code>string cx_current_page = 11;</code>
+     *
+     * @param value The cxCurrentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCxCurrentPage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cxCurrentPage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the current Dialogflow CX conversation page.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * </pre>
+     *
+     * <code>string cx_current_page = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCxCurrentPage() {
+
+      cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the current Dialogflow CX conversation page.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * </pre>
+     *
+     * <code>string cx_current_page = 11;</code>
+     *
+     * @param value The bytes for cxCurrentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCxCurrentPageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cxCurrentPage_ = value;
       onChanged();
       return this;
     }

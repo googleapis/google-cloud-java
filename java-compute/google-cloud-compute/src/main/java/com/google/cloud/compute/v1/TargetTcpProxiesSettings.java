@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.TargetTcpProxiesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetTcpProxiesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -71,6 +72,15 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSettings> {
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListTargetTcpProxiesRequest,
+          TargetTcpProxyAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((TargetTcpProxiesStubSettings) getStubSettings()).aggregatedListSettings();
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteTargetTcpProxyRequest, Operation> deleteSettings() {
@@ -225,6 +235,15 @@ public class TargetTcpProxiesSettings extends ClientSettings<TargetTcpProxiesSet
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListTargetTcpProxiesRequest,
+            TargetTcpProxyAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
     }
 
     /** Returns the builder for the settings used for calls to delete. */

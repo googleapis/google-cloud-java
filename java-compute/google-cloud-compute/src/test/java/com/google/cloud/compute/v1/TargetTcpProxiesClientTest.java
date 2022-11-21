@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.TargetTcpProxiesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetTcpProxiesClient.ListPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -33,7 +34,9 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -76,6 +79,58 @@ public class TargetTcpProxiesClientTest {
   @After
   public void tearDown() throws Exception {
     mockService.reset();
+  }
+
+  @Test
+  public void aggregatedListTest() throws Exception {
+    TargetTcpProxiesScopedList responsesElement = TargetTcpProxiesScopedList.newBuilder().build();
+    TargetTcpProxyAggregatedList expectedResponse =
+        TargetTcpProxyAggregatedList.newBuilder()
+            .setNextPageToken("")
+            .putAllItems(Collections.singletonMap("items", responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+
+    AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
+
+    List<Map.Entry<String, TargetTcpProxiesScopedList>> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().entrySet().iterator().next(), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void aggregatedListExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      client.aggregatedList(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
