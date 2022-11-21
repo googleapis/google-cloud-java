@@ -22,8 +22,17 @@
             "GetInstance": {
               "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RescheduleMaintenance": {
+              "methods": ["rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceOperationCallable", "rescheduleMaintenanceCallable"]
             },
             "UpdateInstance": {
               "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]

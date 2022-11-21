@@ -17,6 +17,7 @@
 package com.google.cloud.memcache.v1;
 
 import static com.google.cloud.memcache.v1.CloudMemcacheClient.ListInstancesPagedResponse;
+import static com.google.cloud.memcache.v1.CloudMemcacheClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -26,6 +27,10 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
@@ -52,6 +57,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class CloudMemcacheClientTest {
   private static MockCloudMemcache mockCloudMemcache;
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
   private CloudMemcacheClient client;
@@ -59,9 +65,11 @@ public class CloudMemcacheClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockCloudMemcache = new MockCloudMemcache();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockCloudMemcache));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockCloudMemcache, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -194,6 +202,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     mockCloudMemcache.addResponse(expectedResponse);
 
@@ -246,6 +256,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     mockCloudMemcache.addResponse(expectedResponse);
 
@@ -298,6 +310,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -364,6 +378,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -430,6 +446,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -493,6 +511,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -559,6 +579,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -709,6 +731,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -775,6 +799,8 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -819,6 +845,251 @@ public class CloudMemcacheClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setAuthorizedNetwork("authorizedNetwork1515554835")
+            .addAllZones(new ArrayList<String>())
+            .setNodeCount(1539922066)
+            .setNodeConfig(Instance.NodeConfig.newBuilder().build())
+            .setMemcacheVersion(MemcacheVersion.forNumber(0))
+            .setParameters(MemcacheParameters.newBuilder().build())
+            .addAllMemcacheNodes(new ArrayList<Instance.Node>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMemcacheFullVersion("memcacheFullVersion976507452")
+            .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
+            .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudMemcache.addResponse(resultOperation);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+        RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+    Timestamp scheduleTime = Timestamp.newBuilder().build();
+
+    Instance actualResponse =
+        client.rescheduleMaintenanceAsync(instance, rescheduleType, scheduleTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudMemcache.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RescheduleMaintenanceRequest actualRequest =
+        ((RescheduleMaintenanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance.toString(), actualRequest.getInstance());
+    Assert.assertEquals(rescheduleType, actualRequest.getRescheduleType());
+    Assert.assertEquals(scheduleTime, actualRequest.getScheduleTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudMemcache.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+          RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+      Timestamp scheduleTime = Timestamp.newBuilder().build();
+      client.rescheduleMaintenanceAsync(instance, rescheduleType, scheduleTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setAuthorizedNetwork("authorizedNetwork1515554835")
+            .addAllZones(new ArrayList<String>())
+            .setNodeCount(1539922066)
+            .setNodeConfig(Instance.NodeConfig.newBuilder().build())
+            .setMemcacheVersion(MemcacheVersion.forNumber(0))
+            .setParameters(MemcacheParameters.newBuilder().build())
+            .addAllMemcacheNodes(new ArrayList<Instance.Node>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMemcacheFullVersion("memcacheFullVersion976507452")
+            .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
+            .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudMemcache.addResponse(resultOperation);
+
+    String instance = "instance555127957";
+    RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+        RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+    Timestamp scheduleTime = Timestamp.newBuilder().build();
+
+    Instance actualResponse =
+        client.rescheduleMaintenanceAsync(instance, rescheduleType, scheduleTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudMemcache.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RescheduleMaintenanceRequest actualRequest =
+        ((RescheduleMaintenanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(rescheduleType, actualRequest.getRescheduleType());
+    Assert.assertEquals(scheduleTime, actualRequest.getScheduleTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudMemcache.addException(exception);
+
+    try {
+      String instance = "instance555127957";
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+          RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+      Timestamp scheduleTime = Timestamp.newBuilder().build();
+      client.rescheduleMaintenanceAsync(instance, rescheduleType, scheduleTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("name3373707")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

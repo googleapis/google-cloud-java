@@ -341,7 +341,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -354,7 +354,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -367,7 +367,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -674,4 +674,86 @@ public interface InstanceOrBuilder
    * @return The updateAvailable.
    */
   boolean getUpdateAvailable();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  boolean hasMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+   *
+   * @return The maintenancePolicy.
+   */
+  com.google.cloud.memcache.v1beta2.MaintenancePolicy getMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+   */
+  com.google.cloud.memcache.v1beta2.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  boolean hasMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  com.google.cloud.memcache.v1beta2.MaintenanceSchedule getMaintenanceSchedule();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memcache.v1beta2.MaintenanceScheduleOrBuilder getMaintenanceScheduleOrBuilder();
 }

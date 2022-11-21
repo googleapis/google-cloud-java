@@ -410,6 +410,55 @@ public final class CloudMemcacheGrpc {
     return getApplySoftwareUpdateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RescheduleMaintenance",
+      requestType = com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest,
+            com.google.longrunning.Operation>
+        getRescheduleMaintenanceMethod;
+    if ((getRescheduleMaintenanceMethod = CloudMemcacheGrpc.getRescheduleMaintenanceMethod)
+        == null) {
+      synchronized (CloudMemcacheGrpc.class) {
+        if ((getRescheduleMaintenanceMethod = CloudMemcacheGrpc.getRescheduleMaintenanceMethod)
+            == null) {
+          CloudMemcacheGrpc.getRescheduleMaintenanceMethod =
+              getRescheduleMaintenanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RescheduleMaintenance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudMemcacheMethodDescriptorSupplier("RescheduleMaintenance"))
+                      .build();
+        }
+      }
+    }
+    return getRescheduleMaintenanceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudMemcacheStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheStub> factory =
@@ -588,6 +637,20 @@ public final class CloudMemcacheGrpc {
           getApplySoftwareUpdateMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Performs the apply phase of the RescheduleMaintenance verb.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRescheduleMaintenanceMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -640,6 +703,12 @@ public final class CloudMemcacheGrpc {
                   new MethodHandlers<
                       com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest,
                       com.google.longrunning.Operation>(this, METHODID_APPLY_SOFTWARE_UPDATE)))
+          .addMethod(
+              getRescheduleMaintenanceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RESCHEDULE_MAINTENANCE)))
           .build();
     }
   }
@@ -805,6 +874,22 @@ public final class CloudMemcacheGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs the apply phase of the RescheduleMaintenance verb.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -943,6 +1028,19 @@ public final class CloudMemcacheGrpc {
         com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getApplySoftwareUpdateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs the apply phase of the RescheduleMaintenance verb.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
     }
   }
 
@@ -1085,6 +1183,20 @@ public final class CloudMemcacheGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getApplySoftwareUpdateMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs the apply phase of the RescheduleMaintenance verb.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rescheduleMaintenance(
+            com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -1095,6 +1207,7 @@ public final class CloudMemcacheGrpc {
   private static final int METHODID_DELETE_INSTANCE = 5;
   private static final int METHODID_APPLY_PARAMETERS = 6;
   private static final int METHODID_APPLY_SOFTWARE_UPDATE = 7;
+  private static final int METHODID_RESCHEDULE_MAINTENANCE = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1153,6 +1266,11 @@ public final class CloudMemcacheGrpc {
         case METHODID_APPLY_SOFTWARE_UPDATE:
           serviceImpl.applySoftwareUpdate(
               (com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESCHEDULE_MAINTENANCE:
+          serviceImpl.rescheduleMaintenance(
+              (com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1227,6 +1345,7 @@ public final class CloudMemcacheGrpc {
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getApplyParametersMethod())
                       .addMethod(getApplySoftwareUpdateMethod())
+                      .addMethod(getRescheduleMaintenanceMethod())
                       .build();
         }
       }

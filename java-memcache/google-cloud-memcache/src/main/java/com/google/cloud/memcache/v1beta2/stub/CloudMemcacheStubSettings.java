@@ -17,6 +17,7 @@
 package com.google.cloud.memcache.v1beta2.stub;
 
 import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListInstancesPagedResponse;
+import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -47,6 +48,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.memcache.v1beta2.ApplyParametersRequest;
 import com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest;
 import com.google.cloud.memcache.v1beta2.CreateInstanceRequest;
@@ -56,6 +61,7 @@ import com.google.cloud.memcache.v1beta2.Instance;
 import com.google.cloud.memcache.v1beta2.ListInstancesRequest;
 import com.google.cloud.memcache.v1beta2.ListInstancesResponse;
 import com.google.cloud.memcache.v1beta2.OperationMetadata;
+import com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest;
 import com.google.cloud.memcache.v1beta2.UpdateInstanceRequest;
 import com.google.cloud.memcache.v1beta2.UpdateParametersRequest;
 import com.google.common.collect.ImmutableList;
@@ -133,6 +139,14 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
       applySoftwareUpdateSettings;
   private final OperationCallSettings<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
       applySoftwareUpdateOperationSettings;
+  private final UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings;
+  private final OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -170,6 +184,42 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       LIST_INSTANCES_PAGE_STR_FACT =
@@ -184,6 +234,23 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
               PageContext<ListInstancesRequest, ListInstancesResponse, Instance> pageContext =
                   PageContext.create(callable, LIST_INSTANCES_PAGE_STR_DESC, request, context);
               return ListInstancesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -262,6 +329,29 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
   public OperationCallSettings<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
       applySoftwareUpdateOperationSettings() {
     return applySoftwareUpdateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return rescheduleMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings() {
+    return rescheduleMaintenanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public CloudMemcacheStub createStub() throws IOException {
@@ -385,6 +475,11 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     applySoftwareUpdateSettings = settingsBuilder.applySoftwareUpdateSettings().build();
     applySoftwareUpdateOperationSettings =
         settingsBuilder.applySoftwareUpdateOperationSettings().build();
+    rescheduleMaintenanceSettings = settingsBuilder.rescheduleMaintenanceSettings().build();
+    rescheduleMaintenanceOperationSettings =
+        settingsBuilder.rescheduleMaintenanceOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for CloudMemcacheStubSettings. */
@@ -420,6 +515,15 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     private final OperationCallSettings.Builder<
             ApplySoftwareUpdateRequest, Instance, OperationMetadata>
         applySoftwareUpdateOperationSettings;
+    private final UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -428,6 +532,7 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
           ImmutableMap.builder();
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -444,6 +549,8 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
               .setTotalTimeout(Duration.ofMillis(1200000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -468,6 +575,10 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
       applyParametersOperationSettings = OperationCallSettings.newBuilder();
       applySoftwareUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       applySoftwareUpdateOperationSettings = OperationCallSettings.newBuilder();
+      rescheduleMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleMaintenanceOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -478,7 +589,10 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
               updateParametersSettings,
               deleteInstanceSettings,
               applyParametersSettings,
-              applySoftwareUpdateSettings);
+              applySoftwareUpdateSettings,
+              rescheduleMaintenanceSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -500,6 +614,11 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
       applySoftwareUpdateSettings = settings.applySoftwareUpdateSettings.toBuilder();
       applySoftwareUpdateOperationSettings =
           settings.applySoftwareUpdateOperationSettings.toBuilder();
+      rescheduleMaintenanceSettings = settings.rescheduleMaintenanceSettings.toBuilder();
+      rescheduleMaintenanceOperationSettings =
+          settings.rescheduleMaintenanceOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -510,7 +629,10 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
               updateParametersSettings,
               deleteInstanceSettings,
               applyParametersSettings,
-              applySoftwareUpdateSettings);
+              applySoftwareUpdateSettings,
+              rescheduleMaintenanceSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -579,6 +701,21 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
           .applySoftwareUpdateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .rescheduleMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createInstanceOperationSettings()
@@ -724,6 +861,30 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .rescheduleMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RescheduleMaintenanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -832,6 +993,32 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     public OperationCallSettings.Builder<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
         applySoftwareUpdateOperationSettings() {
       return applySoftwareUpdateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return rescheduleMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings() {
+      return rescheduleMaintenanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

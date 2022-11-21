@@ -48,6 +48,22 @@ public final class CloudMemcacheProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_memcache_v1_Instance_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memcache_v1_MaintenancePolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_memcache_v1_MaintenancePolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memcache_v1_WeeklyMaintenanceWindow_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_memcache_v1_WeeklyMaintenanceWindow_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memcache_v1_MaintenanceSchedule_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_memcache_v1_MaintenanceSchedule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memcache_v1_RescheduleMaintenanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_memcache_v1_RescheduleMaintenanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_memcache_v1_ListInstancesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_memcache_v1_ListInstancesRequest_fieldAccessorTable;
@@ -91,6 +107,18 @@ public final class CloudMemcacheProto {
       internal_static_google_cloud_memcache_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_memcache_v1_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memcache_v1_LocationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_memcache_v1_LocationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memcache_v1_LocationMetadata_AvailableZonesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_memcache_v1_LocationMetadata_AvailableZonesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memcache_v1_ZoneMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_memcache_v1_ZoneMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -105,135 +133,179 @@ public final class CloudMemcacheProto {
           + "e/api/annotations.proto\032\027google/api/clie"
           + "nt.proto\032\037google/api/field_behavior.prot"
           + "o\032\031google/api/resource.proto\032#google/lon"
-          + "grunning/operations.proto\032 google/protob"
-          + "uf/field_mask.proto\032\037google/protobuf/tim"
-          + "estamp.proto\"\243\014\n\010Instance\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\002\022\024\n\014display_name\030\002 \001(\t\022>\n\006labels\030\003 \003"
-          + "(\0132..google.cloud.memcache.v1.Instance.L"
-          + "abelsEntry\022\032\n\022authorized_network\030\004 \001(\t\022\r"
-          + "\n\005zones\030\005 \003(\t\022\027\n\nnode_count\030\006 \001(\005B\003\340A\002\022G"
-          + "\n\013node_config\030\007 \001(\0132-.google.cloud.memca"
-          + "che.v1.Instance.NodeConfigB\003\340A\002\022C\n\020memca"
-          + "che_version\030\t \001(\0162).google.cloud.memcach"
-          + "e.v1.MemcacheVersion\022@\n\nparameters\030\013 \001(\013"
-          + "2,.google.cloud.memcache.v1.MemcachePara"
-          + "meters\022D\n\016memcache_nodes\030\014 \003(\0132\'.google."
-          + "cloud.memcache.v1.Instance.NodeB\003\340A\003\0224\n\013"
-          + "create_time\030\r \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0224\n\013update_time\030\016 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022<\n\005state\030\017 \001(\0162"
-          + "(.google.cloud.memcache.v1.Instance.Stat"
-          + "eB\003\340A\003\022\"\n\025memcache_full_version\030\022 \001(\tB\003\340"
-          + "A\003\022M\n\021instance_messages\030\023 \003(\01322.google.c"
-          + "loud.memcache.v1.Instance.InstanceMessag"
-          + "e\022\037\n\022discovery_endpoint\030\024 \001(\tB\003\340A\003\032A\n\nNo"
-          + "deConfig\022\026\n\tcpu_count\030\001 \001(\005B\003\340A\002\022\033\n\016memo"
-          + "ry_size_mb\030\002 \001(\005B\003\340A\002\032\257\002\n\004Node\022\024\n\007node_i"
-          + "d\030\001 \001(\tB\003\340A\003\022\021\n\004zone\030\002 \001(\tB\003\340A\003\022A\n\005state"
-          + "\030\003 \001(\0162-.google.cloud.memcache.v1.Instan"
-          + "ce.Node.StateB\003\340A\003\022\021\n\004host\030\004 \001(\tB\003\340A\003\022\021\n"
-          + "\004port\030\005 \001(\005B\003\340A\003\022@\n\nparameters\030\006 \001(\0132,.g"
-          + "oogle.cloud.memcache.v1.MemcacheParamete"
-          + "rs\"S\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CR"
-          + "EATING\020\001\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\014\n\010UPD"
-          + "ATING\020\004\032\251\001\n\017InstanceMessage\022E\n\004code\030\001 \001("
-          + "\01627.google.cloud.memcache.v1.Instance.In"
-          + "stanceMessage.Code\022\017\n\007message\030\002 \001(\t\">\n\004C"
-          + "ode\022\024\n\020CODE_UNSPECIFIED\020\000\022 \n\034ZONE_DISTRI"
-          + "BUTION_UNBALANCED\020\001\032-\n\013LabelsEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\005State\022\025\n\021S"
-          + "TATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READ"
-          + "Y\020\002\022\014\n\010DELETING\020\004\022\032\n\026PERFORMING_MAINTENA"
-          + "NCE\020\005:c\352A`\n memcache.googleapis.com/Inst"
-          + "ance\022<projects/{project}/locations/{loca"
-          + "tion}/instances/{instance}\"\232\001\n\024ListInsta"
-          + "ncesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!loc"
-          + "ations.googleapis.com/Location\022\021\n\tpage_s"
-          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030"
-          + "\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"|\n\025ListInstances"
-          + "Response\0225\n\tinstances\030\001 \003(\0132\".google.clo"
-          + "ud.memcache.v1.Instance\022\027\n\017next_page_tok"
-          + "en\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"L\n\022GetInst"
-          + "anceRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n memca"
-          + "che.googleapis.com/Instance\"\247\001\n\025CreateIn"
-          + "stanceRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!l"
-          + "ocations.googleapis.com/Location\022\030\n\013inst"
-          + "ance_id\030\002 \001(\tB\003\340A\002\0229\n\010instance\030\003 \001(\0132\".g"
-          + "oogle.cloud.memcache.v1.InstanceB\003\340A\002\"\210\001"
-          + "\n\025UpdateInstanceRequest\0224\n\013update_mask\030\001"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\0229\n"
-          + "\010instance\030\002 \001(\0132\".google.cloud.memcache."
-          + "v1.InstanceB\003\340A\002\"O\n\025DeleteInstanceReques"
-          + "t\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n memcache.google"
-          + "apis.com/Instance\"u\n\026ApplyParametersRequ"
-          + "est\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n memcache.goog"
-          + "leapis.com/Instance\022\020\n\010node_ids\030\002 \003(\t\022\021\n"
-          + "\tapply_all\030\003 \001(\010\"\311\001\n\027UpdateParametersReq"
-          + "uest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n memcache.goo"
-          + "gleapis.com/Instance\0224\n\013update_mask\030\002 \001("
-          + "\0132\032.google.protobuf.FieldMaskB\003\340A\002\022@\n\npa"
-          + "rameters\030\003 \001(\0132,.google.cloud.memcache.v"
-          + "1.MemcacheParameters\"\236\001\n\022MemcacheParamet"
-          + "ers\022\017\n\002id\030\001 \001(\tB\003\340A\003\022H\n\006params\030\003 \003(\01328.g"
-          + "oogle.cloud.memcache.v1.MemcacheParamete"
-          + "rs.ParamsEntry\032-\n\013ParamsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\371\001\n\021OperationMetad"
-          + "ata\0224\n\013create_time\030\001 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\022\023\n\006target\030\003"
-          + " \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\032\n\rstatus_d"
-          + "etail\030\005 \001(\tB\003\340A\003\022\035\n\020cancel_requested\030\006 \001"
-          + "(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003*E\n\017Mem"
-          + "cacheVersion\022 \n\034MEMCACHE_VERSION_UNSPECI"
-          + "FIED\020\000\022\020\n\014MEMCACHE_1_5\020\0012\202\016\n\rCloudMemcac"
-          + "he\022\260\001\n\rListInstances\022..google.cloud.memc"
-          + "ache.v1.ListInstancesRequest\032/.google.cl"
-          + "oud.memcache.v1.ListInstancesResponse\">\202"
-          + "\323\344\223\002/\022-/v1/{parent=projects/*/locations/"
-          + "*}/instances\332A\006parent\022\235\001\n\013GetInstance\022,."
-          + "google.cloud.memcache.v1.GetInstanceRequ"
-          + "est\032\".google.cloud.memcache.v1.Instance\""
-          + "<\202\323\344\223\002/\022-/v1/{name=projects/*/locations/"
-          + "*/instances/*}\332A\004name\022\222\002\n\016CreateInstance"
-          + "\022/.google.cloud.memcache.v1.CreateInstan"
-          + "ceRequest\032\035.google.longrunning.Operation"
-          + "\"\257\001\202\323\344\223\0029\"-/v1/{parent=projects/*/locati"
-          + "ons/*}/instances:\010instance\332A\033parent,inst"
-          + "ance,instance_id\312AO\n!google.cloud.memcac"
-          + "he.v1.Instance\022*google.cloud.memcache.v1"
-          + ".OperationMetadata\022\224\002\n\016UpdateInstance\022/."
-          + "google.cloud.memcache.v1.UpdateInstanceR"
-          + "equest\032\035.google.longrunning.Operation\"\261\001"
-          + "\202\323\344\223\002B26/v1/{instance.name=projects/*/lo"
-          + "cations/*/instances/*}:\010instance\332A\024insta"
-          + "nce,update_mask\312AO\n!google.cloud.memcach"
-          + "e.v1.Instance\022*google.cloud.memcache.v1."
-          + "OperationMetadata\022\240\002\n\020UpdateParameters\0221"
-          + ".google.cloud.memcache.v1.UpdateParamete"
-          + "rsRequest\032\035.google.longrunning.Operation"
-          + "\"\271\001\202\323\344\223\002C2>/v1/{name=projects/*/location"
-          + "s/*/instances/*}:updateParameters:\001*\332A\033n"
-          + "ame,update_mask,parameters\312AO\n!google.cl"
-          + "oud.memcache.v1.Instance\022*google.cloud.m"
-          + "emcache.v1.OperationMetadata\022\345\001\n\016DeleteI"
-          + "nstance\022/.google.cloud.memcache.v1.Delet"
-          + "eInstanceRequest\032\035.google.longrunning.Op"
-          + "eration\"\202\001\202\323\344\223\002/*-/v1/{name=projects/*/l"
-          + "ocations/*/instances/*}\332A\004name\312AC\n\025googl"
-          + "e.protobuf.Empty\022*google.cloud.memcache."
-          + "v1.OperationMetadata\022\231\002\n\017ApplyParameters"
-          + "\0220.google.cloud.memcache.v1.ApplyParamet"
-          + "ersRequest\032\035.google.longrunning.Operatio"
-          + "n\"\264\001\202\323\344\223\002B\"=/v1/{name=projects/*/locatio"
-          + "ns/*/instances/*}:applyParameters:\001*\332A\027n"
-          + "ame,node_ids,apply_all\312AO\n!google.cloud."
+          + "grunning/operations.proto\032\036google/protob"
+          + "uf/duration.proto\032 google/protobuf/field"
+          + "_mask.proto\032\037google/protobuf/timestamp.p"
+          + "roto\032\033google/type/dayofweek.proto\032\033googl"
+          + "e/type/timeofday.proto\"\314\r\n\010Instance\022\021\n\004n"
+          + "ame\030\001 \001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t\022>\n\006"
+          + "labels\030\003 \003(\0132..google.cloud.memcache.v1."
+          + "Instance.LabelsEntry\022\032\n\022authorized_netwo"
+          + "rk\030\004 \001(\t\022\r\n\005zones\030\005 \003(\t\022\027\n\nnode_count\030\006 "
+          + "\001(\005B\003\340A\002\022G\n\013node_config\030\007 \001(\0132-.google.c"
+          + "loud.memcache.v1.Instance.NodeConfigB\003\340A"
+          + "\002\022C\n\020memcache_version\030\t \001(\0162).google.clo"
+          + "ud.memcache.v1.MemcacheVersion\022@\n\nparame"
+          + "ters\030\013 \001(\0132,.google.cloud.memcache.v1.Me"
+          + "mcacheParameters\022D\n\016memcache_nodes\030\014 \003(\013"
+          + "2\'.google.cloud.memcache.v1.Instance.Nod"
+          + "eB\003\340A\003\0224\n\013create_time\030\r \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\016 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003\022<\n\005st"
+          + "ate\030\017 \001(\0162(.google.cloud.memcache.v1.Ins"
+          + "tance.StateB\003\340A\003\022\"\n\025memcache_full_versio"
+          + "n\030\022 \001(\tB\003\340A\003\022M\n\021instance_messages\030\023 \003(\0132"
+          + "2.google.cloud.memcache.v1.Instance.Inst"
+          + "anceMessage\022\037\n\022discovery_endpoint\030\024 \001(\tB"
+          + "\003\340A\003\022G\n\022maintenance_policy\030\025 \001(\0132+.googl"
+          + "e.cloud.memcache.v1.MaintenancePolicy\022P\n"
+          + "\024maintenance_schedule\030\026 \001(\0132-.google.clo"
+          + "ud.memcache.v1.MaintenanceScheduleB\003\340A\003\032"
+          + "A\n\nNodeConfig\022\026\n\tcpu_count\030\001 \001(\005B\003\340A\002\022\033\n"
+          + "\016memory_size_mb\030\002 \001(\005B\003\340A\002\032\257\002\n\004Node\022\024\n\007n"
+          + "ode_id\030\001 \001(\tB\003\340A\003\022\021\n\004zone\030\002 \001(\tB\003\340A\003\022A\n\005"
+          + "state\030\003 \001(\0162-.google.cloud.memcache.v1.I"
+          + "nstance.Node.StateB\003\340A\003\022\021\n\004host\030\004 \001(\tB\003\340"
+          + "A\003\022\021\n\004port\030\005 \001(\005B\003\340A\003\022@\n\nparameters\030\006 \001("
+          + "\0132,.google.cloud.memcache.v1.MemcachePar"
+          + "ameters\"S\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022"
+          + "\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\014"
+          + "\n\010UPDATING\020\004\032\251\001\n\017InstanceMessage\022E\n\004code"
+          + "\030\001 \001(\01627.google.cloud.memcache.v1.Instan"
+          + "ce.InstanceMessage.Code\022\017\n\007message\030\002 \001(\t"
+          + "\">\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022 \n\034ZONE_D"
+          + "ISTRIBUTION_UNBALANCED\020\001\032-\n\013LabelsEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"o\n\005State"
+          + "\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n"
+          + "\005READY\020\002\022\014\n\010UPDATING\020\003\022\014\n\010DELETING\020\004\022\032\n\026"
+          + "PERFORMING_MAINTENANCE\020\005:c\352A`\n memcache."
+          + "googleapis.com/Instance\022<projects/{proje"
+          + "ct}/locations/{location}/instances/{inst"
+          + "ance}\"\357\001\n\021MaintenancePolicy\0224\n\013create_ti"
+          + "me\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0224\n\013update_time\030\002 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022\023\n\013description\030\003 \001(\t\022Y\n\031"
+          + "weekly_maintenance_window\030\004 \003(\01321.google"
+          + ".cloud.memcache.v1.WeeklyMaintenanceWind"
+          + "owB\003\340A\002\"\246\001\n\027WeeklyMaintenanceWindow\022(\n\003d"
+          + "ay\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\022/\n"
+          + "\nstart_time\030\002 \001(\0132\026.google.type.TimeOfDa"
+          + "yB\003\340A\002\0220\n\010duration\030\003 \001(\0132\031.google.protob"
+          + "uf.DurationB\003\340A\002\"\276\001\n\023MaintenanceSchedule"
+          + "\0223\n\nstart_time\030\001 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\022?\n\026schedule_dea"
+          + "dline_time\030\004 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\"\342\002\n\034RescheduleMaintenanceReque"
+          + "st\022:\n\010instance\030\001 \001(\tB(\340A\002\372A\"\n memcache.g"
+          + "oogleapis.com/Instance\022c\n\017reschedule_typ"
+          + "e\030\002 \001(\0162E.google.cloud.memcache.v1.Resch"
+          + "eduleMaintenanceRequest.RescheduleTypeB\003"
+          + "\340A\002\0221\n\rschedule_time\030\003 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\"n\n\016RescheduleType\022\037\n\033RESC"
+          + "HEDULE_TYPE_UNSPECIFIED\020\000\022\r\n\tIMMEDIATE\020\001"
+          + "\022\031\n\025NEXT_AVAILABLE_WINDOW\020\002\022\021\n\rSPECIFIC_"
+          + "TIME\020\003\"\232\001\n\024ListInstancesRequest\0229\n\006paren"
+          + "t\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.co"
+          + "m/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
+          + "ken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 "
+          + "\001(\t\"|\n\025ListInstancesResponse\0225\n\tinstance"
+          + "s\030\001 \003(\0132\".google.cloud.memcache.v1.Insta"
+          + "nce\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreacha"
+          + "ble\030\003 \003(\t\"L\n\022GetInstanceRequest\0226\n\004name\030"
+          + "\001 \001(\tB(\340A\002\372A\"\n memcache.googleapis.com/I"
+          + "nstance\"\247\001\n\025CreateInstanceRequest\0229\n\006par"
+          + "ent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis."
+          + "com/Location\022\030\n\013instance_id\030\002 \001(\tB\003\340A\002\0229"
+          + "\n\010instance\030\003 \001(\0132\".google.cloud.memcache"
+          + ".v1.InstanceB\003\340A\002\"\210\001\n\025UpdateInstanceRequ"
+          + "est\0224\n\013update_mask\030\001 \001(\0132\032.google.protob"
+          + "uf.FieldMaskB\003\340A\002\0229\n\010instance\030\002 \001(\0132\".go"
+          + "ogle.cloud.memcache.v1.InstanceB\003\340A\002\"O\n\025"
+          + "DeleteInstanceRequest\0226\n\004name\030\001 \001(\tB(\340A\002"
+          + "\372A\"\n memcache.googleapis.com/Instance\"u\n"
+          + "\026ApplyParametersRequest\0226\n\004name\030\001 \001(\tB(\340"
+          + "A\002\372A\"\n memcache.googleapis.com/Instance\022"
+          + "\020\n\010node_ids\030\002 \003(\t\022\021\n\tapply_all\030\003 \001(\010\"\311\001\n"
+          + "\027UpdateParametersRequest\0226\n\004name\030\001 \001(\tB("
+          + "\340A\002\372A\"\n memcache.googleapis.com/Instance"
+          + "\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf."
+          + "FieldMaskB\003\340A\002\022@\n\nparameters\030\003 \001(\0132,.goo"
+          + "gle.cloud.memcache.v1.MemcacheParameters"
+          + "\"\236\001\n\022MemcacheParameters\022\017\n\002id\030\001 \001(\tB\003\340A\003"
+          + "\022H\n\006params\030\003 \003(\01328.google.cloud.memcache"
+          + ".v1.MemcacheParameters.ParamsEntry\032-\n\013Pa"
+          + "ramsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001\"\371\001\n\021OperationMetadata\0224\n\013create_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 "
+          + "\001(\tB\003\340A\003\022\032\n\rstatus_detail\030\005 \001(\tB\003\340A\003\022\035\n\020"
+          + "cancel_requested\030\006 \001(\010B\003\340A\003\022\030\n\013api_versi"
+          + "on\030\007 \001(\tB\003\340A\003\"\317\001\n\020LocationMetadata\022\\\n\017av"
+          + "ailable_zones\030\001 \003(\0132>.google.cloud.memca"
+          + "che.v1.LocationMetadata.AvailableZonesEn"
+          + "tryB\003\340A\003\032]\n\023AvailableZonesEntry\022\013\n\003key\030\001"
+          + " \001(\t\0225\n\005value\030\002 \001(\0132&.google.cloud.memca"
+          + "che.v1.ZoneMetadata:\0028\001\"\016\n\014ZoneMetadata*"
+          + "E\n\017MemcacheVersion\022 \n\034MEMCACHE_VERSION_U"
+          + "NSPECIFIED\020\000\022\020\n\014MEMCACHE_1_5\020\0012\305\020\n\rCloud"
+          + "Memcache\022\260\001\n\rListInstances\022..google.clou"
+          + "d.memcache.v1.ListInstancesRequest\032/.goo"
+          + "gle.cloud.memcache.v1.ListInstancesRespo"
+          + "nse\">\202\323\344\223\002/\022-/v1/{parent=projects/*/loca"
+          + "tions/*}/instances\332A\006parent\022\235\001\n\013GetInsta"
+          + "nce\022,.google.cloud.memcache.v1.GetInstan"
+          + "ceRequest\032\".google.cloud.memcache.v1.Ins"
+          + "tance\"<\202\323\344\223\002/\022-/v1/{name=projects/*/loca"
+          + "tions/*/instances/*}\332A\004name\022\222\002\n\016CreateIn"
+          + "stance\022/.google.cloud.memcache.v1.Create"
+          + "InstanceRequest\032\035.google.longrunning.Ope"
+          + "ration\"\257\001\202\323\344\223\0029\"-/v1/{parent=projects/*/"
+          + "locations/*}/instances:\010instance\332A\033paren"
+          + "t,instance,instance_id\312AO\n!google.cloud."
           + "memcache.v1.Instance\022*google.cloud.memca"
-          + "che.v1.OperationMetadata\032K\312A\027memcache.go"
-          + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformBv\n\034com.google.clou"
-          + "d.memcache.v1B\022CloudMemcacheProtoP\001Z@goo"
-          + "gle.golang.org/genproto/googleapis/cloud"
-          + "/memcache/v1;memcacheb\006proto3"
+          + "che.v1.OperationMetadata\022\224\002\n\016UpdateInsta"
+          + "nce\022/.google.cloud.memcache.v1.UpdateIns"
+          + "tanceRequest\032\035.google.longrunning.Operat"
+          + "ion\"\261\001\202\323\344\223\002B26/v1/{instance.name=project"
+          + "s/*/locations/*/instances/*}:\010instance\332A"
+          + "\024instance,update_mask\312AO\n!google.cloud.m"
+          + "emcache.v1.Instance\022*google.cloud.memcac"
+          + "he.v1.OperationMetadata\022\240\002\n\020UpdateParame"
+          + "ters\0221.google.cloud.memcache.v1.UpdatePa"
+          + "rametersRequest\032\035.google.longrunning.Ope"
+          + "ration\"\271\001\202\323\344\223\002C2>/v1/{name=projects/*/lo"
+          + "cations/*/instances/*}:updateParameters:"
+          + "\001*\332A\033name,update_mask,parameters\312AO\n!goo"
+          + "gle.cloud.memcache.v1.Instance\022*google.c"
+          + "loud.memcache.v1.OperationMetadata\022\345\001\n\016D"
+          + "eleteInstance\022/.google.cloud.memcache.v1"
+          + ".DeleteInstanceRequest\032\035.google.longrunn"
+          + "ing.Operation\"\202\001\202\323\344\223\002/*-/v1/{name=projec"
+          + "ts/*/locations/*/instances/*}\332A\004name\312AC\n"
+          + "\025google.protobuf.Empty\022*google.cloud.mem"
+          + "cache.v1.OperationMetadata\022\231\002\n\017ApplyPara"
+          + "meters\0220.google.cloud.memcache.v1.ApplyP"
+          + "arametersRequest\032\035.google.longrunning.Op"
+          + "eration\"\264\001\202\323\344\223\002B\"=/v1/{name=projects/*/l"
+          + "ocations/*/instances/*}:applyParameters:"
+          + "\001*\332A\027name,node_ids,apply_all\312AO\n!google."
+          + "cloud.memcache.v1.Instance\022*google.cloud"
+          + ".memcache.v1.OperationMetadata\022\300\002\n\025Resch"
+          + "eduleMaintenance\0226.google.cloud.memcache"
+          + ".v1.RescheduleMaintenanceRequest\032\035.googl"
+          + "e.longrunning.Operation\"\317\001\202\323\344\223\002L\"G/v1/{i"
+          + "nstance=projects/*/locations/*/instances"
+          + "/*}:rescheduleMaintenance:\001*\332A(instance,"
+          + " reschedule_type, schedule_time\312AO\n!goog"
+          + "le.cloud.memcache.v1.Instance\022*google.cl"
+          + "oud.memcache.v1.OperationMetadata\032K\312A\027me"
+          + "mcache.googleapis.com\322A.https://www.goog"
+          + "leapis.com/auth/cloud-platformBv\n\034com.go"
+          + "ogle.cloud.memcache.v1B\022CloudMemcachePro"
+          + "toP\001Z@google.golang.org/genproto/googlea"
+          + "pis/cloud/memcache/v1;memcacheb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -244,8 +316,11 @@ public final class CloudMemcacheProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.DayOfWeekProto.getDescriptor(),
+              com.google.type.TimeOfDayProto.getDescriptor(),
             });
     internal_static_google_cloud_memcache_v1_Instance_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -269,6 +344,8 @@ public final class CloudMemcacheProto {
               "MemcacheFullVersion",
               "InstanceMessages",
               "DiscoveryEndpoint",
+              "MaintenancePolicy",
+              "MaintenanceSchedule",
             });
     internal_static_google_cloud_memcache_v1_Instance_NodeConfig_descriptor =
         internal_static_google_cloud_memcache_v1_Instance_descriptor.getNestedTypes().get(0);
@@ -302,8 +379,40 @@ public final class CloudMemcacheProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_memcache_v1_ListInstancesRequest_descriptor =
+    internal_static_google_cloud_memcache_v1_MaintenancePolicy_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_memcache_v1_MaintenancePolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_memcache_v1_MaintenancePolicy_descriptor,
+            new java.lang.String[] {
+              "CreateTime", "UpdateTime", "Description", "WeeklyMaintenanceWindow",
+            });
+    internal_static_google_cloud_memcache_v1_WeeklyMaintenanceWindow_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_memcache_v1_WeeklyMaintenanceWindow_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_memcache_v1_WeeklyMaintenanceWindow_descriptor,
+            new java.lang.String[] {
+              "Day", "StartTime", "Duration",
+            });
+    internal_static_google_cloud_memcache_v1_MaintenanceSchedule_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_memcache_v1_MaintenanceSchedule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_memcache_v1_MaintenanceSchedule_descriptor,
+            new java.lang.String[] {
+              "StartTime", "EndTime", "ScheduleDeadlineTime",
+            });
+    internal_static_google_cloud_memcache_v1_RescheduleMaintenanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_memcache_v1_RescheduleMaintenanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_memcache_v1_RescheduleMaintenanceRequest_descriptor,
+            new java.lang.String[] {
+              "Instance", "RescheduleType", "ScheduleTime",
+            });
+    internal_static_google_cloud_memcache_v1_ListInstancesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_memcache_v1_ListInstancesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_ListInstancesRequest_descriptor,
@@ -311,7 +420,7 @@ public final class CloudMemcacheProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_memcache_v1_ListInstancesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_memcache_v1_ListInstancesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_ListInstancesResponse_descriptor,
@@ -319,7 +428,7 @@ public final class CloudMemcacheProto {
               "Instances", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_memcache_v1_GetInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_memcache_v1_GetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_GetInstanceRequest_descriptor,
@@ -327,7 +436,7 @@ public final class CloudMemcacheProto {
               "Name",
             });
     internal_static_google_cloud_memcache_v1_CreateInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_memcache_v1_CreateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_CreateInstanceRequest_descriptor,
@@ -335,7 +444,7 @@ public final class CloudMemcacheProto {
               "Parent", "InstanceId", "Instance",
             });
     internal_static_google_cloud_memcache_v1_UpdateInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_memcache_v1_UpdateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_UpdateInstanceRequest_descriptor,
@@ -343,7 +452,7 @@ public final class CloudMemcacheProto {
               "UpdateMask", "Instance",
             });
     internal_static_google_cloud_memcache_v1_DeleteInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_memcache_v1_DeleteInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_DeleteInstanceRequest_descriptor,
@@ -351,7 +460,7 @@ public final class CloudMemcacheProto {
               "Name",
             });
     internal_static_google_cloud_memcache_v1_ApplyParametersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_memcache_v1_ApplyParametersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_ApplyParametersRequest_descriptor,
@@ -359,7 +468,7 @@ public final class CloudMemcacheProto {
               "Name", "NodeIds", "ApplyAll",
             });
     internal_static_google_cloud_memcache_v1_UpdateParametersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_memcache_v1_UpdateParametersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_UpdateParametersRequest_descriptor,
@@ -367,7 +476,7 @@ public final class CloudMemcacheProto {
               "Name", "UpdateMask", "Parameters",
             });
     internal_static_google_cloud_memcache_v1_MemcacheParameters_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_memcache_v1_MemcacheParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_MemcacheParameters_descriptor,
@@ -385,7 +494,7 @@ public final class CloudMemcacheProto {
               "Key", "Value",
             });
     internal_static_google_cloud_memcache_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_memcache_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_memcache_v1_OperationMetadata_descriptor,
@@ -398,6 +507,30 @@ public final class CloudMemcacheProto {
               "CancelRequested",
               "ApiVersion",
             });
+    internal_static_google_cloud_memcache_v1_LocationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_memcache_v1_LocationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_memcache_v1_LocationMetadata_descriptor,
+            new java.lang.String[] {
+              "AvailableZones",
+            });
+    internal_static_google_cloud_memcache_v1_LocationMetadata_AvailableZonesEntry_descriptor =
+        internal_static_google_cloud_memcache_v1_LocationMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_memcache_v1_LocationMetadata_AvailableZonesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_memcache_v1_LocationMetadata_AvailableZonesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_memcache_v1_ZoneMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_memcache_v1_ZoneMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_memcache_v1_ZoneMetadata_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -415,8 +548,11 @@ public final class CloudMemcacheProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.DayOfWeekProto.getDescriptor();
+    com.google.type.TimeOfDayProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
