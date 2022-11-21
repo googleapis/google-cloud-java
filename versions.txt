@@ -1,9 +1,9 @@
 # Format:
 # module:released-version:current-version
 
-gapic-libraries-bom:0.3.0:0.4.0-SNAPSHOT
-google-cloud-jar-parent:0.3.0:0.4.0-SNAPSHOT
-google-cloud-pom-parent:0.3.0:0.4.0-SNAPSHOT
+gapic-libraries-bom:1.0.0:1.1.0-SNAPSHOT
+google-cloud-jar-parent:1.0.0:1.1.0-SNAPSHOT
+google-cloud-pom-parent:1.0.0:1.1.0-SNAPSHOT
 google-cloud-accessapproval:2.7.0:2.8.0-SNAPSHOT
 grpc-google-cloud-accessapproval-v1:2.7.0:2.8.0-SNAPSHOT
 proto-google-cloud-accessapproval-v1:2.7.0:2.8.0-SNAPSHOT
