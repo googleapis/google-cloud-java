@@ -297,7 +297,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional username for logging in to a docker registry. If username
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * username from the Secret Manager.
      * </pre>
      *
@@ -311,7 +311,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional username for logging in to a docker registry. If username
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * username from the Secret Manager.
      * </pre>
      *
@@ -326,7 +326,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional password for logging in to a docker registry. If password
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * password from the Secret Manager;
      * </pre>
      *
@@ -340,7 +340,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional password for logging in to a docker registry. If password
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * password from the Secret Manager;
      * </pre>
      *
@@ -719,7 +719,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional username for logging in to a docker registry. If username
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * username from the Secret Manager.
      * </pre>
      *
@@ -744,7 +744,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional username for logging in to a docker registry. If username
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * username from the Secret Manager.
      * </pre>
      *
@@ -772,7 +772,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional password for logging in to a docker registry. If password
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * password from the Secret Manager;
      * </pre>
      *
@@ -797,7 +797,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional password for logging in to a docker registry. If password
-     * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+     * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
      * password from the Secret Manager;
      * </pre>
      *
@@ -2103,7 +2103,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional username for logging in to a docker registry. If username
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * username from the Secret Manager.
        * </pre>
        *
@@ -2127,7 +2127,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional username for logging in to a docker registry. If username
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * username from the Secret Manager.
        * </pre>
        *
@@ -2151,7 +2151,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional username for logging in to a docker registry. If username
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * username from the Secret Manager.
        * </pre>
        *
@@ -2174,7 +2174,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional username for logging in to a docker registry. If username
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * username from the Secret Manager.
        * </pre>
        *
@@ -2193,7 +2193,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional username for logging in to a docker registry. If username
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * username from the Secret Manager.
        * </pre>
        *
@@ -2219,7 +2219,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional password for logging in to a docker registry. If password
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * password from the Secret Manager;
        * </pre>
        *
@@ -2243,7 +2243,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional password for logging in to a docker registry. If password
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * password from the Secret Manager;
        * </pre>
        *
@@ -2267,7 +2267,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional password for logging in to a docker registry. If password
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * password from the Secret Manager;
        * </pre>
        *
@@ -2290,7 +2290,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional password for logging in to a docker registry. If password
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * password from the Secret Manager;
        * </pre>
        *
@@ -2309,7 +2309,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional password for logging in to a docker registry. If password
-       * matches "projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;" then Batch will read the
+       * matches `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;` then Batch will read the
        * password from the Secret Manager;
        * </pre>
        *
