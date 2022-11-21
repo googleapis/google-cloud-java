@@ -794,7 +794,7 @@
         <dependency>
           <groupId>org.graalvm.buildtools</groupId>
           <artifactId>junit-platform-native</artifactId>
-          <version>0.9.17</version>
+          <version>0.9.18</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
@@ -820,7 +820,7 @@
           <plugin>
             <groupId>org.graalvm.buildtools</groupId>
             <artifactId>native-maven-plugin</artifactId>
-            <version>0.9.17</version>
+            <version>0.9.18</version>
             <extensions>true</extensions>
             <executions>
               <execution>
