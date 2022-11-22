@@ -21,10 +21,9 @@ git clone https://github.com/newren/git-filter-repo.git
 export PATH=$PATH:`pwd`/git-filter-repo
 
 merged_repository=google-cloud-java-merged
-mkdir "${merged_repository}"
+git clone https://github.com/googleapis/google-cloud-java "${merged_repository}"
 
 cd "${merged_repository}"
-git init -b main
 
 cat ../repos.txt | while read service
 do

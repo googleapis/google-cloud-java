@@ -1,3 +1,1 @@
-google-cloud-java
-java-accesscontextmanager
-java-aiplatform
+java-logging
