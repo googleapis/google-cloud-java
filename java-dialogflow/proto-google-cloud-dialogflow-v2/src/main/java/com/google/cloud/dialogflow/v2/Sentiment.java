@@ -23,7 +23,9 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * The sentiment, such as positive/negative feeling or association, for a unit
- * of analysis, such as the query text.
+ * of analysis, such as the query text. See:
+ * https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values
+ * for how to interpret the result.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.Sentiment}
@@ -278,7 +280,9 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The sentiment, such as positive/negative feeling or association, for a unit
-   * of analysis, such as the query text.
+   * of analysis, such as the query text. See:
+   * https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values
+   * for how to interpret the result.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.Sentiment}
