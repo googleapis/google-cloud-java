@@ -7,7 +7,7 @@ They are also used and tested by `merge_repository.sh`.
 
 ## Merge repository into the monorepo
 
-Built by running [erge_repository.sh](merge_repository.sh).
+Built by running [merge_repository.sh](merge_repository.sh).
 
 The script creates a new Git repository in `monorepo/google-cloud-java` by merging
 the repositories in the input.
