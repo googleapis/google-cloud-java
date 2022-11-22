@@ -23,9 +23,9 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * Execution results of the query.
- * The result is formatted as rows represented by BigQuery compatible [schema].
- * When pagination is necessary, it will contains the page token to retrieve
- * the results of following pages.
+ * The result is formatted as rows represented by {{bigquery_name}} compatible
+ * [schema]. When pagination is necessary, it will contains the page token to
+ * retrieve the results of following pages.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.QueryResult}
@@ -448,9 +448,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Execution results of the query.
-   * The result is formatted as rows represented by BigQuery compatible [schema].
-   * When pagination is necessary, it will contains the page token to retrieve
-   * the results of following pages.
+   * The result is formatted as rows represented by {{bigquery_name}} compatible
+   * [schema]. When pagination is necessary, it will contains the page token to
+   * retrieve the results of following pages.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.QueryResult}

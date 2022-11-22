@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A Cloud Storage output result.
+ * A {{storage_name}} output result.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.GcsOutputResult}
@@ -73,7 +73,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of uris of the {{storage_name}} objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -88,7 +88,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of uris of the {{storage_name}} objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -103,7 +103,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of uris of the {{storage_name}} objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -119,7 +119,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of uris of the {{storage_name}} objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -302,7 +302,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A Cloud Storage output result.
+   * A {{storage_name}} output result.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.GcsOutputResult}
@@ -495,7 +495,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -510,7 +510,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -525,7 +525,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -541,7 +541,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -557,7 +557,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -580,7 +580,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -602,7 +602,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -621,7 +621,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -639,7 +639,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of uris of the {{storage_name}} objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *

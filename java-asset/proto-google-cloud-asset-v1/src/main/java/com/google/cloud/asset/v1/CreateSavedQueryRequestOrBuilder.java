@@ -27,11 +27,11 @@ public interface CreateSavedQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project/folder/organization where this saved_query
-   * should be created in. It can only be an organization number (such as
-   * "organizations/123"), a folder number (such as "folders/123"), a project ID
-   * (such as "projects/my-project-id")", or a project number (such as
-   * "projects/12345").
+   * Required. The name of the project/folder/organization where this
+   * saved_query should be created in. It can only be an organization number
+   * (such as "organizations/123"), a folder number (such as "folders/123"), a
+   * project ID (such as "projects/my-project-id")", or a project number (such
+   * as "projects/12345").
    * </pre>
    *
    * <code>
@@ -45,11 +45,11 @@ public interface CreateSavedQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project/folder/organization where this saved_query
-   * should be created in. It can only be an organization number (such as
-   * "organizations/123"), a folder number (such as "folders/123"), a project ID
-   * (such as "projects/my-project-id")", or a project number (such as
-   * "projects/12345").
+   * Required. The name of the project/folder/organization where this
+   * saved_query should be created in. It can only be an organization number
+   * (such as "organizations/123"), a folder number (such as "folders/123"), a
+   * project ID (such as "projects/my-project-id")", or a project number (such
+   * as "projects/12345").
    * </pre>
    *
    * <code>
@@ -64,8 +64,8 @@ public interface CreateSavedQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The saved_query details. The `name` field must be empty as it will be
-   * generated based on the parent and saved_query_id.
+   * Required. The saved_query details. The `name` field must be empty as it
+   * will be generated based on the parent and saved_query_id.
    * </pre>
    *
    * <code>
@@ -79,8 +79,8 @@ public interface CreateSavedQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The saved_query details. The `name` field must be empty as it will be
-   * generated based on the parent and saved_query_id.
+   * Required. The saved_query details. The `name` field must be empty as it
+   * will be generated based on the parent and saved_query_id.
    * </pre>
    *
    * <code>
@@ -94,8 +94,8 @@ public interface CreateSavedQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The saved_query details. The `name` field must be empty as it will be
-   * generated based on the parent and saved_query_id.
+   * Required. The saved_query details. The `name` field must be empty as it
+   * will be generated based on the parent and saved_query_id.
    * </pre>
    *
    * <code>
@@ -108,9 +108,9 @@ public interface CreateSavedQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the saved query, which must be unique in the specified
-   * parent. It will become the final component of the saved query's resource
-   * name.
+   * Required. The ID to use for the saved query, which must be unique in the
+   * specified parent. It will become the final component of the saved query's
+   * resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * Notice that this field is required in the saved query creation, and the
@@ -126,9 +126,9 @@ public interface CreateSavedQueryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the saved query, which must be unique in the specified
-   * parent. It will become the final component of the saved query's resource
-   * name.
+   * Required. The ID to use for the saved query, which must be unique in the
+   * specified parent. It will become the final component of the saved query's
+   * resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * Notice that this field is required in the saved query creation, and the

@@ -22,7 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A response message for [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
+ * A response message for
+ * [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse}
@@ -80,9 +81,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The [full_resource_name]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-     * request.
+     * for which the
+     * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+     * are computed. This is one of the
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+     * the caller provides in the request.
      * </pre>
      *
      * <code>string full_resource_name = 1;</code>
@@ -96,9 +99,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The [full_resource_name]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-     * request.
+     * for which the
+     * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+     * are computed. This is one of the
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+     * the caller provides in the request.
      * </pre>
      *
      * <code>string full_resource_name = 1;</code>
@@ -111,17 +116,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -136,17 +148,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -159,17 +178,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -181,17 +207,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -207,17 +240,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -232,7 +272,7 @@ public final class BatchGetEffectiveIamPoliciesResponse
    *
    *
    * <pre>
-   * The effective IAM policies on one resource.
+   * The effective {{iam_name_short}} policies on one resource.
    * </pre>
    *
    * Protobuf type {@code
@@ -290,7 +330,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+       * The full resource name the
+       * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+       * is directly attached to.
        * </pre>
        *
        * <code>string attached_resource = 1;</code>
@@ -302,7 +344,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+       * The full resource name the
+       * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+       * is directly attached to.
        * </pre>
        *
        * <code>string attached_resource = 1;</code>
@@ -315,7 +359,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+       * The {{iam_name_short}} policy that's directly attached to the
+       * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
        * </pre>
        *
        * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -327,7 +372,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+       * The {{iam_name_short}} policy that's directly attached to the
+       * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
        * </pre>
        *
        * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -339,7 +385,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+       * The {{iam_name_short}} policy that's directly attached to the
+       * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
        * </pre>
        *
        * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -350,7 +397,7 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The IAM policy and its attached resource.
+     * The {{iam_name_short}} policy and its attached resource.
      * </pre>
      *
      * Protobuf type {@code
@@ -404,7 +451,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+       * The full resource name the
+       * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+       * is directly attached to.
        * </pre>
        *
        * <code>string attached_resource = 1;</code>
@@ -427,7 +476,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+       * The full resource name the
+       * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+       * is directly attached to.
        * </pre>
        *
        * <code>string attached_resource = 1;</code>
@@ -453,7 +504,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+       * The {{iam_name_short}} policy that's directly attached to the
+       * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
        * </pre>
        *
        * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -468,7 +520,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+       * The {{iam_name_short}} policy that's directly attached to the
+       * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
        * </pre>
        *
        * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -483,7 +536,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+       * The {{iam_name_short}} policy that's directly attached to the
+       * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
        * </pre>
        *
        * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -700,7 +754,7 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The IAM policy and its attached resource.
+       * The {{iam_name_short}} policy and its attached resource.
        * </pre>
        *
        * Protobuf type {@code
@@ -922,7 +976,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+         * The full resource name the
+         * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+         * is directly attached to.
          * </pre>
          *
          * <code>string attached_resource = 1;</code>
@@ -944,7 +1000,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+         * The full resource name the
+         * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+         * is directly attached to.
          * </pre>
          *
          * <code>string attached_resource = 1;</code>
@@ -966,7 +1024,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+         * The full resource name the
+         * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+         * is directly attached to.
          * </pre>
          *
          * <code>string attached_resource = 1;</code>
@@ -987,7 +1047,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+         * The full resource name the
+         * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+         * is directly attached to.
          * </pre>
          *
          * <code>string attached_resource = 1;</code>
@@ -1004,7 +1066,9 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The full resource name the [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy] is directly attached to.
+         * The full resource name the
+         * [policy][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.policy]
+         * is directly attached to.
          * </pre>
          *
          * <code>string attached_resource = 1;</code>
@@ -1033,7 +1097,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1047,7 +1112,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1065,7 +1131,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1087,7 +1154,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1106,7 +1174,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1130,7 +1199,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1150,7 +1220,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1164,7 +1235,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1180,7 +1252,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
          *
          *
          * <pre>
-         * The IAM policy that's directly attached to the [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
+         * The {{iam_name_short}} policy that's directly attached to the
+         * [attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource].
          * </pre>
          *
          * <code>.google.iam.v1.Policy policy = 2;</code>
@@ -1282,9 +1355,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The [full_resource_name]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-     * request.
+     * for which the
+     * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+     * are computed. This is one of the
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+     * the caller provides in the request.
      * </pre>
      *
      * <code>string full_resource_name = 1;</code>
@@ -1309,9 +1384,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The [full_resource_name]
      * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-     * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-     * request.
+     * for which the
+     * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+     * are computed. This is one of the
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+     * the caller provides in the request.
      * </pre>
      *
      * <code>string full_resource_name = 1;</code>
@@ -1340,17 +1417,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -1368,17 +1452,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -1397,17 +1488,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -1422,17 +1520,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -1449,17 +1554,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-     * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-     * those set on its parents and ancestors up to the
-     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-     * are not filtered according to the resource type of the
+     * The effective policies for the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+     * These policies include the policy set on the
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * and those set on its parents and ancestors up to the
+     * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+     * Note that these policies are not filtered according to the resource type
+     * of the
      * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
      * These policies are hierarchically ordered by
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * starting from
+     * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
      * itself to its parents and ancestors, such that policies[i]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+     * is the child of policies[i+1]'s
+     * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+     * if policies[i+1] exists.
      * </pre>
      *
      * <code>
@@ -1658,7 +1770,7 @@ public final class BatchGetEffectiveIamPoliciesResponse
      *
      *
      * <pre>
-     * The effective IAM policies on one resource.
+     * The effective {{iam_name_short}} policies on one resource.
      * </pre>
      *
      * Protobuf type {@code
@@ -1914,9 +2026,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * <pre>
        * The [full_resource_name]
        * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-       * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-       * request.
+       * for which the
+       * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+       * are computed. This is one of the
+       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+       * the caller provides in the request.
        * </pre>
        *
        * <code>string full_resource_name = 1;</code>
@@ -1940,9 +2054,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * <pre>
        * The [full_resource_name]
        * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-       * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-       * request.
+       * for which the
+       * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+       * are computed. This is one of the
+       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+       * the caller provides in the request.
        * </pre>
        *
        * <code>string full_resource_name = 1;</code>
@@ -1966,9 +2082,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * <pre>
        * The [full_resource_name]
        * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-       * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-       * request.
+       * for which the
+       * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+       * are computed. This is one of the
+       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+       * the caller provides in the request.
        * </pre>
        *
        * <code>string full_resource_name = 1;</code>
@@ -1991,9 +2109,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * <pre>
        * The [full_resource_name]
        * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-       * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-       * request.
+       * for which the
+       * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+       * are computed. This is one of the
+       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+       * the caller provides in the request.
        * </pre>
        *
        * <code>string full_resource_name = 1;</code>
@@ -2012,9 +2132,11 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * <pre>
        * The [full_resource_name]
        * (https://cloud.google.com/asset-inventory/docs/resource-name-format)
-       * for which the [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies] are computed. This is one of the
-       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names] the caller provides in the
-       * request.
+       * for which the
+       * [policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies]
+       * are computed. This is one of the
+       * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]
+       * the caller provides in the request.
        * </pre>
        *
        * <code>string full_resource_name = 1;</code>
@@ -2061,17 +2183,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2092,17 +2221,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2120,17 +2256,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2150,17 +2293,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2188,17 +2338,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2223,17 +2380,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2260,17 +2424,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2298,17 +2469,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2332,17 +2510,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2367,17 +2552,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2403,17 +2595,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2434,17 +2633,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2465,17 +2671,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2491,17 +2704,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2521,17 +2741,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2553,17 +2780,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2582,17 +2816,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2612,17 +2853,24 @@ public final class BatchGetEffectiveIamPoliciesResponse
        *
        *
        * <pre>
-       * The effective policies for the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
-       * These policies include the policy set on the [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name] and
-       * those set on its parents and ancestors up to the
-       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope]. Note that these policies
-       * are not filtered according to the resource type of the
+       * The effective policies for the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
+       * These policies include the policy set on the
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * and those set on its parents and ancestors up to the
+       * [BatchGetEffectiveIamPoliciesRequest.scope][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.scope].
+       * Note that these policies are not filtered according to the resource type
+       * of the
        * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name].
        * These policies are hierarchically ordered by
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] starting from [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * starting from
+       * [full_resource_name][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.full_resource_name]
        * itself to its parents and ancestors, such that policies[i]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource] is the child of policies[i+1]'s
-       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource], if policies[i+1] exists.
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource]
+       * is the child of policies[i+1]'s
+       * [PolicyInfo.attached_resource][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo.attached_resource],
+       * if policies[i+1] exists.
        * </pre>
        *
        * <code>
@@ -2738,9 +2986,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -2759,9 +3008,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -2782,9 +3032,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -2801,9 +3052,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -2821,9 +3073,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -3002,7 +3255,8 @@ public final class BatchGetEffectiveIamPoliciesResponse
    *
    *
    * <pre>
-   * A response message for [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
+   * A response message for
+   * [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse}
@@ -3248,9 +3502,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3272,9 +3527,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3294,9 +3550,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3317,9 +3574,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3347,9 +3605,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3375,9 +3634,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3404,9 +3664,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3434,9 +3695,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3461,9 +3723,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3489,9 +3752,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3519,9 +3783,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3544,9 +3809,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3569,9 +3835,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3588,9 +3855,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3612,9 +3880,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3638,9 +3907,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3660,9 +3930,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>
@@ -3683,9 +3954,10 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * <pre>
      * The effective policies for a batch of resources. Note that the results
      * order is the same as the order of
-     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-     * have any effective IAM policies, its corresponding policy_result will
-     * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+     * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+     * When a resource does not have any effective {{iam_name_short}} policies,
+     * its corresponding policy_result will contain empty
+     * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
      * </pre>
      *
      * <code>

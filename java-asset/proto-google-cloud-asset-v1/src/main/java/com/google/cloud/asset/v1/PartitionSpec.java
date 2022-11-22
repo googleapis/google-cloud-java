@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * Specifications of BigQuery partitioned table as export destination.
+ * Specifications of {{bigquery_name}} partitioned table as export destination.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.PartitionSpec}
@@ -72,9 +72,9 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This enum is used to determine the partition key column when exporting
-   * assets to BigQuery partitioned table(s). Note that, if the partition key is
-   * a timestamp column, the actual partition is based on its date value
-   * (expressed in UTC. see details in
+   * assets to {{bigquery_name}} partitioned table(s). Note that, if the
+   * partition key is a timestamp column, the actual partition is based on its
+   * date value (expressed in UTC. see details in
    * https://cloud.google.com/bigquery/docs/partitioned-tables#date_timestamp_partitioned_tables).
    * </pre>
    *
@@ -248,7 +248,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The partition key for BigQuery partitioned table.
+   * The partition key for {{bigquery_name}} partitioned table.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>
@@ -263,7 +263,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The partition key for BigQuery partitioned table.
+   * The partition key for {{bigquery_name}} partitioned table.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>
@@ -446,7 +446,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifications of BigQuery partitioned table as export destination.
+   * Specifications of {{bigquery_name}} partitioned table as export destination.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.PartitionSpec}
@@ -616,7 +616,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The partition key for BigQuery partitioned table.
+     * The partition key for {{bigquery_name}} partitioned table.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>
@@ -631,7 +631,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The partition key for BigQuery partitioned table.
+     * The partition key for {{bigquery_name}} partitioned table.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>
@@ -649,7 +649,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The partition key for BigQuery partitioned table.
+     * The partition key for {{bigquery_name}} partitioned table.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>
@@ -669,7 +669,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The partition key for BigQuery partitioned table.
+     * The partition key for {{bigquery_name}} partitioned table.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>
@@ -690,7 +690,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The partition key for BigQuery partitioned table.
+     * The partition key for {{bigquery_name}} partitioned table.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>

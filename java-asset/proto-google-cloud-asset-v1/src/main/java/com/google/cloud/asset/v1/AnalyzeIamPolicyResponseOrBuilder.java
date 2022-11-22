@@ -142,9 +142,11 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    *
    *
    * <pre>
-   * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-   * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-   * answer the query in the request.
+   * Represents whether all entries in the
+   * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+   * and
+   * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+   * have been fully explored to answer the query in the request.
    * </pre>
    *
    * <code>bool fully_explored = 3;</code>

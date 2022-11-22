@@ -27,7 +27,7 @@ public interface OutputResultOrBuilder
    *
    *
    * <pre>
-   * Export result on Cloud Storage.
+   * Export result on {{storage_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.GcsOutputResult gcs_result = 1;</code>
@@ -39,7 +39,7 @@ public interface OutputResultOrBuilder
    *
    *
    * <pre>
-   * Export result on Cloud Storage.
+   * Export result on {{storage_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.GcsOutputResult gcs_result = 1;</code>
@@ -51,7 +51,7 @@ public interface OutputResultOrBuilder
    *
    *
    * <pre>
-   * Export result on Cloud Storage.
+   * Export result on {{storage_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.GcsOutputResult gcs_result = 1;</code>

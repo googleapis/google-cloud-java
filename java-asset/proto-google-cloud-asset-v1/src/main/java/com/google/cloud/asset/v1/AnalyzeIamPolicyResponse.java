@@ -22,7 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A response message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+ * A response message for
+ * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyResponse}
@@ -111,8 +112,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -122,8 +124,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -133,8 +136,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -144,8 +148,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -156,8 +161,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -169,8 +175,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-     * fully explored to answer the query.
+     * Represents whether all entries in the
+     * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+     * have been fully explored to answer the query.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -336,8 +343,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -351,8 +359,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -366,8 +375,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -380,8 +390,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -394,8 +405,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -412,8 +424,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-     * fully explored to answer the query.
+     * Represents whether all entries in the
+     * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+     * have been fully explored to answer the query.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -1221,8 +1234,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1239,8 +1253,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1256,8 +1271,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1273,8 +1289,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1297,8 +1314,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1318,8 +1336,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1341,8 +1360,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1365,8 +1385,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1386,8 +1407,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1407,8 +1429,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1428,8 +1451,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1448,8 +1472,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1468,8 +1493,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1482,8 +1508,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1500,8 +1527,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1518,8 +1546,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1532,8 +1561,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1548,8 +1578,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1584,8 +1615,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-       * fully explored to answer the query.
+       * Represents whether all entries in the
+       * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+       * have been fully explored to answer the query.
        * </pre>
        *
        * <code>bool fully_explored = 3;</code>
@@ -1600,8 +1632,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-       * fully explored to answer the query.
+       * Represents whether all entries in the
+       * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+       * have been fully explored to answer the query.
        * </pre>
        *
        * <code>bool fully_explored = 3;</code>
@@ -1619,8 +1652,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-       * fully explored to answer the query.
+       * Represents whether all entries in the
+       * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+       * have been fully explored to answer the query.
        * </pre>
        *
        * <code>bool fully_explored = 3;</code>
@@ -2234,9 +2268,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-   * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-   * answer the query in the request.
+   * Represents whether all entries in the
+   * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+   * and
+   * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+   * have been fully explored to answer the query in the request.
    * </pre>
    *
    * <code>bool fully_explored = 3;</code>
@@ -2439,7 +2475,8 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A response message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+   * A response message for
+   * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyResponse}
@@ -3349,9 +3386,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-     * answer the query in the request.
+     * Represents whether all entries in the
+     * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+     * and
+     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+     * have been fully explored to answer the query in the request.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -3366,9 +3405,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-     * answer the query in the request.
+     * Represents whether all entries in the
+     * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+     * and
+     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+     * have been fully explored to answer the query in the request.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -3386,9 +3427,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-     * answer the query in the request.
+     * Represents whether all entries in the
+     * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+     * and
+     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+     * have been fully explored to answer the query in the request.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>

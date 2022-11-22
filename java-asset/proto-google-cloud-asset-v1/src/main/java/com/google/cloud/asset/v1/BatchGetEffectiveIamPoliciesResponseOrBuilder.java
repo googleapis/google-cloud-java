@@ -29,9 +29,10 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -46,9 +47,10 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -63,9 +65,10 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -79,9 +82,10 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>
@@ -99,9 +103,10 @@ public interface BatchGetEffectiveIamPoliciesResponseOrBuilder
    * <pre>
    * The effective policies for a batch of resources. Note that the results
    * order is the same as the order of
-   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names]. When a resource does not
-   * have any effective IAM policies, its corresponding policy_result will
-   * contain empty [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
+   * [BatchGetEffectiveIamPoliciesRequest.names][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest.names].
+   * When a resource does not have any effective {{iam_name_short}} policies,
+   * its corresponding policy_result will contain empty
+   * [EffectiveIamPolicy.policies][google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.policies].
    * </pre>
    *
    * <code>

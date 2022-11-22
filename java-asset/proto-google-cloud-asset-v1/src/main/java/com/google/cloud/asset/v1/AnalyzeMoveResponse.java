@@ -74,7 +74,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of analyses returned from performing the intended resource move
-   * analysis. The analysis is grouped by different Cloud services.
+   * analysis. The analysis is grouped by different {{gcp_name}} services.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -88,7 +88,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of analyses returned from performing the intended resource move
-   * analysis. The analysis is grouped by different Cloud services.
+   * analysis. The analysis is grouped by different {{gcp_name}} services.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -103,7 +103,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of analyses returned from performing the intended resource move
-   * analysis. The analysis is grouped by different Cloud services.
+   * analysis. The analysis is grouped by different {{gcp_name}} services.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -117,7 +117,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of analyses returned from performing the intended resource move
-   * analysis. The analysis is grouped by different Cloud services.
+   * analysis. The analysis is grouped by different {{gcp_name}} services.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -131,7 +131,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of analyses returned from performing the intended resource move
-   * analysis. The analysis is grouped by different Cloud services.
+   * analysis. The analysis is grouped by different {{gcp_name}} services.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -540,7 +540,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -557,7 +557,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -574,7 +574,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -591,7 +591,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -614,7 +614,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -635,7 +635,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -658,7 +658,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -681,7 +681,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -701,7 +701,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -722,7 +722,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -743,7 +743,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -763,7 +763,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -783,7 +783,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -796,7 +796,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -813,7 +813,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -831,7 +831,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -845,7 +845,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>
@@ -859,7 +859,7 @@ public final class AnalyzeMoveResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of analyses returned from performing the intended resource move
-     * analysis. The analysis is grouped by different Cloud services.
+     * analysis. The analysis is grouped by different {{gcp_name}} services.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.MoveAnalysis move_analysis = 1;</code>

@@ -56,7 +56,7 @@ public interface ResourceOrBuilder
    * Example:
    * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
    * This value is unspecified for resources that do not have an API based on a
-   * discovery document, such as Cloud Bigtable.
+   * discovery document, such as {{bigtable_name}}.
    * </pre>
    *
    * <code>string discovery_document_uri = 2;</code>
@@ -72,7 +72,7 @@ public interface ResourceOrBuilder
    * Example:
    * `https://www.googleapis.com/discovery/v1/apis/compute/v1/rest`
    * This value is unspecified for resources that do not have an API based on a
-   * discovery document, such as Cloud Bigtable.
+   * discovery document, such as {{bigtable_name}}.
    * </pre>
    *
    * <code>string discovery_document_uri = 2;</code>
@@ -88,7 +88,7 @@ public interface ResourceOrBuilder
    * The JSON schema name listed in the discovery document. Example:
    * `Project`
    * This value is unspecified for resources that do not have an API based on a
-   * discovery document, such as Cloud Bigtable.
+   * discovery document, such as {{bigtable_name}}.
    * </pre>
    *
    * <code>string discovery_name = 3;</code>
@@ -103,7 +103,7 @@ public interface ResourceOrBuilder
    * The JSON schema name listed in the discovery document. Example:
    * `Project`
    * This value is unspecified for resources that do not have an API based on a
-   * discovery document, such as Cloud Bigtable.
+   * discovery document, such as {{bigtable_name}}.
    * </pre>
    *
    * <code>string discovery_name = 3;</code>
@@ -151,8 +151,8 @@ public interface ResourceOrBuilder
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
-   * For Google Cloud assets, this value is the parent resource defined in the
-   * [Cloud IAM policy
+   * For {{gcp_name}} assets, this value is the parent resource defined in the
+   * [{{iam_name_short}} policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -172,8 +172,8 @@ public interface ResourceOrBuilder
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
-   * For Google Cloud assets, this value is the parent resource defined in the
-   * [Cloud IAM policy
+   * For {{gcp_name}} assets, this value is the parent resource defined in the
+   * [{{iam_name_short}} policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -228,7 +228,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The location of the resource in Google Cloud, such as its zone and region.
+   * The location of the resource in {{gcp_name}}, such as its zone and region.
    * For more information, see https://cloud.google.com/about/locations/.
    * </pre>
    *
@@ -241,7 +241,7 @@ public interface ResourceOrBuilder
    *
    *
    * <pre>
-   * The location of the resource in Google Cloud, such as its zone and region.
+   * The location of the resource in {{gcp_name}}, such as its zone and region.
    * For more information, see https://cloud.google.com/about/locations/.
    * </pre>
    *

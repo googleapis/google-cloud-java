@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * An asset in Google Cloud and its temporal metadata, including the time window
+ * An asset in {{gcp_name}} and its temporal metadata, including the time window
  * when it was observed and its status during that window.
  * </pre>
  *
@@ -341,7 +341,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An asset in Google Cloud.
+   * An asset in {{gcp_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -356,7 +356,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An asset in Google Cloud.
+   * An asset in {{gcp_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -371,7 +371,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An asset in Google Cloud.
+   * An asset in {{gcp_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -685,7 +685,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An asset in Google Cloud and its temporal metadata, including the time window
+   * An asset in {{gcp_name}} and its temporal metadata, including the time window
    * when it was observed and its status during that window.
    * </pre>
    *
@@ -1170,7 +1170,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1184,7 +1184,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1202,7 +1202,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1224,7 +1224,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1243,7 +1243,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1267,7 +1267,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1287,7 +1287,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1301,7 +1301,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -1317,7 +1317,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An asset in Google Cloud.
+     * An asset in {{gcp_name}}.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>

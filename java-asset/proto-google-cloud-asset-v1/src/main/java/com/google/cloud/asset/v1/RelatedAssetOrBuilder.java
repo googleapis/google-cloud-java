@@ -91,7 +91,7 @@ public interface RelatedAssetOrBuilder
    *
    *
    * <pre>
-   * The ancestors of an asset in Google Cloud [resource
+   * The ancestors of an asset in {{gcp_name}} [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
@@ -107,7 +107,7 @@ public interface RelatedAssetOrBuilder
    *
    *
    * <pre>
-   * The ancestors of an asset in Google Cloud [resource
+   * The ancestors of an asset in {{gcp_name}} [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
@@ -123,7 +123,7 @@ public interface RelatedAssetOrBuilder
    *
    *
    * <pre>
-   * The ancestors of an asset in Google Cloud [resource
+   * The ancestors of an asset in {{gcp_name}} [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
@@ -140,7 +140,7 @@ public interface RelatedAssetOrBuilder
    *
    *
    * <pre>
-   * The ancestors of an asset in Google Cloud [resource
+   * The ancestors of an asset in {{gcp_name}} [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.

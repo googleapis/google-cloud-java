@@ -204,9 +204,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-   * for all supported asset types.
+   * snapshot all asset types. See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -231,9 +231,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-   * for all supported asset types.
+   * snapshot all asset types. See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -258,9 +258,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-   * for all supported asset types.
+   * snapshot all asset types. See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -286,9 +286,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-   * for all supported asset types.
+   * snapshot all asset types. See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -344,7 +344,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output to.
+   * Required. Output configuration indicating where the results will be output
+   * to.
    * </pre>
    *
    * <code>
@@ -361,7 +362,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output to.
+   * Required. Output configuration indicating where the results will be output
+   * to.
    * </pre>
    *
    * <code>
@@ -380,7 +382,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output to.
+   * Required. Output configuration indicating where the results will be output
+   * to.
    * </pre>
    *
    * <code>
@@ -410,9 +413,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 6;</code>
@@ -438,9 +441,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 6;</code>
@@ -466,9 +469,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 6;</code>
@@ -495,9 +498,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 6;</code>
@@ -1382,9 +1385,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1409,9 +1412,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1436,9 +1439,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1464,9 +1467,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1492,9 +1495,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1527,9 +1530,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1561,9 +1564,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1592,9 +1595,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1622,9 +1625,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
      * If specified, only matching assets will be returned, otherwise, it will
-     * snapshot all asset types. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
-     * for all supported asset types.
+     * snapshot all asset types. See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3;</code>
@@ -1749,7 +1752,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1765,7 +1769,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1787,7 +1792,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1811,7 +1817,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1832,7 +1839,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1860,7 +1868,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1882,7 +1891,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1898,7 +1908,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1918,7 +1929,8 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1967,9 +1979,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -1995,9 +2007,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -2023,9 +2035,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -2052,9 +2064,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -2081,9 +2093,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -2117,9 +2129,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -2152,9 +2164,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -2184,9 +2196,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>
@@ -2215,9 +2227,9 @@ public final class ExportAssetsRequest extends com.google.protobuf.GeneratedMess
      * it snapshots the supported relationships for all [asset_types] or returns
      * an error if any of the [asset_types] has no relationship support.
      * An unspecified asset types field means all supported asset_types.
-     * See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-     * supported asset types and relationship types.
+     * See [Introduction to
+     * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+     * all supported asset types and relationship types.
      * </pre>
      *
      * <code>repeated string relationship_types = 6;</code>

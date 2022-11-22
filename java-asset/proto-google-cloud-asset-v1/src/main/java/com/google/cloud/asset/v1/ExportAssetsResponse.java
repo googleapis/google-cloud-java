@@ -23,8 +23,10 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * The export asset response. This message is returned by the
- * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
- * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+ * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+ * method in the returned
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.ExportAssetsResponse}
@@ -168,10 +170,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output result indicating where the assets were exported to. For example, a
-   * set of actual Google Cloud Storage object uris where the assets are
+   * set of actual {{storage_name}} object uris where the assets are
    * exported to. The uris can be different from what [output_config] has
    * specified, as the service will split the output object into multiple ones
-   * once it exceeds a single Google Cloud Storage object limit.
+   * once it exceeds a single {{storage_name}} object limit.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -187,10 +189,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output result indicating where the assets were exported to. For example, a
-   * set of actual Google Cloud Storage object uris where the assets are
+   * set of actual {{storage_name}} object uris where the assets are
    * exported to. The uris can be different from what [output_config] has
    * specified, as the service will split the output object into multiple ones
-   * once it exceeds a single Google Cloud Storage object limit.
+   * once it exceeds a single {{storage_name}} object limit.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -208,10 +210,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output result indicating where the assets were exported to. For example, a
-   * set of actual Google Cloud Storage object uris where the assets are
+   * set of actual {{storage_name}} object uris where the assets are
    * exported to. The uris can be different from what [output_config] has
    * specified, as the service will split the output object into multiple ones
-   * once it exceeds a single Google Cloud Storage object limit.
+   * once it exceeds a single {{storage_name}} object limit.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -418,8 +420,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The export asset response. This message is returned by the
-   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
-   * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * method in the returned
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.ExportAssetsResponse}
@@ -1007,10 +1011,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1025,10 +1029,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1049,10 +1053,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1075,10 +1079,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1098,10 +1102,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1128,10 +1132,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1152,10 +1156,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1170,10 +1174,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>
@@ -1192,10 +1196,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output result indicating where the assets were exported to. For example, a
-     * set of actual Google Cloud Storage object uris where the assets are
+     * set of actual {{storage_name}} object uris where the assets are
      * exported to. The uris can be different from what [output_config] has
      * specified, as the service will split the output object into multiple ones
-     * once it exceeds a single Google Cloud Storage object limit.
+     * once it exceeds a single {{storage_name}} object limit.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.OutputResult output_result = 3;</code>

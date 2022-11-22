@@ -73,7 +73,8 @@ public final class DeleteSavedQueryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the saved query to delete. It must be in the format of:
+   * Required. The name of the saved query to delete. It must be in the format
+   * of:
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -101,7 +102,8 @@ public final class DeleteSavedQueryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the saved query to delete. It must be in the format of:
+   * Required. The name of the saved query to delete. It must be in the format
+   * of:
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -461,7 +463,8 @@ public final class DeleteSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the saved query to delete. It must be in the format of:
+     * Required. The name of the saved query to delete. It must be in the format
+     * of:
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -488,7 +491,8 @@ public final class DeleteSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the saved query to delete. It must be in the format of:
+     * Required. The name of the saved query to delete. It must be in the format
+     * of:
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -515,7 +519,8 @@ public final class DeleteSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the saved query to delete. It must be in the format of:
+     * Required. The name of the saved query to delete. It must be in the format
+     * of:
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -541,7 +546,8 @@ public final class DeleteSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the saved query to delete. It must be in the format of:
+     * Required. The name of the saved query to delete. It must be in the format
+     * of:
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -563,7 +569,8 @@ public final class DeleteSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the saved query to delete. It must be in the format of:
+     * Required. The name of the saved query to delete. It must be in the format
+     * of:
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id

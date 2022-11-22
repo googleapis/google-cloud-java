@@ -27,7 +27,7 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on Cloud Storage.
+   * Destination on {{storage_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination gcs_destination = 1;
@@ -40,7 +40,7 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on Cloud Storage.
+   * Destination on {{storage_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination gcs_destination = 1;
@@ -53,7 +53,7 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on Cloud Storage.
+   * Destination on {{storage_name}}.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination gcs_destination = 1;
@@ -66,7 +66,7 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on BigQuery.
+   * Destination on {{bigquery_name}}.
    * </pre>
    *
    * <code>
@@ -80,7 +80,7 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on BigQuery.
+   * Destination on {{bigquery_name}}.
    * </pre>
    *
    * <code>
@@ -95,7 +95,7 @@ public interface IamPolicyAnalysisOutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on BigQuery.
+   * Destination on {{bigquery_name}}.
    * </pre>
    *
    * <code>

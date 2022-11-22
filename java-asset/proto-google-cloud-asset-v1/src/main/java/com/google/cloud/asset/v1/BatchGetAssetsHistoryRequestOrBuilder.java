@@ -229,9 +229,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * it outputs the supported relationships' history on the [asset_names] or
    * returns an error if any of the [asset_names]'s types has no relationship
    * support.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -256,9 +256,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * it outputs the supported relationships' history on the [asset_names] or
    * returns an error if any of the [asset_names]'s types has no relationship
    * support.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -283,9 +283,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * it outputs the supported relationships' history on the [asset_names] or
    * returns an error if any of the [asset_names]'s types has no relationship
    * support.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -311,9 +311,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * it outputs the supported relationships' history on the [asset_names] or
    * returns an error if any of the [asset_names]'s types has no relationship
    * support.
-   * See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
-   * supported asset types and relationship types.
+   * See [Introduction to
+   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
+   * all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

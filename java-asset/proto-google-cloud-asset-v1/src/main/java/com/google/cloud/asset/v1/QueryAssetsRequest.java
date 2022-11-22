@@ -228,7 +228,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
+   * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+   * Standard
    * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
    * </pre>
    *
@@ -243,7 +244,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
+   * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+   * Standard
    * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
    * </pre>
    *
@@ -271,7 +273,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
+   * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+   * Standard
    * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
    * </pre>
    *
@@ -301,8 +304,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-   * previous `QueryAssets` call.
+   * Optional. Reference to the query job, which is from the
+   * `QueryAssetsResponse` of previous `QueryAssets` call.
    * </pre>
    *
    * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -316,8 +319,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-   * previous `QueryAssets` call.
+   * Optional. Reference to the query job, which is from the
+   * `QueryAssetsResponse` of previous `QueryAssets` call.
    * </pre>
    *
    * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -344,8 +347,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-   * previous `QueryAssets` call.
+   * Optional. Reference to the query job, which is from the
+   * `QueryAssetsResponse` of previous `QueryAssets` call.
    * </pre>
    *
    * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -375,8 +378,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The maximum number of rows to return in the results. Responses are limited
-   * to 10 MB and 1000 rows.
+   * Optional. The maximum number of rows to return in the results. Responses
+   * are limited to 10 MB and 1000 rows.
    * By default, the maximum row count is 1000. When the byte or row count limit
    * is reached, the rest of the query results will be paginated.
    * The field will be ignored when [output_config] is specified.
@@ -448,11 +451,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specifies the maximum amount of time that the client is willing to wait
-   * for the query to complete. By default, this limit is 5 min for the first
-   * query, and 1 minute for the following queries. If the query is complete,
-   * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-   * Like BigQuery [jobs.query
+   * Optional. Specifies the maximum amount of time that the client is willing
+   * to wait for the query to complete. By default, this limit is 5 min for the
+   * first query, and 1 minute for the following queries. If the query is
+   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+   * false.
+   * Like {{bigquery_name}} [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
    * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -472,11 +476,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specifies the maximum amount of time that the client is willing to wait
-   * for the query to complete. By default, this limit is 5 min for the first
-   * query, and 1 minute for the following queries. If the query is complete,
-   * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-   * Like BigQuery [jobs.query
+   * Optional. Specifies the maximum amount of time that the client is willing
+   * to wait for the query to complete. By default, this limit is 5 min for the
+   * first query, and 1 minute for the following queries. If the query is
+   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+   * false.
+   * Like {{bigquery_name}} [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
    * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -496,11 +501,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specifies the maximum amount of time that the client is willing to wait
-   * for the query to complete. By default, this limit is 5 min for the first
-   * query, and 1 minute for the following queries. If the query is complete,
-   * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-   * Like BigQuery [jobs.query
+   * Optional. Specifies the maximum amount of time that the client is willing
+   * to wait for the query to complete. By default, this limit is 5 min for the
+   * first query, and 1 minute for the following queries. If the query is
+   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+   * false.
+   * Like {{bigquery_name}} [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
    * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -520,9 +526,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. [start_time] is required. [start_time] must be less than [end_time]
-   * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-   * Maximum permitted time range is 7 days.
+   * Optional. [start_time] is required. [start_time] must be less than
+   * [end_time] Defaults [end_time] to now if [start_time] is set and
+   * [end_time] isn't. Maximum permitted time range is 7 days.
    * </pre>
    *
    * <code>
@@ -539,9 +545,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. [start_time] is required. [start_time] must be less than [end_time]
-   * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-   * Maximum permitted time range is 7 days.
+   * Optional. [start_time] is required. [start_time] must be less than
+   * [end_time] Defaults [end_time] to now if [start_time] is set and
+   * [end_time] isn't. Maximum permitted time range is 7 days.
    * </pre>
    *
    * <code>
@@ -561,9 +567,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. [start_time] is required. [start_time] must be less than [end_time]
-   * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-   * Maximum permitted time range is 7 days.
+   * Optional. [start_time] is required. [start_time] must be less than
+   * [end_time] Defaults [end_time] to now if [start_time] is set and
+   * [end_time] isn't. Maximum permitted time range is 7 days.
    * </pre>
    *
    * <code>
@@ -583,7 +589,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Queries cloud assets as they appeared at the specified point in time.
+   * Optional. Queries cloud assets as they appeared at the specified point in
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -599,7 +606,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Queries cloud assets as they appeared at the specified point in time.
+   * Optional. Queries cloud assets as they appeared at the specified point in
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -618,7 +626,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Queries cloud assets as they appeared at the specified point in time.
+   * Optional. Queries cloud assets as they appeared at the specified point in
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -1480,7 +1489,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A SQL statement that's compatible with [BigQuery Standard
+     * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+     * Standard
      * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
      * </pre>
      *
@@ -1496,7 +1506,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A SQL statement that's compatible with [BigQuery Standard
+     * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+     * Standard
      * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
      * </pre>
      *
@@ -1525,7 +1536,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A SQL statement that's compatible with [BigQuery Standard
+     * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+     * Standard
      * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
      * </pre>
      *
@@ -1554,7 +1566,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A SQL statement that's compatible with [BigQuery Standard
+     * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+     * Standard
      * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
      * </pre>
      *
@@ -1576,7 +1589,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A SQL statement that's compatible with [BigQuery Standard
+     * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+     * Standard
      * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
      * </pre>
      *
@@ -1596,7 +1610,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A SQL statement that's compatible with [BigQuery Standard
+     * Optional. A SQL statement that's compatible with [{{bigquery_name}}
+     * Standard
      * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
      * </pre>
      *
@@ -1620,8 +1635,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1636,8 +1651,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1665,8 +1680,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1694,8 +1709,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1716,8 +1731,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1736,8 +1751,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1761,8 +1776,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The maximum number of rows to return in the results. Responses are limited
-     * to 10 MB and 1000 rows.
+     * Optional. The maximum number of rows to return in the results. Responses
+     * are limited to 10 MB and 1000 rows.
      * By default, the maximum row count is 1000. When the byte or row count limit
      * is reached, the rest of the query results will be paginated.
      * The field will be ignored when [output_config] is specified.
@@ -1780,8 +1795,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The maximum number of rows to return in the results. Responses are limited
-     * to 10 MB and 1000 rows.
+     * Optional. The maximum number of rows to return in the results. Responses
+     * are limited to 10 MB and 1000 rows.
      * By default, the maximum row count is 1000. When the byte or row count limit
      * is reached, the rest of the query results will be paginated.
      * The field will be ignored when [output_config] is specified.
@@ -1802,8 +1817,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The maximum number of rows to return in the results. Responses are limited
-     * to 10 MB and 1000 rows.
+     * Optional. The maximum number of rows to return in the results. Responses
+     * are limited to 10 MB and 1000 rows.
      * By default, the maximum row count is 1000. When the byte or row count limit
      * is reached, the rest of the query results will be paginated.
      * The field will be ignored when [output_config] is specified.
@@ -1941,11 +1956,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -1964,11 +1980,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -1991,11 +2008,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -2022,11 +2040,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -2050,11 +2069,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -2083,11 +2103,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -2112,11 +2133,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -2135,11 +2157,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -2160,11 +2183,12 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
-     * Like BigQuery [jobs.query
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
+     * Like {{bigquery_name}} [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
      * returns after around 200 seconds (200,000 milliseconds), even if the query
@@ -2200,9 +2224,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2219,9 +2243,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2248,9 +2272,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2274,9 +2298,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2297,9 +2321,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2332,9 +2356,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2361,9 +2385,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2377,9 +2401,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2401,9 +2425,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2442,7 +2466,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2458,7 +2483,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2484,7 +2510,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2507,7 +2534,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2527,7 +2555,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2558,7 +2587,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2584,7 +2614,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2597,7 +2628,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2618,7 +2650,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];

@@ -29,7 +29,9 @@ public interface IamPolicyAnalysisResultOrBuilder
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the resource to which the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] policy attaches.
+   * of the resource to which the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * policy attaches.
    * </pre>
    *
    * <code>string attached_resource_full_name = 1;</code>
@@ -43,7 +45,9 @@ public interface IamPolicyAnalysisResultOrBuilder
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/asset-inventory/docs/resource-name-format)
-   * of the resource to which the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] policy attaches.
+   * of the resource to which the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * policy attaches.
    * </pre>
    *
    * <code>string attached_resource_full_name = 1;</code>
@@ -56,7 +60,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The Cloud IAM policy binding under analysis.
+   * The {{iam_name_short}} policy binding under analysis.
    * </pre>
    *
    * <code>.google.iam.v1.Binding iam_binding = 2;</code>
@@ -68,7 +72,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The Cloud IAM policy binding under analysis.
+   * The {{iam_name_short}} policy binding under analysis.
    * </pre>
    *
    * <code>.google.iam.v1.Binding iam_binding = 2;</code>
@@ -80,7 +84,7 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The Cloud IAM policy binding under analysis.
+   * The {{iam_name_short}} policy binding under analysis.
    * </pre>
    *
    * <code>.google.iam.v1.Binding iam_binding = 2;</code>
@@ -91,8 +95,10 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The access control lists derived from the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match resource and access selectors specified in the request.
+   * The access control lists derived from the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match resource and access selectors specified in
+   * the request.
    * </pre>
    *
    * <code>
@@ -105,8 +111,10 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The access control lists derived from the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match resource and access selectors specified in the request.
+   * The access control lists derived from the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match resource and access selectors specified in
+   * the request.
    * </pre>
    *
    * <code>
@@ -119,8 +127,10 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The access control lists derived from the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match resource and access selectors specified in the request.
+   * The access control lists derived from the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match resource and access selectors specified in
+   * the request.
    * </pre>
    *
    * <code>
@@ -132,8 +142,10 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The access control lists derived from the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match resource and access selectors specified in the request.
+   * The access control lists derived from the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match resource and access selectors specified in
+   * the request.
    * </pre>
    *
    * <code>
@@ -147,8 +159,10 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The access control lists derived from the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match resource and access selectors specified in the request.
+   * The access control lists derived from the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match resource and access selectors specified in
+   * the request.
    * </pre>
    *
    * <code>
@@ -162,8 +176,9 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The identity list derived from members of the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match identity selector specified in the request.
+   * The identity list derived from members of the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match identity selector specified in the request.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.IamPolicyAnalysisResult.IdentityList identity_list = 4;</code>
@@ -175,8 +190,9 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The identity list derived from members of the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match identity selector specified in the request.
+   * The identity list derived from members of the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match identity selector specified in the request.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.IamPolicyAnalysisResult.IdentityList identity_list = 4;</code>
@@ -188,8 +204,9 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * The identity list derived from members of the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] that match or
-   * potentially match identity selector specified in the request.
+   * The identity list derived from members of the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * that match or potentially match identity selector specified in the request.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.IamPolicyAnalysisResult.IdentityList identity_list = 4;</code>
@@ -201,8 +218,9 @@ public interface IamPolicyAnalysisResultOrBuilder
    *
    *
    * <pre>
-   * Represents whether all analyses on the [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding] have successfully
-   * finished.
+   * Represents whether all analyses on the
+   * [iam_binding][google.cloud.asset.v1.IamPolicyAnalysisResult.iam_binding]
+   * have successfully finished.
    * </pre>
    *
    * <code>bool fully_explored = 5;</code>
