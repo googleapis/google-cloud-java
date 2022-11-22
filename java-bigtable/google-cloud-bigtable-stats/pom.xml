@@ -58,6 +58,11 @@
                     <groupId>com.google.http-client</groupId>
                     <artifactId>google-http-client</artifactId>
                 </exclusion>
+                <exclusion>
+                    <!-- using the perfmark version in opencensus -->
+                    <groupId>io.perfmark</groupId>
+                    <artifactId>perfmark-api</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>

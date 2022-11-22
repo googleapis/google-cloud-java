@@ -73,7 +73,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-bom</artifactId>
-        <version>3.6.0</version>
+        <version>3.7.0</version>
+        <exclusions>
+          <exclusion>
+            <!-- using the perfmark version in opencensus -->
+            <groupId>io.perfmark</groupId>
+            <artifactId>perfmark-api</artifactId>
+          </exclusion>
+        </exclusions>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
