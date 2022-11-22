@@ -22,6 +22,7 @@ import com.google.cloud.kms.v1.CryptoKeyVersion;
 import com.google.cloud.kms.v1.CryptoKeyVersionName;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
+import com.google.protobuf.ByteString;
 
 public class SyncImportCryptoKeyVersion {
 
@@ -51,6 +52,7 @@ public class SyncImportCryptoKeyVersion {
                           "[CRYPTO_KEY_VERSION]")
                       .toString())
               .setImportJob("importJob-208547368")
+              .setWrappedKey(ByteString.EMPTY)
               .build();
       CryptoKeyVersion response = keyManagementServiceClient.importCryptoKeyVersion(request);
     }

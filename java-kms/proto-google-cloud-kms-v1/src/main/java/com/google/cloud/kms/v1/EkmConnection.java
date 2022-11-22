@@ -177,7 +177,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -190,7 +191,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -203,7 +205,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -216,7 +219,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -230,7 +234,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -463,7 +468,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -479,7 +485,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -496,7 +503,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -512,7 +520,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -528,7 +537,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. A list of leaf server certificates used to authenticate HTTPS
-     * connections to the EKM replica.
+     * connections to the EKM replica. Currently, a maximum of 10
+     * [Certificate][google.cloud.kms.v1.Certificate] is supported.
      * </pre>
      *
      * <code>
@@ -1373,7 +1383,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1392,7 +1403,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1411,7 +1423,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1430,7 +1443,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1455,7 +1469,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1478,7 +1493,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1503,7 +1519,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1528,7 +1545,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1551,7 +1569,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1574,7 +1593,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1597,7 +1617,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1619,7 +1640,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1641,7 +1663,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1656,7 +1679,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1676,7 +1700,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1696,7 +1721,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1712,7 +1738,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -1728,7 +1755,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. A list of leaf server certificates used to authenticate HTTPS
-       * connections to the EKM replica.
+       * connections to the EKM replica. Currently, a maximum of 10
+       * [Certificate][google.cloud.kms.v1.Certificate] is supported.
        * </pre>
        *
        * <code>
@@ -2031,12 +2059,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update requests to ensure the client has an up-to-date
-   * value before proceeding.
+   * Optional. Etag of the currently stored
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection].
    * </pre>
    *
-   * <code>string etag = 5;</code>
+   * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -2056,12 +2083,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of other fields,
-   * and may be sent on update requests to ensure the client has an up-to-date
-   * value before proceeding.
+   * Optional. Etag of the currently stored
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection].
    * </pre>
    *
-   * <code>string etag = 5;</code>
+   * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -3343,12 +3369,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other fields,
-     * and may be sent on update requests to ensure the client has an up-to-date
-     * value before proceeding.
+     * Optional. Etag of the currently stored
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
      * </pre>
      *
-     * <code>string etag = 5;</code>
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -3367,12 +3392,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other fields,
-     * and may be sent on update requests to ensure the client has an up-to-date
-     * value before proceeding.
+     * Optional. Etag of the currently stored
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
      * </pre>
      *
-     * <code>string etag = 5;</code>
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -3391,12 +3415,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other fields,
-     * and may be sent on update requests to ensure the client has an up-to-date
-     * value before proceeding.
+     * Optional. Etag of the currently stored
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
      * </pre>
      *
-     * <code>string etag = 5;</code>
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -3414,12 +3437,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other fields,
-     * and may be sent on update requests to ensure the client has an up-to-date
-     * value before proceeding.
+     * Optional. Etag of the currently stored
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
      * </pre>
      *
-     * <code>string etag = 5;</code>
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3433,12 +3455,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of other fields,
-     * and may be sent on update requests to ensure the client has an up-to-date
-     * value before proceeding.
+     * Optional. Etag of the currently stored
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
      * </pre>
      *
-     * <code>string etag = 5;</code>
+     * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.

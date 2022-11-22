@@ -1136,6 +1136,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/keyRings/*/cryptoKeys/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/keyRings/*/importJobs/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/ekmConfig}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/ekmConnections/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
@@ -1176,6 +1177,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/keyRings/*/cryptoKeys/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/keyRings/*/importJobs/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/ekmConfig}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/ekmConnections/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
@@ -1213,6 +1215,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .setAdditionalPaths(
                           "/v1/{resource=projects/*/locations/*/keyRings/*/cryptoKeys/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/keyRings/*/importJobs/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/ekmConfig}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/ekmConnections/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
