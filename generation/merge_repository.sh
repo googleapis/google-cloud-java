@@ -20,9 +20,10 @@ cd monorepo
 git clone https://github.com/newren/git-filter-repo.git
 export PATH=$PATH:`pwd`/git-filter-repo
 
-mkdir google-cloud-java
+merged_repository=google-cloud-java-merged
+mkdir "${merged_repository}"
 
-cd google-cloud-java
+cd "${merged_repository}"
 git init -b main
 
 cat ../repos.txt | while read service
@@ -51,7 +52,7 @@ do
   git config --add secrets.allowed "dest.*src"
   git commit -am "chore: setup owlbot configuration"
 
-  cd ../google-cloud-java
+  cd "../${merged_repository}"
   git remote add ${service} ../${service}
   git config --add secrets.allowed "dest.*src"
   git fetch ${service} #--tags
@@ -60,7 +61,7 @@ do
   rm -rf ../${service}
 done
 
-# cwd: monorepo/google-cloud-java
+# cwd: monorepo/google-cloud-java-merged
 echo "Working directory: $(pwd)"
 
 cp -R ../../../google-cloud-jar-parent google-cloud-jar-parent
@@ -117,7 +118,7 @@ git commit -am 'chore: set owlbot copy config' --allow-empty
 
 # create a monorepo/diff repo
 cd ..
-cp -R google-cloud-java split
+cp -R "${merged_repository}" split
 rm -rf split/.git
 git clone -b main --single-branch https://github.com/googleapis/google-cloud-java.git shadow
 cp -R shadow/.git split/.git
