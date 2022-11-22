@@ -169,7 +169,7 @@ created pull request.
 
 # Common Errors
 ## Unable to clone googleapis-gen
-```aidl
+```
 Creating a new module /usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/java-vmwareengine
 gcr.io/cloud-devrel-public-resources/owlbot-java:latest
 Cloning googleapis-gen...
@@ -198,11 +198,12 @@ Traceback (most recent call last):
 subprocess.CalledProcessError: Command '['git', 'clone', '-q', 'https://github.com/googleapis/googleapis-gen.git', './gen/googleapis-gen']' returned non-zero exit status 128.
 ```
 ### Solution
-Run `gh auth login` and choose to authenticate with HTTPS
+Run `gh auth login` and choose to authenticate with HTTPS.
+![img.png](img.png)
 
 ##
 Owl-bot Staging Directory Not Found
-```aidl
+```
 Removing googleapis-gen...
 mv: cannot stat 'owl-bot-staging': No such file or directory
 Traceback (most recent call last):
