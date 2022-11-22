@@ -12,7 +12,7 @@ cd "$(dirname "$0")"
 rm -rf monorepo
 mkdir monorepo
 
-cp bootstrap.sh monorepo
+cp merge_repository.sh monorepo
 cp repos.txt monorepo
 
 cd monorepo
