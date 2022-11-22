@@ -173,8 +173,8 @@ created pull request.
 Creating a new module /usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/java-vmwareengine
 gcr.io/cloud-devrel-public-resources/owlbot-java:latest
 Cloning googleapis-gen...
-Username for 'https://github.com': xxxx
-Password for 'https://lqiu96@gmail.com@github.com': ****
+Username for 'https://github.com': xxxxxx
+Password for 'https://xxxxxx@github.com': ****
 remote: Support for password authentication was removed on August 13, 2021.
 remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
 fatal: Authentication failed for 'https://github.com/googleapis/googleapis-gen.git/'
@@ -227,7 +227,7 @@ subprocess.CalledProcessError: Command '['mv', 'owl-bot-staging', '../']' return
 ```
 
 ### Solution
-The proto path is incorrect. See the `Proto Path` section to find out the correct path.
+The proto path is incorrect. See the `Proto Path` section to find the correct path.
 
 
 
