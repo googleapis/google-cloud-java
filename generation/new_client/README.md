@@ -70,7 +70,7 @@ WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
 Installed Python-3.9.13 to /usr/local/google/home/suztomo/.pyenv/versions/3.9.13
 ```
 
-Conform `python3.9` command is available:
+Confirm `python3.9` command is available:
 
 ```
 $ pyenv local 3.9.13
@@ -105,7 +105,7 @@ Collect them from the ticket before running the command.
 For convenience of the subsequent commands, define a variable for API short name.
 Get the value from the DevRel Services page (Example: `apikeys`):
 
-### proto path
+### Proto path
 
 The script takes "proto path" parameter. This is path from google3's root to the
 directory that contains versions (e.g., "v1" or "v2"). For example, if we
@@ -166,6 +166,67 @@ Create a pull request from the change.
 The script should finish creating a pull request even when the newly created
 module fails to compile. This gives the user flexibility to fix things in the
 created pull request.
+
+# Common Errors
+## Unable to clone googleapis-gen
+```aidl
+Creating a new module /usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/java-vmwareengine
+gcr.io/cloud-devrel-public-resources/owlbot-java:latest
+Cloning googleapis-gen...
+Username for 'https://github.com': xxxx
+Password for 'https://lqiu96@gmail.com@github.com': ****
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/googleapis/googleapis-gen.git/'
+Traceback (most recent call last):
+  File "/usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/generation/new_client/new-client.py", line 291, in <module>
+    main()
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/generation/new_client/new-client.py", line 180, in generate
+    subprocess.check_call(["git", "clone", "-q", googleapis_gen_url, "./gen/googleapis-gen"], cwd=workdir)
+  File "/usr/local/google/home/lawrenceqiu/.pyenv/versions/3.9.13/lib/python3.9/subprocess.py", line 373, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['git', 'clone', '-q', 'https://github.com/googleapis/googleapis-gen.git', './gen/googleapis-gen']' returned non-zero exit status 128.
+```
+### Solution
+Run `gh auth login` and choose to authenticate with HTTPS
+
+##
+Owl-bot Staging Directory Not Found
+```aidl
+Removing googleapis-gen...
+mv: cannot stat 'owl-bot-staging': No such file or directory
+Traceback (most recent call last):
+  File "/usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/generation/new_client/new-client.py", line 291, in <module>
+    main()
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/usr/local/google/home/lawrenceqiu/.local/lib/python3.9/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/usr/local/google/home/lawrenceqiu/IdeaProjects/google-cloud-java/generation/new_client/new-client.py", line 212, in generate
+    subprocess.check_call(
+  File "/usr/local/google/home/lawrenceqiu/.pyenv/versions/3.9.13/lib/python3.9/subprocess.py", line 373, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['mv', 'owl-bot-staging', '../']' returned non-zero exit status 1.
+```
+
+### Solution
+The proto path is incorrect. See the `Proto Path` section to find out the correct path.
 
 
 
