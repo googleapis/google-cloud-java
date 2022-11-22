@@ -149,6 +149,7 @@
     <module>java-video-transcoder</module>
     <module>java-vision</module>
     <module>java-vmmigration</module>
+    <module>java-vmwareengine</module>
     <module>java-vpcaccess</module>
     <module>java-webrisk</module>
     <module>java-websecurityscanner</module>

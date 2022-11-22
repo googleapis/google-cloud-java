@@ -587,3 +587,6 @@ google-cloud-dns:2.4.0:2.5.0-SNAPSHOT
 google-maps-routing:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
+google-cloud-vmwareengine:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-vmwareengine-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-vmwareengine-v1:0.0.0:0.0.1-SNAPSHOT

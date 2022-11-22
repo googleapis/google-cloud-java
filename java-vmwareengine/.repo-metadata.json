@@ -1,0 +1,16 @@
+{
+  "api_shortname": "vmwareengine",
+  "name_pretty": "Google Cloud VMware Engine",
+  "product_documentation": "https://cloud.google.com/vmware-engine/",
+  "api_description": "Easily lift and shift your VMware-based applications to Google Cloud without changes to your apps, tools, or processes.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-vmwareengine/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-vmwareengine",
+  "repo_short": "java-vmwareengine",
+  "distribution_name": "com.google.cloud:google-cloud-vmwareengine",
+  "api_id": "vmwareengine.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
