@@ -1,4 +1,4 @@
-name: Bootstrap
+name: Merge Repository
 on:
   schedule:
     - cron: '0 1 * * *' # nightly at 1 am UTC
@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate
-        run: ./generation/bootstrap.sh
+        run: ./generation/merge_repository.sh
         env:
           USERNAME: ${{ github.actor }}
       - name: Compile

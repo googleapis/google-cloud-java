@@ -3,13 +3,14 @@
 ## Using scripts independently
 
 Most of the scripts in this directory can be used independently to do file updates across all modules.
-They are also used and tested by `bootstrap.sh`.
+They are also used and tested by `merge_repository.sh`.
 
-## Generating the monorepo
+## Merge repository into the monorepo
 
-Built by running [bootstrap.sh](bootstrap.sh).
+Built by running [erge_repository.sh](merge_repository.sh).
 
-The script creates a new Git repository in `monorepo/google-cloud-java`.
+The script creates a new Git repository in `monorepo/google-cloud-java` by merging
+the repositories in the input.
 After running the script locally, you can `cd` into the generated repository and build the project.
 
 ```shell
