@@ -108,7 +108,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   // See
   // https://github.com/googleapis/release-please/blob/main/docs/customizing.md#updating-arbitrary-files
   // {x-version-update-start:google-cloud-logging-logback:current}
-  public static final String DEFAULT_INSTRUMENTATION_VERSION = "0.129.3-alpha-SNAPSHOT";
+  public static final String DEFAULT_INSTRUMENTATION_VERSION = "0.129.3-alpha";
   // {x-version-update-end}
   private static boolean instrumentationAdded = false;
   private static Object instrumentationLock = new Object();
