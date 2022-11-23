@@ -87,7 +87,7 @@ Run this command
 $ pyenv local 3.9.13
 ```
 
-Confirm `python3.9` command is available:
+Confirm `python3.9` is installed:
 ```
 $ which python3.9
 /usr/local/google/home/suztomo/.pyenv/shims/python3.9
@@ -103,7 +103,7 @@ $ python3.9 -m pip install -r generation/new_client/requirements.txt
 
 ### Install GitHub CLI (Optional)
 
-Install the GitHub CLI and login, if needed (may help with `Common Errors` below:
+Install the GitHub CLI and login, if needed (may help with `Common Errors` below):
 
 ```
 $ sudo apt-get install gh
@@ -217,8 +217,7 @@ subprocess.CalledProcessError: Command '['git', 'clone', '-q', 'https://github.c
 Run `gh auth login` and choose to authenticate with HTTPS. You may already be authenticated with SSH.
 ![img.png](img.png)
 
-##
-Owl-bot Staging Directory Not Found
+## Owl-bot Staging Directory Not Found
 ```
 Removing googleapis-gen...
 mv: cannot stat 'owl-bot-staging': No such file or directory
