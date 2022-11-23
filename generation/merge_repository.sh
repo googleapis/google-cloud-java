@@ -72,18 +72,20 @@ git commit -m 'chore: add template files'
 ../../generate_root_pom.sh
 
 git add pom.xml
-git commit -am 'chore: create aggregator pom'
+git commit -am 'chore: create aggregator pom' --allow-empty
 
 # Point modules poms and BOMs to the aggregator pom as parent
 bash ../../set_parent_pom.sh
 
 git add --all
-git commit -am 'chore: point modules to the aggregator pom as parent'
+git commit -am 'chore: point modules to the aggregator pom as parent' \
+    --allow-empty
 
 ../../consolidate_config.sh
 
 git add --all
-git commit -am 'chore: consolidate config to parent'
+git commit -am 'chore: consolidate config to parent' \
+    --allow-empty
 
 ../../generate_gapic_bom.sh
 
@@ -91,26 +93,30 @@ git commit -am 'chore: consolidate config to parent'
 ../../generate_root_pom.sh
 
 git add gapic-libraries-bom/pom.xml
-git commit -am 'chore: create gapic-libraries-bom'
+git commit -am 'chore: create gapic-libraries-bom' \
+    --allow-empty
 
 cp ../../gapic_bom_versions.txt gapic-libraries-bom/versions.txt
 
 ../../delete_non_generated_samples.sh
 
 git add --all
-git commit -am 'chore: delete non-auto-generated samples'
+git commit -am 'chore: delete non-auto-generated samples' \
+    --allow-empty
 
 ../../generate_root_versions_txt.sh
 ../../update_versions.sh -s
 ../../apply_current_versions.sh
 
 git add --all
-git commit -am 'chore: update versions to latest in maven'
+git commit -am 'chore: update versions to latest in maven' \
+    --allow-empty
 
 ../../update_owlbot_postprocessor_config.sh
 
 git add --all
-git commit -am 'chore: remove and disable owlbot postprocessor templates'
+git commit -am 'chore: remove and disable owlbot postprocessor templates' \
+    --allow-empty
 
 for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh ../../set_owlbot_config.sh $F; done
 git commit -am 'chore: set owlbot copy config' --allow-empty
