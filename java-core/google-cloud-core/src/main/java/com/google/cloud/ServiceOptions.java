@@ -327,7 +327,11 @@ public abstract class ServiceOptions<
     quotaProjectId =
         builder.quotaProjectId != null
             ? builder.quotaProjectId
-            : getValueFromCredentialsFile(System.getenv(CREDENTIAL_ENV_NAME), "quota_project_id");
+            : getValueFromCredentialsFile(getCredentialsPath(), "quota_project_id");
+  }
+
+  private static String getCredentialsPath() {
+    return System.getProperty(CREDENTIAL_ENV_NAME, System.getenv(CREDENTIAL_ENV_NAME));
   }
 
   /**
@@ -511,7 +515,7 @@ public abstract class ServiceOptions<
   }
 
   protected static String getServiceAccountProjectId() {
-    return getValueFromCredentialsFile(System.getenv(CREDENTIAL_ENV_NAME), "project_id");
+    return getValueFromCredentialsFile(getCredentialsPath(), "project_id");
   }
 
   @InternalApi("Visible for testing")
