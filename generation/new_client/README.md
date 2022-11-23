@@ -43,14 +43,16 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-Logout the shell and login again.
+Logout the shell and login again. You should be at the home directory.
+
 Assuming you have the following folder structure:
 ```
 ~ (Home)
     -> IdeaProjects/
         -> google-cloud-java
+    -> ...
 ```
-You should run these next commands in the home directory. Otherwise, run it at `google-cloud-java`'s parent directory.
+You can run these next commands in the home directory (or IdeaProjects). Otherwise, run it at `google-cloud-java`'s parent directory.
 
 Confirm pyenv installation succeeded:
 
@@ -84,7 +86,6 @@ Run this command
 ```
 $ pyenv local 3.9.13
 ```
-
 
 Confirm `python3.9` command is available:
 ```
