@@ -107,7 +107,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The full resource name of this resource. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-   * See [{{cai_name}} Resource Name
+   * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
    * To search against the `name`:
@@ -137,7 +137,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The full resource name of this resource. Example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-   * See [{{cai_name}} Resource Name
+   * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
    * To search against the `name`:
@@ -626,8 +626,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See
-   * [Labelling and grouping {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -658,8 +657,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See
-   * [Labelling and grouping {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -681,8 +679,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See
-   * [Labelling and grouping {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -708,8 +705,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See
-   * [Labelling and grouping {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -742,8 +738,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -764,8 +759,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -786,8 +780,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -809,8 +802,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -834,15 +826,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The {{kms_name_short}}
+   * The Cloud KMS
    * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
    * This field only presents for the purpose of backward compatibility. Please
-   * use the `kms_keys` field to retrieve {{kms_name_short}} key information.
-   * This field is available only when the resource's Protobuf contains it and
-   * will only be populated for [these resource
+   * use the `kms_keys` field to retrieve KMS key information. This field is
+   * available only when the resource's Protobuf contains it and will only be
+   * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
    * To search against the `kms_key`:
@@ -853,7 +845,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=438
+   *     google/cloud/asset/v1/assets.proto;l=434
    * @return The kmsKey.
    */
   @java.lang.Override
@@ -873,15 +865,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The {{kms_name_short}}
+   * The Cloud KMS
    * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
    * This field only presents for the purpose of backward compatibility. Please
-   * use the `kms_keys` field to retrieve {{kms_name_short}} key information.
-   * This field is available only when the resource's Protobuf contains it and
-   * will only be populated for [these resource
+   * use the `kms_keys` field to retrieve KMS key information. This field is
+   * available only when the resource's Protobuf contains it and will only be
+   * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
    * To search against the `kms_key`:
@@ -892,7 +884,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=438
+   *     google/cloud/asset/v1/assets.proto;l=434
    * @return The bytes for kmsKey.
    */
   @java.lang.Override
@@ -915,7 +907,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The {{kms_name_short}}
+   * The Cloud KMS
    * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
    * names or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -937,7 +929,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The {{kms_name_short}}
+   * The Cloud KMS
    * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
    * names or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -959,7 +951,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The {{kms_name_short}}
+   * The Cloud KMS
    * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
    * names or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -982,7 +974,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The {{kms_name_short}}
+   * The Cloud KMS
    * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
    * names or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -1161,8 +1153,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
    * in [API
    * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-   * If the resource is a project provided by {{crm_name}}, its state will
-   * include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+   * If the resource is a project provided by Cloud Resource Manager, its state
+   * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
    * To search against the `state`:
@@ -1200,8 +1192,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
    * in [API
    * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-   * If the resource is a project provided by {{crm_name}}, its state will
-   * include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+   * If the resource is a project provided by Cloud Resource Manager, its state
+   * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
    * To search against the `state`:
@@ -1236,14 +1228,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * vary from one resource type to another. Examples: `projectId` for Project,
    * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
    * metadata fields that are returned by the List or Get APIs provided by the
-   * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-   * [API references and supported searchable
+   * corresponding GCP service (e.g., Compute Engine). see [API references and
+   * supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
-   * values may change as the {{gcp_name}} service updates to a new incompatible
-   * API version.
+   * values may change as the GCP service updates to a new incompatible API
+   * version.
    * To search against the `additional_attributes`:
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -1266,14 +1258,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * vary from one resource type to another. Examples: `projectId` for Project,
    * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
    * metadata fields that are returned by the List or Get APIs provided by the
-   * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-   * [API references and supported searchable
+   * corresponding GCP service (e.g., Compute Engine). see [API references and
+   * supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
-   * values may change as the {{gcp_name}} service updates to a new incompatible
-   * API version.
+   * values may change as the GCP service updates to a new incompatible API
+   * version.
    * To search against the `additional_attributes`:
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -1298,14 +1290,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * vary from one resource type to another. Examples: `projectId` for Project,
    * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
    * metadata fields that are returned by the List or Get APIs provided by the
-   * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-   * [API references and supported searchable
+   * corresponding GCP service (e.g., Compute Engine). see [API references and
+   * supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
-   * values may change as the {{gcp_name}} service updates to a new incompatible
-   * API version.
+   * values may change as the GCP service updates to a new incompatible API
+   * version.
    * To search against the `additional_attributes`:
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -3158,7 +3150,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [{{cai_name}} Resource Name
+     * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
      * To search against the `name`:
@@ -3187,7 +3179,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [{{cai_name}} Resource Name
+     * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
      * To search against the `name`:
@@ -3216,7 +3208,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [{{cai_name}} Resource Name
+     * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
      * To search against the `name`:
@@ -3244,7 +3236,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [{{cai_name}} Resource Name
+     * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
      * To search against the `name`:
@@ -3268,7 +3260,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource. Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [{{cai_name}} Resource Name
+     * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
      * To search against the `name`:
@@ -4319,8 +4311,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See
-     * [Labelling and grouping {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4351,8 +4342,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See
-     * [Labelling and grouping {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4374,8 +4364,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See
-     * [Labelling and grouping {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4402,8 +4391,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See
-     * [Labelling and grouping {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4437,8 +4425,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See
-     * [Labelling and grouping {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4468,8 +4455,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See
-     * [Labelling and grouping {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4498,8 +4484,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See
-     * [Labelling and grouping {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4532,8 +4517,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4554,8 +4538,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4576,8 +4559,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4599,8 +4581,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4622,8 +4603,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4652,8 +4632,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4681,8 +4660,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4707,8 +4685,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4732,8 +4709,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4763,15 +4739,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve {{kms_name_short}} key information.
-     * This field is available only when the resource's Protobuf contains it and
-     * will only be populated for [these resource
+     * use the `kms_keys` field to retrieve KMS key information. This field is
+     * available only when the resource's Protobuf contains it and will only be
+     * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
      * To search against the `kms_key`:
@@ -4782,7 +4758,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=438
+     *     google/cloud/asset/v1/assets.proto;l=434
      * @return The kmsKey.
      */
     @java.lang.Deprecated
@@ -4801,15 +4777,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve {{kms_name_short}} key information.
-     * This field is available only when the resource's Protobuf contains it and
-     * will only be populated for [these resource
+     * use the `kms_keys` field to retrieve KMS key information. This field is
+     * available only when the resource's Protobuf contains it and will only be
+     * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
      * To search against the `kms_key`:
@@ -4820,7 +4796,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=438
+     *     google/cloud/asset/v1/assets.proto;l=434
      * @return The bytes for kmsKey.
      */
     @java.lang.Deprecated
@@ -4839,15 +4815,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve {{kms_name_short}} key information.
-     * This field is available only when the resource's Protobuf contains it and
-     * will only be populated for [these resource
+     * use the `kms_keys` field to retrieve KMS key information. This field is
+     * available only when the resource's Protobuf contains it and will only be
+     * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
      * To search against the `kms_key`:
@@ -4858,7 +4834,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=438
+     *     google/cloud/asset/v1/assets.proto;l=434
      * @param value The kmsKey to set.
      * @return This builder for chaining.
      */
@@ -4876,15 +4852,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve {{kms_name_short}} key information.
-     * This field is available only when the resource's Protobuf contains it and
-     * will only be populated for [these resource
+     * use the `kms_keys` field to retrieve KMS key information. This field is
+     * available only when the resource's Protobuf contains it and will only be
+     * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
      * To search against the `kms_key`:
@@ -4895,7 +4871,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=438
+     *     google/cloud/asset/v1/assets.proto;l=434
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4909,15 +4885,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve {{kms_name_short}} key information.
-     * This field is available only when the resource's Protobuf contains it and
-     * will only be populated for [these resource
+     * use the `kms_keys` field to retrieve KMS key information. This field is
+     * available only when the resource's Protobuf contains it and will only be
+     * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
      * To search against the `kms_key`:
@@ -4928,7 +4904,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=438
+     *     google/cloud/asset/v1/assets.proto;l=434
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
      */
@@ -4957,7 +4933,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -4979,7 +4955,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5001,7 +4977,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5024,7 +5000,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5047,7 +5023,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5077,7 +5053,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5106,7 +5082,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5132,7 +5108,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5157,7 +5133,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The {{kms_name_short}}
+     * The Cloud KMS
      * [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)
      * names or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
@@ -5718,8 +5694,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by {{crm_name}}, its state will
-     * include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
      * To search against the `state`:
@@ -5756,8 +5732,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by {{crm_name}}, its state will
-     * include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
      * To search against the `state`:
@@ -5794,8 +5770,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by {{crm_name}}, its state will
-     * include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
      * To search against the `state`:
@@ -5831,8 +5807,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by {{crm_name}}, its state will
-     * include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
      * To search against the `state`:
@@ -5864,8 +5840,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by {{crm_name}}, its state will
-     * include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
+     * If the resource is a project provided by Cloud Resource Manager, its state
+     * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
      * To search against the `state`:
@@ -5903,14 +5879,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -5932,14 +5908,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -5967,14 +5943,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6004,14 +5980,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6038,14 +6014,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6079,14 +6055,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6114,14 +6090,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6143,14 +6119,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6176,14 +6152,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding {{gcp_name}} service (e.g., Compute Engine). see
-     * [API references and supported searchable
+     * corresponding GCP service (e.g., Compute Engine). see [API references and
+     * supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the {{gcp_name}} service updates to a new incompatible
-     * API version.
+     * values may change as the GCP service updates to a new incompatible API
+     * version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query

@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1p1beta1;
  *
  *
  * <pre>
- * Search all {{iam_name_short}} policies request.
+ * Search all IAM policies request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest}
@@ -75,8 +75,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The relative name of an asset. The search is limited to the
-   * resources within the `scope`. The allowed value must be:
+   * Required. The relative name of an asset. The search is limited to the resources
+   * within the `scope`. The allowed value must be:
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -103,8 +103,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The relative name of an asset. The search is limited to the
-   * resources within the `scope`. The allowed value must be:
+   * Required. The relative name of an asset. The search is limited to the resources
+   * within the `scope`. The allowed value must be:
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -189,11 +189,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -211,10 +210,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. If present, retrieve the next batch of results from the preceding
-   * call to this method. `page_token` must be the value of `next_page_token`
-   * from the previous response. The values of all other method parameters must
-   * be identical to those in the previous call.
+   * Optional. If present, retrieve the next batch of results from the preceding call to
+   * this method. `page_token` must be the value of `next_page_token` from the
+   * previous response. The values of all other method parameters must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -237,10 +236,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. If present, retrieve the next batch of results from the preceding
-   * call to this method. `page_token` must be the value of `next_page_token`
-   * from the previous response. The values of all other method parameters must
-   * be identical to those in the previous call.
+   * Optional. If present, retrieve the next batch of results from the preceding call to
+   * this method. `page_token` must be the value of `next_page_token` from the
+   * previous response. The values of all other method parameters must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -451,7 +450,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Search all {{iam_name_short}} policies request.
+   * Search all IAM policies request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest}
@@ -663,8 +662,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -690,8 +689,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -717,8 +716,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -743,8 +742,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -765,8 +764,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -915,11 +914,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -934,11 +932,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -956,11 +953,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -979,10 +975,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1004,10 +1000,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1029,10 +1025,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1053,10 +1049,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1073,10 +1069,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding
-     * call to this method. `page_token` must be the value of `next_page_token`
-     * from the previous response. The values of all other method parameters must
-     * be identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding call to
+     * this method. `page_token` must be the value of `next_page_token` from the
+     * previous response. The values of all other method parameters must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

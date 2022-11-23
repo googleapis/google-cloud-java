@@ -493,8 +493,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping
-   * {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -518,8 +517,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping
-   * {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -534,8 +532,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping
-   * {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -554,8 +551,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping
-   * {{gcp_name}}
+   * Labels associated with this resource. See [Labelling and grouping GCP
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -581,8 +577,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -599,8 +594,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -617,8 +611,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -636,8 +629,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group {{gcp_name}} resources. See
-   * [Labelling {{gcp_name}}
+   * type of annotations used to group GCP resources. See [Labelling GCP
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -2119,8 +2111,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping
-     * {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2144,8 +2135,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping
-     * {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2160,8 +2150,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping
-     * {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2181,8 +2170,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping
-     * {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2209,8 +2197,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping
-     * {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2233,8 +2220,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping
-     * {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2256,8 +2242,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping
-     * {{gcp_name}}
+     * Labels associated with this resource. See [Labelling and grouping GCP
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2283,8 +2268,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2301,8 +2285,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2319,8 +2302,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2338,8 +2320,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2357,8 +2338,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2383,8 +2363,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2408,8 +2387,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2430,8 +2408,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2451,8 +2428,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group {{gcp_name}} resources. See
-     * [Labelling {{gcp_name}}
+     * type of annotations used to group GCP resources. See [Labelling GCP
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>

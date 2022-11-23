@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1p1beta1;
  *
  *
  * <pre>
- * Search all {{iam_name_short}} policies response.
+ * Search all IAM policies response.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse}
@@ -74,9 +74,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of {{iam_name_short}} policies that match the search query. Related
-   * information such as the associated resource is returned along with the
-   * policy.
+   * A list of IamPolicy that match the search query. Related information such
+   * as the associated resource is returned along with the policy.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -89,9 +88,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of {{iam_name_short}} policies that match the search query. Related
-   * information such as the associated resource is returned along with the
-   * policy.
+   * A list of IamPolicy that match the search query. Related information such
+   * as the associated resource is returned along with the policy.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -105,9 +103,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of {{iam_name_short}} policies that match the search query. Related
-   * information such as the associated resource is returned along with the
-   * policy.
+   * A list of IamPolicy that match the search query. Related information such
+   * as the associated resource is returned along with the policy.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -120,9 +117,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of {{iam_name_short}} policies that match the search query. Related
-   * information such as the associated resource is returned along with the
-   * policy.
+   * A list of IamPolicy that match the search query. Related information such
+   * as the associated resource is returned along with the policy.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -135,9 +131,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A list of {{iam_name_short}} policies that match the search query. Related
-   * information such as the associated resource is returned along with the
-   * policy.
+   * A list of IamPolicy that match the search query. Related information such
+   * as the associated resource is returned along with the policy.
    * </pre>
    *
    * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -376,7 +371,7 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Search all {{iam_name_short}} policies response.
+   * Search all IAM policies response.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse}
@@ -627,9 +622,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -645,9 +639,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -663,9 +656,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -681,9 +673,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -706,9 +697,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -728,9 +718,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -752,9 +741,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -777,9 +765,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -799,9 +786,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -821,9 +807,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -844,9 +829,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -865,9 +849,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -886,9 +869,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -901,9 +883,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -920,9 +901,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -939,9 +919,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -954,9 +933,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>
@@ -971,9 +949,8 @@ public final class SearchAllIamPoliciesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A list of {{iam_name_short}} policies that match the search query. Related
-     * information such as the associated resource is returned along with the
-     * policy.
+     * A list of IamPolicy that match the search query. Related information such
+     * as the associated resource is returned along with the policy.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1p1beta1.IamPolicySearchResult results = 1;</code>

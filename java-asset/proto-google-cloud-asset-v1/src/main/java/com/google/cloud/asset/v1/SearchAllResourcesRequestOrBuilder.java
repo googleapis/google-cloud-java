@@ -27,9 +27,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The
-   * search is limited to the resources within the `scope`. The caller must be
-   * granted the
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the resources within the `scope`. The caller must be granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -48,9 +47,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A scope can be a project, a folder, or an organization. The
-   * search is limited to the resources within the `scope`. The caller must be
-   * granted the
+   * Required. A scope can be a project, a folder, or an organization. The search is
+   * limited to the resources within the `scope`. The caller must be granted the
    * [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    * permission on the desired scope.
    * The allowed values are:
@@ -75,30 +73,26 @@ public interface SearchAllResourcesRequestOrBuilder
    * for more information. If not specified or empty, it will search all the
    * resources within the specified `scope`.
    * Examples:
-   * * `name:Important` to find {{gcp_name}} resources whose name contains
+   * * `name:Important` to find Cloud resources whose name contains
    *   "Important" as a word.
-   * * `name=Important` to find the {{gcp_name}} resource whose name is exactly
+   * * `name=Important` to find the Cloud resource whose name is exactly
    *   "Important".
-   * * `displayName:Impor*` to find {{gcp_name}} resources whose display name
+   * * `displayName:Impor*` to find Cloud resources whose display name
    *   contains "Impor" as a prefix of any word in the field.
-   * * `location:us-west*` to find {{gcp_name}} resources whose location
-   * contains both
+   * * `location:us-west*` to find Cloud resources whose location contains both
    *   "us" and "west" as prefixes.
-   * * `labels:prod` to find {{gcp_name}} resources whose labels contain "prod"
-   * as
+   * * `labels:prod` to find Cloud resources whose labels contain "prod" as
    *   a key or value.
-   * * `labels.env:prod` to find {{gcp_name}} resources that have a label "env"
+   * * `labels.env:prod` to find Cloud resources that have a label "env"
    *   and its value is "prod".
-   * * `labels.env:*` to find {{gcp_name}} resources that have a label "env".
-   * * `kmsKey:key` to find {{gcp_name}} resources encrypted with a
-   * customer-managed
+   * * `labels.env:*` to find Cloud resources that have a label "env".
+   * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
    *   encryption key whose name contains "key" as a word. This field is
    *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
    *   information.
-   * * `kmsKeys:key` to find {{gcp_name}} resources encrypted with
-   * customer-managed
+   * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
    *   encryption keys whose name contains the word "key".
-   * * `relationships:instance-group-1` to find {{gcp_name}} resources that have
+   * * `relationships:instance-group-1` to find Cloud resources that have
    *   relationships with "instance-group-1" in the related resource name.
    * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
    *   have relationships of type "INSTANCE_TO_INSTANCEGROUP".
@@ -106,27 +100,21 @@ public interface SearchAllResourcesRequestOrBuilder
    *   compute instances that have relationships with "instance-group-1" in the
    *   compute instance group resource name, for relationship type
    *   "INSTANCE_TO_INSTANCEGROUP".
-   * * `state:ACTIVE` to find {{gcp_name}} resources whose state contains
-   * "ACTIVE" as a
+   * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
    *   word.
-   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state doesn't
-   * contain
+   * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
    *   "ACTIVE" as a word.
-   * * `createTime&lt;1609459200` to find {{gcp_name}} resources that were created
-   * before
+   * * `createTime&lt;1609459200` to find Cloud resources that were created before
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
-   * * `updateTime&gt;1609459200` to find {{gcp_name}} resources that were updated
-   * after
+   * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
-   * * `Important` to find {{gcp_name}} resources that contain "Important" as a
-   * word
+   * * `Important` to find Cloud resources that contain "Important" as a word
    *   in any of the searchable fields.
-   * * `Impor*` to find {{gcp_name}} resources that contain "Impor" as a prefix
-   * of any
+   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
    *   word in any of the searchable fields.
-   * * `Important location:(us-west1 OR global)` to find {{gcp_name}}
+   * * `Important location:(us-west1 OR global)` to find Cloud
    *   resources that contain "Important" as a word in any of the searchable
    *   fields and are also located in the "us-west1" region or the "global"
    *   location.
@@ -146,30 +134,26 @@ public interface SearchAllResourcesRequestOrBuilder
    * for more information. If not specified or empty, it will search all the
    * resources within the specified `scope`.
    * Examples:
-   * * `name:Important` to find {{gcp_name}} resources whose name contains
+   * * `name:Important` to find Cloud resources whose name contains
    *   "Important" as a word.
-   * * `name=Important` to find the {{gcp_name}} resource whose name is exactly
+   * * `name=Important` to find the Cloud resource whose name is exactly
    *   "Important".
-   * * `displayName:Impor*` to find {{gcp_name}} resources whose display name
+   * * `displayName:Impor*` to find Cloud resources whose display name
    *   contains "Impor" as a prefix of any word in the field.
-   * * `location:us-west*` to find {{gcp_name}} resources whose location
-   * contains both
+   * * `location:us-west*` to find Cloud resources whose location contains both
    *   "us" and "west" as prefixes.
-   * * `labels:prod` to find {{gcp_name}} resources whose labels contain "prod"
-   * as
+   * * `labels:prod` to find Cloud resources whose labels contain "prod" as
    *   a key or value.
-   * * `labels.env:prod` to find {{gcp_name}} resources that have a label "env"
+   * * `labels.env:prod` to find Cloud resources that have a label "env"
    *   and its value is "prod".
-   * * `labels.env:*` to find {{gcp_name}} resources that have a label "env".
-   * * `kmsKey:key` to find {{gcp_name}} resources encrypted with a
-   * customer-managed
+   * * `labels.env:*` to find Cloud resources that have a label "env".
+   * * `kmsKey:key` to find Cloud resources encrypted with a customer-managed
    *   encryption key whose name contains "key" as a word. This field is
    *   deprecated. Please use the `kmsKeys` field to retrieve KMS key
    *   information.
-   * * `kmsKeys:key` to find {{gcp_name}} resources encrypted with
-   * customer-managed
+   * * `kmsKeys:key` to find Cloud resources encrypted with customer-managed
    *   encryption keys whose name contains the word "key".
-   * * `relationships:instance-group-1` to find {{gcp_name}} resources that have
+   * * `relationships:instance-group-1` to find Cloud resources that have
    *   relationships with "instance-group-1" in the related resource name.
    * * `relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that
    *   have relationships of type "INSTANCE_TO_INSTANCEGROUP".
@@ -177,27 +161,21 @@ public interface SearchAllResourcesRequestOrBuilder
    *   compute instances that have relationships with "instance-group-1" in the
    *   compute instance group resource name, for relationship type
    *   "INSTANCE_TO_INSTANCEGROUP".
-   * * `state:ACTIVE` to find {{gcp_name}} resources whose state contains
-   * "ACTIVE" as a
+   * * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
    *   word.
-   * * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state doesn't
-   * contain
+   * * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
    *   "ACTIVE" as a word.
-   * * `createTime&lt;1609459200` to find {{gcp_name}} resources that were created
-   * before
+   * * `createTime&lt;1609459200` to find Cloud resources that were created before
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
-   * * `updateTime&gt;1609459200` to find {{gcp_name}} resources that were updated
-   * after
+   * * `updateTime&gt;1609459200` to find Cloud resources that were updated after
    *   "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
    *   "2021-01-01 00:00:00 UTC" in seconds.
-   * * `Important` to find {{gcp_name}} resources that contain "Important" as a
-   * word
+   * * `Important` to find Cloud resources that contain "Important" as a word
    *   in any of the searchable fields.
-   * * `Impor*` to find {{gcp_name}} resources that contain "Impor" as a prefix
-   * of any
+   * * `Impor*` to find Cloud resources that contain "Impor" as a prefix of any
    *   word in any of the searchable fields.
-   * * `Important location:(us-west1 OR global)` to find {{gcp_name}}
+   * * `Important location:(us-west1 OR global)` to find Cloud
    *   resources that contain "Important" as a word in any of the searchable
    *   fields and are also located in the "us-west1" region or the "global"
    *   location.
@@ -213,8 +191,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -235,8 +213,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -257,8 +235,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -280,8 +258,8 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the [searchable asset
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the [searchable asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types).
    * Regular expressions are also supported. For example:
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
@@ -304,11 +282,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -321,10 +298,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -336,10 +313,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method. `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method. `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -352,9 +329,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
    *   * name
@@ -382,9 +359,9 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " DESC" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
+   * Optional. A comma-separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " DESC" after the field name
+   * to indicate descending order. Redundant space characters are ignored.
    * Example: "location DESC, name".
    * Only singular primitive fields in the response are sortable:
    *   * name
@@ -413,10 +390,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be
-   * returned in ResourceSearchResult. Only '*' or combination of top level
-   * fields can be specified. Field names of both snake_case and camelCase are
-   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -455,10 +432,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be
-   * returned in ResourceSearchResult. Only '*' or combination of top level
-   * fields can be specified. Field names of both snake_case and camelCase are
-   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name
@@ -497,10 +474,10 @@ public interface SearchAllResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A comma-separated list of fields specifying which fields to be
-   * returned in ResourceSearchResult. Only '*' or combination of top level
-   * fields can be specified. Field names of both snake_case and camelCase are
-   * supported. Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+   * Optional. A comma-separated list of fields specifying which fields to be returned in
+   * ResourceSearchResult. Only '*' or combination of top level fields can be
+   * specified. Field names of both snake_case and camelCase are supported.
+   * Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
    * The read_mask paths must be valid field paths listed but not limited to
    * (both snake_case and camelCase are supported):
    *   * name

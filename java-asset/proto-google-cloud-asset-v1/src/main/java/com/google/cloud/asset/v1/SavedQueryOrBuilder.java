@@ -189,8 +189,7 @@ public interface SavedQueryOrBuilder
    *
    *
    * <pre>
-   * Output only. The account's email address who has updated this saved query
-   * most recently.
+   * Output only. The account's email address who has updated this saved query most recently.
    * </pre>
    *
    * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -202,8 +201,7 @@ public interface SavedQueryOrBuilder
    *
    *
    * <pre>
-   * Output only. The account's email address who has updated this saved query
-   * most recently.
+   * Output only. The account's email address who has updated this saved query most recently.
    * </pre>
    *
    * <code>string last_updater = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

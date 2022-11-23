@@ -27,7 +27,7 @@ public interface GcsOutputResultOrBuilder
    *
    *
    * <pre>
-   * List of uris of the {{storage_name}} objects. Example:
+   * List of uris of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface GcsOutputResultOrBuilder
    *
    *
    * <pre>
-   * List of uris of the {{storage_name}} objects. Example:
+   * List of uris of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface GcsOutputResultOrBuilder
    *
    *
    * <pre>
-   * List of uris of the {{storage_name}} objects. Example:
+   * List of uris of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -67,7 +67,7 @@ public interface GcsOutputResultOrBuilder
    *
    *
    * <pre>
-   * List of uris of the {{storage_name}} objects. Example:
+   * List of uris of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *

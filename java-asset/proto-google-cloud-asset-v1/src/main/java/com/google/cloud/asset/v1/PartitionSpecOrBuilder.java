@@ -27,7 +27,7 @@ public interface PartitionSpecOrBuilder
    *
    *
    * <pre>
-   * The partition key for {{bigquery_name}} partitioned table.
+   * The partition key for BigQuery partitioned table.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>
@@ -39,7 +39,7 @@ public interface PartitionSpecOrBuilder
    *
    *
    * <pre>
-   * The partition key for {{bigquery_name}} partitioned table.
+   * The partition key for BigQuery partitioned table.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.PartitionSpec.PartitionKey partition_key = 1;</code>

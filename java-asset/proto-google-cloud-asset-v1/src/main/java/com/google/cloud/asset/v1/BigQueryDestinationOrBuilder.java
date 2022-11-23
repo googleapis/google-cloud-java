@@ -27,14 +27,14 @@ public interface BigQueryDestinationOrBuilder
    *
    *
    * <pre>
-   * Required. The {{bigquery_name}} dataset in format
+   * Required. The BigQuery dataset in format
    * "projects/projectId/datasets/datasetId", to which the snapshot result
    * should be exported. If this dataset does not exist, the export call returns
    * an INVALID_ARGUMENT error. Setting the `contentType` for `exportAssets`
    * determines the
    * [schema](/asset-inventory/docs/exporting-to-bigquery#bigquery-schema)
-   * of the {{bigquery_name}} table. Setting `separateTablesPerAssetType` to
-   * `TRUE` also influences the schema.
+   * of the BigQuery table. Setting `separateTablesPerAssetType` to `TRUE` also
+   * influences the schema.
    * </pre>
    *
    * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,14 +46,14 @@ public interface BigQueryDestinationOrBuilder
    *
    *
    * <pre>
-   * Required. The {{bigquery_name}} dataset in format
+   * Required. The BigQuery dataset in format
    * "projects/projectId/datasets/datasetId", to which the snapshot result
    * should be exported. If this dataset does not exist, the export call returns
    * an INVALID_ARGUMENT error. Setting the `contentType` for `exportAssets`
    * determines the
    * [schema](/asset-inventory/docs/exporting-to-bigquery#bigquery-schema)
-   * of the {{bigquery_name}} table. Setting `separateTablesPerAssetType` to
-   * `TRUE` also influences the schema.
+   * of the BigQuery table. Setting `separateTablesPerAssetType` to `TRUE` also
+   * influences the schema.
    * </pre>
    *
    * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -66,8 +66,8 @@ public interface BigQueryDestinationOrBuilder
    *
    *
    * <pre>
-   * Required. The {{bigquery_name}} table to which the snapshot result should
-   * be written. If this table does not exist, a new table with the given name
+   * Required. The BigQuery table to which the snapshot result should be
+   * written. If this table does not exist, a new table with the given name
    * will be created.
    * </pre>
    *
@@ -80,8 +80,8 @@ public interface BigQueryDestinationOrBuilder
    *
    *
    * <pre>
-   * Required. The {{bigquery_name}} table to which the snapshot result should
-   * be written. If this table does not exist, a new table with the given name
+   * Required. The BigQuery table to which the snapshot result should be
+   * written. If this table does not exist, a new table with the given name
    * will be created.
    * </pre>
    *
@@ -203,7 +203,7 @@ public interface BigQueryDestinationOrBuilder
    * When [content_type] in the ExportAssetsRequest is `RESOURCE`, the schema of
    * each table will include RECORD-type columns mapped to the nested fields in
    * the Asset.resource.data field of that asset type (up to the 15 nested level
-   * {{bigquery_name}} supports
+   * BigQuery supports
    * (https://cloud.google.com/bigquery/docs/nested-repeated#limitations)). The
    * fields in &gt;15 nested levels will be stored in JSON format string as a child
    * column of its parent RECORD column.

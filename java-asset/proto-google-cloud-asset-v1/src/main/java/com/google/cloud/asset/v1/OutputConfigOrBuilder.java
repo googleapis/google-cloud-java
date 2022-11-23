@@ -27,7 +27,7 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on {{storage_name}}.
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.GcsDestination gcs_destination = 1;</code>
@@ -39,7 +39,7 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on {{storage_name}}.
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.GcsDestination gcs_destination = 1;</code>
@@ -51,7 +51,7 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on {{storage_name}}.
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.GcsDestination gcs_destination = 1;</code>
@@ -62,8 +62,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on {{bigquery_name}}. The output table stores the fields in
-   * asset Protobuf as columns in {{bigquery_name}}.
+   * Destination on BigQuery. The output table stores the fields in asset
+   * Protobuf as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
@@ -75,8 +75,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on {{bigquery_name}}. The output table stores the fields in
-   * asset Protobuf as columns in {{bigquery_name}}.
+   * Destination on BigQuery. The output table stores the fields in asset
+   * Protobuf as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>
@@ -88,8 +88,8 @@ public interface OutputConfigOrBuilder
    *
    *
    * <pre>
-   * Destination on {{bigquery_name}}. The output table stores the fields in
-   * asset Protobuf as columns in {{bigquery_name}}.
+   * Destination on BigQuery. The output table stores the fields in asset
+   * Protobuf as columns in BigQuery.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.BigQueryDestination bigquery_destination = 2;</code>

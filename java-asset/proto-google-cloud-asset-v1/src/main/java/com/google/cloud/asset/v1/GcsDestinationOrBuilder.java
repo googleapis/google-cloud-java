@@ -27,12 +27,12 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the {{storage_name}} object. It's the same uri that is used by
+   * The uri of the Cloud Storage object. It's the same uri that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
-   * If the specified {{storage_name}} object already exists and there is no
+   * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
    * </pre>
@@ -46,12 +46,12 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the {{storage_name}} object. It's the same uri that is used by
+   * The uri of the Cloud Storage object. It's the same uri that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
-   * If the specified {{storage_name}} object already exists and there is no
+   * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
    * </pre>
@@ -65,12 +65,12 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the {{storage_name}} object. It's the same uri that is used by
+   * The uri of the Cloud Storage object. It's the same uri that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
-   * If the specified {{storage_name}} object already exists and there is no
+   * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
    * </pre>
@@ -85,7 +85,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri prefix of all generated {{storage_name}} objects. Example:
+   * The uri prefix of all generated Cloud Storage objects. Example:
    * "gs://bucket_name/object_name_prefix". Each object uri is in format:
    * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
@@ -105,7 +105,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri prefix of all generated {{storage_name}} objects. Example:
+   * The uri prefix of all generated Cloud Storage objects. Example:
    * "gs://bucket_name/object_name_prefix". Each object uri is in format:
    * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
@@ -125,7 +125,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri prefix of all generated {{storage_name}} objects. Example:
+   * The uri prefix of all generated Cloud Storage objects. Example:
    * "gs://bucket_name/object_name_prefix". Each object uri is in format:
    * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:

@@ -29,7 +29,7 @@ public interface IamPolicySearchResultOrBuilder
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * of the resource associated with this {{iam_name_short}} policy.
+   * of the resource associated with this IAM policy.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -43,7 +43,7 @@ public interface IamPolicySearchResultOrBuilder
    * <pre>
    * The [full resource
    * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
-   * of the resource associated with this {{iam_name_short}} policy.
+   * of the resource associated with this IAM policy.
    * </pre>
    *
    * <code>string resource = 1;</code>
@@ -56,12 +56,11 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The project that the associated {{gcp_name}} resource belongs to, in the
-   * form of `projects/{project_number}`. If an {{iam_name_short}} policy is set
-   * on a resource (like VM instance, {{storage_name}} bucket), the project
-   * field will indicate the project that contains the resource. If an
-   * {{iam_name_short}} policy is set on a folder or orgnization, the project
-   * field will be empty.
+   * The project that the associated GCP resource belongs to, in the form of
+   * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
+   * instance, Cloud Storage bucket), the project field will indicate the
+   * project that contains the resource. If an IAM policy is set on a folder or
+   * orgnization, the project field will be empty.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -73,12 +72,11 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The project that the associated {{gcp_name}} resource belongs to, in the
-   * form of `projects/{project_number}`. If an {{iam_name_short}} policy is set
-   * on a resource (like VM instance, {{storage_name}} bucket), the project
-   * field will indicate the project that contains the resource. If an
-   * {{iam_name_short}} policy is set on a folder or orgnization, the project
-   * field will be empty.
+   * The project that the associated GCP resource belongs to, in the form of
+   * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
+   * instance, Cloud Storage bucket), the project field will indicate the
+   * project that contains the resource. If an IAM policy is set on a folder or
+   * orgnization, the project field will be empty.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -91,11 +89,10 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The {{iam_name_short}} policy directly set on the given resource. Note that
-   * the original {{iam_name_short}} policy can contain multiple bindings. This
-   * only contains the bindings that match the given query. For queries that
-   * don't contain a constrain on policies (e.g. an empty query), this contains
-   * all the bindings.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -107,11 +104,10 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The {{iam_name_short}} policy directly set on the given resource. Note that
-   * the original {{iam_name_short}} policy can contain multiple bindings. This
-   * only contains the bindings that match the given query. For queries that
-   * don't contain a constrain on policies (e.g. an empty query), this contains
-   * all the bindings.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -123,11 +119,10 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The {{iam_name_short}} policy directly set on the given resource. Note that
-   * the original {{iam_name_short}} policy can contain multiple bindings. This
-   * only contains the bindings that match the given query. For queries that
-   * don't contain a constrain on policies (e.g. an empty query), this contains
-   * all the bindings.
+   * The IAM policy directly set on the given resource. Note that the original
+   * IAM policy can contain multiple bindings. This only contains the bindings
+   * that match the given query. For queries that don't contain a constrain on
+   * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -138,8 +133,8 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * Explanation about the {{iam_name_short}} policy search result. It contains
-   * additional information to explain why the search result matches the query.
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -151,8 +146,8 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * Explanation about the {{iam_name_short}} policy search result. It contains
-   * additional information to explain why the search result matches the query.
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -164,8 +159,8 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * Explanation about the {{iam_name_short}} policy search result. It contains
-   * additional information to explain why the search result matches the query.
+   * Explanation about the IAM policy search result. It contains additional
+   * information to explain why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
