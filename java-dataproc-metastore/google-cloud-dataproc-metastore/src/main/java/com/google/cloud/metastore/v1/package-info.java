@@ -50,6 +50,38 @@
  *   Service response = dataprocMetastoreClient.getService(name);
  * }
  * }</pre>
+ *
+ * <p>======================= DataprocMetastoreFederationClient =======================
+ *
+ * <p>Service Description: Configures and manages metastore federation services. Dataproc Metastore
+ * Federation Service allows federating a collection of backend metastores like BigQuery, Dataplex
+ * Lakes, and other Dataproc Metastores. The Federation Service exposes a gRPC URL through which
+ * metadata from the backend metastores are served at query time.
+ *
+ * <p>The Dataproc Metastore Federation API defines the following resource model:
+ *
+ * <ul>
+ *   <li>The service works with a collection of Google Cloud projects.
+ *   <li>Each project has a collection of available locations.
+ *   <li>Each location has a collection of federations.
+ *   <li>Dataproc Metastore Federations are resources with names of the form:
+ *       `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
+ * </ul>
+ *
+ * <p>Sample for DataprocMetastoreFederationClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataprocMetastoreFederationClient dataprocMetastoreFederationClient =
+ *     DataprocMetastoreFederationClient.create()) {
+ *   FederationName name = FederationName.of("[PROJECT]", "[LOCATION]", "[FEDERATION]");
+ *   Federation response = dataprocMetastoreFederationClient.getFederation(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.metastore.v1;

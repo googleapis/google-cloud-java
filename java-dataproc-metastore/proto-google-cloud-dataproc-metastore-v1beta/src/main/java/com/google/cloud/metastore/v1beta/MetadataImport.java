@@ -289,7 +289,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Deprecated
@@ -306,7 +306,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
      * @return The databaseType.
      */
     @java.lang.Deprecated
@@ -349,7 +349,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
      * @return The sourceDatabase.
      */
     @java.lang.Deprecated
@@ -364,7 +364,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Deprecated
@@ -605,7 +605,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Override
@@ -625,7 +625,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
      * @return The databaseType.
      */
     @java.lang.Override
@@ -704,7 +704,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
      * @return The sourceDatabase.
      */
     @java.lang.Override
@@ -730,7 +730,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+     *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Override
@@ -1215,7 +1215,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
        * @return The enum numeric value on the wire for databaseType.
        */
       @java.lang.Override
@@ -1235,7 +1235,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
        * @param value The enum numeric value on the wire for databaseType to set.
        * @return This builder for chaining.
        */
@@ -1258,7 +1258,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
        * @return The databaseType.
        */
       @java.lang.Override
@@ -1286,7 +1286,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
        * @param value The databaseType to set.
        * @return This builder for chaining.
        */
@@ -1313,7 +1313,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=477
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=640
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1446,7 +1446,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
        * @return The sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1471,7 +1471,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
        * @return The bytes for sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1496,7 +1496,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
        * @param value The sourceDatabase to set.
        * @return This builder for chaining.
        */
@@ -1520,7 +1520,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1540,7 +1540,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1beta.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=484
+       *     deprecated. See google/cloud/metastore/v1beta/metastore.proto;l=647
        * @param value The bytes for sourceDatabase to set.
        * @return This builder for chaining.
        */
@@ -1939,7 +1939,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1955,7 +1955,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1971,7 +1971,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2029,6 +2029,55 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp endTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTime() {
+    return endTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEndTime() {
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    return getEndTime();
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
@@ -2107,6 +2156,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           6, (com.google.cloud.metastore.v1beta.MetadataImport.DatabaseDump) metadata_);
     }
+    if (endTime_ != null) {
+      output.writeMessage(7, getEndTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2137,6 +2189,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.metastore.v1beta.MetadataImport.DatabaseDump) metadata_);
     }
+    if (endTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEndTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2162,6 +2217,10 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasEndTime() != other.hasEndTime()) return false;
+    if (hasEndTime()) {
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (state_ != other.state_) return false;
     if (!getMetadataCase().equals(other.getMetadataCase())) return false;
@@ -2194,6 +2253,10 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasEndTime()) {
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime().hashCode();
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
@@ -2362,6 +2425,12 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
       state_ = 0;
 
       metadataCase_ = 0;
@@ -2411,6 +2480,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
+      }
+      if (endTimeBuilder_ == null) {
+        result.endTime_ = endTime_;
+      } else {
+        result.endTime_ = endTimeBuilder_.build();
       }
       result.state_ = state_;
       result.metadataCase_ = metadataCase_;
@@ -2477,6 +2551,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasEndTime()) {
+        mergeEndTime(other.getEndTime());
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
@@ -2554,6 +2631,12 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
                 metadataCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3047,7 +3130,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3063,7 +3146,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3085,7 +3168,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3109,7 +3192,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3130,7 +3213,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3156,7 +3239,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3178,7 +3261,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3194,7 +3277,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3214,7 +3297,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>
@@ -3437,6 +3520,194 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp endTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    public boolean hasEndTime() {
+      return endTimeBuilder_ != null || endTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTime.
+     */
+    public com.google.protobuf.Timestamp getEndTime() {
+      if (endTimeBuilder_ == null) {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      } else {
+        return endTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endTime_ = value;
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (endTimeBuilder_ == null) {
+        endTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (endTime_ != null) {
+          endTime_ =
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        } else {
+          endTime_ = value;
+        }
+        onChanged();
+      } else {
+        endTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEndTime() {
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+        onChanged();
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+
+      onChanged();
+      return getEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      if (endTimeBuilder_ != null) {
+        return endTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getEndTimeFieldBuilder() {
+      if (endTimeBuilder_ == null) {
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
+        endTime_ = null;
+      }
+      return endTimeBuilder_;
     }
 
     private int state_ = 0;

@@ -193,6 +193,9 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -242,6 +245,9 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     mockDataprocMetastore.addResponse(expectedResponse);
 
@@ -291,6 +297,9 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -354,6 +363,9 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -417,6 +429,9 @@ public class DataprocMetastoreClientTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
