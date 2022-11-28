@@ -7,6 +7,10 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
   if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] || [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] ||[[ "${pomFile}" =~ .*CoverageAggregator.* ]]; then
     continue
   fi
+  if [[ "${pomFile}" =~ .*owl-bot-postprocessor.* ]]; then
+    # Skip the template files
+    continue
+  fi
 
   if grep -n '<version>.*</version>' "$pomFile" | grep -v 'x-version-update'; then
     echo "Found version declaration(s) without x-version-update in: $pomFile"
