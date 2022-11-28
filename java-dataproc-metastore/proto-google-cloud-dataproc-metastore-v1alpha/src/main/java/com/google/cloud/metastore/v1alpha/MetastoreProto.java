@@ -100,6 +100,10 @@ public final class MetastoreProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_metastore_v1alpha_NetworkConfig_Consumer_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_metastore_v1alpha_TelemetryConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_metastore_v1alpha_TelemetryConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_metastore_v1alpha_MetadataManagementActivity_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_metastore_v1alpha_MetadataManagementActivity_fieldAccessorTable;
@@ -229,7 +233,7 @@ public final class MetastoreProto {
           + "/protobuf/field_mask.proto\032\037google/proto"
           + "buf/timestamp.proto\032\036google/protobuf/wra"
           + "ppers.proto\032\033google/type/dayofweek.proto"
-          + "\"\225\r\n\007Service\022T\n\025hive_metastore_config\030\005 "
+          + "\"\333\r\n\007Service\022T\n\025hive_metastore_config\030\005 "
           + "\001(\01323.google.cloud.metastore.v1alpha.Hiv"
           + "eMetastoreConfigH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.Tim"
@@ -254,160 +258,166 @@ public final class MetastoreProto {
           + "\030\023 \001(\01626.google.cloud.metastore.v1alpha."
           + "Service.ReleaseChannelB\003\340A\005\022P\n\021encryptio"
           + "n_config\030\024 \001(\01320.google.cloud.metastore."
-          + "v1alpha.EncryptionConfigB\003\340A\005\022J\n\016network"
+          + "v1alpha.EncryptionConfigB\003\340A\005\022E\n\016network"
           + "_config\030\025 \001(\0132-.google.cloud.metastore.v"
-          + "1alpha.NetworkConfigB\003\340A\005\022P\n\rdatabase_ty"
-          + "pe\030\026 \001(\01624.google.cloud.metastore.v1alph"
-          + "a.Service.DatabaseTypeB\003\340A\005\032-\n\013LabelsEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\005St"
-          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001"
-          + "\022\n\n\006ACTIVE\020\002\022\016\n\nSUSPENDING\020\003\022\r\n\tSUSPENDE"
-          + "D\020\004\022\014\n\010UPDATING\020\005\022\014\n\010DELETING\020\006\022\t\n\005ERROR"
-          + "\020\007\";\n\004Tier\022\024\n\020TIER_UNSPECIFIED\020\000\022\r\n\tDEVE"
-          + "LOPER\020\001\022\016\n\nENTERPRISE\020\003\"I\n\016ReleaseChanne"
-          + "l\022\037\n\033RELEASE_CHANNEL_UNSPECIFIED\020\000\022\n\n\006CA"
-          + "NARY\020\001\022\n\n\006STABLE\020\002\"E\n\014DatabaseType\022\035\n\031DA"
-          + "TABASE_TYPE_UNSPECIFIED\020\000\022\t\n\005MYSQL\020\001\022\013\n\007"
-          + "SPANNER\020\002:a\352A^\n metastore.googleapis.com"
-          + "/Service\022:projects/{project}/locations/{"
-          + "location}/services/{service}B\022\n\020metastor"
-          + "e_config\"\256\001\n\023MetadataIntegration\022N\n\023data"
-          + "_catalog_config\030\001 \001(\01321.google.cloud.met"
-          + "astore.v1alpha.DataCatalogConfig\022G\n\017data"
-          + "plex_config\030\002 \001(\0132..google.cloud.metasto"
-          + "re.v1alpha.DataplexConfig\"$\n\021DataCatalog"
-          + "Config\022\017\n\007enabled\030\002 \001(\010\"\307\001\n\016DataplexConf"
-          + "ig\022Y\n\016lake_resources\030\001 \003(\0132A.google.clou"
-          + "d.metastore.v1alpha.DataplexConfig.LakeR"
-          + "esourcesEntry\032Z\n\022LakeResourcesEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\0223\n\005value\030\002 \001(\0132$.google.cloud.m"
-          + "etastore.v1alpha.Lake:\0028\001\"7\n\004Lake\022/\n\004nam"
-          + "e\030\001 \001(\tB!\372A\036\n\034dataplex.googleapis.com/La"
-          + "ke\"r\n\021MaintenanceWindow\0220\n\013hour_of_day\030\001"
-          + " \001(\0132\033.google.protobuf.Int32Value\022+\n\013day"
-          + "_of_week\030\002 \001(\0162\026.google.type.DayOfWeek\"\230"
-          + "\005\n\023HiveMetastoreConfig\022\024\n\007version\030\001 \001(\tB"
-          + "\003\340A\005\022b\n\020config_overrides\030\002 \003(\0132H.google."
-          + "cloud.metastore.v1alpha.HiveMetastoreCon"
-          + "fig.ConfigOverridesEntry\022G\n\017kerberos_con"
-          + "fig\030\003 \001(\0132..google.cloud.metastore.v1alp"
-          + "ha.KerberosConfig\022_\n\021endpoint_protocol\030\004"
-          + " \001(\0162D.google.cloud.metastore.v1alpha.Hi"
-          + "veMetastoreConfig.EndpointProtocol\022f\n\022au"
-          + "xiliary_versions\030\005 \003(\0132J.google.cloud.me"
-          + "tastore.v1alpha.HiveMetastoreConfig.Auxi"
-          + "liaryVersionsEntry\0326\n\024ConfigOverridesEnt"
-          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032p\n\026Au"
-          + "xiliaryVersionsEntry\022\013\n\003key\030\001 \001(\t\022E\n\005val"
-          + "ue\030\002 \001(\01326.google.cloud.metastore.v1alph"
-          + "a.AuxiliaryVersionConfig:\0028\001\"K\n\020Endpoint"
-          + "Protocol\022!\n\035ENDPOINT_PROTOCOL_UNSPECIFIE"
-          + "D\020\000\022\n\n\006THRIFT\020\001\022\010\n\004GRPC\020\002\"x\n\016KerberosCon"
-          + "fig\0226\n\006keytab\030\001 \001(\0132&.google.cloud.metas"
-          + "tore.v1alpha.Secret\022\021\n\tprincipal\030\002 \001(\t\022\033"
-          + "\n\023krb5_config_gcs_uri\030\003 \001(\t\")\n\006Secret\022\026\n"
-          + "\014cloud_secret\030\002 \001(\tH\000B\007\n\005value\"#\n\020Encryp"
-          + "tionConfig\022\017\n\007kms_key\030\001 \001(\t\"\224\002\n\026Auxiliar"
-          + "yVersionConfig\022\017\n\007version\030\001 \001(\t\022e\n\020confi"
-          + "g_overrides\030\002 \003(\0132K.google.cloud.metasto"
-          + "re.v1alpha.AuxiliaryVersionConfig.Config"
-          + "OverridesEntry\022J\n\016network_config\030\003 \001(\0132-"
-          + ".google.cloud.metastore.v1alpha.NetworkC"
-          + "onfigB\003\340A\003\0326\n\024ConfigOverridesEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\324\001\n\rNetworkCo"
-          + "nfig\022N\n\tconsumers\030\001 \003(\01326.google.cloud.m"
-          + "etastore.v1alpha.NetworkConfig.ConsumerB"
-          + "\003\340A\005\032s\n\010Consumer\022<\n\nsubnetwork\030\001 \001(\tB&\372A"
-          + "#\n!compute.googleapis.com/SubnetworkH\000\022\031"
-          + "\n\014endpoint_uri\030\003 \001(\tB\003\340A\003B\016\n\014vpc_resourc"
-          + "e\"\253\001\n\032MetadataManagementActivity\022M\n\020meta"
-          + "data_exports\030\001 \003(\0132..google.cloud.metast"
-          + "ore.v1alpha.MetadataExportB\003\340A\003\022>\n\010resto"
-          + "res\030\002 \003(\0132\'.google.cloud.metastore.v1alp"
-          + "ha.RestoreB\003\340A\003\"\224\007\n\016MetadataImport\022Y\n\rda"
-          + "tabase_dump\030\006 \001(\0132;.google.cloud.metasto"
-          + "re.v1alpha.MetadataImport.DatabaseDumpB\003"
-          + "\340A\005H\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\023\n\013description\030"
-          + "\002 \001(\t\0224\n\013create_time\030\003 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\0221\n\010end"
-          + "_time\030\007 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\022H\n\005state\030\005 \001(\01624.google.cloud.metas"
-          + "tore.v1alpha.MetadataImport.StateB\003\340A\003\032\245"
-          + "\002\n\014DatabaseDump\022c\n\rdatabase_type\030\001 \001(\0162H"
-          + ".google.cloud.metastore.v1alpha.Metadata"
-          + "Import.DatabaseDump.DatabaseTypeB\002\030\001\022\017\n\007"
-          + "gcs_uri\030\002 \001(\t\022\033\n\017source_database\030\003 \001(\tB\002"
-          + "\030\001\022H\n\004type\030\004 \001(\01625.google.cloud.metastor"
-          + "e.v1alpha.DatabaseDumpSpec.TypeB\003\340A\001\"8\n\014"
-          + "DatabaseType\022\035\n\031DATABASE_TYPE_UNSPECIFIE"
-          + "D\020\000\022\t\n\005MYSQL\020\001\"T\n\005State\022\025\n\021STATE_UNSPECI"
-          + "FIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCEEDED\020\002\022\014\n\010UP"
-          + "DATING\020\003\022\n\n\006FAILED\020\004:\213\001\352A\207\001\n\'metastore.g"
-          + "oogleapis.com/MetadataImport\022\\projects/{"
-          + "project}/locations/{location}/services/{"
-          + "service}/metadataImports/{metadata_impor"
-          + "t}B\n\n\010metadata\"\244\003\n\016MetadataExport\022\"\n\023des"
-          + "tination_gcs_uri\030\004 \001(\tB\003\340A\003H\000\0223\n\nstart_t"
-          + "ime\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\0221\n\010end_time\030\002 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\022H\n\005state\030\003 \001(\01624.google.cl"
-          + "oud.metastore.v1alpha.MetadataExport.Sta"
-          + "teB\003\340A\003\022V\n\022database_dump_type\030\005 \001(\01625.go"
-          + "ogle.cloud.metastore.v1alpha.DatabaseDum"
-          + "pSpec.TypeB\003\340A\003\"U\n\005State\022\025\n\021STATE_UNSPEC"
-          + "IFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n\006F"
-          + "AILED\020\003\022\r\n\tCANCELLED\020\004B\r\n\013destination\"\232\004"
-          + "\n\006Backup\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n\013create_ti"
-          + "me\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\0221\n\010end_time\030\003 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\003\340A\003\022@\n\005state\030\004 \001(\0162,.google.clo"
-          + "ud.metastore.v1alpha.Backup.StateB\003\340A\003\022F"
-          + "\n\020service_revision\030\005 \001(\0132\'.google.cloud."
-          + "metastore.v1alpha.ServiceB\003\340A\003\022\023\n\013descri"
-          + "ption\030\006 \001(\t\022\037\n\022restoring_services\030\007 \003(\tB"
-          + "\003\340A\003\"a\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010"
-          + "CREATING\020\001\022\014\n\010DELETING\020\002\022\n\n\006ACTIVE\020\003\022\n\n\006"
-          + "FAILED\020\004\022\r\n\tRESTORING\020\005:q\352An\n\037metastore."
-          + "googleapis.com/Backup\022Kprojects/{project"
-          + "}/locations/{location}/services/{service"
-          + "}/backups/{backup}\"\354\003\n\007Restore\0223\n\nstart_"
-          + "time\030\001 \001(\0132\032.google.protobuf.TimestampB\003"
-          + "\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\022A\n\005state\030\003 \001(\0162-.google.c"
-          + "loud.metastore.v1alpha.Restore.StateB\003\340A"
-          + "\003\0227\n\006backup\030\004 \001(\tB\'\340A\003\372A!\n\037metastore.goo"
-          + "gleapis.com/Backup\022F\n\004type\030\005 \001(\01623.googl"
-          + "e.cloud.metastore.v1alpha.Restore.Restor"
-          + "eTypeB\003\340A\003\022\024\n\007details\030\006 \001(\tB\003\340A\003\"U\n\005Stat"
-          + "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n"
-          + "\tSUCCEEDED\020\002\022\n\n\006FAILED\020\003\022\r\n\tCANCELLED\020\004\""
-          + "H\n\013RestoreType\022\034\n\030RESTORE_TYPE_UNSPECIFI"
-          + "ED\020\000\022\010\n\004FULL\020\001\022\021\n\rMETADATA_ONLY\020\002\"\255\001\n\023Li"
-          + "stServicesRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A"
-          + "#\n!locations.googleapis.com/Location\022\026\n\t"
-          + "page_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\t"
-          + "B\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005"
-          + " \001(\tB\003\340A\001\"\177\n\024ListServicesResponse\0229\n\010ser"
-          + "vices\030\001 \003(\0132\'.google.cloud.metastore.v1a"
-          + "lpha.Service\022\027\n\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"K\n\021GetServiceRequest\022"
-          + "6\n\004name\030\001 \001(\tB(\340A\002\372A\"\n metastore.googlea"
-          + "pis.com/Service\"\302\001\n\024CreateServiceRequest"
-          + "\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.goog"
-          + "leapis.com/Location\022\027\n\nservice_id\030\002 \001(\tB"
-          + "\003\340A\002\022=\n\007service\030\003 \001(\0132\'.google.cloud.met"
+          + "1alpha.NetworkConfig\022P\n\rdatabase_type\030\026 "
+          + "\001(\01624.google.cloud.metastore.v1alpha.Ser"
+          + "vice.DatabaseTypeB\003\340A\005\022I\n\020telemetry_conf"
+          + "ig\030\027 \001(\0132/.google.cloud.metastore.v1alph"
+          + "a.TelemetryConfig\032-\n\013LabelsEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\005State\022\025\n\021STA"
+          + "TE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\n\n\006ACTIVE"
+          + "\020\002\022\016\n\nSUSPENDING\020\003\022\r\n\tSUSPENDED\020\004\022\014\n\010UPD"
+          + "ATING\020\005\022\014\n\010DELETING\020\006\022\t\n\005ERROR\020\007\";\n\004Tier"
+          + "\022\024\n\020TIER_UNSPECIFIED\020\000\022\r\n\tDEVELOPER\020\001\022\016\n"
+          + "\nENTERPRISE\020\003\"I\n\016ReleaseChannel\022\037\n\033RELEA"
+          + "SE_CHANNEL_UNSPECIFIED\020\000\022\n\n\006CANARY\020\001\022\n\n\006"
+          + "STABLE\020\002\"E\n\014DatabaseType\022\035\n\031DATABASE_TYP"
+          + "E_UNSPECIFIED\020\000\022\t\n\005MYSQL\020\001\022\013\n\007SPANNER\020\002:"
+          + "a\352A^\n metastore.googleapis.com/Service\022:"
+          + "projects/{project}/locations/{location}/"
+          + "services/{service}B\022\n\020metastore_config\"\256"
+          + "\001\n\023MetadataIntegration\022N\n\023data_catalog_c"
+          + "onfig\030\001 \001(\01321.google.cloud.metastore.v1a"
+          + "lpha.DataCatalogConfig\022G\n\017dataplex_confi"
+          + "g\030\002 \001(\0132..google.cloud.metastore.v1alpha"
+          + ".DataplexConfig\"$\n\021DataCatalogConfig\022\017\n\007"
+          + "enabled\030\002 \001(\010\"\307\001\n\016DataplexConfig\022Y\n\016lake"
+          + "_resources\030\001 \003(\0132A.google.cloud.metastor"
+          + "e.v1alpha.DataplexConfig.LakeResourcesEn"
+          + "try\032Z\n\022LakeResourcesEntry\022\013\n\003key\030\001 \001(\t\0223"
+          + "\n\005value\030\002 \001(\0132$.google.cloud.metastore.v"
+          + "1alpha.Lake:\0028\001\"7\n\004Lake\022/\n\004name\030\001 \001(\tB!\372"
+          + "A\036\n\034dataplex.googleapis.com/Lake\"r\n\021Main"
+          + "tenanceWindow\0220\n\013hour_of_day\030\001 \001(\0132\033.goo"
+          + "gle.protobuf.Int32Value\022+\n\013day_of_week\030\002"
+          + " \001(\0162\026.google.type.DayOfWeek\"\230\005\n\023HiveMet"
+          + "astoreConfig\022\024\n\007version\030\001 \001(\tB\003\340A\005\022b\n\020co"
+          + "nfig_overrides\030\002 \003(\0132H.google.cloud.meta"
+          + "store.v1alpha.HiveMetastoreConfig.Config"
+          + "OverridesEntry\022G\n\017kerberos_config\030\003 \001(\0132"
+          + "..google.cloud.metastore.v1alpha.Kerbero"
+          + "sConfig\022_\n\021endpoint_protocol\030\004 \001(\0162D.goo"
+          + "gle.cloud.metastore.v1alpha.HiveMetastor"
+          + "eConfig.EndpointProtocol\022f\n\022auxiliary_ve"
+          + "rsions\030\005 \003(\0132J.google.cloud.metastore.v1"
+          + "alpha.HiveMetastoreConfig.AuxiliaryVersi"
+          + "onsEntry\0326\n\024ConfigOverridesEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032p\n\026AuxiliaryVer"
+          + "sionsEntry\022\013\n\003key\030\001 \001(\t\022E\n\005value\030\002 \001(\01326"
+          + ".google.cloud.metastore.v1alpha.Auxiliar"
+          + "yVersionConfig:\0028\001\"K\n\020EndpointProtocol\022!"
+          + "\n\035ENDPOINT_PROTOCOL_UNSPECIFIED\020\000\022\n\n\006THR"
+          + "IFT\020\001\022\010\n\004GRPC\020\002\"x\n\016KerberosConfig\0226\n\006key"
+          + "tab\030\001 \001(\0132&.google.cloud.metastore.v1alp"
+          + "ha.Secret\022\021\n\tprincipal\030\002 \001(\t\022\033\n\023krb5_con"
+          + "fig_gcs_uri\030\003 \001(\t\")\n\006Secret\022\026\n\014cloud_sec"
+          + "ret\030\002 \001(\tH\000B\007\n\005value\"#\n\020EncryptionConfig"
+          + "\022\017\n\007kms_key\030\001 \001(\t\"\224\002\n\026AuxiliaryVersionCo"
+          + "nfig\022\017\n\007version\030\001 \001(\t\022e\n\020config_override"
+          + "s\030\002 \003(\0132K.google.cloud.metastore.v1alpha"
+          + ".AuxiliaryVersionConfig.ConfigOverridesE"
+          + "ntry\022J\n\016network_config\030\003 \001(\0132-.google.cl"
+          + "oud.metastore.v1alpha.NetworkConfigB\003\340A\003"
+          + "\0326\n\024ConfigOverridesEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\327\001\n\rNetworkConfig\022N\n\tco"
+          + "nsumers\030\001 \003(\01326.google.cloud.metastore.v"
+          + "1alpha.NetworkConfig.ConsumerB\003\340A\005\032v\n\010Co"
+          + "nsumer\022?\n\nsubnetwork\030\001 \001(\tB)\340A\005\372A#\n!comp"
+          + "ute.googleapis.com/SubnetworkH\000\022\031\n\014endpo"
+          + "int_uri\030\003 \001(\tB\003\340A\003B\016\n\014vpc_resource\"\237\001\n\017T"
+          + "elemetryConfig\022M\n\nlog_format\030\001 \001(\01629.goo"
+          + "gle.cloud.metastore.v1alpha.TelemetryCon"
+          + "fig.LogFormat\"=\n\tLogFormat\022\032\n\026LOG_FORMAT"
+          + "_UNSPECIFIED\020\000\022\n\n\006LEGACY\020\001\022\010\n\004JSON\020\002\"\253\001\n"
+          + "\032MetadataManagementActivity\022M\n\020metadata_"
+          + "exports\030\001 \003(\0132..google.cloud.metastore.v"
+          + "1alpha.MetadataExportB\003\340A\003\022>\n\010restores\030\002"
+          + " \003(\0132\'.google.cloud.metastore.v1alpha.Re"
+          + "storeB\003\340A\003\"\224\007\n\016MetadataImport\022Y\n\rdatabas"
+          + "e_dump\030\006 \001(\0132;.google.cloud.metastore.v1"
+          + "alpha.MetadataImport.DatabaseDumpB\003\340A\005H\000"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\023\n\013description\030\002 \001(\t"
+          + "\0224\n\013create_time\030\003 \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0221\n\010end_time"
+          + "\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "H\n\005state\030\005 \001(\01624.google.cloud.metastore."
+          + "v1alpha.MetadataImport.StateB\003\340A\003\032\245\002\n\014Da"
+          + "tabaseDump\022c\n\rdatabase_type\030\001 \001(\0162H.goog"
+          + "le.cloud.metastore.v1alpha.MetadataImpor"
+          + "t.DatabaseDump.DatabaseTypeB\002\030\001\022\017\n\007gcs_u"
+          + "ri\030\002 \001(\t\022\033\n\017source_database\030\003 \001(\tB\002\030\001\022H\n"
+          + "\004type\030\004 \001(\01625.google.cloud.metastore.v1a"
+          + "lpha.DatabaseDumpSpec.TypeB\003\340A\001\"8\n\014Datab"
+          + "aseType\022\035\n\031DATABASE_TYPE_UNSPECIFIED\020\000\022\t"
+          + "\n\005MYSQL\020\001\"T\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
+          + "\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCEEDED\020\002\022\014\n\010UPDATIN"
+          + "G\020\003\022\n\n\006FAILED\020\004:\213\001\352A\207\001\n\'metastore.google"
+          + "apis.com/MetadataImport\022\\projects/{proje"
+          + "ct}/locations/{location}/services/{servi"
+          + "ce}/metadataImports/{metadata_import}B\n\n"
+          + "\010metadata\"\244\003\n\016MetadataExport\022\"\n\023destinat"
+          + "ion_gcs_uri\030\004 \001(\tB\003\340A\003H\000\0223\n\nstart_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022H\n\005state\030\003 \001(\01624.google.cloud.m"
+          + "etastore.v1alpha.MetadataExport.StateB\003\340"
+          + "A\003\022V\n\022database_dump_type\030\005 \001(\01625.google."
+          + "cloud.metastore.v1alpha.DatabaseDumpSpec"
+          + ".TypeB\003\340A\003\"U\n\005State\022\025\n\021STATE_UNSPECIFIED"
+          + "\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED"
+          + "\020\003\022\r\n\tCANCELLED\020\004B\r\n\013destination\"\232\004\n\006Bac"
+          + "kup\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n\013create_time\030\002 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n\010"
+          + "end_time\030\003 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\022@\n\005state\030\004 \001(\0162,.google.cloud.me"
+          + "tastore.v1alpha.Backup.StateB\003\340A\003\022F\n\020ser"
+          + "vice_revision\030\005 \001(\0132\'.google.cloud.metas"
+          + "tore.v1alpha.ServiceB\003\340A\003\022\023\n\013description"
+          + "\030\006 \001(\t\022\037\n\022restoring_services\030\007 \003(\tB\003\340A\003\""
+          + "a\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREAT"
+          + "ING\020\001\022\014\n\010DELETING\020\002\022\n\n\006ACTIVE\020\003\022\n\n\006FAILE"
+          + "D\020\004\022\r\n\tRESTORING\020\005:q\352An\n\037metastore.googl"
+          + "eapis.com/Backup\022Kprojects/{project}/loc"
+          + "ations/{location}/services/{service}/bac"
+          + "kups/{backup}\"\354\003\n\007Restore\0223\n\nstart_time\030"
+          + "\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221"
+          + "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\022A\n\005state\030\003 \001(\0162-.google.cloud."
+          + "metastore.v1alpha.Restore.StateB\003\340A\003\0227\n\006"
+          + "backup\030\004 \001(\tB\'\340A\003\372A!\n\037metastore.googleap"
+          + "is.com/Backup\022F\n\004type\030\005 \001(\01623.google.clo"
+          + "ud.metastore.v1alpha.Restore.RestoreType"
+          + "B\003\340A\003\022\024\n\007details\030\006 \001(\tB\003\340A\003\"U\n\005State\022\025\n\021"
+          + "STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tSUCC"
+          + "EEDED\020\002\022\n\n\006FAILED\020\003\022\r\n\tCANCELLED\020\004\"H\n\013Re"
+          + "storeType\022\034\n\030RESTORE_TYPE_UNSPECIFIED\020\000\022"
+          + "\010\n\004FULL\020\001\022\021\n\rMETADATA_ONLY\020\002\"\254\001\n\023ListSer"
+          + "vicesRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 me"
+          + "tastore.googleapis.com/Service\022\026\n\tpage_s"
+          + "ize\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022"
+          + "\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003"
+          + "\340A\001\"\177\n\024ListServicesResponse\0229\n\010services\030"
+          + "\001 \003(\0132\'.google.cloud.metastore.v1alpha.S"
+          + "ervice\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
+          + "chable\030\003 \003(\t\"K\n\021GetServiceRequest\0226\n\004nam"
+          + "e\030\001 \001(\tB(\340A\002\372A\"\n metastore.googleapis.co"
+          + "m/Service\"\301\001\n\024CreateServiceRequest\0228\n\006pa"
+          + "rent\030\001 \001(\tB(\340A\002\372A\"\022 metastore.googleapis"
+          + ".com/Service\022\027\n\nservice_id\030\002 \001(\tB\003\340A\002\022=\n"
+          + "\007service\030\003 \001(\0132\'.google.cloud.metastore."
+          + "v1alpha.ServiceB\003\340A\002\022\027\n\nrequest_id\030\004 \001(\t"
+          + "B\003\340A\001\"\244\001\n\024UpdateServiceRequest\0224\n\013update"
+          + "_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB"
+          + "\003\340A\002\022=\n\007service\030\002 \001(\0132\'.google.cloud.met"
           + "astore.v1alpha.ServiceB\003\340A\002\022\027\n\nrequest_i"
-          + "d\030\004 \001(\tB\003\340A\001\"\244\001\n\024UpdateServiceRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.Fie"
-          + "ldMaskB\003\340A\002\022=\n\007service\030\002 \001(\0132\'.google.cl"
-          + "oud.metastore.v1alpha.ServiceB\003\340A\002\022\027\n\nre"
-          + "quest_id\030\003 \001(\tB\003\340A\001\"g\n\024DeleteServiceRequ"
-          + "est\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n metastore.goo"
-          + "gleapis.com/Service\022\027\n\nrequest_id\030\002 \001(\tB"
-          + "\003\340A\001\"\263\001\n\032ListMetadataImportsRequest\0228\n\006p"
-          + "arent\030\001 \001(\tB(\340A\002\372A\"\n metastore.googleapi"
-          + "s.com/Service\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "d\030\003 \001(\tB\003\340A\001\"g\n\024DeleteServiceRequest\0226\n\004"
+          + "name\030\001 \001(\tB(\340A\002\372A\"\n metastore.googleapis"
+          + ".com/Service\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\272\001"
+          + "\n\032ListMetadataImportsRequest\022?\n\006parent\030\001"
+          + " \001(\tB/\340A\002\372A)\022\'metastore.googleapis.com/M"
+          + "etadataImport\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
           + "\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003"
           + "\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\225\001\n\033ListMetad"
           + "ataImportsResponse\022H\n\020metadata_imports\030\001"
@@ -415,157 +425,165 @@ public final class MetastoreProto {
           + "tadataImport\022\027\n\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"Y\n\030GetMetadataImportR"
           + "equest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'metastore."
-          + "googleapis.com/MetadataImport\"\337\001\n\033Create"
-          + "MetadataImportRequest\0228\n\006parent\030\001 \001(\tB(\340"
-          + "A\002\372A\"\n metastore.googleapis.com/Service\022"
-          + "\037\n\022metadata_import_id\030\002 \001(\tB\003\340A\002\022L\n\017meta"
-          + "data_import\030\003 \001(\0132..google.cloud.metasto"
-          + "re.v1alpha.MetadataImportB\003\340A\002\022\027\n\nreques"
-          + "t_id\030\004 \001(\tB\003\340A\001\"\272\001\n\033UpdateMetadataImport"
-          + "Request\0224\n\013update_mask\030\001 \001(\0132\032.google.pr"
-          + "otobuf.FieldMaskB\003\340A\002\022L\n\017metadata_import"
-          + "\030\002 \001(\0132..google.cloud.metastore.v1alpha."
-          + "MetadataImportB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB"
-          + "\003\340A\001\"\253\001\n\022ListBackupsRequest\0228\n\006parent\030\001 "
-          + "\001(\tB(\340A\002\372A\"\n metastore.googleapis.com/Se"
-          + "rvice\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_to"
-          + "ken\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010o"
-          + "rder_by\030\005 \001(\tB\003\340A\001\"|\n\023ListBackupsRespons"
-          + "e\0227\n\007backups\030\001 \003(\0132&.google.cloud.metast"
-          + "ore.v1alpha.Backup\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\022\023\n\013unreachable\030\003 \003(\t\"I\n\020GetBackupReq"
-          + "uest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037metastore.go"
-          + "ogleapis.com/Backup\"\275\001\n\023CreateBackupRequ"
-          + "est\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\n metastore.g"
-          + "oogleapis.com/Service\022\026\n\tbackup_id\030\002 \001(\t"
-          + "B\003\340A\002\022;\n\006backup\030\003 \001(\0132&.google.cloud.met"
-          + "astore.v1alpha.BackupB\003\340A\002\022\027\n\nrequest_id"
-          + "\030\004 \001(\tB\003\340A\001\"e\n\023DeleteBackupRequest\0225\n\004na"
-          + "me\030\001 \001(\tB\'\340A\002\372A!\n\037metastore.googleapis.c"
-          + "om/Backup\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\"\364\001\n\025E"
-          + "xportMetadataRequest\022 \n\026destination_gcs_"
-          + "folder\030\002 \001(\tH\000\0229\n\007service\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " metastore.googleapis.com/Service\022\027\n\nreq"
-          + "uest_id\030\003 \001(\tB\003\340A\001\022V\n\022database_dump_type"
-          + "\030\004 \001(\01625.google.cloud.metastore.v1alpha."
-          + "DatabaseDumpSpec.TypeB\003\340A\001B\r\n\013destinatio"
-          + "n\"\364\001\n\025RestoreServiceRequest\0229\n\007service\030\001"
-          + " \001(\tB(\340A\002\372A\"\n metastore.googleapis.com/S"
-          + "ervice\0227\n\006backup\030\002 \001(\tB\'\340A\002\372A!\n\037metastor"
-          + "e.googleapis.com/Backup\022N\n\014restore_type\030"
-          + "\003 \001(\01623.google.cloud.metastore.v1alpha.R"
-          + "estore.RestoreTypeB\003\340A\001\022\027\n\nrequest_id\030\004 "
-          + "\001(\tB\003\340A\001\"\200\002\n\021OperationMetadata\0224\n\013create"
-          + "_time\030\001 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004"
-          + "verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\tB"
-          + "\003\340A\003\022#\n\026requested_cancellation\030\006 \001(\010B\003\340A"
-          + "\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003\"\301\001\n\020Location"
-          + "Metadata\022p\n!supported_hive_metastore_ver"
-          + "sions\030\001 \003(\0132E.google.cloud.metastore.v1a"
-          + "lpha.LocationMetadata.HiveMetastoreVersi"
-          + "on\032;\n\024HiveMetastoreVersion\022\017\n\007version\030\001 "
-          + "\001(\t\022\022\n\nis_default\030\002 \001(\010\"E\n\020DatabaseDumpS"
-          + "pec\"1\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\t\n\005MYS"
-          + "QL\020\001\022\010\n\004AVRO\020\0022\200\033\n\021DataprocMetastore\022\275\001\n"
-          + "\014ListServices\0223.google.cloud.metastore.v"
-          + "1alpha.ListServicesRequest\0324.google.clou"
-          + "d.metastore.v1alpha.ListServicesResponse"
-          + "\"B\202\323\344\223\0023\0221/v1alpha/{parent=projects/*/lo"
-          + "cations/*}/services\332A\006parent\022\252\001\n\nGetServ"
-          + "ice\0221.google.cloud.metastore.v1alpha.Get"
-          + "ServiceRequest\032\'.google.cloud.metastore."
-          + "v1alpha.Service\"@\202\323\344\223\0023\0221/v1alpha/{name="
-          + "projects/*/locations/*/services/*}\332A\004nam"
-          + "e\022\343\001\n\rCreateService\0224.google.cloud.metas"
-          + "tore.v1alpha.CreateServiceRequest\032\035.goog"
-          + "le.longrunning.Operation\"}\202\323\344\223\002<\"1/v1alp"
-          + "ha/{parent=projects/*/locations/*}/servi"
-          + "ces:\007service\332A\031parent,service,service_id"
-          + "\312A\034\n\007Service\022\021OperationMetadata\022\345\001\n\rUpda"
-          + "teService\0224.google.cloud.metastore.v1alp"
-          + "ha.UpdateServiceRequest\032\035.google.longrun"
-          + "ning.Operation\"\177\202\323\344\223\002D29/v1alpha/{servic"
-          + "e.name=projects/*/locations/*/services/*"
-          + "}:\007service\332A\023service,update_mask\312A\034\n\007Ser"
-          + "vice\022\021OperationMetadata\022\323\001\n\rDeleteServic"
-          + "e\0224.google.cloud.metastore.v1alpha.Delet"
-          + "eServiceRequest\032\035.google.longrunning.Ope"
-          + "ration\"m\202\323\344\223\0023*1/v1alpha/{name=projects/"
-          + "*/locations/*/services/*}\332A\004name\312A*\n\025goo"
-          + "gle.protobuf.Empty\022\021OperationMetadata\022\344\001"
-          + "\n\023ListMetadataImports\022:.google.cloud.met"
-          + "astore.v1alpha.ListMetadataImportsReques"
-          + "t\032;.google.cloud.metastore.v1alpha.ListM"
-          + "etadataImportsResponse\"T\202\323\344\223\002E\022C/v1alpha"
-          + "/{parent=projects/*/locations/*/services"
-          + "/*}/metadataImports\332A\006parent\022\321\001\n\021GetMeta"
-          + "dataImport\0228.google.cloud.metastore.v1al"
-          + "pha.GetMetadataImportRequest\032..google.cl"
-          + "oud.metastore.v1alpha.MetadataImport\"R\202\323"
-          + "\344\223\002E\022C/v1alpha/{name=projects/*/location"
-          + "s/*/services/*/metadataImports/*}\332A\004name"
-          + "\022\243\002\n\024CreateMetadataImport\022;.google.cloud"
-          + ".metastore.v1alpha.CreateMetadataImportR"
-          + "equest\032\035.google.longrunning.Operation\"\256\001"
-          + "\202\323\344\223\002V\"C/v1alpha/{parent=projects/*/loca"
-          + "tions/*/services/*}/metadataImports:\017met"
-          + "adata_import\332A)parent,metadata_import,me"
-          + "tadata_import_id\312A#\n\016MetadataImport\022\021Ope"
-          + "rationMetadata\022\245\002\n\024UpdateMetadataImport\022"
-          + ";.google.cloud.metastore.v1alpha.UpdateM"
-          + "etadataImportRequest\032\035.google.longrunnin"
-          + "g.Operation\"\260\001\202\323\344\223\002f2S/v1alpha/{metadata"
-          + "_import.name=projects/*/locations/*/serv"
-          + "ices/*/metadataImports/*}:\017metadata_impo"
-          + "rt\332A\033metadata_import,update_mask\312A#\n\016Met"
-          + "adataImport\022\021OperationMetadata\022\334\001\n\016Expor"
-          + "tMetadata\0225.google.cloud.metastore.v1alp"
-          + "ha.ExportMetadataRequest\032\035.google.longru"
-          + "nning.Operation\"t\202\323\344\223\002H\"C/v1alpha/{servi"
-          + "ce=projects/*/locations/*/services/*}:ex"
-          + "portMetadata:\001*\312A#\n\016MetadataExport\022\021Oper"
-          + "ationMetadata\022\337\001\n\016RestoreService\0225.googl"
-          + "e.cloud.metastore.v1alpha.RestoreService"
-          + "Request\032\035.google.longrunning.Operation\"w"
-          + "\202\323\344\223\002A\"</v1alpha/{service=projects/*/loc"
-          + "ations/*/services/*}:restore:\001*\332A\016servic"
-          + "e,backup\312A\034\n\007Restore\022\021OperationMetadata\022"
-          + "\304\001\n\013ListBackups\0222.google.cloud.metastore"
-          + ".v1alpha.ListBackupsRequest\0323.google.clo"
-          + "ud.metastore.v1alpha.ListBackupsResponse"
-          + "\"L\202\323\344\223\002=\022;/v1alpha/{parent=projects/*/lo"
-          + "cations/*/services/*}/backups\332A\006parent\022\261"
-          + "\001\n\tGetBackup\0220.google.cloud.metastore.v1"
-          + "alpha.GetBackupRequest\032&.google.cloud.me"
-          + "tastore.v1alpha.Backup\"J\202\323\344\223\002=\022;/v1alpha"
-          + "/{name=projects/*/locations/*/services/*"
-          + "/backups/*}\332A\004name\022\350\001\n\014CreateBackup\0223.go"
-          + "ogle.cloud.metastore.v1alpha.CreateBacku"
-          + "pRequest\032\035.google.longrunning.Operation\""
-          + "\203\001\202\323\344\223\002E\";/v1alpha/{parent=projects/*/lo"
-          + "cations/*/services/*}/backups:\006backup\332A\027"
-          + "parent,backup,backup_id\312A\033\n\006Backup\022\021Oper"
-          + "ationMetadata\022\333\001\n\014DeleteBackup\0223.google."
-          + "cloud.metastore.v1alpha.DeleteBackupRequ"
-          + "est\032\035.google.longrunning.Operation\"w\202\323\344\223"
-          + "\002=*;/v1alpha/{name=projects/*/locations/"
-          + "*/services/*/backups/*}\332A\004name\312A*\n\025googl"
-          + "e.protobuf.Empty\022\021OperationMetadata\032L\312A\030"
-          + "metastore.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\254\003\n\"co"
-          + "m.google.cloud.metastore.v1alphaB\016Metast"
-          + "oreProtoP\001ZGgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/metastore/v1alpha;metast"
-          + "ore\312\002\036Google\\Cloud\\Metastore\\V1alpha\352AN\n"
-          + "\036compute.googleapis.com/Network\022,project"
-          + "s/{project}/global/networks/{network}\352Aa"
-          + "\n!compute.googleapis.com/Subnetwork\022<pro"
-          + "jects/{project}/regions/{region}/subnetw"
-          + "orks/{subnetwork}\352AT\n\034dataplex.googleapi"
-          + "s.com/Lake\0224projects/{project}/locations"
-          + "/{location}/lakes/{lake}b\006proto3"
+          + "googleapis.com/MetadataImport\"\346\001\n\033Create"
+          + "MetadataImportRequest\022?\n\006parent\030\001 \001(\tB/\340"
+          + "A\002\372A)\022\'metastore.googleapis.com/Metadata"
+          + "Import\022\037\n\022metadata_import_id\030\002 \001(\tB\003\340A\002\022"
+          + "L\n\017metadata_import\030\003 \001(\0132..google.cloud."
+          + "metastore.v1alpha.MetadataImportB\003\340A\002\022\027\n"
+          + "\nrequest_id\030\004 \001(\tB\003\340A\001\"\272\001\n\033UpdateMetadat"
+          + "aImportRequest\0224\n\013update_mask\030\001 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMaskB\003\340A\002\022L\n\017metadata"
+          + "_import\030\002 \001(\0132..google.cloud.metastore.v"
+          + "1alpha.MetadataImportB\003\340A\002\022\027\n\nrequest_id"
+          + "\030\003 \001(\tB\003\340A\001\"\252\001\n\022ListBackupsRequest\0227\n\006pa"
+          + "rent\030\001 \001(\tB\'\340A\002\372A!\022\037metastore.googleapis"
+          + ".com/Backup\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\np"
+          + "age_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A"
+          + "\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"|\n\023ListBackupsR"
+          + "esponse\0227\n\007backups\030\001 \003(\0132&.google.cloud."
+          + "metastore.v1alpha.Backup\022\027\n\017next_page_to"
+          + "ken\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"I\n\020GetBac"
+          + "kupRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037metast"
+          + "ore.googleapis.com/Backup\"\274\001\n\023CreateBack"
+          + "upRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\022\037metas"
+          + "tore.googleapis.com/Backup\022\026\n\tbackup_id\030"
+          + "\002 \001(\tB\003\340A\002\022;\n\006backup\030\003 \001(\0132&.google.clou"
+          + "d.metastore.v1alpha.BackupB\003\340A\002\022\027\n\nreque"
+          + "st_id\030\004 \001(\tB\003\340A\001\"e\n\023DeleteBackupRequest\022"
+          + "5\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037metastore.googlea"
+          + "pis.com/Backup\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\""
+          + "\364\001\n\025ExportMetadataRequest\022 \n\026destination"
+          + "_gcs_folder\030\002 \001(\tH\000\0229\n\007service\030\001 \001(\tB(\340A"
+          + "\002\372A\"\n metastore.googleapis.com/Service\022\027"
+          + "\n\nrequest_id\030\003 \001(\tB\003\340A\001\022V\n\022database_dump"
+          + "_type\030\004 \001(\01625.google.cloud.metastore.v1a"
+          + "lpha.DatabaseDumpSpec.TypeB\003\340A\001B\r\n\013desti"
+          + "nation\"\364\001\n\025RestoreServiceRequest\0229\n\007serv"
+          + "ice\030\001 \001(\tB(\340A\002\372A\"\n metastore.googleapis."
+          + "com/Service\0227\n\006backup\030\002 \001(\tB\'\340A\002\372A!\n\037met"
+          + "astore.googleapis.com/Backup\022N\n\014restore_"
+          + "type\030\003 \001(\01623.google.cloud.metastore.v1al"
+          + "pha.Restore.RestoreTypeB\003\340A\001\022\027\n\nrequest_"
+          + "id\030\004 \001(\tB\003\340A\001\"\200\002\n\021OperationMetadata\0224\n\013c"
+          + "reate_time\030\001 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A"
+          + "\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030\005"
+          + " \001(\tB\003\340A\003\022#\n\026requested_cancellation\030\006 \001("
+          + "\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003\"\301\001\n\020Loc"
+          + "ationMetadata\022p\n!supported_hive_metastor"
+          + "e_versions\030\001 \003(\0132E.google.cloud.metastor"
+          + "e.v1alpha.LocationMetadata.HiveMetastore"
+          + "Version\032;\n\024HiveMetastoreVersion\022\017\n\007versi"
+          + "on\030\001 \001(\t\022\022\n\nis_default\030\002 \001(\010\"E\n\020Database"
+          + "DumpSpec\"1\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\t"
+          + "\n\005MYSQL\020\001\022\010\n\004AVRO\020\0022\235\035\n\021DataprocMetastor"
+          + "e\022\275\001\n\014ListServices\0223.google.cloud.metast"
+          + "ore.v1alpha.ListServicesRequest\0324.google"
+          + ".cloud.metastore.v1alpha.ListServicesRes"
+          + "ponse\"B\202\323\344\223\0023\0221/v1alpha/{parent=projects"
+          + "/*/locations/*}/services\332A\006parent\022\252\001\n\nGe"
+          + "tService\0221.google.cloud.metastore.v1alph"
+          + "a.GetServiceRequest\032\'.google.cloud.metas"
+          + "tore.v1alpha.Service\"@\202\323\344\223\0023\0221/v1alpha/{"
+          + "name=projects/*/locations/*/services/*}\332"
+          + "A\004name\022\203\002\n\rCreateService\0224.google.cloud."
+          + "metastore.v1alpha.CreateServiceRequest\032\035"
+          + ".google.longrunning.Operation\"\234\001\202\323\344\223\002<\"1"
+          + "/v1alpha/{parent=projects/*/locations/*}"
+          + "/services:\007service\332A\031parent,service,serv"
+          + "ice_id\312A;\n\007Service\0220google.cloud.metasto"
+          + "re.v1alpha.OperationMetadata\022\205\002\n\rUpdateS"
+          + "ervice\0224.google.cloud.metastore.v1alpha."
+          + "UpdateServiceRequest\032\035.google.longrunnin"
+          + "g.Operation\"\236\001\202\323\344\223\002D29/v1alpha/{service."
+          + "name=projects/*/locations/*/services/*}:"
+          + "\007service\332A\023service,update_mask\312A;\n\007Servi"
+          + "ce\0220google.cloud.metastore.v1alpha.Opera"
+          + "tionMetadata\022\363\001\n\rDeleteService\0224.google."
+          + "cloud.metastore.v1alpha.DeleteServiceReq"
+          + "uest\032\035.google.longrunning.Operation\"\214\001\202\323"
+          + "\344\223\0023*1/v1alpha/{name=projects/*/location"
+          + "s/*/services/*}\332A\004name\312AI\n\025google.protob"
+          + "uf.Empty\0220google.cloud.metastore.v1alpha"
+          + ".OperationMetadata\022\344\001\n\023ListMetadataImpor"
+          + "ts\022:.google.cloud.metastore.v1alpha.List"
+          + "MetadataImportsRequest\032;.google.cloud.me"
+          + "tastore.v1alpha.ListMetadataImportsRespo"
+          + "nse\"T\202\323\344\223\002E\022C/v1alpha/{parent=projects/*"
+          + "/locations/*/services/*}/metadataImports"
+          + "\332A\006parent\022\321\001\n\021GetMetadataImport\0228.google"
+          + ".cloud.metastore.v1alpha.GetMetadataImpo"
+          + "rtRequest\032..google.cloud.metastore.v1alp"
+          + "ha.MetadataImport\"R\202\323\344\223\002E\022C/v1alpha/{nam"
+          + "e=projects/*/locations/*/services/*/meta"
+          + "dataImports/*}\332A\004name\022\302\002\n\024CreateMetadata"
+          + "Import\022;.google.cloud.metastore.v1alpha."
+          + "CreateMetadataImportRequest\032\035.google.lon"
+          + "grunning.Operation\"\315\001\202\323\344\223\002V\"C/v1alpha/{p"
+          + "arent=projects/*/locations/*/services/*}"
+          + "/metadataImports:\017metadata_import\332A)pare"
+          + "nt,metadata_import,metadata_import_id\312AB"
+          + "\n\016MetadataImport\0220google.cloud.metastore"
+          + ".v1alpha.OperationMetadata\022\304\002\n\024UpdateMet"
+          + "adataImport\022;.google.cloud.metastore.v1a"
+          + "lpha.UpdateMetadataImportRequest\032\035.googl"
+          + "e.longrunning.Operation\"\317\001\202\323\344\223\002f2S/v1alp"
+          + "ha/{metadata_import.name=projects/*/loca"
+          + "tions/*/services/*/metadataImports/*}:\017m"
+          + "etadata_import\332A\033metadata_import,update_"
+          + "mask\312AB\n\016MetadataImport\0220google.cloud.me"
+          + "tastore.v1alpha.OperationMetadata\022\374\001\n\016Ex"
+          + "portMetadata\0225.google.cloud.metastore.v1"
+          + "alpha.ExportMetadataRequest\032\035.google.lon"
+          + "grunning.Operation\"\223\001\202\323\344\223\002H\"C/v1alpha/{s"
+          + "ervice=projects/*/locations/*/services/*"
+          + "}:exportMetadata:\001*\312AB\n\016MetadataExport\0220"
+          + "google.cloud.metastore.v1alpha.Operation"
+          + "Metadata\022\377\001\n\016RestoreService\0225.google.clo"
+          + "ud.metastore.v1alpha.RestoreServiceReque"
+          + "st\032\035.google.longrunning.Operation\"\226\001\202\323\344\223"
+          + "\002A\"</v1alpha/{service=projects/*/locatio"
+          + "ns/*/services/*}:restore:\001*\332A\016service,ba"
+          + "ckup\312A;\n\007Restore\0220google.cloud.metastore"
+          + ".v1alpha.OperationMetadata\022\304\001\n\013ListBacku"
+          + "ps\0222.google.cloud.metastore.v1alpha.List"
+          + "BackupsRequest\0323.google.cloud.metastore."
+          + "v1alpha.ListBackupsResponse\"L\202\323\344\223\002=\022;/v1"
+          + "alpha/{parent=projects/*/locations/*/ser"
+          + "vices/*}/backups\332A\006parent\022\261\001\n\tGetBackup\022"
+          + "0.google.cloud.metastore.v1alpha.GetBack"
+          + "upRequest\032&.google.cloud.metastore.v1alp"
+          + "ha.Backup\"J\202\323\344\223\002=\022;/v1alpha/{name=projec"
+          + "ts/*/locations/*/services/*/backups/*}\332A"
+          + "\004name\022\207\002\n\014CreateBackup\0223.google.cloud.me"
+          + "tastore.v1alpha.CreateBackupRequest\032\035.go"
+          + "ogle.longrunning.Operation\"\242\001\202\323\344\223\002E\";/v1"
+          + "alpha/{parent=projects/*/locations/*/ser"
+          + "vices/*}/backups:\006backup\332A\027parent,backup"
+          + ",backup_id\312A:\n\006Backup\0220google.cloud.meta"
+          + "store.v1alpha.OperationMetadata\022\373\001\n\014Dele"
+          + "teBackup\0223.google.cloud.metastore.v1alph"
+          + "a.DeleteBackupRequest\032\035.google.longrunni"
+          + "ng.Operation\"\226\001\202\323\344\223\002=*;/v1alpha/{name=pr"
+          + "ojects/*/locations/*/services/*/backups/"
+          + "*}\332A\004name\312AI\n\025google.protobuf.Empty\0220goo"
+          + "gle.cloud.metastore.v1alpha.OperationMet"
+          + "adata\032L\312A\030metastore.googleapis.com\322A.htt"
+          + "ps://www.googleapis.com/auth/cloud-platf"
+          + "ormB\254\003\n\"com.google.cloud.metastore.v1alp"
+          + "haB\016MetastoreProtoP\001ZGgoogle.golang.org/"
+          + "genproto/googleapis/cloud/metastore/v1al"
+          + "pha;metastore\312\002\036Google\\Cloud\\Metastore\\V"
+          + "1alpha\352AN\n\036compute.googleapis.com/Networ"
+          + "k\022,projects/{project}/global/networks/{n"
+          + "etwork}\352Aa\n!compute.googleapis.com/Subne"
+          + "twork\022<projects/{project}/regions/{regio"
+          + "n}/subnetworks/{subnetwork}\352AT\n\034dataplex"
+          + ".googleapis.com/Lake\0224projects/{project}"
+          + "/locations/{location}/lakes/{lake}b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -607,6 +625,7 @@ public final class MetastoreProto {
               "EncryptionConfig",
               "NetworkConfig",
               "DatabaseType",
+              "TelemetryConfig",
               "MetastoreConfig",
             });
     internal_static_google_cloud_metastore_v1alpha_Service_LabelsEntry_descriptor =
@@ -759,8 +778,16 @@ public final class MetastoreProto {
             new java.lang.String[] {
               "Subnetwork", "EndpointUri", "VpcResource",
             });
-    internal_static_google_cloud_metastore_v1alpha_MetadataManagementActivity_descriptor =
+    internal_static_google_cloud_metastore_v1alpha_TelemetryConfig_descriptor =
         getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_metastore_v1alpha_TelemetryConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_metastore_v1alpha_TelemetryConfig_descriptor,
+            new java.lang.String[] {
+              "LogFormat",
+            });
+    internal_static_google_cloud_metastore_v1alpha_MetadataManagementActivity_descriptor =
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_metastore_v1alpha_MetadataManagementActivity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_MetadataManagementActivity_descriptor,
@@ -768,7 +795,7 @@ public final class MetastoreProto {
               "MetadataExports", "Restores",
             });
     internal_static_google_cloud_metastore_v1alpha_MetadataImport_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_metastore_v1alpha_MetadataImport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_MetadataImport_descriptor,
@@ -793,7 +820,7 @@ public final class MetastoreProto {
               "DatabaseType", "GcsUri", "SourceDatabase", "Type",
             });
     internal_static_google_cloud_metastore_v1alpha_MetadataExport_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_metastore_v1alpha_MetadataExport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_MetadataExport_descriptor,
@@ -806,7 +833,7 @@ public final class MetastoreProto {
               "Destination",
             });
     internal_static_google_cloud_metastore_v1alpha_Backup_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_metastore_v1alpha_Backup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_Backup_descriptor,
@@ -820,7 +847,7 @@ public final class MetastoreProto {
               "RestoringServices",
             });
     internal_static_google_cloud_metastore_v1alpha_Restore_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_metastore_v1alpha_Restore_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_Restore_descriptor,
@@ -828,7 +855,7 @@ public final class MetastoreProto {
               "StartTime", "EndTime", "State", "Backup", "Type", "Details",
             });
     internal_static_google_cloud_metastore_v1alpha_ListServicesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_metastore_v1alpha_ListServicesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_ListServicesRequest_descriptor,
@@ -836,7 +863,7 @@ public final class MetastoreProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_metastore_v1alpha_ListServicesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_metastore_v1alpha_ListServicesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_ListServicesResponse_descriptor,
@@ -844,7 +871,7 @@ public final class MetastoreProto {
               "Services", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_metastore_v1alpha_GetServiceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_metastore_v1alpha_GetServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_GetServiceRequest_descriptor,
@@ -852,7 +879,7 @@ public final class MetastoreProto {
               "Name",
             });
     internal_static_google_cloud_metastore_v1alpha_CreateServiceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_metastore_v1alpha_CreateServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_CreateServiceRequest_descriptor,
@@ -860,7 +887,7 @@ public final class MetastoreProto {
               "Parent", "ServiceId", "Service", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_UpdateServiceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_metastore_v1alpha_UpdateServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_UpdateServiceRequest_descriptor,
@@ -868,7 +895,7 @@ public final class MetastoreProto {
               "UpdateMask", "Service", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_DeleteServiceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_metastore_v1alpha_DeleteServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_DeleteServiceRequest_descriptor,
@@ -876,7 +903,7 @@ public final class MetastoreProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_ListMetadataImportsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_metastore_v1alpha_ListMetadataImportsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_ListMetadataImportsRequest_descriptor,
@@ -884,7 +911,7 @@ public final class MetastoreProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_metastore_v1alpha_ListMetadataImportsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_metastore_v1alpha_ListMetadataImportsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_ListMetadataImportsResponse_descriptor,
@@ -892,7 +919,7 @@ public final class MetastoreProto {
               "MetadataImports", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_metastore_v1alpha_GetMetadataImportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_metastore_v1alpha_GetMetadataImportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_GetMetadataImportRequest_descriptor,
@@ -900,7 +927,7 @@ public final class MetastoreProto {
               "Name",
             });
     internal_static_google_cloud_metastore_v1alpha_CreateMetadataImportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_metastore_v1alpha_CreateMetadataImportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_CreateMetadataImportRequest_descriptor,
@@ -908,7 +935,7 @@ public final class MetastoreProto {
               "Parent", "MetadataImportId", "MetadataImport", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_UpdateMetadataImportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_metastore_v1alpha_UpdateMetadataImportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_UpdateMetadataImportRequest_descriptor,
@@ -916,7 +943,7 @@ public final class MetastoreProto {
               "UpdateMask", "MetadataImport", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_ListBackupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_metastore_v1alpha_ListBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_ListBackupsRequest_descriptor,
@@ -924,7 +951,7 @@ public final class MetastoreProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_metastore_v1alpha_ListBackupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_metastore_v1alpha_ListBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_ListBackupsResponse_descriptor,
@@ -932,7 +959,7 @@ public final class MetastoreProto {
               "Backups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_metastore_v1alpha_GetBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_metastore_v1alpha_GetBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_GetBackupRequest_descriptor,
@@ -940,7 +967,7 @@ public final class MetastoreProto {
               "Name",
             });
     internal_static_google_cloud_metastore_v1alpha_CreateBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_metastore_v1alpha_CreateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_CreateBackupRequest_descriptor,
@@ -948,7 +975,7 @@ public final class MetastoreProto {
               "Parent", "BackupId", "Backup", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_DeleteBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_metastore_v1alpha_DeleteBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_DeleteBackupRequest_descriptor,
@@ -956,7 +983,7 @@ public final class MetastoreProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_ExportMetadataRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_metastore_v1alpha_ExportMetadataRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_ExportMetadataRequest_descriptor,
@@ -964,7 +991,7 @@ public final class MetastoreProto {
               "DestinationGcsFolder", "Service", "RequestId", "DatabaseDumpType", "Destination",
             });
     internal_static_google_cloud_metastore_v1alpha_RestoreServiceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_metastore_v1alpha_RestoreServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_RestoreServiceRequest_descriptor,
@@ -972,7 +999,7 @@ public final class MetastoreProto {
               "Service", "Backup", "RestoreType", "RequestId",
             });
     internal_static_google_cloud_metastore_v1alpha_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_metastore_v1alpha_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_OperationMetadata_descriptor,
@@ -986,7 +1013,7 @@ public final class MetastoreProto {
               "ApiVersion",
             });
     internal_static_google_cloud_metastore_v1alpha_LocationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_metastore_v1alpha_LocationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_LocationMetadata_descriptor,
@@ -1004,7 +1031,7 @@ public final class MetastoreProto {
               "Version", "IsDefault",
             });
     internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_metastore_v1alpha_DatabaseDumpSpec_descriptor,

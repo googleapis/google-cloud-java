@@ -948,7 +948,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the metastore service, of the form:
+   * Immutable. The relative resource name of the metastore service, in the
+   * following format:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -972,7 +973,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the metastore service, of the form:
+   * Immutable. The relative resource name of the metastore service, in the
+   * following format:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -1195,8 +1197,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. It is specified in the following form:
+   * Immutable. The relative resource name of the VPC network on which the
+   * instance can be accessed. It is specified in the following form:
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -1222,8 +1224,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the VPC network on which the instance can be
-   * accessed. It is specified in the following form:
+   * Immutable. The relative resource name of the VPC network on which the
+   * instance can be accessed. It is specified in the following form:
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -1359,8 +1361,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information about the current state of the metastore service, if
-   * available.
+   * Output only. Additional information about the current state of the
+   * metastore service, if available.
    * </pre>
    *
    * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1383,8 +1385,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information about the current state of the metastore service, if
-   * available.
+   * Output only. Additional information about the current state of the
+   * metastore service, if available.
    * </pre>
    *
    * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1410,8 +1412,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-   * related to the metastore service are stored.
+   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+   * where artifacts related to the metastore service are stored.
    * </pre>
    *
    * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1434,8 +1436,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-   * related to the metastore service are stored.
+   * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+   * where artifacts related to the metastore service are stored.
    * </pre>
    *
    * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1607,7 +1609,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The globally unique resource identifier of the metastore service.
+   * Output only. The globally unique resource identifier of the metastore
+   * service.
    * </pre>
    *
    * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1630,7 +1633,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The globally unique resource identifier of the metastore service.
+   * Output only. The globally unique resource identifier of the metastore
+   * service.
    * </pre>
    *
    * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1756,8 +1760,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-   * customer data at rest. Cannot be updated.
+   * Immutable. Information used to configure the Dataproc Metastore service to
+   * encrypt customer data at rest. Cannot be updated.
    * </pre>
    *
    * <code>
@@ -1774,8 +1778,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-   * customer data at rest. Cannot be updated.
+   * Immutable. Information used to configure the Dataproc Metastore service to
+   * encrypt customer data at rest. Cannot be updated.
    * </pre>
    *
    * <code>
@@ -1794,8 +1798,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-   * customer data at rest. Cannot be updated.
+   * Immutable. Information used to configure the Dataproc Metastore service to
+   * encrypt customer data at rest. Cannot be updated.
    * </pre>
    *
    * <code>
@@ -1814,13 +1818,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The configuration specifying the network settings for the
+   * The configuration specifying the network settings for the
    * Dataproc Metastore service.
    * </pre>
    *
-   * <code>
-   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
    *
    * @return Whether the networkConfig field is set.
    */
@@ -1832,13 +1834,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The configuration specifying the network settings for the
+   * The configuration specifying the network settings for the
    * Dataproc Metastore service.
    * </pre>
    *
-   * <code>
-   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
    *
    * @return The networkConfig.
    */
@@ -1852,13 +1852,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The configuration specifying the network settings for the
+   * The configuration specifying the network settings for the
    * Dataproc Metastore service.
    * </pre>
    *
-   * <code>
-   * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-   * </code>
+   * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
    */
   @java.lang.Override
   public com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
@@ -1905,6 +1903,57 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.cloud.metastore.v1alpha.Service.DatabaseType.UNRECOGNIZED
         : result;
+  }
+
+  public static final int TELEMETRY_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.metastore.v1alpha.TelemetryConfig telemetryConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying telemetry settings for the Dataproc Metastore
+   * service. If unspecified defaults to `JSON`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+   *
+   * @return Whether the telemetryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTelemetryConfig() {
+    return telemetryConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying telemetry settings for the Dataproc Metastore
+   * service. If unspecified defaults to `JSON`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+   *
+   * @return The telemetryConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.TelemetryConfig getTelemetryConfig() {
+    return telemetryConfig_ == null
+        ? com.google.cloud.metastore.v1alpha.TelemetryConfig.getDefaultInstance()
+        : telemetryConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying telemetry settings for the Dataproc Metastore
+   * service. If unspecified defaults to `JSON`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1alpha.TelemetryConfigOrBuilder getTelemetryConfigOrBuilder() {
+    return getTelemetryConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1984,6 +2033,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.metastore.v1alpha.Service.DatabaseType.DATABASE_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(22, databaseType_);
+    }
+    if (telemetryConfig_ != null) {
+      output.writeMessage(23, getTelemetryConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2070,6 +2122,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, databaseType_);
     }
+    if (telemetryConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getTelemetryConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2127,6 +2182,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
     }
     if (databaseType_ != other.databaseType_) return false;
+    if (hasTelemetryConfig() != other.hasTelemetryConfig()) return false;
+    if (hasTelemetryConfig()) {
+      if (!getTelemetryConfig().equals(other.getTelemetryConfig())) return false;
+    }
     if (!getMetastoreConfigCase().equals(other.getMetastoreConfigCase())) return false;
     switch (metastoreConfigCase_) {
       case 5:
@@ -2200,6 +2259,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DATABASE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + databaseType_;
+    if (hasTelemetryConfig()) {
+      hash = (37 * hash) + TELEMETRY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTelemetryConfig().hashCode();
+    }
     switch (metastoreConfigCase_) {
       case 5:
         hash = (37 * hash) + HIVE_METASTORE_CONFIG_FIELD_NUMBER;
@@ -2434,6 +2497,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       databaseType_ = 0;
 
+      if (telemetryConfigBuilder_ == null) {
+        telemetryConfig_ = null;
+      } else {
+        telemetryConfig_ = null;
+        telemetryConfigBuilder_ = null;
+      }
       metastoreConfigCase_ = 0;
       metastoreConfig_ = null;
       return this;
@@ -2519,6 +2588,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.networkConfig_ = networkConfigBuilder_.build();
       }
       result.databaseType_ = databaseType_;
+      if (telemetryConfigBuilder_ == null) {
+        result.telemetryConfig_ = telemetryConfig_;
+      } else {
+        result.telemetryConfig_ = telemetryConfigBuilder_.build();
+      }
       result.metastoreConfigCase_ = metastoreConfigCase_;
       onBuilt();
       return result;
@@ -2629,6 +2703,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.databaseType_ != 0) {
         setDatabaseTypeValue(other.getDatabaseTypeValue());
+      }
+      if (other.hasTelemetryConfig()) {
+        mergeTelemetryConfig(other.getTelemetryConfig());
       }
       switch (other.getMetastoreConfigCase()) {
         case HIVE_METASTORE_CONFIG:
@@ -2797,6 +2874,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 176
+            case 186:
+              {
+                input.readMessage(getTelemetryConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3060,7 +3143,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, in the
+     * following format:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3083,7 +3167,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, in the
+     * following format:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3106,7 +3191,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, in the
+     * following format:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3128,7 +3214,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, in the
+     * following format:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3146,7 +3233,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the metastore service, of the form:
+     * Immutable. The relative resource name of the metastore service, in the
+     * following format:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -3731,8 +3819,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3757,8 +3845,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3783,8 +3871,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3808,8 +3896,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -3829,8 +3917,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The relative resource name of the VPC network on which the instance can be
-     * accessed. It is specified in the following form:
+     * Immutable. The relative resource name of the VPC network on which the
+     * instance can be accessed. It is specified in the following form:
      * `projects/{project_number}/global/networks/{network_id}`.
      * </pre>
      *
@@ -4118,8 +4206,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4141,8 +4229,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4164,8 +4252,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4186,8 +4274,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4204,8 +4292,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the current state of the metastore service, if
-     * available.
+     * Output only. Additional information about the current state of the
+     * metastore service, if available.
      * </pre>
      *
      * <code>string state_message = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4229,8 +4317,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      * </pre>
      *
      * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4252,8 +4340,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      * </pre>
      *
      * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4275,8 +4363,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      * </pre>
      *
      * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4297,8 +4385,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      * </pre>
      *
      * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4315,8 +4403,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies where artifacts
-     * related to the metastore service are stored.
+     * Output only. A Cloud Storage URI (starting with `gs://`) that specifies
+     * where artifacts related to the metastore service are stored.
      * </pre>
      *
      * <code>string artifact_gcs_uri = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4848,7 +4936,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      * </pre>
      *
      * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4870,7 +4959,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      * </pre>
      *
      * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4892,7 +4982,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      * </pre>
      *
      * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4913,7 +5004,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      * </pre>
      *
      * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4930,7 +5022,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The globally unique resource identifier of the metastore service.
+     * Output only. The globally unique resource identifier of the metastore
+     * service.
      * </pre>
      *
      * <code>string uid = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5279,8 +5372,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5296,8 +5389,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5319,8 +5412,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5344,8 +5437,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5367,8 +5460,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5397,8 +5490,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5420,8 +5513,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5438,8 +5531,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5460,8 +5553,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Information used to configure the Dataproc Metastore service to encrypt
-     * customer data at rest. Cannot be updated.
+     * Immutable. Information used to configure the Dataproc Metastore service to
+     * encrypt customer data at rest. Cannot be updated.
      * </pre>
      *
      * <code>
@@ -5495,13 +5588,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      *
      * @return Whether the networkConfig field is set.
      */
@@ -5512,13 +5603,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      *
      * @return The networkConfig.
      */
@@ -5535,13 +5624,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      */
     public Builder setNetworkConfig(com.google.cloud.metastore.v1alpha.NetworkConfig value) {
       if (networkConfigBuilder_ == null) {
@@ -5560,13 +5647,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      */
     public Builder setNetworkConfig(
         com.google.cloud.metastore.v1alpha.NetworkConfig.Builder builderForValue) {
@@ -5583,13 +5668,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      */
     public Builder mergeNetworkConfig(com.google.cloud.metastore.v1alpha.NetworkConfig value) {
       if (networkConfigBuilder_ == null) {
@@ -5612,13 +5695,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      */
     public Builder clearNetworkConfig() {
       if (networkConfigBuilder_ == null) {
@@ -5635,13 +5716,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      */
     public com.google.cloud.metastore.v1alpha.NetworkConfig.Builder getNetworkConfigBuilder() {
 
@@ -5652,13 +5731,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      */
     public com.google.cloud.metastore.v1alpha.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
       if (networkConfigBuilder_ != null) {
@@ -5673,13 +5750,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The configuration specifying the network settings for the
+     * The configuration specifying the network settings for the
      * Dataproc Metastore service.
      * </pre>
      *
-     * <code>
-     * .google.cloud.metastore.v1alpha.NetworkConfig network_config = 21 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * <code>.google.cloud.metastore.v1alpha.NetworkConfig network_config = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.metastore.v1alpha.NetworkConfig,
@@ -5799,6 +5874,202 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       databaseType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.metastore.v1alpha.TelemetryConfig telemetryConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.TelemetryConfig,
+            com.google.cloud.metastore.v1alpha.TelemetryConfig.Builder,
+            com.google.cloud.metastore.v1alpha.TelemetryConfigOrBuilder>
+        telemetryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     *
+     * @return Whether the telemetryConfig field is set.
+     */
+    public boolean hasTelemetryConfig() {
+      return telemetryConfigBuilder_ != null || telemetryConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     *
+     * @return The telemetryConfig.
+     */
+    public com.google.cloud.metastore.v1alpha.TelemetryConfig getTelemetryConfig() {
+      if (telemetryConfigBuilder_ == null) {
+        return telemetryConfig_ == null
+            ? com.google.cloud.metastore.v1alpha.TelemetryConfig.getDefaultInstance()
+            : telemetryConfig_;
+      } else {
+        return telemetryConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     */
+    public Builder setTelemetryConfig(com.google.cloud.metastore.v1alpha.TelemetryConfig value) {
+      if (telemetryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        telemetryConfig_ = value;
+        onChanged();
+      } else {
+        telemetryConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     */
+    public Builder setTelemetryConfig(
+        com.google.cloud.metastore.v1alpha.TelemetryConfig.Builder builderForValue) {
+      if (telemetryConfigBuilder_ == null) {
+        telemetryConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        telemetryConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     */
+    public Builder mergeTelemetryConfig(com.google.cloud.metastore.v1alpha.TelemetryConfig value) {
+      if (telemetryConfigBuilder_ == null) {
+        if (telemetryConfig_ != null) {
+          telemetryConfig_ =
+              com.google.cloud.metastore.v1alpha.TelemetryConfig.newBuilder(telemetryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          telemetryConfig_ = value;
+        }
+        onChanged();
+      } else {
+        telemetryConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     */
+    public Builder clearTelemetryConfig() {
+      if (telemetryConfigBuilder_ == null) {
+        telemetryConfig_ = null;
+        onChanged();
+      } else {
+        telemetryConfig_ = null;
+        telemetryConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     */
+    public com.google.cloud.metastore.v1alpha.TelemetryConfig.Builder getTelemetryConfigBuilder() {
+
+      onChanged();
+      return getTelemetryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     */
+    public com.google.cloud.metastore.v1alpha.TelemetryConfigOrBuilder
+        getTelemetryConfigOrBuilder() {
+      if (telemetryConfigBuilder_ != null) {
+        return telemetryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return telemetryConfig_ == null
+            ? com.google.cloud.metastore.v1alpha.TelemetryConfig.getDefaultInstance()
+            : telemetryConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration specifying telemetry settings for the Dataproc Metastore
+     * service. If unspecified defaults to `JSON`.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1alpha.TelemetryConfig telemetry_config = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1alpha.TelemetryConfig,
+            com.google.cloud.metastore.v1alpha.TelemetryConfig.Builder,
+            com.google.cloud.metastore.v1alpha.TelemetryConfigOrBuilder>
+        getTelemetryConfigFieldBuilder() {
+      if (telemetryConfigBuilder_ == null) {
+        telemetryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.metastore.v1alpha.TelemetryConfig,
+                com.google.cloud.metastore.v1alpha.TelemetryConfig.Builder,
+                com.google.cloud.metastore.v1alpha.TelemetryConfigOrBuilder>(
+                getTelemetryConfig(), getParentForChildren(), isClean());
+        telemetryConfig_ = null;
+      }
+      return telemetryConfigBuilder_;
     }
 
     @java.lang.Override

@@ -37,6 +37,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -201,6 +202,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -257,6 +261,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -313,6 +320,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -378,6 +388,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -443,6 +456,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -467,6 +483,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -511,6 +530,9 @@ public class DataprocMetastoreClientHttpJsonTest {
               .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
               .setUid("uid115792")
               .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+              .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+              .setNetworkConfig(NetworkConfig.newBuilder().build())
+              .setTelemetryConfig(TelemetryConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateServiceAsync(service, updateMask).get();
@@ -719,6 +741,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -770,6 +793,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -821,6 +845,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -880,6 +905,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -939,6 +965,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -956,6 +983,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -994,6 +1022,7 @@ public class DataprocMetastoreClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setEndTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMetadataImportAsync(metadataImport, updateMask).get();
@@ -1385,6 +1414,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1433,6 +1463,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1483,6 +1514,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1540,6 +1572,7 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setEndTime(Timestamp.newBuilder().build())
             .setServiceRevision(Service.newBuilder().build())
             .setDescription("description-1724546052")
+            .addAllRestoringServices(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -22,7 +22,8 @@ package com.google.cloud.metastore.v1alpha;
  *
  *
  * <pre>
- * Request message for [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport].
+ * Request message for
+ * [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1alpha.CreateMetadataImportRequest}
@@ -75,8 +76,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The relative resource name of the service in which to create a metastore
-   * import, in the following form:
+   * Required. The relative resource name of the service in which to create a
+   * metastore import, in the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -102,8 +103,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The relative resource name of the service in which to create a metastore
-   * import, in the following form:
+   * Required. The relative resource name of the service in which to create a
+   * metastore import, in the following form:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -132,8 +133,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The ID of the metadata import, which is used as the final component of the
-   * metadata import's name.
+   * Required. The ID of the metadata import, which is used as the final
+   * component of the metadata import's name.
    * This value must be between 1 and 64 characters long, begin with a letter,
    * end with a letter or number, and consist of alpha-numeric ASCII characters
    * or hyphens.
@@ -159,8 +160,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The ID of the metadata import, which is used as the final component of the
-   * metadata import's name.
+   * Required. The ID of the metadata import, which is used as the final
+   * component of the metadata import's name.
    * This value must be between 1 and 64 characters long, begin with a letter,
    * end with a letter or number, and consist of alpha-numeric ASCII characters
    * or hyphens.
@@ -189,8 +190,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The metadata import to create. The `name` field is ignored. The ID of the
-   * created metadata import must be provided in the request's
+   * Required. The metadata import to create. The `name` field is ignored. The
+   * ID of the created metadata import must be provided in the request's
    * `metadata_import_id` field.
    * </pre>
    *
@@ -208,8 +209,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The metadata import to create. The `name` field is ignored. The ID of the
-   * created metadata import must be provided in the request's
+   * Required. The metadata import to create. The `name` field is ignored. The
+   * ID of the created metadata import must be provided in the request's
    * `metadata_import_id` field.
    * </pre>
    *
@@ -229,8 +230,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The metadata import to create. The `name` field is ignored. The ID of the
-   * created metadata import must be provided in the request's
+   * Required. The metadata import to create. The `name` field is ignored. The
+   * ID of the created metadata import must be provided in the request's
    * `metadata_import_id` field.
    * </pre>
    *
@@ -249,10 +250,10 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -281,10 +282,10 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-   * request if it has completed. The server will ignore subsequent requests
-   * that provide a duplicate request ID for at least 60 minutes after the first
-   * request.
+   * Optional. A request ID. Specify a unique request ID to allow the server to
+   * ignore the request if it has completed. The server will ignore subsequent
+   * requests that provide a duplicate request ID for at least 60 minutes after
+   * the first request.
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
@@ -506,7 +507,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport].
+   * Request message for
+   * [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1alpha.CreateMetadataImportRequest}
@@ -726,8 +728,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a metastore
-     * import, in the following form:
+     * Required. The relative resource name of the service in which to create a
+     * metastore import, in the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -752,8 +754,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a metastore
-     * import, in the following form:
+     * Required. The relative resource name of the service in which to create a
+     * metastore import, in the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -778,8 +780,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a metastore
-     * import, in the following form:
+     * Required. The relative resource name of the service in which to create a
+     * metastore import, in the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -803,8 +805,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a metastore
-     * import, in the following form:
+     * Required. The relative resource name of the service in which to create a
+     * metastore import, in the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -824,8 +826,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative resource name of the service in which to create a metastore
-     * import, in the following form:
+     * Required. The relative resource name of the service in which to create a
+     * metastore import, in the following form:
      * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -852,8 +854,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID of the metadata import, which is used as the final component of the
-     * metadata import's name.
+     * Required. The ID of the metadata import, which is used as the final
+     * component of the metadata import's name.
      * This value must be between 1 and 64 characters long, begin with a letter,
      * end with a letter or number, and consist of alpha-numeric ASCII characters
      * or hyphens.
@@ -878,8 +880,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID of the metadata import, which is used as the final component of the
-     * metadata import's name.
+     * Required. The ID of the metadata import, which is used as the final
+     * component of the metadata import's name.
      * This value must be between 1 and 64 characters long, begin with a letter,
      * end with a letter or number, and consist of alpha-numeric ASCII characters
      * or hyphens.
@@ -904,8 +906,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID of the metadata import, which is used as the final component of the
-     * metadata import's name.
+     * Required. The ID of the metadata import, which is used as the final
+     * component of the metadata import's name.
      * This value must be between 1 and 64 characters long, begin with a letter,
      * end with a letter or number, and consist of alpha-numeric ASCII characters
      * or hyphens.
@@ -929,8 +931,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID of the metadata import, which is used as the final component of the
-     * metadata import's name.
+     * Required. The ID of the metadata import, which is used as the final
+     * component of the metadata import's name.
      * This value must be between 1 and 64 characters long, begin with a letter,
      * end with a letter or number, and consist of alpha-numeric ASCII characters
      * or hyphens.
@@ -950,8 +952,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID of the metadata import, which is used as the final component of the
-     * metadata import's name.
+     * Required. The ID of the metadata import, which is used as the final
+     * component of the metadata import's name.
      * This value must be between 1 and 64 characters long, begin with a letter,
      * end with a letter or number, and consist of alpha-numeric ASCII characters
      * or hyphens.
@@ -983,8 +985,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1001,8 +1003,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1025,8 +1027,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1051,8 +1053,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1075,8 +1077,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1105,8 +1107,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1129,8 +1131,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1147,8 +1149,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1169,8 +1171,8 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The metadata import to create. The `name` field is ignored. The ID of the
-     * created metadata import must be provided in the request's
+     * Required. The metadata import to create. The `name` field is ignored. The
+     * ID of the created metadata import must be provided in the request's
      * `metadata_import_id` field.
      * </pre>
      *
@@ -1200,10 +1202,10 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1231,10 +1233,10 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1262,10 +1264,10 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1292,10 +1294,10 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.
@@ -1318,10 +1320,10 @@ public final class CreateMetadataImportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. A request ID. Specify a unique request ID to allow the server to ignore the
-     * request if it has completed. The server will ignore subsequent requests
-     * that provide a duplicate request ID for at least 60 minutes after the first
-     * request.
+     * Optional. A request ID. Specify a unique request ID to allow the server to
+     * ignore the request if it has completed. The server will ignore subsequent
+     * requests that provide a duplicate request ID for at least 60 minutes after
+     * the first request.
      * For example, if an initial request times out, followed by another request
      * with the same request ID, the server ignores the second request to prevent
      * the creation of duplicate commitments.

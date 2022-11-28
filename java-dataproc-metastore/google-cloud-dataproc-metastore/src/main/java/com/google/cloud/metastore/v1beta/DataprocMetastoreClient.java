@@ -42,10 +42,10 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Configures and manages metastore services. Metastore services are fully
- * managed, highly available, auto-scaled, auto-healing, OSS-native deployments of technical
- * metadata management software. Each metastore service exposes a network endpoint through which
- * metadata queries are served. Metadata queries can originate from a variety of sources, including
- * Apache Hive, Apache Presto, and Apache Spark.
+ * managed, highly available, autoscaled, autohealing, OSS-native deployments of technical metadata
+ * management software. Each metastore service exposes a network endpoint through which metadata
+ * queries are served. Metadata queries can originate from a variety of sources, including Apache
+ * Hive, Apache Presto, and Apache Spark.
  *
  * <p>The Dataproc Metastore API defines the following resource model:
  *
@@ -1290,7 +1290,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param parent Required. The relative resource name of the service in which to create a
    *     metastore import, in the following form:
-   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * @param metadataImport Required. The metadata import to create. The `name` field is ignored. The
    *     ID of the created metadata import must be provided in the request's `metadata_import_id`
    *     field.
@@ -1336,7 +1336,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param parent Required. The relative resource name of the service in which to create a
    *     metastore import, in the following form:
-   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * @param metadataImport Required. The metadata import to create. The `name` field is ignored. The
    *     ID of the created metadata import must be provided in the request's `metadata_import_id`
    *     field.
@@ -1699,10 +1699,10 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param service Required. The relative resource name of the metastore service to run restore, in
    *     the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * @param backup Required. The relative resource name of the metastore service backup to restore
    *     from, in the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> restoreServiceAsync(
@@ -1736,10 +1736,10 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param service Required. The relative resource name of the metastore service to run restore, in
    *     the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * @param backup Required. The relative resource name of the metastore service backup to restore
    *     from, in the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> restoreServiceAsync(
@@ -1773,10 +1773,10 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param service Required. The relative resource name of the metastore service to run restore, in
    *     the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * @param backup Required. The relative resource name of the metastore service backup to restore
    *     from, in the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> restoreServiceAsync(
@@ -1810,10 +1810,10 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param service Required. The relative resource name of the metastore service to run restore, in
    *     the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * @param backup Required. The relative resource name of the metastore service backup to restore
    *     from, in the following form:
-   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+   *     <p>`projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> restoreServiceAsync(
@@ -2204,7 +2204,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Backup in a given project and location.
+   * Creates a new backup in a given project and location.
    *
    * <p>Sample code:
    *
@@ -2224,7 +2224,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param parent Required. The relative resource name of the service in which to create a backup
    *     of the following form:
-   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * @param backup Required. The backup to create. The `name` field is ignored. The ID of the
    *     created backup must be provided in the request's `backup_id` field.
    * @param backupId Required. The ID of the backup, which is used as the final component of the
@@ -2246,7 +2246,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Backup in a given project and location.
+   * Creates a new backup in a given project and location.
    *
    * <p>Sample code:
    *
@@ -2266,7 +2266,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *
    * @param parent Required. The relative resource name of the service in which to create a backup
    *     of the following form:
-   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`
+   *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * @param backup Required. The backup to create. The `name` field is ignored. The ID of the
    *     created backup must be provided in the request's `backup_id` field.
    * @param backupId Required. The ID of the backup, which is used as the final component of the
@@ -2288,7 +2288,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Backup in a given project and location.
+   * Creates a new backup in a given project and location.
    *
    * <p>Sample code:
    *
@@ -2320,7 +2320,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Backup in a given project and location.
+   * Creates a new backup in a given project and location.
    *
    * <p>Sample code:
    *
@@ -2352,7 +2352,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Backup in a given project and location.
+   * Creates a new backup in a given project and location.
    *
    * <p>Sample code:
    *
