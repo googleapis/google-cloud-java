@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        graalvm: [22.2.0]
+        graalvm: [22.3.0]
         java: [11, 17]
         repo:
           # GAPIC library that doesn't use a real GCP project in integration tests
