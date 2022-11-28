@@ -68,4 +68,7 @@ RUN apt-get -y install jq
 # Owl Bot service brings the branch of the repository copy to /workspace
 WORKDIR /workspace
 
+COPY owl-bot-postprocessor/requirements.txt /synthtool/requirements.txt
+RUN pip install --require-hashes -r /synthtool/requirements.txt
+
 CMD [ "owl-bot-postprocessor/main.sh" ]

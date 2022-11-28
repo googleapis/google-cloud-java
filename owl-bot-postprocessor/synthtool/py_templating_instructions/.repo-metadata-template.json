@@ -1,0 +1,25 @@
+{
+    "name": "product name",
+    "name_pretty": "Cloud ProductName",
+    "product_documentation": "https://cloud.google.com/productname",
+    "client_documentation": "https://googleapis.dev/python/productname/latest",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/",
+    "release_level": "ga",
+    "language": "python",
+    "repo": "googleapis/python-productname",
+    "distribution_name": "google-cloud-productname",
+    "api_id": "productname.googleapis.com",
+    "requires_billing": true,
+    "samples": [
+              {"name": "Hello World",
+              "description": "This sample demonstrates basic use of productname.",
+              "file": "hello_world.py",
+              "override_path": "hello_world"},
+              
+              {"name": "Quickstart",
+              "description": "This is the Python quickstart for productname. More information available at: https://cloud.google.com/productname/docs/-python-hello",
+              "file": "main.py",
+              "runnable": true,
+              "custom_content": "`usage: main.py [-h]`"}
+    ]
+  }
