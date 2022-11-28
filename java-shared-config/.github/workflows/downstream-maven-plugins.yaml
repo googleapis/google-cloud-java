@@ -59,7 +59,7 @@ jobs:
         # In that case, you need to upgrade the Docker container used in the
         # tests in the downstream repositories (not just this value below).
         # Example: https://github.com/googleapis/testing-infra-docker/pull/195
-        graalvm-version: 22.2.0
+        graalvm-version: 22.3.0
         native-image: true
     - run: java -version
     - run: sudo apt-get update -y
