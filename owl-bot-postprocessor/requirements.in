@@ -1,18 +1,11 @@
-setuptools==65.0.1
-
-nox
-requests
-pyyaml
-jinja2
-deprecation
-protobuf==3.20.2
-watchdog
-
-# some java processing requires xml handling
-lxml
-
-# Install sample-tester for generated samples
-sample-tester
-
-# flake8 is used to validate the python samples noxfile template
-flake8
+attrs==22.1.0
+click==7.1.2
+jinja2==3.0.3
+lxml==4.6.5
+typing==3.7.4.3
+markupsafe==2.0.1
+colorlog==6.7.0
+protobuf==3.19.5
+watchdog==2.1.9
+requests==2.27.1
+pyyaml==6.0
