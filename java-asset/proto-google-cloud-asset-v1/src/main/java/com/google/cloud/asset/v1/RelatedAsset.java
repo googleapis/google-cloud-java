@@ -22,13 +22,12 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * An asset identifier in {{gcp_name}} which contains its name, type and
- * ancestors. An asset can be any resource in the {{gcp_name}}
- * [resource
+ * An asset identifier in Google Cloud which contains its name, type and
+ * ancestors. An asset can be any resource in the Google Cloud [resource
  * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
- * a resource outside the {{gcp_name}} resource hierarchy (such as
- * {{container_name}} clusters and objects), or a policy (e.g.
- * {{iam_name_short}} policy). See [Supported asset
+ * a resource outside the Google Cloud resource hierarchy (such as Google
+ * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+ * See [Supported asset
  * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
  * for more information.
  * </pre>
@@ -196,7 +195,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestors of an asset in {{gcp_name}} [resource
+   * The ancestors of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
@@ -214,7 +213,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestors of an asset in {{gcp_name}} [resource
+   * The ancestors of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
@@ -232,7 +231,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestors of an asset in {{gcp_name}} [resource
+   * The ancestors of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
@@ -251,7 +250,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestors of an asset in {{gcp_name}} [resource
+   * The ancestors of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root.
@@ -514,13 +513,12 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An asset identifier in {{gcp_name}} which contains its name, type and
-   * ancestors. An asset can be any resource in the {{gcp_name}}
-   * [resource
+   * An asset identifier in Google Cloud which contains its name, type and
+   * ancestors. An asset can be any resource in the Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
-   * a resource outside the {{gcp_name}} resource hierarchy (such as
-   * {{container_name}} clusters and objects), or a policy (e.g.
-   * {{iam_name_short}} policy). See [Supported asset
+   * a resource outside the Google Cloud resource hierarchy (such as Google
+   * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+   * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
    * </pre>
@@ -1001,7 +999,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1019,7 +1017,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1037,7 +1035,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1056,7 +1054,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1075,7 +1073,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1101,7 +1099,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1126,7 +1124,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1148,7 +1146,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.
@@ -1169,7 +1167,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestors of an asset in {{gcp_name}} [resource
+     * The ancestors of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root.

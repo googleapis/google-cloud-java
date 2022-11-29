@@ -22,13 +22,13 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * An asset in {{gcp_name}}. An asset can be any resource in the {{gcp_name}}
+ * An asset in Google Cloud. An asset can be any resource in the Google Cloud
  * [resource
  * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
- * a resource outside the {{gcp_name}} resource hierarchy (such as
- * {{container_name}} clusters and objects), or a policy (e.g.
- * {{iam_name_short}} policy), or a relationship (e.g. an
- * INSTANCE_TO_INSTANCEGROUP relationship). See [Supported asset
+ * a resource outside the Google Cloud resource hierarchy (such as Google
+ * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy),
+ * or a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship).
+ * See [Supported asset
  * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
  * for more information.
  * </pre>
@@ -340,15 +340,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-   * resource. There can be a maximum of one {{iam_name_short}} policy set on
-   * any given resource. In addition, {{iam_name_short}} policies inherit their
-   * granted access scope from any policies set on parent resources in the
-   * resource hierarchy. Therefore, the effectively policy is the union of both
-   * the policy set on this resource and each policy set on all of the
-   * resource's ancestry resource levels in the hierarchy. See [this
-   * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-   * more information.
+   * A representation of the Cloud IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one Cloud IAM policy set on any given resource.
+   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -363,15 +363,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-   * resource. There can be a maximum of one {{iam_name_short}} policy set on
-   * any given resource. In addition, {{iam_name_short}} policies inherit their
-   * granted access scope from any policies set on parent resources in the
-   * resource hierarchy. Therefore, the effectively policy is the union of both
-   * the policy set on this resource and each policy set on all of the
-   * resource's ancestry resource levels in the hierarchy. See [this
-   * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-   * more information.
+   * A representation of the Cloud IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one Cloud IAM policy set on any given resource.
+   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -386,15 +386,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-   * resource. There can be a maximum of one {{iam_name_short}} policy set on
-   * any given resource. In addition, {{iam_name_short}} policies inherit their
-   * granted access scope from any policies set on parent resources in the
-   * resource hierarchy. Therefore, the effectively policy is the union of both
-   * the policy set on this resource and each policy set on all of the
-   * resource's ancestry resource levels in the hierarchy. See [this
-   * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-   * more information.
+   * A representation of the Cloud IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one Cloud IAM policy set on any given resource.
+   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * policies set on parent resources in the resource hierarchy. Therefore, the
+   * effectively policy is the union of both the policy set on this resource
+   * and each policy set on all of the resource's ancestry resource levels in
+   * the hierarchy. See
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -723,7 +723,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=167
+   *     google/cloud/asset/v1/assets.proto;l=166
    * @return Whether the relatedAssets field is set.
    */
   @java.lang.Override
@@ -745,7 +745,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=167
+   *     google/cloud/asset/v1/assets.proto;l=166
    * @return The relatedAssets.
    */
   @java.lang.Override
@@ -828,7 +828,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestry path of an asset in {{gcp_name}} [resource
+   * The ancestry path of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -848,7 +848,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestry path of an asset in {{gcp_name}} [resource
+   * The ancestry path of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -868,7 +868,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestry path of an asset in {{gcp_name}} [resource
+   * The ancestry path of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -889,7 +889,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The ancestry path of an asset in {{gcp_name}} [resource
+   * The ancestry path of an asset in Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * represented as a list of relative resource names. An ancestry path starts
    * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -1246,13 +1246,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An asset in {{gcp_name}}. An asset can be any resource in the {{gcp_name}}
+   * An asset in Google Cloud. An asset can be any resource in the Google Cloud
    * [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
-   * a resource outside the {{gcp_name}} resource hierarchy (such as
-   * {{container_name}} clusters and objects), or a policy (e.g.
-   * {{iam_name_short}} policy), or a relationship (e.g. an
-   * INSTANCE_TO_INSTANCEGROUP relationship). See [Supported asset
+   * a resource outside the Google Cloud resource hierarchy (such as Google
+   * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy),
+   * or a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship).
+   * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
    * </pre>
@@ -2355,15 +2355,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2377,15 +2377,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2403,15 +2403,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2433,15 +2433,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2460,15 +2460,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2492,15 +2492,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2520,15 +2520,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2542,15 +2542,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -2566,15 +2566,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the {{iam_name_short}} policy set on a {{gcp_name}}
-     * resource. There can be a maximum of one {{iam_name_short}} policy set on
-     * any given resource. In addition, {{iam_name_short}} policies inherit their
-     * granted access scope from any policies set on parent resources in the
-     * resource hierarchy. Therefore, the effectively policy is the union of both
-     * the policy set on this resource and each policy set on all of the
-     * resource's ancestry resource levels in the hierarchy. See [this
-     * topic](https://cloud.google.com/iam/help/allow-policies/inheritance) for
-     * more information.
+     * A representation of the Cloud IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one Cloud IAM policy set on any given resource.
+     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * policies set on parent resources in the resource hierarchy. Therefore, the
+     * effectively policy is the union of both the policy set on this resource
+     * and each policy set on all of the resource's ancestry resource levels in
+     * the hierarchy. See
+     * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+     * for more information.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -3898,7 +3898,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=167
+     *     google/cloud/asset/v1/assets.proto;l=166
      * @return Whether the relatedAssets field is set.
      */
     @java.lang.Deprecated
@@ -3919,7 +3919,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=167
+     *     google/cloud/asset/v1/assets.proto;l=166
      * @return The relatedAssets.
      */
     @java.lang.Deprecated
@@ -4310,7 +4310,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4330,7 +4330,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4350,7 +4350,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4371,7 +4371,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4392,7 +4392,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4420,7 +4420,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4447,7 +4447,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4471,7 +4471,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset
@@ -4494,7 +4494,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The ancestry path of an asset in {{gcp_name}} [resource
+     * The ancestry path of an asset in Google Cloud [resource
      * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
      * represented as a list of relative resource names. An ancestry path starts
      * with the closest ancestor in the hierarchy and ends at root. If the asset

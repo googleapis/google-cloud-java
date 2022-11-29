@@ -75,7 +75,7 @@ public interface TemporalAssetOrBuilder
    *
    *
    * <pre>
-   * An asset in {{gcp_name}}.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -87,7 +87,7 @@ public interface TemporalAssetOrBuilder
    *
    *
    * <pre>
-   * An asset in {{gcp_name}}.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
@@ -99,7 +99,7 @@ public interface TemporalAssetOrBuilder
    *
    *
    * <pre>
-   * An asset in {{gcp_name}}.
+   * An asset in Google Cloud.
    * </pre>
    *
    * <code>.google.cloud.asset.v1.Asset asset = 3;</code>

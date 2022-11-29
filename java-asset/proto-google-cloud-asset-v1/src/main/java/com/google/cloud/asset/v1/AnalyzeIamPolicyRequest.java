@@ -22,8 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A request message for
- * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+ * A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyRequest}
@@ -201,8 +200,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON
-   * representation of
+   * Optional. Amount of time executable has to complete.  See JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -226,8 +224,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON
-   * representation of
+   * Optional. Amount of time executable has to complete.  See JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -253,8 +250,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON
-   * representation of
+   * Optional. Amount of time executable has to complete.  See JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -464,8 +460,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A request message for
-   * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+   * A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyRequest}
@@ -1053,8 +1048,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1077,8 +1071,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1107,8 +1100,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1139,8 +1131,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1168,8 +1159,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1204,8 +1194,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1234,8 +1223,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1258,8 +1246,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1286,8 +1273,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON
-     * representation of
+     * Optional. Amount of time executable has to complete.  See JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified

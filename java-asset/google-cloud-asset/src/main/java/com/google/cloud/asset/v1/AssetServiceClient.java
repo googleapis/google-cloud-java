@@ -211,15 +211,14 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports assets with time and resource types to a given {{storage_name}}
-   * location/{{bigquery_name}} table. For {{storage_name}} location destinations, the output format
-   * is newline-delimited JSON. Each line represents a
-   * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for
-   * {{bigquery_name}} table destinations, the output table stores the fields in asset Protobuf as
-   * columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation]
-   * API, which allows you to keep track of the export. We recommend intervals of at least 2 seconds
-   * with exponential retry to poll the export operation result. For regular-size resource parent,
-   * the export operation usually finishes within 5 minutes.
+   * Exports assets with time and resource types to a given Cloud Storage location/BigQuery table.
+   * For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line
+   * represents a [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for
+   * BigQuery table destinations, the output table stores the fields in asset Protobuf as columns.
+   * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API, which
+   * allows you to keep track of the export. We recommend intervals of at least 2 seconds with
+   * exponential retry to poll the export operation result. For regular-size resource parent, the
+   * export operation usually finishes within 5 minutes.
    *
    * <p>Sample code:
    *
@@ -253,15 +252,14 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports assets with time and resource types to a given {{storage_name}}
-   * location/{{bigquery_name}} table. For {{storage_name}} location destinations, the output format
-   * is newline-delimited JSON. Each line represents a
-   * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for
-   * {{bigquery_name}} table destinations, the output table stores the fields in asset Protobuf as
-   * columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation]
-   * API, which allows you to keep track of the export. We recommend intervals of at least 2 seconds
-   * with exponential retry to poll the export operation result. For regular-size resource parent,
-   * the export operation usually finishes within 5 minutes.
+   * Exports assets with time and resource types to a given Cloud Storage location/BigQuery table.
+   * For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line
+   * represents a [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for
+   * BigQuery table destinations, the output table stores the fields in asset Protobuf as columns.
+   * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API, which
+   * allows you to keep track of the export. We recommend intervals of at least 2 seconds with
+   * exponential retry to poll the export operation result. For regular-size resource parent, the
+   * export operation usually finishes within 5 minutes.
    *
    * <p>Sample code:
    *
@@ -295,15 +293,14 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Exports assets with time and resource types to a given {{storage_name}}
-   * location/{{bigquery_name}} table. For {{storage_name}} location destinations, the output format
-   * is newline-delimited JSON. Each line represents a
-   * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for
-   * {{bigquery_name}} table destinations, the output table stores the fields in asset Protobuf as
-   * columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation]
-   * API, which allows you to keep track of the export. We recommend intervals of at least 2 seconds
-   * with exponential retry to poll the export operation result. For regular-size resource parent,
-   * the export operation usually finishes within 5 minutes.
+   * Exports assets with time and resource types to a given Cloud Storage location/BigQuery table.
+   * For Cloud Storage location destinations, the output format is newline-delimited JSON. Each line
+   * represents a [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for
+   * BigQuery table destinations, the output table stores the fields in asset Protobuf as columns.
+   * This API implements the [google.longrunning.Operation][google.longrunning.Operation] API, which
+   * allows you to keep track of the export. We recommend intervals of at least 2 seconds with
+   * exponential retry to poll the export operation result. For regular-size resource parent, the
+   * export operation usually finishes within 5 minutes.
    *
    * <p>Sample code:
    *
@@ -512,7 +509,7 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch gets the update history of assets that overlap a time window. For IAM_POLICY content,
-   * this API outputs history when the asset and its attached IAM_POLICY both exist. This can create
+   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
    * gaps in the output history. Otherwise, this API outputs history with asset in both non-delete
    * or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT
    * error.
@@ -549,7 +546,7 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Batch gets the update history of assets that overlap a time window. For IAM_POLICY content,
-   * this API outputs history when the asset and its attached IAM_POLICY both exist. This can create
+   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
    * gaps in the output history. Otherwise, this API outputs history with asset in both non-delete
    * or deleted status. If a specified asset does not exist, this API returns an INVALID_ARGUMENT
    * error.
@@ -1062,7 +1059,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{gcp_name}} resources within the specified scope, such as a project, folder, or
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1103,45 +1100,42 @@ public class AssetServiceClient implements BackgroundResource {
    *     the specified `scope`.
    *     <p>Examples:
    *     <ul>
-   *       <li>`name:Important` to find {{gcp_name}} resources whose name contains "Important" as a
-   *           word.
-   *       <li>`name=Important` to find the {{gcp_name}} resource whose name is exactly "Important".
-   *       <li>`displayName:Impor&#42;` to find {{gcp_name}} resources whose display name contains
-   *           "Impor" as a prefix of any word in the field.
-   *       <li>`location:us-west&#42;` to find {{gcp_name}} resources whose location contains both
-   *           "us" and "west" as prefixes.
-   *       <li>`labels:prod` to find {{gcp_name}} resources whose labels contain "prod" as a key or
-   *           value.
-   *       <li>`labels.env:prod` to find {{gcp_name}} resources that have a label "env" and its
-   *           value is "prod".
-   *       <li>`labels.env:&#42;` to find {{gcp_name}} resources that have a label "env".
-   *       <li>`kmsKey:key` to find {{gcp_name}} resources encrypted with a customer-managed
-   *           encryption key whose name contains "key" as a word. This field is deprecated. Please
-   *           use the `kmsKeys` field to retrieve KMS key information.
-   *       <li>`kmsKeys:key` to find {{gcp_name}} resources encrypted with customer-managed
-   *           encryption keys whose name contains the word "key".
-   *       <li>`relationships:instance-group-1` to find {{gcp_name}} resources that have
-   *           relationships with "instance-group-1" in the related resource name.
+   *       <li>`name:Important` to find Cloud resources whose name contains "Important" as a word.
+   *       <li>`name=Important` to find the Cloud resource whose name is exactly "Important".
+   *       <li>`displayName:Impor&#42;` to find Cloud resources whose display name contains "Impor"
+   *           as a prefix of any word in the field.
+   *       <li>`location:us-west&#42;` to find Cloud resources whose location contains both "us" and
+   *           "west" as prefixes.
+   *       <li>`labels:prod` to find Cloud resources whose labels contain "prod" as a key or value.
+   *       <li>`labels.env:prod` to find Cloud resources that have a label "env" and its value is
+   *           "prod".
+   *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
+   *       <li>`kmsKey:key` to find Cloud resources encrypted with a customer-managed encryption key
+   *           whose name contains "key" as a word. This field is deprecated. Please use the
+   *           `kmsKeys` field to retrieve KMS key information.
+   *       <li>`kmsKeys:key` to find Cloud resources encrypted with customer-managed encryption keys
+   *           whose name contains the word "key".
+   *       <li>`relationships:instance-group-1` to find Cloud resources that have relationships with
+   *           "instance-group-1" in the related resource name.
    *       <li>`relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that have
    *           relationships of type "INSTANCE_TO_INSTANCEGROUP".
    *       <li>`relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find compute instances
    *           that have relationships with "instance-group-1" in the compute instance group
    *           resource name, for relationship type "INSTANCE_TO_INSTANCEGROUP".
-   *       <li>`state:ACTIVE` to find {{gcp_name}} resources whose state contains "ACTIVE" as a
+   *       <li>`state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a word.
+   *       <li>`NOT state:ACTIVE` to find Cloud resources whose state doesn't contain "ACTIVE" as a
    *           word.
-   *       <li>`NOT state:ACTIVE` to find {{gcp_name}} resources whose state doesn't contain
-   *           "ACTIVE" as a word.
-   *       <li>`createTime&lt;1609459200` to find {{gcp_name}} resources that were created before
+   *       <li>`createTime&lt;1609459200` to find Cloud resources that were created before
    *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01 00:00:00
    *           UTC" in seconds.
-   *       <li>`updateTime&gt;1609459200` to find {{gcp_name}} resources that were updated after
+   *       <li>`updateTime&gt;1609459200` to find Cloud resources that were updated after
    *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01 00:00:00
    *           UTC" in seconds.
-   *       <li>`Important` to find {{gcp_name}} resources that contain "Important" as a word in any
-   *           of the searchable fields.
-   *       <li>`Impor&#42;` to find {{gcp_name}} resources that contain "Impor" as a prefix of any
-   *           word in any of the searchable fields.
-   *       <li>`Important location:(us-west1 OR global)` to find {{gcp_name}} resources that contain
+   *       <li>`Important` to find Cloud resources that contain "Important" as a word in any of the
+   *           searchable fields.
+   *       <li>`Impor&#42;` to find Cloud resources that contain "Impor" as a prefix of any word in
+   *           any of the searchable fields.
+   *       <li>`Important location:(us-west1 OR global)` to find Cloud resources that contain
    *           "Important" as a word in any of the searchable fields and are also located in the
    *           "us-west1" region or the "global" location.
    *     </ul>
@@ -1174,7 +1168,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{gcp_name}} resources within the specified scope, such as a project, folder, or
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1214,7 +1208,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{gcp_name}} resources within the specified scope, such as a project, folder, or
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1253,7 +1247,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{gcp_name}} resources within the specified scope, such as a project, folder, or
+   * Searches all Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1299,8 +1293,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{iam_name_short}} policies within the specified scope, such as a project, folder,
-   * or organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
@@ -1322,8 +1316,7 @@ public class AssetServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param scope Required. A scope can be a project, a folder, or an organization. The search is
-   *     limited to the {{iam_name_short}} policies within the `scope`. The caller must be granted
-   *     the
+   *     limited to the IAM policies within the `scope`. The caller must be granted the
    *     [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions)
    *     permission on the desired scope.
    *     <p>The allowed values are:
@@ -1336,42 +1329,40 @@ public class AssetServiceClient implements BackgroundResource {
    *
    * @param query Optional. The query statement. See [how to construct a
    *     query](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)
-   *     for more information. If not specified or empty, it will search all the {{iam_name_short}}
-   *     policies within the specified `scope`. Note that the query string is compared against each
-   *     {{iam_name_short}} policy binding, including its principals, roles, and {{iam_name_short}}
-   *     conditions. The returned {{iam_name_short}} policies will only contain the bindings that
-   *     match your query. To learn more about the {{iam_name_short}} policy structure, see the
-   *     [{{iam_name_short}} policy
+   *     for more information. If not specified or empty, it will search all the IAM policies within
+   *     the specified `scope`. Note that the query string is compared against each Cloud IAM policy
+   *     binding, including its principals, roles, and Cloud IAM conditions. The returned Cloud IAM
+   *     policies will only contain the bindings that match your query. To learn more about the IAM
+   *     policy structure, see the [IAM policy
    *     documentation](https://cloud.google.com/iam/help/allow-policies/structure).
    *     <p>Examples:
    *     <ul>
-   *       <li>`policy:amy{@literal @}gmail.com` to find {{iam_name_short}} policy bindings that
-   *           specify user "amy{@literal @}gmail.com".
-   *       <li>`policy:roles/compute.admin` to find {{iam_name_short}} policy bindings that specify
-   *           the Compute Admin role.
-   *       <li>`policy:comp&#42;` to find {{iam_name_short}} policy bindings that contain "comp" as
-   *           a prefix of any word in the binding.
-   *       <li>`policy.role.permissions:storage.buckets.update` to find {{iam_name_short}} policy
-   *           bindings that specify a role containing "storage.buckets.update" permission. Note
-   *           that if callers don't have `iam.roles.get` access to a role's included permissions,
-   *           policy bindings that specify this role will be dropped from the search results.
-   *       <li>`policy.role.permissions:upd&#42;` to find {{iam_name_short}} policy bindings that
-   *           specify a role containing "upd" as a prefix of any word in the role permission. Note
-   *           that if callers don't have `iam.roles.get` access to a role's included permissions,
-   *           policy bindings that specify this role will be dropped from the search results.
-   *       <li>`resource:organizations/123456` to find {{iam_name_short}} policy bindings that are
-   *           set on "organizations/123456".
-   *       <li>`resource=//cloudresourcemanager.googleapis.com/projects/myproject` to find
-   *           {{iam_name_short}} policy bindings that are set on the project named "myproject".
-   *       <li>`Important` to find {{iam_name_short}} policy bindings that contain "Important" as a
-   *           word in any of the searchable fields (except for the included permissions).
-   *       <li>`resource:(instance1 OR instance2) policy:amy` to find {{iam_name_short}} policy
-   *           bindings that are set on resources "instance1" or "instance2" and also specify user
-   *           "amy".
-   *       <li>`roles:roles/compute.admin` to find {{iam_name_short}} policy bindings that specify
-   *           the Compute Admin role.
-   *       <li>`memberTypes:user` to find {{iam_name_short}} policy bindings that contain the
-   *           principal type "user".
+   *       <li>`policy:amy{@literal @}gmail.com` to find IAM policy bindings that specify user
+   *           "amy{@literal @}gmail.com".
+   *       <li>`policy:roles/compute.admin` to find IAM policy bindings that specify the Compute
+   *           Admin role.
+   *       <li>`policy:comp&#42;` to find IAM policy bindings that contain "comp" as a prefix of any
+   *           word in the binding.
+   *       <li>`policy.role.permissions:storage.buckets.update` to find IAM policy bindings that
+   *           specify a role containing "storage.buckets.update" permission. Note that if callers
+   *           don't have `iam.roles.get` access to a role's included permissions, policy bindings
+   *           that specify this role will be dropped from the search results.
+   *       <li>`policy.role.permissions:upd&#42;` to find IAM policy bindings that specify a role
+   *           containing "upd" as a prefix of any word in the role permission. Note that if callers
+   *           don't have `iam.roles.get` access to a role's included permissions, policy bindings
+   *           that specify this role will be dropped from the search results.
+   *       <li>`resource:organizations/123456` to find IAM policy bindings that are set on
+   *           "organizations/123456".
+   *       <li>`resource=//cloudresourcemanager.googleapis.com/projects/myproject` to find IAM
+   *           policy bindings that are set on the project named "myproject".
+   *       <li>`Important` to find IAM policy bindings that contain "Important" as a word in any of
+   *           the searchable fields (except for the included permissions).
+   *       <li>`resource:(instance1 OR instance2) policy:amy` to find IAM policy bindings that are
+   *           set on resources "instance1" or "instance2" and also specify user "amy".
+   *       <li>`roles:roles/compute.admin` to find IAM policy bindings that specify the Compute
+   *           Admin role.
+   *       <li>`memberTypes:user` to find IAM policy bindings that contain the principal type
+   *           "user".
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1384,8 +1375,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{iam_name_short}} policies within the specified scope, such as a project, folder,
-   * or organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
@@ -1423,8 +1414,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{iam_name_short}} policies within the specified scope, such as a project, folder,
-   * or organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
@@ -1461,8 +1452,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all {{iam_name_short}} policies within the specified scope, such as a project, folder,
-   * or organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
+   * Searches all IAM policies within the specified scope, such as a project, folder, or
+   * organization. The caller must be granted the `cloudasset.assets.searchAllIamPolicies`
    * permission on the desired scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
@@ -1506,8 +1497,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyzes {{iam_name_short}} policies to answer which identities have what accesses on which
-   * resources.
+   * Analyzes IAM policies to answer which identities have what accesses on which resources.
    *
    * <p>Sample code:
    *
@@ -1537,8 +1527,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyzes {{iam_name_short}} policies to answer which identities have what accesses on which
-   * resources.
+   * Analyzes IAM policies to answer which identities have what accesses on which resources.
    *
    * <p>Sample code:
    *
@@ -1569,10 +1558,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyzes {{iam_name_short}} policies asynchronously to answer which identities have what
-   * accesses on which resources, and writes the analysis results to a Google {{storage_name}} or a
-   * {{bigquery_name}} destination. For {{storage_name}} destination, the output format is the JSON
-   * format that represents a
+   * Analyzes IAM policies asynchronously to answer which identities have what accesses on which
+   * resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination.
+   * For Cloud Storage destination, the output format is the JSON format that represents a
    * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method
    * implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you
    * to track the operation status. We recommend intervals of at least 2 seconds with exponential
@@ -1610,10 +1598,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyzes {{iam_name_short}} policies asynchronously to answer which identities have what
-   * accesses on which resources, and writes the analysis results to a Google {{storage_name}} or a
-   * {{bigquery_name}} destination. For {{storage_name}} destination, the output format is the JSON
-   * format that represents a
+   * Analyzes IAM policies asynchronously to answer which identities have what accesses on which
+   * resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination.
+   * For Cloud Storage destination, the output format is the JSON format that represents a
    * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method
    * implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you
    * to track the operation status. We recommend intervals of at least 2 seconds with exponential
@@ -1653,10 +1640,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Analyzes {{iam_name_short}} policies asynchronously to answer which identities have what
-   * accesses on which resources, and writes the analysis results to a Google {{storage_name}} or a
-   * {{bigquery_name}} destination. For {{storage_name}} destination, the output format is the JSON
-   * format that represents a
+   * Analyzes IAM policies asynchronously to answer which identities have what accesses on which
+   * resources, and writes the analysis results to a Google Cloud Storage or a BigQuery destination.
+   * For Cloud Storage destination, the output format is the JSON format that represents a
    * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method
    * implements the [google.longrunning.Operation][google.longrunning.Operation], which allows you
    * to track the operation status. We recommend intervals of at least 2 seconds with exponential
@@ -1756,8 +1742,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Issue a job that queries assets using a SQL statement compatible with [{{bigquery_name}}
-   * Standard SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Issue a job that queries assets using a SQL statement compatible with [BigQuery Standard
+   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
    *
    * <p>If the query execution finishes within timeout and there's no pagination, the full query
    * results will be returned in the `QueryAssetsResponse`.
@@ -1765,7 +1751,7 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Otherwise, full query results can be obtained by issuing extra requests with the
    * `job_reference` from the a previous `QueryAssets` call.
    *
-   * <p>Note, the query result has approximately 10 GB limitation enforced by {{bigquery_name}}
+   * <p>Note, the query result has approximately 10 GB limitation enforced by BigQuery
    * https://cloud.google.com/bigquery/docs/best-practices-performance-output, queries return larger
    * results will result in errors.
    *
@@ -1799,8 +1785,8 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Issue a job that queries assets using a SQL statement compatible with [{{bigquery_name}}
-   * Standard SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Issue a job that queries assets using a SQL statement compatible with [BigQuery Standard
+   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
    *
    * <p>If the query execution finishes within timeout and there's no pagination, the full query
    * results will be returned in the `QueryAssetsResponse`.
@@ -1808,7 +1794,7 @@ public class AssetServiceClient implements BackgroundResource {
    * <p>Otherwise, full query results can be obtained by issuing extra requests with the
    * `job_reference` from the a previous `QueryAssets` call.
    *
-   * <p>Note, the query result has approximately 10 GB limitation enforced by {{bigquery_name}}
+   * <p>Note, the query result has approximately 10 GB limitation enforced by BigQuery
    * https://cloud.google.com/bigquery/docs/best-practices-performance-output, queries return larger
    * results will result in errors.
    *
@@ -2658,7 +2644,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets effective {{iam_name_short}} policies for a batch of resources.
+   * Gets effective IAM policies for a batch of resources.
    *
    * <p>Sample code:
    *
@@ -2689,7 +2675,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets effective {{iam_name_short}} policies for a batch of resources.
+   * Gets effective IAM policies for a batch of resources.
    *
    * <p>Sample code:
    *

@@ -88,7 +88,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2202
+   *     google/container/v1/cluster_service.proto;l=2204
    * @return The projectId.
    */
   @java.lang.Override
@@ -116,7 +116,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2202
+   *     google/container/v1/cluster_service.proto;l=2204
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -148,7 +148,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2208
+   *     google/container/v1/cluster_service.proto;l=2210
    * @return The zone.
    */
   @java.lang.Override
@@ -177,7 +177,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2208
+   *     google/container/v1/cluster_service.proto;l=2210
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -207,7 +207,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2212
+   *     google/container/v1/cluster_service.proto;l=2214
    * @return The clusterId.
    */
   @java.lang.Override
@@ -234,7 +234,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2212
+   *     google/container/v1/cluster_service.proto;l=2214
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -264,7 +264,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2216
+   *     google/container/v1/cluster_service.proto;l=2218
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -291,7 +291,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2216
+   *     google/container/v1/cluster_service.proto;l=2218
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1094,6 +1094,54 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getGvnic();
   }
 
+  public static final int FAST_SOCKET_FIELD_NUMBER = 31;
+  private com.google.container.v1.FastSocket fastSocket_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+   *
+   * @return Whether the fastSocket field is set.
+   */
+  @java.lang.Override
+  public boolean hasFastSocket() {
+    return fastSocket_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+   *
+   * @return The fastSocket.
+   */
+  @java.lang.Override
+  public com.google.container.v1.FastSocket getFastSocket() {
+    return fastSocket_ == null
+        ? com.google.container.v1.FastSocket.getDefaultInstance()
+        : fastSocket_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.FastSocketOrBuilder getFastSocketOrBuilder() {
+    return getFastSocket();
+  }
+
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 32;
   private com.google.container.v1.NodePoolLoggingConfig loggingConfig_;
   /**
@@ -1264,6 +1312,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (gvnic_ != null) {
       output.writeMessage(29, getGvnic());
     }
+    if (fastSocket_ != null) {
+      output.writeMessage(31, getFastSocket());
+    }
     if (loggingConfig_ != null) {
       output.writeMessage(32, getLoggingConfig());
     }
@@ -1342,6 +1393,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (gvnic_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
     }
+    if (fastSocket_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getFastSocket());
+    }
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getLoggingConfig());
     }
@@ -1415,6 +1469,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasGvnic() != other.hasGvnic()) return false;
     if (hasGvnic()) {
       if (!getGvnic().equals(other.getGvnic())) return false;
+    }
+    if (hasFastSocket() != other.hasFastSocket()) return false;
+    if (hasFastSocket()) {
+      if (!getFastSocket().equals(other.getFastSocket())) return false;
     }
     if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
     if (hasLoggingConfig()) {
@@ -1496,6 +1554,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasGvnic()) {
       hash = (37 * hash) + GVNIC_FIELD_NUMBER;
       hash = (53 * hash) + getGvnic().hashCode();
+    }
+    if (hasFastSocket()) {
+      hash = (37 * hash) + FAST_SOCKET_FIELD_NUMBER;
+      hash = (53 * hash) + getFastSocket().hashCode();
     }
     if (hasLoggingConfig()) {
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
@@ -1725,6 +1787,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gvnic_ = null;
         gvnicBuilder_ = null;
       }
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = null;
+      } else {
+        fastSocket_ = null;
+        fastSocketBuilder_ = null;
+      }
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
       } else {
@@ -1831,6 +1899,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         result.gvnic_ = gvnic_;
       } else {
         result.gvnic_ = gvnicBuilder_.build();
+      }
+      if (fastSocketBuilder_ == null) {
+        result.fastSocket_ = fastSocket_;
+      } else {
+        result.fastSocket_ = fastSocketBuilder_.build();
       }
       if (loggingConfigBuilder_ == null) {
         result.loggingConfig_ = loggingConfig_;
@@ -1961,6 +2034,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasGvnic()) {
         mergeGvnic(other.getGvnic());
+      }
+      if (other.hasFastSocket()) {
+        mergeFastSocket(other.getFastSocket());
       }
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
@@ -2112,6 +2188,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
                 break;
               } // case 234
+            case 250:
+              {
+                input.readMessage(getFastSocketFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 250
             case 258:
               {
                 input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
@@ -2156,7 +2238,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2202
+     *     google/container/v1/cluster_service.proto;l=2204
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2183,7 +2265,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2202
+     *     google/container/v1/cluster_service.proto;l=2204
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2210,7 +2292,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2202
+     *     google/container/v1/cluster_service.proto;l=2204
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2236,7 +2318,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2202
+     *     google/container/v1/cluster_service.proto;l=2204
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2258,7 +2340,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2202
+     *     google/container/v1/cluster_service.proto;l=2204
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2288,7 +2370,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2208
+     *     google/container/v1/cluster_service.proto;l=2210
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2316,7 +2398,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2208
+     *     google/container/v1/cluster_service.proto;l=2210
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2344,7 +2426,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2208
+     *     google/container/v1/cluster_service.proto;l=2210
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2371,7 +2453,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2208
+     *     google/container/v1/cluster_service.proto;l=2210
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2394,7 +2476,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2208
+     *     google/container/v1/cluster_service.proto;l=2210
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2422,7 +2504,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2212
+     *     google/container/v1/cluster_service.proto;l=2214
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2448,7 +2530,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2212
+     *     google/container/v1/cluster_service.proto;l=2214
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2474,7 +2556,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2212
+     *     google/container/v1/cluster_service.proto;l=2214
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2499,7 +2581,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2212
+     *     google/container/v1/cluster_service.proto;l=2214
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2520,7 +2602,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2212
+     *     google/container/v1/cluster_service.proto;l=2214
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2548,7 +2630,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2216
+     *     google/container/v1/cluster_service.proto;l=2218
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2574,7 +2656,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2216
+     *     google/container/v1/cluster_service.proto;l=2218
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2600,7 +2682,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2216
+     *     google/container/v1/cluster_service.proto;l=2218
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2625,7 +2707,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2216
+     *     google/container/v1/cluster_service.proto;l=2218
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2646,7 +2728,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2216
+     *     google/container/v1/cluster_service.proto;l=2218
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -5319,6 +5401,191 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gvnic_ = null;
       }
       return gvnicBuilder_;
+    }
+
+    private com.google.container.v1.FastSocket fastSocket_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.FastSocket,
+            com.google.container.v1.FastSocket.Builder,
+            com.google.container.v1.FastSocketOrBuilder>
+        fastSocketBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     *
+     * @return Whether the fastSocket field is set.
+     */
+    public boolean hasFastSocket() {
+      return fastSocketBuilder_ != null || fastSocket_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     *
+     * @return The fastSocket.
+     */
+    public com.google.container.v1.FastSocket getFastSocket() {
+      if (fastSocketBuilder_ == null) {
+        return fastSocket_ == null
+            ? com.google.container.v1.FastSocket.getDefaultInstance()
+            : fastSocket_;
+      } else {
+        return fastSocketBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     */
+    public Builder setFastSocket(com.google.container.v1.FastSocket value) {
+      if (fastSocketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fastSocket_ = value;
+        onChanged();
+      } else {
+        fastSocketBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     */
+    public Builder setFastSocket(com.google.container.v1.FastSocket.Builder builderForValue) {
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = builderForValue.build();
+        onChanged();
+      } else {
+        fastSocketBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     */
+    public Builder mergeFastSocket(com.google.container.v1.FastSocket value) {
+      if (fastSocketBuilder_ == null) {
+        if (fastSocket_ != null) {
+          fastSocket_ =
+              com.google.container.v1.FastSocket.newBuilder(fastSocket_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          fastSocket_ = value;
+        }
+        onChanged();
+      } else {
+        fastSocketBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     */
+    public Builder clearFastSocket() {
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = null;
+        onChanged();
+      } else {
+        fastSocket_ = null;
+        fastSocketBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     */
+    public com.google.container.v1.FastSocket.Builder getFastSocketBuilder() {
+
+      onChanged();
+      return getFastSocketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     */
+    public com.google.container.v1.FastSocketOrBuilder getFastSocketOrBuilder() {
+      if (fastSocketBuilder_ != null) {
+        return fastSocketBuilder_.getMessageOrBuilder();
+      } else {
+        return fastSocket_ == null
+            ? com.google.container.v1.FastSocket.getDefaultInstance()
+            : fastSocket_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1.FastSocket fast_socket = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.FastSocket,
+            com.google.container.v1.FastSocket.Builder,
+            com.google.container.v1.FastSocketOrBuilder>
+        getFastSocketFieldBuilder() {
+      if (fastSocketBuilder_ == null) {
+        fastSocketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.FastSocket,
+                com.google.container.v1.FastSocket.Builder,
+                com.google.container.v1.FastSocketOrBuilder>(
+                getFastSocket(), getParentForChildren(), isClean());
+        fastSocket_ = null;
+      }
+      return fastSocketBuilder_;
     }
 
     private com.google.container.v1.NodePoolLoggingConfig loggingConfig_;

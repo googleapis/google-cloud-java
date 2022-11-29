@@ -27,11 +27,11 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization, folder, or project the assets belong
-   * to. Format: "organizations/[organization-number]" (such as
-   * "organizations/123"), "projects/[project-id]" (such as
-   * "projects/my-project-id"), "projects/[project-number]" (such as
-   * "projects/12345"), or "folders/[folder-number]" (such as "folders/12345").
+   * Required. Name of the organization, folder, or project the assets belong to. Format:
+   * "organizations/[organization-number]" (such as "organizations/123"),
+   * "projects/[project-id]" (such as "projects/my-project-id"),
+   * "projects/[project-number]" (such as "projects/12345"), or
+   * "folders/[folder-number]" (such as "folders/12345").
    * </pre>
    *
    * <code>
@@ -45,11 +45,11 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization, folder, or project the assets belong
-   * to. Format: "organizations/[organization-number]" (such as
-   * "organizations/123"), "projects/[project-id]" (such as
-   * "projects/my-project-id"), "projects/[project-number]" (such as
-   * "projects/12345"), or "folders/[folder-number]" (such as "folders/12345").
+   * Required. Name of the organization, folder, or project the assets belong to. Format:
+   * "organizations/[organization-number]" (such as "organizations/123"),
+   * "projects/[project-id]" (such as "projects/my-project-id"),
+   * "projects/[project-number]" (such as "projects/12345"), or
+   * "folders/[folder-number]" (such as "folders/12345").
    * </pre>
    *
    * <code>
@@ -122,9 +122,9 @@ public interface ListAssetsRequestOrBuilder
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types.
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -147,9 +147,9 @@ public interface ListAssetsRequestOrBuilder
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types.
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -172,9 +172,9 @@ public interface ListAssetsRequestOrBuilder
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types.
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -198,9 +198,9 @@ public interface ListAssetsRequestOrBuilder
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
    * If specified, only matching assets will be returned, otherwise, it will
-   * snapshot all asset types. See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types.
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3;</code>
@@ -296,9 +296,9 @@ public interface ListAssetsRequestOrBuilder
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types and relationship types.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 7;</code>
@@ -322,9 +322,9 @@ public interface ListAssetsRequestOrBuilder
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types and relationship types.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 7;</code>
@@ -348,9 +348,9 @@ public interface ListAssetsRequestOrBuilder
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types and relationship types.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 7;</code>
@@ -375,9 +375,9 @@ public interface ListAssetsRequestOrBuilder
    * it snapshots the supported relationships for all [asset_types] or returns
    * an error if any of the [asset_types] has no relationship support.
    * An unspecified asset types field means all supported asset_types.
-   * See [Introduction to
-   * {{cai_name}}](https://cloud.google.com/asset-inventory/docs/overview) for
-   * all supported asset types and relationship types.
+   * See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   * for all supported asset types and relationship types.
    * </pre>
    *
    * <code>repeated string relationship_types = 7;</code>

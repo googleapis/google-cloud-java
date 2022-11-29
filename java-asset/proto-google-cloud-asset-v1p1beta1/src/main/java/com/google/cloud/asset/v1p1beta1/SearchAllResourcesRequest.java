@@ -77,8 +77,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The relative name of an asset. The search is limited to the
-   * resources within the `scope`. The allowed value must be:
+   * Required. The relative name of an asset. The search is limited to the resources
+   * within the `scope`. The allowed value must be:
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -105,8 +105,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The relative name of an asset. The search is limited to the
-   * resources within the `scope`. The allowed value must be:
+   * Required. The relative name of an asset. The search is limited to the resources
+   * within the `scope`. The allowed value must be:
    * * Organization number (such as "organizations/123")
    * * Folder number(such as "folders/1234")
    * * Project number (such as "projects/12345")
@@ -185,8 +185,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the supported asset types.
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -200,8 +200,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the supported asset types.
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -215,8 +215,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the supported asset types.
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -231,8 +231,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A list of asset types that this request searches for. If empty,
-   * it will search all the supported asset types.
+   * Optional. A list of asset types that this request searches for. If empty, it will
+   * search all the supported asset types.
    * </pre>
    *
    * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -250,11 +250,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped
-   * at 500 even if a larger value is given. If set to zero, server will pick an
-   * appropriate default. Returned results may be fewer than requested. When
-   * this happens, there could be more results as long as `next_page_token` is
-   * returned.
+   * Optional. The page size for search result pagination. Page size is capped at 500 even
+   * if a larger value is given. If set to zero, server will pick an appropriate
+   * default. Returned results may be fewer than requested. When this happens,
+   * there could be more results as long as `next_page_token` is returned.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -272,10 +271,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method.  `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method.  `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -298,10 +297,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. If present, then retrieve the next batch of results from the
-   * preceding call to this method.  `page_token` must be the value of
-   * `next_page_token` from the previous response. The values of all other
-   * method parameters, must be identical to those in the previous call.
+   * Optional. If present, then retrieve the next batch of results from the preceding call
+   * to this method.  `page_token` must be the value of `next_page_token` from
+   * the previous response. The values of all other method parameters, must be
+   * identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -327,10 +326,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " desc" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
-   * For example, "  foo ,  bar  desc  ".
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " desc" after the field name
+   * to indicate descending order. Redundant space characters are ignored. For
+   * example, "  foo ,  bar  desc  ".
    * </pre>
    *
    * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -353,10 +352,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. A comma separated list of fields specifying the sorting order of
-   * the results. The default order is ascending. Add " desc" after the field
-   * name to indicate descending order. Redundant space characters are ignored.
-   * For example, "  foo ,  bar  desc  ".
+   * Optional. A comma separated list of fields specifying the sorting order of the
+   * results. The default order is ascending. Add " desc" after the field name
+   * to indicate descending order. Redundant space characters are ignored. For
+   * example, "  foo ,  bar  desc  ".
    * </pre>
    *
    * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -842,8 +841,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -869,8 +868,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -896,8 +895,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -922,8 +921,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -944,8 +943,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the
-     * resources within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the resources
+     * within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
      * * Folder number(such as "folders/1234")
      * * Project number (such as "projects/12345")
@@ -1087,8 +1086,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1102,8 +1101,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1117,8 +1116,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1133,8 +1132,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1149,8 +1148,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1172,8 +1171,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1194,8 +1193,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1213,8 +1212,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1231,8 +1230,8 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A list of asset types that this request searches for. If empty,
-     * it will search all the supported asset types.
+     * Optional. A list of asset types that this request searches for. If empty, it will
+     * search all the supported asset types.
      * </pre>
      *
      * <code>repeated string asset_types = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1256,11 +1255,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1275,11 +1273,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1297,11 +1294,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped
-     * at 500 even if a larger value is given. If set to zero, server will pick an
-     * appropriate default. Returned results may be fewer than requested. When
-     * this happens, there could be more results as long as `next_page_token` is
-     * returned.
+     * Optional. The page size for search result pagination. Page size is capped at 500 even
+     * if a larger value is given. If set to zero, server will pick an appropriate
+     * default. Returned results may be fewer than requested. When this happens,
+     * there could be more results as long as `next_page_token` is returned.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1320,10 +1316,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method.  `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method.  `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1345,10 +1341,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method.  `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method.  `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1370,10 +1366,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method.  `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method.  `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1394,10 +1390,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method.  `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method.  `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1414,10 +1410,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If present, then retrieve the next batch of results from the
-     * preceding call to this method.  `page_token` must be the value of
-     * `next_page_token` from the previous response. The values of all other
-     * method parameters, must be identical to those in the previous call.
+     * Optional. If present, then retrieve the next batch of results from the preceding call
+     * to this method.  `page_token` must be the value of `next_page_token` from
+     * the previous response. The values of all other method parameters, must be
+     * identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1441,10 +1437,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " desc" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * For example, "  foo ,  bar  desc  ".
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
      * </pre>
      *
      * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1466,10 +1462,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " desc" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * For example, "  foo ,  bar  desc  ".
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
      * </pre>
      *
      * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1491,10 +1487,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " desc" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * For example, "  foo ,  bar  desc  ".
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
      * </pre>
      *
      * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1515,10 +1511,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " desc" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * For example, "  foo ,  bar  desc  ".
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
      * </pre>
      *
      * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1535,10 +1531,10 @@ public final class SearchAllResourcesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. A comma separated list of fields specifying the sorting order of
-     * the results. The default order is ascending. Add " desc" after the field
-     * name to indicate descending order. Redundant space characters are ignored.
-     * For example, "  foo ,  bar  desc  ".
+     * Optional. A comma separated list of fields specifying the sorting order of the
+     * results. The default order is ascending. Add " desc" after the field name
+     * to indicate descending order. Redundant space characters are ignored. For
+     * example, "  foo ,  bar  desc  ".
      * </pre>
      *
      * <code>string order_by = 10 [(.google.api.field_behavior) = OPTIONAL];</code>

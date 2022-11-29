@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * {{bigquery_name}} Compatible table schema.
+ * BigQuery Compatible table schema.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.TableSchema}
@@ -299,7 +299,7 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * {{bigquery_name}} Compatible table schema.
+   * BigQuery Compatible table schema.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.TableSchema}

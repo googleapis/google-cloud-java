@@ -65,7 +65,8 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the metastore service, of the form:
+   * Immutable. The relative resource name of the metastore service, in the following
+   * format:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -78,7 +79,8 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The relative resource name of the metastore service, of the form:
+   * Immutable. The relative resource name of the metastore service, in the following
+   * format:
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -408,6 +410,8 @@ public interface ServiceOrBuilder
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1.MaintenanceWindow maintenance_window = 15;</code>
@@ -421,6 +425,8 @@ public interface ServiceOrBuilder
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1.MaintenanceWindow maintenance_window = 15;</code>
@@ -434,6 +440,8 @@ public interface ServiceOrBuilder
    * <pre>
    * The one hour maintenance window of the metastore service. This specifies
    * when the service can be restarted for maintenance purposes in UTC time.
+   * Maintenance window is not needed for services with the SPANNER
+   * database type.
    * </pre>
    *
    * <code>.google.cloud.metastore.v1.MaintenanceWindow maintenance_window = 15;</code>
@@ -537,6 +545,155 @@ public interface ServiceOrBuilder
    * @return The releaseChannel.
    */
   com.google.cloud.metastore.v1.Service.ReleaseChannel getReleaseChannel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  boolean hasEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  com.google.cloud.metastore.v1.EncryptionConfig getEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Information used to configure the Dataproc Metastore service to encrypt
+   * customer data at rest. Cannot be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1.EncryptionConfig encryption_config = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.metastore.v1.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.NetworkConfig network_config = 21;</code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.NetworkConfig network_config = 21;</code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.cloud.metastore.v1.NetworkConfig getNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying the network settings for the
+   * Dataproc Metastore service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.NetworkConfig network_config = 21;</code>
+   */
+  com.google.cloud.metastore.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The database type that the Metastore service stores its data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseType.
+   */
+  int getDatabaseTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The database type that the Metastore service stores its data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.metastore.v1.Service.DatabaseType database_type = 22 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The databaseType.
+   */
+  com.google.cloud.metastore.v1.Service.DatabaseType getDatabaseType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying telemetry settings for the Dataproc Metastore
+   * service. If unspecified defaults to `JSON`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.TelemetryConfig telemetry_config = 23;</code>
+   *
+   * @return Whether the telemetryConfig field is set.
+   */
+  boolean hasTelemetryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying telemetry settings for the Dataproc Metastore
+   * service. If unspecified defaults to `JSON`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.TelemetryConfig telemetry_config = 23;</code>
+   *
+   * @return The telemetryConfig.
+   */
+  com.google.cloud.metastore.v1.TelemetryConfig getTelemetryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration specifying telemetry settings for the Dataproc Metastore
+   * service. If unspecified defaults to `JSON`.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1.TelemetryConfig telemetry_config = 23;</code>
+   */
+  com.google.cloud.metastore.v1.TelemetryConfigOrBuilder getTelemetryConfigOrBuilder();
 
   public com.google.cloud.metastore.v1.Service.MetastoreConfigCase getMetastoreConfigCase();
 }

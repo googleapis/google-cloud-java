@@ -23,6 +23,7 @@ import com.google.cloud.kms.v1.CryptoKeyVersion;
 import com.google.cloud.kms.v1.CryptoKeyVersionName;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.KeyManagementServiceClient;
+import com.google.protobuf.ByteString;
 
 public class AsyncImportCryptoKeyVersion {
 
@@ -52,6 +53,7 @@ public class AsyncImportCryptoKeyVersion {
                           "[CRYPTO_KEY_VERSION]")
                       .toString())
               .setImportJob("importJob-208547368")
+              .setWrappedKey(ByteString.EMPTY)
               .build();
       ApiFuture<CryptoKeyVersion> future =
           keyManagementServiceClient.importCryptoKeyVersionCallable().futureCall(request);

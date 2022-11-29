@@ -27,7 +27,7 @@ public interface QueryAssetsOutputConfigOrBuilder
    *
    *
    * <pre>
-   * {{bigquery_name}} destination where the query results will be saved.
+   * BigQuery destination where the query results will be saved.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface QueryAssetsOutputConfigOrBuilder
    *
    *
    * <pre>
-   * {{bigquery_name}} destination where the query results will be saved.
+   * BigQuery destination where the query results will be saved.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface QueryAssetsOutputConfigOrBuilder
    *
    *
    * <pre>
-   * {{bigquery_name}} destination where the query results will be saved.
+   * BigQuery destination where the query results will be saved.
    * </pre>
    *
    * <code>

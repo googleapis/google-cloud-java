@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1p1beta1;
  *
  *
  * <pre>
- * {{iam_name_short}} permissions
+ * IAM permissions
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1p1beta1.Permissions}
@@ -298,7 +298,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * {{iam_name_short}} permissions
+   * IAM permissions
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1p1beta1.Permissions}

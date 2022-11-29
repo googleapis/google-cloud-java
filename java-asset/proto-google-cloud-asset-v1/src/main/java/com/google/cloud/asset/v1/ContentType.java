@@ -52,7 +52,7 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The actual {{iam_name_short}} policy set on a resource.
+   * The actual IAM policy set on a resource.
    * </pre>
    *
    * <code>IAM_POLICY = 2;</code>
@@ -62,7 +62,7 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The organization policy set on an asset.
+   * The Cloud Organization Policy set on an asset.
    * </pre>
    *
    * <code>ORG_POLICY = 4;</code>
@@ -72,7 +72,7 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The {{acm_name}} policy set on an asset.
+   * The Cloud Access context manager Policy set on an asset.
    * </pre>
    *
    * <code>ACCESS_POLICY = 5;</code>
@@ -125,7 +125,7 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The actual {{iam_name_short}} policy set on a resource.
+   * The actual IAM policy set on a resource.
    * </pre>
    *
    * <code>IAM_POLICY = 2;</code>
@@ -135,7 +135,7 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The organization policy set on an asset.
+   * The Cloud Organization Policy set on an asset.
    * </pre>
    *
    * <code>ORG_POLICY = 4;</code>
@@ -145,7 +145,7 @@ public enum ContentType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The {{acm_name}} policy set on an asset.
+   * The Cloud Access context manager Policy set on an asset.
    * </pre>
    *
    * <code>ACCESS_POLICY = 5;</code>

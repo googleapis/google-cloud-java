@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.ListEkmConnections][].
+ * Response message for
+ * [EkmService.ListEkmConnections][google.cloud.kms.v1.EkmService.ListEkmConnections].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.ListEkmConnectionsResponse}
@@ -392,7 +393,8 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.ListEkmConnections][].
+   * Response message for
+   * [EkmService.ListEkmConnections][google.cloud.kms.v1.EkmService.ListEkmConnections].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.ListEkmConnectionsResponse}

@@ -185,7 +185,7 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible {{crm_name}} scope
+     * Searches all the resources under a given accessible CRM scope
      * (project/folder/organization). This RPC gives callers
      * especially admins the ability to search all the resources under a scope,
      * even if they don't have .get permission of all the resources. Callers
@@ -205,13 +205,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the {{iam_name_short}} policies under a given accessible
-     * {{crm_name}} scope (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the {{iam_name_short}} policies
-     * under a scope, even if they don't have .getIamPolicy permission of all the
-     * {{iam_name_short}} policies. Callers should have
-     * cloud.assets.SearchAllIamPolicies permission on the requested scope,
-     * otherwise it will be rejected.
+     * Searches all the IAM policies under a given accessible CRM scope
+     * (project/folder/organization). This RPC gives callers
+     * especially admins the ability to search all the IAM policies under a scope,
+     * even if they don't have .getIamPolicy permission of all the IAM policies.
+     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
+     * requested scope, otherwise it will be rejected.
      * </pre>
      */
     public void searchAllIamPolicies(
@@ -265,7 +264,7 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible {{crm_name}} scope
+     * Searches all the resources under a given accessible CRM scope
      * (project/folder/organization). This RPC gives callers
      * especially admins the ability to search all the resources under a scope,
      * even if they don't have .get permission of all the resources. Callers
@@ -287,13 +286,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the {{iam_name_short}} policies under a given accessible
-     * {{crm_name}} scope (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the {{iam_name_short}} policies
-     * under a scope, even if they don't have .getIamPolicy permission of all the
-     * {{iam_name_short}} policies. Callers should have
-     * cloud.assets.SearchAllIamPolicies permission on the requested scope,
-     * otherwise it will be rejected.
+     * Searches all the IAM policies under a given accessible CRM scope
+     * (project/folder/organization). This RPC gives callers
+     * especially admins the ability to search all the IAM policies under a scope,
+     * even if they don't have .getIamPolicy permission of all the IAM policies.
+     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
+     * requested scope, otherwise it will be rejected.
      * </pre>
      */
     public void searchAllIamPolicies(
@@ -330,7 +328,7 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible {{crm_name}} scope
+     * Searches all the resources under a given accessible CRM scope
      * (project/folder/organization). This RPC gives callers
      * especially admins the ability to search all the resources under a scope,
      * even if they don't have .get permission of all the resources. Callers
@@ -348,13 +346,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the {{iam_name_short}} policies under a given accessible
-     * {{crm_name}} scope (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the {{iam_name_short}} policies
-     * under a scope, even if they don't have .getIamPolicy permission of all the
-     * {{iam_name_short}} policies. Callers should have
-     * cloud.assets.SearchAllIamPolicies permission on the requested scope,
-     * otherwise it will be rejected.
+     * Searches all the IAM policies under a given accessible CRM scope
+     * (project/folder/organization). This RPC gives callers
+     * especially admins the ability to search all the IAM policies under a scope,
+     * even if they don't have .getIamPolicy permission of all the IAM policies.
+     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
+     * requested scope, otherwise it will be rejected.
      * </pre>
      */
     public com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse searchAllIamPolicies(
@@ -387,7 +384,7 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible {{crm_name}} scope
+     * Searches all the resources under a given accessible CRM scope
      * (project/folder/organization). This RPC gives callers
      * especially admins the ability to search all the resources under a scope,
      * even if they don't have .get permission of all the resources. Callers
@@ -406,13 +403,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the {{iam_name_short}} policies under a given accessible
-     * {{crm_name}} scope (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the {{iam_name_short}} policies
-     * under a scope, even if they don't have .getIamPolicy permission of all the
-     * {{iam_name_short}} policies. Callers should have
-     * cloud.assets.SearchAllIamPolicies permission on the requested scope,
-     * otherwise it will be rejected.
+     * Searches all the IAM policies under a given accessible CRM scope
+     * (project/folder/organization). This RPC gives callers
+     * especially admins the ability to search all the IAM policies under a scope,
+     * even if they don't have .getIamPolicy permission of all the IAM policies.
+     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
+     * requested scope, otherwise it will be rejected.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

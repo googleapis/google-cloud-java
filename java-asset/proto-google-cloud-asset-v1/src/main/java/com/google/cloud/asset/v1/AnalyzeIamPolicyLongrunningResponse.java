@@ -22,8 +22,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A response message for
- * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
+ * A response message for [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse}
@@ -223,8 +222,7 @@ public final class AnalyzeIamPolicyLongrunningResponse
    *
    *
    * <pre>
-   * A response message for
-   * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
+   * A response message for [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse}

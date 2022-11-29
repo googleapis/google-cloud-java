@@ -289,7 +289,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Deprecated
@@ -306,7 +306,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
      * @return The databaseType.
      */
     @java.lang.Deprecated
@@ -571,7 +571,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Override
@@ -591,7 +591,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
      * @return The databaseType.
      */
     @java.lang.Override
@@ -1099,7 +1099,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
        * @return The enum numeric value on the wire for databaseType.
        */
       @java.lang.Override
@@ -1119,7 +1119,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
        * @param value The enum numeric value on the wire for databaseType to set.
        * @return This builder for chaining.
        */
@@ -1142,7 +1142,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
        * @return The databaseType.
        */
       @java.lang.Override
@@ -1169,7 +1169,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
        * @param value The databaseType to set.
        * @return This builder for chaining.
        */
@@ -1196,7 +1196,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=444
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=538
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

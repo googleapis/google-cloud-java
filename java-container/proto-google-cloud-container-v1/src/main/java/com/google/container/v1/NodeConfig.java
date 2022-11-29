@@ -96,6 +96,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.NodeConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object machineType_;
   /**
@@ -1724,6 +1725,56 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return getConfidentialNodes();
   }
 
+  public static final int FAST_SOCKET_FIELD_NUMBER = 36;
+  private com.google.container.v1.FastSocket fastSocket_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+   *
+   * @return Whether the fastSocket field is set.
+   */
+  @java.lang.Override
+  public boolean hasFastSocket() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+   *
+   * @return The fastSocket.
+   */
+  @java.lang.Override
+  public com.google.container.v1.FastSocket getFastSocket() {
+    return fastSocket_ == null
+        ? com.google.container.v1.FastSocket.getDefaultInstance()
+        : fastSocket_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.FastSocketOrBuilder getFastSocketOrBuilder() {
+    return fastSocket_ == null
+        ? com.google.container.v1.FastSocket.getDefaultInstance()
+        : fastSocket_;
+  }
+
   public static final int RESOURCE_LABELS_FIELD_NUMBER = 37;
 
   private static final class ResourceLabelsDefaultEntryHolder {
@@ -1970,6 +2021,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (confidentialNodes_ != null) {
       output.writeMessage(35, getConfidentialNodes());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(36, getFastSocket());
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 37);
     if (loggingConfig_ != null) {
@@ -2094,6 +2148,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (confidentialNodes_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getConfidentialNodes());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getFastSocket());
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetResourceLabels().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
@@ -2178,6 +2235,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfidentialNodes() != other.hasConfidentialNodes()) return false;
     if (hasConfidentialNodes()) {
       if (!getConfidentialNodes().equals(other.getConfidentialNodes())) return false;
+    }
+    if (hasFastSocket() != other.hasFastSocket()) return false;
+    if (hasFastSocket()) {
+      if (!getFastSocket().equals(other.getFastSocket())) return false;
     }
     if (!internalGetResourceLabels().equals(other.internalGetResourceLabels())) return false;
     if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
@@ -2280,6 +2341,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfidentialNodes()) {
       hash = (37 * hash) + CONFIDENTIAL_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getConfidentialNodes().hashCode();
+    }
+    if (hasFastSocket()) {
+      hash = (37 * hash) + FAST_SOCKET_FIELD_NUMBER;
+      hash = (53 * hash) + getFastSocket().hashCode();
     }
     if (!internalGetResourceLabels().getMap().isEmpty()) {
       hash = (37 * hash) + RESOURCE_LABELS_FIELD_NUMBER;
@@ -2449,10 +2514,21 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.container.v1.NodeConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAcceleratorsFieldBuilder();
+        getTaintsFieldBuilder();
+        getFastSocketFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -2560,6 +2636,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         confidentialNodes_ = null;
         confidentialNodesBuilder_ = null;
       }
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = null;
+      } else {
+        fastSocketBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableResourceLabels().clear();
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
@@ -2594,6 +2676,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1.NodeConfig buildPartial() {
       com.google.container.v1.NodeConfig result = new com.google.container.v1.NodeConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.machineType_ = machineType_;
       result.diskSizeGb_ = diskSizeGb_;
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -2687,6 +2770,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.confidentialNodes_ = confidentialNodesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (fastSocketBuilder_ == null) {
+          result.fastSocket_ = fastSocket_;
+        } else {
+          result.fastSocket_ = fastSocketBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
       result.resourceLabels_ = internalGetResourceLabels();
       result.resourceLabels_.makeImmutable();
       if (loggingConfigBuilder_ == null) {
@@ -2694,6 +2785,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
       }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2888,6 +2980,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasConfidentialNodes()) {
         mergeConfidentialNodes(other.getConfidentialNodes());
+      }
+      if (other.hasFastSocket()) {
+        mergeFastSocket(other.getFastSocket());
       }
       internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
       if (other.hasLoggingConfig()) {
@@ -3112,6 +3207,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 282
+            case 290:
+              {
+                input.readMessage(getFastSocketFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 290
             case 298:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
@@ -7911,6 +8012,192 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         confidentialNodes_ = null;
       }
       return confidentialNodesBuilder_;
+    }
+
+    private com.google.container.v1.FastSocket fastSocket_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.FastSocket,
+            com.google.container.v1.FastSocket.Builder,
+            com.google.container.v1.FastSocketOrBuilder>
+        fastSocketBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     *
+     * @return Whether the fastSocket field is set.
+     */
+    public boolean hasFastSocket() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     *
+     * @return The fastSocket.
+     */
+    public com.google.container.v1.FastSocket getFastSocket() {
+      if (fastSocketBuilder_ == null) {
+        return fastSocket_ == null
+            ? com.google.container.v1.FastSocket.getDefaultInstance()
+            : fastSocket_;
+      } else {
+        return fastSocketBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder setFastSocket(com.google.container.v1.FastSocket value) {
+      if (fastSocketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fastSocket_ = value;
+        onChanged();
+      } else {
+        fastSocketBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder setFastSocket(com.google.container.v1.FastSocket.Builder builderForValue) {
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = builderForValue.build();
+        onChanged();
+      } else {
+        fastSocketBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder mergeFastSocket(com.google.container.v1.FastSocket value) {
+      if (fastSocketBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && fastSocket_ != null
+            && fastSocket_ != com.google.container.v1.FastSocket.getDefaultInstance()) {
+          fastSocket_ =
+              com.google.container.v1.FastSocket.newBuilder(fastSocket_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          fastSocket_ = value;
+        }
+        onChanged();
+      } else {
+        fastSocketBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder clearFastSocket() {
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = null;
+        onChanged();
+      } else {
+        fastSocketBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     */
+    public com.google.container.v1.FastSocket.Builder getFastSocketBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getFastSocketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     */
+    public com.google.container.v1.FastSocketOrBuilder getFastSocketOrBuilder() {
+      if (fastSocketBuilder_ != null) {
+        return fastSocketBuilder_.getMessageOrBuilder();
+      } else {
+        return fastSocket_ == null
+            ? com.google.container.v1.FastSocket.getDefaultInstance()
+            : fastSocket_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.FastSocket,
+            com.google.container.v1.FastSocket.Builder,
+            com.google.container.v1.FastSocketOrBuilder>
+        getFastSocketFieldBuilder() {
+      if (fastSocketBuilder_ == null) {
+        fastSocketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.FastSocket,
+                com.google.container.v1.FastSocket.Builder,
+                com.google.container.v1.FastSocketOrBuilder>(
+                getFastSocket(), getParentForChildren(), isClean());
+        fastSocket_ = null;
+      }
+      return fastSocketBuilder_;
     }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;

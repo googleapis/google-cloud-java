@@ -182,8 +182,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The feed details. The field `name` must be empty and it will be
-   * generated in the format of: projects/project_number/feeds/feed_id
+   * Required. The feed details. The field `name` must be empty and it will be generated
+   * in the format of:
+   * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
@@ -200,8 +201,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The feed details. The field `name` must be empty and it will be
-   * generated in the format of: projects/project_number/feeds/feed_id
+   * Required. The feed details. The field `name` must be empty and it will be generated
+   * in the format of:
+   * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
@@ -218,8 +220,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The feed details. The field `name` must be empty and it will be
-   * generated in the format of: projects/project_number/feeds/feed_id
+   * Required. The feed details. The field `name` must be empty and it will be generated
+   * in the format of:
+   * projects/project_number/feeds/feed_id
    * folders/folder_number/feeds/feed_id
    * organizations/organization_number/feeds/feed_id
    * </pre>
@@ -863,8 +866,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -880,8 +884,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -901,8 +906,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -926,8 +932,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -948,8 +955,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -974,8 +982,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -997,8 +1006,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -1014,8 +1024,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>
@@ -1033,8 +1044,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The feed details. The field `name` must be empty and it will be
-     * generated in the format of: projects/project_number/feeds/feed_id
+     * Required. The feed details. The field `name` must be empty and it will be generated
+     * in the format of:
+     * projects/project_number/feeds/feed_id
      * folders/folder_number/feeds/feed_id
      * organizations/organization_number/feeds/feed_id
      * </pre>

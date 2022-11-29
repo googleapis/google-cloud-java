@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.UpdateEkmConnection][].
+ * Request message for
+ * [EkmService.UpdateEkmConnection][google.cloud.kms.v1.EkmService.UpdateEkmConnection].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.UpdateEkmConnectionRequest}
@@ -353,7 +354,8 @@ public final class UpdateEkmConnectionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.UpdateEkmConnection][].
+   * Request message for
+   * [EkmService.UpdateEkmConnection][google.cloud.kms.v1.EkmService.UpdateEkmConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.UpdateEkmConnectionRequest}

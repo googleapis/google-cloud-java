@@ -41,6 +41,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     state_ = 0;
     description_ = "";
+    restoringServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -129,6 +130,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     FAILED(4),
+    /**
+     *
+     *
+     * <pre>
+     * The backup is being restored.
+     * </pre>
+     *
+     * <code>RESTORING = 5;</code>
+     */
+    RESTORING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -182,6 +193,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The backup is being restored.
+     * </pre>
+     *
+     * <code>RESTORING = 5;</code>
+     */
+    public static final int RESTORING_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -217,6 +238,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           return ACTIVE;
         case 4:
           return FAILED;
+        case 5:
+          return RESTORING;
         default:
           return null;
       }
@@ -562,6 +585,71 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RESTORING_SERVICES_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList restoringServices_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the restoringServices.
+   */
+  public com.google.protobuf.ProtocolStringList getRestoringServicesList() {
+    return restoringServices_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of restoringServices.
+   */
+  public int getRestoringServicesCount() {
+    return restoringServices_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The restoringServices at the given index.
+   */
+  public java.lang.String getRestoringServices(int index) {
+    return restoringServices_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Services that are restoring from the backup.
+   * </pre>
+   *
+   * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the restoringServices at the given index.
+   */
+  public com.google.protobuf.ByteString getRestoringServicesBytes(int index) {
+    return restoringServices_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -594,6 +682,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
     }
+    for (int i = 0; i < restoringServices_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, restoringServices_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -620,6 +711,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < restoringServices_.size(); i++) {
+        dataSize += computeStringSizeNoTag(restoringServices_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRestoringServicesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -651,6 +750,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (!getServiceRevision().equals(other.getServiceRevision())) return false;
     }
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getRestoringServicesList().equals(other.getRestoringServicesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -680,6 +780,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (getRestoringServicesCount() > 0) {
+      hash = (37 * hash) + RESTORING_SERVICES_FIELD_NUMBER;
+      hash = (53 * hash) + getRestoringServicesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -842,6 +946,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       description_ = "";
 
+      restoringServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -869,6 +975,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1beta.Backup buildPartial() {
       com.google.cloud.metastore.v1beta.Backup result =
           new com.google.cloud.metastore.v1beta.Backup(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
@@ -887,6 +994,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         result.serviceRevision_ = serviceRevisionBuilder_.build();
       }
       result.description_ = description_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        restoringServices_ = restoringServices_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.restoringServices_ = restoringServices_;
       onBuilt();
       return result;
     }
@@ -956,6 +1068,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         description_ = other.description_;
         onChanged();
       }
+      if (!other.restoringServices_.isEmpty()) {
+        if (restoringServices_.isEmpty()) {
+          restoringServices_ = other.restoringServices_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureRestoringServicesIsMutable();
+          restoringServices_.addAll(other.restoringServices_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1018,6 +1140,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRestoringServicesIsMutable();
+                restoringServices_.add(s);
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1034,6 +1163,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1942,6 +2073,183 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList restoringServices_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureRestoringServicesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        restoringServices_ = new com.google.protobuf.LazyStringArrayList(restoringServices_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the restoringServices.
+     */
+    public com.google.protobuf.ProtocolStringList getRestoringServicesList() {
+      return restoringServices_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of restoringServices.
+     */
+    public int getRestoringServicesCount() {
+      return restoringServices_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The restoringServices at the given index.
+     */
+    public java.lang.String getRestoringServices(int index) {
+      return restoringServices_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the restoringServices at the given index.
+     */
+    public com.google.protobuf.ByteString getRestoringServicesBytes(int index) {
+      return restoringServices_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The restoringServices to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestoringServices(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRestoringServicesIsMutable();
+      restoringServices_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The restoringServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRestoringServices(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRestoringServicesIsMutable();
+      restoringServices_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The restoringServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRestoringServices(java.lang.Iterable<java.lang.String> values) {
+      ensureRestoringServicesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restoringServices_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRestoringServices() {
+      restoringServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Services that are restoring from the backup.
+     * </pre>
+     *
+     * <code>repeated string restoring_services = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the restoringServices to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRestoringServicesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRestoringServicesIsMutable();
+      restoringServices_.add(value);
       onChanged();
       return this;
     }

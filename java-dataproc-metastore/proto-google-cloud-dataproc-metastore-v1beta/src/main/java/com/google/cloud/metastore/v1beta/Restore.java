@@ -275,7 +275,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of restore.
+   * The type of restore. If unspecified, defaults to `METADATA_ONLY`.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.metastore.v1beta.Restore.RestoreType}
@@ -574,7 +574,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The relative resource name of the metastore service backup to
    * restore from, in the following form:
-   * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+   * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * </pre>
    *
    * <code>
@@ -601,7 +601,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The relative resource name of the metastore service backup to
    * restore from, in the following form:
-   * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+   * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * </pre>
    *
    * <code>
@@ -1665,7 +1665,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The relative resource name of the metastore service backup to
      * restore from, in the following form:
-     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -1691,7 +1691,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The relative resource name of the metastore service backup to
      * restore from, in the following form:
-     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -1717,7 +1717,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The relative resource name of the metastore service backup to
      * restore from, in the following form:
-     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -1742,7 +1742,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The relative resource name of the metastore service backup to
      * restore from, in the following form:
-     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
@@ -1763,7 +1763,7 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The relative resource name of the metastore service backup to
      * restore from, in the following form:
-     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
+     * `projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
      * </pre>
      *
      * <code>
