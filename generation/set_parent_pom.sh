@@ -16,7 +16,7 @@ function replaceParent {
   relativePath=$(echo "$parent_pom" | sed 's/\//\\\//g')
 
   # Search for <parent> tag in module pom and replace the next three lines -- groupId, artifcatId, and version
-  perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>${parent_group_id}<\/groupId>\n    <artifactId>${parent_artifact_id}<\/artifactId>\n    <version>${parent_version}<\/version><!-- {x-version-update:${parent_artifact_id}:current} -->\n    <relativePath>${relativePath}<\/relativePath>\n  <\/parent>/s"
+  perl_command="s/\s*<parent>.*?<\/parent>/\n\n  <parent>\n    <groupId>${parent_group_id}<\/groupId>\n    <artifactId>${parent_artifact_id}<\/artifactId>\n    <version>${parent_version}<\/version><!-- {x-version-update:google-cloud-java:current} -->\n    <relativePath>${relativePath}<\/relativePath>\n  <\/parent>/s"
   # execute the replacement in pom.xml
   perl -i -0pe "$perl_command" pom.xml
 }
