@@ -16,6 +16,7 @@
     <module>google-cloud-pom-parent</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
+    <module>java-addressvalidation</module>
     <module>java-aiplatform</module>
     <module>java-analytics-admin</module>
     <module>java-analytics-data</module>
