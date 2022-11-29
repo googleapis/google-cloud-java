@@ -327,4 +327,182 @@ public class QueryTest {
     assertThat(clonedReq).isEqualTo(query);
     assertThat(clonedReq.toProto(requestContext)).isEqualTo(request);
   }
+
+  @Test
+  public void testQueryPaginatorRangeLimitReached() {
+    int chunkSize = 10, limit = 15;
+    Query query = Query.create(TABLE_ID).range("a", "z").limit(limit);
+    Query.QueryPaginator paginator = query.createPaginator(chunkSize);
+
+    Query nextQuery = paginator.getNextQuery();
+
+    Builder expectedProto =
+        expectedProtoBuilder()
+            .setRows(
+                RowSet.newBuilder()
+                    .addRowRanges(
+                        RowRange.newBuilder()
+                            .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                            .setEndKeyOpen(ByteString.copyFromUtf8("z"))
+                            .build()))
+            .setRowsLimit(chunkSize);
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    assertThat(paginator.advance(ByteString.copyFromUtf8("c"))).isTrue();
+    int expectedLimit = limit - chunkSize;
+    nextQuery = paginator.getNextQuery();
+    expectedProto =
+        expectedProtoBuilder()
+            .setRows(
+                RowSet.newBuilder()
+                    .addRowRanges(
+                        RowRange.newBuilder()
+                            .setStartKeyOpen(ByteString.copyFromUtf8("c"))
+                            .setEndKeyOpen(ByteString.copyFromUtf8("z"))
+                            .build()))
+            .setRowsLimit(expectedLimit);
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    assertThat(paginator.advance(ByteString.copyFromUtf8("d"))).isFalse();
+  }
+
+  @Test
+  public void testQueryPaginatorRangeLimitMultiplyOfChunkSize() {
+    int chunkSize = 10, limit = 20;
+    Query query = Query.create(TABLE_ID).range("a", "z").limit(limit);
+    Query.QueryPaginator paginator = query.createPaginator(chunkSize);
+
+    Query nextQuery = paginator.getNextQuery();
+
+    Builder expectedProto =
+        expectedProtoBuilder()
+            .setRows(
+                RowSet.newBuilder()
+                    .addRowRanges(
+                        RowRange.newBuilder()
+                            .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                            .setEndKeyOpen(ByteString.copyFromUtf8("z"))
+                            .build()))
+            .setRowsLimit(chunkSize);
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    assertThat(paginator.advance(ByteString.copyFromUtf8("c"))).isTrue();
+    int expectedLimit = limit - chunkSize;
+    nextQuery = paginator.getNextQuery();
+    expectedProto =
+        expectedProtoBuilder()
+            .setRows(
+                RowSet.newBuilder()
+                    .addRowRanges(
+                        RowRange.newBuilder()
+                            .setStartKeyOpen(ByteString.copyFromUtf8("c"))
+                            .setEndKeyOpen(ByteString.copyFromUtf8("z"))
+                            .build()))
+            .setRowsLimit(expectedLimit);
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    assertThat(paginator.advance(ByteString.copyFromUtf8("d"))).isFalse();
+  }
+
+  @Test
+  public void testQueryPaginatorRagneNoLimit() {
+    int chunkSize = 10;
+    Query query = Query.create(TABLE_ID).range("a", "z");
+    Query.QueryPaginator paginator = query.createPaginator(chunkSize);
+
+    Query nextQuery = paginator.getNextQuery();
+
+    Builder expectedProto =
+        expectedProtoBuilder()
+            .setRows(
+                RowSet.newBuilder()
+                    .addRowRanges(
+                        RowRange.newBuilder()
+                            .setStartKeyClosed(ByteString.copyFromUtf8("a"))
+                            .setEndKeyOpen(ByteString.copyFromUtf8("z"))
+                            .build()))
+            .setRowsLimit(chunkSize);
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    assertThat(paginator.advance(ByteString.copyFromUtf8("c"))).isTrue();
+    nextQuery = paginator.getNextQuery();
+    expectedProto
+        .setRows(
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder()
+                        .setStartKeyOpen(ByteString.copyFromUtf8("c"))
+                        .setEndKeyOpen(ByteString.copyFromUtf8("z"))
+                        .build()))
+        .setRowsLimit(chunkSize);
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    assertThat(paginator.advance(ByteString.copyFromUtf8("z"))).isFalse();
+  }
+
+  @Test
+  public void testQueryPaginatorRowsNoLimit() {
+    int chunkSize = 10;
+    Query query = Query.create(TABLE_ID).rowKey("a").rowKey("b").rowKey("c");
+
+    Query.QueryPaginator paginator = query.createPaginator(chunkSize);
+
+    Query nextQuery = paginator.getNextQuery();
+
+    ReadRowsRequest.Builder expectedProto = expectedProtoBuilder();
+    expectedProto
+        .getRowsBuilder()
+        .addRowKeys(ByteString.copyFromUtf8("a"))
+        .addRowKeys(ByteString.copyFromUtf8("b"))
+        .addRowKeys(ByteString.copyFromUtf8("c"));
+    expectedProto.setRowsLimit(chunkSize);
+
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    paginator.advance(ByteString.copyFromUtf8("b"));
+    nextQuery = paginator.getNextQuery();
+    expectedProto = expectedProtoBuilder();
+    expectedProto.getRowsBuilder().addRowKeys(ByteString.copyFromUtf8("c"));
+    expectedProto.setRowsLimit(chunkSize);
+
+    assertThat(nextQuery.toProto(requestContext)).isEqualTo(expectedProto.build());
+
+    assertThat(paginator.advance(ByteString.copyFromUtf8("c"))).isFalse();
+  }
+
+  @Test
+  public void testQueryPaginatorFullTableScan() {
+    int chunkSize = 10;
+    Query query = Query.create(TABLE_ID);
+    Query.QueryPaginator queryPaginator = query.createPaginator(chunkSize);
+
+    ReadRowsRequest.Builder expectedProto = expectedProtoBuilder().setRowsLimit(chunkSize);
+    assertThat(queryPaginator.getNextQuery().toProto(requestContext))
+        .isEqualTo(expectedProto.build());
+
+    assertThat(queryPaginator.advance(ByteString.copyFromUtf8("a"))).isTrue();
+    expectedProto
+        .setRows(
+            RowSet.newBuilder()
+                .addRowRanges(
+                    RowRange.newBuilder().setStartKeyOpen(ByteString.copyFromUtf8("a")).build()))
+        .setRowsLimit(chunkSize);
+    assertThat(queryPaginator.getNextQuery().toProto(requestContext))
+        .isEqualTo(expectedProto.build());
+
+    assertThat(queryPaginator.advance(ByteString.copyFromUtf8("a"))).isFalse();
+  }
+
+  @Test
+  public void testQueryPaginatorEmptyTable() {
+    int chunkSize = 10;
+    Query query = Query.create(TABLE_ID);
+    Query.QueryPaginator queryPaginator = query.createPaginator(chunkSize);
+
+    ReadRowsRequest.Builder expectedProto = expectedProtoBuilder().setRowsLimit(chunkSize);
+    assertThat(queryPaginator.getNextQuery().toProto(requestContext))
+        .isEqualTo(expectedProto.build());
+
+    assertThat(queryPaginator.advance(ByteString.EMPTY)).isFalse();
+  }
 }

@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowFilter;
@@ -248,6 +249,29 @@ public final class Query implements Serializable {
     return shards;
   }
 
+  /**
+   * Create a query paginator that'll split the query into smaller chunks.
+   *
+   * <p>Example usage:
+   *
+   * <pre>{@code
+   * Query query = Query.create(...).range("a", "z");
+   * Query.QueryPaginator paginator = query.createQueryPaginator(100);
+   * ByteString lastSeenRowKey = ByteString.EMPTY;
+   * do {
+   *     List<Row> rows = client.readRowsCallable().all().call(paginator.getNextQuery());
+   *     for (Row row : rows) {
+   *        // do some processing
+   *        lastSeenRow = row;
+   *     }
+   * } while (paginator.advance(lastSeenRowKey));
+   * }</pre>
+   */
+  @BetaApi("This surface is stable yet it might be removed in the future.")
+  public QueryPaginator createPaginator(int pageSize) {
+    return new QueryPaginator(this, pageSize);
+  }
+
   /** Get the minimal range that encloses all of the row keys and ranges in this Query. */
   public ByteStringRange getBound() {
     return RowSetUtil.getBound(builder.getRows());
@@ -295,6 +319,73 @@ public final class Query implements Serializable {
       return null;
     }
     return ByteString.copyFromUtf8(key);
+  }
+
+  /**
+   * A Query Paginator that will split a query into small chunks. See {@link
+   * Query#createPaginator(int)} for example usage.
+   */
+  @BetaApi("This surface is stable yet it might be removed in the future.")
+  public static class QueryPaginator {
+
+    private final boolean hasOverallLimit;
+    private long remainingRows;
+    private Query query;
+    private final int pageSize;
+    private ByteString prevSplitPoint;
+
+    QueryPaginator(@Nonnull Query query, int pageSize) {
+      this.hasOverallLimit = query.builder.getRowsLimit() > 0;
+      this.remainingRows = query.builder.getRowsLimit();
+      this.query = query.limit(pageSize);
+      if (hasOverallLimit) {
+        remainingRows -= pageSize;
+      }
+      this.pageSize = pageSize;
+      this.prevSplitPoint = ByteString.EMPTY;
+    }
+
+    /** Return the next query. */
+    public Query getNextQuery() {
+      return query;
+    }
+
+    /**
+     * Construct the next query. Return true if there are more queries to return. False if we've
+     * read everything.
+     */
+    public boolean advance(@Nonnull ByteString lastSeenRowKey) {
+      Preconditions.checkNotNull(
+          lastSeenRowKey, "lastSeenRowKey cannot be null, use ByteString.EMPTY instead.");
+      // Full table scans don't have ranges or limits. Running the query again will return an empty
+      // list when we reach the end of the table. lastSeenRowKey won't be updated in this case, and
+      // we can break out of the loop.
+      if (lastSeenRowKey.equals(prevSplitPoint)) {
+        return false;
+      }
+      this.prevSplitPoint = lastSeenRowKey;
+
+      // Set the query limit. If the original limit is set, return false if the new
+      // limit is <= 0 to avoid returning more rows than intended.
+      if (hasOverallLimit && remainingRows <= 0) {
+        return false;
+      }
+      if (hasOverallLimit) {
+        query.limit(Math.min(this.pageSize, remainingRows));
+        remainingRows -= pageSize;
+      } else {
+        query.limit(pageSize);
+      }
+
+      // Split the row ranges / row keys. Return false if there's nothing
+      // left on the right of the split point.
+      RowSetUtil.Split split = RowSetUtil.split(query.builder.getRows(), lastSeenRowKey);
+      if (split.getRight() == null) {
+        return false;
+      }
+      query.builder.setRows(split.getRight());
+      return true;
+    }
   }
 
   @Override
