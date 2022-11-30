@@ -1,7 +1,7 @@
 attrs==22.1.0
 click==7.1.2
 jinja2==3.0.3
-lxml==4.6.5
+lxml==4.9.1
 typing==3.7.4.3
 markupsafe==2.0.1
 colorlog==6.7.0
