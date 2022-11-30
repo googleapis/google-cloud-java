@@ -41,6 +41,8 @@ import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Phaser;
 import javax.annotation.concurrent.GuardedBy;
 import org.json.JSONArray;
@@ -193,6 +195,8 @@ public class WriteToDefaultStream {
 
       private final DataWriter parent;
       private final AppendContext appendContext;
+      // Prepare a thread pool
+      static ExecutorService pool = Executors.newFixedThreadPool(50);
 
       public AppendCompleteCallback(DataWriter parent, AppendContext appendContext) {
         this.parent = parent;
@@ -213,19 +217,18 @@ public class WriteToDefaultStream {
             && RETRIABLE_ERROR_CODES.contains(status.getCode())) {
           appendContext.retryCount++;
           // Use a separate thread to avoid potentially blocking while we are in a callback.
-          new Thread(
-                  () -> {
-                    try {
-                      // Since default stream appends are not ordered, we can simply retry the
-                      // appends.
-                      // Retrying with exclusive streams requires more careful consideration.
-                      this.parent.append(appendContext);
-                    } catch (Exception e) {
-                      // Fall through to return error.
-                      System.out.format("Failed to retry append: %s%n", e);
-                    }
-                  })
-              .start();
+          pool.submit(
+              () -> {
+                try {
+                  // Since default stream appends are not ordered, we can simply retry the
+                  // appends.
+                  // Retrying with exclusive streams requires more careful consideration.
+                  this.parent.append(appendContext);
+                } catch (Exception e) {
+                  // Fall through to return error.
+                  System.out.format("Failed to retry append: %s%n", e);
+                }
+              });
           // Mark the existing attempt as done since it's being retried.
           done();
           return;
@@ -251,15 +254,14 @@ public class WriteToDefaultStream {
             // Retry the remaining valid rows, but using a separate thread to
             // avoid potentially blocking while we are in a callback.
             if (dataNew.length() > 0) {
-              new Thread(
-                      () -> {
-                        try {
-                          this.parent.append(new AppendContext(dataNew, 0));
-                        } catch (Exception e2) {
-                          System.out.format("Failed to retry append with filtered rows: %s%n", e2);
-                        }
-                      })
-                  .start();
+              pool.submit(
+                  () -> {
+                    try {
+                      this.parent.append(new AppendContext(dataNew, 0));
+                    } catch (Exception e2) {
+                      System.out.format("Failed to retry append with filtered rows: %s%n", e2);
+                    }
+                  });
             }
             return;
           }
