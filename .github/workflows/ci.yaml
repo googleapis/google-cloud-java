@@ -108,6 +108,7 @@ jobs:
     - run: |
         python3 --version
         python3 -m pip install --require-hashes -r .kokoro/requirements.txt
+        python3 -m pip install --require-hashes -r owl-bot-postprocessor/requirements.txt
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:
