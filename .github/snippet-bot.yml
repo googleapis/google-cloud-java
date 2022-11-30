@@ -1,2 +1,2 @@
 ignoreFiles:
-- "owl-bot-bootstrapper/**/*"
+- "owl-bot-postprocessor/**/*"
