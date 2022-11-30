@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Specifying our own image is more reliable than 3rd-party image, which
-# may become unavailable per their maintenance policy.
+# may become unavailable due to their maintenance policy.
 FROM gcr.io/cloud-devrel-public-resources/java17
 
 RUN apt-get update && \
@@ -44,12 +44,6 @@ RUN apt-get update && apt-get install -y \
         stable" && \
     apt-get update && \
     apt-get install -y docker-ce docker-ce-cli containerd.io
-
-# Install Terraform
-RUN apt-get update && apt-get install -y gnupg software-properties-common curl && \
-    curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add - && \
-    apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
-    apt-get update && apt-get install terraform
 
 # Install jq
 RUN apt-get -y install jq
