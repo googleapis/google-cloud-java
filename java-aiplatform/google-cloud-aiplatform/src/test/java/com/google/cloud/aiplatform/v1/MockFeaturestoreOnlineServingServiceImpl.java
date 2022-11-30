@@ -102,4 +102,26 @@ public class MockFeaturestoreOnlineServingServiceImpl
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void writeFeatureValues(
+      WriteFeatureValuesRequest request,
+      StreamObserver<WriteFeatureValuesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof WriteFeatureValuesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((WriteFeatureValuesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method WriteFeatureValues, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  WriteFeatureValuesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }
