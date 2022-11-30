@@ -124,6 +124,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -182,6 +183,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -240,6 +242,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -287,6 +290,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -334,6 +338,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
