@@ -119,6 +119,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -174,6 +175,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -229,6 +231,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -288,6 +291,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -347,6 +351,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
@@ -391,6 +396,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
@@ -523,6 +529,7 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
+            .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -755,6 +762,7 @@ public class FeaturestoreServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .setOfflineStorageTtlDays(-844678422)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -812,6 +820,7 @@ public class FeaturestoreServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .setOfflineStorageTtlDays(-844678422)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -869,6 +878,7 @@ public class FeaturestoreServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .setOfflineStorageTtlDays(-844678422)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -930,6 +940,7 @@ public class FeaturestoreServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .setOfflineStorageTtlDays(-844678422)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -991,6 +1002,7 @@ public class FeaturestoreServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .setOfflineStorageTtlDays(-844678422)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1039,6 +1051,7 @@ public class FeaturestoreServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .setOfflineStorageTtlDays(-844678422)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1173,6 +1186,7 @@ public class FeaturestoreServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
+            .setOfflineStorageTtlDays(-844678422)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
