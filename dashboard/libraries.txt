@@ -1,0 +1,2 @@
+com.google.cloud:google-cloud-storage
+com.google.cloud:google-cloud-vision
