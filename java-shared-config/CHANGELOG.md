@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.5.5](https://github.com/googleapis/java-shared-config/compare/v1.5.4...v1.5.5) (2022-11-28)
+
+
+### Dependencies
+
+* Updata java-docfx-doclet to v1.8.0 ([#540](https://github.com/googleapis/java-shared-config/issues/540)) ([29e20eb](https://github.com/googleapis/java-shared-config/commit/29e20eb8809fc3dc985111bbaecd09c281222484))
+* Update auto-value-annotation.version to v1.10.1 ([#543](https://github.com/googleapis/java-shared-config/issues/543)) ([b83ac8b](https://github.com/googleapis/java-shared-config/commit/b83ac8b0d0b121f522d850983421d9a7a31a8627))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.4 ([#535](https://github.com/googleapis/java-shared-config/issues/535)) ([eeeda5d](https://github.com/googleapis/java-shared-config/commit/eeeda5d41a4e2d3632afa95cede3174b44a135eb))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.5.0 ([#545](https://github.com/googleapis/java-shared-config/issues/545)) ([30c48d1](https://github.com/googleapis/java-shared-config/commit/30c48d17a4d2b0e86cac2f58bf6b6df2865a0fbd))
+* update dependency org.codehaus.mojo:flatten-maven-plugin to v1.3.0 ([ce1a04e](https://github.com/googleapis/java-shared-config/commit/ce1a04e5a319754963a6da6f9da0055e53449b3c))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.16 ([#528](https://github.com/googleapis/java-shared-config/issues/528)) ([a6db032](https://github.com/googleapis/java-shared-config/commit/a6db032d261ec1534e9b54a055adde1c7b3ebdd6))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.17 ([#537](https://github.com/googleapis/java-shared-config/issues/537)) ([5d34fff](https://github.com/googleapis/java-shared-config/commit/5d34fff2d487f5b88614c076df1928ae8f7ef810))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.16 ([#529](https://github.com/googleapis/java-shared-config/issues/529)) ([e802be9](https://github.com/googleapis/java-shared-config/commit/e802be90f2ff121e403fdc8cc590ec29e4b98729))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.17 ([#538](https://github.com/googleapis/java-shared-config/issues/538)) ([bf7fd02](https://github.com/googleapis/java-shared-config/commit/bf7fd02be0bb5934664d35d7e8e4effb4716f58e))
+* Update graalvm native-image dependencies to v0.9.18 ([#544](https://github.com/googleapis/java-shared-config/issues/544)) ([59a7b6d](https://github.com/googleapis/java-shared-config/commit/59a7b6d612aee531342410d0adc3ea161c26fea0))
+
 ## [1.5.4](https://github.com/googleapis/java-shared-config/compare/v1.5.3...v1.5.4) (2022-10-19)
 
 
