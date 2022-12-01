@@ -16,6 +16,8 @@
 
 package com.google.cloud.datastore.testing;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.api.core.InternalApi;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
@@ -68,7 +70,9 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
 
   // Common settings
   private static final String CONSISTENCY_FLAG = "--consistency=";
+  private static final String PROJECT_FLAG = "--project=";
   private static final double DEFAULT_CONSISTENCY = 0.9;
+  private static final String DEFAULT_PROJECT_ID = PROJECT_ID_PREFIX + UUID.randomUUID();
 
   private static final Logger LOGGER = Logger.getLogger(LocalDatastoreHelper.class.getName());
 
@@ -90,6 +94,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     private int port;
     private Path dataDir;
     private boolean storeOnDisk = true;
+    private String projectId;
 
     private Builder() {}
 
@@ -106,6 +111,11 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
 
     public Builder setPort(int port) {
       this.port = port;
+      return this;
+    }
+
+    public Builder setProjectId(String projectId) {
+      this.projectId = projectId;
       return this;
     }
 
@@ -129,7 +139,8 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     super(
         "datastore",
         builder.port > 0 ? builder.port : BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
-        PROJECT_ID_PREFIX + UUID.randomUUID().toString());
+        firstNonNull(builder.projectId, DEFAULT_PROJECT_ID));
+    String projectId = firstNonNull(builder.projectId, DEFAULT_PROJECT_ID);
     this.consistency = builder.consistency > 0 ? builder.consistency : DEFAULT_CONSISTENCY;
     this.gcdPath = builder.dataDir;
     this.storeOnDisk = builder.storeOnDisk;
@@ -140,6 +151,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     List<String> gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
     gcloudCommand.add(GCLOUD_CMD_PORT_FLAG + "localhost:" + getPort());
     gcloudCommand.add(CONSISTENCY_FLAG + builder.consistency);
+    gcloudCommand.add(PROJECT_FLAG + projectId);
     if (!builder.storeOnDisk) {
       gcloudCommand.add("--no-store-on-disk");
     }

@@ -89,6 +89,14 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
+  public void testCreateWithCustomProjectId() {
+    String customProjectId = "custom-project-id";
+    LocalDatastoreHelper helper =
+        LocalDatastoreHelper.newBuilder().setProjectId(customProjectId).build();
+    assertEquals(customProjectId, helper.getProjectId());
+  }
+
+  @Test
   public void testCreateWithToBuilder() throws IOException {
     LocalDatastoreHelper helper =
         LocalDatastoreHelper.newBuilder()
