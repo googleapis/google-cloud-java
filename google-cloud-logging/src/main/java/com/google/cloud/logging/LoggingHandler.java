@@ -498,29 +498,21 @@ public class LoggingHandler extends Handler {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
     }
-
-    switch (level.intValue()) {
-        // FINEST
-        // FINER
-        // FINE
-      case 300:
-      case 400:
-      case 500:
-        return Severity.DEBUG;
-        // CONFIG
-        // INFO
-      case 700:
-      case 800:
-        return Severity.INFO;
-        // WARNING
-      case 900:
-        return Severity.WARNING;
-        // SEVERE
-      case 1000:
-        return Severity.ERROR;
-      default:
-        return Severity.DEFAULT;
+    // Choose the severity based on Level range.
+    // The assumption is that Level values below maintain same numeric value
+    int value = level.intValue();
+    if (value <= Level.FINE.intValue()) {
+      return Severity.DEBUG;
+    } else if (value <= Level.INFO.intValue()) {
+      return Severity.INFO;
+    } else if (value <= Level.WARNING.intValue()) {
+      return Severity.WARNING;
+    } else if (value <= Level.SEVERE.intValue()) {
+      return Severity.ERROR;
+    } else if (value == Level.OFF.intValue()) {
+      return Severity.NONE;
     }
+    return Severity.DEFAULT;
   }
 
   private static boolean isTrueOrNull(Boolean b) {

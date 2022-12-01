@@ -715,6 +715,9 @@ public class LogEntry implements Serializable {
     if (payload.getType() == Payload.Type.PROTO) {
       throw new UnsupportedOperationException("LogEntry with protobuf payload cannot be converted");
     }
+    if (severity == Severity.NONE) {
+      throw new IllegalArgumentException("Severity.NONE cannot be used for LogEntry");
+    }
 
     final StringBuilder builder = new StringBuilder("{");
     final StructuredLogFormatter formatter = new StructuredLogFormatter(builder);

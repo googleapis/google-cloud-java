@@ -303,8 +303,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
   /**
    * Sets flush severity for asynchronous logging writes. It is disabled by default, enabled when
-   * this method is called with not null value. Logs will be immediately written out for entries at
-   * or higher than flush severity.
+   * this method is called with any {@link Severity} value other than {@link Severity.NONE}. Logs
+   * will be immediately written out for entries at or higher than flush severity.
    *
    * <p>Enabling this can cause the leaking and hanging threads, see BUG(2796) BUG(3880). However
    * you can explicitly call {@link #flush}.

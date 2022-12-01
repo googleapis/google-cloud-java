@@ -231,6 +231,12 @@ public class LoggingHandlerTest {
     }
   }
 
+  static class CustomLevel extends Level {
+    CustomLevel() {
+      super("CUSTOM", 510);
+    }
+  }
+
   @Rule public final OutputStreamPatcher outputStreamPatcher = new OutputStreamPatcher();
 
   @Before
@@ -241,7 +247,7 @@ public class LoggingHandlerTest {
     expect(options.getProjectId()).andStubReturn(PROJECT);
     expect(options.getService()).andStubReturn(logging);
     expect(options.getAutoPopulateMetadata()).andStubReturn(Boolean.FALSE);
-    logging.setFlushSeverity(EasyMock.anyObject(Severity.class));
+    logging.setFlushSeverity(Severity.ERROR);
     expectLastCall().anyTimes();
     logging.setWriteSynchronicity(EasyMock.anyObject(Synchronicity.class));
     expectLastCall().anyTimes();
@@ -535,6 +541,37 @@ public class LoggingHandlerTest {
     handler.publish(newLogRecord(Level.CONFIG, MESSAGE));
     handler.publish(newLogRecord(Level.INFO, MESSAGE));
     handler.publish(newLogRecord(Level.WARNING, MESSAGE));
+  }
+
+  @Test
+  public void testFlushLevelOff() {
+    logging.setFlushSeverity(Severity.NONE);
+    expectLastCall().once();
+    replay(options, logging);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
+    handler.setFlushLevel(Level.OFF);
+    assertEquals(Level.OFF, handler.getFlushLevel());
+  }
+
+  @Test
+  public void testFlushLevelOn() {
+    logging.setFlushSeverity(Severity.WARNING);
+    expectLastCall().once();
+    replay(options, logging);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
+    handler.setFlushLevel(Level.WARNING);
+    assertEquals(Level.WARNING, handler.getFlushLevel());
+  }
+
+  @Test
+  public void testCustomFlushLevelOn() {
+    CustomLevel level = new CustomLevel();
+    logging.setFlushSeverity(Severity.INFO);
+    expectLastCall().once();
+    replay(options, logging);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE);
+    handler.setFlushLevel(level);
+    assertEquals(level, handler.getFlushLevel());
   }
 
   @Test

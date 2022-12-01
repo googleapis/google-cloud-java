@@ -107,7 +107,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private final Map<Object, ApiFuture<Void>> pendingWrites = new ConcurrentHashMap<>();
 
   private volatile Synchronicity writeSynchronicity = Synchronicity.ASYNC;
-  private volatile Severity flushSeverity = null;
+  private volatile Severity flushSeverity = Severity.NONE;
   private boolean closed;
 
   private static Boolean emptyToBooleanFunction(Empty input) {
@@ -138,7 +138,12 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   @Override
   public void setFlushSeverity(Severity flushSeverity) {
-    this.flushSeverity = flushSeverity;
+    // For backward compatibility we treat null as Severity.NONE
+    if (flushSeverity == null) {
+      this.flushSeverity = Severity.NONE;
+    } else {
+      this.flushSeverity = flushSeverity;
+    }
   }
 
   @Override
@@ -882,7 +887,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         options = Instrumentation.addPartialSuccessOption(options);
       }
       writeLogEntries(logEntries, options);
-      if (flushSeverity != null) {
+      if (flushSeverity != Severity.NONE) {
         for (LogEntry logEntry : logEntries) {
           // flush pending writes if log severity at or above flush severity
           if (logEntry.getSeverity().compareTo(flushSeverity) >= 0) {
