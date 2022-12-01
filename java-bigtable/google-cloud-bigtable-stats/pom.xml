@@ -185,7 +185,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.4.0</version>
                 <!-- Ignore opencensus-exporter-metrics-util and opencensus-exporter-stats-stackdriver from -->
                 <!-- dependency analyze. opencensus-exporter-metrics-util is a transitive dependency from  -->
                 <!-- opencensus-exporter-stats-stackdriver but it's not defined in java-shared-dependencies. -->
