@@ -65,7 +65,7 @@
     <errorprone.version>2.16</errorprone.version>
     <jackson.version>2.14.1</jackson.version>
     <codec.version>1.15</codec.version>
-    <httpcomponents.httpcore.version>4.4.15</httpcomponents.httpcore.version>
+    <httpcomponents.httpcore.version>4.4.16</httpcomponents.httpcore.version>
     <httpcomponents.httpclient.version>4.5.13</httpcomponents.httpclient.version>
     <!-- ensure checker-qual version matches what Guava uses -->
     <checker-qual.version>3.27.0</checker-qual.version>
