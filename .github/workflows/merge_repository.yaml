@@ -23,15 +23,15 @@ jobs:
         env:
           USERNAME: ${{ github.actor }}
       - name: Compile
-        working-directory: generation/monorepo/google-cloud-java
+        working-directory: generation/monorepo/google-cloud-java-merged
         run: mvn compile -T C1 -B
       - name: Unit Tests
-        working-directory: generation/monorepo/google-cloud-java
+        working-directory: generation/monorepo/google-cloud-java-merged
         run: mvn test -T C1 -B
       - name: Push monorepo to branch
         if: ${{ github.event_name != 'pull_request' }}
         run: |
-          cd generation/monorepo/google-cloud-java
+          cd generation/monorepo/google-cloud-java-merged
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
           git push -f monorepo main:bootstrap_output
       - name: Push diff to branch
