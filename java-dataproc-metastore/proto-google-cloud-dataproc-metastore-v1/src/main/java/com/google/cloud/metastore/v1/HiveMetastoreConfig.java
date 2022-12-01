@@ -161,7 +161,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -185,7 +187,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -200,7 +204,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -220,7 +226,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * A mapping of Hive metastore configuration key-value pairs to apply to the
    * Hive metastore (configured in `hive-site.xml`). The mappings
-   * override system defaults (some keys cannot be overridden).
+   * override system defaults (some keys cannot be overridden). These
+   * overrides are also applied to auxiliary versions and can be further
+   * customized in the auxiliary version's `AuxiliaryVersionConfig`.
    * </pre>
    *
    * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -858,7 +866,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -882,7 +892,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -897,7 +909,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -917,7 +931,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -944,7 +960,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -967,7 +985,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>
@@ -989,7 +1009,9 @@ public final class HiveMetastoreConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * A mapping of Hive metastore configuration key-value pairs to apply to the
      * Hive metastore (configured in `hive-site.xml`). The mappings
-     * override system defaults (some keys cannot be overridden).
+     * override system defaults (some keys cannot be overridden). These
+     * overrides are also applied to auxiliary versions and can be further
+     * customized in the auxiliary version's `AuxiliaryVersionConfig`.
      * </pre>
      *
      * <code>map&lt;string, string&gt; config_overrides = 2;</code>

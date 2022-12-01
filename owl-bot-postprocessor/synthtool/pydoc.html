@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module __init__</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>__init__</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Crennie%5Cgitrepos%5Csynthtool%5Csynthtool%5C__init__.py">c:\users\rennie\gitrepos\synthtool\synthtool\__init__.py</a></font></td></tr></table>
+    <p><tt>Synthtool&nbsp;synthesizes&nbsp;libraries&nbsp;from&nbsp;disparate&nbsp;sources.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="__main__.html">__main__</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-copy"><strong>copy</strong></a> = move(sources: Iterable[Union[str, pathlib.Path]], destination: Union[str, pathlib.Path] = None, excludes: Iterable[Union[str, pathlib.Path]] = None, merge: Callable[[str, str, pathlib.Path], str] = None, required: bool = False) -&gt; bool</dt><dd><tt>copy&nbsp;file(s)&nbsp;at&nbsp;source&nbsp;to&nbsp;current&nbsp;directory,&nbsp;preserving&nbsp;file&nbsp;mode.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sources&nbsp;(ListOfPathsOrStrs):&nbsp;Glob&nbsp;pattern(s)&nbsp;to&nbsp;copy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;destination&nbsp;(PathOrStr):&nbsp;Destination&nbsp;folder&nbsp;for&nbsp;copied&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;excludes&nbsp;(ListOfPathsOrStrs):&nbsp;Glob&nbsp;pattern(s)&nbsp;of&nbsp;files&nbsp;to&nbsp;skip<br>
+&nbsp;&nbsp;&nbsp;&nbsp;merge&nbsp;(Callable[[str,&nbsp;str,&nbsp;Path],&nbsp;str]):&nbsp;Callback&nbsp;function&nbsp;for&nbsp;merging&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;there&nbsp;is&nbsp;an&nbsp;existing&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;required&nbsp;(bool):&nbsp;If&nbsp;required&nbsp;and&nbsp;no&nbsp;source&nbsp;files&nbsp;are&nbsp;copied,&nbsp;throws&nbsp;a&nbsp;MissingSourceError<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;any&nbsp;files&nbsp;were&nbsp;copied,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+ <dl><dt><a name="-dont_overwrite"><strong>dont_overwrite</strong></a>(patterns: Iterable[Union[str, pathlib.Path]]) -&gt; Callable[[str, str, pathlib.Path], str]</dt><dd><tt>Returns&nbsp;a&nbsp;merge&nbsp;function&nbsp;that&nbsp;doesn't&nbsp;overwrite&nbsp;the&nbsp;specified&nbsp;files.<br>
+&nbsp;<br>
+Pass&nbsp;the&nbsp;return&nbsp;value&nbsp;to&nbsp;<a href="#-move">move</a>()&nbsp;or&nbsp;<a href="#-copy">copy</a>()&nbsp;to&nbsp;avoid&nbsp;overwriting&nbsp;existing<br>
+files.</tt></dd></dl>
+ <dl><dt><a name="-move"><strong>move</strong></a>(sources: Iterable[Union[str, pathlib.Path]], destination: Union[str, pathlib.Path] = None, excludes: Iterable[Union[str, pathlib.Path]] = None, merge: Callable[[str, str, pathlib.Path], str] = None, required: bool = False) -&gt; bool</dt><dd><tt>copy&nbsp;file(s)&nbsp;at&nbsp;source&nbsp;to&nbsp;current&nbsp;directory,&nbsp;preserving&nbsp;file&nbsp;mode.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sources&nbsp;(ListOfPathsOrStrs):&nbsp;Glob&nbsp;pattern(s)&nbsp;to&nbsp;copy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;destination&nbsp;(PathOrStr):&nbsp;Destination&nbsp;folder&nbsp;for&nbsp;copied&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;excludes&nbsp;(ListOfPathsOrStrs):&nbsp;Glob&nbsp;pattern(s)&nbsp;of&nbsp;files&nbsp;to&nbsp;skip<br>
+&nbsp;&nbsp;&nbsp;&nbsp;merge&nbsp;(Callable[[str,&nbsp;str,&nbsp;Path],&nbsp;str]):&nbsp;Callback&nbsp;function&nbsp;for&nbsp;merging&nbsp;files<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;there&nbsp;is&nbsp;an&nbsp;existing&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;required&nbsp;(bool):&nbsp;If&nbsp;required&nbsp;and&nbsp;no&nbsp;source&nbsp;files&nbsp;are&nbsp;copied,&nbsp;throws&nbsp;a&nbsp;MissingSourceError<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;any&nbsp;files&nbsp;were&nbsp;copied,&nbsp;False&nbsp;otherwise.</tt></dd></dl>
+ <dl><dt><a name="-replace"><strong>replace</strong></a>(sources: Iterable[Union[str, pathlib.Path]], before: str, after: str, flags: int = &lt;RegexFlag.MULTILINE: 8&gt;) -&gt; int</dt><dd><tt>Replaces&nbsp;occurrences&nbsp;of&nbsp;before&nbsp;with&nbsp;after&nbsp;in&nbsp;all&nbsp;the&nbsp;given&nbsp;sources.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;times&nbsp;the&nbsp;text&nbsp;was&nbsp;found&nbsp;and&nbsp;replaced&nbsp;across&nbsp;all&nbsp;files.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['copy', 'move', 'replace', 'dont_overwrite']</td></tr></table>
+</body></html>

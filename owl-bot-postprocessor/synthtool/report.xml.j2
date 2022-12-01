@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites name="{{name}}" tests="{{results|length}}" failures="{{failures}}" skipped="{{skips}}">
+    {% for result in results %}
+    <testsuite name="{{result.name}}" tests="1" errors="0" failures="{% if result.error %}1{% else %}0{% endif %}" skipped="{% if result.skipped %}1{% else %}0{% endif %}">
+        <testcase classname="{{result.name}}" name="synthesize">
+            {% if result.error %}
+            <failure>{{result.output|e}}</failure>
+            {% else %}
+            <system-out>{{result.output|e}}</system-out>
+            {% endif %}
+        </testcase>
+    </testsuite>
+    {% endfor %}
+</testsuites>

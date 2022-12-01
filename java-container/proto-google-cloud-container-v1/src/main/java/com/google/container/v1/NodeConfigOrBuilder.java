@@ -1236,6 +1236,41 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+   *
+   * @return Whether the fastSocket field is set.
+   */
+  boolean hasFastSocket();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+   *
+   * @return The fastSocket.
+   */
+  com.google.container.v1.FastSocket getFastSocket();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
+   */
+  com.google.container.v1.FastSocketOrBuilder getFastSocketOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The resource labels for the node pool to use to annotate any related
    * Google Compute Engine resources.
    * </pre>

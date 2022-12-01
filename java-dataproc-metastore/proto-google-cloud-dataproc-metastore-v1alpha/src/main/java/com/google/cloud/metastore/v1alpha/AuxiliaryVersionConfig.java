@@ -252,8 +252,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-   * Hive metastore service.
+   * Output only. The network configuration contains the endpoint URI(s) of the
+   * auxiliary Hive metastore service.
    * </pre>
    *
    * <code>
@@ -270,8 +270,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-   * Hive metastore service.
+   * Output only. The network configuration contains the endpoint URI(s) of the
+   * auxiliary Hive metastore service.
    * </pre>
    *
    * <code>
@@ -290,8 +290,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-   * Hive metastore service.
+   * Output only. The network configuration contains the endpoint URI(s) of the
+   * auxiliary Hive metastore service.
    * </pre>
    *
    * <code>
@@ -1034,8 +1034,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1051,8 +1051,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1074,8 +1074,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1099,8 +1099,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1122,8 +1122,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1151,8 +1151,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1174,8 +1174,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1191,8 +1191,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>
@@ -1212,8 +1212,8 @@ public final class AuxiliaryVersionConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-     * Hive metastore service.
+     * Output only. The network configuration contains the endpoint URI(s) of the
+     * auxiliary Hive metastore service.
      * </pre>
      *
      * <code>

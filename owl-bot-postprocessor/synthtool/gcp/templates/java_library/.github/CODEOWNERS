@@ -1,0 +1,20 @@
+# Code owners file.
+# This file controls who is tagged for review for any given pull request.
+
+# For syntax help see:
+# https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
+{% if 'codeowner_team' in metadata['repo'] %}
+# The {{ metadata['repo']['codeowner_team'] }} is the default owner for changes in this repo
+*                       @googleapis/yoshi-java {{ metadata['repo']['codeowner_team'] }}
+{% if 'library_type' in metadata['repo'] and metadata['repo']['library_type'] != 'GAPIC_AUTO' %}
+# for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
+**/*.java               {{ metadata['repo']['codeowner_team'] }}
+{% endif %}
+{% else %}
+*                       @googleapis/yoshi-java
+{% endif %}
+# The java-samples-reviewers team is the default owner for samples changes
+samples/**/*.java       @googleapis/java-samples-reviewers
+
+# Generated snippets should not be owned by samples reviewers
+samples/snippets/generated/       @googleapis/yoshi-java

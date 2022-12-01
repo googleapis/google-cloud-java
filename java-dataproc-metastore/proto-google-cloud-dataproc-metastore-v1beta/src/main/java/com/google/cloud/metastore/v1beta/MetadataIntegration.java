@@ -114,6 +114,54 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     return getDataCatalogConfig();
   }
 
+  public static final int DATAPLEX_CONFIG_FIELD_NUMBER = 2;
+  private com.google.cloud.metastore.v1beta.DataplexConfig dataplexConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The integration config for the Dataplex service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+   *
+   * @return Whether the dataplexConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataplexConfig() {
+    return dataplexConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The integration config for the Dataplex service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+   *
+   * @return The dataplexConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1beta.DataplexConfig getDataplexConfig() {
+    return dataplexConfig_ == null
+        ? com.google.cloud.metastore.v1beta.DataplexConfig.getDefaultInstance()
+        : dataplexConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The integration config for the Dataplex service.
+   * </pre>
+   *
+   * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.metastore.v1beta.DataplexConfigOrBuilder getDataplexConfigOrBuilder() {
+    return getDataplexConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -131,6 +179,9 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     if (dataCatalogConfig_ != null) {
       output.writeMessage(1, getDataCatalogConfig());
     }
+    if (dataplexConfig_ != null) {
+      output.writeMessage(2, getDataplexConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -142,6 +193,9 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     size = 0;
     if (dataCatalogConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDataCatalogConfig());
+    }
+    if (dataplexConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDataplexConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -163,6 +217,10 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     if (hasDataCatalogConfig()) {
       if (!getDataCatalogConfig().equals(other.getDataCatalogConfig())) return false;
     }
+    if (hasDataplexConfig() != other.hasDataplexConfig()) return false;
+    if (hasDataplexConfig()) {
+      if (!getDataplexConfig().equals(other.getDataplexConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -177,6 +235,10 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     if (hasDataCatalogConfig()) {
       hash = (37 * hash) + DATA_CATALOG_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDataCatalogConfig().hashCode();
+    }
+    if (hasDataplexConfig()) {
+      hash = (37 * hash) + DATAPLEX_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDataplexConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -323,6 +385,12 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
         dataCatalogConfig_ = null;
         dataCatalogConfigBuilder_ = null;
       }
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfig_ = null;
+      } else {
+        dataplexConfig_ = null;
+        dataplexConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -354,6 +422,11 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
         result.dataCatalogConfig_ = dataCatalogConfig_;
       } else {
         result.dataCatalogConfig_ = dataCatalogConfigBuilder_.build();
+      }
+      if (dataplexConfigBuilder_ == null) {
+        result.dataplexConfig_ = dataplexConfig_;
+      } else {
+        result.dataplexConfig_ = dataplexConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -408,6 +481,9 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       if (other.hasDataCatalogConfig()) {
         mergeDataCatalogConfig(other.getDataCatalogConfig());
       }
+      if (other.hasDataplexConfig()) {
+        mergeDataplexConfig(other.getDataplexConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -441,6 +517,12 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
 
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getDataplexConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -645,6 +727,192 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
         dataCatalogConfig_ = null;
       }
       return dataCatalogConfigBuilder_;
+    }
+
+    private com.google.cloud.metastore.v1beta.DataplexConfig dataplexConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1beta.DataplexConfig,
+            com.google.cloud.metastore.v1beta.DataplexConfig.Builder,
+            com.google.cloud.metastore.v1beta.DataplexConfigOrBuilder>
+        dataplexConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     *
+     * @return Whether the dataplexConfig field is set.
+     */
+    public boolean hasDataplexConfig() {
+      return dataplexConfigBuilder_ != null || dataplexConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     *
+     * @return The dataplexConfig.
+     */
+    public com.google.cloud.metastore.v1beta.DataplexConfig getDataplexConfig() {
+      if (dataplexConfigBuilder_ == null) {
+        return dataplexConfig_ == null
+            ? com.google.cloud.metastore.v1beta.DataplexConfig.getDefaultInstance()
+            : dataplexConfig_;
+      } else {
+        return dataplexConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     */
+    public Builder setDataplexConfig(com.google.cloud.metastore.v1beta.DataplexConfig value) {
+      if (dataplexConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataplexConfig_ = value;
+        onChanged();
+      } else {
+        dataplexConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     */
+    public Builder setDataplexConfig(
+        com.google.cloud.metastore.v1beta.DataplexConfig.Builder builderForValue) {
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataplexConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     */
+    public Builder mergeDataplexConfig(com.google.cloud.metastore.v1beta.DataplexConfig value) {
+      if (dataplexConfigBuilder_ == null) {
+        if (dataplexConfig_ != null) {
+          dataplexConfig_ =
+              com.google.cloud.metastore.v1beta.DataplexConfig.newBuilder(dataplexConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataplexConfig_ = value;
+        }
+        onChanged();
+      } else {
+        dataplexConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     */
+    public Builder clearDataplexConfig() {
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfig_ = null;
+        onChanged();
+      } else {
+        dataplexConfig_ = null;
+        dataplexConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     */
+    public com.google.cloud.metastore.v1beta.DataplexConfig.Builder getDataplexConfigBuilder() {
+
+      onChanged();
+      return getDataplexConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     */
+    public com.google.cloud.metastore.v1beta.DataplexConfigOrBuilder getDataplexConfigOrBuilder() {
+      if (dataplexConfigBuilder_ != null) {
+        return dataplexConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dataplexConfig_ == null
+            ? com.google.cloud.metastore.v1beta.DataplexConfig.getDefaultInstance()
+            : dataplexConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The integration config for the Dataplex service.
+     * </pre>
+     *
+     * <code>.google.cloud.metastore.v1beta.DataplexConfig dataplex_config = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.metastore.v1beta.DataplexConfig,
+            com.google.cloud.metastore.v1beta.DataplexConfig.Builder,
+            com.google.cloud.metastore.v1beta.DataplexConfigOrBuilder>
+        getDataplexConfigFieldBuilder() {
+      if (dataplexConfigBuilder_ == null) {
+        dataplexConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.metastore.v1beta.DataplexConfig,
+                com.google.cloud.metastore.v1beta.DataplexConfig.Builder,
+                com.google.cloud.metastore.v1beta.DataplexConfigOrBuilder>(
+                getDataplexConfig(), getParentForChildren(), isClean());
+        dataplexConfig_ = null;
+      }
+      return dataplexConfigBuilder_;
     }
 
     @java.lang.Override
