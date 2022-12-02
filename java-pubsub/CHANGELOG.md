@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.122.0](https://github.com/googleapis/java-pubsub/compare/v1.121.1...v1.122.0) (2022-12-01)
+
+
+### Features
+
+* Next release from main branch is 1.122.0 ([#1409](https://github.com/googleapis/java-pubsub/issues/1409)) ([dad2c82](https://github.com/googleapis/java-pubsub/commit/dad2c82cc22ed40def105514a4bc8446375dc70e))
+
+
+### Dependencies
+
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.10 ([#1425](https://github.com/googleapis/java-pubsub/issues/1425)) ([39c22cb](https://github.com/googleapis/java-pubsub/commit/39c22cb99dadd1dea874e0a57cf2c9fb0dd67328))
+
 ## [1.121.1](https://github.com/googleapis/java-pubsub/compare/v1.121.0...v1.121.1) (2022-11-21)
 
 
