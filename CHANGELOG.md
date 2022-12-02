@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.13.3](https://github.com/googleapis/java-logging/compare/v3.13.2...v3.13.3) (2022-12-01)
+
+
+### Bug Fixes
+
+* Add a partner team as approvers for PRs ([#1211](https://github.com/googleapis/java-logging/issues/1211)) ([a69fd5e](https://github.com/googleapis/java-logging/commit/a69fd5e02b41e8818493797f8d4f64f75fdfb5e0))
+* Need a way to disable flushing ([#1206](https://github.com/googleapis/java-logging/issues/1206)) ([aa0c176](https://github.com/googleapis/java-logging/commit/aa0c176418534c1f07054ab10d66006fd88f6c39))
+
 ## [3.13.2](https://github.com/googleapis/java-logging/compare/v3.13.1...v3.13.2) (2022-11-21)
 
 
