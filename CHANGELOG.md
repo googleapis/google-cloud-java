@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [0.128.4](https://github.com/googleapis/java-logging-logback/compare/v0.128.3...v0.128.4) (2022-12-02)
+
+
+### Bug Fixes
+
+* Add a partner team as approvers for PRs ([#942](https://github.com/googleapis/java-logging-logback/issues/942)) ([21fdffe](https://github.com/googleapis/java-logging-logback/commit/21fdffe649dfaf91d6a4cec2020b68d5a6fa75ae))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.13.3 ([#944](https://github.com/googleapis/java-logging-logback/issues/944)) ([5eb8498](https://github.com/googleapis/java-logging-logback/commit/5eb8498a78724933e804adab6499100cad07a4d1))
+
 ## [0.128.3](https://github.com/googleapis/java-logging-logback/compare/v0.128.2...v0.128.3) (2022-11-22)
 
 
