@@ -15,6 +15,8 @@
 
 set -eo pipefail
 
+git branch --all --no-color --contains "$(git rev-parse HEAD)" | grep -v 'HEAD'
+
 ## Get the directory of the build script
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 ## cd to the parent directory, i.e. the root of the git repo
