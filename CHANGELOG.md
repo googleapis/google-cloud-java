@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.2 (2022-12-02)
+
+### Fixes
+
+* Fix race condition when running and adding state change callbacks. (#155)
+
 ## 1.3.1 (2022-10-24)
 
 ### Fixes
