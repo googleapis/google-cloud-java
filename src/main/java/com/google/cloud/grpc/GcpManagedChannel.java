@@ -98,7 +98,10 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private final ExecutorService stateNotificationExecutor = Executors.newCachedThreadPool(
       new ThreadFactoryBuilder().setNameFormat("gcp-mc-state-notifications-%d").build());
-  private List<Runnable> stateChangeCallbacks = Collections.synchronizedList(new LinkedList<>());
+
+  // Callbacks to call when state changes.
+  @GuardedBy("this")
+  private List<Runnable> stateChangeCallbacks = new LinkedList<>();
 
   // Metrics configuration.
   private MetricRegistry metricRegistry;
@@ -882,16 +885,19 @@ public class GcpManagedChannel extends ManagedChannel {
 
   @Override
   public void notifyWhenStateChanged(ConnectivityState source, Runnable callback) {
-    if (!getState(false).equals(source)) {
-      try {
-        stateNotificationExecutor.execute(callback);
-      } catch (RejectedExecutionException e) {
-        // Ignore exceptions on shutdown.
-        logger.fine(log("State notification change task rejected: %s", e.getMessage()));
+    if (getState(false).equals(source)) {
+      synchronized (this) {
+        stateChangeCallbacks.add(callback);
       }
       return;
     }
-    stateChangeCallbacks.add(callback);
+
+    try {
+      stateNotificationExecutor.execute(callback);
+    } catch (RejectedExecutionException e) {
+      // Ignore exceptions on shutdown.
+      logger.fine(log("State notification change task rejected: %s", e.getMessage()));
+    }
   }
 
   /**

@@ -32,6 +32,7 @@ import com.google.cloud.grpc.proto.AffinityConfig;
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.ChannelPoolConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.TransactionSelector;
 import io.grpc.CallOptions;
@@ -1263,6 +1264,69 @@ public final class GcpManagedChannelTest {
 
     assertThat(newState.get())
         .isAnyOf(ConnectivityState.CONNECTING, ConnectivityState.TRANSIENT_FAILURE);
+  }
+
+  @Test
+  public void testParallelStateNotifications() throws InterruptedException {
+    AtomicReference<Throwable> exception = new AtomicReference<>();
+
+    ExecutorService grpcExecutor = Executors.newCachedThreadPool(
+        new ThreadFactoryBuilder().setUncaughtExceptionHandler((t, e) ->
+            exception.set(e)
+        ).build()
+    );
+
+    ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forAddress(TARGET, 443);
+    GcpManagedChannel pool = (GcpManagedChannel) GcpManagedChannelBuilder.forDelegateBuilder(
+            builder)
+        .executor(grpcExecutor)
+        .withOptions(GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(GcpChannelPoolOptions.newBuilder()
+                .setMaxSize(1)
+                .build())
+            .build())
+        .build();
+
+    // Pre-populate with a fake channel to control state changes.
+    FakeManagedChannel channel = new FakeManagedChannel(grpcExecutor);
+    ChannelRef ref = pool.new ChannelRef(channel, 0);
+    pool.channelRefs.add(ref);
+
+    // Always re-subscribe for notification to have constant callbacks flowing.
+    final Runnable callback = new Runnable() {
+      @Override
+      public void run() {
+        ConnectivityState state = pool.getState(false);
+        pool.notifyWhenStateChanged(state, this);
+      }
+    };
+
+    // Update channels state and subscribe for pool state changes in parallel.
+    final ExecutorService executor = Executors.newCachedThreadPool(
+        new ThreadFactoryBuilder().setNameFormat("gcp-mc-test-%d").build());
+
+    for (int i = 0; i < 300; i++) {
+      executor.execute(() -> {
+        ConnectivityState currentState = pool.getState(true);
+        pool.notifyWhenStateChanged(currentState, callback);
+      });
+      executor.execute(() -> {
+        channel.setState(ConnectivityState.IDLE);
+        channel.setState(ConnectivityState.CONNECTING);
+      });
+    }
+
+    executor.shutdown();
+    //noinspection StatementWithEmptyBody
+    while (!executor.awaitTermination(10, TimeUnit.MILLISECONDS)) {}
+
+    channel.setState(ConnectivityState.SHUTDOWN);
+    pool.shutdownNow();
+
+    // Make sure no exceptions were raised in callbacks.
+    assertThat(exception.get()).isNull();
+
+    grpcExecutor.shutdown();
   }
 
   @Test
