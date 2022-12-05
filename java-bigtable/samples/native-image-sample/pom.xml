@@ -89,7 +89,7 @@
         <dependency>
           <groupId>org.graalvm.buildtools</groupId>
           <artifactId>junit-platform-native</artifactId>
-          <version>0.9.18</version>
+          <version>0.9.19</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
