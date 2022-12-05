@@ -404,7 +404,7 @@ see https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google
 
 ## Java Versions
 
-Java 7 or above is required for using the clients in this repository.
+Java 8 or above is required for using the clients in this repository.
 
 ## Supported Platforms
 
