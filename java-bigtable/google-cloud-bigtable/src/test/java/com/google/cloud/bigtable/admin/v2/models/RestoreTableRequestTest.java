@@ -31,6 +31,7 @@ public class RestoreTableRequestTest {
   private static final String INSTANCE_ID = "my-instance";
   private static final String CLUSTER_ID = "my-cluster";
   private static final String SOURCE_INSTANCE_ID = "source-instance-id";
+  private static final String SOURCE_PROJECT_ID = "source-project-id";
 
   @Test
   public void testToProto() {
@@ -56,6 +57,23 @@ public class RestoreTableRequestTest {
             .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
             .setBackup(
                 NameUtil.formatBackupName(PROJECT_ID, SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
+            .setTableId(TABLE_ID)
+            .build();
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testToProtoCrossProject() {
+    RestoreTableRequest request =
+        RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID, SOURCE_PROJECT_ID)
+            .setTableId(TABLE_ID);
+
+    com.google.bigtable.admin.v2.RestoreTableRequest requestProto =
+        com.google.bigtable.admin.v2.RestoreTableRequest.newBuilder()
+            .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
+            .setBackup(
+                NameUtil.formatBackupName(
+                    SOURCE_PROJECT_ID, SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID))
             .setTableId(TABLE_ID)
             .build();
     assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
@@ -89,6 +107,24 @@ public class RestoreTableRequestTest {
   }
 
   @Test
+  public void testEqualityCrossProject() {
+    RestoreTableRequest request =
+        RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID, SOURCE_PROJECT_ID)
+            .setTableId(TABLE_ID);
+
+    assertThat(request)
+        .isEqualTo(
+            RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID, SOURCE_PROJECT_ID)
+                .setTableId(TABLE_ID));
+    assertThat(request)
+        .isNotEqualTo(RestoreTableRequest.of(CLUSTER_ID, BACKUP_ID).setTableId(TABLE_ID));
+    assertThat(request)
+        .isNotEqualTo(
+            RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID, SOURCE_PROJECT_ID)
+                .setTableId("another-table"));
+  }
+
+  @Test
   public void testHashCode() {
     RestoreTableRequest request =
         RestoreTableRequest.of(CLUSTER_ID, BACKUP_ID).setTableId(TABLE_ID);
@@ -114,6 +150,26 @@ public class RestoreTableRequestTest {
     assertThat(request.hashCode())
         .isNotEqualTo(
             RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID)
+                .setTableId("another-table")
+                .hashCode());
+  }
+
+  @Test
+  public void testHashCodeCrossProject() {
+    RestoreTableRequest request =
+        RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID, SOURCE_PROJECT_ID)
+            .setTableId(TABLE_ID);
+    assertThat(request.hashCode())
+        .isEqualTo(
+            RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID, SOURCE_PROJECT_ID)
+                .setTableId(TABLE_ID)
+                .hashCode());
+    assertThat(request.hashCode())
+        .isNotEqualTo(
+            RestoreTableRequest.of(CLUSTER_ID, BACKUP_ID).setTableId(TABLE_ID).hashCode());
+    assertThat(request.hashCode())
+        .isNotEqualTo(
+            RestoreTableRequest.of(SOURCE_INSTANCE_ID, CLUSTER_ID, BACKUP_ID, SOURCE_PROJECT_ID)
                 .setTableId("another-table")
                 .hashCode());
   }
