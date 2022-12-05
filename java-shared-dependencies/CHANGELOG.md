@@ -1,6 +1,48 @@
 # Changelog
 
 
+## [3.1.0](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.6...v3.1.0) (2022-12-05)
+
+
+### Features
+
+* Next release from main branch is 3.1.0 ([#910](https://github.com/googleapis/java-shared-dependencies/issues/910)) ([3e36bc6](https://github.com/googleapis/java-shared-dependencies/commit/3e36bc6c5a6ffff771480200ecf5908cb347a50a))
+
+
+### Dependencies
+
+* Update dependency com.fasterxml.jackson:jackson-bom to v2.14.1 ([#924](https://github.com/googleapis/java-shared-dependencies/issues/924)) ([c630375](https://github.com/googleapis/java-shared-dependencies/commit/c630375d5059b4ac367979a2507c3870840c08e4))
+* Update dependency com.google.api-client:google-api-client-bom to v2.1.0 ([#934](https://github.com/googleapis/java-shared-dependencies/issues/934)) ([8af7b00](https://github.com/googleapis/java-shared-dependencies/commit/8af7b00cf0758df4015b1999d6f824ba1864be00))
+* Update dependency com.google.api-client:google-api-client-bom to v2.1.1 ([#941](https://github.com/googleapis/java-shared-dependencies/issues/941)) ([6a6e3e7](https://github.com/googleapis/java-shared-dependencies/commit/6a6e3e7d3232c7d74f92849a98e607a6d22b7b4e))
+* Update dependency com.google.auth:google-auth-library-bom to v1.13.0 ([#917](https://github.com/googleapis/java-shared-dependencies/issues/917)) ([1e2448c](https://github.com/googleapis/java-shared-dependencies/commit/1e2448c60cbe3e215b4f9f772d8e0c7cb1434bd0))
+* Update dependency com.google.cloud:grpc-gcp to v1.3.2 ([#942](https://github.com/googleapis/java-shared-dependencies/issues/942)) ([66c3e2a](https://github.com/googleapis/java-shared-dependencies/commit/66c3e2acda213fe9aea60b85f8543e3fdeaa2ecf))
+* Update dependency com.google.cloud.tools:dependencies to v1.5.13 ([#914](https://github.com/googleapis/java-shared-dependencies/issues/914)) ([9c0fa2c](https://github.com/googleapis/java-shared-dependencies/commit/9c0fa2c06ed04a3dddd9f0fd908865279393d373))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.10 ([#936](https://github.com/googleapis/java-shared-dependencies/issues/936)) ([f8abca8](https://github.com/googleapis/java-shared-dependencies/commit/f8abca8e075c59461c88b8c79fd1c5cd5eacb509))
+* Update dependency io.grpc:grpc-bom to v1.51.0 ([#919](https://github.com/googleapis/java-shared-dependencies/issues/919)) ([713b331](https://github.com/googleapis/java-shared-dependencies/commit/713b331a39917725ed4bd95c80c083c23d2a192e))
+* Update dependency io.perfmark:perfmark-api to v0.26.0 ([#907](https://github.com/googleapis/java-shared-dependencies/issues/907)) ([950cca6](https://github.com/googleapis/java-shared-dependencies/commit/950cca6df2d7e7d24ab8dd7e32c7a264e89d721f))
+* Update dependency org.apache.httpcomponents:httpclient to v4.5.14 ([#943](https://github.com/googleapis/java-shared-dependencies/issues/943)) ([7590b65](https://github.com/googleapis/java-shared-dependencies/commit/7590b6538290d3f9892b2b302505d3ecfca69530))
+* Update dependency org.apache.httpcomponents:httpcore to v4.4.16 ([#933](https://github.com/googleapis/java-shared-dependencies/issues/933)) ([6a68eb9](https://github.com/googleapis/java-shared-dependencies/commit/6a68eb96179a13cf324b4a4026ff6877d447a334))
+* Update dependency org.checkerframework:checker-qual to v3.28.0 ([#940](https://github.com/googleapis/java-shared-dependencies/issues/940)) ([5ea57c3](https://github.com/googleapis/java-shared-dependencies/commit/5ea57c3f5490c3cf7048e71dfab63aba8d7b874f))
+* Update gax.version to v2.20.1 ([#937](https://github.com/googleapis/java-shared-dependencies/issues/937)) ([ca30914](https://github.com/googleapis/java-shared-dependencies/commit/ca30914b59516c634de24b1fa33c8a6c454a0cef))
+* Update google.common-protos.version to v2.11.0 ([#935](https://github.com/googleapis/java-shared-dependencies/issues/935)) ([e92f583](https://github.com/googleapis/java-shared-dependencies/commit/e92f58361c0062414c34b669161f9d6284b0903f))
+* Update google.core.version to v2.8.28 ([#909](https://github.com/googleapis/java-shared-dependencies/issues/909)) ([79a731e](https://github.com/googleapis/java-shared-dependencies/commit/79a731e057fa7b1ac5f4bc6ae15869726bc9c20a))
+* Update google.core.version to v2.9.0 ([#944](https://github.com/googleapis/java-shared-dependencies/issues/944)) ([a50513b](https://github.com/googleapis/java-shared-dependencies/commit/a50513bc8902d059a7b53dc852b02b7e2f9bc3e6))
+* Update iam.version to v1.6.10 ([#915](https://github.com/googleapis/java-shared-dependencies/issues/915)) ([2c06312](https://github.com/googleapis/java-shared-dependencies/commit/2c06312732a56fd94f0ce8447062b42b3da15c92))
+* Update iam.version to v1.6.11 ([#916](https://github.com/googleapis/java-shared-dependencies/issues/916)) ([10b152d](https://github.com/googleapis/java-shared-dependencies/commit/10b152ded8ceded5ae3c60774ea8e75c7b69d9d8))
+* Update iam.version to v1.6.12 ([#918](https://github.com/googleapis/java-shared-dependencies/issues/918)) ([db57153](https://github.com/googleapis/java-shared-dependencies/commit/db57153752380dacb773530aef8079ff68772fc9))
+* Update iam.version to v1.6.13 ([#920](https://github.com/googleapis/java-shared-dependencies/issues/920)) ([763197e](https://github.com/googleapis/java-shared-dependencies/commit/763197e94a34620a2e234885fcdbdcb5fba144c2))
+* Update iam.version to v1.6.14 ([#921](https://github.com/googleapis/java-shared-dependencies/issues/921)) ([036cf6f](https://github.com/googleapis/java-shared-dependencies/commit/036cf6f0df788e9bffd5e21bfd8e560a797ed37d))
+* Update iam.version to v1.6.15 ([#922](https://github.com/googleapis/java-shared-dependencies/issues/922)) ([98b11a7](https://github.com/googleapis/java-shared-dependencies/commit/98b11a72f3818e4505d468c47b7c8105a3b55847))
+* Update iam.version to v1.6.16 ([#923](https://github.com/googleapis/java-shared-dependencies/issues/923)) ([b44d6ba](https://github.com/googleapis/java-shared-dependencies/commit/b44d6babd71d89ed27a0d7cac229d04111bb39e7))
+* Update iam.version to v1.6.17 ([#925](https://github.com/googleapis/java-shared-dependencies/issues/925)) ([f24a7f8](https://github.com/googleapis/java-shared-dependencies/commit/f24a7f8577ca90153d86b9ed3eab5954c1fc5500))
+* Update iam.version to v1.6.18 ([#926](https://github.com/googleapis/java-shared-dependencies/issues/926)) ([c77314d](https://github.com/googleapis/java-shared-dependencies/commit/c77314d5bdfbe960e6f71fb8dc044a60d1973038))
+* Update iam.version to v1.6.19 ([#927](https://github.com/googleapis/java-shared-dependencies/issues/927)) ([2990cf0](https://github.com/googleapis/java-shared-dependencies/commit/2990cf020e526ddba54c2a0542ef8e01f4f517f5))
+* Update iam.version to v1.6.20 ([#928](https://github.com/googleapis/java-shared-dependencies/issues/928)) ([7dbd204](https://github.com/googleapis/java-shared-dependencies/commit/7dbd204cdc0df7107c656e28766afeb14f6793c4))
+* Update iam.version to v1.6.21 ([#929](https://github.com/googleapis/java-shared-dependencies/issues/929)) ([cec2265](https://github.com/googleapis/java-shared-dependencies/commit/cec2265e43eaac7cc1be3c9bb42c0d93872f4075))
+* Update iam.version to v1.6.22 ([#931](https://github.com/googleapis/java-shared-dependencies/issues/931)) ([812ccf4](https://github.com/googleapis/java-shared-dependencies/commit/812ccf46fb0ada475dea2f6eb53839be8940dbde))
+* Update iam.version to v1.6.8 ([#906](https://github.com/googleapis/java-shared-dependencies/issues/906)) ([68ebe06](https://github.com/googleapis/java-shared-dependencies/commit/68ebe06101ec5b24fddb48012e3487c37827ba6a))
+* Update iam.version to v1.6.9 ([#912](https://github.com/googleapis/java-shared-dependencies/issues/912)) ([6a3097b](https://github.com/googleapis/java-shared-dependencies/commit/6a3097b559319f643f63727bd6d4ce5d30091317))
+
 ## [3.0.6](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.5...v3.0.6) (2022-11-07)
 
 
