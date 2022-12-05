@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetTcpProxiesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetTcpProxiesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,6 +45,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListTargetTcpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.GetTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetTcpProxyRequest;
@@ -51,14 +53,18 @@ import com.google.cloud.compute.v1.ListTargetTcpProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetBackendServiceTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest;
+import com.google.cloud.compute.v1.TargetTcpProxiesScopedList;
 import com.google.cloud.compute.v1.TargetTcpProxy;
+import com.google.cloud.compute.v1.TargetTcpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -105,6 +111,11 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListTargetTcpProxiesRequest,
+          TargetTcpProxyAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteTargetTcpProxyRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteTargetTcpProxyRequest, Operation, Operation>
       deleteOperationSettings;
@@ -123,6 +134,55 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
       setProxyHeaderSettings;
   private final OperationCallSettings<SetProxyHeaderTargetTcpProxyRequest, Operation, Operation>
       setProxyHeaderOperationSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListTargetTcpProxiesRequest,
+          TargetTcpProxyAggregatedList,
+          Map.Entry<String, TargetTcpProxiesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListTargetTcpProxiesRequest,
+              TargetTcpProxyAggregatedList,
+              Map.Entry<String, TargetTcpProxiesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListTargetTcpProxiesRequest injectToken(
+                AggregatedListTargetTcpProxiesRequest payload, String token) {
+              return AggregatedListTargetTcpProxiesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListTargetTcpProxiesRequest injectPageSize(
+                AggregatedListTargetTcpProxiesRequest payload, int pageSize) {
+              return AggregatedListTargetTcpProxiesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListTargetTcpProxiesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(TargetTcpProxyAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, TargetTcpProxiesScopedList>> extractResources(
+                TargetTcpProxyAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, TargetTcpProxiesScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy>
@@ -167,6 +227,32 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListTargetTcpProxiesRequest,
+          TargetTcpProxyAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListTargetTcpProxiesRequest,
+              TargetTcpProxyAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>
+                    callable,
+                AggregatedListTargetTcpProxiesRequest request,
+                ApiCallContext context,
+                ApiFuture<TargetTcpProxyAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListTargetTcpProxiesRequest,
+                      TargetTcpProxyAggregatedList,
+                      Map.Entry<String, TargetTcpProxiesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListTargetTcpProxiesRequest, TargetTcpProxyList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -182,6 +268,15 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
               return ListPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListTargetTcpProxiesRequest,
+          TargetTcpProxyAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteTargetTcpProxyRequest, Operation> deleteSettings() {
@@ -316,6 +411,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
   protected TargetTcpProxiesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -332,6 +428,11 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
   /** Builder for TargetTcpProxiesStubSettings. */
   public static class Builder extends StubSettings.Builder<TargetTcpProxiesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final PagedCallSettings.Builder<
+            AggregatedListTargetTcpProxiesRequest,
+            TargetTcpProxyAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteTargetTcpProxyRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteTargetTcpProxyRequest, Operation, Operation>
         deleteOperationSettings;
@@ -359,12 +460,12 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -373,14 +474,6 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -392,6 +485,14 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -402,6 +503,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -415,6 +517,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -427,6 +530,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
     protected Builder(TargetTcpProxiesStubSettings settings) {
       super(settings);
 
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -440,6 +544,7 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               insertSettings,
@@ -462,6 +567,11 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -606,6 +716,15 @@ public class TargetTcpProxiesStubSettings extends StubSettings<TargetTcpProxiesS
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListTargetTcpProxiesRequest,
+            TargetTcpProxyAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */

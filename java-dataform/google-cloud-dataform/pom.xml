@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataform</artifactId>
-  <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
+  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Dataform</name>
   <description>Cloud Dataform Help analytics teams manage data inside BigQuery using SQL.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataform-parent</artifactId>
-    <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
+    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataform</site.installationModule>

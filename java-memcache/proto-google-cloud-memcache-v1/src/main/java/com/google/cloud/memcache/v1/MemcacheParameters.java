@@ -78,8 +78,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The unique ID associated with this set of parameters. Users
    * can use this id to determine if the parameters associated with the instance
-   * differ from the parameters associated with the nodes and any action needs
-   * to be taken to apply parameters on nodes.
+   * differ from the parameters associated with the nodes. A discrepancy between
+   * parameter ids can inform users that they may need to take action to apply
+   * parameters on nodes.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -104,8 +105,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The unique ID associated with this set of parameters. Users
    * can use this id to determine if the parameters associated with the instance
-   * differ from the parameters associated with the nodes and any action needs
-   * to be taken to apply parameters on nodes.
+   * differ from the parameters associated with the nodes. A discrepancy between
+   * parameter ids can inform users that they may need to take action to apply
+   * parameters on nodes.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -607,8 +609,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The unique ID associated with this set of parameters. Users
      * can use this id to determine if the parameters associated with the instance
-     * differ from the parameters associated with the nodes and any action needs
-     * to be taken to apply parameters on nodes.
+     * differ from the parameters associated with the nodes. A discrepancy between
+     * parameter ids can inform users that they may need to take action to apply
+     * parameters on nodes.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -632,8 +635,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The unique ID associated with this set of parameters. Users
      * can use this id to determine if the parameters associated with the instance
-     * differ from the parameters associated with the nodes and any action needs
-     * to be taken to apply parameters on nodes.
+     * differ from the parameters associated with the nodes. A discrepancy between
+     * parameter ids can inform users that they may need to take action to apply
+     * parameters on nodes.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -657,8 +661,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The unique ID associated with this set of parameters. Users
      * can use this id to determine if the parameters associated with the instance
-     * differ from the parameters associated with the nodes and any action needs
-     * to be taken to apply parameters on nodes.
+     * differ from the parameters associated with the nodes. A discrepancy between
+     * parameter ids can inform users that they may need to take action to apply
+     * parameters on nodes.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -681,8 +686,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The unique ID associated with this set of parameters. Users
      * can use this id to determine if the parameters associated with the instance
-     * differ from the parameters associated with the nodes and any action needs
-     * to be taken to apply parameters on nodes.
+     * differ from the parameters associated with the nodes. A discrepancy between
+     * parameter ids can inform users that they may need to take action to apply
+     * parameters on nodes.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -701,8 +707,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The unique ID associated with this set of parameters. Users
      * can use this id to determine if the parameters associated with the instance
-     * differ from the parameters associated with the nodes and any action needs
-     * to be taken to apply parameters on nodes.
+     * differ from the parameters associated with the nodes. A discrepancy between
+     * parameter ids can inform users that they may need to take action to apply
+     * parameters on nodes.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

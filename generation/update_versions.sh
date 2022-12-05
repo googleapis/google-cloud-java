@@ -57,59 +57,59 @@ fi
 count=0
 missing_artifacts=()
 
-for path in $(find . -mindepth 2 -maxdepth 2 -name pom.xml | sort | xargs dirname); do
-  versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt"))
 
-  for line in "${versions_array[@]}"; do
-    artifactId=$(echo "${line}" | cut -d ":" -f1)
+path=.
+versions_array=($(grep -E "^.*:[0-9]+\.[0-9]+\.[0-9]+.*:[0-9]+\.[0-9]+\.[0-9]+.*$" "${path}/versions.txt"))
 
-    if [[ "${artifactId}" =~ .*grafeas.* ]]; then
-      maven_url="https://repo1.maven.org/maven2/io/grafeas/${artifactId}/maven-metadata.xml"
-    elif [[ "${artifactId}" =~ .*area120.* ]] && [[ "${artifactId}" =~ ^google- ]]; then
-      maven_url="https://repo1.maven.org/maven2/com/google/area120/${artifactId}/maven-metadata.xml"
-    elif [[ "${artifactId}" =~ .*analytics.* ]] && [[ "${artifactId}" =~ ^google- ]]; then
-      maven_url="https://repo1.maven.org/maven2/com/google/analytics/${artifactId}/maven-metadata.xml"
-    elif [[ "${artifactId}" =~ ^google- ]]; then
-      maven_url="https://repo1.maven.org/maven2/com/google/cloud/${artifactId}/maven-metadata.xml"
+for line in "${versions_array[@]}"; do
+  artifactId=$(echo "${line}" | cut -d ":" -f1)
+
+  if [[ "${artifactId}" =~ .*grafeas.* ]]; then
+    maven_url="https://repo1.maven.org/maven2/io/grafeas/${artifactId}/maven-metadata.xml"
+  elif [[ "${artifactId}" =~ .*area120.* ]] && [[ "${artifactId}" =~ ^google- ]]; then
+    maven_url="https://repo1.maven.org/maven2/com/google/area120/${artifactId}/maven-metadata.xml"
+  elif [[ "${artifactId}" =~ .*analytics-.* ]] && [[ "${artifactId}" =~ ^google- ]]; then
+    maven_url="https://repo1.maven.org/maven2/com/google/analytics/${artifactId}/maven-metadata.xml"
+  elif [[ "${artifactId}" =~ ^(google-|gapic) ]]; then
+    maven_url="https://repo1.maven.org/maven2/com/google/cloud/${artifactId}/maven-metadata.xml"
+  else
+    maven_url="https://repo1.maven.org/maven2/com/google/api/grpc/${artifactId}/maven-metadata.xml"
+  fi
+
+  count=$((count + 1))
+  echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
+  # Check if the artifact exists in Maven Central, otherwise add to missing_artifacts
+  if curl --output /dev/null --silent --head --fail "${maven_url}"; then
+    metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept:application/xml" --limit-rate 200k)
+
+    # Versioning of artifacts in Maven Central follow SemVer (Major.Minor.Patch-{alpha|beta})
+    # This keeps track of the additional versioning after the PATCH value (alpha/beta)
+    # `cut` normally returns the entire string if the delimiter DNE. The `-s` makes cut return nothing
+    # maven_latest_version stores Major.Minor.Patch or the entire version
+    # maven_latest_trailing stores alpha/beta/etc. or nothing
+    maven_metadata_version=$(echo "${metadata_file}" | grep 'latest' | cut -d '>' -f 2 | cut -d '<' -f 1)
+    maven_latest_version=$(echo "${maven_metadata_version}" | cut -d "-" -f1)
+    maven_latest_trailing=$(echo "${maven_metadata_version}" | cut -s -d "-" -f2-)
+
+    major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
+    minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
+    patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
+    patch_version_bump=$((patch_version + 1))
+    if [[ -z "${maven_latest_trailing}" ]]; then
+      maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
     else
-      maven_url="https://repo1.maven.org/maven2/com/google/api/grpc/${artifactId}/maven-metadata.xml"
+      maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}-${maven_latest_trailing}"
+    fi
+    if [[ "${snapshot_flag}" = "true" ]]; then
+      new_version="${artifactId}:${maven_metadata_version}:${maven_version_bump}-SNAPSHOT"
+    else
+      new_version="${artifactId}:${maven_metadata_version}:${maven_metadata_version}"
     fi
 
-    count=$((count + 1))
-    echo "Module #${count} -- Downloading ${artifactId} from ${maven_url}"
-    # Check if the artifact exists in Maven Central, otherwise add to missing_artifacts
-    if curl --output /dev/null --silent --head --fail "${maven_url}"; then
-      metadata_file=$(retry_with_backoff 3 10 curl -s "${maven_url}" -H "Accept:application/xml" --limit-rate 200k)
-
-      # Versioning of artifacts in Maven Central follow SemVer (Major.Minor.Patch-{alpha|beta})
-      # This keeps track of the additional versioning after the PATCH value (alpha/beta)
-      # `cut` normally returns the entire string if the delimiter DNE. The `-s` makes cut return nothing
-      # maven_latest_version stores Major.Minor.Patch or the entire version
-      # maven_latest_trailing stores alpha/beta/etc. or nothing
-      maven_metadata_version=$(echo "${metadata_file}" | grep 'latest' | cut -d '>' -f 2 | cut -d '<' -f 1)
-      maven_latest_version=$(echo "${maven_metadata_version}" | cut -d "-" -f1)
-      maven_latest_trailing=$(echo "${maven_metadata_version}" | cut -s -d "-" -f2-)
-
-      major_version=$(echo "${maven_latest_version}" | cut -d "." -f1)
-      minor_version=$(echo "${maven_latest_version}" | cut -d "." -f2)
-      patch_version=$(echo "${maven_latest_version}" | cut -d "." -f3)
-      patch_version_bump=$((patch_version + 1))
-      if [[ -z "${maven_latest_trailing}" ]]; then
-        maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}"
-      else
-        maven_version_bump="${major_version}.${minor_version}.${patch_version_bump}-${maven_latest_trailing}"
-      fi
-      if [[ "${snapshot_flag}" = "true" ]]; then
-        new_version="${artifactId}:${maven_metadata_version}:${maven_version_bump}-SNAPSHOT"
-      else
-        new_version="${artifactId}:${maven_metadata_version}:${maven_metadata_version}"
-      fi
-
-      sed -i.bak "s/${line}/${new_version}/g" "${path}/versions.txt" && rm "${path}/versions.txt.bak"
-    else
-      missing_artifacts+=("${artifactId}")
-    fi
-  done
+    sed -i.bak "s/${line}/${new_version}/g" "${path}/versions.txt" && rm "${path}/versions.txt.bak"
+  else
+    missing_artifacts+=("${artifactId}")
+  fi
 done
 
 echo "These artifacts don't exist: ${missing_artifacts[*]}"

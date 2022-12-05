@@ -117,6 +117,28 @@ public class EnterpriseKnowledgeGraphServiceSettings
         .deleteEntityReconciliationJobSettings();
   }
 
+  /** Returns the object with the settings used for calls to lookup. */
+  public UnaryCallSettings<LookupRequest, LookupResponse> lookupSettings() {
+    return ((EnterpriseKnowledgeGraphServiceStubSettings) getStubSettings()).lookupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to search. */
+  public UnaryCallSettings<SearchRequest, SearchResponse> searchSettings() {
+    return ((EnterpriseKnowledgeGraphServiceStubSettings) getStubSettings()).searchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to lookupPublicKg. */
+  public UnaryCallSettings<LookupPublicKgRequest, LookupPublicKgResponse> lookupPublicKgSettings() {
+    return ((EnterpriseKnowledgeGraphServiceStubSettings) getStubSettings())
+        .lookupPublicKgSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchPublicKg. */
+  public UnaryCallSettings<SearchPublicKgRequest, SearchPublicKgResponse> searchPublicKgSettings() {
+    return ((EnterpriseKnowledgeGraphServiceStubSettings) getStubSettings())
+        .searchPublicKgSettings();
+  }
+
   public static final EnterpriseKnowledgeGraphServiceSettings create(
       EnterpriseKnowledgeGraphServiceStubSettings stub) throws IOException {
     return new EnterpriseKnowledgeGraphServiceSettings.Builder(stub.toBuilder()).build();
@@ -264,6 +286,28 @@ public class EnterpriseKnowledgeGraphServiceSettings
     public UnaryCallSettings.Builder<DeleteEntityReconciliationJobRequest, Empty>
         deleteEntityReconciliationJobSettings() {
       return getStubSettingsBuilder().deleteEntityReconciliationJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lookup. */
+    public UnaryCallSettings.Builder<LookupRequest, LookupResponse> lookupSettings() {
+      return getStubSettingsBuilder().lookupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to search. */
+    public UnaryCallSettings.Builder<SearchRequest, SearchResponse> searchSettings() {
+      return getStubSettingsBuilder().searchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lookupPublicKg. */
+    public UnaryCallSettings.Builder<LookupPublicKgRequest, LookupPublicKgResponse>
+        lookupPublicKgSettings() {
+      return getStubSettingsBuilder().lookupPublicKgSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchPublicKg. */
+    public UnaryCallSettings.Builder<SearchPublicKgRequest, SearchPublicKgResponse>
+        searchPublicKgSettings() {
+      return getStubSettingsBuilder().searchPublicKgSettings();
     }
 
     @Override

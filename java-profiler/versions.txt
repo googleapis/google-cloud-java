@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-profiler:2.5.0:2.5.1-SNAPSHOT
-grpc-google-cloud-profiler-v2:2.5.0:2.5.1-SNAPSHOT
-proto-google-cloud-profiler-v2:2.5.0:2.5.1-SNAPSHOT

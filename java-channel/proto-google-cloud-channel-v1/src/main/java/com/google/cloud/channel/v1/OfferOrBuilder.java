@@ -367,4 +367,29 @@ public interface OfferOrBuilder
    */
   com.google.cloud.channel.v1.ParameterDefinitionOrBuilder getParameterDefinitionsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The deal code of the offer to get a special promotion or discount.
+   * </pre>
+   *
+   * <code>string deal_code = 12;</code>
+   *
+   * @return The dealCode.
+   */
+  java.lang.String getDealCode();
+  /**
+   *
+   *
+   * <pre>
+   * The deal code of the offer to get a special promotion or discount.
+   * </pre>
+   *
+   * <code>string deal_code = 12;</code>
+   *
+   * @return The bytes for dealCode.
+   */
+  com.google.protobuf.ByteString getDealCodeBytes();
 }

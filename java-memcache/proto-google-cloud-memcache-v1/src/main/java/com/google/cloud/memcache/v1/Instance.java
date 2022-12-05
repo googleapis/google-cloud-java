@@ -18,7 +18,15 @@
 
 package com.google.cloud.memcache.v1;
 
-/** Protobuf type {@code google.cloud.memcache.v1.Instance} */
+/**
+ *
+ *
+ * <pre>
+ * A Memorystore for Memcached instance
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.memcache.v1.Instance}
+ */
 public final class Instance extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.memcache.v1.Instance)
@@ -123,6 +131,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Memcached instance is updating configuration such as maintenance policy
+     * and schedule.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    UPDATING(3),
+    /**
+     *
+     *
+     * <pre>
      * Memcached instance is being deleted.
      * </pre>
      *
@@ -176,6 +195,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Memcached instance is updating configuration such as maintenance policy
+     * and schedule.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    public static final int UPDATING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
      * Memcached instance is being deleted.
      * </pre>
      *
@@ -223,6 +253,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return CREATING;
         case 2:
           return READY;
+        case 3:
+          return UPDATING;
         case 4:
           return DELETING;
         case 5:
@@ -3698,10 +3730,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users may choose which
-   * zones Memcached nodes within an instances should be provisioned in.
-   * Refer to [zones] field for more details.
+   * Note: Memcached instances are managed and addressed at the regional level
+   * so `location_id` here refers to a Google Cloud region; however, users may
+   * choose which zones Memcached nodes should be provisioned in within an
+   * instance. Refer to [zones][google.cloud.memcache.v1.Instance.zones] field for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3727,10 +3759,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-   * Note: Memcached instances are managed and addressed at regional level so
-   * location_id here refers to a GCP region; however, users may choose which
-   * zones Memcached nodes within an instances should be provisioned in.
-   * Refer to [zones] field for more details.
+   * Note: Memcached instances are managed and addressed at the regional level
+   * so `location_id` here refers to a Google Cloud region; however, users may
+   * choose which zones Memcached nodes should be provisioned in within an
+   * instance. Refer to [zones][google.cloud.memcache.v1.Instance.zones] field for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3756,7 +3788,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User provided name for the instance only used for display
+   * User provided name for the instance, which is only used for display
    * purposes. Cannot be more than 80 characters.
    * </pre>
    *
@@ -3780,7 +3812,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User provided name for the instance only used for display
+   * User provided name for the instance, which is only used for display
    * purposes. Cannot be more than 80 characters.
    * </pre>
    *
@@ -3968,7 +4000,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -3985,7 +4017,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -4002,7 +4034,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -4020,7 +4052,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Zones where Memcached nodes should be provisioned in.
+   * Zones in which Memcached nodes should be provisioned.
    * Memcached nodes will be equally distributed across these zones. If not
    * provided, the service will by default create nodes in all zones in the
    * region for the instance.
@@ -4115,7 +4147,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The major version of Memcached software.
    * If not provided, latest supported version will be used. Currently the
-   * latest supported major version is MEMCACHE_1_5.
+   * latest supported major version is `MEMCACHE_1_5`.
    * The minor version will be automatically determined by our system based on
    * the latest supported minor version.
    * </pre>
@@ -4134,7 +4166,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The major version of Memcached software.
    * If not provided, latest supported version will be used. Currently the
-   * latest supported major version is MEMCACHE_1_5.
+   * latest supported major version is `MEMCACHE_1_5`.
    * The minor version will be automatically determined by our system based on
    * the latest supported minor version.
    * </pre>
@@ -4157,7 +4189,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -4173,7 +4205,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -4191,7 +4223,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -4209,7 +4241,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
    * </pre>
    *
    * <code>
@@ -4225,7 +4257,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
    * </pre>
    *
    * <code>
@@ -4242,7 +4274,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
    * </pre>
    *
    * <code>
@@ -4258,7 +4290,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
    * </pre>
    *
    * <code>
@@ -4274,7 +4306,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of Memcached nodes.
-   * Refer to [Node] message for more details.
+   * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
    * </pre>
    *
    * <code>
@@ -4485,7 +4517,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -4500,7 +4532,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -4515,7 +4547,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -4529,7 +4561,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -4543,7 +4575,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of messages that describe current statuses of memcached instance.
+   * List of messages that describe the current state of the Memcached instance.
    * </pre>
    *
    * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -4561,7 +4593,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoint for Discovery API
+   * Output only. Endpoint for the Discovery API.
    * </pre>
    *
    * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4584,7 +4616,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Endpoint for Discovery API
+   * Output only. Endpoint for the Discovery API.
    * </pre>
    *
    * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4602,6 +4634,115 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 21;
+  private com.google.cloud.memcache.v1.MaintenancePolicy maintenancePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return maintenancePolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1.MaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.memcache.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
+    return getMaintenancePolicy();
+  }
+
+  public static final int MAINTENANCE_SCHEDULE_FIELD_NUMBER = 22;
+  private com.google.cloud.memcache.v1.MaintenanceSchedule maintenanceSchedule_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceSchedule() {
+    return maintenanceSchedule_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1.MaintenanceSchedule getMaintenanceSchedule() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.memcache.v1.MaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1.MaintenanceScheduleOrBuilder
+      getMaintenanceScheduleOrBuilder() {
+    return getMaintenanceSchedule();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4665,6 +4806,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(discoveryEndpoint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, discoveryEndpoint_);
+    }
+    if (maintenancePolicy_ != null) {
+      output.writeMessage(21, getMaintenancePolicy());
+    }
+    if (maintenanceSchedule_ != null) {
+      output.writeMessage(22, getMaintenanceSchedule());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4737,6 +4884,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(discoveryEndpoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, discoveryEndpoint_);
     }
+    if (maintenancePolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getMaintenancePolicy());
+    }
+    if (maintenanceSchedule_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(22, getMaintenanceSchedule());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4780,6 +4934,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getMemcacheFullVersion().equals(other.getMemcacheFullVersion())) return false;
     if (!getInstanceMessagesList().equals(other.getInstanceMessagesList())) return false;
     if (!getDiscoveryEndpoint().equals(other.getDiscoveryEndpoint())) return false;
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
+    }
+    if (hasMaintenanceSchedule() != other.hasMaintenanceSchedule()) return false;
+    if (hasMaintenanceSchedule()) {
+      if (!getMaintenanceSchedule().equals(other.getMaintenanceSchedule())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4839,6 +5001,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DISCOVERY_ENDPOINT_FIELD_NUMBER;
     hash = (53 * hash) + getDiscoveryEndpoint().hashCode();
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasMaintenanceSchedule()) {
+      hash = (37 * hash) + MAINTENANCE_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceSchedule().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4938,7 +5108,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.memcache.v1.Instance} */
+  /**
+   *
+   *
+   * <pre>
+   * A Memorystore for Memcached instance
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.memcache.v1.Instance}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.memcache.v1.Instance)
@@ -5045,6 +5223,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000008);
       discoveryEndpoint_ = "";
 
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = null;
+      } else {
+        maintenancePolicy_ = null;
+        maintenancePolicyBuilder_ = null;
+      }
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = null;
+      } else {
+        maintenanceSchedule_ = null;
+        maintenanceScheduleBuilder_ = null;
+      }
       return this;
     }
 
@@ -5126,6 +5316,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         result.instanceMessages_ = instanceMessagesBuilder_.build();
       }
       result.discoveryEndpoint_ = discoveryEndpoint_;
+      if (maintenancePolicyBuilder_ == null) {
+        result.maintenancePolicy_ = maintenancePolicy_;
+      } else {
+        result.maintenancePolicy_ = maintenancePolicyBuilder_.build();
+      }
+      if (maintenanceScheduleBuilder_ == null) {
+        result.maintenanceSchedule_ = maintenanceSchedule_;
+      } else {
+        result.maintenanceSchedule_ = maintenanceScheduleBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -5281,6 +5481,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         discoveryEndpoint_ = other.discoveryEndpoint_;
         onChanged();
       }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasMaintenanceSchedule()) {
+        mergeMaintenanceSchedule(other.getMaintenanceSchedule());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5424,6 +5630,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getMaintenanceScheduleFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5451,10 +5671,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5479,10 +5699,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5507,10 +5727,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5534,10 +5754,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5557,10 +5777,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
-     * Note: Memcached instances are managed and addressed at regional level so
-     * location_id here refers to a GCP region; however, users may choose which
-     * zones Memcached nodes within an instances should be provisioned in.
-     * Refer to [zones] field for more details.
+     * Note: Memcached instances are managed and addressed at the regional level
+     * so `location_id` here refers to a Google Cloud region; however, users may
+     * choose which zones Memcached nodes should be provisioned in within an
+     * instance. Refer to [zones][google.cloud.memcache.v1.Instance.zones] field for more details.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5584,7 +5804,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5607,7 +5827,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5630,7 +5850,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5652,7 +5872,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5670,7 +5890,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User provided name for the instance only used for display
+     * User provided name for the instance, which is only used for display
      * purposes. Cannot be more than 80 characters.
      * </pre>
      *
@@ -5996,7 +6216,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6013,7 +6233,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6030,7 +6250,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6048,7 +6268,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6066,7 +6286,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6091,7 +6311,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6115,7 +6335,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6136,7 +6356,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6156,7 +6376,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zones where Memcached nodes should be provisioned in.
+     * Zones in which Memcached nodes should be provisioned.
      * Memcached nodes will be equally distributed across these zones. If not
      * provided, the service will by default create nodes in all zones in the
      * region for the instance.
@@ -6441,7 +6661,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6460,7 +6680,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6482,7 +6702,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6504,7 +6724,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6529,7 +6749,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The major version of Memcached software.
      * If not provided, latest supported version will be used. Currently the
-     * latest supported major version is MEMCACHE_1_5.
+     * latest supported major version is `MEMCACHE_1_5`.
      * The minor version will be automatically determined by our system based on
      * the latest supported minor version.
      * </pre>
@@ -6555,7 +6775,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6570,7 +6790,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6591,7 +6811,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6614,7 +6834,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6635,7 +6855,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6662,7 +6882,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6683,7 +6903,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6698,7 +6918,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6717,7 +6937,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6762,7 +6982,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6781,7 +7001,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6800,7 +7020,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6819,7 +7039,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6844,7 +7064,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6867,7 +7087,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6892,7 +7112,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6917,7 +7137,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6940,7 +7160,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6963,7 +7183,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -6986,7 +7206,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7008,7 +7228,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7030,7 +7250,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7045,7 +7265,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7065,7 +7285,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7085,7 +7305,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7101,7 +7321,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7117,7 +7337,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of Memcached nodes.
-     * Refer to [Node] message for more details.
+     * Refer to [Node][google.cloud.memcache.v1.Instance.Node] message for more details.
      * </pre>
      *
      * <code>
@@ -7795,7 +8015,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7813,7 +8033,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7830,7 +8050,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7847,7 +8067,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7871,7 +8091,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7892,7 +8112,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7916,7 +8136,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7940,7 +8160,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7961,7 +8181,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -7982,7 +8202,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8004,7 +8224,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8024,7 +8244,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8044,7 +8264,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8058,7 +8278,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8076,7 +8296,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8094,7 +8314,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8109,7 +8329,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8125,7 +8345,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of messages that describe current statuses of memcached instance.
+     * List of messages that describe the current state of the Memcached instance.
      * </pre>
      *
      * <code>repeated .google.cloud.memcache.v1.Instance.InstanceMessage instance_messages = 19;
@@ -8161,7 +8381,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8183,7 +8403,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8205,7 +8425,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8226,7 +8446,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8243,7 +8463,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Endpoint for Discovery API
+     * Output only. Endpoint for the Discovery API.
      * </pre>
      *
      * <code>string discovery_endpoint = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8260,6 +8480,417 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       discoveryEndpoint_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.memcache.v1.MaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1.MaintenancePolicy,
+            com.google.cloud.memcache.v1.MaintenancePolicy.Builder,
+            com.google.cloud.memcache.v1.MaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return maintenancePolicyBuilder_ != null || maintenancePolicy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.cloud.memcache.v1.MaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.memcache.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     */
+    public Builder setMaintenancePolicy(com.google.cloud.memcache.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.cloud.memcache.v1.MaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     */
+    public Builder mergeMaintenancePolicy(com.google.cloud.memcache.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (maintenancePolicy_ != null) {
+          maintenancePolicy_ =
+              com.google.cloud.memcache.v1.MaintenancePolicy.newBuilder(maintenancePolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenancePolicy_ = value;
+        }
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     */
+    public Builder clearMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = null;
+        onChanged();
+      } else {
+        maintenancePolicy_ = null;
+        maintenancePolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     */
+    public com.google.cloud.memcache.v1.MaintenancePolicy.Builder getMaintenancePolicyBuilder() {
+
+      onChanged();
+      return getMaintenancePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     */
+    public com.google.cloud.memcache.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.memcache.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1.MaintenancePolicy maintenance_policy = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1.MaintenancePolicy,
+            com.google.cloud.memcache.v1.MaintenancePolicy.Builder,
+            com.google.cloud.memcache.v1.MaintenancePolicyOrBuilder>
+        getMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memcache.v1.MaintenancePolicy,
+                com.google.cloud.memcache.v1.MaintenancePolicy.Builder,
+                com.google.cloud.memcache.v1.MaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
+    }
+
+    private com.google.cloud.memcache.v1.MaintenanceSchedule maintenanceSchedule_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1.MaintenanceSchedule,
+            com.google.cloud.memcache.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.memcache.v1.MaintenanceScheduleOrBuilder>
+        maintenanceScheduleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the maintenanceSchedule field is set.
+     */
+    public boolean hasMaintenanceSchedule() {
+      return maintenanceScheduleBuilder_ != null || maintenanceSchedule_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The maintenanceSchedule.
+     */
+    public com.google.cloud.memcache.v1.MaintenanceSchedule getMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.memcache.v1.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      } else {
+        return maintenanceScheduleBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(com.google.cloud.memcache.v1.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceSchedule_ = value;
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.memcache.v1.MaintenanceSchedule.Builder builderForValue) {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMaintenanceSchedule(
+        com.google.cloud.memcache.v1.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (maintenanceSchedule_ != null) {
+          maintenanceSchedule_ =
+              com.google.cloud.memcache.v1.MaintenanceSchedule.newBuilder(maintenanceSchedule_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenanceSchedule_ = value;
+        }
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = null;
+        onChanged();
+      } else {
+        maintenanceSchedule_ = null;
+        maintenanceScheduleBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memcache.v1.MaintenanceSchedule.Builder
+        getMaintenanceScheduleBuilder() {
+
+      onChanged();
+      return getMaintenanceScheduleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memcache.v1.MaintenanceScheduleOrBuilder
+        getMaintenanceScheduleOrBuilder() {
+      if (maintenanceScheduleBuilder_ != null) {
+        return maintenanceScheduleBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.memcache.v1.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1.MaintenanceSchedule maintenance_schedule = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1.MaintenanceSchedule,
+            com.google.cloud.memcache.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.memcache.v1.MaintenanceScheduleOrBuilder>
+        getMaintenanceScheduleFieldBuilder() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceScheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memcache.v1.MaintenanceSchedule,
+                com.google.cloud.memcache.v1.MaintenanceSchedule.Builder,
+                com.google.cloud.memcache.v1.MaintenanceScheduleOrBuilder>(
+                getMaintenanceSchedule(), getParentForChildren(), isClean());
+        maintenanceSchedule_ = null;
+      }
+      return maintenanceScheduleBuilder_;
     }
 
     @java.lang.Override

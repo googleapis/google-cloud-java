@@ -17,11 +17,16 @@
 package com.google.cloud.memcache.v1beta2.stub;
 
 import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListInstancesPagedResponse;
+import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.memcache.v1beta2.ApplyParametersRequest;
 import com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest;
 import com.google.cloud.memcache.v1beta2.CreateInstanceRequest;
@@ -31,6 +36,7 @@ import com.google.cloud.memcache.v1beta2.Instance;
 import com.google.cloud.memcache.v1beta2.ListInstancesRequest;
 import com.google.cloud.memcache.v1beta2.ListInstancesResponse;
 import com.google.cloud.memcache.v1beta2.OperationMetadata;
+import com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest;
 import com.google.cloud.memcache.v1beta2.UpdateInstanceRequest;
 import com.google.cloud.memcache.v1beta2.UpdateParametersRequest;
 import com.google.longrunning.Operation;
@@ -122,6 +128,29 @@ public abstract class CloudMemcacheStub implements BackgroundResource {
 
   public UnaryCallable<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateCallable() {
     throw new UnsupportedOperationException("Not implemented: applySoftwareUpdateCallable()");
+  }
+
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rescheduleMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: rescheduleMaintenanceCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

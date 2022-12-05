@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-config</artifactId>
-  <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+  <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
   <packaging>jar</packaging>
   <name>Google OS Config API</name>
   <description>provides OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-os-config-parent</artifactId>
-    <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+    <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-os-config</site.installationModule>

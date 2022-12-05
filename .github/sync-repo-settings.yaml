@@ -32,6 +32,7 @@ branchProtectionRules:
       - units (11)
       - units (17)
       - cla/google
+      - enforcer
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
       - 'Kokoro - Test: Java 17 GraalVM Native Image - AI Platform'

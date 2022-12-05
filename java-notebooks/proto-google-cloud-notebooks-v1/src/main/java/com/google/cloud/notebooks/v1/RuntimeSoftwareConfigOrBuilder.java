@@ -273,4 +273,98 @@ public interface RuntimeSoftwareConfigOrBuilder
    * @return The upgradeable.
    */
   boolean getUpgradeable();
+
+  /**
+   *
+   *
+   * <pre>
+   * Behavior for the post startup script.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for postStartupScriptBehavior.
+   */
+  int getPostStartupScriptBehaviorValue();
+  /**
+   *
+   *
+   * <pre>
+   * Behavior for the post startup script.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+   * </code>
+   *
+   * @return The postStartupScriptBehavior.
+   */
+  com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
+      getPostStartupScriptBehavior();
+
+  /**
+   *
+   *
+   * <pre>
+   * Bool indicating whether JupyterLab terminal will be available or not.
+   * Default: False
+   * </pre>
+   *
+   * <code>optional bool disable_terminal = 11;</code>
+   *
+   * @return Whether the disableTerminal field is set.
+   */
+  boolean hasDisableTerminal();
+  /**
+   *
+   *
+   * <pre>
+   * Bool indicating whether JupyterLab terminal will be available or not.
+   * Default: False
+   * </pre>
+   *
+   * <code>optional bool disable_terminal = 11;</code>
+   *
+   * @return The disableTerminal.
+   */
+  boolean getDisableTerminal();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. version of boot image such as M100, from release label of the image.
+   * </pre>
+   *
+   * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the version field is set.
+   */
+  boolean hasVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. version of boot image such as M100, from release label of the image.
+   * </pre>
+   *
+   * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The version.
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. version of boot image such as M100, from release label of the image.
+   * </pre>
+   *
+   * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for version.
+   */
+  com.google.protobuf.ByteString getVersionBytes();
 }

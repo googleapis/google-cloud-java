@@ -1434,6 +1434,7 @@ public class KeyManagementServiceClientHttpJsonTest {
                         "[CRYPTO_KEY_VERSION]")
                     .toString())
             .setImportJob("importJob-208547368")
+            .setWrappedKey(ByteString.EMPTY)
             .build();
 
     CryptoKeyVersion actualResponse = client.importCryptoKeyVersion(request);
@@ -1476,6 +1477,7 @@ public class KeyManagementServiceClientHttpJsonTest {
                           "[CRYPTO_KEY_VERSION]")
                       .toString())
               .setImportJob("importJob-208547368")
+              .setWrappedKey(ByteString.EMPTY)
               .build();
       client.importCryptoKeyVersion(request);
       Assert.fail("No exception raised");

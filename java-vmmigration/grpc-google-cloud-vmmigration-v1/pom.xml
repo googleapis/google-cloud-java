@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-vmmigration-v1</artifactId>
-  <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vmmigration-v1:current} -->
+  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vmmigration-v1:current} -->
   <name>grpc-google-cloud-vmmigration-v1</name>
   <description>GRPC library for google-cloud-vmmigration</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vmmigration-parent</artifactId>
-    <version>1.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
+    <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
   </parent>
   <dependencies>
     <dependency>

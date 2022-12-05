@@ -78,6 +78,7 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     DICTIONARY(1),
     REGEX(2),
     EXCLUDE_INFO_TYPES(3),
+    EXCLUDE_BY_HOTWORD(5),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
           return REGEX;
         case 3:
           return EXCLUDE_INFO_TYPES;
+        case 5:
+          return EXCLUDE_BY_HOTWORD;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -271,6 +274,60 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.ExcludeInfoTypes.getDefaultInstance();
   }
 
+  public static final int EXCLUDE_BY_HOTWORD_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Drop if the hotword rule is contained in the proximate context. For
+   * tabular data, the context includes the column name.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+   *
+   * @return Whether the excludeByHotword field is set.
+   */
+  @java.lang.Override
+  public boolean hasExcludeByHotword() {
+    return typeCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Drop if the hotword rule is contained in the proximate context. For
+   * tabular data, the context includes the column name.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+   *
+   * @return The excludeByHotword.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ExcludeByHotword getExcludeByHotword() {
+    if (typeCase_ == 5) {
+      return (com.google.privacy.dlp.v2.ExcludeByHotword) type_;
+    }
+    return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Drop if the hotword rule is contained in the proximate context. For
+   * tabular data, the context includes the column name.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ExcludeByHotwordOrBuilder getExcludeByHotwordOrBuilder() {
+    if (typeCase_ == 5) {
+      return (com.google.privacy.dlp.v2.ExcludeByHotword) type_;
+    }
+    return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
+  }
+
   public static final int MATCHING_TYPE_FIELD_NUMBER = 4;
   private int matchingType_;
   /**
@@ -334,6 +391,9 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         != com.google.privacy.dlp.v2.MatchingType.MATCHING_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, matchingType_);
     }
+    if (typeCase_ == 5) {
+      output.writeMessage(5, (com.google.privacy.dlp.v2.ExcludeByHotword) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -362,6 +422,11 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         != com.google.privacy.dlp.v2.MatchingType.MATCHING_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, matchingType_);
     }
+    if (typeCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.ExcludeByHotword) type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -388,6 +453,9 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
         break;
       case 3:
         if (!getExcludeInfoTypes().equals(other.getExcludeInfoTypes())) return false;
+        break;
+      case 5:
+        if (!getExcludeByHotword().equals(other.getExcludeByHotword())) return false;
         break;
       case 0:
       default:
@@ -417,6 +485,10 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       case 3:
         hash = (37 * hash) + EXCLUDE_INFO_TYPES_FIELD_NUMBER;
         hash = (53 * hash) + getExcludeInfoTypes().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + EXCLUDE_BY_HOTWORD_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludeByHotword().hashCode();
         break;
       case 0:
       default:
@@ -569,6 +641,9 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       if (excludeInfoTypesBuilder_ != null) {
         excludeInfoTypesBuilder_.clear();
       }
+      if (excludeByHotwordBuilder_ != null) {
+        excludeByHotwordBuilder_.clear();
+      }
       matchingType_ = 0;
 
       typeCase_ = 0;
@@ -619,6 +694,13 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
           result.type_ = type_;
         } else {
           result.type_ = excludeInfoTypesBuilder_.build();
+        }
+      }
+      if (typeCase_ == 5) {
+        if (excludeByHotwordBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = excludeByHotwordBuilder_.build();
         }
       }
       result.matchingType_ = matchingType_;
@@ -691,6 +773,11 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
             mergeExcludeInfoTypes(other.getExcludeInfoTypes());
             break;
           }
+        case EXCLUDE_BY_HOTWORD:
+          {
+            mergeExcludeByHotword(other.getExcludeByHotword());
+            break;
+          }
         case TYPE_NOT_SET:
           {
             break;
@@ -747,6 +834,13 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    getExcludeByHotwordFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1406,6 +1500,225 @@ public final class ExclusionRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return excludeInfoTypesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ExcludeByHotword,
+            com.google.privacy.dlp.v2.ExcludeByHotword.Builder,
+            com.google.privacy.dlp.v2.ExcludeByHotwordOrBuilder>
+        excludeByHotwordBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     *
+     * @return Whether the excludeByHotword field is set.
+     */
+    @java.lang.Override
+    public boolean hasExcludeByHotword() {
+      return typeCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     *
+     * @return The excludeByHotword.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ExcludeByHotword getExcludeByHotword() {
+      if (excludeByHotwordBuilder_ == null) {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.ExcludeByHotword) type_;
+        }
+        return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
+      } else {
+        if (typeCase_ == 5) {
+          return excludeByHotwordBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     */
+    public Builder setExcludeByHotword(com.google.privacy.dlp.v2.ExcludeByHotword value) {
+      if (excludeByHotwordBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        excludeByHotwordBuilder_.setMessage(value);
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     */
+    public Builder setExcludeByHotword(
+        com.google.privacy.dlp.v2.ExcludeByHotword.Builder builderForValue) {
+      if (excludeByHotwordBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        excludeByHotwordBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     */
+    public Builder mergeExcludeByHotword(com.google.privacy.dlp.v2.ExcludeByHotword value) {
+      if (excludeByHotwordBuilder_ == null) {
+        if (typeCase_ == 5
+            && type_ != com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.ExcludeByHotword.newBuilder(
+                      (com.google.privacy.dlp.v2.ExcludeByHotword) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 5) {
+          excludeByHotwordBuilder_.mergeFrom(value);
+        } else {
+          excludeByHotwordBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     */
+    public Builder clearExcludeByHotword() {
+      if (excludeByHotwordBuilder_ == null) {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        excludeByHotwordBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.ExcludeByHotword.Builder getExcludeByHotwordBuilder() {
+      return getExcludeByHotwordFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ExcludeByHotwordOrBuilder getExcludeByHotwordOrBuilder() {
+      if ((typeCase_ == 5) && (excludeByHotwordBuilder_ != null)) {
+        return excludeByHotwordBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.ExcludeByHotword) type_;
+        }
+        return com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drop if the hotword rule is contained in the proximate context. For
+     * tabular data, the context includes the column name.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ExcludeByHotword exclude_by_hotword = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ExcludeByHotword,
+            com.google.privacy.dlp.v2.ExcludeByHotword.Builder,
+            com.google.privacy.dlp.v2.ExcludeByHotwordOrBuilder>
+        getExcludeByHotwordFieldBuilder() {
+      if (excludeByHotwordBuilder_ == null) {
+        if (!(typeCase_ == 5)) {
+          type_ = com.google.privacy.dlp.v2.ExcludeByHotword.getDefaultInstance();
+        }
+        excludeByHotwordBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.ExcludeByHotword,
+                com.google.privacy.dlp.v2.ExcludeByHotword.Builder,
+                com.google.privacy.dlp.v2.ExcludeByHotwordOrBuilder>(
+                (com.google.privacy.dlp.v2.ExcludeByHotword) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 5;
+      onChanged();
+      ;
+      return excludeByHotwordBuilder_;
     }
 
     private int matchingType_ = 0;

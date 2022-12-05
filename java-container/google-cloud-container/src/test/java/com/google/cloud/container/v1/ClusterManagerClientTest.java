@@ -43,6 +43,7 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DatabaseEncryption;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.FastSocket;
 import com.google.container.v1.GcfsConfig;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
@@ -717,6 +718,7 @@ public class ClusterManagerClientTest {
             .setGcfsConfig(GcfsConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
+            .setFastSocket(FastSocket.newBuilder().build())
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .setResourceLabels(ResourceLabels.newBuilder().build())
             .build();
@@ -748,6 +750,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
     Assert.assertEquals(request.getConfidentialNodes(), actualRequest.getConfidentialNodes());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
+    Assert.assertEquals(request.getFastSocket(), actualRequest.getFastSocket());
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
     Assert.assertTrue(
@@ -783,6 +786,7 @@ public class ClusterManagerClientTest {
               .setGcfsConfig(GcfsConfig.newBuilder().build())
               .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
+              .setFastSocket(FastSocket.newBuilder().build())
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
               .build();
@@ -2049,6 +2053,7 @@ public class ClusterManagerClientTest {
             .addAllConditions(new ArrayList<StatusCondition>())
             .setPodIpv4CidrSize(1098768716)
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+            .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
@@ -2102,6 +2107,7 @@ public class ClusterManagerClientTest {
             .addAllConditions(new ArrayList<StatusCondition>())
             .setPodIpv4CidrSize(1098768716)
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+            .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);

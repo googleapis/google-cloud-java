@@ -391,6 +391,41 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
+   * The service account that the DeployedModel's container runs as. If not
+   * specified, a system generated one will be used, which
+   * has minimal permissions and the custom container, if used, may not have
+   * enough permission to access other GCP resources.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 29;</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * The service account that the DeployedModel's container runs as. If not
+   * specified, a system generated one will be used, which
+   * has minimal permissions and the custom container, if used, may not have
+   * enough permission to access other GCP resources.
+   * Users deploying the Model must have the `iam.serviceAccounts.actAs`
+   * permission on this service account.
+   * </pre>
+   *
+   * <code>string service_account = 29;</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. Parameters configuring the batch behavior. Currently only applicable when
    * [dedicated_resources][google.cloud.aiplatform.v1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
    * the tuning itself).

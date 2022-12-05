@@ -3794,7 +3794,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
+   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}".
    * @param state Required. The desired State of the finding.
    * @param startTime Required. The time at which the updated state takes effect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3833,7 +3833,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}".
+   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}".
    * @param state Required. The desired State of the finding.
    * @param startTime Required. The time at which the updated state takes effect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3934,9 +3934,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}",
-   *     "folders/{folder_id}/sources/{source_id}/finding/{finding_id}",
-   *     "projects/{project_id}/sources/{source_id}/finding/{finding_id}".
+   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   *     "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   *     "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * @param mute Required. The desired state of the Mute.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3972,9 +3972,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *
    * @param name Required. The relative resource name of the finding. See:
    *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/{organization_id}/sources/{source_id}/finding/{finding_id}",
-   *     "folders/{folder_id}/sources/{source_id}/finding/{finding_id}",
-   *     "projects/{project_id}/sources/{source_id}/finding/{finding_id}".
+   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   *     "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   *     "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * @param mute Required. The desired state of the Mute.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

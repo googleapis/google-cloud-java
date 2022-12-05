@@ -37,6 +37,14 @@ import com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob;
 import com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -248,6 +256,154 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<LookupRequest, LookupResponse> lookupMethodDescriptor =
+      ApiMethodDescriptor.<LookupRequest, LookupResponse>newBuilder()
+          .setFullMethodName(
+              "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/Lookup")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<LookupRequest>newBuilder()
+                  .setPath(
+                      "/v1/{parent=projects/*/locations/*}/cloudKnowledgeGraphEntities:Lookup",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<LookupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "parent", request.getParent());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<LookupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "ids", request.getIdsList());
+                        serializer.putQueryParam(fields, "languages", request.getLanguagesList());
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<LookupResponse>newBuilder()
+                  .setDefaultInstance(LookupResponse.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<SearchRequest, SearchResponse> searchMethodDescriptor =
+      ApiMethodDescriptor.<SearchRequest, SearchResponse>newBuilder()
+          .setFullMethodName(
+              "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/Search")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<SearchRequest>newBuilder()
+                  .setPath(
+                      "/v1/{parent=projects/*/locations/*}/cloudKnowledgeGraphEntities:Search",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<SearchRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "parent", request.getParent());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<SearchRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "languages", request.getLanguagesList());
+                        serializer.putQueryParam(fields, "limit", request.getLimit());
+                        serializer.putQueryParam(fields, "query", request.getQuery());
+                        serializer.putQueryParam(fields, "types", request.getTypesList());
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<SearchResponse>newBuilder()
+                  .setDefaultInstance(SearchResponse.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<LookupPublicKgRequest, LookupPublicKgResponse>
+      lookupPublicKgMethodDescriptor =
+          ApiMethodDescriptor.<LookupPublicKgRequest, LookupPublicKgResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/LookupPublicKg")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<LookupPublicKgRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/publicKnowledgeGraphEntities:Lookup",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<LookupPublicKgRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<LookupPublicKgRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "ids", request.getIdsList());
+                            serializer.putQueryParam(
+                                fields, "languages", request.getLanguagesList());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<LookupPublicKgResponse>newBuilder()
+                      .setDefaultInstance(LookupPublicKgResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SearchPublicKgRequest, SearchPublicKgResponse>
+      searchPublicKgMethodDescriptor =
+          ApiMethodDescriptor.<SearchPublicKgRequest, SearchPublicKgResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/SearchPublicKg")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchPublicKgRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/publicKnowledgeGraphEntities:Search",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchPublicKgRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchPublicKgRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "languages", request.getLanguagesList());
+                            serializer.putQueryParam(fields, "limit", request.getLimit());
+                            serializer.putQueryParam(fields, "query", request.getQuery());
+                            serializer.putQueryParam(fields, "types", request.getTypesList());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchPublicKgResponse>newBuilder()
+                      .setDefaultInstance(SearchPublicKgResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateEntityReconciliationJobRequest, EntityReconciliationJob>
       createEntityReconciliationJobCallable;
   private final UnaryCallable<GetEntityReconciliationJobRequest, EntityReconciliationJob>
@@ -262,6 +418,10 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
       cancelEntityReconciliationJobCallable;
   private final UnaryCallable<DeleteEntityReconciliationJobRequest, Empty>
       deleteEntityReconciliationJobCallable;
+  private final UnaryCallable<LookupRequest, LookupResponse> lookupCallable;
+  private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;
+  private final UnaryCallable<LookupPublicKgRequest, LookupPublicKgResponse> lookupPublicKgCallable;
+  private final UnaryCallable<SearchPublicKgRequest, SearchPublicKgResponse> searchPublicKgCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -343,6 +503,28 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                 .setMethodDescriptor(deleteEntityReconciliationJobMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<LookupRequest, LookupResponse> lookupTransportSettings =
+        HttpJsonCallSettings.<LookupRequest, LookupResponse>newBuilder()
+            .setMethodDescriptor(lookupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<SearchRequest, SearchResponse> searchTransportSettings =
+        HttpJsonCallSettings.<SearchRequest, SearchResponse>newBuilder()
+            .setMethodDescriptor(searchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<LookupPublicKgRequest, LookupPublicKgResponse>
+        lookupPublicKgTransportSettings =
+            HttpJsonCallSettings.<LookupPublicKgRequest, LookupPublicKgResponse>newBuilder()
+                .setMethodDescriptor(lookupPublicKgMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<SearchPublicKgRequest, SearchPublicKgResponse>
+        searchPublicKgTransportSettings =
+            HttpJsonCallSettings.<SearchPublicKgRequest, SearchPublicKgResponse>newBuilder()
+                .setMethodDescriptor(searchPublicKgMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.createEntityReconciliationJobCallable =
         callableFactory.createUnaryCallable(
@@ -374,6 +556,18 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
             deleteEntityReconciliationJobTransportSettings,
             settings.deleteEntityReconciliationJobSettings(),
             clientContext);
+    this.lookupCallable =
+        callableFactory.createUnaryCallable(
+            lookupTransportSettings, settings.lookupSettings(), clientContext);
+    this.searchCallable =
+        callableFactory.createUnaryCallable(
+            searchTransportSettings, settings.searchSettings(), clientContext);
+    this.lookupPublicKgCallable =
+        callableFactory.createUnaryCallable(
+            lookupPublicKgTransportSettings, settings.lookupPublicKgSettings(), clientContext);
+    this.searchPublicKgCallable =
+        callableFactory.createUnaryCallable(
+            searchPublicKgTransportSettings, settings.searchPublicKgSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -387,6 +581,10 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
     methodDescriptors.add(listEntityReconciliationJobsMethodDescriptor);
     methodDescriptors.add(cancelEntityReconciliationJobMethodDescriptor);
     methodDescriptors.add(deleteEntityReconciliationJobMethodDescriptor);
+    methodDescriptors.add(lookupMethodDescriptor);
+    methodDescriptors.add(searchMethodDescriptor);
+    methodDescriptors.add(lookupPublicKgMethodDescriptor);
+    methodDescriptors.add(searchPublicKgMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -425,6 +623,26 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
   public UnaryCallable<DeleteEntityReconciliationJobRequest, Empty>
       deleteEntityReconciliationJobCallable() {
     return deleteEntityReconciliationJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupRequest, LookupResponse> lookupCallable() {
+    return lookupCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchRequest, SearchResponse> searchCallable() {
+    return searchCallable;
+  }
+
+  @Override
+  public UnaryCallable<LookupPublicKgRequest, LookupPublicKgResponse> lookupPublicKgCallable() {
+    return lookupPublicKgCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchPublicKgRequest, SearchPublicKgResponse> searchPublicKgCallable() {
+    return searchPublicKgCallable;
   }
 
   @Override

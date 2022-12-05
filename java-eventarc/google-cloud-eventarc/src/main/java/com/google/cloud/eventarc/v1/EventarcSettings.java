@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -35,6 +36,15 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.eventarc.v1.stub.EventarcStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
@@ -212,6 +222,45 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
   public OperationCallSettings<DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
       deleteChannelConnectionOperationSettings() {
     return ((EventarcStubSettings) getStubSettings()).deleteChannelConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoogleChannelConfig. */
+  public UnaryCallSettings<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+      getGoogleChannelConfigSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getGoogleChannelConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleChannelConfig. */
+  public UnaryCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+      updateGoogleChannelConfigSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateGoogleChannelConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((EventarcStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((EventarcStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((EventarcStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final EventarcSettings create(EventarcStubSettings stub) throws IOException {
@@ -469,6 +518,46 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
             DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
         deleteChannelConnectionOperationSettings() {
       return getStubSettingsBuilder().deleteChannelConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoogleChannelConfig. */
+    public UnaryCallSettings.Builder<GetGoogleChannelConfigRequest, GoogleChannelConfig>
+        getGoogleChannelConfigSettings() {
+      return getStubSettingsBuilder().getGoogleChannelConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleChannelConfig. */
+    public UnaryCallSettings.Builder<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
+        updateGoogleChannelConfigSettings() {
+      return getStubSettingsBuilder().updateGoogleChannelConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

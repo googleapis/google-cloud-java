@@ -27,6 +27,14 @@ import com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob;
 import com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsRequest;
 import com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest;
+import com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -74,6 +82,22 @@ public abstract class EnterpriseKnowledgeGraphServiceStub implements BackgroundR
       deleteEntityReconciliationJobCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteEntityReconciliationJobCallable()");
+  }
+
+  public UnaryCallable<LookupRequest, LookupResponse> lookupCallable() {
+    throw new UnsupportedOperationException("Not implemented: lookupCallable()");
+  }
+
+  public UnaryCallable<SearchRequest, SearchResponse> searchCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchCallable()");
+  }
+
+  public UnaryCallable<LookupPublicKgRequest, LookupPublicKgResponse> lookupPublicKgCallable() {
+    throw new UnsupportedOperationException("Not implemented: lookupPublicKgCallable()");
+  }
+
+  public UnaryCallable<SearchPublicKgRequest, SearchPublicKgResponse> searchPublicKgCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchPublicKgCallable()");
   }
 
   @Override

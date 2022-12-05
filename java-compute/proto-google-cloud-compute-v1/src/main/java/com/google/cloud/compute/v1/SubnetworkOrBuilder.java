@@ -126,7 +126,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * The external IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -138,7 +138,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * The external IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -150,7 +150,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * The external IPv6 address range that is owned by this subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>

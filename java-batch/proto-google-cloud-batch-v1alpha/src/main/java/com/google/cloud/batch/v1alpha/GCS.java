@@ -22,7 +22,7 @@ package com.google.cloud.batch.v1alpha;
  *
  *
  * <pre>
- * Represents a Google Cloud Storage volume source config.
+ * Represents a Google Cloud Storage volume.
  * </pre>
  *
  * Protobuf type {@code google.cloud.batch.v1alpha.GCS}
@@ -279,7 +279,7 @@ public final class GCS extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Google Cloud Storage volume source config.
+   * Represents a Google Cloud Storage volume.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1alpha.GCS}

@@ -12,5 +12,5 @@ about: |
   that are tailored to your business needs, and then integrate those 
   models into your applications and web sites.
 
-  See the [Cloud Auto ML client library docs](https://cloud.google.com/java/docs/reference/google-cloud-automl/latest/history)
+  See the [Cloud Auto ML client library docs](https://cloud.google.com/java/docs/reference/google-cloud-automl/latest/overview)
   to learn how to use this Cloud Auto ML Client Library.

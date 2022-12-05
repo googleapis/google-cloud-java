@@ -27,9 +27,9 @@ jobs:
       matrix:
         java: [8, 11, 17]
     steps:
-    - name: Get current date
+    - name: Get current week within the year
       id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d' --utc)"
+      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
@@ -40,7 +40,7 @@ jobs:
       id: mvn-cache
       with:
         path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.date }}
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
@@ -64,24 +64,49 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+    - name: Get current week within the year
+      id: date
+      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
       with:
         distribution: zulu
         java-version: 11
     - run: java -version
-    - run: mvn com.coveo:fmt-maven-plugin:check -B -ntp
-    - run: mvn checkstyle:check@checkstyle -B -ntp
+    - uses: actions/cache@v3
+      id: mvn-cache
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
+    - run: java -version
+    - run: mvn -B -ntp com.coveo:fmt-maven-plugin:check
+    - run: mvn -B -ntp checkstyle:check@checkstyle
   enforcer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
-        with:
-          distribution: zulu
-          java-version: 11
-      - run: java -version
-      - run: mvn enforcer:enforce@enforce -T 1C
+    - name: Get current week within the year
+      id: date
+      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: 11
+    - run: java -version
+    - uses: actions/cache@v3
+      id: mvn-cache
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
+    - run: java -version
+    - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+  requirements-kokoro:
+    runs-on: ubuntu-latest
+    container: gcr.io/cloud-devrel-public-resources/java8
+    steps:
+    - uses: actions/checkout@v3
+    - run: python3 --version
+    - run: python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:

@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-memcache</artifactId>
-  <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
+  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Memcache</name>
   <description>Java idiomatic client for Google Cloud memcache</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-memcache-parent</artifactId>
-    <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
+    <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-memcache:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-memcache</site.installationModule>
@@ -102,6 +102,11 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-management-bom</artifactId>
-  <version>3.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
+  <version>3.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-pom-parent:current} -->
+    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-management</artifactId>
-        <version>3.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
+        <version>3.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-management:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-management-v1</artifactId>
-        <version>3.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-management-v1:current} -->
+        <version>3.5.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-management-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-management-v1</artifactId>
-        <version>3.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-management-v1:current} -->
+        <version>3.5.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-management-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

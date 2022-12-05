@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Retrieves GCP Console billing accounts and associates them with projects.
+ * Retrieves the Google Cloud Console billing accounts and associates them with
+ * projects.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -538,7 +539,8 @@ public final class CloudBillingGrpc {
    *
    *
    * <pre>
-   * Retrieves GCP Console billing accounts and associates them with projects.
+   * Retrieves the Google Cloud Console billing accounts and associates them with
+   * projects.
    * </pre>
    */
   public abstract static class CloudBillingImplBase implements io.grpc.BindableService {
@@ -599,15 +601,18 @@ public final class CloudBillingGrpc {
      *
      *
      * <pre>
-     * Creates a billing account.
-     * This method can only be used to create
-     * [billing subaccounts](https://cloud.google.com/billing/docs/concepts)
-     * by GCP resellers.
+     * This method creates [billing
+     * subaccounts](https://cloud.google.com/billing/docs/concepts#subaccounts).
+     * Google Cloud resellers should use the
+     * Channel Services APIs,
+     * [accounts.customers.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers/create)
+     * and
+     * [accounts.customers.entitlements.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers.entitlements/create).
      * When creating a subaccount, the current authenticated user must have the
-     * `billing.accounts.update` IAM permission on the master account, which is
+     * `billing.accounts.update` IAM permission on the parent account, which is
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
-     * This method will return an error if the master account has not been
+     * This method will return an error if the parent account has not been
      * provisioned as a reseller account.
      * </pre>
      */
@@ -641,9 +646,10 @@ public final class CloudBillingGrpc {
      *
      * <pre>
      * Gets the billing information for a project. The current authenticated user
-     * must have [permission to view the
-     * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
-     * ).
+     * must have the `resourcemanager.projects.get` permission for the project,
+     * which can be granted by assigning the [Project
+     * Viewer](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+     * role.
      * </pre>
      */
     public void getProjectBillingInfo(
@@ -666,7 +672,7 @@ public final class CloudBillingGrpc {
      * billing account, this method changes the billing account used for resource
      * usage charges.
      * *Note:* Incurred charges that have not yet been reported in the transaction
-     * history of the GCP Console might be billed to the new billing
+     * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
      * The current authenticated user must have ownership privileges for both the
@@ -826,7 +832,8 @@ public final class CloudBillingGrpc {
    *
    *
    * <pre>
-   * Retrieves GCP Console billing accounts and associates them with projects.
+   * Retrieves the Google Cloud Console billing accounts and associates them with
+   * projects.
    * </pre>
    */
   public static final class CloudBillingStub
@@ -902,15 +909,18 @@ public final class CloudBillingGrpc {
      *
      *
      * <pre>
-     * Creates a billing account.
-     * This method can only be used to create
-     * [billing subaccounts](https://cloud.google.com/billing/docs/concepts)
-     * by GCP resellers.
+     * This method creates [billing
+     * subaccounts](https://cloud.google.com/billing/docs/concepts#subaccounts).
+     * Google Cloud resellers should use the
+     * Channel Services APIs,
+     * [accounts.customers.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers/create)
+     * and
+     * [accounts.customers.entitlements.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers.entitlements/create).
      * When creating a subaccount, the current authenticated user must have the
-     * `billing.accounts.update` IAM permission on the master account, which is
+     * `billing.accounts.update` IAM permission on the parent account, which is
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
-     * This method will return an error if the master account has not been
+     * This method will return an error if the parent account has not been
      * provisioned as a reseller account.
      * </pre>
      */
@@ -948,9 +958,10 @@ public final class CloudBillingGrpc {
      *
      * <pre>
      * Gets the billing information for a project. The current authenticated user
-     * must have [permission to view the
-     * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
-     * ).
+     * must have the `resourcemanager.projects.get` permission for the project,
+     * which can be granted by assigning the [Project
+     * Viewer](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+     * role.
      * </pre>
      */
     public void getProjectBillingInfo(
@@ -975,7 +986,7 @@ public final class CloudBillingGrpc {
      * billing account, this method changes the billing account used for resource
      * usage charges.
      * *Note:* Incurred charges that have not yet been reported in the transaction
-     * history of the GCP Console might be billed to the new billing
+     * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
      * The current authenticated user must have ownership privileges for both the
@@ -1069,7 +1080,8 @@ public final class CloudBillingGrpc {
    *
    *
    * <pre>
-   * Retrieves GCP Console billing accounts and associates them with projects.
+   * Retrieves the Google Cloud Console billing accounts and associates them with
+   * projects.
    * </pre>
    */
   public static final class CloudBillingBlockingStub
@@ -1136,15 +1148,18 @@ public final class CloudBillingGrpc {
      *
      *
      * <pre>
-     * Creates a billing account.
-     * This method can only be used to create
-     * [billing subaccounts](https://cloud.google.com/billing/docs/concepts)
-     * by GCP resellers.
+     * This method creates [billing
+     * subaccounts](https://cloud.google.com/billing/docs/concepts#subaccounts).
+     * Google Cloud resellers should use the
+     * Channel Services APIs,
+     * [accounts.customers.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers/create)
+     * and
+     * [accounts.customers.entitlements.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers.entitlements/create).
      * When creating a subaccount, the current authenticated user must have the
-     * `billing.accounts.update` IAM permission on the master account, which is
+     * `billing.accounts.update` IAM permission on the parent account, which is
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
-     * This method will return an error if the master account has not been
+     * This method will return an error if the parent account has not been
      * provisioned as a reseller account.
      * </pre>
      */
@@ -1175,9 +1190,10 @@ public final class CloudBillingGrpc {
      *
      * <pre>
      * Gets the billing information for a project. The current authenticated user
-     * must have [permission to view the
-     * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
-     * ).
+     * must have the `resourcemanager.projects.get` permission for the project,
+     * which can be granted by assigning the [Project
+     * Viewer](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+     * role.
      * </pre>
      */
     public com.google.cloud.billing.v1.ProjectBillingInfo getProjectBillingInfo(
@@ -1198,7 +1214,7 @@ public final class CloudBillingGrpc {
      * billing account, this method changes the billing account used for resource
      * usage charges.
      * *Note:* Incurred charges that have not yet been reported in the transaction
-     * history of the GCP Console might be billed to the new billing
+     * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
      * The current authenticated user must have ownership privileges for both the
@@ -1276,7 +1292,8 @@ public final class CloudBillingGrpc {
    *
    *
    * <pre>
-   * Retrieves GCP Console billing accounts and associates them with projects.
+   * Retrieves the Google Cloud Console billing accounts and associates them with
+   * projects.
    * </pre>
    */
   public static final class CloudBillingFutureStub
@@ -1346,15 +1363,18 @@ public final class CloudBillingGrpc {
      *
      *
      * <pre>
-     * Creates a billing account.
-     * This method can only be used to create
-     * [billing subaccounts](https://cloud.google.com/billing/docs/concepts)
-     * by GCP resellers.
+     * This method creates [billing
+     * subaccounts](https://cloud.google.com/billing/docs/concepts#subaccounts).
+     * Google Cloud resellers should use the
+     * Channel Services APIs,
+     * [accounts.customers.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers/create)
+     * and
+     * [accounts.customers.entitlements.create](https://cloud.google.com/channel/docs/reference/rest/v1/accounts.customers.entitlements/create).
      * When creating a subaccount, the current authenticated user must have the
-     * `billing.accounts.update` IAM permission on the master account, which is
+     * `billing.accounts.update` IAM permission on the parent account, which is
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
-     * This method will return an error if the master account has not been
+     * This method will return an error if the parent account has not been
      * provisioned as a reseller account.
      * </pre>
      */
@@ -1387,9 +1407,10 @@ public final class CloudBillingGrpc {
      *
      * <pre>
      * Gets the billing information for a project. The current authenticated user
-     * must have [permission to view the
-     * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
-     * ).
+     * must have the `resourcemanager.projects.get` permission for the project,
+     * which can be granted by assigning the [Project
+     * Viewer](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+     * role.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1411,7 +1432,7 @@ public final class CloudBillingGrpc {
      * billing account, this method changes the billing account used for resource
      * usage charges.
      * *Note:* Incurred charges that have not yet been reported in the transaction
-     * history of the GCP Console might be billed to the new billing
+     * history of the Google Cloud Console might be billed to the new billing
      * account, even if the charge occurred before the new billing account was
      * assigned to the project.
      * The current authenticated user must have ownership privileges for both the

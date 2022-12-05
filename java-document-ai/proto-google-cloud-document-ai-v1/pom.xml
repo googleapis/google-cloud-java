@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-document-ai-v1</artifactId>
-  <version>2.9.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-document-ai-v1:current} -->
+  <version>2.11.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-document-ai-v1:current} -->
   <name>proto-google-cloud-document-ai-v1</name>
   <description>Proto library for google-cloud-document-ai</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-document-ai-parent</artifactId>
-    <version>2.9.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-document-ai:current} -->
+    <version>2.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-document-ai:current} -->
   </parent>
   <dependencies>
     <dependency>

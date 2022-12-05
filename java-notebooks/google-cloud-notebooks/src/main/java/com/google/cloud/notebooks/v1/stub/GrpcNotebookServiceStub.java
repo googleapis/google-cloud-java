@@ -19,6 +19,7 @@ package com.google.cloud.notebooks.v1.stub;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListExecutionsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListInstancesPagedResponse;
+import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListSchedulesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -28,6 +29,10 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1.CreateEnvironmentRequest;
 import com.google.cloud.notebooks.v1.CreateExecutionRequest;
 import com.google.cloud.notebooks.v1.CreateInstanceRequest;
@@ -36,6 +41,7 @@ import com.google.cloud.notebooks.v1.DeleteEnvironmentRequest;
 import com.google.cloud.notebooks.v1.DeleteExecutionRequest;
 import com.google.cloud.notebooks.v1.DeleteInstanceRequest;
 import com.google.cloud.notebooks.v1.DeleteScheduleRequest;
+import com.google.cloud.notebooks.v1.DiagnoseInstanceRequest;
 import com.google.cloud.notebooks.v1.Environment;
 import com.google.cloud.notebooks.v1.Execution;
 import com.google.cloud.notebooks.v1.GetEnvironmentRequest;
@@ -74,6 +80,11 @@ import com.google.cloud.notebooks.v1.UpdateShieldedInstanceConfigRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceInternalRequest;
 import com.google.cloud.notebooks.v1.UpgradeInstanceRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -286,6 +297,16 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DiagnoseInstanceRequest, Operation>
+      diagnoseInstanceMethodDescriptor =
+          MethodDescriptor.<DiagnoseInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.notebooks.v1.NotebookService/DiagnoseInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DiagnoseInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalMethodDescriptor =
           MethodDescriptor.<UpgradeInstanceInternalRequest, Operation>newBuilder()
@@ -427,6 +448,52 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
@@ -483,6 +550,9 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   private final UnaryCallable<RollbackInstanceRequest, Operation> rollbackInstanceCallable;
   private final OperationCallable<RollbackInstanceRequest, Instance, OperationMetadata>
       rollbackInstanceOperationCallable;
+  private final UnaryCallable<DiagnoseInstanceRequest, Operation> diagnoseInstanceCallable;
+  private final OperationCallable<DiagnoseInstanceRequest, Instance, OperationMetadata>
+      diagnoseInstanceOperationCallable;
   private final UnaryCallable<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalCallable;
   private final OperationCallable<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
@@ -521,6 +591,14 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   private final UnaryCallable<CreateExecutionRequest, Operation> createExecutionCallable;
   private final OperationCallable<CreateExecutionRequest, Execution, OperationMetadata>
       createExecutionOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -766,6 +844,16 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<DiagnoseInstanceRequest, Operation> diagnoseInstanceTransportSettings =
+        GrpcCallSettings.<DiagnoseInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(diagnoseInstanceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<UpgradeInstanceInternalRequest, Operation>
         upgradeInstanceInternalTransportSettings =
             GrpcCallSettings.<UpgradeInstanceInternalRequest, Operation>newBuilder()
@@ -909,6 +997,57 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
+                    })
+                .build();
 
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -1072,6 +1211,15 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             settings.rollbackInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.diagnoseInstanceCallable =
+        callableFactory.createUnaryCallable(
+            diagnoseInstanceTransportSettings, settings.diagnoseInstanceSettings(), clientContext);
+    this.diagnoseInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            diagnoseInstanceTransportSettings,
+            settings.diagnoseInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.upgradeInstanceInternalCallable =
         callableFactory.createUnaryCallable(
             upgradeInstanceInternalTransportSettings,
@@ -1177,6 +1325,26 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
             settings.createExecutionOperationSettings(),
             clientContext,
             operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1376,6 +1544,17 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   }
 
   @Override
+  public UnaryCallable<DiagnoseInstanceRequest, Operation> diagnoseInstanceCallable() {
+    return diagnoseInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<DiagnoseInstanceRequest, Instance, OperationMetadata>
+      diagnoseInstanceOperationCallable() {
+    return diagnoseInstanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalCallable() {
     return upgradeInstanceInternalCallable;
@@ -1511,6 +1690,38 @@ public class GrpcNotebookServiceStub extends NotebookServiceStub {
   public OperationCallable<CreateExecutionRequest, Execution, OperationMetadata>
       createExecutionOperationCallable() {
     return createExecutionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

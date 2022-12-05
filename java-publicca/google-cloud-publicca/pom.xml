@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-publicca</artifactId>
-  <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
   <packaging>jar</packaging>
   <name>Google Public Certificate Authority</name>
   <description>Public Certificate Authority Certificate Manager's Public Certificate Authority (CA) functionality allows you to provision and deploy widely trusted X.509 certificates after validating that the certificate requester controls the domains.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-publicca-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-publicca:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-publicca</site.installationModule>

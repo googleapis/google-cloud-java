@@ -19,19 +19,19 @@
  *
  * <p>======================= CloudFilestoreManagerClient =======================
  *
- * <p>Service Description: Configures and manages Cloud Filestore resources.
+ * <p>Service Description: Configures and manages Filestore resources.
  *
- * <p>Cloud Filestore Manager v1beta1.
+ * <p>Filestore Manager v1beta1.
  *
- * <p>The `file.googleapis.com` service implements the Cloud Filestore API and defines the following
- * model for managing resources:
+ * <p>The `file.googleapis.com` service implements the Filestore API and defines the following model
+ * for managing resources:
  *
  * <ul>
  *   <li>The service works with a collection of cloud projects, named: `/projects/&#42;`
  *   <li>Each project has a collection of available locations, named: `/locations/&#42;`
  *   <li>Each location has a collection of instances and backups, named: `/instances/&#42;` and
  *       `/backups/&#42;` respectively.
- *   <li>As such, Cloud Filestore instances are resources of the form:
+ *   <li>As such, Filestore instances are resources of the form:
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}` backups are
  *       resources of the form: `/projects/{project_id}/locations/{location_id}/backup/{backup_id}`
  * </ul>

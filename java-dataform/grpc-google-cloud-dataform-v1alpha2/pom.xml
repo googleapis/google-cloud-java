@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-dataform-v1alpha2</artifactId>
-  <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataform-v1alpha2:current} -->
+  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dataform-v1alpha2:current} -->
   <name>grpc-google-cloud-dataform-v1alpha2</name>
   <description>GRPC library for google-cloud-dataform</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataform-parent</artifactId>
-    <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
+    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
   </parent>
   <dependencies>
     <dependency>

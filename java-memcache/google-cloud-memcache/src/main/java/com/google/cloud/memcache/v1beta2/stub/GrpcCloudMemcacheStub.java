@@ -17,6 +17,7 @@
 package com.google.cloud.memcache.v1beta2.stub;
 
 import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListInstancesPagedResponse;
+import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -26,6 +27,10 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.memcache.v1beta2.ApplyParametersRequest;
 import com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest;
 import com.google.cloud.memcache.v1beta2.CreateInstanceRequest;
@@ -35,6 +40,7 @@ import com.google.cloud.memcache.v1beta2.Instance;
 import com.google.cloud.memcache.v1beta2.ListInstancesRequest;
 import com.google.cloud.memcache.v1beta2.ListInstancesResponse;
 import com.google.cloud.memcache.v1beta2.OperationMetadata;
+import com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest;
 import com.google.cloud.memcache.v1beta2.UpdateInstanceRequest;
 import com.google.cloud.memcache.v1beta2.UpdateParametersRequest;
 import com.google.common.collect.ImmutableMap;
@@ -135,6 +141,36 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceMethodDescriptor =
+          MethodDescriptor.<RescheduleMaintenanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.memcache.v1beta2.CloudMemcache/RescheduleMaintenance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RescheduleMaintenanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
@@ -157,6 +193,14 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
   private final UnaryCallable<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateCallable;
   private final OperationCallable<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
       applySoftwareUpdateOperationCallable;
+  private final UnaryCallable<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceCallable;
+  private final OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -280,6 +324,37 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceTransportSettings =
+            GrpcCallSettings.<RescheduleMaintenanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rescheduleMaintenanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("instance", String.valueOf(request.getInstance()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -346,6 +421,26 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
             settings.applySoftwareUpdateOperationSettings(),
             clientContext,
             operationsStub);
+    this.rescheduleMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceSettings(),
+            clientContext);
+    this.rescheduleMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -435,6 +530,33 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
   public OperationCallable<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
       applySoftwareUpdateOperationCallable() {
     return applySoftwareUpdateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    return rescheduleMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    return rescheduleMaintenanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

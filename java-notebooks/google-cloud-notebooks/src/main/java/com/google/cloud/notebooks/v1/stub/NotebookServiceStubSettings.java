@@ -19,6 +19,7 @@ package com.google.cloud.notebooks.v1.stub;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListEnvironmentsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListExecutionsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListInstancesPagedResponse;
+import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.notebooks.v1.NotebookServiceClient.ListSchedulesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -47,6 +48,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1.CreateEnvironmentRequest;
 import com.google.cloud.notebooks.v1.CreateExecutionRequest;
 import com.google.cloud.notebooks.v1.CreateInstanceRequest;
@@ -55,6 +60,7 @@ import com.google.cloud.notebooks.v1.DeleteEnvironmentRequest;
 import com.google.cloud.notebooks.v1.DeleteExecutionRequest;
 import com.google.cloud.notebooks.v1.DeleteInstanceRequest;
 import com.google.cloud.notebooks.v1.DeleteScheduleRequest;
+import com.google.cloud.notebooks.v1.DiagnoseInstanceRequest;
 import com.google.cloud.notebooks.v1.Environment;
 import com.google.cloud.notebooks.v1.Execution;
 import com.google.cloud.notebooks.v1.GetEnvironmentRequest;
@@ -96,6 +102,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -201,6 +212,9 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
   private final UnaryCallSettings<RollbackInstanceRequest, Operation> rollbackInstanceSettings;
   private final OperationCallSettings<RollbackInstanceRequest, Instance, OperationMetadata>
       rollbackInstanceOperationSettings;
+  private final UnaryCallSettings<DiagnoseInstanceRequest, Operation> diagnoseInstanceSettings;
+  private final OperationCallSettings<DiagnoseInstanceRequest, Instance, OperationMetadata>
+      diagnoseInstanceOperationSettings;
   private final UnaryCallSettings<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalSettings;
   private final OperationCallSettings<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
@@ -238,6 +252,14 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
   private final UnaryCallSettings<CreateExecutionRequest, Operation> createExecutionSettings;
   private final OperationCallSettings<CreateExecutionRequest, Execution, OperationMetadata>
       createExecutionOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -388,6 +410,42 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       LIST_INSTANCES_PAGE_STR_FACT =
@@ -455,6 +513,23 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> pageContext =
                   PageContext.create(callable, LIST_EXECUTIONS_PAGE_STR_DESC, request, context);
               return ListExecutionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -644,6 +719,17 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     return rollbackInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to diagnoseInstance. */
+  public UnaryCallSettings<DiagnoseInstanceRequest, Operation> diagnoseInstanceSettings() {
+    return diagnoseInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to diagnoseInstance. */
+  public OperationCallSettings<DiagnoseInstanceRequest, Instance, OperationMetadata>
+      diagnoseInstanceOperationSettings() {
+    return diagnoseInstanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to upgradeInstanceInternal. */
   public UnaryCallSettings<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalSettings() {
@@ -768,6 +854,33 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     return createExecutionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public NotebookServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -884,6 +997,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     upgradeInstanceOperationSettings = settingsBuilder.upgradeInstanceOperationSettings().build();
     rollbackInstanceSettings = settingsBuilder.rollbackInstanceSettings().build();
     rollbackInstanceOperationSettings = settingsBuilder.rollbackInstanceOperationSettings().build();
+    diagnoseInstanceSettings = settingsBuilder.diagnoseInstanceSettings().build();
+    diagnoseInstanceOperationSettings = settingsBuilder.diagnoseInstanceOperationSettings().build();
     upgradeInstanceInternalSettings = settingsBuilder.upgradeInstanceInternalSettings().build();
     upgradeInstanceInternalOperationSettings =
         settingsBuilder.upgradeInstanceInternalOperationSettings().build();
@@ -909,6 +1024,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     deleteExecutionOperationSettings = settingsBuilder.deleteExecutionOperationSettings().build();
     createExecutionSettings = settingsBuilder.createExecutionSettings().build();
     createExecutionOperationSettings = settingsBuilder.createExecutionOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for NotebookServiceStubSettings. */
@@ -987,6 +1107,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     private final OperationCallSettings.Builder<
             RollbackInstanceRequest, Instance, OperationMetadata>
         rollbackInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<DiagnoseInstanceRequest, Operation>
+        diagnoseInstanceSettings;
+    private final OperationCallSettings.Builder<
+            DiagnoseInstanceRequest, Instance, OperationMetadata>
+        diagnoseInstanceOperationSettings;
     private final UnaryCallSettings.Builder<UpgradeInstanceInternalRequest, Operation>
         upgradeInstanceInternalSettings;
     private final OperationCallSettings.Builder<
@@ -1035,6 +1160,14 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     private final OperationCallSettings.Builder<
             CreateExecutionRequest, Execution, OperationMetadata>
         createExecutionOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1116,6 +1249,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       upgradeInstanceOperationSettings = OperationCallSettings.newBuilder();
       rollbackInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rollbackInstanceOperationSettings = OperationCallSettings.newBuilder();
+      diagnoseInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      diagnoseInstanceOperationSettings = OperationCallSettings.newBuilder();
       upgradeInstanceInternalSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       upgradeInstanceInternalOperationSettings = OperationCallSettings.newBuilder();
       listEnvironmentsSettings = PagedCallSettings.newBuilder(LIST_ENVIRONMENTS_PAGE_STR_FACT);
@@ -1138,6 +1273,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       deleteExecutionOperationSettings = OperationCallSettings.newBuilder();
       createExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createExecutionOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1160,6 +1300,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               getInstanceHealthSettings,
               upgradeInstanceSettings,
               rollbackInstanceSettings,
+              diagnoseInstanceSettings,
               upgradeInstanceInternalSettings,
               listEnvironmentsSettings,
               getEnvironmentSettings,
@@ -1173,7 +1314,12 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               listExecutionsSettings,
               getExecutionSettings,
               deleteExecutionSettings,
-              createExecutionSettings);
+              createExecutionSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -1220,6 +1366,8 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       upgradeInstanceOperationSettings = settings.upgradeInstanceOperationSettings.toBuilder();
       rollbackInstanceSettings = settings.rollbackInstanceSettings.toBuilder();
       rollbackInstanceOperationSettings = settings.rollbackInstanceOperationSettings.toBuilder();
+      diagnoseInstanceSettings = settings.diagnoseInstanceSettings.toBuilder();
+      diagnoseInstanceOperationSettings = settings.diagnoseInstanceOperationSettings.toBuilder();
       upgradeInstanceInternalSettings = settings.upgradeInstanceInternalSettings.toBuilder();
       upgradeInstanceInternalOperationSettings =
           settings.upgradeInstanceInternalOperationSettings.toBuilder();
@@ -1243,6 +1391,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       deleteExecutionOperationSettings = settings.deleteExecutionOperationSettings.toBuilder();
       createExecutionSettings = settings.createExecutionSettings.toBuilder();
       createExecutionOperationSettings = settings.createExecutionOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1265,6 +1418,7 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               getInstanceHealthSettings,
               upgradeInstanceSettings,
               rollbackInstanceSettings,
+              diagnoseInstanceSettings,
               upgradeInstanceInternalSettings,
               listEnvironmentsSettings,
               getEnvironmentSettings,
@@ -1278,7 +1432,12 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
               listExecutionsSettings,
               getExecutionSettings,
               deleteExecutionSettings,
-              createExecutionSettings);
+              createExecutionSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -1391,6 +1550,11 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .diagnoseInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .upgradeInstanceInternalSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1459,6 +1623,31 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           .createExecutionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createInstanceOperationSettings()
@@ -1778,6 +1967,30 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
           .setInitialCallSettings(
               UnaryCallSettings
                   .<RollbackInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .diagnoseInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DiagnoseInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -2229,6 +2442,20 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
       return rollbackInstanceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to diagnoseInstance. */
+    public UnaryCallSettings.Builder<DiagnoseInstanceRequest, Operation>
+        diagnoseInstanceSettings() {
+      return diagnoseInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to diagnoseInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DiagnoseInstanceRequest, Instance, OperationMetadata>
+        diagnoseInstanceOperationSettings() {
+      return diagnoseInstanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to upgradeInstanceInternal. */
     public UnaryCallSettings.Builder<UpgradeInstanceInternalRequest, Operation>
         upgradeInstanceInternalSettings() {
@@ -2371,6 +2598,34 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     public OperationCallSettings.Builder<CreateExecutionRequest, Execution, OperationMetadata>
         createExecutionOperationSettings() {
       return createExecutionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

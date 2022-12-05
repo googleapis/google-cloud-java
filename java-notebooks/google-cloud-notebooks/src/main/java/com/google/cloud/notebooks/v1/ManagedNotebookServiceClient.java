@@ -26,12 +26,22 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1.stub.ManagedNotebookServiceStub;
 import com.google.cloud.notebooks.v1.stub.ManagedNotebookServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -633,6 +643,141 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateRuntimeRequest, Operation> createRuntimeCallable() {
     return stub.createRuntimeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update Notebook Runtime configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   Runtime runtime = Runtime.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Runtime response = managedNotebookServiceClient.updateRuntimeAsync(runtime, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param runtime Required. The Runtime to be updated.
+   * @param updateMask Required. Specifies the path, relative to `Runtime`, of the field to update.
+   *     For example, to change the software configuration kernels, the `update_mask` parameter
+   *     would be specified as `software_config.kernels`, and the `PATCH` request body would specify
+   *     the new value, as follows:
+   *     <p>{ "software_config":{ "kernels": [{ 'repository':
+   *     'gcr.io/deeplearning-platform-release/pytorch-gpu', 'tag': 'latest' }], } }
+   *     <p>Currently, only the following fields can be updated: - software_config.kernels -
+   *     software_config.post_startup_script - software_config.custom_gpu_driver_path -
+   *     software_config.idle_shutdown - software_config.idle_shutdown_timeout -
+   *     software_config.disable_terminal
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Runtime, OperationMetadata> updateRuntimeAsync(
+      Runtime runtime, FieldMask updateMask) {
+    UpdateRuntimeRequest request =
+        UpdateRuntimeRequest.newBuilder().setRuntime(runtime).setUpdateMask(updateMask).build();
+    return updateRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update Notebook Runtime configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   UpdateRuntimeRequest request =
+   *       UpdateRuntimeRequest.newBuilder()
+   *           .setRuntime(Runtime.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Runtime response = managedNotebookServiceClient.updateRuntimeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Runtime, OperationMetadata> updateRuntimeAsync(
+      UpdateRuntimeRequest request) {
+    return updateRuntimeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update Notebook Runtime configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   UpdateRuntimeRequest request =
+   *       UpdateRuntimeRequest.newBuilder()
+   *           .setRuntime(Runtime.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Runtime, OperationMetadata> future =
+   *       managedNotebookServiceClient.updateRuntimeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Runtime response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRuntimeRequest, Runtime, OperationMetadata>
+      updateRuntimeOperationCallable() {
+    return stub.updateRuntimeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update Notebook Runtime configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   UpdateRuntimeRequest request =
+   *       UpdateRuntimeRequest.newBuilder()
+   *           .setRuntime(Runtime.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedNotebookServiceClient.updateRuntimeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRuntimeRequest, Operation> updateRuntimeCallable() {
+    return stub.updateRuntimeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1288,6 +1433,126 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Upgrades a Managed Notebook Runtime to the latest version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   String name = "name3373707";
+   *   Runtime response = managedNotebookServiceClient.upgradeRuntimeAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format:
+   *     `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Runtime, OperationMetadata> upgradeRuntimeAsync(String name) {
+    UpgradeRuntimeRequest request = UpgradeRuntimeRequest.newBuilder().setName(name).build();
+    return upgradeRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a Managed Notebook Runtime to the latest version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   UpgradeRuntimeRequest request =
+   *       UpgradeRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Runtime response = managedNotebookServiceClient.upgradeRuntimeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Runtime, OperationMetadata> upgradeRuntimeAsync(
+      UpgradeRuntimeRequest request) {
+    return upgradeRuntimeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a Managed Notebook Runtime to the latest version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   UpgradeRuntimeRequest request =
+   *       UpgradeRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Runtime, OperationMetadata> future =
+   *       managedNotebookServiceClient.upgradeRuntimeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Runtime response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpgradeRuntimeRequest, Runtime, OperationMetadata>
+      upgradeRuntimeOperationCallable() {
+    return stub.upgradeRuntimeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a Managed Notebook Runtime to the latest version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   UpgradeRuntimeRequest request =
+   *       UpgradeRuntimeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedNotebookServiceClient.upgradeRuntimeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpgradeRuntimeRequest, Operation> upgradeRuntimeCallable() {
+    return stub.upgradeRuntimeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Report and process a runtime event.
    *
    * <p>Sample code:
@@ -1581,6 +1846,532 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
     return stub.refreshRuntimeTokenInternalCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   RuntimeName name = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]");
+   *   DiagnosticConfig diagnosticConfig = DiagnosticConfig.newBuilder().build();
+   *   Runtime response =
+   *       managedNotebookServiceClient.diagnoseRuntimeAsync(name, diagnosticConfig).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format:
+   *     `projects/{project_id}/locations/{location}/runtimes/{runtimes_id}`
+   * @param diagnosticConfig Required. Defines flags that are used to run the diagnostic tool
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Runtime, OperationMetadata> diagnoseRuntimeAsync(
+      RuntimeName name, DiagnosticConfig diagnosticConfig) {
+    DiagnoseRuntimeRequest request =
+        DiagnoseRuntimeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDiagnosticConfig(diagnosticConfig)
+            .build();
+    return diagnoseRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   String name = RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString();
+   *   DiagnosticConfig diagnosticConfig = DiagnosticConfig.newBuilder().build();
+   *   Runtime response =
+   *       managedNotebookServiceClient.diagnoseRuntimeAsync(name, diagnosticConfig).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format:
+   *     `projects/{project_id}/locations/{location}/runtimes/{runtimes_id}`
+   * @param diagnosticConfig Required. Defines flags that are used to run the diagnostic tool
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Runtime, OperationMetadata> diagnoseRuntimeAsync(
+      String name, DiagnosticConfig diagnosticConfig) {
+    DiagnoseRuntimeRequest request =
+        DiagnoseRuntimeRequest.newBuilder()
+            .setName(name)
+            .setDiagnosticConfig(diagnosticConfig)
+            .build();
+    return diagnoseRuntimeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   DiagnoseRuntimeRequest request =
+   *       DiagnoseRuntimeRequest.newBuilder()
+   *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
+   *           .build();
+   *   Runtime response = managedNotebookServiceClient.diagnoseRuntimeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Runtime, OperationMetadata> diagnoseRuntimeAsync(
+      DiagnoseRuntimeRequest request) {
+    return diagnoseRuntimeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   DiagnoseRuntimeRequest request =
+   *       DiagnoseRuntimeRequest.newBuilder()
+   *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Runtime, OperationMetadata> future =
+   *       managedNotebookServiceClient.diagnoseRuntimeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Runtime response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DiagnoseRuntimeRequest, Runtime, OperationMetadata>
+      diagnoseRuntimeOperationCallable() {
+    return stub.diagnoseRuntimeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   DiagnoseRuntimeRequest request =
+   *       DiagnoseRuntimeRequest.newBuilder()
+   *           .setName(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setDiagnosticConfig(DiagnosticConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       managedNotebookServiceClient.diagnoseRuntimeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DiagnoseRuntimeRequest, Operation> diagnoseRuntimeCallable() {
+    return stub.diagnoseRuntimeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : managedNotebookServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       managedNotebookServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         managedNotebookServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = managedNotebookServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future =
+   *       managedNotebookServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = managedNotebookServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       managedNotebookServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = managedNotebookServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       managedNotebookServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response =
+   *       managedNotebookServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ManagedNotebookServiceClient managedNotebookServiceClient =
+   *     ManagedNotebookServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(RuntimeName.of("[PROJECT]", "[LOCATION]", "[RUNTIME]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       managedNotebookServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1683,6 +2474,82 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
     protected ListRuntimesFixedSizeCollection createCollection(
         List<ListRuntimesPage> pages, int collectionSize) {
       return new ListRuntimesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-bigquery-data-exchange",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-bigquery-data-exchange",
   "distribution_name": "com.google.cloud:google-cloud-bigquery-data-exchange",
   "api_id": "analyticshub.googleapis.com",

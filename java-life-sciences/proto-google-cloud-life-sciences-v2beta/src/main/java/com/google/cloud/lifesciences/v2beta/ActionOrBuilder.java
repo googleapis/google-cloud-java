@@ -312,6 +312,62 @@ public interface ActionOrBuilder
    *
    *
    * <pre>
+   * The encrypted environment to pass into the container. This environment is
+   * merged with values specified in the
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
+   * duplicate values.
+   * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+   * serve as environment variable names and their values. The decoded
+   * environment variables can overwrite the values specified by the
+   * `environment` field.
+   * </pre>
+   *
+   * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 21;</code>
+   *
+   * @return Whether the encryptedEnvironment field is set.
+   */
+  boolean hasEncryptedEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * The encrypted environment to pass into the container. This environment is
+   * merged with values specified in the
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
+   * duplicate values.
+   * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+   * serve as environment variable names and their values. The decoded
+   * environment variables can overwrite the values specified by the
+   * `environment` field.
+   * </pre>
+   *
+   * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 21;</code>
+   *
+   * @return The encryptedEnvironment.
+   */
+  com.google.cloud.lifesciences.v2beta.Secret getEncryptedEnvironment();
+  /**
+   *
+   *
+   * <pre>
+   * The encrypted environment to pass into the container. This environment is
+   * merged with values specified in the
+   * [google.cloud.lifesciences.v2beta.Pipeline][google.cloud.lifesciences.v2beta.Pipeline] message, overwriting any
+   * duplicate values.
+   * The secret must decrypt to a JSON-encoded dictionary where key-value pairs
+   * serve as environment variable names and their values. The decoded
+   * environment variables can overwrite the values specified by the
+   * `environment` field.
+   * </pre>
+   *
+   * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 21;</code>
+   */
+  com.google.cloud.lifesciences.v2beta.SecretOrBuilder getEncryptedEnvironmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * An optional identifier for a PID namespace to run the action inside.
    * Multiple actions should use the same string to share a namespace.  If
    * unspecified, a separate isolated namespace is used.

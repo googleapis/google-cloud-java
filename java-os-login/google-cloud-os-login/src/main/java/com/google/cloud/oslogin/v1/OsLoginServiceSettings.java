@@ -49,7 +49,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deletePosixAccount to 30 seconds:
+ * <p>For example, to set the total timeout of createSshPublicKey to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -60,10 +60,10 @@ import javax.annotation.Generated;
  * OsLoginServiceSettings.Builder osLoginServiceSettingsBuilder =
  *     OsLoginServiceSettings.newBuilder();
  * osLoginServiceSettingsBuilder
- *     .deletePosixAccountSettings()
+ *     .createSshPublicKeySettings()
  *     .setRetrySettings(
  *         osLoginServiceSettingsBuilder
- *             .deletePosixAccountSettings()
+ *             .createSshPublicKeySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -73,6 +73,12 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSettings> {
+
+  /** Returns the object with the settings used for calls to createSshPublicKey. */
+  public UnaryCallSettings<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+      createSshPublicKeySettings() {
+    return ((OsLoginServiceStubSettings) getStubSettings()).createSshPublicKeySettings();
+  }
 
   /** Returns the object with the settings used for calls to deletePosixAccount. */
   public UnaryCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountSettings() {
@@ -220,6 +226,12 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to createSshPublicKey. */
+    public UnaryCallSettings.Builder<CreateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
+        createSshPublicKeySettings() {
+      return getStubSettingsBuilder().createSshPublicKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to deletePosixAccount. */

@@ -193,30 +193,58 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Wrapped key material produced with
-   * [RSA_OAEP_3072_SHA1_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256]
+   * Optional. The wrapped key material to import.
+   * Before wrapping, key material must be formatted. If importing symmetric key
+   * material, the expected key material format is plain bytes. If importing
+   * asymmetric key material, the expected key material format is PKCS#8-encoded
+   * DER (the PrivateKeyInfo structure from RFC 5208).
+   * When wrapping with import methods
+   * ([RSA_OAEP_3072_SHA1_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256]
    * or
-   * [RSA_OAEP_4096_SHA1_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_4096_SHA1_AES_256].
-   * This field contains the concatenation of two wrapped keys:
+   * [RSA_OAEP_4096_SHA1_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_4096_SHA1_AES_256]
+   * or
+   * [RSA_OAEP_3072_SHA256_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA256_AES_256]
+   * or
+   * [RSA_OAEP_4096_SHA256_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_4096_SHA256_AES_256]),
+   * this field must contain the concatenation of:
    * &lt;ol&gt;
    *   &lt;li&gt;An ephemeral AES-256 wrapping key wrapped with the
    *       [public_key][google.cloud.kms.v1.ImportJob.public_key] using
-   *       RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an
-   *       empty label.
+   *       RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an empty
+   *       label.
    *   &lt;/li&gt;
-   *   &lt;li&gt;The key to be imported, wrapped with the ephemeral AES-256 key
-   *       using AES-KWP (RFC 5649).
+   *   &lt;li&gt;The formatted key to be imported, wrapped with the ephemeral AES-256
+   *       key using AES-KWP (RFC 5649).
    *   &lt;/li&gt;
    * &lt;/ol&gt;
-   * If importing symmetric key material, it is expected that the unwrapped
-   * key contains plain bytes. If importing asymmetric key material, it is
-   * expected that the unwrapped key is in PKCS#8-encoded DER format (the
-   * PrivateKeyInfo structure from RFC 5208).
    * This format is the same as the format produced by PKCS#11 mechanism
    * CKM_RSA_AES_KEY_WRAP.
+   * When wrapping with import methods
+   * ([RSA_OAEP_3072_SHA256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA256]
+   * or
+   * [RSA_OAEP_4096_SHA256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_4096_SHA256]),
+   * this field must contain the formatted key to be imported, wrapped with the
+   * [public_key][google.cloud.kms.v1.ImportJob.public_key] using RSAES-OAEP
+   * with SHA-256, MGF1 with SHA-256, and an empty label.
    * </pre>
    *
-   * <code>bytes rsa_aes_wrapped_key = 5;</code>
+   * <code>bytes wrapped_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The wrappedKey.
+   */
+  com.google.protobuf.ByteString getWrappedKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field has the same meaning as
+   * [wrapped_key][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.wrapped_key].
+   * Prefer to use that field in new work. Either that field or this field
+   * (but not both) must be specified.
+   * </pre>
+   *
+   * <code>bytes rsa_aes_wrapped_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the rsaAesWrappedKey field is set.
    */
@@ -225,30 +253,13 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Wrapped key material produced with
-   * [RSA_OAEP_3072_SHA1_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_3072_SHA1_AES_256]
-   * or
-   * [RSA_OAEP_4096_SHA1_AES_256][google.cloud.kms.v1.ImportJob.ImportMethod.RSA_OAEP_4096_SHA1_AES_256].
-   * This field contains the concatenation of two wrapped keys:
-   * &lt;ol&gt;
-   *   &lt;li&gt;An ephemeral AES-256 wrapping key wrapped with the
-   *       [public_key][google.cloud.kms.v1.ImportJob.public_key] using
-   *       RSAES-OAEP with SHA-1/SHA-256, MGF1 with SHA-1/SHA-256, and an
-   *       empty label.
-   *   &lt;/li&gt;
-   *   &lt;li&gt;The key to be imported, wrapped with the ephemeral AES-256 key
-   *       using AES-KWP (RFC 5649).
-   *   &lt;/li&gt;
-   * &lt;/ol&gt;
-   * If importing symmetric key material, it is expected that the unwrapped
-   * key contains plain bytes. If importing asymmetric key material, it is
-   * expected that the unwrapped key is in PKCS#8-encoded DER format (the
-   * PrivateKeyInfo structure from RFC 5208).
-   * This format is the same as the format produced by PKCS#11 mechanism
-   * CKM_RSA_AES_KEY_WRAP.
+   * Optional. This field has the same meaning as
+   * [wrapped_key][google.cloud.kms.v1.ImportCryptoKeyVersionRequest.wrapped_key].
+   * Prefer to use that field in new work. Either that field or this field
+   * (but not both) must be specified.
    * </pre>
    *
-   * <code>bytes rsa_aes_wrapped_key = 5;</code>
+   * <code>bytes rsa_aes_wrapped_key = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The rsaAesWrappedKey.
    */

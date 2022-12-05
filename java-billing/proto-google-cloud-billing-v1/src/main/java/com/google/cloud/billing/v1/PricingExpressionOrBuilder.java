@@ -54,6 +54,89 @@ public interface PricingExpressionOrBuilder
    *
    *
    * <pre>
+   * The recommended quantity of units for displaying pricing info. When
+   * displaying pricing info it is recommended to display:
+   * (unit_price * display_quantity) per display_quantity usage_unit.
+   * This field does not affect the pricing formula and is for display purposes
+   * only.
+   * Example: If the unit_price is "0.0001 USD", the usage_unit is "GB" and
+   * the display_quantity is "1000" then the recommended way of displaying the
+   * pricing info is "0.10 USD per 1000 GB"
+   * </pre>
+   *
+   * <code>double display_quantity = 2;</code>
+   *
+   * @return The displayQuantity.
+   */
+  double getDisplayQuantity();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate> getTieredRatesList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  com.google.cloud.billing.v1.PricingExpression.TierRate getTieredRates(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  int getTieredRatesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder>
+      getTieredRatesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder getTieredRatesOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The unit of usage in human readable form.
    * Example: "gibi byte".
    * </pre>
@@ -147,87 +230,4 @@ public interface PricingExpressionOrBuilder
    * @return The baseUnitConversionFactor.
    */
   double getBaseUnitConversionFactor();
-
-  /**
-   *
-   *
-   * <pre>
-   * The recommended quantity of units for displaying pricing info. When
-   * displaying pricing info it is recommended to display:
-   * (unit_price * display_quantity) per display_quantity usage_unit.
-   * This field does not affect the pricing formula and is for display purposes
-   * only.
-   * Example: If the unit_price is "0.0001 USD", the usage_unit is "GB" and
-   * the display_quantity is "1000" then the recommended way of displaying the
-   * pricing info is "0.10 USD per 1000 GB"
-   * </pre>
-   *
-   * <code>double display_quantity = 2;</code>
-   *
-   * @return The displayQuantity.
-   */
-  double getDisplayQuantity();
-
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate> getTieredRatesList();
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  com.google.cloud.billing.v1.PricingExpression.TierRate getTieredRates(int index);
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  int getTieredRatesCount();
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  java.util.List<? extends com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder>
-      getTieredRatesOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder getTieredRatesOrBuilder(
-      int index);
 }

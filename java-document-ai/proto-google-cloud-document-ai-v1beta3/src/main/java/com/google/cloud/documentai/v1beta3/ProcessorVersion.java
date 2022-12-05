@@ -1405,6 +1405,54 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DOCUMENT_SCHEMA_FIELD_NUMBER = 12;
+  private com.google.cloud.documentai.v1beta3.DocumentSchema documentSchema_;
+  /**
+   *
+   *
+   * <pre>
+   * The schema of the processor version. Describes the output.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+   *
+   * @return Whether the documentSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentSchema() {
+    return documentSchema_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The schema of the processor version. Describes the output.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+   *
+   * @return The documentSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentSchema getDocumentSchema() {
+    return documentSchema_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+        : documentSchema_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The schema of the processor version. Describes the output.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
+    return getDocumentSchema();
+  }
+
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_;
   /**
@@ -1694,6 +1742,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (googleManaged_ != false) {
       output.writeBool(11, googleManaged_);
     }
+    if (documentSchema_ != null) {
+      output.writeMessage(12, getDocumentSchema());
+    }
     if (deprecationInfo_ != null) {
       output.writeMessage(13, getDeprecationInfo());
     }
@@ -1729,6 +1780,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (googleManaged_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, googleManaged_);
     }
+    if (documentSchema_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDocumentSchema());
+    }
     if (deprecationInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDeprecationInfo());
     }
@@ -1750,6 +1804,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
 
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (hasDocumentSchema() != other.hasDocumentSchema()) return false;
+    if (hasDocumentSchema()) {
+      if (!getDocumentSchema().equals(other.getDocumentSchema())) return false;
+    }
     if (state_ != other.state_) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -1777,6 +1835,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    if (hasDocumentSchema()) {
+      hash = (37 * hash) + DOCUMENT_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentSchema().hashCode();
+    }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     if (hasCreateTime()) {
@@ -1939,6 +2001,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
 
       displayName_ = "";
 
+      if (documentSchemaBuilder_ == null) {
+        documentSchema_ = null;
+      } else {
+        documentSchema_ = null;
+        documentSchemaBuilder_ = null;
+      }
       state_ = 0;
 
       if (createTimeBuilder_ == null) {
@@ -1988,6 +2056,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
           new com.google.cloud.documentai.v1beta3.ProcessorVersion(this);
       result.name_ = name_;
       result.displayName_ = displayName_;
+      if (documentSchemaBuilder_ == null) {
+        result.documentSchema_ = documentSchema_;
+      } else {
+        result.documentSchema_ = documentSchemaBuilder_.build();
+      }
       result.state_ = state_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
@@ -2059,6 +2132,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
         onChanged();
+      }
+      if (other.hasDocumentSchema()) {
+        mergeDocumentSchema(other.getDocumentSchema());
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
@@ -2148,6 +2224,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
 
                 break;
               } // case 88
+            case 98:
+              {
+                input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
             case 106:
               {
                 input.readMessage(getDeprecationInfoFieldBuilder().getBuilder(), extensionRegistry);
@@ -2391,6 +2473,193 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       displayName_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.documentai.v1beta3.DocumentSchema documentSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.DocumentSchema,
+            com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>
+        documentSchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     *
+     * @return Whether the documentSchema field is set.
+     */
+    public boolean hasDocumentSchema() {
+      return documentSchemaBuilder_ != null || documentSchema_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     *
+     * @return The documentSchema.
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentSchema getDocumentSchema() {
+      if (documentSchemaBuilder_ == null) {
+        return documentSchema_ == null
+            ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+            : documentSchema_;
+      } else {
+        return documentSchemaBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     */
+    public Builder setDocumentSchema(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
+      if (documentSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentSchema_ = value;
+        onChanged();
+      } else {
+        documentSchemaBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     */
+    public Builder setDocumentSchema(
+        com.google.cloud.documentai.v1beta3.DocumentSchema.Builder builderForValue) {
+      if (documentSchemaBuilder_ == null) {
+        documentSchema_ = builderForValue.build();
+        onChanged();
+      } else {
+        documentSchemaBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     */
+    public Builder mergeDocumentSchema(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
+      if (documentSchemaBuilder_ == null) {
+        if (documentSchema_ != null) {
+          documentSchema_ =
+              com.google.cloud.documentai.v1beta3.DocumentSchema.newBuilder(documentSchema_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          documentSchema_ = value;
+        }
+        onChanged();
+      } else {
+        documentSchemaBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     */
+    public Builder clearDocumentSchema() {
+      if (documentSchemaBuilder_ == null) {
+        documentSchema_ = null;
+        onChanged();
+      } else {
+        documentSchema_ = null;
+        documentSchemaBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentSchema.Builder getDocumentSchemaBuilder() {
+
+      onChanged();
+      return getDocumentSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder
+        getDocumentSchemaOrBuilder() {
+      if (documentSchemaBuilder_ != null) {
+        return documentSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return documentSchema_ == null
+            ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+            : documentSchema_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema of the processor version. Describes the output.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentSchema document_schema = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.DocumentSchema,
+            com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>
+        getDocumentSchemaFieldBuilder() {
+      if (documentSchemaBuilder_ == null) {
+        documentSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.DocumentSchema,
+                com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
+                com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>(
+                getDocumentSchema(), getParentForChildren(), isClean());
+        documentSchema_ = null;
+      }
+      return documentSchemaBuilder_;
     }
 
     private int state_ = 0;

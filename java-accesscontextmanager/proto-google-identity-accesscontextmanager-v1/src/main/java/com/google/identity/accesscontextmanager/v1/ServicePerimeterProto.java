@@ -52,10 +52,6 @@ public final class ServicePerimeterProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressFrom_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressFrom_fieldAccessorTable;
@@ -68,13 +64,17 @@ public final class ServicePerimeterProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressPolicy_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -104,7 +104,7 @@ public final class ServicePerimeterProto {
           + "METER_TYPE_BRIDGE\020\001:\177\352A|\n4accesscontextm"
           + "anager.googleapis.com/ServicePerimeter\022D"
           + "accessPolicies/{access_policy}/servicePe"
-          + "rimeters/{service_perimeter}\"\230\017\n\026Service"
+          + "rimeters/{service_perimeter}\"\265\017\n\026Service"
           + "PerimeterConfig\022\021\n\tresources\030\001 \003(\t\022\025\n\rac"
           + "cess_levels\030\002 \003(\t\022\033\n\023restricted_services"
           + "\030\004 \003(\t\022v\n\027vpc_accessible_services\030\n \001(\0132"
@@ -124,44 +124,44 @@ public final class ServicePerimeterProto {
           + "ty.accesscontextmanager.v1.ServicePerime"
           + "terConfig.MethodSelector\032E\n\rIngressSourc"
           + "e\022\026\n\014access_level\030\001 \001(\tH\000\022\022\n\010resource\030\002 "
-          + "\001(\tH\000B\010\n\006source\032\177\n\010EgressTo\022\021\n\tresources"
-          + "\030\001 \003(\t\022`\n\noperations\030\002 \003(\0132L.google.iden"
-          + "tity.accesscontextmanager.v1.ServicePeri"
-          + "meterConfig.ApiOperation\032\346\001\n\013IngressFrom"
-          + "\022^\n\007sources\030\001 \003(\0132M.google.identity.acce"
-          + "sscontextmanager.v1.ServicePerimeterConf"
-          + "ig.IngressSource\022\022\n\nidentities\030\002 \003(\t\022c\n\r"
-          + "identity_type\030\003 \001(\0162L.google.identity.ac"
+          + "\001(\tH\000B\010\n\006source\032\346\001\n\013IngressFrom\022^\n\007sourc"
+          + "es\030\001 \003(\0132M.google.identity.accesscontext"
+          + "manager.v1.ServicePerimeterConfig.Ingres"
+          + "sSource\022\022\n\nidentities\030\002 \003(\t\022c\n\ridentity_"
+          + "type\030\003 \001(\0162L.google.identity.accessconte"
+          + "xtmanager.v1.ServicePerimeterConfig.Iden"
+          + "tityType\032\200\001\n\tIngressTo\022`\n\noperations\030\001 \003"
+          + "(\0132L.google.identity.accesscontextmanage"
+          + "r.v1.ServicePerimeterConfig.ApiOperation"
+          + "\022\021\n\tresources\030\002 \003(\t\032\321\001\n\rIngressPolicy\022a\n"
+          + "\014ingress_from\030\001 \001(\0132K.google.identity.ac"
           + "cesscontextmanager.v1.ServicePerimeterCo"
-          + "nfig.IdentityType\032\200\001\n\tIngressTo\022`\n\nopera"
-          + "tions\030\001 \003(\0132L.google.identity.accesscont"
-          + "extmanager.v1.ServicePerimeterConfig.Api"
-          + "Operation\022\021\n\tresources\030\002 \003(\t\032\321\001\n\rIngress"
-          + "Policy\022a\n\014ingress_from\030\001 \001(\0132K.google.id"
-          + "entity.accesscontextmanager.v1.ServicePe"
-          + "rimeterConfig.IngressFrom\022]\n\ningress_to\030"
-          + "\002 \001(\0132I.google.identity.accesscontextman"
-          + "ager.v1.ServicePerimeterConfig.IngressTo"
-          + "\032\314\001\n\014EgressPolicy\022_\n\013egress_from\030\001 \001(\0132J"
-          + ".google.identity.accesscontextmanager.v1"
-          + ".ServicePerimeterConfig.EgressFrom\022[\n\teg"
-          + "ress_to\030\002 \001(\0132H.google.identity.accessco"
-          + "ntextmanager.v1.ServicePerimeterConfig.E"
-          + "gressTo\032\205\001\n\nEgressFrom\022\022\n\nidentities\030\001 \003"
-          + "(\t\022c\n\ridentity_type\030\002 \001(\0162L.google.ident"
-          + "ity.accesscontextmanager.v1.ServicePerim"
-          + "eterConfig.IdentityType\"n\n\014IdentityType\022"
-          + "\035\n\031IDENTITY_TYPE_UNSPECIFIED\020\000\022\020\n\014ANY_ID"
-          + "ENTITY\020\001\022\024\n\020ANY_USER_ACCOUNT\020\002\022\027\n\023ANY_SE"
-          + "RVICE_ACCOUNT\020\003B\253\002\n+com.google.identity."
-          + "accesscontextmanager.v1B\025ServicePerimete"
-          + "rProtoP\001Z[google.golang.org/genproto/goo"
-          + "gleapis/identity/accesscontextmanager/v1"
-          + ";accesscontextmanager\242\002\004GACM\252\002\'Google.Id"
-          + "entity.AccessContextManager.V1\312\002\'Google\\"
-          + "Identity\\AccessContextManager\\V1\352\002*Googl"
-          + "e::Identity::AccessContextManager::V1b\006p"
-          + "roto3"
+          + "nfig.IngressFrom\022]\n\ningress_to\030\002 \001(\0132I.g"
+          + "oogle.identity.accesscontextmanager.v1.S"
+          + "ervicePerimeterConfig.IngressTo\032\205\001\n\nEgre"
+          + "ssFrom\022\022\n\nidentities\030\001 \003(\t\022c\n\ridentity_t"
+          + "ype\030\002 \001(\0162L.google.identity.accesscontex"
+          + "tmanager.v1.ServicePerimeterConfig.Ident"
+          + "ityType\032\233\001\n\010EgressTo\022\021\n\tresources\030\001 \003(\t\022"
+          + "`\n\noperations\030\002 \003(\0132L.google.identity.ac"
+          + "cesscontextmanager.v1.ServicePerimeterCo"
+          + "nfig.ApiOperation\022\032\n\022external_resources\030"
+          + "\003 \003(\t\032\314\001\n\014EgressPolicy\022_\n\013egress_from\030\001 "
+          + "\001(\0132J.google.identity.accesscontextmanag"
+          + "er.v1.ServicePerimeterConfig.EgressFrom\022"
+          + "[\n\tegress_to\030\002 \001(\0132H.google.identity.acc"
+          + "esscontextmanager.v1.ServicePerimeterCon"
+          + "fig.EgressTo\"n\n\014IdentityType\022\035\n\031IDENTITY"
+          + "_TYPE_UNSPECIFIED\020\000\022\020\n\014ANY_IDENTITY\020\001\022\024\n"
+          + "\020ANY_USER_ACCOUNT\020\002\022\027\n\023ANY_SERVICE_ACCOU"
+          + "NT\020\003B\253\002\n+com.google.identity.accessconte"
+          + "xtmanager.v1B\025ServicePerimeterProtoP\001Z[g"
+          + "oogle.golang.org/genproto/googleapis/ide"
+          + "ntity/accesscontextmanager/v1;accesscont"
+          + "extmanager\242\002\004GACM\252\002\'Google.Identity.Acce"
+          + "ssContextManager.V1\312\002\'Google\\Identity\\Ac"
+          + "cessContextManager\\V1\352\002*Google::Identity"
+          + "::AccessContextManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -239,20 +239,10 @@ public final class ServicePerimeterProto {
             new java.lang.String[] {
               "AccessLevel", "Resource", "Source",
             });
-    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor =
-        internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
-            .getNestedTypes()
-            .get(4);
-    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor,
-            new java.lang.String[] {
-              "Resources", "Operations",
-            });
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressFrom_descriptor =
         internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
             .getNestedTypes()
-            .get(5);
+            .get(4);
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressFrom_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressFrom_descriptor,
@@ -262,7 +252,7 @@ public final class ServicePerimeterProto {
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressTo_descriptor =
         internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
             .getNestedTypes()
-            .get(6);
+            .get(5);
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressTo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressTo_descriptor,
@@ -272,32 +262,42 @@ public final class ServicePerimeterProto {
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressPolicy_descriptor =
         internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
             .getNestedTypes()
-            .get(7);
+            .get(6);
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_IngressPolicy_descriptor,
             new java.lang.String[] {
               "IngressFrom", "IngressTo",
             });
-    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_descriptor =
-        internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
-            .getNestedTypes()
-            .get(8);
-    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_descriptor,
-            new java.lang.String[] {
-              "EgressFrom", "EgressTo",
-            });
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor =
         internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
             .getNestedTypes()
-            .get(9);
+            .get(7);
     internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressFrom_descriptor,
             new java.lang.String[] {
               "Identities", "IdentityType",
+            });
+    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor =
+        internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
+            .getNestedTypes()
+            .get(8);
+    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressTo_descriptor,
+            new java.lang.String[] {
+              "Resources", "Operations", "ExternalResources",
+            });
+    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_descriptor =
+        internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_descriptor
+            .getNestedTypes()
+            .get(9);
+    internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_identity_accesscontextmanager_v1_ServicePerimeterConfig_EgressPolicy_descriptor,
+            new java.lang.String[] {
+              "EgressFrom", "EgressTo",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

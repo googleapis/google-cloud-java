@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-tpu-v2alpha1</artifactId>
-  <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v2alpha1:current} -->
+  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-tpu-v2alpha1:current} -->
   <name>grpc-google-cloud-tpu-v2alpha1</name>
   <description>GRPC library for google-cloud-tpu</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-tpu-parent</artifactId>
-    <version>2.6.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+    <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   </parent>
   <dependencies>
     <dependency>

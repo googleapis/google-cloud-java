@@ -323,8 +323,8 @@ public interface VirtualMachineConfigOrBuilder
    * `network` nor `subnet` is specified, the "default" network of
    * the project is used, if it exists.
    * A full URL or partial URI. Examples:
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
-   * * `projects/[project_id]/regions/global/default`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
+   * * `projects/[project_id]/global/networks/default`
    * Runtimes are managed resources inside Google Infrastructure.
    * Runtimes support the following network configurations:
    * * Google Managed Network (Network &amp; subnet are empty)
@@ -348,8 +348,8 @@ public interface VirtualMachineConfigOrBuilder
    * `network` nor `subnet` is specified, the "default" network of
    * the project is used, if it exists.
    * A full URL or partial URI. Examples:
-   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/global/default`
-   * * `projects/[project_id]/regions/global/default`
+   * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
+   * * `projects/[project_id]/global/networks/default`
    * Runtimes are managed resources inside Google Infrastructure.
    * Runtimes support the following network configurations:
    * * Google Managed Network (Network &amp; subnet are empty)

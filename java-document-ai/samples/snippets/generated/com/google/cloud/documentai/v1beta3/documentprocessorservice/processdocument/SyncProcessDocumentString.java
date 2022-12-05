@@ -18,7 +18,7 @@ package com.google.cloud.documentai.v1beta3.samples;
 
 // [START documentai_v1beta3_generated_DocumentProcessorService_ProcessDocument_String_sync]
 import com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient;
-import com.google.cloud.documentai.v1beta3.HumanReviewConfigName;
+import com.google.cloud.documentai.v1beta3.EvaluationName;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 
 public class SyncProcessDocumentString {
@@ -35,7 +35,10 @@ public class SyncProcessDocumentString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DocumentProcessorServiceClient documentProcessorServiceClient =
         DocumentProcessorServiceClient.create()) {
-      String name = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+      String name =
+          EvaluationName.of(
+                  "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
+              .toString();
       ProcessResponse response = documentProcessorServiceClient.processDocument(name);
     }
   }

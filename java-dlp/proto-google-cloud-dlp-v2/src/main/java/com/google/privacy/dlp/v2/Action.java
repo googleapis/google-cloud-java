@@ -5774,8 +5774,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable email notification for project owners and editors on job's
-   * completion/failure.
+   * Sends an email when the job completes. The email goes to IAM project
+   * owners and technical [Essential
+   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -5790,8 +5791,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable email notification for project owners and editors on job's
-   * completion/failure.
+   * Sends an email when the job completes. The email goes to IAM project
+   * owners and technical [Essential
+   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -5809,8 +5811,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable email notification for project owners and editors on job's
-   * completion/failure.
+   * Sends an email when the job completes. The email goes to IAM project
+   * owners and technical [Essential
+   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7567,8 +7570,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7583,8 +7587,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7609,8 +7614,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7633,8 +7639,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7654,8 +7661,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7689,8 +7697,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7715,8 +7724,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7729,8 +7739,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7751,8 +7762,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable email notification for project owners and editors on job's
-     * completion/failure.
+     * Sends an email when the job completes. The email goes to IAM project
+     * owners and technical [Essential
+     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>

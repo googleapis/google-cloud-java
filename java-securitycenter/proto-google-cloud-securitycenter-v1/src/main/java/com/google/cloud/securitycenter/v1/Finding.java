@@ -62,6 +62,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     iamBindings_ = java.util.Collections.emptyList();
     nextSteps_ = "";
     containers_ = java.util.Collections.emptyList();
+    files_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -3001,6 +3002,75 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return getDatabase();
   }
 
+  public static final int FILES_FIELD_NUMBER = 46;
+  private java.util.List<com.google.cloud.securitycenter.v1.File> files_;
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.File> getFilesList() {
+    return files_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.FileOrBuilder>
+      getFilesOrBuilderList() {
+    return files_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  @java.lang.Override
+  public int getFilesCount() {
+    return files_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.File getFiles(int index) {
+    return files_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * File associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.FileOrBuilder getFilesOrBuilder(int index) {
+    return files_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3113,6 +3183,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (database_ != null) {
       output.writeMessage(44, getDatabase());
+    }
+    for (int i = 0; i < files_.size(); i++) {
+      output.writeMessage(46, files_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -3250,6 +3323,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (database_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(44, getDatabase());
     }
+    for (int i = 0; i < files_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(46, files_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3332,6 +3408,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasDatabase()) {
       if (!getDatabase().equals(other.getDatabase())) return false;
     }
+    if (!getFilesList().equals(other.getFilesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3446,6 +3523,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasDatabase()) {
       hash = (37 * hash) + DATABASE_FIELD_NUMBER;
       hash = (53 * hash) + getDatabase().hashCode();
+    }
+    if (getFilesCount() > 0) {
+      hash = (37 * hash) + FILES_FIELD_NUMBER;
+      hash = (53 * hash) + getFilesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3750,6 +3831,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         database_ = null;
         databaseBuilder_ = null;
       }
+      if (filesBuilder_ == null) {
+        files_ = java.util.Collections.emptyList();
+      } else {
+        files_ = null;
+        filesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -3897,6 +3985,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.database_ = database_;
       } else {
         result.database_ = databaseBuilder_.build();
+      }
+      if (filesBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          files_ = java.util.Collections.unmodifiableList(files_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.files_ = files_;
+      } else {
+        result.files_ = filesBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4169,6 +4266,33 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDatabase()) {
         mergeDatabase(other.getDatabase());
+      }
+      if (filesBuilder_ == null) {
+        if (!other.files_.isEmpty()) {
+          if (files_.isEmpty()) {
+            files_ = other.files_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureFilesIsMutable();
+            files_.addAll(other.files_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.files_.isEmpty()) {
+          if (filesBuilder_.isEmpty()) {
+            filesBuilder_.dispose();
+            filesBuilder_ = null;
+            files_ = other.files_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            filesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFilesFieldBuilder()
+                    : null;
+          } else {
+            filesBuilder_.addAllMessages(other.files_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4449,6 +4573,19 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 354
+            case 370:
+              {
+                com.google.cloud.securitycenter.v1.File m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.File.parser(), extensionRegistry);
+                if (filesBuilder_ == null) {
+                  ensureFilesIsMutable();
+                  files_.add(m);
+                } else {
+                  filesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 370
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10717,6 +10854,354 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         database_ = null;
       }
       return databaseBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.File> files_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFilesIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        files_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.File>(files_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.File,
+            com.google.cloud.securitycenter.v1.File.Builder,
+            com.google.cloud.securitycenter.v1.FileOrBuilder>
+        filesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.File> getFilesList() {
+      if (filesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(files_);
+      } else {
+        return filesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public int getFilesCount() {
+      if (filesBuilder_ == null) {
+        return files_.size();
+      } else {
+        return filesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public com.google.cloud.securitycenter.v1.File getFiles(int index) {
+      if (filesBuilder_ == null) {
+        return files_.get(index);
+      } else {
+        return filesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder setFiles(int index, com.google.cloud.securitycenter.v1.File value) {
+      if (filesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files_.set(index, value);
+        onChanged();
+      } else {
+        filesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder setFiles(
+        int index, com.google.cloud.securitycenter.v1.File.Builder builderForValue) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder addFiles(com.google.cloud.securitycenter.v1.File value) {
+      if (filesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files_.add(value);
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder addFiles(int index, com.google.cloud.securitycenter.v1.File value) {
+      if (filesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFilesIsMutable();
+        files_.add(index, value);
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder addFiles(com.google.cloud.securitycenter.v1.File.Builder builderForValue) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.add(builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder addFiles(
+        int index, com.google.cloud.securitycenter.v1.File.Builder builderForValue) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        filesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder addAllFiles(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.File> values) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, files_);
+        onChanged();
+      } else {
+        filesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder clearFiles() {
+      if (filesBuilder_ == null) {
+        files_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        filesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public Builder removeFiles(int index) {
+      if (filesBuilder_ == null) {
+        ensureFilesIsMutable();
+        files_.remove(index);
+        onChanged();
+      } else {
+        filesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public com.google.cloud.securitycenter.v1.File.Builder getFilesBuilder(int index) {
+      return getFilesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public com.google.cloud.securitycenter.v1.FileOrBuilder getFilesOrBuilder(int index) {
+      if (filesBuilder_ == null) {
+        return files_.get(index);
+      } else {
+        return filesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.FileOrBuilder>
+        getFilesOrBuilderList() {
+      if (filesBuilder_ != null) {
+        return filesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(files_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public com.google.cloud.securitycenter.v1.File.Builder addFilesBuilder() {
+      return getFilesFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.File.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public com.google.cloud.securitycenter.v1.File.Builder addFilesBuilder(int index) {
+      return getFilesFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.File.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * File associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.File.Builder> getFilesBuilderList() {
+      return getFilesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.File,
+            com.google.cloud.securitycenter.v1.File.Builder,
+            com.google.cloud.securitycenter.v1.FileOrBuilder>
+        getFilesFieldBuilder() {
+      if (filesBuilder_ == null) {
+        filesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.File,
+                com.google.cloud.securitycenter.v1.File.Builder,
+                com.google.cloud.securitycenter.v1.FileOrBuilder>(
+                files_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+        files_ = null;
+      }
+      return filesBuilder_;
     }
 
     @java.lang.Override

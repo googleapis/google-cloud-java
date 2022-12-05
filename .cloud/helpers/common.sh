@@ -40,7 +40,7 @@ function getOutput() {
 
 # Parse stdin and get the value associated with the given key.
 function parseJson() {
-  python3 -c "import sys, json; print(json.load(sys.stdin)['$1'])"
+  jq ".$1" -r
 }
 
 # Example use: getModuleOutput java-redis redis_network

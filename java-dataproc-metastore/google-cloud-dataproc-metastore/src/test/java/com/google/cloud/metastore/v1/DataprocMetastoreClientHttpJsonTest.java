@@ -201,6 +201,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -256,6 +259,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -311,6 +317,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -375,6 +384,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -439,6 +451,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -462,6 +477,9 @@ public class DataprocMetastoreClientHttpJsonTest {
             .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
             .setUid("uid115792")
             .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+            .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+            .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .setTelemetryConfig(TelemetryConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -505,6 +523,9 @@ public class DataprocMetastoreClientHttpJsonTest {
               .setMaintenanceWindow(MaintenanceWindow.newBuilder().build())
               .setUid("uid115792")
               .setMetadataManagementActivity(MetadataManagementActivity.newBuilder().build())
+              .setEncryptionConfig(EncryptionConfig.newBuilder().build())
+              .setNetworkConfig(NetworkConfig.newBuilder().build())
+              .setTelemetryConfig(TelemetryConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateServiceAsync(service, updateMask).get();

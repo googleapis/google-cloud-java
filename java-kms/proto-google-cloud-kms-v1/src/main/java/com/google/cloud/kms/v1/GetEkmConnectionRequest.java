@@ -22,7 +22,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.GetEkmConnection][].
+ * Request message for
+ * [EkmService.GetEkmConnection][google.cloud.kms.v1.EkmService.GetEkmConnection].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.GetEkmConnectionRequest}
@@ -285,7 +286,8 @@ public final class GetEkmConnectionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.GetEkmConnection][].
+   * Request message for
+   * [EkmService.GetEkmConnection][google.cloud.kms.v1.EkmService.GetEkmConnection].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.GetEkmConnectionRequest}

@@ -96,6 +96,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <pre>
      * Cavium HSM attestation compressed with gzip. Note that this format is
      * defined by Cavium and subject to change at any time.
+     * See
+     * https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/software-key-attestation.html.
      * </pre>
      *
      * <code>CAVIUM_V1_COMPRESSED = 3;</code>
@@ -131,6 +133,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <pre>
      * Cavium HSM attestation compressed with gzip. Note that this format is
      * defined by Cavium and subject to change at any time.
+     * See
+     * https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/software-key-attestation.html.
      * </pre>
      *
      * <code>CAVIUM_V1_COMPRESSED = 3;</code>

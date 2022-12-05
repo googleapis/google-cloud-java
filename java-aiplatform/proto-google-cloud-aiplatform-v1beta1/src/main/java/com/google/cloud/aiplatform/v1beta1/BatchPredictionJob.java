@@ -1563,6 +1563,2094 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface InstanceConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The format of the instance that the Model accepts. Vertex AI will
+     * convert compatible
+     * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+     * to the specified format.
+     * Supported values are:
+     * * `object`: Each input is converted to JSON object format.
+     *     * For `bigquery`, each row is converted to an object.
+     *     * For `jsonl`, each line of the JSONL input must be an object.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * * `array`: Each input is converted to JSON array format.
+     *     * For `bigquery`, each row is converted to an array. The order
+     *       of columns is determined by the BigQuery column order, unless
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * For `jsonl`, if each line of the JSONL input is an object,
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * If not specified, Vertex AI converts the batch prediction input as
+     * follows:
+     *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+     *    order of columns is the same as defined in the file or table, unless
+     *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *  * For `jsonl`, the prediction instance format is determined by
+     *    each line of the input.
+     *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+     *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the record.
+     *  * For `file-list`, each file in the list will be converted to an
+     *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the file.
+     * </pre>
+     *
+     * <code>string instance_type = 1;</code>
+     *
+     * @return The instanceType.
+     */
+    java.lang.String getInstanceType();
+    /**
+     *
+     *
+     * <pre>
+     * The format of the instance that the Model accepts. Vertex AI will
+     * convert compatible
+     * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+     * to the specified format.
+     * Supported values are:
+     * * `object`: Each input is converted to JSON object format.
+     *     * For `bigquery`, each row is converted to an object.
+     *     * For `jsonl`, each line of the JSONL input must be an object.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * * `array`: Each input is converted to JSON array format.
+     *     * For `bigquery`, each row is converted to an array. The order
+     *       of columns is determined by the BigQuery column order, unless
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * For `jsonl`, if each line of the JSONL input is an object,
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * If not specified, Vertex AI converts the batch prediction input as
+     * follows:
+     *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+     *    order of columns is the same as defined in the file or table, unless
+     *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *  * For `jsonl`, the prediction instance format is determined by
+     *    each line of the input.
+     *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+     *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the record.
+     *  * For `file-list`, each file in the list will be converted to an
+     *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the file.
+     * </pre>
+     *
+     * <code>string instance_type = 1;</code>
+     *
+     * @return The bytes for instanceType.
+     */
+    com.google.protobuf.ByteString getInstanceTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the field that is considered as a key.
+     * The values identified by the key field is not included in the transformed
+     * instances that is sent to the Model. This is similar to
+     * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+     * the batch prediction output will not include the instances. Instead the
+     * output will only include the value of the key field, in a field named
+     * `key` in the output:
+     *  * For `jsonl` output format, the output will have a `key` field
+     *    instead of the `instance` field.
+     *  * For `csv`/`bigquery` output format, the output will have have a `key`
+     *    column instead of the instance feature columns.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>string key_field = 2;</code>
+     *
+     * @return The keyField.
+     */
+    java.lang.String getKeyField();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the field that is considered as a key.
+     * The values identified by the key field is not included in the transformed
+     * instances that is sent to the Model. This is similar to
+     * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+     * the batch prediction output will not include the instances. Instead the
+     * output will only include the value of the key field, in a field named
+     * `key` in the output:
+     *  * For `jsonl` output format, the output will have a `key` field
+     *    instead of the `instance` field.
+     *  * For `csv`/`bigquery` output format, the output will have have a `key`
+     *    column instead of the instance feature columns.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>string key_field = 2;</code>
+     *
+     * @return The bytes for keyField.
+     */
+    com.google.protobuf.ByteString getKeyFieldBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @return A list containing the includedFields.
+     */
+    java.util.List<java.lang.String> getIncludedFieldsList();
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @return The count of includedFields.
+     */
+    int getIncludedFieldsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includedFields at the given index.
+     */
+    java.lang.String getIncludedFields(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includedFields at the given index.
+     */
+    com.google.protobuf.ByteString getIncludedFieldsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @return A list containing the excludedFields.
+     */
+    java.util.List<java.lang.String> getExcludedFieldsList();
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @return The count of excludedFields.
+     */
+    int getExcludedFieldsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedFields at the given index.
+     */
+    java.lang.String getExcludedFields(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedFields at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedFieldsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration defining how to transform batch prediction input instances to
+   * the instances that the Model accepts.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig}
+   */
+  public static final class InstanceConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig)
+      InstanceConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InstanceConfig.newBuilder() to construct.
+    private InstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InstanceConfig() {
+      instanceType_ = "";
+      keyField_ = "";
+      includedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      excludedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InstanceConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.BatchPredictionJobProto
+          .internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.BatchPredictionJobProto
+          .internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.class,
+              com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.Builder.class);
+    }
+
+    public static final int INSTANCE_TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object instanceType_;
+    /**
+     *
+     *
+     * <pre>
+     * The format of the instance that the Model accepts. Vertex AI will
+     * convert compatible
+     * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+     * to the specified format.
+     * Supported values are:
+     * * `object`: Each input is converted to JSON object format.
+     *     * For `bigquery`, each row is converted to an object.
+     *     * For `jsonl`, each line of the JSONL input must be an object.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * * `array`: Each input is converted to JSON array format.
+     *     * For `bigquery`, each row is converted to an array. The order
+     *       of columns is determined by the BigQuery column order, unless
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * For `jsonl`, if each line of the JSONL input is an object,
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * If not specified, Vertex AI converts the batch prediction input as
+     * follows:
+     *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+     *    order of columns is the same as defined in the file or table, unless
+     *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *  * For `jsonl`, the prediction instance format is determined by
+     *    each line of the input.
+     *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+     *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the record.
+     *  * For `file-list`, each file in the list will be converted to an
+     *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the file.
+     * </pre>
+     *
+     * <code>string instance_type = 1;</code>
+     *
+     * @return The instanceType.
+     */
+    @java.lang.Override
+    public java.lang.String getInstanceType() {
+      java.lang.Object ref = instanceType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceType_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The format of the instance that the Model accepts. Vertex AI will
+     * convert compatible
+     * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+     * to the specified format.
+     * Supported values are:
+     * * `object`: Each input is converted to JSON object format.
+     *     * For `bigquery`, each row is converted to an object.
+     *     * For `jsonl`, each line of the JSONL input must be an object.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * * `array`: Each input is converted to JSON array format.
+     *     * For `bigquery`, each row is converted to an array. The order
+     *       of columns is determined by the BigQuery column order, unless
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * For `jsonl`, if each line of the JSONL input is an object,
+     *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+     *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+     *       `tf-record-gzip`.
+     * If not specified, Vertex AI converts the batch prediction input as
+     * follows:
+     *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+     *    order of columns is the same as defined in the file or table, unless
+     *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+     *  * For `jsonl`, the prediction instance format is determined by
+     *    each line of the input.
+     *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+     *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the record.
+     *  * For `file-list`, each file in the list will be converted to an
+     *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+     *    the Base64-encoded string of the content of the file.
+     * </pre>
+     *
+     * <code>string instance_type = 1;</code>
+     *
+     * @return The bytes for instanceType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInstanceTypeBytes() {
+      java.lang.Object ref = instanceType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instanceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KEY_FIELD_FIELD_NUMBER = 2;
+    private volatile java.lang.Object keyField_;
+    /**
+     *
+     *
+     * <pre>
+     * The name of the field that is considered as a key.
+     * The values identified by the key field is not included in the transformed
+     * instances that is sent to the Model. This is similar to
+     * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+     * the batch prediction output will not include the instances. Instead the
+     * output will only include the value of the key field, in a field named
+     * `key` in the output:
+     *  * For `jsonl` output format, the output will have a `key` field
+     *    instead of the `instance` field.
+     *  * For `csv`/`bigquery` output format, the output will have have a `key`
+     *    column instead of the instance feature columns.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>string key_field = 2;</code>
+     *
+     * @return The keyField.
+     */
+    @java.lang.Override
+    public java.lang.String getKeyField() {
+      java.lang.Object ref = keyField_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyField_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the field that is considered as a key.
+     * The values identified by the key field is not included in the transformed
+     * instances that is sent to the Model. This is similar to
+     * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+     * the batch prediction output will not include the instances. Instead the
+     * output will only include the value of the key field, in a field named
+     * `key` in the output:
+     *  * For `jsonl` output format, the output will have a `key` field
+     *    instead of the `instance` field.
+     *  * For `csv`/`bigquery` output format, the output will have have a `key`
+     *    column instead of the instance feature columns.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>string key_field = 2;</code>
+     *
+     * @return The bytes for keyField.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKeyFieldBytes() {
+      java.lang.Object ref = keyField_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        keyField_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INCLUDED_FIELDS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList includedFields_;
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @return A list containing the includedFields.
+     */
+    public com.google.protobuf.ProtocolStringList getIncludedFieldsList() {
+      return includedFields_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @return The count of includedFields.
+     */
+    public int getIncludedFieldsCount() {
+      return includedFields_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The includedFields at the given index.
+     */
+    public java.lang.String getIncludedFields(int index) {
+      return includedFields_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be included in the prediction instance that is
+     * sent to the Model.
+     * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+     * included_fields also determines the order of the values in the array.
+     * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string included_fields = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includedFields at the given index.
+     */
+    public com.google.protobuf.ByteString getIncludedFieldsBytes(int index) {
+      return includedFields_.getByteString(index);
+    }
+
+    public static final int EXCLUDED_FIELDS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList excludedFields_;
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @return A list containing the excludedFields.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedFieldsList() {
+      return excludedFields_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @return The count of excludedFields.
+     */
+    public int getExcludedFieldsCount() {
+      return excludedFields_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedFields at the given index.
+     */
+    public java.lang.String getExcludedFields(int index) {
+      return excludedFields_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields that will be excluded in the prediction instance that is
+     * sent to the Model.
+     * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+     * is not specified.
+     * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+     * The input must be JSONL with objects at each line, CSV, BigQuery
+     * or TfRecord.
+     * </pre>
+     *
+     * <code>repeated string excluded_fields = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedFields at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedFieldsBytes(int index) {
+      return excludedFields_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyField_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyField_);
+      }
+      for (int i = 0; i < includedFields_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, includedFields_.getRaw(i));
+      }
+      for (int i = 0; i < excludedFields_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, excludedFields_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyField_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyField_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < includedFields_.size(); i++) {
+          dataSize += computeStringSizeNoTag(includedFields_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getIncludedFieldsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedFields_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedFields_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedFieldsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig other =
+          (com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig) obj;
+
+      if (!getInstanceType().equals(other.getInstanceType())) return false;
+      if (!getKeyField().equals(other.getKeyField())) return false;
+      if (!getIncludedFieldsList().equals(other.getIncludedFieldsList())) return false;
+      if (!getExcludedFieldsList().equals(other.getExcludedFieldsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INSTANCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceType().hashCode();
+      hash = (37 * hash) + KEY_FIELD_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyField().hashCode();
+      if (getIncludedFieldsCount() > 0) {
+        hash = (37 * hash) + INCLUDED_FIELDS_FIELD_NUMBER;
+        hash = (53 * hash) + getIncludedFieldsList().hashCode();
+      }
+      if (getExcludedFieldsCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_FIELDS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedFieldsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration defining how to transform batch prediction input instances to
+     * the instances that the Model accepts.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig)
+        com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.BatchPredictionJobProto
+            .internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.BatchPredictionJobProto
+            .internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.class,
+                com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        instanceType_ = "";
+
+        keyField_ = "";
+
+        includedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        excludedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.BatchPredictionJobProto
+            .internal_static_google_cloud_aiplatform_v1beta1_BatchPredictionJob_InstanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig build() {
+        com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig result =
+            new com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig(this);
+        int from_bitField0_ = bitField0_;
+        result.instanceType_ = instanceType_;
+        result.keyField_ = keyField_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          includedFields_ = includedFields_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.includedFields_ = includedFields_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          excludedFields_ = excludedFields_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.excludedFields_ = excludedFields_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+                .getDefaultInstance()) return this;
+        if (!other.getInstanceType().isEmpty()) {
+          instanceType_ = other.instanceType_;
+          onChanged();
+        }
+        if (!other.getKeyField().isEmpty()) {
+          keyField_ = other.keyField_;
+          onChanged();
+        }
+        if (!other.includedFields_.isEmpty()) {
+          if (includedFields_.isEmpty()) {
+            includedFields_ = other.includedFields_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureIncludedFieldsIsMutable();
+            includedFields_.addAll(other.includedFields_);
+          }
+          onChanged();
+        }
+        if (!other.excludedFields_.isEmpty()) {
+          if (excludedFields_.isEmpty()) {
+            excludedFields_ = other.excludedFields_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureExcludedFieldsIsMutable();
+            excludedFields_.addAll(other.excludedFields_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  instanceType_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 18:
+                {
+                  keyField_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureIncludedFieldsIsMutable();
+                  includedFields_.add(s);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedFieldsIsMutable();
+                  excludedFields_.add(s);
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object instanceType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The format of the instance that the Model accepts. Vertex AI will
+       * convert compatible
+       * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+       * to the specified format.
+       * Supported values are:
+       * * `object`: Each input is converted to JSON object format.
+       *     * For `bigquery`, each row is converted to an object.
+       *     * For `jsonl`, each line of the JSONL input must be an object.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * * `array`: Each input is converted to JSON array format.
+       *     * For `bigquery`, each row is converted to an array. The order
+       *       of columns is determined by the BigQuery column order, unless
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * For `jsonl`, if each line of the JSONL input is an object,
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * If not specified, Vertex AI converts the batch prediction input as
+       * follows:
+       *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+       *    order of columns is the same as defined in the file or table, unless
+       *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *  * For `jsonl`, the prediction instance format is determined by
+       *    each line of the input.
+       *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+       *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the record.
+       *  * For `file-list`, each file in the list will be converted to an
+       *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the file.
+       * </pre>
+       *
+       * <code>string instance_type = 1;</code>
+       *
+       * @return The instanceType.
+       */
+      public java.lang.String getInstanceType() {
+        java.lang.Object ref = instanceType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format of the instance that the Model accepts. Vertex AI will
+       * convert compatible
+       * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+       * to the specified format.
+       * Supported values are:
+       * * `object`: Each input is converted to JSON object format.
+       *     * For `bigquery`, each row is converted to an object.
+       *     * For `jsonl`, each line of the JSONL input must be an object.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * * `array`: Each input is converted to JSON array format.
+       *     * For `bigquery`, each row is converted to an array. The order
+       *       of columns is determined by the BigQuery column order, unless
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * For `jsonl`, if each line of the JSONL input is an object,
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * If not specified, Vertex AI converts the batch prediction input as
+       * follows:
+       *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+       *    order of columns is the same as defined in the file or table, unless
+       *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *  * For `jsonl`, the prediction instance format is determined by
+       *    each line of the input.
+       *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+       *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the record.
+       *  * For `file-list`, each file in the list will be converted to an
+       *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the file.
+       * </pre>
+       *
+       * <code>string instance_type = 1;</code>
+       *
+       * @return The bytes for instanceType.
+       */
+      public com.google.protobuf.ByteString getInstanceTypeBytes() {
+        java.lang.Object ref = instanceType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          instanceType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format of the instance that the Model accepts. Vertex AI will
+       * convert compatible
+       * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+       * to the specified format.
+       * Supported values are:
+       * * `object`: Each input is converted to JSON object format.
+       *     * For `bigquery`, each row is converted to an object.
+       *     * For `jsonl`, each line of the JSONL input must be an object.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * * `array`: Each input is converted to JSON array format.
+       *     * For `bigquery`, each row is converted to an array. The order
+       *       of columns is determined by the BigQuery column order, unless
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * For `jsonl`, if each line of the JSONL input is an object,
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * If not specified, Vertex AI converts the batch prediction input as
+       * follows:
+       *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+       *    order of columns is the same as defined in the file or table, unless
+       *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *  * For `jsonl`, the prediction instance format is determined by
+       *    each line of the input.
+       *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+       *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the record.
+       *  * For `file-list`, each file in the list will be converted to an
+       *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the file.
+       * </pre>
+       *
+       * <code>string instance_type = 1;</code>
+       *
+       * @param value The instanceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        instanceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format of the instance that the Model accepts. Vertex AI will
+       * convert compatible
+       * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+       * to the specified format.
+       * Supported values are:
+       * * `object`: Each input is converted to JSON object format.
+       *     * For `bigquery`, each row is converted to an object.
+       *     * For `jsonl`, each line of the JSONL input must be an object.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * * `array`: Each input is converted to JSON array format.
+       *     * For `bigquery`, each row is converted to an array. The order
+       *       of columns is determined by the BigQuery column order, unless
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * For `jsonl`, if each line of the JSONL input is an object,
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * If not specified, Vertex AI converts the batch prediction input as
+       * follows:
+       *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+       *    order of columns is the same as defined in the file or table, unless
+       *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *  * For `jsonl`, the prediction instance format is determined by
+       *    each line of the input.
+       *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+       *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the record.
+       *  * For `file-list`, each file in the list will be converted to an
+       *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the file.
+       * </pre>
+       *
+       * <code>string instance_type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInstanceType() {
+
+        instanceType_ = getDefaultInstance().getInstanceType();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format of the instance that the Model accepts. Vertex AI will
+       * convert compatible
+       * [batch prediction input instance formats][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.instances_format]
+       * to the specified format.
+       * Supported values are:
+       * * `object`: Each input is converted to JSON object format.
+       *     * For `bigquery`, each row is converted to an object.
+       *     * For `jsonl`, each line of the JSONL input must be an object.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * * `array`: Each input is converted to JSON array format.
+       *     * For `bigquery`, each row is converted to an array. The order
+       *       of columns is determined by the BigQuery column order, unless
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * For `jsonl`, if each line of the JSONL input is an object,
+       *       [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be populated for specifying field orders.
+       *     * Does not apply to `csv`, `file-list`, `tf-record`, or
+       *       `tf-record-gzip`.
+       * If not specified, Vertex AI converts the batch prediction input as
+       * follows:
+       *  * For `bigquery` and `csv`, the behavior is the same as `array`. The
+       *    order of columns is the same as defined in the file or table, unless
+       *    [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] is populated.
+       *  * For `jsonl`, the prediction instance format is determined by
+       *    each line of the input.
+       *  * For `tf-record`/`tf-record-gzip`, each record will be converted to
+       *    an object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the record.
+       *  * For `file-list`, each file in the list will be converted to an
+       *    object in the format of `{"b64": &lt;value&gt;}`, where `&lt;value&gt;` is
+       *    the Base64-encoded string of the content of the file.
+       * </pre>
+       *
+       * <code>string instance_type = 1;</code>
+       *
+       * @param value The bytes for instanceType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        instanceType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object keyField_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the field that is considered as a key.
+       * The values identified by the key field is not included in the transformed
+       * instances that is sent to the Model. This is similar to
+       * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+       * the batch prediction output will not include the instances. Instead the
+       * output will only include the value of the key field, in a field named
+       * `key` in the output:
+       *  * For `jsonl` output format, the output will have a `key` field
+       *    instead of the `instance` field.
+       *  * For `csv`/`bigquery` output format, the output will have have a `key`
+       *    column instead of the instance feature columns.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>string key_field = 2;</code>
+       *
+       * @return The keyField.
+       */
+      public java.lang.String getKeyField() {
+        java.lang.Object ref = keyField_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          keyField_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the field that is considered as a key.
+       * The values identified by the key field is not included in the transformed
+       * instances that is sent to the Model. This is similar to
+       * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+       * the batch prediction output will not include the instances. Instead the
+       * output will only include the value of the key field, in a field named
+       * `key` in the output:
+       *  * For `jsonl` output format, the output will have a `key` field
+       *    instead of the `instance` field.
+       *  * For `csv`/`bigquery` output format, the output will have have a `key`
+       *    column instead of the instance feature columns.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>string key_field = 2;</code>
+       *
+       * @return The bytes for keyField.
+       */
+      public com.google.protobuf.ByteString getKeyFieldBytes() {
+        java.lang.Object ref = keyField_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          keyField_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the field that is considered as a key.
+       * The values identified by the key field is not included in the transformed
+       * instances that is sent to the Model. This is similar to
+       * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+       * the batch prediction output will not include the instances. Instead the
+       * output will only include the value of the key field, in a field named
+       * `key` in the output:
+       *  * For `jsonl` output format, the output will have a `key` field
+       *    instead of the `instance` field.
+       *  * For `csv`/`bigquery` output format, the output will have have a `key`
+       *    column instead of the instance feature columns.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>string key_field = 2;</code>
+       *
+       * @param value The keyField to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyField(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        keyField_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the field that is considered as a key.
+       * The values identified by the key field is not included in the transformed
+       * instances that is sent to the Model. This is similar to
+       * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+       * the batch prediction output will not include the instances. Instead the
+       * output will only include the value of the key field, in a field named
+       * `key` in the output:
+       *  * For `jsonl` output format, the output will have a `key` field
+       *    instead of the `instance` field.
+       *  * For `csv`/`bigquery` output format, the output will have have a `key`
+       *    column instead of the instance feature columns.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>string key_field = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKeyField() {
+
+        keyField_ = getDefaultInstance().getKeyField();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the field that is considered as a key.
+       * The values identified by the key field is not included in the transformed
+       * instances that is sent to the Model. This is similar to
+       * specifying this name of the field in [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]. In addition,
+       * the batch prediction output will not include the instances. Instead the
+       * output will only include the value of the key field, in a field named
+       * `key` in the output:
+       *  * For `jsonl` output format, the output will have a `key` field
+       *    instead of the `instance` field.
+       *  * For `csv`/`bigquery` output format, the output will have have a `key`
+       *    column instead of the instance feature columns.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>string key_field = 2;</code>
+       *
+       * @param value The bytes for keyField to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyFieldBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        keyField_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList includedFields_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureIncludedFieldsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          includedFields_ = new com.google.protobuf.LazyStringArrayList(includedFields_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @return A list containing the includedFields.
+       */
+      public com.google.protobuf.ProtocolStringList getIncludedFieldsList() {
+        return includedFields_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @return The count of includedFields.
+       */
+      public int getIncludedFieldsCount() {
+        return includedFields_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The includedFields at the given index.
+       */
+      public java.lang.String getIncludedFields(int index) {
+        return includedFields_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the includedFields at the given index.
+       */
+      public com.google.protobuf.ByteString getIncludedFieldsBytes(int index) {
+        return includedFields_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The includedFields to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIncludedFields(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncludedFieldsIsMutable();
+        includedFields_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @param value The includedFields to add.
+       * @return This builder for chaining.
+       */
+      public Builder addIncludedFields(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncludedFieldsIsMutable();
+        includedFields_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @param values The includedFields to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllIncludedFields(java.lang.Iterable<java.lang.String> values) {
+        ensureIncludedFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedFields_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIncludedFields() {
+        includedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be included in the prediction instance that is
+       * sent to the Model.
+       * If [instance_type][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.instance_type] is `array`, the order of field names in
+       * included_fields also determines the order of the values in the array.
+       * When included_fields is populated, [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string included_fields = 3;</code>
+       *
+       * @param value The bytes of the includedFields to add.
+       * @return This builder for chaining.
+       */
+      public Builder addIncludedFieldsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureIncludedFieldsIsMutable();
+        includedFields_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList excludedFields_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureExcludedFieldsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          excludedFields_ = new com.google.protobuf.LazyStringArrayList(excludedFields_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @return A list containing the excludedFields.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedFieldsList() {
+        return excludedFields_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @return The count of excludedFields.
+       */
+      public int getExcludedFieldsCount() {
+        return excludedFields_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedFields at the given index.
+       */
+      public java.lang.String getExcludedFields(int index) {
+        return excludedFields_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedFields at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedFieldsBytes(int index) {
+        return excludedFields_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedFields to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedFields(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @param value The excludedFields to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedFields(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @param values The excludedFields to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedFields(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludedFields_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedFields() {
+        excludedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Fields that will be excluded in the prediction instance that is
+       * sent to the Model.
+       * Excluded will be attached to the batch prediction output if [key_field][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.key_field]
+       * is not specified.
+       * When excluded_fields is populated, [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields] must be empty.
+       * The input must be JSONL with objects at each line, CSV, BigQuery
+       * or TfRecord.
+       * </pre>
+       *
+       * <code>repeated string excluded_fields = 4;</code>
+       *
+       * @param value The bytes of the excludedFields to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedFieldsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InstanceConfig> PARSER =
+        new com.google.protobuf.AbstractParser<InstanceConfig>() {
+          @java.lang.Override
+          public InstanceConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InstanceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InstanceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface OutputConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig)
@@ -5199,6 +7287,61 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     return getInputConfig();
   }
 
+  public static final int INSTANCE_CONFIG_FIELD_NUMBER = 27;
+  private com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for how to convert batch prediction input instances to the
+   * prediction instances that are sent to the Model.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+   * </code>
+   *
+   * @return Whether the instanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceConfig() {
+    return instanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for how to convert batch prediction input instances to the
+   * prediction instances that are sent to the Model.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+   * </code>
+   *
+   * @return The instanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig getInstanceConfig() {
+    return instanceConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.getDefaultInstance()
+        : instanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for how to convert batch prediction input instances to the
+   * prediction instances that are sent to the Model.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfigOrBuilder
+      getInstanceConfigOrBuilder() {
+    return getInstanceConfig();
+  }
+
   public static final int MODEL_PARAMETERS_FIELD_NUMBER = 5;
   private com.google.protobuf.Value modelParameters_;
   /**
@@ -6616,6 +8759,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (modelMonitoringConfig_ != null) {
       output.writeMessage(26, getModelMonitoringConfig());
     }
+    if (instanceConfig_ != null) {
+      output.writeMessage(27, getInstanceConfig());
+    }
     if (unmanagedContainerModel_ != null) {
       output.writeMessage(28, getUnmanagedContainerModel());
     }
@@ -6719,6 +8865,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(26, getModelMonitoringConfig());
     }
+    if (instanceConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getInstanceConfig());
+    }
     if (unmanagedContainerModel_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -6766,6 +8915,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasInputConfig() != other.hasInputConfig()) return false;
     if (hasInputConfig()) {
       if (!getInputConfig().equals(other.getInputConfig())) return false;
+    }
+    if (hasInstanceConfig() != other.hasInstanceConfig()) return false;
+    if (hasInstanceConfig()) {
+      if (!getInstanceConfig().equals(other.getInstanceConfig())) return false;
     }
     if (hasModelParameters() != other.hasModelParameters()) return false;
     if (hasModelParameters()) {
@@ -6865,6 +9018,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasInputConfig()) {
       hash = (37 * hash) + INPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInputConfig().hashCode();
+    }
+    if (hasInstanceConfig()) {
+      hash = (37 * hash) + INSTANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceConfig().hashCode();
     }
     if (hasModelParameters()) {
       hash = (37 * hash) + MODEL_PARAMETERS_FIELD_NUMBER;
@@ -7130,6 +9287,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         inputConfig_ = null;
         inputConfigBuilder_ = null;
       }
+      if (instanceConfigBuilder_ == null) {
+        instanceConfig_ = null;
+      } else {
+        instanceConfig_ = null;
+        instanceConfigBuilder_ = null;
+      }
       if (modelParametersBuilder_ == null) {
         modelParameters_ = null;
       } else {
@@ -7288,6 +9451,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         result.inputConfig_ = inputConfig_;
       } else {
         result.inputConfig_ = inputConfigBuilder_.build();
+      }
+      if (instanceConfigBuilder_ == null) {
+        result.instanceConfig_ = instanceConfig_;
+      } else {
+        result.instanceConfig_ = instanceConfigBuilder_.build();
       }
       if (modelParametersBuilder_ == null) {
         result.modelParameters_ = modelParameters_;
@@ -7464,6 +9632,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasInputConfig()) {
         mergeInputConfig(other.getInputConfig());
+      }
+      if (other.hasInstanceConfig()) {
+        mergeInstanceConfig(other.getInstanceConfig());
       }
       if (other.hasModelParameters()) {
         mergeModelParameters(other.getModelParameters());
@@ -7758,6 +9929,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
                 break;
               } // case 210
+            case 218:
+              {
+                input.readMessage(getInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 218
             case 226:
               {
                 input.readMessage(
@@ -8745,6 +10922,228 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         inputConfig_ = null;
       }
       return inputConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig,
+            com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfigOrBuilder>
+        instanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     *
+     * @return Whether the instanceConfig field is set.
+     */
+    public boolean hasInstanceConfig() {
+      return instanceConfigBuilder_ != null || instanceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     *
+     * @return The instanceConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+        getInstanceConfig() {
+      if (instanceConfigBuilder_ == null) {
+        return instanceConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+                .getDefaultInstance()
+            : instanceConfig_;
+      } else {
+        return instanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     */
+    public Builder setInstanceConfig(
+        com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig value) {
+      if (instanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instanceConfig_ = value;
+        onChanged();
+      } else {
+        instanceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     */
+    public Builder setInstanceConfig(
+        com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.Builder
+            builderForValue) {
+      if (instanceConfigBuilder_ == null) {
+        instanceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        instanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     */
+    public Builder mergeInstanceConfig(
+        com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig value) {
+      if (instanceConfigBuilder_ == null) {
+        if (instanceConfig_ != null) {
+          instanceConfig_ =
+              com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.newBuilder(
+                      instanceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          instanceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        instanceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     */
+    public Builder clearInstanceConfig() {
+      if (instanceConfigBuilder_ == null) {
+        instanceConfig_ = null;
+        onChanged();
+      } else {
+        instanceConfig_ = null;
+        instanceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.Builder
+        getInstanceConfigBuilder() {
+
+      onChanged();
+      return getInstanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfigOrBuilder
+        getInstanceConfigOrBuilder() {
+      if (instanceConfigBuilder_ != null) {
+        return instanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return instanceConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig
+                .getDefaultInstance()
+            : instanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for how to convert batch prediction input instances to the
+     * prediction instances that are sent to the Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig instance_config = 27;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig,
+            com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfigOrBuilder>
+        getInstanceConfigFieldBuilder() {
+      if (instanceConfigBuilder_ == null) {
+        instanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig,
+                com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfigOrBuilder>(
+                getInstanceConfig(), getParentForChildren(), isClean());
+        instanceConfig_ = null;
+      }
+      return instanceConfigBuilder_;
     }
 
     private com.google.protobuf.Value modelParameters_;

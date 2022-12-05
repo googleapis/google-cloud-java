@@ -139,5 +139,51 @@ public interface DestinationOrBuilder
    */
   com.google.cloud.eventarc.v1.GKEOrBuilder getGkeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Workflow whose Executions are triggered by
+   * the events. The Workflow resource should be deployed in the same project
+   * as the trigger.
+   * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+   * </pre>
+   *
+   * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the workflow field is set.
+   */
+  boolean hasWorkflow();
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Workflow whose Executions are triggered by
+   * the events. The Workflow resource should be deployed in the same project
+   * as the trigger.
+   * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+   * </pre>
+   *
+   * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The workflow.
+   */
+  java.lang.String getWorkflow();
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the Workflow whose Executions are triggered by
+   * the events. The Workflow resource should be deployed in the same project
+   * as the trigger.
+   * Format: `projects/{project}/locations/{location}/workflows/{workflow}`
+   * </pre>
+   *
+   * <code>string workflow = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for workflow.
+   */
+  com.google.protobuf.ByteString getWorkflowBytes();
+
   public com.google.cloud.eventarc.v1.Destination.DescriptorCase getDescriptorCase();
 }

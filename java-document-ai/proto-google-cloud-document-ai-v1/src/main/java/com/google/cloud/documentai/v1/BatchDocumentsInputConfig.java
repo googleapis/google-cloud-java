@@ -117,7 +117,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The set of documents that match the specified Cloud Storage [gcs_prefix].
+   * The set of documents that match the specified Cloud Storage `gcs_prefix`.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -132,7 +132,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The set of documents that match the specified Cloud Storage [gcs_prefix].
+   * The set of documents that match the specified Cloud Storage `gcs_prefix`.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -150,7 +150,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The set of documents that match the specified Cloud Storage [gcs_prefix].
+   * The set of documents that match the specified Cloud Storage `gcs_prefix`.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -636,7 +636,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -651,7 +651,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -676,7 +676,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -698,7 +698,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -717,7 +717,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -749,7 +749,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -774,7 +774,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -786,7 +786,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>
@@ -806,7 +806,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The set of documents that match the specified Cloud Storage [gcs_prefix].
+     * The set of documents that match the specified Cloud Storage `gcs_prefix`.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.GcsPrefix gcs_prefix = 1;</code>

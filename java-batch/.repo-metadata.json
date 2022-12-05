@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-batch",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-batch",
   "distribution_name": "com.google.cloud:google-cloud-batch",
   "api_id": "batch.googleapis.com",

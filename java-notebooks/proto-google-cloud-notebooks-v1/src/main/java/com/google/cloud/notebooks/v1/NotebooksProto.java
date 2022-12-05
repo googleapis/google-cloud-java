@@ -152,6 +152,10 @@ public final class NotebooksProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_notebooks_v1_ListEnvironmentsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_notebooks_v1_DiagnoseInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_notebooks_v1_DiagnoseInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_notebooks_v1_ListEnvironmentsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_notebooks_v1_ListEnvironmentsResponse_fieldAccessorTable;
@@ -224,318 +228,329 @@ public final class NotebooksProto {
           + "o\022\031google.cloud.notebooks.v1\032\034google/api"
           + "/annotations.proto\032\027google/api/client.pr"
           + "oto\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\032+google/cloud/no"
-          + "tebooks/v1/environment.proto\032)google/clo"
-          + "ud/notebooks/v1/execution.proto\032(google/"
-          + "cloud/notebooks/v1/instance.proto\032/googl"
-          + "e/cloud/notebooks/v1/instance_config.pro"
-          + "to\032(google/cloud/notebooks/v1/schedule.p"
-          + "roto\032#google/longrunning/operations.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\357\001\n\021O"
-          + "perationMetadata\022/\n\013create_time\030\001 \001(\0132\032."
-          + "google.protobuf.Timestamp\022,\n\010end_time\030\002 "
-          + "\001(\0132\032.google.protobuf.Timestamp\022\016\n\006targe"
-          + "t\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022\026\n\016status_message\030"
-          + "\005 \001(\t\022\036\n\026requested_cancellation\030\006 \001(\010\022\023\n"
-          + "\013api_version\030\007 \001(\t\022\020\n\010endpoint\030\010 \001(\t\"R\n\024"
-          + "ListInstancesRequest\022\023\n\006parent\030\001 \001(\tB\003\340A"
-          + "\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
-          + "\"}\n\025ListInstancesResponse\0226\n\tinstances\030\001"
-          + " \003(\0132#.google.cloud.notebooks.v1.Instanc"
-          + "e\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachabl"
-          + "e\030\003 \003(\t\"\'\n\022GetInstanceRequest\022\021\n\004name\030\001 "
-          + "\001(\tB\003\340A\002\"\202\001\n\025CreateInstanceRequest\022\023\n\006pa"
-          + "rent\030\001 \001(\tB\003\340A\002\022\030\n\013instance_id\030\002 \001(\tB\003\340A"
-          + "\002\022:\n\010instance\030\003 \001(\0132#.google.cloud.noteb"
-          + "ooks.v1.InstanceB\003\340A\002\"H\n\027RegisterInstanc"
-          + "eRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\030\n\013instanc"
-          + "e_id\030\002 \001(\tB\003\340A\002\"\223\001\n\035SetInstanceAccelerat"
-          + "orRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022F\n\004type\030\002 \001"
-          + "(\01623.google.cloud.notebooks.v1.Instance."
-          + "AcceleratorTypeB\003\340A\002\022\027\n\ncore_count\030\003 \001(\003"
-          + "B\003\340A\002\"M\n\035SetInstanceMachineTypeRequest\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014machine_type\030\002 \001(\tB"
-          + "\003\340A\002\"k\n\033UpdateInstanceConfigRequest\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\002\0229\n\006config\030\002 \001(\0132).google."
-          + "cloud.notebooks.v1.InstanceConfig\"\255\001\n\030Se"
-          + "tInstanceLabelsRequest\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\002\022O\n\006labels\030\002 \003(\0132?.google.cloud.noteboo"
-          + "ks.v1.SetInstanceLabelsRequest.LabelsEnt"
-          + "ry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\"\276\001\n\"UpdateInstanceMetadataItem"
-          + "sRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022W\n\005items\030\002 \003"
-          + "(\0132H.google.cloud.notebooks.v1.UpdateIns"
-          + "tanceMetadataItemsRequest.ItemsEntry\032,\n\n"
-          + "ItemsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-          + "8\001\"\255\001\n#UpdateInstanceMetadataItemsRespon"
-          + "se\022X\n\005items\030\001 \003(\0132I.google.cloud.noteboo"
-          + "ks.v1.UpdateInstanceMetadataItemsRespons"
-          + "e.ItemsEntry\032,\n\nItemsEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "\r\n\005value\030\002 \001(\t:\0028\001\"\226\001\n#UpdateShieldedIns"
-          + "tanceConfigRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\\\n"
-          + "\030shielded_instance_config\030\002 \001(\0132:.google"
-          + ".cloud.notebooks.v1.Instance.ShieldedIns"
-          + "tanceConfig\"*\n\025DeleteInstanceRequest\022\021\n\004"
-          + "name\030\001 \001(\tB\003\340A\002\")\n\024StartInstanceRequest\022"
-          + "\021\n\004name\030\001 \001(\tB\003\340A\002\"(\n\023StopInstanceReques"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\002\")\n\024ResetInstanceReq"
-          + "uest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\311\001\n\031ReportInstan"
-          + "ceInfoRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\022\n\005vm_i"
-          + "d\030\002 \001(\tB\003\340A\002\022T\n\010metadata\030\003 \003(\0132B.google."
-          + "cloud.notebooks.v1.ReportInstanceInfoReq"
-          + "uest.MetadataEntry\032/\n\rMetadataEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y\n\034IsInstanc"
-          + "eUpgradeableRequest\022\036\n\021notebook_instance"
-          + "\030\001 \001(\tB\003\340A\002\0229\n\004type\030\002 \001(\0162&.google.cloud"
-          + ".notebooks.v1.UpgradeTypeB\003\340A\001\"z\n\035IsInst"
-          + "anceUpgradeableResponse\022\023\n\013upgradeable\030\001"
-          + " \001(\010\022\027\n\017upgrade_version\030\002 \001(\t\022\024\n\014upgrade"
-          + "_info\030\003 \001(\t\022\025\n\rupgrade_image\030\004 \001(\t\"S\n\030Ge"
-          + "tInstanceHealthRequest\0227\n\004name\030\001 \001(\tB)\340A"
-          + "\002\372A#\n!notebooks.googleapis.com/Instance\""
-          + "\204\003\n\031GetInstanceHealthResponse\022[\n\014health_"
-          + "state\030\001 \001(\0162@.google.cloud.notebooks.v1."
-          + "GetInstanceHealthResponse.HealthStateB\003\340"
-          + "A\003\022^\n\013health_info\030\002 \003(\0132D.google.cloud.n"
-          + "otebooks.v1.GetInstanceHealthResponse.He"
-          + "althInfoEntryB\003\340A\003\0321\n\017HealthInfoEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"w\n\013HealthS"
-          + "tate\022\034\n\030HEALTH_STATE_UNSPECIFIED\020\000\022\013\n\007HE"
-          + "ALTHY\020\001\022\r\n\tUNHEALTHY\020\002\022\027\n\023AGENT_NOT_INST"
-          + "ALLED\020\003\022\025\n\021AGENT_NOT_RUNNING\020\004\"f\n\026Upgrad"
-          + "eInstanceRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\0229\n\004t"
-          + "ype\030\002 \001(\0162&.google.cloud.notebooks.v1.Up"
-          + "gradeTypeB\003\340A\001\"J\n\027RollbackInstanceReques"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\034\n\017target_snapshot\030"
-          + "\002 \001(\tB\003\340A\002\"\202\001\n\036UpgradeInstanceInternalRe"
-          + "quest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\022\n\005vm_id\030\002 \001(\tB"
-          + "\003\340A\002\0229\n\004type\030\003 \001(\0162&.google.cloud.notebo"
-          + "oks.v1.UpgradeTypeB\003\340A\001\"U\n\027ListEnvironme"
-          + "ntsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tpage_"
-          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"\206\001\n\030ListE"
-          + "nvironmentsResponse\022<\n\014environments\030\001 \003("
-          + "\0132&.google.cloud.notebooks.v1.Environmen"
-          + "t\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachabl"
-          + "e\030\003 \003(\t\"*\n\025GetEnvironmentRequest\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\002\"\216\001\n\030CreateEnvironmentRequest"
-          + "\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\033\n\016environment_id\030"
-          + "\002 \001(\tB\003\340A\002\022@\n\013environment\030\003 \001(\0132&.google"
-          + ".cloud.notebooks.v1.EnvironmentB\003\340A\002\"-\n\030"
-          + "DeleteEnvironmentRequest\022\021\n\004name\030\001 \001(\tB\003"
-          + "\340A\002\"\232\001\n\024ListSchedulesRequest\0229\n\006parent\030\001"
-          + " \001(\tB)\340A\002\372A#\n!notebooks.googleapis.com/S"
-          + "chedule\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
-          + "\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t"
-          + "\"}\n\025ListSchedulesResponse\0226\n\tschedules\030\001"
-          + " \003(\0132#.google.cloud.notebooks.v1.Schedul"
-          + "e\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachabl"
-          + "e\030\003 \003(\t\"M\n\022GetScheduleRequest\0227\n\004name\030\001 "
-          + "\001(\tB)\340A\002\372A#\n!notebooks.googleapis.com/Sc"
-          + "hedule\"P\n\025DeleteScheduleRequest\0227\n\004name\030"
-          + "\001 \001(\tB)\340A\002\372A#\n!notebooks.googleapis.com/"
-          + "Schedule\"\250\001\n\025CreateScheduleRequest\0229\n\006pa"
-          + "rent\030\001 \001(\tB)\340A\002\372A#\n!notebooks.googleapis"
-          + ".com/Schedule\022\030\n\013schedule_id\030\002 \001(\tB\003\340A\002\022"
-          + ":\n\010schedule\030\003 \001(\0132#.google.cloud.noteboo"
-          + "ks.v1.ScheduleB\003\340A\002\"Q\n\026TriggerScheduleRe"
-          + "quest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!notebooks.g"
-          + "oogleapis.com/Schedule\"\234\001\n\025ListExecution"
-          + "sRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\n\"notebo"
-          + "oks.googleapis.com/Execution\022\021\n\tpage_siz"
-          + "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 "
-          + "\001(\t\022\020\n\010order_by\030\005 \001(\t\"\200\001\n\026ListExecutions"
-          + "Response\0228\n\nexecutions\030\001 \003(\0132$.google.cl"
-          + "oud.notebooks.v1.Execution\022\027\n\017next_page_"
-          + "token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"O\n\023GetE"
-          + "xecutionRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"n"
-          + "otebooks.googleapis.com/Execution\"R\n\026Del"
-          + "eteExecutionRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A"
-          + "$\n\"notebooks.googleapis.com/Execution\"\255\001"
-          + "\n\026CreateExecutionRequest\022:\n\006parent\030\001 \001(\t"
-          + "B*\340A\002\372A$\n\"notebooks.googleapis.com/Execu"
-          + "tion\022\031\n\014execution_id\030\002 \001(\tB\003\340A\002\022<\n\texecu"
-          + "tion\030\003 \001(\0132$.google.cloud.notebooks.v1.E"
-          + "xecutionB\003\340A\002*u\n\013UpgradeType\022\034\n\030UPGRADE_"
-          + "TYPE_UNSPECIFIED\020\000\022\025\n\021UPGRADE_FRAMEWORK\020"
-          + "\001\022\016\n\nUPGRADE_OS\020\002\022\020\n\014UPGRADE_CUDA\020\003\022\017\n\013U"
-          + "PGRADE_ALL\020\0042\3265\n\017NotebookService\022\262\001\n\rLis"
-          + "tInstances\022/.google.cloud.notebooks.v1.L"
-          + "istInstancesRequest\0320.google.cloud.noteb"
-          + "ooks.v1.ListInstancesResponse\">\202\323\344\223\002/\022-/"
-          + "v1/{parent=projects/*/locations/*}/insta"
-          + "nces\332A\006parent\022\237\001\n\013GetInstance\022-.google.c"
-          + "loud.notebooks.v1.GetInstanceRequest\032#.g"
-          + "oogle.cloud.notebooks.v1.Instance\"<\202\323\344\223\002"
-          + "/\022-/v1/{name=projects/*/locations/*/inst"
-          + "ances/*}\332A\004name\022\340\001\n\016CreateInstance\0220.goo"
-          + "gle.cloud.notebooks.v1.CreateInstanceReq"
-          + "uest\032\035.google.longrunning.Operation\"}\202\323\344"
-          + "\223\0029\"-/v1/{parent=projects/*/locations/*}"
-          + "/instances:\010instance\332A\033parent,instance,i"
-          + "nstance_id\312A\035\n\010Instance\022\021OperationMetada"
-          + "ta\022\310\001\n\020RegisterInstance\0222.google.cloud.n"
-          + "otebooks.v1.RegisterInstanceRequest\032\035.go"
-          + "ogle.longrunning.Operation\"a\202\323\344\223\002;\"6/v1/"
-          + "{parent=projects/*/locations/*}/instance"
-          + "s:register:\001*\312A\035\n\010Instance\022\021OperationMet"
-          + "adata\022\332\001\n\026SetInstanceAccelerator\0228.googl"
-          + "e.cloud.notebooks.v1.SetInstanceAccelera"
-          + "torRequest\032\035.google.longrunning.Operatio"
-          + "n\"g\202\323\344\223\002A2</v1/{name=projects/*/location"
-          + "s/*/instances/*}:setAccelerator:\001*\312A\035\n\010I"
-          + "nstance\022\021OperationMetadata\022\332\001\n\026SetInstan"
-          + "ceMachineType\0228.google.cloud.notebooks.v"
-          + "1.SetInstanceMachineTypeRequest\032\035.google"
-          + ".longrunning.Operation\"g\202\323\344\223\002A2</v1/{nam"
-          + "e=projects/*/locations/*/instances/*}:se"
-          + "tMachineType:\001*\312A\035\n\010Instance\022\021OperationM"
-          + "etadata\022\324\001\n\024UpdateInstanceConfig\0226.googl"
-          + "e.cloud.notebooks.v1.UpdateInstanceConfi"
-          + "gRequest\032\035.google.longrunning.Operation\""
-          + "e\202\323\344\223\002?2:/v1/{name=projects/*/locations/"
-          + "*/instances/*}:updateConfig:\001*\312A\035\n\010Insta"
-          + "nce\022\021OperationMetadata\022\364\001\n\034UpdateShielde"
-          + "dInstanceConfig\022>.google.cloud.notebooks"
-          + ".v1.UpdateShieldedInstanceConfigRequest\032"
-          + "\035.google.longrunning.Operation\"u\202\323\344\223\002O2J"
-          + "/v1/{name=projects/*/locations/*/instanc"
-          + "es/*}:updateShieldedInstanceConfig:\001*\312A\035"
-          + "\n\010Instance\022\021OperationMetadata\022\313\001\n\021SetIns"
-          + "tanceLabels\0223.google.cloud.notebooks.v1."
-          + "SetInstanceLabelsRequest\032\035.google.longru"
-          + "nning.Operation\"b\202\323\344\223\002<27/v1/{name=proje"
-          + "cts/*/locations/*/instances/*}:setLabels"
-          + ":\001*\312A\035\n\010Instance\022\021OperationMetadata\022\352\001\n\033"
-          + "UpdateInstanceMetadataItems\022=.google.clo"
-          + "ud.notebooks.v1.UpdateInstanceMetadataIt"
-          + "emsRequest\032>.google.cloud.notebooks.v1.U"
-          + "pdateInstanceMetadataItemsResponse\"L\202\323\344\223"
-          + "\002F2A/v1/{name=projects/*/locations/*/ins"
-          + "tances/*}:updateMetadataItems:\001*\022\314\001\n\016Del"
-          + "eteInstance\0220.google.cloud.notebooks.v1."
-          + "DeleteInstanceRequest\032\035.google.longrunni"
-          + "ng.Operation\"i\202\323\344\223\002/*-/v1/{name=projects"
-          + "/*/locations/*/instances/*}\332A\004name\312A*\n\025g"
-          + "oogle.protobuf.Empty\022\021OperationMetadata\022"
-          + "\277\001\n\rStartInstance\022/.google.cloud.noteboo"
-          + "ks.v1.StartInstanceRequest\032\035.google.long"
-          + "running.Operation\"^\202\323\344\223\0028\"3/v1/{name=pro"
-          + "jects/*/locations/*/instances/*}:start:\001"
-          + "*\312A\035\n\010Instance\022\021OperationMetadata\022\274\001\n\014St"
-          + "opInstance\022..google.cloud.notebooks.v1.S"
-          + "topInstanceRequest\032\035.google.longrunning."
-          + "Operation\"]\202\323\344\223\0027\"2/v1/{name=projects/*/"
-          + "locations/*/instances/*}:stop:\001*\312A\035\n\010Ins"
-          + "tance\022\021OperationMetadata\022\277\001\n\rResetInstan"
-          + "ce\022/.google.cloud.notebooks.v1.ResetInst"
-          + "anceRequest\032\035.google.longrunning.Operati"
-          + "on\"^\202\323\344\223\0028\"3/v1/{name=projects/*/locatio"
-          + "ns/*/instances/*}:reset:\001*\312A\035\n\010Instance\022"
-          + "\021OperationMetadata\022\312\001\n\022ReportInstanceInf"
-          + "o\0224.google.cloud.notebooks.v1.ReportInst"
-          + "anceInfoRequest\032\035.google.longrunning.Ope"
-          + "ration\"_\202\323\344\223\0029\"4/v1/{name=projects/*/loc"
-          + "ations/*/instances/*}:report:\001*\312A\035\n\010Inst"
-          + "ance\022\021OperationMetadata\022\334\001\n\025IsInstanceUp"
-          + "gradeable\0227.google.cloud.notebooks.v1.Is"
-          + "InstanceUpgradeableRequest\0328.google.clou"
-          + "d.notebooks.v1.IsInstanceUpgradeableResp"
-          + "onse\"P\202\323\344\223\002J\022H/v1/{notebook_instance=pro"
-          + "jects/*/locations/*/instances/*}:isUpgra"
-          + "deable\022\316\001\n\021GetInstanceHealth\0223.google.cl"
-          + "oud.notebooks.v1.GetInstanceHealthReques"
-          + "t\0324.google.cloud.notebooks.v1.GetInstanc"
-          + "eHealthResponse\"N\202\323\344\223\002A\022?/v1/{name=proje"
-          + "cts/*/locations/*/instances/*}:getInstan"
-          + "ceHealth\332A\004name\022\305\001\n\017UpgradeInstance\0221.go"
-          + "ogle.cloud.notebooks.v1.UpgradeInstanceR"
-          + "equest\032\035.google.longrunning.Operation\"`\202"
-          + "\323\344\223\002:\"5/v1/{name=projects/*/locations/*/"
-          + "instances/*}:upgrade:\001*\312A\035\n\010Instance\022\021Op"
-          + "erationMetadata\022\310\001\n\020RollbackInstance\0222.g"
-          + "oogle.cloud.notebooks.v1.RollbackInstanc"
+          + "ogle/api/resource.proto\0321google/cloud/no"
+          + "tebooks/v1/diagnostic_config.proto\032+goog"
+          + "le/cloud/notebooks/v1/environment.proto\032"
+          + ")google/cloud/notebooks/v1/execution.pro"
+          + "to\032(google/cloud/notebooks/v1/instance.p"
+          + "roto\032/google/cloud/notebooks/v1/instance"
+          + "_config.proto\032(google/cloud/notebooks/v1"
+          + "/schedule.proto\032#google/longrunning/oper"
+          + "ations.proto\032\037google/protobuf/timestamp."
+          + "proto\"\357\001\n\021OperationMetadata\022/\n\013create_ti"
+          + "me\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n\010"
+          + "end_time\030\002 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\022\016\n\006target\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022\026\n\016stat"
+          + "us_message\030\005 \001(\t\022\036\n\026requested_cancellati"
+          + "on\030\006 \001(\010\022\023\n\013api_version\030\007 \001(\t\022\020\n\010endpoin"
+          + "t\030\010 \001(\t\"R\n\024ListInstancesRequest\022\023\n\006paren"
+          + "t\030\001 \001(\tB\003\340A\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
+          + "token\030\003 \001(\t\"}\n\025ListInstancesResponse\0226\n\t"
+          + "instances\030\001 \003(\0132#.google.cloud.notebooks"
+          + ".v1.Instance\022\027\n\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\'\n\022GetInstanceRequest"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\202\001\n\025CreateInstanceRe"
+          + "quest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\030\n\013instance_i"
+          + "d\030\002 \001(\tB\003\340A\002\022:\n\010instance\030\003 \001(\0132#.google."
+          + "cloud.notebooks.v1.InstanceB\003\340A\002\"H\n\027Regi"
+          + "sterInstanceRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002"
+          + "\022\030\n\013instance_id\030\002 \001(\tB\003\340A\002\"\223\001\n\035SetInstan"
+          + "ceAcceleratorRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022"
+          + "F\n\004type\030\002 \001(\01623.google.cloud.notebooks.v"
+          + "1.Instance.AcceleratorTypeB\003\340A\002\022\027\n\ncore_"
+          + "count\030\003 \001(\003B\003\340A\002\"M\n\035SetInstanceMachineTy"
+          + "peRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014machine_"
+          + "type\030\002 \001(\tB\003\340A\002\"k\n\033UpdateInstanceConfigR"
+          + "equest\022\021\n\004name\030\001 \001(\tB\003\340A\002\0229\n\006config\030\002 \001("
+          + "\0132).google.cloud.notebooks.v1.InstanceCo"
+          + "nfig\"\255\001\n\030SetInstanceLabelsRequest\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\002\022O\n\006labels\030\002 \003(\0132?.google.cl"
+          + "oud.notebooks.v1.SetInstanceLabelsReques"
+          + "t.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\276\001\n\"UpdateInstanceM"
+          + "etadataItemsRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022W"
+          + "\n\005items\030\002 \003(\0132H.google.cloud.notebooks.v"
+          + "1.UpdateInstanceMetadataItemsRequest.Ite"
+          + "msEntry\032,\n\nItemsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001\"\255\001\n#UpdateInstanceMetadata"
+          + "ItemsResponse\022X\n\005items\030\001 \003(\0132I.google.cl"
+          + "oud.notebooks.v1.UpdateInstanceMetadataI"
+          + "temsResponse.ItemsEntry\032,\n\nItemsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\226\001\n#Update"
+          + "ShieldedInstanceConfigRequest\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\002\022\\\n\030shielded_instance_config\030\002 \001"
+          + "(\0132:.google.cloud.notebooks.v1.Instance."
+          + "ShieldedInstanceConfig\"*\n\025DeleteInstance"
+          + "Request\022\021\n\004name\030\001 \001(\tB\003\340A\002\")\n\024StartInsta"
+          + "nceRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"(\n\023StopIns"
+          + "tanceRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\")\n\024Reset"
+          + "InstanceRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\311\001\n\031R"
+          + "eportInstanceInfoRequest\022\021\n\004name\030\001 \001(\tB\003"
+          + "\340A\002\022\022\n\005vm_id\030\002 \001(\tB\003\340A\002\022T\n\010metadata\030\003 \003("
+          + "\0132B.google.cloud.notebooks.v1.ReportInst"
+          + "anceInfoRequest.MetadataEntry\032/\n\rMetadat"
+          + "aEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"y"
+          + "\n\034IsInstanceUpgradeableRequest\022\036\n\021notebo"
+          + "ok_instance\030\001 \001(\tB\003\340A\002\0229\n\004type\030\002 \001(\0162&.g"
+          + "oogle.cloud.notebooks.v1.UpgradeTypeB\003\340A"
+          + "\001\"z\n\035IsInstanceUpgradeableResponse\022\023\n\013up"
+          + "gradeable\030\001 \001(\010\022\027\n\017upgrade_version\030\002 \001(\t"
+          + "\022\024\n\014upgrade_info\030\003 \001(\t\022\025\n\rupgrade_image\030"
+          + "\004 \001(\t\"S\n\030GetInstanceHealthRequest\0227\n\004nam"
+          + "e\030\001 \001(\tB)\340A\002\372A#\n!notebooks.googleapis.co"
+          + "m/Instance\"\204\003\n\031GetInstanceHealthResponse"
+          + "\022[\n\014health_state\030\001 \001(\0162@.google.cloud.no"
+          + "tebooks.v1.GetInstanceHealthResponse.Hea"
+          + "lthStateB\003\340A\003\022^\n\013health_info\030\002 \003(\0132D.goo"
+          + "gle.cloud.notebooks.v1.GetInstanceHealth"
+          + "Response.HealthInfoEntryB\003\340A\003\0321\n\017HealthI"
+          + "nfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+          + "\"w\n\013HealthState\022\034\n\030HEALTH_STATE_UNSPECIF"
+          + "IED\020\000\022\013\n\007HEALTHY\020\001\022\r\n\tUNHEALTHY\020\002\022\027\n\023AGE"
+          + "NT_NOT_INSTALLED\020\003\022\025\n\021AGENT_NOT_RUNNING\020"
+          + "\004\"f\n\026UpgradeInstanceRequest\022\021\n\004name\030\001 \001("
+          + "\tB\003\340A\002\0229\n\004type\030\002 \001(\0162&.google.cloud.note"
+          + "books.v1.UpgradeTypeB\003\340A\001\"J\n\027RollbackIns"
+          + "tanceRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\034\n\017targe"
+          + "t_snapshot\030\002 \001(\tB\003\340A\002\"\202\001\n\036UpgradeInstanc"
+          + "eInternalRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\022\n\005v"
+          + "m_id\030\002 \001(\tB\003\340A\002\0229\n\004type\030\003 \001(\0162&.google.c"
+          + "loud.notebooks.v1.UpgradeTypeB\003\340A\001\"U\n\027Li"
+          + "stEnvironmentsRequest\022\023\n\006parent\030\001 \001(\tB\003\340"
+          + "A\002\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
+          + "\t\"\237\001\n\027DiagnoseInstanceRequest\0227\n\004name\030\001 "
+          + "\001(\tB)\340A\002\372A#\n!notebooks.googleapis.com/In"
+          + "stance\022K\n\021diagnostic_config\030\002 \001(\0132+.goog"
+          + "le.cloud.notebooks.v1.DiagnosticConfigB\003"
+          + "\340A\002\"\206\001\n\030ListEnvironmentsResponse\022<\n\014envi"
+          + "ronments\030\001 \003(\0132&.google.cloud.notebooks."
+          + "v1.Environment\022\027\n\017next_page_token\030\002 \001(\t\022"
+          + "\023\n\013unreachable\030\003 \003(\t\"*\n\025GetEnvironmentRe"
+          + "quest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"\216\001\n\030CreateEnvir"
+          + "onmentRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\033\n\016en"
+          + "vironment_id\030\002 \001(\tB\003\340A\002\022@\n\013environment\030\003"
+          + " \001(\0132&.google.cloud.notebooks.v1.Environ"
+          + "mentB\003\340A\002\"-\n\030DeleteEnvironmentRequest\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\"\232\001\n\024ListSchedulesReques"
+          + "t\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!notebooks.goo"
+          + "gleapis.com/Schedule\022\021\n\tpage_size\030\002 \001(\005\022"
+          + "\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010o"
+          + "rder_by\030\005 \001(\t\"}\n\025ListSchedulesResponse\0226"
+          + "\n\tschedules\030\001 \003(\0132#.google.cloud.noteboo"
+          + "ks.v1.Schedule\022\027\n\017next_page_token\030\002 \001(\t\022"
+          + "\023\n\013unreachable\030\003 \003(\t\"M\n\022GetScheduleReque"
+          + "st\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!notebooks.goog"
+          + "leapis.com/Schedule\"P\n\025DeleteScheduleReq"
+          + "uest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!notebooks.go"
+          + "ogleapis.com/Schedule\"\250\001\n\025CreateSchedule"
+          + "Request\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!noteboo"
+          + "ks.googleapis.com/Schedule\022\030\n\013schedule_i"
+          + "d\030\002 \001(\tB\003\340A\002\022:\n\010schedule\030\003 \001(\0132#.google."
+          + "cloud.notebooks.v1.ScheduleB\003\340A\002\"Q\n\026Trig"
+          + "gerScheduleRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#"
+          + "\n!notebooks.googleapis.com/Schedule\"\234\001\n\025"
+          + "ListExecutionsRequest\022:\n\006parent\030\001 \001(\tB*\340"
+          + "A\002\372A$\n\"notebooks.googleapis.com/Executio"
+          + "n\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
+          + "\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\200\001\n\026L"
+          + "istExecutionsResponse\0228\n\nexecutions\030\001 \003("
+          + "\0132$.google.cloud.notebooks.v1.Execution\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030"
+          + "\003 \003(\t\"O\n\023GetExecutionRequest\0228\n\004name\030\001 \001"
+          + "(\tB*\340A\002\372A$\n\"notebooks.googleapis.com/Exe"
+          + "cution\"R\n\026DeleteExecutionRequest\0228\n\004name"
+          + "\030\001 \001(\tB*\340A\002\372A$\n\"notebooks.googleapis.com"
+          + "/Execution\"\255\001\n\026CreateExecutionRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\340A\002\372A$\n\"notebooks.googlea"
+          + "pis.com/Execution\022\031\n\014execution_id\030\002 \001(\tB"
+          + "\003\340A\002\022<\n\texecution\030\003 \001(\0132$.google.cloud.n"
+          + "otebooks.v1.ExecutionB\003\340A\002*u\n\013UpgradeTyp"
+          + "e\022\034\n\030UPGRADE_TYPE_UNSPECIFIED\020\000\022\025\n\021UPGRA"
+          + "DE_FRAMEWORK\020\001\022\016\n\nUPGRADE_OS\020\002\022\020\n\014UPGRAD"
+          + "E_CUDA\020\003\022\017\n\013UPGRADE_ALL\020\0042\2727\n\017NotebookSe"
+          + "rvice\022\262\001\n\rListInstances\022/.google.cloud.n"
+          + "otebooks.v1.ListInstancesRequest\0320.googl"
+          + "e.cloud.notebooks.v1.ListInstancesRespon"
+          + "se\">\202\323\344\223\002/\022-/v1/{parent=projects/*/locat"
+          + "ions/*}/instances\332A\006parent\022\237\001\n\013GetInstan"
+          + "ce\022-.google.cloud.notebooks.v1.GetInstan"
+          + "ceRequest\032#.google.cloud.notebooks.v1.In"
+          + "stance\"<\202\323\344\223\002/\022-/v1/{name=projects/*/loc"
+          + "ations/*/instances/*}\332A\004name\022\340\001\n\016CreateI"
+          + "nstance\0220.google.cloud.notebooks.v1.Crea"
+          + "teInstanceRequest\032\035.google.longrunning.O"
+          + "peration\"}\202\323\344\223\0029\"-/v1/{parent=projects/*"
+          + "/locations/*}/instances:\010instance\332A\033pare"
+          + "nt,instance,instance_id\312A\035\n\010Instance\022\021Op"
+          + "erationMetadata\022\310\001\n\020RegisterInstance\0222.g"
+          + "oogle.cloud.notebooks.v1.RegisterInstanc"
           + "eRequest\032\035.google.longrunning.Operation\""
-          + "a\202\323\344\223\002;\"6/v1/{name=projects/*/locations/"
-          + "*/instances/*}:rollback:\001*\312A\035\n\010Instance\022"
-          + "\021OperationMetadata\022\335\001\n\027UpgradeInstanceIn"
-          + "ternal\0229.google.cloud.notebooks.v1.Upgra"
-          + "deInstanceInternalRequest\032\035.google.longr"
-          + "unning.Operation\"h\202\323\344\223\002B\"=/v1/{name=proj"
-          + "ects/*/locations/*/instances/*}:upgradeI"
-          + "nternal:\001*\312A\035\n\010Instance\022\021OperationMetada"
-          + "ta\022\276\001\n\020ListEnvironments\0222.google.cloud.n"
-          + "otebooks.v1.ListEnvironmentsRequest\0323.go"
-          + "ogle.cloud.notebooks.v1.ListEnvironments"
-          + "Response\"A\202\323\344\223\0022\0220/v1/{parent=projects/*"
-          + "/locations/*}/environments\332A\006parent\022\253\001\n\016"
-          + "GetEnvironment\0220.google.cloud.notebooks."
-          + "v1.GetEnvironmentRequest\032&.google.cloud."
-          + "notebooks.v1.Environment\"?\202\323\344\223\0022\0220/v1/{n"
-          + "ame=projects/*/locations/*/environments/"
-          + "*}\332A\004name\022\366\001\n\021CreateEnvironment\0223.google"
-          + ".cloud.notebooks.v1.CreateEnvironmentReq"
-          + "uest\032\035.google.longrunning.Operation\"\214\001\202\323"
-          + "\344\223\002?\"0/v1/{parent=projects/*/locations/*"
-          + "}/environments:\013environment\332A!parent,env"
-          + "ironment,environment_id\312A \n\013Environment\022"
-          + "\021OperationMetadata\022\325\001\n\021DeleteEnvironment"
-          + "\0223.google.cloud.notebooks.v1.DeleteEnvir"
-          + "onmentRequest\032\035.google.longrunning.Opera"
-          + "tion\"l\202\323\344\223\0022*0/v1/{name=projects/*/locat"
-          + "ions/*/environments/*}\332A\004name\312A*\n\025google"
-          + ".protobuf.Empty\022\021OperationMetadata\022\262\001\n\rL"
-          + "istSchedules\022/.google.cloud.notebooks.v1"
-          + ".ListSchedulesRequest\0320.google.cloud.not"
-          + "ebooks.v1.ListSchedulesResponse\">\202\323\344\223\002/\022"
-          + "-/v1/{parent=projects/*/locations/*}/sch"
-          + "edules\332A\006parent\022\237\001\n\013GetSchedule\022-.google"
-          + ".cloud.notebooks.v1.GetScheduleRequest\032#"
-          + ".google.cloud.notebooks.v1.Schedule\"<\202\323\344"
-          + "\223\002/\022-/v1/{name=projects/*/locations/*/sc"
-          + "hedules/*}\332A\004name\022\314\001\n\016DeleteSchedule\0220.g"
-          + "oogle.cloud.notebooks.v1.DeleteScheduleR"
-          + "equest\032\035.google.longrunning.Operation\"i\202"
-          + "\323\344\223\002/*-/v1/{name=projects/*/locations/*/"
-          + "schedules/*}\332A\004name\312A*\n\025google.protobuf."
-          + "Empty\022\021OperationMetadata\022\340\001\n\016CreateSched"
-          + "ule\0220.google.cloud.notebooks.v1.CreateSc"
-          + "heduleRequest\032\035.google.longrunning.Opera"
-          + "tion\"}\202\323\344\223\0029\"-/v1/{parent=projects/*/loc"
-          + "ations/*}/schedules:\010schedule\332A\033parent,s"
-          + "chedule,schedule_id\312A\035\n\010Schedule\022\021Operat"
-          + "ionMetadata\022\305\001\n\017TriggerSchedule\0221.google"
-          + ".cloud.notebooks.v1.TriggerScheduleReque"
-          + "st\032\035.google.longrunning.Operation\"`\202\323\344\223\002"
-          + ":\"5/v1/{name=projects/*/locations/*/sche"
-          + "dules/*}:trigger:\001*\312A\035\n\010Schedule\022\021Operat"
-          + "ionMetadata\022\266\001\n\016ListExecutions\0220.google."
-          + "cloud.notebooks.v1.ListExecutionsRequest"
-          + "\0321.google.cloud.notebooks.v1.ListExecuti"
-          + "onsResponse\"?\202\323\344\223\0020\022./v1/{parent=project"
-          + "s/*/locations/*}/executions\332A\006parent\022\243\001\n"
-          + "\014GetExecution\022..google.cloud.notebooks.v"
-          + "1.GetExecutionRequest\032$.google.cloud.not"
-          + "ebooks.v1.Execution\"=\202\323\344\223\0020\022./v1/{name=p"
-          + "rojects/*/locations/*/executions/*}\332A\004na"
-          + "me\022\317\001\n\017DeleteExecution\0221.google.cloud.no"
-          + "tebooks.v1.DeleteExecutionRequest\032\035.goog"
-          + "le.longrunning.Operation\"j\202\323\344\223\0020*./v1/{n"
-          + "ame=projects/*/locations/*/executions/*}"
+          + "a\202\323\344\223\002;\"6/v1/{parent=projects/*/location"
+          + "s/*}/instances:register:\001*\312A\035\n\010Instance\022"
+          + "\021OperationMetadata\022\332\001\n\026SetInstanceAccele"
+          + "rator\0228.google.cloud.notebooks.v1.SetIns"
+          + "tanceAcceleratorRequest\032\035.google.longrun"
+          + "ning.Operation\"g\202\323\344\223\002A2</v1/{name=projec"
+          + "ts/*/locations/*/instances/*}:setAcceler"
+          + "ator:\001*\312A\035\n\010Instance\022\021OperationMetadata\022"
+          + "\332\001\n\026SetInstanceMachineType\0228.google.clou"
+          + "d.notebooks.v1.SetInstanceMachineTypeReq"
+          + "uest\032\035.google.longrunning.Operation\"g\202\323\344"
+          + "\223\002A2</v1/{name=projects/*/locations/*/in"
+          + "stances/*}:setMachineType:\001*\312A\035\n\010Instanc"
+          + "e\022\021OperationMetadata\022\324\001\n\024UpdateInstanceC"
+          + "onfig\0226.google.cloud.notebooks.v1.Update"
+          + "InstanceConfigRequest\032\035.google.longrunni"
+          + "ng.Operation\"e\202\323\344\223\002?2:/v1/{name=projects"
+          + "/*/locations/*/instances/*}:updateConfig"
+          + ":\001*\312A\035\n\010Instance\022\021OperationMetadata\022\364\001\n\034"
+          + "UpdateShieldedInstanceConfig\022>.google.cl"
+          + "oud.notebooks.v1.UpdateShieldedInstanceC"
+          + "onfigRequest\032\035.google.longrunning.Operat"
+          + "ion\"u\202\323\344\223\002O2J/v1/{name=projects/*/locati"
+          + "ons/*/instances/*}:updateShieldedInstanc"
+          + "eConfig:\001*\312A\035\n\010Instance\022\021OperationMetada"
+          + "ta\022\313\001\n\021SetInstanceLabels\0223.google.cloud."
+          + "notebooks.v1.SetInstanceLabelsRequest\032\035."
+          + "google.longrunning.Operation\"b\202\323\344\223\002<27/v"
+          + "1/{name=projects/*/locations/*/instances"
+          + "/*}:setLabels:\001*\312A\035\n\010Instance\022\021Operation"
+          + "Metadata\022\352\001\n\033UpdateInstanceMetadataItems"
+          + "\022=.google.cloud.notebooks.v1.UpdateInsta"
+          + "nceMetadataItemsRequest\032>.google.cloud.n"
+          + "otebooks.v1.UpdateInstanceMetadataItemsR"
+          + "esponse\"L\202\323\344\223\002F2A/v1/{name=projects/*/lo"
+          + "cations/*/instances/*}:updateMetadataIte"
+          + "ms:\001*\022\314\001\n\016DeleteInstance\0220.google.cloud."
+          + "notebooks.v1.DeleteInstanceRequest\032\035.goo"
+          + "gle.longrunning.Operation\"i\202\323\344\223\002/*-/v1/{"
+          + "name=projects/*/locations/*/instances/*}"
           + "\332A\004name\312A*\n\025google.protobuf.Empty\022\021Opera"
-          + "tionMetadata\022\350\001\n\017CreateExecution\0221.googl"
-          + "e.cloud.notebooks.v1.CreateExecutionRequ"
-          + "est\032\035.google.longrunning.Operation\"\202\001\202\323\344"
-          + "\223\002;\"./v1/{parent=projects/*/locations/*}"
-          + "/executions:\texecution\332A\035parent,executio"
-          + "n,execution_id\312A\036\n\tExecution\022\021OperationM"
-          + "etadata\032L\312A\030notebooks.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\314\001\n\035com.google.cloud.notebooks.v1B"
-          + "\016NotebooksProtoP\001ZBgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/notebooks/v1;note"
-          + "books\252\002\031Google.Cloud.Notebooks.V1\312\002\031Goog"
-          + "le\\Cloud\\Notebooks\\V1\352\002\034Google::Cloud::N"
-          + "otebooks::V1b\006proto3"
+          + "tionMetadata\022\277\001\n\rStartInstance\022/.google."
+          + "cloud.notebooks.v1.StartInstanceRequest\032"
+          + "\035.google.longrunning.Operation\"^\202\323\344\223\0028\"3"
+          + "/v1/{name=projects/*/locations/*/instanc"
+          + "es/*}:start:\001*\312A\035\n\010Instance\022\021OperationMe"
+          + "tadata\022\274\001\n\014StopInstance\022..google.cloud.n"
+          + "otebooks.v1.StopInstanceRequest\032\035.google"
+          + ".longrunning.Operation\"]\202\323\344\223\0027\"2/v1/{nam"
+          + "e=projects/*/locations/*/instances/*}:st"
+          + "op:\001*\312A\035\n\010Instance\022\021OperationMetadata\022\277\001"
+          + "\n\rResetInstance\022/.google.cloud.notebooks"
+          + ".v1.ResetInstanceRequest\032\035.google.longru"
+          + "nning.Operation\"^\202\323\344\223\0028\"3/v1/{name=proje"
+          + "cts/*/locations/*/instances/*}:reset:\001*\312"
+          + "A\035\n\010Instance\022\021OperationMetadata\022\312\001\n\022Repo"
+          + "rtInstanceInfo\0224.google.cloud.notebooks."
+          + "v1.ReportInstanceInfoRequest\032\035.google.lo"
+          + "ngrunning.Operation\"_\202\323\344\223\0029\"4/v1/{name=p"
+          + "rojects/*/locations/*/instances/*}:repor"
+          + "t:\001*\312A\035\n\010Instance\022\021OperationMetadata\022\334\001\n"
+          + "\025IsInstanceUpgradeable\0227.google.cloud.no"
+          + "tebooks.v1.IsInstanceUpgradeableRequest\032"
+          + "8.google.cloud.notebooks.v1.IsInstanceUp"
+          + "gradeableResponse\"P\202\323\344\223\002J\022H/v1/{notebook"
+          + "_instance=projects/*/locations/*/instanc"
+          + "es/*}:isUpgradeable\022\316\001\n\021GetInstanceHealt"
+          + "h\0223.google.cloud.notebooks.v1.GetInstanc"
+          + "eHealthRequest\0324.google.cloud.notebooks."
+          + "v1.GetInstanceHealthResponse\"N\202\323\344\223\002A\022?/v"
+          + "1/{name=projects/*/locations/*/instances"
+          + "/*}:getInstanceHealth\332A\004name\022\305\001\n\017Upgrade"
+          + "Instance\0221.google.cloud.notebooks.v1.Upg"
+          + "radeInstanceRequest\032\035.google.longrunning"
+          + ".Operation\"`\202\323\344\223\002:\"5/v1/{name=projects/*"
+          + "/locations/*/instances/*}:upgrade:\001*\312A\035\n"
+          + "\010Instance\022\021OperationMetadata\022\310\001\n\020Rollbac"
+          + "kInstance\0222.google.cloud.notebooks.v1.Ro"
+          + "llbackInstanceRequest\032\035.google.longrunni"
+          + "ng.Operation\"a\202\323\344\223\002;\"6/v1/{name=projects"
+          + "/*/locations/*/instances/*}:rollback:\001*\312"
+          + "A\035\n\010Instance\022\021OperationMetadata\022\341\001\n\020Diag"
+          + "noseInstance\0222.google.cloud.notebooks.v1"
+          + ".DiagnoseInstanceRequest\032\035.google.longru"
+          + "nning.Operation\"z\202\323\344\223\002;\"6/v1/{name=proje"
+          + "cts/*/locations/*/instances/*}:diagnose:"
+          + "\001*\332A\026name,diagnostic_config\312A\035\n\010Instance"
+          + "\022\021OperationMetadata\022\335\001\n\027UpgradeInstanceI"
+          + "nternal\0229.google.cloud.notebooks.v1.Upgr"
+          + "adeInstanceInternalRequest\032\035.google.long"
+          + "running.Operation\"h\202\323\344\223\002B\"=/v1/{name=pro"
+          + "jects/*/locations/*/instances/*}:upgrade"
+          + "Internal:\001*\312A\035\n\010Instance\022\021OperationMetad"
+          + "ata\022\276\001\n\020ListEnvironments\0222.google.cloud."
+          + "notebooks.v1.ListEnvironmentsRequest\0323.g"
+          + "oogle.cloud.notebooks.v1.ListEnvironment"
+          + "sResponse\"A\202\323\344\223\0022\0220/v1/{parent=projects/"
+          + "*/locations/*}/environments\332A\006parent\022\253\001\n"
+          + "\016GetEnvironment\0220.google.cloud.notebooks"
+          + ".v1.GetEnvironmentRequest\032&.google.cloud"
+          + ".notebooks.v1.Environment\"?\202\323\344\223\0022\0220/v1/{"
+          + "name=projects/*/locations/*/environments"
+          + "/*}\332A\004name\022\366\001\n\021CreateEnvironment\0223.googl"
+          + "e.cloud.notebooks.v1.CreateEnvironmentRe"
+          + "quest\032\035.google.longrunning.Operation\"\214\001\202"
+          + "\323\344\223\002?\"0/v1/{parent=projects/*/locations/"
+          + "*}/environments:\013environment\332A!parent,en"
+          + "vironment,environment_id\312A \n\013Environment"
+          + "\022\021OperationMetadata\022\325\001\n\021DeleteEnvironmen"
+          + "t\0223.google.cloud.notebooks.v1.DeleteEnvi"
+          + "ronmentRequest\032\035.google.longrunning.Oper"
+          + "ation\"l\202\323\344\223\0022*0/v1/{name=projects/*/loca"
+          + "tions/*/environments/*}\332A\004name\312A*\n\025googl"
+          + "e.protobuf.Empty\022\021OperationMetadata\022\262\001\n\r"
+          + "ListSchedules\022/.google.cloud.notebooks.v"
+          + "1.ListSchedulesRequest\0320.google.cloud.no"
+          + "tebooks.v1.ListSchedulesResponse\">\202\323\344\223\002/"
+          + "\022-/v1/{parent=projects/*/locations/*}/sc"
+          + "hedules\332A\006parent\022\237\001\n\013GetSchedule\022-.googl"
+          + "e.cloud.notebooks.v1.GetScheduleRequest\032"
+          + "#.google.cloud.notebooks.v1.Schedule\"<\202\323"
+          + "\344\223\002/\022-/v1/{name=projects/*/locations/*/s"
+          + "chedules/*}\332A\004name\022\314\001\n\016DeleteSchedule\0220."
+          + "google.cloud.notebooks.v1.DeleteSchedule"
+          + "Request\032\035.google.longrunning.Operation\"i"
+          + "\202\323\344\223\002/*-/v1/{name=projects/*/locations/*"
+          + "/schedules/*}\332A\004name\312A*\n\025google.protobuf"
+          + ".Empty\022\021OperationMetadata\022\340\001\n\016CreateSche"
+          + "dule\0220.google.cloud.notebooks.v1.CreateS"
+          + "cheduleRequest\032\035.google.longrunning.Oper"
+          + "ation\"}\202\323\344\223\0029\"-/v1/{parent=projects/*/lo"
+          + "cations/*}/schedules:\010schedule\332A\033parent,"
+          + "schedule,schedule_id\312A\035\n\010Schedule\022\021Opera"
+          + "tionMetadata\022\305\001\n\017TriggerSchedule\0221.googl"
+          + "e.cloud.notebooks.v1.TriggerScheduleRequ"
+          + "est\032\035.google.longrunning.Operation\"`\202\323\344\223"
+          + "\002:\"5/v1/{name=projects/*/locations/*/sch"
+          + "edules/*}:trigger:\001*\312A\035\n\010Schedule\022\021Opera"
+          + "tionMetadata\022\266\001\n\016ListExecutions\0220.google"
+          + ".cloud.notebooks.v1.ListExecutionsReques"
+          + "t\0321.google.cloud.notebooks.v1.ListExecut"
+          + "ionsResponse\"?\202\323\344\223\0020\022./v1/{parent=projec"
+          + "ts/*/locations/*}/executions\332A\006parent\022\243\001"
+          + "\n\014GetExecution\022..google.cloud.notebooks."
+          + "v1.GetExecutionRequest\032$.google.cloud.no"
+          + "tebooks.v1.Execution\"=\202\323\344\223\0020\022./v1/{name="
+          + "projects/*/locations/*/executions/*}\332A\004n"
+          + "ame\022\317\001\n\017DeleteExecution\0221.google.cloud.n"
+          + "otebooks.v1.DeleteExecutionRequest\032\035.goo"
+          + "gle.longrunning.Operation\"j\202\323\344\223\0020*./v1/{"
+          + "name=projects/*/locations/*/executions/*"
+          + "}\332A\004name\312A*\n\025google.protobuf.Empty\022\021Oper"
+          + "ationMetadata\022\350\001\n\017CreateExecution\0221.goog"
+          + "le.cloud.notebooks.v1.CreateExecutionReq"
+          + "uest\032\035.google.longrunning.Operation\"\202\001\202\323"
+          + "\344\223\002;\"./v1/{parent=projects/*/locations/*"
+          + "}/executions:\texecution\332A\035parent,executi"
+          + "on,execution_id\312A\036\n\tExecution\022\021Operation"
+          + "Metadata\032L\312A\030notebooks.googleapis.com\322A."
+          + "https://www.googleapis.com/auth/cloud-pl"
+          + "atformB\314\001\n\035com.google.cloud.notebooks.v1"
+          + "B\016NotebooksProtoP\001ZBgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/notebooks/v1;not"
+          + "ebooks\252\002\031Google.Cloud.Notebooks.V1\312\002\031Goo"
+          + "gle\\Cloud\\Notebooks\\V1\352\002\034Google::Cloud::"
+          + "Notebooks::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -545,6 +560,7 @@ public final class NotebooksProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.notebooks.v1.DiagnosticConfigProto.getDescriptor(),
               com.google.cloud.notebooks.v1.EnvironmentProto.getDescriptor(),
               com.google.cloud.notebooks.v1.ExecutionProto.getDescriptor(),
               com.google.cloud.notebooks.v1.InstanceProto.getDescriptor(),
@@ -818,8 +834,16 @@ public final class NotebooksProto {
             new java.lang.String[] {
               "Parent", "PageSize", "PageToken",
             });
-    internal_static_google_cloud_notebooks_v1_ListEnvironmentsResponse_descriptor =
+    internal_static_google_cloud_notebooks_v1_DiagnoseInstanceRequest_descriptor =
         getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_notebooks_v1_DiagnoseInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_notebooks_v1_DiagnoseInstanceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "DiagnosticConfig",
+            });
+    internal_static_google_cloud_notebooks_v1_ListEnvironmentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_notebooks_v1_ListEnvironmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_ListEnvironmentsResponse_descriptor,
@@ -827,7 +851,7 @@ public final class NotebooksProto {
               "Environments", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_notebooks_v1_GetEnvironmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_notebooks_v1_GetEnvironmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_GetEnvironmentRequest_descriptor,
@@ -835,7 +859,7 @@ public final class NotebooksProto {
               "Name",
             });
     internal_static_google_cloud_notebooks_v1_CreateEnvironmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_notebooks_v1_CreateEnvironmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_CreateEnvironmentRequest_descriptor,
@@ -843,7 +867,7 @@ public final class NotebooksProto {
               "Parent", "EnvironmentId", "Environment",
             });
     internal_static_google_cloud_notebooks_v1_DeleteEnvironmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_notebooks_v1_DeleteEnvironmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_DeleteEnvironmentRequest_descriptor,
@@ -851,7 +875,7 @@ public final class NotebooksProto {
               "Name",
             });
     internal_static_google_cloud_notebooks_v1_ListSchedulesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_notebooks_v1_ListSchedulesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_ListSchedulesRequest_descriptor,
@@ -859,7 +883,7 @@ public final class NotebooksProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_notebooks_v1_ListSchedulesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_notebooks_v1_ListSchedulesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_ListSchedulesResponse_descriptor,
@@ -867,7 +891,7 @@ public final class NotebooksProto {
               "Schedules", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_notebooks_v1_GetScheduleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_notebooks_v1_GetScheduleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_GetScheduleRequest_descriptor,
@@ -875,7 +899,7 @@ public final class NotebooksProto {
               "Name",
             });
     internal_static_google_cloud_notebooks_v1_DeleteScheduleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_notebooks_v1_DeleteScheduleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_DeleteScheduleRequest_descriptor,
@@ -883,7 +907,7 @@ public final class NotebooksProto {
               "Name",
             });
     internal_static_google_cloud_notebooks_v1_CreateScheduleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_notebooks_v1_CreateScheduleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_CreateScheduleRequest_descriptor,
@@ -891,7 +915,7 @@ public final class NotebooksProto {
               "Parent", "ScheduleId", "Schedule",
             });
     internal_static_google_cloud_notebooks_v1_TriggerScheduleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_notebooks_v1_TriggerScheduleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_TriggerScheduleRequest_descriptor,
@@ -899,7 +923,7 @@ public final class NotebooksProto {
               "Name",
             });
     internal_static_google_cloud_notebooks_v1_ListExecutionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_notebooks_v1_ListExecutionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_ListExecutionsRequest_descriptor,
@@ -907,7 +931,7 @@ public final class NotebooksProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_notebooks_v1_ListExecutionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_notebooks_v1_ListExecutionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_ListExecutionsResponse_descriptor,
@@ -915,7 +939,7 @@ public final class NotebooksProto {
               "Executions", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_notebooks_v1_GetExecutionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_notebooks_v1_GetExecutionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_GetExecutionRequest_descriptor,
@@ -923,7 +947,7 @@ public final class NotebooksProto {
               "Name",
             });
     internal_static_google_cloud_notebooks_v1_DeleteExecutionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_notebooks_v1_DeleteExecutionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_DeleteExecutionRequest_descriptor,
@@ -931,7 +955,7 @@ public final class NotebooksProto {
               "Name",
             });
     internal_static_google_cloud_notebooks_v1_CreateExecutionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_notebooks_v1_CreateExecutionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_notebooks_v1_CreateExecutionRequest_descriptor,
@@ -953,6 +977,7 @@ public final class NotebooksProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.notebooks.v1.DiagnosticConfigProto.getDescriptor();
     com.google.cloud.notebooks.v1.EnvironmentProto.getDescriptor();
     com.google.cloud.notebooks.v1.ExecutionProto.getDescriptor();
     com.google.cloud.notebooks.v1.InstanceProto.getDescriptor();

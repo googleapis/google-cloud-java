@@ -118,7 +118,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the file share (must be 16 characters or less).
+   * The name of the file share (must be 32 characters or less for
+   * Enterprise and High Scale SSD tiers and 16 characters or less for all other
+   * tiers).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -141,7 +143,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The name of the file share (must be 16 characters or less).
+   * The name of the file share (must be 32 characters or less for
+   * Enterprise and High Scale SSD tiers and 16 characters or less for all other
+   * tiers).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -168,7 +172,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * File share capacity in gigabytes (GB).
-   * Cloud Filestore defines 1 GB as 1024^3 bytes.
+   * Filestore defines 1 GB as 1024^3 bytes.
    * </pre>
    *
    * <code>int64 capacity_gb = 2;</code>
@@ -821,7 +825,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * The name of the file share (must be 32 characters or less for
+     * Enterprise and High Scale SSD tiers and 16 characters or less for all other
+     * tiers).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -843,7 +849,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * The name of the file share (must be 32 characters or less for
+     * Enterprise and High Scale SSD tiers and 16 characters or less for all other
+     * tiers).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -865,7 +873,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * The name of the file share (must be 32 characters or less for
+     * Enterprise and High Scale SSD tiers and 16 characters or less for all other
+     * tiers).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -886,7 +896,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * The name of the file share (must be 32 characters or less for
+     * Enterprise and High Scale SSD tiers and 16 characters or less for all other
+     * tiers).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -903,7 +915,9 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The name of the file share (must be 16 characters or less).
+     * The name of the file share (must be 32 characters or less for
+     * Enterprise and High Scale SSD tiers and 16 characters or less for all other
+     * tiers).
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -928,7 +942,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * File share capacity in gigabytes (GB).
-     * Cloud Filestore defines 1 GB as 1024^3 bytes.
+     * Filestore defines 1 GB as 1024^3 bytes.
      * </pre>
      *
      * <code>int64 capacity_gb = 2;</code>
@@ -944,7 +958,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * File share capacity in gigabytes (GB).
-     * Cloud Filestore defines 1 GB as 1024^3 bytes.
+     * Filestore defines 1 GB as 1024^3 bytes.
      * </pre>
      *
      * <code>int64 capacity_gb = 2;</code>
@@ -963,7 +977,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * File share capacity in gigabytes (GB).
-     * Cloud Filestore defines 1 GB as 1024^3 bytes.
+     * Filestore defines 1 GB as 1024^3 bytes.
      * </pre>
      *
      * <code>int64 capacity_gb = 2;</code>

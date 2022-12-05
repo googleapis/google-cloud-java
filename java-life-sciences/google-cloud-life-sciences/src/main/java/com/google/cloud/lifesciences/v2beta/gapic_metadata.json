@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "WorkflowsServiceV2BetaClient",
           "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "RunPipeline": {
               "methods": ["runPipelineAsync", "runPipelineOperationCallable", "runPipelineCallable"]
             }

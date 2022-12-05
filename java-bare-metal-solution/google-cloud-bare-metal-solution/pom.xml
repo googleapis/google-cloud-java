@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bare-metal-solution</artifactId>
-  <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+  <version>0.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   <packaging>jar</packaging>
   <name>Google Bare Metal SOlution</name>
   <description>Bare Metal SOlution Bring your Oracle workloads to Google Cloud with Bare Metal Solution and jumpstart your cloud journey with minimal risk.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bare-metal-solution-parent</artifactId>
-    <version>0.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+    <version>0.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bare-metal-solution</site.installationModule>

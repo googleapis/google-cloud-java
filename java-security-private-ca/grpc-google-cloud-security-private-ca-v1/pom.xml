@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-security-private-ca-v1</artifactId>
-  <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-security-private-ca-v1:current} -->
+  <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-security-private-ca-v1:current} -->
   <name>grpc-google-cloud-security-private-ca-v1</name>
   <description>GRPC library for google-cloud-security-private-ca</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-security-private-ca-parent</artifactId>
-    <version>2.7.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
+    <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
   </parent>
   <dependencies>
     <dependency>

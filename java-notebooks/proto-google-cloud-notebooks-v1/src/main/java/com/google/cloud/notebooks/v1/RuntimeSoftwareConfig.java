@@ -47,6 +47,8 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     customGpuDriverPath_ = "";
     postStartupScript_ = "";
     kernels_ = java.util.Collections.emptyList();
+    postStartupScriptBehavior_ = 0;
+    version_ = "";
   }
 
   @java.lang.Override
@@ -73,6 +75,168 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         .ensureFieldAccessorsInitialized(
             com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.class,
             com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Behavior for the post startup script.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior}
+   */
+  public enum PostStartupScriptBehavior implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified post startup script behavior. Will run only once at creation.
+     * </pre>
+     *
+     * <code>POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0;</code>
+     */
+    POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Runs the post startup script provided during creation at every start.
+     * </pre>
+     *
+     * <code>RUN_EVERY_START = 1;</code>
+     */
+    RUN_EVERY_START(1),
+    /**
+     *
+     *
+     * <pre>
+     * Downloads and runs the provided post startup script at every start.
+     * </pre>
+     *
+     * <code>DOWNLOAD_AND_RUN_EVERY_START = 2;</code>
+     */
+    DOWNLOAD_AND_RUN_EVERY_START(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified post startup script behavior. Will run only once at creation.
+     * </pre>
+     *
+     * <code>POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0;</code>
+     */
+    public static final int POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Runs the post startup script provided during creation at every start.
+     * </pre>
+     *
+     * <code>RUN_EVERY_START = 1;</code>
+     */
+    public static final int RUN_EVERY_START_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Downloads and runs the provided post startup script at every start.
+     * </pre>
+     *
+     * <code>DOWNLOAD_AND_RUN_EVERY_START = 2;</code>
+     */
+    public static final int DOWNLOAD_AND_RUN_EVERY_START_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PostStartupScriptBehavior valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PostStartupScriptBehavior forNumber(int value) {
+      switch (value) {
+        case 0:
+          return POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED;
+        case 1:
+          return RUN_EVERY_START;
+        case 2:
+          return DOWNLOAD_AND_RUN_EVERY_START;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PostStartupScriptBehavior>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PostStartupScriptBehavior>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PostStartupScriptBehavior>() {
+              public PostStartupScriptBehavior findValueByNumber(int number) {
+                return PostStartupScriptBehavior.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final PostStartupScriptBehavior[] VALUES = values();
+
+    public static PostStartupScriptBehavior valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PostStartupScriptBehavior(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior)
   }
 
   private int bitField0_;
@@ -450,6 +614,149 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     return upgradeable_;
   }
 
+  public static final int POST_STARTUP_SCRIPT_BEHAVIOR_FIELD_NUMBER = 10;
+  private int postStartupScriptBehavior_;
+  /**
+   *
+   *
+   * <pre>
+   * Behavior for the post startup script.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for postStartupScriptBehavior.
+   */
+  @java.lang.Override
+  public int getPostStartupScriptBehaviorValue() {
+    return postStartupScriptBehavior_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Behavior for the post startup script.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+   * </code>
+   *
+   * @return The postStartupScriptBehavior.
+   */
+  @java.lang.Override
+  public com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
+      getPostStartupScriptBehavior() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior result =
+        com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.valueOf(
+            postStartupScriptBehavior_);
+    return result == null
+        ? com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DISABLE_TERMINAL_FIELD_NUMBER = 11;
+  private boolean disableTerminal_;
+  /**
+   *
+   *
+   * <pre>
+   * Bool indicating whether JupyterLab terminal will be available or not.
+   * Default: False
+   * </pre>
+   *
+   * <code>optional bool disable_terminal = 11;</code>
+   *
+   * @return Whether the disableTerminal field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableTerminal() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Bool indicating whether JupyterLab terminal will be available or not.
+   * Default: False
+   * </pre>
+   *
+   * <code>optional bool disable_terminal = 11;</code>
+   *
+   * @return The disableTerminal.
+   */
+  @java.lang.Override
+  public boolean getDisableTerminal() {
+    return disableTerminal_;
+  }
+
+  public static final int VERSION_FIELD_NUMBER = 12;
+  private volatile java.lang.Object version_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. version of boot image such as M100, from release label of the image.
+   * </pre>
+   *
+   * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the version field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersion() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. version of boot image such as M100, from release label of the image.
+   * </pre>
+   *
+   * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. version of boot image such as M100, from release label of the image.
+   * </pre>
+   *
+   * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for version.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -491,6 +798,18 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(9, upgradeable_);
     }
+    if (postStartupScriptBehavior_
+        != com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
+            .POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, postStartupScriptBehavior_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(11, disableTerminal_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, version_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -527,6 +846,18 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, upgradeable_);
     }
+    if (postStartupScriptBehavior_
+        != com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
+            .POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, postStartupScriptBehavior_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, disableTerminal_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, version_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -560,6 +891,15 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (hasUpgradeable() != other.hasUpgradeable()) return false;
     if (hasUpgradeable()) {
       if (getUpgradeable() != other.getUpgradeable()) return false;
+    }
+    if (postStartupScriptBehavior_ != other.postStartupScriptBehavior_) return false;
+    if (hasDisableTerminal() != other.hasDisableTerminal()) return false;
+    if (hasDisableTerminal()) {
+      if (getDisableTerminal() != other.getDisableTerminal()) return false;
+    }
+    if (hasVersion() != other.hasVersion()) return false;
+    if (hasVersion()) {
+      if (!getVersion().equals(other.getVersion())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -597,6 +937,16 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     if (hasUpgradeable()) {
       hash = (37 * hash) + UPGRADEABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpgradeable());
+    }
+    hash = (37 * hash) + POST_STARTUP_SCRIPT_BEHAVIOR_FIELD_NUMBER;
+    hash = (53 * hash) + postStartupScriptBehavior_;
+    if (hasDisableTerminal()) {
+      hash = (37 * hash) + DISABLE_TERMINAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableTerminal());
+    }
+    if (hasVersion()) {
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -764,6 +1114,12 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       bitField0_ = (bitField0_ & ~0x00000004);
       upgradeable_ = false;
       bitField0_ = (bitField0_ & ~0x00000008);
+      postStartupScriptBehavior_ = 0;
+
+      disableTerminal_ = false;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      version_ = "";
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -819,6 +1175,15 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
         result.upgradeable_ = upgradeable_;
         to_bitField0_ |= 0x00000004;
       }
+      result.postStartupScriptBehavior_ = postStartupScriptBehavior_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.disableTerminal_ = disableTerminal_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000010;
+      }
+      result.version_ = version_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -924,6 +1289,17 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
       if (other.hasUpgradeable()) {
         setUpgradeable(other.getUpgradeable());
       }
+      if (other.postStartupScriptBehavior_ != 0) {
+        setPostStartupScriptBehaviorValue(other.getPostStartupScriptBehaviorValue());
+      }
+      if (other.hasDisableTerminal()) {
+        setDisableTerminal(other.getDisableTerminal());
+      }
+      if (other.hasVersion()) {
+        bitField0_ |= 0x00000020;
+        version_ = other.version_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1011,6 +1387,24 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000008;
                 break;
               } // case 72
+            case 80:
+              {
+                postStartupScriptBehavior_ = input.readEnum();
+
+                break;
+              } // case 80
+            case 88:
+              {
+                disableTerminal_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+            case 98:
+              {
+                version_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2066,6 +2460,304 @@ public final class RuntimeSoftwareConfig extends com.google.protobuf.GeneratedMe
     public Builder clearUpgradeable() {
       bitField0_ = (bitField0_ & ~0x00000008);
       upgradeable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int postStartupScriptBehavior_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Behavior for the post startup script.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for postStartupScriptBehavior.
+     */
+    @java.lang.Override
+    public int getPostStartupScriptBehaviorValue() {
+      return postStartupScriptBehavior_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Behavior for the post startup script.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for postStartupScriptBehavior to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPostStartupScriptBehaviorValue(int value) {
+
+      postStartupScriptBehavior_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Behavior for the post startup script.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+     * </code>
+     *
+     * @return The postStartupScriptBehavior.
+     */
+    @java.lang.Override
+    public com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
+        getPostStartupScriptBehavior() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior result =
+          com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior.valueOf(
+              postStartupScriptBehavior_);
+      return result == null
+          ? com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Behavior for the post startup script.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+     * </code>
+     *
+     * @param value The postStartupScriptBehavior to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPostStartupScriptBehavior(
+        com.google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      postStartupScriptBehavior_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Behavior for the post startup script.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.notebooks.v1.RuntimeSoftwareConfig.PostStartupScriptBehavior post_startup_script_behavior = 10;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPostStartupScriptBehavior() {
+
+      postStartupScriptBehavior_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableTerminal_;
+    /**
+     *
+     *
+     * <pre>
+     * Bool indicating whether JupyterLab terminal will be available or not.
+     * Default: False
+     * </pre>
+     *
+     * <code>optional bool disable_terminal = 11;</code>
+     *
+     * @return Whether the disableTerminal field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisableTerminal() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool indicating whether JupyterLab terminal will be available or not.
+     * Default: False
+     * </pre>
+     *
+     * <code>optional bool disable_terminal = 11;</code>
+     *
+     * @return The disableTerminal.
+     */
+    @java.lang.Override
+    public boolean getDisableTerminal() {
+      return disableTerminal_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool indicating whether JupyterLab terminal will be available or not.
+     * Default: False
+     * </pre>
+     *
+     * <code>optional bool disable_terminal = 11;</code>
+     *
+     * @param value The disableTerminal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableTerminal(boolean value) {
+      bitField0_ |= 0x00000010;
+      disableTerminal_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Bool indicating whether JupyterLab terminal will be available or not.
+     * Default: False
+     * </pre>
+     *
+     * <code>optional bool disable_terminal = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableTerminal() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      disableTerminal_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object version_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. version of boot image such as M100, from release label of the image.
+     * </pre>
+     *
+     * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the version field is set.
+     */
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. version of boot image such as M100, from release label of the image.
+     * </pre>
+     *
+     * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The version.
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. version of boot image such as M100, from release label of the image.
+     * </pre>
+     *
+     * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for version.
+     */
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. version of boot image such as M100, from release label of the image.
+     * </pre>
+     *
+     * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      version_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. version of boot image such as M100, from release label of the image.
+     * </pre>
+     *
+     * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersion() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      version_ = getDefaultInstance().getVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. version of boot image such as M100, from release label of the image.
+     * </pre>
+     *
+     * <code>optional string version = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      version_ = value;
       onChanged();
       return this;
     }

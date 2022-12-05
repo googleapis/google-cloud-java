@@ -104,8 +104,9 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * Accelerator type is Nvidia Tesla K80.
      * </pre>
      *
-     * <code>NVIDIA_TESLA_K80 = 1;</code>
+     * <code>NVIDIA_TESLA_K80 = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     NVIDIA_TESLA_K80(1),
     /**
      *
@@ -227,9 +228,9 @@ public final class RuntimeAcceleratorConfig extends com.google.protobuf.Generate
      * Accelerator type is Nvidia Tesla K80.
      * </pre>
      *
-     * <code>NVIDIA_TESLA_K80 = 1;</code>
+     * <code>NVIDIA_TESLA_K80 = 1 [deprecated = true];</code>
      */
-    public static final int NVIDIA_TESLA_K80_VALUE = 1;
+    @java.lang.Deprecated public static final int NVIDIA_TESLA_K80_VALUE = 1;
     /**
      *
      *

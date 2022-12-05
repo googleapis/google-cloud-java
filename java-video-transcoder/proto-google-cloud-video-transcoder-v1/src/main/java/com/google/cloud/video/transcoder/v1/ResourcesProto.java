@@ -140,6 +140,18 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Pad_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_YadifConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_YadifConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_BwdifConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_BwdifConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_transcoder_v1_VideoStream_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_transcoder_v1_VideoStream_fieldAccessorTable;
@@ -299,7 +311,7 @@ public final class ResourcesProto {
           + "ideo.transcoder.v1.Overlay.AnimationEndH"
           + "\000B\020\n\016animation_type\"@\n\010FadeType\022\031\n\025FADE_"
           + "TYPE_UNSPECIFIED\020\000\022\013\n\007FADE_IN\020\001\022\014\n\010FADE_"
-          + "OUT\020\002\"\364\006\n\023PreprocessingConfig\022J\n\005color\030\001"
+          + "OUT\020\002\"\363\n\n\023PreprocessingConfig\022J\n\005color\030\001"
           + " \001(\0132;.google.cloud.video.transcoder.v1."
           + "PreprocessingConfig.Color\022N\n\007denoise\030\002 \001"
           + "(\0132=.google.cloud.video.transcoder.v1.Pr"
@@ -311,76 +323,89 @@ public final class ResourcesProto {
           + "ogle.cloud.video.transcoder.v1.Preproces"
           + "singConfig.Crop\022F\n\003pad\030\006 \001(\01329.google.cl"
           + "oud.video.transcoder.v1.PreprocessingCon"
-          + "fig.Pad\032A\n\005Color\022\022\n\nsaturation\030\001 \001(\001\022\020\n\010"
-          + "contrast\030\002 \001(\001\022\022\n\nbrightness\030\003 \001(\001\032)\n\007De"
-          + "noise\022\020\n\010strength\030\001 \001(\001\022\014\n\004tune\030\002 \001(\t\032,\n"
-          + "\007Deblock\022\020\n\010strength\030\001 \001(\001\022\017\n\007enabled\030\002 "
-          + "\001(\010\032<\n\005Audio\022\014\n\004lufs\030\001 \001(\001\022\022\n\nhigh_boost"
-          + "\030\002 \001(\010\022\021\n\tlow_boost\030\003 \001(\010\032\\\n\004Crop\022\022\n\ntop"
-          + "_pixels\030\001 \001(\005\022\025\n\rbottom_pixels\030\002 \001(\005\022\023\n\013"
-          + "left_pixels\030\003 \001(\005\022\024\n\014right_pixels\030\004 \001(\005\032"
-          + "[\n\003Pad\022\022\n\ntop_pixels\030\001 \001(\005\022\025\n\rbottom_pix"
-          + "els\030\002 \001(\005\022\023\n\013left_pixels\030\003 \001(\005\022\024\n\014right_"
-          + "pixels\030\004 \001(\005\"\225\014\n\013VideoStream\022O\n\004h264\030\001 \001"
-          + "(\0132?.google.cloud.video.transcoder.v1.Vi"
-          + "deoStream.H264CodecSettingsH\000\022O\n\004h265\030\002 "
-          + "\001(\0132?.google.cloud.video.transcoder.v1.V"
-          + "ideoStream.H265CodecSettingsH\000\022M\n\003vp9\030\003 "
-          + "\001(\0132>.google.cloud.video.transcoder.v1.V"
-          + "ideoStream.Vp9CodecSettingsH\000\032\371\003\n\021H264Co"
-          + "decSettings\022\024\n\014width_pixels\030\001 \001(\005\022\025\n\rhei"
-          + "ght_pixels\030\002 \001(\005\022\027\n\nframe_rate\030\003 \001(\001B\003\340A"
-          + "\002\022\030\n\013bitrate_bps\030\004 \001(\005B\003\340A\002\022\024\n\014pixel_for"
-          + "mat\030\005 \001(\t\022\031\n\021rate_control_mode\030\006 \001(\t\022\021\n\t"
-          + "crf_level\030\007 \001(\005\022\026\n\016allow_open_gop\030\010 \001(\010\022"
-          + "\031\n\017gop_frame_count\030\t \001(\005H\000\0221\n\014gop_durati"
-          + "on\030\n \001(\0132\031.google.protobuf.DurationH\000\022\027\n"
-          + "\017enable_two_pass\030\013 \001(\010\022\025\n\rvbv_size_bits\030"
-          + "\014 \001(\005\022\031\n\021vbv_fullness_bits\030\r \001(\005\022\025\n\rentr"
-          + "opy_coder\030\016 \001(\t\022\021\n\tb_pyramid\030\017 \001(\010\022\025\n\rb_"
-          + "frame_count\030\020 \001(\005\022\023\n\013aq_strength\030\021 \001(\001\022\017"
-          + "\n\007profile\030\022 \001(\t\022\014\n\004tune\030\023 \001(\t\022\016\n\006preset\030"
-          + "\024 \001(\tB\n\n\010gop_mode\032\342\003\n\021H265CodecSettings\022"
-          + "\024\n\014width_pixels\030\001 \001(\005\022\025\n\rheight_pixels\030\002"
-          + " \001(\005\022\027\n\nframe_rate\030\003 \001(\001B\003\340A\002\022\030\n\013bitrate"
-          + "_bps\030\004 \001(\005B\003\340A\002\022\024\n\014pixel_format\030\005 \001(\t\022\031\n"
-          + "\021rate_control_mode\030\006 \001(\t\022\021\n\tcrf_level\030\007 "
-          + "\001(\005\022\026\n\016allow_open_gop\030\010 \001(\010\022\031\n\017gop_frame"
-          + "_count\030\t \001(\005H\000\0221\n\014gop_duration\030\n \001(\0132\031.g"
-          + "oogle.protobuf.DurationH\000\022\027\n\017enable_two_"
-          + "pass\030\013 \001(\010\022\025\n\rvbv_size_bits\030\014 \001(\005\022\031\n\021vbv"
-          + "_fullness_bits\030\r \001(\005\022\021\n\tb_pyramid\030\016 \001(\010\022"
-          + "\025\n\rb_frame_count\030\017 \001(\005\022\023\n\013aq_strength\030\020 "
-          + "\001(\001\022\017\n\007profile\030\021 \001(\t\022\014\n\004tune\030\022 \001(\t\022\016\n\006pr"
-          + "eset\030\023 \001(\tB\n\n\010gop_mode\032\241\002\n\020Vp9CodecSetti"
-          + "ngs\022\024\n\014width_pixels\030\001 \001(\005\022\025\n\rheight_pixe"
-          + "ls\030\002 \001(\005\022\027\n\nframe_rate\030\003 \001(\001B\003\340A\002\022\030\n\013bit"
-          + "rate_bps\030\004 \001(\005B\003\340A\002\022\024\n\014pixel_format\030\005 \001("
-          + "\t\022\031\n\021rate_control_mode\030\006 \001(\t\022\021\n\tcrf_leve"
-          + "l\030\007 \001(\005\022\031\n\017gop_frame_count\030\010 \001(\005H\000\0221\n\014go"
-          + "p_duration\030\t \001(\0132\031.google.protobuf.Durat"
-          + "ionH\000\022\017\n\007profile\030\n \001(\tB\n\n\010gop_modeB\020\n\016co"
-          + "dec_settings\"\361\002\n\013AudioStream\022\r\n\005codec\030\001 "
-          + "\001(\t\022\030\n\013bitrate_bps\030\002 \001(\005B\003\340A\002\022\025\n\rchannel"
-          + "_count\030\003 \001(\005\022\026\n\016channel_layout\030\004 \003(\t\022K\n\007"
-          + "mapping\030\005 \003(\0132:.google.cloud.video.trans"
-          + "coder.v1.AudioStream.AudioMapping\022\031\n\021sam"
-          + "ple_rate_hertz\030\006 \001(\005\032\241\001\n\014AudioMapping\022\025\n"
-          + "\010atom_key\030\001 \001(\tB\003\340A\002\022\026\n\tinput_key\030\002 \001(\tB"
-          + "\003\340A\002\022\030\n\013input_track\030\003 \001(\005B\003\340A\002\022\032\n\rinput_"
-          + "channel\030\004 \001(\005B\003\340A\002\022\033\n\016output_channel\030\005 \001"
-          + "(\005B\003\340A\002\022\017\n\007gain_db\030\006 \001(\001\"\276\001\n\nTextStream\022"
-          + "\r\n\005codec\030\001 \001(\t\022I\n\007mapping\030\003 \003(\01328.google"
-          + ".cloud.video.transcoder.v1.TextStream.Te"
-          + "xtMapping\032V\n\013TextMapping\022\025\n\010atom_key\030\001 \001"
-          + "(\tB\003\340A\002\022\026\n\tinput_key\030\002 \001(\tB\003\340A\002\022\030\n\013input"
-          + "_track\030\003 \001(\005B\003\340A\002\"h\n\017SegmentSettings\0223\n\020"
-          + "segment_duration\030\001 \001(\0132\031.google.protobuf"
-          + ".Duration\022 \n\023individual_segments\030\003 \001(\010B\003"
-          + "\340A\002B\204\001\n$com.google.cloud.video.transcode"
-          + "r.v1B\016ResourcesProtoP\001ZJgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/video/transc"
-          + "oder/v1;transcoderb\006proto3"
+          + "fig.Pad\022V\n\013deinterlace\030\007 \001(\0132A.google.cl"
+          + "oud.video.transcoder.v1.PreprocessingCon"
+          + "fig.Deinterlace\032A\n\005Color\022\022\n\nsaturation\030\001"
+          + " \001(\001\022\020\n\010contrast\030\002 \001(\001\022\022\n\nbrightness\030\003 \001"
+          + "(\001\032)\n\007Denoise\022\020\n\010strength\030\001 \001(\001\022\014\n\004tune\030"
+          + "\002 \001(\t\032,\n\007Deblock\022\020\n\010strength\030\001 \001(\001\022\017\n\007en"
+          + "abled\030\002 \001(\010\032<\n\005Audio\022\014\n\004lufs\030\001 \001(\001\022\022\n\nhi"
+          + "gh_boost\030\002 \001(\010\022\021\n\tlow_boost\030\003 \001(\010\032\\\n\004Cro"
+          + "p\022\022\n\ntop_pixels\030\001 \001(\005\022\025\n\rbottom_pixels\030\002"
+          + " \001(\005\022\023\n\013left_pixels\030\003 \001(\005\022\024\n\014right_pixel"
+          + "s\030\004 \001(\005\032[\n\003Pad\022\022\n\ntop_pixels\030\001 \001(\005\022\025\n\rbo"
+          + "ttom_pixels\030\002 \001(\005\022\023\n\013left_pixels\030\003 \001(\005\022\024"
+          + "\n\014right_pixels\030\004 \001(\005\032\244\003\n\013Deinterlace\022^\n\005"
+          + "yadif\030\001 \001(\0132M.google.cloud.video.transco"
+          + "der.v1.PreprocessingConfig.Deinterlace.Y"
+          + "adifConfigH\000\022^\n\005bwdif\030\002 \001(\0132M.google.clo"
+          + "ud.video.transcoder.v1.PreprocessingConf"
+          + "ig.Deinterlace.BwdifConfigH\000\032p\n\013YadifCon"
+          + "fig\022\014\n\004mode\030\001 \001(\t\022#\n\033disable_spatial_int"
+          + "erlacing\030\002 \001(\010\022\016\n\006parity\030\003 \001(\t\022\036\n\026deinte"
+          + "rlace_all_frames\030\004 \001(\010\032K\n\013BwdifConfig\022\014\n"
+          + "\004mode\030\001 \001(\t\022\016\n\006parity\030\002 \001(\t\022\036\n\026deinterla"
+          + "ce_all_frames\030\003 \001(\010B\026\n\024deinterlacing_fil"
+          + "ter\"\225\014\n\013VideoStream\022O\n\004h264\030\001 \001(\0132?.goog"
+          + "le.cloud.video.transcoder.v1.VideoStream"
+          + ".H264CodecSettingsH\000\022O\n\004h265\030\002 \001(\0132?.goo"
+          + "gle.cloud.video.transcoder.v1.VideoStrea"
+          + "m.H265CodecSettingsH\000\022M\n\003vp9\030\003 \001(\0132>.goo"
+          + "gle.cloud.video.transcoder.v1.VideoStrea"
+          + "m.Vp9CodecSettingsH\000\032\371\003\n\021H264CodecSettin"
+          + "gs\022\024\n\014width_pixels\030\001 \001(\005\022\025\n\rheight_pixel"
+          + "s\030\002 \001(\005\022\027\n\nframe_rate\030\003 \001(\001B\003\340A\002\022\030\n\013bitr"
+          + "ate_bps\030\004 \001(\005B\003\340A\002\022\024\n\014pixel_format\030\005 \001(\t"
+          + "\022\031\n\021rate_control_mode\030\006 \001(\t\022\021\n\tcrf_level"
+          + "\030\007 \001(\005\022\026\n\016allow_open_gop\030\010 \001(\010\022\031\n\017gop_fr"
+          + "ame_count\030\t \001(\005H\000\0221\n\014gop_duration\030\n \001(\0132"
+          + "\031.google.protobuf.DurationH\000\022\027\n\017enable_t"
+          + "wo_pass\030\013 \001(\010\022\025\n\rvbv_size_bits\030\014 \001(\005\022\031\n\021"
+          + "vbv_fullness_bits\030\r \001(\005\022\025\n\rentropy_coder"
+          + "\030\016 \001(\t\022\021\n\tb_pyramid\030\017 \001(\010\022\025\n\rb_frame_cou"
+          + "nt\030\020 \001(\005\022\023\n\013aq_strength\030\021 \001(\001\022\017\n\007profile"
+          + "\030\022 \001(\t\022\014\n\004tune\030\023 \001(\t\022\016\n\006preset\030\024 \001(\tB\n\n\010"
+          + "gop_mode\032\342\003\n\021H265CodecSettings\022\024\n\014width_"
+          + "pixels\030\001 \001(\005\022\025\n\rheight_pixels\030\002 \001(\005\022\027\n\nf"
+          + "rame_rate\030\003 \001(\001B\003\340A\002\022\030\n\013bitrate_bps\030\004 \001("
+          + "\005B\003\340A\002\022\024\n\014pixel_format\030\005 \001(\t\022\031\n\021rate_con"
+          + "trol_mode\030\006 \001(\t\022\021\n\tcrf_level\030\007 \001(\005\022\026\n\016al"
+          + "low_open_gop\030\010 \001(\010\022\031\n\017gop_frame_count\030\t "
+          + "\001(\005H\000\0221\n\014gop_duration\030\n \001(\0132\031.google.pro"
+          + "tobuf.DurationH\000\022\027\n\017enable_two_pass\030\013 \001("
+          + "\010\022\025\n\rvbv_size_bits\030\014 \001(\005\022\031\n\021vbv_fullness"
+          + "_bits\030\r \001(\005\022\021\n\tb_pyramid\030\016 \001(\010\022\025\n\rb_fram"
+          + "e_count\030\017 \001(\005\022\023\n\013aq_strength\030\020 \001(\001\022\017\n\007pr"
+          + "ofile\030\021 \001(\t\022\014\n\004tune\030\022 \001(\t\022\016\n\006preset\030\023 \001("
+          + "\tB\n\n\010gop_mode\032\241\002\n\020Vp9CodecSettings\022\024\n\014wi"
+          + "dth_pixels\030\001 \001(\005\022\025\n\rheight_pixels\030\002 \001(\005\022"
+          + "\027\n\nframe_rate\030\003 \001(\001B\003\340A\002\022\030\n\013bitrate_bps\030"
+          + "\004 \001(\005B\003\340A\002\022\024\n\014pixel_format\030\005 \001(\t\022\031\n\021rate"
+          + "_control_mode\030\006 \001(\t\022\021\n\tcrf_level\030\007 \001(\005\022\031"
+          + "\n\017gop_frame_count\030\010 \001(\005H\000\0221\n\014gop_duratio"
+          + "n\030\t \001(\0132\031.google.protobuf.DurationH\000\022\017\n\007"
+          + "profile\030\n \001(\tB\n\n\010gop_modeB\020\n\016codec_setti"
+          + "ngs\"\361\002\n\013AudioStream\022\r\n\005codec\030\001 \001(\t\022\030\n\013bi"
+          + "trate_bps\030\002 \001(\005B\003\340A\002\022\025\n\rchannel_count\030\003 "
+          + "\001(\005\022\026\n\016channel_layout\030\004 \003(\t\022K\n\007mapping\030\005"
+          + " \003(\0132:.google.cloud.video.transcoder.v1."
+          + "AudioStream.AudioMapping\022\031\n\021sample_rate_"
+          + "hertz\030\006 \001(\005\032\241\001\n\014AudioMapping\022\025\n\010atom_key"
+          + "\030\001 \001(\tB\003\340A\002\022\026\n\tinput_key\030\002 \001(\tB\003\340A\002\022\030\n\013i"
+          + "nput_track\030\003 \001(\005B\003\340A\002\022\032\n\rinput_channel\030\004"
+          + " \001(\005B\003\340A\002\022\033\n\016output_channel\030\005 \001(\005B\003\340A\002\022\017"
+          + "\n\007gain_db\030\006 \001(\001\"\276\001\n\nTextStream\022\r\n\005codec\030"
+          + "\001 \001(\t\022I\n\007mapping\030\003 \003(\01328.google.cloud.vi"
+          + "deo.transcoder.v1.TextStream.TextMapping"
+          + "\032V\n\013TextMapping\022\025\n\010atom_key\030\001 \001(\tB\003\340A\002\022\026"
+          + "\n\tinput_key\030\002 \001(\tB\003\340A\002\022\030\n\013input_track\030\003 "
+          + "\001(\005B\003\340A\002\"h\n\017SegmentSettings\0223\n\020segment_d"
+          + "uration\030\001 \001(\0132\031.google.protobuf.Duration"
+          + "\022 \n\023individual_segments\030\003 \001(\010B\003\340A\002B\204\001\n$c"
+          + "om.google.cloud.video.transcoder.v1B\016Res"
+          + "ourcesProtoP\001ZJgoogle.golang.org/genprot"
+          + "o/googleapis/cloud/video/transcoder/v1;t"
+          + "ranscoderb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -600,7 +625,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_descriptor,
             new java.lang.String[] {
-              "Color", "Denoise", "Deblock", "Audio", "Crop", "Pad",
+              "Color", "Denoise", "Deblock", "Audio", "Crop", "Pad", "Deinterlace",
             });
     internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Color_descriptor =
         internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_descriptor
@@ -661,6 +686,36 @@ public final class ResourcesProto {
             internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Pad_descriptor,
             new java.lang.String[] {
               "TopPixels", "BottomPixels", "LeftPixels", "RightPixels",
+            });
+    internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_descriptor =
+        internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_descriptor
+            .getNestedTypes()
+            .get(6);
+    internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_descriptor,
+            new java.lang.String[] {
+              "Yadif", "Bwdif", "DeinterlacingFilter",
+            });
+    internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_YadifConfig_descriptor =
+        internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_YadifConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_YadifConfig_descriptor,
+            new java.lang.String[] {
+              "Mode", "DisableSpatialInterlacing", "Parity", "DeinterlaceAllFrames",
+            });
+    internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_BwdifConfig_descriptor =
+        internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_BwdifConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_transcoder_v1_PreprocessingConfig_Deinterlace_BwdifConfig_descriptor,
+            new java.lang.String[] {
+              "Mode", "Parity", "DeinterlaceAllFrames",
             });
     internal_static_google_cloud_video_transcoder_v1_VideoStream_descriptor =
         getDescriptor().getMessageTypes().get(14);

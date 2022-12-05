@@ -46,6 +46,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     provider_ = "";
     state_ = 0;
     activationToken_ = "";
+    cryptoKeyName_ = "";
   }
 
   @java.lang.Override
@@ -123,7 +124,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The INACTIVE state means that the Channel cannot receive events
+     * The INACTIVE state indicates that the Channel cannot receive events
      * permanently. There are two possible cases this state can happen:
      * 1. The SaaS provider disconnected from this Channel.
      * 2. The Channel activation token has expired but the SaaS provider
@@ -177,7 +178,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The INACTIVE state means that the Channel cannot receive events
+     * The INACTIVE state indicates that the Channel cannot receive events
      * permanently. There are two possible cases this state can happen:
      * 1. The SaaS provider disconnected from this Channel.
      * 2. The Channel activation token has expired but the SaaS provider
@@ -325,8 +326,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the channel. Must be unique within the location
-   * on the project and must be in
+   * Required. The resource name of the channel. Must be unique within the
+   * location on the project and must be in
    * `projects/{project}/locations/{location}/channels/{channel_id}` format.
    * </pre>
    *
@@ -350,8 +351,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the channel. Must be unique within the location
-   * on the project and must be in
+   * Required. The resource name of the channel. Must be unique within the
+   * location on the project and must be in
    * `projects/{project}/locations/{location}/channels/{channel_id}` format.
    * </pre>
    *
@@ -378,8 +379,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the channel. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the channel. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -402,8 +404,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Server assigned unique identifier for the channel. The value is a UUID4
-   * string and guaranteed to remain unchanged until the resource is deleted.
+   * Output only. Server assigned unique identifier for the channel. The value
+   * is a UUID4 string and guaranteed to remain unchanged until the resource is
+   * deleted.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -527,13 +530,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the event provider (e.g. Eventarc SaaS partner) associated
+   * The name of the event provider (e.g. Eventarc SaaS partner) associated
    * with the channel. This provider will be granted permissions to publish
    * events to the channel. Format:
    * `projects/{project}/locations/{location}/providers/{provider_id}`.
    * </pre>
    *
-   * <code>string provider = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string provider = 7;</code>
    *
    * @return The provider.
    */
@@ -553,13 +556,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the event provider (e.g. Eventarc SaaS partner) associated
+   * The name of the event provider (e.g. Eventarc SaaS partner) associated
    * with the channel. This provider will be granted permissions to publish
    * events to the channel. Format:
    * `projects/{project}/locations/{location}/providers/{provider_id}`.
    * </pre>
    *
-   * <code>string provider = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string provider = 7;</code>
    *
    * @return The bytes for provider.
    */
@@ -581,8 +584,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-   * a transport for the event delivery. Format:
+   * Output only. The name of the Pub/Sub topic created and managed by
+   * Eventarc system as a transport for the event delivery. Format:
    * `projects/{project}/topics/{topic_id}`.
    * </pre>
    *
@@ -597,8 +600,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-   * a transport for the event delivery. Format:
+   * Output only. The name of the Pub/Sub topic created and managed by
+   * Eventarc system as a transport for the event delivery. Format:
    * `projects/{project}/topics/{topic_id}`.
    * </pre>
    *
@@ -626,8 +629,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-   * a transport for the event delivery. Format:
+   * Output only. The name of the Pub/Sub topic created and managed by
+   * Eventarc system as a transport for the event delivery. Format:
    * `projects/{project}/topics/{topic_id}`.
    * </pre>
    *
@@ -698,8 +701,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The activation token for the channel. The token must be used by the
-   * provider to register the channel for publishing.
+   * Output only. The activation token for the channel. The token must be used
+   * by the provider to register the channel for publishing.
    * </pre>
    *
    * <code>string activation_token = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -722,8 +725,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The activation token for the channel. The token must be used by the
-   * provider to register the channel for publishing.
+   * Output only. The activation token for the channel. The token must be used
+   * by the provider to register the channel for publishing.
    * </pre>
    *
    * <code>string activation_token = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -737,6 +740,65 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       activationToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CRYPTO_KEY_NAME_FIELD_NUMBER = 11;
+  private volatile java.lang.Object cryptoKeyName_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt their event data.
+   * It must match the pattern
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cryptoKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getCryptoKeyName() {
+    java.lang.Object ref = cryptoKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cryptoKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt their event data.
+   * It must match the pattern
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cryptoKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCryptoKeyNameBytes() {
+    java.lang.Object ref = cryptoKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cryptoKeyName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -781,6 +843,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activationToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, activationToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, cryptoKeyName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -814,6 +879,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activationToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, activationToken_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cryptoKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, cryptoKeyName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -842,6 +910,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (!getProvider().equals(other.getProvider())) return false;
     if (state_ != other.state_) return false;
     if (!getActivationToken().equals(other.getActivationToken())) return false;
+    if (!getCryptoKeyName().equals(other.getCryptoKeyName())) return false;
     if (!getTransportCase().equals(other.getTransportCase())) return false;
     switch (transportCase_) {
       case 8:
@@ -879,6 +948,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + ACTIVATION_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getActivationToken().hashCode();
+    hash = (37 * hash) + CRYPTO_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCryptoKeyName().hashCode();
     switch (transportCase_) {
       case 8:
         hash = (37 * hash) + PUBSUB_TOPIC_FIELD_NUMBER;
@@ -1049,6 +1120,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
       activationToken_ = "";
 
+      cryptoKeyName_ = "";
+
       transportCase_ = 0;
       transport_ = null;
       return this;
@@ -1095,6 +1168,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       result.state_ = state_;
       result.activationToken_ = activationToken_;
+      result.cryptoKeyName_ = cryptoKeyName_;
       result.transportCase_ = transportCase_;
       onBuilt();
       return result;
@@ -1168,6 +1242,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getActivationToken().isEmpty()) {
         activationToken_ = other.activationToken_;
+        onChanged();
+      }
+      if (!other.getCryptoKeyName().isEmpty()) {
+        cryptoKeyName_ = other.cryptoKeyName_;
         onChanged();
       }
       switch (other.getTransportCase()) {
@@ -1258,6 +1336,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 82
+            case 90:
+              {
+                cryptoKeyName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1294,8 +1378,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the channel. Must be unique within the location
-     * on the project and must be in
+     * Required. The resource name of the channel. Must be unique within the
+     * location on the project and must be in
      * `projects/{project}/locations/{location}/channels/{channel_id}` format.
      * </pre>
      *
@@ -1318,8 +1402,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the channel. Must be unique within the location
-     * on the project and must be in
+     * Required. The resource name of the channel. Must be unique within the
+     * location on the project and must be in
      * `projects/{project}/locations/{location}/channels/{channel_id}` format.
      * </pre>
      *
@@ -1342,8 +1426,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the channel. Must be unique within the location
-     * on the project and must be in
+     * Required. The resource name of the channel. Must be unique within the
+     * location on the project and must be in
      * `projects/{project}/locations/{location}/channels/{channel_id}` format.
      * </pre>
      *
@@ -1365,8 +1449,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the channel. Must be unique within the location
-     * on the project and must be in
+     * Required. The resource name of the channel. Must be unique within the
+     * location on the project and must be in
      * `projects/{project}/locations/{location}/channels/{channel_id}` format.
      * </pre>
      *
@@ -1384,8 +1468,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the channel. Must be unique within the location
-     * on the project and must be in
+     * Required. The resource name of the channel. Must be unique within the
+     * location on the project and must be in
      * `projects/{project}/locations/{location}/channels/{channel_id}` format.
      * </pre>
      *
@@ -1410,8 +1494,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the channel. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the channel. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1433,8 +1518,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the channel. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the channel. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1456,8 +1542,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the channel. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the channel. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1478,8 +1565,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the channel. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the channel. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1496,8 +1584,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Server assigned unique identifier for the channel. The value is a UUID4
-     * string and guaranteed to remain unchanged until the resource is deleted.
+     * Output only. Server assigned unique identifier for the channel. The value
+     * is a UUID4 string and guaranteed to remain unchanged until the resource is
+     * deleted.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1923,13 +2012,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the event provider (e.g. Eventarc SaaS partner) associated
+     * The name of the event provider (e.g. Eventarc SaaS partner) associated
      * with the channel. This provider will be granted permissions to publish
      * events to the channel. Format:
      * `projects/{project}/locations/{location}/providers/{provider_id}`.
      * </pre>
      *
-     * <code>string provider = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string provider = 7;</code>
      *
      * @return The provider.
      */
@@ -1948,13 +2037,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the event provider (e.g. Eventarc SaaS partner) associated
+     * The name of the event provider (e.g. Eventarc SaaS partner) associated
      * with the channel. This provider will be granted permissions to publish
      * events to the channel. Format:
      * `projects/{project}/locations/{location}/providers/{provider_id}`.
      * </pre>
      *
-     * <code>string provider = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string provider = 7;</code>
      *
      * @return The bytes for provider.
      */
@@ -1973,13 +2062,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the event provider (e.g. Eventarc SaaS partner) associated
+     * The name of the event provider (e.g. Eventarc SaaS partner) associated
      * with the channel. This provider will be granted permissions to publish
      * events to the channel. Format:
      * `projects/{project}/locations/{location}/providers/{provider_id}`.
      * </pre>
      *
-     * <code>string provider = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string provider = 7;</code>
      *
      * @param value The provider to set.
      * @return This builder for chaining.
@@ -1997,13 +2086,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the event provider (e.g. Eventarc SaaS partner) associated
+     * The name of the event provider (e.g. Eventarc SaaS partner) associated
      * with the channel. This provider will be granted permissions to publish
      * events to the channel. Format:
      * `projects/{project}/locations/{location}/providers/{provider_id}`.
      * </pre>
      *
-     * <code>string provider = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string provider = 7;</code>
      *
      * @return This builder for chaining.
      */
@@ -2017,13 +2106,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the event provider (e.g. Eventarc SaaS partner) associated
+     * The name of the event provider (e.g. Eventarc SaaS partner) associated
      * with the channel. This provider will be granted permissions to publish
      * events to the channel. Format:
      * `projects/{project}/locations/{location}/providers/{provider_id}`.
      * </pre>
      *
-     * <code>string provider = 7 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string provider = 7;</code>
      *
      * @param value The bytes for provider to set.
      * @return This builder for chaining.
@@ -2043,8 +2132,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-     * a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub topic created and managed by
+     * Eventarc system as a transport for the event delivery. Format:
      * `projects/{project}/topics/{topic_id}`.
      * </pre>
      *
@@ -2060,8 +2149,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-     * a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub topic created and managed by
+     * Eventarc system as a transport for the event delivery. Format:
      * `projects/{project}/topics/{topic_id}`.
      * </pre>
      *
@@ -2090,8 +2179,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-     * a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub topic created and managed by
+     * Eventarc system as a transport for the event delivery. Format:
      * `projects/{project}/topics/{topic_id}`.
      * </pre>
      *
@@ -2120,8 +2209,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-     * a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub topic created and managed by
+     * Eventarc system as a transport for the event delivery. Format:
      * `projects/{project}/topics/{topic_id}`.
      * </pre>
      *
@@ -2143,8 +2232,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-     * a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub topic created and managed by
+     * Eventarc system as a transport for the event delivery. Format:
      * `projects/{project}/topics/{topic_id}`.
      * </pre>
      *
@@ -2164,8 +2253,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Pub/Sub topic created and managed by Eventarc system as
-     * a transport for the event delivery. Format:
+     * Output only. The name of the Pub/Sub topic created and managed by
+     * Eventarc system as a transport for the event delivery. Format:
      * `projects/{project}/topics/{topic_id}`.
      * </pre>
      *
@@ -2291,8 +2380,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The activation token for the channel. The token must be used by the
-     * provider to register the channel for publishing.
+     * Output only. The activation token for the channel. The token must be used
+     * by the provider to register the channel for publishing.
      * </pre>
      *
      * <code>string activation_token = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2314,8 +2403,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The activation token for the channel. The token must be used by the
-     * provider to register the channel for publishing.
+     * Output only. The activation token for the channel. The token must be used
+     * by the provider to register the channel for publishing.
      * </pre>
      *
      * <code>string activation_token = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2337,8 +2426,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The activation token for the channel. The token must be used by the
-     * provider to register the channel for publishing.
+     * Output only. The activation token for the channel. The token must be used
+     * by the provider to register the channel for publishing.
      * </pre>
      *
      * <code>string activation_token = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2359,8 +2448,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The activation token for the channel. The token must be used by the
-     * provider to register the channel for publishing.
+     * Output only. The activation token for the channel. The token must be used
+     * by the provider to register the channel for publishing.
      * </pre>
      *
      * <code>string activation_token = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2377,8 +2466,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The activation token for the channel. The token must be used by the
-     * provider to register the channel for publishing.
+     * Output only. The activation token for the channel. The token must be used
+     * by the provider to register the channel for publishing.
      * </pre>
      *
      * <code>string activation_token = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2393,6 +2482,137 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       activationToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cryptoKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt their event data.
+     * It must match the pattern
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The cryptoKeyName.
+     */
+    public java.lang.String getCryptoKeyName() {
+      java.lang.Object ref = cryptoKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cryptoKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt their event data.
+     * It must match the pattern
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for cryptoKeyName.
+     */
+    public com.google.protobuf.ByteString getCryptoKeyNameBytes() {
+      java.lang.Object ref = cryptoKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cryptoKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt their event data.
+     * It must match the pattern
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The cryptoKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cryptoKeyName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt their event data.
+     * It must match the pattern
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCryptoKeyName() {
+
+      cryptoKeyName_ = getDefaultInstance().getCryptoKeyName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt their event data.
+     * It must match the pattern
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for cryptoKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCryptoKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cryptoKeyName_ = value;
       onChanged();
       return this;
     }

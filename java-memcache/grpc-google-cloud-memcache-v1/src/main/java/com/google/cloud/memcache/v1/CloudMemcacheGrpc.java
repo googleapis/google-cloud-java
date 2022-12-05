@@ -349,6 +349,55 @@ public final class CloudMemcacheGrpc {
     return getApplyParametersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memcache.v1.RescheduleMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RescheduleMaintenance",
+      requestType = com.google.cloud.memcache.v1.RescheduleMaintenanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memcache.v1.RescheduleMaintenanceRequest,
+          com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memcache.v1.RescheduleMaintenanceRequest,
+            com.google.longrunning.Operation>
+        getRescheduleMaintenanceMethod;
+    if ((getRescheduleMaintenanceMethod = CloudMemcacheGrpc.getRescheduleMaintenanceMethod)
+        == null) {
+      synchronized (CloudMemcacheGrpc.class) {
+        if ((getRescheduleMaintenanceMethod = CloudMemcacheGrpc.getRescheduleMaintenanceMethod)
+            == null) {
+          CloudMemcacheGrpc.getRescheduleMaintenanceMethod =
+              getRescheduleMaintenanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memcache.v1.RescheduleMaintenanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RescheduleMaintenance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memcache.v1.RescheduleMaintenanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudMemcacheMethodDescriptorSupplier("RescheduleMaintenance"))
+                      .build();
+        }
+      }
+    }
+    return getRescheduleMaintenanceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudMemcacheStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheStub> factory =
@@ -471,9 +520,10 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public void updateParameters(
@@ -501,7 +551,7 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * ApplyParameters will restart the set of specified nodes in order to update
+     * `ApplyParameters` restarts the set of specified nodes in order to update
      * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
@@ -510,6 +560,20 @@ public final class CloudMemcacheGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getApplyParametersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.memcache.v1.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRescheduleMaintenanceMethod(), responseObserver);
     }
 
     @java.lang.Override
@@ -558,6 +622,12 @@ public final class CloudMemcacheGrpc {
                   new MethodHandlers<
                       com.google.cloud.memcache.v1.ApplyParametersRequest,
                       com.google.longrunning.Operation>(this, METHODID_APPLY_PARAMETERS)))
+          .addMethod(
+              getRescheduleMaintenanceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.memcache.v1.RescheduleMaintenanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RESCHEDULE_MAINTENANCE)))
           .build();
     }
   }
@@ -660,9 +730,10 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public void updateParameters(
@@ -694,7 +765,7 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * ApplyParameters will restart the set of specified nodes in order to update
+     * `ApplyParameters` restarts the set of specified nodes in order to update
      * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
@@ -703,6 +774,22 @@ public final class CloudMemcacheGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getApplyParametersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.memcache.v1.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -794,9 +881,10 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public com.google.longrunning.Operation updateParameters(
@@ -822,7 +910,7 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * ApplyParameters will restart the set of specified nodes in order to update
+     * `ApplyParameters` restarts the set of specified nodes in order to update
      * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
@@ -830,6 +918,19 @@ public final class CloudMemcacheGrpc {
         com.google.cloud.memcache.v1.ApplyParametersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getApplyParametersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.memcache.v1.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
     }
   }
 
@@ -920,9 +1021,10 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * Updates the defined Memcached Parameters for an existing Instance.
+     * Updates the defined Memcached parameters for an existing instance.
      * This method only stages the parameters, it must be followed by
-     * ApplyParameters to apply the parameters to nodes of the Memcached Instance.
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -948,7 +1050,7 @@ public final class CloudMemcacheGrpc {
      *
      *
      * <pre>
-     * ApplyParameters will restart the set of specified nodes in order to update
+     * `ApplyParameters` restarts the set of specified nodes in order to update
      * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
@@ -956,6 +1058,19 @@ public final class CloudMemcacheGrpc {
         applyParameters(com.google.cloud.memcache.v1.ApplyParametersRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getApplyParametersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rescheduleMaintenance(com.google.cloud.memcache.v1.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()), request);
     }
   }
 
@@ -966,6 +1081,7 @@ public final class CloudMemcacheGrpc {
   private static final int METHODID_UPDATE_PARAMETERS = 4;
   private static final int METHODID_DELETE_INSTANCE = 5;
   private static final int METHODID_APPLY_PARAMETERS = 6;
+  private static final int METHODID_RESCHEDULE_MAINTENANCE = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1019,6 +1135,11 @@ public final class CloudMemcacheGrpc {
         case METHODID_APPLY_PARAMETERS:
           serviceImpl.applyParameters(
               (com.google.cloud.memcache.v1.ApplyParametersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESCHEDULE_MAINTENANCE:
+          serviceImpl.rescheduleMaintenance(
+              (com.google.cloud.memcache.v1.RescheduleMaintenanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1092,6 +1213,7 @@ public final class CloudMemcacheGrpc {
                       .addMethod(getUpdateParametersMethod())
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getApplyParametersMethod())
+                      .addMethod(getRescheduleMaintenanceMethod())
                       .build();
         }
       }

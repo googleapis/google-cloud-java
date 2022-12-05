@@ -89,6 +89,10 @@ public interface SpriteSheetOrBuilder
    * source aspect ratio, set the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_width_pixels] field or
    * the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_height_pixels] field, but not both (the API will
    * automatically calculate the missing field).
+   * For portrait videos that contain horizontal ASR and rotation metadata,
+   * provide the width, in pixels, per the horizontal ASR. The API calculates
+   * the height per the horizontal ASR. The API detects any rotation metadata
+   * and swaps the requested height and width for the output.
    * </pre>
    *
    * <code>int32 sprite_width_pixels = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -105,6 +109,10 @@ public interface SpriteSheetOrBuilder
    * source aspect ratio, set the [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_height_pixels] field or
    * the [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_width_pixels] field, but not both (the API will
    * automatically calculate the missing field).
+   * For portrait videos that contain horizontal ASR and rotation metadata,
+   * provide the height, in pixels, per the horizontal ASR. The API calculates
+   * the width per the horizontal ASR. The API detects any rotation metadata
+   * and swaps the requested height and width for the output.
    * </pre>
    *
    * <code>int32 sprite_height_pixels = 4 [(.google.api.field_behavior) = REQUIRED];</code>

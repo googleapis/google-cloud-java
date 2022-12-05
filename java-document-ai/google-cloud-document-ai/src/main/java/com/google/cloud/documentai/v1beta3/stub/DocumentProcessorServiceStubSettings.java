@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListEvaluationsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorTypesPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
@@ -67,10 +68,17 @@ import com.google.cloud.documentai.v1beta3.DisableProcessorResponse;
 import com.google.cloud.documentai.v1beta3.EnableProcessorMetadata;
 import com.google.cloud.documentai.v1beta3.EnableProcessorRequest;
 import com.google.cloud.documentai.v1beta3.EnableProcessorResponse;
+import com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionResponse;
+import com.google.cloud.documentai.v1beta3.Evaluation;
 import com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse;
+import com.google.cloud.documentai.v1beta3.GetEvaluationRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ListEvaluationsRequest;
+import com.google.cloud.documentai.v1beta3.ListEvaluationsResponse;
 import com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest;
 import com.google.cloud.documentai.v1beta3.ListProcessorTypesResponse;
 import com.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest;
@@ -88,6 +96,9 @@ import com.google.cloud.documentai.v1beta3.ReviewDocumentResponse;
 import com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionMetadata;
 import com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest;
 import com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionResponse;
+import com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.TrainProcessorVersionResponse;
 import com.google.cloud.documentai.v1beta3.UndeployProcessorVersionMetadata;
 import com.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest;
 import com.google.cloud.documentai.v1beta3.UndeployProcessorVersionResponse;
@@ -166,6 +177,13 @@ public class DocumentProcessorServiceStubSettings
           ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
       listProcessorsSettings;
   private final UnaryCallSettings<GetProcessorRequest, Processor> getProcessorSettings;
+  private final UnaryCallSettings<TrainProcessorVersionRequest, Operation>
+      trainProcessorVersionSettings;
+  private final OperationCallSettings<
+          TrainProcessorVersionRequest,
+          TrainProcessorVersionResponse,
+          TrainProcessorVersionMetadata>
+      trainProcessorVersionOperationSettings;
   private final UnaryCallSettings<GetProcessorVersionRequest, ProcessorVersion>
       getProcessorVersionSettings;
   private final PagedCallSettings<
@@ -215,6 +233,17 @@ public class DocumentProcessorServiceStubSettings
   private final OperationCallSettings<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationSettings;
+  private final UnaryCallSettings<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionSettings;
+  private final OperationCallSettings<
+          EvaluateProcessorVersionRequest,
+          EvaluateProcessorVersionResponse,
+          EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionOperationSettings;
+  private final UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings;
+  private final PagedCallSettings<
+          ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
+      listEvaluationsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -338,6 +367,45 @@ public class DocumentProcessorServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListEvaluationsRequest, ListEvaluationsResponse, Evaluation>
+      LIST_EVALUATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEvaluationsRequest injectToken(
+                ListEvaluationsRequest payload, String token) {
+              return ListEvaluationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEvaluationsRequest injectPageSize(
+                ListEvaluationsRequest payload, int pageSize) {
+              return ListEvaluationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEvaluationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEvaluationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Evaluation> extractResources(ListEvaluationsResponse payload) {
+              return payload.getEvaluationsList() == null
+                  ? ImmutableList.<Evaluation>of()
+                  : payload.getEvaluationsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -437,6 +505,23 @@ public class DocumentProcessorServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
+      LIST_EVALUATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEvaluationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEvaluationsRequest, ListEvaluationsResponse> callable,
+                ListEvaluationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEvaluationsResponse> futureResponse) {
+              PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> pageContext =
+                  PageContext.create(callable, LIST_EVALUATIONS_PAGE_STR_DESC, request, context);
+              return ListEvaluationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -492,6 +577,21 @@ public class DocumentProcessorServiceStubSettings
   /** Returns the object with the settings used for calls to getProcessor. */
   public UnaryCallSettings<GetProcessorRequest, Processor> getProcessorSettings() {
     return getProcessorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to trainProcessorVersion. */
+  public UnaryCallSettings<TrainProcessorVersionRequest, Operation>
+      trainProcessorVersionSettings() {
+    return trainProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to trainProcessorVersion. */
+  public OperationCallSettings<
+          TrainProcessorVersionRequest,
+          TrainProcessorVersionResponse,
+          TrainProcessorVersionMetadata>
+      trainProcessorVersionOperationSettings() {
+    return trainProcessorVersionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getProcessorVersion. */
@@ -616,6 +716,33 @@ public class DocumentProcessorServiceStubSettings
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationSettings() {
     return reviewDocumentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to evaluateProcessorVersion. */
+  public UnaryCallSettings<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionSettings() {
+    return evaluateProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to evaluateProcessorVersion. */
+  public OperationCallSettings<
+          EvaluateProcessorVersionRequest,
+          EvaluateProcessorVersionResponse,
+          EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionOperationSettings() {
+    return evaluateProcessorVersionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEvaluation. */
+  public UnaryCallSettings<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+    return getEvaluationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEvaluations. */
+  public PagedCallSettings<
+          ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
+      listEvaluationsSettings() {
+    return listEvaluationsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -743,6 +870,9 @@ public class DocumentProcessorServiceStubSettings
     listProcessorTypesSettings = settingsBuilder.listProcessorTypesSettings().build();
     listProcessorsSettings = settingsBuilder.listProcessorsSettings().build();
     getProcessorSettings = settingsBuilder.getProcessorSettings().build();
+    trainProcessorVersionSettings = settingsBuilder.trainProcessorVersionSettings().build();
+    trainProcessorVersionOperationSettings =
+        settingsBuilder.trainProcessorVersionOperationSettings().build();
     getProcessorVersionSettings = settingsBuilder.getProcessorVersionSettings().build();
     listProcessorVersionsSettings = settingsBuilder.listProcessorVersionsSettings().build();
     deleteProcessorVersionSettings = settingsBuilder.deleteProcessorVersionSettings().build();
@@ -767,6 +897,11 @@ public class DocumentProcessorServiceStubSettings
         settingsBuilder.setDefaultProcessorVersionOperationSettings().build();
     reviewDocumentSettings = settingsBuilder.reviewDocumentSettings().build();
     reviewDocumentOperationSettings = settingsBuilder.reviewDocumentOperationSettings().build();
+    evaluateProcessorVersionSettings = settingsBuilder.evaluateProcessorVersionSettings().build();
+    evaluateProcessorVersionOperationSettings =
+        settingsBuilder.evaluateProcessorVersionOperationSettings().build();
+    getEvaluationSettings = settingsBuilder.getEvaluationSettings().build();
+    listEvaluationsSettings = settingsBuilder.listEvaluationsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -791,6 +926,13 @@ public class DocumentProcessorServiceStubSettings
             ListProcessorsRequest, ListProcessorsResponse, ListProcessorsPagedResponse>
         listProcessorsSettings;
     private final UnaryCallSettings.Builder<GetProcessorRequest, Processor> getProcessorSettings;
+    private final UnaryCallSettings.Builder<TrainProcessorVersionRequest, Operation>
+        trainProcessorVersionSettings;
+    private final OperationCallSettings.Builder<
+            TrainProcessorVersionRequest,
+            TrainProcessorVersionResponse,
+            TrainProcessorVersionMetadata>
+        trainProcessorVersionOperationSettings;
     private final UnaryCallSettings.Builder<GetProcessorVersionRequest, ProcessorVersion>
         getProcessorVersionSettings;
     private final PagedCallSettings.Builder<
@@ -846,6 +988,17 @@ public class DocumentProcessorServiceStubSettings
     private final OperationCallSettings.Builder<
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings;
+    private final UnaryCallSettings.Builder<EvaluateProcessorVersionRequest, Operation>
+        evaluateProcessorVersionSettings;
+    private final OperationCallSettings.Builder<
+            EvaluateProcessorVersionRequest,
+            EvaluateProcessorVersionResponse,
+            EvaluateProcessorVersionMetadata>
+        evaluateProcessorVersionOperationSettings;
+    private final UnaryCallSettings.Builder<GetEvaluationRequest, Evaluation> getEvaluationSettings;
+    private final PagedCallSettings.Builder<
+            ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
+        listEvaluationsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -900,6 +1053,8 @@ public class DocumentProcessorServiceStubSettings
       listProcessorTypesSettings = PagedCallSettings.newBuilder(LIST_PROCESSOR_TYPES_PAGE_STR_FACT);
       listProcessorsSettings = PagedCallSettings.newBuilder(LIST_PROCESSORS_PAGE_STR_FACT);
       getProcessorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      trainProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      trainProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
       getProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listProcessorVersionsSettings =
           PagedCallSettings.newBuilder(LIST_PROCESSOR_VERSIONS_PAGE_STR_FACT);
@@ -920,6 +1075,10 @@ public class DocumentProcessorServiceStubSettings
       setDefaultProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
       reviewDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reviewDocumentOperationSettings = OperationCallSettings.newBuilder();
+      evaluateProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      evaluateProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
+      getEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEvaluationsSettings = PagedCallSettings.newBuilder(LIST_EVALUATIONS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -931,6 +1090,7 @@ public class DocumentProcessorServiceStubSettings
               listProcessorTypesSettings,
               listProcessorsSettings,
               getProcessorSettings,
+              trainProcessorVersionSettings,
               getProcessorVersionSettings,
               listProcessorVersionsSettings,
               deleteProcessorVersionSettings,
@@ -942,6 +1102,9 @@ public class DocumentProcessorServiceStubSettings
               disableProcessorSettings,
               setDefaultProcessorVersionSettings,
               reviewDocumentSettings,
+              evaluateProcessorVersionSettings,
+              getEvaluationSettings,
+              listEvaluationsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -958,6 +1121,9 @@ public class DocumentProcessorServiceStubSettings
       listProcessorTypesSettings = settings.listProcessorTypesSettings.toBuilder();
       listProcessorsSettings = settings.listProcessorsSettings.toBuilder();
       getProcessorSettings = settings.getProcessorSettings.toBuilder();
+      trainProcessorVersionSettings = settings.trainProcessorVersionSettings.toBuilder();
+      trainProcessorVersionOperationSettings =
+          settings.trainProcessorVersionOperationSettings.toBuilder();
       getProcessorVersionSettings = settings.getProcessorVersionSettings.toBuilder();
       listProcessorVersionsSettings = settings.listProcessorVersionsSettings.toBuilder();
       deleteProcessorVersionSettings = settings.deleteProcessorVersionSettings.toBuilder();
@@ -981,6 +1147,11 @@ public class DocumentProcessorServiceStubSettings
           settings.setDefaultProcessorVersionOperationSettings.toBuilder();
       reviewDocumentSettings = settings.reviewDocumentSettings.toBuilder();
       reviewDocumentOperationSettings = settings.reviewDocumentOperationSettings.toBuilder();
+      evaluateProcessorVersionSettings = settings.evaluateProcessorVersionSettings.toBuilder();
+      evaluateProcessorVersionOperationSettings =
+          settings.evaluateProcessorVersionOperationSettings.toBuilder();
+      getEvaluationSettings = settings.getEvaluationSettings.toBuilder();
+      listEvaluationsSettings = settings.listEvaluationsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -992,6 +1163,7 @@ public class DocumentProcessorServiceStubSettings
               listProcessorTypesSettings,
               listProcessorsSettings,
               getProcessorSettings,
+              trainProcessorVersionSettings,
               getProcessorVersionSettings,
               listProcessorVersionsSettings,
               deleteProcessorVersionSettings,
@@ -1003,6 +1175,9 @@ public class DocumentProcessorServiceStubSettings
               disableProcessorSettings,
               setDefaultProcessorVersionSettings,
               reviewDocumentSettings,
+              evaluateProcessorVersionSettings,
+              getEvaluationSettings,
+              listEvaluationsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1065,6 +1240,11 @@ public class DocumentProcessorServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .trainProcessorVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .getProcessorVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1120,6 +1300,21 @@ public class DocumentProcessorServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .evaluateProcessorVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getEvaluationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1141,6 +1336,32 @@ public class DocumentProcessorServiceStubSettings
               ProtoOperationTransformers.ResponseTransformer.create(BatchProcessResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(BatchProcessMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .trainProcessorVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<TrainProcessorVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  TrainProcessorVersionResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  TrainProcessorVersionMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1354,6 +1575,32 @@ public class DocumentProcessorServiceStubSettings
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .evaluateProcessorVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<EvaluateProcessorVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  EvaluateProcessorVersionResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  EvaluateProcessorVersionMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1415,6 +1662,23 @@ public class DocumentProcessorServiceStubSettings
     /** Returns the builder for the settings used for calls to getProcessor. */
     public UnaryCallSettings.Builder<GetProcessorRequest, Processor> getProcessorSettings() {
       return getProcessorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to trainProcessorVersion. */
+    public UnaryCallSettings.Builder<TrainProcessorVersionRequest, Operation>
+        trainProcessorVersionSettings() {
+      return trainProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to trainProcessorVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            TrainProcessorVersionRequest,
+            TrainProcessorVersionResponse,
+            TrainProcessorVersionMetadata>
+        trainProcessorVersionOperationSettings() {
+      return trainProcessorVersionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getProcessorVersion. */
@@ -1557,6 +1821,35 @@ public class DocumentProcessorServiceStubSettings
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings() {
       return reviewDocumentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateProcessorVersion. */
+    public UnaryCallSettings.Builder<EvaluateProcessorVersionRequest, Operation>
+        evaluateProcessorVersionSettings() {
+      return evaluateProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to evaluateProcessorVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            EvaluateProcessorVersionRequest,
+            EvaluateProcessorVersionResponse,
+            EvaluateProcessorVersionMetadata>
+        evaluateProcessorVersionOperationSettings() {
+      return evaluateProcessorVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEvaluation. */
+    public UnaryCallSettings.Builder<GetEvaluationRequest, Evaluation> getEvaluationSettings() {
+      return getEvaluationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEvaluations. */
+    public PagedCallSettings.Builder<
+            ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
+        listEvaluationsSettings() {
+      return listEvaluationsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

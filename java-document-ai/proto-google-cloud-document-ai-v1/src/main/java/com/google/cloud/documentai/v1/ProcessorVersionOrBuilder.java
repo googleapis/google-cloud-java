@@ -81,6 +81,41 @@ public interface ProcessorVersionOrBuilder
    *
    *
    * <pre>
+   * The schema of the processor version. Describes the output.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
+   *
+   * @return Whether the documentSchema field is set.
+   */
+  boolean hasDocumentSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The schema of the processor version. Describes the output.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
+   *
+   * @return The documentSchema.
+   */
+  com.google.cloud.documentai.v1.DocumentSchema getDocumentSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The schema of the processor version. Describes the output.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
+   */
+  com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The state of the processor version.
    * </pre>
    *

@@ -1,6 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-contentwarehouse:0.1.0:0.1.1-SNAPSHOT
-proto-google-cloud-contentwarehouse-v1:0.1.0:0.1.1-SNAPSHOT
-grpc-google-cloud-contentwarehouse-v1:0.1.0:0.1.1-SNAPSHOT

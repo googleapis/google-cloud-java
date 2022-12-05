@@ -216,7 +216,7 @@ In cases where the library may expect a project ID explicitly, we provide a help
 [https://github.com/googleapis/google-auth-library-java](https://github.com/googleapis/google-auth-library-java)
 to authenticate requests. `google-auth-library-java` supports a wide range of authentication types;
 see the project's [README](https://github.com/google/google-auth-library-java/blob/main/README.md)
-and [javadoc](http://googleapis.dev/java/google-auth-library/latest/) for more
+and [javadoc](https://cloud.google.com/java/docs/reference/google-auth-library/latest/overview) for more
 details.
 
 ### Google Cloud Platform environment
@@ -371,7 +371,7 @@ to track its progress.
 
 Our generated gRPC clients provide a nice interface for starting the operation and
 then waiting for the operation to complete. This is accomplished by returning an
-[`OperationFuture`](https://googleapis.dev/java/gax/latest/index.html?com/google/api/gax/longrunning/OperationFuture.html).
+[`OperationFuture`](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.longrunning.OperationFuture).
 When you call `get()` on the `OperationFuture` we poll the operation endpoint to
 check on the operation. These polling operations have a default timeout that
 varies from service to service and will throw a `java.util.concurrent.CancellationException`
@@ -404,7 +404,7 @@ see https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google
 
 ## Java Versions
 
-Java 7 or above is required for using the clients in this repository.
+Java 8 or above is required for using the clients in this repository.
 
 ## Supported Platforms
 
@@ -523,4 +523,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/googleapis/google-cloud-java/blob/main/TESTING.md
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
-[client-lib-docs]: https://googleapis.dev/java/google-cloud-clients/latest/index.html
+[client-lib-docs]: https://cloud.google.com/java/docs/reference

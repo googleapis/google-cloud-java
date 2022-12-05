@@ -451,7 +451,7 @@ public interface VirtualMachineOrBuilder
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
    * @return The nvidiaDriverVersion.
    */
   @java.lang.Deprecated
@@ -469,7 +469,7 @@ public interface VirtualMachineOrBuilder
    * <code>string nvidia_driver_version = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.lifesciences.v2beta.VirtualMachine.nvidia_driver_version is
-   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=390
+   *     deprecated. See google/cloud/lifesciences/v2beta/workflows.proto;l=410
    * @return The bytes for nvidiaDriverVersion.
    */
   @java.lang.Deprecated
@@ -627,4 +627,31 @@ public interface VirtualMachineOrBuilder
    * <code>repeated .google.cloud.lifesciences.v2beta.Volume volumes = 14;</code>
    */
   com.google.cloud.lifesciences.v2beta.VolumeOrBuilder getVolumesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the VM will only be allocated inside the matching
+   * reservation. It will fail if the VM parameters don't match the reservation.
+   * </pre>
+   *
+   * <code>string reservation = 15;</code>
+   *
+   * @return The reservation.
+   */
+  java.lang.String getReservation();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the VM will only be allocated inside the matching
+   * reservation. It will fail if the VM parameters don't match the reservation.
+   * </pre>
+   *
+   * <code>string reservation = 15;</code>
+   *
+   * @return The bytes for reservation.
+   */
+  com.google.protobuf.ByteString getReservationBytes();
 }

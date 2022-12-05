@@ -344,6 +344,35 @@ public interface AutomatedAgentReplyOrBuilder
    */
   boolean getAllowCancellation();
 
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the current Dialogflow CX conversation page.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * </pre>
+   *
+   * <code>string cx_current_page = 11;</code>
+   *
+   * @return The cxCurrentPage.
+   */
+  java.lang.String getCxCurrentPage();
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the current Dialogflow CX conversation page.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * </pre>
+   *
+   * <code>string cx_current_page = 11;</code>
+   *
+   * @return The bytes for cxCurrentPage.
+   */
+  com.google.protobuf.ByteString getCxCurrentPageBytes();
+
   public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.ResponseCase getResponseCase();
 
   public com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply.MatchCase getMatchCase();

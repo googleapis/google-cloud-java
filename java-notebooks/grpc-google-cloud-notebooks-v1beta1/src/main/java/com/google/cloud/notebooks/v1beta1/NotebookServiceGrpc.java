@@ -1150,8 +1150,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Check if a notebook instance is upgradable.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public void isInstanceUpgradeable(
         com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableRequest request,
         io.grpc.stub.StreamObserver<
@@ -1166,8 +1168,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Upgrades a notebook instance to the latest version.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public void upgradeInstance(
         com.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1181,8 +1185,10 @@ public final class NotebookServiceGrpc {
      * <pre>
      * Allows notebook instances to
      * call this endpoint to upgrade themselves. Do not use this method directly.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public void upgradeInstanceInternal(
         com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1595,8 +1601,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Check if a notebook instance is upgradable.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public void isInstanceUpgradeable(
         com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableRequest request,
         io.grpc.stub.StreamObserver<
@@ -1613,8 +1621,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Upgrades a notebook instance to the latest version.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public void upgradeInstance(
         com.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1630,8 +1640,10 @@ public final class NotebookServiceGrpc {
      * <pre>
      * Allows notebook instances to
      * call this endpoint to upgrade themselves. Do not use this method directly.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public void upgradeInstanceInternal(
         com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1894,8 +1906,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Check if a notebook instance is upgradable.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableResponse isInstanceUpgradeable(
         com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1907,8 +1921,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Upgrades a notebook instance to the latest version.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation upgradeInstance(
         com.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1921,8 +1937,10 @@ public final class NotebookServiceGrpc {
      * <pre>
      * Allows notebook instances to
      * call this endpoint to upgrade themselves. Do not use this method directly.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation upgradeInstanceInternal(
         com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2172,8 +2190,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Check if a notebook instance is upgradable.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableResponse>
         isInstanceUpgradeable(
@@ -2187,8 +2207,10 @@ public final class NotebookServiceGrpc {
      *
      * <pre>
      * Upgrades a notebook instance to the latest version.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         upgradeInstance(com.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2201,8 +2223,10 @@ public final class NotebookServiceGrpc {
      * <pre>
      * Allows notebook instances to
      * call this endpoint to upgrade themselves. Do not use this method directly.
+     * Deprecated. Please consider using v1.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         upgradeInstanceInternal(
             com.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest request) {

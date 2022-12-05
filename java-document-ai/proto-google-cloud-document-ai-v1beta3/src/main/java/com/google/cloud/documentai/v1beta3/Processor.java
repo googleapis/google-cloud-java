@@ -120,7 +120,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being enabled, will become ENABLED if successful.
+     * The processor is being enabled, will become `ENABLED` if successful.
      * </pre>
      *
      * <code>ENABLING = 3;</code>
@@ -130,7 +130,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being disabled, will become DISABLED if successful.
+     * The processor is being disabled, will become `DISABLED` if successful.
      * </pre>
      *
      * <code>DISABLING = 4;</code>
@@ -140,8 +140,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being created, will become either ENABLED (for
-     * successful creation) or FAILED (for failed ones).
+     * The processor is being created, will become either `ENABLED` (for
+     * successful creation) or `FAILED` (for failed ones).
      * Once a processor is in this state, it can then be used for document
      * processing, but the feature dependencies of the processor might not be
      * fully created yet.
@@ -211,7 +211,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being enabled, will become ENABLED if successful.
+     * The processor is being enabled, will become `ENABLED` if successful.
      * </pre>
      *
      * <code>ENABLING = 3;</code>
@@ -221,7 +221,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being disabled, will become DISABLED if successful.
+     * The processor is being disabled, will become `DISABLED` if successful.
      * </pre>
      *
      * <code>DISABLING = 4;</code>
@@ -231,8 +231,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor is being created, will become either ENABLED (for
-     * successful creation) or FAILED (for failed ones).
+     * The processor is being created, will become either `ENABLED` (for
+     * successful creation) or `FAILED` (for failed ones).
      * Once a processor is in this state, it can then be used for document
      * processing, but the feature dependencies of the processor might not be
      * fully created yet.
@@ -418,7 +418,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
    * To get a list of processors types, see
    * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
@@ -443,7 +443,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+   * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
    * To get a list of processors types, see
    * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
    * </pre>
@@ -1378,7 +1378,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
      * To get a list of processors types, see
      * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
@@ -1402,7 +1402,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
      * To get a list of processors types, see
      * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
@@ -1426,7 +1426,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
      * To get a list of processors types, see
      * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
@@ -1449,7 +1449,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
      * To get a list of processors types, see
      * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>
@@ -1468,7 +1468,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The processor type, e.g., OCR_PROCESSOR, INVOICE_PROCESSOR, etc.
+     * The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
      * To get a list of processors types, see
      * [FetchProcessorTypes][google.cloud.documentai.v1beta3.DocumentProcessorService.FetchProcessorTypes].
      * </pre>

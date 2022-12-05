@@ -27,7 +27,8 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * An NFS source for the volume (could be a Filestore, for example).
+   * A Network File System (NFS) volume. For example, a
+   * Filestore file share.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.NFS nfs = 1;</code>
@@ -39,7 +40,8 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * An NFS source for the volume (could be a Filestore, for example).
+   * A Network File System (NFS) volume. For example, a
+   * Filestore file share.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.NFS nfs = 1;</code>
@@ -51,7 +53,8 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * An NFS source for the volume (could be a Filestore, for example).
+   * A Network File System (NFS) volume. For example, a
+   * Filestore file share.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.NFS nfs = 1;</code>
@@ -62,13 +65,13 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * A persistent disk source for the volume.
+   * Deprecated: please use device_name instead.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.PD pd = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.Volume.pd is deprecated. See
-   *     google/cloud/batch/v1alpha/volume.proto;l=37
+   *     google/cloud/batch/v1alpha/volume.proto;l=36
    * @return Whether the pd field is set.
    */
   @java.lang.Deprecated
@@ -77,13 +80,13 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * A persistent disk source for the volume.
+   * Deprecated: please use device_name instead.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.PD pd = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.Volume.pd is deprecated. See
-   *     google/cloud/batch/v1alpha/volume.proto;l=37
+   *     google/cloud/batch/v1alpha/volume.proto;l=36
    * @return The pd.
    */
   @java.lang.Deprecated
@@ -92,7 +95,7 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * A persistent disk source for the volume.
+   * Deprecated: please use device_name instead.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.PD pd = 2 [deprecated = true];</code>
@@ -104,7 +107,7 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * A Google Cloud Storage source for the volume.
+   * A Google Cloud Storage (GCS) volume.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.GCS gcs = 3;</code>
@@ -116,7 +119,7 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * A Google Cloud Storage source for the volume.
+   * A Google Cloud Storage (GCS) volume.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.GCS gcs = 3;</code>
@@ -128,7 +131,7 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * A Google Cloud Storage source for the volume.
+   * A Google Cloud Storage (GCS) volume.
    * </pre>
    *
    * <code>.google.cloud.batch.v1alpha.GCS gcs = 3;</code>
@@ -139,7 +142,11 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Device name of an attached disk
+   * Device name of an attached disk volume, which should align with a
+   * device_name specified by
+   * job.allocation_policy.instances[0].policy.disks[i].device_name or
+   * defined by the given instance template in
+   * job.allocation_policy.instances[0].instance_template.
    * </pre>
    *
    * <code>string device_name = 6;</code>
@@ -151,7 +158,11 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Device name of an attached disk
+   * Device name of an attached disk volume, which should align with a
+   * device_name specified by
+   * job.allocation_policy.instances[0].policy.disks[i].device_name or
+   * defined by the given instance template in
+   * job.allocation_policy.instances[0].instance_template.
    * </pre>
    *
    * <code>string device_name = 6;</code>
@@ -163,7 +174,11 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Device name of an attached disk
+   * Device name of an attached disk volume, which should align with a
+   * device_name specified by
+   * job.allocation_policy.instances[0].policy.disks[i].device_name or
+   * defined by the given instance template in
+   * job.allocation_policy.instances[0].instance_template.
    * </pre>
    *
    * <code>string device_name = 6;</code>
@@ -176,7 +191,7 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Mount path for the volume, e.g. /mnt/share
+   * The mount path for the volume, e.g. /mnt/disks/share.
    * </pre>
    *
    * <code>string mount_path = 4;</code>
@@ -188,7 +203,7 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Mount path for the volume, e.g. /mnt/share
+   * The mount path for the volume, e.g. /mnt/disks/share.
    * </pre>
    *
    * <code>string mount_path = 4;</code>
@@ -201,14 +216,15 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>
@@ -220,14 +236,15 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>
@@ -239,14 +256,15 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>
@@ -259,14 +277,15 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>

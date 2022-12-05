@@ -33,8 +33,10 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
- *   PosixAccountName name = PosixAccountName.of("[USER]", "[PROJECT]");
- *   osLoginServiceClient.deletePosixAccount(name);
+ *   UserName parent = UserName.of("[USER]");
+ *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+ *   OsLoginProto.SshPublicKey response =
+ *       osLoginServiceClient.createSshPublicKey(parent, sshPublicKey);
  * }
  * }</pre>
  */

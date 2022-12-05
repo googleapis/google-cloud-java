@@ -46,10 +46,10 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
 
   private PricingExpression() {
     usageUnit_ = "";
+    tieredRates_ = java.util.Collections.emptyList();
     usageUnitDescription_ = "";
     baseUnit_ = "";
     baseUnitDescription_ = "";
-    tieredRates_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -981,6 +981,112 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int DISPLAY_QUANTITY_FIELD_NUMBER = 2;
+  private double displayQuantity_;
+  /**
+   *
+   *
+   * <pre>
+   * The recommended quantity of units for displaying pricing info. When
+   * displaying pricing info it is recommended to display:
+   * (unit_price * display_quantity) per display_quantity usage_unit.
+   * This field does not affect the pricing formula and is for display purposes
+   * only.
+   * Example: If the unit_price is "0.0001 USD", the usage_unit is "GB" and
+   * the display_quantity is "1000" then the recommended way of displaying the
+   * pricing info is "0.10 USD per 1000 GB"
+   * </pre>
+   *
+   * <code>double display_quantity = 2;</code>
+   *
+   * @return The displayQuantity.
+   */
+  @java.lang.Override
+  public double getDisplayQuantity() {
+    return displayQuantity_;
+  }
+
+  public static final int TIERED_RATES_FIELD_NUMBER = 3;
+  private java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate> tieredRates_;
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate>
+      getTieredRatesList() {
+    return tieredRates_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder>
+      getTieredRatesOrBuilderList() {
+    return tieredRates_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  @java.lang.Override
+  public int getTieredRatesCount() {
+    return tieredRates_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.billing.v1.PricingExpression.TierRate getTieredRates(int index) {
+    return tieredRates_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The list of tiered rates for this pricing. The total cost is computed by
+   * applying each of the tiered rates on usage. This repeated list is sorted
+   * by ascending order of start_usage_amount.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder getTieredRatesOrBuilder(
+      int index) {
+    return tieredRates_.get(index);
+  }
+
   public static final int USAGE_UNIT_DESCRIPTION_FIELD_NUMBER = 4;
   private volatile java.lang.Object usageUnitDescription_;
   /**
@@ -1156,112 +1262,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     return baseUnitConversionFactor_;
   }
 
-  public static final int DISPLAY_QUANTITY_FIELD_NUMBER = 2;
-  private double displayQuantity_;
-  /**
-   *
-   *
-   * <pre>
-   * The recommended quantity of units for displaying pricing info. When
-   * displaying pricing info it is recommended to display:
-   * (unit_price * display_quantity) per display_quantity usage_unit.
-   * This field does not affect the pricing formula and is for display purposes
-   * only.
-   * Example: If the unit_price is "0.0001 USD", the usage_unit is "GB" and
-   * the display_quantity is "1000" then the recommended way of displaying the
-   * pricing info is "0.10 USD per 1000 GB"
-   * </pre>
-   *
-   * <code>double display_quantity = 2;</code>
-   *
-   * @return The displayQuantity.
-   */
-  @java.lang.Override
-  public double getDisplayQuantity() {
-    return displayQuantity_;
-  }
-
-  public static final int TIERED_RATES_FIELD_NUMBER = 3;
-  private java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate> tieredRates_;
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.billing.v1.PricingExpression.TierRate>
-      getTieredRatesList() {
-    return tieredRates_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder>
-      getTieredRatesOrBuilderList() {
-    return tieredRates_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  @java.lang.Override
-  public int getTieredRatesCount() {
-    return tieredRates_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.billing.v1.PricingExpression.TierRate getTieredRates(int index) {
-    return tieredRates_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The list of tiered rates for this pricing. The total cost is computed by
-   * applying each of the tiered rates on usage. This repeated list is sorted
-   * by ascending order of start_usage_amount.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.billing.v1.PricingExpression.TierRate tiered_rates = 3;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.billing.v1.PricingExpression.TierRateOrBuilder getTieredRatesOrBuilder(
-      int index) {
-    return tieredRates_.get(index);
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1344,14 +1344,14 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.billing.v1.PricingExpression) obj;
 
     if (!getUsageUnit().equals(other.getUsageUnit())) return false;
+    if (java.lang.Double.doubleToLongBits(getDisplayQuantity())
+        != java.lang.Double.doubleToLongBits(other.getDisplayQuantity())) return false;
+    if (!getTieredRatesList().equals(other.getTieredRatesList())) return false;
     if (!getUsageUnitDescription().equals(other.getUsageUnitDescription())) return false;
     if (!getBaseUnit().equals(other.getBaseUnit())) return false;
     if (!getBaseUnitDescription().equals(other.getBaseUnitDescription())) return false;
     if (java.lang.Double.doubleToLongBits(getBaseUnitConversionFactor())
         != java.lang.Double.doubleToLongBits(other.getBaseUnitConversionFactor())) return false;
-    if (java.lang.Double.doubleToLongBits(getDisplayQuantity())
-        != java.lang.Double.doubleToLongBits(other.getDisplayQuantity())) return false;
-    if (!getTieredRatesList().equals(other.getTieredRatesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1365,6 +1365,15 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + USAGE_UNIT_FIELD_NUMBER;
     hash = (53 * hash) + getUsageUnit().hashCode();
+    hash = (37 * hash) + DISPLAY_QUANTITY_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getDisplayQuantity()));
+    if (getTieredRatesCount() > 0) {
+      hash = (37 * hash) + TIERED_RATES_FIELD_NUMBER;
+      hash = (53 * hash) + getTieredRatesList().hashCode();
+    }
     hash = (37 * hash) + USAGE_UNIT_DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getUsageUnitDescription().hashCode();
     hash = (37 * hash) + BASE_UNIT_FIELD_NUMBER;
@@ -1376,15 +1385,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getBaseUnitConversionFactor()));
-    hash = (37 * hash) + DISPLAY_QUANTITY_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getDisplayQuantity()));
-    if (getTieredRatesCount() > 0) {
-      hash = (37 * hash) + TIERED_RATES_FIELD_NUMBER;
-      hash = (53 * hash) + getTieredRatesList().hashCode();
-    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1532,14 +1532,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       super.clear();
       usageUnit_ = "";
 
-      usageUnitDescription_ = "";
-
-      baseUnit_ = "";
-
-      baseUnitDescription_ = "";
-
-      baseUnitConversionFactor_ = 0D;
-
       displayQuantity_ = 0D;
 
       if (tieredRatesBuilder_ == null) {
@@ -1549,6 +1541,14 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         tieredRatesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      usageUnitDescription_ = "";
+
+      baseUnit_ = "";
+
+      baseUnitDescription_ = "";
+
+      baseUnitConversionFactor_ = 0D;
+
       return this;
     }
 
@@ -1578,10 +1578,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
           new com.google.cloud.billing.v1.PricingExpression(this);
       int from_bitField0_ = bitField0_;
       result.usageUnit_ = usageUnit_;
-      result.usageUnitDescription_ = usageUnitDescription_;
-      result.baseUnit_ = baseUnit_;
-      result.baseUnitDescription_ = baseUnitDescription_;
-      result.baseUnitConversionFactor_ = baseUnitConversionFactor_;
       result.displayQuantity_ = displayQuantity_;
       if (tieredRatesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -1592,6 +1588,10 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       } else {
         result.tieredRates_ = tieredRatesBuilder_.build();
       }
+      result.usageUnitDescription_ = usageUnitDescription_;
+      result.baseUnit_ = baseUnit_;
+      result.baseUnitDescription_ = baseUnitDescription_;
+      result.baseUnitConversionFactor_ = baseUnitConversionFactor_;
       onBuilt();
       return result;
     }
@@ -1645,21 +1645,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         usageUnit_ = other.usageUnit_;
         onChanged();
       }
-      if (!other.getUsageUnitDescription().isEmpty()) {
-        usageUnitDescription_ = other.usageUnitDescription_;
-        onChanged();
-      }
-      if (!other.getBaseUnit().isEmpty()) {
-        baseUnit_ = other.baseUnit_;
-        onChanged();
-      }
-      if (!other.getBaseUnitDescription().isEmpty()) {
-        baseUnitDescription_ = other.baseUnitDescription_;
-        onChanged();
-      }
-      if (other.getBaseUnitConversionFactor() != 0D) {
-        setBaseUnitConversionFactor(other.getBaseUnitConversionFactor());
-      }
       if (other.getDisplayQuantity() != 0D) {
         setDisplayQuantity(other.getDisplayQuantity());
       }
@@ -1689,6 +1674,21 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
             tieredRatesBuilder_.addAllMessages(other.tieredRates_);
           }
         }
+      }
+      if (!other.getUsageUnitDescription().isEmpty()) {
+        usageUnitDescription_ = other.usageUnitDescription_;
+        onChanged();
+      }
+      if (!other.getBaseUnit().isEmpty()) {
+        baseUnit_ = other.baseUnit_;
+        onChanged();
+      }
+      if (!other.getBaseUnitDescription().isEmpty()) {
+        baseUnitDescription_ = other.baseUnitDescription_;
+        onChanged();
+      }
+      if (other.getBaseUnitConversionFactor() != 0D) {
+        setBaseUnitConversionFactor(other.getBaseUnitConversionFactor());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1892,403 +1892,6 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
 
       usageUnit_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object usageUnitDescription_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The unit of usage in human readable form.
-     * Example: "gibi byte".
-     * </pre>
-     *
-     * <code>string usage_unit_description = 4;</code>
-     *
-     * @return The usageUnitDescription.
-     */
-    public java.lang.String getUsageUnitDescription() {
-      java.lang.Object ref = usageUnitDescription_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        usageUnitDescription_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The unit of usage in human readable form.
-     * Example: "gibi byte".
-     * </pre>
-     *
-     * <code>string usage_unit_description = 4;</code>
-     *
-     * @return The bytes for usageUnitDescription.
-     */
-    public com.google.protobuf.ByteString getUsageUnitDescriptionBytes() {
-      java.lang.Object ref = usageUnitDescription_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        usageUnitDescription_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The unit of usage in human readable form.
-     * Example: "gibi byte".
-     * </pre>
-     *
-     * <code>string usage_unit_description = 4;</code>
-     *
-     * @param value The usageUnitDescription to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUsageUnitDescription(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      usageUnitDescription_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The unit of usage in human readable form.
-     * Example: "gibi byte".
-     * </pre>
-     *
-     * <code>string usage_unit_description = 4;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearUsageUnitDescription() {
-
-      usageUnitDescription_ = getDefaultInstance().getUsageUnitDescription();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The unit of usage in human readable form.
-     * Example: "gibi byte".
-     * </pre>
-     *
-     * <code>string usage_unit_description = 4;</code>
-     *
-     * @param value The bytes for usageUnitDescription to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUsageUnitDescriptionBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      usageUnitDescription_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object baseUnit_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The base unit for the SKU which is the unit used in usage exports.
-     * Example: "By"
-     * </pre>
-     *
-     * <code>string base_unit = 5;</code>
-     *
-     * @return The baseUnit.
-     */
-    public java.lang.String getBaseUnit() {
-      java.lang.Object ref = baseUnit_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        baseUnit_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit for the SKU which is the unit used in usage exports.
-     * Example: "By"
-     * </pre>
-     *
-     * <code>string base_unit = 5;</code>
-     *
-     * @return The bytes for baseUnit.
-     */
-    public com.google.protobuf.ByteString getBaseUnitBytes() {
-      java.lang.Object ref = baseUnit_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        baseUnit_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit for the SKU which is the unit used in usage exports.
-     * Example: "By"
-     * </pre>
-     *
-     * <code>string base_unit = 5;</code>
-     *
-     * @param value The baseUnit to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBaseUnit(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      baseUnit_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit for the SKU which is the unit used in usage exports.
-     * Example: "By"
-     * </pre>
-     *
-     * <code>string base_unit = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearBaseUnit() {
-
-      baseUnit_ = getDefaultInstance().getBaseUnit();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit for the SKU which is the unit used in usage exports.
-     * Example: "By"
-     * </pre>
-     *
-     * <code>string base_unit = 5;</code>
-     *
-     * @param value The bytes for baseUnit to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBaseUnitBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      baseUnit_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object baseUnitDescription_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The base unit in human readable form.
-     * Example: "byte".
-     * </pre>
-     *
-     * <code>string base_unit_description = 6;</code>
-     *
-     * @return The baseUnitDescription.
-     */
-    public java.lang.String getBaseUnitDescription() {
-      java.lang.Object ref = baseUnitDescription_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        baseUnitDescription_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit in human readable form.
-     * Example: "byte".
-     * </pre>
-     *
-     * <code>string base_unit_description = 6;</code>
-     *
-     * @return The bytes for baseUnitDescription.
-     */
-    public com.google.protobuf.ByteString getBaseUnitDescriptionBytes() {
-      java.lang.Object ref = baseUnitDescription_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        baseUnitDescription_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit in human readable form.
-     * Example: "byte".
-     * </pre>
-     *
-     * <code>string base_unit_description = 6;</code>
-     *
-     * @param value The baseUnitDescription to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBaseUnitDescription(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      baseUnitDescription_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit in human readable form.
-     * Example: "byte".
-     * </pre>
-     *
-     * <code>string base_unit_description = 6;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearBaseUnitDescription() {
-
-      baseUnitDescription_ = getDefaultInstance().getBaseUnitDescription();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The base unit in human readable form.
-     * Example: "byte".
-     * </pre>
-     *
-     * <code>string base_unit_description = 6;</code>
-     *
-     * @param value The bytes for baseUnitDescription to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBaseUnitDescriptionBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      baseUnitDescription_ = value;
-      onChanged();
-      return this;
-    }
-
-    private double baseUnitConversionFactor_;
-    /**
-     *
-     *
-     * <pre>
-     * Conversion factor for converting from price per usage_unit to price per
-     * base_unit, and start_usage_amount to start_usage_amount in base_unit.
-     * unit_price / base_unit_conversion_factor = price per base_unit.
-     * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
-     * base_unit.
-     * </pre>
-     *
-     * <code>double base_unit_conversion_factor = 7;</code>
-     *
-     * @return The baseUnitConversionFactor.
-     */
-    @java.lang.Override
-    public double getBaseUnitConversionFactor() {
-      return baseUnitConversionFactor_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Conversion factor for converting from price per usage_unit to price per
-     * base_unit, and start_usage_amount to start_usage_amount in base_unit.
-     * unit_price / base_unit_conversion_factor = price per base_unit.
-     * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
-     * base_unit.
-     * </pre>
-     *
-     * <code>double base_unit_conversion_factor = 7;</code>
-     *
-     * @param value The baseUnitConversionFactor to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBaseUnitConversionFactor(double value) {
-
-      baseUnitConversionFactor_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Conversion factor for converting from price per usage_unit to price per
-     * base_unit, and start_usage_amount to start_usage_amount in base_unit.
-     * unit_price / base_unit_conversion_factor = price per base_unit.
-     * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
-     * base_unit.
-     * </pre>
-     *
-     * <code>double base_unit_conversion_factor = 7;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearBaseUnitConversionFactor() {
-
-      baseUnitConversionFactor_ = 0D;
       onChanged();
       return this;
     }
@@ -2760,6 +2363,403 @@ public final class PricingExpression extends com.google.protobuf.GeneratedMessag
         tieredRates_ = null;
       }
       return tieredRatesBuilder_;
+    }
+
+    private java.lang.Object usageUnitDescription_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unit of usage in human readable form.
+     * Example: "gibi byte".
+     * </pre>
+     *
+     * <code>string usage_unit_description = 4;</code>
+     *
+     * @return The usageUnitDescription.
+     */
+    public java.lang.String getUsageUnitDescription() {
+      java.lang.Object ref = usageUnitDescription_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        usageUnitDescription_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unit of usage in human readable form.
+     * Example: "gibi byte".
+     * </pre>
+     *
+     * <code>string usage_unit_description = 4;</code>
+     *
+     * @return The bytes for usageUnitDescription.
+     */
+    public com.google.protobuf.ByteString getUsageUnitDescriptionBytes() {
+      java.lang.Object ref = usageUnitDescription_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        usageUnitDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unit of usage in human readable form.
+     * Example: "gibi byte".
+     * </pre>
+     *
+     * <code>string usage_unit_description = 4;</code>
+     *
+     * @param value The usageUnitDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsageUnitDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      usageUnitDescription_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unit of usage in human readable form.
+     * Example: "gibi byte".
+     * </pre>
+     *
+     * <code>string usage_unit_description = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUsageUnitDescription() {
+
+      usageUnitDescription_ = getDefaultInstance().getUsageUnitDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unit of usage in human readable form.
+     * Example: "gibi byte".
+     * </pre>
+     *
+     * <code>string usage_unit_description = 4;</code>
+     *
+     * @param value The bytes for usageUnitDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsageUnitDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      usageUnitDescription_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object baseUnit_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The base unit for the SKU which is the unit used in usage exports.
+     * Example: "By"
+     * </pre>
+     *
+     * <code>string base_unit = 5;</code>
+     *
+     * @return The baseUnit.
+     */
+    public java.lang.String getBaseUnit() {
+      java.lang.Object ref = baseUnit_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baseUnit_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit for the SKU which is the unit used in usage exports.
+     * Example: "By"
+     * </pre>
+     *
+     * <code>string base_unit = 5;</code>
+     *
+     * @return The bytes for baseUnit.
+     */
+    public com.google.protobuf.ByteString getBaseUnitBytes() {
+      java.lang.Object ref = baseUnit_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        baseUnit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit for the SKU which is the unit used in usage exports.
+     * Example: "By"
+     * </pre>
+     *
+     * <code>string base_unit = 5;</code>
+     *
+     * @param value The baseUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseUnit(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      baseUnit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit for the SKU which is the unit used in usage exports.
+     * Example: "By"
+     * </pre>
+     *
+     * <code>string base_unit = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBaseUnit() {
+
+      baseUnit_ = getDefaultInstance().getBaseUnit();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit for the SKU which is the unit used in usage exports.
+     * Example: "By"
+     * </pre>
+     *
+     * <code>string base_unit = 5;</code>
+     *
+     * @param value The bytes for baseUnit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseUnitBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      baseUnit_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object baseUnitDescription_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The base unit in human readable form.
+     * Example: "byte".
+     * </pre>
+     *
+     * <code>string base_unit_description = 6;</code>
+     *
+     * @return The baseUnitDescription.
+     */
+    public java.lang.String getBaseUnitDescription() {
+      java.lang.Object ref = baseUnitDescription_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baseUnitDescription_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit in human readable form.
+     * Example: "byte".
+     * </pre>
+     *
+     * <code>string base_unit_description = 6;</code>
+     *
+     * @return The bytes for baseUnitDescription.
+     */
+    public com.google.protobuf.ByteString getBaseUnitDescriptionBytes() {
+      java.lang.Object ref = baseUnitDescription_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        baseUnitDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit in human readable form.
+     * Example: "byte".
+     * </pre>
+     *
+     * <code>string base_unit_description = 6;</code>
+     *
+     * @param value The baseUnitDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseUnitDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      baseUnitDescription_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit in human readable form.
+     * Example: "byte".
+     * </pre>
+     *
+     * <code>string base_unit_description = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBaseUnitDescription() {
+
+      baseUnitDescription_ = getDefaultInstance().getBaseUnitDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The base unit in human readable form.
+     * Example: "byte".
+     * </pre>
+     *
+     * <code>string base_unit_description = 6;</code>
+     *
+     * @param value The bytes for baseUnitDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseUnitDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      baseUnitDescription_ = value;
+      onChanged();
+      return this;
+    }
+
+    private double baseUnitConversionFactor_;
+    /**
+     *
+     *
+     * <pre>
+     * Conversion factor for converting from price per usage_unit to price per
+     * base_unit, and start_usage_amount to start_usage_amount in base_unit.
+     * unit_price / base_unit_conversion_factor = price per base_unit.
+     * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
+     * base_unit.
+     * </pre>
+     *
+     * <code>double base_unit_conversion_factor = 7;</code>
+     *
+     * @return The baseUnitConversionFactor.
+     */
+    @java.lang.Override
+    public double getBaseUnitConversionFactor() {
+      return baseUnitConversionFactor_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conversion factor for converting from price per usage_unit to price per
+     * base_unit, and start_usage_amount to start_usage_amount in base_unit.
+     * unit_price / base_unit_conversion_factor = price per base_unit.
+     * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
+     * base_unit.
+     * </pre>
+     *
+     * <code>double base_unit_conversion_factor = 7;</code>
+     *
+     * @param value The baseUnitConversionFactor to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaseUnitConversionFactor(double value) {
+
+      baseUnitConversionFactor_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Conversion factor for converting from price per usage_unit to price per
+     * base_unit, and start_usage_amount to start_usage_amount in base_unit.
+     * unit_price / base_unit_conversion_factor = price per base_unit.
+     * start_usage_amount * base_unit_conversion_factor = start_usage_amount in
+     * base_unit.
+     * </pre>
+     *
+     * <code>double base_unit_conversion_factor = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBaseUnitConversionFactor() {
+
+      baseUnitConversionFactor_ = 0D;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

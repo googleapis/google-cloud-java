@@ -144,7 +144,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=378
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=426
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=378
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=426
    * @return The outputConfig.
    */
   @java.lang.Deprecated

@@ -133,8 +133,8 @@ public interface AuxiliaryVersionConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-   * Hive metastore service.
+   * Output only. The network configuration contains the endpoint URI(s) of the
+   * auxiliary Hive metastore service.
    * </pre>
    *
    * <code>
@@ -148,8 +148,8 @@ public interface AuxiliaryVersionConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-   * Hive metastore service.
+   * Output only. The network configuration contains the endpoint URI(s) of the
+   * auxiliary Hive metastore service.
    * </pre>
    *
    * <code>
@@ -163,8 +163,8 @@ public interface AuxiliaryVersionConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The network configuration contains the endpoint URI(s) of the auxiliary
-   * Hive metastore service.
+   * Output only. The network configuration contains the endpoint URI(s) of the
+   * auxiliary Hive metastore service.
    * </pre>
    *
    * <code>

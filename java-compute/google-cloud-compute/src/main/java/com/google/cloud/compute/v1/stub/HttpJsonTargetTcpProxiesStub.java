@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.TargetTcpProxiesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetTcpProxiesClient.ListPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -32,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListTargetTcpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.GetTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetTcpProxyRequest;
@@ -41,6 +43,7 @@ import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetBackendServiceTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.TargetTcpProxy;
+import com.google.cloud.compute.v1.TargetTcpProxyAggregatedList;
 import com.google.cloud.compute.v1.TargetTcpProxyList;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -62,6 +65,64 @@ import javax.annotation.Generated;
 public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregatedListTargetTcpProxiesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/targetTcpProxies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListTargetTcpProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListTargetTcpProxiesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TargetTcpProxyAggregatedList>newBuilder()
+                      .setDefaultInstance(TargetTcpProxyAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<DeleteTargetTcpProxyRequest, Operation>
       deleteMethodDescriptor =
@@ -366,6 +427,10 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   })
               .build();
 
+  private final UnaryCallable<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<AggregatedListTargetTcpProxiesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<DeleteTargetTcpProxyRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteTargetTcpProxyRequest, Operation, Operation>
       deleteOperationCallable;
@@ -429,6 +494,13 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
     this.httpJsonOperationsStub =
         HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
+    HttpJsonCallSettings<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<DeleteTargetTcpProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetTcpProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -462,6 +534,12 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                 .setTypeRegistry(typeRegistry)
                 .build();
 
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -517,6 +595,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
@@ -524,6 +603,18 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
     methodDescriptors.add(setBackendServiceMethodDescriptor);
     methodDescriptors.add(setProxyHeaderMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListTargetTcpProxiesRequest, TargetTcpProxyAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListTargetTcpProxiesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override

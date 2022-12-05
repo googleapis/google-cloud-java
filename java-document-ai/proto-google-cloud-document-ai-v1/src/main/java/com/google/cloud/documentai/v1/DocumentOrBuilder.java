@@ -373,9 +373,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -385,9 +385,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -397,9 +397,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -409,9 +409,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -422,9 +422,9 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text].  This is
-   * usually used for annotating corrections to OCR mistakes.  Text changes for
-   * a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
+   * is usually used for annotating corrections to OCR mistakes.  Text changes
+   * for a given revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>

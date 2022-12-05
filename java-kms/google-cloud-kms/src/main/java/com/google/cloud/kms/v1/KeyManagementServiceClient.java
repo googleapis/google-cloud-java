@@ -2070,6 +2070,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
    *           .setImportJob("importJob-208547368")
+   *           .setWrappedKey(ByteString.EMPTY)
    *           .build();
    *   CryptoKeyVersion response = keyManagementServiceClient.importCryptoKeyVersion(request);
    * }
@@ -2116,6 +2117,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                       "[CRYPTO_KEY_VERSION]")
    *                   .toString())
    *           .setImportJob("importJob-208547368")
+   *           .setWrappedKey(ByteString.EMPTY)
    *           .build();
    *   ApiFuture<CryptoKeyVersion> future =
    *       keyManagementServiceClient.importCryptoKeyVersionCallable().futureCall(request);
@@ -3047,10 +3049,12 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param plaintext Required. The data to encrypt. Must be no larger than 64KiB.
    *     <p>The maximum size depends on the key version's
    *     [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no
-   *     larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined
-   *     length of the plaintext and additional_authenticated_data fields must be no larger than
-   *     8KiB.
+   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
+   *     [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL], and
+   *     [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC] keys, the plaintext must
+   *     be no larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the
+   *     combined length of the plaintext and additional_authenticated_data fields must be no larger
+   *     than 8KiB.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EncryptResponse encrypt(ResourceName name, ByteString plaintext) {
@@ -3132,10 +3136,12 @@ public class KeyManagementServiceClient implements BackgroundResource {
    * @param plaintext Required. The data to encrypt. Must be no larger than 64KiB.
    *     <p>The maximum size depends on the key version's
    *     [protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]. For
-   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE] keys, the plaintext must be no
-   *     larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the combined
-   *     length of the plaintext and additional_authenticated_data fields must be no larger than
-   *     8KiB.
+   *     [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE],
+   *     [EXTERNAL][google.cloud.kms.v1.ProtectionLevel.EXTERNAL], and
+   *     [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC] keys, the plaintext must
+   *     be no larger than 64KiB. For [HSM][google.cloud.kms.v1.ProtectionLevel.HSM] keys, the
+   *     combined length of the plaintext and additional_authenticated_data fields must be no larger
+   *     than 8KiB.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EncryptResponse encrypt(String name, ByteString plaintext) {

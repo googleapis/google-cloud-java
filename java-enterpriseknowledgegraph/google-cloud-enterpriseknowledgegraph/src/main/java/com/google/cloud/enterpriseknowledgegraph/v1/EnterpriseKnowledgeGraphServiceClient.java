@@ -919,6 +919,528 @@ public class EnterpriseKnowledgeGraphServiceClient implements BackgroundResource
     return stub.deleteEntityReconciliationJobCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the Cloud KG entities with CKG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   List<String> ids = new ArrayList<>();
+   *   LookupResponse response = enterpriseKnowledgeGraphServiceClient.lookup(parent, ids);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param ids Required. The list of entity ids to be used for lookup.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupResponse lookup(LocationName parent, List<String> ids) {
+    LookupRequest request =
+        LookupRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllIds(ids)
+            .build();
+    return lookup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the Cloud KG entities with CKG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   List<String> ids = new ArrayList<>();
+   *   LookupResponse response = enterpriseKnowledgeGraphServiceClient.lookup(parent, ids);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param ids Required. The list of entity ids to be used for lookup.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupResponse lookup(String parent, List<String> ids) {
+    LookupRequest request = LookupRequest.newBuilder().setParent(parent).addAllIds(ids).build();
+    return lookup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the Cloud KG entities with CKG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LookupRequest request =
+   *       LookupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllIds(new ArrayList<String>())
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .build();
+   *   LookupResponse response = enterpriseKnowledgeGraphServiceClient.lookup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupResponse lookup(LookupRequest request) {
+    return lookupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the Cloud KG entities with CKG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LookupRequest request =
+   *       LookupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllIds(new ArrayList<String>())
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<LookupResponse> future =
+   *       enterpriseKnowledgeGraphServiceClient.lookupCallable().futureCall(request);
+   *   // Do something.
+   *   LookupResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LookupRequest, LookupResponse> lookupCallable() {
+    return stub.lookupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the Cloud KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String query = "query107944136";
+   *   SearchResponse response = enterpriseKnowledgeGraphServiceClient.search(parent, query);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param query Required. The literal query string for search.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchResponse search(LocationName parent, String query) {
+    SearchRequest request =
+        SearchRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuery(query)
+            .build();
+    return search(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the Cloud KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String query = "query107944136";
+   *   SearchResponse response = enterpriseKnowledgeGraphServiceClient.search(parent, query);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param query Required. The literal query string for search.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchResponse search(String parent, String query) {
+    SearchRequest request = SearchRequest.newBuilder().setParent(parent).setQuery(query).build();
+    return search(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the Cloud KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   SearchRequest request =
+   *       SearchRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .addAllTypes(new ArrayList<String>())
+   *           .setLimit(Int32Value.newBuilder().build())
+   *           .build();
+   *   SearchResponse response = enterpriseKnowledgeGraphServiceClient.search(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchResponse search(SearchRequest request) {
+    return searchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the Cloud KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   SearchRequest request =
+   *       SearchRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .addAllTypes(new ArrayList<String>())
+   *           .setLimit(Int32Value.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SearchResponse> future =
+   *       enterpriseKnowledgeGraphServiceClient.searchCallable().futureCall(request);
+   *   // Do something.
+   *   SearchResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchRequest, SearchResponse> searchCallable() {
+    return stub.searchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the public KG entities with public KG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   List<String> ids = new ArrayList<>();
+   *   LookupPublicKgResponse response =
+   *       enterpriseKnowledgeGraphServiceClient.lookupPublicKg(parent, ids);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param ids Required. The list of entity ids to be used for lookup.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupPublicKgResponse lookupPublicKg(LocationName parent, List<String> ids) {
+    LookupPublicKgRequest request =
+        LookupPublicKgRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllIds(ids)
+            .build();
+    return lookupPublicKg(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the public KG entities with public KG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   List<String> ids = new ArrayList<>();
+   *   LookupPublicKgResponse response =
+   *       enterpriseKnowledgeGraphServiceClient.lookupPublicKg(parent, ids);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param ids Required. The list of entity ids to be used for lookup.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupPublicKgResponse lookupPublicKg(String parent, List<String> ids) {
+    LookupPublicKgRequest request =
+        LookupPublicKgRequest.newBuilder().setParent(parent).addAllIds(ids).build();
+    return lookupPublicKg(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the public KG entities with public KG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LookupPublicKgRequest request =
+   *       LookupPublicKgRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllIds(new ArrayList<String>())
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .build();
+   *   LookupPublicKgResponse response =
+   *       enterpriseKnowledgeGraphServiceClient.lookupPublicKg(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LookupPublicKgResponse lookupPublicKg(LookupPublicKgRequest request) {
+    return lookupPublicKgCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the public KG entities with public KG ID(s).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LookupPublicKgRequest request =
+   *       LookupPublicKgRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllIds(new ArrayList<String>())
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<LookupPublicKgResponse> future =
+   *       enterpriseKnowledgeGraphServiceClient.lookupPublicKgCallable().futureCall(request);
+   *   // Do something.
+   *   LookupPublicKgResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LookupPublicKgRequest, LookupPublicKgResponse>
+      lookupPublicKgCallable() {
+    return stub.lookupPublicKgCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the public KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String query = "query107944136";
+   *   SearchPublicKgResponse response =
+   *       enterpriseKnowledgeGraphServiceClient.searchPublicKg(parent, query);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param query Required. The literal query string for search.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchPublicKgResponse searchPublicKg(LocationName parent, String query) {
+    SearchPublicKgRequest request =
+        SearchPublicKgRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuery(query)
+            .build();
+    return searchPublicKg(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the public KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String query = "query107944136";
+   *   SearchPublicKgResponse response =
+   *       enterpriseKnowledgeGraphServiceClient.searchPublicKg(parent, query);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Entity's parent resource. Format:
+   *     `projects/{project}/locations/{location}`
+   * @param query Required. The literal query string for search.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchPublicKgResponse searchPublicKg(String parent, String query) {
+    SearchPublicKgRequest request =
+        SearchPublicKgRequest.newBuilder().setParent(parent).setQuery(query).build();
+    return searchPublicKg(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the public KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   SearchPublicKgRequest request =
+   *       SearchPublicKgRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .addAllTypes(new ArrayList<String>())
+   *           .setLimit(Int32Value.newBuilder().build())
+   *           .build();
+   *   SearchPublicKgResponse response =
+   *       enterpriseKnowledgeGraphServiceClient.searchPublicKg(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchPublicKgResponse searchPublicKg(SearchPublicKgRequest request) {
+    return searchPublicKgCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches the public KG entities with entity name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnterpriseKnowledgeGraphServiceClient enterpriseKnowledgeGraphServiceClient =
+   *     EnterpriseKnowledgeGraphServiceClient.create()) {
+   *   SearchPublicKgRequest request =
+   *       SearchPublicKgRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQuery("query107944136")
+   *           .addAllLanguages(new ArrayList<String>())
+   *           .addAllTypes(new ArrayList<String>())
+   *           .setLimit(Int32Value.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SearchPublicKgResponse> future =
+   *       enterpriseKnowledgeGraphServiceClient.searchPublicKgCallable().futureCall(request);
+   *   // Do something.
+   *   SearchPublicKgResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchPublicKgRequest, SearchPublicKgResponse>
+      searchPublicKgCallable() {
+    return stub.searchPublicKgCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

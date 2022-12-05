@@ -22,7 +22,8 @@ package com.google.cloud.metastore.v1alpha;
  *
  *
  * <pre>
- * Request message for [DataprocMetastore.GetBackup][google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup].
+ * Request message for
+ * [DataprocMetastore.GetBackup][google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1alpha.GetBackupRequest}
@@ -287,7 +288,8 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request message for [DataprocMetastore.GetBackup][google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup].
+   * Request message for
+   * [DataprocMetastore.GetBackup][google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1alpha.GetBackupRequest}

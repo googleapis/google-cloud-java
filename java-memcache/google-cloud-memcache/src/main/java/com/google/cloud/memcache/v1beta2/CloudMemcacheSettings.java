@@ -17,6 +17,7 @@
 package com.google.cloud.memcache.v1beta2;
 
 import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListInstancesPagedResponse;
+import static com.google.cloud.memcache.v1beta2.CloudMemcacheClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.memcache.v1beta2.stub.CloudMemcacheStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -150,6 +155,29 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
   public OperationCallSettings<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
       applySoftwareUpdateOperationSettings() {
     return ((CloudMemcacheStubSettings) getStubSettings()).applySoftwareUpdateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return ((CloudMemcacheStubSettings) getStubSettings()).rescheduleMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings() {
+    return ((CloudMemcacheStubSettings) getStubSettings()).rescheduleMaintenanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((CloudMemcacheStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((CloudMemcacheStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final CloudMemcacheSettings create(CloudMemcacheStubSettings stub)
@@ -345,6 +373,30 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     public OperationCallSettings.Builder<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
         applySoftwareUpdateOperationSettings() {
       return getStubSettingsBuilder().applySoftwareUpdateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return getStubSettingsBuilder().rescheduleMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().rescheduleMaintenanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

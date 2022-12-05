@@ -150,6 +150,62 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_OAEP_4096_SHA1_AES_256 = 2;</code>
      */
     RSA_OAEP_4096_SHA1_AES_256(2),
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping
+     * scheme defined in the PKCS #11 standard. In summary, this involves
+     * wrapping the raw key with an ephemeral AES key, and wrapping the
+     * ephemeral AES key with a 3072 bit RSA key. For more details, see
+     * [RSA AES key wrap
+     * mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908).
+     * </pre>
+     *
+     * <code>RSA_OAEP_3072_SHA256_AES_256 = 3;</code>
+     */
+    RSA_OAEP_3072_SHA256_AES_256(3),
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping
+     * scheme defined in the PKCS #11 standard. In summary, this involves
+     * wrapping the raw key with an ephemeral AES key, and wrapping the
+     * ephemeral AES key with a 4096 bit RSA key. For more details, see
+     * [RSA AES key wrap
+     * mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908).
+     * </pre>
+     *
+     * <code>RSA_OAEP_4096_SHA256_AES_256 = 4;</code>
+     */
+    RSA_OAEP_4096_SHA256_AES_256(4),
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents RSAES-OAEP with a 3072 bit RSA key. The
+     * key material to be imported is wrapped directly with the RSA key. Due
+     * to technical limitations of RSA wrapping, this method cannot be used to
+     * wrap RSA keys for import.
+     * </pre>
+     *
+     * <code>RSA_OAEP_3072_SHA256 = 5;</code>
+     */
+    RSA_OAEP_3072_SHA256(5),
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents RSAES-OAEP with a 4096 bit RSA key. The
+     * key material to be imported is wrapped directly with the RSA key. Due
+     * to technical limitations of RSA wrapping, this method cannot be used to
+     * wrap RSA keys for import.
+     * </pre>
+     *
+     * <code>RSA_OAEP_4096_SHA256 = 6;</code>
+     */
+    RSA_OAEP_4096_SHA256(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -193,6 +249,62 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * <code>RSA_OAEP_4096_SHA1_AES_256 = 2;</code>
      */
     public static final int RSA_OAEP_4096_SHA1_AES_256_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping
+     * scheme defined in the PKCS #11 standard. In summary, this involves
+     * wrapping the raw key with an ephemeral AES key, and wrapping the
+     * ephemeral AES key with a 3072 bit RSA key. For more details, see
+     * [RSA AES key wrap
+     * mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908).
+     * </pre>
+     *
+     * <code>RSA_OAEP_3072_SHA256_AES_256 = 3;</code>
+     */
+    public static final int RSA_OAEP_3072_SHA256_AES_256_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents the CKM_RSA_AES_KEY_WRAP key wrapping
+     * scheme defined in the PKCS #11 standard. In summary, this involves
+     * wrapping the raw key with an ephemeral AES key, and wrapping the
+     * ephemeral AES key with a 4096 bit RSA key. For more details, see
+     * [RSA AES key wrap
+     * mechanism](http://docs.oasis-open.org/pkcs11/pkcs11-curr/v2.40/cos01/pkcs11-curr-v2.40-cos01.html#_Toc408226908).
+     * </pre>
+     *
+     * <code>RSA_OAEP_4096_SHA256_AES_256 = 4;</code>
+     */
+    public static final int RSA_OAEP_4096_SHA256_AES_256_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents RSAES-OAEP with a 3072 bit RSA key. The
+     * key material to be imported is wrapped directly with the RSA key. Due
+     * to technical limitations of RSA wrapping, this method cannot be used to
+     * wrap RSA keys for import.
+     * </pre>
+     *
+     * <code>RSA_OAEP_3072_SHA256 = 5;</code>
+     */
+    public static final int RSA_OAEP_3072_SHA256_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * This ImportMethod represents RSAES-OAEP with a 4096 bit RSA key. The
+     * key material to be imported is wrapped directly with the RSA key. Due
+     * to technical limitations of RSA wrapping, this method cannot be used to
+     * wrap RSA keys for import.
+     * </pre>
+     *
+     * <code>RSA_OAEP_4096_SHA256 = 6;</code>
+     */
+    public static final int RSA_OAEP_4096_SHA256_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -224,6 +336,14 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           return RSA_OAEP_3072_SHA1_AES_256;
         case 2:
           return RSA_OAEP_4096_SHA1_AES_256;
+        case 3:
+          return RSA_OAEP_3072_SHA256_AES_256;
+        case 4:
+          return RSA_OAEP_4096_SHA256_AES_256;
+        case 5:
+          return RSA_OAEP_3072_SHA256;
+        case 6:
+          return RSA_OAEP_4096_SHA256;
         default:
           return null;
       }

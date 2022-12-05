@@ -267,7 +267,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String name =
+   *       EvaluationName.of(
+   *               "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
+   *           .toString();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
    * }
    * }</pre>
@@ -401,7 +404,10 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name = HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String name =
+   *       EvaluationName.of(
+   *               "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
+   *           .toString();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
    * }
@@ -1119,6 +1125,191 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetProcessorRequest, Processor> getProcessorCallable() {
     return stub.getProcessorCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Trains a new processor version. Operation metadata is returned as
+   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   ProcessorVersion processorVersion = ProcessorVersion.newBuilder().build();
+   *   TrainProcessorVersionResponse response =
+   *       documentProcessorServiceClient.trainProcessorVersionAsync(parent, processorVersion).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project, location and processor) to create the new version
+   *     for. Format: `projects/{project}/locations/{location}/processors/{processor}`.
+   * @param processorVersion Required. The processor version to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrainProcessorVersionResponse, TrainProcessorVersionMetadata>
+      trainProcessorVersionAsync(ProcessorName parent, ProcessorVersion processorVersion) {
+    TrainProcessorVersionRequest request =
+        TrainProcessorVersionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setProcessorVersion(processorVersion)
+            .build();
+    return trainProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Trains a new processor version. Operation metadata is returned as
+   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   ProcessorVersion processorVersion = ProcessorVersion.newBuilder().build();
+   *   TrainProcessorVersionResponse response =
+   *       documentProcessorServiceClient.trainProcessorVersionAsync(parent, processorVersion).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project, location and processor) to create the new version
+   *     for. Format: `projects/{project}/locations/{location}/processors/{processor}`.
+   * @param processorVersion Required. The processor version to be created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrainProcessorVersionResponse, TrainProcessorVersionMetadata>
+      trainProcessorVersionAsync(String parent, ProcessorVersion processorVersion) {
+    TrainProcessorVersionRequest request =
+        TrainProcessorVersionRequest.newBuilder()
+            .setParent(parent)
+            .setProcessorVersion(processorVersion)
+            .build();
+    return trainProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Trains a new processor version. Operation metadata is returned as
+   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   TrainProcessorVersionRequest request =
+   *       TrainProcessorVersionRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setProcessorVersion(ProcessorVersion.newBuilder().build())
+   *           .setDocumentSchema(DocumentSchema.newBuilder().build())
+   *           .setInputData(TrainProcessorVersionRequest.InputData.newBuilder().build())
+   *           .setBaseProcessorVersion("baseProcessorVersion337709271")
+   *           .build();
+   *   TrainProcessorVersionResponse response =
+   *       documentProcessorServiceClient.trainProcessorVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrainProcessorVersionResponse, TrainProcessorVersionMetadata>
+      trainProcessorVersionAsync(TrainProcessorVersionRequest request) {
+    return trainProcessorVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Trains a new processor version. Operation metadata is returned as
+   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   TrainProcessorVersionRequest request =
+   *       TrainProcessorVersionRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setProcessorVersion(ProcessorVersion.newBuilder().build())
+   *           .setDocumentSchema(DocumentSchema.newBuilder().build())
+   *           .setInputData(TrainProcessorVersionRequest.InputData.newBuilder().build())
+   *           .setBaseProcessorVersion("baseProcessorVersion337709271")
+   *           .build();
+   *   OperationFuture<TrainProcessorVersionResponse, TrainProcessorVersionMetadata> future =
+   *       documentProcessorServiceClient
+   *           .trainProcessorVersionOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   TrainProcessorVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          TrainProcessorVersionRequest,
+          TrainProcessorVersionResponse,
+          TrainProcessorVersionMetadata>
+      trainProcessorVersionOperationCallable() {
+    return stub.trainProcessorVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Trains a new processor version. Operation metadata is returned as
+   * cloud_documentai_core.TrainProcessorVersionMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   TrainProcessorVersionRequest request =
+   *       TrainProcessorVersionRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setProcessorVersion(ProcessorVersion.newBuilder().build())
+   *           .setDocumentSchema(DocumentSchema.newBuilder().build())
+   *           .setInputData(TrainProcessorVersionRequest.InputData.newBuilder().build())
+   *           .setBaseProcessorVersion("baseProcessorVersion337709271")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.trainProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TrainProcessorVersionRequest, Operation>
+      trainProcessorVersionCallable() {
+    return stub.trainProcessorVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2686,6 +2877,509 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Evaluates a ProcessorVersion against annotated documents, producing an Evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorVersionName processorVersion =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+   *   EvaluateProcessorVersionResponse response =
+   *       documentProcessorServiceClient.evaluateProcessorVersionAsync(processorVersion).get();
+   * }
+   * }</pre>
+   *
+   * @param processorVersion Required. The resource name of the
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion] to evaluate.
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EvaluateProcessorVersionResponse, EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionAsync(ProcessorVersionName processorVersion) {
+    EvaluateProcessorVersionRequest request =
+        EvaluateProcessorVersionRequest.newBuilder()
+            .setProcessorVersion(processorVersion == null ? null : processorVersion.toString())
+            .build();
+    return evaluateProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Evaluates a ProcessorVersion against annotated documents, producing an Evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String processorVersion =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *           .toString();
+   *   EvaluateProcessorVersionResponse response =
+   *       documentProcessorServiceClient.evaluateProcessorVersionAsync(processorVersion).get();
+   * }
+   * }</pre>
+   *
+   * @param processorVersion Required. The resource name of the
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion] to evaluate.
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EvaluateProcessorVersionResponse, EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionAsync(String processorVersion) {
+    EvaluateProcessorVersionRequest request =
+        EvaluateProcessorVersionRequest.newBuilder().setProcessorVersion(processorVersion).build();
+    return evaluateProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Evaluates a ProcessorVersion against annotated documents, producing an Evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   EvaluateProcessorVersionRequest request =
+   *       EvaluateProcessorVersionRequest.newBuilder()
+   *           .setProcessorVersion(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .setEvaluationDocuments(BatchDocumentsInputConfig.newBuilder().build())
+   *           .build();
+   *   EvaluateProcessorVersionResponse response =
+   *       documentProcessorServiceClient.evaluateProcessorVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<EvaluateProcessorVersionResponse, EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionAsync(EvaluateProcessorVersionRequest request) {
+    return evaluateProcessorVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Evaluates a ProcessorVersion against annotated documents, producing an Evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   EvaluateProcessorVersionRequest request =
+   *       EvaluateProcessorVersionRequest.newBuilder()
+   *           .setProcessorVersion(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .setEvaluationDocuments(BatchDocumentsInputConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<EvaluateProcessorVersionResponse, EvaluateProcessorVersionMetadata> future =
+   *       documentProcessorServiceClient
+   *           .evaluateProcessorVersionOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   EvaluateProcessorVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          EvaluateProcessorVersionRequest,
+          EvaluateProcessorVersionResponse,
+          EvaluateProcessorVersionMetadata>
+      evaluateProcessorVersionOperationCallable() {
+    return stub.evaluateProcessorVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Evaluates a ProcessorVersion against annotated documents, producing an Evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   EvaluateProcessorVersionRequest request =
+   *       EvaluateProcessorVersionRequest.newBuilder()
+   *           .setProcessorVersion(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .setEvaluationDocuments(BatchDocumentsInputConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.evaluateProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EvaluateProcessorVersionRequest, Operation>
+      evaluateProcessorVersionCallable() {
+    return stub.evaluateProcessorVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a specific evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   EvaluationName name =
+   *       EvaluationName.of(
+   *           "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]");
+   *   Evaluation response = documentProcessorServiceClient.getEvaluation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the
+   *     [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Evaluation getEvaluation(EvaluationName name) {
+    GetEvaluationRequest request =
+        GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getEvaluation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a specific evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name =
+   *       EvaluationName.of(
+   *               "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]", "[EVALUATION]")
+   *           .toString();
+   *   Evaluation response = documentProcessorServiceClient.getEvaluation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the
+   *     [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Evaluation getEvaluation(String name) {
+    GetEvaluationRequest request = GetEvaluationRequest.newBuilder().setName(name).build();
+    return getEvaluation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a specific evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetEvaluationRequest request =
+   *       GetEvaluationRequest.newBuilder()
+   *           .setName(
+   *               EvaluationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PROCESSOR]",
+   *                       "[PROCESSOR_VERSION]",
+   *                       "[EVALUATION]")
+   *                   .toString())
+   *           .build();
+   *   Evaluation response = documentProcessorServiceClient.getEvaluation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Evaluation getEvaluation(GetEvaluationRequest request) {
+    return getEvaluationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a specific evaluation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   GetEvaluationRequest request =
+   *       GetEvaluationRequest.newBuilder()
+   *           .setName(
+   *               EvaluationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[PROCESSOR]",
+   *                       "[PROCESSOR_VERSION]",
+   *                       "[EVALUATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Evaluation> future =
+   *       documentProcessorServiceClient.getEvaluationCallable().futureCall(request);
+   *   // Do something.
+   *   Evaluation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
+    return stub.getEvaluationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a set of evaluations for a given processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorVersionName parent =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]");
+   *   for (Evaluation element :
+   *       documentProcessorServiceClient.listEvaluations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion] to list evaluations
+   *     for.
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEvaluationsPagedResponse listEvaluations(ProcessorVersionName parent) {
+    ListEvaluationsRequest request =
+        ListEvaluationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listEvaluations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a set of evaluations for a given processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String parent =
+   *       ProcessorVersionName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *           .toString();
+   *   for (Evaluation element :
+   *       documentProcessorServiceClient.listEvaluations(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the
+   *     [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion] to list evaluations
+   *     for.
+   *     `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEvaluationsPagedResponse listEvaluations(String parent) {
+    ListEvaluationsRequest request = ListEvaluationsRequest.newBuilder().setParent(parent).build();
+    return listEvaluations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a set of evaluations for a given processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListEvaluationsRequest request =
+   *       ListEvaluationsRequest.newBuilder()
+   *           .setParent(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Evaluation element :
+   *       documentProcessorServiceClient.listEvaluations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEvaluationsPagedResponse listEvaluations(ListEvaluationsRequest request) {
+    return listEvaluationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a set of evaluations for a given processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListEvaluationsRequest request =
+   *       ListEvaluationsRequest.newBuilder()
+   *           .setParent(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Evaluation> future =
+   *       documentProcessorServiceClient.listEvaluationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Evaluation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEvaluationsRequest, ListEvaluationsPagedResponse>
+      listEvaluationsPagedCallable() {
+    return stub.listEvaluationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a set of evaluations for a given processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ListEvaluationsRequest request =
+   *       ListEvaluationsRequest.newBuilder()
+   *           .setParent(
+   *               ProcessorVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListEvaluationsResponse response =
+   *         documentProcessorServiceClient.listEvaluationsCallable().call(request);
+   *     for (Evaluation element : response.getEvaluationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEvaluationsRequest, ListEvaluationsResponse>
+      listEvaluationsCallable() {
+    return stub.listEvaluationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -3113,6 +3807,83 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
     protected ListProcessorVersionsFixedSizeCollection createCollection(
         List<ListProcessorVersionsPage> pages, int collectionSize) {
       return new ListProcessorVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListEvaluationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListEvaluationsRequest,
+          ListEvaluationsResponse,
+          Evaluation,
+          ListEvaluationsPage,
+          ListEvaluationsFixedSizeCollection> {
+
+    public static ApiFuture<ListEvaluationsPagedResponse> createAsync(
+        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        ApiFuture<ListEvaluationsResponse> futureResponse) {
+      ApiFuture<ListEvaluationsPage> futurePage =
+          ListEvaluationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListEvaluationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListEvaluationsPagedResponse(ListEvaluationsPage page) {
+      super(page, ListEvaluationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEvaluationsPage
+      extends AbstractPage<
+          ListEvaluationsRequest, ListEvaluationsResponse, Evaluation, ListEvaluationsPage> {
+
+    private ListEvaluationsPage(
+        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        ListEvaluationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListEvaluationsPage createEmptyPage() {
+      return new ListEvaluationsPage(null, null);
+    }
+
+    @Override
+    protected ListEvaluationsPage createPage(
+        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        ListEvaluationsResponse response) {
+      return new ListEvaluationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEvaluationsPage> createPageAsync(
+        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        ApiFuture<ListEvaluationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEvaluationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEvaluationsRequest,
+          ListEvaluationsResponse,
+          Evaluation,
+          ListEvaluationsPage,
+          ListEvaluationsFixedSizeCollection> {
+
+    private ListEvaluationsFixedSizeCollection(
+        List<ListEvaluationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEvaluationsFixedSizeCollection createEmptyCollection() {
+      return new ListEvaluationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEvaluationsFixedSizeCollection createCollection(
+        List<ListEvaluationsPage> pages, int collectionSize) {
+      return new ListEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
 

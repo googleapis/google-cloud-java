@@ -25,8 +25,14 @@
             "GetEnvironment": {
               "methods": ["getEnvironment", "getEnvironmentCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetInstance": {
               "methods": ["getInstance", "getInstanceCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
             },
             "IsInstanceUpgradeable": {
               "methods": ["isInstanceUpgradeable", "isInstanceUpgradeableCallable"]
@@ -37,6 +43,9 @@
             "ListInstances": {
               "methods": ["listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "RegisterInstance": {
               "methods": ["registerInstanceAsync", "registerInstanceOperationCallable", "registerInstanceCallable"]
             },
@@ -45,6 +54,9 @@
             },
             "ResetInstance": {
               "methods": ["resetInstanceAsync", "resetInstanceOperationCallable", "resetInstanceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
             "SetInstanceAccelerator": {
               "methods": ["setInstanceAcceleratorAsync", "setInstanceAcceleratorOperationCallable", "setInstanceAcceleratorCallable"]
@@ -60,6 +72,9 @@
             },
             "StopInstance": {
               "methods": ["stopInstanceAsync", "stopInstanceOperationCallable", "stopInstanceCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpgradeInstance": {
               "methods": ["upgradeInstanceAsync", "upgradeInstanceOperationCallable", "upgradeInstanceCallable"]

@@ -22,9 +22,7 @@ package com.google.cloud.batch.v1;
  *
  *
  * <pre>
- * Volume and mount parameters to be associated with a TaskSpec. A TaskSpec
- * might describe zero, one, or multiple volumes to be mounted as part of the
- * task.
+ * Volume describes a volume and parameters for it to be mounted to a VM.
  * </pre>
  *
  * Protobuf type {@code google.cloud.batch.v1.Volume}
@@ -124,7 +122,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An NFS source for the volume (could be a Filestore, for example).
+   * A Network File System (NFS) volume. For example, a
+   * Filestore file share.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -139,7 +138,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An NFS source for the volume (could be a Filestore, for example).
+   * A Network File System (NFS) volume. For example, a
+   * Filestore file share.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -157,7 +157,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An NFS source for the volume (could be a Filestore, for example).
+   * A Network File System (NFS) volume. For example, a
+   * Filestore file share.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -175,7 +176,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Cloud Storage source for the volume.
+   * A Google Cloud Storage (GCS) volume.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -190,7 +191,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Cloud Storage source for the volume.
+   * A Google Cloud Storage (GCS) volume.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -208,7 +209,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Google Cloud Storage source for the volume.
+   * A Google Cloud Storage (GCS) volume.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -226,7 +227,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Device name of an attached disk
+   * Device name of an attached disk volume, which should align with a
+   * device_name specified by
+   * job.allocation_policy.instances[0].policy.disks[i].device_name or
+   * defined by the given instance template in
+   * job.allocation_policy.instances[0].instance_template.
    * </pre>
    *
    * <code>string device_name = 6;</code>
@@ -240,7 +245,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Device name of an attached disk
+   * Device name of an attached disk volume, which should align with a
+   * device_name specified by
+   * job.allocation_policy.instances[0].policy.disks[i].device_name or
+   * defined by the given instance template in
+   * job.allocation_policy.instances[0].instance_template.
    * </pre>
    *
    * <code>string device_name = 6;</code>
@@ -267,7 +276,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Device name of an attached disk
+   * Device name of an attached disk volume, which should align with a
+   * device_name specified by
+   * job.allocation_policy.instances[0].policy.disks[i].device_name or
+   * defined by the given instance template in
+   * job.allocation_policy.instances[0].instance_template.
    * </pre>
    *
    * <code>string device_name = 6;</code>
@@ -297,7 +310,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Mount path for the volume, e.g. /mnt/share
+   * The mount path for the volume, e.g. /mnt/disks/share.
    * </pre>
    *
    * <code>string mount_path = 4;</code>
@@ -320,7 +333,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Mount path for the volume, e.g. /mnt/share
+   * The mount path for the volume, e.g. /mnt/disks/share.
    * </pre>
    *
    * <code>string mount_path = 4;</code>
@@ -346,14 +359,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>
@@ -367,14 +381,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>
@@ -388,14 +403,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>
@@ -410,14 +426,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Mount options
-   * For Google Cloud Storage, mount options are the global options supported by
-   * gcsfuse tool. Batch will use them to mount the volume with the following
-   * command:
-   * "gcsfuse [global options] bucket mountpoint".
-   * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-   * use Fstab to mount such volumes.
-   * https://help.ubuntu.com/community/Fstab
+   * For Google Cloud Storage (GCS), mount options are the options supported by
+   * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+   * For existing persistent disks, mount options provided by the
+   * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+   * writing are supported. This is due to restrictions of multi-writer mode
+   * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+   * For other attached disks and Network File System (NFS), mount options are
+   * these supported by the mount command
+   * (https://man7.org/linux/man-pages/man8/mount.8.html).
    * </pre>
    *
    * <code>repeated string mount_options = 5;</code>
@@ -658,9 +675,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Volume and mount parameters to be associated with a TaskSpec. A TaskSpec
-   * might describe zero, one, or multiple volumes to be mounted as part of the
-   * task.
+   * Volume describes a volume and parameters for it to be mounted to a VM.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1.Volume}
@@ -943,7 +958,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -958,7 +974,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -983,7 +1000,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -1005,7 +1023,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -1024,7 +1043,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -1059,7 +1079,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -1084,7 +1105,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -1096,7 +1118,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -1116,7 +1139,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An NFS source for the volume (could be a Filestore, for example).
+     * A Network File System (NFS) volume. For example, a
+     * Filestore file share.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.NFS nfs = 1;</code>
@@ -1153,7 +1177,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1168,7 +1192,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1193,7 +1217,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1215,7 +1239,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1234,7 +1258,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1269,7 +1293,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1294,7 +1318,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1306,7 +1330,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1326,7 +1350,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A Google Cloud Storage source for the volume.
+     * A Google Cloud Storage (GCS) volume.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.GCS gcs = 3;</code>
@@ -1358,7 +1382,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Device name of an attached disk
+     * Device name of an attached disk volume, which should align with a
+     * device_name specified by
+     * job.allocation_policy.instances[0].policy.disks[i].device_name or
+     * defined by the given instance template in
+     * job.allocation_policy.instances[0].instance_template.
      * </pre>
      *
      * <code>string device_name = 6;</code>
@@ -1373,7 +1401,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Device name of an attached disk
+     * Device name of an attached disk volume, which should align with a
+     * device_name specified by
+     * job.allocation_policy.instances[0].policy.disks[i].device_name or
+     * defined by the given instance template in
+     * job.allocation_policy.instances[0].instance_template.
      * </pre>
      *
      * <code>string device_name = 6;</code>
@@ -1401,7 +1433,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Device name of an attached disk
+     * Device name of an attached disk volume, which should align with a
+     * device_name specified by
+     * job.allocation_policy.instances[0].policy.disks[i].device_name or
+     * defined by the given instance template in
+     * job.allocation_policy.instances[0].instance_template.
      * </pre>
      *
      * <code>string device_name = 6;</code>
@@ -1429,7 +1465,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Device name of an attached disk
+     * Device name of an attached disk volume, which should align with a
+     * device_name specified by
+     * job.allocation_policy.instances[0].policy.disks[i].device_name or
+     * defined by the given instance template in
+     * job.allocation_policy.instances[0].instance_template.
      * </pre>
      *
      * <code>string device_name = 6;</code>
@@ -1450,7 +1490,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Device name of an attached disk
+     * Device name of an attached disk volume, which should align with a
+     * device_name specified by
+     * job.allocation_policy.instances[0].policy.disks[i].device_name or
+     * defined by the given instance template in
+     * job.allocation_policy.instances[0].instance_template.
      * </pre>
      *
      * <code>string device_name = 6;</code>
@@ -1469,7 +1513,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Device name of an attached disk
+     * Device name of an attached disk volume, which should align with a
+     * device_name specified by
+     * job.allocation_policy.instances[0].policy.disks[i].device_name or
+     * defined by the given instance template in
+     * job.allocation_policy.instances[0].instance_template.
      * </pre>
      *
      * <code>string device_name = 6;</code>
@@ -1493,7 +1541,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount path for the volume, e.g. /mnt/share
+     * The mount path for the volume, e.g. /mnt/disks/share.
      * </pre>
      *
      * <code>string mount_path = 4;</code>
@@ -1515,7 +1563,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount path for the volume, e.g. /mnt/share
+     * The mount path for the volume, e.g. /mnt/disks/share.
      * </pre>
      *
      * <code>string mount_path = 4;</code>
@@ -1537,7 +1585,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount path for the volume, e.g. /mnt/share
+     * The mount path for the volume, e.g. /mnt/disks/share.
      * </pre>
      *
      * <code>string mount_path = 4;</code>
@@ -1558,7 +1606,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount path for the volume, e.g. /mnt/share
+     * The mount path for the volume, e.g. /mnt/disks/share.
      * </pre>
      *
      * <code>string mount_path = 4;</code>
@@ -1575,7 +1623,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount path for the volume, e.g. /mnt/share
+     * The mount path for the volume, e.g. /mnt/disks/share.
      * </pre>
      *
      * <code>string mount_path = 4;</code>
@@ -1607,14 +1655,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1628,14 +1677,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1649,14 +1699,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1671,14 +1722,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1693,14 +1745,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1722,14 +1775,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1750,14 +1804,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1775,14 +1830,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>
@@ -1799,14 +1855,15 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Mount options
-     * For Google Cloud Storage, mount options are the global options supported by
-     * gcsfuse tool. Batch will use them to mount the volume with the following
-     * command:
-     * "gcsfuse [global options] bucket mountpoint".
-     * For PD, NFS, mount options are these supported by /etc/fstab. Batch will
-     * use Fstab to mount such volumes.
-     * https://help.ubuntu.com/community/Fstab
+     * For Google Cloud Storage (GCS), mount options are the options supported by
+     * the gcsfuse tool (https://github.com/GoogleCloudPlatform/gcsfuse).
+     * For existing persistent disks, mount options provided by the
+     * mount command (https://man7.org/linux/man-pages/man8/mount.8.html) except
+     * writing are supported. This is due to restrictions of multi-writer mode
+     * (https://cloud.google.com/compute/docs/disks/sharing-disks-between-vms).
+     * For other attached disks and Network File System (NFS), mount options are
+     * these supported by the mount command
+     * (https://man7.org/linux/man-pages/man8/mount.8.html).
      * </pre>
      *
      * <code>repeated string mount_options = 5;</code>

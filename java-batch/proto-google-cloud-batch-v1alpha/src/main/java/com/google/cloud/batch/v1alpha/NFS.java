@@ -22,7 +22,7 @@ package com.google.cloud.batch.v1alpha;
  *
  *
  * <pre>
- * Represents an NFS server and remote path: &lt;server&gt;:&lt;remote_path&gt;
+ * Represents an NFS volume.
  * </pre>
  *
  * Protobuf type {@code google.cloud.batch.v1alpha.NFS}
@@ -74,7 +74,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of the NFS server, e.g. an IP address.
+   * The IP address of the NFS.
    * </pre>
    *
    * <code>string server = 1;</code>
@@ -97,7 +97,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of the NFS server, e.g. an IP address.
+   * The IP address of the NFS.
    * </pre>
    *
    * <code>string server = 1;</code>
@@ -123,7 +123,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Remote source path exported from NFS, e.g., "/share".
+   * Remote source path exported from the NFS, e.g., "/share".
    * </pre>
    *
    * <code>string remote_path = 2;</code>
@@ -146,7 +146,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Remote source path exported from NFS, e.g., "/share".
+   * Remote source path exported from the NFS, e.g., "/share".
    * </pre>
    *
    * <code>string remote_path = 2;</code>
@@ -336,7 +336,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an NFS server and remote path: &lt;server&gt;:&lt;remote_path&gt;
+   * Represents an NFS volume.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1alpha.NFS}
@@ -519,7 +519,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the NFS server, e.g. an IP address.
+     * The IP address of the NFS.
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -541,7 +541,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the NFS server, e.g. an IP address.
+     * The IP address of the NFS.
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -563,7 +563,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the NFS server, e.g. an IP address.
+     * The IP address of the NFS.
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -584,7 +584,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the NFS server, e.g. an IP address.
+     * The IP address of the NFS.
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -601,7 +601,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the NFS server, e.g. an IP address.
+     * The IP address of the NFS.
      * </pre>
      *
      * <code>string server = 1;</code>
@@ -625,7 +625,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Remote source path exported from NFS, e.g., "/share".
+     * Remote source path exported from the NFS, e.g., "/share".
      * </pre>
      *
      * <code>string remote_path = 2;</code>
@@ -647,7 +647,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Remote source path exported from NFS, e.g., "/share".
+     * Remote source path exported from the NFS, e.g., "/share".
      * </pre>
      *
      * <code>string remote_path = 2;</code>
@@ -669,7 +669,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Remote source path exported from NFS, e.g., "/share".
+     * Remote source path exported from the NFS, e.g., "/share".
      * </pre>
      *
      * <code>string remote_path = 2;</code>
@@ -690,7 +690,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Remote source path exported from NFS, e.g., "/share".
+     * Remote source path exported from the NFS, e.g., "/share".
      * </pre>
      *
      * <code>string remote_path = 2;</code>
@@ -707,7 +707,7 @@ public final class NFS extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Remote source path exported from NFS, e.g., "/share".
+     * Remote source path exported from the NFS, e.g., "/share".
      * </pre>
      *
      * <code>string remote_path = 2;</code>

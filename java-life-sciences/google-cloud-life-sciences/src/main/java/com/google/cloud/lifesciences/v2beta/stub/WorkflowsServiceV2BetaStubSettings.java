@@ -16,7 +16,10 @@
 
 package com.google.cloud.lifesciences.v2beta.stub;
 
+import static com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -31,16 +34,26 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.lifesciences.v2beta.Metadata;
 import com.google.cloud.lifesciences.v2beta.RunPipelineRequest;
 import com.google.cloud.lifesciences.v2beta.RunPipelineResponse;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -66,7 +79,7 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runPipeline to 30 seconds:
+ * <p>For example, to set the total timeout of getLocation to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -77,10 +90,10 @@ import org.threeten.bp.Duration;
  * WorkflowsServiceV2BetaStubSettings.Builder workflowsServiceV2BetaSettingsBuilder =
  *     WorkflowsServiceV2BetaStubSettings.newBuilder();
  * workflowsServiceV2BetaSettingsBuilder
- *     .runPipelineSettings()
+ *     .getLocationSettings()
  *     .setRetrySettings(
  *         workflowsServiceV2BetaSettingsBuilder
- *             .runPipelineSettings()
+ *             .getLocationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -100,6 +113,63 @@ public class WorkflowsServiceV2BetaStubSettings
   private final UnaryCallSettings<RunPipelineRequest, Operation> runPipelineSettings;
   private final OperationCallSettings<RunPipelineRequest, RunPipelineResponse, Metadata>
       runPipelineOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to runPipeline. */
   public UnaryCallSettings<RunPipelineRequest, Operation> runPipelineSettings() {
@@ -110,6 +180,17 @@ public class WorkflowsServiceV2BetaStubSettings
   public OperationCallSettings<RunPipelineRequest, RunPipelineResponse, Metadata>
       runPipelineOperationSettings() {
     return runPipelineOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public WorkflowsServiceV2BetaStub createStub() throws IOException {
@@ -220,6 +301,8 @@ public class WorkflowsServiceV2BetaStubSettings
 
     runPipelineSettings = settingsBuilder.runPipelineSettings().build();
     runPipelineOperationSettings = settingsBuilder.runPipelineOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for WorkflowsServiceV2BetaStubSettings. */
@@ -229,6 +312,10 @@ public class WorkflowsServiceV2BetaStubSettings
     private final UnaryCallSettings.Builder<RunPipelineRequest, Operation> runPipelineSettings;
     private final OperationCallSettings.Builder<RunPipelineRequest, RunPipelineResponse, Metadata>
         runPipelineOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -265,9 +352,12 @@ public class WorkflowsServiceV2BetaStubSettings
 
       runPipelineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runPipelineOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(runPipelineSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              runPipelineSettings, listLocationsSettings, getLocationSettings);
       initDefaults(this);
     }
 
@@ -276,9 +366,12 @@ public class WorkflowsServiceV2BetaStubSettings
 
       runPipelineSettings = settings.runPipelineSettings.toBuilder();
       runPipelineOperationSettings = settings.runPipelineOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(runPipelineSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              runPipelineSettings, listLocationsSettings, getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -310,6 +403,16 @@ public class WorkflowsServiceV2BetaStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .runPipelineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -365,6 +468,18 @@ public class WorkflowsServiceV2BetaStubSettings
     public OperationCallSettings.Builder<RunPipelineRequest, RunPipelineResponse, Metadata>
         runPipelineOperationSettings() {
       return runPipelineOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

@@ -131,6 +131,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Memcached instance is updating configuration such as maintenance policy
+     * and schedule.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    UPDATING(3),
+    /**
+     *
+     *
+     * <pre>
      * Memcached instance is being deleted.
      * </pre>
      *
@@ -184,6 +195,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Memcached instance is updating configuration such as maintenance policy
+     * and schedule.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    public static final int UPDATING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
      * Memcached instance is being deleted.
      * </pre>
      *
@@ -231,6 +253,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return CREATING;
         case 2:
           return READY;
+        case 3:
+          return UPDATING;
         case 4:
           return DELETING;
         case 5:
@@ -4278,7 +4302,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -4294,7 +4318,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -4312,7 +4336,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional: User defined parameters to apply to the memcached process
+   * User defined parameters to apply to the memcached process
    * on each node.
    * </pre>
    *
@@ -4746,6 +4770,116 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     return updateAvailable_;
   }
 
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 22;
+  private com.google.cloud.memcache.v1beta2.MaintenancePolicy maintenancePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return maintenancePolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1beta2.MaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.memcache.v1beta2.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The maintenance policy for the instance. If not provided,
+   * the maintenance event will be performed based on Memorystore
+   * internal rollout schedule.
+   * </pre>
+   *
+   * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1beta2.MaintenancePolicyOrBuilder
+      getMaintenancePolicyOrBuilder() {
+    return getMaintenancePolicy();
+  }
+
+  public static final int MAINTENANCE_SCHEDULE_FIELD_NUMBER = 23;
+  private com.google.cloud.memcache.v1beta2.MaintenanceSchedule maintenanceSchedule_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the maintenanceSchedule field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceSchedule() {
+    return maintenanceSchedule_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The maintenanceSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1beta2.MaintenanceSchedule getMaintenanceSchedule() {
+    return maintenanceSchedule_ == null
+        ? com.google.cloud.memcache.v1beta2.MaintenanceSchedule.getDefaultInstance()
+        : maintenanceSchedule_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Published maintenance schedule.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memcache.v1beta2.MaintenanceScheduleOrBuilder
+      getMaintenanceScheduleOrBuilder() {
+    return getMaintenanceSchedule();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4811,6 +4945,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (updateAvailable_ != false) {
       output.writeBool(21, updateAvailable_);
+    }
+    if (maintenancePolicy_ != null) {
+      output.writeMessage(22, getMaintenancePolicy());
+    }
+    if (maintenanceSchedule_ != null) {
+      output.writeMessage(23, getMaintenanceSchedule());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4887,6 +5027,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (updateAvailable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, updateAvailable_);
     }
+    if (maintenancePolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getMaintenancePolicy());
+    }
+    if (maintenanceSchedule_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getMaintenanceSchedule());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4932,6 +5079,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getInstanceMessagesList().equals(other.getInstanceMessagesList())) return false;
     if (!getDiscoveryEndpoint().equals(other.getDiscoveryEndpoint())) return false;
     if (getUpdateAvailable() != other.getUpdateAvailable()) return false;
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
+    }
+    if (hasMaintenanceSchedule() != other.hasMaintenanceSchedule()) return false;
+    if (hasMaintenanceSchedule()) {
+      if (!getMaintenanceSchedule().equals(other.getMaintenanceSchedule())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4993,6 +5148,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDiscoveryEndpoint().hashCode();
     hash = (37 * hash) + UPDATE_AVAILABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpdateAvailable());
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasMaintenanceSchedule()) {
+      hash = (37 * hash) + MAINTENANCE_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceSchedule().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5210,6 +5373,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
       updateAvailable_ = false;
 
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = null;
+      } else {
+        maintenancePolicy_ = null;
+        maintenancePolicyBuilder_ = null;
+      }
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = null;
+      } else {
+        maintenanceSchedule_ = null;
+        maintenanceScheduleBuilder_ = null;
+      }
       return this;
     }
 
@@ -5292,6 +5467,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       result.discoveryEndpoint_ = discoveryEndpoint_;
       result.updateAvailable_ = updateAvailable_;
+      if (maintenancePolicyBuilder_ == null) {
+        result.maintenancePolicy_ = maintenancePolicy_;
+      } else {
+        result.maintenancePolicy_ = maintenancePolicyBuilder_.build();
+      }
+      if (maintenanceScheduleBuilder_ == null) {
+        result.maintenanceSchedule_ = maintenanceSchedule_;
+      } else {
+        result.maintenanceSchedule_ = maintenanceScheduleBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -5450,6 +5635,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.getUpdateAvailable() != false) {
         setUpdateAvailable(other.getUpdateAvailable());
       }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasMaintenanceSchedule()) {
+        mergeMaintenanceSchedule(other.getMaintenanceSchedule());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5600,6 +5791,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 168
+            case 178:
+              {
+                input.readMessage(
+                    getMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    getMaintenanceScheduleFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6733,7 +6938,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6748,7 +6953,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6769,7 +6974,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6792,7 +6997,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6813,7 +7018,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6840,7 +7045,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6861,7 +7066,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6876,7 +7081,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -6895,7 +7100,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional: User defined parameters to apply to the memcached process
+     * User defined parameters to apply to the memcached process
      * on each node.
      * </pre>
      *
@@ -8521,6 +8726,421 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       updateAvailable_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.memcache.v1beta2.MaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1beta2.MaintenancePolicy,
+            com.google.cloud.memcache.v1beta2.MaintenancePolicy.Builder,
+            com.google.cloud.memcache.v1beta2.MaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return maintenancePolicyBuilder_ != null || maintenancePolicy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.cloud.memcache.v1beta2.MaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.memcache.v1beta2.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     */
+    public Builder setMaintenancePolicy(com.google.cloud.memcache.v1beta2.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.cloud.memcache.v1beta2.MaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     */
+    public Builder mergeMaintenancePolicy(
+        com.google.cloud.memcache.v1beta2.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (maintenancePolicy_ != null) {
+          maintenancePolicy_ =
+              com.google.cloud.memcache.v1beta2.MaintenancePolicy.newBuilder(maintenancePolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenancePolicy_ = value;
+        }
+        onChanged();
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     */
+    public Builder clearMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = null;
+        onChanged();
+      } else {
+        maintenancePolicy_ = null;
+        maintenancePolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     */
+    public com.google.cloud.memcache.v1beta2.MaintenancePolicy.Builder
+        getMaintenancePolicyBuilder() {
+
+      onChanged();
+      return getMaintenancePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     */
+    public com.google.cloud.memcache.v1beta2.MaintenancePolicyOrBuilder
+        getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.memcache.v1beta2.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maintenance policy for the instance. If not provided,
+     * the maintenance event will be performed based on Memorystore
+     * internal rollout schedule.
+     * </pre>
+     *
+     * <code>.google.cloud.memcache.v1beta2.MaintenancePolicy maintenance_policy = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1beta2.MaintenancePolicy,
+            com.google.cloud.memcache.v1beta2.MaintenancePolicy.Builder,
+            com.google.cloud.memcache.v1beta2.MaintenancePolicyOrBuilder>
+        getMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memcache.v1beta2.MaintenancePolicy,
+                com.google.cloud.memcache.v1beta2.MaintenancePolicy.Builder,
+                com.google.cloud.memcache.v1beta2.MaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
+    }
+
+    private com.google.cloud.memcache.v1beta2.MaintenanceSchedule maintenanceSchedule_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1beta2.MaintenanceSchedule,
+            com.google.cloud.memcache.v1beta2.MaintenanceSchedule.Builder,
+            com.google.cloud.memcache.v1beta2.MaintenanceScheduleOrBuilder>
+        maintenanceScheduleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the maintenanceSchedule field is set.
+     */
+    public boolean hasMaintenanceSchedule() {
+      return maintenanceScheduleBuilder_ != null || maintenanceSchedule_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The maintenanceSchedule.
+     */
+    public com.google.cloud.memcache.v1beta2.MaintenanceSchedule getMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.memcache.v1beta2.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      } else {
+        return maintenanceScheduleBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.memcache.v1beta2.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceSchedule_ = value;
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMaintenanceSchedule(
+        com.google.cloud.memcache.v1beta2.MaintenanceSchedule.Builder builderForValue) {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMaintenanceSchedule(
+        com.google.cloud.memcache.v1beta2.MaintenanceSchedule value) {
+      if (maintenanceScheduleBuilder_ == null) {
+        if (maintenanceSchedule_ != null) {
+          maintenanceSchedule_ =
+              com.google.cloud.memcache.v1beta2.MaintenanceSchedule.newBuilder(maintenanceSchedule_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenanceSchedule_ = value;
+        }
+        onChanged();
+      } else {
+        maintenanceScheduleBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMaintenanceSchedule() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceSchedule_ = null;
+        onChanged();
+      } else {
+        maintenanceSchedule_ = null;
+        maintenanceScheduleBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memcache.v1beta2.MaintenanceSchedule.Builder
+        getMaintenanceScheduleBuilder() {
+
+      onChanged();
+      return getMaintenanceScheduleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memcache.v1beta2.MaintenanceScheduleOrBuilder
+        getMaintenanceScheduleOrBuilder() {
+      if (maintenanceScheduleBuilder_ != null) {
+        return maintenanceScheduleBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceSchedule_ == null
+            ? com.google.cloud.memcache.v1beta2.MaintenanceSchedule.getDefaultInstance()
+            : maintenanceSchedule_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Published maintenance schedule.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memcache.v1beta2.MaintenanceSchedule maintenance_schedule = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.memcache.v1beta2.MaintenanceSchedule,
+            com.google.cloud.memcache.v1beta2.MaintenanceSchedule.Builder,
+            com.google.cloud.memcache.v1beta2.MaintenanceScheduleOrBuilder>
+        getMaintenanceScheduleFieldBuilder() {
+      if (maintenanceScheduleBuilder_ == null) {
+        maintenanceScheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.memcache.v1beta2.MaintenanceSchedule,
+                com.google.cloud.memcache.v1beta2.MaintenanceSchedule.Builder,
+                com.google.cloud.memcache.v1beta2.MaintenanceScheduleOrBuilder>(
+                getMaintenanceSchedule(), getParentForChildren(), isClean());
+        maintenanceSchedule_ = null;
+      }
+      return maintenanceScheduleBuilder_;
     }
 
     @java.lang.Override

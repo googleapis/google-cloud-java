@@ -127,4 +127,33 @@ public interface ListTriggersRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Filter field. Used to filter the Triggers to be listed. Possible filters
+   * are described in https://google.aip.dev/160. For example, using
+   * "?filter=destination:gke" would list only Triggers with a gke destination.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Filter field. Used to filter the Triggers to be listed. Possible filters
+   * are described in https://google.aip.dev/160. For example, using
+   * "?filter=destination:gke" would list only Triggers with a gke destination.
+   * </pre>
+   *
+   * <code>string filter = 5;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

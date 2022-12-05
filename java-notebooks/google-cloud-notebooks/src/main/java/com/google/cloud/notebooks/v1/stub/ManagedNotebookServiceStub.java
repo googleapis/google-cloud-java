@@ -16,13 +16,19 @@
 
 package com.google.cloud.notebooks.v1.stub;
 
+import static com.google.cloud.notebooks.v1.ManagedNotebookServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.notebooks.v1.ManagedNotebookServiceClient.ListRuntimesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.notebooks.v1.CreateRuntimeRequest;
 import com.google.cloud.notebooks.v1.DeleteRuntimeRequest;
+import com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest;
 import com.google.cloud.notebooks.v1.GetRuntimeRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesRequest;
 import com.google.cloud.notebooks.v1.ListRuntimesResponse;
@@ -35,6 +41,13 @@ import com.google.cloud.notebooks.v1.Runtime;
 import com.google.cloud.notebooks.v1.StartRuntimeRequest;
 import com.google.cloud.notebooks.v1.StopRuntimeRequest;
 import com.google.cloud.notebooks.v1.SwitchRuntimeRequest;
+import com.google.cloud.notebooks.v1.UpdateRuntimeRequest;
+import com.google.cloud.notebooks.v1.UpgradeRuntimeRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -72,6 +85,15 @@ public abstract class ManagedNotebookServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateRuntimeRequest, Operation> createRuntimeCallable() {
     throw new UnsupportedOperationException("Not implemented: createRuntimeCallable()");
+  }
+
+  public OperationCallable<UpdateRuntimeRequest, Runtime, OperationMetadata>
+      updateRuntimeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRuntimeOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRuntimeRequest, Operation> updateRuntimeCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRuntimeCallable()");
   }
 
   public OperationCallable<DeleteRuntimeRequest, Empty, OperationMetadata>
@@ -119,6 +141,15 @@ public abstract class ManagedNotebookServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: resetRuntimeCallable()");
   }
 
+  public OperationCallable<UpgradeRuntimeRequest, Runtime, OperationMetadata>
+      upgradeRuntimeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeRuntimeOperationCallable()");
+  }
+
+  public UnaryCallable<UpgradeRuntimeRequest, Operation> upgradeRuntimeCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeRuntimeCallable()");
+  }
+
   public OperationCallable<ReportRuntimeEventRequest, Runtime, OperationMetadata>
       reportRuntimeEventOperationCallable() {
     throw new UnsupportedOperationException(
@@ -133,6 +164,41 @@ public abstract class ManagedNotebookServiceStub implements BackgroundResource {
       refreshRuntimeTokenInternalCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: refreshRuntimeTokenInternalCallable()");
+  }
+
+  public OperationCallable<DiagnoseRuntimeRequest, Runtime, OperationMetadata>
+      diagnoseRuntimeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: diagnoseRuntimeOperationCallable()");
+  }
+
+  public UnaryCallable<DiagnoseRuntimeRequest, Operation> diagnoseRuntimeCallable() {
+    throw new UnsupportedOperationException("Not implemented: diagnoseRuntimeCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

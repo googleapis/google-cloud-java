@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-cloudcommerceconsumerprocurement",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-cloudcommerceconsumerprocurement",
   "distribution_name": "com.google.cloud:google-cloud-cloudcommerceconsumerprocurement",
   "api_id": "cloudcommerceconsumerprocurement.googleapis.com",

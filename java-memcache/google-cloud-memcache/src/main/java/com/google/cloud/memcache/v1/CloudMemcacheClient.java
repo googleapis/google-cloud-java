@@ -28,12 +28,17 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.memcache.v1.stub.CloudMemcacheStub;
 import com.google.cloud.memcache.v1.stub.CloudMemcacheStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -534,9 +539,9 @@ public class CloudMemcacheClient implements BackgroundResource {
    *       <li>Must start with a letter.
    *       <li>Must be between 1-40 characters.
    *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the user project / location
+   *       <li>Must be unique within the user project / location.
    *     </ul>
-   *     <p>If any of the above are not met, will raise an invalid argument error.
+   *     <p>If any of the above are not met, the API raises an invalid argument error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
@@ -581,9 +586,9 @@ public class CloudMemcacheClient implements BackgroundResource {
    *       <li>Must start with a letter.
    *       <li>Must be between 1-40 characters.
    *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the user project / location
+   *       <li>Must be unique within the user project / location.
    *     </ul>
-   *     <p>If any of the above are not met, will raise an invalid argument error.
+   *     <p>If any of the above are not met, the API raises an invalid argument error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
@@ -710,7 +715,8 @@ public class CloudMemcacheClient implements BackgroundResource {
    *
    * @param instance Required. A Memcached Instance. Only fields specified in update_mask are
    *     updated.
-   * @param updateMask Required. Mask of fields to update. &#42; `displayName`
+   * @param updateMask Required. Mask of fields to update.
+   *     <p>&#42; `displayName`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> updateInstanceAsync(
@@ -811,9 +817,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -851,9 +857,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -891,9 +897,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -924,9 +930,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -957,9 +963,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -1132,7 +1138,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will restart the set of specified nodes in order to update them to the current
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
@@ -1153,10 +1159,10 @@ public class CloudMemcacheClient implements BackgroundResource {
    *
    * @param name Required. Resource name of the Memcached instance for which parameter group updates
    *     should be applied.
-   * @param nodeIds Nodes to which we should apply the instance-level parameter group.
+   * @param nodeIds Nodes to which the instance-level parameter group is applied.
    * @param applyAll Whether to apply instance-level parameter group to all nodes. If set to true,
-   *     will explicitly restrict users from specifying any nodes, and apply parameter group updates
-   *     to all nodes within the instance.
+   *     users are restricted from specifying individual nodes, and `ApplyParameters` updates all
+   *     nodes within the instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> applyParametersAsync(
@@ -1172,7 +1178,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will restart the set of specified nodes in order to update them to the current
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
@@ -1193,10 +1199,10 @@ public class CloudMemcacheClient implements BackgroundResource {
    *
    * @param name Required. Resource name of the Memcached instance for which parameter group updates
    *     should be applied.
-   * @param nodeIds Nodes to which we should apply the instance-level parameter group.
+   * @param nodeIds Nodes to which the instance-level parameter group is applied.
    * @param applyAll Whether to apply instance-level parameter group to all nodes. If set to true,
-   *     will explicitly restrict users from specifying any nodes, and apply parameter group updates
-   *     to all nodes within the instance.
+   *     users are restricted from specifying individual nodes, and `ApplyParameters` updates all
+   *     nodes within the instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> applyParametersAsync(
@@ -1212,7 +1218,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will restart the set of specified nodes in order to update them to the current
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
@@ -1244,7 +1250,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will restart the set of specified nodes in order to update them to the current
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
@@ -1276,7 +1282,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will restart the set of specified nodes in order to update them to the current
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
@@ -1303,6 +1309,343 @@ public class CloudMemcacheClient implements BackgroundResource {
    */
   public final UnaryCallable<ApplyParametersRequest, Operation> applyParametersCallable() {
     return stub.applyParametersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+   *       RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+   *   Timestamp scheduleTime = Timestamp.newBuilder().build();
+   *   Instance response =
+   *       cloudMemcacheClient
+   *           .rescheduleMaintenanceAsync(instance, rescheduleType, scheduleTime)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Memcache instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param rescheduleType Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time
+   *     as well.
+   * @param scheduleTime Timestamp when the maintenance shall be rescheduled to if
+   *     reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example `2012-11-15T16:19:00.094Z`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
+      InstanceName instance,
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType,
+      Timestamp scheduleTime) {
+    RescheduleMaintenanceRequest request =
+        RescheduleMaintenanceRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setRescheduleType(rescheduleType)
+            .setScheduleTime(scheduleTime)
+            .build();
+    return rescheduleMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+   *       RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+   *   Timestamp scheduleTime = Timestamp.newBuilder().build();
+   *   Instance response =
+   *       cloudMemcacheClient
+   *           .rescheduleMaintenanceAsync(instance, rescheduleType, scheduleTime)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Memcache instance resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region.
+   * @param rescheduleType Required. If reschedule type is SPECIFIC_TIME, must set up schedule_time
+   *     as well.
+   * @param scheduleTime Timestamp when the maintenance shall be rescheduled to if
+   *     reschedule_type=SPECIFIC_TIME, in RFC 3339 format, for example `2012-11-15T16:19:00.094Z`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
+      String instance,
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType,
+      Timestamp scheduleTime) {
+    RescheduleMaintenanceRequest request =
+        RescheduleMaintenanceRequest.newBuilder()
+            .setInstance(instance)
+            .setRescheduleType(rescheduleType)
+            .setScheduleTime(scheduleTime)
+            .build();
+    return rescheduleMaintenanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   RescheduleMaintenanceRequest request =
+   *       RescheduleMaintenanceRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   Instance response = cloudMemcacheClient.rescheduleMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> rescheduleMaintenanceAsync(
+      RescheduleMaintenanceRequest request) {
+    return rescheduleMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   RescheduleMaintenanceRequest request =
+   *       RescheduleMaintenanceRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudMemcacheClient.rescheduleMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    return stub.rescheduleMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reschedules upcoming maintenance event.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   RescheduleMaintenanceRequest request =
+   *       RescheduleMaintenanceRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setScheduleTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudMemcacheClient.rescheduleMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceCallable() {
+    return stub.rescheduleMaintenanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : cloudMemcacheClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       cloudMemcacheClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response = cloudMemcacheClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = cloudMemcacheClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = cloudMemcacheClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
   }
 
   @Override
@@ -1408,6 +1751,82 @@ public class CloudMemcacheClient implements BackgroundResource {
     protected ListInstancesFixedSizeCollection createCollection(
         List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

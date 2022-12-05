@@ -42,6 +42,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     modes_ = java.util.Collections.emptyList();
     reservedIpRange_ = "";
     ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    connectMode_ = 0;
   }
 
   @java.lang.Override
@@ -74,7 +75,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Internet protocol versions supported by Cloud Filestore.
+   * Internet protocol versions supported by Filestore.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.filestore.v1beta1.NetworkConfig.AddressMode}
@@ -203,6 +204,167 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.NetworkConfig.AddressMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Available connection modes.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode}
+   */
+  public enum ConnectMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * ConnectMode not set.
+     * </pre>
+     *
+     * <code>CONNECT_MODE_UNSPECIFIED = 0;</code>
+     */
+    CONNECT_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Connect via direct peering to the Filestore service.
+     * </pre>
+     *
+     * <code>DIRECT_PEERING = 1;</code>
+     */
+    DIRECT_PEERING(1),
+    /**
+     *
+     *
+     * <pre>
+     * Connect to your Filestore instance using Private Service
+     * Access. Private services access provides an IP address range for multiple
+     * Google Cloud services, including Filestore.
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
+     */
+    PRIVATE_SERVICE_ACCESS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * ConnectMode not set.
+     * </pre>
+     *
+     * <code>CONNECT_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONNECT_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Connect via direct peering to the Filestore service.
+     * </pre>
+     *
+     * <code>DIRECT_PEERING = 1;</code>
+     */
+    public static final int DIRECT_PEERING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Connect to your Filestore instance using Private Service
+     * Access. Private services access provides an IP address range for multiple
+     * Google Cloud services, including Filestore.
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_ACCESS = 2;</code>
+     */
+    public static final int PRIVATE_SERVICE_ACCESS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConnectMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConnectMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONNECT_MODE_UNSPECIFIED;
+        case 1:
+          return DIRECT_PEERING;
+        case 2:
+          return PRIVATE_SERVICE_ACCESS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConnectMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConnectMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ConnectMode>() {
+          public ConnectMode findValueByNumber(int number) {
+            return ConnectMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.filestore.v1beta1.NetworkConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ConnectMode[] VALUES = values();
+
+    public static ConnectMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConnectMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode)
   }
 
   public static final int NETWORK_FIELD_NUMBER = 1;
@@ -369,13 +531,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
-   * [internal IP address
+   * Optional, reserved_ip_range can have one of the following two types of
+   * values.
+   * * CIDR range value when using DIRECT_PEERING connect mode.
+   * * [Allocated IP address
+   * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
+   * when using PRIVATE_SERVICE_ACCESS connect mode.
+   * When the name of an allocated IP address range is specified, it must be one
+   * of the ranges associated with the private service access connection.
+   * When specified as a direct CIDR value, it must be a /29 CIDR block for
+   * Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for
+   * Enterprise tier in one of the [internal IP address
    * ranges](https://www.arin.net/reference/research/statistics/address_filters/)
    * that identifies the range of IP addresses reserved for this instance. For
-   * example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
-   * with either existing subnets or assigned IP address ranges for other Cloud
-   * Filestore instances in the selected VPC network.
+   * example, 10.0.0.0/29, 192.168.0.0/24, or 192.168.0.0/26, respectively. The
+   * range you specify can't overlap with either existing subnets or assigned IP
+   * address ranges for other Filestore instances in the selected VPC
+   * network.
    * </pre>
    *
    * <code>string reserved_ip_range = 4;</code>
@@ -398,13 +570,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
-   * [internal IP address
+   * Optional, reserved_ip_range can have one of the following two types of
+   * values.
+   * * CIDR range value when using DIRECT_PEERING connect mode.
+   * * [Allocated IP address
+   * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
+   * when using PRIVATE_SERVICE_ACCESS connect mode.
+   * When the name of an allocated IP address range is specified, it must be one
+   * of the ranges associated with the private service access connection.
+   * When specified as a direct CIDR value, it must be a /29 CIDR block for
+   * Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for
+   * Enterprise tier in one of the [internal IP address
    * ranges](https://www.arin.net/reference/research/statistics/address_filters/)
    * that identifies the range of IP addresses reserved for this instance. For
-   * example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
-   * with either existing subnets or assigned IP address ranges for other Cloud
-   * Filestore instances in the selected VPC network.
+   * example, 10.0.0.0/29, 192.168.0.0/24, or 192.168.0.0/26, respectively. The
+   * range you specify can't overlap with either existing subnets or assigned IP
+   * address ranges for other Filestore instances in the selected VPC
+   * network.
    * </pre>
    *
    * <code>string reserved_ip_range = 4;</code>
@@ -430,8 +612,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format
-   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+   * IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -446,8 +628,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format
-   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+   * IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -462,8 +644,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format
-   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+   * IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -479,8 +661,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format
-   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+   * IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -491,6 +673,46 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getIpAddressesBytes(int index) {
     return ipAddresses_.getByteString(index);
+  }
+
+  public static final int CONNECT_MODE_FIELD_NUMBER = 6;
+  private int connectMode_;
+  /**
+   *
+   *
+   * <pre>
+   * The network connect mode of the Filestore instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode connect_mode = 6;</code>
+   *
+   * @return The enum numeric value on the wire for connectMode.
+   */
+  @java.lang.Override
+  public int getConnectModeValue() {
+    return connectMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network connect mode of the Filestore instance.
+   * If not provided, the connect mode defaults to DIRECT_PEERING.
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode connect_mode = 6;</code>
+   *
+   * @return The connectMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode getConnectMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode result =
+        com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode.valueOf(connectMode_);
+    return result == null
+        ? com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -523,6 +745,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < ipAddresses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ipAddresses_.getRaw(i));
+    }
+    if (connectMode_
+        != com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode.CONNECT_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, connectMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -559,6 +786,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getIpAddressesList().size();
     }
+    if (connectMode_
+        != com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode.CONNECT_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, connectMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -579,6 +811,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (!modes_.equals(other.modes_)) return false;
     if (!getReservedIpRange().equals(other.getReservedIpRange())) return false;
     if (!getIpAddressesList().equals(other.getIpAddressesList())) return false;
+    if (connectMode_ != other.connectMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -602,6 +835,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + IP_ADDRESSES_FIELD_NUMBER;
       hash = (53 * hash) + getIpAddressesList().hashCode();
     }
+    hash = (37 * hash) + CONNECT_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + connectMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -748,6 +983,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
       ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      connectMode_ = 0;
+
       return this;
     }
 
@@ -788,6 +1025,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.ipAddresses_ = ipAddresses_;
+      result.connectMode_ = connectMode_;
       onBuilt();
       return result;
     }
@@ -866,6 +1104,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.connectMode_ != 0) {
+        setConnectModeValue(other.getConnectModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -930,6 +1171,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 ipAddresses_.add(s);
                 break;
               } // case 42
+            case 48:
+              {
+                connectMode_ = input.readEnum();
+
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1306,13 +1553,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
-     * [internal IP address
+     * Optional, reserved_ip_range can have one of the following two types of
+     * values.
+     * * CIDR range value when using DIRECT_PEERING connect mode.
+     * * [Allocated IP address
+     * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
+     * when using PRIVATE_SERVICE_ACCESS connect mode.
+     * When the name of an allocated IP address range is specified, it must be one
+     * of the ranges associated with the private service access connection.
+     * When specified as a direct CIDR value, it must be a /29 CIDR block for
+     * Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for
+     * Enterprise tier in one of the [internal IP address
      * ranges](https://www.arin.net/reference/research/statistics/address_filters/)
      * that identifies the range of IP addresses reserved for this instance. For
-     * example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
-     * with either existing subnets or assigned IP address ranges for other Cloud
-     * Filestore instances in the selected VPC network.
+     * example, 10.0.0.0/29, 192.168.0.0/24, or 192.168.0.0/26, respectively. The
+     * range you specify can't overlap with either existing subnets or assigned IP
+     * address ranges for other Filestore instances in the selected VPC
+     * network.
      * </pre>
      *
      * <code>string reserved_ip_range = 4;</code>
@@ -1334,13 +1591,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
-     * [internal IP address
+     * Optional, reserved_ip_range can have one of the following two types of
+     * values.
+     * * CIDR range value when using DIRECT_PEERING connect mode.
+     * * [Allocated IP address
+     * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
+     * when using PRIVATE_SERVICE_ACCESS connect mode.
+     * When the name of an allocated IP address range is specified, it must be one
+     * of the ranges associated with the private service access connection.
+     * When specified as a direct CIDR value, it must be a /29 CIDR block for
+     * Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for
+     * Enterprise tier in one of the [internal IP address
      * ranges](https://www.arin.net/reference/research/statistics/address_filters/)
      * that identifies the range of IP addresses reserved for this instance. For
-     * example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
-     * with either existing subnets or assigned IP address ranges for other Cloud
-     * Filestore instances in the selected VPC network.
+     * example, 10.0.0.0/29, 192.168.0.0/24, or 192.168.0.0/26, respectively. The
+     * range you specify can't overlap with either existing subnets or assigned IP
+     * address ranges for other Filestore instances in the selected VPC
+     * network.
      * </pre>
      *
      * <code>string reserved_ip_range = 4;</code>
@@ -1362,13 +1629,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
-     * [internal IP address
+     * Optional, reserved_ip_range can have one of the following two types of
+     * values.
+     * * CIDR range value when using DIRECT_PEERING connect mode.
+     * * [Allocated IP address
+     * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
+     * when using PRIVATE_SERVICE_ACCESS connect mode.
+     * When the name of an allocated IP address range is specified, it must be one
+     * of the ranges associated with the private service access connection.
+     * When specified as a direct CIDR value, it must be a /29 CIDR block for
+     * Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for
+     * Enterprise tier in one of the [internal IP address
      * ranges](https://www.arin.net/reference/research/statistics/address_filters/)
      * that identifies the range of IP addresses reserved for this instance. For
-     * example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
-     * with either existing subnets or assigned IP address ranges for other Cloud
-     * Filestore instances in the selected VPC network.
+     * example, 10.0.0.0/29, 192.168.0.0/24, or 192.168.0.0/26, respectively. The
+     * range you specify can't overlap with either existing subnets or assigned IP
+     * address ranges for other Filestore instances in the selected VPC
+     * network.
      * </pre>
      *
      * <code>string reserved_ip_range = 4;</code>
@@ -1389,13 +1666,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
-     * [internal IP address
+     * Optional, reserved_ip_range can have one of the following two types of
+     * values.
+     * * CIDR range value when using DIRECT_PEERING connect mode.
+     * * [Allocated IP address
+     * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
+     * when using PRIVATE_SERVICE_ACCESS connect mode.
+     * When the name of an allocated IP address range is specified, it must be one
+     * of the ranges associated with the private service access connection.
+     * When specified as a direct CIDR value, it must be a /29 CIDR block for
+     * Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for
+     * Enterprise tier in one of the [internal IP address
      * ranges](https://www.arin.net/reference/research/statistics/address_filters/)
      * that identifies the range of IP addresses reserved for this instance. For
-     * example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
-     * with either existing subnets or assigned IP address ranges for other Cloud
-     * Filestore instances in the selected VPC network.
+     * example, 10.0.0.0/29, 192.168.0.0/24, or 192.168.0.0/26, respectively. The
+     * range you specify can't overlap with either existing subnets or assigned IP
+     * address ranges for other Filestore instances in the selected VPC
+     * network.
      * </pre>
      *
      * <code>string reserved_ip_range = 4;</code>
@@ -1412,13 +1699,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
-     * [internal IP address
+     * Optional, reserved_ip_range can have one of the following two types of
+     * values.
+     * * CIDR range value when using DIRECT_PEERING connect mode.
+     * * [Allocated IP address
+     * range](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
+     * when using PRIVATE_SERVICE_ACCESS connect mode.
+     * When the name of an allocated IP address range is specified, it must be one
+     * of the ranges associated with the private service access connection.
+     * When specified as a direct CIDR value, it must be a /29 CIDR block for
+     * Basic tier, a /24 CIDR block for High Scale tier, or a /26 CIDR block for
+     * Enterprise tier in one of the [internal IP address
      * ranges](https://www.arin.net/reference/research/statistics/address_filters/)
      * that identifies the range of IP addresses reserved for this instance. For
-     * example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
-     * with either existing subnets or assigned IP address ranges for other Cloud
-     * Filestore instances in the selected VPC network.
+     * example, 10.0.0.0/29, 192.168.0.0/24, or 192.168.0.0/26, respectively. The
+     * range you specify can't overlap with either existing subnets or assigned IP
+     * address ranges for other Filestore instances in the selected VPC
+     * network.
      * </pre>
      *
      * <code>string reserved_ip_range = 4;</code>
@@ -1450,8 +1747,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1466,8 +1763,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1482,8 +1779,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1499,8 +1796,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1516,8 +1813,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1540,8 +1837,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1563,8 +1860,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1583,8 +1880,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1602,8 +1899,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format
-     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
+     * IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1619,6 +1916,105 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIpAddressesIsMutable();
       ipAddresses_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int connectMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The network connect mode of the Filestore instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode connect_mode = 6;</code>
+     *
+     * @return The enum numeric value on the wire for connectMode.
+     */
+    @java.lang.Override
+    public int getConnectModeValue() {
+      return connectMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network connect mode of the Filestore instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode connect_mode = 6;</code>
+     *
+     * @param value The enum numeric value on the wire for connectMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectModeValue(int value) {
+
+      connectMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network connect mode of the Filestore instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode connect_mode = 6;</code>
+     *
+     * @return The connectMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode getConnectMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode result =
+          com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode.valueOf(connectMode_);
+      return result == null
+          ? com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network connect mode of the Filestore instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode connect_mode = 6;</code>
+     *
+     * @param value The connectMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConnectMode(
+        com.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      connectMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network connect mode of the Filestore instance.
+     * If not provided, the connect mode defaults to DIRECT_PEERING.
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.NetworkConfig.ConnectMode connect_mode = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConnectMode() {
+
+      connectMode_ = 0;
       onChanged();
       return this;
     }
