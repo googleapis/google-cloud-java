@@ -50,4 +50,5 @@
     <module>proto-google-cloud-monitoring-metricsscope-v1</module>
     <module>google-cloud-monitoring-metricsscope-bom</module>
   </modules>
-</project>
+
+  </project>
