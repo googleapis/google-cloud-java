@@ -63,6 +63,7 @@ def main(ctx):
     "--release-level",
     type=click.Choice(["stable", "preview"]),
     default="preview",
+    show_default=True,
     help="A label that appears in repo-metadata.json. The first library "
          "generation is always 'preview'."
 )
@@ -70,9 +71,10 @@ def main(ctx):
     "--transport",
     type=click.Choice(["grpc", "http", "both"]),
     default="grpc",
+    show_default=True,
     help="A label that appears in repo-metadata.json"
 )
-@click.option("--language", type=str, default="java")
+@click.option("--language", type=str, default="java", show_default=True)
 @click.option(
     "--distribution-name",
     type=str,
@@ -89,6 +91,7 @@ def main(ctx):
     "--requires-billing",
     type=bool,
     default=True,
+    show_default=True,
     help="Based on this value, README.md explains whether billing setup is "
          "needed or not."
 )
@@ -113,6 +116,7 @@ def main(ctx):
     "--cloud-api",
     type=bool,
     default=True,
+    show_default=True,
     help="If true, the artifact ID of the library is 'google-cloud-'; "
          "otherwise 'google-'"
 )
@@ -120,18 +124,21 @@ def main(ctx):
     "--group-id",
     type=str,
     default="com.google.cloud",
+    show_default=True,
     help="The group ID of the artifact when distribution name is not set"
 )
 @click.option(
     "--owlbot-image",
     type=str,
     default="gcr.io/cloud-devrel-public-resources/owlbot-java",
+    show_default=True,
     help="The owlbot container image used in OwlBot.yaml"
 )
 @click.option(
     "--library-type",
     type=str,
     default="GAPIC_AUTO",
+    show_default=True,
     help="A label that appear in repo-metadata.json to tell how the library is "
          "maintained or generated"
 )
@@ -139,6 +146,7 @@ def main(ctx):
     "--googleapis-gen-url",
     type=str,
     default="https://github.com/googleapis/googleapis-gen.git",
+    show_default=True,
     help="The URL of the repository that has generated Java code from proto "
          "service definition"
 )

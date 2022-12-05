@@ -198,9 +198,10 @@ Options:
   --release-level [stable|preview]
                                   A label that appears in repo-metadata.json.
                                   The first library generation is always
-                                  'preview'.
+                                  'preview'.  [default: preview]
   --transport [grpc|http|both]    A label that appears in repo-metadata.json
-  --language TEXT
+                                  [default: grpc]
+  --language TEXT                 [default: java]
   --distribution-name TEXT        Maven coordinates of the generated library.
                                   By default it's com.google.cloud:google-
                                   cloud-<api_shortname>
@@ -209,6 +210,7 @@ Options:
                                   ud.google.com/flows/enableapi?apiid=<api_id>
   --requires-billing BOOLEAN      Based on this value, README.md explains
                                   whether billing setup is needed or not.
+                                  [default: True]
   --destination-name TEXT         The directory name of the new library. By
                                   default it's java-<api_shortname>
   --proto-path TEXT               Path to proto file from the root of the
@@ -220,15 +222,21 @@ Options:
                                   'google/maps/routing'  [required]
   --cloud-api BOOLEAN             If true, the artifact ID of the library is
                                   'google-cloud-'; otherwise 'google-'
+                                  [default: True]
   --group-id TEXT                 The group ID of the artifact when
-                                  distribution name is not set
+                                  distribution name is not set  [default:
+                                  com.google.cloud]
   --owlbot-image TEXT             The owlbot container image used in
-                                  OwlBot.yaml
+                                  OwlBot.yaml  [default: gcr.io/cloud-devrel-
+                                  public-resources/owlbot-java]
   --library-type TEXT             A label that appear in repo-metadata.json to
                                   tell how the library is maintained or
-                                  generated
+                                  generated  [default: GAPIC_AUTO]
   --googleapis-gen-url TEXT       The URL of the repository that has generated
                                   Java code from proto service definition
+                                  [default:
+                                  https://github.com/googleapis/googleapis-
+                                  gen.git]
   --help                          Show this message and exit.
 ```
 
