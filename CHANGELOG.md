@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.13.0](https://github.com/googleapis/java-datastore/compare/v2.12.5...v2.13.0) (2022-12-06)
+
+
+### Features
+
+* Next release from main branch is 2.13.0 ([#917](https://github.com/googleapis/java-datastore/issues/917)) ([1f12435](https://github.com/googleapis/java-datastore/commit/1f1243577cbdc206b6a0bfcde818411eb1b806ad))
+
+
+### Bug Fixes
+
+* [#355](https://github.com/googleapis/java-datastore/issues/355) Explicitly passing --project argument when starting emulator ([#923](https://github.com/googleapis/java-datastore/issues/923)) ([ef4065d](https://github.com/googleapis/java-datastore/commit/ef4065d233b968f58a34673aa53d39f60a013e2d))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.0 ([#932](https://github.com/googleapis/java-datastore/issues/932)) ([1dbcea7](https://github.com/googleapis/java-datastore/commit/1dbcea73827961148800c1ec8e87065dbceb6c88))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.18 ([#924](https://github.com/googleapis/java-datastore/issues/924)) ([625e896](https://github.com/googleapis/java-datastore/commit/625e89685172ae546a813f5f7184223d01fbb0ac))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.19 ([#930](https://github.com/googleapis/java-datastore/issues/930)) ([77285be](https://github.com/googleapis/java-datastore/commit/77285be97fbd6bca1ada35202842238e306dd8dc))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.18 ([#925](https://github.com/googleapis/java-datastore/issues/925)) ([0c7539d](https://github.com/googleapis/java-datastore/commit/0c7539d736ec993d7bb0531d7cd4dab1b08487a0))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.19 ([#931](https://github.com/googleapis/java-datastore/issues/931)) ([40b4011](https://github.com/googleapis/java-datastore/commit/40b4011e3a826a91e33541efdecb05f0e129f87c))
+
 ## [2.12.5](https://github.com/googleapis/java-datastore/compare/v2.12.4...v2.12.5) (2022-11-08)
 
 
