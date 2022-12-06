@@ -82,12 +82,13 @@ public class HttpJsonPredictionApiKeyRegistryStub extends PredictionApiKeyRegist
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreatePredictionApiKeyRegistrationRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PredictionApiKeyRegistration>newBuilder()
@@ -125,6 +126,7 @@ public class HttpJsonPredictionApiKeyRegistryStub extends PredictionApiKeyRegist
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -161,6 +163,7 @@ public class HttpJsonPredictionApiKeyRegistryStub extends PredictionApiKeyRegist
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeletePredictionApiKeyRegistrationRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

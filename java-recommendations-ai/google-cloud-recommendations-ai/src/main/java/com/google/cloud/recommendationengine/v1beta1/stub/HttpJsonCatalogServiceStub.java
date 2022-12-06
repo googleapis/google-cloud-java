@@ -92,12 +92,13 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateCatalogItemRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("catalogItem", request.getCatalogItem(), false))
+                                  .toBody("catalogItem", request.getCatalogItem(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CatalogItem>newBuilder()
@@ -129,6 +130,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCatalogItemRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -166,6 +168,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -201,12 +204,13 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                             ProtoRestSerializer<UpdateCatalogItemRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("catalogItem", request.getCatalogItem(), false))
+                                  .toBody("catalogItem", request.getCatalogItem(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CatalogItem>newBuilder()
@@ -238,6 +242,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCatalogItemRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -272,12 +277,13 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportCatalogItemsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
