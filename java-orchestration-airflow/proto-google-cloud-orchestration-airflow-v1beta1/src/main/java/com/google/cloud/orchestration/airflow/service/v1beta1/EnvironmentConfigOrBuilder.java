@@ -85,6 +85,8 @@ public interface EnvironmentConfigOrBuilder
    * <pre>
    * The number of nodes in the Kubernetes Engine cluster that will be
    * used to run this environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 node_count = 3;</code>
@@ -307,6 +309,8 @@ public interface EnvironmentConfigOrBuilder
    *
    * <pre>
    * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>
@@ -321,6 +325,8 @@ public interface EnvironmentConfigOrBuilder
    *
    * <pre>
    * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>
@@ -335,6 +341,8 @@ public interface EnvironmentConfigOrBuilder
    *
    * <pre>
    * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>
@@ -577,4 +585,107 @@ public interface EnvironmentConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig.EnvironmentSize
       getEnvironmentSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the masterAuthorizedNetworksConfig field is set.
+   */
+  boolean hasMasterAuthorizedNetworksConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The masterAuthorizedNetworksConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+      getMasterAuthorizedNetworksConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfigOrBuilder
+      getMasterAuthorizedNetworksConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the recoveryConfig field is set.
+   */
+  boolean hasRecoveryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The recoveryConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig getRecoveryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder
+      getRecoveryConfigOrBuilder();
 }

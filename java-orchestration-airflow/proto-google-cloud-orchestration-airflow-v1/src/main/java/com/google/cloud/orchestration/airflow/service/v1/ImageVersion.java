@@ -75,7 +75,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The string identifier of the ImageVersion, in the form:
-   * "composer-x.y.z-airflow-a.b(.c)"
+   * "composer-x.y.z-airflow-a.b.c"
    * </pre>
    *
    * <code>string image_version_id = 1;</code>
@@ -99,7 +99,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The string identifier of the ImageVersion, in the form:
-   * "composer-x.y.z-airflow-a.b(.c)"
+   * "composer-x.y.z-airflow-a.b.c"
    * </pre>
    *
    * <code>string image_version_id = 1;</code>
@@ -763,7 +763,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The string identifier of the ImageVersion, in the form:
-     * "composer-x.y.z-airflow-a.b(.c)"
+     * "composer-x.y.z-airflow-a.b.c"
      * </pre>
      *
      * <code>string image_version_id = 1;</code>
@@ -786,7 +786,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The string identifier of the ImageVersion, in the form:
-     * "composer-x.y.z-airflow-a.b(.c)"
+     * "composer-x.y.z-airflow-a.b.c"
      * </pre>
      *
      * <code>string image_version_id = 1;</code>
@@ -809,7 +809,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The string identifier of the ImageVersion, in the form:
-     * "composer-x.y.z-airflow-a.b(.c)"
+     * "composer-x.y.z-airflow-a.b.c"
      * </pre>
      *
      * <code>string image_version_id = 1;</code>
@@ -831,7 +831,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The string identifier of the ImageVersion, in the form:
-     * "composer-x.y.z-airflow-a.b(.c)"
+     * "composer-x.y.z-airflow-a.b.c"
      * </pre>
      *
      * <code>string image_version_id = 1;</code>
@@ -849,7 +849,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The string identifier of the ImageVersion, in the form:
-     * "composer-x.y.z-airflow-a.b(.c)"
+     * "composer-x.y.z-airflow-a.b.c"
      * </pre>
      *
      * <code>string image_version_id = 1;</code>

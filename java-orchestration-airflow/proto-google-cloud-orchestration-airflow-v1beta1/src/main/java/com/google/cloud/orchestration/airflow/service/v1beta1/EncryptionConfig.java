@@ -23,7 +23,8 @@ package com.google.cloud.orchestration.airflow.service.v1beta1;
  *
  * <pre>
  * The encryption options for the Cloud Composer environment and its
- * dependencies.
+ * dependencies. Supported for Cloud Composer environments in versions
+ * composer-1.*.*-airflow-*.*.*.
  * </pre>
  *
  * Protobuf type {@code google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig}
@@ -287,7 +288,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The encryption options for the Cloud Composer environment and its
-   * dependencies.
+   * dependencies. Supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig}

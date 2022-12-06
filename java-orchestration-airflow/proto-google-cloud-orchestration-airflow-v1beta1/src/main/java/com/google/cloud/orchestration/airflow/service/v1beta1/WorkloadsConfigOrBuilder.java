@@ -150,4 +150,47 @@ public interface WorkloadsConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.WorkerResourceOrBuilder
       getWorkerOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources used by Airflow triggerers.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.TriggererResource triggerer = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the triggerer field is set.
+   */
+  boolean hasTriggerer();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources used by Airflow triggerers.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.TriggererResource triggerer = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The triggerer.
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.TriggererResource
+      getTriggerer();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources used by Airflow triggerers.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.TriggererResource triggerer = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.TriggererResourceOrBuilder
+      getTriggererOrBuilder();
 }

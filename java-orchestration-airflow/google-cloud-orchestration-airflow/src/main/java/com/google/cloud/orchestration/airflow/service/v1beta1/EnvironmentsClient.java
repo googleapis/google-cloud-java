@@ -605,8 +605,10 @@ public class EnvironmentsClient implements BackgroundResource {
    *           `labels` mask.
    *       <li>`config.nodeCount` &#42; Horizontally scale the number of nodes in the environment.
    *           An integer greater than or equal to 3 must be provided in the `config.nodeCount`
-   *           field. &#42; `config.webServerNetworkAccessControl` &#42; Replace the environment's
-   *           current WebServerNetworkAccessControl.
+   *           field. Supported for Cloud Composer environments in versions
+   *           composer-1.&#42;.&#42;-airflow-&#42;.&#42;.&#42;.
+   *       <li>`config.webServerNetworkAccessControl` &#42; Replace the environment's current
+   *           WebServerNetworkAccessControl.
    *       <li>`config.softwareConfig.airflowConfigOverrides` &#42; Replace all Apache Airflow
    *           config overrides. If a replacement config overrides map is not included in
    *           `environment`, all config overrides are cleared. It is an error to provide both this
@@ -619,25 +621,35 @@ public class EnvironmentsClient implements BackgroundResource {
    *           both a mask of this form and the `config.softwareConfig.airflowConfigOverrides` mask.
    *       <li>`config.softwareConfig.envVariables` &#42; Replace all environment variables. If a
    *           replacement environment variable map is not included in `environment`, all custom
-   *           environment variables are cleared. It is an error to provide both this mask and a
-   *           mask specifying one or more individual environment variables.
+   *           environment variables are cleared.
    *       <li>`config.softwareConfig.imageVersion` &#42; Upgrade the version of the environment
    *           in-place. Refer to `SoftwareConfig.image_version` for information on how to format
    *           the new image version. Additionally, the new image version cannot effect a version
-   *           downgrade and must match the current image version's Composer major version and
-   *           Airflow major and minor versions. Consult the [Cloud Composer Version
-   *           List](https://cloud.google.com/composer/docs/concepts/versioning/composer-versions)
-   *           for valid values.
+   *           downgrade, and must match the current image version's Composer and Airflow major
+   *           versions. Consult the [Cloud Composer version
+   *           list](/composer/docs/concepts/versioning/composer-versions) for valid values.
    *       <li>`config.softwareConfig.schedulerCount` &#42; Horizontally scale the number of
    *           schedulers in Airflow. A positive integer not greater than the number of nodes must
-   *           be provided in the `config.softwareConfig.schedulerCount` field. &#42;
-   *           `config.databaseConfig.machineType` &#42; Cloud SQL machine type used by Airflow
+   *           be provided in the `config.softwareConfig.schedulerCount` field. Supported for Cloud
+   *           Composer environments in versions composer-1.&#42;.&#42;-airflow-2.&#42;.&#42;.
+   *       <li>`config.softwareConfig.cloudDataLineageIntegration` &#42; Configuration for Cloud
+   *           Data Lineage integration.
+   *       <li>`config.databaseConfig.machineType` &#42; Cloud SQL machine type used by Airflow
    *           database. It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
-   *           or db-n1-standard-16. &#42; `config.webServerConfig.machineType` &#42; Machine type
-   *           on which Airflow web server is running. It has to be one of: composer-n1-webserver-2,
-   *           composer-n1-webserver-4 or composer-n1-webserver-8. &#42; `config.maintenanceWindow`
-   *           &#42; Maintenance window during which Cloud Composer components may be under
-   *           maintenance.
+   *           or db-n1-standard-16. Supported for Cloud Composer environments in versions
+   *           composer-1.&#42;.&#42;-airflow-&#42;.&#42;.&#42;.
+   *       <li>`config.webServerConfig.machineType` &#42; Machine type on which Airflow web server
+   *           is running. It has to be one of: composer-n1-webserver-2, composer-n1-webserver-4 or
+   *           composer-n1-webserver-8. Supported for Cloud Composer environments in versions
+   *           composer-1.&#42;.&#42;-airflow-&#42;.&#42;.&#42;.
+   *       <li>`config.maintenanceWindow` &#42; Maintenance window during which Cloud Composer
+   *           components may be under maintenance.
+   *       <li>`config.workloadsConfig` &#42; The workloads configuration settings for the GKE
+   *           cluster associated with the Cloud Composer environment. Supported for Cloud Composer
+   *           environments in versions composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
+   *       <li>`config.environmentSize` &#42; The size of the Cloud Composer environment. Supported
+   *           for Cloud Composer environments in versions
+   *           composer-2.&#42;.&#42;-airflow-&#42;.&#42;.&#42; and newer.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1024,6 +1036,212 @@ public class EnvironmentsClient implements BackgroundResource {
    */
   public final UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable() {
     return stub.checkUpgradeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshots of a Cloud Composer environment.
+   *
+   * <p>As a result of this operation, snapshot of environment's state is stored in a location
+   * specified in the SaveSnapshotRequest.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   SaveSnapshotRequest request =
+   *       SaveSnapshotRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setSnapshotLocation("snapshotLocation1625609625")
+   *           .build();
+   *   SaveSnapshotResponse response = environmentsClient.saveSnapshotAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SaveSnapshotResponse, OperationMetadata> saveSnapshotAsync(
+      SaveSnapshotRequest request) {
+    return saveSnapshotOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshots of a Cloud Composer environment.
+   *
+   * <p>As a result of this operation, snapshot of environment's state is stored in a location
+   * specified in the SaveSnapshotRequest.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   SaveSnapshotRequest request =
+   *       SaveSnapshotRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setSnapshotLocation("snapshotLocation1625609625")
+   *           .build();
+   *   OperationFuture<SaveSnapshotResponse, OperationMetadata> future =
+   *       environmentsClient.saveSnapshotOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SaveSnapshotResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationCallable() {
+    return stub.saveSnapshotOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a snapshots of a Cloud Composer environment.
+   *
+   * <p>As a result of this operation, snapshot of environment's state is stored in a location
+   * specified in the SaveSnapshotRequest.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   SaveSnapshotRequest request =
+   *       SaveSnapshotRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setSnapshotLocation("snapshotLocation1625609625")
+   *           .build();
+   *   ApiFuture<Operation> future = environmentsClient.saveSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable() {
+    return stub.saveSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Loads a snapshot of a Cloud Composer environment.
+   *
+   * <p>As a result of this operation, a snapshot of environment's specified in LoadSnapshotRequest
+   * is loaded into the environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   LoadSnapshotRequest request =
+   *       LoadSnapshotRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setSnapshotPath("snapshotPath-931648503")
+   *           .setSkipPypiPackagesInstallation(true)
+   *           .setSkipEnvironmentVariablesSetting(true)
+   *           .setSkipAirflowOverridesSetting(true)
+   *           .setSkipGcsDataCopying(true)
+   *           .build();
+   *   LoadSnapshotResponse response = environmentsClient.loadSnapshotAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LoadSnapshotResponse, OperationMetadata> loadSnapshotAsync(
+      LoadSnapshotRequest request) {
+    return loadSnapshotOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Loads a snapshot of a Cloud Composer environment.
+   *
+   * <p>As a result of this operation, a snapshot of environment's specified in LoadSnapshotRequest
+   * is loaded into the environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   LoadSnapshotRequest request =
+   *       LoadSnapshotRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setSnapshotPath("snapshotPath-931648503")
+   *           .setSkipPypiPackagesInstallation(true)
+   *           .setSkipEnvironmentVariablesSetting(true)
+   *           .setSkipAirflowOverridesSetting(true)
+   *           .setSkipGcsDataCopying(true)
+   *           .build();
+   *   OperationFuture<LoadSnapshotResponse, OperationMetadata> future =
+   *       environmentsClient.loadSnapshotOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LoadSnapshotResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationCallable() {
+    return stub.loadSnapshotOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Loads a snapshot of a Cloud Composer environment.
+   *
+   * <p>As a result of this operation, a snapshot of environment's specified in LoadSnapshotRequest
+   * is loaded into the environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   LoadSnapshotRequest request =
+   *       LoadSnapshotRequest.newBuilder()
+   *           .setEnvironment("environment-85904877")
+   *           .setSnapshotPath("snapshotPath-931648503")
+   *           .setSkipPypiPackagesInstallation(true)
+   *           .setSkipEnvironmentVariablesSetting(true)
+   *           .setSkipAirflowOverridesSetting(true)
+   *           .setSkipGcsDataCopying(true)
+   *           .build();
+   *   ApiFuture<Operation> future = environmentsClient.loadSnapshotCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable() {
+    return stub.loadSnapshotCallable();
   }
 
   @Override

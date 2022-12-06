@@ -92,20 +92,23 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * The version of the software running in the environment.
    * This encapsulates both the version of Cloud Composer functionality and the
    * version of Apache Airflow. It must match the regular expression
-   * `composer-([0-9]+&#92;.[0-9]+&#92;.[0-9]+|latest)-airflow-[0-9]+&#92;.[0-9]+(&#92;.[0-9]+.*)?`.
+   * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
    * When used as input, the server also checks if the provided version is
    * supported and denies the request for an unsupported version.
-   * The Cloud Composer portion of the version is a
-   * [semantic version](https://semver.org) or `latest`. When the patch version
-   * is omitted, the current Cloud Composer patch version is selected.
-   * When `latest` is provided instead of an explicit version number,
-   * the server replaces `latest` with the current Cloud Composer version
-   * and stores that version number in the same field.
-   * The portion of the image version that follows *airflow-* is an
-   * official Apache Airflow repository
-   * [release name](https://github.com/apache/incubator-airflow/releases).
-   * See also [Version
-   * List](/composer/docs/concepts/versioning/composer-versions).
+   * The Cloud Composer portion of the image version is a full
+   * [semantic version](https://semver.org), or an alias in the form of major
+   * version number or `latest`. When an alias is provided, the server replaces
+   * it with the current Cloud Composer version that satisfies the alias.
+   * The Apache Airflow portion of the image version is a full semantic version
+   * that points to one of the supported Apache Airflow versions, or an alias in
+   * the form of only major or major.minor versions specified. When an alias is
+   * provided, the server replaces it with the latest Apache Airflow version
+   * that satisfies the alias and is supported in the given Cloud Composer
+   * version.
+   * In all cases, the resolved image version is stored in the same field.
+   * See also [version
+   * list](/composer/docs/concepts/versioning/composer-versions) and [versioning
+   * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
    * </pre>
    *
    * <code>string image_version = 1;</code>
@@ -131,20 +134,23 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * The version of the software running in the environment.
    * This encapsulates both the version of Cloud Composer functionality and the
    * version of Apache Airflow. It must match the regular expression
-   * `composer-([0-9]+&#92;.[0-9]+&#92;.[0-9]+|latest)-airflow-[0-9]+&#92;.[0-9]+(&#92;.[0-9]+.*)?`.
+   * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
    * When used as input, the server also checks if the provided version is
    * supported and denies the request for an unsupported version.
-   * The Cloud Composer portion of the version is a
-   * [semantic version](https://semver.org) or `latest`. When the patch version
-   * is omitted, the current Cloud Composer patch version is selected.
-   * When `latest` is provided instead of an explicit version number,
-   * the server replaces `latest` with the current Cloud Composer version
-   * and stores that version number in the same field.
-   * The portion of the image version that follows *airflow-* is an
-   * official Apache Airflow repository
-   * [release name](https://github.com/apache/incubator-airflow/releases).
-   * See also [Version
-   * List](/composer/docs/concepts/versioning/composer-versions).
+   * The Cloud Composer portion of the image version is a full
+   * [semantic version](https://semver.org), or an alias in the form of major
+   * version number or `latest`. When an alias is provided, the server replaces
+   * it with the current Cloud Composer version that satisfies the alias.
+   * The Apache Airflow portion of the image version is a full semantic version
+   * that points to one of the supported Apache Airflow versions, or an alias in
+   * the form of only major or major.minor versions specified. When an alias is
+   * provided, the server replaces it with the latest Apache Airflow version
+   * that satisfies the alias and is supported in the given Cloud Composer
+   * version.
+   * In all cases, the resolved image version is stored in the same field.
+   * See also [version
+   * list](/composer/docs/concepts/versioning/composer-versions) and [versioning
+   * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
    * </pre>
    *
    * <code>string image_version = 1;</code>
@@ -627,6 +633,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * scheduler, worker, and webserver processes.
    * Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be
    * updated.
+   * This field is only supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*. Environments in newer versions always use
+   * Python major version 3.
    * </pre>
    *
    * <code>string python_version = 6;</code>
@@ -653,6 +662,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * scheduler, worker, and webserver processes.
    * Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be
    * updated.
+   * This field is only supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*. Environments in newer versions always use
+   * Python major version 3.
    * </pre>
    *
    * <code>string python_version = 6;</code>
@@ -670,6 +682,26 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SCHEDULER_COUNT_FIELD_NUMBER = 7;
+  private int schedulerCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of schedulers for Airflow.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-2.*.*.
+   * </pre>
+   *
+   * <code>int32 scheduler_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The schedulerCount.
+   */
+  @java.lang.Override
+  public int getSchedulerCount() {
+    return schedulerCount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -700,6 +732,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         output, internalGetEnvVariables(), EnvVariablesDefaultEntryHolder.defaultEntry, 4);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pythonVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pythonVersion_);
+    }
+    if (schedulerCount_ != 0) {
+      output.writeInt32(7, schedulerCount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -746,6 +781,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pythonVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pythonVersion_);
     }
+    if (schedulerCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, schedulerCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -768,6 +806,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetPypiPackages().equals(other.internalGetPypiPackages())) return false;
     if (!internalGetEnvVariables().equals(other.internalGetEnvVariables())) return false;
     if (!getPythonVersion().equals(other.getPythonVersion())) return false;
+    if (getSchedulerCount() != other.getSchedulerCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -795,6 +834,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + PYTHON_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getPythonVersion().hashCode();
+    hash = (37 * hash) + SCHEDULER_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getSchedulerCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -969,6 +1010,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableEnvVariables().clear();
       pythonVersion_ = "";
 
+      schedulerCount_ = 0;
+
       return this;
     }
 
@@ -1006,6 +1049,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       result.envVariables_ = internalGetEnvVariables();
       result.envVariables_.makeImmutable();
       result.pythonVersion_ = pythonVersion_;
+      result.schedulerCount_ = schedulerCount_;
       onBuilt();
       return result;
     }
@@ -1069,6 +1113,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.getPythonVersion().isEmpty()) {
         pythonVersion_ = other.pythonVersion_;
         onChanged();
+      }
+      if (other.getSchedulerCount() != 0) {
+        setSchedulerCount(other.getSchedulerCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1143,6 +1190,12 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 50
+            case 56:
+              {
+                schedulerCount_ = input.readInt32();
+
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1170,20 +1223,23 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * The version of the software running in the environment.
      * This encapsulates both the version of Cloud Composer functionality and the
      * version of Apache Airflow. It must match the regular expression
-     * `composer-([0-9]+&#92;.[0-9]+&#92;.[0-9]+|latest)-airflow-[0-9]+&#92;.[0-9]+(&#92;.[0-9]+.*)?`.
+     * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
      * When used as input, the server also checks if the provided version is
      * supported and denies the request for an unsupported version.
-     * The Cloud Composer portion of the version is a
-     * [semantic version](https://semver.org) or `latest`. When the patch version
-     * is omitted, the current Cloud Composer patch version is selected.
-     * When `latest` is provided instead of an explicit version number,
-     * the server replaces `latest` with the current Cloud Composer version
-     * and stores that version number in the same field.
-     * The portion of the image version that follows *airflow-* is an
-     * official Apache Airflow repository
-     * [release name](https://github.com/apache/incubator-airflow/releases).
-     * See also [Version
-     * List](/composer/docs/concepts/versioning/composer-versions).
+     * The Cloud Composer portion of the image version is a full
+     * [semantic version](https://semver.org), or an alias in the form of major
+     * version number or `latest`. When an alias is provided, the server replaces
+     * it with the current Cloud Composer version that satisfies the alias.
+     * The Apache Airflow portion of the image version is a full semantic version
+     * that points to one of the supported Apache Airflow versions, or an alias in
+     * the form of only major or major.minor versions specified. When an alias is
+     * provided, the server replaces it with the latest Apache Airflow version
+     * that satisfies the alias and is supported in the given Cloud Composer
+     * version.
+     * In all cases, the resolved image version is stored in the same field.
+     * See also [version
+     * list](/composer/docs/concepts/versioning/composer-versions) and [versioning
+     * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -1208,20 +1264,23 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * The version of the software running in the environment.
      * This encapsulates both the version of Cloud Composer functionality and the
      * version of Apache Airflow. It must match the regular expression
-     * `composer-([0-9]+&#92;.[0-9]+&#92;.[0-9]+|latest)-airflow-[0-9]+&#92;.[0-9]+(&#92;.[0-9]+.*)?`.
+     * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
      * When used as input, the server also checks if the provided version is
      * supported and denies the request for an unsupported version.
-     * The Cloud Composer portion of the version is a
-     * [semantic version](https://semver.org) or `latest`. When the patch version
-     * is omitted, the current Cloud Composer patch version is selected.
-     * When `latest` is provided instead of an explicit version number,
-     * the server replaces `latest` with the current Cloud Composer version
-     * and stores that version number in the same field.
-     * The portion of the image version that follows *airflow-* is an
-     * official Apache Airflow repository
-     * [release name](https://github.com/apache/incubator-airflow/releases).
-     * See also [Version
-     * List](/composer/docs/concepts/versioning/composer-versions).
+     * The Cloud Composer portion of the image version is a full
+     * [semantic version](https://semver.org), or an alias in the form of major
+     * version number or `latest`. When an alias is provided, the server replaces
+     * it with the current Cloud Composer version that satisfies the alias.
+     * The Apache Airflow portion of the image version is a full semantic version
+     * that points to one of the supported Apache Airflow versions, or an alias in
+     * the form of only major or major.minor versions specified. When an alias is
+     * provided, the server replaces it with the latest Apache Airflow version
+     * that satisfies the alias and is supported in the given Cloud Composer
+     * version.
+     * In all cases, the resolved image version is stored in the same field.
+     * See also [version
+     * list](/composer/docs/concepts/versioning/composer-versions) and [versioning
+     * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -1246,20 +1305,23 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * The version of the software running in the environment.
      * This encapsulates both the version of Cloud Composer functionality and the
      * version of Apache Airflow. It must match the regular expression
-     * `composer-([0-9]+&#92;.[0-9]+&#92;.[0-9]+|latest)-airflow-[0-9]+&#92;.[0-9]+(&#92;.[0-9]+.*)?`.
+     * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
      * When used as input, the server also checks if the provided version is
      * supported and denies the request for an unsupported version.
-     * The Cloud Composer portion of the version is a
-     * [semantic version](https://semver.org) or `latest`. When the patch version
-     * is omitted, the current Cloud Composer patch version is selected.
-     * When `latest` is provided instead of an explicit version number,
-     * the server replaces `latest` with the current Cloud Composer version
-     * and stores that version number in the same field.
-     * The portion of the image version that follows *airflow-* is an
-     * official Apache Airflow repository
-     * [release name](https://github.com/apache/incubator-airflow/releases).
-     * See also [Version
-     * List](/composer/docs/concepts/versioning/composer-versions).
+     * The Cloud Composer portion of the image version is a full
+     * [semantic version](https://semver.org), or an alias in the form of major
+     * version number or `latest`. When an alias is provided, the server replaces
+     * it with the current Cloud Composer version that satisfies the alias.
+     * The Apache Airflow portion of the image version is a full semantic version
+     * that points to one of the supported Apache Airflow versions, or an alias in
+     * the form of only major or major.minor versions specified. When an alias is
+     * provided, the server replaces it with the latest Apache Airflow version
+     * that satisfies the alias and is supported in the given Cloud Composer
+     * version.
+     * In all cases, the resolved image version is stored in the same field.
+     * See also [version
+     * list](/composer/docs/concepts/versioning/composer-versions) and [versioning
+     * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -1283,20 +1345,23 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * The version of the software running in the environment.
      * This encapsulates both the version of Cloud Composer functionality and the
      * version of Apache Airflow. It must match the regular expression
-     * `composer-([0-9]+&#92;.[0-9]+&#92;.[0-9]+|latest)-airflow-[0-9]+&#92;.[0-9]+(&#92;.[0-9]+.*)?`.
+     * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
      * When used as input, the server also checks if the provided version is
      * supported and denies the request for an unsupported version.
-     * The Cloud Composer portion of the version is a
-     * [semantic version](https://semver.org) or `latest`. When the patch version
-     * is omitted, the current Cloud Composer patch version is selected.
-     * When `latest` is provided instead of an explicit version number,
-     * the server replaces `latest` with the current Cloud Composer version
-     * and stores that version number in the same field.
-     * The portion of the image version that follows *airflow-* is an
-     * official Apache Airflow repository
-     * [release name](https://github.com/apache/incubator-airflow/releases).
-     * See also [Version
-     * List](/composer/docs/concepts/versioning/composer-versions).
+     * The Cloud Composer portion of the image version is a full
+     * [semantic version](https://semver.org), or an alias in the form of major
+     * version number or `latest`. When an alias is provided, the server replaces
+     * it with the current Cloud Composer version that satisfies the alias.
+     * The Apache Airflow portion of the image version is a full semantic version
+     * that points to one of the supported Apache Airflow versions, or an alias in
+     * the form of only major or major.minor versions specified. When an alias is
+     * provided, the server replaces it with the latest Apache Airflow version
+     * that satisfies the alias and is supported in the given Cloud Composer
+     * version.
+     * In all cases, the resolved image version is stored in the same field.
+     * See also [version
+     * list](/composer/docs/concepts/versioning/composer-versions) and [versioning
+     * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -1316,20 +1381,23 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * The version of the software running in the environment.
      * This encapsulates both the version of Cloud Composer functionality and the
      * version of Apache Airflow. It must match the regular expression
-     * `composer-([0-9]+&#92;.[0-9]+&#92;.[0-9]+|latest)-airflow-[0-9]+&#92;.[0-9]+(&#92;.[0-9]+.*)?`.
+     * `composer-([0-9]+(&#92;.[0-9]+&#92;.[0-9]+(-preview&#92;.[0-9]+)?)?|latest)-airflow-([0-9]+(&#92;.[0-9]+(&#92;.[0-9]+)?)?)`.
      * When used as input, the server also checks if the provided version is
      * supported and denies the request for an unsupported version.
-     * The Cloud Composer portion of the version is a
-     * [semantic version](https://semver.org) or `latest`. When the patch version
-     * is omitted, the current Cloud Composer patch version is selected.
-     * When `latest` is provided instead of an explicit version number,
-     * the server replaces `latest` with the current Cloud Composer version
-     * and stores that version number in the same field.
-     * The portion of the image version that follows *airflow-* is an
-     * official Apache Airflow repository
-     * [release name](https://github.com/apache/incubator-airflow/releases).
-     * See also [Version
-     * List](/composer/docs/concepts/versioning/composer-versions).
+     * The Cloud Composer portion of the image version is a full
+     * [semantic version](https://semver.org), or an alias in the form of major
+     * version number or `latest`. When an alias is provided, the server replaces
+     * it with the current Cloud Composer version that satisfies the alias.
+     * The Apache Airflow portion of the image version is a full semantic version
+     * that points to one of the supported Apache Airflow versions, or an alias in
+     * the form of only major or major.minor versions specified. When an alias is
+     * provided, the server replaces it with the latest Apache Airflow version
+     * that satisfies the alias and is supported in the given Cloud Composer
+     * version.
+     * In all cases, the resolved image version is stored in the same field.
+     * See also [version
+     * list](/composer/docs/concepts/versioning/composer-versions) and [versioning
+     * overview](/composer/docs/concepts/versioning/composer-versioning-overview).
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -2104,6 +2172,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * scheduler, worker, and webserver processes.
      * Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be
      * updated.
+     * This field is only supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*. Environments in newer versions always use
+     * Python major version 3.
      * </pre>
      *
      * <code>string python_version = 6;</code>
@@ -2129,6 +2200,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * scheduler, worker, and webserver processes.
      * Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be
      * updated.
+     * This field is only supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*. Environments in newer versions always use
+     * Python major version 3.
      * </pre>
      *
      * <code>string python_version = 6;</code>
@@ -2154,6 +2228,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * scheduler, worker, and webserver processes.
      * Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be
      * updated.
+     * This field is only supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*. Environments in newer versions always use
+     * Python major version 3.
      * </pre>
      *
      * <code>string python_version = 6;</code>
@@ -2178,6 +2255,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * scheduler, worker, and webserver processes.
      * Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be
      * updated.
+     * This field is only supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*. Environments in newer versions always use
+     * Python major version 3.
      * </pre>
      *
      * <code>string python_version = 6;</code>
@@ -2198,6 +2278,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * scheduler, worker, and webserver processes.
      * Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be
      * updated.
+     * This field is only supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*. Environments in newer versions always use
+     * Python major version 3.
      * </pre>
      *
      * <code>string python_version = 6;</code>
@@ -2212,6 +2295,64 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       pythonVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int schedulerCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of schedulers for Airflow.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-2.*.*.
+     * </pre>
+     *
+     * <code>int32 scheduler_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The schedulerCount.
+     */
+    @java.lang.Override
+    public int getSchedulerCount() {
+      return schedulerCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of schedulers for Airflow.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-2.*.*.
+     * </pre>
+     *
+     * <code>int32 scheduler_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The schedulerCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSchedulerCount(int value) {
+
+      schedulerCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of schedulers for Airflow.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-2.*.*.
+     * </pre>
+     *
+     * <code>int32 scheduler_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSchedulerCount() {
+
+      schedulerCount_ = 0;
       onChanged();
       return this;
     }

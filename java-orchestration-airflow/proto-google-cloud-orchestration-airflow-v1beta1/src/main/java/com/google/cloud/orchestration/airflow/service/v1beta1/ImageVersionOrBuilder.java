@@ -28,7 +28,7 @@ public interface ImageVersionOrBuilder
    *
    * <pre>
    * The string identifier of the ImageVersion, in the form:
-   * "composer-x.y.z-airflow-a.b(.c)"
+   * "composer-x.y.z-airflow-a.b.c"
    * </pre>
    *
    * <code>string image_version_id = 1;</code>
@@ -41,7 +41,7 @@ public interface ImageVersionOrBuilder
    *
    * <pre>
    * The string identifier of the ImageVersion, in the form:
-   * "composer-x.y.z-airflow-a.b(.c)"
+   * "composer-x.y.z-airflow-a.b.c"
    * </pre>
    *
    * <code>string image_version_id = 1;</code>
