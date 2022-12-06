@@ -18,24 +18,21 @@
 
 package com.google.container.v1beta1;
 
-public interface KalmConfigOrBuilder
+public interface FastSocketOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.container.v1beta1.KalmConfig)
+    // @@protoc_insertion_point(interface_extends:google.container.v1beta1.FastSocket)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Whether KALM is enabled for this cluster.
+   * Whether Fast Socket features are enabled in the node pool.
    * </pre>
    *
-   * <code>bool enabled = 1 [deprecated = true];</code>
+   * <code>bool enabled = 1;</code>
    *
-   * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1133
    * @return The enabled.
    */
-  @java.lang.Deprecated
   boolean getEnabled();
 }

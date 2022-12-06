@@ -22,27 +22,27 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration options for the KALM addon.
+ * Configuration of Fast Socket feature.
  * </pre>
  *
- * Protobuf type {@code google.container.v1beta1.KalmConfig}
+ * Protobuf type {@code google.container.v1beta1.FastSocket}
  */
-public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
+public final class FastSocket extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.container.v1beta1.KalmConfig)
-    KalmConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.container.v1beta1.FastSocket)
+    FastSocketOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use KalmConfig.newBuilder() to construct.
-  private KalmConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FastSocket.newBuilder() to construct.
+  private FastSocket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private KalmConfig() {}
+  private FastSocket() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new KalmConfig();
+    return new FastSocket();
   }
 
   @java.lang.Override
@@ -52,17 +52,17 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_KalmConfig_descriptor;
+        .internal_static_google_container_v1beta1_FastSocket_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_KalmConfig_fieldAccessorTable
+        .internal_static_google_container_v1beta1_FastSocket_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1beta1.KalmConfig.class,
-            com.google.container.v1beta1.KalmConfig.Builder.class);
+            com.google.container.v1beta1.FastSocket.class,
+            com.google.container.v1beta1.FastSocket.Builder.class);
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
@@ -71,17 +71,14 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether KALM is enabled for this cluster.
+   * Whether Fast Socket features are enabled in the node pool.
    * </pre>
    *
-   * <code>bool enabled = 1 [deprecated = true];</code>
+   * <code>bool enabled = 1;</code>
    *
-   * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1133
    * @return The enabled.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public boolean getEnabled() {
     return enabled_;
   }
@@ -125,10 +122,10 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.container.v1beta1.KalmConfig)) {
+    if (!(obj instanceof com.google.container.v1beta1.FastSocket)) {
       return super.equals(obj);
     }
-    com.google.container.v1beta1.KalmConfig other = (com.google.container.v1beta1.KalmConfig) obj;
+    com.google.container.v1beta1.FastSocket other = (com.google.container.v1beta1.FastSocket) obj;
 
     if (getEnabled() != other.getEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -149,71 +146,71 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(java.nio.ByteBuffer data)
+  public static com.google.container.v1beta1.FastSocket parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.FastSocket parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.FastSocket parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.FastSocket parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(byte[] data)
+  public static com.google.container.v1beta1.FastSocket parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.FastSocket parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(java.io.InputStream input)
+  public static com.google.container.v1beta1.FastSocket parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.FastSocket parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.FastSocket parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.FastSocket parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.FastSocket parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.FastSocket parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -230,7 +227,7 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.container.v1beta1.KalmConfig prototype) {
+  public static Builder newBuilder(com.google.container.v1beta1.FastSocket prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -248,31 +245,31 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration options for the KALM addon.
+   * Configuration of Fast Socket feature.
    * </pre>
    *
-   * Protobuf type {@code google.container.v1beta1.KalmConfig}
+   * Protobuf type {@code google.container.v1beta1.FastSocket}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.KalmConfig)
-      com.google.container.v1beta1.KalmConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.FastSocket)
+      com.google.container.v1beta1.FastSocketOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_KalmConfig_descriptor;
+          .internal_static_google_container_v1beta1_FastSocket_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_KalmConfig_fieldAccessorTable
+          .internal_static_google_container_v1beta1_FastSocket_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1beta1.KalmConfig.class,
-              com.google.container.v1beta1.KalmConfig.Builder.class);
+              com.google.container.v1beta1.FastSocket.class,
+              com.google.container.v1beta1.FastSocket.Builder.class);
     }
 
-    // Construct using com.google.container.v1beta1.KalmConfig.newBuilder()
+    // Construct using com.google.container.v1beta1.FastSocket.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -290,17 +287,17 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_KalmConfig_descriptor;
+          .internal_static_google_container_v1beta1_FastSocket_descriptor;
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.KalmConfig getDefaultInstanceForType() {
-      return com.google.container.v1beta1.KalmConfig.getDefaultInstance();
+    public com.google.container.v1beta1.FastSocket getDefaultInstanceForType() {
+      return com.google.container.v1beta1.FastSocket.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.KalmConfig build() {
-      com.google.container.v1beta1.KalmConfig result = buildPartial();
+    public com.google.container.v1beta1.FastSocket build() {
+      com.google.container.v1beta1.FastSocket result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -308,9 +305,9 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.KalmConfig buildPartial() {
-      com.google.container.v1beta1.KalmConfig result =
-          new com.google.container.v1beta1.KalmConfig(this);
+    public com.google.container.v1beta1.FastSocket buildPartial() {
+      com.google.container.v1beta1.FastSocket result =
+          new com.google.container.v1beta1.FastSocket(this);
       result.enabled_ = enabled_;
       onBuilt();
       return result;
@@ -351,16 +348,16 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.container.v1beta1.KalmConfig) {
-        return mergeFrom((com.google.container.v1beta1.KalmConfig) other);
+      if (other instanceof com.google.container.v1beta1.FastSocket) {
+        return mergeFrom((com.google.container.v1beta1.FastSocket) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.container.v1beta1.KalmConfig other) {
-      if (other == com.google.container.v1beta1.KalmConfig.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.container.v1beta1.FastSocket other) {
+      if (other == com.google.container.v1beta1.FastSocket.getDefaultInstance()) return this;
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
       }
@@ -418,17 +415,14 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether KALM is enabled for this cluster.
+     * Whether Fast Socket features are enabled in the node pool.
      * </pre>
      *
-     * <code>bool enabled = 1 [deprecated = true];</code>
+     * <code>bool enabled = 1;</code>
      *
-     * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1133
      * @return The enabled.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public boolean getEnabled() {
       return enabled_;
     }
@@ -436,17 +430,14 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether KALM is enabled for this cluster.
+     * Whether Fast Socket features are enabled in the node pool.
      * </pre>
      *
-     * <code>bool enabled = 1 [deprecated = true];</code>
+     * <code>bool enabled = 1;</code>
      *
-     * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1133
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
@@ -457,16 +448,13 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether KALM is enabled for this cluster.
+     * Whether Fast Socket features are enabled in the node pool.
      * </pre>
      *
-     * <code>bool enabled = 1 [deprecated = true];</code>
+     * <code>bool enabled = 1;</code>
      *
-     * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1133
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder clearEnabled() {
 
       enabled_ = false;
@@ -485,24 +473,24 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.KalmConfig)
+    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.FastSocket)
   }
 
-  // @@protoc_insertion_point(class_scope:google.container.v1beta1.KalmConfig)
-  private static final com.google.container.v1beta1.KalmConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.container.v1beta1.FastSocket)
+  private static final com.google.container.v1beta1.FastSocket DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.container.v1beta1.KalmConfig();
+    DEFAULT_INSTANCE = new com.google.container.v1beta1.FastSocket();
   }
 
-  public static com.google.container.v1beta1.KalmConfig getDefaultInstance() {
+  public static com.google.container.v1beta1.FastSocket getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<KalmConfig> PARSER =
-      new com.google.protobuf.AbstractParser<KalmConfig>() {
+  private static final com.google.protobuf.Parser<FastSocket> PARSER =
+      new com.google.protobuf.AbstractParser<FastSocket>() {
         @java.lang.Override
-        public KalmConfig parsePartialFrom(
+        public FastSocket parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -521,17 +509,17 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<KalmConfig> parser() {
+  public static com.google.protobuf.Parser<FastSocket> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<KalmConfig> getParserForType() {
+  public com.google.protobuf.Parser<FastSocket> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.container.v1beta1.KalmConfig getDefaultInstanceForType() {
+  public com.google.container.v1beta1.FastSocket getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

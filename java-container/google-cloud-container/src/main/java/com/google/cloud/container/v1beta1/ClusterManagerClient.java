@@ -683,6 +683,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setGcfsConfig(GcfsConfig.newBuilder().build())
    *           .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
+   *           .setFastSocket(FastSocket.newBuilder().build())
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
    *           .setResourceLabels(ResourceLabels.newBuilder().build())
    *           .build();
@@ -731,6 +732,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setGcfsConfig(GcfsConfig.newBuilder().build())
    *           .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
+   *           .setFastSocket(FastSocket.newBuilder().build())
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
    *           .setResourceLabels(ResourceLabels.newBuilder().build())
    *           .build();

@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2454
+   *     google/container/v1beta1/cluster_service.proto;l=2456
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2454
+   *     google/container/v1beta1/cluster_service.proto;l=2456
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2463
+   *     google/container/v1beta1/cluster_service.proto;l=2465
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2463
+   *     google/container/v1beta1/cluster_service.proto;l=2465
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2470
+   *     google/container/v1beta1/cluster_service.proto;l=2472
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2470
+   *     google/container/v1beta1/cluster_service.proto;l=2472
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2477
+   *     google/container/v1beta1/cluster_service.proto;l=2479
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2477
+   *     google/container/v1beta1/cluster_service.proto;l=2479
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -734,6 +734,41 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1beta1.VirtualNIC gvnic = 29;</code>
    */
   com.google.container.v1beta1.VirtualNICOrBuilder getGvnicOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.FastSocket fast_socket = 31;</code>
+   *
+   * @return Whether the fastSocket field is set.
+   */
+  boolean hasFastSocket();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.FastSocket fast_socket = 31;</code>
+   *
+   * @return The fastSocket.
+   */
+  com.google.container.v1beta1.FastSocket getFastSocket();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.FastSocket fast_socket = 31;</code>
+   */
+  com.google.container.v1beta1.FastSocketOrBuilder getFastSocketOrBuilder();
 
   /**
    *
