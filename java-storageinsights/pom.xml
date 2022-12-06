@@ -50,4 +50,5 @@
     <module>proto-google-cloud-storageinsights-v1</module>
     <module>google-cloud-storageinsights-bom</module>
   </modules>
-</project>
+
+  </project>
