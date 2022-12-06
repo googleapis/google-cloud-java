@@ -1,0 +1,16 @@
+{
+  "api_shortname": "storageinsights",
+  "name_pretty": "Storage Insights",
+  "product_documentation": "https://cloud.google.com/storage/storageinsights/",
+  "api_description": "Storage Insights API",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-storageinsights/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-storageinsights",
+  "repo_short": "java-storageinsights",
+  "distribution_name": "com.google.cloud:google-cloud-storageinsights",
+  "api_id": "storageinsights.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
