@@ -102,6 +102,7 @@
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
     <module>java-monitoring-dashboards</module>
+    <module>java-monitoring-metricsscope</module>
     <module>java-monitoring</module>
     <module>java-networkconnectivity</module>
     <module>java-network-management</module>

@@ -618,6 +618,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-monitoring-metricsscope-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-metricsscope:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-networkconnectivity-bom</artifactId>
         <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
         <type>pom</type>
