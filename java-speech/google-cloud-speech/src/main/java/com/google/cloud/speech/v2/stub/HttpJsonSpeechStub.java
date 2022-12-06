@@ -121,12 +121,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                                 fields, "recognizerId", request.getRecognizerId());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("recognizer", request.getRecognizer(), false))
+                                  .toBody("recognizer", request.getRecognizer(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -164,6 +165,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "showDeleted", request.getShowDeleted());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -197,6 +199,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetRecognizerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -234,12 +237,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("recognizer", request.getRecognizer(), false))
+                                  .toBody("recognizer", request.getRecognizer(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -278,6 +282,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -314,12 +319,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UndeleteRecognizerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -353,13 +359,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RecognizeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*", request.toBuilder().clearRecognizer().build(), false))
+                                  .toBody("*", request.toBuilder().clearRecognizer().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RecognizeResponse>newBuilder()
@@ -390,13 +396,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchRecognizeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*", request.toBuilder().clearRecognizer().build(), false))
+                                  .toBody("*", request.toBuilder().clearRecognizer().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -429,6 +435,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetConfigRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -464,12 +471,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             ProtoRestSerializer<UpdateConfigRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("config", request.getConfig(), false))
+                                  .toBody("config", request.getConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Config>newBuilder()
@@ -504,12 +512,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                                 fields, "customClassId", request.getCustomClassId());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customClass", request.getCustomClass(), false))
+                                  .toBody("customClass", request.getCustomClass(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -547,6 +556,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "showDeleted", request.getShowDeleted());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -580,6 +590,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCustomClassRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -617,12 +628,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customClass", request.getCustomClass(), false))
+                                  .toBody("customClass", request.getCustomClass(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -661,6 +673,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -697,12 +710,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UndeleteCustomClassRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -740,12 +754,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                                 fields, "phraseSetId", request.getPhraseSetId());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("phraseSet", request.getPhraseSet(), false))
+                                  .toBody("phraseSet", request.getPhraseSet(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -783,6 +798,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "showDeleted", request.getShowDeleted());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -816,6 +832,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetPhraseSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -853,12 +870,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("phraseSet", request.getPhraseSet(), false))
+                                  .toBody("phraseSet", request.getPhraseSet(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -897,6 +915,7 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -933,12 +952,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UndeletePhraseSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

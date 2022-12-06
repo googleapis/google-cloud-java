@@ -79,7 +79,7 @@ public interface SpeakerDiarizationConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.speech.v1.SpeakerDiarizationConfig.speaker_tag is deprecated. See
-   *     google/cloud/speech/v1/cloud_speech.proto;l=457
+   *     google/cloud/speech/v1/cloud_speech.proto;l=456
    * @return The speakerTag.
    */
   @java.lang.Deprecated

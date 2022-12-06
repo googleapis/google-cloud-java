@@ -184,4 +184,53 @@ public interface LongRunningRecognizeResponseOrBuilder
    * <code>.google.rpc.Status output_error = 7;</code>
    */
   com.google.rpc.StatusOrBuilder getOutputErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on speech adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+   *
+   * @return Whether the speechAdaptationInfo field is set.
+   */
+  boolean hasSpeechAdaptationInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on speech adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+   *
+   * @return The speechAdaptationInfo.
+   */
+  com.google.cloud.speech.v1.SpeechAdaptationInfo getSpeechAdaptationInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on speech adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+   */
+  com.google.cloud.speech.v1.SpeechAdaptationInfoOrBuilder getSpeechAdaptationInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID associated with the request. This is a unique ID specific only to
+   * the given request.
+   * </pre>
+   *
+   * <code>int64 request_id = 9;</code>
+   *
+   * @return The requestId.
+   */
+  long getRequestId();
 }

@@ -114,4 +114,53 @@ public interface RecognizeResponseOrBuilder
    * <code>.google.protobuf.Duration total_billed_time = 3;</code>
    */
   com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptationInfo speech_adaptation_info = 7;</code>
+   *
+   * @return Whether the speechAdaptationInfo field is set.
+   */
+  boolean hasSpeechAdaptationInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptationInfo speech_adaptation_info = 7;</code>
+   *
+   * @return The speechAdaptationInfo.
+   */
+  com.google.cloud.speech.v1.SpeechAdaptationInfo getSpeechAdaptationInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptationInfo speech_adaptation_info = 7;</code>
+   */
+  com.google.cloud.speech.v1.SpeechAdaptationInfoOrBuilder getSpeechAdaptationInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID associated with the request. This is a unique ID specific only to
+   * the given request.
+   * </pre>
+   *
+   * <code>int64 request_id = 8;</code>
+   *
+   * @return The requestId.
+   */
+  long getRequestId();
 }

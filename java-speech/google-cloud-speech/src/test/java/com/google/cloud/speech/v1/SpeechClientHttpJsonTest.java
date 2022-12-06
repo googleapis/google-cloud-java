@@ -82,6 +82,8 @@ public class SpeechClientHttpJsonTest {
         RecognizeResponse.newBuilder()
             .addAllResults(new ArrayList<SpeechRecognitionResult>())
             .setTotalBilledTime(Duration.newBuilder().build())
+            .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
+            .setRequestId(37109963)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -131,6 +133,8 @@ public class SpeechClientHttpJsonTest {
             .setTotalBilledTime(Duration.newBuilder().build())
             .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
             .setOutputError(Status.newBuilder().build())
+            .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
+            .setRequestId(37109963)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
