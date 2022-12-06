@@ -116,6 +116,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -148,6 +149,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetServiceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -183,12 +185,13 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "serviceId", request.getServiceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("service", request.getService(), false))
+                                  .toBody("service", request.getService(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -225,12 +228,13 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("service", request.getService(), false))
+                                  .toBody("service", request.getService(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -265,6 +269,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             ProtoRestSerializer<DeleteServiceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -305,6 +310,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -338,6 +344,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetMetadataImportRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -374,12 +381,13 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             serializer.putQueryParam(
                                 fields, "metadataImportId", request.getMetadataImportId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("metadataImport", request.getMetadataImport(), false))
+                                  .toBody("metadataImport", request.getMetadataImport(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -418,12 +426,13 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("metadataImport", request.getMetadataImport(), false))
+                                  .toBody("metadataImport", request.getMetadataImport(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -457,12 +466,13 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportMetadataRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearService().build(), false))
+                                  .toBody("*", request.toBuilder().clearService().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -496,12 +506,13 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RestoreServiceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearService().build(), false))
+                                  .toBody("*", request.toBuilder().clearService().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -539,6 +550,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -571,6 +583,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetBackupRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -606,12 +619,13 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "backupId", request.getBackupId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backup", request.getBackup(), false))
+                                  .toBody("backup", request.getBackup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -646,6 +660,7 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
                             ProtoRestSerializer<DeleteBackupRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
