@@ -74,7 +74,9 @@ public final class GetNotificationConfigRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. Name of the notification config to get. Its format is
-   * "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * "organizations/[organization_id]/notificationConfigs/[config_id]",
+   * "folders/[folder_id]/notificationConfigs/[config_id]",
+   * or "projects/[project_id]/notificationConfigs/[config_id]".
    * </pre>
    *
    * <code>
@@ -100,7 +102,9 @@ public final class GetNotificationConfigRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. Name of the notification config to get. Its format is
-   * "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * "organizations/[organization_id]/notificationConfigs/[config_id]",
+   * "folders/[folder_id]/notificationConfigs/[config_id]",
+   * or "projects/[project_id]/notificationConfigs/[config_id]".
    * </pre>
    *
    * <code>
@@ -462,7 +466,9 @@ public final class GetNotificationConfigRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the notification config to get. Its format is
-     * "organizations/[organization_id]/notificationConfigs/[config_id]".
+     * "organizations/[organization_id]/notificationConfigs/[config_id]",
+     * "folders/[folder_id]/notificationConfigs/[config_id]",
+     * or "projects/[project_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -487,7 +493,9 @@ public final class GetNotificationConfigRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the notification config to get. Its format is
-     * "organizations/[organization_id]/notificationConfigs/[config_id]".
+     * "organizations/[organization_id]/notificationConfigs/[config_id]",
+     * "folders/[folder_id]/notificationConfigs/[config_id]",
+     * or "projects/[project_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -512,7 +520,9 @@ public final class GetNotificationConfigRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the notification config to get. Its format is
-     * "organizations/[organization_id]/notificationConfigs/[config_id]".
+     * "organizations/[organization_id]/notificationConfigs/[config_id]",
+     * "folders/[folder_id]/notificationConfigs/[config_id]",
+     * or "projects/[project_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -536,7 +546,9 @@ public final class GetNotificationConfigRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the notification config to get. Its format is
-     * "organizations/[organization_id]/notificationConfigs/[config_id]".
+     * "organizations/[organization_id]/notificationConfigs/[config_id]",
+     * "folders/[folder_id]/notificationConfigs/[config_id]",
+     * or "projects/[project_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>
@@ -556,7 +568,9 @@ public final class GetNotificationConfigRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. Name of the notification config to get. Its format is
-     * "organizations/[organization_id]/notificationConfigs/[config_id]".
+     * "organizations/[organization_id]/notificationConfigs/[config_id]",
+     * "folders/[folder_id]/notificationConfigs/[config_id]",
+     * or "projects/[project_id]/notificationConfigs/[config_id]".
      * </pre>
      *
      * <code>

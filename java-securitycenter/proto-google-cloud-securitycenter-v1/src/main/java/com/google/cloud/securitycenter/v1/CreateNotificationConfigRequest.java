@@ -134,8 +134,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    * <pre>
    * Required.
    * Unique identifier provided by the client within the parent scope.
-   * It must be between 1 and 128 characters, and contains alphanumeric
-   * characters, underscores or hyphens only.
+   * It must be between 1 and 128 characters and contain alphanumeric
+   * characters, underscores, or hyphens only.
    * </pre>
    *
    * <code>string config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -160,8 +160,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
    * <pre>
    * Required.
    * Unique identifier provided by the client within the parent scope.
-   * It must be between 1 and 128 characters, and contains alphanumeric
-   * characters, underscores or hyphens only.
+   * It must be between 1 and 128 characters and contain alphanumeric
+   * characters, underscores, or hyphens only.
    * </pre>
    *
    * <code>string config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -770,8 +770,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * <pre>
      * Required.
      * Unique identifier provided by the client within the parent scope.
-     * It must be between 1 and 128 characters, and contains alphanumeric
-     * characters, underscores or hyphens only.
+     * It must be between 1 and 128 characters and contain alphanumeric
+     * characters, underscores, or hyphens only.
      * </pre>
      *
      * <code>string config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -795,8 +795,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * <pre>
      * Required.
      * Unique identifier provided by the client within the parent scope.
-     * It must be between 1 and 128 characters, and contains alphanumeric
-     * characters, underscores or hyphens only.
+     * It must be between 1 and 128 characters and contain alphanumeric
+     * characters, underscores, or hyphens only.
      * </pre>
      *
      * <code>string config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -820,8 +820,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * <pre>
      * Required.
      * Unique identifier provided by the client within the parent scope.
-     * It must be between 1 and 128 characters, and contains alphanumeric
-     * characters, underscores or hyphens only.
+     * It must be between 1 and 128 characters and contain alphanumeric
+     * characters, underscores, or hyphens only.
      * </pre>
      *
      * <code>string config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -844,8 +844,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * <pre>
      * Required.
      * Unique identifier provided by the client within the parent scope.
-     * It must be between 1 and 128 characters, and contains alphanumeric
-     * characters, underscores or hyphens only.
+     * It must be between 1 and 128 characters and contain alphanumeric
+     * characters, underscores, or hyphens only.
      * </pre>
      *
      * <code>string config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -864,8 +864,8 @@ public final class CreateNotificationConfigRequest extends com.google.protobuf.G
      * <pre>
      * Required.
      * Unique identifier provided by the client within the parent scope.
-     * It must be between 1 and 128 characters, and contains alphanumeric
-     * characters, underscores or hyphens only.
+     * It must be between 1 and 128 characters and contain alphanumeric
+     * characters, underscores, or hyphens only.
      * </pre>
      *
      * <code>string config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

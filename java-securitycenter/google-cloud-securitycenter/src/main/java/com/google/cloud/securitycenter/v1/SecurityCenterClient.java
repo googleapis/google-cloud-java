@@ -1147,7 +1147,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Resource name of the new notification config's parent. Its format is
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
-   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     must be between 1 and 128 characters and contain alphanumeric characters, underscores, or
    *     hyphens only.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
@@ -1188,7 +1188,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Resource name of the new notification config's parent. Its format is
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
-   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     must be between 1 and 128 characters and contain alphanumeric characters, underscores, or
    *     hyphens only.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
@@ -1229,7 +1229,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Resource name of the new notification config's parent. Its format is
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
-   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     must be between 1 and 128 characters and contain alphanumeric characters, underscores, or
    *     hyphens only.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
@@ -1270,7 +1270,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * @param parent Required. Resource name of the new notification config's parent. Its format is
    *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
    * @param configId Required. Unique identifier provided by the client within the parent scope. It
-   *     must be between 1 and 128 characters, and contains alphanumeric characters, underscores or
+   *     must be between 1 and 128 characters and contain alphanumeric characters, underscores, or
    *     hyphens only.
    * @param notificationConfig Required. The notification config being created. The name and the
    *     service account will be ignored as they are both output only fields on this resource.
@@ -1488,7 +1488,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the notification config to delete. Its format is
-   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]",
+   *     "folders/[folder_id]/notificationConfigs/[config_id]", or
+   *     "projects/[project_id]/notificationConfigs/[config_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNotificationConfig(NotificationConfigName name) {
@@ -1521,7 +1523,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the notification config to delete. Its format is
-   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]",
+   *     "folders/[folder_id]/notificationConfigs/[config_id]", or
+   *     "projects/[project_id]/notificationConfigs/[config_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteNotificationConfig(String name) {
@@ -1595,7 +1599,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a big query export.
+   * Gets a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -1612,7 +1616,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the big query export to retrieve. Its format is
+   * @param name Required. Name of the BigQuery export to retrieve. Its format is
    *     organizations/{organization}/bigQueryExports/{export_id},
    *     folders/{folder}/bigQueryExports/{export_id}, or
    *     projects/{project}/bigQueryExports/{export_id}
@@ -1628,7 +1632,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a big query export.
+   * Gets a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -1645,7 +1649,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the big query export to retrieve. Its format is
+   * @param name Required. Name of the BigQuery export to retrieve. Its format is
    *     organizations/{organization}/bigQueryExports/{export_id},
    *     folders/{folder}/bigQueryExports/{export_id}, or
    *     projects/{project}/bigQueryExports/{export_id}
@@ -1658,7 +1662,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a big query export.
+   * Gets a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -1688,7 +1692,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a big query export.
+   * Gets a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -1972,7 +1976,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the notification config to get. Its format is
-   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]",
+   *     "folders/[folder_id]/notificationConfigs/[config_id]", or
+   *     "projects/[project_id]/notificationConfigs/[config_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationConfig getNotificationConfig(NotificationConfigName name) {
@@ -2005,7 +2011,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Name of the notification config to get. Its format is
-   *     "organizations/[organization_id]/notificationConfigs/[config_id]".
+   *     "organizations/[organization_id]/notificationConfigs/[config_id]",
+   *     "folders/[folder_id]/notificationConfigs/[config_id]", or
+   *     "projects/[project_id]/notificationConfigs/[config_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NotificationConfig getNotificationConfig(String name) {
@@ -3162,8 +3170,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the organization to list notification configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param parent Required. The name of the parent in which to list the notification
+   *     configurations. Its format is "organizations/[organization_id]", "folders/[folder_id]", or
+   *     "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(FolderName parent) {
@@ -3195,8 +3204,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the organization to list notification configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param parent Required. The name of the parent in which to list the notification
+   *     configurations. Its format is "organizations/[organization_id]", "folders/[folder_id]", or
+   *     "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(
@@ -3229,8 +3239,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the organization to list notification configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param parent Required. The name of the parent in which to list the notification
+   *     configurations. Its format is "organizations/[organization_id]", "folders/[folder_id]", or
+   *     "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(ProjectName parent) {
@@ -3262,8 +3273,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Name of the organization to list notification configs. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param parent Required. The name of the parent in which to list the notification
+   *     configurations. Its format is "organizations/[organization_id]", "folders/[folder_id]", or
+   *     "projects/[project_id]".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNotificationConfigsPagedResponse listNotificationConfigs(String parent) {
@@ -3792,9 +3804,12 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The relative resource name of the finding. See:
-   *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}".
+   * @param name Required. The [relative resource
+   *     name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the
+   *     finding. Example:
+   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   *     "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   *     "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * @param state Required. The desired State of the finding.
    * @param startTime Required. The time at which the updated state takes effect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3831,9 +3846,12 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The relative resource name of the finding. See:
-   *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
-   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}".
+   * @param name Required. The [relative resource
+   *     name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the
+   *     finding. Example:
+   *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   *     "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   *     "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * @param state Required. The desired State of the finding.
    * @param startTime Required. The time at which the updated state takes effect.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3932,8 +3950,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The relative resource name of the finding. See:
-   *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
+   * @param name Required. The [relative resource
+   *     name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the
+   *     finding. Example:
    *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
    *     "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
    *     "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
@@ -3970,8 +3989,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The relative resource name of the finding. See:
-   *     https://cloud.google.com/apis/design/resource_names#relative_resource_name Example:
+   * @param name Required. The [relative resource
+   *     name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the
+   *     finding. Example:
    *     "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
    *     "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
    *     "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
@@ -4974,7 +4994,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a big query export.
+   * Creates a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -4993,9 +5013,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the new big query export's parent. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
-   * @param bigQueryExport Required. The big query export being created.
+   * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
    *     a letter, the last a letter or a number, and a 63 character maximum.
@@ -5014,7 +5034,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a big query export.
+   * Creates a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5033,9 +5053,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the new big query export's parent. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
-   * @param bigQueryExport Required. The big query export being created.
+   * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
    *     a letter, the last a letter or a number, and a 63 character maximum.
@@ -5054,7 +5074,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a big query export.
+   * Creates a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5073,9 +5093,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the new big query export's parent. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
-   * @param bigQueryExport Required. The big query export being created.
+   * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
    *     a letter, the last a letter or a number, and a 63 character maximum.
@@ -5094,7 +5114,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a big query export.
+   * Creates a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5113,9 +5133,9 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Resource name of the new big query export's parent. Its format is
-   *     "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
-   * @param bigQueryExport Required. The big query export being created.
+   * @param parent Required. The name of the parent resource of the new BigQuery export. Its format
+   *     is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+   * @param bigQueryExport Required. The BigQuery export being created.
    * @param bigQueryExportId Required. Unique identifier provided by the client within the parent
    *     scope. It must consist of lower case letters, numbers, and hyphen, with the first character
    *     a letter, the last a letter or a number, and a 63 character maximum.
@@ -5134,7 +5154,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a big query export.
+   * Creates a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5164,7 +5184,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a big query export.
+   * Creates a BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5195,7 +5215,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing big query export.
+   * Deletes an existing BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5212,7 +5232,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the big query export to delete. Its format is
+   * @param name Required. The name of the BigQuery export to delete. Its format is
    *     organizations/{organization}/bigQueryExports/{export_id},
    *     folders/{folder}/bigQueryExports/{export_id}, or
    *     projects/{project}/bigQueryExports/{export_id}
@@ -5228,7 +5248,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing big query export.
+   * Deletes an existing BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5245,7 +5265,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the big query export to delete. Its format is
+   * @param name Required. The name of the BigQuery export to delete. Its format is
    *     organizations/{organization}/bigQueryExports/{export_id},
    *     folders/{folder}/bigQueryExports/{export_id}, or
    *     projects/{project}/bigQueryExports/{export_id}
@@ -5259,7 +5279,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing big query export.
+   * Deletes an existing BigQuery export.
    *
    * <p>Sample code:
    *
@@ -5289,7 +5309,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an existing big query export.
+   * Deletes an existing BigQuery export.
    *
    * <p>Sample code:
    *

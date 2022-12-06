@@ -76,7 +76,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Name of the organization to groupBy. Its format is
+   * Required. The name of the parent to group the assets by. Its format is
    * "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
@@ -103,7 +103,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Name of the organization to groupBy. Its format is
+   * Required. The name of the parent to group the assets by. Its format is
    * "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
@@ -1072,7 +1072,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the organization to groupBy. Its format is
+     * Required. The name of the parent to group the assets by. Its format is
      * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
@@ -1098,7 +1098,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the organization to groupBy. Its format is
+     * Required. The name of the parent to group the assets by. Its format is
      * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
@@ -1124,7 +1124,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the organization to groupBy. Its format is
+     * Required. The name of the parent to group the assets by. Its format is
      * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
@@ -1149,7 +1149,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the organization to groupBy. Its format is
+     * Required. The name of the parent to group the assets by. Its format is
      * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
@@ -1170,7 +1170,7 @@ public final class GroupAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the organization to groupBy. Its format is
+     * Required. The name of the parent to group the assets by. Its format is
      * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>

@@ -27,9 +27,9 @@ public interface ListNotificationConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization to list notification configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * Required. The name of the parent in which to list the notification
+   * configurations. Its format is "organizations/[organization_id]",
+   * "folders/[folder_id]", or "projects/[project_id]".
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface ListNotificationConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization to list notification configs. Its format
-   * is "organizations/[organization_id]", "folders/[folder_id]", or
-   * "projects/[project_id]".
+   * Required. The name of the parent in which to list the notification
+   * configurations. Its format is "organizations/[organization_id]",
+   * "folders/[folder_id]", or "projects/[project_id]".
    * </pre>
    *
    * <code>
