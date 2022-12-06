@@ -1,5 +1,5 @@
 {
-  "api_shortname": "addressvalidation",
+  "api_shortname": "maps-addressvalidation",
   "name_pretty": "Address Validation API",
   "product_documentation": "https://developers.google.com/maps/documentation/address-validation/",
   "api_description": "The Address Validation API allows developers to verify the accuracy of addresses. Given an address, it returns information about the correctness of the components of the parsed address, a geocode, and a verdict on the deliverability of the parsed address.",
@@ -7,8 +7,8 @@
   "release_level": "preview",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-addressvalidation",
-  "repo_short": "java-addressvalidation",
+  "repo": "googleapis/java-maps-addressvalidation",
+  "repo_short": "java-maps-addressvalidation",
   "distribution_name": "com.google.maps:google-maps-addressvalidation",
   "api_id": "addressvalidation.googleapis.com",
   "library_type": "GAPIC_AUTO",
