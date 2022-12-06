@@ -33,6 +33,7 @@ import com.google.api.Logging;
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.Monitoring;
+import com.google.api.Publishing;
 import com.google.api.Quota;
 import com.google.api.Service;
 import com.google.api.SourceInfo;
@@ -427,6 +428,7 @@ public class ServiceManagerClientTest {
             .setMonitoring(Monitoring.newBuilder().build())
             .setSystemParameters(SystemParameters.newBuilder().build())
             .setSourceInfo(SourceInfo.newBuilder().build())
+            .setPublishing(Publishing.newBuilder().build())
             .setConfigVersion(UInt32Value.newBuilder().build())
             .build();
     mockServiceManager.addResponse(expectedResponse);
@@ -495,6 +497,7 @@ public class ServiceManagerClientTest {
             .setMonitoring(Monitoring.newBuilder().build())
             .setSystemParameters(SystemParameters.newBuilder().build())
             .setSourceInfo(SourceInfo.newBuilder().build())
+            .setPublishing(Publishing.newBuilder().build())
             .setConfigVersion(UInt32Value.newBuilder().build())
             .build();
     mockServiceManager.addResponse(expectedResponse);
