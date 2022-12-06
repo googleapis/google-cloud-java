@@ -44,6 +44,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.ReadFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -112,6 +114,8 @@ public class FeaturestoreOnlineServingServiceStubSettings
   private final ServerStreamingCallSettings<
           StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
       streamingReadFeatureValuesSettings;
+  private final UnaryCallSettings<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -184,6 +188,12 @@ public class FeaturestoreOnlineServingServiceStubSettings
   public ServerStreamingCallSettings<StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
       streamingReadFeatureValuesSettings() {
     return streamingReadFeatureValuesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to writeFeatureValues. */
+  public UnaryCallSettings<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesSettings() {
+    return writeFeatureValuesSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -293,6 +303,7 @@ public class FeaturestoreOnlineServingServiceStubSettings
     readFeatureValuesSettings = settingsBuilder.readFeatureValuesSettings().build();
     streamingReadFeatureValuesSettings =
         settingsBuilder.streamingReadFeatureValuesSettings().build();
+    writeFeatureValuesSettings = settingsBuilder.writeFeatureValuesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -309,6 +320,8 @@ public class FeaturestoreOnlineServingServiceStubSettings
     private final ServerStreamingCallSettings.Builder<
             StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
         streamingReadFeatureValuesSettings;
+    private final UnaryCallSettings.Builder<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+        writeFeatureValuesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -346,6 +359,7 @@ public class FeaturestoreOnlineServingServiceStubSettings
 
       readFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamingReadFeatureValuesSettings = ServerStreamingCallSettings.newBuilder();
+      writeFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -355,6 +369,7 @@ public class FeaturestoreOnlineServingServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               readFeatureValuesSettings,
+              writeFeatureValuesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -368,6 +383,7 @@ public class FeaturestoreOnlineServingServiceStubSettings
 
       readFeatureValuesSettings = settings.readFeatureValuesSettings.toBuilder();
       streamingReadFeatureValuesSettings = settings.streamingReadFeatureValuesSettings.toBuilder();
+      writeFeatureValuesSettings = settings.writeFeatureValuesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -377,6 +393,7 @@ public class FeaturestoreOnlineServingServiceStubSettings
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               readFeatureValuesSettings,
+              writeFeatureValuesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -405,6 +422,11 @@ public class FeaturestoreOnlineServingServiceStubSettings
 
       builder
           .streamingReadFeatureValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .writeFeatureValuesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -462,6 +484,12 @@ public class FeaturestoreOnlineServingServiceStubSettings
             StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
         streamingReadFeatureValuesSettings() {
       return streamingReadFeatureValuesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to writeFeatureValues. */
+    public UnaryCallSettings.Builder<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+        writeFeatureValuesSettings() {
+      return writeFeatureValuesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

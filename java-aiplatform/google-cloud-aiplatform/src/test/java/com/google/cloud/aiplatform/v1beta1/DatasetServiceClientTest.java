@@ -21,6 +21,7 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataI
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.SearchDataItemsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -124,6 +125,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -182,6 +184,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -240,6 +243,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -287,6 +291,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -334,6 +339,7 @@ public class DatasetServiceClientTest {
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setMetadataArtifact("metadataArtifact1018119713")
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -810,6 +816,93 @@ public class DatasetServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listDataItems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchDataItemsTest() throws Exception {
+    DataItemView responsesElement = DataItemView.newBuilder().build();
+    SearchDataItemsResponse expectedResponse =
+        SearchDataItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataItemViews(Arrays.asList(responsesElement))
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    SearchDataItemsRequest request =
+        SearchDataItemsRequest.newBuilder()
+            .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setSavedQuery(
+                SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+                    .toString())
+            .setDataLabelingJob("dataLabelingJob951814757")
+            .setDataItemFilter("dataItemFilter1487804341")
+            .setAnnotationsFilter("annotationsFilter-583841860")
+            .addAllAnnotationFilters(new ArrayList<String>())
+            .setFieldMask(FieldMask.newBuilder().build())
+            .setAnnotationsLimit(134561504)
+            .setPageSize(883849137)
+            .setOrderBy("orderBy-1207110587")
+            .setPageToken("pageToken873572522")
+            .build();
+
+    SearchDataItemsPagedResponse pagedListResponse = client.searchDataItems(request);
+
+    List<DataItemView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataItemViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchDataItemsRequest actualRequest = ((SearchDataItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getOrderByDataItem(), actualRequest.getOrderByDataItem());
+    Assert.assertEquals(request.getOrderByAnnotation(), actualRequest.getOrderByAnnotation());
+    Assert.assertEquals(request.getDataset(), actualRequest.getDataset());
+    Assert.assertEquals(request.getSavedQuery(), actualRequest.getSavedQuery());
+    Assert.assertEquals(request.getDataLabelingJob(), actualRequest.getDataLabelingJob());
+    Assert.assertEquals(request.getDataItemFilter(), actualRequest.getDataItemFilter());
+    Assert.assertEquals(request.getAnnotationsFilter(), actualRequest.getAnnotationsFilter());
+    Assert.assertEquals(
+        request.getAnnotationFiltersList(), actualRequest.getAnnotationFiltersList());
+    Assert.assertEquals(request.getFieldMask(), actualRequest.getFieldMask());
+    Assert.assertEquals(request.getAnnotationsLimit(), actualRequest.getAnnotationsLimit());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchDataItemsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      SearchDataItemsRequest request =
+          SearchDataItemsRequest.newBuilder()
+              .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setSavedQuery(
+                  SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+                      .toString())
+              .setDataLabelingJob("dataLabelingJob951814757")
+              .setDataItemFilter("dataItemFilter1487804341")
+              .setAnnotationsFilter("annotationsFilter-583841860")
+              .addAllAnnotationFilters(new ArrayList<String>())
+              .setFieldMask(FieldMask.newBuilder().build())
+              .setAnnotationsLimit(134561504)
+              .setPageSize(883849137)
+              .setOrderBy("orderBy-1207110587")
+              .setPageToken("pageToken873572522")
+              .build();
+      client.searchDataItems(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

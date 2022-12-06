@@ -50,7 +50,7 @@ public final class EntityTypeProto {
           + "oogle/api/resource.proto\032=google/cloud/a"
           + "iplatform/v1beta1/featurestore_monitorin"
           + "g.proto\032\037google/protobuf/timestamp.proto"
-          + "\"\241\004\n\nEntityType\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\030\n\013de"
+          + "\"\310\004\n\nEntityType\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\030\n\013de"
           + "scription\030\002 \001(\tB\003\340A\001\0224\n\013create_time\030\003 \001("
           + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
           + "date_time\030\004 \001(\0132\032.google.protobuf.Timest"
@@ -59,17 +59,18 @@ public final class EntityTypeProto {
           + "yB\003\340A\001\022\021\n\004etag\030\007 \001(\tB\003\340A\001\022]\n\021monitoring_"
           + "config\030\010 \001(\0132=.google.cloud.aiplatform.v"
           + "1beta1.FeaturestoreMonitoringConfigB\003\340A\001"
-          + "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\t:\0028\001:\212\001\352A\206\001\n$aiplatform.googleapis.co"
-          + "m/EntityType\022^projects/{project}/locatio"
-          + "ns/{location}/featurestores/{featurestor"
-          + "e}/entityTypes/{entity_type}B\354\001\n#com.goo"
-          + "gle.cloud.aiplatform.v1beta1B\017EntityType"
-          + "ProtoP\001ZIgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/aiplatform/v1beta1;aiplatfo"
-          + "rm\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
-          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
-          + ":Cloud::AIPlatform::V1beta1b\006proto3"
+          + "\022%\n\030offline_storage_ttl_days\030\n \001(\005B\003\340A\001\032"
+          + "-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001:\212\001\352A\206\001\n$aiplatform.googleapis.com"
+          + "/EntityType\022^projects/{project}/location"
+          + "s/{location}/featurestores/{featurestore"
+          + "}/entityTypes/{entity_type}B\354\001\n#com.goog"
+          + "le.cloud.aiplatform.v1beta1B\017EntityTypeP"
+          + "rotoP\001ZIgoogle.golang.org/genproto/googl"
+          + "eapis/cloud/aiplatform/v1beta1;aiplatfor"
+          + "m\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Go"
+          + "ogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::"
+          + "Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -93,6 +94,7 @@ public final class EntityTypeProto {
               "Labels",
               "Etag",
               "MonitoringConfig",
+              "OfflineStorageTtlDays",
             });
     internal_static_google_cloud_aiplatform_v1beta1_EntityType_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_EntityType_descriptor

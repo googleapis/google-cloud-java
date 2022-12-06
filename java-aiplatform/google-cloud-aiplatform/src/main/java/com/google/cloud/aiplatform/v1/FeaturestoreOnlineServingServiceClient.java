@@ -359,6 +359,165 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Writes Feature values of one or more entities of an EntityType.
+   *
+   * <p>The Feature values are merged into existing entities if any. The Feature values to be
+   * written must have timestamp within the online storage retention.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
+   *     FeaturestoreOnlineServingServiceClient.create()) {
+   *   EntityTypeName entityType =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]");
+   *   List<WriteFeatureValuesPayload> payloads = new ArrayList<>();
+   *   WriteFeatureValuesResponse response =
+   *       featurestoreOnlineServingServiceClient.writeFeatureValues(entityType, payloads);
+   * }
+   * }</pre>
+   *
+   * @param entityType Required. The resource name of the EntityType for the entities being written.
+   *     Value format: `projects/{project}/locations/{location}/featurestores/
+   *     {featurestore}/entityTypes/{entityType}`. For example, for a machine learning model
+   *     predicting user clicks on a website, an EntityType ID could be `user`.
+   * @param payloads Required. The entities to be written. Up to 100,000 feature values can be
+   *     written across all `payloads`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteFeatureValuesResponse writeFeatureValues(
+      EntityTypeName entityType, List<WriteFeatureValuesPayload> payloads) {
+    WriteFeatureValuesRequest request =
+        WriteFeatureValuesRequest.newBuilder()
+            .setEntityType(entityType == null ? null : entityType.toString())
+            .addAllPayloads(payloads)
+            .build();
+    return writeFeatureValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Writes Feature values of one or more entities of an EntityType.
+   *
+   * <p>The Feature values are merged into existing entities if any. The Feature values to be
+   * written must have timestamp within the online storage retention.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
+   *     FeaturestoreOnlineServingServiceClient.create()) {
+   *   String entityType =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *           .toString();
+   *   List<WriteFeatureValuesPayload> payloads = new ArrayList<>();
+   *   WriteFeatureValuesResponse response =
+   *       featurestoreOnlineServingServiceClient.writeFeatureValues(entityType, payloads);
+   * }
+   * }</pre>
+   *
+   * @param entityType Required. The resource name of the EntityType for the entities being written.
+   *     Value format: `projects/{project}/locations/{location}/featurestores/
+   *     {featurestore}/entityTypes/{entityType}`. For example, for a machine learning model
+   *     predicting user clicks on a website, an EntityType ID could be `user`.
+   * @param payloads Required. The entities to be written. Up to 100,000 feature values can be
+   *     written across all `payloads`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteFeatureValuesResponse writeFeatureValues(
+      String entityType, List<WriteFeatureValuesPayload> payloads) {
+    WriteFeatureValuesRequest request =
+        WriteFeatureValuesRequest.newBuilder()
+            .setEntityType(entityType)
+            .addAllPayloads(payloads)
+            .build();
+    return writeFeatureValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Writes Feature values of one or more entities of an EntityType.
+   *
+   * <p>The Feature values are merged into existing entities if any. The Feature values to be
+   * written must have timestamp within the online storage retention.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
+   *     FeaturestoreOnlineServingServiceClient.create()) {
+   *   WriteFeatureValuesRequest request =
+   *       WriteFeatureValuesRequest.newBuilder()
+   *           .setEntityType(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllPayloads(new ArrayList<WriteFeatureValuesPayload>())
+   *           .build();
+   *   WriteFeatureValuesResponse response =
+   *       featurestoreOnlineServingServiceClient.writeFeatureValues(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WriteFeatureValuesResponse writeFeatureValues(WriteFeatureValuesRequest request) {
+    return writeFeatureValuesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Writes Feature values of one or more entities of an EntityType.
+   *
+   * <p>The Feature values are merged into existing entities if any. The Feature values to be
+   * written must have timestamp within the online storage retention.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
+   *     FeaturestoreOnlineServingServiceClient.create()) {
+   *   WriteFeatureValuesRequest request =
+   *       WriteFeatureValuesRequest.newBuilder()
+   *           .setEntityType(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllPayloads(new ArrayList<WriteFeatureValuesPayload>())
+   *           .build();
+   *   ApiFuture<WriteFeatureValuesResponse> future =
+   *       featurestoreOnlineServingServiceClient.writeFeatureValuesCallable().futureCall(request);
+   *   // Do something.
+   *   WriteFeatureValuesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesCallable() {
+    return stub.writeFeatureValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

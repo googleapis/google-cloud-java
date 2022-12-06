@@ -53,7 +53,7 @@ public interface DatasetOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -67,7 +67,7 @@ public interface DatasetOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -81,10 +81,10 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The description.
    */
@@ -93,10 +93,10 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The bytes for description.
    */
@@ -419,4 +419,33 @@ public interface DatasetOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Dataset. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadataArtifact.
+   */
+  java.lang.String getMetadataArtifact();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Dataset. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for metadataArtifact.
+   */
+  com.google.protobuf.ByteString getMetadataArtifactBytes();
 }

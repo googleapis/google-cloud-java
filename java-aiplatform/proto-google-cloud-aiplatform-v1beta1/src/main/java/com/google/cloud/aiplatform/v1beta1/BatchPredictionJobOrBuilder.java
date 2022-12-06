@@ -438,7 +438,7 @@ public interface BatchPredictionJobOrBuilder
    * The service account that the DeployedModel's container runs as. If not
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
-   * enough permission to access other GCP resources.
+   * enough permission to access other Google Cloud resources.
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -455,7 +455,7 @@ public interface BatchPredictionJobOrBuilder
    * The service account that the DeployedModel's container runs as. If not
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
-   * enough permission to access other GCP resources.
+   * enough permission to access other Google Cloud resources.
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -704,7 +704,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -719,7 +719,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -734,7 +734,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -749,7 +749,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -764,7 +764,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>

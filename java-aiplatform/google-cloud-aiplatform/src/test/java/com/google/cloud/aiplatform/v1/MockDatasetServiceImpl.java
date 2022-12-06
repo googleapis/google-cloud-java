@@ -225,6 +225,27 @@ public class MockDatasetServiceImpl extends DatasetServiceImplBase {
   }
 
   @Override
+  public void searchDataItems(
+      SearchDataItemsRequest request, StreamObserver<SearchDataItemsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchDataItemsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchDataItemsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchDataItems, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchDataItemsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listSavedQueries(
       ListSavedQueriesRequest request, StreamObserver<ListSavedQueriesResponse> responseObserver) {
     Object response = responses.poll();

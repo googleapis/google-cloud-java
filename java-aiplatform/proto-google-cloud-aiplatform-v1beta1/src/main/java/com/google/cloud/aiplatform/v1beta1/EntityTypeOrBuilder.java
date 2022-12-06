@@ -346,4 +346,21 @@ public interface EntityTypeOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfigOrBuilder
       getMonitoringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for data retention policy in offline storage.
+   * TTL in days for feature values that will be stored in offline storage.
+   * The Feature Store offline storage periodically removes obsolete feature
+   * values older than `offline_storage_ttl_days` since the feature generation
+   * time. If unset (or explicitly set to 0), default to 4000 days TTL.
+   * </pre>
+   *
+   * <code>int32 offline_storage_ttl_days = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The offlineStorageTtlDays.
+   */
+  int getOfflineStorageTtlDays();
 }

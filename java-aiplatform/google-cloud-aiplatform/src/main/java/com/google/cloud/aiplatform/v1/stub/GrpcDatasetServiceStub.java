@@ -21,6 +21,7 @@ import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDataItemsP
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListSavedQueriesPagedResponse;
+import static com.google.cloud.aiplatform.v1.DatasetServiceClient.SearchDataItemsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -51,6 +52,8 @@ import com.google.cloud.aiplatform.v1.ListDatasetsRequest;
 import com.google.cloud.aiplatform.v1.ListDatasetsResponse;
 import com.google.cloud.aiplatform.v1.ListSavedQueriesRequest;
 import com.google.cloud.aiplatform.v1.ListSavedQueriesResponse;
+import com.google.cloud.aiplatform.v1.SearchDataItemsRequest;
+import com.google.cloud.aiplatform.v1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1.UpdateDatasetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -154,6 +157,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListDataItemsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SearchDataItemsRequest, SearchDataItemsResponse>
+      searchDataItemsMethodDescriptor =
+          MethodDescriptor.<SearchDataItemsRequest, SearchDataItemsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.DatasetService/SearchDataItems")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchDataItemsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchDataItemsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListSavedQueriesRequest, ListSavedQueriesResponse>
       listSavedQueriesMethodDescriptor =
           MethodDescriptor.<ListSavedQueriesRequest, ListSavedQueriesResponse>newBuilder()
@@ -254,6 +268,10 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable;
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable;
+  private final UnaryCallable<SearchDataItemsRequest, SearchDataItemsResponse>
+      searchDataItemsCallable;
+  private final UnaryCallable<SearchDataItemsRequest, SearchDataItemsPagedResponse>
+      searchDataItemsPagedCallable;
   private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
       listSavedQueriesCallable;
   private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
@@ -396,6 +414,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<SearchDataItemsRequest, SearchDataItemsResponse>
+        searchDataItemsTransportSettings =
+            GrpcCallSettings.<SearchDataItemsRequest, SearchDataItemsResponse>newBuilder()
+                .setMethodDescriptor(searchDataItemsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("dataset", String.valueOf(request.getDataset()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
         listSavedQueriesTransportSettings =
             GrpcCallSettings.<ListSavedQueriesRequest, ListSavedQueriesResponse>newBuilder()
@@ -534,6 +563,12 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     this.listDataItemsPagedCallable =
         callableFactory.createPagedCallable(
             listDataItemsTransportSettings, settings.listDataItemsSettings(), clientContext);
+    this.searchDataItemsCallable =
+        callableFactory.createUnaryCallable(
+            searchDataItemsTransportSettings, settings.searchDataItemsSettings(), clientContext);
+    this.searchDataItemsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchDataItemsTransportSettings, settings.searchDataItemsSettings(), clientContext);
     this.listSavedQueriesCallable =
         callableFactory.createUnaryCallable(
             listSavedQueriesTransportSettings, settings.listSavedQueriesSettings(), clientContext);
@@ -653,6 +688,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   public UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable() {
     return listDataItemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchDataItemsRequest, SearchDataItemsResponse> searchDataItemsCallable() {
+    return searchDataItemsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchDataItemsRequest, SearchDataItemsPagedResponse>
+      searchDataItemsPagedCallable() {
+    return searchDataItemsPagedCallable;
   }
 
   @Override

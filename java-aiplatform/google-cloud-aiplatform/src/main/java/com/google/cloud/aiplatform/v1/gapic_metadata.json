@@ -49,6 +49,9 @@
             "ListSavedQueries": {
               "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
             },
+            "SearchDataItems": {
+              "methods": ["searchDataItems", "searchDataItemsPagedCallable", "searchDataItemsCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -132,6 +135,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "WriteFeatureValues": {
+              "methods": ["writeFeatureValues", "writeFeatureValues", "writeFeatureValues", "writeFeatureValuesCallable"]
             }
           }
         }

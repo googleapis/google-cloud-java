@@ -336,6 +336,25 @@ public interface FeaturestoreOrBuilder
    *
    *
    * <pre>
+   * Optional. TTL in days for feature values that will be stored in online serving
+   * storage. The Feature Store online storage periodically removes obsolete
+   * feature values older than `online_storage_ttl_days` since the feature
+   * generation time.
+   * Note that `online_storage_ttl_days` should be less than or equal to
+   * `offline_storage_ttl_days` for each EntityType under a featurestore.
+   * If not set, default to 4000 days
+   * </pre>
+   *
+   * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The onlineStorageTtlDays.
+   */
+  int getOnlineStorageTtlDays();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Customer-managed encryption key spec for data storage. If set, both of the
    * online and offline data storage will be secured by this key.
    * </pre>

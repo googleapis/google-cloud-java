@@ -307,7 +307,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The display name of the Index.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -332,7 +332,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The display name of the Index.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -1797,7 +1797,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The display name of the Index.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1821,7 +1821,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The display name of the Index.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1845,7 +1845,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The display name of the Index.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1868,7 +1868,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The display name of the Index.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1887,7 +1887,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The display name of the Index.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
