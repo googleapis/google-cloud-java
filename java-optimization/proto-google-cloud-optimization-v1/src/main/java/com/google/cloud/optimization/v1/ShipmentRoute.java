@@ -1198,7 +1198,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Index of the `shipments` field in the source [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
+     * Index of the `shipments` field in the source
+     * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
      * </pre>
      *
      * <code>int32 shipment_index = 1;</code>
@@ -1501,8 +1502,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -1519,8 +1521,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -1537,8 +1540,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -1555,8 +1559,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -1574,8 +1579,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -1599,7 +1605,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1895
      * @return Whether the delayBeforeStart field is set.
      */
     @java.lang.Deprecated
@@ -1616,7 +1622,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1895
      * @return The delayBeforeStart.
      */
     @java.lang.Deprecated
@@ -1772,7 +1778,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Index of the `shipments` field in the source [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
+     * Index of the `shipments` field in the source
+     * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
      * </pre>
      *
      * <code>int32 shipment_index = 1;</code>
@@ -2207,8 +2214,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -2228,8 +2236,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -2250,8 +2259,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -2271,8 +2281,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -2292,8 +2303,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at the visit location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-     * `end_load_intervals` or `demands`.
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * `start_load_intervals`, `end_load_intervals` or `demands`.
      * Exception: we omit loads for quantity types unconstrained by intervals
      * and that don't have any non-zero demand on the route.
      * </pre>
@@ -2323,7 +2335,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1895
      * @return Whether the delayBeforeStart field is set.
      */
     @java.lang.Override
@@ -2343,7 +2355,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1895
      * @return The delayBeforeStart.
      */
     @java.lang.Override
@@ -3180,7 +3192,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Index of the `shipments` field in the source [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
+       * Index of the `shipments` field in the source
+       * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
        * </pre>
        *
        * <code>int32 shipment_index = 1;</code>
@@ -3195,7 +3208,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Index of the `shipments` field in the source [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
+       * Index of the `shipments` field in the source
+       * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
        * </pre>
        *
        * <code>int32 shipment_index = 1;</code>
@@ -3213,7 +3227,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Index of the `shipments` field in the source [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
+       * Index of the `shipments` field in the source
+       * [ShipmentModel][google.cloud.optimization.v1.ShipmentModel].
        * </pre>
        *
        * <code>int32 shipment_index = 1;</code>
@@ -4304,8 +4319,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4329,8 +4345,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4353,8 +4370,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4377,8 +4395,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4408,8 +4427,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4436,8 +4456,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4466,8 +4487,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4497,8 +4519,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4525,8 +4548,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4553,8 +4577,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4581,8 +4606,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4608,8 +4634,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4635,8 +4662,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4656,8 +4684,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4681,8 +4710,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4706,8 +4736,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4727,8 +4758,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4750,8 +4782,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
        * Vehicle loads upon arrival at the visit location, for each
-       * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities], `start_load_intervals`,
-       * `end_load_intervals` or `demands`.
+       * type specified in
+       * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+       * `start_load_intervals`, `end_load_intervals` or `demands`.
        * Exception: we omit loads for quantity types unconstrained by intervals
        * and that don't have any non-zero demand on the route.
        * </pre>
@@ -4804,7 +4837,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
+       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1895
        * @return Whether the delayBeforeStart field is set.
        */
       @java.lang.Deprecated
@@ -4823,7 +4856,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1824
+       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1895
        * @return The delayBeforeStart.
        */
       @java.lang.Deprecated
@@ -5819,8 +5852,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -5837,8 +5873,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -5859,8 +5898,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -5878,8 +5920,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -5901,8 +5946,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -6508,8 +6556,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -6540,8 +6591,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -6563,8 +6617,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -6591,8 +6648,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Vehicle loads during this transition, for each type that either appears
-     * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+     * in this vehicle's
+     * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+     * or that have non-zero
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * on some shipment performed on this route.
      * The loads during the first transition are the starting loads of the
      * vehicle route. Then, after each visit, the visit's `load_demands` are
      * either added or subtracted to get the next transition's loads, depending
@@ -9045,8 +9105,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Vehicle loads during this transition, for each type that either appears
-       * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+       * in this vehicle's
+       * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+       * or that have non-zero
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * on some shipment performed on this route.
        * The loads during the first transition are the starting loads of the
        * vehicle route. Then, after each visit, the visit's `load_demands` are
        * either added or subtracted to get the next transition's loads, depending
@@ -9077,8 +9140,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Vehicle loads during this transition, for each type that either appears
-       * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+       * in this vehicle's
+       * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+       * or that have non-zero
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * on some shipment performed on this route.
        * The loads during the first transition are the starting loads of the
        * vehicle route. Then, after each visit, the visit's `load_demands` are
        * either added or subtracted to get the next transition's loads, depending
@@ -9100,8 +9166,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Vehicle loads during this transition, for each type that either appears
-       * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+       * in this vehicle's
+       * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+       * or that have non-zero
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * on some shipment performed on this route.
        * The loads during the first transition are the starting loads of the
        * vehicle route. Then, after each visit, the visit's `load_demands` are
        * either added or subtracted to get the next transition's loads, depending
@@ -9128,8 +9197,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Vehicle loads during this transition, for each type that either appears
-       * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+       * in this vehicle's
+       * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+       * or that have non-zero
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * on some shipment performed on this route.
        * The loads during the first transition are the starting loads of the
        * vehicle route. Then, after each visit, the visit's `load_demands` are
        * either added or subtracted to get the next transition's loads, depending
@@ -9163,8 +9235,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Vehicle loads during this transition, for each type that either appears
-       * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+       * in this vehicle's
+       * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+       * or that have non-zero
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * on some shipment performed on this route.
        * The loads during the first transition are the starting loads of the
        * vehicle route. Then, after each visit, the visit's `load_demands` are
        * either added or subtracted to get the next transition's loads, depending
@@ -9194,8 +9269,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Vehicle loads during this transition, for each type that either appears
-       * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+       * in this vehicle's
+       * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+       * or that have non-zero
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * on some shipment performed on this route.
        * The loads during the first transition are the starting loads of the
        * vehicle route. Then, after each visit, the visit's `load_demands` are
        * either added or subtracted to get the next transition's loads, depending
@@ -9223,8 +9301,11 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Vehicle loads during this transition, for each type that either appears
-       * in this vehicle's [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits], or that have non-zero
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] on some shipment performed on this route.
+       * in this vehicle's
+       * [Vehicle.load_limits][google.cloud.optimization.v1.Vehicle.load_limits],
+       * or that have non-zero
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * on some shipment performed on this route.
        * The loads during the first transition are the starting loads of the
        * vehicle route. Then, after each visit, the visit's `load_demands` are
        * either added or subtracted to get the next transition's loads, depending
@@ -9724,7 +9805,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The amount of load on the vehicle, for the given type. The unit of load
-     * is usually indicated by the type. See [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
+     * is usually indicated by the type. See
+     * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
      * </pre>
      *
      * <code>int64 amount = 1;</code>
@@ -9738,7 +9820,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Reports the actual load of the vehicle at some point along the route,
-   * for a given type (see [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]).
+   * for a given type (see
+   * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]).
    * </pre>
    *
    * Protobuf type {@code google.cloud.optimization.v1.ShipmentRoute.VehicleLoad}
@@ -9788,7 +9871,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The amount of load on the vehicle, for the given type. The unit of load
-     * is usually indicated by the type. See [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
+     * is usually indicated by the type. See
+     * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
      * </pre>
      *
      * <code>int64 amount = 1;</code>
@@ -9966,7 +10050,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Reports the actual load of the vehicle at some point along the route,
-     * for a given type (see [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]).
+     * for a given type (see
+     * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads]).
      * </pre>
      *
      * Protobuf type {@code google.cloud.optimization.v1.ShipmentRoute.VehicleLoad}
@@ -10143,7 +10228,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of load on the vehicle, for the given type. The unit of load
-       * is usually indicated by the type. See [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
+       * is usually indicated by the type. See
+       * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
        * </pre>
        *
        * <code>int64 amount = 1;</code>
@@ -10159,7 +10245,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of load on the vehicle, for the given type. The unit of load
-       * is usually indicated by the type. See [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
+       * is usually indicated by the type. See
+       * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
        * </pre>
        *
        * <code>int64 amount = 1;</code>
@@ -10178,7 +10265,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The amount of load on the vehicle, for the given type. The unit of load
-       * is usually indicated by the type. See [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
+       * is usually indicated by the type. See
+       * [Transition.vehicle_loads][google.cloud.optimization.v1.ShipmentRoute.Transition.vehicle_loads].
        * </pre>
        *
        * <code>int64 amount = 1;</code>
@@ -13612,8 +13700,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * insufficient time to complete traffic-adjusted travel, delays, and breaks
    * between visits, before the first visit, or after the last visit, while
    * still satisfying the visit and vehicle time windows. For example,
-   *   ```start_time(previous_visit) + duration(previous_visit) +
-   *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)```
+   * ```
+   *   start_time(previous_visit) + duration(previous_visit) +
+   *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)
+   * ```
    * Arrival at next_visit will likely happen later than its current
    * time window due the increased estimate of travel time
    * `travel_duration(previous_visit, next_visit)` due to traffic. Also, a break
@@ -13775,8 +13865,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Duration, distance and load metrics for this route. The fields of
-   * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-   * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+   * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+   * summed over all
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * or
+   * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+   * depending on the context.
    * </pre>
    *
    * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -13792,8 +13886,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Duration, distance and load metrics for this route. The fields of
-   * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-   * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+   * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+   * summed over all
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * or
+   * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+   * depending on the context.
    * </pre>
    *
    * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -13811,8 +13909,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Duration, distance and load metrics for this route. The fields of
-   * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-   * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+   * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+   * summed over all
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * or
+   * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+   * depending on the context.
    * </pre>
    *
    * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -13974,7 +14076,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
    * Vehicle loads upon arrival at its end location, for each
-   * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+   * type specified in
+   * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
    * non-zero demand on the route.
@@ -13995,7 +14098,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
    * Vehicle loads upon arrival at its end location, for each
-   * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+   * type specified in
+   * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
    * non-zero demand on the route.
@@ -14017,7 +14121,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
    * Vehicle loads upon arrival at its end location, for each
-   * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+   * type specified in
+   * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
    * non-zero demand on the route.
@@ -14038,7 +14143,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
    * Vehicle loads upon arrival at its end location, for each
-   * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+   * type specified in
+   * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
    * non-zero demand on the route.
@@ -14059,7 +14165,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
    * Vehicle loads upon arrival at its end location, for each
-   * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+   * type specified in
+   * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
    * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
    * loads for quantity types unconstrained by intervals and that don't have any
    * non-zero demand on the route.
@@ -14176,8 +14283,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: No longer used.
    * This field will only be populated at the
-   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-   * Extra detour time due to the shipments visited on the route.
+   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+   * level. Extra detour time due to the shipments visited on the route.
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -14185,7 +14292,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2135
    * @return Whether the vehicleDetour field is set.
    */
   @java.lang.Override
@@ -14199,8 +14306,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: No longer used.
    * This field will only be populated at the
-   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-   * Extra detour time due to the shipments visited on the route.
+   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+   * level. Extra detour time due to the shipments visited on the route.
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -14208,7 +14315,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2135
    * @return The vehicleDetour.
    */
   @java.lang.Override
@@ -14224,8 +14331,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated: No longer used.
    * This field will only be populated at the
-   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-   * Extra detour time due to the shipments visited on the route.
+   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+   * level. Extra detour time due to the shipments visited on the route.
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -14254,7 +14361,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2057
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2140
    * @return Whether the delayBeforeVehicleEnd field is set.
    */
   @java.lang.Override
@@ -14276,7 +14383,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2057
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2140
    * @return The delayBeforeVehicleEnd.
    */
   @java.lang.Override
@@ -16688,8 +16795,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * insufficient time to complete traffic-adjusted travel, delays, and breaks
      * between visits, before the first visit, or after the last visit, while
      * still satisfying the visit and vehicle time windows. For example,
-     *   ```start_time(previous_visit) + duration(previous_visit) +
-     *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)```
+     * ```
+     *   start_time(previous_visit) + duration(previous_visit) +
+     *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)
+     * ```
      * Arrival at next_visit will likely happen later than its current
      * time window due the increased estimate of travel time
      * `travel_duration(previous_visit, next_visit)` due to traffic. Also, a break
@@ -16716,8 +16825,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * insufficient time to complete traffic-adjusted travel, delays, and breaks
      * between visits, before the first visit, or after the last visit, while
      * still satisfying the visit and vehicle time windows. For example,
-     *   ```start_time(previous_visit) + duration(previous_visit) +
-     *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)```
+     * ```
+     *   start_time(previous_visit) + duration(previous_visit) +
+     *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)
+     * ```
      * Arrival at next_visit will likely happen later than its current
      * time window due the increased estimate of travel time
      * `travel_duration(previous_visit, next_visit)` due to traffic. Also, a break
@@ -16747,8 +16858,10 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * insufficient time to complete traffic-adjusted travel, delays, and breaks
      * between visits, before the first visit, or after the last visit, while
      * still satisfying the visit and vehicle time windows. For example,
-     *   ```start_time(previous_visit) + duration(previous_visit) +
-     *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)```
+     * ```
+     *   start_time(previous_visit) + duration(previous_visit) +
+     *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)
+     * ```
      * Arrival at next_visit will likely happen later than its current
      * time window due the increased estimate of travel time
      * `travel_duration(previous_visit, next_visit)` due to traffic. Also, a break
@@ -17389,8 +17502,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17405,8 +17522,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17427,8 +17548,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17451,8 +17576,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17473,8 +17602,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17501,8 +17634,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17523,8 +17660,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17539,8 +17680,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17559,8 +17704,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Duration, distance and load metrics for this route. The fields of
-     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are summed over all [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] or
-     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits], depending on the context.
+     * [AggregatedMetrics][google.cloud.optimization.v1.AggregatedMetrics] are
+     * summed over all
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * or
+     * [ShipmentRoute.visits][google.cloud.optimization.v1.ShipmentRoute.visits],
+     * depending on the context.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics metrics = 12;</code>
@@ -17863,7 +18012,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -17887,7 +18037,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -17911,7 +18062,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -17935,7 +18087,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -17965,7 +18118,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -17993,7 +18147,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18023,7 +18178,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18053,7 +18209,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18081,7 +18238,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18109,7 +18267,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18137,7 +18296,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18164,7 +18324,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18191,7 +18352,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18211,7 +18373,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18236,7 +18399,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18261,7 +18425,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18282,7 +18447,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18304,7 +18470,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: Use [ShipmentRoute.Transition.loads][] instead.
      * Vehicle loads upon arrival at its end location, for each
-     * type specified in [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
+     * type specified in
+     * [Vehicle.capacities][google.cloud.optimization.v1.Vehicle.capacities],
      * `start_load_intervals`, `end_load_intervals` or demands. Exception: we omit
      * loads for quantity types unconstrained by intervals and that don't have any
      * non-zero demand on the route.
@@ -18787,8 +18954,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18796,7 +18963,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2135
      * @return Whether the vehicleDetour field is set.
      */
     @java.lang.Deprecated
@@ -18809,8 +18976,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18818,7 +18985,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2052
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2135
      * @return The vehicleDetour.
      */
     @java.lang.Deprecated
@@ -18837,8 +19004,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18865,8 +19032,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18890,8 +19057,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18922,8 +19089,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18948,8 +19115,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18968,8 +19135,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -18992,8 +19159,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated: No longer used.
      * This field will only be populated at the
-     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit] level.
-     * Extra detour time due to the shipments visited on the route.
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
+     * level. Extra detour time due to the shipments visited on the route.
      * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
      * from the vehicle's start_location to its `end_location`.
      * </pre>
@@ -19037,7 +19204,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2057
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2140
      * @return Whether the delayBeforeVehicleEnd field is set.
      */
     @java.lang.Deprecated
@@ -19058,7 +19225,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2057
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2140
      * @return The delayBeforeVehicleEnd.
      */
     @java.lang.Deprecated

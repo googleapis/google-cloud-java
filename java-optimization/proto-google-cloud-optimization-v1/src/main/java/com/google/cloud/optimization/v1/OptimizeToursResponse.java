@@ -82,7 +82,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Aggregated over the routes. Each metric is the sum (or max, for loads)
-     * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+     * over all
+     * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+     * fields of the same name.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -95,7 +97,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Aggregated over the routes. Each metric is the sum (or max, for loads)
-     * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+     * over all
+     * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+     * fields of the same name.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -108,7 +112,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Aggregated over the routes. Each metric is the sum (or max, for loads)
-     * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+     * over all
+     * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+     * fields of the same name.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -134,8 +140,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Number of vehicles used. Note: if a vehicle route is empty and
-     * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty] is true, the vehicle is considered
-     * used.
+     * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty]
+     * is true, the vehicle is considered used.
      * </pre>
      *
      * <code>int32 used_vehicle_count = 3;</code>
@@ -149,7 +155,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The earliest start time for a used vehicle, computed as the minimum over
-     * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * all used vehicles of
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -162,7 +169,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The earliest start time for a used vehicle, computed as the minimum over
-     * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * all used vehicles of
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -175,7 +183,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The earliest start time for a used vehicle, computed as the minimum over
-     * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * all used vehicles of
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -187,7 +196,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The latest end time for a used vehicle, computed as the maximum over all
-     * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+     * used vehicles of
+     * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -200,7 +210,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The latest end time for a used vehicle, computed as the maximum over all
-     * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+     * used vehicles of
+     * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -213,7 +224,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The latest end time for a used vehicle, computed as the maximum over all
-     * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+     * used vehicles of
+     * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -392,7 +404,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Aggregated over the routes. Each metric is the sum (or max, for loads)
-     * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+     * over all
+     * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+     * fields of the same name.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -408,7 +422,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Aggregated over the routes. Each metric is the sum (or max, for loads)
-     * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+     * over all
+     * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+     * fields of the same name.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -426,7 +442,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Aggregated over the routes. Each metric is the sum (or max, for loads)
-     * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+     * over all
+     * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+     * fields of the same name.
      * </pre>
      *
      * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -462,8 +480,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Number of vehicles used. Note: if a vehicle route is empty and
-     * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty] is true, the vehicle is considered
-     * used.
+     * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty]
+     * is true, the vehicle is considered used.
      * </pre>
      *
      * <code>int32 used_vehicle_count = 3;</code>
@@ -482,7 +500,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The earliest start time for a used vehicle, computed as the minimum over
-     * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * all used vehicles of
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -498,7 +517,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The earliest start time for a used vehicle, computed as the minimum over
-     * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * all used vehicles of
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -516,7 +536,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The earliest start time for a used vehicle, computed as the minimum over
-     * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * all used vehicles of
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -533,7 +554,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The latest end time for a used vehicle, computed as the maximum over all
-     * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+     * used vehicles of
+     * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -549,7 +571,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The latest end time for a used vehicle, computed as the maximum over all
-     * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+     * used vehicles of
+     * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -567,7 +590,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The latest end time for a used vehicle, computed as the maximum over all
-     * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+     * used vehicles of
+     * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1288,7 +1312,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1303,7 +1329,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1324,7 +1352,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1348,7 +1378,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1369,7 +1401,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1398,7 +1432,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1419,7 +1455,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1435,7 +1473,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1455,7 +1495,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Aggregated over the routes. Each metric is the sum (or max, for loads)
-       * over all [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics] fields of the same name.
+       * over all
+       * [ShipmentRoute.metrics][google.cloud.optimization.v1.ShipmentRoute.metrics]
+       * fields of the same name.
        * </pre>
        *
        * <code>.google.cloud.optimization.v1.AggregatedMetrics aggregated_route_metrics = 1;</code>
@@ -1535,8 +1577,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Number of vehicles used. Note: if a vehicle route is empty and
-       * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty] is true, the vehicle is considered
-       * used.
+       * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty]
+       * is true, the vehicle is considered used.
        * </pre>
        *
        * <code>int32 used_vehicle_count = 3;</code>
@@ -1552,8 +1594,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Number of vehicles used. Note: if a vehicle route is empty and
-       * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty] is true, the vehicle is considered
-       * used.
+       * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty]
+       * is true, the vehicle is considered used.
        * </pre>
        *
        * <code>int32 used_vehicle_count = 3;</code>
@@ -1572,8 +1614,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Number of vehicles used. Note: if a vehicle route is empty and
-       * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty] is true, the vehicle is considered
-       * used.
+       * [Vehicle.used_if_route_is_empty][google.cloud.optimization.v1.Vehicle.used_if_route_is_empty]
+       * is true, the vehicle is considered used.
        * </pre>
        *
        * <code>int32 used_vehicle_count = 3;</code>
@@ -1598,7 +1640,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1613,7 +1656,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1634,7 +1678,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1657,7 +1702,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1678,7 +1724,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1705,7 +1752,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1726,7 +1774,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1741,7 +1790,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1760,7 +1810,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The earliest start time for a used vehicle, computed as the minimum over
-       * all used vehicles of [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+       * all used vehicles of
+       * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp earliest_vehicle_start_time = 4;</code>
@@ -1793,7 +1844,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1808,7 +1860,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1829,7 +1882,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1852,7 +1906,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1873,7 +1928,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1900,7 +1956,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1921,7 +1978,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1936,7 +1994,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -1955,7 +2014,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The latest end time for a used vehicle, computed as the maximum over all
-       * used vehicles of [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
+       * used vehicles of
+       * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time].
        * </pre>
        *
        * <code>.google.protobuf.Timestamp latest_vehicle_end_time = 5;</code>
@@ -2386,8 +2446,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-   * request.
+   * Copy of the
+   * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+   * if a label was specified in the request.
    * </pre>
    *
    * <code>string request_label = 3;</code>
@@ -2410,8 +2471,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-   * request.
+   * Copy of the
+   * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+   * if a label was specified in the request.
    * </pre>
    *
    * <code>string request_label = 3;</code>
@@ -2511,7 +2573,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -2529,7 +2592,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -2548,7 +2612,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -2565,7 +2630,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -2583,7 +2649,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -2660,7 +2727,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    * <code>double total_cost = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=394
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=423
    * @return The totalCost.
    */
   @java.lang.Override
@@ -3640,8 +3707,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-     * request.
+     * Copy of the
+     * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+     * if a label was specified in the request.
      * </pre>
      *
      * <code>string request_label = 3;</code>
@@ -3663,8 +3731,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-     * request.
+     * Copy of the
+     * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+     * if a label was specified in the request.
      * </pre>
      *
      * <code>string request_label = 3;</code>
@@ -3686,8 +3755,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-     * request.
+     * Copy of the
+     * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+     * if a label was specified in the request.
      * </pre>
      *
      * <code>string request_label = 3;</code>
@@ -3708,8 +3778,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-     * request.
+     * Copy of the
+     * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+     * if a label was specified in the request.
      * </pre>
      *
      * <code>string request_label = 3;</code>
@@ -3726,8 +3797,9 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-     * request.
+     * Copy of the
+     * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+     * if a label was specified in the request.
      * </pre>
      *
      * <code>string request_label = 3;</code>
@@ -4131,7 +4203,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4152,7 +4225,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4172,7 +4246,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4193,7 +4268,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4220,7 +4296,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4245,7 +4322,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4272,7 +4350,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4299,7 +4378,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4323,7 +4403,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4348,7 +4429,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4373,7 +4455,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4396,7 +4479,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4419,7 +4503,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4436,7 +4521,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4457,7 +4543,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4479,7 +4566,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4498,7 +4586,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4518,7 +4607,8 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * List of all the validation errors that we were able to detect
      * independently. See the "MULTIPLE ERRORS" explanation for the
-     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+     * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+     * message.
      * </pre>
      *
      * <code>
@@ -4754,7 +4844,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=394
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=423
      * @return The totalCost.
      */
     @java.lang.Override
@@ -4775,7 +4865,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=394
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=423
      * @param value The totalCost to set.
      * @return This builder for chaining.
      */
@@ -4799,7 +4889,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=394
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=423
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
