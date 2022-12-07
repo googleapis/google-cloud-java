@@ -19,6 +19,7 @@ package com.google.cloud.tpu.v2alpha1.samples;
 // [START tpu_v2alpha1_generated_Tpu_StartNode_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.tpu.v2alpha1.Node;
+import com.google.cloud.tpu.v2alpha1.NodeName;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
 import com.google.cloud.tpu.v2alpha1.StartNodeRequest;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
@@ -36,7 +37,10 @@ public class AsyncStartNodeLRO {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
-      StartNodeRequest request = StartNodeRequest.newBuilder().setName("name3373707").build();
+      StartNodeRequest request =
+          StartNodeRequest.newBuilder()
+              .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+              .build();
       OperationFuture<Node, OperationMetadata> future =
           tpuClient.startNodeOperationCallable().futureCall(request);
       // Do something.

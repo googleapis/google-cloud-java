@@ -192,6 +192,26 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     return enableExternalIps_;
   }
 
+  public static final int CAN_IP_FORWARD_FIELD_NUMBER = 4;
+  private boolean canIpForward_;
+  /**
+   *
+   *
+   * <pre>
+   * Allows the TPU node to send and receive packets with non-matching
+   * destination or source IPs. This is required if you plan to use the TPU
+   * workers to forward routes.
+   * </pre>
+   *
+   * <code>bool can_ip_forward = 4;</code>
+   *
+   * @return The canIpForward.
+   */
+  @java.lang.Override
+  public boolean getCanIpForward() {
+    return canIpForward_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -215,6 +235,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableExternalIps_ != false) {
       output.writeBool(3, enableExternalIps_);
     }
+    if (canIpForward_ != false) {
+      output.writeBool(4, canIpForward_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -232,6 +255,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (enableExternalIps_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableExternalIps_);
+    }
+    if (canIpForward_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, canIpForward_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -252,6 +278,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (getEnableExternalIps() != other.getEnableExternalIps()) return false;
+    if (getCanIpForward() != other.getCanIpForward()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -269,6 +296,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSubnetwork().hashCode();
     hash = (37 * hash) + ENABLE_EXTERNAL_IPS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableExternalIps());
+    hash = (37 * hash) + CAN_IP_FORWARD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCanIpForward());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -413,6 +442,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
       enableExternalIps_ = false;
 
+      canIpForward_ = false;
+
       return this;
     }
 
@@ -443,6 +474,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       result.network_ = network_;
       result.subnetwork_ = subnetwork_;
       result.enableExternalIps_ = enableExternalIps_;
+      result.canIpForward_ = canIpForward_;
       onBuilt();
       return result;
     }
@@ -503,6 +535,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableExternalIps() != false) {
         setEnableExternalIps(other.getEnableExternalIps());
       }
+      if (other.getCanIpForward() != false) {
+        setCanIpForward(other.getCanIpForward());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -547,6 +582,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 24
+            case 32:
+              {
+                canIpForward_ = input.readBool();
+
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -845,6 +886,64 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableExternalIps() {
 
       enableExternalIps_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean canIpForward_;
+    /**
+     *
+     *
+     * <pre>
+     * Allows the TPU node to send and receive packets with non-matching
+     * destination or source IPs. This is required if you plan to use the TPU
+     * workers to forward routes.
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 4;</code>
+     *
+     * @return The canIpForward.
+     */
+    @java.lang.Override
+    public boolean getCanIpForward() {
+      return canIpForward_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows the TPU node to send and receive packets with non-matching
+     * destination or source IPs. This is required if you plan to use the TPU
+     * workers to forward routes.
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 4;</code>
+     *
+     * @param value The canIpForward to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanIpForward(boolean value) {
+
+      canIpForward_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Allows the TPU node to send and receive packets with non-matching
+     * destination or source IPs. This is required if you plan to use the TPU
+     * workers to forward routes.
+     * </pre>
+     *
+     * <code>bool can_ip_forward = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanIpForward() {
+
+      canIpForward_ = false;
       onChanged();
       return this;
     }

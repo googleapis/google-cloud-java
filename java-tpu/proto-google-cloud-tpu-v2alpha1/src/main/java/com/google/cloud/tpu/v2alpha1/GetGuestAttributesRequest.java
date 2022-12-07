@@ -22,8 +22,7 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for
- * [GetGuestAttributes][google.cloud.tpu.v2alpha1.Tpu.GetGuestAttributes].
+ * Request for [GetGuestAttributes][google.cloud.tpu.v2alpha1.Tpu.GetGuestAttributes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.GetGuestAttributesRequest}
@@ -426,8 +425,7 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request for
-   * [GetGuestAttributes][google.cloud.tpu.v2alpha1.Tpu.GetGuestAttributes].
+   * Request for [GetGuestAttributes][google.cloud.tpu.v2alpha1.Tpu.GetGuestAttributes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.GetGuestAttributesRequest}

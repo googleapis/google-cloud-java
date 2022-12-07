@@ -22,8 +22,7 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for
- * [GenerateServiceIdentity][google.cloud.tpu.v2alpha1.Tpu.GenerateServiceIdentity].
+ * Request for [GenerateServiceIdentity][google.cloud.tpu.v2alpha1.Tpu.GenerateServiceIdentity].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.GenerateServiceIdentityRequest}
@@ -286,8 +285,7 @@ public final class GenerateServiceIdentityRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request for
-   * [GenerateServiceIdentity][google.cloud.tpu.v2alpha1.Tpu.GenerateServiceIdentity].
+   * Request for [GenerateServiceIdentity][google.cloud.tpu.v2alpha1.Tpu.GenerateServiceIdentity].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.GenerateServiceIdentityRequest}

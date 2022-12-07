@@ -14,31 +14,39 @@
  * limitations under the License.
  */
 
-package com.google.cloud.tpu.v2alpha1.samples;
+package com.google.cloud.tpu.v2.samples;
 
-// [START tpu_v2alpha1_generated_Tpu_ListNodes_Nodename_sync]
-import com.google.cloud.tpu.v2alpha1.Node;
-import com.google.cloud.tpu.v2alpha1.NodeName;
-import com.google.cloud.tpu.v2alpha1.TpuClient;
+// [START tpu_v2_generated_Tpu_GetAcceleratorType_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.tpu.v2.AcceleratorType;
+import com.google.cloud.tpu.v2.AcceleratorTypeName;
+import com.google.cloud.tpu.v2.GetAcceleratorTypeRequest;
+import com.google.cloud.tpu.v2.TpuClient;
 
-public class SyncListNodesNodename {
+public class AsyncGetAcceleratorType {
 
   public static void main(String[] args) throws Exception {
-    syncListNodesNodename();
+    asyncGetAcceleratorType();
   }
 
-  public static void syncListNodesNodename() throws Exception {
+  public static void asyncGetAcceleratorType() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
-      NodeName parent = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]");
-      for (Node element : tpuClient.listNodes(parent).iterateAll()) {
-        // doThingsWith(element);
-      }
+      GetAcceleratorTypeRequest request =
+          GetAcceleratorTypeRequest.newBuilder()
+              .setName(
+                  AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]")
+                      .toString())
+              .build();
+      ApiFuture<AcceleratorType> future =
+          tpuClient.getAcceleratorTypeCallable().futureCall(request);
+      // Do something.
+      AcceleratorType response = future.get();
     }
   }
 }
-// [END tpu_v2alpha1_generated_Tpu_ListNodes_Nodename_sync]
+// [END tpu_v2_generated_Tpu_GetAcceleratorType_async]

@@ -14,32 +14,31 @@
  * limitations under the License.
  */
 
-package com.google.cloud.tpu.v2alpha1.samples;
+package com.google.cloud.tpu.v2.samples;
 
-// [START tpu_v2alpha1_generated_Tpu_ListAcceleratorTypes_Acceleratortypename_sync]
-import com.google.cloud.tpu.v2alpha1.AcceleratorType;
-import com.google.cloud.tpu.v2alpha1.AcceleratorTypeName;
-import com.google.cloud.tpu.v2alpha1.TpuClient;
+// [START tpu_v2_generated_Tpu_CreateNode_StringNodeString_sync]
+import com.google.cloud.tpu.v2.LocationName;
+import com.google.cloud.tpu.v2.Node;
+import com.google.cloud.tpu.v2.TpuClient;
 
-public class SyncListAcceleratorTypesAcceleratortypename {
+public class SyncCreateNodeStringNodeString {
 
   public static void main(String[] args) throws Exception {
-    syncListAcceleratorTypesAcceleratortypename();
+    syncCreateNodeStringNodeString();
   }
 
-  public static void syncListAcceleratorTypesAcceleratortypename() throws Exception {
+  public static void syncCreateNodeStringNodeString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
-      AcceleratorTypeName parent =
-          AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]");
-      for (AcceleratorType element : tpuClient.listAcceleratorTypes(parent).iterateAll()) {
-        // doThingsWith(element);
-      }
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+      Node node = Node.newBuilder().build();
+      String nodeId = "nodeId-1040171331";
+      Node response = tpuClient.createNodeAsync(parent, node, nodeId).get();
     }
   }
 }
-// [END tpu_v2alpha1_generated_Tpu_ListAcceleratorTypes_Acceleratortypename_sync]
+// [END tpu_v2_generated_Tpu_CreateNode_StringNodeString_sync]

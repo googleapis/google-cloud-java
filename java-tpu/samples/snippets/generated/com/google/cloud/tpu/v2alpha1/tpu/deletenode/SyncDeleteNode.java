@@ -18,9 +18,9 @@ package com.google.cloud.tpu.v2alpha1.samples;
 
 // [START tpu_v2alpha1_generated_Tpu_DeleteNode_sync]
 import com.google.cloud.tpu.v2alpha1.DeleteNodeRequest;
-import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.NodeName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteNode {
 
@@ -38,8 +38,9 @@ public class SyncDeleteNode {
       DeleteNodeRequest request =
           DeleteNodeRequest.newBuilder()
               .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+              .setRequestId("requestId693933066")
               .build();
-      Node response = tpuClient.deleteNodeAsync(request).get();
+      tpuClient.deleteNodeAsync(request).get();
     }
   }
 }

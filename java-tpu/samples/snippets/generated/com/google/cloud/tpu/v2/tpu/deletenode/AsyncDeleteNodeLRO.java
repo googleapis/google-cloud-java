@@ -14,32 +14,38 @@
  * limitations under the License.
  */
 
-package com.google.cloud.tpu.v2alpha1.samples;
+package com.google.cloud.tpu.v2.samples;
 
-// [START tpu_v2alpha1_generated_Tpu_ListRuntimeVersions_Runtimeversionname_sync]
-import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
-import com.google.cloud.tpu.v2alpha1.RuntimeVersionName;
-import com.google.cloud.tpu.v2alpha1.TpuClient;
+// [START tpu_v2_generated_Tpu_DeleteNode_LRO_async]
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.tpu.v2.DeleteNodeRequest;
+import com.google.cloud.tpu.v2.NodeName;
+import com.google.cloud.tpu.v2.OperationMetadata;
+import com.google.cloud.tpu.v2.TpuClient;
+import com.google.protobuf.Empty;
 
-public class SyncListRuntimeVersionsRuntimeversionname {
+public class AsyncDeleteNodeLRO {
 
   public static void main(String[] args) throws Exception {
-    syncListRuntimeVersionsRuntimeversionname();
+    asyncDeleteNodeLRO();
   }
 
-  public static void syncListRuntimeVersionsRuntimeversionname() throws Exception {
+  public static void asyncDeleteNodeLRO() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
-      RuntimeVersionName parent =
-          RuntimeVersionName.of("[PROJECT]", "[LOCATION]", "[RUNTIME_VERSION]");
-      for (RuntimeVersion element : tpuClient.listRuntimeVersions(parent).iterateAll()) {
-        // doThingsWith(element);
-      }
+      DeleteNodeRequest request =
+          DeleteNodeRequest.newBuilder()
+              .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+              .build();
+      OperationFuture<Empty, OperationMetadata> future =
+          tpuClient.deleteNodeOperationCallable().futureCall(request);
+      // Do something.
+      future.get();
     }
   }
 }
-// [END tpu_v2alpha1_generated_Tpu_ListRuntimeVersions_Runtimeversionname_sync]
+// [END tpu_v2_generated_Tpu_DeleteNode_LRO_async]

@@ -621,7 +621,7 @@ public final class TpuGrpc {
      *
      *
      * <pre>
-     * Stops a node.
+     * Stops a node, this operation is only available with single TPU nodes.
      * </pre>
      */
     public void stopNode(
@@ -872,7 +872,7 @@ public final class TpuGrpc {
      *
      *
      * <pre>
-     * Stops a node.
+     * Stops a node, this operation is only available with single TPU nodes.
      * </pre>
      */
     public void stopNode(
@@ -1050,7 +1050,7 @@ public final class TpuGrpc {
      *
      *
      * <pre>
-     * Stops a node.
+     * Stops a node, this operation is only available with single TPU nodes.
      * </pre>
      */
     public com.google.longrunning.Operation stopNode(
@@ -1213,7 +1213,7 @@ public final class TpuGrpc {
      *
      *
      * <pre>
-     * Stops a node.
+     * Stops a node, this operation is only available with single TPU nodes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

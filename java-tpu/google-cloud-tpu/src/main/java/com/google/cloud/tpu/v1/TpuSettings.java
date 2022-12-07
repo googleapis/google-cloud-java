@@ -17,6 +17,7 @@
 package com.google.cloud.tpu.v1;
 
 import static com.google.cloud.tpu.v1.TpuClient.ListAcceleratorTypesPagedResponse;
+import static com.google.cloud.tpu.v1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v1.TpuClient.ListTensorFlowVersionsPagedResponse;
 
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tpu.v1.stub.TpuStubSettings;
 import com.google.longrunning.Operation;
 import java.io.IOException;
@@ -168,6 +173,17 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   public UnaryCallSettings<GetAcceleratorTypeRequest, AcceleratorType>
       getAcceleratorTypeSettings() {
     return ((TpuStubSettings) getStubSettings()).getAcceleratorTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((TpuStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((TpuStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final TpuSettings create(TpuStubSettings stub) throws IOException {
@@ -360,6 +376,18 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     public UnaryCallSettings.Builder<GetAcceleratorTypeRequest, AcceleratorType>
         getAcceleratorTypeSettings() {
       return getStubSettingsBuilder().getAcceleratorTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

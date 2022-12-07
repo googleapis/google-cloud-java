@@ -18,7 +18,7 @@ package com.google.cloud.tpu.v2alpha1.samples;
 
 // [START tpu_v2alpha1_generated_Tpu_ListAcceleratorTypes_String_sync]
 import com.google.cloud.tpu.v2alpha1.AcceleratorType;
-import com.google.cloud.tpu.v2alpha1.AcceleratorTypeName;
+import com.google.cloud.tpu.v2alpha1.LocationName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
 
 public class SyncListAcceleratorTypesString {
@@ -34,8 +34,7 @@ public class SyncListAcceleratorTypesString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
-      String parent =
-          AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]").toString();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       for (AcceleratorType element : tpuClient.listAcceleratorTypes(parent).iterateAll()) {
         // doThingsWith(element);
       }

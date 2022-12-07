@@ -51,4 +51,29 @@ public interface DeleteNodeRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 3;</code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 3;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

@@ -40,6 +40,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
   private CreateNodeRequest() {
     parent_ = "";
     nodeId_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -219,6 +220,55 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     return getNode();
   }
 
+  public static final int REQUEST_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -242,6 +292,9 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     if (node_ != null) {
       output.writeMessage(3, getNode());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, requestId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -259,6 +312,9 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     }
     if (node_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getNode());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, requestId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -282,6 +338,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     if (hasNode()) {
       if (!getNode().equals(other.getNode())) return false;
     }
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -301,6 +358,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + NODE_FIELD_NUMBER;
       hash = (53 * hash) + getNode().hashCode();
     }
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -449,6 +508,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         node_ = null;
         nodeBuilder_ = null;
       }
+      requestId_ = "";
+
       return this;
     }
 
@@ -483,6 +544,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       } else {
         result.node_ = nodeBuilder_.build();
       }
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -544,6 +606,10 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       if (other.hasNode()) {
         mergeNode(other.getNode());
       }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -588,6 +654,12 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
 
                 break;
               } // case 26
+            case 50:
+              {
+                requestId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1013,6 +1085,112 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         node_ = null;
       }
       return nodeBuilder_;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Idempotent request UUID.
+     * </pre>
+     *
+     * <code>string request_id = 6;</code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      requestId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

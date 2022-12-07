@@ -17,6 +17,7 @@
 package com.google.cloud.tpu.v1.stub;
 
 import static com.google.cloud.tpu.v1.TpuClient.ListAcceleratorTypesPagedResponse;
+import static com.google.cloud.tpu.v1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v1.TpuClient.ListTensorFlowVersionsPagedResponse;
 
@@ -27,6 +28,10 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tpu.v1.AcceleratorType;
 import com.google.cloud.tpu.v1.CreateNodeRequest;
 import com.google.cloud.tpu.v1.DeleteNodeRequest;
@@ -163,6 +168,25 @@ public class GrpcTpuStub extends TpuStub {
               .setResponseMarshaller(ProtoUtils.marshaller(AcceleratorType.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable;
   private final UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable;
   private final UnaryCallable<GetNodeRequest, Node> getNodeCallable;
@@ -193,6 +217,10 @@ public class GrpcTpuStub extends TpuStub {
       listAcceleratorTypesPagedCallable;
   private final UnaryCallable<GetAcceleratorTypeRequest, AcceleratorType>
       getAcceleratorTypeCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -346,6 +374,26 @@ public class GrpcTpuStub extends TpuStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.listNodesCallable =
         callableFactory.createUnaryCallable(
@@ -431,6 +479,15 @@ public class GrpcTpuStub extends TpuStub {
             getAcceleratorTypeTransportSettings,
             settings.getAcceleratorTypeSettings(),
             clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -541,6 +598,22 @@ public class GrpcTpuStub extends TpuStub {
   @Override
   public UnaryCallable<GetAcceleratorTypeRequest, AcceleratorType> getAcceleratorTypeCallable() {
     return getAcceleratorTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

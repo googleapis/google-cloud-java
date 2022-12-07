@@ -17,7 +17,9 @@
 package com.google.cloud.tpu.v2alpha1.stub;
 
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -28,31 +30,43 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tpu.v2alpha1.AcceleratorType;
 import com.google.cloud.tpu.v2alpha1.CreateNodeRequest;
+import com.google.cloud.tpu.v2alpha1.CreateQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.DeleteNodeRequest;
+import com.google.cloud.tpu.v2alpha1.DeleteQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityRequest;
 import com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityResponse;
 import com.google.cloud.tpu.v2alpha1.GetAcceleratorTypeRequest;
 import com.google.cloud.tpu.v2alpha1.GetGuestAttributesRequest;
 import com.google.cloud.tpu.v2alpha1.GetGuestAttributesResponse;
 import com.google.cloud.tpu.v2alpha1.GetNodeRequest;
+import com.google.cloud.tpu.v2alpha1.GetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.GetRuntimeVersionRequest;
 import com.google.cloud.tpu.v2alpha1.ListAcceleratorTypesRequest;
 import com.google.cloud.tpu.v2alpha1.ListAcceleratorTypesResponse;
 import com.google.cloud.tpu.v2alpha1.ListNodesRequest;
 import com.google.cloud.tpu.v2alpha1.ListNodesResponse;
+import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesRequest;
+import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesResponse;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
+import com.google.cloud.tpu.v2alpha1.QueuedResource;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
+import com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest;
 import com.google.cloud.tpu.v2alpha1.StartNodeRequest;
 import com.google.cloud.tpu.v2alpha1.StopNodeRequest;
 import com.google.cloud.tpu.v2alpha1.UpdateNodeRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -125,6 +139,47 @@ public class GrpcTpuStub extends TpuStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
+      listQueuedResourcesMethodDescriptor =
+          MethodDescriptor.<ListQueuedResourcesRequest, ListQueuedResourcesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/ListQueuedResources")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListQueuedResourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListQueuedResourcesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetQueuedResourceRequest, QueuedResource>
+      getQueuedResourceMethodDescriptor =
+          MethodDescriptor.<GetQueuedResourceRequest, QueuedResource>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/GetQueuedResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetQueuedResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QueuedResource.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateQueuedResourceRequest, Operation>
+      createQueuedResourceMethodDescriptor =
+          MethodDescriptor.<CreateQueuedResourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/CreateQueuedResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateQueuedResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteQueuedResourceRequest, Operation>
+      deleteQueuedResourceMethodDescriptor =
+          MethodDescriptor.<DeleteQueuedResourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/DeleteQueuedResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteQueuedResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<
           GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentityMethodDescriptor =
@@ -191,6 +246,35 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(GetGuestAttributesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SimulateMaintenanceEventRequest, Operation>
+      simulateMaintenanceEventMethodDescriptor =
+          MethodDescriptor.<SimulateMaintenanceEventRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/SimulateMaintenanceEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SimulateMaintenanceEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable;
   private final UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable;
   private final UnaryCallable<GetNodeRequest, Node> getNodeCallable;
@@ -198,7 +282,7 @@ public class GrpcTpuStub extends TpuStub {
   private final OperationCallable<CreateNodeRequest, Node, OperationMetadata>
       createNodeOperationCallable;
   private final UnaryCallable<DeleteNodeRequest, Operation> deleteNodeCallable;
-  private final OperationCallable<DeleteNodeRequest, Node, OperationMetadata>
+  private final OperationCallable<DeleteNodeRequest, Empty, OperationMetadata>
       deleteNodeOperationCallable;
   private final UnaryCallable<StopNodeRequest, Operation> stopNodeCallable;
   private final OperationCallable<StopNodeRequest, Node, OperationMetadata>
@@ -209,6 +293,17 @@ public class GrpcTpuStub extends TpuStub {
   private final UnaryCallable<UpdateNodeRequest, Operation> updateNodeCallable;
   private final OperationCallable<UpdateNodeRequest, Node, OperationMetadata>
       updateNodeOperationCallable;
+  private final UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
+      listQueuedResourcesCallable;
+  private final UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesPagedResponse>
+      listQueuedResourcesPagedCallable;
+  private final UnaryCallable<GetQueuedResourceRequest, QueuedResource> getQueuedResourceCallable;
+  private final UnaryCallable<CreateQueuedResourceRequest, Operation> createQueuedResourceCallable;
+  private final OperationCallable<CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+      createQueuedResourceOperationCallable;
+  private final UnaryCallable<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceCallable;
+  private final OperationCallable<DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
+      deleteQueuedResourceOperationCallable;
   private final UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentityCallable;
   private final UnaryCallable<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
@@ -224,6 +319,14 @@ public class GrpcTpuStub extends TpuStub {
   private final UnaryCallable<GetRuntimeVersionRequest, RuntimeVersion> getRuntimeVersionCallable;
   private final UnaryCallable<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesCallable;
+  private final UnaryCallable<SimulateMaintenanceEventRequest, Operation>
+      simulateMaintenanceEventCallable;
+  private final OperationCallable<SimulateMaintenanceEventRequest, Node, OperationMetadata>
+      simulateMaintenanceEventOperationCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -332,6 +435,47 @@ public class GrpcTpuStub extends TpuStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
+        listQueuedResourcesTransportSettings =
+            GrpcCallSettings.<ListQueuedResourcesRequest, ListQueuedResourcesResponse>newBuilder()
+                .setMethodDescriptor(listQueuedResourcesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetQueuedResourceRequest, QueuedResource> getQueuedResourceTransportSettings =
+        GrpcCallSettings.<GetQueuedResourceRequest, QueuedResource>newBuilder()
+            .setMethodDescriptor(getQueuedResourceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CreateQueuedResourceRequest, Operation> createQueuedResourceTransportSettings =
+        GrpcCallSettings.<CreateQueuedResourceRequest, Operation>newBuilder()
+            .setMethodDescriptor(createQueuedResourceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceTransportSettings =
+        GrpcCallSettings.<DeleteQueuedResourceRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteQueuedResourceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
         generateServiceIdentityTransportSettings =
             GrpcCallSettings
@@ -398,6 +542,37 @@ public class GrpcTpuStub extends TpuStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<SimulateMaintenanceEventRequest, Operation>
+        simulateMaintenanceEventTransportSettings =
+            GrpcCallSettings.<SimulateMaintenanceEventRequest, Operation>newBuilder()
+                .setMethodDescriptor(simulateMaintenanceEventMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.listNodesCallable =
         callableFactory.createUnaryCallable(
@@ -453,6 +628,43 @@ public class GrpcTpuStub extends TpuStub {
             settings.updateNodeOperationSettings(),
             clientContext,
             operationsStub);
+    this.listQueuedResourcesCallable =
+        callableFactory.createUnaryCallable(
+            listQueuedResourcesTransportSettings,
+            settings.listQueuedResourcesSettings(),
+            clientContext);
+    this.listQueuedResourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            listQueuedResourcesTransportSettings,
+            settings.listQueuedResourcesSettings(),
+            clientContext);
+    this.getQueuedResourceCallable =
+        callableFactory.createUnaryCallable(
+            getQueuedResourceTransportSettings,
+            settings.getQueuedResourceSettings(),
+            clientContext);
+    this.createQueuedResourceCallable =
+        callableFactory.createUnaryCallable(
+            createQueuedResourceTransportSettings,
+            settings.createQueuedResourceSettings(),
+            clientContext);
+    this.createQueuedResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            createQueuedResourceTransportSettings,
+            settings.createQueuedResourceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteQueuedResourceCallable =
+        callableFactory.createUnaryCallable(
+            deleteQueuedResourceTransportSettings,
+            settings.deleteQueuedResourceSettings(),
+            clientContext);
+    this.deleteQueuedResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteQueuedResourceTransportSettings,
+            settings.deleteQueuedResourceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.generateServiceIdentityCallable =
         callableFactory.createUnaryCallable(
             generateServiceIdentityTransportSettings,
@@ -493,6 +705,26 @@ public class GrpcTpuStub extends TpuStub {
             getGuestAttributesTransportSettings,
             settings.getGuestAttributesSettings(),
             clientContext);
+    this.simulateMaintenanceEventCallable =
+        callableFactory.createUnaryCallable(
+            simulateMaintenanceEventTransportSettings,
+            settings.simulateMaintenanceEventSettings(),
+            clientContext);
+    this.simulateMaintenanceEventOperationCallable =
+        callableFactory.createOperationCallable(
+            simulateMaintenanceEventTransportSettings,
+            settings.simulateMaintenanceEventOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -534,7 +766,7 @@ public class GrpcTpuStub extends TpuStub {
   }
 
   @Override
-  public OperationCallable<DeleteNodeRequest, Node, OperationMetadata>
+  public OperationCallable<DeleteNodeRequest, Empty, OperationMetadata>
       deleteNodeOperationCallable() {
     return deleteNodeOperationCallable;
   }
@@ -568,6 +800,45 @@ public class GrpcTpuStub extends TpuStub {
   public OperationCallable<UpdateNodeRequest, Node, OperationMetadata>
       updateNodeOperationCallable() {
     return updateNodeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
+      listQueuedResourcesCallable() {
+    return listQueuedResourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesPagedResponse>
+      listQueuedResourcesPagedCallable() {
+    return listQueuedResourcesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQueuedResourceRequest, QueuedResource> getQueuedResourceCallable() {
+    return getQueuedResourceCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQueuedResourceRequest, Operation> createQueuedResourceCallable() {
+    return createQueuedResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+      createQueuedResourceOperationCallable() {
+    return createQueuedResourceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceCallable() {
+    return deleteQueuedResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
+      deleteQueuedResourceOperationCallable() {
+    return deleteQueuedResourceOperationCallable;
   }
 
   @Override
@@ -614,6 +885,34 @@ public class GrpcTpuStub extends TpuStub {
   public UnaryCallable<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesCallable() {
     return getGuestAttributesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SimulateMaintenanceEventRequest, Operation>
+      simulateMaintenanceEventCallable() {
+    return simulateMaintenanceEventCallable;
+  }
+
+  @Override
+  public OperationCallable<SimulateMaintenanceEventRequest, Node, OperationMetadata>
+      simulateMaintenanceEventOperationCallable() {
+    return simulateMaintenanceEventOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override
