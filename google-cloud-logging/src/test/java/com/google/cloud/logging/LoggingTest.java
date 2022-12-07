@@ -18,6 +18,9 @@ package com.google.cloud.logging;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.EntryListOption;
@@ -27,6 +30,7 @@ import com.google.cloud.logging.Logging.SortingOrder;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.ListLogEntriesRequest;
+import java.util.Map;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -98,6 +102,18 @@ public class LoggingTest {
             "organizations/test-org",
             "billingAccounts/test-account",
             "folders/test-folder");
+  }
+
+  @Test
+  public void testFilterUpdate() {
+    Map<Option.OptionType, ?> options = LoggingImpl.optionMap(EntryListOption.filter(FILTER));
+    assertThat((String) EntryListOption.OptionType.FILTER.get(options)).isEqualTo(FILTER);
+    Map<Option.OptionType, ?> updated = LoggingImpl.updateFilter(options);
+    assertTrue(((String) EntryListOption.OptionType.FILTER.get(updated)).contains("timestamp"));
+    assertFalse(options == updated);
+    assertNotEquals(EntryListOption.OptionType.FILTER.get(updated), FILTER);
+    Map<Option.OptionType, ?> anotherUpdated = LoggingImpl.updateFilter(updated);
+    assertTrue(anotherUpdated == updated);
   }
 
   @Test

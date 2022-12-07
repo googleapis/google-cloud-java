@@ -1203,7 +1203,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * {@link EntryListOption#pageToken(String)} to specify the page token from which to start listing
    * entries. Use {@link EntryListOption#sortOrder(SortingField, SortingOrder)} to sort log entries
    * according to your preferred order (default is most-recent last). Use {@link
-   * EntryListOption#filter(String)} to filter listed log entries.
+   * EntryListOption#filter(String)} to filter listed log entries. By default a 24 hour filter is
+   * applied.
    *
    * <p>Example of listing log entries for a specific log.
    *
@@ -1231,7 +1232,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * specify the page size. Use {@link EntryListOption#pageToken(String)} to specify the page token
    * from which to start listing entries. Use {@link EntryListOption#sortOrder(SortingField,
    * SortingOrder)} to sort log entries according to your preferred order (default is most-recent
-   * last). Use {@link EntryListOption#filter(String)} to filter listed log entries.
+   * last). Use {@link EntryListOption#filter(String)} to filter listed log entries. By default a 24
+   * hour filter is applied.
    *
    * <p>Example of asynchronously listing log entries for a specific log.
    *

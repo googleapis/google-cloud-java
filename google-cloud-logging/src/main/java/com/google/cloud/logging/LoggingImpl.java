@@ -1014,31 +1014,19 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     if (orderBy != null) {
       builder.setOrderBy(orderBy);
     }
-    String filter = EntryListOption.OptionType.FILTER.get(options);
-    // Make sure timestamp filter is either explicitly specified or we add a default
-    // time filter
-    // of 24 hours back to be inline with gcloud behavior for the same API
+    String filter = generateFilter(EntryListOption.OptionType.FILTER.get(options));
     if (filter != null) {
-      if (!Ascii.toLowerCase(filter).contains("timestamp")) {
-        filter =
-            String.format(
-                "%s AND %s", filter, defaultTimestampFilterCreator.createDefaultTimestampFilter());
-      }
       builder.setFilter(filter);
-    } else {
-      // If filter is not specified, default filter is looking back 24 hours in line
-      // with gcloud
-      // behavior
-      builder.setFilter(defaultTimestampFilterCreator.createDefaultTimestampFilter());
     }
-
     return builder.build();
   }
 
   private static ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(
       final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
+    // Make sure to set a filter option which later can be reused in subsequent calls
+    final Map<Option.OptionType, ?> updatedOptions = updateFilter(options);
     final ListLogEntriesRequest request =
-        listLogEntriesRequest(serviceOptions.getProjectId(), options);
+        listLogEntriesRequest(serviceOptions.getProjectId(), updatedOptions);
     ApiFuture<ListLogEntriesResponse> list = serviceOptions.getLoggingRpcV2().list(request);
     return transform(
         list,
@@ -1055,7 +1043,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                     ? null
                     : listLogEntriesResponse.getNextPageToken();
             return new AsyncPageImpl<>(
-                new LogEntryPageFetcher(serviceOptions, cursor, options), cursor, entries);
+                new LogEntryPageFetcher(serviceOptions, cursor, updatedOptions), cursor, entries);
           }
         });
   }
@@ -1135,6 +1123,37 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;
+  }
+
+  static Map<Option.OptionType, ?> updateFilter(final Map<Option.OptionType, ?> options) {
+    // We should see if filter provided in otiopns have a timestamp parameter
+    // and if not, it should be added with further update of options map.
+    String existingFilter = EntryListOption.OptionType.FILTER.get(options);
+    String newFilter = generateFilter(existingFilter);
+    if (newFilter.equals(existingFilter)) {
+      return options;
+    }
+    // Update
+    Map<Option.OptionType, Object> optionsCopy = Maps.newHashMap(options);
+    optionsCopy.put(EntryListOption.OptionType.FILTER, newFilter);
+    return optionsCopy;
+  }
+
+  static String generateFilter(String filter) {
+    String newFilter = filter;
+    // Make sure timestamp filter is either explicitly specified or we add a default
+    // time filter of 24 hours back to be inline with gcloud behavior for the same API
+    if (newFilter != null) {
+      if (!Ascii.toLowerCase(filter).contains("timestamp")) {
+        newFilter =
+            String.format(
+                "%s AND %s",
+                newFilter, defaultTimestampFilterCreator.createDefaultTimestampFilter());
+      }
+    } else {
+      newFilter = defaultTimestampFilterCreator.createDefaultTimestampFilter();
+    }
+    return newFilter;
   }
 
   @VisibleForTesting
