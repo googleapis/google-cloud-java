@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.13.6](https://github.com/googleapis/java-logging/compare/v3.13.5...v3.13.6) (2022-12-07)
+
+
+### Bug Fixes
+
+* Retrieving logentries pagewise always results in an exception ([#1220](https://github.com/googleapis/java-logging/issues/1220)) ([662a439](https://github.com/googleapis/java-logging/commit/662a4394688661e7da2da51446cb3a73658ead62))
+
 ## [3.13.5](https://github.com/googleapis/java-logging/compare/v3.13.4...v3.13.5) (2022-12-06)
 
 
