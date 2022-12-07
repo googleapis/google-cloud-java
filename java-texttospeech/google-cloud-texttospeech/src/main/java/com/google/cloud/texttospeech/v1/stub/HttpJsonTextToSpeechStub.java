@@ -75,6 +75,7 @@ public class HttpJsonTextToSpeechStub extends TextToSpeechStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -107,12 +108,13 @@ public class HttpJsonTextToSpeechStub extends TextToSpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SynthesizeSpeechRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SynthesizeSpeechResponse>newBuilder()

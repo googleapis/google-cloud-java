@@ -33,7 +33,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Not specified. Will return result [google.rpc.Code.INVALID_ARGUMENT][].
+   * Not specified. Will return result [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
    * </pre>
    *
    * <code>AUDIO_ENCODING_UNSPECIFIED = 0;</code>
@@ -112,7 +112,7 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Not specified. Will return result [google.rpc.Code.INVALID_ARGUMENT][].
+   * Not specified. Will return result [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
    * </pre>
    *
    * <code>AUDIO_ENCODING_UNSPECIFIED = 0;</code>

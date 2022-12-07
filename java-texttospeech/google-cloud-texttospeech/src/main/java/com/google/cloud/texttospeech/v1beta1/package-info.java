@@ -36,6 +36,33 @@
  *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
  * }
  * }</pre>
+ *
+ * <p>======================= TextToSpeechLongAudioSynthesizeClient =======================
+ *
+ * <p>Service Description: Service that implements Google Cloud Text-to-Speech API.
+ *
+ * <p>Sample for TextToSpeechLongAudioSynthesizeClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (TextToSpeechLongAudioSynthesizeClient textToSpeechLongAudioSynthesizeClient =
+ *     TextToSpeechLongAudioSynthesizeClient.create()) {
+ *   SynthesizeLongAudioRequest request =
+ *       SynthesizeLongAudioRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setInput(SynthesisInput.newBuilder().build())
+ *           .setAudioConfig(AudioConfig.newBuilder().build())
+ *           .setOutputGcsUri("outputGcsUri-489598154")
+ *           .setVoice(VoiceSelectionParams.newBuilder().build())
+ *           .build();
+ *   SynthesizeLongAudioResponse response =
+ *       textToSpeechLongAudioSynthesizeClient.synthesizeLongAudioAsync(request).get();
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.texttospeech.v1beta1;
