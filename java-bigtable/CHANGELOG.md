@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.17.0](https://github.com/googleapis/java-bigtable/compare/v2.16.0...v2.17.0) (2022-12-07)
+
+
+### Features
+
+* Add a query paginator ([#1530](https://github.com/googleapis/java-bigtable/issues/1530)) ([5c8e1f6](https://github.com/googleapis/java-bigtable/commit/5c8e1f656b15177ecef4709b9e502cef58cca479))
+* Add test proxy to java-bigtable client ([#1498](https://github.com/googleapis/java-bigtable/issues/1498)) ([132b4e4](https://github.com/googleapis/java-bigtable/commit/132b4e4fe340ca316de8eef2e2133b6dabd9dec3))
+* Implement cross-project table restore ([#1536](https://github.com/googleapis/java-bigtable/issues/1536)) ([335977c](https://github.com/googleapis/java-bigtable/commit/335977c499b1776c8fa861d13195ffc49e468e0a))
+* Next release from main branch is 2.17.0 ([#1514](https://github.com/googleapis/java-bigtable/issues/1514)) ([4fc6a93](https://github.com/googleapis/java-bigtable/commit/4fc6a93a25362df7bc107d48f94e1c00b6bd608d))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom … ([#1531](https://github.com/googleapis/java-bigtable/issues/1531)) ([ee98338](https://github.com/googleapis/java-bigtable/commit/ee9833835a84cee202b142950b28704db682ac0c))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.0 ([#1539](https://github.com/googleapis/java-bigtable/issues/1539)) ([3244cef](https://github.com/googleapis/java-bigtable/commit/3244cefd4d77a44bab6ccaa8f5c03e3d31575625))
+* Update dependency kr.motd.maven:os-maven-plugin to v1.7.1 ([#1518](https://github.com/googleapis/java-bigtable/issues/1518)) ([8309681](https://github.com/googleapis/java-bigtable/commit/830968109a3754a12bd0bc92674fe42ae529b924))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.19 ([#1537](https://github.com/googleapis/java-bigtable/issues/1537)) ([7f7c478](https://github.com/googleapis/java-bigtable/commit/7f7c478a2163c46d10ed39ea3c1b046f971d4569))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.19 ([#1538](https://github.com/googleapis/java-bigtable/issues/1538)) ([9d3df57](https://github.com/googleapis/java-bigtable/commit/9d3df57d7bfeafd9cbcf56ecd58b52cc1b14ba7b))
+
 ## [2.16.0](https://github.com/googleapis/java-bigtable/compare/v2.15.1...v2.16.0) (2022-11-11)
 
 
