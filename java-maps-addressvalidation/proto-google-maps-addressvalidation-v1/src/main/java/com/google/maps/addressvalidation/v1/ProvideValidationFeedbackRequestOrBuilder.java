@@ -61,7 +61,8 @@ public interface ProvideValidationFeedbackRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the response that this feedback is for. This should be the
+   * Required. The ID of the response that this feedback is for. This should be
+   * the
    * [response_id][google.maps.addressvalidation.v1.ValidateAddressRequest.response_id]
    * from the first response in a series of address validation attempts.
    * </pre>
@@ -75,7 +76,8 @@ public interface ProvideValidationFeedbackRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the response that this feedback is for. This should be the
+   * Required. The ID of the response that this feedback is for. This should be
+   * the
    * [response_id][google.maps.addressvalidation.v1.ValidateAddressRequest.response_id]
    * from the first response in a series of address validation attempts.
    * </pre>

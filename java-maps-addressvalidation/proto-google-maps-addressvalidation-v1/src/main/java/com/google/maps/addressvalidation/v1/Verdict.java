@@ -121,7 +121,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A geocode that should be very close to the building-level location of
-     * the address. Only used for geocodes and not for addresses.
+     * the address.
      * </pre>
      *
      * <code>PREMISE_PROXIMITY = 3;</code>
@@ -198,7 +198,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A geocode that should be very close to the building-level location of
-     * the address. Only used for geocodes and not for addresses.
+     * the address.
      * </pre>
      *
      * <code>PREMISE_PROXIMITY = 3;</code>
