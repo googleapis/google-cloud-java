@@ -320,6 +320,11 @@ public class JsonStreamWriter implements AutoCloseable {
    * newBuilder that constructs a JsonStreamWriter builder with BigQuery client being initialized by
    * StreamWriter by default.
    *
+   * <p>The table schema passed in will be updated automatically when there is a schema update
+   * event. When used for Writer creation, it should be the latest schema. So when you are trying to
+   * reuse a stream, you should use Builder newBuilder( String streamOrTableName,
+   * BigQueryWriteClient client) instead, so the created Writer will be based on a fresh schema.
+   *
    * @param streamOrTableName name of the stream that must follow
    *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+" or table name
    *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+"
@@ -335,6 +340,11 @@ public class JsonStreamWriter implements AutoCloseable {
 
   /**
    * newBuilder that constructs a JsonStreamWriter builder.
+   *
+   * <p>The table schema passed in will be updated automatically when there is a schema update
+   * event. When used for Writer creation, it should be the latest schema. So when you are trying to
+   * reuse a stream, you should use Builder newBuilder( String streamOrTableName,
+   * BigQueryWriteClient client) instead, so the created Writer will be based on a fresh schema.
    *
    * @param streamOrTableName name of the stream that must follow
    *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+"
