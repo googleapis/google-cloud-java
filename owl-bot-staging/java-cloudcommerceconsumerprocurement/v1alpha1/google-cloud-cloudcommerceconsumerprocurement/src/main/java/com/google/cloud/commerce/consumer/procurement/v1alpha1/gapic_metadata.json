@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.commerce.consumer.procurement.v1alpha1",
+  "libraryPackage": "com.google.cloud.commerce.consumer.procurement.v1alpha1",
+  "services": {
+    "ConsumerProcurementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConsumerProcurementServiceClient",
+          "rpcs": {
+            "GetOrder": {
+              "methods": ["getOrder", "getOrderCallable"]
+            },
+            "ListOrders": {
+              "methods": ["listOrders", "listOrdersPagedCallable", "listOrdersCallable"]
+            },
+            "PlaceOrder": {
+              "methods": ["placeOrderAsync", "placeOrderOperationCallable", "placeOrderCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

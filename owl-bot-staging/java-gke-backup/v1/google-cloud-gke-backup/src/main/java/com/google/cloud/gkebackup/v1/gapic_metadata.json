@@ -1,0 +1,90 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.gkebackup.v1",
+  "libraryPackage": "com.google.cloud.gkebackup.v1",
+  "services": {
+    "BackupForGKE": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BackupForGKEClient",
+          "rpcs": {
+            "CreateBackup": {
+              "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
+            },
+            "CreateBackupPlan": {
+              "methods": ["createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanOperationCallable", "createBackupPlanCallable"]
+            },
+            "CreateRestore": {
+              "methods": ["createRestoreAsync", "createRestoreAsync", "createRestoreAsync", "createRestoreOperationCallable", "createRestoreCallable"]
+            },
+            "CreateRestorePlan": {
+              "methods": ["createRestorePlanAsync", "createRestorePlanAsync", "createRestorePlanAsync", "createRestorePlanOperationCallable", "createRestorePlanCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
+            },
+            "DeleteBackupPlan": {
+              "methods": ["deleteBackupPlanAsync", "deleteBackupPlanAsync", "deleteBackupPlanAsync", "deleteBackupPlanOperationCallable", "deleteBackupPlanCallable"]
+            },
+            "DeleteRestore": {
+              "methods": ["deleteRestoreAsync", "deleteRestoreAsync", "deleteRestoreAsync", "deleteRestoreOperationCallable", "deleteRestoreCallable"]
+            },
+            "DeleteRestorePlan": {
+              "methods": ["deleteRestorePlanAsync", "deleteRestorePlanAsync", "deleteRestorePlanAsync", "deleteRestorePlanOperationCallable", "deleteRestorePlanCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupPlan": {
+              "methods": ["getBackupPlan", "getBackupPlan", "getBackupPlan", "getBackupPlanCallable"]
+            },
+            "GetRestore": {
+              "methods": ["getRestore", "getRestore", "getRestore", "getRestoreCallable"]
+            },
+            "GetRestorePlan": {
+              "methods": ["getRestorePlan", "getRestorePlan", "getRestorePlan", "getRestorePlanCallable"]
+            },
+            "GetVolumeBackup": {
+              "methods": ["getVolumeBackup", "getVolumeBackup", "getVolumeBackup", "getVolumeBackupCallable"]
+            },
+            "GetVolumeRestore": {
+              "methods": ["getVolumeRestore", "getVolumeRestore", "getVolumeRestore", "getVolumeRestoreCallable"]
+            },
+            "ListBackupPlans": {
+              "methods": ["listBackupPlans", "listBackupPlans", "listBackupPlans", "listBackupPlansPagedCallable", "listBackupPlansCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListRestorePlans": {
+              "methods": ["listRestorePlans", "listRestorePlans", "listRestorePlans", "listRestorePlansPagedCallable", "listRestorePlansCallable"]
+            },
+            "ListRestores": {
+              "methods": ["listRestores", "listRestores", "listRestores", "listRestoresPagedCallable", "listRestoresCallable"]
+            },
+            "ListVolumeBackups": {
+              "methods": ["listVolumeBackups", "listVolumeBackups", "listVolumeBackups", "listVolumeBackupsPagedCallable", "listVolumeBackupsCallable"]
+            },
+            "ListVolumeRestores": {
+              "methods": ["listVolumeRestores", "listVolumeRestores", "listVolumeRestores", "listVolumeRestoresPagedCallable", "listVolumeRestoresCallable"]
+            },
+            "UpdateBackup": {
+              "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
+            },
+            "UpdateBackupPlan": {
+              "methods": ["updateBackupPlanAsync", "updateBackupPlanAsync", "updateBackupPlanOperationCallable", "updateBackupPlanCallable"]
+            },
+            "UpdateRestore": {
+              "methods": ["updateRestoreAsync", "updateRestoreAsync", "updateRestoreOperationCallable", "updateRestoreCallable"]
+            },
+            "UpdateRestorePlan": {
+              "methods": ["updateRestorePlanAsync", "updateRestorePlanAsync", "updateRestorePlanOperationCallable", "updateRestorePlanCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

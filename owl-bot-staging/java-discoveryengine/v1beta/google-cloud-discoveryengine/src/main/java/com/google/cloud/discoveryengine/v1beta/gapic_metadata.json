@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.discoveryengine.v1beta",
+  "libraryPackage": "com.google.cloud.discoveryengine.v1beta",
+  "services": {
+    "DocumentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DocumentServiceClient",
+          "rpcs": {
+            "CreateDocument": {
+              "methods": ["createDocument", "createDocument", "createDocument", "createDocumentCallable"]
+            },
+            "DeleteDocument": {
+              "methods": ["deleteDocument", "deleteDocument", "deleteDocument", "deleteDocumentCallable"]
+            },
+            "GetDocument": {
+              "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
+            },
+            "ImportDocuments": {
+              "methods": ["importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
+            },
+            "ListDocuments": {
+              "methods": ["listDocuments", "listDocuments", "listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
+            },
+            "UpdateDocument": {
+              "methods": ["updateDocument", "updateDocumentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RecommendationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RecommendationServiceClient",
+          "rpcs": {
+            "Recommend": {
+              "methods": ["recommend", "recommendCallable"]
+            }
+          }
+        }
+      }
+    },
+    "UserEventService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserEventServiceClient",
+          "rpcs": {
+            "CollectUserEvent": {
+              "methods": ["collectUserEvent", "collectUserEventCallable"]
+            },
+            "ImportUserEvents": {
+              "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]
+            },
+            "WriteUserEvent": {
+              "methods": ["writeUserEvent", "writeUserEventCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
