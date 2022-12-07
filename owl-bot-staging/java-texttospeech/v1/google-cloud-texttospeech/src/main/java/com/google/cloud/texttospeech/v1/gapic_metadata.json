@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.texttospeech.v1",
+  "libraryPackage": "com.google.cloud.texttospeech.v1",
+  "services": {
+    "TextToSpeech": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TextToSpeechClient",
+          "rpcs": {
+            "ListVoices": {
+              "methods": ["listVoices", "listVoices", "listVoicesCallable"]
+            },
+            "SynthesizeSpeech": {
+              "methods": ["synthesizeSpeech", "synthesizeSpeech", "synthesizeSpeechCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TextToSpeechLongAudioSynthesize": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TextToSpeechLongAudioSynthesizeClient",
+          "rpcs": {
+            "SynthesizeLongAudio": {
+              "methods": ["synthesizeLongAudioAsync", "synthesizeLongAudioOperationCallable", "synthesizeLongAudioCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
