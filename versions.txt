@@ -593,6 +593,8 @@ grpc-google-cloud-vmwareengine-v1:0.0.0:0.0.1-SNAPSHOT
 google-maps-addressvalidation:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-addressvalidation-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-addressvalidation-v1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-bigquerydatapolicy-v1:0.3.0:0.4.0-SNAPSHOT
+grpc-google-cloud-bigquerydatapolicy-v1:0.3.0:0.4.0-SNAPSHOT
 google-cloud-monitoring-metricsscope:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-monitoring-metricsscope-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-monitoring-metricsscope-v1:0.0.0:0.0.1-SNAPSHOT
