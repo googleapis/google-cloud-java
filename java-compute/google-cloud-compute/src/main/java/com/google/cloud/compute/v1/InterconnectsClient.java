@@ -163,7 +163,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified interconnect.
+   * Deletes the specified Interconnect.
    *
    * <p>Sample code:
    *
@@ -196,7 +196,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified interconnect.
+   * Deletes the specified Interconnect.
    *
    * <p>Sample code:
    *
@@ -229,7 +229,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified interconnect.
+   * Deletes the specified Interconnect.
    *
    * <p>Sample code:
    *
@@ -260,7 +260,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the specified interconnect.
+   * Deletes the specified Interconnect.
    *
    * <p>Sample code:
    *
@@ -289,7 +289,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified interconnect. Get a list of available interconnects by making a list()
+   * Returns the specified Interconnect. Get a list of available Interconnects by making a list()
    * request.
    *
    * <p>Sample code:
@@ -322,7 +322,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified interconnect. Get a list of available interconnects by making a list()
+   * Returns the specified Interconnect. Get a list of available Interconnects by making a list()
    * request.
    *
    * <p>Sample code:
@@ -352,7 +352,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified interconnect. Get a list of available interconnects by making a list()
+   * Returns the specified Interconnect. Get a list of available Interconnects by making a list()
    * request.
    *
    * <p>Sample code:
@@ -381,7 +381,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect.
    *
    * <p>Sample code:
    *
@@ -415,7 +415,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect.
    *
    * <p>Sample code:
    *
@@ -445,7 +445,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the interconnectDiagnostics for the specified interconnect.
+   * Returns the interconnectDiagnostics for the specified Interconnect.
    *
    * <p>Sample code:
    *
@@ -475,7 +475,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Interconnect in the specified project using the data included in the request.
+   * Creates an Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -508,7 +508,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Interconnect in the specified project using the data included in the request.
+   * Creates an Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -541,7 +541,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Interconnect in the specified project using the data included in the request.
+   * Creates an Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -572,7 +572,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Interconnect in the specified project using the data included in the request.
+   * Creates an Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:
    *
@@ -601,7 +601,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of interconnect available to the specified project.
+   * Retrieves the list of Interconnects available to the specified project.
    *
    * <p>Sample code:
    *
@@ -630,7 +630,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of interconnect available to the specified project.
+   * Retrieves the list of Interconnects available to the specified project.
    *
    * <p>Sample code:
    *
@@ -665,7 +665,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of interconnect available to the specified project.
+   * Retrieves the list of Interconnects available to the specified project.
    *
    * <p>Sample code:
    *
@@ -699,7 +699,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of interconnect available to the specified project.
+   * Retrieves the list of Interconnects available to the specified project.
    *
    * <p>Sample code:
    *
@@ -740,7 +740,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the specified interconnect with the data included in the request. This method supports
+   * Updates the specified Interconnect with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
@@ -778,7 +778,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the specified interconnect with the data included in the request. This method supports
+   * Updates the specified Interconnect with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
@@ -812,7 +812,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the specified interconnect with the data included in the request. This method supports
+   * Updates the specified Interconnect with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:
@@ -845,7 +845,7 @@ public class InterconnectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the specified interconnect with the data included in the request. This method supports
+   * Updates the specified Interconnect with the data included in the request. This method supports
    * PATCH semantics and uses the JSON merge patch format and processing rules.
    *
    * <p>Sample code:

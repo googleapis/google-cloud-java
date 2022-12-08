@@ -162,8 +162,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
-     * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-     * `interpret_injected_solutions_using_labels` is true (see `fields`
+     * A vehicle index is mapped the same as
+     * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+     * if `interpret_injected_solutions_using_labels` is true (see `fields`
      * comment).
      * </pre>
      *
@@ -183,8 +184,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
-     * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-     * `interpret_injected_solutions_using_labels` is true (see `fields`
+     * A vehicle index is mapped the same as
+     * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+     * if `interpret_injected_solutions_using_labels` is true (see `fields`
      * comment).
      * </pre>
      *
@@ -204,8 +206,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
-     * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-     * `interpret_injected_solutions_using_labels` is true (see `fields`
+     * A vehicle index is mapped the same as
+     * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+     * if `interpret_injected_solutions_using_labels` is true (see `fields`
      * comment).
      * </pre>
      *
@@ -1806,8 +1809,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
-     * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-     * `interpret_injected_solutions_using_labels` is true (see `fields`
+     * A vehicle index is mapped the same as
+     * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+     * if `interpret_injected_solutions_using_labels` is true (see `fields`
      * comment).
      * </pre>
      *
@@ -1830,8 +1834,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
-     * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-     * `interpret_injected_solutions_using_labels` is true (see `fields`
+     * A vehicle index is mapped the same as
+     * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+     * if `interpret_injected_solutions_using_labels` is true (see `fields`
      * comment).
      * </pre>
      *
@@ -1853,8 +1858,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * most one constraint relaxation field is allowed empty
      * `vehicle_indices`. A vehicle index can only be listed once, even within
      * several `constraint_relaxations`.
-     * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-     * `interpret_injected_solutions_using_labels` is true (see `fields`
+     * A vehicle index is mapped the same as
+     * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+     * if `interpret_injected_solutions_using_labels` is true (see `fields`
      * comment).
      * </pre>
      *
@@ -2832,8 +2838,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
-       * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-       * `interpret_injected_solutions_using_labels` is true (see `fields`
+       * A vehicle index is mapped the same as
+       * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+       * if `interpret_injected_solutions_using_labels` is true (see `fields`
        * comment).
        * </pre>
        *
@@ -2857,8 +2864,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
-       * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-       * `interpret_injected_solutions_using_labels` is true (see `fields`
+       * A vehicle index is mapped the same as
+       * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+       * if `interpret_injected_solutions_using_labels` is true (see `fields`
        * comment).
        * </pre>
        *
@@ -2880,8 +2888,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
-       * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-       * `interpret_injected_solutions_using_labels` is true (see `fields`
+       * A vehicle index is mapped the same as
+       * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+       * if `interpret_injected_solutions_using_labels` is true (see `fields`
        * comment).
        * </pre>
        *
@@ -2904,8 +2913,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
-       * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-       * `interpret_injected_solutions_using_labels` is true (see `fields`
+       * A vehicle index is mapped the same as
+       * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+       * if `interpret_injected_solutions_using_labels` is true (see `fields`
        * comment).
        * </pre>
        *
@@ -2932,8 +2942,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
-       * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-       * `interpret_injected_solutions_using_labels` is true (see `fields`
+       * A vehicle index is mapped the same as
+       * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+       * if `interpret_injected_solutions_using_labels` is true (see `fields`
        * comment).
        * </pre>
        *
@@ -2959,8 +2970,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
-       * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-       * `interpret_injected_solutions_using_labels` is true (see `fields`
+       * A vehicle index is mapped the same as
+       * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+       * if `interpret_injected_solutions_using_labels` is true (see `fields`
        * comment).
        * </pre>
        *
@@ -2986,8 +2998,9 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * most one constraint relaxation field is allowed empty
        * `vehicle_indices`. A vehicle index can only be listed once, even within
        * several `constraint_relaxations`.
-       * A vehicle index is mapped the same as [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index], if
-       * `interpret_injected_solutions_using_labels` is true (see `fields`
+       * A vehicle index is mapped the same as
+       * [ShipmentRoute.vehicle_index][google.cloud.optimization.v1.ShipmentRoute.vehicle_index],
+       * if `interpret_injected_solutions_using_labels` is true (see `fields`
        * comment).
        * </pre>
        *

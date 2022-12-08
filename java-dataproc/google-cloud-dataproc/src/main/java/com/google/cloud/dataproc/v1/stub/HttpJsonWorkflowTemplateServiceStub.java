@@ -93,12 +93,13 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateWorkflowTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("template", request.getTemplate(), false))
+                                  .toBody("template", request.getTemplate(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WorkflowTemplate>newBuilder()
@@ -132,6 +133,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                             ProtoRestSerializer<GetWorkflowTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "version", request.getVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -168,12 +170,13 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<InstantiateWorkflowTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -212,12 +215,13 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                             ProtoRestSerializer<InstantiateInlineWorkflowTemplateRequest>
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("template", request.getTemplate(), false))
+                                  .toBody("template", request.getTemplate(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -255,12 +259,13 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateWorkflowTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("template", request.getTemplate(), false))
+                                  .toBody("template", request.getTemplate(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WorkflowTemplate>newBuilder()
@@ -297,6 +302,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -333,6 +339,7 @@ public class HttpJsonWorkflowTemplateServiceStub extends WorkflowTemplateService
                             ProtoRestSerializer<DeleteWorkflowTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "version", request.getVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

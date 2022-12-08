@@ -544,6 +544,28 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     return getMonitoringConfig();
   }
 
+  public static final int OFFLINE_STORAGE_TTL_DAYS_FIELD_NUMBER = 10;
+  private int offlineStorageTtlDays_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for data retention policy in offline storage.
+   * TTL in days for feature values that will be stored in offline storage.
+   * The Feature Store offline storage periodically removes obsolete feature
+   * values older than `offline_storage_ttl_days` since the feature generation
+   * time. If unset (or explicitly set to 0), default to 4000 days TTL.
+   * </pre>
+   *
+   * <code>int32 offline_storage_ttl_days = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The offlineStorageTtlDays.
+   */
+  @java.lang.Override
+  public int getOfflineStorageTtlDays() {
+    return offlineStorageTtlDays_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -577,6 +599,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
     if (monitoringConfig_ != null) {
       output.writeMessage(8, getMonitoringConfig());
+    }
+    if (offlineStorageTtlDays_ != 0) {
+      output.writeInt32(10, offlineStorageTtlDays_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -615,6 +640,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     if (monitoringConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMonitoringConfig());
     }
+    if (offlineStorageTtlDays_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, offlineStorageTtlDays_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -647,6 +675,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     if (hasMonitoringConfig()) {
       if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
     }
+    if (getOfflineStorageTtlDays() != other.getOfflineStorageTtlDays()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -680,6 +709,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMonitoringConfig().hashCode();
     }
+    hash = (37 * hash) + OFFLINE_STORAGE_TTL_DAYS_FIELD_NUMBER;
+    hash = (53 * hash) + getOfflineStorageTtlDays();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -865,6 +896,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         monitoringConfig_ = null;
         monitoringConfigBuilder_ = null;
       }
+      offlineStorageTtlDays_ = 0;
+
       return this;
     }
 
@@ -913,6 +946,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.monitoringConfig_ = monitoringConfigBuilder_.build();
       }
+      result.offlineStorageTtlDays_ = offlineStorageTtlDays_;
       onBuilt();
       return result;
     }
@@ -983,6 +1017,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMonitoringConfig()) {
         mergeMonitoringConfig(other.getMonitoringConfig());
+      }
+      if (other.getOfflineStorageTtlDays() != 0) {
+        setOfflineStorageTtlDays(other.getOfflineStorageTtlDays());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1058,6 +1095,12 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 66
+            case 80:
+              {
+                offlineStorageTtlDays_ = input.readInt32();
+
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2307,6 +2350,70 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         monitoringConfig_ = null;
       }
       return monitoringConfigBuilder_;
+    }
+
+    private int offlineStorageTtlDays_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for data retention policy in offline storage.
+     * TTL in days for feature values that will be stored in offline storage.
+     * The Feature Store offline storage periodically removes obsolete feature
+     * values older than `offline_storage_ttl_days` since the feature generation
+     * time. If unset (or explicitly set to 0), default to 4000 days TTL.
+     * </pre>
+     *
+     * <code>int32 offline_storage_ttl_days = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The offlineStorageTtlDays.
+     */
+    @java.lang.Override
+    public int getOfflineStorageTtlDays() {
+      return offlineStorageTtlDays_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for data retention policy in offline storage.
+     * TTL in days for feature values that will be stored in offline storage.
+     * The Feature Store offline storage periodically removes obsolete feature
+     * values older than `offline_storage_ttl_days` since the feature generation
+     * time. If unset (or explicitly set to 0), default to 4000 days TTL.
+     * </pre>
+     *
+     * <code>int32 offline_storage_ttl_days = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The offlineStorageTtlDays to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOfflineStorageTtlDays(int value) {
+
+      offlineStorageTtlDays_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for data retention policy in offline storage.
+     * TTL in days for feature values that will be stored in offline storage.
+     * The Feature Store offline storage periodically removes obsolete feature
+     * values older than `offline_storage_ttl_days` since the feature generation
+     * time. If unset (or explicitly set to 0), default to 4000 days TTL.
+     * </pre>
+     *
+     * <code>int32 offline_storage_ttl_days = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOfflineStorageTtlDays() {
+
+      offlineStorageTtlDays_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

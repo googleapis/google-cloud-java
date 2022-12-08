@@ -727,7 +727,8 @@ public interface VehicleOrBuilder
    * <pre>
    * Cost per traveled hour of the vehicle route. This cost is applied only to
    * travel time taken by the route (i.e., that reported in
-   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]), and excludes waiting time and visit time.
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]),
+   * and excludes waiting time and visit time.
    * </pre>
    *
    * <code>double cost_per_traveled_hour = 17;</code>
@@ -741,9 +742,10 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Cost per kilometer of the vehicle route. This cost is applied to the
-   * distance reported in the [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] and does not apply
-   * to any distance implicitly traveled from the `arrival_location` to the
-   * `departure_location` of a single `VisitRequest`.
+   * distance reported in the
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * and does not apply to any distance implicitly traveled from the
+   * `arrival_location` to the `departure_location` of a single `VisitRequest`.
    * </pre>
    *
    * <code>double cost_per_kilometer = 18;</code>
@@ -1053,7 +1055,8 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies a label for this vehicle. This label is reported in the response
-   * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+   * as the `vehicle_label` of the corresponding
+   * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
    * </pre>
    *
    * <code>string label = 27;</code>
@@ -1066,7 +1069,8 @@ public interface VehicleOrBuilder
    *
    * <pre>
    * Specifies a label for this vehicle. This label is reported in the response
-   * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+   * as the `vehicle_label` of the corresponding
+   * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
    * </pre>
    *
    * <code>string label = 27;</code>
@@ -1111,7 +1115,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1129,7 +1133,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1147,7 +1151,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */

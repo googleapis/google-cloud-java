@@ -169,6 +169,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -203,6 +204,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCustomerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -240,12 +242,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CheckCloudIdentityAccountsExistRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CheckCloudIdentityAccountsExistResponse>newBuilder()
@@ -278,12 +281,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateCustomerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customer", request.getCustomer(), false))
+                                  .toBody("customer", request.getCustomer(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Customer>newBuilder()
@@ -318,12 +322,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             ProtoRestSerializer<UpdateCustomerRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customer", request.getCustomer(), false))
+                                  .toBody("customer", request.getCustomer(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Customer>newBuilder()
@@ -355,6 +360,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCustomerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -390,12 +396,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportCustomerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Customer>newBuilder()
@@ -427,12 +434,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ProvisionCloudIdentityRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearCustomer().build(), false))
+                                  .toBody("*", request.toBuilder().clearCustomer().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -468,6 +476,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -503,12 +512,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListTransferableSkusRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ListTransferableSkusResponse>newBuilder()
@@ -542,12 +552,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListTransferableOffersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ListTransferableOffersResponse>newBuilder()
@@ -578,6 +589,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEntitlementRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -611,12 +623,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateEntitlementRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -650,12 +663,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ChangeParametersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -690,12 +704,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ChangeRenewalSettingsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -729,12 +744,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ChangeOfferRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -768,12 +784,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StartPaidServiceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -807,12 +824,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SuspendEntitlementRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -846,12 +864,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CancelEntitlementRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -885,12 +904,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ActivateEntitlementRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -924,12 +944,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TransferEntitlementsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -964,12 +985,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TransferEntitlementsToGoogleRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1009,6 +1031,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1044,6 +1067,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             ProtoRestSerializer<GetChannelPartnerLinkRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1078,13 +1102,14 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateChannelPartnerLinkRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "channelPartnerLink", request.getChannelPartnerLink(), false))
+                                      "channelPartnerLink", request.getChannelPartnerLink(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerLink>newBuilder()
@@ -1116,12 +1141,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateChannelPartnerLinkRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerLink>newBuilder()
@@ -1155,6 +1181,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCustomerRepricingConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1195,6 +1222,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1231,6 +1259,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateCustomerRepricingConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1239,7 +1268,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                   .toBody(
                                       "customerRepricingConfig",
                                       request.getCustomerRepricingConfig(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomerRepricingConfig>newBuilder()
@@ -1276,6 +1305,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateCustomerRepricingConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1284,7 +1314,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                   .toBody(
                                       "customerRepricingConfig",
                                       request.getCustomerRepricingConfig(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomerRepricingConfig>newBuilder()
@@ -1316,6 +1346,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCustomerRepricingConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1352,6 +1383,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetChannelPartnerRepricingConfigRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1394,6 +1426,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1434,6 +1467,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateChannelPartnerRepricingConfigRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1442,7 +1476,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                   .toBody(
                                       "channelPartnerRepricingConfig",
                                       request.getChannelPartnerRepricingConfig(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerRepricingConfig>newBuilder()
@@ -1481,6 +1515,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateChannelPartnerRepricingConfigRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1489,7 +1524,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                   .toBody(
                                       "channelPartnerRepricingConfig",
                                       request.getChannelPartnerRepricingConfig(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ChannelPartnerRepricingConfig>newBuilder()
@@ -1522,6 +1557,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteChannelPartnerRepricingConfigRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1554,6 +1590,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<LookupOfferRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -1591,6 +1628,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1629,6 +1667,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1667,6 +1706,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1710,6 +1750,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1756,6 +1797,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1789,12 +1831,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RegisterSubscriberRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAccount().build(), false))
+                                  .toBody("*", request.toBuilder().clearAccount().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegisterSubscriberResponse>newBuilder()
@@ -1827,12 +1870,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UnregisterSubscriberRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAccount().build(), false))
+                                  .toBody("*", request.toBuilder().clearAccount().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UnregisterSubscriberResponse>newBuilder()
@@ -1865,6 +1909,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

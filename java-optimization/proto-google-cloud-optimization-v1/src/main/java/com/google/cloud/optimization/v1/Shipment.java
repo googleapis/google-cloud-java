@@ -483,8 +483,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -498,8 +500,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -517,8 +521,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -533,8 +539,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -553,8 +561,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -632,7 +642,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this `VisitRequest`. This label is reported in the
-     * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * response as `visit_label` in the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 11;</code>
@@ -645,7 +656,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this `VisitRequest`. This label is reported in the
-     * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * response as `visit_label` in the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 11;</code>
@@ -1306,8 +1318,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -1334,8 +1348,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -1353,8 +1369,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -1377,8 +1395,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Load demands of this visit request. This is just like
-     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+     * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+     * field, except that it only applies to this
+     * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+     * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
      * The demands listed here are added to the demands listed in
      * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
@@ -1480,7 +1500,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this `VisitRequest`. This label is reported in the
-     * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * response as `visit_label` in the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 11;</code>
@@ -1504,7 +1525,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this `VisitRequest`. This label is reported in the
-     * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * response as `visit_label` in the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 11;</code>
@@ -4256,8 +4278,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Load demands of this visit request. This is just like
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * field, except that it only applies to this
+       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+       * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
        * The demands listed here are added to the demands listed in
        * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
        * </pre>
@@ -4284,8 +4308,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Load demands of this visit request. This is just like
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * field, except that it only applies to this
+       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+       * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
        * The demands listed here are added to the demands listed in
        * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
        * </pre>
@@ -4303,8 +4329,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Load demands of this visit request. This is just like
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * field, except that it only applies to this
+       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+       * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
        * The demands listed here are added to the demands listed in
        * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
        * </pre>
@@ -4327,8 +4355,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Load demands of this visit request. This is just like
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * field, except that it only applies to this
+       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+       * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
        * The demands listed here are added to the demands listed in
        * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
        * </pre>
@@ -4359,8 +4389,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Load demands of this visit request. This is just like
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * field, except that it only applies to this
+       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+       * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
        * The demands listed here are added to the demands listed in
        * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
        * </pre>
@@ -4386,8 +4418,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Load demands of this visit request. This is just like
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * field, except that it only applies to this
+       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+       * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
        * The demands listed here are added to the demands listed in
        * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
        * </pre>
@@ -4412,8 +4446,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Load demands of this visit request. This is just like
-       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands] field, except that it only applies to this
-       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest] instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
+       * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands]
+       * field, except that it only applies to this
+       * [VisitRequest][google.cloud.optimization.v1.Shipment.VisitRequest]
+       * instead of the whole [Shipment][google.cloud.optimization.v1.Shipment].
        * The demands listed here are added to the demands listed in
        * [Shipment.load_demands][google.cloud.optimization.v1.Shipment.load_demands].
        * </pre>
@@ -4628,7 +4664,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies a label for this `VisitRequest`. This label is reported in the
-       * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+       * response as `visit_label` in the corresponding
+       * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
        * </pre>
        *
        * <code>string label = 11;</code>
@@ -4651,7 +4688,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies a label for this `VisitRequest`. This label is reported in the
-       * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+       * response as `visit_label` in the corresponding
+       * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
        * </pre>
        *
        * <code>string label = 11;</code>
@@ -4674,7 +4712,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies a label for this `VisitRequest`. This label is reported in the
-       * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+       * response as `visit_label` in the corresponding
+       * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
        * </pre>
        *
        * <code>string label = 11;</code>
@@ -4696,7 +4735,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies a label for this `VisitRequest`. This label is reported in the
-       * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+       * response as `visit_label` in the corresponding
+       * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
        * </pre>
        *
        * <code>string label = 11;</code>
@@ -4714,7 +4754,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specifies a label for this `VisitRequest`. This label is reported in the
-       * response as `visit_label` in the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+       * response as `visit_label` in the corresponding
+       * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
        * </pre>
        *
        * <code>string label = 11;</code>
@@ -5234,7 +5275,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * When performing a visit, a predefined amount may be added to the vehicle
    * load if it's a pickup, or subtracted if it's a delivery. This message
-   * defines such amount. See [load_demands][google.cloud.optimization.v1.Shipment.load_demands].
+   * defines such amount. See
+   * [load_demands][google.cloud.optimization.v1.Shipment.load_demands].
    * </pre>
    *
    * Protobuf type {@code google.cloud.optimization.v1.Shipment.Load}
@@ -5463,7 +5505,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * When performing a visit, a predefined amount may be added to the vehicle
      * load if it's a pickup, or subtracted if it's a delivery. This message
-     * defines such amount. See [load_demands][google.cloud.optimization.v1.Shipment.load_demands].
+     * defines such amount. See
+     * [load_demands][google.cloud.optimization.v1.Shipment.load_demands].
      * </pre>
      *
      * Protobuf type {@code google.cloud.optimization.v1.Shipment.Load}
@@ -6546,7 +6589,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a label for this shipment. This label is reported in the response
-   * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+   * in the `shipment_label` of the corresponding
+   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
    * </pre>
    *
    * <code>string label = 12;</code>
@@ -6570,7 +6614,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a label for this shipment. This label is reported in the response
-   * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+   * in the `shipment_label` of the corresponding
+   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
    * </pre>
    *
    * <code>string label = 12;</code>
@@ -9991,7 +10036,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this shipment. This label is reported in the response
-     * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * in the `shipment_label` of the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 12;</code>
@@ -10014,7 +10060,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this shipment. This label is reported in the response
-     * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * in the `shipment_label` of the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 12;</code>
@@ -10037,7 +10084,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this shipment. This label is reported in the response
-     * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * in the `shipment_label` of the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 12;</code>
@@ -10059,7 +10107,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this shipment. This label is reported in the response
-     * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * in the `shipment_label` of the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 12;</code>
@@ -10077,7 +10126,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this shipment. This label is reported in the response
-     * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+     * in the `shipment_label` of the corresponding
+     * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
      * </pre>
      *
      * <code>string label = 12;</code>

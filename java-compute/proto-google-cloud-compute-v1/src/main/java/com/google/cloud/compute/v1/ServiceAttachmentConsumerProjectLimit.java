@@ -39,6 +39,7 @@ public final class ServiceAttachmentConsumerProjectLimit
   }
 
   private ServiceAttachmentConsumerProjectLimit() {
+    networkUrl_ = "";
     projectIdOrNum_ = "";
   }
 
@@ -102,6 +103,70 @@ public final class ServiceAttachmentConsumerProjectLimit
     return connectionLimit_;
   }
 
+  public static final int NETWORK_URL_FIELD_NUMBER = 207194078;
+  private volatile java.lang.Object networkUrl_;
+  /**
+   *
+   *
+   * <pre>
+   * The network URL for the network to set the limit for.
+   * </pre>
+   *
+   * <code>optional string network_url = 207194078;</code>
+   *
+   * @return Whether the networkUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkUrl() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network URL for the network to set the limit for.
+   * </pre>
+   *
+   * <code>optional string network_url = 207194078;</code>
+   *
+   * @return The networkUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getNetworkUrl() {
+    java.lang.Object ref = networkUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The network URL for the network to set the limit for.
+   * </pre>
+   *
+   * <code>optional string network_url = 207194078;</code>
+   *
+   * @return The bytes for networkUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNetworkUrlBytes() {
+    java.lang.Object ref = networkUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      networkUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROJECT_ID_OR_NUM_FIELD_NUMBER = 349783336;
   private volatile java.lang.Object projectIdOrNum_;
   /**
@@ -117,7 +182,7 @@ public final class ServiceAttachmentConsumerProjectLimit
    */
   @java.lang.Override
   public boolean hasProjectIdOrNum() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -184,6 +249,9 @@ public final class ServiceAttachmentConsumerProjectLimit
       output.writeUInt32(131403546, connectionLimit_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 207194078, networkUrl_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 349783336, projectIdOrNum_);
     }
     getUnknownFields().writeTo(output);
@@ -199,6 +267,9 @@ public final class ServiceAttachmentConsumerProjectLimit
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(131403546, connectionLimit_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207194078, networkUrl_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(349783336, projectIdOrNum_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -221,6 +292,10 @@ public final class ServiceAttachmentConsumerProjectLimit
     if (hasConnectionLimit()) {
       if (getConnectionLimit() != other.getConnectionLimit()) return false;
     }
+    if (hasNetworkUrl() != other.hasNetworkUrl()) return false;
+    if (hasNetworkUrl()) {
+      if (!getNetworkUrl().equals(other.getNetworkUrl())) return false;
+    }
     if (hasProjectIdOrNum() != other.hasProjectIdOrNum()) return false;
     if (hasProjectIdOrNum()) {
       if (!getProjectIdOrNum().equals(other.getProjectIdOrNum())) return false;
@@ -239,6 +314,10 @@ public final class ServiceAttachmentConsumerProjectLimit
     if (hasConnectionLimit()) {
       hash = (37 * hash) + CONNECTION_LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getConnectionLimit();
+    }
+    if (hasNetworkUrl()) {
+      hash = (37 * hash) + NETWORK_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkUrl().hashCode();
     }
     if (hasProjectIdOrNum()) {
       hash = (37 * hash) + PROJECT_ID_OR_NUM_FIELD_NUMBER;
@@ -386,8 +465,10 @@ public final class ServiceAttachmentConsumerProjectLimit
       super.clear();
       connectionLimit_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
-      projectIdOrNum_ = "";
+      networkUrl_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
+      projectIdOrNum_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -424,6 +505,10 @@ public final class ServiceAttachmentConsumerProjectLimit
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
+      }
+      result.networkUrl_ = networkUrl_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.projectIdOrNum_ = projectIdOrNum_;
       result.bitField0_ = to_bitField0_;
@@ -482,8 +567,13 @@ public final class ServiceAttachmentConsumerProjectLimit
       if (other.hasConnectionLimit()) {
         setConnectionLimit(other.getConnectionLimit());
       }
-      if (other.hasProjectIdOrNum()) {
+      if (other.hasNetworkUrl()) {
         bitField0_ |= 0x00000002;
+        networkUrl_ = other.networkUrl_;
+        onChanged();
+      }
+      if (other.hasProjectIdOrNum()) {
+        bitField0_ |= 0x00000004;
         projectIdOrNum_ = other.projectIdOrNum_;
         onChanged();
       }
@@ -519,10 +609,16 @@ public final class ServiceAttachmentConsumerProjectLimit
                 bitField0_ |= 0x00000001;
                 break;
               } // case 1051228368
+            case 1657552626:
+              {
+                networkUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1657552626
             case -1496700606:
               {
                 projectIdOrNum_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1496700606
             default:
@@ -611,6 +707,126 @@ public final class ServiceAttachmentConsumerProjectLimit
       return this;
     }
 
+    private java.lang.Object networkUrl_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The network URL for the network to set the limit for.
+     * </pre>
+     *
+     * <code>optional string network_url = 207194078;</code>
+     *
+     * @return Whether the networkUrl field is set.
+     */
+    public boolean hasNetworkUrl() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network URL for the network to set the limit for.
+     * </pre>
+     *
+     * <code>optional string network_url = 207194078;</code>
+     *
+     * @return The networkUrl.
+     */
+    public java.lang.String getNetworkUrl() {
+      java.lang.Object ref = networkUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network URL for the network to set the limit for.
+     * </pre>
+     *
+     * <code>optional string network_url = 207194078;</code>
+     *
+     * @return The bytes for networkUrl.
+     */
+    public com.google.protobuf.ByteString getNetworkUrlBytes() {
+      java.lang.Object ref = networkUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        networkUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network URL for the network to set the limit for.
+     * </pre>
+     *
+     * <code>optional string network_url = 207194078;</code>
+     *
+     * @param value The networkUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      networkUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network URL for the network to set the limit for.
+     * </pre>
+     *
+     * <code>optional string network_url = 207194078;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkUrl() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      networkUrl_ = getDefaultInstance().getNetworkUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The network URL for the network to set the limit for.
+     * </pre>
+     *
+     * <code>optional string network_url = 207194078;</code>
+     *
+     * @param value The bytes for networkUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      networkUrl_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object projectIdOrNum_ = "";
     /**
      *
@@ -624,7 +840,7 @@ public final class ServiceAttachmentConsumerProjectLimit
      * @return Whether the projectIdOrNum field is set.
      */
     public boolean hasProjectIdOrNum() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -686,7 +902,7 @@ public final class ServiceAttachmentConsumerProjectLimit
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       projectIdOrNum_ = value;
       onChanged();
       return this;
@@ -703,7 +919,7 @@ public final class ServiceAttachmentConsumerProjectLimit
      * @return This builder for chaining.
      */
     public Builder clearProjectIdOrNum() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       projectIdOrNum_ = getDefaultInstance().getProjectIdOrNum();
       onChanged();
       return this;
@@ -725,7 +941,7 @@ public final class ServiceAttachmentConsumerProjectLimit
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       projectIdOrNum_ = value;
       onChanged();
       return this;

@@ -17,8 +17,8 @@
 package com.google.cloud.tpu.v2alpha1.samples;
 
 // [START tpu_v2alpha1_generated_Tpu_ListRuntimeVersions_String_sync]
+import com.google.cloud.tpu.v2alpha1.LocationName;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
-import com.google.cloud.tpu.v2alpha1.RuntimeVersionName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
 
 public class SyncListRuntimeVersionsString {
@@ -34,8 +34,7 @@ public class SyncListRuntimeVersionsString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
-      String parent =
-          RuntimeVersionName.of("[PROJECT]", "[LOCATION]", "[RUNTIME_VERSION]").toString();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       for (RuntimeVersion element : tpuClient.listRuntimeVersions(parent).iterateAll()) {
         // doThingsWith(element);
       }

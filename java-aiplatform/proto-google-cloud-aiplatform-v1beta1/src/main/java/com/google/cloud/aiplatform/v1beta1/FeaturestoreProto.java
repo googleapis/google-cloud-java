@@ -57,7 +57,7 @@ public final class FeaturestoreProto {
           + "beta1\032\037google/api/field_behavior.proto\032\031"
           + "google/api/resource.proto\0325google/cloud/"
           + "aiplatform/v1beta1/encryption_spec.proto"
-          + "\032\037google/protobuf/timestamp.proto\"\231\007\n\014Fe"
+          + "\032\037google/protobuf/timestamp.proto\"\277\007\n\014Fe"
           + "aturestore\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_"
           + "time\030\003 \001(\0132\032.google.protobuf.TimestampB\003"
           + "\340A\003\0224\n\013update_time\030\004 \001(\0132\032.google.protob"
@@ -68,26 +68,27 @@ public final class FeaturestoreProto {
           + "ud.aiplatform.v1beta1.Featurestore.Onlin"
           + "eServingConfigB\003\340A\001\022G\n\005state\030\010 \001(\01623.goo"
           + "gle.cloud.aiplatform.v1beta1.Featurestor"
-          + "e.StateB\003\340A\003\022M\n\017encryption_spec\030\n \001(\0132/."
-          + "google.cloud.aiplatform.v1beta1.Encrypti"
-          + "onSpecB\003\340A\001\032\313\001\n\023OnlineServingConfig\022\030\n\020f"
-          + "ixed_node_count\030\002 \001(\005\022Z\n\007scaling\030\004 \001(\0132I"
-          + ".google.cloud.aiplatform.v1beta1.Feature"
-          + "store.OnlineServingConfig.Scaling\032>\n\007Sca"
-          + "ling\022\033\n\016min_node_count\030\001 \001(\005B\003\340A\002\022\026\n\016max"
-          + "_node_count\030\002 \001(\005\032-\n\013LabelsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STA"
-          + "TE_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING"
-          + "\020\002:q\352An\n&aiplatform.googleapis.com/Featu"
-          + "restore\022Dprojects/{project}/locations/{l"
-          + "ocation}/featurestores/{featurestore}B\356\001"
-          + "\n#com.google.cloud.aiplatform.v1beta1B\021F"
-          + "eaturestoreProtoP\001ZIgoogle.golang.org/ge"
-          + "nproto/googleapis/cloud/aiplatform/v1bet"
-          + "a1;aiplatform\252\002\037Google.Cloud.AIPlatform."
-          + "V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta"
-          + "1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006"
-          + "proto3"
+          + "e.StateB\003\340A\003\022$\n\027online_storage_ttl_days\030"
+          + "\r \001(\005B\003\340A\001\022M\n\017encryption_spec\030\n \001(\0132/.go"
+          + "ogle.cloud.aiplatform.v1beta1.Encryption"
+          + "SpecB\003\340A\001\032\313\001\n\023OnlineServingConfig\022\030\n\020fix"
+          + "ed_node_count\030\002 \001(\005\022Z\n\007scaling\030\004 \001(\0132I.g"
+          + "oogle.cloud.aiplatform.v1beta1.Featurest"
+          + "ore.OnlineServingConfig.Scaling\032>\n\007Scali"
+          + "ng\022\033\n\016min_node_count\030\001 \001(\005B\003\340A\002\022\026\n\016max_n"
+          + "ode_count\030\002 \001(\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE"
+          + "_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002"
+          + ":q\352An\n&aiplatform.googleapis.com/Feature"
+          + "store\022Dprojects/{project}/locations/{loc"
+          + "ation}/featurestores/{featurestore}B\356\001\n#"
+          + "com.google.cloud.aiplatform.v1beta1B\021Fea"
+          + "turestoreProtoP\001ZIgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/aiplatform/v1beta1"
+          + ";aiplatform\252\002\037Google.Cloud.AIPlatform.V1"
+          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
+          + "\002\"Google::Cloud::AIPlatform::V1beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -111,6 +112,7 @@ public final class FeaturestoreProto {
               "Labels",
               "OnlineServingConfig",
               "State",
+              "OnlineStorageTtlDays",
               "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Featurestore_OnlineServingConfig_descriptor =

@@ -161,12 +161,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ProcessRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProcessResponse>newBuilder()
@@ -200,12 +201,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchProcessRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -240,6 +242,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FetchProcessorTypesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -276,6 +279,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -312,6 +316,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -346,6 +351,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetProcessorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -380,12 +386,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TrainProcessorVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -420,6 +427,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetProcessorVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -458,6 +466,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -492,6 +501,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteProcessorVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -529,12 +539,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeployProcessorVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -569,12 +580,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UndeployProcessorVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -609,12 +621,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateProcessorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("processor", request.getProcessor(), false))
+                                  .toBody("processor", request.getProcessor(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Processor>newBuilder()
@@ -646,6 +659,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteProcessorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -683,12 +697,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<EnableProcessorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -723,12 +738,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DisableProcessorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -763,12 +779,13 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetDefaultProcessorVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProcessor().build(), false))
+                                  .toBody("*", request.toBuilder().clearProcessor().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -804,6 +821,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ReviewDocumentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -812,7 +830,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearHumanReviewConfig().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -848,6 +866,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<EvaluateProcessorVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -856,7 +875,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearProcessorVersion().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -891,6 +910,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEvaluationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -927,6 +947,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -961,6 +982,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -995,6 +1017,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

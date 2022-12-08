@@ -79,6 +79,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PublishChannelConnectionEventsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -87,7 +88,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearChannelConnection().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublishChannelConnectionEventsResponse>newBuilder()
@@ -119,12 +120,13 @@ public class HttpJsonPublisherStub extends PublisherStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PublishEventsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearChannel().build(), false))
+                                  .toBody("*", request.toBuilder().clearChannel().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PublishEventsResponse>newBuilder()

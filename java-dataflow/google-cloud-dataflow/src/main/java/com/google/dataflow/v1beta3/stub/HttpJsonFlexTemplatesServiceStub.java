@@ -73,6 +73,7 @@ public class HttpJsonFlexTemplatesServiceStub extends FlexTemplatesServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<LaunchFlexTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -81,7 +82,7 @@ public class HttpJsonFlexTemplatesServiceStub extends FlexTemplatesServiceStub {
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearLocation().clearProjectId().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<LaunchFlexTemplateResponse>newBuilder()

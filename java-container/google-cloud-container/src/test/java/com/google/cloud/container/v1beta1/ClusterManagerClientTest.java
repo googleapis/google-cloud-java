@@ -44,6 +44,7 @@ import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DatabaseEncryption;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.FastSocket;
 import com.google.container.v1beta1.GcfsConfig;
 import com.google.container.v1beta1.GetClusterRequest;
 import com.google.container.v1beta1.GetJSONWebKeysRequest;
@@ -495,6 +496,7 @@ public class ClusterManagerClientTest {
             .setGcfsConfig(GcfsConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
+            .setFastSocket(FastSocket.newBuilder().build())
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .setResourceLabels(ResourceLabels.newBuilder().build())
             .build();
@@ -526,6 +528,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
     Assert.assertEquals(request.getConfidentialNodes(), actualRequest.getConfidentialNodes());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
+    Assert.assertEquals(request.getFastSocket(), actualRequest.getFastSocket());
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
     Assert.assertTrue(
@@ -561,6 +564,7 @@ public class ClusterManagerClientTest {
               .setGcfsConfig(GcfsConfig.newBuilder().build())
               .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
+              .setFastSocket(FastSocket.newBuilder().build())
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
               .build();

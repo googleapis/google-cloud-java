@@ -71,12 +71,13 @@ public class HttpJsonServiceControllerStub extends ServiceControllerStub {
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CheckRequest> serializer = ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearServiceName().build(), false))
+                              .toBody("*", request.toBuilder().clearServiceName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<CheckResponse>newBuilder()
@@ -106,12 +107,13 @@ public class HttpJsonServiceControllerStub extends ServiceControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<ReportRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearServiceName().build(), false))
+                              .toBody("*", request.toBuilder().clearServiceName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<ReportResponse>newBuilder()

@@ -77,12 +77,13 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PatchJobs.ExecutePatchJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchJobs.PatchJob>newBuilder()
@@ -113,6 +114,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PatchJobs.GetPatchJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -146,12 +148,13 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PatchJobs.CancelPatchJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchJobs.PatchJob>newBuilder()
@@ -187,6 +190,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -230,6 +234,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -271,12 +276,13 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "patchDeploymentId", request.getPatchDeploymentId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("patchDeployment", request.getPatchDeployment(), false))
+                                  .toBody("patchDeployment", request.getPatchDeployment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()
@@ -311,6 +317,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PatchDeployments.GetPatchDeploymentRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -352,6 +359,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -388,6 +396,7 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PatchDeployments.DeletePatchDeploymentRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -429,12 +438,13 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             ProtoRestSerializer<PatchDeployments.UpdatePatchDeploymentRequest>
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("patchDeployment", request.getPatchDeployment(), false))
+                                  .toBody("patchDeployment", request.getPatchDeployment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()
@@ -469,12 +479,13 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PatchDeployments.PausePatchDeploymentRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()
@@ -509,12 +520,13 @@ public class HttpJsonOsConfigServiceStub extends OsConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PatchDeployments.ResumePatchDeploymentRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PatchDeployments.PatchDeployment>newBuilder()

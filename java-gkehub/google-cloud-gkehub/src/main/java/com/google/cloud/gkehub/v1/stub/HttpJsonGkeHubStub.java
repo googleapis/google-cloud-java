@@ -105,6 +105,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -142,6 +143,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -175,6 +177,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -207,6 +210,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetFeatureRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -243,12 +247,13 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                             serializer.putQueryParam(
                                 fields, "membershipId", request.getMembershipId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource(), false))
+                                  .toBody("resource", request.getResource(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -284,12 +289,13 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "featureId", request.getFeatureId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource(), false))
+                                  .toBody("resource", request.getResource(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -324,6 +330,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                             ProtoRestSerializer<DeleteMembershipRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -362,6 +369,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -400,12 +408,13 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource(), false))
+                                  .toBody("resource", request.getResource(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -441,12 +450,13 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("resource", request.getResource(), false))
+                                  .toBody("resource", request.getResource(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -491,6 +501,7 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
                             serializer.putQueryParam(fields, "proxy", request.getProxy());
                             serializer.putQueryParam(fields, "registry", request.getRegistry());
                             serializer.putQueryParam(fields, "version", request.getVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

@@ -135,6 +135,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "parent", request.getParent());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -169,6 +170,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAccessPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -202,12 +204,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AccessPolicy> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -244,12 +247,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             ProtoRestSerializer<UpdateAccessPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policy", request.getPolicy(), false))
+                                  .toBody("policy", request.getPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -284,6 +288,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteAccessPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -325,6 +330,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                                 fields, "accessLevelFormat", request.getAccessLevelFormatValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -361,6 +367,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "accessLevelFormat", request.getAccessLevelFormatValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -395,12 +402,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateAccessLevelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("accessLevel", request.getAccessLevel(), false))
+                                  .toBody("accessLevel", request.getAccessLevel(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -437,12 +445,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             ProtoRestSerializer<UpdateAccessLevelRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("accessLevel", request.getAccessLevel(), false))
+                                  .toBody("accessLevel", request.getAccessLevel(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -477,6 +486,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteAccessLevelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -514,12 +524,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ReplaceAccessLevelsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -558,6 +569,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -592,6 +604,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetServicePerimeterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -626,12 +639,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateServicePerimeterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servicePerimeter", request.getServicePerimeter(), false))
+                                  .toBody("servicePerimeter", request.getServicePerimeter(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -670,12 +684,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             ProtoRestSerializer<UpdateServicePerimeterRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servicePerimeter", request.getServicePerimeter(), false))
+                                  .toBody("servicePerimeter", request.getServicePerimeter(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -710,6 +725,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteServicePerimeterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -747,12 +763,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ReplaceServicePerimetersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -787,12 +804,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CommitServicePerimetersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -831,6 +849,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -865,6 +884,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetGcpUserAccessBindingRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -899,6 +919,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateGcpUserAccessBindingRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -907,7 +928,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                                   .toBody(
                                       "gcpUserAccessBinding",
                                       request.getGcpUserAccessBinding(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -946,6 +967,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             ProtoRestSerializer<UpdateGcpUserAccessBindingRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -954,7 +976,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                                   .toBody(
                                       "gcpUserAccessBinding",
                                       request.getGcpUserAccessBinding(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -989,6 +1011,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteGcpUserAccessBindingRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1026,12 +1049,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1063,12 +1087,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1103,12 +1128,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

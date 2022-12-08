@@ -77,6 +77,8 @@ public final class DatabaseConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Cloud SQL machine type used by Airflow database.
    * It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
    * or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+   * Supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -102,6 +104,8 @@ public final class DatabaseConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Cloud SQL machine type used by Airflow database.
    * It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
    * or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+   * Supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -468,6 +472,8 @@ public final class DatabaseConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cloud SQL machine type used by Airflow database.
      * It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
      * or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+     * Supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -492,6 +498,8 @@ public final class DatabaseConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cloud SQL machine type used by Airflow database.
      * It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
      * or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+     * Supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -516,6 +524,8 @@ public final class DatabaseConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cloud SQL machine type used by Airflow database.
      * It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
      * or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+     * Supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -539,6 +549,8 @@ public final class DatabaseConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cloud SQL machine type used by Airflow database.
      * It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
      * or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+     * Supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -558,6 +570,8 @@ public final class DatabaseConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Cloud SQL machine type used by Airflow database.
      * It has to be one of: db-n1-standard-2, db-n1-standard-4, db-n1-standard-8
      * or db-n1-standard-16. If not specified, db-n1-standard-2 will be used.
+     * Supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

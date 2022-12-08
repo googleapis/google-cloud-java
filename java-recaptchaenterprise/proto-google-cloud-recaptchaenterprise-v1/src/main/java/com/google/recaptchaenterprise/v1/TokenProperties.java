@@ -32,6 +32,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
   private TokenProperties() {
     invalidReason_ = 0;
     hostname_ = "";
+    androidPackageName_ = "";
+    iosBundleId_ = "";
     action_ = "";
   }
 
@@ -467,6 +469,108 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int ANDROID_PACKAGE_NAME_FIELD_NUMBER = 8;
+  private volatile java.lang.Object androidPackageName_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the Android package with which the token was generated (Android
+   * keys only).
+   * </pre>
+   *
+   * <code>string android_package_name = 8;</code>
+   *
+   * @return The androidPackageName.
+   */
+  @java.lang.Override
+  public java.lang.String getAndroidPackageName() {
+    java.lang.Object ref = androidPackageName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      androidPackageName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the Android package with which the token was generated (Android
+   * keys only).
+   * </pre>
+   *
+   * <code>string android_package_name = 8;</code>
+   *
+   * @return The bytes for androidPackageName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAndroidPackageNameBytes() {
+    java.lang.Object ref = androidPackageName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      androidPackageName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IOS_BUNDLE_ID_FIELD_NUMBER = 9;
+  private volatile java.lang.Object iosBundleId_;
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the iOS bundle with which the token was generated (iOS keys
+   * only).
+   * </pre>
+   *
+   * <code>string ios_bundle_id = 9;</code>
+   *
+   * @return The iosBundleId.
+   */
+  @java.lang.Override
+  public java.lang.String getIosBundleId() {
+    java.lang.Object ref = iosBundleId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      iosBundleId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the iOS bundle with which the token was generated (iOS keys
+   * only).
+   * </pre>
+   *
+   * <code>string ios_bundle_id = 9;</code>
+   *
+   * @return The bytes for iosBundleId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIosBundleIdBytes() {
+    java.lang.Object ref = iosBundleId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      iosBundleId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ACTION_FIELD_NUMBER = 5;
   private volatile java.lang.Object action_;
   /**
@@ -548,6 +652,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, action_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidPackageName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, androidPackageName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iosBundleId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, iosBundleId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -575,6 +685,12 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, action_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(androidPackageName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, androidPackageName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iosBundleId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, iosBundleId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -598,6 +714,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
     if (!getHostname().equals(other.getHostname())) return false;
+    if (!getAndroidPackageName().equals(other.getAndroidPackageName())) return false;
+    if (!getIosBundleId().equals(other.getIosBundleId())) return false;
     if (!getAction().equals(other.getAction())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -620,6 +738,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + HOSTNAME_FIELD_NUMBER;
     hash = (53 * hash) + getHostname().hashCode();
+    hash = (37 * hash) + ANDROID_PACKAGE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAndroidPackageName().hashCode();
+    hash = (37 * hash) + IOS_BUNDLE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getIosBundleId().hashCode();
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + getAction().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -764,6 +886,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       }
       hostname_ = "";
 
+      androidPackageName_ = "";
+
+      iosBundleId_ = "";
+
       action_ = "";
 
       return this;
@@ -801,6 +927,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         result.createTime_ = createTimeBuilder_.build();
       }
       result.hostname_ = hostname_;
+      result.androidPackageName_ = androidPackageName_;
+      result.iosBundleId_ = iosBundleId_;
       result.action_ = action_;
       onBuilt();
       return result;
@@ -865,6 +993,14 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
         hostname_ = other.hostname_;
         onChanged();
       }
+      if (!other.getAndroidPackageName().isEmpty()) {
+        androidPackageName_ = other.androidPackageName_;
+        onChanged();
+      }
+      if (!other.getIosBundleId().isEmpty()) {
+        iosBundleId_ = other.iosBundleId_;
+        onChanged();
+      }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
         onChanged();
@@ -925,6 +1061,18 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
 
                 break;
               } // case 42
+            case 66:
+              {
+                androidPackageName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                iosBundleId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1390,6 +1538,228 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       hostname_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object androidPackageName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Android package with which the token was generated (Android
+     * keys only).
+     * </pre>
+     *
+     * <code>string android_package_name = 8;</code>
+     *
+     * @return The androidPackageName.
+     */
+    public java.lang.String getAndroidPackageName() {
+      java.lang.Object ref = androidPackageName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        androidPackageName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Android package with which the token was generated (Android
+     * keys only).
+     * </pre>
+     *
+     * <code>string android_package_name = 8;</code>
+     *
+     * @return The bytes for androidPackageName.
+     */
+    public com.google.protobuf.ByteString getAndroidPackageNameBytes() {
+      java.lang.Object ref = androidPackageName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        androidPackageName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Android package with which the token was generated (Android
+     * keys only).
+     * </pre>
+     *
+     * <code>string android_package_name = 8;</code>
+     *
+     * @param value The androidPackageName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAndroidPackageName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      androidPackageName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Android package with which the token was generated (Android
+     * keys only).
+     * </pre>
+     *
+     * <code>string android_package_name = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAndroidPackageName() {
+
+      androidPackageName_ = getDefaultInstance().getAndroidPackageName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the Android package with which the token was generated (Android
+     * keys only).
+     * </pre>
+     *
+     * <code>string android_package_name = 8;</code>
+     *
+     * @param value The bytes for androidPackageName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAndroidPackageNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      androidPackageName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object iosBundleId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the iOS bundle with which the token was generated (iOS keys
+     * only).
+     * </pre>
+     *
+     * <code>string ios_bundle_id = 9;</code>
+     *
+     * @return The iosBundleId.
+     */
+    public java.lang.String getIosBundleId() {
+      java.lang.Object ref = iosBundleId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iosBundleId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the iOS bundle with which the token was generated (iOS keys
+     * only).
+     * </pre>
+     *
+     * <code>string ios_bundle_id = 9;</code>
+     *
+     * @return The bytes for iosBundleId.
+     */
+    public com.google.protobuf.ByteString getIosBundleIdBytes() {
+      java.lang.Object ref = iosBundleId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        iosBundleId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the iOS bundle with which the token was generated (iOS keys
+     * only).
+     * </pre>
+     *
+     * <code>string ios_bundle_id = 9;</code>
+     *
+     * @param value The iosBundleId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIosBundleId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      iosBundleId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the iOS bundle with which the token was generated (iOS keys
+     * only).
+     * </pre>
+     *
+     * <code>string ios_bundle_id = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIosBundleId() {
+
+      iosBundleId_ = getDefaultInstance().getIosBundleId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the iOS bundle with which the token was generated (iOS keys
+     * only).
+     * </pre>
+     *
+     * <code>string ios_bundle_id = 9;</code>
+     *
+     * @param value The bytes for iosBundleId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIosBundleIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      iosBundleId_ = value;
       onChanged();
       return this;
     }

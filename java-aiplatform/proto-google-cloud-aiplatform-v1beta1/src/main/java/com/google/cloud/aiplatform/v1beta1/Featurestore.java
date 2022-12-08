@@ -2314,6 +2314,30 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int ONLINE_STORAGE_TTL_DAYS_FIELD_NUMBER = 13;
+  private int onlineStorageTtlDays_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TTL in days for feature values that will be stored in online serving
+   * storage. The Feature Store online storage periodically removes obsolete
+   * feature values older than `online_storage_ttl_days` since the feature
+   * generation time.
+   * Note that `online_storage_ttl_days` should be less than or equal to
+   * `offline_storage_ttl_days` for each EntityType under a featurestore.
+   * If not set, default to 4000 days
+   * </pre>
+   *
+   * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The onlineStorageTtlDays.
+   */
+  @java.lang.Override
+  public int getOnlineStorageTtlDays() {
+    return onlineStorageTtlDays_;
+  }
+
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 10;
   private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
   /**
@@ -2409,6 +2433,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       output.writeMessage(10, getEncryptionSpec());
     }
+    if (onlineStorageTtlDays_ != 0) {
+      output.writeInt32(13, onlineStorageTtlDays_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2450,6 +2477,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEncryptionSpec());
     }
+    if (onlineStorageTtlDays_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, onlineStorageTtlDays_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2482,6 +2512,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       if (!getOnlineServingConfig().equals(other.getOnlineServingConfig())) return false;
     }
     if (state_ != other.state_) return false;
+    if (getOnlineStorageTtlDays() != other.getOnlineStorageTtlDays()) return false;
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
@@ -2519,6 +2550,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + ONLINE_STORAGE_TTL_DAYS_FIELD_NUMBER;
+    hash = (53 * hash) + getOnlineStorageTtlDays();
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
@@ -2708,6 +2741,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       }
       state_ = 0;
 
+      onlineStorageTtlDays_ = 0;
+
       if (encryptionSpecBuilder_ == null) {
         encryptionSpec_ = null;
       } else {
@@ -2762,6 +2797,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         result.onlineServingConfig_ = onlineServingConfigBuilder_.build();
       }
       result.state_ = state_;
+      result.onlineStorageTtlDays_ = onlineStorageTtlDays_;
       if (encryptionSpecBuilder_ == null) {
         result.encryptionSpec_ = encryptionSpec_;
       } else {
@@ -2837,6 +2873,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.getOnlineStorageTtlDays() != 0) {
+        setOnlineStorageTtlDays(other.getOnlineStorageTtlDays());
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
@@ -2921,6 +2960,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 82
+            case 104:
+              {
+                onlineStorageTtlDays_ = input.readInt32();
+
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4118,6 +4163,76 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
 
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int onlineStorageTtlDays_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TTL in days for feature values that will be stored in online serving
+     * storage. The Feature Store online storage periodically removes obsolete
+     * feature values older than `online_storage_ttl_days` since the feature
+     * generation time.
+     * Note that `online_storage_ttl_days` should be less than or equal to
+     * `offline_storage_ttl_days` for each EntityType under a featurestore.
+     * If not set, default to 4000 days
+     * </pre>
+     *
+     * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The onlineStorageTtlDays.
+     */
+    @java.lang.Override
+    public int getOnlineStorageTtlDays() {
+      return onlineStorageTtlDays_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TTL in days for feature values that will be stored in online serving
+     * storage. The Feature Store online storage periodically removes obsolete
+     * feature values older than `online_storage_ttl_days` since the feature
+     * generation time.
+     * Note that `online_storage_ttl_days` should be less than or equal to
+     * `offline_storage_ttl_days` for each EntityType under a featurestore.
+     * If not set, default to 4000 days
+     * </pre>
+     *
+     * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The onlineStorageTtlDays to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOnlineStorageTtlDays(int value) {
+
+      onlineStorageTtlDays_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TTL in days for feature values that will be stored in online serving
+     * storage. The Feature Store online storage periodically removes obsolete
+     * feature values older than `online_storage_ttl_days` since the feature
+     * generation time.
+     * Note that `online_storage_ttl_days` should be less than or equal to
+     * `offline_storage_ttl_days` for each EntityType under a featurestore.
+     * If not set, default to 4000 days
+     * </pre>
+     *
+     * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOnlineStorageTtlDays() {
+
+      onlineStorageTtlDays_ = 0;
       onChanged();
       return this;
     }

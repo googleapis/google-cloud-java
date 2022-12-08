@@ -21,6 +21,7 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataI
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.SearchDataItemsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -53,6 +54,7 @@ import com.google.cloud.aiplatform.v1beta1.AnnotationSpec;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.DataItem;
+import com.google.cloud.aiplatform.v1beta1.DataItemView;
 import com.google.cloud.aiplatform.v1beta1.Dataset;
 import com.google.cloud.aiplatform.v1beta1.DeleteDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -73,6 +75,8 @@ import com.google.cloud.aiplatform.v1beta1.ListDatasetsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesResponse;
 import com.google.cloud.aiplatform.v1beta1.SavedQuery;
+import com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest;
+import com.google.cloud.aiplatform.v1beta1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -157,6 +161,9 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   private final PagedCallSettings<
           ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
       listDataItemsSettings;
+  private final PagedCallSettings<
+          SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>
+      searchDataItemsSettings;
   private final PagedCallSettings<
           ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
       listSavedQueriesSettings;
@@ -243,6 +250,45 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               return payload.getDataItemsList() == null
                   ? ImmutableList.<DataItem>of()
                   : payload.getDataItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchDataItemsRequest, SearchDataItemsResponse, DataItemView>
+      SEARCH_DATA_ITEMS_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchDataItemsRequest injectToken(
+                SearchDataItemsRequest payload, String token) {
+              return SearchDataItemsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchDataItemsRequest injectPageSize(
+                SearchDataItemsRequest payload, int pageSize) {
+              return SearchDataItemsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchDataItemsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchDataItemsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DataItemView> extractResources(SearchDataItemsResponse payload) {
+              return payload.getDataItemViewsList() == null
+                  ? ImmutableList.<DataItemView>of()
+                  : payload.getDataItemViewsList();
             }
           };
 
@@ -395,6 +441,25 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           };
 
   private static final PagedListResponseFactory<
+          SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>
+      SEARCH_DATA_ITEMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchDataItemsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchDataItemsRequest, SearchDataItemsResponse> callable,
+                SearchDataItemsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchDataItemsResponse> futureResponse) {
+              PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_DATA_ITEMS_PAGE_STR_DESC, request, context);
+              return SearchDataItemsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
       LIST_SAVED_QUERIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -511,6 +576,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   public PagedCallSettings<ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
       listDataItemsSettings() {
     return listDataItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchDataItems. */
+  public PagedCallSettings<
+          SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>
+      searchDataItemsSettings() {
+    return searchDataItemsSettings;
   }
 
   /** Returns the object with the settings used for calls to listSavedQueries. */
@@ -646,6 +718,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     exportDataSettings = settingsBuilder.exportDataSettings().build();
     exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
     listDataItemsSettings = settingsBuilder.listDataItemsSettings().build();
+    searchDataItemsSettings = settingsBuilder.searchDataItemsSettings().build();
     listSavedQueriesSettings = settingsBuilder.listSavedQueriesSettings().build();
     getAnnotationSpecSettings = settingsBuilder.getAnnotationSpecSettings().build();
     listAnnotationsSettings = settingsBuilder.listAnnotationsSettings().build();
@@ -683,6 +756,9 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     private final PagedCallSettings.Builder<
             ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
         listDataItemsSettings;
+    private final PagedCallSettings.Builder<
+            SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>
+        searchDataItemsSettings;
     private final PagedCallSettings.Builder<
             ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
         listSavedQueriesSettings;
@@ -748,6 +824,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportDataOperationSettings = OperationCallSettings.newBuilder();
       listDataItemsSettings = PagedCallSettings.newBuilder(LIST_DATA_ITEMS_PAGE_STR_FACT);
+      searchDataItemsSettings = PagedCallSettings.newBuilder(SEARCH_DATA_ITEMS_PAGE_STR_FACT);
       listSavedQueriesSettings = PagedCallSettings.newBuilder(LIST_SAVED_QUERIES_PAGE_STR_FACT);
       getAnnotationSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnnotationsSettings = PagedCallSettings.newBuilder(LIST_ANNOTATIONS_PAGE_STR_FACT);
@@ -767,6 +844,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               importDataSettings,
               exportDataSettings,
               listDataItemsSettings,
+              searchDataItemsSettings,
               listSavedQueriesSettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
@@ -793,6 +871,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       exportDataSettings = settings.exportDataSettings.toBuilder();
       exportDataOperationSettings = settings.exportDataOperationSettings.toBuilder();
       listDataItemsSettings = settings.listDataItemsSettings.toBuilder();
+      searchDataItemsSettings = settings.searchDataItemsSettings.toBuilder();
       listSavedQueriesSettings = settings.listSavedQueriesSettings.toBuilder();
       getAnnotationSpecSettings = settings.getAnnotationSpecSettings.toBuilder();
       listAnnotationsSettings = settings.listAnnotationsSettings.toBuilder();
@@ -812,6 +891,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               importDataSettings,
               exportDataSettings,
               listDataItemsSettings,
+              searchDataItemsSettings,
               listSavedQueriesSettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
@@ -875,6 +955,11 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .listDataItemsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .searchDataItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listSavedQueriesSettings()
@@ -1108,6 +1193,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
             ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
         listDataItemsSettings() {
       return listDataItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchDataItems. */
+    public PagedCallSettings.Builder<
+            SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>
+        searchDataItemsSettings() {
+      return searchDataItemsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSavedQueries. */

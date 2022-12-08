@@ -64,7 +64,6 @@ public interface ScoreMetricsOrBuilder
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -78,7 +77,6 @@ public interface ScoreMetricsOrBuilder
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -96,7 +94,6 @@ public interface ScoreMetricsOrBuilder
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -111,7 +108,6 @@ public interface ScoreMetricsOrBuilder
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -130,7 +126,6 @@ public interface ScoreMetricsOrBuilder
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>

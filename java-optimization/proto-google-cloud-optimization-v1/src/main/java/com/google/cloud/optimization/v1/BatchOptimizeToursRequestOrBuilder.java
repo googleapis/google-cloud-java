@@ -56,8 +56,8 @@ public interface BatchOptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -70,8 +70,8 @@ public interface BatchOptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -84,8 +84,8 @@ public interface BatchOptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -97,8 +97,8 @@ public interface BatchOptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -113,8 +113,8 @@ public interface BatchOptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>

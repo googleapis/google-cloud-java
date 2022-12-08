@@ -81,12 +81,13 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSshPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sshPublicKey", request.getSshPublicKey(), false))
+                                  .toBody("sshPublicKey", request.getSshPublicKey(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<OsLoginProto.SshPublicKey>newBuilder()
@@ -117,6 +118,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeletePosixAccountRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -150,6 +152,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSshPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -185,6 +188,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "projectId", request.getProjectId());
                             serializer.putQueryParam(fields, "systemId", request.getSystemId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -218,6 +222,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSshPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -252,12 +257,13 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             ProtoRestSerializer<ImportSshPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "projectId", request.getProjectId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sshPublicKey", request.getSshPublicKey(), false))
+                                  .toBody("sshPublicKey", request.getSshPublicKey(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ImportSshPublicKeyResponse>newBuilder()
@@ -289,12 +295,13 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                             ProtoRestSerializer<UpdateSshPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("sshPublicKey", request.getSshPublicKey(), false))
+                                  .toBody("sshPublicKey", request.getSshPublicKey(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<OsLoginProto.SshPublicKey>newBuilder()

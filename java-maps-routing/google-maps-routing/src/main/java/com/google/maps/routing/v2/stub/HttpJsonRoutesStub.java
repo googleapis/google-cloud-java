@@ -74,12 +74,13 @@ public class HttpJsonRoutesStub extends RoutesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ComputeRoutesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ComputeRoutesResponse>newBuilder()
@@ -109,12 +110,13 @@ public class HttpJsonRoutesStub extends RoutesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ComputeRouteMatrixRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RouteMatrixElement>newBuilder()

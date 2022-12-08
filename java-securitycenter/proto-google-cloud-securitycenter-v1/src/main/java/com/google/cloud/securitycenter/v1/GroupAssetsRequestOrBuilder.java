@@ -27,7 +27,7 @@ public interface GroupAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization to groupBy. Its format is
+   * Required. The name of the parent to group the assets by. Its format is
    * "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
@@ -43,7 +43,7 @@ public interface GroupAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization to groupBy. Its format is
+   * Required. The name of the parent to group the assets by. Its format is
    * "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>

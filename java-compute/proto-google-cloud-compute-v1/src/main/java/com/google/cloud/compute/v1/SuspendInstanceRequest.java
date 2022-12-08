@@ -71,6 +71,39 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
   }
 
   private int bitField0_;
+  public static final int DISCARD_LOCAL_SSD_FIELD_NUMBER = 319517903;
+  private boolean discardLocalSsd_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, discard the contents of any attached localSSD partitions. Default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return Whether the discardLocalSsd field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiscardLocalSsd() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, discard the contents of any attached localSSD partitions. Default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return The discardLocalSsd.
+   */
+  @java.lang.Override
+  public boolean getDiscardLocalSsd() {
+    return discardLocalSsd_;
+  }
+
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
   private volatile java.lang.Object instance_;
   /**
@@ -188,7 +221,7 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasRequestId() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -310,11 +343,14 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(319517903, discardLocalSsd_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -331,11 +367,14 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(319517903, discardLocalSsd_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -353,6 +392,10 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.SuspendInstanceRequest other =
         (com.google.cloud.compute.v1.SuspendInstanceRequest) obj;
 
+    if (hasDiscardLocalSsd() != other.hasDiscardLocalSsd()) return false;
+    if (hasDiscardLocalSsd()) {
+      if (getDiscardLocalSsd() != other.getDiscardLocalSsd()) return false;
+    }
     if (!getInstance().equals(other.getInstance())) return false;
     if (!getProject().equals(other.getProject())) return false;
     if (hasRequestId() != other.hasRequestId()) return false;
@@ -371,6 +414,10 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDiscardLocalSsd()) {
+      hash = (37 * hash) + DISCARD_LOCAL_SSD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDiscardLocalSsd());
+    }
     hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getInstance().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
@@ -519,12 +566,14 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      discardLocalSsd_ = false;
+      bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = "";
 
       project_ = "";
 
       requestId_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       zone_ = "";
 
       return this;
@@ -556,10 +605,14 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
           new com.google.cloud.compute.v1.SuspendInstanceRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.discardLocalSsd_ = discardLocalSsd_;
+        to_bitField0_ |= 0x00000001;
+      }
       result.instance_ = instance_;
       result.project_ = project_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
       }
       result.requestId_ = requestId_;
       result.zone_ = zone_;
@@ -614,6 +667,9 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.SuspendInstanceRequest other) {
       if (other == com.google.cloud.compute.v1.SuspendInstanceRequest.getDefaultInstance())
         return this;
+      if (other.hasDiscardLocalSsd()) {
+        setDiscardLocalSsd(other.getDiscardLocalSsd());
+      }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
         onChanged();
@@ -623,7 +679,7 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
         onChanged();
       }
       if (other.hasRequestId()) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         requestId_ = other.requestId_;
         onChanged();
       }
@@ -672,7 +728,7 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 296879706
             case 1820481738:
@@ -681,6 +737,12 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
 
                 break;
               } // case 1820481738
+            case -1738824072:
+              {
+                discardLocalSsd_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -1738824072
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -699,6 +761,73 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
     }
 
     private int bitField0_;
+
+    private boolean discardLocalSsd_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, discard the contents of any attached localSSD partitions. Default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @return Whether the discardLocalSsd field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiscardLocalSsd() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, discard the contents of any attached localSSD partitions. Default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @return The discardLocalSsd.
+     */
+    @java.lang.Override
+    public boolean getDiscardLocalSsd() {
+      return discardLocalSsd_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, discard the contents of any attached localSSD partitions. Default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @param value The discardLocalSsd to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiscardLocalSsd(boolean value) {
+      bitField0_ |= 0x00000001;
+      discardLocalSsd_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, discard the contents of any attached localSSD partitions. Default value is false.
+     * </pre>
+     *
+     * <code>optional bool discard_local_ssd = 319517903;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiscardLocalSsd() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      discardLocalSsd_ = false;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object instance_ = "";
     /**
@@ -935,7 +1064,7 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -997,7 +1126,7 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;
@@ -1014,7 +1143,7 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
@@ -1036,7 +1165,7 @@ public final class SuspendInstanceRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       requestId_ = value;
       onChanged();
       return this;

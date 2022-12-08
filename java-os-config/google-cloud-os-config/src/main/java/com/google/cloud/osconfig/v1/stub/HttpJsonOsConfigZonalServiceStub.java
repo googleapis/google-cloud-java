@@ -111,13 +111,14 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "osPolicyAssignmentId", request.getOsPolicyAssignmentId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "osPolicyAssignment", request.getOsPolicyAssignment(), false))
+                                      "osPolicyAssignment", request.getOsPolicyAssignment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -156,13 +157,14 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             ProtoRestSerializer<UpdateOSPolicyAssignmentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "osPolicyAssignment", request.getOsPolicyAssignment(), false))
+                                      "osPolicyAssignment", request.getOsPolicyAssignment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -197,6 +199,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetOSPolicyAssignmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -235,6 +238,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -274,6 +278,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -309,6 +314,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteOSPolicyAssignmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -348,6 +354,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetOSPolicyAssignmentReportRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -388,6 +395,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -423,6 +431,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             ProtoRestSerializer<GetInventoryRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -460,6 +469,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -494,6 +504,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetVulnerabilityReportRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -533,6 +544,7 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

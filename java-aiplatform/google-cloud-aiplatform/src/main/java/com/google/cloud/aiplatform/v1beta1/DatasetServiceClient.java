@@ -1336,6 +1336,141 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Searches DataItems in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   SearchDataItemsRequest request =
+   *       SearchDataItemsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setSavedQuery(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .setDataLabelingJob("dataLabelingJob951814757")
+   *           .setDataItemFilter("dataItemFilter1487804341")
+   *           .setAnnotationsFilter("annotationsFilter-583841860")
+   *           .addAllAnnotationFilters(new ArrayList<String>())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setAnnotationsLimit(134561504)
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (DataItemView element : datasetServiceClient.searchDataItems(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchDataItemsPagedResponse searchDataItems(SearchDataItemsRequest request) {
+    return searchDataItemsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches DataItems in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   SearchDataItemsRequest request =
+   *       SearchDataItemsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setSavedQuery(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .setDataLabelingJob("dataLabelingJob951814757")
+   *           .setDataItemFilter("dataItemFilter1487804341")
+   *           .setAnnotationsFilter("annotationsFilter-583841860")
+   *           .addAllAnnotationFilters(new ArrayList<String>())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setAnnotationsLimit(134561504)
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<DataItemView> future =
+   *       datasetServiceClient.searchDataItemsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DataItemView element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchDataItemsRequest, SearchDataItemsPagedResponse>
+      searchDataItemsPagedCallable() {
+    return stub.searchDataItemsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches DataItems in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   SearchDataItemsRequest request =
+   *       SearchDataItemsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setSavedQuery(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .setDataLabelingJob("dataLabelingJob951814757")
+   *           .setDataItemFilter("dataItemFilter1487804341")
+   *           .setAnnotationsFilter("annotationsFilter-583841860")
+   *           .addAllAnnotationFilters(new ArrayList<String>())
+   *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setAnnotationsLimit(134561504)
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     SearchDataItemsResponse response =
+   *         datasetServiceClient.searchDataItemsCallable().call(request);
+   *     for (DataItemView element : response.getDataItemViewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchDataItemsRequest, SearchDataItemsResponse>
+      searchDataItemsCallable() {
+    return stub.searchDataItemsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists SavedQueries in a Dataset.
    *
    * <p>Sample code:
@@ -2347,6 +2482,83 @@ public class DatasetServiceClient implements BackgroundResource {
     protected ListDataItemsFixedSizeCollection createCollection(
         List<ListDataItemsPage> pages, int collectionSize) {
       return new ListDataItemsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchDataItemsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchDataItemsRequest,
+          SearchDataItemsResponse,
+          DataItemView,
+          SearchDataItemsPage,
+          SearchDataItemsFixedSizeCollection> {
+
+    public static ApiFuture<SearchDataItemsPagedResponse> createAsync(
+        PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView> context,
+        ApiFuture<SearchDataItemsResponse> futureResponse) {
+      ApiFuture<SearchDataItemsPage> futurePage =
+          SearchDataItemsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchDataItemsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchDataItemsPagedResponse(SearchDataItemsPage page) {
+      super(page, SearchDataItemsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchDataItemsPage
+      extends AbstractPage<
+          SearchDataItemsRequest, SearchDataItemsResponse, DataItemView, SearchDataItemsPage> {
+
+    private SearchDataItemsPage(
+        PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView> context,
+        SearchDataItemsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchDataItemsPage createEmptyPage() {
+      return new SearchDataItemsPage(null, null);
+    }
+
+    @Override
+    protected SearchDataItemsPage createPage(
+        PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView> context,
+        SearchDataItemsResponse response) {
+      return new SearchDataItemsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchDataItemsPage> createPageAsync(
+        PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView> context,
+        ApiFuture<SearchDataItemsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchDataItemsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchDataItemsRequest,
+          SearchDataItemsResponse,
+          DataItemView,
+          SearchDataItemsPage,
+          SearchDataItemsFixedSizeCollection> {
+
+    private SearchDataItemsFixedSizeCollection(
+        List<SearchDataItemsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchDataItemsFixedSizeCollection createEmptyCollection() {
+      return new SearchDataItemsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchDataItemsFixedSizeCollection createCollection(
+        List<SearchDataItemsPage> pages, int collectionSize) {
+      return new SearchDataItemsFixedSizeCollection(pages, collectionSize);
     }
   }
 

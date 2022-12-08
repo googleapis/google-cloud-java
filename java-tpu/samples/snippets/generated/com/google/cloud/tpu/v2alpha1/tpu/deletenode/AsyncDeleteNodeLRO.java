@@ -19,10 +19,10 @@ package com.google.cloud.tpu.v2alpha1.samples;
 // [START tpu_v2alpha1_generated_Tpu_DeleteNode_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.tpu.v2alpha1.DeleteNodeRequest;
-import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.NodeName;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
+import com.google.protobuf.Empty;
 
 public class AsyncDeleteNodeLRO {
 
@@ -40,11 +40,12 @@ public class AsyncDeleteNodeLRO {
       DeleteNodeRequest request =
           DeleteNodeRequest.newBuilder()
               .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+              .setRequestId("requestId693933066")
               .build();
-      OperationFuture<Node, OperationMetadata> future =
+      OperationFuture<Empty, OperationMetadata> future =
           tpuClient.deleteNodeOperationCallable().futureCall(request);
       // Do something.
-      Node response = future.get();
+      future.get();
     }
   }
 }

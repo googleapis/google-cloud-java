@@ -79,12 +79,13 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -117,12 +118,13 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -156,12 +158,13 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -198,6 +201,7 @@ public class HttpJsonContainerAnalysisStub extends ContainerAnalysisStub {
                             ProtoRestSerializer<GetVulnerabilityOccurrencesSummaryRequest>
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

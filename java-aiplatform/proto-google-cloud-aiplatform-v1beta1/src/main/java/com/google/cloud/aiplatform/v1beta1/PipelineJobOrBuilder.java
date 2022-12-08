@@ -53,7 +53,7 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The display name of the Pipeline.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -67,7 +67,7 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * The display name of the Pipeline.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -575,8 +575,8 @@ public interface PipelineJobOrBuilder
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
    * Private services access must already be configured for the network.
-   * Pipeline job will apply the network configuration to the GCP resources
-   * being launched, if applied, such as Vertex AI
+   * Pipeline job will apply the network configuration to the Google Cloud
+   * resources being launched, if applied, such as Vertex AI
    * Training or Dataflow job. If left unspecified, the workload is not peered
    * with any network.
    * </pre>
@@ -599,8 +599,8 @@ public interface PipelineJobOrBuilder
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
    * Private services access must already be configured for the network.
-   * Pipeline job will apply the network configuration to the GCP resources
-   * being launched, if applied, such as Vertex AI
+   * Pipeline job will apply the network configuration to the Google Cloud
+   * resources being launched, if applied, such as Vertex AI
    * Training or Dataflow job. If left unspecified, the workload is not peered
    * with any network.
    * </pre>

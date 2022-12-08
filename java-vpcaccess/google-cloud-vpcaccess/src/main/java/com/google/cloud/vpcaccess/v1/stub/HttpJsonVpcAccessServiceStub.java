@@ -94,12 +94,13 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "connectorId", request.getConnectorId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connector", request.getConnector(), false))
+                                  .toBody("connector", request.getConnector(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -133,6 +134,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetConnectorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -168,6 +170,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -201,6 +204,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteConnectorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -237,6 +241,7 @@ public class HttpJsonVpcAccessServiceStub extends VpcAccessServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

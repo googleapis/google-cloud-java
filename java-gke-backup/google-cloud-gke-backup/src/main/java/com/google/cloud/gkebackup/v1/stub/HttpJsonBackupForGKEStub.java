@@ -129,12 +129,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "backupPlanId", request.getBackupPlanId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backupPlan", request.getBackupPlan(), false))
+                                  .toBody("backupPlan", request.getBackupPlan(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -172,6 +173,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -205,6 +207,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetBackupPlanRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -240,12 +243,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             ProtoRestSerializer<UpdateBackupPlanRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backupPlan", request.getBackupPlan(), false))
+                                  .toBody("backupPlan", request.getBackupPlan(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -280,6 +284,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             ProtoRestSerializer<DeleteBackupPlanRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -317,12 +322,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             ProtoRestSerializer<CreateBackupRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "backupId", request.getBackupId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backup", request.getBackup(), false))
+                                  .toBody("backup", request.getBackup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -360,6 +366,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -392,6 +399,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetBackupRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -427,12 +435,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             ProtoRestSerializer<UpdateBackupRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backup", request.getBackup(), false))
+                                  .toBody("backup", request.getBackup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -468,6 +477,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -508,6 +518,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -541,6 +552,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetVolumeBackupRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -576,12 +588,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "restorePlanId", request.getRestorePlanId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("restorePlan", request.getRestorePlan(), false))
+                                  .toBody("restorePlan", request.getRestorePlan(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -619,6 +632,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -652,6 +666,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetRestorePlanRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -687,12 +702,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             ProtoRestSerializer<UpdateRestorePlanRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("restorePlan", request.getRestorePlan(), false))
+                                  .toBody("restorePlan", request.getRestorePlan(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -728,6 +744,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -765,12 +782,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             ProtoRestSerializer<CreateRestoreRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "restoreId", request.getRestoreId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("restore", request.getRestore(), false))
+                                  .toBody("restore", request.getRestore(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -808,6 +826,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -840,6 +859,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetRestoreRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -875,12 +895,13 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             ProtoRestSerializer<UpdateRestoreRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("restore", request.getRestore(), false))
+                                  .toBody("restore", request.getRestore(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -916,6 +937,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -956,6 +978,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -989,6 +1012,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetVolumeRestoreRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

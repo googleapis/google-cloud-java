@@ -78,12 +78,13 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateAccessTokenRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateAccessTokenResponse>newBuilder()
@@ -114,12 +115,13 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateIdTokenRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateIdTokenResponse>newBuilder()
@@ -150,12 +152,13 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SignBlobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SignBlobResponse>newBuilder()
@@ -186,12 +189,13 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SignJwtRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SignJwtResponse>newBuilder()

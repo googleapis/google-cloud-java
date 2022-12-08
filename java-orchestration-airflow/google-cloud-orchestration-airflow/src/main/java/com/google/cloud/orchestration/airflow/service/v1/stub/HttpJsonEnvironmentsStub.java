@@ -39,7 +39,11 @@ import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -66,6 +70,8 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
           .add(Environment.getDescriptor())
           .add(Empty.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(LoadSnapshotResponse.getDescriptor())
+          .add(SaveSnapshotResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateEnvironmentRequest, Operation>
@@ -91,12 +97,13 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment(), false))
+                                  .toBody("environment", request.getEnvironment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -131,6 +138,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -167,6 +175,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -202,12 +211,13 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             ProtoRestSerializer<UpdateEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment(), false))
+                                  .toBody("environment", request.getEnvironment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -242,6 +252,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -253,6 +264,92 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteEnvironmentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<SaveSnapshotRequest, Operation>
+      saveSnapshotMethodDescriptor =
+          ApiMethodDescriptor.<SaveSnapshotRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/SaveSnapshot")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SaveSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:saveSnapshot",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SaveSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SaveSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SaveSnapshotRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<LoadSnapshotRequest, Operation>
+      loadSnapshotMethodDescriptor =
+          ApiMethodDescriptor.<LoadSnapshotRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/LoadSnapshot")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<LoadSnapshotRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:loadSnapshot",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<LoadSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<LoadSnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (LoadSnapshotRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -270,6 +367,12 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable;
   private final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable;
+  private final UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable;
+  private final OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationCallable;
+  private final UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable;
+  private final OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -342,6 +445,16 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
             .setMethodDescriptor(deleteEnvironmentMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
+        HttpJsonCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(saveSnapshotMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<LoadSnapshotRequest, Operation> loadSnapshotTransportSettings =
+        HttpJsonCallSettings.<LoadSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(loadSnapshotMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.createEnvironmentCallable =
         callableFactory.createUnaryCallable(
@@ -385,6 +498,24 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
             settings.deleteEnvironmentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.saveSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            saveSnapshotTransportSettings, settings.saveSnapshotSettings(), clientContext);
+    this.saveSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            saveSnapshotTransportSettings,
+            settings.saveSnapshotOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.loadSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            loadSnapshotTransportSettings, settings.loadSnapshotSettings(), clientContext);
+    this.loadSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            loadSnapshotTransportSettings,
+            settings.loadSnapshotOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -398,6 +529,8 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
     methodDescriptors.add(listEnvironmentsMethodDescriptor);
     methodDescriptors.add(updateEnvironmentMethodDescriptor);
     methodDescriptors.add(deleteEnvironmentMethodDescriptor);
+    methodDescriptors.add(saveSnapshotMethodDescriptor);
+    methodDescriptors.add(loadSnapshotMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -453,6 +586,28 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable() {
     return deleteEnvironmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable() {
+    return saveSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationCallable() {
+    return saveSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable() {
+    return loadSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationCallable() {
+    return loadSnapshotOperationCallable;
   }
 
   @Override

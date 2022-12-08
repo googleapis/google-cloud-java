@@ -98,6 +98,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -134,6 +135,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetInsightRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -171,12 +173,13 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MarkInsightAcceptedRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Insight>newBuilder()
@@ -214,6 +217,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -251,6 +255,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetRecommendationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -289,12 +294,13 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MarkRecommendationClaimedRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Recommendation>newBuilder()
@@ -330,12 +336,13 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MarkRecommendationSucceededRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Recommendation>newBuilder()
@@ -371,12 +378,13 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MarkRecommendationFailedRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Recommendation>newBuilder()
@@ -410,6 +418,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetRecommenderConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -452,13 +461,14 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "recommenderConfig", request.getRecommenderConfig(), false))
+                                      "recommenderConfig", request.getRecommenderConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RecommenderConfig>newBuilder()
@@ -492,6 +502,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetInsightTypeConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -534,13 +545,14 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "insightTypeConfig", request.getInsightTypeConfig(), false))
+                                      "insightTypeConfig", request.getInsightTypeConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InsightTypeConfig>newBuilder()

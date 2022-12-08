@@ -43,6 +43,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     metadataSchemaUri_ = "";
     etag_ = "";
+    metadataArtifact_ = "";
   }
 
   @java.lang.Override
@@ -138,7 +139,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -163,7 +164,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -190,10 +191,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The description.
    */
@@ -213,10 +214,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The bytes for description.
    */
@@ -674,6 +675,59 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     return getEncryptionSpec();
   }
 
+  public static final int METADATA_ARTIFACT_FIELD_NUMBER = 17;
+  private volatile java.lang.Object metadataArtifact_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Dataset. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadataArtifact.
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataArtifact() {
+    java.lang.Object ref = metadataArtifact_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadataArtifact_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in MetadataStore when
+   * creating the Dataset. The Artifact resource name pattern is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for metadataArtifact.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMetadataArtifactBytes() {
+    java.lang.Object ref = metadataArtifact_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      metadataArtifact_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -716,6 +770,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, description_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, metadataArtifact_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -763,6 +820,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, description_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, metadataArtifact_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -800,6 +860,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (!getMetadataArtifact().equals(other.getMetadataArtifact())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -841,6 +902,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + METADATA_ARTIFACT_FIELD_NUMBER;
+    hash = (53 * hash) + getMetadataArtifact().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1034,6 +1097,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      metadataArtifact_ = "";
+
       return this;
     }
 
@@ -1089,6 +1154,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
       }
+      result.metadataArtifact_ = metadataArtifact_;
       onBuilt();
       return result;
     }
@@ -1170,6 +1236,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (!other.getMetadataArtifact().isEmpty()) {
+        metadataArtifact_ = other.metadataArtifact_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1262,6 +1332,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 130
+            case 138:
+              {
+                metadataArtifact_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1393,7 +1469,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1417,7 +1493,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1441,7 +1517,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1464,7 +1540,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1483,7 +1559,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1508,10 +1584,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @return The description.
      */
@@ -1530,10 +1606,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @return The bytes for description.
      */
@@ -1552,10 +1628,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1573,10 +1649,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @return This builder for chaining.
      */
@@ -1590,10 +1666,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2848,6 +2924,122 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private java.lang.Object metadataArtifact_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Dataset. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The metadataArtifact.
+     */
+    public java.lang.String getMetadataArtifact() {
+      java.lang.Object ref = metadataArtifact_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataArtifact_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Dataset. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for metadataArtifact.
+     */
+    public com.google.protobuf.ByteString getMetadataArtifactBytes() {
+      java.lang.Object ref = metadataArtifact_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        metadataArtifact_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Dataset. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The metadataArtifact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataArtifact(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      metadataArtifact_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Dataset. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataArtifact() {
+
+      metadataArtifact_ = getDefaultInstance().getMetadataArtifact();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in MetadataStore when
+     * creating the Dataset. The Artifact resource name pattern is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for metadataArtifact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataArtifactBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      metadataArtifact_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

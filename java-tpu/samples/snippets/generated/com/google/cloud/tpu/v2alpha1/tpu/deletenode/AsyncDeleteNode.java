@@ -39,10 +39,11 @@ public class AsyncDeleteNode {
       DeleteNodeRequest request =
           DeleteNodeRequest.newBuilder()
               .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+              .setRequestId("requestId693933066")
               .build();
       ApiFuture<Operation> future = tpuClient.deleteNodeCallable().futureCall(request);
       // Do something.
-      Operation response = future.get();
+      future.get();
     }
   }
 }

@@ -87,12 +87,13 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PlaceOrderRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -126,6 +127,7 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetOrderRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -163,6 +165,7 @@ public class HttpJsonConsumerProcurementServiceStub extends ConsumerProcurementS
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

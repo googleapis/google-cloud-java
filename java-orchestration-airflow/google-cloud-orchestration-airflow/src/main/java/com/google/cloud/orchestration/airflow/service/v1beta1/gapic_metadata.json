@@ -25,8 +25,14 @@
             "ListEnvironments": {
               "methods": ["listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
             },
+            "LoadSnapshot": {
+              "methods": ["loadSnapshotAsync", "loadSnapshotOperationCallable", "loadSnapshotCallable"]
+            },
             "RestartWebServer": {
               "methods": ["restartWebServerAsync", "restartWebServerOperationCallable", "restartWebServerCallable"]
+            },
+            "SaveSnapshot": {
+              "methods": ["saveSnapshotAsync", "saveSnapshotOperationCallable", "saveSnapshotCallable"]
             },
             "UpdateEnvironment": {
               "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]

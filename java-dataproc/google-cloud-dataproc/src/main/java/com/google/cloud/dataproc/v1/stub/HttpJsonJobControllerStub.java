@@ -87,6 +87,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<SubmitJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
@@ -95,7 +96,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                               .toBody(
                                   "*",
                                   request.toBuilder().clearProjectId().clearRegion().build(),
-                                  false))
+                                  true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -127,6 +128,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SubmitJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -135,7 +137,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearProjectId().clearRegion().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -170,6 +172,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -211,6 +214,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                                 fields, "jobStateMatcher", request.getJobStateMatcherValue());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -246,11 +250,11 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                         ProtoRestSerializer<UpdateJobRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -282,6 +286,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CancelJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
@@ -295,7 +300,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                                       .clearProjectId()
                                       .clearRegion()
                                       .build(),
-                                  false))
+                                  true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -327,6 +332,7 @@ public class HttpJsonJobControllerStub extends JobControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)

@@ -21,6 +21,7 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataI
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.SearchDataItemsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -152,6 +153,13 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
   public PagedCallSettings<ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
       listDataItemsSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).listDataItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchDataItems. */
+  public PagedCallSettings<
+          SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>
+      searchDataItemsSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).searchDataItemsSettings();
   }
 
   /** Returns the object with the settings used for calls to listSavedQueries. */
@@ -366,6 +374,13 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
             ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
         listDataItemsSettings() {
       return getStubSettingsBuilder().listDataItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchDataItems. */
+    public PagedCallSettings.Builder<
+            SearchDataItemsRequest, SearchDataItemsResponse, SearchDataItemsPagedResponse>
+        searchDataItemsSettings() {
+      return getStubSettingsBuilder().searchDataItemsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSavedQueries. */

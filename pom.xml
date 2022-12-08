@@ -16,7 +16,6 @@
     <module>google-cloud-pom-parent</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
-    <module>java-addressvalidation</module>
     <module>java-aiplatform</module>
     <module>java-analytics-admin</module>
     <module>java-analytics-data</module>
@@ -98,10 +97,12 @@
     <module>java-language</module>
     <module>java-life-sciences</module>
     <module>java-managed-identities</module>
+    <module>java-maps-addressvalidation</module>
     <module>java-maps-routing</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
     <module>java-monitoring-dashboards</module>
+    <module>java-monitoring-metricsscope</module>
     <module>java-monitoring</module>
     <module>java-networkconnectivity</module>
     <module>java-network-management</module>

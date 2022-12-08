@@ -73,12 +73,13 @@ public class HttpJsonTraceServiceStub extends TraceServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchWriteSpansRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -106,12 +107,13 @@ public class HttpJsonTraceServiceStub extends TraceServiceStub {
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<Span> serializer = ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Span>newBuilder()

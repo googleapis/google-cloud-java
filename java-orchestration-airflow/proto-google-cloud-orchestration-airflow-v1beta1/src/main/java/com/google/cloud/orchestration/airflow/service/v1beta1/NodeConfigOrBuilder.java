@@ -40,6 +40,8 @@ public interface NodeConfigOrBuilder
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -64,6 +66,8 @@ public interface NodeConfigOrBuilder
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -94,6 +98,8 @@ public interface NodeConfigOrBuilder
    * type](/compute/docs/machine-types#sharedcore).
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -123,6 +129,8 @@ public interface NodeConfigOrBuilder
    * type](/compute/docs/machine-types#sharedcore).
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -217,8 +225,10 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
+   * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
    * If unspecified, defaults to 100GB. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 disk_size_gb = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -234,6 +244,8 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -248,6 +260,8 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -262,6 +276,8 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -277,6 +293,8 @@ public interface NodeConfigOrBuilder
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -323,6 +341,8 @@ public interface NodeConfigOrBuilder
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -338,6 +358,8 @@ public interface NodeConfigOrBuilder
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -353,6 +375,8 @@ public interface NodeConfigOrBuilder
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -369,6 +393,8 @@ public interface NodeConfigOrBuilder
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -434,6 +460,8 @@ public interface NodeConfigOrBuilder
    * For more information, see [Optimizing IP address allocation]
    * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 max_pods_per_node = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -441,4 +469,21 @@ public interface NodeConfigOrBuilder
    * @return The maxPodsPerNode.
    */
   int getMaxPodsPerNode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
+   * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
+   * all destination addresses, except between pods traffic.
+   * See:
+   * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
+   * </pre>
+   *
+   * <code>bool enable_ip_masq_agent = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableIpMasqAgent.
+   */
+  boolean getEnableIpMasqAgent();
 }

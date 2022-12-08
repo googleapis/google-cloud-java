@@ -47,6 +47,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     quotas_ = java.util.Collections.emptyList();
     selfLink_ = "";
+    vmDnsSetting_ = "";
     xpnProjectStatus_ = "";
   }
 
@@ -284,6 +285,143 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Project.VmDnsSetting}
+   */
+  public enum VmDnsSetting implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VM_DNS_SETTING = 0;</code>
+     */
+    UNDEFINED_VM_DNS_SETTING(0),
+    /** <code>GLOBAL_DEFAULT = 345419141;</code> */
+    GLOBAL_DEFAULT(345419141),
+    /** <code>UNSPECIFIED_VM_DNS_SETTING = 35691930;</code> */
+    UNSPECIFIED_VM_DNS_SETTING(35691930),
+    /** <code>ZONAL_DEFAULT = 368475782;</code> */
+    ZONAL_DEFAULT(368475782),
+    /** <code>ZONAL_ONLY = 521198951;</code> */
+    ZONAL_ONLY(521198951),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VM_DNS_SETTING = 0;</code>
+     */
+    public static final int UNDEFINED_VM_DNS_SETTING_VALUE = 0;
+    /** <code>GLOBAL_DEFAULT = 345419141;</code> */
+    public static final int GLOBAL_DEFAULT_VALUE = 345419141;
+    /** <code>UNSPECIFIED_VM_DNS_SETTING = 35691930;</code> */
+    public static final int UNSPECIFIED_VM_DNS_SETTING_VALUE = 35691930;
+    /** <code>ZONAL_DEFAULT = 368475782;</code> */
+    public static final int ZONAL_DEFAULT_VALUE = 368475782;
+    /** <code>ZONAL_ONLY = 521198951;</code> */
+    public static final int ZONAL_ONLY_VALUE = 521198951;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VmDnsSetting valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VmDnsSetting forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_VM_DNS_SETTING;
+        case 345419141:
+          return GLOBAL_DEFAULT;
+        case 35691930:
+          return UNSPECIFIED_VM_DNS_SETTING;
+        case 368475782:
+          return ZONAL_DEFAULT;
+        case 521198951:
+          return ZONAL_ONLY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VmDnsSetting> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VmDnsSetting> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<VmDnsSetting>() {
+          public VmDnsSetting findValueByNumber(int number) {
+            return VmDnsSetting.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Project.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final VmDnsSetting[] VALUES = values();
+
+    public static VmDnsSetting valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VmDnsSetting(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Project.VmDnsSetting)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
    * </pre>
    *
@@ -382,7 +520,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Project.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.Project.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final XpnProjectStatus[] VALUES = values();
@@ -1126,6 +1264,73 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         : usageExportLocation_;
   }
 
+  public static final int VM_DNS_SETTING_FIELD_NUMBER = 58856370;
+  private volatile java.lang.Object vmDnsSetting_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Check the VmDnsSetting enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string vm_dns_setting = 58856370;</code>
+   *
+   * @return Whether the vmDnsSetting field is set.
+   */
+  @java.lang.Override
+  public boolean hasVmDnsSetting() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Check the VmDnsSetting enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string vm_dns_setting = 58856370;</code>
+   *
+   * @return The vmDnsSetting.
+   */
+  @java.lang.Override
+  public java.lang.String getVmDnsSetting() {
+    java.lang.Object ref = vmDnsSetting_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vmDnsSetting_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Check the VmDnsSetting enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string vm_dns_setting = 58856370;</code>
+   *
+   * @return The bytes for vmDnsSetting.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVmDnsSettingBytes() {
+    java.lang.Object ref = vmDnsSetting_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      vmDnsSetting_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int XPN_PROJECT_STATUS_FIELD_NUMBER = 228419265;
   private volatile java.lang.Object xpnProjectStatus_;
   /**
@@ -1142,7 +1347,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasXpnProjectStatus() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1219,13 +1424,16 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 58856370, vmDnsSetting_);
+    }
     for (int i = 0; i < quotas_.size(); i++) {
       output.writeMessage(125341947, quotas_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(185794117, getCommonInstanceMetadata());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 228419265, xpnProjectStatus_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1269,6 +1477,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(58856370, vmDnsSetting_);
+    }
     for (int i = 0; i < quotas_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(125341947, quotas_.get(i));
     }
@@ -1277,7 +1488,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               185794117, getCommonInstanceMetadata());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(228419265, xpnProjectStatus_);
     }
@@ -1366,6 +1577,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     if (hasUsageExportLocation()) {
       if (!getUsageExportLocation().equals(other.getUsageExportLocation())) return false;
     }
+    if (hasVmDnsSetting() != other.hasVmDnsSetting()) return false;
+    if (hasVmDnsSetting()) {
+      if (!getVmDnsSetting().equals(other.getVmDnsSetting())) return false;
+    }
     if (hasXpnProjectStatus() != other.hasXpnProjectStatus()) return false;
     if (hasXpnProjectStatus()) {
       if (!getXpnProjectStatus().equals(other.getXpnProjectStatus())) return false;
@@ -1428,6 +1643,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     if (hasUsageExportLocation()) {
       hash = (37 * hash) + USAGE_EXPORT_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getUsageExportLocation().hashCode();
+    }
+    if (hasVmDnsSetting()) {
+      hash = (37 * hash) + VM_DNS_SETTING_FIELD_NUMBER;
+      hash = (53 * hash) + getVmDnsSetting().hashCode();
     }
     if (hasXpnProjectStatus()) {
       hash = (37 * hash) + XPN_PROJECT_STATUS_FIELD_NUMBER;
@@ -1618,8 +1837,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         usageExportLocationBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000800);
-      xpnProjectStatus_ = "";
+      vmDnsSetting_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
+      xpnProjectStatus_ = "";
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1712,6 +1933,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00000400;
+      }
+      result.vmDnsSetting_ = vmDnsSetting_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        to_bitField0_ |= 0x00000800;
       }
       result.xpnProjectStatus_ = xpnProjectStatus_;
       result.bitField0_ = to_bitField0_;
@@ -1845,8 +2070,13 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUsageExportLocation()) {
         mergeUsageExportLocation(other.getUsageExportLocation());
       }
-      if (other.hasXpnProjectStatus()) {
+      if (other.hasVmDnsSetting()) {
         bitField0_ |= 0x00001000;
+        vmDnsSetting_ = other.vmDnsSetting_;
+        onChanged();
+      }
+      if (other.hasXpnProjectStatus()) {
+        bitField0_ |= 0x00002000;
         xpnProjectStatus_ = other.xpnProjectStatus_;
         onChanged();
       }
@@ -1900,6 +2130,12 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 244202930
+            case 470850962:
+              {
+                vmDnsSetting_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 470850962
             case 1002735578:
               {
                 com.google.cloud.compute.v1.Quota m =
@@ -1923,7 +2159,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
             case 1827354122:
               {
                 xpnProjectStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1827354122
             case -1905269462:
@@ -3805,6 +4041,132 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       return usageExportLocationBuilder_;
     }
 
+    private java.lang.Object vmDnsSetting_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Check the VmDnsSetting enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string vm_dns_setting = 58856370;</code>
+     *
+     * @return Whether the vmDnsSetting field is set.
+     */
+    public boolean hasVmDnsSetting() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Check the VmDnsSetting enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string vm_dns_setting = 58856370;</code>
+     *
+     * @return The vmDnsSetting.
+     */
+    public java.lang.String getVmDnsSetting() {
+      java.lang.Object ref = vmDnsSetting_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vmDnsSetting_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Check the VmDnsSetting enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string vm_dns_setting = 58856370;</code>
+     *
+     * @return The bytes for vmDnsSetting.
+     */
+    public com.google.protobuf.ByteString getVmDnsSettingBytes() {
+      java.lang.Object ref = vmDnsSetting_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        vmDnsSetting_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Check the VmDnsSetting enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string vm_dns_setting = 58856370;</code>
+     *
+     * @param value The vmDnsSetting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVmDnsSetting(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      vmDnsSetting_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Check the VmDnsSetting enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string vm_dns_setting = 58856370;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVmDnsSetting() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      vmDnsSetting_ = getDefaultInstance().getVmDnsSetting();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Default internal DNS setting used by VMs running in this project.
+     * Check the VmDnsSetting enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string vm_dns_setting = 58856370;</code>
+     *
+     * @param value The bytes for vmDnsSetting to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVmDnsSettingBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00001000;
+      vmDnsSetting_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object xpnProjectStatus_ = "";
     /**
      *
@@ -3819,7 +4181,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the xpnProjectStatus field is set.
      */
     public boolean hasXpnProjectStatus() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3884,7 +4246,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       xpnProjectStatus_ = value;
       onChanged();
       return this;
@@ -3902,7 +4264,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearXpnProjectStatus() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       xpnProjectStatus_ = getDefaultInstance().getXpnProjectStatus();
       onChanged();
       return this;
@@ -3925,7 +4287,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       xpnProjectStatus_ = value;
       onChanged();
       return this;

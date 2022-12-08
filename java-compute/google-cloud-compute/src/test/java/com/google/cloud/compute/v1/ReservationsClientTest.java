@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -213,6 +214,7 @@ public class ReservationsClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .putAllResourcePolicies(new HashMap<String, String>())
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setShareSettings(ShareSettings.newBuilder().build())

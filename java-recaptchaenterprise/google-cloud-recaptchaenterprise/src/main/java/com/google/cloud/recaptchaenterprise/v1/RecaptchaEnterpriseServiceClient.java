@@ -947,6 +947,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   MigrateKeyRequest request =
    *       MigrateKeyRequest.newBuilder()
    *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setSkipBillingCheck(true)
    *           .build();
    *   Key response = recaptchaEnterpriseServiceClient.migrateKey(request);
    * }
@@ -979,6 +980,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   MigrateKeyRequest request =
    *       MigrateKeyRequest.newBuilder()
    *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setSkipBillingCheck(true)
    *           .build();
    *   ApiFuture<Key> future =
    *       recaptchaEnterpriseServiceClient.migrateKeyCallable().futureCall(request);

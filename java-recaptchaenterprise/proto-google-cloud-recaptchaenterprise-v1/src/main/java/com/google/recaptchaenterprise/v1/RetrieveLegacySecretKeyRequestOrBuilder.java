@@ -27,8 +27,8 @@ public interface RetrieveLegacySecretKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The public key name linked to the requested secret key in the format
-   * "projects/{project}/keys/{key}".
+   * Required. The public key name linked to the requested secret key in the
+   * format "projects/{project}/keys/{key}".
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface RetrieveLegacySecretKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The public key name linked to the requested secret key in the format
-   * "projects/{project}/keys/{key}".
+   * Required. The public key name linked to the requested secret key in the
+   * format "projects/{project}/keys/{key}".
    * </pre>
    *
    * <code>

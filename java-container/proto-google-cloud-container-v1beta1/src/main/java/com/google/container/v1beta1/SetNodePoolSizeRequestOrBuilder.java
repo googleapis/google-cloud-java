@@ -36,7 +36,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3740
+   *     google/container/v1beta1/cluster_service.proto;l=3745
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3740
+   *     google/container/v1beta1/cluster_service.proto;l=3745
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3749
+   *     google/container/v1beta1/cluster_service.proto;l=3754
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3749
+   *     google/container/v1beta1/cluster_service.proto;l=3754
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3756
+   *     google/container/v1beta1/cluster_service.proto;l=3761
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3756
+   *     google/container/v1beta1/cluster_service.proto;l=3761
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3763
+   *     google/container/v1beta1/cluster_service.proto;l=3768
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3763
+   *     google/container/v1beta1/cluster_service.proto;l=3768
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated

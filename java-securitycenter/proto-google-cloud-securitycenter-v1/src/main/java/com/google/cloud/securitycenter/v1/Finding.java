@@ -1790,7 +1790,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * Represents vulnerability-specific fields like CVE and CVS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -1807,7 +1807,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * Represents vulnerability-specific fields like CVE and CVS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -1826,7 +1826,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * Represents vulnerability-specific fields like CVE and CVS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -3071,6 +3071,54 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return files_.get(index);
   }
 
+  public static final int KERNEL_ROOTKIT_FIELD_NUMBER = 50;
+  private com.google.cloud.securitycenter.v1.KernelRootkit kernelRootkit_;
+  /**
+   *
+   *
+   * <pre>
+   * Kernel Rootkit signature.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+   *
+   * @return Whether the kernelRootkit field is set.
+   */
+  @java.lang.Override
+  public boolean hasKernelRootkit() {
+    return kernelRootkit_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kernel Rootkit signature.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+   *
+   * @return The kernelRootkit.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.KernelRootkit getKernelRootkit() {
+    return kernelRootkit_ == null
+        ? com.google.cloud.securitycenter.v1.KernelRootkit.getDefaultInstance()
+        : kernelRootkit_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kernel Rootkit signature.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.KernelRootkitOrBuilder getKernelRootkitOrBuilder() {
+    return getKernelRootkit();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3186,6 +3234,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < files_.size(); i++) {
       output.writeMessage(46, files_.get(i));
+    }
+    if (kernelRootkit_ != null) {
+      output.writeMessage(50, getKernelRootkit());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3326,6 +3377,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < files_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(46, files_.get(i));
     }
+    if (kernelRootkit_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getKernelRootkit());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3409,6 +3463,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!getDatabase().equals(other.getDatabase())) return false;
     }
     if (!getFilesList().equals(other.getFilesList())) return false;
+    if (hasKernelRootkit() != other.hasKernelRootkit()) return false;
+    if (hasKernelRootkit()) {
+      if (!getKernelRootkit().equals(other.getKernelRootkit())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3527,6 +3585,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (getFilesCount() > 0) {
       hash = (37 * hash) + FILES_FIELD_NUMBER;
       hash = (53 * hash) + getFilesList().hashCode();
+    }
+    if (hasKernelRootkit()) {
+      hash = (37 * hash) + KERNEL_ROOTKIT_FIELD_NUMBER;
+      hash = (53 * hash) + getKernelRootkit().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3838,6 +3900,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         filesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000100);
+      if (kernelRootkitBuilder_ == null) {
+        kernelRootkit_ = null;
+      } else {
+        kernelRootkit_ = null;
+        kernelRootkitBuilder_ = null;
+      }
       return this;
     }
 
@@ -3994,6 +4062,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.files_ = files_;
       } else {
         result.files_ = filesBuilder_.build();
+      }
+      if (kernelRootkitBuilder_ == null) {
+        result.kernelRootkit_ = kernelRootkit_;
+      } else {
+        result.kernelRootkit_ = kernelRootkitBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4294,6 +4367,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasKernelRootkit()) {
+        mergeKernelRootkit(other.getKernelRootkit());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4586,6 +4662,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 370
+            case 402:
+              {
+                input.readMessage(getKernelRootkitFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 402
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6788,7 +6870,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6804,7 +6886,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6826,7 +6908,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6850,7 +6932,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6872,7 +6954,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6900,7 +6982,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6922,7 +7004,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6938,7 +7020,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6958,7 +7040,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability specific fields like cve, cvss scores etc.
+     * Represents vulnerability-specific fields like CVE and CVS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -11202,6 +11284,192 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         files_ = null;
       }
       return filesBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.KernelRootkit kernelRootkit_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.KernelRootkit,
+            com.google.cloud.securitycenter.v1.KernelRootkit.Builder,
+            com.google.cloud.securitycenter.v1.KernelRootkitOrBuilder>
+        kernelRootkitBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     *
+     * @return Whether the kernelRootkit field is set.
+     */
+    public boolean hasKernelRootkit() {
+      return kernelRootkitBuilder_ != null || kernelRootkit_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     *
+     * @return The kernelRootkit.
+     */
+    public com.google.cloud.securitycenter.v1.KernelRootkit getKernelRootkit() {
+      if (kernelRootkitBuilder_ == null) {
+        return kernelRootkit_ == null
+            ? com.google.cloud.securitycenter.v1.KernelRootkit.getDefaultInstance()
+            : kernelRootkit_;
+      } else {
+        return kernelRootkitBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     */
+    public Builder setKernelRootkit(com.google.cloud.securitycenter.v1.KernelRootkit value) {
+      if (kernelRootkitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kernelRootkit_ = value;
+        onChanged();
+      } else {
+        kernelRootkitBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     */
+    public Builder setKernelRootkit(
+        com.google.cloud.securitycenter.v1.KernelRootkit.Builder builderForValue) {
+      if (kernelRootkitBuilder_ == null) {
+        kernelRootkit_ = builderForValue.build();
+        onChanged();
+      } else {
+        kernelRootkitBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     */
+    public Builder mergeKernelRootkit(com.google.cloud.securitycenter.v1.KernelRootkit value) {
+      if (kernelRootkitBuilder_ == null) {
+        if (kernelRootkit_ != null) {
+          kernelRootkit_ =
+              com.google.cloud.securitycenter.v1.KernelRootkit.newBuilder(kernelRootkit_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kernelRootkit_ = value;
+        }
+        onChanged();
+      } else {
+        kernelRootkitBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     */
+    public Builder clearKernelRootkit() {
+      if (kernelRootkitBuilder_ == null) {
+        kernelRootkit_ = null;
+        onChanged();
+      } else {
+        kernelRootkit_ = null;
+        kernelRootkitBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     */
+    public com.google.cloud.securitycenter.v1.KernelRootkit.Builder getKernelRootkitBuilder() {
+
+      onChanged();
+      return getKernelRootkitFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     */
+    public com.google.cloud.securitycenter.v1.KernelRootkitOrBuilder getKernelRootkitOrBuilder() {
+      if (kernelRootkitBuilder_ != null) {
+        return kernelRootkitBuilder_.getMessageOrBuilder();
+      } else {
+        return kernelRootkit_ == null
+            ? com.google.cloud.securitycenter.v1.KernelRootkit.getDefaultInstance()
+            : kernelRootkit_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kernel Rootkit signature.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.KernelRootkit,
+            com.google.cloud.securitycenter.v1.KernelRootkit.Builder,
+            com.google.cloud.securitycenter.v1.KernelRootkitOrBuilder>
+        getKernelRootkitFieldBuilder() {
+      if (kernelRootkitBuilder_ == null) {
+        kernelRootkitBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.KernelRootkit,
+                com.google.cloud.securitycenter.v1.KernelRootkit.Builder,
+                com.google.cloud.securitycenter.v1.KernelRootkitOrBuilder>(
+                getKernelRootkit(), getParentForChildren(), isClean());
+        kernelRootkit_ = null;
+      }
+      return kernelRootkitBuilder_;
     }
 
     @java.lang.Override

@@ -92,6 +92,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -125,6 +126,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEkmConnectionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -160,12 +162,13 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "ekmConnectionId", request.getEkmConnectionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("ekmConnection", request.getEkmConnection(), false))
+                                  .toBody("ekmConnection", request.getEkmConnection(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EkmConnection>newBuilder()
@@ -198,12 +201,13 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             ProtoRestSerializer<UpdateEkmConnectionRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("ekmConnection", request.getEkmConnection(), false))
+                                  .toBody("ekmConnection", request.getEkmConnection(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EkmConnection>newBuilder()
@@ -234,6 +238,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -267,6 +272,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -305,12 +311,13 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -346,6 +353,7 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -384,12 +392,13 @@ public class HttpJsonEkmServiceStub extends EkmServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

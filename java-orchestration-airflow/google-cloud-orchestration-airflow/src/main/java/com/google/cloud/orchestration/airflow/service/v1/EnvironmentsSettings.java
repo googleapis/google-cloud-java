@@ -119,6 +119,28 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return ((EnvironmentsStubSettings) getStubSettings()).deleteEnvironmentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to saveSnapshot. */
+  public UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).saveSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to saveSnapshot. */
+  public OperationCallSettings<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).saveSnapshotOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to loadSnapshot. */
+  public UnaryCallSettings<LoadSnapshotRequest, Operation> loadSnapshotSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).loadSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to loadSnapshot. */
+  public OperationCallSettings<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).loadSnapshotOperationSettings();
+  }
+
   public static final EnvironmentsSettings create(EnvironmentsStubSettings stub)
       throws IOException {
     return new EnvironmentsSettings.Builder(stub.toBuilder()).build();
@@ -280,6 +302,30 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return getStubSettingsBuilder().deleteEnvironmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to saveSnapshot. */
+    public UnaryCallSettings.Builder<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
+      return getStubSettingsBuilder().saveSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to saveSnapshot. */
+    public OperationCallSettings.Builder<
+            SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+        saveSnapshotOperationSettings() {
+      return getStubSettingsBuilder().saveSnapshotOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to loadSnapshot. */
+    public UnaryCallSettings.Builder<LoadSnapshotRequest, Operation> loadSnapshotSettings() {
+      return getStubSettingsBuilder().loadSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to loadSnapshot. */
+    public OperationCallSettings.Builder<
+            LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+        loadSnapshotOperationSettings() {
+      return getStubSettingsBuilder().loadSnapshotOperationSettings();
     }
 
     @Override

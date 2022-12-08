@@ -526,8 +526,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The number of channels in the input audio data.
    * ONLY set this for MULTI-CHANNEL recognition.
-   * Valid values for LINEAR16 and FLAC are `1`-`8`.
-   * Valid values for OGG_OPUS are '1'-'254'.
+   * Valid values for LINEAR16, OGG_OPUS and FLAC are `1`-`8`.
    * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
    * If `0` or omitted, defaults to one channel (mono).
    * Note: We only recognize the first channel by default.
@@ -1189,7 +1188,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
    * @return The enableSpeakerDiarization.
    */
   @java.lang.Override
@@ -1212,7 +1211,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
+   *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
    * @return The diarizationSpeakerCount.
    */
   @java.lang.Override
@@ -2633,8 +2632,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of channels in the input audio data.
      * ONLY set this for MULTI-CHANNEL recognition.
-     * Valid values for LINEAR16 and FLAC are `1`-`8`.
-     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid values for LINEAR16, OGG_OPUS and FLAC are `1`-`8`.
      * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
      * If `0` or omitted, defaults to one channel (mono).
      * Note: We only recognize the first channel by default.
@@ -2656,8 +2654,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of channels in the input audio data.
      * ONLY set this for MULTI-CHANNEL recognition.
-     * Valid values for LINEAR16 and FLAC are `1`-`8`.
-     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid values for LINEAR16, OGG_OPUS and FLAC are `1`-`8`.
      * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
      * If `0` or omitted, defaults to one channel (mono).
      * Note: We only recognize the first channel by default.
@@ -2682,8 +2679,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of channels in the input audio data.
      * ONLY set this for MULTI-CHANNEL recognition.
-     * Valid values for LINEAR16 and FLAC are `1`-`8`.
-     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid values for LINEAR16, OGG_OPUS and FLAC are `1`-`8`.
      * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
      * If `0` or omitted, defaults to one channel (mono).
      * Note: We only recognize the first channel by default.
@@ -4832,7 +4828,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
      * @return The enableSpeakerDiarization.
      */
     @java.lang.Override
@@ -4853,7 +4849,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
      * @param value The enableSpeakerDiarization to set.
      * @return This builder for chaining.
      */
@@ -4877,7 +4873,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>bool enable_speaker_diarization = 16 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.enable_speaker_diarization is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=378
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=377
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4901,7 +4897,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
      * @return The diarizationSpeakerCount.
      */
     @java.lang.Override
@@ -4921,7 +4917,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
      * @param value The diarizationSpeakerCount to set.
      * @return This builder for chaining.
      */
@@ -4944,7 +4940,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>int32 diarization_speaker_count = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.speech.v1p1beta1.RecognitionConfig.diarization_speaker_count is
-     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=383
+     *     deprecated. See google/cloud/speech/v1p1beta1/cloud_speech.proto;l=382
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

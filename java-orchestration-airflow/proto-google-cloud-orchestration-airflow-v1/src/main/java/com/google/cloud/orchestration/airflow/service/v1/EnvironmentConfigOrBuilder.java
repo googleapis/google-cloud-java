@@ -85,6 +85,8 @@ public interface EnvironmentConfigOrBuilder
    * <pre>
    * The number of nodes in the Kubernetes Engine cluster that will be
    * used to run this environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 node_count = 3;</code>
@@ -389,6 +391,166 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The maintenance window is the period when Cloud Composer components may
+   * undergo maintenance. It is defined so that maintenance is not executed
+   * during peak hours or critical time periods.
+   * The system will not be under maintenance for every occurrence of this
+   * window, but when maintenance is planned, it will be scheduled
+   * during the window.
+   * The maintenance window period must encompass at least 12 hours per week.
+   * This may be split into multiple chunks, each with a size of
+   * at least 4 hours.
+   * If this value is omitted, the default value for maintenance window will be
+   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceWindow field is set.
+   */
+  boolean hasMaintenanceWindow();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance window is the period when Cloud Composer components may
+   * undergo maintenance. It is defined so that maintenance is not executed
+   * during peak hours or critical time periods.
+   * The system will not be under maintenance for every occurrence of this
+   * window, but when maintenance is planned, it will be scheduled
+   * during the window.
+   * The maintenance window period must encompass at least 12 hours per week.
+   * This may be split into multiple chunks, each with a size of
+   * at least 4 hours.
+   * If this value is omitted, the default value for maintenance window will be
+   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceWindow.
+   */
+  com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow getMaintenanceWindow();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance window is the period when Cloud Composer components may
+   * undergo maintenance. It is defined so that maintenance is not executed
+   * during peak hours or critical time periods.
+   * The system will not be under maintenance for every occurrence of this
+   * window, but when maintenance is planned, it will be scheduled
+   * during the window.
+   * The maintenance window period must encompass at least 12 hours per week.
+   * This may be split into multiple chunks, each with a size of
+   * at least 4 hours.
+   * If this value is omitted, the default value for maintenance window will be
+   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindowOrBuilder
+      getMaintenanceWindowOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The workloads configuration settings for the GKE cluster associated with
+   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+   * server and workers workloads.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workloadsConfig field is set.
+   */
+  boolean hasWorkloadsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The workloads configuration settings for the GKE cluster associated with
+   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+   * server and workers workloads.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workloadsConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig getWorkloadsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The workloads configuration settings for the GKE cluster associated with
+   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+   * server and workers workloads.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfigOrBuilder
+      getWorkloadsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The size of the Cloud Composer environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for environmentSize.
+   */
+  int getEnvironmentSizeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The size of the Cloud Composer environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The environmentSize.
+   */
+  com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+      getEnvironmentSize();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The URI of the Apache Airflow Web UI hosted within this environment (see
    * [Airflow web
    * interface](/composer/docs/how-to/accessing/airflow-web-interface)).
@@ -413,4 +575,107 @@ public interface EnvironmentConfigOrBuilder
    * @return The bytes for airflowUri.
    */
   com.google.protobuf.ByteString getAirflowUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the masterAuthorizedNetworksConfig field is set.
+   */
+  boolean hasMasterAuthorizedNetworksConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The masterAuthorizedNetworksConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+      getMasterAuthorizedNetworksConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfigOrBuilder
+      getMasterAuthorizedNetworksConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the recoveryConfig field is set.
+   */
+  boolean hasRecoveryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The recoveryConfig.
+   */
+  com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig getRecoveryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.orchestration.airflow.service.v1.RecoveryConfigOrBuilder
+      getRecoveryConfigOrBuilder();
 }

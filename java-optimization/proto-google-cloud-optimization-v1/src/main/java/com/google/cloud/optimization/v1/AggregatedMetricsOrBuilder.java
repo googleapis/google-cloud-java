@@ -217,7 +217,9 @@ public interface AggregatedMetricsOrBuilder
    *
    * <pre>
    * The total duration should be equal to the sum of all durations above.
-   * For routes, it also corresponds to [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time] -
+   * For routes, it also corresponds to
+   * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
+   * -
    * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
    * </pre>
    *
@@ -231,7 +233,9 @@ public interface AggregatedMetricsOrBuilder
    *
    * <pre>
    * The total duration should be equal to the sum of all durations above.
-   * For routes, it also corresponds to [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time] -
+   * For routes, it also corresponds to
+   * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
+   * -
    * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
    * </pre>
    *
@@ -245,7 +249,9 @@ public interface AggregatedMetricsOrBuilder
    *
    * <pre>
    * The total duration should be equal to the sum of all durations above.
-   * For routes, it also corresponds to [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time] -
+   * For routes, it also corresponds to
+   * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
+   * -
    * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
    * </pre>
    *
@@ -362,7 +368,8 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use [ShipmentRoute.route_costs][] and
+   * [OptimizeToursResponse.Metrics.costs][] instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -373,7 +380,8 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use [ShipmentRoute.route_costs][] and
+   * [OptimizeToursResponse.Metrics.costs][] instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -387,7 +395,8 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use [ShipmentRoute.route_costs][] and
+   * [OptimizeToursResponse.Metrics.costs][] instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -398,7 +407,8 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use [ShipmentRoute.route_costs][] and
+   * [OptimizeToursResponse.Metrics.costs][] instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -409,7 +419,8 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_costs][] and [OptimizeToursResponse.Metrics.costs][] instead.
+   * Deprecated: Use [ShipmentRoute.route_costs][] and
+   * [OptimizeToursResponse.Metrics.costs][] instead.
    * </pre>
    *
    * <code>map&lt;string, double&gt; costs = 10 [deprecated = true];</code>
@@ -421,13 +432,14 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
-   * Deprecated: Use [ShipmentRoute.route_total_cost][] and [OptimizeToursResponse.Metrics.total_cost][] instead.
+   * Deprecated: Use [ShipmentRoute.route_total_cost][] and
+   * [OptimizeToursResponse.Metrics.total_cost][] instead.
    * </pre>
    *
    * <code>double total_cost = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2206
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2296
    * @return The totalCost.
    */
   @java.lang.Deprecated

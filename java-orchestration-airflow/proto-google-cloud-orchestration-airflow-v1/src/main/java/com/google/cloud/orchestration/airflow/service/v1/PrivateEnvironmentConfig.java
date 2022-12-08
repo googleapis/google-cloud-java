@@ -42,6 +42,9 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     webServerIpv4CidrBlock_ = "";
     cloudSqlIpv4CidrBlock_ = "";
     webServerIpv4ReservedRange_ = "";
+    cloudComposerNetworkIpv4CidrBlock_ = "";
+    cloudComposerNetworkIpv4ReservedRange_ = "";
+    cloudComposerConnectionSubnetwork_ = "";
   }
 
   @java.lang.Override
@@ -79,7 +82,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * <pre>
    * Optional. If `true`, a Private IP Cloud Composer environment is created.
    * If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be
-   * set to true.
+   * set to true for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>bool enable_private_environment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -161,6 +165,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * Optional. The CIDR block from which IP range for web server will be reserved. Needs
    * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
    * `cloud_sql_ipv4_cidr_block`.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string web_server_ipv4_cidr_block = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -186,6 +192,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    * Optional. The CIDR block from which IP range for web server will be reserved. Needs
    * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
    * `cloud_sql_ipv4_cidr_block`.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string web_server_ipv4_cidr_block = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -263,6 +271,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The IP range reserved for the tenant project's App Engine VMs.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string web_server_ipv4_reserved_range = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -287,6 +297,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The IP range reserved for the tenant project's App Engine VMs.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string web_server_ipv4_reserved_range = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -305,6 +317,261 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CLOUD_COMPOSER_NETWORK_IPV4_CIDR_BLOCK_FIELD_NUMBER = 7;
+  private volatile java.lang.Object cloudComposerNetworkIpv4CidrBlock_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
+   * project will be reserved. Needs to be disjoint from
+   * private_cluster_config.master_ipv4_cidr_block and
+   * cloud_sql_ipv4_cidr_block.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * string cloud_composer_network_ipv4_cidr_block = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cloudComposerNetworkIpv4CidrBlock.
+   */
+  @java.lang.Override
+  public java.lang.String getCloudComposerNetworkIpv4CidrBlock() {
+    java.lang.Object ref = cloudComposerNetworkIpv4CidrBlock_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cloudComposerNetworkIpv4CidrBlock_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
+   * project will be reserved. Needs to be disjoint from
+   * private_cluster_config.master_ipv4_cidr_block and
+   * cloud_sql_ipv4_cidr_block.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * string cloud_composer_network_ipv4_cidr_block = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for cloudComposerNetworkIpv4CidrBlock.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCloudComposerNetworkIpv4CidrBlockBytes() {
+    java.lang.Object ref = cloudComposerNetworkIpv4CidrBlock_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cloudComposerNetworkIpv4CidrBlock_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLOUD_COMPOSER_NETWORK_IPV4_RESERVED_RANGE_FIELD_NUMBER = 8;
+  private volatile java.lang.Object cloudComposerNetworkIpv4ReservedRange_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * string cloud_composer_network_ipv4_reserved_range = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudComposerNetworkIpv4ReservedRange.
+   */
+  @java.lang.Override
+  public java.lang.String getCloudComposerNetworkIpv4ReservedRange() {
+    java.lang.Object ref = cloudComposerNetworkIpv4ReservedRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cloudComposerNetworkIpv4ReservedRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * string cloud_composer_network_ipv4_reserved_range = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for cloudComposerNetworkIpv4ReservedRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCloudComposerNetworkIpv4ReservedRangeBytes() {
+    java.lang.Object ref = cloudComposerNetworkIpv4ReservedRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cloudComposerNetworkIpv4ReservedRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENABLE_PRIVATELY_USED_PUBLIC_IPS_FIELD_NUMBER = 6;
+  private boolean enablePrivatelyUsedPublicIps_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When enabled, IPs from public (non-RFC1918) ranges can be used for
+   * `IPAllocationPolicy.cluster_ipv4_cidr_block` and
+   * `IPAllocationPolicy.service_ipv4_cidr_block`.
+   * </pre>
+   *
+   * <code>bool enable_privately_used_public_ips = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enablePrivatelyUsedPublicIps.
+   */
+  @java.lang.Override
+  public boolean getEnablePrivatelyUsedPublicIps() {
+    return enablePrivatelyUsedPublicIps_;
+  }
+
+  public static final int CLOUD_COMPOSER_CONNECTION_SUBNETWORK_FIELD_NUMBER = 9;
+  private volatile java.lang.Object cloudComposerConnectionSubnetwork_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specified, the environment will use Private Service Connect
+   * instead of VPC peerings to connect to Cloud SQL in the Tenant Project,
+   * and the PSC endpoint in the Customer Project will use an IP address from
+   * this subnetwork.
+   * </pre>
+   *
+   * <code>
+   * string cloud_composer_connection_subnetwork = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cloudComposerConnectionSubnetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getCloudComposerConnectionSubnetwork() {
+    java.lang.Object ref = cloudComposerConnectionSubnetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cloudComposerConnectionSubnetwork_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specified, the environment will use Private Service Connect
+   * instead of VPC peerings to connect to Cloud SQL in the Tenant Project,
+   * and the PSC endpoint in the Customer Project will use an IP address from
+   * this subnetwork.
+   * </pre>
+   *
+   * <code>
+   * string cloud_composer_connection_subnetwork = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for cloudComposerConnectionSubnetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCloudComposerConnectionSubnetworkBytes() {
+    java.lang.Object ref = cloudComposerConnectionSubnetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cloudComposerConnectionSubnetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORKING_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig networkingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the network connections configuration in the environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkingConfig() {
+    return networkingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the network connections configuration in the environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig getNetworkingConfig() {
+    return networkingConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.getDefaultInstance()
+        : networkingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the network connections configuration in the environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfigOrBuilder
+      getNetworkingConfigOrBuilder() {
+    return getNetworkingConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -336,6 +603,25 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webServerIpv4ReservedRange_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, webServerIpv4ReservedRange_);
     }
+    if (enablePrivatelyUsedPublicIps_ != false) {
+      output.writeBool(6, enablePrivatelyUsedPublicIps_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudComposerNetworkIpv4CidrBlock_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 7, cloudComposerNetworkIpv4CidrBlock_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        cloudComposerNetworkIpv4ReservedRange_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 8, cloudComposerNetworkIpv4ReservedRange_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudComposerConnectionSubnetwork_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 9, cloudComposerConnectionSubnetwork_);
+    }
+    if (networkingConfig_ != null) {
+      output.writeMessage(10, getNetworkingConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -361,6 +647,29 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webServerIpv4ReservedRange_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(5, webServerIpv4ReservedRange_);
+    }
+    if (enablePrivatelyUsedPublicIps_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(6, enablePrivatelyUsedPublicIps_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudComposerNetworkIpv4CidrBlock_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              7, cloudComposerNetworkIpv4CidrBlock_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        cloudComposerNetworkIpv4ReservedRange_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              8, cloudComposerNetworkIpv4ReservedRange_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudComposerConnectionSubnetwork_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              9, cloudComposerConnectionSubnetwork_);
+    }
+    if (networkingConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getNetworkingConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -388,6 +697,17 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     if (!getCloudSqlIpv4CidrBlock().equals(other.getCloudSqlIpv4CidrBlock())) return false;
     if (!getWebServerIpv4ReservedRange().equals(other.getWebServerIpv4ReservedRange()))
       return false;
+    if (!getCloudComposerNetworkIpv4CidrBlock()
+        .equals(other.getCloudComposerNetworkIpv4CidrBlock())) return false;
+    if (!getCloudComposerNetworkIpv4ReservedRange()
+        .equals(other.getCloudComposerNetworkIpv4ReservedRange())) return false;
+    if (getEnablePrivatelyUsedPublicIps() != other.getEnablePrivatelyUsedPublicIps()) return false;
+    if (!getCloudComposerConnectionSubnetwork()
+        .equals(other.getCloudComposerConnectionSubnetwork())) return false;
+    if (hasNetworkingConfig() != other.hasNetworkingConfig()) return false;
+    if (hasNetworkingConfig()) {
+      if (!getNetworkingConfig().equals(other.getNetworkingConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -411,6 +731,19 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
     hash = (53 * hash) + getCloudSqlIpv4CidrBlock().hashCode();
     hash = (37 * hash) + WEB_SERVER_IPV4_RESERVED_RANGE_FIELD_NUMBER;
     hash = (53 * hash) + getWebServerIpv4ReservedRange().hashCode();
+    hash = (37 * hash) + CLOUD_COMPOSER_NETWORK_IPV4_CIDR_BLOCK_FIELD_NUMBER;
+    hash = (53 * hash) + getCloudComposerNetworkIpv4CidrBlock().hashCode();
+    hash = (37 * hash) + CLOUD_COMPOSER_NETWORK_IPV4_RESERVED_RANGE_FIELD_NUMBER;
+    hash = (53 * hash) + getCloudComposerNetworkIpv4ReservedRange().hashCode();
+    hash = (37 * hash) + ENABLE_PRIVATELY_USED_PUBLIC_IPS_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePrivatelyUsedPublicIps());
+    hash = (37 * hash) + CLOUD_COMPOSER_CONNECTION_SUBNETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getCloudComposerConnectionSubnetwork().hashCode();
+    if (hasNetworkingConfig()) {
+      hash = (37 * hash) + NETWORKING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkingConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -573,6 +906,20 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
       webServerIpv4ReservedRange_ = "";
 
+      cloudComposerNetworkIpv4CidrBlock_ = "";
+
+      cloudComposerNetworkIpv4ReservedRange_ = "";
+
+      enablePrivatelyUsedPublicIps_ = false;
+
+      cloudComposerConnectionSubnetwork_ = "";
+
+      if (networkingConfigBuilder_ == null) {
+        networkingConfig_ = null;
+      } else {
+        networkingConfig_ = null;
+        networkingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -613,6 +960,15 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       result.webServerIpv4CidrBlock_ = webServerIpv4CidrBlock_;
       result.cloudSqlIpv4CidrBlock_ = cloudSqlIpv4CidrBlock_;
       result.webServerIpv4ReservedRange_ = webServerIpv4ReservedRange_;
+      result.cloudComposerNetworkIpv4CidrBlock_ = cloudComposerNetworkIpv4CidrBlock_;
+      result.cloudComposerNetworkIpv4ReservedRange_ = cloudComposerNetworkIpv4ReservedRange_;
+      result.enablePrivatelyUsedPublicIps_ = enablePrivatelyUsedPublicIps_;
+      result.cloudComposerConnectionSubnetwork_ = cloudComposerConnectionSubnetwork_;
+      if (networkingConfigBuilder_ == null) {
+        result.networkingConfig_ = networkingConfig_;
+      } else {
+        result.networkingConfig_ = networkingConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -685,6 +1041,24 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
         webServerIpv4ReservedRange_ = other.webServerIpv4ReservedRange_;
         onChanged();
       }
+      if (!other.getCloudComposerNetworkIpv4CidrBlock().isEmpty()) {
+        cloudComposerNetworkIpv4CidrBlock_ = other.cloudComposerNetworkIpv4CidrBlock_;
+        onChanged();
+      }
+      if (!other.getCloudComposerNetworkIpv4ReservedRange().isEmpty()) {
+        cloudComposerNetworkIpv4ReservedRange_ = other.cloudComposerNetworkIpv4ReservedRange_;
+        onChanged();
+      }
+      if (other.getEnablePrivatelyUsedPublicIps() != false) {
+        setEnablePrivatelyUsedPublicIps(other.getEnablePrivatelyUsedPublicIps());
+      }
+      if (!other.getCloudComposerConnectionSubnetwork().isEmpty()) {
+        cloudComposerConnectionSubnetwork_ = other.cloudComposerConnectionSubnetwork_;
+        onChanged();
+      }
+      if (other.hasNetworkingConfig()) {
+        mergeNetworkingConfig(other.getNetworkingConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -742,6 +1116,37 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
 
                 break;
               } // case 42
+            case 48:
+              {
+                enablePrivatelyUsedPublicIps_ = input.readBool();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                cloudComposerNetworkIpv4CidrBlock_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
+            case 66:
+              {
+                cloudComposerNetworkIpv4ReservedRange_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 66
+            case 74:
+              {
+                cloudComposerConnectionSubnetwork_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getNetworkingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -766,7 +1171,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Optional. If `true`, a Private IP Cloud Composer environment is created.
      * If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be
-     * set to true.
+     * set to true for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>bool enable_private_environment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -783,7 +1189,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Optional. If `true`, a Private IP Cloud Composer environment is created.
      * If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be
-     * set to true.
+     * set to true for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>bool enable_private_environment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -803,7 +1210,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * <pre>
      * Optional. If `true`, a Private IP Cloud Composer environment is created.
      * If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be
-     * set to true.
+     * set to true for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>bool enable_private_environment = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1048,6 +1456,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * Optional. The CIDR block from which IP range for web server will be reserved. Needs
      * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_cidr_block = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1072,6 +1482,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * Optional. The CIDR block from which IP range for web server will be reserved. Needs
      * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_cidr_block = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1096,6 +1508,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * Optional. The CIDR block from which IP range for web server will be reserved. Needs
      * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_cidr_block = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1119,6 +1533,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * Optional. The CIDR block from which IP range for web server will be reserved. Needs
      * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_cidr_block = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1138,6 +1554,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      * Optional. The CIDR block from which IP range for web server will be reserved. Needs
      * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
      * `cloud_sql_ipv4_cidr_block`.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_cidr_block = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1273,6 +1691,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_reserved_range = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1296,6 +1716,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_reserved_range = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1319,6 +1741,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_reserved_range = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1341,6 +1765,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_reserved_range = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1359,6 +1785,8 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The IP range reserved for the tenant project's App Engine VMs.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string web_server_ipv4_reserved_range = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1376,6 +1804,682 @@ public final class PrivateEnvironmentConfig extends com.google.protobuf.Generate
       webServerIpv4ReservedRange_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object cloudComposerNetworkIpv4CidrBlock_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
+     * project will be reserved. Needs to be disjoint from
+     * private_cluster_config.master_ipv4_cidr_block and
+     * cloud_sql_ipv4_cidr_block.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_cidr_block = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The cloudComposerNetworkIpv4CidrBlock.
+     */
+    public java.lang.String getCloudComposerNetworkIpv4CidrBlock() {
+      java.lang.Object ref = cloudComposerNetworkIpv4CidrBlock_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cloudComposerNetworkIpv4CidrBlock_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
+     * project will be reserved. Needs to be disjoint from
+     * private_cluster_config.master_ipv4_cidr_block and
+     * cloud_sql_ipv4_cidr_block.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_cidr_block = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for cloudComposerNetworkIpv4CidrBlock.
+     */
+    public com.google.protobuf.ByteString getCloudComposerNetworkIpv4CidrBlockBytes() {
+      java.lang.Object ref = cloudComposerNetworkIpv4CidrBlock_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cloudComposerNetworkIpv4CidrBlock_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
+     * project will be reserved. Needs to be disjoint from
+     * private_cluster_config.master_ipv4_cidr_block and
+     * cloud_sql_ipv4_cidr_block.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_cidr_block = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The cloudComposerNetworkIpv4CidrBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudComposerNetworkIpv4CidrBlock(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cloudComposerNetworkIpv4CidrBlock_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
+     * project will be reserved. Needs to be disjoint from
+     * private_cluster_config.master_ipv4_cidr_block and
+     * cloud_sql_ipv4_cidr_block.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_cidr_block = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCloudComposerNetworkIpv4CidrBlock() {
+
+      cloudComposerNetworkIpv4CidrBlock_ =
+          getDefaultInstance().getCloudComposerNetworkIpv4CidrBlock();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The CIDR block from which IP range for Cloud Composer Network in tenant
+     * project will be reserved. Needs to be disjoint from
+     * private_cluster_config.master_ipv4_cidr_block and
+     * cloud_sql_ipv4_cidr_block.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_cidr_block = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for cloudComposerNetworkIpv4CidrBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudComposerNetworkIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cloudComposerNetworkIpv4CidrBlock_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cloudComposerNetworkIpv4ReservedRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_reserved_range = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cloudComposerNetworkIpv4ReservedRange.
+     */
+    public java.lang.String getCloudComposerNetworkIpv4ReservedRange() {
+      java.lang.Object ref = cloudComposerNetworkIpv4ReservedRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cloudComposerNetworkIpv4ReservedRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_reserved_range = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for cloudComposerNetworkIpv4ReservedRange.
+     */
+    public com.google.protobuf.ByteString getCloudComposerNetworkIpv4ReservedRangeBytes() {
+      java.lang.Object ref = cloudComposerNetworkIpv4ReservedRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cloudComposerNetworkIpv4ReservedRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_reserved_range = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The cloudComposerNetworkIpv4ReservedRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudComposerNetworkIpv4ReservedRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cloudComposerNetworkIpv4ReservedRange_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_reserved_range = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCloudComposerNetworkIpv4ReservedRange() {
+
+      cloudComposerNetworkIpv4ReservedRange_ =
+          getDefaultInstance().getCloudComposerNetworkIpv4ReservedRange();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The IP range reserved for the tenant project's Cloud Composer network.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_network_ipv4_reserved_range = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for cloudComposerNetworkIpv4ReservedRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudComposerNetworkIpv4ReservedRangeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cloudComposerNetworkIpv4ReservedRange_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean enablePrivatelyUsedPublicIps_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When enabled, IPs from public (non-RFC1918) ranges can be used for
+     * `IPAllocationPolicy.cluster_ipv4_cidr_block` and
+     * `IPAllocationPolicy.service_ipv4_cidr_block`.
+     * </pre>
+     *
+     * <code>bool enable_privately_used_public_ips = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enablePrivatelyUsedPublicIps.
+     */
+    @java.lang.Override
+    public boolean getEnablePrivatelyUsedPublicIps() {
+      return enablePrivatelyUsedPublicIps_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When enabled, IPs from public (non-RFC1918) ranges can be used for
+     * `IPAllocationPolicy.cluster_ipv4_cidr_block` and
+     * `IPAllocationPolicy.service_ipv4_cidr_block`.
+     * </pre>
+     *
+     * <code>bool enable_privately_used_public_ips = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enablePrivatelyUsedPublicIps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnablePrivatelyUsedPublicIps(boolean value) {
+
+      enablePrivatelyUsedPublicIps_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When enabled, IPs from public (non-RFC1918) ranges can be used for
+     * `IPAllocationPolicy.cluster_ipv4_cidr_block` and
+     * `IPAllocationPolicy.service_ipv4_cidr_block`.
+     * </pre>
+     *
+     * <code>bool enable_privately_used_public_ips = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnablePrivatelyUsedPublicIps() {
+
+      enablePrivatelyUsedPublicIps_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cloudComposerConnectionSubnetwork_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified, the environment will use Private Service Connect
+     * instead of VPC peerings to connect to Cloud SQL in the Tenant Project,
+     * and the PSC endpoint in the Customer Project will use an IP address from
+     * this subnetwork.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_connection_subnetwork = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The cloudComposerConnectionSubnetwork.
+     */
+    public java.lang.String getCloudComposerConnectionSubnetwork() {
+      java.lang.Object ref = cloudComposerConnectionSubnetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cloudComposerConnectionSubnetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified, the environment will use Private Service Connect
+     * instead of VPC peerings to connect to Cloud SQL in the Tenant Project,
+     * and the PSC endpoint in the Customer Project will use an IP address from
+     * this subnetwork.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_connection_subnetwork = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for cloudComposerConnectionSubnetwork.
+     */
+    public com.google.protobuf.ByteString getCloudComposerConnectionSubnetworkBytes() {
+      java.lang.Object ref = cloudComposerConnectionSubnetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cloudComposerConnectionSubnetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified, the environment will use Private Service Connect
+     * instead of VPC peerings to connect to Cloud SQL in the Tenant Project,
+     * and the PSC endpoint in the Customer Project will use an IP address from
+     * this subnetwork.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_connection_subnetwork = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The cloudComposerConnectionSubnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudComposerConnectionSubnetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cloudComposerConnectionSubnetwork_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified, the environment will use Private Service Connect
+     * instead of VPC peerings to connect to Cloud SQL in the Tenant Project,
+     * and the PSC endpoint in the Customer Project will use an IP address from
+     * this subnetwork.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_connection_subnetwork = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCloudComposerConnectionSubnetwork() {
+
+      cloudComposerConnectionSubnetwork_ =
+          getDefaultInstance().getCloudComposerConnectionSubnetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specified, the environment will use Private Service Connect
+     * instead of VPC peerings to connect to Cloud SQL in the Tenant Project,
+     * and the PSC endpoint in the Customer Project will use an IP address from
+     * this subnetwork.
+     * </pre>
+     *
+     * <code>
+     * string cloud_composer_connection_subnetwork = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for cloudComposerConnectionSubnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloudComposerConnectionSubnetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cloudComposerConnectionSubnetwork_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig networkingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig,
+            com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.NetworkingConfigOrBuilder>
+        networkingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the networkingConfig field is set.
+     */
+    public boolean hasNetworkingConfig() {
+      return networkingConfigBuilder_ != null || networkingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The networkingConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig
+        getNetworkingConfig() {
+      if (networkingConfigBuilder_ == null) {
+        return networkingConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig
+                .getDefaultInstance()
+            : networkingConfig_;
+      } else {
+        return networkingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkingConfig(
+        com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig value) {
+      if (networkingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkingConfig_ = value;
+        onChanged();
+      } else {
+        networkingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkingConfig(
+        com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.Builder
+            builderForValue) {
+      if (networkingConfigBuilder_ == null) {
+        networkingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        networkingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNetworkingConfig(
+        com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig value) {
+      if (networkingConfigBuilder_ == null) {
+        if (networkingConfig_ != null) {
+          networkingConfig_ =
+              com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.newBuilder(
+                      networkingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          networkingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        networkingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNetworkingConfig() {
+      if (networkingConfigBuilder_ == null) {
+        networkingConfig_ = null;
+        onChanged();
+      } else {
+        networkingConfig_ = null;
+        networkingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.Builder
+        getNetworkingConfigBuilder() {
+
+      onChanged();
+      return getNetworkingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.NetworkingConfigOrBuilder
+        getNetworkingConfigOrBuilder() {
+      if (networkingConfigBuilder_ != null) {
+        return networkingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkingConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig
+                .getDefaultInstance()
+            : networkingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the network connections configuration in the environment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.NetworkingConfig networking_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig,
+            com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.NetworkingConfigOrBuilder>
+        getNetworkingConfigFieldBuilder() {
+      if (networkingConfigBuilder_ == null) {
+        networkingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig,
+                com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1.NetworkingConfigOrBuilder>(
+                getNetworkingConfig(), getParentForChildren(), isClean());
+        networkingConfig_ = null;
+      }
+      return networkingConfigBuilder_;
     }
 
     @java.lang.Override

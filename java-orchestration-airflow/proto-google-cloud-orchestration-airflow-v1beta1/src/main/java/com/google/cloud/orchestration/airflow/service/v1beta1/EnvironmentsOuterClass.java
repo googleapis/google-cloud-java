@@ -56,6 +56,38 @@ public final class EnvironmentsOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_RestartWebServerRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_ExecuteAirflowCommandResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_ExecuteAirflowCommandResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_Line_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_Line_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_ExitInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_ExitInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_EnvironmentConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_EnvironmentConfig_fieldAccessorTable;
@@ -96,6 +128,10 @@ public final class EnvironmentsOuterClass {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateClusterConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_NetworkingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_NetworkingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateEnvironmentConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateEnvironmentConfig_fieldAccessorTable;
@@ -131,6 +167,30 @@ public final class EnvironmentsOuterClass {
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_WorkerResource_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_WorkerResource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_TriggererResource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_TriggererResource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_RecoveryConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_RecoveryConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_ScheduledSnapshotsConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_ScheduledSnapshotsConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_CidrBlock_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_CloudDataLineageIntegration_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orchestration_airflow_service_v1beta1_CloudDataLineageIntegration_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_orchestration_airflow_service_v1beta1_Environment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -185,202 +245,281 @@ public final class EnvironmentsOuterClass {
           + "ervice.v1beta1.Environment\0224\n\013update_mas"
           + "k\030\003 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002"
           + "\"\'\n\027RestartWebServerRequest\022\014\n\004name\030\001 \001("
-          + "\t\"\232\n\n\021EnvironmentConfig\022\030\n\013gke_cluster\030\001"
-          + " \001(\tB\003\340A\003\022\033\n\016dag_gcs_prefix\030\002 \001(\tB\003\340A\003\022\022"
-          + "\n\nnode_count\030\003 \001(\005\022[\n\017software_config\030\004 "
-          + "\001(\0132B.google.cloud.orchestration.airflow"
-          + ".service.v1beta1.SoftwareConfig\022S\n\013node_"
-          + "config\030\005 \001(\0132>.google.cloud.orchestratio"
-          + "n.airflow.service.v1beta1.NodeConfig\022p\n\032"
-          + "private_environment_config\030\007 \001(\0132L.googl"
-          + "e.cloud.orchestration.airflow.service.v1"
-          + "beta1.PrivateEnvironmentConfig\022\201\001\n!web_s"
-          + "erver_network_access_control\030\t \001(\0132Q.goo"
+          + "\t\"h\n\035ExecuteAirflowCommandResponse\022\024\n\014ex"
+          + "ecution_id\030\001 \001(\t\022\013\n\003pod\030\002 \001(\t\022\025\n\rpod_nam"
+          + "espace\030\003 \001(\t\022\r\n\005error\030\004 \001(\t\"\335\002\n\032PollAirf"
+          + "lowCommandResponse\022c\n\006output\030\001 \003(\0132S.goo"
           + "gle.cloud.orchestration.airflow.service."
-          + "v1beta1.WebServerNetworkAccessControlB\003\340"
-          + "A\001\022`\n\017database_config\030\n \001(\0132B.google.clo"
-          + "ud.orchestration.airflow.service.v1beta1"
-          + ".DatabaseConfigB\003\340A\001\022c\n\021web_server_confi"
-          + "g\030\013 \001(\0132C.google.cloud.orchestration.air"
-          + "flow.service.v1beta1.WebServerConfigB\003\340A"
-          + "\001\022\030\n\013airflow_uri\030\006 \001(\tB\003\340A\003\022d\n\021encryptio"
-          + "n_config\030\014 \001(\0132D.google.cloud.orchestrat"
-          + "ion.airflow.service.v1beta1.EncryptionCo"
-          + "nfigB\003\340A\001\022f\n\022maintenance_window\030\r \001(\0132E."
-          + "google.cloud.orchestration.airflow.servi"
-          + "ce.v1beta1.MaintenanceWindowB\003\340A\001\022b\n\020wor"
-          + "kloads_config\030\017 \001(\0132C.google.cloud.orche"
-          + "stration.airflow.service.v1beta1.Workloa"
-          + "dsConfigB\003\340A\001\022t\n\020environment_size\030\020 \001(\0162"
-          + "U.google.cloud.orchestration.airflow.ser"
-          + "vice.v1beta1.EnvironmentConfig.Environme"
-          + "ntSizeB\003\340A\001\"\210\001\n\017EnvironmentSize\022 \n\034ENVIR"
-          + "ONMENT_SIZE_UNSPECIFIED\020\000\022\032\n\026ENVIRONMENT"
-          + "_SIZE_SMALL\020\001\022\033\n\027ENVIRONMENT_SIZE_MEDIUM"
-          + "\020\002\022\032\n\026ENVIRONMENT_SIZE_LARGE\020\003\"\327\001\n\035WebSe"
-          + "rverNetworkAccessControl\022{\n\021allowed_ip_r"
-          + "anges\030\001 \003(\0132`.google.cloud.orchestration"
-          + ".airflow.service.v1beta1.WebServerNetwor"
-          + "kAccessControl.AllowedIpRange\0329\n\016Allowed"
-          + "IpRange\022\r\n\005value\030\001 \001(\t\022\030\n\013description\030\002 "
-          + "\001(\tB\003\340A\001\"\331\004\n\016SoftwareConfig\022\025\n\rimage_ver"
-          + "sion\030\001 \001(\t\022\205\001\n\030airflow_config_overrides\030"
-          + "\002 \003(\0132^.google.cloud.orchestration.airfl"
-          + "ow.service.v1beta1.SoftwareConfig.Airflo"
-          + "wConfigOverridesEntryB\003\340A\001\022p\n\rpypi_packa"
-          + "ges\030\003 \003(\0132T.google.cloud.orchestration.a"
-          + "irflow.service.v1beta1.SoftwareConfig.Py"
-          + "piPackagesEntryB\003\340A\001\022p\n\renv_variables\030\004 "
-          + "\003(\0132T.google.cloud.orchestration.airflow"
-          + ".service.v1beta1.SoftwareConfig.EnvVaria"
-          + "blesEntryB\003\340A\001\022\033\n\016python_version\030\006 \001(\tB\003"
-          + "\340A\001\032=\n\033AirflowConfigOverridesEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0323\n\021PypiPackag"
-          + "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032"
-          + "3\n\021EnvVariablesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001\"\325\001\n\022IPAllocationPolicy\022\033\n\016u"
-          + "se_ip_aliases\030\001 \001(\010B\003\340A\001\022)\n\034cluster_seco"
-          + "ndary_range_name\030\002 \001(\tB\003\340A\001\022*\n\035services_"
-          + "secondary_range_name\030\003 \001(\tB\003\340A\001\022$\n\027clust"
-          + "er_ipv4_cidr_block\030\004 \001(\tB\003\340A\001\022%\n\030service"
-          + "s_ipv4_cidr_block\030\005 \001(\tB\003\340A\001\"\337\002\n\nNodeCon"
-          + "fig\022\025\n\010location\030\001 \001(\tB\003\340A\001\022\031\n\014machine_ty"
-          + "pe\030\002 \001(\tB\003\340A\001\022\024\n\007network\030\003 \001(\tB\003\340A\001\022\027\n\ns"
-          + "ubnetwork\030\004 \001(\tB\003\340A\001\022\031\n\014disk_size_gb\030\005 \001"
-          + "(\005B\003\340A\001\022\031\n\014oauth_scopes\030\006 \003(\tB\003\340A\001\022\034\n\017se"
-          + "rvice_account\030\007 \001(\tB\003\340A\001\022\021\n\004tags\030\010 \003(\tB\003"
-          + "\340A\001\022i\n\024ip_allocation_policy\030\t \001(\0132F.goog"
-          + "le.cloud.orchestration.airflow.service.v"
-          + "1beta1.IPAllocationPolicyB\003\340A\001\022\036\n\021max_po"
-          + "ds_per_node\030\n \001(\005B\003\340A\001\"\212\001\n\024PrivateCluste"
-          + "rConfig\022$\n\027enable_private_endpoint\030\001 \001(\010"
-          + "B\003\340A\001\022#\n\026master_ipv4_cidr_block\030\002 \001(\tB\003\340"
-          + "A\001\022\'\n\032master_ipv4_reserved_range\030\003 \001(\tB\003"
-          + "\340A\003\"\236\003\n\030PrivateEnvironmentConfig\022\'\n\032enab"
-          + "le_private_environment\030\001 \001(\010B\003\340A\001\022m\n\026pri"
-          + "vate_cluster_config\030\002 \001(\0132H.google.cloud"
-          + ".orchestration.airflow.service.v1beta1.P"
-          + "rivateClusterConfigB\003\340A\001\022\'\n\032web_server_i"
-          + "pv4_cidr_block\030\003 \001(\tB\003\340A\001\022&\n\031cloud_sql_i"
-          + "pv4_cidr_block\030\004 \001(\tB\003\340A\001\022+\n\036web_server_"
-          + "ipv4_reserved_range\030\005 \001(\tB\003\340A\003\0223\n&cloud_"
-          + "composer_network_ipv4_cidr_block\030\007 \001(\tB\003"
-          + "\340A\001\0227\n*cloud_composer_network_ipv4_reser"
-          + "ved_range\030\010 \001(\tB\003\340A\003\"+\n\016DatabaseConfig\022\031"
-          + "\n\014machine_type\030\001 \001(\tB\003\340A\001\",\n\017WebServerCo"
-          + "nfig\022\031\n\014machine_type\030\001 \001(\tB\003\340A\001\"-\n\020Encry"
-          + "ptionConfig\022\031\n\014kms_key_name\030\001 \001(\tB\003\340A\001\"\224"
-          + "\001\n\021MaintenanceWindow\0223\n\nstart_time\030\001 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\002\0221\n\010end"
-          + "_time\030\002 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\002\022\027\n\nrecurrence\030\003 \001(\tB\003\340A\002\"\243\005\n\017Worklo"
-          + "adsConfig\022m\n\tscheduler\030\001 \001(\0132U.google.cl"
-          + "oud.orchestration.airflow.service.v1beta"
-          + "1.WorkloadsConfig.SchedulerResourceB\003\340A\001"
-          + "\022n\n\nweb_server\030\002 \001(\0132U.google.cloud.orch"
-          + "estration.airflow.service.v1beta1.Worklo"
-          + "adsConfig.WebServerResourceB\003\340A\001\022g\n\006work"
-          + "er\030\003 \001(\0132R.google.cloud.orchestration.ai"
-          + "rflow.service.v1beta1.WorkloadsConfig.Wo"
-          + "rkerResourceB\003\340A\001\032j\n\021SchedulerResource\022\020"
-          + "\n\003cpu\030\001 \001(\002B\003\340A\001\022\026\n\tmemory_gb\030\002 \001(\002B\003\340A\001"
-          + "\022\027\n\nstorage_gb\030\003 \001(\002B\003\340A\001\022\022\n\005count\030\004 \001(\005"
-          + "B\003\340A\001\032V\n\021WebServerResource\022\020\n\003cpu\030\001 \001(\002B"
-          + "\003\340A\001\022\026\n\tmemory_gb\030\002 \001(\002B\003\340A\001\022\027\n\nstorage_"
-          + "gb\030\003 \001(\002B\003\340A\001\032\203\001\n\016WorkerResource\022\020\n\003cpu\030"
-          + "\001 \001(\002B\003\340A\001\022\026\n\tmemory_gb\030\002 \001(\002B\003\340A\001\022\027\n\nst"
-          + "orage_gb\030\003 \001(\002B\003\340A\001\022\026\n\tmin_count\030\004 \001(\005B\003"
-          + "\340A\001\022\026\n\tmax_count\030\005 \001(\005B\003\340A\001\"\250\005\n\013Environm"
-          + "ent\022\014\n\004name\030\001 \001(\t\022U\n\006config\030\002 \001(\0132E.goog"
-          + "le.cloud.orchestration.airflow.service.v"
-          + "1beta1.EnvironmentConfig\022\021\n\004uuid\030\003 \001(\tB\003"
-          + "\340A\003\022T\n\005state\030\004 \001(\0162E.google.cloud.orches"
-          + "tration.airflow.service.v1beta1.Environm"
-          + "ent.State\0224\n\013create_time\030\005 \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003\0224\n\013update_time\030\006"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022`\n"
-          + "\006labels\030\007 \003(\0132K.google.cloud.orchestrati"
-          + "on.airflow.service.v1beta1.Environment.L"
-          + "abelsEntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"`\n\005State\022\025\n\021STATE"
-          + "_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\013\n\007RUNNING\020"
-          + "\002\022\014\n\010UPDATING\020\003\022\014\n\010DELETING\020\004\022\t\n\005ERROR\020\005"
-          + ":l\352Ai\n#composer.googleapis.com/Environme"
-          + "nt\022Bprojects/{project}/locations/{locati"
-          + "on}/environments/{environment}\"A\n\023CheckU"
-          + "pgradeRequest\022\023\n\013environment\030\001 \001(\t\022\025\n\rim"
-          + "age_version\030\002 \001(\t\"\204\004\n\024CheckUpgradeRespon"
-          + "se\022\032\n\rbuild_log_uri\030\001 \001(\tB\003\340A\003\022\204\001\n\036conta"
-          + "ins_pypi_modules_conflict\030\004 \001(\0162W.google"
-          + ".cloud.orchestration.airflow.service.v1b"
-          + "eta1.CheckUpgradeResponse.ConflictResult"
-          + "B\003\340A\003\022,\n\037pypi_conflict_build_log_extract"
-          + "\030\003 \001(\tB\003\340A\003\022\025\n\rimage_version\030\005 \001(\t\022y\n\021py"
-          + "pi_dependencies\030\006 \003(\0132^.google.cloud.orc"
-          + "hestration.airflow.service.v1beta1.Check"
-          + "UpgradeResponse.PypiDependenciesEntry\0327\n"
-          + "\025PypiDependenciesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001\"P\n\016ConflictResult\022\037\n\033CONF"
-          + "LICT_RESULT_UNSPECIFIED\020\000\022\014\n\010CONFLICT\020\001\022"
-          + "\017\n\013NO_CONFLICT\020\0022\360\020\n\014Environments\022\270\002\n\021Cr"
-          + "eateEnvironment\022L.google.cloud.orchestra"
-          + "tion.airflow.service.v1beta1.CreateEnvir"
-          + "onmentRequest\032\035.google.longrunning.Opera"
-          + "tion\"\265\001\202\323\344\223\002D\"5/v1beta1/{parent=projects"
-          + "/*/locations/*}/environments:\013environmen"
-          + "t\332A\022parent,environment\312AS\n\013Environment\022D"
-          + "google.cloud.orchestration.airflow.servi"
-          + "ce.v1beta1.OperationMetadata\022\342\001\n\016GetEnvi"
-          + "ronment\022I.google.cloud.orchestration.air"
-          + "flow.service.v1beta1.GetEnvironmentReque"
-          + "st\032?.google.cloud.orchestration.airflow."
-          + "service.v1beta1.Environment\"D\202\323\344\223\0027\0225/v1"
-          + "beta1/{name=projects/*/locations/*/envir"
-          + "onments/*}\332A\004name\022\365\001\n\020ListEnvironments\022K"
+          + "v1beta1.PollAirflowCommandResponse.Line\022"
+          + "\022\n\noutput_end\030\002 \001(\010\022j\n\texit_info\030\003 \001(\0132W"
           + ".google.cloud.orchestration.airflow.serv"
-          + "ice.v1beta1.ListEnvironmentsRequest\032L.go"
-          + "ogle.cloud.orchestration.airflow.service"
-          + ".v1beta1.ListEnvironmentsResponse\"F\202\323\344\223\002"
-          + "7\0225/v1beta1/{parent=projects/*/locations"
-          + "/*}/environments\332A\006parent\022\302\002\n\021UpdateEnvi"
-          + "ronment\022L.google.cloud.orchestration.air"
-          + "flow.service.v1beta1.UpdateEnvironmentRe"
-          + "quest\032\035.google.longrunning.Operation\"\277\001\202"
-          + "\323\344\223\002D25/v1beta1/{name=projects/*/locatio"
-          + "ns/*/environments/*}:\013environment\332A\034name"
-          + ",environment,update_mask\312AS\n\013Environment"
-          + "\022Dgoogle.cloud.orchestration.airflow.ser"
-          + "vice.v1beta1.OperationMetadata\022\247\002\n\021Delet"
-          + "eEnvironment\022L.google.cloud.orchestratio"
-          + "n.airflow.service.v1beta1.DeleteEnvironm"
-          + "entRequest\032\035.google.longrunning.Operatio"
-          + "n\"\244\001\202\323\344\223\0027*5/v1beta1/{name=projects/*/lo"
-          + "cations/*/environments/*}\332A\004name\312A]\n\025goo"
-          + "gle.protobuf.Empty\022Dgoogle.cloud.orchest"
-          + "ration.airflow.service.v1beta1.Operation"
-          + "Metadata\022\250\002\n\020RestartWebServer\022K.google.c"
-          + "loud.orchestration.airflow.service.v1bet"
-          + "a1.RestartWebServerRequest\032\035.google.long"
-          + "running.Operation\"\247\001\202\323\344\223\002K\"F/v1beta1/{na"
-          + "me=projects/*/locations/*/environments/*"
-          + "}:restartWebServer:\001*\312AS\n\013Environment\022Dg"
+          + "ice.v1beta1.PollAirflowCommandResponse.E"
+          + "xitInfo\032,\n\004Line\022\023\n\013line_number\030\001 \001(\005\022\017\n\007"
+          + "content\030\002 \001(\t\032,\n\010ExitInfo\022\021\n\texit_code\030\001"
+          + " \001(\005\022\r\n\005error\030\002 \001(\t\"E\n\023SaveSnapshotReque"
+          + "st\022\023\n\013environment\030\001 \001(\t\022\031\n\021snapshot_loca"
+          + "tion\030\002 \001(\t\"-\n\024SaveSnapshotResponse\022\025\n\rsn"
+          + "apshot_path\030\001 \001(\t\"\335\001\n\023LoadSnapshotReques"
+          + "t\022\023\n\013environment\030\001 \001(\t\022\025\n\rsnapshot_path\030"
+          + "\002 \001(\t\022\'\n\037skip_pypi_packages_installation"
+          + "\030\003 \001(\010\022*\n\"skip_environment_variables_set"
+          + "ting\030\004 \001(\010\022&\n\036skip_airflow_overrides_set"
+          + "ting\030\005 \001(\010\022\035\n\025skip_gcs_data_copying\030\006 \001("
+          + "\010\"\026\n\024LoadSnapshotResponse\"\201\014\n\021Environmen"
+          + "tConfig\022\030\n\013gke_cluster\030\001 \001(\tB\003\340A\003\022\033\n\016dag"
+          + "_gcs_prefix\030\002 \001(\tB\003\340A\003\022\022\n\nnode_count\030\003 \001"
+          + "(\005\022[\n\017software_config\030\004 \001(\0132B.google.clo"
+          + "ud.orchestration.airflow.service.v1beta1"
+          + ".SoftwareConfig\022S\n\013node_config\030\005 \001(\0132>.g"
           + "oogle.cloud.orchestration.airflow.servic"
-          + "e.v1beta1.OperationMetadata\022\340\002\n\014CheckUpg"
-          + "rade\022G.google.cloud.orchestration.airflo"
-          + "w.service.v1beta1.CheckUpgradeRequest\032\035."
-          + "google.longrunning.Operation\"\347\001\202\323\344\223\002N\"I/"
-          + "v1beta1/{environment=projects/*/location"
-          + "s/*/environments/*}:checkUpgrade:\001*\312A\217\001\n"
-          + "Ggoogle.cloud.orchestration.airflow.serv"
-          + "ice.v1beta1.CheckUpgradeResponse\022Dgoogle"
+          + "e.v1beta1.NodeConfig\022p\n\032private_environm"
+          + "ent_config\030\007 \001(\0132L.google.cloud.orchestr"
+          + "ation.airflow.service.v1beta1.PrivateEnv"
+          + "ironmentConfig\022\201\001\n!web_server_network_ac"
+          + "cess_control\030\t \001(\0132Q.google.cloud.orches"
+          + "tration.airflow.service.v1beta1.WebServe"
+          + "rNetworkAccessControlB\003\340A\001\022`\n\017database_c"
+          + "onfig\030\n \001(\0132B.google.cloud.orchestration"
+          + ".airflow.service.v1beta1.DatabaseConfigB"
+          + "\003\340A\001\022c\n\021web_server_config\030\013 \001(\0132C.google"
           + ".cloud.orchestration.airflow.service.v1b"
-          + "eta1.OperationMetadata\032K\312A\027composer.goog"
-          + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformB\225\001\n6com.google.cloud"
-          + ".orchestration.airflow.service.v1beta1P\001"
-          + "ZYgoogle.golang.org/genproto/googleapis/"
-          + "cloud/orchestration/airflow/service/v1be"
-          + "ta1;serviceb\006proto3"
+          + "eta1.WebServerConfigB\003\340A\001\022\030\n\013airflow_uri"
+          + "\030\006 \001(\tB\003\340A\003\022d\n\021encryption_config\030\014 \001(\0132D"
+          + ".google.cloud.orchestration.airflow.serv"
+          + "ice.v1beta1.EncryptionConfigB\003\340A\001\022f\n\022mai"
+          + "ntenance_window\030\r \001(\0132E.google.cloud.orc"
+          + "hestration.airflow.service.v1beta1.Maint"
+          + "enanceWindowB\003\340A\001\022b\n\020workloads_config\030\017 "
+          + "\001(\0132C.google.cloud.orchestration.airflow"
+          + ".service.v1beta1.WorkloadsConfigB\003\340A\001\022t\n"
+          + "\020environment_size\030\020 \001(\0162U.google.cloud.o"
+          + "rchestration.airflow.service.v1beta1.Env"
+          + "ironmentConfig.EnvironmentSizeB\003\340A\001\022\202\001\n!"
+          + "master_authorized_networks_config\030\021 \001(\0132"
+          + "R.google.cloud.orchestration.airflow.ser"
+          + "vice.v1beta1.MasterAuthorizedNetworksCon"
+          + "figB\003\340A\001\022`\n\017recovery_config\030\022 \001(\0132B.goog"
+          + "le.cloud.orchestration.airflow.service.v"
+          + "1beta1.RecoveryConfigB\003\340A\001\"\210\001\n\017Environme"
+          + "ntSize\022 \n\034ENVIRONMENT_SIZE_UNSPECIFIED\020\000"
+          + "\022\032\n\026ENVIRONMENT_SIZE_SMALL\020\001\022\033\n\027ENVIRONM"
+          + "ENT_SIZE_MEDIUM\020\002\022\032\n\026ENVIRONMENT_SIZE_LA"
+          + "RGE\020\003\"\327\001\n\035WebServerNetworkAccessControl\022"
+          + "{\n\021allowed_ip_ranges\030\001 \003(\0132`.google.clou"
+          + "d.orchestration.airflow.service.v1beta1."
+          + "WebServerNetworkAccessControl.AllowedIpR"
+          + "ange\0329\n\016AllowedIpRange\022\r\n\005value\030\001 \001(\t\022\030\n"
+          + "\013description\030\002 \001(\tB\003\340A\001\"\365\005\n\016SoftwareConf"
+          + "ig\022\025\n\rimage_version\030\001 \001(\t\022\205\001\n\030airflow_co"
+          + "nfig_overrides\030\002 \003(\0132^.google.cloud.orch"
+          + "estration.airflow.service.v1beta1.Softwa"
+          + "reConfig.AirflowConfigOverridesEntryB\003\340A"
+          + "\001\022p\n\rpypi_packages\030\003 \003(\0132T.google.cloud."
+          + "orchestration.airflow.service.v1beta1.So"
+          + "ftwareConfig.PypiPackagesEntryB\003\340A\001\022p\n\re"
+          + "nv_variables\030\004 \003(\0132T.google.cloud.orches"
+          + "tration.airflow.service.v1beta1.Software"
+          + "Config.EnvVariablesEntryB\003\340A\001\022\033\n\016python_"
+          + "version\030\006 \001(\tB\003\340A\001\022\034\n\017scheduler_count\030\007 "
+          + "\001(\005B\003\340A\001\022|\n\036cloud_data_lineage_integrati"
+          + "on\030\010 \001(\0132O.google.cloud.orchestration.ai"
+          + "rflow.service.v1beta1.CloudDataLineageIn"
+          + "tegrationB\003\340A\001\032=\n\033AirflowConfigOverrides"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0323\n"
+          + "\021PypiPackagesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001\0323\n\021EnvVariablesEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\325\001\n\022IPAllocation"
+          + "Policy\022\033\n\016use_ip_aliases\030\001 \001(\010B\003\340A\001\022)\n\034c"
+          + "luster_secondary_range_name\030\002 \001(\tB\003\340A\001\022*"
+          + "\n\035services_secondary_range_name\030\003 \001(\tB\003\340"
+          + "A\001\022$\n\027cluster_ipv4_cidr_block\030\004 \001(\tB\003\340A\001"
+          + "\022%\n\030services_ipv4_cidr_block\030\005 \001(\tB\003\340A\001\""
+          + "\202\003\n\nNodeConfig\022\025\n\010location\030\001 \001(\tB\003\340A\001\022\031\n"
+          + "\014machine_type\030\002 \001(\tB\003\340A\001\022\024\n\007network\030\003 \001("
+          + "\tB\003\340A\001\022\027\n\nsubnetwork\030\004 \001(\tB\003\340A\001\022\031\n\014disk_"
+          + "size_gb\030\005 \001(\005B\003\340A\001\022\031\n\014oauth_scopes\030\006 \003(\t"
+          + "B\003\340A\001\022\034\n\017service_account\030\007 \001(\tB\003\340A\001\022\021\n\004t"
+          + "ags\030\010 \003(\tB\003\340A\001\022i\n\024ip_allocation_policy\030\t"
+          + " \001(\0132F.google.cloud.orchestration.airflo"
+          + "w.service.v1beta1.IPAllocationPolicyB\003\340A"
+          + "\001\022\036\n\021max_pods_per_node\030\n \001(\005B\003\340A\001\022!\n\024ena"
+          + "ble_ip_masq_agent\030\013 \001(\010B\003\340A\001\"\212\001\n\024Private"
+          + "ClusterConfig\022$\n\027enable_private_endpoint"
+          + "\030\001 \001(\010B\003\340A\001\022#\n\026master_ipv4_cidr_block\030\002 "
+          + "\001(\tB\003\340A\001\022\'\n\032master_ipv4_reserved_range\030\003"
+          + " \001(\tB\003\340A\003\"\346\001\n\020NetworkingConfig\022q\n\017connec"
+          + "tion_type\030\001 \001(\0162S.google.cloud.orchestra"
+          + "tion.airflow.service.v1beta1.NetworkingC"
+          + "onfig.ConnectionTypeB\003\340A\001\"_\n\016ConnectionT"
+          + "ype\022\037\n\033CONNECTION_TYPE_UNSPECIFIED\020\000\022\017\n\013"
+          + "VPC_PEERING\020\001\022\033\n\027PRIVATE_SERVICE_CONNECT"
+          + "\020\002\"\346\004\n\030PrivateEnvironmentConfig\022\'\n\032enabl"
+          + "e_private_environment\030\001 \001(\010B\003\340A\001\022m\n\026priv"
+          + "ate_cluster_config\030\002 \001(\0132H.google.cloud."
+          + "orchestration.airflow.service.v1beta1.Pr"
+          + "ivateClusterConfigB\003\340A\001\022\'\n\032web_server_ip"
+          + "v4_cidr_block\030\003 \001(\tB\003\340A\001\022&\n\031cloud_sql_ip"
+          + "v4_cidr_block\030\004 \001(\tB\003\340A\001\022+\n\036web_server_i"
+          + "pv4_reserved_range\030\005 \001(\tB\003\340A\003\0223\n&cloud_c"
+          + "omposer_network_ipv4_cidr_block\030\007 \001(\tB\003\340"
+          + "A\001\0227\n*cloud_composer_network_ipv4_reserv"
+          + "ed_range\030\010 \001(\tB\003\340A\003\022-\n enable_privately_"
+          + "used_public_ips\030\006 \001(\010B\003\340A\001\0221\n$cloud_comp"
+          + "oser_connection_subnetwork\030\t \001(\tB\003\340A\001\022d\n"
+          + "\021networking_config\030\n \001(\0132D.google.cloud."
+          + "orchestration.airflow.service.v1beta1.Ne"
+          + "tworkingConfigB\003\340A\001\"+\n\016DatabaseConfig\022\031\n"
+          + "\014machine_type\030\001 \001(\tB\003\340A\001\",\n\017WebServerCon"
+          + "fig\022\031\n\014machine_type\030\001 \001(\tB\003\340A\001\"-\n\020Encryp"
+          + "tionConfig\022\031\n\014kms_key_name\030\001 \001(\tB\003\340A\001\"\224\001"
+          + "\n\021MaintenanceWindow\0223\n\nstart_time\030\001 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\002\0221\n\010end_"
+          + "time\030\002 \001(\0132\032.google.protobuf.TimestampB\003"
+          + "\340A\002\022\027\n\nrecurrence\030\003 \001(\tB\003\340A\002\"\345\006\n\017Workloa"
+          + "dsConfig\022m\n\tscheduler\030\001 \001(\0132U.google.clo"
+          + "ud.orchestration.airflow.service.v1beta1"
+          + ".WorkloadsConfig.SchedulerResourceB\003\340A\001\022"
+          + "n\n\nweb_server\030\002 \001(\0132U.google.cloud.orche"
+          + "stration.airflow.service.v1beta1.Workloa"
+          + "dsConfig.WebServerResourceB\003\340A\001\022g\n\006worke"
+          + "r\030\003 \001(\0132R.google.cloud.orchestration.air"
+          + "flow.service.v1beta1.WorkloadsConfig.Wor"
+          + "kerResourceB\003\340A\001\022m\n\ttriggerer\030\004 \001(\0132U.go"
+          + "ogle.cloud.orchestration.airflow.service"
+          + ".v1beta1.WorkloadsConfig.TriggererResour"
+          + "ceB\003\340A\001\032j\n\021SchedulerResource\022\020\n\003cpu\030\001 \001("
+          + "\002B\003\340A\001\022\026\n\tmemory_gb\030\002 \001(\002B\003\340A\001\022\027\n\nstorag"
+          + "e_gb\030\003 \001(\002B\003\340A\001\022\022\n\005count\030\004 \001(\005B\003\340A\001\032V\n\021W"
+          + "ebServerResource\022\020\n\003cpu\030\001 \001(\002B\003\340A\001\022\026\n\tme"
+          + "mory_gb\030\002 \001(\002B\003\340A\001\022\027\n\nstorage_gb\030\003 \001(\002B\003"
+          + "\340A\001\032\203\001\n\016WorkerResource\022\020\n\003cpu\030\001 \001(\002B\003\340A\001"
+          + "\022\026\n\tmemory_gb\030\002 \001(\002B\003\340A\001\022\027\n\nstorage_gb\030\003"
+          + " \001(\002B\003\340A\001\022\026\n\tmin_count\030\004 \001(\005B\003\340A\001\022\026\n\tmax"
+          + "_count\030\005 \001(\005B\003\340A\001\032Q\n\021TriggererResource\022\022"
+          + "\n\005count\030\001 \001(\005B\003\340A\001\022\020\n\003cpu\030\002 \001(\002B\003\340A\001\022\026\n\t"
+          + "memory_gb\030\003 \001(\002B\003\340A\001\"\207\001\n\016RecoveryConfig\022"
+          + "u\n\032scheduled_snapshots_config\030\001 \001(\0132L.go"
+          + "ogle.cloud.orchestration.airflow.service"
+          + ".v1beta1.ScheduledSnapshotsConfigB\003\340A\001\"\221"
+          + "\001\n\030ScheduledSnapshotsConfig\022\024\n\007enabled\030\001"
+          + " \001(\010B\003\340A\001\022\036\n\021snapshot_location\030\006 \001(\tB\003\340A"
+          + "\001\022\'\n\032snapshot_creation_schedule\030\003 \001(\tB\003\340"
+          + "A\001\022\026\n\ttime_zone\030\005 \001(\tB\003\340A\001\"\333\001\n\036MasterAut"
+          + "horizedNetworksConfig\022\017\n\007enabled\030\001 \001(\010\022q"
+          + "\n\013cidr_blocks\030\002 \003(\0132\\.google.cloud.orche"
+          + "stration.airflow.service.v1beta1.MasterA"
+          + "uthorizedNetworksConfig.CidrBlock\0325\n\tCid"
+          + "rBlock\022\024\n\014display_name\030\001 \001(\t\022\022\n\ncidr_blo"
+          + "ck\030\002 \001(\t\"3\n\033CloudDataLineageIntegration\022"
+          + "\024\n\007enabled\030\001 \001(\010B\003\340A\001\"\250\005\n\013Environment\022\014\n"
+          + "\004name\030\001 \001(\t\022U\n\006config\030\002 \001(\0132E.google.clo"
+          + "ud.orchestration.airflow.service.v1beta1"
+          + ".EnvironmentConfig\022\021\n\004uuid\030\003 \001(\tB\003\340A\003\022T\n"
+          + "\005state\030\004 \001(\0162E.google.cloud.orchestratio"
+          + "n.airflow.service.v1beta1.Environment.St"
+          + "ate\0224\n\013create_time\030\005 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\003\022`\n\006label"
+          + "s\030\007 \003(\0132K.google.cloud.orchestration.air"
+          + "flow.service.v1beta1.Environment.LabelsE"
+          + "ntryB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"`\n\005State\022\025\n\021STATE_UNSPE"
+          + "CIFIED\020\000\022\014\n\010CREATING\020\001\022\013\n\007RUNNING\020\002\022\014\n\010U"
+          + "PDATING\020\003\022\014\n\010DELETING\020\004\022\t\n\005ERROR\020\005:l\352Ai\n"
+          + "#composer.googleapis.com/Environment\022Bpr"
+          + "ojects/{project}/locations/{location}/en"
+          + "vironments/{environment}\"A\n\023CheckUpgrade"
+          + "Request\022\023\n\013environment\030\001 \001(\t\022\025\n\rimage_ve"
+          + "rsion\030\002 \001(\t\"\204\004\n\024CheckUpgradeResponse\022\032\n\r"
+          + "build_log_uri\030\001 \001(\tB\003\340A\003\022\204\001\n\036contains_py"
+          + "pi_modules_conflict\030\004 \001(\0162W.google.cloud"
+          + ".orchestration.airflow.service.v1beta1.C"
+          + "heckUpgradeResponse.ConflictResultB\003\340A\003\022"
+          + ",\n\037pypi_conflict_build_log_extract\030\003 \001(\t"
+          + "B\003\340A\003\022\025\n\rimage_version\030\005 \001(\t\022y\n\021pypi_dep"
+          + "endencies\030\006 \003(\0132^.google.cloud.orchestra"
+          + "tion.airflow.service.v1beta1.CheckUpgrad"
+          + "eResponse.PypiDependenciesEntry\0327\n\025PypiD"
+          + "ependenciesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\"P\n\016ConflictResult\022\037\n\033CONFLICT_R"
+          + "ESULT_UNSPECIFIED\020\000\022\014\n\010CONFLICT\020\001\022\017\n\013NO_"
+          + "CONFLICT\020\0022\266\026\n\014Environments\022\270\002\n\021CreateEn"
+          + "vironment\022L.google.cloud.orchestration.a"
+          + "irflow.service.v1beta1.CreateEnvironment"
+          + "Request\032\035.google.longrunning.Operation\"\265"
+          + "\001\202\323\344\223\002D\"5/v1beta1/{parent=projects/*/loc"
+          + "ations/*}/environments:\013environment\332A\022pa"
+          + "rent,environment\312AS\n\013Environment\022Dgoogle"
+          + ".cloud.orchestration.airflow.service.v1b"
+          + "eta1.OperationMetadata\022\342\001\n\016GetEnvironmen"
+          + "t\022I.google.cloud.orchestration.airflow.s"
+          + "ervice.v1beta1.GetEnvironmentRequest\032?.g"
+          + "oogle.cloud.orchestration.airflow.servic"
+          + "e.v1beta1.Environment\"D\202\323\344\223\0027\0225/v1beta1/"
+          + "{name=projects/*/locations/*/environment"
+          + "s/*}\332A\004name\022\365\001\n\020ListEnvironments\022K.googl"
+          + "e.cloud.orchestration.airflow.service.v1"
+          + "beta1.ListEnvironmentsRequest\032L.google.c"
+          + "loud.orchestration.airflow.service.v1bet"
+          + "a1.ListEnvironmentsResponse\"F\202\323\344\223\0027\0225/v1"
+          + "beta1/{parent=projects/*/locations/*}/en"
+          + "vironments\332A\006parent\022\302\002\n\021UpdateEnvironmen"
+          + "t\022L.google.cloud.orchestration.airflow.s"
+          + "ervice.v1beta1.UpdateEnvironmentRequest\032"
+          + "\035.google.longrunning.Operation\"\277\001\202\323\344\223\002D2"
+          + "5/v1beta1/{name=projects/*/locations/*/e"
+          + "nvironments/*}:\013environment\332A\034name,envir"
+          + "onment,update_mask\312AS\n\013Environment\022Dgoog"
+          + "le.cloud.orchestration.airflow.service.v"
+          + "1beta1.OperationMetadata\022\247\002\n\021DeleteEnvir"
+          + "onment\022L.google.cloud.orchestration.airf"
+          + "low.service.v1beta1.DeleteEnvironmentReq"
+          + "uest\032\035.google.longrunning.Operation\"\244\001\202\323"
+          + "\344\223\0027*5/v1beta1/{name=projects/*/location"
+          + "s/*/environments/*}\332A\004name\312A]\n\025google.pr"
+          + "otobuf.Empty\022Dgoogle.cloud.orchestration"
+          + ".airflow.service.v1beta1.OperationMetada"
+          + "ta\022\250\002\n\020RestartWebServer\022K.google.cloud.o"
+          + "rchestration.airflow.service.v1beta1.Res"
+          + "tartWebServerRequest\032\035.google.longrunnin"
+          + "g.Operation\"\247\001\202\323\344\223\002K\"F/v1beta1/{name=pro"
+          + "jects/*/locations/*/environments/*}:rest"
+          + "artWebServer:\001*\312AS\n\013Environment\022Dgoogle."
+          + "cloud.orchestration.airflow.service.v1be"
+          + "ta1.OperationMetadata\022\340\002\n\014CheckUpgrade\022G"
+          + ".google.cloud.orchestration.airflow.serv"
+          + "ice.v1beta1.CheckUpgradeRequest\032\035.google"
+          + ".longrunning.Operation\"\347\001\202\323\344\223\002N\"I/v1beta"
+          + "1/{environment=projects/*/locations/*/en"
+          + "vironments/*}:checkUpgrade:\001*\312A\217\001\nGgoogl"
+          + "e.cloud.orchestration.airflow.service.v1"
+          + "beta1.CheckUpgradeResponse\022Dgoogle.cloud"
+          + ".orchestration.airflow.service.v1beta1.O"
+          + "perationMetadata\022\340\002\n\014SaveSnapshot\022G.goog"
+          + "le.cloud.orchestration.airflow.service.v"
+          + "1beta1.SaveSnapshotRequest\032\035.google.long"
+          + "running.Operation\"\347\001\202\323\344\223\002N\"I/v1beta1/{en"
+          + "vironment=projects/*/locations/*/environ"
+          + "ments/*}:saveSnapshot:\001*\312A\217\001\nGgoogle.clo"
+          + "ud.orchestration.airflow.service.v1beta1"
+          + ".SaveSnapshotResponse\022Dgoogle.cloud.orch"
+          + "estration.airflow.service.v1beta1.Operat"
+          + "ionMetadata\022\340\002\n\014LoadSnapshot\022G.google.cl"
+          + "oud.orchestration.airflow.service.v1beta"
+          + "1.LoadSnapshotRequest\032\035.google.longrunni"
+          + "ng.Operation\"\347\001\202\323\344\223\002N\"I/v1beta1/{environ"
+          + "ment=projects/*/locations/*/environments"
+          + "/*}:loadSnapshot:\001*\312A\217\001\nGgoogle.cloud.or"
+          + "chestration.airflow.service.v1beta1.Load"
+          + "SnapshotResponse\022Dgoogle.cloud.orchestra"
+          + "tion.airflow.service.v1beta1.OperationMe"
+          + "tadata\032K\312A\027composer.googleapis.com\322A.htt"
+          + "ps://www.googleapis.com/auth/cloud-platf"
+          + "ormB\225\001\n6com.google.cloud.orchestration.a"
+          + "irflow.service.v1beta1P\001ZYgoogle.golang."
+          + "org/genproto/googleapis/cloud/orchestrat"
+          + "ion/airflow/service/v1beta1;serviceb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -450,8 +589,79 @@ public final class EnvironmentsOuterClass {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_orchestration_airflow_service_v1beta1_EnvironmentConfig_descriptor =
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_ExecuteAirflowCommandResponse_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_ExecuteAirflowCommandResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_ExecuteAirflowCommandResponse_descriptor,
+            new java.lang.String[] {
+              "ExecutionId", "Pod", "PodNamespace", "Error",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_descriptor,
+            new java.lang.String[] {
+              "Output", "OutputEnd", "ExitInfo",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_Line_descriptor =
+        internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_Line_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_Line_descriptor,
+            new java.lang.String[] {
+              "LineNumber", "Content",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_ExitInfo_descriptor =
+        internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_ExitInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_PollAirflowCommandResponse_ExitInfo_descriptor,
+            new java.lang.String[] {
+              "ExitCode", "Error",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotRequest_descriptor,
+            new java.lang.String[] {
+              "Environment", "SnapshotLocation",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_SaveSnapshotResponse_descriptor,
+            new java.lang.String[] {
+              "SnapshotPath",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotRequest_descriptor,
+            new java.lang.String[] {
+              "Environment",
+              "SnapshotPath",
+              "SkipPypiPackagesInstallation",
+              "SkipEnvironmentVariablesSetting",
+              "SkipAirflowOverridesSetting",
+              "SkipGcsDataCopying",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_LoadSnapshotResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_EnvironmentConfig_descriptor =
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_EnvironmentConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_EnvironmentConfig_descriptor,
@@ -470,9 +680,11 @@ public final class EnvironmentsOuterClass {
               "MaintenanceWindow",
               "WorkloadsConfig",
               "EnvironmentSize",
+              "MasterAuthorizedNetworksConfig",
+              "RecoveryConfig",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_WebServerNetworkAccessControl_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_WebServerNetworkAccessControl_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_WebServerNetworkAccessControl_descriptor,
@@ -490,7 +702,7 @@ public final class EnvironmentsOuterClass {
               "Value", "Description",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_SoftwareConfig_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_SoftwareConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_SoftwareConfig_descriptor,
@@ -500,6 +712,8 @@ public final class EnvironmentsOuterClass {
               "PypiPackages",
               "EnvVariables",
               "PythonVersion",
+              "SchedulerCount",
+              "CloudDataLineageIntegration",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_SoftwareConfig_AirflowConfigOverridesEntry_descriptor =
         internal_static_google_cloud_orchestration_airflow_service_v1beta1_SoftwareConfig_descriptor
@@ -532,7 +746,7 @@ public final class EnvironmentsOuterClass {
               "Key", "Value",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_IPAllocationPolicy_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_IPAllocationPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_IPAllocationPolicy_descriptor,
@@ -544,7 +758,7 @@ public final class EnvironmentsOuterClass {
               "ServicesIpv4CidrBlock",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_NodeConfig_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_NodeConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_NodeConfig_descriptor,
@@ -559,17 +773,26 @@ public final class EnvironmentsOuterClass {
               "Tags",
               "IpAllocationPolicy",
               "MaxPodsPerNode",
+              "EnableIpMasqAgent",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateClusterConfig_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateClusterConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateClusterConfig_descriptor,
             new java.lang.String[] {
               "EnablePrivateEndpoint", "MasterIpv4CidrBlock", "MasterIpv4ReservedRange",
             });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_NetworkingConfig_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_NetworkingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_NetworkingConfig_descriptor,
+            new java.lang.String[] {
+              "ConnectionType",
+            });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateEnvironmentConfig_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateEnvironmentConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_PrivateEnvironmentConfig_descriptor,
@@ -581,9 +804,12 @@ public final class EnvironmentsOuterClass {
               "WebServerIpv4ReservedRange",
               "CloudComposerNetworkIpv4CidrBlock",
               "CloudComposerNetworkIpv4ReservedRange",
+              "EnablePrivatelyUsedPublicIps",
+              "CloudComposerConnectionSubnetwork",
+              "NetworkingConfig",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_DatabaseConfig_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_DatabaseConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_DatabaseConfig_descriptor,
@@ -591,7 +817,7 @@ public final class EnvironmentsOuterClass {
               "MachineType",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_WebServerConfig_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_WebServerConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_WebServerConfig_descriptor,
@@ -599,7 +825,7 @@ public final class EnvironmentsOuterClass {
               "MachineType",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_EncryptionConfig_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_EncryptionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_EncryptionConfig_descriptor,
@@ -607,7 +833,7 @@ public final class EnvironmentsOuterClass {
               "KmsKeyName",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_MaintenanceWindow_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_MaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_MaintenanceWindow_descriptor,
@@ -615,12 +841,12 @@ public final class EnvironmentsOuterClass {
               "StartTime", "EndTime", "Recurrence",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_descriptor,
             new java.lang.String[] {
-              "Scheduler", "WebServer", "Worker",
+              "Scheduler", "WebServer", "Worker", "Triggerer",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_SchedulerResource_descriptor =
         internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_descriptor
@@ -652,8 +878,60 @@ public final class EnvironmentsOuterClass {
             new java.lang.String[] {
               "Cpu", "MemoryGb", "StorageGb", "MinCount", "MaxCount",
             });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_TriggererResource_descriptor =
+        internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_TriggererResource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_WorkloadsConfig_TriggererResource_descriptor,
+            new java.lang.String[] {
+              "Count", "Cpu", "MemoryGb",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_RecoveryConfig_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_RecoveryConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_RecoveryConfig_descriptor,
+            new java.lang.String[] {
+              "ScheduledSnapshotsConfig",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_ScheduledSnapshotsConfig_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_ScheduledSnapshotsConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_ScheduledSnapshotsConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled", "SnapshotLocation", "SnapshotCreationSchedule", "TimeZone",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_descriptor =
+        getDescriptor().getMessageTypes().get(28);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled", "CidrBlocks",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor =
+        internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_CidrBlock_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_MasterAuthorizedNetworksConfig_CidrBlock_descriptor,
+            new java.lang.String[] {
+              "DisplayName", "CidrBlock",
+            });
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_CloudDataLineageIntegration_descriptor =
+        getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_orchestration_airflow_service_v1beta1_CloudDataLineageIntegration_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orchestration_airflow_service_v1beta1_CloudDataLineageIntegration_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+            });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_Environment_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_Environment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_Environment_descriptor,
@@ -671,7 +949,7 @@ public final class EnvironmentsOuterClass {
               "Key", "Value",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_CheckUpgradeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_CheckUpgradeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_CheckUpgradeRequest_descriptor,
@@ -679,7 +957,7 @@ public final class EnvironmentsOuterClass {
               "Environment", "ImageVersion",
             });
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_CheckUpgradeResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_orchestration_airflow_service_v1beta1_CheckUpgradeResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orchestration_airflow_service_v1beta1_CheckUpgradeResponse_descriptor,

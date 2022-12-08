@@ -40,6 +40,7 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   private EnvironmentConfig() {
     gkeCluster_ = "";
     dagGcsPrefix_ = "";
+    environmentSize_ = 0;
     airflowUri_ = "";
   }
 
@@ -67,6 +68,190 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.class,
             com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The size of the Cloud Composer environment.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize}
+   */
+  public enum EnvironmentSize implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The size of the environment is unspecified.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_UNSPECIFIED = 0;</code>
+     */
+    ENVIRONMENT_SIZE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The environment size is small.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_SMALL = 1;</code>
+     */
+    ENVIRONMENT_SIZE_SMALL(1),
+    /**
+     *
+     *
+     * <pre>
+     * The environment size is medium.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_MEDIUM = 2;</code>
+     */
+    ENVIRONMENT_SIZE_MEDIUM(2),
+    /**
+     *
+     *
+     * <pre>
+     * The environment size is large.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_LARGE = 3;</code>
+     */
+    ENVIRONMENT_SIZE_LARGE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The size of the environment is unspecified.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ENVIRONMENT_SIZE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The environment size is small.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_SMALL = 1;</code>
+     */
+    public static final int ENVIRONMENT_SIZE_SMALL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The environment size is medium.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_MEDIUM = 2;</code>
+     */
+    public static final int ENVIRONMENT_SIZE_MEDIUM_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The environment size is large.
+     * </pre>
+     *
+     * <code>ENVIRONMENT_SIZE_LARGE = 3;</code>
+     */
+    public static final int ENVIRONMENT_SIZE_LARGE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EnvironmentSize valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EnvironmentSize forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ENVIRONMENT_SIZE_UNSPECIFIED;
+        case 1:
+          return ENVIRONMENT_SIZE_SMALL;
+        case 2:
+          return ENVIRONMENT_SIZE_MEDIUM;
+        case 3:
+          return ENVIRONMENT_SIZE_LARGE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EnvironmentSize> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EnvironmentSize>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EnvironmentSize>() {
+              public EnvironmentSize findValueByNumber(int number) {
+                return EnvironmentSize.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final EnvironmentSize[] VALUES = values();
+
+    public static EnvironmentSize valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EnvironmentSize(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize)
   }
 
   public static final int GKE_CLUSTER_FIELD_NUMBER = 1;
@@ -181,6 +366,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The number of nodes in the Kubernetes Engine cluster that will be
    * used to run this environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 node_count = 3;</code>
@@ -580,6 +767,208 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     return getEncryptionConfig();
   }
 
+  public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 12;
+  private com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenanceWindow_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance window is the period when Cloud Composer components may
+   * undergo maintenance. It is defined so that maintenance is not executed
+   * during peak hours or critical time periods.
+   * The system will not be under maintenance for every occurrence of this
+   * window, but when maintenance is planned, it will be scheduled
+   * during the window.
+   * The maintenance window period must encompass at least 12 hours per week.
+   * This may be split into multiple chunks, each with a size of
+   * at least 4 hours.
+   * If this value is omitted, the default value for maintenance window will be
+   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceWindow() {
+    return maintenanceWindow_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance window is the period when Cloud Composer components may
+   * undergo maintenance. It is defined so that maintenance is not executed
+   * during peak hours or critical time periods.
+   * The system will not be under maintenance for every occurrence of this
+   * window, but when maintenance is planned, it will be scheduled
+   * during the window.
+   * The maintenance window period must encompass at least 12 hours per week.
+   * This may be split into multiple chunks, each with a size of
+   * at least 4 hours.
+   * If this value is omitted, the default value for maintenance window will be
+   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceWindow.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow
+      getMaintenanceWindow() {
+    return maintenanceWindow_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow.getDefaultInstance()
+        : maintenanceWindow_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance window is the period when Cloud Composer components may
+   * undergo maintenance. It is defined so that maintenance is not executed
+   * during peak hours or critical time periods.
+   * The system will not be under maintenance for every occurrence of this
+   * window, but when maintenance is planned, it will be scheduled
+   * during the window.
+   * The maintenance window period must encompass at least 12 hours per week.
+   * This may be split into multiple chunks, each with a size of
+   * at least 4 hours.
+   * If this value is omitted, the default value for maintenance window will be
+   * applied. The default value is Saturday and Sunday 00-06 GMT.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindowOrBuilder
+      getMaintenanceWindowOrBuilder() {
+    return getMaintenanceWindow();
+  }
+
+  public static final int WORKLOADS_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloadsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The workloads configuration settings for the GKE cluster associated with
+   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+   * server and workers workloads.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workloadsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkloadsConfig() {
+    return workloadsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The workloads configuration settings for the GKE cluster associated with
+   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+   * server and workers workloads.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workloadsConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig getWorkloadsConfig() {
+    return workloadsConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.getDefaultInstance()
+        : workloadsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The workloads configuration settings for the GKE cluster associated with
+   * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+   * server and workers workloads.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfigOrBuilder
+      getWorkloadsConfigOrBuilder() {
+    return getWorkloadsConfig();
+  }
+
+  public static final int ENVIRONMENT_SIZE_FIELD_NUMBER = 16;
+  private int environmentSize_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The size of the Cloud Composer environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for environmentSize.
+   */
+  @java.lang.Override
+  public int getEnvironmentSizeValue() {
+    return environmentSize_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The size of the Cloud Composer environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The environmentSize.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+      getEnvironmentSize() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize result =
+        com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize.valueOf(
+            environmentSize_);
+    return result == null
+        ? com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+            .UNRECOGNIZED
+        : result;
+  }
+
   public static final int AIRFLOW_URI_FIELD_NUMBER = 6;
   private volatile java.lang.Object airflowUri_;
   /**
@@ -633,6 +1022,137 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER = 17;
+  private com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+      masterAuthorizedNetworksConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the masterAuthorizedNetworksConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMasterAuthorizedNetworksConfig() {
+    return masterAuthorizedNetworksConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The masterAuthorizedNetworksConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+      getMasterAuthorizedNetworksConfig() {
+    return masterAuthorizedNetworksConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+            .getDefaultInstance()
+        : masterAuthorizedNetworksConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfigOrBuilder
+      getMasterAuthorizedNetworksConfigOrBuilder() {
+    return getMasterAuthorizedNetworksConfig();
+  }
+
+  public static final int RECOVERY_CONFIG_FIELD_NUMBER = 18;
+  private com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig recoveryConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the recoveryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecoveryConfig() {
+    return recoveryConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The recoveryConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig getRecoveryConfig() {
+    return recoveryConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.getDefaultInstance()
+        : recoveryConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1.RecoveryConfigOrBuilder
+      getRecoveryConfigOrBuilder() {
+    return getRecoveryConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -680,6 +1200,24 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     if (encryptionConfig_ != null) {
       output.writeMessage(11, getEncryptionConfig());
     }
+    if (maintenanceWindow_ != null) {
+      output.writeMessage(12, getMaintenanceWindow());
+    }
+    if (workloadsConfig_ != null) {
+      output.writeMessage(15, getWorkloadsConfig());
+    }
+    if (environmentSize_
+        != com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+            .ENVIRONMENT_SIZE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(16, environmentSize_);
+    }
+    if (masterAuthorizedNetworksConfig_ != null) {
+      output.writeMessage(17, getMasterAuthorizedNetworksConfig());
+    }
+    if (recoveryConfig_ != null) {
+      output.writeMessage(18, getRecoveryConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -725,6 +1263,26 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     if (encryptionConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionConfig());
+    }
+    if (maintenanceWindow_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getMaintenanceWindow());
+    }
+    if (workloadsConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getWorkloadsConfig());
+    }
+    if (environmentSize_
+        != com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+            .ENVIRONMENT_SIZE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, environmentSize_);
+    }
+    if (masterAuthorizedNetworksConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getMasterAuthorizedNetworksConfig());
+    }
+    if (recoveryConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getRecoveryConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -775,7 +1333,26 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     if (hasEncryptionConfig()) {
       if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
     }
+    if (hasMaintenanceWindow() != other.hasMaintenanceWindow()) return false;
+    if (hasMaintenanceWindow()) {
+      if (!getMaintenanceWindow().equals(other.getMaintenanceWindow())) return false;
+    }
+    if (hasWorkloadsConfig() != other.hasWorkloadsConfig()) return false;
+    if (hasWorkloadsConfig()) {
+      if (!getWorkloadsConfig().equals(other.getWorkloadsConfig())) return false;
+    }
+    if (environmentSize_ != other.environmentSize_) return false;
     if (!getAirflowUri().equals(other.getAirflowUri())) return false;
+    if (hasMasterAuthorizedNetworksConfig() != other.hasMasterAuthorizedNetworksConfig())
+      return false;
+    if (hasMasterAuthorizedNetworksConfig()) {
+      if (!getMasterAuthorizedNetworksConfig().equals(other.getMasterAuthorizedNetworksConfig()))
+        return false;
+    }
+    if (hasRecoveryConfig() != other.hasRecoveryConfig()) return false;
+    if (hasRecoveryConfig()) {
+      if (!getRecoveryConfig().equals(other.getRecoveryConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -821,8 +1398,26 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionConfig().hashCode();
     }
+    if (hasMaintenanceWindow()) {
+      hash = (37 * hash) + MAINTENANCE_WINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceWindow().hashCode();
+    }
+    if (hasWorkloadsConfig()) {
+      hash = (37 * hash) + WORKLOADS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkloadsConfig().hashCode();
+    }
+    hash = (37 * hash) + ENVIRONMENT_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + environmentSize_;
     hash = (37 * hash) + AIRFLOW_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAirflowUri().hashCode();
+    if (hasMasterAuthorizedNetworksConfig()) {
+      hash = (37 * hash) + MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMasterAuthorizedNetworksConfig().hashCode();
+    }
+    if (hasRecoveryConfig()) {
+      hash = (37 * hash) + RECOVERY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRecoveryConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1012,8 +1607,34 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         encryptionConfig_ = null;
         encryptionConfigBuilder_ = null;
       }
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = null;
+      } else {
+        maintenanceWindow_ = null;
+        maintenanceWindowBuilder_ = null;
+      }
+      if (workloadsConfigBuilder_ == null) {
+        workloadsConfig_ = null;
+      } else {
+        workloadsConfig_ = null;
+        workloadsConfigBuilder_ = null;
+      }
+      environmentSize_ = 0;
+
       airflowUri_ = "";
 
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfig_ = null;
+      } else {
+        masterAuthorizedNetworksConfig_ = null;
+        masterAuthorizedNetworksConfigBuilder_ = null;
+      }
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfig_ = null;
+      } else {
+        recoveryConfig_ = null;
+        recoveryConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1081,7 +1702,28 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       } else {
         result.encryptionConfig_ = encryptionConfigBuilder_.build();
       }
+      if (maintenanceWindowBuilder_ == null) {
+        result.maintenanceWindow_ = maintenanceWindow_;
+      } else {
+        result.maintenanceWindow_ = maintenanceWindowBuilder_.build();
+      }
+      if (workloadsConfigBuilder_ == null) {
+        result.workloadsConfig_ = workloadsConfig_;
+      } else {
+        result.workloadsConfig_ = workloadsConfigBuilder_.build();
+      }
+      result.environmentSize_ = environmentSize_;
       result.airflowUri_ = airflowUri_;
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        result.masterAuthorizedNetworksConfig_ = masterAuthorizedNetworksConfig_;
+      } else {
+        result.masterAuthorizedNetworksConfig_ = masterAuthorizedNetworksConfigBuilder_.build();
+      }
+      if (recoveryConfigBuilder_ == null) {
+        result.recoveryConfig_ = recoveryConfig_;
+      } else {
+        result.recoveryConfig_ = recoveryConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1167,9 +1809,24 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasEncryptionConfig()) {
         mergeEncryptionConfig(other.getEncryptionConfig());
       }
+      if (other.hasMaintenanceWindow()) {
+        mergeMaintenanceWindow(other.getMaintenanceWindow());
+      }
+      if (other.hasWorkloadsConfig()) {
+        mergeWorkloadsConfig(other.getWorkloadsConfig());
+      }
+      if (other.environmentSize_ != 0) {
+        setEnvironmentSizeValue(other.getEnvironmentSizeValue());
+      }
       if (!other.getAirflowUri().isEmpty()) {
         airflowUri_ = other.airflowUri_;
         onChanged();
+      }
+      if (other.hasMasterAuthorizedNetworksConfig()) {
+        mergeMasterAuthorizedNetworksConfig(other.getMasterAuthorizedNetworksConfig());
+      }
+      if (other.hasRecoveryConfig()) {
+        mergeRecoveryConfig(other.getRecoveryConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1266,6 +1923,39 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getMaintenanceWindowFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 98
+            case 122:
+              {
+                input.readMessage(getWorkloadsConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
+            case 128:
+              {
+                environmentSize_ = input.readEnum();
+
+                break;
+              } // case 128
+            case 138:
+              {
+                input.readMessage(
+                    getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getRecoveryConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1517,6 +2207,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 node_count = 3;</code>
@@ -1533,6 +2225,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 node_count = 3;</code>
@@ -1552,6 +2246,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 node_count = 3;</code>
@@ -3047,6 +3743,671 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       return encryptionConfigBuilder_;
     }
 
+    private com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenanceWindow_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow,
+            com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindowOrBuilder>
+        maintenanceWindowBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenanceWindow field is set.
+     */
+    public boolean hasMaintenanceWindow() {
+      return maintenanceWindowBuilder_ != null || maintenanceWindow_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenanceWindow.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow
+        getMaintenanceWindow() {
+      if (maintenanceWindowBuilder_ == null) {
+        return maintenanceWindow_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow
+                .getDefaultInstance()
+            : maintenanceWindow_;
+      } else {
+        return maintenanceWindowBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenanceWindow(
+        com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow value) {
+      if (maintenanceWindowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceWindow_ = value;
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenanceWindow(
+        com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow.Builder
+            builderForValue) {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenanceWindow(
+        com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow value) {
+      if (maintenanceWindowBuilder_ == null) {
+        if (maintenanceWindow_ != null) {
+          maintenanceWindow_ =
+              com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow.newBuilder(
+                      maintenanceWindow_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenanceWindow_ = value;
+        }
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenanceWindow() {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = null;
+        onChanged();
+      } else {
+        maintenanceWindow_ = null;
+        maintenanceWindowBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow.Builder
+        getMaintenanceWindowBuilder() {
+
+      onChanged();
+      return getMaintenanceWindowFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindowOrBuilder
+        getMaintenanceWindowOrBuilder() {
+      if (maintenanceWindowBuilder_ != null) {
+        return maintenanceWindowBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceWindow_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow
+                .getDefaultInstance()
+            : maintenanceWindow_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance window is the period when Cloud Composer components may
+     * undergo maintenance. It is defined so that maintenance is not executed
+     * during peak hours or critical time periods.
+     * The system will not be under maintenance for every occurrence of this
+     * window, but when maintenance is planned, it will be scheduled
+     * during the window.
+     * The maintenance window period must encompass at least 12 hours per week.
+     * This may be split into multiple chunks, each with a size of
+     * at least 4 hours.
+     * If this value is omitted, the default value for maintenance window will be
+     * applied. The default value is Saturday and Sunday 00-06 GMT.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MaintenanceWindow maintenance_window = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow,
+            com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindowOrBuilder>
+        getMaintenanceWindowFieldBuilder() {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow,
+                com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindow.Builder,
+                com.google.cloud.orchestration.airflow.service.v1.MaintenanceWindowOrBuilder>(
+                getMaintenanceWindow(), getParentForChildren(), isClean());
+        maintenanceWindow_ = null;
+      }
+      return maintenanceWindowBuilder_;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloadsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig,
+            com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfigOrBuilder>
+        workloadsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workloadsConfig field is set.
+     */
+    public boolean hasWorkloadsConfig() {
+      return workloadsConfigBuilder_ != null || workloadsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workloadsConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig getWorkloadsConfig() {
+      if (workloadsConfigBuilder_ == null) {
+        return workloadsConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.getDefaultInstance()
+            : workloadsConfig_;
+      } else {
+        return workloadsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkloadsConfig(
+        com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig value) {
+      if (workloadsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workloadsConfig_ = value;
+        onChanged();
+      } else {
+        workloadsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkloadsConfig(
+        com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.Builder builderForValue) {
+      if (workloadsConfigBuilder_ == null) {
+        workloadsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        workloadsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkloadsConfig(
+        com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig value) {
+      if (workloadsConfigBuilder_ == null) {
+        if (workloadsConfig_ != null) {
+          workloadsConfig_ =
+              com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.newBuilder(
+                      workloadsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          workloadsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        workloadsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkloadsConfig() {
+      if (workloadsConfigBuilder_ == null) {
+        workloadsConfig_ = null;
+        onChanged();
+      } else {
+        workloadsConfig_ = null;
+        workloadsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.Builder
+        getWorkloadsConfigBuilder() {
+
+      onChanged();
+      return getWorkloadsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfigOrBuilder
+        getWorkloadsConfigOrBuilder() {
+      if (workloadsConfigBuilder_ != null) {
+        return workloadsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workloadsConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.getDefaultInstance()
+            : workloadsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The workloads configuration settings for the GKE cluster associated with
+     * the Cloud Composer environment. The GKE cluster runs Airflow scheduler, web
+     * server and workers workloads.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.WorkloadsConfig workloads_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig,
+            com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfigOrBuilder>
+        getWorkloadsConfigFieldBuilder() {
+      if (workloadsConfigBuilder_ == null) {
+        workloadsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig,
+                com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1.WorkloadsConfigOrBuilder>(
+                getWorkloadsConfig(), getParentForChildren(), isClean());
+        workloadsConfig_ = null;
+      }
+      return workloadsConfigBuilder_;
+    }
+
+    private int environmentSize_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The size of the Cloud Composer environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for environmentSize.
+     */
+    @java.lang.Override
+    public int getEnvironmentSizeValue() {
+      return environmentSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The size of the Cloud Composer environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for environmentSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentSizeValue(int value) {
+
+      environmentSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The size of the Cloud Composer environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The environmentSize.
+     */
+    @java.lang.Override
+    public com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+        getEnvironmentSize() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize result =
+          com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+              .valueOf(environmentSize_);
+      return result == null
+          ? com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize
+              .UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The size of the Cloud Composer environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The environmentSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentSize(
+        com.google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      environmentSize_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The size of the Cloud Composer environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.EnvironmentConfig.EnvironmentSize environment_size = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvironmentSize() {
+
+      environmentSize_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object airflowUri_ = "";
     /**
      *
@@ -3161,6 +4522,490 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       airflowUri_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+        masterAuthorizedNetworksConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig,
+            com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+                .Builder,
+            com.google.cloud.orchestration.airflow.service.v1
+                .MasterAuthorizedNetworksConfigOrBuilder>
+        masterAuthorizedNetworksConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the masterAuthorizedNetworksConfig field is set.
+     */
+    public boolean hasMasterAuthorizedNetworksConfig() {
+      return masterAuthorizedNetworksConfigBuilder_ != null
+          || masterAuthorizedNetworksConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The masterAuthorizedNetworksConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+        getMasterAuthorizedNetworksConfig() {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        return masterAuthorizedNetworksConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+                .getDefaultInstance()
+            : masterAuthorizedNetworksConfig_;
+      } else {
+        return masterAuthorizedNetworksConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMasterAuthorizedNetworksConfig(
+        com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig value) {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        masterAuthorizedNetworksConfig_ = value;
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMasterAuthorizedNetworksConfig(
+        com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig.Builder
+            builderForValue) {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMasterAuthorizedNetworksConfig(
+        com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig value) {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        if (masterAuthorizedNetworksConfig_ != null) {
+          masterAuthorizedNetworksConfig_ =
+              com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+                  .newBuilder(masterAuthorizedNetworksConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          masterAuthorizedNetworksConfig_ = value;
+        }
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMasterAuthorizedNetworksConfig() {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfig_ = null;
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfig_ = null;
+        masterAuthorizedNetworksConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig.Builder
+        getMasterAuthorizedNetworksConfigBuilder() {
+
+      onChanged();
+      return getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfigOrBuilder
+        getMasterAuthorizedNetworksConfigOrBuilder() {
+      if (masterAuthorizedNetworksConfigBuilder_ != null) {
+        return masterAuthorizedNetworksConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return masterAuthorizedNetworksConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+                .getDefaultInstance()
+            : masterAuthorizedNetworksConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig,
+            com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+                .Builder,
+            com.google.cloud.orchestration.airflow.service.v1
+                .MasterAuthorizedNetworksConfigOrBuilder>
+        getMasterAuthorizedNetworksConfigFieldBuilder() {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig,
+                com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
+                    .Builder,
+                com.google.cloud.orchestration.airflow.service.v1
+                    .MasterAuthorizedNetworksConfigOrBuilder>(
+                getMasterAuthorizedNetworksConfig(), getParentForChildren(), isClean());
+        masterAuthorizedNetworksConfig_ = null;
+      }
+      return masterAuthorizedNetworksConfigBuilder_;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig recoveryConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig,
+            com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.RecoveryConfigOrBuilder>
+        recoveryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the recoveryConfig field is set.
+     */
+    public boolean hasRecoveryConfig() {
+      return recoveryConfigBuilder_ != null || recoveryConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The recoveryConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig getRecoveryConfig() {
+      if (recoveryConfigBuilder_ == null) {
+        return recoveryConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.getDefaultInstance()
+            : recoveryConfig_;
+      } else {
+        return recoveryConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRecoveryConfig(
+        com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig value) {
+      if (recoveryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        recoveryConfig_ = value;
+        onChanged();
+      } else {
+        recoveryConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRecoveryConfig(
+        com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.Builder builderForValue) {
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        recoveryConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRecoveryConfig(
+        com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig value) {
+      if (recoveryConfigBuilder_ == null) {
+        if (recoveryConfig_ != null) {
+          recoveryConfig_ =
+              com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.newBuilder(
+                      recoveryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          recoveryConfig_ = value;
+        }
+        onChanged();
+      } else {
+        recoveryConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRecoveryConfig() {
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfig_ = null;
+        onChanged();
+      } else {
+        recoveryConfig_ = null;
+        recoveryConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.Builder
+        getRecoveryConfigBuilder() {
+
+      onChanged();
+      return getRecoveryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1.RecoveryConfigOrBuilder
+        getRecoveryConfigOrBuilder() {
+      if (recoveryConfigBuilder_ != null) {
+        return recoveryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return recoveryConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.getDefaultInstance()
+            : recoveryConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig,
+            com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1.RecoveryConfigOrBuilder>
+        getRecoveryConfigFieldBuilder() {
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig,
+                com.google.cloud.orchestration.airflow.service.v1.RecoveryConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1.RecoveryConfigOrBuilder>(
+                getRecoveryConfig(), getParentForChildren(), isClean());
+        recoveryConfig_ = null;
+      }
+      return recoveryConfigBuilder_;
     }
 
     @java.lang.Override

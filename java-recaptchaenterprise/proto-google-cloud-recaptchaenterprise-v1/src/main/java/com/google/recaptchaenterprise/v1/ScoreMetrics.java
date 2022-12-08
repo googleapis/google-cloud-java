@@ -164,7 +164,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -191,7 +190,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -209,7 +207,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -232,7 +229,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Action-based metrics. The map key is the action name which specified by the
    * site owners at time of the "execute" client-side call.
-   * Populated only for SCORE keys.
    * </pre>
    *
    * <code>
@@ -878,7 +874,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Action-based metrics. The map key is the action name which specified by the
      * site owners at time of the "execute" client-side call.
-     * Populated only for SCORE keys.
      * </pre>
      *
      * <code>
@@ -905,7 +900,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Action-based metrics. The map key is the action name which specified by the
      * site owners at time of the "execute" client-side call.
-     * Populated only for SCORE keys.
      * </pre>
      *
      * <code>
@@ -923,7 +917,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Action-based metrics. The map key is the action name which specified by the
      * site owners at time of the "execute" client-side call.
-     * Populated only for SCORE keys.
      * </pre>
      *
      * <code>
@@ -946,7 +939,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Action-based metrics. The map key is the action name which specified by the
      * site owners at time of the "execute" client-side call.
-     * Populated only for SCORE keys.
      * </pre>
      *
      * <code>
@@ -977,7 +969,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Action-based metrics. The map key is the action name which specified by the
      * site owners at time of the "execute" client-side call.
-     * Populated only for SCORE keys.
      * </pre>
      *
      * <code>
@@ -1003,7 +994,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Action-based metrics. The map key is the action name which specified by the
      * site owners at time of the "execute" client-side call.
-     * Populated only for SCORE keys.
      * </pre>
      *
      * <code>
@@ -1028,7 +1018,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Action-based metrics. The map key is the action name which specified by the
      * site owners at time of the "execute" client-side call.
-     * Populated only for SCORE keys.
      * </pre>
      *
      * <code>

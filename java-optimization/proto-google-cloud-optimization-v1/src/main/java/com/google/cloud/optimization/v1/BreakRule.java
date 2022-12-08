@@ -1549,8 +1549,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed span of any interval of time in the route that does not
-     * include at least partially a break of `duration &gt;=
+     * Required. Maximum allowed span of any interval of time in the route that
+     * does not include at least partially a break of `duration &gt;=
      * min_break_duration`. Must be positive.
      * </pre>
      *
@@ -1565,8 +1565,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed span of any interval of time in the route that does not
-     * include at least partially a break of `duration &gt;=
+     * Required. Maximum allowed span of any interval of time in the route that
+     * does not include at least partially a break of `duration &gt;=
      * min_break_duration`. Must be positive.
      * </pre>
      *
@@ -1581,8 +1581,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed span of any interval of time in the route that does not
-     * include at least partially a break of `duration &gt;=
+     * Required. Maximum allowed span of any interval of time in the route that
+     * does not include at least partially a break of `duration &gt;=
      * min_break_duration`. Must be positive.
      * </pre>
      *
@@ -1732,8 +1732,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed span of any interval of time in the route that does not
-     * include at least partially a break of `duration &gt;=
+     * Required. Maximum allowed span of any interval of time in the route that
+     * does not include at least partially a break of `duration &gt;=
      * min_break_duration`. Must be positive.
      * </pre>
      *
@@ -1751,8 +1751,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed span of any interval of time in the route that does not
-     * include at least partially a break of `duration &gt;=
+     * Required. Maximum allowed span of any interval of time in the route that
+     * does not include at least partially a break of `duration &gt;=
      * min_break_duration`. Must be positive.
      * </pre>
      *
@@ -1772,8 +1772,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum allowed span of any interval of time in the route that does not
-     * include at least partially a break of `duration &gt;=
+     * Required. Maximum allowed span of any interval of time in the route that
+     * does not include at least partially a break of `duration &gt;=
      * min_break_duration`. Must be positive.
      * </pre>
      *
@@ -2425,8 +2425,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2443,8 +2443,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2467,8 +2467,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2493,8 +2493,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2517,8 +2517,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2547,8 +2547,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2571,8 +2571,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2589,8 +2589,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *
@@ -2611,8 +2611,8 @@ public final class BreakRule extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Maximum allowed span of any interval of time in the route that does not
-       * include at least partially a break of `duration &gt;=
+       * Required. Maximum allowed span of any interval of time in the route that
+       * does not include at least partially a break of `duration &gt;=
        * min_break_duration`. Must be positive.
        * </pre>
        *

@@ -90,11 +90,11 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                         ProtoRestSerializer<CreateKeyRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "keyId", request.getKeyId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("key", request.getKey(), false))
+                      request -> ProtoRestSerializer.create().toBody("key", request.getKey(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -132,6 +132,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "showDeleted", request.getShowDeleted());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -164,6 +165,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetKeyRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -197,6 +199,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetKeyStringRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -230,11 +233,11 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                         ProtoRestSerializer<UpdateKeyRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("key", request.getKey(), false))
+                      request -> ProtoRestSerializer.create().toBody("key", request.getKey(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -268,6 +271,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                         ProtoRestSerializer<DeleteKeyRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "etag", request.getEtag());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -304,12 +308,13 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UndeleteKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -343,6 +348,7 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
                             ProtoRestSerializer<LookupKeyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "keyString", request.getKeyString());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

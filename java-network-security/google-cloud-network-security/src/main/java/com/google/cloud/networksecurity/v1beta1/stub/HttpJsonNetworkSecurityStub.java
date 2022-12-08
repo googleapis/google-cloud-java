@@ -123,6 +123,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -157,6 +158,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAuthorizationPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -195,6 +197,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                 fields,
                                 "authorizationPolicyId",
                                 request.getAuthorizationPolicyId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -203,7 +206,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                   .toBody(
                                       "authorizationPolicy",
                                       request.getAuthorizationPolicy(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -242,6 +245,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             ProtoRestSerializer<UpdateAuthorizationPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -250,7 +254,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                   .toBody(
                                       "authorizationPolicy",
                                       request.getAuthorizationPolicy(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -285,6 +289,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteAuthorizationPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -326,6 +331,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -360,6 +366,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetServerTlsPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -396,12 +403,13 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "serverTlsPolicyId", request.getServerTlsPolicyId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy(), false))
+                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -440,12 +448,13 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             ProtoRestSerializer<UpdateServerTlsPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy(), false))
+                                  .toBody("serverTlsPolicy", request.getServerTlsPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -480,6 +489,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteServerTlsPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -521,6 +531,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -555,6 +566,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetClientTlsPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -591,12 +603,13 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "clientTlsPolicyId", request.getClientTlsPolicyId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy(), false))
+                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -635,12 +648,13 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             ProtoRestSerializer<UpdateClientTlsPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy(), false))
+                                  .toBody("clientTlsPolicy", request.getClientTlsPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -675,6 +689,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteClientTlsPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -711,6 +726,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -744,6 +760,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -780,12 +797,13 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -819,6 +837,7 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -855,12 +874,13 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

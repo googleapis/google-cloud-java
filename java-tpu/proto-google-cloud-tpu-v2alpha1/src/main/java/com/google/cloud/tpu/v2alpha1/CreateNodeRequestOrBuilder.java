@@ -114,4 +114,29 @@ public interface CreateNodeRequestOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v2alpha1.NodeOrBuilder getNodeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+  /**
+   *
+   *
+   * <pre>
+   * Idempotent request UUID.
+   * </pre>
+   *
+   * <code>string request_id = 6;</code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

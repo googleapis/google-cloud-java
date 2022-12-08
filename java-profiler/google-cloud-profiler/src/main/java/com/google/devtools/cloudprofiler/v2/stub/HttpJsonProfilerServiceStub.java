@@ -74,12 +74,13 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateProfileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Profile>newBuilder()
@@ -111,12 +112,13 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateOfflineProfileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("profile", request.getProfile(), false))
+                                  .toBody("profile", request.getProfile(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Profile>newBuilder()
@@ -149,12 +151,13 @@ public class HttpJsonProfilerServiceStub extends ProfilerServiceStub {
                             ProtoRestSerializer<UpdateProfileRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("profile", request.getProfile(), false))
+                                  .toBody("profile", request.getProfile(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Profile>newBuilder()

@@ -23,6 +23,8 @@ package com.google.cloud.orchestration.airflow.service.v1;
  *
  * <pre>
  * The configuration settings for the Airflow web server App Engine instance.
+ * Supported for Cloud Composer environments in versions
+ * composer-1.*.*-airflow-*.*.*
  * </pre>
  *
  * Protobuf type {@code google.cloud.orchestration.airflow.service.v1.WebServerConfig}
@@ -292,6 +294,8 @@ public final class WebServerConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The configuration settings for the Airflow web server App Engine instance.
+   * Supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*
    * </pre>
    *
    * Protobuf type {@code google.cloud.orchestration.airflow.service.v1.WebServerConfig}

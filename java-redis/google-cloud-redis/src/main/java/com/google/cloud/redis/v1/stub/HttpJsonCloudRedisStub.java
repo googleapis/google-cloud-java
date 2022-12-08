@@ -99,6 +99,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -132,6 +133,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -165,6 +167,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetInstanceAuthStringRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -199,12 +202,13 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             ProtoRestSerializer<CreateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "instanceId", request.getInstanceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance(), false))
+                                  .toBody("instance", request.getInstance(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -240,12 +244,13 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             ProtoRestSerializer<UpdateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance(), false))
+                                  .toBody("instance", request.getInstance(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -279,12 +284,13 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpgradeInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -318,12 +324,13 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -357,12 +364,13 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -396,12 +404,13 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FailoverInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -435,6 +444,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -471,12 +481,13 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RescheduleMaintenanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

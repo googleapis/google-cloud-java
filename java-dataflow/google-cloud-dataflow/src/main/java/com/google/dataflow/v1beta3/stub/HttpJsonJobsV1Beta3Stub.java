@@ -84,11 +84,11 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "replaceJobId", request.getReplaceJobId());
                         serializer.putQueryParam(fields, "view", request.getViewValue());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -122,6 +122,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                         ProtoRestSerializer<GetJobRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "view", request.getViewValue());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -157,11 +158,11 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<UpdateJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -198,6 +199,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -236,6 +238,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -272,6 +275,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SnapshotJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -285,7 +289,7 @@ public class HttpJsonJobsV1Beta3Stub extends JobsV1Beta3Stub {
                                           .clearLocation()
                                           .clearProjectId()
                                           .build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Snapshot>newBuilder()

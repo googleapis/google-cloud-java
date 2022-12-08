@@ -72,7 +72,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ResourceCommitment.Type}
@@ -315,7 +315,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -331,7 +331,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -355,7 +355,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -971,7 +971,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -986,7 +986,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1009,7 +1009,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1032,7 +1032,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1054,7 +1054,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -1072,7 +1072,7 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+     * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

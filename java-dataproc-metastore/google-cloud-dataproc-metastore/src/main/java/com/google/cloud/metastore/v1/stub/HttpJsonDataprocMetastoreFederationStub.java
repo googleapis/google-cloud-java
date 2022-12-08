@@ -95,6 +95,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -129,6 +130,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetFederationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -166,12 +168,13 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                             serializer.putQueryParam(
                                 fields, "federationId", request.getFederationId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("federation", request.getFederation(), false))
+                                  .toBody("federation", request.getFederation(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -209,12 +212,13 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("federation", request.getFederation(), false))
+                                  .toBody("federation", request.getFederation(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -250,6 +254,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                             ProtoRestSerializer<DeleteFederationRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

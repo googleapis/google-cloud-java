@@ -17,9 +17,9 @@
 package com.google.cloud.tpu.v2alpha1.samples;
 
 // [START tpu_v2alpha1_generated_Tpu_DeleteNode_String_sync]
-import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.NodeName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteNodeString {
 
@@ -35,7 +35,7 @@ public class SyncDeleteNodeString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
       String name = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString();
-      Node response = tpuClient.deleteNodeAsync(name).get();
+      tpuClient.deleteNodeAsync(name).get();
     }
   }
 }

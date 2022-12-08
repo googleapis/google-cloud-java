@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for deleting a big query export.
+ * Request message for deleting a BigQuery export.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.DeleteBigQueryExportRequest}
@@ -73,7 +73,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Name of the big query export to delete. Its format is
+   * Required. The name of the BigQuery export to delete. Its format is
    * organizations/{organization}/bigQueryExports/{export_id},
    * folders/{folder}/bigQueryExports/{export_id}, or
    * projects/{project}/bigQueryExports/{export_id}
@@ -101,7 +101,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Name of the big query export to delete. Its format is
+   * Required. The name of the BigQuery export to delete. Its format is
    * organizations/{organization}/bigQueryExports/{export_id},
    * folders/{folder}/bigQueryExports/{export_id}, or
    * projects/{project}/bigQueryExports/{export_id}
@@ -290,7 +290,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for deleting a big query export.
+   * Request message for deleting a BigQuery export.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.DeleteBigQueryExportRequest}
@@ -464,7 +464,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the big query export to delete. Its format is
+     * Required. The name of the BigQuery export to delete. Its format is
      * organizations/{organization}/bigQueryExports/{export_id},
      * folders/{folder}/bigQueryExports/{export_id}, or
      * projects/{project}/bigQueryExports/{export_id}
@@ -491,7 +491,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the big query export to delete. Its format is
+     * Required. The name of the BigQuery export to delete. Its format is
      * organizations/{organization}/bigQueryExports/{export_id},
      * folders/{folder}/bigQueryExports/{export_id}, or
      * projects/{project}/bigQueryExports/{export_id}
@@ -518,7 +518,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the big query export to delete. Its format is
+     * Required. The name of the BigQuery export to delete. Its format is
      * organizations/{organization}/bigQueryExports/{export_id},
      * folders/{folder}/bigQueryExports/{export_id}, or
      * projects/{project}/bigQueryExports/{export_id}
@@ -544,7 +544,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the big query export to delete. Its format is
+     * Required. The name of the BigQuery export to delete. Its format is
      * organizations/{organization}/bigQueryExports/{export_id},
      * folders/{folder}/bigQueryExports/{export_id}, or
      * projects/{project}/bigQueryExports/{export_id}
@@ -566,7 +566,7 @@ public final class DeleteBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Name of the big query export to delete. Its format is
+     * Required. The name of the BigQuery export to delete. Its format is
      * organizations/{organization}/bigQueryExports/{export_id},
      * folders/{folder}/bigQueryExports/{export_id}, or
      * projects/{project}/bigQueryExports/{export_id}

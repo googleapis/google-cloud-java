@@ -87,6 +87,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -119,6 +120,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetWebhookRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -152,12 +154,13 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateWebhookRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("webhook", request.getWebhook(), false))
+                                  .toBody("webhook", request.getWebhook(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Webhook>newBuilder()
@@ -190,12 +193,13 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                             ProtoRestSerializer<UpdateWebhookRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("webhook", request.getWebhook(), false))
+                                  .toBody("webhook", request.getWebhook(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Webhook>newBuilder()
@@ -227,6 +231,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                             ProtoRestSerializer<DeleteWebhookRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -260,6 +265,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -293,6 +299,7 @@ public class HttpJsonWebhooksStub extends WebhooksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

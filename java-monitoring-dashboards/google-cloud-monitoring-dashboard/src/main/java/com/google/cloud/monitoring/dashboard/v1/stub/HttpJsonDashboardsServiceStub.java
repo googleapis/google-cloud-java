@@ -82,12 +82,13 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dashboard", request.getDashboard(), false))
+                                  .toBody("dashboard", request.getDashboard(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Dashboard>newBuilder()
@@ -120,6 +121,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -153,6 +155,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetDashboardRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -186,6 +189,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteDashboardRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -222,12 +226,13 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dashboard", request.getDashboard(), false))
+                                  .toBody("dashboard", request.getDashboard(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Dashboard>newBuilder()

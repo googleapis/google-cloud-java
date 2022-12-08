@@ -171,6 +171,48 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
+   * Account verification information for identity verification. The assessment
+   * event must include a token and site key to use this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * </code>
+   *
+   * @return Whether the accountVerification field is set.
+   */
+  boolean hasAccountVerification();
+  /**
+   *
+   *
+   * <pre>
+   * Account verification information for identity verification. The assessment
+   * event must include a token and site key to use this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * </code>
+   *
+   * @return The accountVerification.
+   */
+  com.google.recaptchaenterprise.v1.AccountVerificationInfo getAccountVerification();
+  /**
+   *
+   *
+   * <pre>
+   * Account verification information for identity verification. The assessment
+   * event must include a token and site key to use this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder
+      getAccountVerificationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Assessment returned by account defender when a hashed_account_id is
    * provided.
    * </pre>

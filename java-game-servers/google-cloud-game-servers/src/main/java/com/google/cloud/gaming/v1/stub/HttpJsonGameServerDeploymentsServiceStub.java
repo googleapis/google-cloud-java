@@ -104,6 +104,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -138,6 +139,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetGameServerDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -174,6 +176,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "deploymentId", request.getDeploymentId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -182,7 +185,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                                   .toBody(
                                       "gameServerDeployment",
                                       request.getGameServerDeployment(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -217,6 +220,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteGameServerDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -258,6 +262,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             ProtoRestSerializer<UpdateGameServerDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -266,7 +271,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                                   .toBody(
                                       "gameServerDeployment",
                                       request.getGameServerDeployment(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -303,6 +308,7 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetGameServerDeploymentRolloutRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -340,12 +346,13 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             ProtoRestSerializer<UpdateGameServerDeploymentRolloutRequest>
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("rollout", request.getRollout(), false))
+                                  .toBody("rollout", request.getRollout(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -389,12 +396,13 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             serializer.putQueryParam(
                                 fields, "previewTime", request.getPreviewTime());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("rollout", request.getRollout(), false))
+                                  .toBody("rollout", request.getRollout(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser
@@ -430,12 +438,13 @@ public class HttpJsonGameServerDeploymentsServiceStub extends GameServerDeployme
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FetchDeploymentStateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FetchDeploymentStateResponse>newBuilder()

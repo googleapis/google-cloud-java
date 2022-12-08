@@ -368,6 +368,7 @@ public class ProjectsClientTest {
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setUsageExportLocation(UsageExportLocation.newBuilder().build())
+            .setVmDnsSetting("vmDnsSetting233497342")
             .setXpnProjectStatus("xpnProjectStatus-52109419")
             .build();
     mockService.addResponse(expectedResponse);
@@ -424,6 +425,7 @@ public class ProjectsClientTest {
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setUsageExportLocation(UsageExportLocation.newBuilder().build())
+            .setVmDnsSetting("vmDnsSetting233497342")
             .setXpnProjectStatus("xpnProjectStatus-52109419")
             .build();
     mockService.addResponse(expectedResponse);

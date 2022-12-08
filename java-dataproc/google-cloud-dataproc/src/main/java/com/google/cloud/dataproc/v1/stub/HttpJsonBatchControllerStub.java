@@ -90,12 +90,13 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "batchId", request.getBatchId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("batch", request.getBatch(), false))
+                                  .toBody("batch", request.getBatch(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -128,6 +129,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetBatchRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -163,6 +165,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -195,6 +198,7 @@ public class HttpJsonBatchControllerStub extends BatchControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteBatchRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)

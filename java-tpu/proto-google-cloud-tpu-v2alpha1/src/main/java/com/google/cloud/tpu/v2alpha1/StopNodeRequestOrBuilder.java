@@ -27,10 +27,12 @@ public interface StopNodeRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name.
+   * Required. The resource name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -39,10 +41,12 @@ public interface StopNodeRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name.
+   * Required. The resource name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

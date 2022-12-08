@@ -39,7 +39,9 @@ public final class ImportFeatureValuesOperationMetadata
     super(builder);
   }
 
-  private ImportFeatureValuesOperationMetadata() {}
+  private ImportFeatureValuesOperationMetadata() {
+    sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -152,6 +154,67 @@ public final class ImportFeatureValuesOperationMetadata
     return importedFeatureValueCount_;
   }
 
+  public static final int SOURCE_URIS_FIELD_NUMBER = 4;
+  private com.google.protobuf.LazyStringList sourceUris_;
+  /**
+   *
+   *
+   * <pre>
+   * The source URI from where Feature values are imported.
+   * </pre>
+   *
+   * <code>repeated string source_uris = 4;</code>
+   *
+   * @return A list containing the sourceUris.
+   */
+  public com.google.protobuf.ProtocolStringList getSourceUrisList() {
+    return sourceUris_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source URI from where Feature values are imported.
+   * </pre>
+   *
+   * <code>repeated string source_uris = 4;</code>
+   *
+   * @return The count of sourceUris.
+   */
+  public int getSourceUrisCount() {
+    return sourceUris_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source URI from where Feature values are imported.
+   * </pre>
+   *
+   * <code>repeated string source_uris = 4;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sourceUris at the given index.
+   */
+  public java.lang.String getSourceUris(int index) {
+    return sourceUris_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source URI from where Feature values are imported.
+   * </pre>
+   *
+   * <code>repeated string source_uris = 4;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sourceUris at the given index.
+   */
+  public com.google.protobuf.ByteString getSourceUrisBytes(int index) {
+    return sourceUris_.getByteString(index);
+  }
+
   public static final int INVALID_ROW_COUNT_FIELD_NUMBER = 6;
   private long invalidRowCount_;
   /**
@@ -216,6 +279,9 @@ public final class ImportFeatureValuesOperationMetadata
     if (importedFeatureValueCount_ != 0L) {
       output.writeInt64(3, importedFeatureValueCount_);
     }
+    for (int i = 0; i < sourceUris_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sourceUris_.getRaw(i));
+    }
     if (invalidRowCount_ != 0L) {
       output.writeInt64(6, invalidRowCount_);
     }
@@ -239,6 +305,14 @@ public final class ImportFeatureValuesOperationMetadata
     }
     if (importedFeatureValueCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, importedFeatureValueCount_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < sourceUris_.size(); i++) {
+        dataSize += computeStringSizeNoTag(sourceUris_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSourceUrisList().size();
     }
     if (invalidRowCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, invalidRowCount_);
@@ -270,6 +344,7 @@ public final class ImportFeatureValuesOperationMetadata
     }
     if (getImportedEntityCount() != other.getImportedEntityCount()) return false;
     if (getImportedFeatureValueCount() != other.getImportedFeatureValueCount()) return false;
+    if (!getSourceUrisList().equals(other.getSourceUrisList())) return false;
     if (getInvalidRowCount() != other.getInvalidRowCount()) return false;
     if (getTimestampOutsideRetentionRowsCount() != other.getTimestampOutsideRetentionRowsCount())
       return false;
@@ -292,6 +367,10 @@ public final class ImportFeatureValuesOperationMetadata
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getImportedEntityCount());
     hash = (37 * hash) + IMPORTED_FEATURE_VALUE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getImportedFeatureValueCount());
+    if (getSourceUrisCount() > 0) {
+      hash = (37 * hash) + SOURCE_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceUrisList().hashCode();
+    }
     hash = (37 * hash) + INVALID_ROW_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getInvalidRowCount());
     hash = (37 * hash) + TIMESTAMP_OUTSIDE_RETENTION_ROWS_COUNT_FIELD_NUMBER;
@@ -449,6 +528,8 @@ public final class ImportFeatureValuesOperationMetadata
 
       importedFeatureValueCount_ = 0L;
 
+      sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       invalidRowCount_ = 0L;
 
       timestampOutsideRetentionRowsCount_ = 0L;
@@ -482,6 +563,7 @@ public final class ImportFeatureValuesOperationMetadata
     public com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata buildPartial() {
       com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata result =
           new com.google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata(this);
+      int from_bitField0_ = bitField0_;
       if (genericMetadataBuilder_ == null) {
         result.genericMetadata_ = genericMetadata_;
       } else {
@@ -489,6 +571,11 @@ public final class ImportFeatureValuesOperationMetadata
       }
       result.importedEntityCount_ = importedEntityCount_;
       result.importedFeatureValueCount_ = importedFeatureValueCount_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        sourceUris_ = sourceUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.sourceUris_ = sourceUris_;
       result.invalidRowCount_ = invalidRowCount_;
       result.timestampOutsideRetentionRowsCount_ = timestampOutsideRetentionRowsCount_;
       onBuilt();
@@ -553,6 +640,16 @@ public final class ImportFeatureValuesOperationMetadata
       if (other.getImportedFeatureValueCount() != 0L) {
         setImportedFeatureValueCount(other.getImportedFeatureValueCount());
       }
+      if (!other.sourceUris_.isEmpty()) {
+        if (sourceUris_.isEmpty()) {
+          sourceUris_ = other.sourceUris_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureSourceUrisIsMutable();
+          sourceUris_.addAll(other.sourceUris_);
+        }
+        onChanged();
+      }
       if (other.getInvalidRowCount() != 0L) {
         setInvalidRowCount(other.getInvalidRowCount());
       }
@@ -603,6 +700,13 @@ public final class ImportFeatureValuesOperationMetadata
 
                 break;
               } // case 24
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSourceUrisIsMutable();
+                sourceUris_.add(s);
+                break;
+              } // case 34
             case 48:
               {
                 invalidRowCount_ = input.readInt64();
@@ -631,6 +735,8 @@ public final class ImportFeatureValuesOperationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -922,6 +1028,174 @@ public final class ImportFeatureValuesOperationMetadata
     public Builder clearImportedFeatureValueCount() {
 
       importedFeatureValueCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList sourceUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureSourceUrisIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        sourceUris_ = new com.google.protobuf.LazyStringArrayList(sourceUris_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @return A list containing the sourceUris.
+     */
+    public com.google.protobuf.ProtocolStringList getSourceUrisList() {
+      return sourceUris_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @return The count of sourceUris.
+     */
+    public int getSourceUrisCount() {
+      return sourceUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sourceUris at the given index.
+     */
+    public java.lang.String getSourceUris(int index) {
+      return sourceUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sourceUris at the given index.
+     */
+    public com.google.protobuf.ByteString getSourceUrisBytes(int index) {
+      return sourceUris_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The sourceUris to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceUris(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourceUrisIsMutable();
+      sourceUris_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @param value The sourceUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSourceUris(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSourceUrisIsMutable();
+      sourceUris_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @param values The sourceUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSourceUris(java.lang.Iterable<java.lang.String> values) {
+      ensureSourceUrisIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceUris_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceUris() {
+      sourceUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source URI from where Feature values are imported.
+     * </pre>
+     *
+     * <code>repeated string source_uris = 4;</code>
+     *
+     * @param value The bytes of the sourceUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSourceUrisBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSourceUrisIsMutable();
+      sourceUris_.add(value);
       onChanged();
       return this;
     }

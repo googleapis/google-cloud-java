@@ -87,12 +87,13 @@ public class HttpJsonImageAnnotatorStub extends ImageAnnotatorStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchAnnotateImagesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchAnnotateImagesResponse>newBuilder()
@@ -122,12 +123,13 @@ public class HttpJsonImageAnnotatorStub extends ImageAnnotatorStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchAnnotateFilesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchAnnotateFilesResponse>newBuilder()
@@ -158,12 +160,13 @@ public class HttpJsonImageAnnotatorStub extends ImageAnnotatorStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AsyncBatchAnnotateImagesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -197,12 +200,13 @@ public class HttpJsonImageAnnotatorStub extends ImageAnnotatorStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AsyncBatchAnnotateFilesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

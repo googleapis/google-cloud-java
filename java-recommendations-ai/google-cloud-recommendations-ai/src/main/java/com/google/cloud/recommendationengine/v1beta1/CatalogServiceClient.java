@@ -645,7 +645,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
    * @param catalogItem Required. The catalog item to update/create. The 'catalog_item_id' field has
    *     to match that in the 'name'.
    * @param updateMask Optional. Indicates which fields in the provided 'item' to update. If not
@@ -686,7 +686,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
    * @param catalogItem Required. The catalog item to update/create. The 'catalog_item_id' field has
    *     to match that in the 'name'.
    * @param updateMask Optional. Indicates which fields in the provided 'item' to update. If not

@@ -581,7 +581,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * Represents vulnerability-specific fields like CVE and CVS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -595,7 +595,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * Represents vulnerability-specific fields like CVE and CVS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -609,7 +609,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents vulnerability specific fields like cve, cvss scores etc.
+   * Represents vulnerability-specific fields like CVE and CVS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -1490,4 +1490,39 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.File files = 46;</code>
    */
   com.google.cloud.securitycenter.v1.FileOrBuilder getFilesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Kernel Rootkit signature.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+   *
+   * @return Whether the kernelRootkit field is set.
+   */
+  boolean hasKernelRootkit();
+  /**
+   *
+   *
+   * <pre>
+   * Kernel Rootkit signature.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+   *
+   * @return The kernelRootkit.
+   */
+  com.google.cloud.securitycenter.v1.KernelRootkit getKernelRootkit();
+  /**
+   *
+   *
+   * <pre>
+   * Kernel Rootkit signature.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
+   */
+  com.google.cloud.securitycenter.v1.KernelRootkitOrBuilder getKernelRootkitOrBuilder();
 }

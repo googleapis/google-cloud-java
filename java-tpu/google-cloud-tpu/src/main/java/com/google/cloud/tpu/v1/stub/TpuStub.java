@@ -17,12 +17,17 @@
 package com.google.cloud.tpu.v1.stub;
 
 import static com.google.cloud.tpu.v1.TpuClient.ListAcceleratorTypesPagedResponse;
+import static com.google.cloud.tpu.v1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v1.TpuClient.ListTensorFlowVersionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tpu.v1.AcceleratorType;
 import com.google.cloud.tpu.v1.CreateNodeRequest;
 import com.google.cloud.tpu.v1.DeleteNodeRequest;
@@ -141,6 +146,19 @@ public abstract class TpuStub implements BackgroundResource {
 
   public UnaryCallable<GetAcceleratorTypeRequest, AcceleratorType> getAcceleratorTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: getAcceleratorTypeCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

@@ -1,4 +1,4 @@
-# Google Cloud VMware Engine Client for Java
+# Google Google Cloud VMware Engine Client for Java
 
 Java idiomatic client for [Google Cloud VMware Engine][product-docs].
 

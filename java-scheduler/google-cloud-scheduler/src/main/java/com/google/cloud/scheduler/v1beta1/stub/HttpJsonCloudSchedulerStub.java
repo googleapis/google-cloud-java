@@ -85,6 +85,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -117,6 +118,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -149,11 +151,11 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CreateJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -184,11 +186,11 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         ProtoRestSerializer<UpdateJobRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -218,6 +220,7 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -250,12 +253,13 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<PauseJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -285,12 +289,13 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<ResumeJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -320,12 +325,13 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<RunJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()

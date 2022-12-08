@@ -428,7 +428,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A soft limit of the load. See [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
+     * A soft limit of the load. See
+     * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
      * </pre>
      *
      * <code>int64 soft_max_load = 2;</code>
@@ -441,10 +442,14 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the load ever exceeds [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load] along this vehicle's route,
-     * the following cost penalty applies (only once per vehicle):
-     * (load - [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]) * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
-     * add up and must be in the same unit as [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
+     * If the load ever exceeds
+     * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]
+     * along this vehicle's route, the following cost penalty applies (only once
+     * per vehicle): (load -
+     * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load])
+     * * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
+     * add up and must be in the same unit as
+     * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
      * </pre>
      *
      * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -533,7 +538,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines a load limit applying to a vehicle, e.g. "this truck may only
-   * carry up to 3500 kg". See [load_limits][google.cloud.optimization.v1.Vehicle.load_limits].
+   * carry up to 3500 kg". See
+   * [load_limits][google.cloud.optimization.v1.Vehicle.load_limits].
    * </pre>
    *
    * Protobuf type {@code google.cloud.optimization.v1.Vehicle.LoadLimit}
@@ -586,7 +592,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A minimum acceptable load. Must be ≥ 0.
-       * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+       * If they're both specified,
+       * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+       * be ≤
+       * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
        * </pre>
        *
        * <code>int64 min = 1;</code>
@@ -601,7 +610,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
        * load is unrestricted by this message.
-       * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+       * If they're both specified,
+       * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+       * be ≤
+       * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
        * </pre>
        *
        * <code>optional int64 max = 2;</code>
@@ -615,7 +627,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
        * load is unrestricted by this message.
-       * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+       * If they're both specified,
+       * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+       * be ≤
+       * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
        * </pre>
        *
        * <code>optional int64 max = 2;</code>
@@ -679,7 +694,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A minimum acceptable load. Must be ≥ 0.
-       * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+       * If they're both specified,
+       * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+       * be ≤
+       * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
        * </pre>
        *
        * <code>int64 min = 1;</code>
@@ -699,7 +717,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
        * load is unrestricted by this message.
-       * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+       * If they're both specified,
+       * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+       * be ≤
+       * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
        * </pre>
        *
        * <code>optional int64 max = 2;</code>
@@ -716,7 +737,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
        * load is unrestricted by this message.
-       * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+       * If they're both specified,
+       * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+       * be ≤
+       * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
        * </pre>
        *
        * <code>optional int64 max = 2;</code>
@@ -1105,7 +1129,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A minimum acceptable load. Must be ≥ 0.
-         * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+         * If they're both specified,
+         * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+         * be ≤
+         * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
          * </pre>
          *
          * <code>int64 min = 1;</code>
@@ -1121,7 +1148,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A minimum acceptable load. Must be ≥ 0.
-         * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+         * If they're both specified,
+         * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+         * be ≤
+         * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
          * </pre>
          *
          * <code>int64 min = 1;</code>
@@ -1140,7 +1170,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A minimum acceptable load. Must be ≥ 0.
-         * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+         * If they're both specified,
+         * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+         * be ≤
+         * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
          * </pre>
          *
          * <code>int64 min = 1;</code>
@@ -1161,7 +1194,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
          * load is unrestricted by this message.
-         * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+         * If they're both specified,
+         * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+         * be ≤
+         * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
          * </pre>
          *
          * <code>optional int64 max = 2;</code>
@@ -1178,7 +1214,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
          * load is unrestricted by this message.
-         * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+         * If they're both specified,
+         * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+         * be ≤
+         * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
          * </pre>
          *
          * <code>optional int64 max = 2;</code>
@@ -1195,7 +1234,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
          * load is unrestricted by this message.
-         * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+         * If they're both specified,
+         * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+         * be ≤
+         * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
          * </pre>
          *
          * <code>optional int64 max = 2;</code>
@@ -1215,7 +1257,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A maximum acceptable load. Must be ≥ 0. If unspecified, the maximum
          * load is unrestricted by this message.
-         * If they're both specified, [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must be ≤ [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
+         * If they're both specified,
+         * [min][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.min] must
+         * be ≤
+         * [max][google.cloud.optimization.v1.Vehicle.LoadLimit.Interval.max].
          * </pre>
          *
          * <code>optional int64 max = 2;</code>
@@ -1336,7 +1381,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A soft limit of the load. See [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
+     * A soft limit of the load. See
+     * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
      * </pre>
      *
      * <code>int64 soft_max_load = 2;</code>
@@ -1354,10 +1400,14 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If the load ever exceeds [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load] along this vehicle's route,
-     * the following cost penalty applies (only once per vehicle):
-     * (load - [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]) * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
-     * add up and must be in the same unit as [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
+     * If the load ever exceeds
+     * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]
+     * along this vehicle's route, the following cost penalty applies (only once
+     * per vehicle): (load -
+     * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load])
+     * * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
+     * add up and must be in the same unit as
+     * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
      * </pre>
      *
      * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -1691,7 +1741,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines a load limit applying to a vehicle, e.g. "this truck may only
-     * carry up to 3500 kg". See [load_limits][google.cloud.optimization.v1.Vehicle.load_limits].
+     * carry up to 3500 kg". See
+     * [load_limits][google.cloud.optimization.v1.Vehicle.load_limits].
      * </pre>
      *
      * Protobuf type {@code google.cloud.optimization.v1.Vehicle.LoadLimit}
@@ -2006,7 +2057,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A soft limit of the load. See [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
+       * A soft limit of the load. See
+       * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
        * </pre>
        *
        * <code>int64 soft_max_load = 2;</code>
@@ -2021,7 +2073,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A soft limit of the load. See [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
+       * A soft limit of the load. See
+       * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
        * </pre>
        *
        * <code>int64 soft_max_load = 2;</code>
@@ -2039,7 +2092,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A soft limit of the load. See [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
+       * A soft limit of the load. See
+       * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max].
        * </pre>
        *
        * <code>int64 soft_max_load = 2;</code>
@@ -2058,10 +2112,14 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the load ever exceeds [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load] along this vehicle's route,
-       * the following cost penalty applies (only once per vehicle):
-       * (load - [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]) * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
-       * add up and must be in the same unit as [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
+       * If the load ever exceeds
+       * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]
+       * along this vehicle's route, the following cost penalty applies (only once
+       * per vehicle): (load -
+       * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load])
+       * * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
+       * add up and must be in the same unit as
+       * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
        * </pre>
        *
        * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -2076,10 +2134,14 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the load ever exceeds [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load] along this vehicle's route,
-       * the following cost penalty applies (only once per vehicle):
-       * (load - [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]) * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
-       * add up and must be in the same unit as [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
+       * If the load ever exceeds
+       * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]
+       * along this vehicle's route, the following cost penalty applies (only once
+       * per vehicle): (load -
+       * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load])
+       * * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
+       * add up and must be in the same unit as
+       * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
        * </pre>
        *
        * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -2097,10 +2159,14 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If the load ever exceeds [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load] along this vehicle's route,
-       * the following cost penalty applies (only once per vehicle):
-       * (load - [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]) * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
-       * add up and must be in the same unit as [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
+       * If the load ever exceeds
+       * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load]
+       * along this vehicle's route, the following cost penalty applies (only once
+       * per vehicle): (load -
+       * [soft_max_load][google.cloud.optimization.v1.Vehicle.LoadLimit.soft_max_load])
+       * * [cost_per_unit_above_soft_max][google.cloud.optimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
+       * add up and must be in the same unit as
+       * [Shipment.penalty_cost][google.cloud.optimization.v1.Shipment.penalty_cost].
        * </pre>
        *
        * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -5425,7 +5491,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Cost per traveled hour of the vehicle route. This cost is applied only to
    * travel time taken by the route (i.e., that reported in
-   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]), and excludes waiting time and visit time.
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]),
+   * and excludes waiting time and visit time.
    * </pre>
    *
    * <code>double cost_per_traveled_hour = 17;</code>
@@ -5444,9 +5511,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Cost per kilometer of the vehicle route. This cost is applied to the
-   * distance reported in the [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] and does not apply
-   * to any distance implicitly traveled from the `arrival_location` to the
-   * `departure_location` of a single `VisitRequest`.
+   * distance reported in the
+   * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+   * and does not apply to any distance implicitly traveled from the
+   * `arrival_location` to the `departure_location` of a single `VisitRequest`.
    * </pre>
    *
    * <code>double cost_per_kilometer = 18;</code>
@@ -5866,7 +5934,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a label for this vehicle. This label is reported in the response
-   * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+   * as the `vehicle_label` of the corresponding
+   * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
    * </pre>
    *
    * <code>string label = 27;</code>
@@ -5890,7 +5959,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a label for this vehicle. This label is reported in the response
-   * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+   * as the `vehicle_label` of the corresponding
+   * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
    * </pre>
    *
    * <code>string label = 27;</code>
@@ -5953,7 +6023,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Override
@@ -5974,7 +6044,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -5994,7 +6064,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */
@@ -10540,7 +10610,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cost per traveled hour of the vehicle route. This cost is applied only to
      * travel time taken by the route (i.e., that reported in
-     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]), and excludes waiting time and visit time.
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]),
+     * and excludes waiting time and visit time.
      * </pre>
      *
      * <code>double cost_per_traveled_hour = 17;</code>
@@ -10557,7 +10628,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cost per traveled hour of the vehicle route. This cost is applied only to
      * travel time taken by the route (i.e., that reported in
-     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]), and excludes waiting time and visit time.
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]),
+     * and excludes waiting time and visit time.
      * </pre>
      *
      * <code>double cost_per_traveled_hour = 17;</code>
@@ -10577,7 +10649,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cost per traveled hour of the vehicle route. This cost is applied only to
      * travel time taken by the route (i.e., that reported in
-     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]), and excludes waiting time and visit time.
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]),
+     * and excludes waiting time and visit time.
      * </pre>
      *
      * <code>double cost_per_traveled_hour = 17;</code>
@@ -10597,9 +10670,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cost per kilometer of the vehicle route. This cost is applied to the
-     * distance reported in the [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] and does not apply
-     * to any distance implicitly traveled from the `arrival_location` to the
-     * `departure_location` of a single `VisitRequest`.
+     * distance reported in the
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * and does not apply to any distance implicitly traveled from the
+     * `arrival_location` to the `departure_location` of a single `VisitRequest`.
      * </pre>
      *
      * <code>double cost_per_kilometer = 18;</code>
@@ -10615,9 +10689,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cost per kilometer of the vehicle route. This cost is applied to the
-     * distance reported in the [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] and does not apply
-     * to any distance implicitly traveled from the `arrival_location` to the
-     * `departure_location` of a single `VisitRequest`.
+     * distance reported in the
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * and does not apply to any distance implicitly traveled from the
+     * `arrival_location` to the `departure_location` of a single `VisitRequest`.
      * </pre>
      *
      * <code>double cost_per_kilometer = 18;</code>
@@ -10636,9 +10711,10 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Cost per kilometer of the vehicle route. This cost is applied to the
-     * distance reported in the [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions] and does not apply
-     * to any distance implicitly traveled from the `arrival_location` to the
-     * `departure_location` of a single `VisitRequest`.
+     * distance reported in the
+     * [ShipmentRoute.transitions][google.cloud.optimization.v1.ShipmentRoute.transitions]
+     * and does not apply to any distance implicitly traveled from the
+     * `arrival_location` to the `departure_location` of a single `VisitRequest`.
      * </pre>
      *
      * <code>double cost_per_kilometer = 18;</code>
@@ -11833,7 +11909,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this vehicle. This label is reported in the response
-     * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+     * as the `vehicle_label` of the corresponding
+     * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
      * </pre>
      *
      * <code>string label = 27;</code>
@@ -11856,7 +11933,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this vehicle. This label is reported in the response
-     * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+     * as the `vehicle_label` of the corresponding
+     * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
      * </pre>
      *
      * <code>string label = 27;</code>
@@ -11879,7 +11957,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this vehicle. This label is reported in the response
-     * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+     * as the `vehicle_label` of the corresponding
+     * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
      * </pre>
      *
      * <code>string label = 27;</code>
@@ -11901,7 +11980,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this vehicle. This label is reported in the response
-     * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+     * as the `vehicle_label` of the corresponding
+     * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
      * </pre>
      *
      * <code>string label = 27;</code>
@@ -11919,7 +11999,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a label for this vehicle. This label is reported in the response
-     * as the `vehicle_label` of the corresponding [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
+     * as the `vehicle_label` of the corresponding
+     * [ShipmentRoute][google.cloud.optimization.v1.ShipmentRoute].
      * </pre>
      *
      * <code>string label = 27;</code>
@@ -12041,7 +12122,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
      * @return A list containing the breakRuleIndices.
      */
     @java.lang.Deprecated
@@ -12063,7 +12144,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
      * @return The count of breakRuleIndices.
      */
     @java.lang.Deprecated
@@ -12083,7 +12164,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
      * @param index The index of the element to return.
      * @return The breakRuleIndices at the given index.
      */
@@ -12104,7 +12185,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
      * @param index The index to set the value at.
      * @param value The breakRuleIndices to set.
      * @return This builder for chaining.
@@ -12129,7 +12210,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
      * @param value The breakRuleIndices to add.
      * @return This builder for chaining.
      */
@@ -12153,7 +12234,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
      * @param values The breakRuleIndices to add.
      * @return This builder for chaining.
      */
@@ -12177,7 +12258,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1379
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1436
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

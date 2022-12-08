@@ -112,6 +112,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -145,6 +146,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -179,12 +181,13 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment(), false))
+                                  .toBody("environment", request.getEnvironment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -221,12 +224,13 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             ProtoRestSerializer<UpdateEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("environment", request.getEnvironment(), false))
+                                  .toBody("environment", request.getEnvironment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -261,6 +265,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteEnvironmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -299,6 +304,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -334,13 +340,14 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunContinuousTestRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearEnvironment().build(), false))
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -379,6 +386,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -413,13 +421,14 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeployFlowRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearEnvironment().build(), false))
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -453,6 +462,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -486,6 +496,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

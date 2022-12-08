@@ -84,6 +84,7 @@ public class HttpJsonApplicationsStub extends ApplicationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetApplicationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -116,12 +117,13 @@ public class HttpJsonApplicationsStub extends ApplicationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateApplicationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("application", request.getApplication(), false))
+                                  .toBody("application", request.getApplication(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -156,12 +158,13 @@ public class HttpJsonApplicationsStub extends ApplicationsStub {
                             ProtoRestSerializer<UpdateApplicationRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("application", request.getApplication(), false))
+                                  .toBody("application", request.getApplication(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -195,12 +198,13 @@ public class HttpJsonApplicationsStub extends ApplicationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RepairApplicationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

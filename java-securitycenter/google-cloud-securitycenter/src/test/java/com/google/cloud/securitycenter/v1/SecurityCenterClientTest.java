@@ -316,6 +316,7 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -392,6 +393,7 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2875,6 +2877,7 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2953,6 +2956,7 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3029,6 +3033,7 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3104,6 +3109,7 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3389,6 +3395,7 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

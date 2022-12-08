@@ -72,12 +72,13 @@ public class HttpJsonLookupServiceStub extends LookupServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ResolveServiceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ResolveServiceResponse>newBuilder()

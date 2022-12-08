@@ -81,12 +81,13 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                             ProtoRestSerializer<CreateControlRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "controlId", request.getControlId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("control", request.getControl(), false))
+                                  .toBody("control", request.getControl(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Control>newBuilder()
@@ -117,6 +118,7 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteControlRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -152,12 +154,13 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                             ProtoRestSerializer<UpdateControlRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("control", request.getControl(), false))
+                                  .toBody("control", request.getControl(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Control>newBuilder()
@@ -187,6 +190,7 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetControlRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -223,6 +227,7 @@ public class HttpJsonControlServiceStub extends ControlServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

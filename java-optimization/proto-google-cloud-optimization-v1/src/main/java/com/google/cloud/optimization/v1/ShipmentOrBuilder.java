@@ -629,7 +629,8 @@ public interface ShipmentOrBuilder
    *
    * <pre>
    * Specifies a label for this shipment. This label is reported in the response
-   * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+   * in the `shipment_label` of the corresponding
+   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
    * </pre>
    *
    * <code>string label = 12;</code>
@@ -642,7 +643,8 @@ public interface ShipmentOrBuilder
    *
    * <pre>
    * Specifies a label for this shipment. This label is reported in the response
-   * in the `shipment_label` of the corresponding [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
+   * in the `shipment_label` of the corresponding
+   * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit].
    * </pre>
    *
    * <code>string label = 12;</code>

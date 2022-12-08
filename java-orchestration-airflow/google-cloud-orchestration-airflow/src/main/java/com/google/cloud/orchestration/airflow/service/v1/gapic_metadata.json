@@ -22,6 +22,12 @@
             "ListEnvironments": {
               "methods": ["listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
             },
+            "LoadSnapshot": {
+              "methods": ["loadSnapshotAsync", "loadSnapshotOperationCallable", "loadSnapshotCallable"]
+            },
+            "SaveSnapshot": {
+              "methods": ["saveSnapshotAsync", "saveSnapshotOperationCallable", "saveSnapshotCallable"]
+            },
             "UpdateEnvironment": {
               "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]
             }

@@ -82,12 +82,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RecognizeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RecognizeResponse>newBuilder()
@@ -117,12 +118,13 @@ public class HttpJsonSpeechStub extends SpeechStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<LongRunningRecognizeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

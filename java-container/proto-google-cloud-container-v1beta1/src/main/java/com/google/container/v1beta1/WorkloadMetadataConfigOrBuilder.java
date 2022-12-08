@@ -36,7 +36,7 @@ public interface WorkloadMetadataConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4248
+   *     google/container/v1beta1/cluster_service.proto;l=4253
    * @return The enum numeric value on the wire for nodeMetadata.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface WorkloadMetadataConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4248
+   *     google/container/v1beta1/cluster_service.proto;l=4253
    * @return The nodeMetadata.
    */
   @java.lang.Deprecated

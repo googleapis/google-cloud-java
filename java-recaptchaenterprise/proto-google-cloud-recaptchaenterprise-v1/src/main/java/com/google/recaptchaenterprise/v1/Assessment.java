@@ -272,6 +272,61 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     return getTokenProperties();
   }
 
+  public static final int ACCOUNT_VERIFICATION_FIELD_NUMBER = 5;
+  private com.google.recaptchaenterprise.v1.AccountVerificationInfo accountVerification_;
+  /**
+   *
+   *
+   * <pre>
+   * Account verification information for identity verification. The assessment
+   * event must include a token and site key to use this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * </code>
+   *
+   * @return Whether the accountVerification field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccountVerification() {
+    return accountVerification_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Account verification information for identity verification. The assessment
+   * event must include a token and site key to use this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * </code>
+   *
+   * @return The accountVerification.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AccountVerificationInfo getAccountVerification() {
+    return accountVerification_ == null
+        ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.getDefaultInstance()
+        : accountVerification_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Account verification information for identity verification. The assessment
+   * event must include a token and site key to use this feature.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder
+      getAccountVerificationOrBuilder() {
+    return getAccountVerification();
+  }
+
   public static final int ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER = 6;
   private com.google.recaptchaenterprise.v1.AccountDefenderAssessment accountDefenderAssessment_;
   /**
@@ -417,6 +472,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (tokenProperties_ != null) {
       output.writeMessage(4, getTokenProperties());
     }
+    if (accountVerification_ != null) {
+      output.writeMessage(5, getAccountVerification());
+    }
     if (accountDefenderAssessment_ != null) {
       output.writeMessage(6, getAccountDefenderAssessment());
     }
@@ -443,6 +501,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     }
     if (tokenProperties_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTokenProperties());
+    }
+    if (accountVerification_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAccountVerification());
     }
     if (accountDefenderAssessment_ != null) {
       size +=
@@ -483,6 +544,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasTokenProperties()) {
       if (!getTokenProperties().equals(other.getTokenProperties())) return false;
     }
+    if (hasAccountVerification() != other.hasAccountVerification()) return false;
+    if (hasAccountVerification()) {
+      if (!getAccountVerification().equals(other.getAccountVerification())) return false;
+    }
     if (hasAccountDefenderAssessment() != other.hasAccountDefenderAssessment()) return false;
     if (hasAccountDefenderAssessment()) {
       if (!getAccountDefenderAssessment().equals(other.getAccountDefenderAssessment()))
@@ -518,6 +583,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (hasTokenProperties()) {
       hash = (37 * hash) + TOKEN_PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + getTokenProperties().hashCode();
+    }
+    if (hasAccountVerification()) {
+      hash = (37 * hash) + ACCOUNT_VERIFICATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountVerification().hashCode();
     }
     if (hasAccountDefenderAssessment()) {
       hash = (37 * hash) + ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER;
@@ -685,6 +754,12 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         tokenProperties_ = null;
         tokenPropertiesBuilder_ = null;
       }
+      if (accountVerificationBuilder_ == null) {
+        accountVerification_ = null;
+      } else {
+        accountVerification_ = null;
+        accountVerificationBuilder_ = null;
+      }
       if (accountDefenderAssessmentBuilder_ == null) {
         accountDefenderAssessment_ = null;
       } else {
@@ -739,6 +814,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         result.tokenProperties_ = tokenProperties_;
       } else {
         result.tokenProperties_ = tokenPropertiesBuilder_.build();
+      }
+      if (accountVerificationBuilder_ == null) {
+        result.accountVerification_ = accountVerification_;
+      } else {
+        result.accountVerification_ = accountVerificationBuilder_.build();
       }
       if (accountDefenderAssessmentBuilder_ == null) {
         result.accountDefenderAssessment_ = accountDefenderAssessment_;
@@ -812,6 +892,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTokenProperties()) {
         mergeTokenProperties(other.getTokenProperties());
       }
+      if (other.hasAccountVerification()) {
+        mergeAccountVerification(other.getAccountVerification());
+      }
       if (other.hasAccountDefenderAssessment()) {
         mergeAccountDefenderAssessment(other.getAccountDefenderAssessment());
       }
@@ -868,6 +951,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getAccountVerificationFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 42
             case 50:
               {
                 input.readMessage(
@@ -1603,6 +1693,215 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         tokenProperties_ = null;
       }
       return tokenPropertiesBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.AccountVerificationInfo accountVerification_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AccountVerificationInfo,
+            com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder,
+            com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder>
+        accountVerificationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     *
+     * @return Whether the accountVerification field is set.
+     */
+    public boolean hasAccountVerification() {
+      return accountVerificationBuilder_ != null || accountVerification_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     *
+     * @return The accountVerification.
+     */
+    public com.google.recaptchaenterprise.v1.AccountVerificationInfo getAccountVerification() {
+      if (accountVerificationBuilder_ == null) {
+        return accountVerification_ == null
+            ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.getDefaultInstance()
+            : accountVerification_;
+      } else {
+        return accountVerificationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     */
+    public Builder setAccountVerification(
+        com.google.recaptchaenterprise.v1.AccountVerificationInfo value) {
+      if (accountVerificationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accountVerification_ = value;
+        onChanged();
+      } else {
+        accountVerificationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     */
+    public Builder setAccountVerification(
+        com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder builderForValue) {
+      if (accountVerificationBuilder_ == null) {
+        accountVerification_ = builderForValue.build();
+        onChanged();
+      } else {
+        accountVerificationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     */
+    public Builder mergeAccountVerification(
+        com.google.recaptchaenterprise.v1.AccountVerificationInfo value) {
+      if (accountVerificationBuilder_ == null) {
+        if (accountVerification_ != null) {
+          accountVerification_ =
+              com.google.recaptchaenterprise.v1.AccountVerificationInfo.newBuilder(
+                      accountVerification_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          accountVerification_ = value;
+        }
+        onChanged();
+      } else {
+        accountVerificationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     */
+    public Builder clearAccountVerification() {
+      if (accountVerificationBuilder_ == null) {
+        accountVerification_ = null;
+        onChanged();
+      } else {
+        accountVerification_ = null;
+        accountVerificationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder
+        getAccountVerificationBuilder() {
+
+      onChanged();
+      return getAccountVerificationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder
+        getAccountVerificationOrBuilder() {
+      if (accountVerificationBuilder_ != null) {
+        return accountVerificationBuilder_.getMessageOrBuilder();
+      } else {
+        return accountVerification_ == null
+            ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.getDefaultInstance()
+            : accountVerification_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Account verification information for identity verification. The assessment
+     * event must include a token and site key to use this feature.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AccountVerificationInfo account_verification = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AccountVerificationInfo,
+            com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder,
+            com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder>
+        getAccountVerificationFieldBuilder() {
+      if (accountVerificationBuilder_ == null) {
+        accountVerificationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.AccountVerificationInfo,
+                com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder,
+                com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder>(
+                getAccountVerification(), getParentForChildren(), isClean());
+        accountVerification_ = null;
+      }
+      return accountVerificationBuilder_;
     }
 
     private com.google.recaptchaenterprise.v1.AccountDefenderAssessment accountDefenderAssessment_;

@@ -84,8 +84,9 @@ public interface OptimizeToursResponseOrBuilder
    *
    *
    * <pre>
-   * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-   * request.
+   * Copy of the
+   * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+   * if a label was specified in the request.
    * </pre>
    *
    * <code>string request_label = 3;</code>
@@ -97,8 +98,9 @@ public interface OptimizeToursResponseOrBuilder
    *
    *
    * <pre>
-   * Copy of the [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label], if a label was specified in the
-   * request.
+   * Copy of the
+   * [OptimizeToursRequest.label][google.cloud.optimization.v1.OptimizeToursRequest.label],
+   * if a label was specified in the request.
    * </pre>
    *
    * <code>string request_label = 3;</code>
@@ -165,7 +167,8 @@ public interface OptimizeToursResponseOrBuilder
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -180,7 +183,8 @@ public interface OptimizeToursResponseOrBuilder
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -194,7 +198,8 @@ public interface OptimizeToursResponseOrBuilder
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -208,7 +213,8 @@ public interface OptimizeToursResponseOrBuilder
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -223,7 +229,8 @@ public interface OptimizeToursResponseOrBuilder
    * <pre>
    * List of all the validation errors that we were able to detect
    * independently. See the "MULTIPLE ERRORS" explanation for the
-   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError] message.
+   * [OptimizeToursValidationError][google.cloud.optimization.v1.OptimizeToursValidationError]
+   * message.
    * </pre>
    *
    * <code>
@@ -281,7 +288,7 @@ public interface OptimizeToursResponseOrBuilder
    * <code>double total_cost = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=394
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=423
    * @return The totalCost.
    */
   @java.lang.Deprecated

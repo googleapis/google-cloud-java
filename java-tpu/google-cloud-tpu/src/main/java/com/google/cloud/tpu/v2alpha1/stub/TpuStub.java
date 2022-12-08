@@ -17,37 +17,51 @@
 package com.google.cloud.tpu.v2alpha1.stub;
 
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tpu.v2alpha1.AcceleratorType;
 import com.google.cloud.tpu.v2alpha1.CreateNodeRequest;
+import com.google.cloud.tpu.v2alpha1.CreateQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.DeleteNodeRequest;
+import com.google.cloud.tpu.v2alpha1.DeleteQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityRequest;
 import com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityResponse;
 import com.google.cloud.tpu.v2alpha1.GetAcceleratorTypeRequest;
 import com.google.cloud.tpu.v2alpha1.GetGuestAttributesRequest;
 import com.google.cloud.tpu.v2alpha1.GetGuestAttributesResponse;
 import com.google.cloud.tpu.v2alpha1.GetNodeRequest;
+import com.google.cloud.tpu.v2alpha1.GetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.GetRuntimeVersionRequest;
 import com.google.cloud.tpu.v2alpha1.ListAcceleratorTypesRequest;
 import com.google.cloud.tpu.v2alpha1.ListAcceleratorTypesResponse;
 import com.google.cloud.tpu.v2alpha1.ListNodesRequest;
 import com.google.cloud.tpu.v2alpha1.ListNodesResponse;
+import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesRequest;
+import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesResponse;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
+import com.google.cloud.tpu.v2alpha1.QueuedResource;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
+import com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest;
 import com.google.cloud.tpu.v2alpha1.StartNodeRequest;
 import com.google.cloud.tpu.v2alpha1.StopNodeRequest;
 import com.google.cloud.tpu.v2alpha1.UpdateNodeRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -85,7 +99,7 @@ public abstract class TpuStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createNodeCallable()");
   }
 
-  public OperationCallable<DeleteNodeRequest, Node, OperationMetadata>
+  public OperationCallable<DeleteNodeRequest, Empty, OperationMetadata>
       deleteNodeOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteNodeOperationCallable()");
   }
@@ -117,6 +131,40 @@ public abstract class TpuStub implements BackgroundResource {
 
   public UnaryCallable<UpdateNodeRequest, Operation> updateNodeCallable() {
     throw new UnsupportedOperationException("Not implemented: updateNodeCallable()");
+  }
+
+  public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesPagedResponse>
+      listQueuedResourcesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listQueuedResourcesPagedCallable()");
+  }
+
+  public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
+      listQueuedResourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listQueuedResourcesCallable()");
+  }
+
+  public UnaryCallable<GetQueuedResourceRequest, QueuedResource> getQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getQueuedResourceCallable()");
+  }
+
+  public OperationCallable<CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+      createQueuedResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createQueuedResourceOperationCallable()");
+  }
+
+  public UnaryCallable<CreateQueuedResourceRequest, Operation> createQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: createQueuedResourceCallable()");
+  }
+
+  public OperationCallable<DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
+      deleteQueuedResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteQueuedResourceOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteQueuedResourceCallable()");
   }
 
   public UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
@@ -155,6 +203,30 @@ public abstract class TpuStub implements BackgroundResource {
   public UnaryCallable<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesCallable() {
     throw new UnsupportedOperationException("Not implemented: getGuestAttributesCallable()");
+  }
+
+  public OperationCallable<SimulateMaintenanceEventRequest, Node, OperationMetadata>
+      simulateMaintenanceEventOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: simulateMaintenanceEventOperationCallable()");
+  }
+
+  public UnaryCallable<SimulateMaintenanceEventRequest, Operation>
+      simulateMaintenanceEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: simulateMaintenanceEventCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

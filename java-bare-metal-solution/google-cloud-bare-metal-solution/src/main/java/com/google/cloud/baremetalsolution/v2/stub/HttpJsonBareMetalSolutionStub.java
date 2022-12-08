@@ -129,6 +129,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -162,6 +163,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -198,12 +200,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             ProtoRestSerializer<UpdateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance(), false))
+                                  .toBody("instance", request.getInstance(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -238,12 +241,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ResetInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -278,12 +282,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StartInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -317,12 +322,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StopInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -355,12 +361,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DetachLunRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearInstance().build(), false))
+                              .toBody("*", request.toBuilder().clearInstance().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -397,6 +404,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -429,6 +437,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetVolumeRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -464,12 +473,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             ProtoRestSerializer<UpdateVolumeRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("volume", request.getVolume(), false))
+                                  .toBody("volume", request.getVolume(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -503,12 +513,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ResizeVolumeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearVolume().build(), false))
+                                  .toBody("*", request.toBuilder().clearVolume().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -545,6 +556,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -579,6 +591,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListNetworkUsageRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -611,6 +624,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetNetworkRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -647,12 +661,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             ProtoRestSerializer<UpdateNetworkRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("network", request.getNetwork(), false))
+                                  .toBody("network", request.getNetwork(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -685,6 +700,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetLunRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -720,6 +736,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -753,6 +770,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetNfsShareRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -790,6 +808,7 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -826,12 +845,13 @@ public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
                             ProtoRestSerializer<UpdateNfsShareRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("nfsShare", request.getNfsShare(), false))
+                                  .toBody("nfsShare", request.getNfsShare(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

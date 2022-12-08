@@ -123,7 +123,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * the accelerator type.
+   * The accelerator type.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -146,7 +146,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * the accelerator type.
+   * The accelerator type.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -628,7 +628,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the accelerator type.
+     * The accelerator type.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -650,7 +650,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the accelerator type.
+     * The accelerator type.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -672,7 +672,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the accelerator type.
+     * The accelerator type.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -693,7 +693,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the accelerator type.
+     * The accelerator type.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -710,7 +710,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * the accelerator type.
+     * The accelerator type.
      * </pre>
      *
      * <code>string type = 2;</code>

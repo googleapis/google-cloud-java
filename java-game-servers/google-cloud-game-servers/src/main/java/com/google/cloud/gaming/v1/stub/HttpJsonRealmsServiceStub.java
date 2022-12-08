@@ -96,6 +96,7 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -128,6 +129,7 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetRealmRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -162,12 +164,13 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                             ProtoRestSerializer<CreateRealmRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "realmId", request.getRealmId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("realm", request.getRealm(), false))
+                                  .toBody("realm", request.getRealm(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -201,6 +204,7 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteRealmRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -239,12 +243,13 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                             ProtoRestSerializer<UpdateRealmRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("realm", request.getRealm(), false))
+                                  .toBody("realm", request.getRealm(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -282,12 +287,13 @@ public class HttpJsonRealmsServiceStub extends RealmsServiceStub {
                             serializer.putQueryParam(
                                 fields, "previewTime", request.getPreviewTime());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("realm", request.getRealm(), false))
+                                  .toBody("realm", request.getRealm(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PreviewRealmUpdateResponse>newBuilder()

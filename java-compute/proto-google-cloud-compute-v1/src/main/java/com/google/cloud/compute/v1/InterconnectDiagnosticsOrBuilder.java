@@ -85,6 +85,86 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
+   * The aggregation type of the bundle interface.
+   * Check the BundleAggregationType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_aggregation_type = 434939028;</code>
+   *
+   * @return Whether the bundleAggregationType field is set.
+   */
+  boolean hasBundleAggregationType();
+  /**
+   *
+   *
+   * <pre>
+   * The aggregation type of the bundle interface.
+   * Check the BundleAggregationType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_aggregation_type = 434939028;</code>
+   *
+   * @return The bundleAggregationType.
+   */
+  java.lang.String getBundleAggregationType();
+  /**
+   *
+   *
+   * <pre>
+   * The aggregation type of the bundle interface.
+   * Check the BundleAggregationType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_aggregation_type = 434939028;</code>
+   *
+   * @return The bytes for bundleAggregationType.
+   */
+  com.google.protobuf.ByteString getBundleAggregationTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the bundle interface.
+   * Check the BundleOperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_operational_status = 106433500;</code>
+   *
+   * @return Whether the bundleOperationalStatus field is set.
+   */
+  boolean hasBundleOperationalStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the bundle interface.
+   * Check the BundleOperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_operational_status = 106433500;</code>
+   *
+   * @return The bundleOperationalStatus.
+   */
+  java.lang.String getBundleOperationalStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the bundle interface.
+   * Check the BundleOperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_operational_status = 106433500;</code>
+   *
+   * @return The bytes for bundleOperationalStatus.
+   */
+  com.google.protobuf.ByteString getBundleOperationalStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
    * </pre>
    *

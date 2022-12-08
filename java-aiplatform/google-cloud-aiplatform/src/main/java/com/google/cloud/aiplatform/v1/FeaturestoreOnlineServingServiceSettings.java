@@ -101,6 +101,13 @@ public class FeaturestoreOnlineServingServiceSettings
         .streamingReadFeatureValuesSettings();
   }
 
+  /** Returns the object with the settings used for calls to writeFeatureValues. */
+  public UnaryCallSettings<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesSettings() {
+    return ((FeaturestoreOnlineServingServiceStubSettings) getStubSettings())
+        .writeFeatureValuesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -241,6 +248,12 @@ public class FeaturestoreOnlineServingServiceSettings
             StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
         streamingReadFeatureValuesSettings() {
       return getStubSettingsBuilder().streamingReadFeatureValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to writeFeatureValues. */
+    public UnaryCallSettings.Builder<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+        writeFeatureValuesSettings() {
+      return getStubSettingsBuilder().writeFeatureValuesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

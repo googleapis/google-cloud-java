@@ -79,6 +79,7 @@ public class HttpJsonSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSnapshotRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -115,6 +116,7 @@ public class HttpJsonSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSnapshotRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -153,6 +155,7 @@ public class HttpJsonSnapshotsV1Beta3Stub extends SnapshotsV1Beta3Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListSnapshotsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

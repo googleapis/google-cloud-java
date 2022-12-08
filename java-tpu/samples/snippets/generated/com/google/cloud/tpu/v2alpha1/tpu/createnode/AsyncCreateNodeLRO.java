@@ -42,6 +42,7 @@ public class AsyncCreateNodeLRO {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setNodeId("nodeId-1040171331")
               .setNode(Node.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       OperationFuture<Node, OperationMetadata> future =
           tpuClient.createNodeOperationCallable().futureCall(request);
