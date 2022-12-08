@@ -183,6 +183,46 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    *
    *
    * <pre>
+   * The operational status of the link.
+   * Check the OperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string operational_status = 201070847;</code>
+   *
+   * @return Whether the operationalStatus field is set.
+   */
+  boolean hasOperationalStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the link.
+   * Check the OperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string operational_status = 201070847;</code>
+   *
+   * @return The operationalStatus.
+   */
+  java.lang.String getOperationalStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the link.
+   * Check the OperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string operational_status = 201070847;</code>
+   *
+   * @return The bytes for operationalStatus.
+   */
+  com.google.protobuf.ByteString getOperationalStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the received light level.
    * </pre>
    *

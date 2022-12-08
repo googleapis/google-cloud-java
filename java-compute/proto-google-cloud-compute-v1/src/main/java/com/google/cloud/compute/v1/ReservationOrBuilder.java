@@ -237,6 +237,65 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
+  int getResourcePoliciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
+  boolean containsResourcePolicies(java.lang.String key);
+  /** Use {@link #getResourcePoliciesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getResourcePolicies();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getResourcePoliciesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
+
+  /* nullable */
+  java.lang.String getResourcePoliciesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
+  java.lang.String getResourcePoliciesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Reserved for future use.
    * </pre>
    *

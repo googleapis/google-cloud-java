@@ -52,6 +52,43 @@ public interface ServiceAttachmentConsumerProjectLimitOrBuilder
    *
    *
    * <pre>
+   * The network URL for the network to set the limit for.
+   * </pre>
+   *
+   * <code>optional string network_url = 207194078;</code>
+   *
+   * @return Whether the networkUrl field is set.
+   */
+  boolean hasNetworkUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The network URL for the network to set the limit for.
+   * </pre>
+   *
+   * <code>optional string network_url = 207194078;</code>
+   *
+   * @return The networkUrl.
+   */
+  java.lang.String getNetworkUrl();
+  /**
+   *
+   *
+   * <pre>
+   * The network URL for the network to set the limit for.
+   * </pre>
+   *
+   * <code>optional string network_url = 207194078;</code>
+   *
+   * @return The bytes for networkUrl.
+   */
+  com.google.protobuf.ByteString getNetworkUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The project id or number for the project to set the limit for.
    * </pre>
    *

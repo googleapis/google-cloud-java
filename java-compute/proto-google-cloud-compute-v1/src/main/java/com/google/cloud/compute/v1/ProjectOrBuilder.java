@@ -489,6 +489,46 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Check the VmDnsSetting enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string vm_dns_setting = 58856370;</code>
+   *
+   * @return Whether the vmDnsSetting field is set.
+   */
+  boolean hasVmDnsSetting();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Check the VmDnsSetting enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string vm_dns_setting = 58856370;</code>
+   *
+   * @return The vmDnsSetting.
+   */
+  java.lang.String getVmDnsSetting();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Default internal DNS setting used by VMs running in this project.
+   * Check the VmDnsSetting enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string vm_dns_setting = 58856370;</code>
+   *
+   * @return The bytes for vmDnsSetting.
+   */
+  com.google.protobuf.ByteString getVmDnsSettingBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
    * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>

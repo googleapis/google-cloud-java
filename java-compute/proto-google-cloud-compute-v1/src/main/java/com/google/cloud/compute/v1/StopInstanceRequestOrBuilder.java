@@ -27,6 +27,31 @@ public interface StopInstanceRequestOrBuilder
    *
    *
    * <pre>
+   * If true, discard the contents of any attached localSSD partitions. Default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return Whether the discardLocalSsd field is set.
+   */
+  boolean hasDiscardLocalSsd();
+  /**
+   *
+   *
+   * <pre>
+   * If true, discard the contents of any attached localSSD partitions. Default value is false.
+   * </pre>
+   *
+   * <code>optional bool discard_local_ssd = 319517903;</code>
+   *
+   * @return The discardLocalSsd.
+   */
+  boolean getDiscardLocalSsd();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the instance resource to stop.
    * </pre>
    *
