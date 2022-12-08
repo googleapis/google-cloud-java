@@ -101,6 +101,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetAgentRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -136,11 +137,12 @@ public class HttpJsonAgentsStub extends AgentsStub {
                         ProtoRestSerializer<SetAgentRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("agent", request.getAgent(), false))
+                          ProtoRestSerializer.create().toBody("agent", request.getAgent(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Agent>newBuilder()
@@ -171,6 +173,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteAgentRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -207,6 +210,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -241,12 +245,13 @@ public class HttpJsonAgentsStub extends AgentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TrainAgentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -281,12 +286,13 @@ public class HttpJsonAgentsStub extends AgentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportAgentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -321,12 +327,13 @@ public class HttpJsonAgentsStub extends AgentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportAgentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -361,12 +368,13 @@ public class HttpJsonAgentsStub extends AgentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RestoreAgentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -404,6 +412,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -437,6 +446,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -470,6 +480,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

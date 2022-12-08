@@ -89,6 +89,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetBillingAccountRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -124,6 +125,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -158,12 +160,13 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             ProtoRestSerializer<UpdateBillingAccountRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("account", request.getAccount(), false))
+                                  .toBody("account", request.getAccount(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BillingAccount>newBuilder()
@@ -193,12 +196,13 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateBillingAccountRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("billingAccount", request.getBillingAccount(), false))
+                                  .toBody("billingAccount", request.getBillingAccount(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BillingAccount>newBuilder()
@@ -233,6 +237,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -266,6 +271,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetProjectBillingInfoRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -299,13 +305,14 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateProjectBillingInfoRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "projectBillingInfo", request.getProjectBillingInfo(), false))
+                                      "projectBillingInfo", request.getProjectBillingInfo(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProjectBillingInfo>newBuilder()
@@ -337,6 +344,7 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "options", request.getOptions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -370,12 +378,13 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -406,12 +415,13 @@ public class HttpJsonCloudBillingStub extends CloudBillingStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

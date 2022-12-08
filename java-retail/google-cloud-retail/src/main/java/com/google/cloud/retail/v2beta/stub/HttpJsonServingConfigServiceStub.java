@@ -85,12 +85,13 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "servingConfigId", request.getServingConfigId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servingConfig", request.getServingConfig(), false))
+                                  .toBody("servingConfig", request.getServingConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()
@@ -122,6 +123,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteServingConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -158,12 +160,13 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                             ProtoRestSerializer<UpdateServingConfigRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("servingConfig", request.getServingConfig(), false))
+                                  .toBody("servingConfig", request.getServingConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()
@@ -194,6 +197,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetServingConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -230,6 +234,7 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -264,13 +269,14 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AddControlRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearServingConfig().build(), false))
+                                      "*", request.toBuilder().clearServingConfig().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()
@@ -302,13 +308,14 @@ public class HttpJsonServingConfigServiceStub extends ServingConfigServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RemoveControlRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearServingConfig().build(), false))
+                                      "*", request.toBuilder().clearServingConfig().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ServingConfig>newBuilder()

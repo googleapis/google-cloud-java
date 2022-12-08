@@ -80,6 +80,7 @@ public class HttpJsonFulfillmentsStub extends FulfillmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetFulfillmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -117,12 +118,13 @@ public class HttpJsonFulfillmentsStub extends FulfillmentsStub {
                             ProtoRestSerializer<UpdateFulfillmentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("fulfillment", request.getFulfillment(), false))
+                                  .toBody("fulfillment", request.getFulfillment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Fulfillment>newBuilder()
@@ -153,6 +155,7 @@ public class HttpJsonFulfillmentsStub extends FulfillmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -186,6 +189,7 @@ public class HttpJsonFulfillmentsStub extends FulfillmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

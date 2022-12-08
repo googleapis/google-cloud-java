@@ -118,6 +118,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -150,6 +151,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetClusterRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -185,12 +187,13 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "clusterId", request.getClusterId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cluster", request.getCluster(), false))
+                                  .toBody("cluster", request.getCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -227,12 +230,13 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cluster", request.getCluster(), false))
+                                  .toBody("cluster", request.getCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -267,6 +271,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             ProtoRestSerializer<DeleteClusterRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -303,6 +308,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateAccessTokenRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -340,6 +346,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -373,6 +380,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetNodePoolRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -408,12 +416,13 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "nodePoolId", request.getNodePoolId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("nodePool", request.getNodePool(), false))
+                                  .toBody("nodePool", request.getNodePool(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -450,12 +459,13 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("nodePool", request.getNodePool(), false))
+                                  .toBody("nodePool", request.getNodePool(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -490,6 +500,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             ProtoRestSerializer<DeleteNodePoolRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -530,6 +541,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -562,6 +574,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetMachineRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -599,6 +612,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -632,6 +646,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetVpnConnectionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -668,12 +683,13 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
                                 fields, "vpnConnectionId", request.getVpnConnectionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("vpnConnection", request.getVpnConnection(), false))
+                                  .toBody("vpnConnection", request.getVpnConnection(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -708,6 +724,7 @@ public class HttpJsonEdgeContainerStub extends EdgeContainerStub {
                             ProtoRestSerializer<DeleteVpnConnectionRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

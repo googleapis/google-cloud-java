@@ -88,12 +88,13 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateContactRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("contact", request.getContact(), false))
+                                  .toBody("contact", request.getContact(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Contact>newBuilder()
@@ -130,12 +131,13 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                             ProtoRestSerializer<UpdateContactRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("contact", request.getContact(), false))
+                                  .toBody("contact", request.getContact(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Contact>newBuilder()
@@ -172,6 +174,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -207,6 +210,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetContactRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -244,6 +248,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteContactRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -287,6 +292,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                                 request.getNotificationCategoriesList());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -324,12 +330,13 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SendTestMessageRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

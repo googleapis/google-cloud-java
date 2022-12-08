@@ -93,6 +93,7 @@ public class HttpJsonIDSStub extends IDSStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -126,6 +127,7 @@ public class HttpJsonIDSStub extends IDSStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEndpointRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -161,12 +163,13 @@ public class HttpJsonIDSStub extends IDSStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "endpointId", request.getEndpointId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("endpoint", request.getEndpoint(), false))
+                                  .toBody("endpoint", request.getEndpoint(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -201,6 +204,7 @@ public class HttpJsonIDSStub extends IDSStub {
                             ProtoRestSerializer<DeleteEndpointRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

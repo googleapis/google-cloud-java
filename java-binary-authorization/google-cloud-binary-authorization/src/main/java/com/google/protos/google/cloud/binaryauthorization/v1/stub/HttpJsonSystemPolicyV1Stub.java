@@ -73,6 +73,7 @@ public class HttpJsonSystemPolicyV1Stub extends SystemPolicyV1Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<Service.GetSystemPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

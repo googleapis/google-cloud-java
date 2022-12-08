@@ -112,6 +112,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -144,6 +145,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetGatewayRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -178,12 +180,13 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             ProtoRestSerializer<CreateGatewayRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "gatewayId", request.getGatewayId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gateway", request.getGateway(), false))
+                                  .toBody("gateway", request.getGateway(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -219,12 +222,13 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             ProtoRestSerializer<UpdateGatewayRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gateway", request.getGateway(), false))
+                                  .toBody("gateway", request.getGateway(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -258,6 +262,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteGatewayRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -298,6 +303,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -330,6 +336,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetApiRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -363,11 +370,11 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                         ProtoRestSerializer<CreateApiRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "apiId", request.getApiId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
+                      request -> ProtoRestSerializer.create().toBody("api", request.getApi(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -401,11 +408,11 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                         ProtoRestSerializer<UpdateApiRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
+                      request -> ProtoRestSerializer.create().toBody("api", request.getApi(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -438,6 +445,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteApiRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -478,6 +486,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -512,6 +521,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             ProtoRestSerializer<GetApiConfigRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -547,12 +557,13 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "apiConfigId", request.getApiConfigId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiConfig", request.getApiConfig(), false))
+                                  .toBody("apiConfig", request.getApiConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -588,12 +599,13 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             ProtoRestSerializer<UpdateApiConfigRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiConfig", request.getApiConfig(), false))
+                                  .toBody("apiConfig", request.getApiConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -627,6 +639,7 @@ public class HttpJsonApiGatewayServiceStub extends ApiGatewayServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteApiConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

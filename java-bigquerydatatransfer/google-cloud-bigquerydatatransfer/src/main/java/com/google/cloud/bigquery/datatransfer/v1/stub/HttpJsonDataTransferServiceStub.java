@@ -103,6 +103,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetDataSourceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -140,6 +141,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -181,12 +183,13 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                                 fields, "serviceAccountName", request.getServiceAccountName());
                             serializer.putQueryParam(
                                 fields, "versionInfo", request.getVersionInfo());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("transferConfig", request.getTransferConfig(), false))
+                                  .toBody("transferConfig", request.getTransferConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferConfig>newBuilder()
@@ -229,12 +232,13 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "versionInfo", request.getVersionInfo());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("transferConfig", request.getTransferConfig(), false))
+                                  .toBody("transferConfig", request.getTransferConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransferConfig>newBuilder()
@@ -267,6 +271,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteTransferConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -302,6 +307,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetTransferConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -341,6 +347,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                                 fields, "dataSourceIds", request.getDataSourceIdsList());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -378,12 +385,13 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ScheduleTransferRunsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScheduleTransferRunsResponse>newBuilder()
@@ -419,12 +427,13 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StartManualTransferRunsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<StartManualTransferRunsResponse>newBuilder()
@@ -457,6 +466,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetTransferRunRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -492,6 +502,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteTransferRunRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -532,6 +543,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             serializer.putQueryParam(
                                 fields, "runAttempt", request.getRunAttemptValue());
                             serializer.putQueryParam(fields, "states", request.getStatesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -572,6 +584,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                                 fields, "messageTypes", request.getMessageTypesList());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -607,12 +620,13 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CheckValidCredsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CheckValidCredsResponse>newBuilder()
@@ -645,12 +659,13 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<EnrollDataSourcesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()

@@ -124,6 +124,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -157,6 +158,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -192,12 +194,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<CreateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "instanceId", request.getInstanceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance(), false))
+                                  .toBody("instance", request.getInstance(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -234,12 +237,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<UpdateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance(), false))
+                                  .toBody("instance", request.getInstance(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -274,12 +278,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RestoreInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -314,12 +319,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RevertInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -355,6 +361,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -396,6 +403,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -429,6 +437,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSnapshotRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -464,12 +473,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<CreateSnapshotRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "snapshotId", request.getSnapshotId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("snapshot", request.getSnapshot(), false))
+                                  .toBody("snapshot", request.getSnapshot(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -504,6 +514,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSnapshotRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -543,12 +554,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<UpdateSnapshotRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("snapshot", request.getSnapshot(), false))
+                                  .toBody("snapshot", request.getSnapshot(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -586,6 +598,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -618,6 +631,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetBackupRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -653,12 +667,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<CreateBackupRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "backupId", request.getBackupId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backup", request.getBackup(), false))
+                                  .toBody("backup", request.getBackup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -693,6 +708,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteBackupRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -732,12 +748,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<UpdateBackupRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("backup", request.getBackup(), false))
+                                  .toBody("backup", request.getBackup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -775,6 +792,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -807,6 +825,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetShareRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -841,12 +860,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<CreateShareRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "shareId", request.getShareId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("share", request.getShare(), false))
+                                  .toBody("share", request.getShare(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -880,6 +900,7 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteShareRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -918,12 +939,13 @@ public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub
                             ProtoRestSerializer<UpdateShareRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("share", request.getShare(), false))
+                                  .toBody("share", request.getShare(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

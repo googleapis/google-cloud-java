@@ -81,12 +81,13 @@ public class HttpJsonVideoIntelligenceServiceStub extends VideoIntelligenceServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnnotateVideoRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

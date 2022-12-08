@@ -131,6 +131,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -170,6 +171,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "versionView", request.getVersionViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -210,6 +212,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -247,6 +250,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -279,6 +283,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetKeyRingRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -312,6 +317,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCryptoKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -345,6 +351,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCryptoKeyVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -378,6 +385,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetPublicKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -411,6 +419,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetImportJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -445,12 +454,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             ProtoRestSerializer<CreateKeyRingRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "keyRingId", request.getKeyRingId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("keyRing", request.getKeyRing(), false))
+                                  .toBody("keyRing", request.getKeyRing(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<KeyRing>newBuilder()
@@ -487,12 +497,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                                 fields,
                                 "skipInitialVersionCreation",
                                 request.getSkipInitialVersionCreation());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKey", request.getCryptoKey(), false))
+                                  .toBody("cryptoKey", request.getCryptoKey(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKey>newBuilder()
@@ -523,12 +534,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateCryptoKeyVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion(), false))
+                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -559,12 +571,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportCryptoKeyVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -597,12 +610,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "importJobId", request.getImportJobId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("importJob", request.getImportJob(), false))
+                                  .toBody("importJob", request.getImportJob(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ImportJob>newBuilder()
@@ -635,12 +649,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             ProtoRestSerializer<UpdateCryptoKeyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKey", request.getCryptoKey(), false))
+                                  .toBody("cryptoKey", request.getCryptoKey(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKey>newBuilder()
@@ -675,12 +690,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             ProtoRestSerializer<UpdateCryptoKeyVersionRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion(), false))
+                                  .toBody("cryptoKeyVersion", request.getCryptoKeyVersion(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -712,12 +728,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateCryptoKeyPrimaryVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKey>newBuilder()
@@ -748,12 +765,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DestroyCryptoKeyVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -784,12 +802,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RestoreCryptoKeyVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
@@ -820,12 +839,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<EncryptRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EncryptResponse>newBuilder()
@@ -856,12 +876,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DecryptRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DecryptResponse>newBuilder()
@@ -892,12 +913,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AsymmetricSignRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AsymmetricSignResponse>newBuilder()
@@ -928,12 +950,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AsymmetricDecryptRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AsymmetricDecryptResponse>newBuilder()
@@ -964,12 +987,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MacSignRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MacSignResponse>newBuilder()
@@ -1000,12 +1024,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MacVerifyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MacVerifyResponse>newBuilder()
@@ -1036,12 +1061,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateRandomBytesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearLocation().build(), false))
+                                  .toBody("*", request.toBuilder().clearLocation().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<GenerateRandomBytesResponse>newBuilder()
@@ -1072,6 +1098,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1105,6 +1132,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1143,12 +1171,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1184,6 +1213,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1222,12 +1252,13 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

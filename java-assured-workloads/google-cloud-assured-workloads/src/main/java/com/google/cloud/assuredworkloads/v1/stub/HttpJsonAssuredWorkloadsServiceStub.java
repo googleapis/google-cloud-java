@@ -93,12 +93,13 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                             ProtoRestSerializer<CreateWorkloadRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "externalId", request.getExternalId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workload", request.getWorkload(), false))
+                                  .toBody("workload", request.getWorkload(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -135,12 +136,13 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                             ProtoRestSerializer<UpdateWorkloadRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workload", request.getWorkload(), false))
+                                  .toBody("workload", request.getWorkload(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Workload>newBuilder()
@@ -174,12 +176,13 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RestrictAllowedResourcesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RestrictAllowedResourcesResponse>newBuilder()
@@ -212,6 +215,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                             ProtoRestSerializer<DeleteWorkloadRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -246,6 +250,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetWorkloadRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -283,6 +288,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

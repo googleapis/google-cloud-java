@@ -74,13 +74,14 @@ public class HttpJsonRecommendationServiceStub extends RecommendationServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RecommendRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearServingConfig().build(), false))
+                                      "*", request.toBuilder().clearServingConfig().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RecommendResponse>newBuilder()

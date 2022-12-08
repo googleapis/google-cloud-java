@@ -78,12 +78,13 @@ public class HttpJsonValidationHelperV1Stub extends ValidationHelperV1Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<Service.ValidateAttestationOccurrenceRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAttestor().build(), false))
+                                  .toBody("*", request.toBuilder().clearAttestor().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser

@@ -75,6 +75,7 @@ public class HttpJsonTasksStub extends TasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetTaskRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -112,6 +113,7 @@ public class HttpJsonTasksStub extends TasksStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "showDeleted", request.getShowDeleted());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

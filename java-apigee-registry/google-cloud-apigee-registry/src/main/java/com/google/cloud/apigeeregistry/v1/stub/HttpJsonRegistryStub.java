@@ -140,6 +140,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -172,6 +173,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetApiRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -205,11 +207,11 @@ public class HttpJsonRegistryStub extends RegistryStub {
                         ProtoRestSerializer<CreateApiRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "apiId", request.getApiId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
+                      request -> ProtoRestSerializer.create().toBody("api", request.getApi(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Api>newBuilder()
@@ -241,11 +243,11 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "allowMissing", request.getAllowMissing());
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("api", request.getApi(), false))
+                      request -> ProtoRestSerializer.create().toBody("api", request.getApi(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Api>newBuilder()
@@ -276,6 +278,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                         ProtoRestSerializer<DeleteApiRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "force", request.getForce());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -312,6 +315,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -345,6 +349,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetApiVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -380,12 +385,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "apiVersionId", request.getApiVersionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiVersion", request.getApiVersion(), false))
+                                  .toBody("apiVersion", request.getApiVersion(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiVersion>newBuilder()
@@ -420,12 +426,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiVersion", request.getApiVersion(), false))
+                                  .toBody("apiVersion", request.getApiVersion(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiVersion>newBuilder()
@@ -457,6 +464,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             ProtoRestSerializer<DeleteApiVersionRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -493,6 +501,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -525,6 +534,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetApiSpecRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -558,6 +568,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetApiSpecContentsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -592,12 +603,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             ProtoRestSerializer<CreateApiSpecRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "apiSpecId", request.getApiSpecId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiSpec", request.getApiSpec(), false))
+                                  .toBody("apiSpec", request.getApiSpec(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -632,12 +644,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiSpec", request.getApiSpec(), false))
+                                  .toBody("apiSpec", request.getApiSpec(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -669,6 +682,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             ProtoRestSerializer<DeleteApiSpecRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -702,12 +716,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TagApiSpecRevisionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -742,6 +757,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -775,12 +791,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RollbackApiSpecRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiSpec>newBuilder()
@@ -811,6 +828,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteApiSpecRevisionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -847,6 +865,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -880,6 +899,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetApiDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -915,12 +935,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "apiDeploymentId", request.getApiDeploymentId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiDeployment", request.getApiDeployment(), false))
+                                  .toBody("apiDeployment", request.getApiDeployment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -955,12 +976,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(
                                 fields, "allowMissing", request.getAllowMissing());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("apiDeployment", request.getApiDeployment(), false))
+                                  .toBody("apiDeployment", request.getApiDeployment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -992,6 +1014,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             ProtoRestSerializer<DeleteApiDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1025,12 +1048,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TagApiDeploymentRevisionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -1066,6 +1090,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1099,12 +1124,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RollbackApiDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApiDeployment>newBuilder()
@@ -1136,6 +1162,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteApiDeploymentRevisionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1177,6 +1204,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1215,6 +1243,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetArtifactRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1253,6 +1282,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetArtifactContentsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1292,12 +1322,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             ProtoRestSerializer<CreateArtifactRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "artifactId", request.getArtifactId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("artifact", request.getArtifact(), false))
+                                  .toBody("artifact", request.getArtifact(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Artifact>newBuilder()
@@ -1334,12 +1365,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ReplaceArtifactRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("artifact", request.getArtifact(), false))
+                                  .toBody("artifact", request.getArtifact(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Artifact>newBuilder()
@@ -1375,6 +1407,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteArtifactRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1408,6 +1441,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1441,6 +1475,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1484,12 +1519,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1530,6 +1566,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1573,12 +1610,13 @@ public class HttpJsonRegistryStub extends RegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

@@ -111,12 +111,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "reservationId", request.getReservationId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("reservation", request.getReservation(), false))
+                                  .toBody("reservation", request.getReservation(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Reservation>newBuilder()
@@ -150,6 +151,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -184,6 +186,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetReservationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -218,6 +221,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteReservationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -254,12 +258,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             ProtoRestSerializer<UpdateReservationRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("reservation", request.getReservation(), false))
+                                  .toBody("reservation", request.getReservation(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Reservation>newBuilder()
@@ -297,13 +302,14 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                                 fields,
                                 "enforceSingleAdminProjectPerOrg",
                                 request.getEnforceSingleAdminProjectPerOrg());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "capacityCommitment", request.getCapacityCommitment(), false))
+                                      "capacityCommitment", request.getCapacityCommitment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CapacityCommitment>newBuilder()
@@ -339,6 +345,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -373,6 +380,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCapacityCommitmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -408,6 +416,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             ProtoRestSerializer<DeleteCapacityCommitmentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -446,13 +455,14 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             ProtoRestSerializer<UpdateCapacityCommitmentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "capacityCommitment", request.getCapacityCommitment(), false))
+                                      "capacityCommitment", request.getCapacityCommitment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CapacityCommitment>newBuilder()
@@ -486,12 +496,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SplitCapacityCommitmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SplitCapacityCommitmentResponse>newBuilder()
@@ -523,12 +534,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MergeCapacityCommitmentsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CapacityCommitment>newBuilder()
@@ -562,12 +574,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "assignmentId", request.getAssignmentId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("assignment", request.getAssignment(), false))
+                                  .toBody("assignment", request.getAssignment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assignment>newBuilder()
@@ -601,6 +614,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -635,6 +649,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteAssignmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -672,6 +687,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "query", request.getQuery());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -711,6 +727,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "query", request.getQuery());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -745,12 +762,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MoveAssignmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assignment>newBuilder()
@@ -784,12 +802,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             ProtoRestSerializer<UpdateAssignmentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("assignment", request.getAssignment(), false))
+                                  .toBody("assignment", request.getAssignment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assignment>newBuilder()
@@ -821,6 +840,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetBiReservationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -857,12 +877,13 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                             ProtoRestSerializer<UpdateBiReservationRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("biReservation", request.getBiReservation(), false))
+                                  .toBody("biReservation", request.getBiReservation(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BiReservation>newBuilder()

@@ -81,12 +81,13 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSynonymSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("synonymSet", request.getSynonymSet(), false))
+                                  .toBody("synonymSet", request.getSynonymSet(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SynonymSet>newBuilder()
@@ -117,6 +118,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSynonymSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -151,12 +153,13 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateSynonymSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("synonymSet", request.getSynonymSet(), false))
+                                  .toBody("synonymSet", request.getSynonymSet(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SynonymSet>newBuilder()
@@ -188,6 +191,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSynonymSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -224,6 +228,7 @@ public class HttpJsonSynonymSetServiceStub extends SynonymSetServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

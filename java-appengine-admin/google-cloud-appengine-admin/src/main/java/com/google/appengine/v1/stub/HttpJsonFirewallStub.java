@@ -86,6 +86,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                                 fields, "matchingAddress", request.getMatchingAddress());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -121,12 +122,13 @@ public class HttpJsonFirewallStub extends FirewallStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchUpdateIngressRulesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchUpdateIngressRulesResponse>newBuilder()
@@ -157,11 +159,12 @@ public class HttpJsonFirewallStub extends FirewallStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateIngressRuleRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("rule", request.getRule(), false))
+                              ProtoRestSerializer.create().toBody("rule", request.getRule(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallRule>newBuilder()
@@ -192,6 +195,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIngressRuleRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -226,11 +230,12 @@ public class HttpJsonFirewallStub extends FirewallStub {
                             ProtoRestSerializer<UpdateIngressRuleRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("rule", request.getRule(), false))
+                              ProtoRestSerializer.create().toBody("rule", request.getRule(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FirewallRule>newBuilder()
@@ -261,6 +266,7 @@ public class HttpJsonFirewallStub extends FirewallStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteIngressRuleRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

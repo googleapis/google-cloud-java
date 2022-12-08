@@ -101,12 +101,13 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                 "actionOnFailedPrimaryWorkers",
                                 request.getActionOnFailedPrimaryWorkersValue());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cluster", request.getCluster(), false))
+                                  .toBody("cluster", request.getCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -149,12 +150,13 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                 request.getGracefulDecommissionTimeout());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cluster", request.getCluster(), false))
+                                  .toBody("cluster", request.getCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -191,6 +193,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StopClusterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -204,7 +207,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                           .clearProjectId()
                                           .clearRegion()
                                           .build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -241,6 +244,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StartClusterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -254,7 +258,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                           .clearProjectId()
                                           .clearRegion()
                                           .build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -294,6 +298,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                             serializer.putQueryParam(
                                 fields, "clusterUuid", request.getClusterUuid());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -331,6 +336,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetClusterRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -368,6 +374,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -404,6 +411,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DiagnoseClusterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -417,7 +425,7 @@ public class HttpJsonClusterControllerStub extends ClusterControllerStub {
                                           .clearProjectId()
                                           .clearRegion()
                                           .build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

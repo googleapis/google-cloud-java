@@ -150,6 +150,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -183,6 +184,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetRepositoryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -218,12 +220,13 @@ public class HttpJsonDataformStub extends DataformStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "repositoryId", request.getRepositoryId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("repository", request.getRepository(), false))
+                                  .toBody("repository", request.getRepository(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Repository>newBuilder()
@@ -256,12 +259,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             ProtoRestSerializer<UpdateRepositoryRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("repository", request.getRepository(), false))
+                                  .toBody("repository", request.getRepository(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Repository>newBuilder()
@@ -293,6 +297,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             ProtoRestSerializer<DeleteRepositoryRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -326,6 +331,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FetchRemoteBranchesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -363,6 +369,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -396,6 +403,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetWorkspaceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -431,12 +439,13 @@ public class HttpJsonDataformStub extends DataformStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "workspaceId", request.getWorkspaceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workspace", request.getWorkspace(), false))
+                                  .toBody("workspace", request.getWorkspace(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Workspace>newBuilder()
@@ -467,6 +476,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteWorkspaceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -500,12 +510,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<InstallNpmPackagesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<InstallNpmPackagesResponse>newBuilder()
@@ -536,12 +547,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PullGitCommitsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -572,12 +584,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PushGitCommitsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -610,6 +623,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FetchFileGitStatusesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -645,6 +659,7 @@ public class HttpJsonDataformStub extends DataformStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "remoteBranch", request.getRemoteBranch());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -678,12 +693,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CommitWorkspaceChangesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -714,12 +730,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ResetWorkspaceChangesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -751,6 +768,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             ProtoRestSerializer<FetchFileDiffRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "path", request.getPath());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -789,6 +807,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "path", request.getPath());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -822,12 +841,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MakeDirectoryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MakeDirectoryResponse>newBuilder()
@@ -858,12 +878,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RemoveDirectoryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -894,12 +915,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MoveDirectoryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MoveDirectoryResponse>newBuilder()
@@ -931,6 +953,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             ProtoRestSerializer<ReadFileRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "path", request.getPath());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -963,12 +986,13 @@ public class HttpJsonDataformStub extends DataformStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<RemoveFileRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearWorkspace().build(), false))
+                              .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Empty>newBuilder()
@@ -999,12 +1023,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MoveFileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<MoveFileResponse>newBuilder()
@@ -1035,12 +1060,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<WriteFileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearWorkspace().build(), false))
+                                  .toBody("*", request.toBuilder().clearWorkspace().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WriteFileResponse>newBuilder()
@@ -1075,6 +1101,7 @@ public class HttpJsonDataformStub extends DataformStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1108,6 +1135,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCompilationResultRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1141,13 +1169,14 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateCompilationResultRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "compilationResult", request.getCompilationResult(), false))
+                                      "compilationResult", request.getCompilationResult(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CompilationResult>newBuilder()
@@ -1185,6 +1214,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1223,6 +1253,7 @@ public class HttpJsonDataformStub extends DataformStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1256,6 +1287,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetWorkflowInvocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1289,13 +1321,14 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateWorkflowInvocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "workflowInvocation", request.getWorkflowInvocation(), false))
+                                      "workflowInvocation", request.getWorkflowInvocation(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<WorkflowInvocation>newBuilder()
@@ -1326,6 +1359,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteWorkflowInvocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1359,12 +1393,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CancelWorkflowInvocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -1401,6 +1436,7 @@ public class HttpJsonDataformStub extends DataformStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1435,6 +1471,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1468,6 +1505,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1504,12 +1542,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1542,6 +1581,7 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1577,12 +1617,13 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

@@ -95,6 +95,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -131,6 +132,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetApprovalRequestMessage> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -168,12 +170,13 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ApproveApprovalRequestMessage> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApprovalRequest>newBuilder()
@@ -208,12 +211,13 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DismissApprovalRequestMessage> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApprovalRequest>newBuilder()
@@ -248,12 +252,13 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<InvalidateApprovalRequestMessage> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ApprovalRequest>newBuilder()
@@ -288,6 +293,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAccessApprovalSettingsMessage> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -329,12 +335,13 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             ProtoRestSerializer<UpdateAccessApprovalSettingsMessage> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("settings", request.getSettings(), false))
+                                  .toBody("settings", request.getSettings(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AccessApprovalSettings>newBuilder()
@@ -369,6 +376,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteAccessApprovalSettingsMessage> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -408,6 +416,7 @@ public class HttpJsonAccessApprovalStub extends AccessApprovalStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAccessApprovalServiceAccountMessage> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

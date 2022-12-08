@@ -112,12 +112,13 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "channelId", request.getChannelId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("channel", request.getChannel(), false))
+                                  .toBody("channel", request.getChannel(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -155,6 +156,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -187,6 +189,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetChannelRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -222,6 +225,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -261,12 +265,13 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("channel", request.getChannel(), false))
+                                  .toBody("channel", request.getChannel(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -300,12 +305,13 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StartChannelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -339,12 +345,13 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StopChannelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -380,12 +387,13 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "inputId", request.getInputId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("input", request.getInput(), false))
+                                  .toBody("input", request.getInput(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -423,6 +431,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -455,6 +464,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetInputRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -489,6 +499,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                             ProtoRestSerializer<DeleteInputRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -528,12 +539,13 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("input", request.getInput(), false))
+                                  .toBody("input", request.getInput(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -568,11 +580,12 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "eventId", request.getEventId());
                         serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("event", request.getEvent(), false))
+                          ProtoRestSerializer.create().toBody("event", request.getEvent(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Event>newBuilder()
@@ -607,6 +620,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -639,6 +653,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetEventRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -672,6 +687,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                         ProtoRestSerializer<DeleteEventRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)

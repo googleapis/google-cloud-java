@@ -98,12 +98,13 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateScanConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("scanConfig", request.getScanConfig(), false))
+                                  .toBody("scanConfig", request.getScanConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanConfig>newBuilder()
@@ -135,6 +136,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteScanConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -169,6 +171,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetScanConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -205,6 +208,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -241,12 +245,13 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             ProtoRestSerializer<UpdateScanConfigRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("scanConfig", request.getScanConfig(), false))
+                                  .toBody("scanConfig", request.getScanConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanConfig>newBuilder()
@@ -278,12 +283,13 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StartScanRunRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanRun>newBuilder()
@@ -314,6 +320,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetScanRunRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -350,6 +357,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -384,12 +392,13 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StopScanRunRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ScanRun>newBuilder()
@@ -423,6 +432,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -456,6 +466,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetFindingRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -493,6 +504,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -529,6 +541,7 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListFindingTypeStatsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

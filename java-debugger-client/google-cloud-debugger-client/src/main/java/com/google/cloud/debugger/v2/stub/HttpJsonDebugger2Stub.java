@@ -82,12 +82,13 @@ public class HttpJsonDebugger2Stub extends Debugger2Stub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "clientVersion", request.getClientVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("breakpoint", request.getBreakpoint(), false))
+                                  .toBody("breakpoint", request.getBreakpoint(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SetBreakpointResponse>newBuilder()
@@ -122,6 +123,7 @@ public class HttpJsonDebugger2Stub extends Debugger2Stub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "clientVersion", request.getClientVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -159,6 +161,7 @@ public class HttpJsonDebugger2Stub extends Debugger2Stub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "clientVersion", request.getClientVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -202,6 +205,7 @@ public class HttpJsonDebugger2Stub extends Debugger2Stub {
                             serializer.putQueryParam(
                                 fields, "stripResults", request.getStripResults());
                             serializer.putQueryParam(fields, "waitToken", request.getWaitToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -239,6 +243,7 @@ public class HttpJsonDebugger2Stub extends Debugger2Stub {
                             serializer.putQueryParam(
                                 fields, "includeInactive", request.getIncludeInactive());
                             serializer.putQueryParam(fields, "project", request.getProject());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

@@ -89,6 +89,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -124,6 +125,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -159,12 +161,13 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("entityType", request.getEntityType(), false))
+                                  .toBody("entityType", request.getEntityType(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EntityType>newBuilder()
@@ -199,12 +202,13 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("entityType", request.getEntityType(), false))
+                                  .toBody("entityType", request.getEntityType(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EntityType>newBuilder()
@@ -236,6 +240,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                             ProtoRestSerializer<DeleteEntityTypeRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -269,6 +274,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -302,6 +308,7 @@ public class HttpJsonEntityTypesStub extends EntityTypesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

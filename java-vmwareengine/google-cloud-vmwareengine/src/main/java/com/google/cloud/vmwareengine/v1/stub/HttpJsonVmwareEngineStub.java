@@ -152,6 +152,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -185,6 +186,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetPrivateCloudRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -223,12 +225,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("privateCloud", request.getPrivateCloud(), false))
+                                  .toBody("privateCloud", request.getPrivateCloud(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -265,12 +268,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("privateCloud", request.getPrivateCloud(), false))
+                                  .toBody("privateCloud", request.getPrivateCloud(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -310,6 +314,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             }
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -346,12 +351,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UndeletePrivateCloudRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -389,6 +395,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -421,6 +428,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetClusterRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -458,12 +466,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cluster", request.getCluster(), false))
+                                  .toBody("cluster", request.getCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -502,12 +511,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cluster", request.getCluster(), false))
+                                  .toBody("cluster", request.getCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -542,6 +552,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             ProtoRestSerializer<DeleteClusterRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -580,6 +591,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -616,6 +628,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -649,6 +662,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetNodeTypeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -683,6 +697,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ShowNsxCredentialsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -717,6 +732,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ShowVcenterCredentialsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -751,13 +767,14 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ResetNsxCredentialsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearPrivateCloud().build(), false))
+                                      "*", request.toBuilder().clearPrivateCloud().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -793,13 +810,14 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ResetVcenterCredentialsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearPrivateCloud().build(), false))
+                                      "*", request.toBuilder().clearPrivateCloud().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -836,12 +854,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(
                                 fields, "hcxActivationKeyId", request.getHcxActivationKeyId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("hcxActivationKey", request.getHcxActivationKey(), false))
+                                  .toBody("hcxActivationKey", request.getHcxActivationKey(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -879,6 +898,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -912,6 +932,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetHcxActivationKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -945,6 +966,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetNetworkPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -982,6 +1004,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1018,12 +1041,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(
                                 fields, "networkPolicyId", request.getNetworkPolicyId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("networkPolicy", request.getNetworkPolicy(), false))
+                                  .toBody("networkPolicy", request.getNetworkPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1060,12 +1084,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("networkPolicy", request.getNetworkPolicy(), false))
+                                  .toBody("networkPolicy", request.getNetworkPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1100,6 +1125,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             ProtoRestSerializer<DeleteNetworkPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1142,6 +1168,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                 fields,
                                 "vmwareEngineNetworkId",
                                 request.getVmwareEngineNetworkId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1150,7 +1177,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                   .toBody(
                                       "vmwareEngineNetwork",
                                       request.getVmwareEngineNetwork(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1190,6 +1217,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1198,7 +1226,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                   .toBody(
                                       "vmwareEngineNetwork",
                                       request.getVmwareEngineNetwork(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1235,6 +1263,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1271,6 +1300,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetVmwareEngineNetworkRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1311,6 +1341,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1344,6 +1375,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1377,6 +1409,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1413,12 +1446,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -1452,6 +1486,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1488,12 +1523,13 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

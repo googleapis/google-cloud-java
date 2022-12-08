@@ -72,12 +72,13 @@ public class HttpJsonEventServiceStub extends EventServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateClientEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("clientEvent", request.getClientEvent(), false))
+                                  .toBody("clientEvent", request.getClientEvent(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ClientEvent>newBuilder()

@@ -73,13 +73,14 @@ public class HttpJsonQuotaControllerStub extends QuotaControllerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AllocateQuotaRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearServiceName().build(), false))
+                                      "*", request.toBuilder().clearServiceName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AllocateQuotaResponse>newBuilder()
