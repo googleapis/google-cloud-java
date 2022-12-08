@@ -50,4 +50,5 @@
     <module>proto-google-cloud-vmwareengine-v1</module>
     <module>google-cloud-vmwareengine-bom</module>
   </modules>
-</project>
+
+  </project>

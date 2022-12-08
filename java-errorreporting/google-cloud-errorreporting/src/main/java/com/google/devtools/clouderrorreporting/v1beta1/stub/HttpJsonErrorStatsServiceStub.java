@@ -94,6 +94,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                             serializer.putQueryParam(fields, "timeRange", request.getTimeRange());
                             serializer.putQueryParam(
                                 fields, "timedCountDuration", request.getTimedCountDuration());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -135,6 +136,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                             serializer.putQueryParam(
                                 fields, "serviceFilter", request.getServiceFilter());
                             serializer.putQueryParam(fields, "timeRange", request.getTimeRange());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -170,6 +172,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteEventsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

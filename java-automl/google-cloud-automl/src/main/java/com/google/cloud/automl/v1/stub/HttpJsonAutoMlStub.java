@@ -111,12 +111,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateDatasetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dataset", request.getDataset(), false))
+                                  .toBody("dataset", request.getDataset(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -149,6 +150,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetDatasetRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -185,6 +187,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -220,12 +223,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             ProtoRestSerializer<UpdateDatasetRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dataset", request.getDataset(), false))
+                                  .toBody("dataset", request.getDataset(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Dataset>newBuilder()
@@ -256,6 +260,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteDatasetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -292,12 +297,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportDataRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -331,12 +337,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportDataRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -370,6 +377,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAnnotationSpecRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -403,12 +411,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateModelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("model", request.getModel(), false))
+                                  .toBody("model", request.getModel(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -441,6 +450,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetModelRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -477,6 +487,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -510,6 +521,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteModelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -546,11 +558,12 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                         ProtoRestSerializer<UpdateModelRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("model", request.getModel(), false))
+                          ProtoRestSerializer.create().toBody("model", request.getModel(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Model>newBuilder()
@@ -581,12 +594,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeployModelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -620,12 +634,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UndeployModelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -659,12 +674,13 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportModelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -698,6 +714,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetModelEvaluationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -736,6 +753,7 @@ public class HttpJsonAutoMlStub extends AutoMlStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

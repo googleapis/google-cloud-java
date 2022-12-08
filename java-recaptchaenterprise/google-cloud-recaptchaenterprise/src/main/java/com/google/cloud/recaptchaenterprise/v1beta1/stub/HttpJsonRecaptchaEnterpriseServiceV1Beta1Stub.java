@@ -76,12 +76,13 @@ public class HttpJsonRecaptchaEnterpriseServiceV1Beta1Stub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateAssessmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("assessment", request.getAssessment(), false))
+                                  .toBody("assessment", request.getAssessment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Assessment>newBuilder()
@@ -113,12 +114,13 @@ public class HttpJsonRecaptchaEnterpriseServiceV1Beta1Stub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnnotateAssessmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnnotateAssessmentResponse>newBuilder()

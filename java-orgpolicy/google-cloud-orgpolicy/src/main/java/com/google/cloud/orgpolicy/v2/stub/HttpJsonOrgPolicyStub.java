@@ -89,6 +89,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -127,6 +128,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -161,6 +163,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetPolicyRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -197,6 +200,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEffectivePolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -233,12 +237,13 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreatePolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policy", request.getPolicy(), false))
+                                  .toBody("policy", request.getPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -273,12 +278,13 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdatePolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policy", request.getPolicy(), false))
+                                  .toBody("policy", request.getPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -312,6 +318,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeletePolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

@@ -74,12 +74,13 @@ public class HttpJsonIamCheckerStub extends IamCheckerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TroubleshootIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TroubleshootIamPolicyResponse>newBuilder()

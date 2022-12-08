@@ -115,12 +115,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "productSetId", request.getProductSetId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("productSet", request.getProductSet(), false))
+                                  .toBody("productSet", request.getProductSet(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProductSet>newBuilder()
@@ -153,6 +154,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -186,6 +188,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetProductSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -221,12 +224,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             ProtoRestSerializer<UpdateProductSetRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("productSet", request.getProductSet(), false))
+                                  .toBody("productSet", request.getProductSet(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ProductSet>newBuilder()
@@ -257,6 +261,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteProductSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -291,12 +296,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             ProtoRestSerializer<CreateProductRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "productId", request.getProductId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("product", request.getProduct(), false))
+                                  .toBody("product", request.getProduct(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Product>newBuilder()
@@ -329,6 +335,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -361,6 +368,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetProductRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -396,12 +404,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             ProtoRestSerializer<UpdateProductRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("product", request.getProduct(), false))
+                                  .toBody("product", request.getProduct(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Product>newBuilder()
@@ -432,6 +441,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteProductRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -467,12 +477,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "referenceImageId", request.getReferenceImageId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("referenceImage", request.getReferenceImage(), false))
+                                  .toBody("referenceImage", request.getReferenceImage(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ReferenceImage>newBuilder()
@@ -503,6 +514,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteReferenceImageRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -538,6 +550,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -571,6 +584,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetReferenceImageRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -604,12 +618,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AddProductToProductSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -640,12 +655,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RemoveProductFromProductSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -680,6 +696,7 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -713,12 +730,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportProductSetsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -752,12 +770,13 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PurgeProductsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

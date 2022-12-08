@@ -95,12 +95,13 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<WriteUserEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("userEvent", request.getUserEvent(), false))
+                                  .toBody("userEvent", request.getUserEvent(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UserEvent>newBuilder()
@@ -134,6 +135,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             serializer.putQueryParam(fields, "ets", request.getEts());
                             serializer.putQueryParam(fields, "uri", request.getUri());
                             serializer.putQueryParam(fields, "userEvent", request.getUserEvent());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -167,12 +169,13 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PurgeUserEventsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -206,12 +209,13 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportUserEventsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -245,12 +249,13 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RejoinUserEventsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

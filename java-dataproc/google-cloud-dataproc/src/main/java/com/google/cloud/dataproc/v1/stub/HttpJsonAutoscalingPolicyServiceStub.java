@@ -82,12 +82,13 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateAutoscalingPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policy", request.getPolicy(), false))
+                                  .toBody("policy", request.getPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AutoscalingPolicy>newBuilder()
@@ -122,12 +123,13 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateAutoscalingPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policy", request.getPolicy(), false))
+                                  .toBody("policy", request.getPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AutoscalingPolicy>newBuilder()
@@ -160,6 +162,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAutoscalingPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -199,6 +202,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -234,6 +238,7 @@ public class HttpJsonAutoscalingPolicyServiceStub extends AutoscalingPolicyServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteAutoscalingPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

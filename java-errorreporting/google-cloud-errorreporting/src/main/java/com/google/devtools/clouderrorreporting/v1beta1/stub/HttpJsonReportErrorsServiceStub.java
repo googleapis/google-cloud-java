@@ -74,12 +74,13 @@ public class HttpJsonReportErrorsServiceStub extends ReportErrorsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ReportErrorEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("event", request.getEvent(), false))
+                                  .toBody("event", request.getEvent(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ReportErrorEventResponse>newBuilder()

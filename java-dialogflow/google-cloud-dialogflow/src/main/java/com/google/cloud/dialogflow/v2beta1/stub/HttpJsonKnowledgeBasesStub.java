@@ -92,6 +92,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -128,6 +129,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetKnowledgeBaseRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -165,12 +167,13 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateKnowledgeBaseRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("knowledgeBase", request.getKnowledgeBase(), false))
+                                  .toBody("knowledgeBase", request.getKnowledgeBase(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<KnowledgeBase>newBuilder()
@@ -206,6 +209,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                             ProtoRestSerializer<DeleteKnowledgeBaseRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -245,12 +249,13 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                             ProtoRestSerializer<UpdateKnowledgeBaseRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("knowledgeBase", request.getKnowledgeBase(), false))
+                                  .toBody("knowledgeBase", request.getKnowledgeBase(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<KnowledgeBase>newBuilder()
@@ -281,6 +286,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -314,6 +320,7 @@ public class HttpJsonKnowledgeBasesStub extends KnowledgeBasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

@@ -92,6 +92,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateEntityReconciliationJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -100,7 +101,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                                   .toBody(
                                       "entityReconciliationJob",
                                       request.getEntityReconciliationJob(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<EntityReconciliationJob>newBuilder()
@@ -134,6 +135,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetEntityReconciliationJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -174,6 +176,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -208,12 +211,13 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CancelEntityReconciliationJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -245,6 +249,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteEntityReconciliationJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -280,6 +285,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "ids", request.getIdsList());
                         serializer.putQueryParam(fields, "languages", request.getLanguagesList());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -317,6 +323,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                         serializer.putQueryParam(fields, "limit", request.getLimit());
                         serializer.putQueryParam(fields, "query", request.getQuery());
                         serializer.putQueryParam(fields, "types", request.getTypesList());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -354,6 +361,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             serializer.putQueryParam(fields, "ids", request.getIdsList());
                             serializer.putQueryParam(
                                 fields, "languages", request.getLanguagesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -393,6 +401,7 @@ public class HttpJsonEnterpriseKnowledgeGraphServiceStub
                             serializer.putQueryParam(fields, "limit", request.getLimit());
                             serializer.putQueryParam(fields, "query", request.getQuery());
                             serializer.putQueryParam(fields, "types", request.getTypesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

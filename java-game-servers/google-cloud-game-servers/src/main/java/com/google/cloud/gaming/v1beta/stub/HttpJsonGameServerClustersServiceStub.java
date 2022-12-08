@@ -103,6 +103,7 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -137,6 +138,7 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetGameServerClusterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -173,13 +175,14 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "gameServerClusterId", request.getGameServerClusterId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gameServerCluster", request.getGameServerCluster(), false))
+                                      "gameServerCluster", request.getGameServerCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -221,13 +224,14 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                                 fields, "gameServerClusterId", request.getGameServerClusterId());
                             serializer.putQueryParam(
                                 fields, "previewTime", request.getPreviewTime());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gameServerCluster", request.getGameServerCluster(), false))
+                                      "gameServerCluster", request.getGameServerCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PreviewCreateGameServerClusterResponse>newBuilder()
@@ -260,6 +264,7 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteGameServerClusterRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -302,6 +307,7 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "previewTime", request.getPreviewTime());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -341,13 +347,14 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                             ProtoRestSerializer<UpdateGameServerClusterRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gameServerCluster", request.getGameServerCluster(), false))
+                                      "gameServerCluster", request.getGameServerCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -391,13 +398,14 @@ public class HttpJsonGameServerClustersServiceStub extends GameServerClustersSer
                             serializer.putQueryParam(
                                 fields, "previewTime", request.getPreviewTime());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "gameServerCluster", request.getGameServerCluster(), false))
+                                      "gameServerCluster", request.getGameServerCluster(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PreviewUpdateGameServerClusterResponse>newBuilder()

@@ -104,11 +104,12 @@ public class HttpJsonFlowsStub extends FlowsStub {
                         ProtoRestSerializer<CreateFlowRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "languageCode", request.getLanguageCode());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("flow", request.getFlow(), false))
+                          ProtoRestSerializer.create().toBody("flow", request.getFlow(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Flow>newBuilder()
@@ -139,6 +140,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                         ProtoRestSerializer<DeleteFlowRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "force", request.getForce());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -176,6 +178,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -209,6 +212,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                         ProtoRestSerializer<GetFlowRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "languageCode", request.getLanguageCode());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -243,11 +247,12 @@ public class HttpJsonFlowsStub extends FlowsStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "languageCode", request.getLanguageCode());
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("flow", request.getFlow(), false))
+                          ProtoRestSerializer.create().toBody("flow", request.getFlow(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Flow>newBuilder()
@@ -277,12 +282,13 @@ public class HttpJsonFlowsStub extends FlowsStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<TrainFlowRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -316,12 +322,13 @@ public class HttpJsonFlowsStub extends FlowsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ValidateFlowRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FlowValidationResult>newBuilder()
@@ -354,6 +361,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -387,12 +395,13 @@ public class HttpJsonFlowsStub extends FlowsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportFlowRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -426,12 +435,13 @@ public class HttpJsonFlowsStub extends FlowsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportFlowRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -465,6 +475,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -498,6 +509,7 @@ public class HttpJsonFlowsStub extends FlowsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

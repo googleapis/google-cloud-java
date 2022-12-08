@@ -84,6 +84,7 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetPolicyRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -119,12 +120,13 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdatePolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("policy", request.getPolicy(), false))
+                                  .toBody("policy", request.getPolicy(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -157,12 +159,13 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                             ProtoRestSerializer<CreateAttestorRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "attestorId", request.getAttestorId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("attestor", request.getAttestor(), false))
+                                  .toBody("attestor", request.getAttestor(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Attestor>newBuilder()
@@ -194,6 +197,7 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAttestorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -229,12 +233,13 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateAttestorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("attestor", request.getAttestor(), false))
+                                  .toBody("attestor", request.getAttestor(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Attestor>newBuilder()
@@ -268,6 +273,7 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -302,6 +308,7 @@ public class HttpJsonBinauthzManagementServiceV1Beta1Stub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteAttestorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

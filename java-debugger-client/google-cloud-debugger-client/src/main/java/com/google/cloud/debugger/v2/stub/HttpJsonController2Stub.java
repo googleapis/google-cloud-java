@@ -75,12 +75,13 @@ public class HttpJsonController2Stub extends Controller2Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RegisterDebuggeeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegisterDebuggeeResponse>newBuilder()
@@ -117,6 +118,7 @@ public class HttpJsonController2Stub extends Controller2Stub {
                             serializer.putQueryParam(
                                 fields, "successOnTimeout", request.getSuccessOnTimeout());
                             serializer.putQueryParam(fields, "waitToken", request.getWaitToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -155,13 +157,13 @@ public class HttpJsonController2Stub extends Controller2Stub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateActiveBreakpointRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody(
-                                      "*", request.toBuilder().clearDebuggeeId().build(), false))
+                                  .toBody("*", request.toBuilder().clearDebuggeeId().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UpdateActiveBreakpointResponse>newBuilder()

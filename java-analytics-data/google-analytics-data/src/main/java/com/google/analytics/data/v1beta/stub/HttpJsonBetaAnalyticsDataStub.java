@@ -84,12 +84,13 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunReportRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunReportResponse>newBuilder()
@@ -120,12 +121,13 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunPivotReportRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunPivotReportResponse>newBuilder()
@@ -156,12 +158,13 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchRunReportsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchRunReportsResponse>newBuilder()
@@ -195,12 +198,13 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchRunPivotReportsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchRunPivotReportsResponse>newBuilder()
@@ -231,6 +235,7 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetMetadataRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -264,12 +269,13 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunRealtimeReportRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunRealtimeReportResponse>newBuilder()
@@ -301,12 +307,13 @@ public class HttpJsonBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CheckCompatibilityRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CheckCompatibilityResponse>newBuilder()

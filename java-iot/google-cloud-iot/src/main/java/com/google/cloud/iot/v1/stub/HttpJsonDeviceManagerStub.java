@@ -105,12 +105,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateDeviceRegistryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deviceRegistry", request.getDeviceRegistry(), false))
+                                  .toBody("deviceRegistry", request.getDeviceRegistry(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DeviceRegistry>newBuilder()
@@ -141,6 +142,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetDeviceRegistryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -178,12 +180,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             ProtoRestSerializer<UpdateDeviceRegistryRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deviceRegistry", request.getDeviceRegistry(), false))
+                                  .toBody("deviceRegistry", request.getDeviceRegistry(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DeviceRegistry>newBuilder()
@@ -214,6 +217,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteDeviceRegistryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -251,6 +255,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -284,12 +289,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateDeviceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("device", request.getDevice(), false))
+                                  .toBody("device", request.getDevice(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Device>newBuilder()
@@ -322,6 +328,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                         ProtoRestSerializer<GetDeviceRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "fieldMask", request.getFieldMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -359,12 +366,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             ProtoRestSerializer<UpdateDeviceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("device", request.getDevice(), false))
+                                  .toBody("device", request.getDevice(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Device>newBuilder()
@@ -395,6 +403,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteDeviceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -439,6 +448,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                                 fields, "gatewayListOptions", request.getGatewayListOptions());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -474,12 +484,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ModifyCloudToDeviceConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DeviceConfig>newBuilder()
@@ -516,6 +527,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "numVersions", request.getNumVersions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -552,6 +564,7 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             ProtoRestSerializer<ListDeviceStatesRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "numStates", request.getNumStates());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -587,12 +600,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -625,12 +639,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -663,12 +678,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -701,12 +717,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SendCommandToDeviceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SendCommandToDeviceResponse>newBuilder()
@@ -739,12 +756,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BindDeviceToGatewayRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BindDeviceToGatewayResponse>newBuilder()
@@ -779,12 +797,13 @@ public class HttpJsonDeviceManagerStub extends DeviceManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UnbindDeviceFromGatewayRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UnbindDeviceFromGatewayResponse>newBuilder()

@@ -72,12 +72,13 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunFunnelReportRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProperty().build(), false))
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RunFunnelReportResponse>newBuilder()

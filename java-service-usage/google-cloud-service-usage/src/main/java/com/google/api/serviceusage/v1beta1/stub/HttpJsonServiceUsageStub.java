@@ -123,12 +123,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<EnableServiceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -162,12 +163,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DisableServiceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -200,6 +202,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetServiceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -236,6 +239,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -269,12 +273,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchEnableServicesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -314,6 +319,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -349,6 +355,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             ProtoRestSerializer<GetConsumerQuotaMetricRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -384,6 +391,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             ProtoRestSerializer<GetConsumerQuotaLimitRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -420,12 +428,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(
                                 fields, "forceOnly", request.getForceOnlyList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("override", request.getOverride(), false))
+                                  .toBody("override", request.getOverride(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -463,12 +472,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(
                                 fields, "forceOnly", request.getForceOnlyList());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("override", request.getOverride(), false))
+                                  .toBody("override", request.getOverride(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -505,6 +515,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(
                                 fields, "forceOnly", request.getForceOnlyList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -543,6 +554,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -577,12 +589,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportAdminOverridesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -620,12 +633,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(
                                 fields, "forceOnly", request.getForceOnlyList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("override", request.getOverride(), false))
+                                  .toBody("override", request.getOverride(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -664,12 +678,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(
                                 fields, "forceOnly", request.getForceOnlyList());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("override", request.getOverride(), false))
+                                  .toBody("override", request.getOverride(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -707,6 +722,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(
                                 fields, "forceOnly", request.getForceOnlyList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -748,6 +764,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -782,12 +799,13 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportConsumerOverridesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -822,6 +840,7 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GenerateServiceIdentityRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

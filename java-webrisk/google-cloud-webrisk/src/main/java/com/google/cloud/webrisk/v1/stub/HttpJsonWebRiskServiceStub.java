@@ -85,6 +85,7 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                                 fields, "threatType", request.getThreatTypeValue());
                             serializer.putQueryParam(
                                 fields, "versionToken", request.getVersionToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -120,6 +121,7 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                             serializer.putQueryParam(
                                 fields, "threatTypes", request.getThreatTypesList());
                             serializer.putQueryParam(fields, "uri", request.getUri());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -155,6 +157,7 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                             serializer.putQueryParam(fields, "hashPrefix", request.getHashPrefix());
                             serializer.putQueryParam(
                                 fields, "threatTypes", request.getThreatTypesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -188,12 +191,13 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSubmissionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("submission", request.getSubmission(), false))
+                                  .toBody("submission", request.getSubmission(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Submission>newBuilder()

@@ -96,6 +96,7 @@ public class HttpJsonGameServerConfigsServiceStub extends GameServerConfigsServi
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -130,6 +131,7 @@ public class HttpJsonGameServerConfigsServiceStub extends GameServerConfigsServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetGameServerConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -165,12 +167,13 @@ public class HttpJsonGameServerConfigsServiceStub extends GameServerConfigsServi
                             ProtoRestSerializer<CreateGameServerConfigRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "configId", request.getConfigId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("gameServerConfig", request.getGameServerConfig(), false))
+                                  .toBody("gameServerConfig", request.getGameServerConfig(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -205,6 +208,7 @@ public class HttpJsonGameServerConfigsServiceStub extends GameServerConfigsServi
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteGameServerConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

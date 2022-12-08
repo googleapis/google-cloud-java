@@ -74,13 +74,14 @@ public class HttpJsonPublicCertificateAuthorityServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateExternalAccountKeyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "externalAccountKey", request.getExternalAccountKey(), false))
+                                      "externalAccountKey", request.getExternalAccountKey(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ExternalAccountKey>newBuilder()

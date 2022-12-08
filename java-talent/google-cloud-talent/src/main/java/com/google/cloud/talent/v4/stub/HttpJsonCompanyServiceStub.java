@@ -80,12 +80,13 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateCompanyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("company", request.getCompany(), false))
+                                  .toBody("company", request.getCompany(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Company>newBuilder()
@@ -115,6 +116,7 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetCompanyRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -150,12 +152,13 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                             ProtoRestSerializer<UpdateCompanyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("company", request.getCompany(), false))
+                                  .toBody("company", request.getCompany(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Company>newBuilder()
@@ -186,6 +189,7 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCompanyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -223,6 +227,7 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "requireOpenJobs", request.getRequireOpenJobs());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

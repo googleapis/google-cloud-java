@@ -83,6 +83,7 @@ public class HttpJsonMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                             ProtoRestSerializer<GetJobMetricsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "startTime", request.getStartTime());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -120,6 +121,7 @@ public class HttpJsonMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -160,6 +162,7 @@ public class HttpJsonMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "startTime", request.getStartTime());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

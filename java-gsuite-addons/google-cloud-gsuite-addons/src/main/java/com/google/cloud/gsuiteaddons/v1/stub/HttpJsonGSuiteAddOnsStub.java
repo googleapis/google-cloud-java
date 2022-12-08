@@ -86,6 +86,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetAuthorizationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -121,12 +122,13 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "deploymentId", request.getDeploymentId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deployment", request.getDeployment(), false))
+                                  .toBody("deployment", request.getDeployment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Deployment>newBuilder()
@@ -158,12 +160,13 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ReplaceDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("deployment", request.getDeployment(), false))
+                                  .toBody("deployment", request.getDeployment(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Deployment>newBuilder()
@@ -194,6 +197,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -229,6 +233,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -263,6 +268,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                             ProtoRestSerializer<DeleteDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -296,12 +302,13 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<InstallDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -332,12 +339,13 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UninstallDeploymentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -368,6 +376,7 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetInstallStatusRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
