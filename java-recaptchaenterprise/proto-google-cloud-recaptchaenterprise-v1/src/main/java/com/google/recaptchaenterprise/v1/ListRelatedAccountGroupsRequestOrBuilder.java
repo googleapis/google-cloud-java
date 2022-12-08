@@ -27,8 +27,8 @@ public interface ListRelatedAccountGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project to list related account groups from, in the format
-   * "projects/{project}".
+   * Required. The name of the project to list related account groups from, in
+   * the format "projects/{project}".
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListRelatedAccountGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the project to list related account groups from, in the format
-   * "projects/{project}".
+   * Required. The name of the project to list related account groups from, in
+   * the format "projects/{project}".
    * </pre>
    *
    * <code>
@@ -58,10 +58,9 @@ public interface ListRelatedAccountGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of groups to return. The service might return fewer than
-   * this value.
-   * If unspecified, at most 50 groups are returned.
-   * The maximum value is 1000; values above 1000 are coerced to 1000.
+   * Optional. The maximum number of groups to return. The service might return
+   * fewer than this value. If unspecified, at most 50 groups are returned. The
+   * maximum value is 1000; values above 1000 are coerced to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -74,8 +73,8 @@ public interface ListRelatedAccountGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous `ListRelatedAccountGroups` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. A page token, received from a previous `ListRelatedAccountGroups`
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
    * `ListRelatedAccountGroups` must match the call that provided the page
    * token.
@@ -90,8 +89,8 @@ public interface ListRelatedAccountGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous `ListRelatedAccountGroups` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. A page token, received from a previous `ListRelatedAccountGroups`
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
    * `ListRelatedAccountGroups` must match the call that provided the page
    * token.

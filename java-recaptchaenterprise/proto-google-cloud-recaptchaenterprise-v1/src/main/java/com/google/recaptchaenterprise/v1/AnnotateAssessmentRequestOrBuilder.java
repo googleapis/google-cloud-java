@@ -58,9 +58,9 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can be left
-   * empty to provide reasons that apply to an event without concluding whether
-   * the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can
+   * be left empty to provide reasons that apply to an event without concluding
+   * whether the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -74,9 +74,9 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The annotation that will be assigned to the Event. This field can be left
-   * empty to provide reasons that apply to an event without concluding whether
-   * the event is legitimate or fraudulent.
+   * Optional. The annotation that will be assigned to the Event. This field can
+   * be left empty to provide reasons that apply to an event without concluding
+   * whether the event is legitimate or fraudulent.
    * </pre>
    *
    * <code>
@@ -91,7 +91,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -106,7 +107,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -120,7 +122,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -135,7 +138,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>
@@ -149,7 +153,8 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional reasons for the annotation that will be assigned to the Event.
+   * Optional. Optional reasons for the annotation that will be assigned to the
+   * Event.
    * </pre>
    *
    * <code>

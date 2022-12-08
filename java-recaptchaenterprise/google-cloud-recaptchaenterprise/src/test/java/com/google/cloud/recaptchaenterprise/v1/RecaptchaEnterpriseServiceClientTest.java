@@ -35,6 +35,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.recaptchaenterprise.v1.AccountDefenderAssessment;
+import com.google.recaptchaenterprise.v1.AccountVerificationInfo;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -134,6 +135,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setEvent(Event.newBuilder().build())
             .setRiskAnalysis(RiskAnalysis.newBuilder().build())
             .setTokenProperties(TokenProperties.newBuilder().build())
+            .setAccountVerification(AccountVerificationInfo.newBuilder().build())
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .setPrivatePasswordLeakVerification(
                 PrivatePasswordLeakVerification.newBuilder().build())
@@ -181,6 +183,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setEvent(Event.newBuilder().build())
             .setRiskAnalysis(RiskAnalysis.newBuilder().build())
             .setTokenProperties(TokenProperties.newBuilder().build())
+            .setAccountVerification(AccountVerificationInfo.newBuilder().build())
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .setPrivatePasswordLeakVerification(
                 PrivatePasswordLeakVerification.newBuilder().build())
@@ -635,7 +638,10 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
     MigrateKeyRequest request =
-        MigrateKeyRequest.newBuilder().setName(KeyName.of("[PROJECT]", "[KEY]").toString()).build();
+        MigrateKeyRequest.newBuilder()
+            .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+            .setSkipBillingCheck(true)
+            .build();
 
     Key actualResponse = client.migrateKey(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -645,6 +651,7 @@ public class RecaptchaEnterpriseServiceClientTest {
     MigrateKeyRequest actualRequest = ((MigrateKeyRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getSkipBillingCheck(), actualRequest.getSkipBillingCheck());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -660,6 +667,7 @@ public class RecaptchaEnterpriseServiceClientTest {
       MigrateKeyRequest request =
           MigrateKeyRequest.newBuilder()
               .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+              .setSkipBillingCheck(true)
               .build();
       client.migrateKey(request);
       Assert.fail("No exception raised");

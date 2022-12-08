@@ -27,8 +27,9 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    *
    *
    * <pre>
-   * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized username. It
-   * is used to look up password leaks associated with that hash prefix.
+   * Optional. Exactly 26-bit prefix of the SHA-256 hash of the canonicalized
+   * username. It is used to look up password leaks associated with that hash
+   * prefix.
    * </pre>
    *
    * <code>bytes lookup_hash_prefix = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,8 +42,8 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    *
    *
    * <pre>
-   * Optional. Encrypted Scrypt hash of the canonicalized username+password. It is
-   * re-encrypted by the server and returned through
+   * Optional. Encrypted Scrypt hash of the canonicalized username+password. It
+   * is re-encrypted by the server and returned through
    * `reencrypted_user_credentials_hash`.
    * </pre>
    *
@@ -57,9 +58,9 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    *
    *
    * <pre>
-   * Output only. List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They must be compared with the client-side decryption
-   * prefix of `reencrypted_user_credentials_hash`
+   * Output only. List of prefixes of the encrypted potential password leaks
+   * that matched the given parameters. They must be compared with the
+   * client-side decryption prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
    * <code>
@@ -73,9 +74,9 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    *
    *
    * <pre>
-   * Output only. List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They must be compared with the client-side decryption
-   * prefix of `reencrypted_user_credentials_hash`
+   * Output only. List of prefixes of the encrypted potential password leaks
+   * that matched the given parameters. They must be compared with the
+   * client-side decryption prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
    * <code>
@@ -89,9 +90,9 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    *
    *
    * <pre>
-   * Output only. List of prefixes of the encrypted potential password leaks that matched the
-   * given parameters. They must be compared with the client-side decryption
-   * prefix of `reencrypted_user_credentials_hash`
+   * Output only. List of prefixes of the encrypted potential password leaks
+   * that matched the given parameters. They must be compared with the
+   * client-side decryption prefix of `reencrypted_user_credentials_hash`
    * </pre>
    *
    * <code>
@@ -107,9 +108,9 @@ public interface PrivatePasswordLeakVerificationOrBuilder
    *
    *
    * <pre>
-   * Output only. Corresponds to the re-encryption of the `encrypted_user_credentials_hash`
-   * field. It is used to match potential password leaks within
-   * `encrypted_leak_match_prefixes`.
+   * Output only. Corresponds to the re-encryption of the
+   * `encrypted_user_credentials_hash` field. It is used to match potential
+   * password leaks within `encrypted_leak_match_prefixes`.
    * </pre>
    *
    * <code>bytes reencrypted_user_credentials_hash = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
