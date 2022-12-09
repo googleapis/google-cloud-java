@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-orgpolicy</artifactId>
-  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
+  <version>2.7.0</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
   <name>Google Cloud Org Policy</name>
   <description>The Org Policy API allows users to configure governance rules on
     their GCP resources across the Cloud Resource Hierarchy.
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-orgpolicy-parent</artifactId>
-    <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
+    <version>2.7.0</version><!-- {x-version-update:google-cloud-orgpolicy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-orgpolicy</site.installationModule>

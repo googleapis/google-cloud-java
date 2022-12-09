@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-networkconnectivity</artifactId>
-  <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+  <version>1.6.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
   <packaging>jar</packaging>
   <name>Google Network Connectivity Center</name>
   <description>Google's suite of products that provide enterprise connectivity from your on-premises network or from another cloud provider to your Virtual Private Cloud (VPC) network</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-networkconnectivity-parent</artifactId>
-    <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+    <version>1.6.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-networkconnectivity</site.installationModule>

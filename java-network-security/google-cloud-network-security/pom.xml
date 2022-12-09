@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-network-security</artifactId>
-  <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
+  <version>0.10.0</version><!-- {x-version-update:google-cloud-network-security:current} -->
   <packaging>jar</packaging>
   <name>Google Network Security API</name>
   <description>Network Security API n/a</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-network-security-parent</artifactId>
-    <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-security:current} -->
+    <version>0.10.0</version><!-- {x-version-update:google-cloud-network-security:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-network-security</site.installationModule>
