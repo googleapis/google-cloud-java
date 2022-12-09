@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-bare-metal-solution-v2</artifactId>
-  <version>0.7.0</version><!-- {x-version-update:grpc-google-cloud-bare-metal-solution-v2:current} -->
+  <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bare-metal-solution-v2:current} -->
   <name>grpc-google-cloud-bare-metal-solution-v2</name>
   <description>GRPC library for google-cloud-bare-metal-solution</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bare-metal-solution-parent</artifactId>
-    <version>0.7.0</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
+    <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bare-metal-solution:current} -->
   </parent>
   <dependencies>
     <dependency>
