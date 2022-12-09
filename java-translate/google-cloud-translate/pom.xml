@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>2.7.0</version><!-- {x-version-update:google-cloud-translate:current} -->
+  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Translate</name>
   <description>Java idiomatic client for Google Cloud Translate</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-translate-parent</artifactId>
-    <version>2.7.0</version><!-- {x-version-update:google-cloud-translate:current} -->
+    <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-translate:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-translate</site.installationModule>
