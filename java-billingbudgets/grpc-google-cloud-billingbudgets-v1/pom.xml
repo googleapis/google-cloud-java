@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-billingbudgets-v1</artifactId>
-  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1:current} -->
+  <version>2.7.0</version><!-- {x-version-update:grpc-google-cloud-billingbudgets-v1:current} -->
   <name>grpc-google-cloud-billingbudgets-v1</name>
   <description>GRPC library for grpc-google-cloud-billingbudgets-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-billingbudgets-parent</artifactId>
-    <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+    <version>2.7.0</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
   </parent>
   <dependencies>
     <dependency>

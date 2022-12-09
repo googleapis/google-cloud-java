@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vmwareengine</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmwareengine:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-vmwareengine:current} -->
   <packaging>jar</packaging>
   <name>Google Google Cloud VMware Engine</name>
   <description>Google Cloud VMware Engine Easily lift and shift your VMware-based applications to Google Cloud without changes to your apps, tools, or processes.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vmwareengine-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmwareengine:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-vmwareengine:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vmwareengine</site.installationModule>

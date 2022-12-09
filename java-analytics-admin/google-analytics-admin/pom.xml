@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.analytics</groupId>
   <artifactId>google-analytics-admin</artifactId>
-  <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+  <version>0.17.0</version><!-- {x-version-update:google-analytics-admin:current} -->
   <packaging>jar</packaging>
   <name>Google Analytics Admin</name>
   <description>allows you to manage Google Analytics accounts and properties.</description>
   <parent>
     <groupId>com.google.analytics</groupId>
     <artifactId>google-analytics-admin-parent</artifactId>
-    <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+    <version>0.17.0</version><!-- {x-version-update:google-analytics-admin:current} -->
   </parent>
   <properties>
     <site.installationModule>google-analytics-admin</site.installationModule>

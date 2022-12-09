@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-network-management-bom</artifactId>
-  <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-management:current} -->
+  <version>1.8.0</version><!-- {x-version-update:google-cloud-network-management:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.1.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,27 +27,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-network-management</artifactId>
-        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-management:current} -->
+        <version>1.8.0</version><!-- {x-version-update:google-cloud-network-management:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-network-management-v1beta1</artifactId>
-        <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-management-v1beta1:current} -->
+        <version>0.10.0</version><!-- {x-version-update:grpc-google-cloud-network-management-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-network-management-v1</artifactId>
-        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-management-v1:current} -->
+        <version>1.8.0</version><!-- {x-version-update:grpc-google-cloud-network-management-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-network-management-v1beta1</artifactId>
-        <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-network-management-v1beta1:current} -->
+        <version>0.10.0</version><!-- {x-version-update:proto-google-cloud-network-management-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-network-management-v1</artifactId>
-        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-network-management-v1:current} -->
+        <version>1.8.0</version><!-- {x-version-update:proto-google-cloud-network-management-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

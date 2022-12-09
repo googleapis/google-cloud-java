@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-debugger-client-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+  <version>1.7.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
   <name>Google Cloud Debugger Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.1.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,22 +29,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-debugger-client</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+        <version>1.7.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-debugger-client-v2</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-debugger-client-v2:current} -->
+        <version>1.7.0</version><!-- {x-version-update:grpc-google-cloud-debugger-client-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-debugger-client-v2</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-debugger-client-v2:current} -->
+        <version>1.7.0</version><!-- {x-version-update:proto-google-cloud-debugger-client-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-devtools-source-protos</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-devtools-source-protos:current} -->
+        <version>1.7.0</version><!-- {x-version-update:proto-google-devtools-source-protos:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
