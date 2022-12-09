@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-maps-addressvalidation-v1</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:grpc-google-maps-addressvalidation-v1:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-maps-addressvalidation-v1:current} -->
   <name>grpc-google-maps-addressvalidation-v1</name>
   <description>GRPC library for google-maps-addressvalidation</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-addressvalidation-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-maps-addressvalidation:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-addressvalidation:current} -->
   </parent>
   <dependencies>
     <dependency>

@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iamcredentials-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.7.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   <name>Google Cloud IAM Service Account Credentials Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.1.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
-        <version>2.7.0</version><!-- {x-version-update:proto-google-cloud-iamcredentials-v1:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-iamcredentials-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
-        <version>2.7.0</version><!-- {x-version-update:grpc-google-cloud-iamcredentials-v1:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-iamcredentials-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-iamcredentials</artifactId>
-        <version>2.7.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
