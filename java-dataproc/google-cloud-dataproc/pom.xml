@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc</artifactId>
-  <version>4.4.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+  <version>4.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Dataproc</name>
   <description>Java idiomatic client for Google Cloud Dataproc</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataproc-parent</artifactId>
-    <version>4.4.0</version><!-- {x-version-update:google-cloud-dataproc:current} -->
+    <version>4.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataproc:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataproc</site.installationModule>

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1</artifactId>
-  <version>0.5.0</version><!-- {x-version-update:proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1:current} -->
+  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1:current} -->
   <name>proto-google-cloud-cloudcommerceconsumerprocurement-v1alpha1</name>
   <description>Proto library for google-cloud-cloudcommerceconsumerprocurement</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-cloudcommerceconsumerprocurement-parent</artifactId>
-    <version>0.5.0</version><!-- {x-version-update:google-cloud-cloudcommerceconsumerprocurement:current} -->
+    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudcommerceconsumerprocurement:current} -->
   </parent>
   <dependencies>
     <dependency>
