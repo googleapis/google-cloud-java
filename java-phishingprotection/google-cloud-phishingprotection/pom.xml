@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-phishingprotection</artifactId>
-  <version>0.38.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
+  <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Phishing Protection</name>
   <description>Java idiomatic client for Google Cloud Phishing Protection</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-phishingprotection-parent</artifactId>
-    <version>0.38.0</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
+    <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-phishingprotection</site.installationModule>

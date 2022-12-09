@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-optimization</artifactId>
-  <version>1.5.0</version><!-- {x-version-update:google-cloud-optimization:current} -->
+  <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-optimization:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Fleet Routing</name>
   <description>Cloud Fleet Routing is a managed routing service that takes your list of orders, vehicles, constraints, and objectives and returns the most efficient plan for your entire fleet in near real-time.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-optimization-parent</artifactId>
-    <version>1.5.0</version><!-- {x-version-update:google-cloud-optimization:current} -->
+    <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-optimization:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-optimization</site.installationModule>
