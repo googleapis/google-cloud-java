@@ -152,4 +152,41 @@ public interface UploadModelRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelOrBuilder getModelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the model
+   * upload. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used. Users uploading the Model must have the
+   * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+   * account must belong to the project specified in the `parent` field and have
+   * all necessary read permissions.
+   * </pre>
+   *
+   * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the model
+   * upload. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used. Users uploading the Model must have the
+   * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+   * account must belong to the project specified in the `parent` field and have
+   * all necessary read permissions.
+   * </pre>
+   *
+   * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
 }

@@ -266,6 +266,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParentModel("parentModel998431903")
    *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
+   *           .setServiceAccount("serviceAccount1079137720")
    *           .build();
    *   UploadModelResponse response = modelServiceClient.uploadModelAsync(request).get();
    * }
@@ -298,6 +299,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParentModel("parentModel998431903")
    *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
+   *           .setServiceAccount("serviceAccount1079137720")
    *           .build();
    *   OperationFuture<UploadModelResponse, UploadModelOperationMetadata> future =
    *       modelServiceClient.uploadModelOperationCallable().futureCall(request);
@@ -331,6 +333,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParentModel("parentModel998431903")
    *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
+   *           .setServiceAccount("serviceAccount1079137720")
    *           .build();
    *   ApiFuture<Operation> future = modelServiceClient.uploadModelCallable().futureCall(request);
    *   // Do something.
