@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apigee-registry</artifactId>
-  <version>0.7.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+  <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   <packaging>jar</packaging>
   <name>Google Registry API</name>
   <description>Registry API allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apigee-registry-parent</artifactId>
-    <version>0.7.0</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
+    <version>0.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apigee-registry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apigee-registry</site.installationModule>

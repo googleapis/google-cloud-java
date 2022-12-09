@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-area120-tables-v1alpha1</artifactId>
-  <version>0.11.0</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
+  <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
   <name>proto-google-area120-tables-v1alpha1</name>
   <description>Proto library for google-area120-tables</description>
   <parent>
     <groupId>com.google.area120</groupId>
     <artifactId>google-area120-tables-parent</artifactId>
-    <version>0.11.0</version><!-- {x-version-update:google-area120-tables:current} -->
+    <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
   </parent>
   <dependencies>
     <dependency>
