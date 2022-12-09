@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-iamcredentials</artifactId>
-  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+  <version>2.7.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud IAM Service Account Credentials</name>
   <description>Java idiomatic client for Google Cloud IAM Service Account Credentials</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-iamcredentials-parent</artifactId>
-    <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
+    <version>2.7.0</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-iamcredentials</site.installationModule>

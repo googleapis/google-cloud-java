@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-multi-cloud-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+  <version>0.6.0</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
   <name>Google Anthos Multicloud Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.1.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,17 +29,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gke-multi-cloud</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+        <version>0.6.0</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-gke-multi-cloud-v1</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-gke-multi-cloud-v1:current} -->
+        <version>0.6.0</version><!-- {x-version-update:grpc-google-cloud-gke-multi-cloud-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-gke-multi-cloud-v1</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-gke-multi-cloud-v1:current} -->
+        <version>0.6.0</version><!-- {x-version-update:proto-google-cloud-gke-multi-cloud-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
