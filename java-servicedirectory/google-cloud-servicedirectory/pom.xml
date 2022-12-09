@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-servicedirectory</artifactId>
-  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+  <version>2.8.0</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Service Directory</name>
   <description>Java idiomatic client for Google Cloud Service Directory</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-servicedirectory-parent</artifactId>
-    <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+    <version>2.8.0</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-servicedirectory</site.installationModule>
