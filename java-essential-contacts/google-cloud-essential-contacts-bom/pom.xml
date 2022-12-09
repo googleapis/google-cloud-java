@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-essential-contacts-bom</artifactId>
-  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
+  <version>2.7.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.1.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-essential-contacts</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
+        <version>2.7.0</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-essential-contacts-v1</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-essential-contacts-v1:current} -->
+        <version>2.7.0</version><!-- {x-version-update:grpc-google-cloud-essential-contacts-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-essential-contacts-v1</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-essential-contacts-v1:current} -->
+        <version>2.7.0</version><!-- {x-version-update:proto-google-cloud-essential-contacts-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
