@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-data-fusion</artifactId>
-  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
+  <version>1.7.0</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Data Fusion</name>
   <description>Cloud Data Fusion is a fully managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-data-fusion-parent</artifactId>
-    <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
+    <version>1.7.0</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-data-fusion</site.installationModule>

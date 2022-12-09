@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-channel</artifactId>
-  <version>3.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-channel:current} -->
+  <version>3.11.0</version><!-- {x-version-update:google-cloud-channel:current} -->
   <packaging>jar</packaging>
   <name>Google Channel Services</name>
   <description>With Channel Services, Google Cloud partners and resellers have a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-channel-parent</artifactId>
-    <version>3.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-channel:current} -->
+    <version>3.11.0</version><!-- {x-version-update:google-cloud-channel:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-channel</site.installationModule>
