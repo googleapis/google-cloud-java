@@ -100,8 +100,10 @@
     <module>java-language</module>
     <module>java-life-sciences</module>
     <module>java-managed-identities</module>
+    -->
     <module>java-maps-addressvalidation</module>
     <module>java-maps-routing</module>
+    <!--
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
     <module>java-monitoring-dashboards</module>
