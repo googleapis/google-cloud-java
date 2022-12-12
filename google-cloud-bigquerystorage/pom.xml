@@ -206,10 +206,6 @@
       <artifactId>google-cloud-core</artifactId>
       <scope>runtime</scope>
     </dependency>
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
-    </dependency>
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
