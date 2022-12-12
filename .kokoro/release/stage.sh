@@ -35,7 +35,7 @@ mvn clean deploy -B \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
-  --projects '!java-maps-*' \
+  --projects '!java-maps-addressvalidation,!java-maps-routing' \
   -P release
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
