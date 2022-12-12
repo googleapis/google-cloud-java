@@ -47,7 +47,10 @@ public class StreamWriter implements AutoCloseable {
   private static final Logger log = Logger.getLogger(StreamWriter.class.getName());
 
   private static String datasetsMatching = "projects/[^/]+/datasets/[^/]+/";
-  private static Pattern streamPattern = Pattern.compile(datasetsMatching);
+  private static Pattern streamPatternDatasets = Pattern.compile(datasetsMatching);
+
+  private static String defaultStreamMatching = "/_default";
+  private static Pattern streamPatternDefaultStream = Pattern.compile(defaultStreamMatching);
 
   // Cache of location info for a given dataset.
   private static Map<String, String> projectAndDatasetToLocation = new ConcurrentHashMap<>();
@@ -195,6 +198,14 @@ public class StreamWriter implements AutoCloseable {
                   getBigQueryWriteClient(builder),
                   ownsBigQueryWriteClient));
     } else {
+      if (!isDefaultStream(streamName)) {
+        log.warning(
+            "Connection pool is only allowed in default stream! However received "
+                + builder.streamName);
+        throw new IllegalArgumentException(
+            "Trying to enable connection pool in non-default stream.");
+      }
+
       BigQueryWriteClient client = getBigQueryWriteClient(builder);
       String location = builder.location;
       if (location == null || location.isEmpty()) {
@@ -264,13 +275,19 @@ public class StreamWriter implements AutoCloseable {
 
   @VisibleForTesting
   static String extractDatasetAndProjectName(String streamName) {
-    Matcher streamMatcher = streamPattern.matcher(streamName);
+    Matcher streamMatcher = streamPatternDatasets.matcher(streamName);
     if (streamMatcher.find()) {
       return streamMatcher.group();
     } else {
       throw new IllegalStateException(
           String.format("The passed in stream name does not match standard format %s", streamName));
     }
+  }
+
+  @VisibleForTesting
+  static boolean isDefaultStream(String streamName) {
+    Matcher streamMatcher = streamPatternDefaultStream.matcher(streamName);
+    return streamMatcher.find();
   }
 
   private BigQueryWriteClient getBigQueryWriteClient(Builder builder) throws IOException {

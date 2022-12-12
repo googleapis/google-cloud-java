@@ -62,8 +62,10 @@ import org.threeten.bp.Duration;
 @RunWith(JUnit4.class)
 public class StreamWriterTest {
   private static final Logger log = Logger.getLogger(StreamWriterTest.class.getName());
-  private static final String TEST_STREAM_1 = "projects/p/datasets/d1/tables/t1/streams/s1";
-  private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/s2";
+  private static final String TEST_STREAM_1 = "projects/p/datasets/d1/tables/t1/streams/_default";
+  private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/_default";
+  private static final String TEST_STREAM_SHORTEN = "projects/p/datasets/d2/tables/t2/_default";
+  private static final String EXPLICIT_STEAM = "projects/p/datasets/d1/tables/t1/streams/s1";
   private static final String TEST_TRACE_ID = "DATAFLOW:job_id";
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
@@ -364,6 +366,31 @@ public class StreamWriterTest {
             StreamWriter.newBuilder(TEST_STREAM_1).setTraceId(":abc");
           }
         });
+  }
+
+  @Test
+  public void testEnableConnectionPoolOnExplicitStream() throws Exception {
+    IllegalArgumentException ex =
+        assertThrows(
+            IllegalArgumentException.class,
+            new ThrowingRunnable() {
+              @Override
+              public void run() throws Throwable {
+                StreamWriter.newBuilder(EXPLICIT_STEAM, client)
+                    .setEnableConnectionPool(true)
+                    .build();
+              }
+            });
+    assertTrue(ex.getMessage().contains("Trying to enable connection pool in non-default stream."));
+  }
+
+  @Test
+  public void testShortenStreamNameAllowed() throws Exception {
+    // no exception is thrown.
+    StreamWriter.newBuilder(TEST_STREAM_SHORTEN, client)
+        .setEnableConnectionPool(true)
+        .setLocation("us")
+        .build();
   }
 
   @Test

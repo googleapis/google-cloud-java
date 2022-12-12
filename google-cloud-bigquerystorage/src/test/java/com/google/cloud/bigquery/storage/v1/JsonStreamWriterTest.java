@@ -63,8 +63,8 @@ import org.threeten.bp.LocalTime;
 @RunWith(JUnit4.class)
 public class JsonStreamWriterTest {
   private static final Logger LOG = Logger.getLogger(JsonStreamWriterTest.class.getName());
-  private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/s";
-  private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/s2";
+  private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/_default";
+  private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/_default";
   private static final String TEST_TABLE = "projects/p/datasets/d/tables/t";
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
