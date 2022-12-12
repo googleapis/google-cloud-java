@@ -43,6 +43,14 @@ mvn clean deploy -B \
   --projects "${excludedMapsModule}" \
   -P release
 
+echo "Finding nexus-staging"
+find . -name "nexus-staging"
+
+echo "Done"
+echo "Finding staging"
+find . -name "staging"
+echo  "Done"
+
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
 # environment variable. Fusion also lets us to specify this variable.
 if [[ -n "${AUTORELEASE_PR}" ]]
