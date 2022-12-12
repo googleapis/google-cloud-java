@@ -28,6 +28,11 @@ setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
 echo "Deploying artifacts to staging repositories"
+
+excludedMapsModule=$(find java-maps-* -name 'pom.xml'  \
+    |sed -e 's/^/!/' -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
+echo "Excluded modules: ${excludedMapsModule}"
+
 mvn clean deploy -B \
   -DskipTests=true \
   -Dclirr.skip=true \
@@ -35,7 +40,7 @@ mvn clean deploy -B \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
-  --projects '!java-maps-addressvalidation,!java-maps-routing' \
+  --projects "${excludedMapsModule}" \
   -P release
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
