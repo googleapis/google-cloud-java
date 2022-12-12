@@ -97,12 +97,13 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportEntitiesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProjectId().build(), false))
+                                  .toBody("*", request.toBuilder().clearProjectId().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -136,12 +137,13 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportEntitiesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearProjectId().build(), false))
+                                  .toBody("*", request.toBuilder().clearProjectId().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -175,12 +177,13 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateIndexRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("index", request.getIndex(), false))
+                                  .toBody("index", request.getIndex(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -215,6 +218,7 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteIndexRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -251,6 +255,7 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetIndexRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -287,6 +292,7 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
