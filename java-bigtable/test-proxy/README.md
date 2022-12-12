@@ -2,7 +2,7 @@
 
 The CBT test proxy is intended for running confromance tests for Cloug Bigtable Java Client.
 
-## Set up 
+## Set up
 
 If you have not already done so, [install golang](https://go.dev/doc/install), then clone the go test library:
 
@@ -12,7 +12,7 @@ git clone https://github.com/googleapis/cloud-bigtable-clients-test.git
 
 ## Start test proxy
 
-Build the proxy with the latest version of the client
+Build the proxy with the latest/head version of the client
 
 ```
 cd java-bigtable
@@ -24,20 +24,13 @@ mvn clean install
 Start the proxy on default port 9999
 
 ```
-mvn exec:java -Dexec.mainClass=com.google.cloud.bigtable.testproxy.CbtTestProxyMain
+java -jar target/google-cloud-bigtable-test-proxy-<proxy_version>.jar
 ```
 
 Start the proxy on a different port
 
 ```
-mvn exec:java -Dexec.mainClass=com.google.cloud.bigtable.testproxy.CbtTestProxyMain -Dport=1
-```
-
-Build and start the proxy with an older version of the client
-
-```
-mvn clean install -Dbigtable.client.version=<client_version> -Denforcer.skip
-mvn exec:java -Dexec.mainClass=com.google.cloud.bigtable.testproxy.CbtTestProxyMain
+java -Dport=1 -jar target/google-cloud-bigtable-test-proxy-<proxy_version>.jar
 ```
 
 ## Run the test cases
@@ -46,3 +39,12 @@ mvn exec:java -Dexec.mainClass=com.google.cloud.bigtable.testproxy.CbtTestProxyM
 cd cloud-bigtable-clients-test/tests
 go test -v -proxy_addr=:9999
 ```
+
+## Test a released client
+
+To do so, you need to build the proxy with the released version of the client.
+Please download the source code
+[here](https://github.com/googleapis/java-bigtable/releases), and repeat the
+above steps.
+
+Note that Kokoro presubmit test doesn't use this route.
