@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.27.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.26.0...v2.27.0) (2022-12-12)
+
+
+### Features
+
+* Change one thread per retry to use a thread pool  ([#1898](https://github.com/googleapis/java-bigquerystorage/issues/1898)) ([44a4e4d](https://github.com/googleapis/java-bigquerystorage/commit/44a4e4d8c70bf910f96d2d2c181d1f23b70f3e52))
+* Throw error when using connection pool for explicit stream ([#1903](https://github.com/googleapis/java-bigquerystorage/issues/1903)) ([bd89556](https://github.com/googleapis/java-bigquerystorage/commit/bd895567fe33735294065d7043d845f14f33f8a8))
+
+
+### Bug Fixes
+
+* Add back the accidentally removed background executor provider  ([#1899](https://github.com/googleapis/java-bigquerystorage/issues/1899)) ([065cc4f](https://github.com/googleapis/java-bigquerystorage/commit/065cc4f35ad5e5cdc393e01adbea881c6e92dcab))
+* Update JsonStreamWriterBuilder comment and update sample to use the latest schema retrieval support ([#1902](https://github.com/googleapis/java-bigquerystorage/issues/1902)) ([2a46ec3](https://github.com/googleapis/java-bigquerystorage/commit/2a46ec3df419bbeba6a2e60b2b621dc60f31eab1))
+
+
+### Dependencies
+
+* Update arrow.version to v10.0.1 ([#1894](https://github.com/googleapis/java-bigquerystorage/issues/1894)) ([8e90767](https://github.com/googleapis/java-bigquerystorage/commit/8e907677bae0c48e8c64be5cbab8fb203645f4ef))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.0 ([#1905](https://github.com/googleapis/java-bigquerystorage/issues/1905)) ([767be03](https://github.com/googleapis/java-bigquerystorage/commit/767be035defbcc5b77f1276bb1a2983b6a7423bd))
+* Update dependency org.apache.arrow:arrow-memory-netty to v10.0.1 ([#1895](https://github.com/googleapis/java-bigquerystorage/issues/1895)) ([8b079cc](https://github.com/googleapis/java-bigquerystorage/commit/8b079cc47ca914756bd73dda98bd15393754ebb1))
+* Update dependency org.apache.arrow:arrow-vector to v10.0.1 ([#1896](https://github.com/googleapis/java-bigquerystorage/issues/1896)) ([087ac6e](https://github.com/googleapis/java-bigquerystorage/commit/087ac6e7ad813dc248e9029f91c454299a87b2b3))
+
 ## [2.26.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.25.0...v2.26.0) (2022-11-18)
 
 
