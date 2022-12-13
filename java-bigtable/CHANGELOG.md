@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.17.1](https://github.com/googleapis/java-bigtable/compare/v2.17.0...v2.17.1) (2022-12-13)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.8.0 ([#1548](https://github.com/googleapis/java-bigtable/issues/1548)) ([48f136d](https://github.com/googleapis/java-bigtable/commit/48f136dc1422d601d5470a33763e37514cf620de))
+
 ## [2.17.0](https://github.com/googleapis/java-bigtable/compare/v2.16.0...v2.17.0) (2022-12-07)
 
 
