@@ -41,8 +41,9 @@ mvn clean deploy -B \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
   --projects "${includedMapsModule}" \
-  -DnexusUrl="https://oss.sonatype.org/" \
-  -P release
+  -P release \
+  -P release-non-google-oss-sonatype
+
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
 # environment variable. Fusion also lets us to specify this variable.
