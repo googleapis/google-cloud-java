@@ -1,0 +1,33 @@
+name: Prepare GraalVM upgrade
+on:
+  workflow_dispatch:
+    inputs:
+      graalvm_version:
+        description: GraalVM version to upgrade to
+        required: true
+        default: (for example, 22.3.0)
+
+
+jobs:
+  graalvm-upgrade:
+    name: Upgrade GraalVM version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update GraalVM versions
+        run: |
+          sed -i "s/gcr.io/cloud-devrel-kokoro-resources/graalvm:.*/gcr.io/cloud-devrel-kokoro-resources/graalvm:${{ github.event.inputs.graalvm_version }}" \
+          .kokoro/nightly/graalvm-native.cfg \
+          .kokoro/presubmit/graalvm-native-aiplatform.cfg \
+          .kokoro/presubmit/graalvm-native-compute.cfg \
+          .kokoro/nightly/graalvm-sub-jobs/native/common.cfg 
+      - name: Create PR
+        run: |
+          [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
+          [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
+          git checkout -b graalvm_upgrade_${{ github.event.inputs.graalvm_version }}
+          git add --all
+          git commit -m 'chore: upgrade Kokoro jobs to GraalVM ${{ github.event.inputs.graalvm_version }}'
+          git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+          git fetch -q --unshallow monorepo
+          git push -f monorepo graalvm_upgrade_${{ github.event.inputs.graalvm_version }}
