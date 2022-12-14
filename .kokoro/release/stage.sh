@@ -44,6 +44,13 @@ mvn clean deploy -B \
   -P release \
   -P release-non-google-oss-sonatype
 
+echo "Finding nexus-staging"
+find . -name "nexus-staging"
+
+echo "Done"
+echo "Finding staging"
+find . -name "staging"
+echo  "Done"
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
 # environment variable. Fusion also lets us to specify this variable.
@@ -52,7 +59,9 @@ then
   echo "Releasing the staging repositories"
   mvn nexus-staging:release -B \
     -DperformRelease=true \
-    --settings=${MAVEN_SETTINGS_FILE}
+    --settings=${MAVEN_SETTINGS_FILE} \
+    --projects "${includedMapsModule}" \
+    -P release-non-google-oss-sonatype
 else
   echo "AUTORELEASE_PR is not set. Not releasing."
 fi
