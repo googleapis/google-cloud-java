@@ -30,12 +30,12 @@
         <version>0.1.0</version><!-- {x-version-update:google-maps-addressvalidation:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
+        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>grpc-google-maps-addressvalidation-v1</artifactId>
         <version>0.1.0</version><!-- {x-version-update:grpc-google-maps-addressvalidation-v1:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
+        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>proto-google-maps-addressvalidation-v1</artifactId>
         <version>0.1.0</version><!-- {x-version-update:proto-google-maps-addressvalidation-v1:current} -->
       </dependency>

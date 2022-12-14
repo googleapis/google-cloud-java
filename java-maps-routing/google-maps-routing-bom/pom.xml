@@ -30,12 +30,12 @@
         <version>0.1.0</version><!-- {x-version-update:google-maps-routing:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
+        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>grpc-google-maps-routing-v2</artifactId>
         <version>0.1.0</version><!-- {x-version-update:grpc-google-maps-routing-v2:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.api.grpc</groupId>
+        <groupId>com.google.maps.api.grpc</groupId>
         <artifactId>proto-google-maps-routing-v2</artifactId>
         <version>0.1.0</version><!-- {x-version-update:proto-google-maps-routing-v2:current} -->
       </dependency>

@@ -42,7 +42,7 @@
     </dependency>
 
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
+      <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>proto-google-maps-routing-v2</artifactId>
     </dependency>
     <dependency>
@@ -86,7 +86,7 @@
     </dependency>
 
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
+      <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>grpc-google-maps-routing-v2</artifactId>
       <scope>test</scope>
     </dependency>
