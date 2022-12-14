@@ -258,6 +258,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
         @Override
         public boolean cancel(boolean mayInterruptIfRunning) {
           synchronized (this) {
+            future.cancel(mayInterruptIfRunning);
             cancelled.set(true);
             return !done.get();
           }
