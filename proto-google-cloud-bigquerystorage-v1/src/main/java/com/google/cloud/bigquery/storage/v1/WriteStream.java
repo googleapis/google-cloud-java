@@ -487,8 +487,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Create time of the stream. For the _default stream, this is the
-   * creation_time of the table.
+   * Output only. Create time of the stream. For the _default stream, this is
+   * the creation_time of the table.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -504,8 +504,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Create time of the stream. For the _default stream, this is the
-   * creation_time of the table.
+   * Output only. Create time of the stream. For the _default stream, this is
+   * the creation_time of the table.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -521,8 +521,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Create time of the stream. For the _default stream, this is the
-   * creation_time of the table.
+   * Output only. Create time of the stream. For the _default stream, this is
+   * the creation_time of the table.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1475,8 +1475,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1492,8 +1492,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1515,8 +1515,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1540,8 +1540,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1562,8 +1562,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1589,8 +1589,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1612,8 +1612,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1629,8 +1629,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>
@@ -1650,8 +1650,8 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Create time of the stream. For the _default stream, this is the
-     * creation_time of the table.
+     * Output only. Create time of the stream. For the _default stream, this is
+     * the creation_time of the table.
      * </pre>
      *
      * <code>

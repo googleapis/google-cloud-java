@@ -3452,9 +3452,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time, subsequent
-   * requests to read this Session will return errors. The expire_time is
-   * automatically assigned and currently cannot be specified or updated.
+   * Output only. Time at which the session becomes invalid. After this time,
+   * subsequent requests to read this Session will return errors. The
+   * expire_time is automatically assigned and currently cannot be specified or
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3470,9 +3471,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time, subsequent
-   * requests to read this Session will return errors. The expire_time is
-   * automatically assigned and currently cannot be specified or updated.
+   * Output only. Time at which the session becomes invalid. After this time,
+   * subsequent requests to read this Session will return errors. The
+   * expire_time is automatically assigned and currently cannot be specified or
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3488,9 +3490,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time at which the session becomes invalid. After this time, subsequent
-   * requests to read this Session will return errors. The expire_time is
-   * automatically assigned and currently cannot be specified or updated.
+   * Output only. Time at which the session becomes invalid. After this time,
+   * subsequent requests to read this Session will return errors. The
+   * expire_time is automatically assigned and currently cannot be specified or
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3507,7 +3510,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
+   * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not
+   * supported.
    * </pre>
    *
    * <code>
@@ -3524,7 +3528,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
+   * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not
+   * supported.
    * </pre>
    *
    * <code>
@@ -3716,7 +3721,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified table.
+   * Optional. Any modifiers which are applied when reading from the specified
+   * table.
    * </pre>
    *
    * <code>
@@ -3733,7 +3739,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified table.
+   * Optional. Any modifiers which are applied when reading from the specified
+   * table.
    * </pre>
    *
    * <code>
@@ -3752,7 +3759,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Any modifiers which are applied when reading from the specified table.
+   * Optional. Any modifiers which are applied when reading from the specified
+   * table.
    * </pre>
    *
    * <code>
@@ -3940,14 +3948,34 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     return estimatedTotalBytesScanned_;
   }
 
+  public static final int ESTIMATED_ROW_COUNT_FIELD_NUMBER = 14;
+  private long estimatedRowCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An estimate on the number of rows present in this session's
+   * streams. This estimate is based on metadata from the table which might be
+   * incomplete or stale.
+   * </pre>
+   *
+   * <code>int64 estimated_row_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The estimatedRowCount.
+   */
+  @java.lang.Override
+  public long getEstimatedRowCount() {
+    return estimatedRowCount_;
+  }
+
   public static final int TRACE_ID_FIELD_NUMBER = 13;
   private volatile java.lang.Object traceId_;
   /**
    *
    *
    * <pre>
-   * Optional. ID set by client to annotate a session identity.  This does not need
-   * to be strictly unique, but instead the same ID should be used to group
+   * Optional. ID set by client to annotate a session identity.  This does not
+   * need to be strictly unique, but instead the same ID should be used to group
    * logically connected sessions (e.g. All using the same ID for all sessions
    * needed to complete a Spark SQL query is reasonable).
    * Maximum length is 256 bytes.
@@ -3973,8 +4001,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ID set by client to annotate a session identity.  This does not need
-   * to be strictly unique, but instead the same ID should be used to group
+   * Optional. ID set by client to annotate a session identity.  This does not
+   * need to be strictly unique, but instead the same ID should be used to group
    * logically connected sessions (e.g. All using the same ID for all sessions
    * needed to complete a Spark SQL query is reasonable).
    * Maximum length is 256 bytes.
@@ -4045,6 +4073,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, traceId_);
     }
+    if (estimatedRowCount_ != 0L) {
+      output.writeInt64(14, estimatedRowCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4093,6 +4124,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(traceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, traceId_);
     }
+    if (estimatedRowCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(14, estimatedRowCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4126,6 +4160,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getStreamsList().equals(other.getStreamsList())) return false;
     if (getEstimatedTotalBytesScanned() != other.getEstimatedTotalBytesScanned()) return false;
+    if (getEstimatedRowCount() != other.getEstimatedRowCount()) return false;
     if (!getTraceId().equals(other.getTraceId())) return false;
     if (!getSchemaCase().equals(other.getSchemaCase())) return false;
     switch (schemaCase_) {
@@ -4173,6 +4208,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ESTIMATED_TOTAL_BYTES_SCANNED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedTotalBytesScanned());
+    hash = (37 * hash) + ESTIMATED_ROW_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedRowCount());
     hash = (37 * hash) + TRACE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTraceId().hashCode();
     switch (schemaCase_) {
@@ -4364,6 +4401,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000001);
       estimatedTotalBytesScanned_ = 0L;
 
+      estimatedRowCount_ = 0L;
+
       traceId_ = "";
 
       schemaCase_ = 0;
@@ -4438,6 +4477,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         result.streams_ = streamsBuilder_.build();
       }
       result.estimatedTotalBytesScanned_ = estimatedTotalBytesScanned_;
+      result.estimatedRowCount_ = estimatedRowCount_;
       result.traceId_ = traceId_;
       result.schemaCase_ = schemaCase_;
       onBuilt();
@@ -4539,6 +4579,9 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEstimatedTotalBytesScanned() != 0L) {
         setEstimatedTotalBytesScanned(other.getEstimatedTotalBytesScanned());
+      }
+      if (other.getEstimatedRowCount() != 0L) {
+        setEstimatedRowCount(other.getEstimatedRowCount());
       }
       if (!other.getTraceId().isEmpty()) {
         traceId_ = other.traceId_;
@@ -4660,6 +4703,12 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 106
+            case 112:
+              {
+                estimatedRowCount_ = input.readInt64();
+
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4814,9 +4863,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4832,9 +4882,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4856,9 +4907,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4882,9 +4934,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4905,9 +4958,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4933,9 +4987,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4957,9 +5012,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4975,9 +5031,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -4997,9 +5054,10 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time at which the session becomes invalid. After this time, subsequent
-     * requests to read this Session will return errors. The expire_time is
-     * automatically assigned and currently cannot be specified or updated.
+     * Output only. Time at which the session becomes invalid. After this time,
+     * subsequent requests to read this Session will return errors. The
+     * expire_time is automatically assigned and currently cannot be specified or
+     * updated.
      * </pre>
      *
      * <code>
@@ -5028,7 +5086,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
+     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not
+     * supported.
      * </pre>
      *
      * <code>
@@ -5045,7 +5104,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
+     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not
+     * supported.
      * </pre>
      *
      * <code>
@@ -5065,7 +5125,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
+     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not
+     * supported.
      * </pre>
      *
      * <code>
@@ -5085,7 +5146,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
+     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not
+     * supported.
      * </pre>
      *
      * <code>
@@ -5108,7 +5170,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
+     * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not
+     * supported.
      * </pre>
      *
      * <code>
@@ -5711,7 +5774,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5727,7 +5791,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5749,7 +5814,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5774,7 +5840,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5796,7 +5863,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5826,7 +5894,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5848,7 +5917,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5865,7 +5935,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -5886,7 +5957,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Any modifiers which are applied when reading from the specified table.
+     * Optional. Any modifiers which are applied when reading from the specified
+     * table.
      * </pre>
      *
      * <code>
@@ -6639,13 +6711,71 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private long estimatedRowCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An estimate on the number of rows present in this session's
+     * streams. This estimate is based on metadata from the table which might be
+     * incomplete or stale.
+     * </pre>
+     *
+     * <code>int64 estimated_row_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The estimatedRowCount.
+     */
+    @java.lang.Override
+    public long getEstimatedRowCount() {
+      return estimatedRowCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An estimate on the number of rows present in this session's
+     * streams. This estimate is based on metadata from the table which might be
+     * incomplete or stale.
+     * </pre>
+     *
+     * <code>int64 estimated_row_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The estimatedRowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEstimatedRowCount(long value) {
+
+      estimatedRowCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An estimate on the number of rows present in this session's
+     * streams. This estimate is based on metadata from the table which might be
+     * incomplete or stale.
+     * </pre>
+     *
+     * <code>int64 estimated_row_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEstimatedRowCount() {
+
+      estimatedRowCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object traceId_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. ID set by client to annotate a session identity.  This does not need
-     * to be strictly unique, but instead the same ID should be used to group
+     * Optional. ID set by client to annotate a session identity.  This does not
+     * need to be strictly unique, but instead the same ID should be used to group
      * logically connected sessions (e.g. All using the same ID for all sessions
      * needed to complete a Spark SQL query is reasonable).
      * Maximum length is 256 bytes.
@@ -6670,8 +6800,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ID set by client to annotate a session identity.  This does not need
-     * to be strictly unique, but instead the same ID should be used to group
+     * Optional. ID set by client to annotate a session identity.  This does not
+     * need to be strictly unique, but instead the same ID should be used to group
      * logically connected sessions (e.g. All using the same ID for all sessions
      * needed to complete a Spark SQL query is reasonable).
      * Maximum length is 256 bytes.
@@ -6696,8 +6826,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ID set by client to annotate a session identity.  This does not need
-     * to be strictly unique, but instead the same ID should be used to group
+     * Optional. ID set by client to annotate a session identity.  This does not
+     * need to be strictly unique, but instead the same ID should be used to group
      * logically connected sessions (e.g. All using the same ID for all sessions
      * needed to complete a Spark SQL query is reasonable).
      * Maximum length is 256 bytes.
@@ -6721,8 +6851,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ID set by client to annotate a session identity.  This does not need
-     * to be strictly unique, but instead the same ID should be used to group
+     * Optional. ID set by client to annotate a session identity.  This does not
+     * need to be strictly unique, but instead the same ID should be used to group
      * logically connected sessions (e.g. All using the same ID for all sessions
      * needed to complete a Spark SQL query is reasonable).
      * Maximum length is 256 bytes.
@@ -6742,8 +6872,8 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ID set by client to annotate a session identity.  This does not need
-     * to be strictly unique, but instead the same ID should be used to group
+     * Optional. ID set by client to annotate a session identity.  This does not
+     * need to be strictly unique, but instead the same ID should be used to group
      * logically connected sessions (e.g. All using the same ID for all sessions
      * needed to complete a Spark SQL query is reasonable).
      * Maximum length is 256 bytes.

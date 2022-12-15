@@ -93,6 +93,7 @@ public class BaseBigQueryReadClientTest {
             .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
             .setEstimatedTotalBytesScanned(452788190)
+            .setEstimatedRowCount(-1745583577)
             .setTraceId("traceId-1067401920")
             .build();
     mockBigQueryRead.addResponse(expectedResponse);
@@ -145,6 +146,7 @@ public class BaseBigQueryReadClientTest {
             .setReadOptions(ReadSession.TableReadOptions.newBuilder().build())
             .addAllStreams(new ArrayList<ReadStream>())
             .setEstimatedTotalBytesScanned(452788190)
+            .setEstimatedRowCount(-1745583577)
             .setTraceId("traceId-1067401920")
             .build();
     mockBigQueryRead.addResponse(expectedResponse);

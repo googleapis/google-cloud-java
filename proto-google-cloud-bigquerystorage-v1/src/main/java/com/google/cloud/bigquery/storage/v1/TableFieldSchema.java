@@ -776,7 +776,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+   * Optional. Describes the nested schema fields if the type property is set to
+   * STRUCT.
    * </pre>
    *
    * <code>
@@ -791,7 +792,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+   * Optional. Describes the nested schema fields if the type property is set to
+   * STRUCT.
    * </pre>
    *
    * <code>
@@ -807,7 +809,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+   * Optional. Describes the nested schema fields if the type property is set to
+   * STRUCT.
    * </pre>
    *
    * <code>
@@ -822,7 +825,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+   * Optional. Describes the nested schema fields if the type property is set to
+   * STRUCT.
    * </pre>
    *
    * <code>
@@ -837,7 +841,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+   * Optional. Describes the nested schema fields if the type property is set to
+   * STRUCT.
    * </pre>
    *
    * <code>
@@ -1862,7 +1867,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -1880,7 +1886,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -1898,7 +1905,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -1916,7 +1924,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -1941,7 +1950,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -1963,7 +1973,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -1987,7 +1998,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2012,7 +2024,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2034,7 +2047,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2056,7 +2070,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2079,7 +2094,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2100,7 +2116,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2121,7 +2138,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2136,7 +2154,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2155,7 +2174,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2174,7 +2194,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2189,7 +2210,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>
@@ -2206,7 +2228,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Describes the nested schema fields if the type property is set to STRUCT.
+     * Optional. Describes the nested schema fields if the type property is set to
+     * STRUCT.
      * </pre>
      *
      * <code>

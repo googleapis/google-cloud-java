@@ -75,8 +75,8 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Parent table that all the streams should belong to, in the form of
-   * `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * Required. Parent table that all the streams should belong to, in the form
+   * of `projects/{project}/datasets/{dataset}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Parent table that all the streams should belong to, in the form of
-   * `projects/{project}/datasets/{dataset}/tables/{table}`.
+   * Required. Parent table that all the streams should belong to, in the form
+   * of `projects/{project}/datasets/{dataset}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -571,8 +571,8 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -596,8 +596,8 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -621,8 +621,8 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -645,8 +645,8 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>
@@ -665,8 +665,8 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Parent table that all the streams should belong to, in the form of
-     * `projects/{project}/datasets/{dataset}/tables/{table}`.
+     * Required. Parent table that all the streams should belong to, in the form
+     * of `projects/{project}/datasets/{dataset}/tables/{table}`.
      * </pre>
      *
      * <code>

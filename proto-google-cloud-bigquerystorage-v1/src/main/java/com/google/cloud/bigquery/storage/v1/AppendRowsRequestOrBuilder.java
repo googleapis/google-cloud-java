@@ -27,10 +27,10 @@ public interface AppendRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The write_stream identifies the target of the append operation, and only
-   * needs to be specified as part of the first request on the gRPC connection.
-   * If provided for subsequent requests, it must match the value of the first
-   * request.
+   * Required. The write_stream identifies the target of the append operation,
+   * and only needs to be specified as part of the first request on the gRPC
+   * connection. If provided for subsequent requests, it must match the value of
+   * the first request.
    * For explicitly created write streams, the format is:
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
    * For the special default stream, the format is:
@@ -48,10 +48,10 @@ public interface AppendRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The write_stream identifies the target of the append operation, and only
-   * needs to be specified as part of the first request on the gRPC connection.
-   * If provided for subsequent requests, it must match the value of the first
-   * request.
+   * Required. The write_stream identifies the target of the append operation,
+   * and only needs to be specified as part of the first request on the gRPC
+   * connection. If provided for subsequent requests, it must match the value of
+   * the first request.
    * For explicitly created write streams, the format is:
    * * `projects/{project}/datasets/{dataset}/tables/{table}/streams/{id}`
    * For the special default stream, the format is:
