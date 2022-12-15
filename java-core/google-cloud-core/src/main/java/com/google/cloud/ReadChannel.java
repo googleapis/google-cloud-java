@@ -37,6 +37,7 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
   @Override
   void close();
 
+  /** Set the offset to read from. */
   void seek(long position) throws IOException;
 
   /**
@@ -61,6 +62,23 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
    *
    * <p>If used in conjunction with {@link #seek(long)} the total number of returned bytes from this
    * channel will be reduced by the number of bytes specified to seek.
+   *
+   * <p>The value provided as {@code limit} will define a <a target="_blank" rel="noopener
+   * noreferrer"
+   * href="https://en.wikipedia.org/wiki/Interval_(mathematics)#Classification_of_intervals">left-closed,
+   * right-open</a> interval along with either {@code 0} or any value provided to {@link
+   * #seek(long)}, i.e. {@code [}{@link #seek(long)}{@code , }{@link #limit(long)}{@code )}.
+   *
+   * <h3>An example to help illustrate the relationship</h3>
+   *
+   * Imagine some data {@code [A, B, C, D, E, F, G, H, I, J]}, 10 bytes total.
+   *
+   * <ol>
+   *   <li>{@code limit(5)} would produce {@code [A, B, C, D, E]}
+   *   <li>{@code seek(8)} would produce {@code [I, J]}
+   *   <li>{@code seek(2)} {@code limit(5)} would produce {@code [C, D, E]}
+   *   <li>{@code seek(3)} {@code limit(3)} would produce {@code []}
+   * </ol>
    *
    * <p><i>NOTE:</i>Implementers are not required to return a new instance from this method, however
    * they are allowed to. Users of this method should always use the instance returned from this
