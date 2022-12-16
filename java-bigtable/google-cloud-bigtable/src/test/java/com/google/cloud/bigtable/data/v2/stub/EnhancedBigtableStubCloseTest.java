@@ -65,7 +65,6 @@ public class EnhancedBigtableStubCloseTest {
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
-            .setRefreshingChannel(false)
             .build()
             .getStubSettings();
 

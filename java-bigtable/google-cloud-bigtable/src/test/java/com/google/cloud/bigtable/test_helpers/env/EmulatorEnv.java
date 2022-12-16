@@ -61,6 +61,7 @@ public class EmulatorEnv extends AbstractTestEnv {
         BigtableDataSettings.newBuilderForEmulator(emulator.getPort())
             .setProjectId("fake-project")
             .setInstanceId("fake-instance")
+            .setRefreshingChannel(false)
             .build();
 
     dataClient = BigtableDataClient.create(dataSettings);

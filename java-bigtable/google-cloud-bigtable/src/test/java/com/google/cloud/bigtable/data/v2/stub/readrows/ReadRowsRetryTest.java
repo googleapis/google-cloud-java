@@ -81,6 +81,8 @@ public class ReadRowsRetryTest {
         .setTransportChannelProvider(
             FixedTransportChannelProvider.create(
                 GrpcTransportChannel.create(serverRule.getChannel())))
+        // Refreshing channel doesn't work with FixedTransportChannelProvider
+        .setRefreshingChannel(false)
         .build();
 
     client = BigtableDataClient.create(settings.build());

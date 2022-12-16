@@ -162,7 +162,6 @@ public class EnhancedBigtableStubTest {
             .setCredentialsProvider(FixedCredentialsProvider.create(jwtCreds))
             .build();
     enhancedBigtableStub = EnhancedBigtableStub.create(settings);
-
     // Send rpc and grab the credentials sent
     enhancedBigtableStub.readRowCallable().futureCall(Query.create("fake-table")).get();
     Metadata metadata = metadataInterceptor.headers.take();
@@ -208,6 +207,9 @@ public class EnhancedBigtableStubTest {
               .setTransportChannelProvider(
                   FixedTransportChannelProvider.create(
                       GrpcTransportChannel.create(emulatorChannel)))
+              // Channel refreshing doesn't work with FixedTransportChannelProvider. Disable it for
+              // the test
+              .setRefreshingChannel(false)
               .build();
       enhancedBigtableStub = EnhancedBigtableStub.create(settings);
       // Send rpc and grab the credentials sent
@@ -342,7 +344,7 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testBulkMutationFlowControllerConfigured() throws Exception {
     BigtableDataSettings.Builder settings =
-        BigtableDataSettings.newBuilder()
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId("my-project")
             .setInstanceId("my-instance")
             .setCredentialsProvider(defaultSettings.getCredentialsProvider())

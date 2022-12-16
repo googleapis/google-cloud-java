@@ -69,6 +69,8 @@ public class MutateRowsRetryTest {
         .setTransportChannelProvider(
             FixedTransportChannelProvider.create(
                 GrpcTransportChannel.create(serverRule.getChannel())))
+        // channel priming doesn't work with FixedTransportChannelProvider. Disable it for the test
+        .setRefreshingChannel(false)
         .build();
 
     this.client = BigtableDataClient.create(settings.build());

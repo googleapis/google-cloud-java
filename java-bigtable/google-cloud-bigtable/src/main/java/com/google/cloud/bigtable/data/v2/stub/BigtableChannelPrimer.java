@@ -51,6 +51,8 @@ class BigtableChannelPrimer implements ChannelPrimer {
             .setInstanceId(instanceId)
             .setAppProfileId(appProfileId)
             .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
+            // Disable refreshing channel here to avoid creating settings in a loop
+            .setRefreshingChannel(false)
             .setExecutorProvider(
                 InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build());
 

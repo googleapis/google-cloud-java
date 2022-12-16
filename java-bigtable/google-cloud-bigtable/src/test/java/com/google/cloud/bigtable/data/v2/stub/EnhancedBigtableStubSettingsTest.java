@@ -185,7 +185,10 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId);
+            .setInstanceId(dummyInstanceId)
+            // Here and everywhere in this test, disable channel priming so we won't need
+            // authentication for sending the prime request since we're only testing the settings.
+            .setRefreshingChannel(false);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -243,7 +246,8 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId("my-project")
-            .setInstanceId("my-instance");
+            .setInstanceId("my-instance")
+            .setRefreshingChannel(false);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -295,7 +299,8 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId("my-project")
-            .setInstanceId("my-instance");
+            .setInstanceId("my-instance")
+            .setRefreshingChannel(false);
 
     builder.readRowsSettings().setRetryableCodes(Code.DEADLINE_EXCEEDED);
 
@@ -329,7 +334,8 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId);
+            .setInstanceId(dummyInstanceId)
+            .setRefreshingChannel(false);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -376,7 +382,8 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId);
+            .setInstanceId(dummyInstanceId)
+            .setRefreshingChannel(false);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -423,7 +430,8 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId);
+            .setInstanceId(dummyInstanceId)
+            .setRefreshingChannel(false);
 
     assertThat(builder.bulkMutateRowsSettings().isLatencyBasedThrottlingEnabled()).isFalse();
 
@@ -536,7 +544,8 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId);
+            .setInstanceId(dummyInstanceId)
+            .setRefreshingChannel(false);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -611,7 +620,8 @@ public class EnhancedBigtableStubSettingsTest {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(dummyProjectId)
-            .setInstanceId(dummyInstanceId);
+            .setInstanceId(dummyInstanceId)
+            .setRefreshingChannel(false);
 
     RetrySettings retrySettings = RetrySettings.newBuilder().build();
     builder
@@ -677,9 +687,7 @@ public class EnhancedBigtableStubSettingsTest {
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(dummyProjectId)
             .setInstanceId(dummyInstanceId);
-    assertThat(builder.isRefreshingChannel()).isFalse();
-    assertThat(builder.build().isRefreshingChannel()).isFalse();
-    assertThat(builder.build().toBuilder().isRefreshingChannel()).isFalse();
+    assertThat(builder.isRefreshingChannel()).isTrue();
   }
 
   @Test
@@ -721,6 +729,7 @@ public class EnhancedBigtableStubSettingsTest {
             .setProjectId("our-project-85")
             .setInstanceId("our-instance-06")
             .setAppProfileId("our-appProfile-06")
+            .setRefreshingChannel(false)
             .build();
 
     checkToString(defaultSettings);

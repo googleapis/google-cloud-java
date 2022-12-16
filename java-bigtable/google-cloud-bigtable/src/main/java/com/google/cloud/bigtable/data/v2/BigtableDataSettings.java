@@ -124,6 +124,8 @@ public final class BigtableDataSettings {
         .stubSettings()
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setEndpoint(hostname + ":" + port)
+        // disable channel refreshing when creating an emulator
+        .setRefreshingChannel(false)
         .setTransportChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setMaxInboundMessageSize(256 * 1024 * 1024)
@@ -244,8 +246,12 @@ public final class BigtableDataSettings {
     return stubSettings.getAppProfileId();
   }
 
-  /** Gets if channels will gracefully refresh connections to Cloud Bigtable service */
-  @BetaApi("Channel priming is not currently stable and may change in the future")
+  /**
+   * Gets if channels will gracefully refresh connections to Cloud Bigtable service
+   *
+   * @deprecated Channel refreshing is enabled by default and this method will be deprecated.
+   */
+  @Deprecated
   public boolean isRefreshingChannel() {
     return stubSettings.isRefreshingChannel();
   }
@@ -395,19 +401,25 @@ public final class BigtableDataSettings {
     /**
      * Configure periodic gRPC channel refreshes.
      *
-     * <p>This feature will gracefully refresh connections to the Cloud Bigtable service. This is an
-     * experimental feature to address tail latency caused by the service dropping long lived gRPC
-     * connections, which causes the client to renegotiate the gRPC connection in the request path,
-     * which causes periodic spikes in latency
+     * <p>This feature will gracefully refresh connections to the Cloud Bigtable service. This is a
+     * feature to address tail latency caused by the service dropping long lived gRPC connections,
+     * which causes the client to renegotiate the gRPC connection in the request path, which causes
+     * periodic spikes in latency.
+     *
+     * @deprecated Channel refreshing is enabled by default and this method will be deprecated.
      */
-    @BetaApi("Channel priming is not currently stable and may change in the future")
+    @Deprecated
     public Builder setRefreshingChannel(boolean isRefreshingChannel) {
       stubSettings.setRefreshingChannel(isRefreshingChannel);
       return this;
     }
 
-    /** Gets if channels will gracefully refresh connections to Cloud Bigtable service */
-    @BetaApi("Channel priming is not currently stable and may change in the future")
+    /**
+     * Gets if channels will gracefully refresh connections to Cloud Bigtable service.
+     *
+     * @deprecated Channel refreshing is enabled by default and this method will be deprecated.
+     */
+    @Deprecated
     public boolean isRefreshingChannel() {
       return stubSettings.isRefreshingChannel();
     }

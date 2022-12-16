@@ -233,6 +233,7 @@ public class HeadersTest {
         CheckAndMutateRowRequest request,
         StreamObserver<CheckAndMutateRowResponse> responseObserver) {
       responseObserver.onNext(CheckAndMutateRowResponse.getDefaultInstance());
+      responseObserver.onCompleted();
     }
 
     @Override

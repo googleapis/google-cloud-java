@@ -33,6 +33,9 @@ public class BigtableDataSettingsTest {
             .setInstanceId("our-instance-85")
             .setAppProfileId("our-appProfile-06")
             .enableBatchMutationLatencyBasedThrottling(10)
+            // disable channel priming so we won't need authentication
+            // for sending the prime request since we're only testing the settings.
+            .setRefreshingChannel(false)
             .build();
     EnhancedBigtableStubSettings stubSettings = settings.getStubSettings();
     assertThat(settings.toString())
