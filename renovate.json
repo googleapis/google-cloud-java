@@ -6,5 +6,19 @@
     "pom.xml",
     "google-cloud-pom-parent/pom.xml",
     "google-cloud-jar-parent/pom.xml"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^.kokoro/nightly/graalvm-native.cfg$",
+        "^.kokoro/presubmit/graalvm-native-.*.cfg$",
+        "^.kokoro/nightly/graalvm-sub-jobs/native.*/common.cfg$",
+        "^owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native.*.cfg$"
+      ],
+      "matchStrings": ["value: \"gcr.io/cloud-devrel-kokoro-resources/graalvm:(?<currentValue>.*?)\"",
+        "value: \"gcr.io/cloud-devrel-kokoro-resources/graalvm17:(?<currentValue>.*?)\""],
+      "depNameTemplate": "jdk",
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "ghcr.io/graalvm/jdk"
+    }
   ]
 }
