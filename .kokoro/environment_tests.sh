@@ -63,6 +63,9 @@ if [[ "${ENVIRONMENT}" == "kubernetes" ]]; then
   mkdir -p ~/.local/bin
   mv ./kubectl ~/.local/bin
   export PATH=$PATH:~/.local/bin
+  # install auth plugin
+  gcloud components install gke-gcloud-auth-plugin -q
+  export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 fi
 
 # create a unique id for this run
