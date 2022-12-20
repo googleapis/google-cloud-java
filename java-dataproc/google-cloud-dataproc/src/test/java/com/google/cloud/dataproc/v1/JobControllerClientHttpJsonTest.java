@@ -97,6 +97,7 @@ public class JobControllerClientHttpJsonTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -155,6 +156,7 @@ public class JobControllerClientHttpJsonTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -218,6 +220,7 @@ public class JobControllerClientHttpJsonTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -382,6 +385,7 @@ public class JobControllerClientHttpJsonTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -450,6 +454,7 @@ public class JobControllerClientHttpJsonTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

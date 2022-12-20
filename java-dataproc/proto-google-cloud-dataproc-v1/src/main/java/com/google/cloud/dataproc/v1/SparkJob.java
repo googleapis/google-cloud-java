@@ -22,7 +22,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A Dataproc job for running [Apache Spark](http://spark.apache.org/)
+ * A Dataproc job for running [Apache Spark](https://spark.apache.org/)
  * applications on YARN.
  * </pre>
  *
@@ -991,7 +991,7 @@ public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Dataproc job for running [Apache Spark](http://spark.apache.org/)
+   * A Dataproc job for running [Apache Spark](https://spark.apache.org/)
    * applications on YARN.
    * </pre>
    *
