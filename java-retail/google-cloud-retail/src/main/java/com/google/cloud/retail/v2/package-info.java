@@ -42,8 +42,8 @@
  *
  * <p>Service Description: Auto-completion service for retail.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>Sample for CompletionServiceClient:
  *
@@ -141,8 +141,8 @@
  *
  * <p>Service Description: Service for search.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>Sample for SearchServiceClient:
  *
@@ -222,6 +222,7 @@
  *       WriteUserEventRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
  * }

@@ -25,8 +25,9 @@ package com.google.cloud.retail.v2alpha;
  * A rule is a condition-action pair
  * * A condition defines when a rule is to be triggered.
  * * An action specifies what occurs on that trigger.
- * Currently only boost rules are supported.
- * Currently only supported by the search endpoint.
+ * Currently rules only work for [controls][google.cloud.retail.v2alpha.Control]
+ * with
+ * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.Rule}
@@ -2457,7 +2458,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Creates a set of terms that will be treated as synonyms of each other.
-   * Example: synonyms of "sneakers" and "shoes".
+   * Example: synonyms of "sneakers" and "shoes":
    *  * "sneakers" will use a synonym of "shoes".
    *  * "shoes" will use a synonym of "sneakers".
    * </pre>
@@ -2746,7 +2747,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Creates a set of terms that will be treated as synonyms of each other.
-     * Example: synonyms of "sneakers" and "shoes".
+     * Example: synonyms of "sneakers" and "shoes":
      *  * "sneakers" will use a synonym of "shoes".
      *  * "shoes" will use a synonym of "sneakers".
      * </pre>
@@ -8917,8 +8918,9 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * A rule is a condition-action pair
    * * A condition defines when a rule is to be triggered.
    * * An action specifies what occurs on that trigger.
-   * Currently only boost rules are supported.
-   * Currently only supported by the search endpoint.
+   * Currently rules only work for [controls][google.cloud.retail.v2alpha.Control]
+   * with
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2alpha.SolutionType.SOLUTION_TYPE_SEARCH].
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.Rule}

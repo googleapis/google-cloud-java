@@ -22,7 +22,7 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Metadata for RejoinUserEvents method.
+ * Metadata for `RejoinUserEvents` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.RejoinUserEventsMetadata}
@@ -219,7 +219,7 @@ public final class RejoinUserEventsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Metadata for RejoinUserEvents method.
+   * Metadata for `RejoinUserEvents` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.RejoinUserEventsMetadata}

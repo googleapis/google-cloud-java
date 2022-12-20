@@ -75,7 +75,7 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The source ServingConfig resource name . Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The source ServingConfig resource name . Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -531,7 +531,7 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The source ServingConfig resource name . Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -556,7 +556,7 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The source ServingConfig resource name . Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -581,7 +581,7 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The source ServingConfig resource name . Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -605,7 +605,7 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The source ServingConfig resource name . Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -625,7 +625,7 @@ public final class AddControlRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The source ServingConfig resource name . Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>

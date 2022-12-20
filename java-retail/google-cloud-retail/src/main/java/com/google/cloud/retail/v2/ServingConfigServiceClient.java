@@ -361,7 +361,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to delete. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServingConfig(ServingConfigName name) {
@@ -396,7 +396,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to delete. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteServingConfig(String name) {
@@ -596,7 +596,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(ServingConfigName name) {
@@ -629,7 +629,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(String name) {
@@ -726,7 +726,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The catalog resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(CatalogName parent) {
@@ -760,7 +760,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The catalog resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(String parent) {
@@ -904,7 +904,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig addControl(ServingConfigName servingConfig) {
@@ -941,7 +941,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig addControl(String servingConfig) {
@@ -1044,7 +1044,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig removeControl(ServingConfigName servingConfig) {
@@ -1078,7 +1078,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param servingConfig Required. The source ServingConfig resource name . Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig removeControl(String servingConfig) {

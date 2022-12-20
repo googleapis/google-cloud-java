@@ -502,7 +502,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_3_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
@@ -535,7 +535,7 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
               .setMaxRpcTimeout(Duration.ofMillis(300000L))
               .setTotalTimeout(Duration.ofMillis(300000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -674,8 +674,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
 
       builder
           .importProductsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .setInventorySettings()
@@ -707,8 +707,8 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportProductsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ImportProductsResponse.class))

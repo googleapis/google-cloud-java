@@ -2444,7 +2444,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Creates a set of terms that will be treated as synonyms of each other.
-   * Example: synonyms of "sneakers" and "shoes".
+   * Example: synonyms of "sneakers" and "shoes":
    *  * "sneakers" will use a synonym of "shoes".
    *  * "shoes" will use a synonym of "sneakers".
    * </pre>
@@ -2733,7 +2733,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Creates a set of terms that will be treated as synonyms of each other.
-     * Example: synonyms of "sneakers" and "shoes".
+     * Example: synonyms of "sneakers" and "shoes":
      *  * "sneakers" will use a synonym of "shoes".
      *  * "shoes" will use a synonym of "sneakers".
      * </pre>

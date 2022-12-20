@@ -41,6 +41,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     parent_ = "";
     userEvent_ = "";
     uri_ = "";
+    rawJson_ = "";
   }
 
   @java.lang.Override
@@ -67,6 +68,123 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.retail.v2beta.CollectUserEventRequest.class,
             com.google.cloud.retail.v2beta.CollectUserEventRequest.Builder.class);
+  }
+
+  private int conversionRuleCase_ = 0;
+  private java.lang.Object conversionRule_;
+
+  public enum ConversionRuleCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PREBUILT_RULE(6),
+    CONVERSIONRULE_NOT_SET(0);
+    private final int value;
+
+    private ConversionRuleCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConversionRuleCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ConversionRuleCase forNumber(int value) {
+      switch (value) {
+        case 6:
+          return PREBUILT_RULE;
+        case 0:
+          return CONVERSIONRULE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ConversionRuleCase getConversionRuleCase() {
+    return ConversionRuleCase.forNumber(conversionRuleCase_);
+  }
+
+  public static final int PREBUILT_RULE_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The prebuilt rule name that can convert a specific type of raw_json.
+   * For example: "default_schema/v1.0"
+   * </pre>
+   *
+   * <code>string prebuilt_rule = 6;</code>
+   *
+   * @return Whether the prebuiltRule field is set.
+   */
+  public boolean hasPrebuiltRule() {
+    return conversionRuleCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The prebuilt rule name that can convert a specific type of raw_json.
+   * For example: "default_schema/v1.0"
+   * </pre>
+   *
+   * <code>string prebuilt_rule = 6;</code>
+   *
+   * @return The prebuiltRule.
+   */
+  public java.lang.String getPrebuiltRule() {
+    java.lang.Object ref = "";
+    if (conversionRuleCase_ == 6) {
+      ref = conversionRule_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (conversionRuleCase_ == 6) {
+        conversionRule_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The prebuilt rule name that can convert a specific type of raw_json.
+   * For example: "default_schema/v1.0"
+   * </pre>
+   *
+   * <code>string prebuilt_rule = 6;</code>
+   *
+   * @return The bytes for prebuiltRule.
+   */
+  public com.google.protobuf.ByteString getPrebuiltRuleBytes() {
+    java.lang.Object ref = "";
+    if (conversionRuleCase_ == 6) {
+      ref = conversionRule_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (conversionRuleCase_ == 6) {
+        conversionRule_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
@@ -246,6 +364,61 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     return ets_;
   }
 
+  public static final int RAW_JSON_FIELD_NUMBER = 5;
+  private volatile java.lang.Object rawJson_;
+  /**
+   *
+   *
+   * <pre>
+   * An arbitrary serialized JSON string that contains necessary information
+   * that can comprise a user event. When this field is specified, the
+   * user_event field will be ignored. Note: line-delimited JSON is not
+   * supported, a single JSON only.
+   * </pre>
+   *
+   * <code>string raw_json = 5;</code>
+   *
+   * @return The rawJson.
+   */
+  @java.lang.Override
+  public java.lang.String getRawJson() {
+    java.lang.Object ref = rawJson_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rawJson_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An arbitrary serialized JSON string that contains necessary information
+   * that can comprise a user event. When this field is specified, the
+   * user_event field will be ignored. Note: line-delimited JSON is not
+   * supported, a single JSON only.
+   * </pre>
+   *
+   * <code>string raw_json = 5;</code>
+   *
+   * @return The bytes for rawJson.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRawJsonBytes() {
+    java.lang.Object ref = rawJson_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rawJson_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -272,6 +445,12 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     if (ets_ != 0L) {
       output.writeInt64(4, ets_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawJson_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rawJson_);
+    }
+    if (conversionRuleCase_ == 6) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, conversionRule_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -293,6 +472,12 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     if (ets_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, ets_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawJson_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rawJson_);
+    }
+    if (conversionRuleCase_ == 6) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, conversionRule_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -313,6 +498,15 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     if (!getUserEvent().equals(other.getUserEvent())) return false;
     if (!getUri().equals(other.getUri())) return false;
     if (getEts() != other.getEts()) return false;
+    if (!getRawJson().equals(other.getRawJson())) return false;
+    if (!getConversionRuleCase().equals(other.getConversionRuleCase())) return false;
+    switch (conversionRuleCase_) {
+      case 6:
+        if (!getPrebuiltRule().equals(other.getPrebuiltRule())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -332,6 +526,16 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getUri().hashCode();
     hash = (37 * hash) + ETS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEts());
+    hash = (37 * hash) + RAW_JSON_FIELD_NUMBER;
+    hash = (53 * hash) + getRawJson().hashCode();
+    switch (conversionRuleCase_) {
+      case 6:
+        hash = (37 * hash) + PREBUILT_RULE_FIELD_NUMBER;
+        hash = (53 * hash) + getPrebuiltRule().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -479,6 +683,10 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
 
       ets_ = 0L;
 
+      rawJson_ = "";
+
+      conversionRuleCase_ = 0;
+      conversionRule_ = null;
       return this;
     }
 
@@ -506,10 +714,15 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     public com.google.cloud.retail.v2beta.CollectUserEventRequest buildPartial() {
       com.google.cloud.retail.v2beta.CollectUserEventRequest result =
           new com.google.cloud.retail.v2beta.CollectUserEventRequest(this);
+      if (conversionRuleCase_ == 6) {
+        result.conversionRule_ = conversionRule_;
+      }
       result.parent_ = parent_;
       result.userEvent_ = userEvent_;
       result.uri_ = uri_;
       result.ets_ = ets_;
+      result.rawJson_ = rawJson_;
+      result.conversionRuleCase_ = conversionRuleCase_;
       onBuilt();
       return result;
     }
@@ -575,6 +788,23 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       if (other.getEts() != 0L) {
         setEts(other.getEts());
       }
+      if (!other.getRawJson().isEmpty()) {
+        rawJson_ = other.rawJson_;
+        onChanged();
+      }
+      switch (other.getConversionRuleCase()) {
+        case PREBUILT_RULE:
+          {
+            conversionRuleCase_ = 6;
+            conversionRule_ = other.conversionRule_;
+            onChanged();
+            break;
+          }
+        case CONVERSIONRULE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -625,6 +855,19 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
 
                 break;
               } // case 32
+            case 42:
+              {
+                rawJson_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                conversionRuleCase_ = 6;
+                conversionRule_ = s;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -639,6 +882,160 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int conversionRuleCase_ = 0;
+    private java.lang.Object conversionRule_;
+
+    public ConversionRuleCase getConversionRuleCase() {
+      return ConversionRuleCase.forNumber(conversionRuleCase_);
+    }
+
+    public Builder clearConversionRule() {
+      conversionRuleCase_ = 0;
+      conversionRule_ = null;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The prebuilt rule name that can convert a specific type of raw_json.
+     * For example: "default_schema/v1.0"
+     * </pre>
+     *
+     * <code>string prebuilt_rule = 6;</code>
+     *
+     * @return Whether the prebuiltRule field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrebuiltRule() {
+      return conversionRuleCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prebuilt rule name that can convert a specific type of raw_json.
+     * For example: "default_schema/v1.0"
+     * </pre>
+     *
+     * <code>string prebuilt_rule = 6;</code>
+     *
+     * @return The prebuiltRule.
+     */
+    @java.lang.Override
+    public java.lang.String getPrebuiltRule() {
+      java.lang.Object ref = "";
+      if (conversionRuleCase_ == 6) {
+        ref = conversionRule_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (conversionRuleCase_ == 6) {
+          conversionRule_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prebuilt rule name that can convert a specific type of raw_json.
+     * For example: "default_schema/v1.0"
+     * </pre>
+     *
+     * <code>string prebuilt_rule = 6;</code>
+     *
+     * @return The bytes for prebuiltRule.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPrebuiltRuleBytes() {
+      java.lang.Object ref = "";
+      if (conversionRuleCase_ == 6) {
+        ref = conversionRule_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (conversionRuleCase_ == 6) {
+          conversionRule_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prebuilt rule name that can convert a specific type of raw_json.
+     * For example: "default_schema/v1.0"
+     * </pre>
+     *
+     * <code>string prebuilt_rule = 6;</code>
+     *
+     * @param value The prebuiltRule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrebuiltRule(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      conversionRuleCase_ = 6;
+      conversionRule_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prebuilt rule name that can convert a specific type of raw_json.
+     * For example: "default_schema/v1.0"
+     * </pre>
+     *
+     * <code>string prebuilt_rule = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrebuiltRule() {
+      if (conversionRuleCase_ == 6) {
+        conversionRuleCase_ = 0;
+        conversionRule_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The prebuilt rule name that can convert a specific type of raw_json.
+     * For example: "default_schema/v1.0"
+     * </pre>
+     *
+     * <code>string prebuilt_rule = 6;</code>
+     *
+     * @param value The bytes for prebuiltRule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrebuiltRuleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      conversionRuleCase_ = 6;
+      conversionRule_ = value;
+      onChanged();
       return this;
     }
 
@@ -1039,6 +1436,127 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
     public Builder clearEts() {
 
       ets_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object rawJson_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An arbitrary serialized JSON string that contains necessary information
+     * that can comprise a user event. When this field is specified, the
+     * user_event field will be ignored. Note: line-delimited JSON is not
+     * supported, a single JSON only.
+     * </pre>
+     *
+     * <code>string raw_json = 5;</code>
+     *
+     * @return The rawJson.
+     */
+    public java.lang.String getRawJson() {
+      java.lang.Object ref = rawJson_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rawJson_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An arbitrary serialized JSON string that contains necessary information
+     * that can comprise a user event. When this field is specified, the
+     * user_event field will be ignored. Note: line-delimited JSON is not
+     * supported, a single JSON only.
+     * </pre>
+     *
+     * <code>string raw_json = 5;</code>
+     *
+     * @return The bytes for rawJson.
+     */
+    public com.google.protobuf.ByteString getRawJsonBytes() {
+      java.lang.Object ref = rawJson_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rawJson_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An arbitrary serialized JSON string that contains necessary information
+     * that can comprise a user event. When this field is specified, the
+     * user_event field will be ignored. Note: line-delimited JSON is not
+     * supported, a single JSON only.
+     * </pre>
+     *
+     * <code>string raw_json = 5;</code>
+     *
+     * @param value The rawJson to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRawJson(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      rawJson_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An arbitrary serialized JSON string that contains necessary information
+     * that can comprise a user event. When this field is specified, the
+     * user_event field will be ignored. Note: line-delimited JSON is not
+     * supported, a single JSON only.
+     * </pre>
+     *
+     * <code>string raw_json = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRawJson() {
+
+      rawJson_ = getDefaultInstance().getRawJson();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An arbitrary serialized JSON string that contains necessary information
+     * that can comprise a user event. When this field is specified, the
+     * user_event field will be ignored. Note: line-delimited JSON is not
+     * supported, a single JSON only.
+     * </pre>
+     *
+     * <code>string raw_json = 5;</code>
+     *
+     * @param value The bytes for rawJson to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRawJsonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      rawJson_ = value;
       onChanged();
       return this;
     }

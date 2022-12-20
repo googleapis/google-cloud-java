@@ -45,7 +45,7 @@ public final class ServingConfigProto {
           + "i/field_behavior.proto\032\031google/api/resou"
           + "rce.proto\032#google/cloud/retail/v2/common"
           + ".proto\032+google/cloud/retail/v2/search_se"
-          + "rvice.proto\"\305\006\n\rServingConfig\022\021\n\004name\030\001 "
+          + "rvice.proto\"\370\007\n\rServingConfig\022\021\n\004name\030\001 "
           + "\001(\tB\003\340A\005\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\020\n\010m"
           + "odel_id\030\003 \001(\t\022\035\n\025price_reranking_level\030\004"
           + " \001(\t\022\031\n\021facet_control_ids\030\005 \003(\t\022R\n\022dynam"
@@ -57,21 +57,25 @@ public final class ServingConfigProto {
           + "\033oneway_synonyms_control_ids\030\014 \003(\t\022$\n\034do"
           + "_not_associate_control_ids\030\r \003(\t\022\037\n\027repl"
           + "acement_control_ids\030\016 \003(\t\022\032\n\022ignore_cont"
-          + "rol_ids\030\017 \003(\t\022\027\n\017diversity_level\030\010 \001(\t\022$"
-          + "\n\034enable_category_filter_level\030\020 \001(\t\022W\n\024"
-          + "personalization_spec\030\025 \001(\01329.google.clou"
-          + "d.retail.v2.SearchRequest.Personalizatio"
-          + "nSpec\022D\n\016solution_types\030\023 \003(\0162$.google.c"
-          + "loud.retail.v2.SolutionTypeB\006\340A\002\340A\005:\205\001\352A"
-          + "\201\001\n#retail.googleapis.com/ServingConfig\022"
-          + "Zprojects/{project}/locations/{location}"
-          + "/catalogs/{catalog}/servingConfigs/{serv"
-          + "ing_config}B\307\001\n\032com.google.cloud.retail."
-          + "v2B\022ServingConfigProtoP\001Z<google.golang."
-          + "org/genproto/googleapis/cloud/retail/v2;"
-          + "retail\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2"
-          + "\312\002\026Google\\Cloud\\Retail\\V2\352\002\031Google::Clou"
-          + "d::Retail::V2b\006proto3"
+          + "rol_ids\030\017 \003(\t\022\027\n\017diversity_level\030\010 \001(\t\022K"
+          + "\n\016diversity_type\030\024 \001(\01623.google.cloud.re"
+          + "tail.v2.ServingConfig.DiversityType\022$\n\034e"
+          + "nable_category_filter_level\030\020 \001(\t\022W\n\024per"
+          + "sonalization_spec\030\025 \001(\01329.google.cloud.r"
+          + "etail.v2.SearchRequest.PersonalizationSp"
+          + "ec\022D\n\016solution_types\030\023 \003(\0162$.google.clou"
+          + "d.retail.v2.SolutionTypeB\006\340A\002\340A\005\"d\n\rDive"
+          + "rsityType\022\036\n\032DIVERSITY_TYPE_UNSPECIFIED\020"
+          + "\000\022\030\n\024RULE_BASED_DIVERSITY\020\002\022\031\n\025DATA_DRIV"
+          + "EN_DIVERSITY\020\003:\205\001\352A\201\001\n#retail.googleapis"
+          + ".com/ServingConfig\022Zprojects/{project}/l"
+          + "ocations/{location}/catalogs/{catalog}/s"
+          + "ervingConfigs/{serving_config}B\307\001\n\032com.g"
+          + "oogle.cloud.retail.v2B\022ServingConfigProt"
+          + "oP\001Z<google.golang.org/genproto/googleap"
+          + "is/cloud/retail/v2;retail\242\002\006RETAIL\252\002\026Goo"
+          + "gle.Cloud.Retail.V2\312\002\026Google\\Cloud\\Retai"
+          + "l\\V2\352\002\031Google::Cloud::Retail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,6 +107,7 @@ public final class ServingConfigProto {
               "ReplacementControlIds",
               "IgnoreControlIds",
               "DiversityLevel",
+              "DiversityType",
               "EnableCategoryFilterLevel",
               "PersonalizationSpec",
               "SolutionTypes",

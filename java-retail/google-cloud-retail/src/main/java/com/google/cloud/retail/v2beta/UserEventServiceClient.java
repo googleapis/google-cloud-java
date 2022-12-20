@@ -48,6 +48,7 @@ import javax.annotation.Generated;
  *       WriteUserEventRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
  * }
@@ -220,6 +221,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *       WriteUserEventRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setWriteAsync(true)
    *           .build();
    *   UserEvent response = userEventServiceClient.writeUserEvent(request);
    * }
@@ -249,6 +251,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *       WriteUserEventRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setWriteAsync(true)
    *           .build();
    *   ApiFuture<UserEvent> future =
    *       userEventServiceClient.writeUserEventCallable().futureCall(request);
@@ -284,6 +287,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *           .setUserEvent("userEvent315571599")
    *           .setUri("uri116076")
    *           .setEts(100772)
+   *           .setRawJson("rawJson985449776")
    *           .build();
    *   HttpBody response = userEventServiceClient.collectUserEvent(request);
    * }
@@ -319,6 +323,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *           .setUserEvent("userEvent315571599")
    *           .setUri("uri116076")
    *           .setEts(100772)
+   *           .setRawJson("rawJson985449776")
    *           .build();
    *   ApiFuture<HttpBody> future =
    *       userEventServiceClient.collectUserEventCallable().futureCall(request);

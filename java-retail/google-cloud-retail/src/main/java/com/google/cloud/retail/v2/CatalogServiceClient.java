@@ -814,7 +814,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full CompletionConfig resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompletionConfig getCompletionConfig(CompletionConfigName name) {
@@ -844,7 +844,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full CompletionConfig resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompletionConfig getCompletionConfig(String name) {

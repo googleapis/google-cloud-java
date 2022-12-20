@@ -28,7 +28,7 @@ public interface DeleteServingConfigRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the ServingConfig to delete. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteServingConfigRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the ServingConfig to delete. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>

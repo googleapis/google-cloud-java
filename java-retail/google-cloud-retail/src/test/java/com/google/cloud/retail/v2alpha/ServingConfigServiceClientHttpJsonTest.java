@@ -100,6 +100,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -167,6 +168,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -318,6 +320,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -342,6 +345,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -392,6 +396,7 @@ public class ServingConfigServiceClientHttpJsonTest {
               .addAllIgnoreControlIds(new ArrayList<String>())
               .setDiversityLevel("diversityLevel578206123")
               .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+              .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .addAllSolutionTypes(new ArrayList<SolutionType>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -424,6 +429,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -488,6 +494,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -652,6 +659,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -716,6 +724,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -780,6 +789,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -844,6 +854,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .addAllIgnoreControlIds(new ArrayList<String>())
             .setDiversityLevel("diversityLevel578206123")
             .setEnableCategoryFilterLevel("enableCategoryFilterLevel-1232535413")
+            .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .build();
     mockService.addResponse(expectedResponse);

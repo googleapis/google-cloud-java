@@ -816,7 +816,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full CompletionConfig resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompletionConfig getCompletionConfig(CompletionConfigName name) {
@@ -846,7 +846,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full CompletionConfig resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompletionConfig getCompletionConfig(String name) {
@@ -1389,6 +1389,72 @@ public class CatalogServiceClient implements BackgroundResource {
   public final UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeCallable() {
     return stub.removeCatalogAttributeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes all specified [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]s from
+   * the [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   BatchRemoveCatalogAttributesRequest request =
+   *       BatchRemoveCatalogAttributesRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .addAllAttributeKeys(new ArrayList<String>())
+   *           .build();
+   *   BatchRemoveCatalogAttributesResponse response =
+   *       catalogServiceClient.batchRemoveCatalogAttributes(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRemoveCatalogAttributesResponse batchRemoveCatalogAttributes(
+      BatchRemoveCatalogAttributesRequest request) {
+    return batchRemoveCatalogAttributesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes all specified [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]s from
+   * the [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   BatchRemoveCatalogAttributesRequest request =
+   *       BatchRemoveCatalogAttributesRequest.newBuilder()
+   *           .setAttributesConfig(
+   *               AttributesConfigName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .addAllAttributeKeys(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchRemoveCatalogAttributesResponse> future =
+   *       catalogServiceClient.batchRemoveCatalogAttributesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchRemoveCatalogAttributesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesCallable() {
+    return stub.batchRemoveCatalogAttributesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

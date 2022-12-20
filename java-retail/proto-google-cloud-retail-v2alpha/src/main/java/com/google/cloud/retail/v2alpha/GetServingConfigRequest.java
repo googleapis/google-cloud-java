@@ -74,7 +74,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the ServingConfig to get. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the ServingConfig to get. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -459,7 +459,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -484,7 +484,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -509,7 +509,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -533,7 +533,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -553,7 +553,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>

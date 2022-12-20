@@ -44,6 +44,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     destinations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     regionCode_ = "";
     languageCode_ = "";
+    feeds_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -79,7 +80,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The linked [Merchant center account
-   * id](https://developers.google.com/shopping-content/guides/accountstatuses).
+   * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
    * The account must be a standalone account or a sub-account of a MCA.
    * </pre>
    *
@@ -98,11 +99,11 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The branch id (e.g. 0/1/2) within this catalog that products from
+   * The branch ID (e.g. 0/1/2) within this catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
    * <code>string branch_id = 2;</code>
@@ -125,11 +126,11 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The branch id (e.g. 0/1/2) within this catalog that products from
+   * The branch ID (e.g. 0/1/2) within this catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
    * <code>string branch_id = 2;</code>
@@ -156,8 +157,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -176,8 +177,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -196,8 +197,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -217,8 +218,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * String representing the destination to import for, all if left empty.
-   * List of possible values can be found here.
-   * [https://support.google.com/merchants/answer/7501026]
+   * List of possible values is given in [Included
+   * destination](https://support.google.com/merchants/answer/7501026).
    * List of allowed string values:
    * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
    * _ads", "Free_listings", "Free_local_listings"
@@ -352,6 +353,86 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int FEEDS_FIELD_NUMBER = 6;
+  private java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter> feeds_;
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter> getFeedsList() {
+    return feeds_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder>
+      getFeedsOrBuilderList() {
+    return feeds_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  @java.lang.Override
+  public int getFeedsCount() {
+    return feeds_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter getFeeds(int index) {
+    return feeds_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder getFeedsOrBuilder(
+      int index) {
+    return feeds_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -380,6 +461,9 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, languageCode_);
+    }
+    for (int i = 0; i < feeds_.size(); i++) {
+      output.writeMessage(6, feeds_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -410,6 +494,9 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, languageCode_);
     }
+    for (int i = 0; i < feeds_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, feeds_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -431,6 +518,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     if (!getDestinationsList().equals(other.getDestinationsList())) return false;
     if (!getRegionCode().equals(other.getRegionCode())) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getFeedsList().equals(other.getFeedsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -454,6 +542,10 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getRegionCode().hashCode();
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    if (getFeedsCount() > 0) {
+      hash = (37 * hash) + FEEDS_FIELD_NUMBER;
+      hash = (53 * hash) + getFeedsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -604,6 +696,13 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
       languageCode_ = "";
 
+      if (feedsBuilder_ == null) {
+        feeds_ = java.util.Collections.emptyList();
+      } else {
+        feeds_ = null;
+        feedsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -641,6 +740,15 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       result.destinations_ = destinations_;
       result.regionCode_ = regionCode_;
       result.languageCode_ = languageCode_;
+      if (feedsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          feeds_ = java.util.Collections.unmodifiableList(feeds_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.feeds_ = feeds_;
+      } else {
+        result.feeds_ = feedsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -716,6 +824,33 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
         languageCode_ = other.languageCode_;
         onChanged();
       }
+      if (feedsBuilder_ == null) {
+        if (!other.feeds_.isEmpty()) {
+          if (feeds_.isEmpty()) {
+            feeds_ = other.feeds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFeedsIsMutable();
+            feeds_.addAll(other.feeds_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.feeds_.isEmpty()) {
+          if (feedsBuilder_.isEmpty()) {
+            feedsBuilder_.dispose();
+            feedsBuilder_ = null;
+            feeds_ = other.feeds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            feedsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFeedsFieldBuilder()
+                    : null;
+          } else {
+            feedsBuilder_.addAllMessages(other.feeds_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -773,6 +908,20 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
 
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.parser(),
+                        extensionRegistry);
+                if (feedsBuilder_ == null) {
+                  ensureFeedsIsMutable();
+                  feeds_.add(m);
+                } else {
+                  feedsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -798,7 +947,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The linked [Merchant center account
-     * id](https://developers.google.com/shopping-content/guides/accountstatuses).
+     * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
      * The account must be a standalone account or a sub-account of a MCA.
      * </pre>
      *
@@ -815,7 +964,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The linked [Merchant center account
-     * id](https://developers.google.com/shopping-content/guides/accountstatuses).
+     * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
      * The account must be a standalone account or a sub-account of a MCA.
      * </pre>
      *
@@ -835,7 +984,7 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The linked [Merchant center account
-     * id](https://developers.google.com/shopping-content/guides/accountstatuses).
+     * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
      * The account must be a standalone account or a sub-account of a MCA.
      * </pre>
      *
@@ -855,11 +1004,11 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The branch id (e.g. 0/1/2) within this catalog that products from
+     * The branch ID (e.g. 0/1/2) within this catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -881,11 +1030,11 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The branch id (e.g. 0/1/2) within this catalog that products from
+     * The branch ID (e.g. 0/1/2) within this catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -907,11 +1056,11 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The branch id (e.g. 0/1/2) within this catalog that products from
+     * The branch ID (e.g. 0/1/2) within this catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -932,11 +1081,11 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The branch id (e.g. 0/1/2) within this catalog that products from
+     * The branch ID (e.g. 0/1/2) within this catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -953,11 +1102,11 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The branch id (e.g. 0/1/2) within this catalog that products from
+     * The branch ID (e.g. 0/1/2) within this catalog that products from
      * merchant_center_account_id are streamed to. When updating this field, an
      * empty value will use the currently configured default branch. However,
      * changing the default branch later on won't change the linked branch here.
-     * A single branch id can only have one linked merchant center account id.
+     * A single branch ID can only have one linked merchant center account ID.
      * </pre>
      *
      * <code>string branch_id = 2;</code>
@@ -990,8 +1139,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1010,8 +1159,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1030,8 +1179,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1051,8 +1200,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1072,8 +1221,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1100,8 +1249,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1127,8 +1276,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1151,8 +1300,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1174,8 +1323,8 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * String representing the destination to import for, all if left empty.
-     * List of possible values can be found here.
-     * [https://support.google.com/merchants/answer/7501026]
+     * List of possible values is given in [Included
+     * destination](https://support.google.com/merchants/answer/7501026).
      * List of allowed string values:
      * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
      * _ads", "Free_listings", "Free_local_listings"
@@ -1458,6 +1607,405 @@ public final class MerchantCenterLink extends com.google.protobuf.GeneratedMessa
       languageCode_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter> feeds_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFeedsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        feeds_ =
+            new java.util.ArrayList<com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter>(
+                feeds_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter,
+            com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder,
+            com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder>
+        feedsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter> getFeedsList() {
+      if (feedsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(feeds_);
+      } else {
+        return feedsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public int getFeedsCount() {
+      if (feedsBuilder_ == null) {
+        return feeds_.size();
+      } else {
+        return feedsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter getFeeds(int index) {
+      if (feedsBuilder_ == null) {
+        return feeds_.get(index);
+      } else {
+        return feedsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder setFeeds(
+        int index, com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter value) {
+      if (feedsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFeedsIsMutable();
+        feeds_.set(index, value);
+        onChanged();
+      } else {
+        feedsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder setFeeds(
+        int index,
+        com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder builderForValue) {
+      if (feedsBuilder_ == null) {
+        ensureFeedsIsMutable();
+        feeds_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        feedsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder addFeeds(com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter value) {
+      if (feedsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFeedsIsMutable();
+        feeds_.add(value);
+        onChanged();
+      } else {
+        feedsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder addFeeds(
+        int index, com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter value) {
+      if (feedsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFeedsIsMutable();
+        feeds_.add(index, value);
+        onChanged();
+      } else {
+        feedsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder addFeeds(
+        com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder builderForValue) {
+      if (feedsBuilder_ == null) {
+        ensureFeedsIsMutable();
+        feeds_.add(builderForValue.build());
+        onChanged();
+      } else {
+        feedsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder addFeeds(
+        int index,
+        com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder builderForValue) {
+      if (feedsBuilder_ == null) {
+        ensureFeedsIsMutable();
+        feeds_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        feedsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder addAllFeeds(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter>
+            values) {
+      if (feedsBuilder_ == null) {
+        ensureFeedsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, feeds_);
+        onChanged();
+      } else {
+        feedsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder clearFeeds() {
+      if (feedsBuilder_ == null) {
+        feeds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        feedsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public Builder removeFeeds(int index) {
+      if (feedsBuilder_ == null) {
+        ensureFeedsIsMutable();
+        feeds_.remove(index);
+        onChanged();
+      } else {
+        feedsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder getFeedsBuilder(
+        int index) {
+      return getFeedsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder getFeedsOrBuilder(
+        int index) {
+      if (feedsBuilder_ == null) {
+        return feeds_.get(index);
+      } else {
+        return feedsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder>
+        getFeedsOrBuilderList() {
+      if (feedsBuilder_ != null) {
+        return feedsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(feeds_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder addFeedsBuilder() {
+      return getFeedsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder addFeedsBuilder(
+        int index) {
+      return getFeedsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Criteria for the Merchant Center feeds to be ingested via the link.
+     * All offers will be ingested if the list is empty.
+     * Otherwise the offers will be ingested from selected feeds.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2alpha.MerchantCenterFeedFilter feeds = 6;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder>
+        getFeedsBuilderList() {
+      return getFeedsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter,
+            com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder,
+            com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder>
+        getFeedsFieldBuilder() {
+      if (feedsBuilder_ == null) {
+        feedsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter,
+                com.google.cloud.retail.v2alpha.MerchantCenterFeedFilter.Builder,
+                com.google.cloud.retail.v2alpha.MerchantCenterFeedFilterOrBuilder>(
+                feeds_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        feeds_ = null;
+      }
+      return feedsBuilder_;
     }
 
     @java.lang.Override

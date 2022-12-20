@@ -33,7 +33,7 @@ public enum SearchSolutionUseCase implements com.google.protobuf.ProtocolMessage
    *
    * <pre>
    * The value when it's unspecified. In this case, server behavior defaults to
-   * [SEARCH_SOLUTION_USE_CASE_SEARCH][].
+   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2alpha.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH].
    * </pre>
    *
    * <code>SEARCH_SOLUTION_USE_CASE_UNSPECIFIED = 0;</code>
@@ -69,7 +69,7 @@ public enum SearchSolutionUseCase implements com.google.protobuf.ProtocolMessage
    *
    * <pre>
    * The value when it's unspecified. In this case, server behavior defaults to
-   * [SEARCH_SOLUTION_USE_CASE_SEARCH][].
+   * [SEARCH_SOLUTION_USE_CASE_SEARCH][google.cloud.retail.v2alpha.SearchSolutionUseCase.SEARCH_SOLUTION_USE_CASE_SEARCH].
    * </pre>
    *
    * <code>SEARCH_SOLUTION_USE_CASE_UNSPECIFIED = 0;</code>

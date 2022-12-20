@@ -76,7 +76,7 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Full CompletionConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Full CompletionConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
    * </pre>
    *
    * <code>
@@ -463,7 +463,7 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full CompletionConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
      * </pre>
      *
      * <code>
@@ -488,7 +488,7 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full CompletionConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
      * </pre>
      *
      * <code>
@@ -513,7 +513,7 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full CompletionConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
      * </pre>
      *
      * <code>
@@ -537,7 +537,7 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full CompletionConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
      * </pre>
      *
      * <code>
@@ -557,7 +557,7 @@ public final class GetCompletionConfigRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full CompletionConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/completionConfig`
      * </pre>
      *
      * <code>

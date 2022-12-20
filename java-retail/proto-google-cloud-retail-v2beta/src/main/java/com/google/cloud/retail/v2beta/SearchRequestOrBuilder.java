@@ -31,7 +31,7 @@ public interface SearchRequestOrBuilder
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the serving configuration name and the set
+   * This field is used to identify the serving config name and the set
    * of models that will be used to make the search.
    * </pre>
    *
@@ -48,7 +48,7 @@ public interface SearchRequestOrBuilder
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the serving configuration name and the set
+   * This field is used to identify the serving config name and the set
    * of models that will be used to make the search.
    * </pre>
    *

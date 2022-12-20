@@ -76,7 +76,7 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The parent for which to list models.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The parent for which to list models.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * </pre>
    *
    * <code>
@@ -575,7 +575,7 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The parent for which to list models.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -601,7 +601,7 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The parent for which to list models.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -627,7 +627,7 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The parent for which to list models.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -652,7 +652,7 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The parent for which to list models.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -673,7 +673,7 @@ public final class ListModelsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The parent for which to list models.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>

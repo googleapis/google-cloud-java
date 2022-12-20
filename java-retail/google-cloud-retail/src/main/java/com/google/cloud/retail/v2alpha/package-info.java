@@ -42,8 +42,8 @@
  *
  * <p>Service Description: Auto-completion service for retail.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>Sample for CompletionServiceClient:
  *
@@ -63,6 +63,7 @@
  *           .setDeviceType("deviceType781190832")
  *           .setDataset("dataset1443214456")
  *           .setMaxSuggestions(618824852)
+ *           .setEnableAttributeSuggestions(true)
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
  * }
@@ -91,11 +92,11 @@
  * <p>======================= ModelServiceClient =======================
  *
  * <p>Service Description: Service for performing CRUD operations on models. Recommendation models
- * contain all the metadata necessary to generate a set of models for the Predict() api. A model is
- * queried indirectly via a ServingConfig, which associates a model with a given Placement (e.g.
+ * contain all the metadata necessary to generate a set of models for the `Predict()` API. A model
+ * is queried indirectly via a ServingConfig, which associates a model with a given Placement (e.g.
  * Frequently Bought Together on Home Page).
  *
- * <p>This service allows customers to e.g.:
+ * <p>This service allows you to do the following:
  *
  * <ul>
  *   <li>Initiate training of a model.
@@ -171,8 +172,8 @@
  *
  * <p>Service Description: Service for search.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>Sample for SearchServiceClient:
  *
@@ -252,6 +253,7 @@
  *       WriteUserEventRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
  * }
