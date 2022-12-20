@@ -169,7 +169,8 @@ class MutateRowsAttemptCallable implements Callable<Void> {
       // variables in ApiTracer and avoid exceptions when the tracer marks the attempt as finished
       callContext
           .getTracer()
-          .attemptStarted(externalFuture.getAttemptSettings().getOverallAttemptCount());
+          .attemptStarted(
+              currentRequest, externalFuture.getAttemptSettings().getOverallAttemptCount());
 
       Preconditions.checkState(
           currentRequest.getEntriesCount() > 0, "Request doesn't have any mutations to send");
