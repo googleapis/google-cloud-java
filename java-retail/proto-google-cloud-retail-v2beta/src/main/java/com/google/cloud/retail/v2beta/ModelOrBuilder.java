@@ -246,7 +246,7 @@ public interface ModelOrBuilder
    * Required. The type of model e.g. `home-page`.
    * Currently supported values: `recommended-for-you`, `others-you-may-like`,
    * `frequently-bought-together`, `page-optimization`, `similar-items`,
-   * `buy-it-again`, and `recently-viewed`(readonly value).
+   * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
    * This field together with
    * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
    * describe model metadata to use to control model training and serving.
@@ -270,7 +270,7 @@ public interface ModelOrBuilder
    * Required. The type of model e.g. `home-page`.
    * Currently supported values: `recommended-for-you`, `others-you-may-like`,
    * `frequently-bought-together`, `page-optimization`, `similar-items`,
-   * `buy-it-again`, and `recently-viewed`(readonly value).
+   * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
    * This field together with
    * [optimization_objective][google.cloud.retail.v2beta.Model.optimization_objective]
    * describe model metadata to use to control model training and serving.

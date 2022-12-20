@@ -46,6 +46,7 @@ public class AsyncCompleteQuery {
               .setDeviceType("deviceType781190832")
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
+              .setEnableAttributeSuggestions(true)
               .build();
       ApiFuture<CompleteQueryResponse> future =
           completionServiceClient.completeQueryCallable().futureCall(request);

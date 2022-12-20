@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -88,6 +89,7 @@ public class CompletionServiceClientTest {
             .addAllCompletionResults(new ArrayList<CompleteQueryResponse.CompletionResult>())
             .setAttributionToken("attributionToken104706234")
             .addAllRecentSearchResults(new ArrayList<CompleteQueryResponse.RecentSearchResult>())
+            .putAllAttributeResults(new HashMap<String, CompleteQueryResponse.AttributeResult>())
             .build();
     mockCompletionService.addResponse(expectedResponse);
 
@@ -100,6 +102,7 @@ public class CompletionServiceClientTest {
             .setDeviceType("deviceType781190832")
             .setDataset("dataset1443214456")
             .setMaxSuggestions(618824852)
+            .setEnableAttributeSuggestions(true)
             .build();
 
     CompleteQueryResponse actualResponse = client.completeQuery(request);
@@ -116,6 +119,8 @@ public class CompletionServiceClientTest {
     Assert.assertEquals(request.getDeviceType(), actualRequest.getDeviceType());
     Assert.assertEquals(request.getDataset(), actualRequest.getDataset());
     Assert.assertEquals(request.getMaxSuggestions(), actualRequest.getMaxSuggestions());
+    Assert.assertEquals(
+        request.getEnableAttributeSuggestions(), actualRequest.getEnableAttributeSuggestions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -137,6 +142,7 @@ public class CompletionServiceClientTest {
               .setDeviceType("deviceType781190832")
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
+              .setEnableAttributeSuggestions(true)
               .build();
       client.completeQuery(request);
       Assert.fail("No exception raised");

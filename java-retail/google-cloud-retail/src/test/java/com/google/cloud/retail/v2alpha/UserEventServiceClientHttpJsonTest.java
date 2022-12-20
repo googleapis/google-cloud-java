@@ -111,6 +111,7 @@ public class UserEventServiceClientHttpJsonTest {
         WriteUserEventRequest.newBuilder()
             .setParent("projects/project-6267/locations/location-6267/catalogs/catalog-6267")
             .setUserEvent(UserEvent.newBuilder().build())
+            .setWriteAsync(true)
             .build();
 
     UserEvent actualResponse = client.writeUserEvent(request);
@@ -143,6 +144,7 @@ public class UserEventServiceClientHttpJsonTest {
           WriteUserEventRequest.newBuilder()
               .setParent("projects/project-6267/locations/location-6267/catalogs/catalog-6267")
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       client.writeUserEvent(request);
       Assert.fail("No exception raised");
@@ -167,6 +169,7 @@ public class UserEventServiceClientHttpJsonTest {
             .setUserEvent("userEvent315571599")
             .setUri("uri116076")
             .setEts(100772)
+            .setRawJson("rawJson985449776")
             .build();
 
     HttpBody actualResponse = client.collectUserEvent(request);
@@ -201,6 +204,7 @@ public class UserEventServiceClientHttpJsonTest {
               .setUserEvent("userEvent315571599")
               .setUri("uri116076")
               .setEts(100772)
+              .setRawJson("rawJson985449776")
               .build();
       client.collectUserEvent(request);
       Assert.fail("No exception raised");

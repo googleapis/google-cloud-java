@@ -23,7 +23,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * Auto-completion service for retail.
  * This feature is only available for users who have Retail Search enabled.
- * Please enable Retail Search on Cloud Console before using this feature.
+ * Enable Retail Search on Cloud Console before using this feature.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -177,7 +177,7 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public abstract static class CompletionServiceImplBase implements io.grpc.BindableService {
@@ -188,7 +188,7 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void completeQuery(
@@ -208,7 +208,7 @@ public final class CompletionServiceGrpc {
      * The operation is successfully finished only after the imported suggestions
      * are indexed successfully and ready for serving. The process takes hours.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void importCompletionData(
@@ -244,7 +244,7 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public static final class CompletionServiceStub
@@ -265,7 +265,7 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void completeQuery(
@@ -287,7 +287,7 @@ public final class CompletionServiceGrpc {
      * The operation is successfully finished only after the imported suggestions
      * are indexed successfully and ready for serving. The process takes hours.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void importCompletionData(
@@ -306,7 +306,7 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public static final class CompletionServiceBlockingStub
@@ -328,7 +328,7 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.cloud.retail.v2.CompleteQueryResponse completeQuery(
@@ -346,7 +346,7 @@ public final class CompletionServiceGrpc {
      * The operation is successfully finished only after the imported suggestions
      * are indexed successfully and ready for serving. The process takes hours.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation importCompletionData(
@@ -362,7 +362,7 @@ public final class CompletionServiceGrpc {
    * <pre>
    * Auto-completion service for retail.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public static final class CompletionServiceFutureStub
@@ -383,7 +383,7 @@ public final class CompletionServiceGrpc {
      * <pre>
      * Completes the specified prefix with keyword suggestions.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -402,7 +402,7 @@ public final class CompletionServiceGrpc {
      * The operation is successfully finished only after the imported suggestions
      * are indexed successfully and ready for serving. The process takes hours.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

@@ -763,9 +763,9 @@ public final class ProductServiceGrpc {
      * update timestamps of each inventory field.
      * This process is asynchronous and does not require the
      * [Product][google.cloud.retail.v2alpha.Product] to exist before updating
-     * fulfillment information. If the request is valid, the update will be
-     * enqueued and processed downstream. As a consequence, when a response is
-     * returned, updates are not immediately manifested in the
+     * fulfillment information. If the request is valid, the update is enqueued
+     * and processed downstream. As a consequence, when a response is returned,
+     * updates are not immediately manifested in the
      * [Product][google.cloud.retail.v2alpha.Product] queried by
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
@@ -774,27 +774,34 @@ public final class ProductServiceGrpc {
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
-     * the specified inventory field value(s) will overwrite any existing value(s)
+     * the specified inventory field value(s) overwrite any existing value(s)
      * while ignoring the last update time for this field. Furthermore, the last
-     * update time for the specified inventory fields will be overwritten to the
-     * time of the
+     * update times for the specified inventory fields are overwritten by the
+     * times of the
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * or
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * request.
      * If no inventory fields are set in
      * [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
-     * then any pre-existing inventory information for this product will be used.
+     * then any pre-existing inventory information for this product is used.
      * If no inventory fields are set in
      * [SetInventoryRequest.set_mask][google.cloud.retail.v2alpha.SetInventoryRequest.set_mask],
-     * then any existing inventory information will be preserved.
+     * then any existing inventory information is preserved.
      * Pre-existing inventory information can only be updated with
      * [ProductService.SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][google.longrunning.Operation]s is obsolete after
+     * one day, and the [GetOperation][google.longrunning.Operations.GetOperation]
+     * API returns `NOT_FOUND` afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates are not marked as [done][google.longrunning.Operation.done] until
+     * they are obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void setInventory(
@@ -819,8 +826,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void addFulfillmentPlaces(
@@ -845,8 +859,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void removeFulfillmentPlaces(
@@ -877,8 +898,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void addLocalInventories(
@@ -907,8 +935,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void removeLocalInventories(
@@ -1155,9 +1190,9 @@ public final class ProductServiceGrpc {
      * update timestamps of each inventory field.
      * This process is asynchronous and does not require the
      * [Product][google.cloud.retail.v2alpha.Product] to exist before updating
-     * fulfillment information. If the request is valid, the update will be
-     * enqueued and processed downstream. As a consequence, when a response is
-     * returned, updates are not immediately manifested in the
+     * fulfillment information. If the request is valid, the update is enqueued
+     * and processed downstream. As a consequence, when a response is returned,
+     * updates are not immediately manifested in the
      * [Product][google.cloud.retail.v2alpha.Product] queried by
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
@@ -1166,27 +1201,34 @@ public final class ProductServiceGrpc {
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
-     * the specified inventory field value(s) will overwrite any existing value(s)
+     * the specified inventory field value(s) overwrite any existing value(s)
      * while ignoring the last update time for this field. Furthermore, the last
-     * update time for the specified inventory fields will be overwritten to the
-     * time of the
+     * update times for the specified inventory fields are overwritten by the
+     * times of the
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * or
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * request.
      * If no inventory fields are set in
      * [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
-     * then any pre-existing inventory information for this product will be used.
+     * then any pre-existing inventory information for this product is used.
      * If no inventory fields are set in
      * [SetInventoryRequest.set_mask][google.cloud.retail.v2alpha.SetInventoryRequest.set_mask],
-     * then any existing inventory information will be preserved.
+     * then any existing inventory information is preserved.
      * Pre-existing inventory information can only be updated with
      * [ProductService.SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][google.longrunning.Operation]s is obsolete after
+     * one day, and the [GetOperation][google.longrunning.Operations.GetOperation]
+     * API returns `NOT_FOUND` afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates are not marked as [done][google.longrunning.Operation.done] until
+     * they are obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void setInventory(
@@ -1213,8 +1255,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void addFulfillmentPlaces(
@@ -1241,8 +1290,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void removeFulfillmentPlaces(
@@ -1275,8 +1331,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void addLocalInventories(
@@ -1307,8 +1370,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void removeLocalInventories(
@@ -1459,9 +1529,9 @@ public final class ProductServiceGrpc {
      * update timestamps of each inventory field.
      * This process is asynchronous and does not require the
      * [Product][google.cloud.retail.v2alpha.Product] to exist before updating
-     * fulfillment information. If the request is valid, the update will be
-     * enqueued and processed downstream. As a consequence, when a response is
-     * returned, updates are not immediately manifested in the
+     * fulfillment information. If the request is valid, the update is enqueued
+     * and processed downstream. As a consequence, when a response is returned,
+     * updates are not immediately manifested in the
      * [Product][google.cloud.retail.v2alpha.Product] queried by
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
@@ -1470,27 +1540,34 @@ public final class ProductServiceGrpc {
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
-     * the specified inventory field value(s) will overwrite any existing value(s)
+     * the specified inventory field value(s) overwrite any existing value(s)
      * while ignoring the last update time for this field. Furthermore, the last
-     * update time for the specified inventory fields will be overwritten to the
-     * time of the
+     * update times for the specified inventory fields are overwritten by the
+     * times of the
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * or
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * request.
      * If no inventory fields are set in
      * [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
-     * then any pre-existing inventory information for this product will be used.
+     * then any pre-existing inventory information for this product is used.
      * If no inventory fields are set in
      * [SetInventoryRequest.set_mask][google.cloud.retail.v2alpha.SetInventoryRequest.set_mask],
-     * then any existing inventory information will be preserved.
+     * then any existing inventory information is preserved.
      * Pre-existing inventory information can only be updated with
      * [ProductService.SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][google.longrunning.Operation]s is obsolete after
+     * one day, and the [GetOperation][google.longrunning.Operations.GetOperation]
+     * API returns `NOT_FOUND` afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates are not marked as [done][google.longrunning.Operation.done] until
+     * they are obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation setInventory(
@@ -1514,8 +1591,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation addFulfillmentPlaces(
@@ -1539,8 +1623,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation removeFulfillmentPlaces(
@@ -1570,8 +1661,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation addLocalInventories(
@@ -1599,8 +1697,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation removeLocalInventories(
@@ -1752,9 +1857,9 @@ public final class ProductServiceGrpc {
      * update timestamps of each inventory field.
      * This process is asynchronous and does not require the
      * [Product][google.cloud.retail.v2alpha.Product] to exist before updating
-     * fulfillment information. If the request is valid, the update will be
-     * enqueued and processed downstream. As a consequence, when a response is
-     * returned, updates are not immediately manifested in the
+     * fulfillment information. If the request is valid, the update is enqueued
+     * and processed downstream. As a consequence, when a response is returned,
+     * updates are not immediately manifested in the
      * [Product][google.cloud.retail.v2alpha.Product] queried by
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
@@ -1763,27 +1868,34 @@ public final class ProductServiceGrpc {
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
-     * the specified inventory field value(s) will overwrite any existing value(s)
+     * the specified inventory field value(s) overwrite any existing value(s)
      * while ignoring the last update time for this field. Furthermore, the last
-     * update time for the specified inventory fields will be overwritten to the
-     * time of the
+     * update times for the specified inventory fields are overwritten by the
+     * times of the
      * [ProductService.CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
      * or
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * request.
      * If no inventory fields are set in
      * [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
-     * then any pre-existing inventory information for this product will be used.
+     * then any pre-existing inventory information for this product is used.
      * If no inventory fields are set in
      * [SetInventoryRequest.set_mask][google.cloud.retail.v2alpha.SetInventoryRequest.set_mask],
-     * then any existing inventory information will be preserved.
+     * then any existing inventory information is preserved.
      * Pre-existing inventory information can only be updated with
      * [ProductService.SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
      * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
      * and
      * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * The returned [Operation][google.longrunning.Operation]s is obsolete after
+     * one day, and the [GetOperation][google.longrunning.Operations.GetOperation]
+     * API returns `NOT_FOUND` afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates are not marked as [done][google.longrunning.Operation.done] until
+     * they are obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1807,8 +1919,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1832,8 +1951,15 @@ public final class ProductServiceGrpc {
      * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
      * or
      * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1864,8 +1990,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1893,8 +2026,15 @@ public final class ProductServiceGrpc {
      * and
      * [ProductService.UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
      * has no effect on local inventories.
+     * The returned [Operation][google.longrunning.Operation]s will be obsolete
+     * after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation]
+     * API will return NOT_FOUND afterwards.
+     * If conflicting updates are issued, the
+     * [Operation][google.longrunning.Operation]s associated with the stale
+     * updates will not be marked as [done][google.longrunning.Operation.done]
+     * until being obsolete.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

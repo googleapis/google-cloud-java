@@ -261,4 +261,99 @@ public interface CompleteQueryResponseOrBuilder
    */
   com.google.cloud.retail.v2alpha.CompleteQueryResponse.RecentSearchResultOrBuilder
       getRecentSearchResultsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   * Current supported keys:
+   * * `brands`
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  int getAttributeResultsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   * Current supported keys:
+   * * `brands`
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  boolean containsAttributeResults(java.lang.String key);
+  /** Use {@link #getAttributeResultsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<
+          java.lang.String, com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult>
+      getAttributeResults();
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   * Current supported keys:
+   * * `brands`
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  java.util.Map<
+          java.lang.String, com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult>
+      getAttributeResultsMap();
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   * Current supported keys:
+   * * `brands`
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+
+  /* nullable */
+  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult
+      getAttributeResultsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * A map of matched attribute suggestions. This field is only available for
+   * "cloud-retail" dataset.
+   * Current supported keys:
+   * * `brands`
+   * * `categories`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult&gt; attribute_results = 4;
+   * </code>
+   */
+  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult getAttributeResultsOrThrow(
+      java.lang.String key);
 }

@@ -334,8 +334,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The device type context for completion suggestions.
-   * It is useful to apply different suggestions on different device types, e.g.
+   * The device type context for completion suggestions. We recommend that you
+   * leave this field empty.
+   * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
    * Supported formats:
@@ -365,8 +366,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The device type context for completion suggestions.
-   * It is useful to apply different suggestions on different device types, e.g.
+   * The device type context for completion suggestions. We recommend that you
+   * leave this field empty.
+   * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
    * Supported formats:
@@ -482,6 +484,25 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     return maxSuggestions_;
   }
 
+  public static final int ENABLE_ATTRIBUTE_SUGGESTIONS_FIELD_NUMBER = 9;
+  private boolean enableAttributeSuggestions_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, attribute suggestions are enabled and provided in response.
+   * This field is only available for "cloud-retail" dataset.
+   * </pre>
+   *
+   * <code>bool enable_attribute_suggestions = 9;</code>
+   *
+   * @return The enableAttributeSuggestions.
+   */
+  @java.lang.Override
+  public boolean getEnableAttributeSuggestions() {
+    return enableAttributeSuggestions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -516,6 +537,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, visitorId_);
+    }
+    if (enableAttributeSuggestions_ != false) {
+      output.writeBool(9, enableAttributeSuggestions_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -552,6 +576,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, visitorId_);
     }
+    if (enableAttributeSuggestions_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, enableAttributeSuggestions_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -575,6 +602,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (!getDeviceType().equals(other.getDeviceType())) return false;
     if (!getDataset().equals(other.getDataset())) return false;
     if (getMaxSuggestions() != other.getMaxSuggestions()) return false;
+    if (getEnableAttributeSuggestions() != other.getEnableAttributeSuggestions()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -602,6 +630,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getDataset().hashCode();
     hash = (37 * hash) + MAX_SUGGESTIONS_FIELD_NUMBER;
     hash = (53 * hash) + getMaxSuggestions();
+    hash = (37 * hash) + ENABLE_ATTRIBUTE_SUGGESTIONS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAttributeSuggestions());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -754,6 +784,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
       maxSuggestions_ = 0;
 
+      enableAttributeSuggestions_ = false;
+
       return this;
     }
 
@@ -793,6 +825,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       result.deviceType_ = deviceType_;
       result.dataset_ = dataset_;
       result.maxSuggestions_ = maxSuggestions_;
+      result.enableAttributeSuggestions_ = enableAttributeSuggestions_;
       onBuilt();
       return result;
     }
@@ -876,6 +909,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (other.getMaxSuggestions() != 0) {
         setMaxSuggestions(other.getMaxSuggestions());
       }
+      if (other.getEnableAttributeSuggestions() != false) {
+        setEnableAttributeSuggestions(other.getEnableAttributeSuggestions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -945,6 +981,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
                 break;
               } // case 58
+            case 72:
+              {
+                enableAttributeSuggestions_ = input.readBool();
+
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1568,8 +1610,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The device type context for completion suggestions.
-     * It is useful to apply different suggestions on different device types, e.g.
+     * The device type context for completion suggestions. We recommend that you
+     * leave this field empty.
+     * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
@@ -1598,8 +1641,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The device type context for completion suggestions.
-     * It is useful to apply different suggestions on different device types, e.g.
+     * The device type context for completion suggestions. We recommend that you
+     * leave this field empty.
+     * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
@@ -1628,8 +1672,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The device type context for completion suggestions.
-     * It is useful to apply different suggestions on different device types, e.g.
+     * The device type context for completion suggestions. We recommend that you
+     * leave this field empty.
+     * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
@@ -1657,8 +1702,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The device type context for completion suggestions.
-     * It is useful to apply different suggestions on different device types, e.g.
+     * The device type context for completion suggestions. We recommend that you
+     * leave this field empty.
+     * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
@@ -1682,8 +1728,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The device type context for completion suggestions.
-     * It is useful to apply different suggestions on different device types, e.g.
+     * The device type context for completion suggestions. We recommend that you
+     * leave this field empty.
+     * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
      * Supported formats:
@@ -1920,6 +1967,61 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public Builder clearMaxSuggestions() {
 
       maxSuggestions_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableAttributeSuggestions_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, attribute suggestions are enabled and provided in response.
+     * This field is only available for "cloud-retail" dataset.
+     * </pre>
+     *
+     * <code>bool enable_attribute_suggestions = 9;</code>
+     *
+     * @return The enableAttributeSuggestions.
+     */
+    @java.lang.Override
+    public boolean getEnableAttributeSuggestions() {
+      return enableAttributeSuggestions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, attribute suggestions are enabled and provided in response.
+     * This field is only available for "cloud-retail" dataset.
+     * </pre>
+     *
+     * <code>bool enable_attribute_suggestions = 9;</code>
+     *
+     * @param value The enableAttributeSuggestions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableAttributeSuggestions(boolean value) {
+
+      enableAttributeSuggestions_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, attribute suggestions are enabled and provided in response.
+     * This field is only available for "cloud-retail" dataset.
+     * </pre>
+     *
+     * <code>bool enable_attribute_suggestions = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableAttributeSuggestions() {
+
+      enableAttributeSuggestions_ = false;
       onChanged();
       return this;
     }

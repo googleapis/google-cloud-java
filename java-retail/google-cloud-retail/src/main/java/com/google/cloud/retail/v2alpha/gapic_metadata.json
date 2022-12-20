@@ -13,6 +13,9 @@
             "AddCatalogAttribute": {
               "methods": ["addCatalogAttribute", "addCatalogAttributeCallable"]
             },
+            "BatchRemoveCatalogAttributes": {
+              "methods": ["batchRemoveCatalogAttributes", "batchRemoveCatalogAttributesCallable"]
+            },
             "GetAttributesConfig": {
               "methods": ["getAttributesConfig", "getAttributesConfig", "getAttributesConfig", "getAttributesConfigCallable"]
             },

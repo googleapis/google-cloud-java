@@ -185,8 +185,8 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Pub/Sub topic for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
    * </pre>
@@ -212,8 +212,8 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Pub/Sub topic for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
    * </pre>
@@ -956,8 +956,8 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -982,8 +982,8 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1008,8 +1008,8 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1033,8 +1033,8 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1054,8 +1054,8 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>

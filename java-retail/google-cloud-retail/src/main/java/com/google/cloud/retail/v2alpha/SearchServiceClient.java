@@ -37,8 +37,8 @@ import javax.annotation.Generated;
 /**
  * Service Description: Service for search.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -205,8 +205,8 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -258,8 +258,8 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -311,8 +311,8 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *

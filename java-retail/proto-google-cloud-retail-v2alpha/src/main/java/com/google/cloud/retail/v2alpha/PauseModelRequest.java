@@ -75,7 +75,7 @@ public final class PauseModelRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The name of the model to pause.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class PauseModelRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The name of the model to pause.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * </pre>
    *
    * <code>
@@ -461,7 +461,7 @@ public final class PauseModelRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The name of the model to pause.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -487,7 +487,7 @@ public final class PauseModelRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The name of the model to pause.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -513,7 +513,7 @@ public final class PauseModelRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The name of the model to pause.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -538,7 +538,7 @@ public final class PauseModelRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The name of the model to pause.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -559,7 +559,7 @@ public final class PauseModelRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The name of the model to pause.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>

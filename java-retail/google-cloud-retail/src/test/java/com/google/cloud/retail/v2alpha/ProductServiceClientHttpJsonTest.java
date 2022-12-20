@@ -120,6 +120,7 @@ public class ProductServiceClientHttpJsonTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -198,6 +199,7 @@ public class ProductServiceClientHttpJsonTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -278,6 +280,7 @@ public class ProductServiceClientHttpJsonTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -354,6 +357,7 @@ public class ProductServiceClientHttpJsonTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -532,6 +536,7 @@ public class ProductServiceClientHttpJsonTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -568,6 +573,7 @@ public class ProductServiceClientHttpJsonTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -630,6 +636,7 @@ public class ProductServiceClientHttpJsonTest {
               .setPublishTime(Timestamp.newBuilder().build())
               .setRetrievableFields(FieldMask.newBuilder().build())
               .addAllVariants(new ArrayList<Product>())
+              .addAllLocalInventories(new ArrayList<LocalInventory>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateProduct(product, updateMask);
@@ -897,6 +904,7 @@ public class ProductServiceClientHttpJsonTest {
             .setPublishTime(Timestamp.newBuilder().build())
             .setRetrievableFields(FieldMask.newBuilder().build())
             .addAllVariants(new ArrayList<Product>())
+            .addAllLocalInventories(new ArrayList<LocalInventory>())
             .build();
     FieldMask setMask = FieldMask.newBuilder().build();
 
@@ -959,6 +967,7 @@ public class ProductServiceClientHttpJsonTest {
               .setPublishTime(Timestamp.newBuilder().build())
               .setRetrievableFields(FieldMask.newBuilder().build())
               .addAllVariants(new ArrayList<Product>())
+              .addAllLocalInventories(new ArrayList<LocalInventory>())
               .build();
       FieldMask setMask = FieldMask.newBuilder().build();
       client.setInventoryAsync(inventory, setMask).get();

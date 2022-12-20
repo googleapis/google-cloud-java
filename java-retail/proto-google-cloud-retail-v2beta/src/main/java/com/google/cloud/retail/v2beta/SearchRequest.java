@@ -349,7 +349,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Maximum of facet values that should be returned for this facet. If
-     * unspecified, defaults to 20. The maximum allowed value is 300. Values
+     * unspecified, defaults to 50. The maximum allowed value is 300. Values
      * above 300 will be coerced to 300.
      * If this field is negative, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -4514,7 +4514,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Maximum of facet values that should be returned for this facet. If
-     * unspecified, defaults to 20. The maximum allowed value is 300. Values
+     * unspecified, defaults to 50. The maximum allowed value is 300. Values
      * above 300 will be coerced to 300.
      * If this field is negative, an INVALID_ARGUMENT is returned.
      * </pre>
@@ -5360,7 +5360,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Maximum of facet values that should be returned for this facet. If
-       * unspecified, defaults to 20. The maximum allowed value is 300. Values
+       * unspecified, defaults to 50. The maximum allowed value is 300. Values
        * above 300 will be coerced to 300.
        * If this field is negative, an INVALID_ARGUMENT is returned.
        * </pre>
@@ -5378,7 +5378,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Maximum of facet values that should be returned for this facet. If
-       * unspecified, defaults to 20. The maximum allowed value is 300. Values
+       * unspecified, defaults to 50. The maximum allowed value is 300. Values
        * above 300 will be coerced to 300.
        * If this field is negative, an INVALID_ARGUMENT is returned.
        * </pre>
@@ -5399,7 +5399,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Maximum of facet values that should be returned for this facet. If
-       * unspecified, defaults to 20. The maximum allowed value is 300. Values
+       * unspecified, defaults to 50. The maximum allowed value is 300. Values
        * above 300 will be coerced to 300.
        * If this field is negative, an INVALID_ARGUMENT is returned.
        * </pre>
@@ -11573,7 +11573,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the serving configuration name and the set
+   * This field is used to identify the serving config name and the set
    * of models that will be used to make the search.
    * </pre>
    *
@@ -11601,7 +11601,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
    * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-   * This field is used to identify the serving configuration name and the set
+   * This field is used to identify the serving config name and the set
    * of models that will be used to make the search.
    * </pre>
    *
@@ -14156,7 +14156,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the serving configuration name and the set
+     * This field is used to identify the serving config name and the set
      * of models that will be used to make the search.
      * </pre>
      *
@@ -14183,7 +14183,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the serving configuration name and the set
+     * This field is used to identify the serving config name and the set
      * of models that will be used to make the search.
      * </pre>
      *
@@ -14210,7 +14210,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the serving configuration name and the set
+     * This field is used to identify the serving config name and the set
      * of models that will be used to make the search.
      * </pre>
      *
@@ -14236,7 +14236,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the serving configuration name and the set
+     * This field is used to identify the serving config name and the set
      * of models that will be used to make the search.
      * </pre>
      *
@@ -14258,7 +14258,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
      * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
-     * This field is used to identify the serving configuration name and the set
+     * This field is used to identify the serving config name and the set
      * of models that will be used to make the search.
      * </pre>
      *

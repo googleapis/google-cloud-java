@@ -356,8 +356,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
+   * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+   * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -378,8 +378,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
+   * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+   * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -400,8 +400,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
+   * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+   * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -423,8 +423,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of [serving
-   * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-   * associated with this control in the same
+   * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+   * with this control in the same
    * [Catalog][google.cloud.retail.v2beta.Catalog].
    * Note the association is managed via the
    * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2047,8 +2047,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2069,8 +2069,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2091,8 +2091,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2114,8 +2114,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2137,8 +2137,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2167,8 +2167,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2196,8 +2196,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2222,8 +2222,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an
@@ -2247,8 +2247,8 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of [serving
-     * configuration][google.cloud.retail.v2beta.ServingConfig] ids that are
-     * associated with this control in the same
+     * config][google.cloud.retail.v2beta.ServingConfig] ids that are associated
+     * with this control in the same
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * Note the association is managed via the
      * [ServingConfig][google.cloud.retail.v2beta.ServingConfig], this is an

@@ -75,7 +75,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The resource name of the model that this tune applies to.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * </pre>
    *
    * <code>string model = 1;</code>
@@ -100,7 +100,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The resource name of the model that this tune applies to.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * </pre>
    *
    * <code>string model = 1;</code>
@@ -457,7 +457,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The resource name of the model that this tune applies to.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model = 1;</code>
@@ -481,7 +481,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The resource name of the model that this tune applies to.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model = 1;</code>
@@ -505,7 +505,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The resource name of the model that this tune applies to.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model = 1;</code>
@@ -528,7 +528,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The resource name of the model that this tune applies to.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model = 1;</code>
@@ -547,7 +547,7 @@ public final class TuneModelMetadata extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The resource name of the model that this tune applies to.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>string model = 1;</code>
