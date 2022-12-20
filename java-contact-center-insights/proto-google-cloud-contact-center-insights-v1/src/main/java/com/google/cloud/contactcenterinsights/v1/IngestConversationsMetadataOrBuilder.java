@@ -18,9 +18,9 @@
 
 package com.google.cloud.contactcenterinsights.v1;
 
-public interface CreateAnalysisOperationMetadataOrBuilder
+public interface IngestConversationsMetadataOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata)
+    // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -103,70 +103,107 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The Conversation that this Analysis Operation belongs to.
+   * Output only. The original request for ingest.
    * </pre>
    *
    * <code>
-   * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The conversation.
+   * @return Whether the request field is set.
    */
-  java.lang.String getConversation();
+  boolean hasRequest();
   /**
    *
    *
    * <pre>
-   * Output only. The Conversation that this Analysis Operation belongs to.
+   * Output only. The original request for ingest.
    * </pre>
    *
    * <code>
-   * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The bytes for conversation.
+   * @return The request.
    */
-  com.google.protobuf.ByteString getConversationBytes();
+  com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest getRequest();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The original request for ingest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.IngestConversationsRequestOrBuilder
+      getRequestOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Output only. The annotator selector used for the analysis (if any).
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
-   *
-   * @return Whether the annotatorSelector field is set.
    */
-  boolean hasAnnotatorSelector();
+  java.util.List<com.google.rpc.Status> getPartialErrorsList();
   /**
    *
    *
    * <pre>
-   * Output only. The annotator selector used for the analysis (if any).
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
-   *
-   * @return The annotatorSelector.
    */
-  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector();
+  com.google.rpc.Status getPartialErrors(int index);
   /**
    *
    *
    * <pre>
-   * Output only. The annotator selector used for the analysis (if any).
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-  com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
-      getAnnotatorSelectorOrBuilder();
+  int getPartialErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index);
 }

@@ -79,6 +79,7 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     ENTITY_MENTION_DATA(15),
     INTENT_MATCH_DATA(16),
     PHRASE_MATCH_DATA(17),
+    ISSUE_MATCH_DATA(18),
     DATA_NOT_SET(0);
     private final int value;
 
@@ -111,6 +112,8 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
           return INTENT_MATCH_DATA;
         case 17:
           return PHRASE_MATCH_DATA;
+        case 18:
+          return ISSUE_MATCH_DATA;
         case 0:
           return DATA_NOT_SET;
         default:
@@ -489,6 +492,58 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.contactcenterinsights.v1.PhraseMatchData.getDefaultInstance();
   }
 
+  public static final int ISSUE_MATCH_DATA_FIELD_NUMBER = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Data specifying an issue match.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+   *
+   * @return Whether the issueMatchData field is set.
+   */
+  @java.lang.Override
+  public boolean hasIssueMatchData() {
+    return dataCase_ == 18;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data specifying an issue match.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+   *
+   * @return The issueMatchData.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IssueMatchData getIssueMatchData() {
+    if (dataCase_ == 18) {
+      return (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_;
+    }
+    return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data specifying an issue match.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IssueMatchDataOrBuilder
+      getIssueMatchDataOrBuilder() {
+    if (dataCase_ == 18) {
+      return (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_;
+    }
+    return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
+  }
+
   public static final int CHANNEL_TAG_FIELD_NUMBER = 1;
   private int channelTag_;
   /**
@@ -656,6 +711,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
     if (dataCase_ == 17) {
       output.writeMessage(17, (com.google.cloud.contactcenterinsights.v1.PhraseMatchData) data_);
     }
+    if (dataCase_ == 18) {
+      output.writeMessage(18, (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -711,6 +769,11 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               17, (com.google.cloud.contactcenterinsights.v1.PhraseMatchData) data_);
     }
+    if (dataCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -758,6 +821,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
         break;
       case 17:
         if (!getPhraseMatchData().equals(other.getPhraseMatchData())) return false;
+        break;
+      case 18:
+        if (!getIssueMatchData().equals(other.getIssueMatchData())) return false;
         break;
       case 0:
       default:
@@ -811,6 +877,10 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       case 17:
         hash = (37 * hash) + PHRASE_MATCH_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getPhraseMatchData().hashCode();
+        break;
+      case 18:
+        hash = (37 * hash) + ISSUE_MATCH_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getIssueMatchData().hashCode();
         break;
       case 0:
       default:
@@ -975,6 +1045,9 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (phraseMatchDataBuilder_ != null) {
         phraseMatchDataBuilder_.clear();
       }
+      if (issueMatchDataBuilder_ != null) {
+        issueMatchDataBuilder_.clear();
+      }
       channelTag_ = 0;
 
       if (annotationStartBoundaryBuilder_ == null) {
@@ -1065,6 +1138,13 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
           result.data_ = data_;
         } else {
           result.data_ = phraseMatchDataBuilder_.build();
+        }
+      }
+      if (dataCase_ == 18) {
+        if (issueMatchDataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = issueMatchDataBuilder_.build();
         }
       }
       result.channelTag_ = channelTag_;
@@ -1174,6 +1254,11 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
             mergePhraseMatchData(other.getPhraseMatchData());
             break;
           }
+        case ISSUE_MATCH_DATA:
+          {
+            mergeIssueMatchData(other.getIssueMatchData());
+            break;
+          }
         case DATA_NOT_SET:
           {
             break;
@@ -1269,6 +1354,12 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
                 dataCase_ = 17;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(getIssueMatchDataFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 18;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2805,6 +2896,221 @@ public final class CallAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return phraseMatchDataBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.IssueMatchData,
+            com.google.cloud.contactcenterinsights.v1.IssueMatchData.Builder,
+            com.google.cloud.contactcenterinsights.v1.IssueMatchDataOrBuilder>
+        issueMatchDataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     *
+     * @return Whether the issueMatchData field is set.
+     */
+    @java.lang.Override
+    public boolean hasIssueMatchData() {
+      return dataCase_ == 18;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     *
+     * @return The issueMatchData.
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.IssueMatchData getIssueMatchData() {
+      if (issueMatchDataBuilder_ == null) {
+        if (dataCase_ == 18) {
+          return (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_;
+        }
+        return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
+      } else {
+        if (dataCase_ == 18) {
+          return issueMatchDataBuilder_.getMessage();
+        }
+        return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     */
+    public Builder setIssueMatchData(
+        com.google.cloud.contactcenterinsights.v1.IssueMatchData value) {
+      if (issueMatchDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        issueMatchDataBuilder_.setMessage(value);
+      }
+      dataCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     */
+    public Builder setIssueMatchData(
+        com.google.cloud.contactcenterinsights.v1.IssueMatchData.Builder builderForValue) {
+      if (issueMatchDataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        issueMatchDataBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     */
+    public Builder mergeIssueMatchData(
+        com.google.cloud.contactcenterinsights.v1.IssueMatchData value) {
+      if (issueMatchDataBuilder_ == null) {
+        if (dataCase_ == 18
+            && data_
+                != com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance()) {
+          data_ =
+              com.google.cloud.contactcenterinsights.v1.IssueMatchData.newBuilder(
+                      (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 18) {
+          issueMatchDataBuilder_.mergeFrom(value);
+        } else {
+          issueMatchDataBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 18;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     */
+    public Builder clearIssueMatchData() {
+      if (issueMatchDataBuilder_ == null) {
+        if (dataCase_ == 18) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 18) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        issueMatchDataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IssueMatchData.Builder
+        getIssueMatchDataBuilder() {
+      return getIssueMatchDataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.IssueMatchDataOrBuilder
+        getIssueMatchDataOrBuilder() {
+      if ((dataCase_ == 18) && (issueMatchDataBuilder_ != null)) {
+        return issueMatchDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 18) {
+          return (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_;
+        }
+        return com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data specifying an issue match.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.IssueMatchData,
+            com.google.cloud.contactcenterinsights.v1.IssueMatchData.Builder,
+            com.google.cloud.contactcenterinsights.v1.IssueMatchDataOrBuilder>
+        getIssueMatchDataFieldBuilder() {
+      if (issueMatchDataBuilder_ == null) {
+        if (!(dataCase_ == 18)) {
+          data_ = com.google.cloud.contactcenterinsights.v1.IssueMatchData.getDefaultInstance();
+        }
+        issueMatchDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.IssueMatchData,
+                com.google.cloud.contactcenterinsights.v1.IssueMatchData.Builder,
+                com.google.cloud.contactcenterinsights.v1.IssueMatchDataOrBuilder>(
+                (com.google.cloud.contactcenterinsights.v1.IssueMatchData) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 18;
+      onChanged();
+      ;
+      return issueMatchDataBuilder_;
     }
 
     private int channelTag_;

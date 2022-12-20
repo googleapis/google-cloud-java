@@ -611,6 +611,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -667,6 +668,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -724,6 +726,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -774,6 +777,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -996,6 +1000,208 @@ public class ContactCenterInsightsClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsTest() throws Exception {
+    BulkAnalyzeConversationsResponse expectedResponse =
+        BulkAnalyzeConversationsResponse.newBuilder()
+            .setSuccessfulAnalysisCount(1153322545)
+            .setFailedAnalysisCount(1044285998)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkAnalyzeConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String filter = "filter-1274492040";
+    float analysisPercentage = 1609757661;
+
+    BulkAnalyzeConversationsResponse actualResponse =
+        client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String filter = "filter-1274492040";
+      float analysisPercentage = 1609757661;
+      client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsTest2() throws Exception {
+    BulkAnalyzeConversationsResponse expectedResponse =
+        BulkAnalyzeConversationsResponse.newBuilder()
+            .setSuccessfulAnalysisCount(1153322545)
+            .setFailedAnalysisCount(1044285998)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkAnalyzeConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String filter = "filter-1274492040";
+    float analysisPercentage = 1609757661;
+
+    BulkAnalyzeConversationsResponse actualResponse =
+        client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String filter = "filter-1274492040";
+      float analysisPercentage = 1609757661;
+      client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void ingestConversationsTest() throws Exception {
+    IngestConversationsResponse expectedResponse = IngestConversationsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("ingestConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    IngestConversationsResponse actualResponse = client.ingestConversationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void ingestConversationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.ingestConversationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void ingestConversationsTest2() throws Exception {
+    IngestConversationsResponse expectedResponse = IngestConversationsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("ingestConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    IngestConversationsResponse actualResponse = client.ingestConversationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void ingestConversationsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.ingestConversationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1734,6 +1940,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSampleUtterances(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1781,6 +1988,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSampleUtterances(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1914,6 +2122,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSampleUtterances(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1923,6 +2132,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSampleUtterances(new ArrayList<String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1959,9 +2169,92 @@ public class ContactCenterInsightsClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllSampleUtterances(new ArrayList<String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateIssue(issue, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteIssueTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]");
+
+    client.deleteIssue(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteIssueExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]");
+      client.deleteIssue(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteIssueTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9867/locations/location-9867/issueModels/issueModel-9867/issues/issue-9867";
+
+    client.deleteIssue(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteIssueExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9867/locations/location-9867/issueModels/issueModel-9867/issues/issue-9867";
+      client.deleteIssue(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

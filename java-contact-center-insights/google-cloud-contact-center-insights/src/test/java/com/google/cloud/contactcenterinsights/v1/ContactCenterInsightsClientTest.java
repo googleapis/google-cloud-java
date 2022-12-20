@@ -533,6 +533,7 @@ public class ContactCenterInsightsClientTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -587,6 +588,7 @@ public class ContactCenterInsightsClientTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -641,6 +643,7 @@ public class ContactCenterInsightsClientTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -685,6 +688,7 @@ public class ContactCenterInsightsClientTest {
             .setRequestTime(Timestamp.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setAnalysisResult(AnalysisResult.newBuilder().build())
+            .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -872,6 +876,202 @@ public class ContactCenterInsightsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsTest() throws Exception {
+    BulkAnalyzeConversationsResponse expectedResponse =
+        BulkAnalyzeConversationsResponse.newBuilder()
+            .setSuccessfulAnalysisCount(1153322545)
+            .setFailedAnalysisCount(1044285998)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkAnalyzeConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String filter = "filter-1274492040";
+    float analysisPercentage = 1609757661;
+
+    BulkAnalyzeConversationsResponse actualResponse =
+        client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkAnalyzeConversationsRequest actualRequest =
+        ((BulkAnalyzeConversationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(analysisPercentage, actualRequest.getAnalysisPercentage(), 0.0001f);
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String filter = "filter-1274492040";
+      float analysisPercentage = 1609757661;
+      client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsTest2() throws Exception {
+    BulkAnalyzeConversationsResponse expectedResponse =
+        BulkAnalyzeConversationsResponse.newBuilder()
+            .setSuccessfulAnalysisCount(1153322545)
+            .setFailedAnalysisCount(1044285998)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkAnalyzeConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+    float analysisPercentage = 1609757661;
+
+    BulkAnalyzeConversationsResponse actualResponse =
+        client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkAnalyzeConversationsRequest actualRequest =
+        ((BulkAnalyzeConversationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(analysisPercentage, actualRequest.getAnalysisPercentage(), 0.0001f);
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkAnalyzeConversationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      float analysisPercentage = 1609757661;
+      client.bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void ingestConversationsTest() throws Exception {
+    IngestConversationsResponse expectedResponse = IngestConversationsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("ingestConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    IngestConversationsResponse actualResponse = client.ingestConversationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IngestConversationsRequest actualRequest = ((IngestConversationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ingestConversationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.ingestConversationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void ingestConversationsTest2() throws Exception {
+    IngestConversationsResponse expectedResponse = IngestConversationsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("ingestConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    IngestConversationsResponse actualResponse = client.ingestConversationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IngestConversationsRequest actualRequest = ((IngestConversationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ingestConversationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.ingestConversationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1537,6 +1737,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSampleUtterances(new ArrayList<String>())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1578,6 +1779,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSampleUtterances(new ArrayList<String>())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1691,6 +1893,7 @@ public class ContactCenterInsightsClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllSampleUtterances(new ArrayList<String>())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -1721,6 +1924,74 @@ public class ContactCenterInsightsClientTest {
       Issue issue = Issue.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateIssue(issue, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteIssueTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]");
+
+    client.deleteIssue(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteIssueRequest actualRequest = ((DeleteIssueRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteIssueExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]");
+      client.deleteIssue(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteIssueTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockContactCenterInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteIssue(name);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteIssueRequest actualRequest = ((DeleteIssueRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteIssueExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteIssue(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

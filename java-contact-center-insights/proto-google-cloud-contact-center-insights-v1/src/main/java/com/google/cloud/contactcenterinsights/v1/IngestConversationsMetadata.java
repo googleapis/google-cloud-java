@@ -22,30 +22,29 @@ package com.google.cloud.contactcenterinsights.v1;
  *
  *
  * <pre>
- * Metadata for a create analysis operation.
+ * The metadata for an IngestConversations operation.
  * </pre>
  *
- * Protobuf type {@code google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata}
+ * Protobuf type {@code google.cloud.contactcenterinsights.v1.IngestConversationsMetadata}
  */
-public final class CreateAnalysisOperationMetadata extends com.google.protobuf.GeneratedMessageV3
+public final class IngestConversationsMetadata extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata)
-    CreateAnalysisOperationMetadataOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata)
+    IngestConversationsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use CreateAnalysisOperationMetadata.newBuilder() to construct.
-  private CreateAnalysisOperationMetadata(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use IngestConversationsMetadata.newBuilder() to construct.
+  private IngestConversationsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private CreateAnalysisOperationMetadata() {
-    conversation_ = "";
+  private IngestConversationsMetadata() {
+    partialErrors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new CreateAnalysisOperationMetadata();
+    return new IngestConversationsMetadata();
   }
 
   @java.lang.Override
@@ -55,18 +54,17 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-        .internal_static_google_cloud_contactcenterinsights_v1_CreateAnalysisOperationMetadata_descriptor;
+        .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-        .internal_static_google_cloud_contactcenterinsights_v1_CreateAnalysisOperationMetadata_fieldAccessorTable
+        .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata.class,
-            com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata.Builder
-                .class);
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.class,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.Builder.class);
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
@@ -167,112 +165,142 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     return getEndTime();
   }
 
-  public static final int CONVERSATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object conversation_;
+  public static final int REQUEST_FIELD_NUMBER = 3;
+  private com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request_;
   /**
    *
    *
    * <pre>
-   * Output only. The Conversation that this Analysis Operation belongs to.
+   * Output only. The original request for ingest.
    * </pre>
    *
    * <code>
-   * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The conversation.
+   * @return Whether the request field is set.
    */
   @java.lang.Override
-  public java.lang.String getConversation() {
-    java.lang.Object ref = conversation_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      conversation_ = s;
-      return s;
-    }
+  public boolean hasRequest() {
+    return request_ != null;
   }
   /**
    *
    *
    * <pre>
-   * Output only. The Conversation that this Analysis Operation belongs to.
+   * Output only. The original request for ingest.
    * </pre>
    *
    * <code>
-   * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @return The bytes for conversation.
+   * @return The request.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getConversationBytes() {
-    java.lang.Object ref = conversation_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      conversation_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest getRequest() {
+    return request_ == null
+        ? com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.getDefaultInstance()
+        : request_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The original request for ingest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequestOrBuilder
+      getRequestOrBuilder() {
+    return getRequest();
   }
 
-  public static final int ANNOTATOR_SELECTOR_FIELD_NUMBER = 4;
-  private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
+  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 4;
+  private java.util.List<com.google.rpc.Status> partialErrors_;
   /**
    *
    *
    * <pre>
-   * Output only. The annotator selector used for the analysis (if any).
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
-   *
-   * @return Whether the annotatorSelector field is set.
    */
   @java.lang.Override
-  public boolean hasAnnotatorSelector() {
-    return annotatorSelector_ != null;
+  public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
+    return partialErrors_;
   }
   /**
    *
    *
    * <pre>
-   * Output only. The annotator selector used for the analysis (if any).
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
-   *
-   * @return The annotatorSelector.
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector() {
-    return annotatorSelector_ == null
-        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
-        : annotatorSelector_;
+  public java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList() {
+    return partialErrors_;
   }
   /**
    *
    *
    * <pre>
-   * Output only. The annotator selector used for the analysis (if any).
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
    * </pre>
    *
    * <code>
-   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
-      getAnnotatorSelectorOrBuilder() {
-    return getAnnotatorSelector();
+  public int getPartialErrorsCount() {
+    return partialErrors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getPartialErrors(int index) {
+    return partialErrors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Partial errors during ingest operation that might cause the operation
+   * output to be incomplete.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
+    return partialErrors_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -295,11 +323,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     if (endTime_ != null) {
       output.writeMessage(2, getEndTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, conversation_);
+    if (request_ != null) {
+      output.writeMessage(3, getRequest());
     }
-    if (annotatorSelector_ != null) {
-      output.writeMessage(4, getAnnotatorSelector());
+    for (int i = 0; i < partialErrors_.size(); i++) {
+      output.writeMessage(4, partialErrors_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -316,11 +344,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, conversation_);
+    if (request_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRequest());
     }
-    if (annotatorSelector_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAnnotatorSelector());
+    for (int i = 0; i < partialErrors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, partialErrors_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -332,12 +360,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     if (obj == this) {
       return true;
     }
-    if (!(obj
-        instanceof com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata)) {
+    if (!(obj instanceof com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata other =
-        (com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata) obj;
+    com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata other =
+        (com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata) obj;
 
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -347,11 +374,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    if (!getConversation().equals(other.getConversation())) return false;
-    if (hasAnnotatorSelector() != other.hasAnnotatorSelector()) return false;
-    if (hasAnnotatorSelector()) {
-      if (!getAnnotatorSelector().equals(other.getAnnotatorSelector())) return false;
+    if (hasRequest() != other.hasRequest()) return false;
+    if (hasRequest()) {
+      if (!getRequest().equals(other.getRequest())) return false;
     }
+    if (!getPartialErrorsList().equals(other.getPartialErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -371,70 +398,72 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
-    hash = (37 * hash) + CONVERSATION_FIELD_NUMBER;
-    hash = (53 * hash) + getConversation().hashCode();
-    if (hasAnnotatorSelector()) {
-      hash = (37 * hash) + ANNOTATOR_SELECTOR_FIELD_NUMBER;
-      hash = (53 * hash) + getAnnotatorSelector().hashCode();
+    if (hasRequest()) {
+      hash = (37 * hash) + REQUEST_FIELD_NUMBER;
+      hash = (53 * hash) + getRequest().hashCode();
+    }
+    if (getPartialErrorsCount() > 0) {
+      hash = (37 * hash) + PARTIAL_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getPartialErrorsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -442,12 +471,12 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata parseFrom(
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -465,7 +494,7 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
   }
 
   public static Builder newBuilder(
-      com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata prototype) {
+      com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -483,33 +512,32 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Metadata for a create analysis operation.
+   * The metadata for an IngestConversations operation.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata}
+   * Protobuf type {@code google.cloud.contactcenterinsights.v1.IngestConversationsMetadata}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata)
-      com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata)
+      com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_CreateAnalysisOperationMetadata_descriptor;
+          .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_CreateAnalysisOperationMetadata_fieldAccessorTable
+          .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata.class,
-              com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata.Builder
-                  .class);
+              com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.class,
+              com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.Builder.class);
     }
 
     // Construct using
-    // com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata.newBuilder()
+    // com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -531,34 +559,38 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         endTime_ = null;
         endTimeBuilder_ = null;
       }
-      conversation_ = "";
-
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
+      if (requestBuilder_ == null) {
+        request_ = null;
       } else {
-        annotatorSelector_ = null;
-        annotatorSelectorBuilder_ = null;
+        request_ = null;
+        requestBuilder_ = null;
       }
+      if (partialErrorsBuilder_ == null) {
+        partialErrors_ = java.util.Collections.emptyList();
+      } else {
+        partialErrors_ = null;
+        partialErrorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_CreateAnalysisOperationMetadata_descriptor;
+          .internal_static_google_cloud_contactcenterinsights_v1_IngestConversationsMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
         getDefaultInstanceForType() {
-      return com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+      return com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
           .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata build() {
-      com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata result =
-          buildPartial();
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata build() {
+      com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -566,10 +598,10 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
-        buildPartial() {
-      com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata result =
-          new com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata(this);
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata buildPartial() {
+      com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata result =
+          new com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata(this);
+      int from_bitField0_ = bitField0_;
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -580,11 +612,19 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       } else {
         result.endTime_ = endTimeBuilder_.build();
       }
-      result.conversation_ = conversation_;
-      if (annotatorSelectorBuilder_ == null) {
-        result.annotatorSelector_ = annotatorSelector_;
+      if (requestBuilder_ == null) {
+        result.request_ = request_;
       } else {
-        result.annotatorSelector_ = annotatorSelectorBuilder_.build();
+        result.request_ = requestBuilder_.build();
+      }
+      if (partialErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.partialErrors_ = partialErrors_;
+      } else {
+        result.partialErrors_ = partialErrorsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -625,10 +665,9 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other
-          instanceof com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata) {
+      if (other instanceof com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata) {
         return mergeFrom(
-            (com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata) other);
+            (com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -636,9 +675,9 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     }
 
     public Builder mergeFrom(
-        com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata other) {
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata other) {
       if (other
-          == com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+          == com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
               .getDefaultInstance()) return this;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -646,12 +685,35 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
       }
-      if (!other.getConversation().isEmpty()) {
-        conversation_ = other.conversation_;
-        onChanged();
+      if (other.hasRequest()) {
+        mergeRequest(other.getRequest());
       }
-      if (other.hasAnnotatorSelector()) {
-        mergeAnnotatorSelector(other.getAnnotatorSelector());
+      if (partialErrorsBuilder_ == null) {
+        if (!other.partialErrors_.isEmpty()) {
+          if (partialErrors_.isEmpty()) {
+            partialErrors_ = other.partialErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensurePartialErrorsIsMutable();
+            partialErrors_.addAll(other.partialErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.partialErrors_.isEmpty()) {
+          if (partialErrorsBuilder_.isEmpty()) {
+            partialErrorsBuilder_.dispose();
+            partialErrorsBuilder_ = null;
+            partialErrors_ = other.partialErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            partialErrorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPartialErrorsFieldBuilder()
+                    : null;
+          } else {
+            partialErrorsBuilder_.addAllMessages(other.partialErrors_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -693,15 +755,20 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
               } // case 18
             case 26:
               {
-                conversation_ = input.readStringRequireUtf8();
+                input.readMessage(getRequestFieldBuilder().getBuilder(), extensionRegistry);
 
                 break;
               } // case 26
             case 34:
               {
-                input.readMessage(
-                    getAnnotatorSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                com.google.rpc.Status m =
+                    input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (partialErrorsBuilder_ == null) {
+                  ensurePartialErrorsIsMutable();
+                  partialErrors_.add(m);
+                } else {
+                  partialErrorsBuilder_.addMessage(m);
+                }
                 break;
               } // case 34
             default:
@@ -720,6 +787,8 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1110,187 +1179,72 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       return endTimeBuilder_;
     }
 
-    private java.lang.Object conversation_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The Conversation that this Analysis Operation belongs to.
-     * </pre>
-     *
-     * <code>
-     * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The conversation.
-     */
-    public java.lang.String getConversation() {
-      java.lang.Object ref = conversation_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        conversation_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The Conversation that this Analysis Operation belongs to.
-     * </pre>
-     *
-     * <code>
-     * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The bytes for conversation.
-     */
-    public com.google.protobuf.ByteString getConversationBytes() {
-      java.lang.Object ref = conversation_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        conversation_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The Conversation that this Analysis Operation belongs to.
-     * </pre>
-     *
-     * <code>
-     * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The conversation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setConversation(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      conversation_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The Conversation that this Analysis Operation belongs to.
-     * </pre>
-     *
-     * <code>
-     * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearConversation() {
-
-      conversation_ = getDefaultInstance().getConversation();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The Conversation that this Analysis Operation belongs to.
-     * </pre>
-     *
-     * <code>
-     * string conversation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The bytes for conversation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setConversationBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      conversation_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
+    private com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector,
-            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
-            com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>
-        annotatorSelectorBuilder_;
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.Builder,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequestOrBuilder>
+        requestBuilder_;
     /**
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return Whether the annotatorSelector field is set.
+     * @return Whether the request field is set.
      */
-    public boolean hasAnnotatorSelector() {
-      return annotatorSelectorBuilder_ != null || annotatorSelector_ != null;
+    public boolean hasRequest() {
+      return requestBuilder_ != null || request_ != null;
     }
     /**
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @return The annotatorSelector.
+     * @return The request.
      */
-    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector() {
-      if (annotatorSelectorBuilder_ == null) {
-        return annotatorSelector_ == null
-            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
-            : annotatorSelector_;
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest getRequest() {
+      if (requestBuilder_ == null) {
+        return request_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
+                .getDefaultInstance()
+            : request_;
       } else {
-        return annotatorSelectorBuilder_.getMessage();
+        return requestBuilder_.getMessage();
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder setAnnotatorSelector(
-        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
-      if (annotatorSelectorBuilder_ == null) {
+    public Builder setRequest(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest value) {
+      if (requestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        annotatorSelector_ = value;
+        request_ = value;
         onChanged();
       } else {
-        annotatorSelectorBuilder_.setMessage(value);
+        requestBuilder_.setMessage(value);
       }
 
       return this;
@@ -1299,20 +1253,21 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder setAnnotatorSelector(
-        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder builderForValue) {
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = builderForValue.build();
+    public Builder setRequest(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.Builder
+            builderForValue) {
+      if (requestBuilder_ == null) {
+        request_ = builderForValue.build();
         onChanged();
       } else {
-        annotatorSelectorBuilder_.setMessage(builderForValue.build());
+        requestBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1321,28 +1276,28 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder mergeAnnotatorSelector(
-        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
-      if (annotatorSelectorBuilder_ == null) {
-        if (annotatorSelector_ != null) {
-          annotatorSelector_ =
-              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.newBuilder(
-                      annotatorSelector_)
+    public Builder mergeRequest(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest value) {
+      if (requestBuilder_ == null) {
+        if (request_ != null) {
+          request_ =
+              com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.newBuilder(
+                      request_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          annotatorSelector_ = value;
+          request_ = value;
         }
         onChanged();
       } else {
-        annotatorSelectorBuilder_.mergeFrom(value);
+        requestBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -1351,20 +1306,20 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public Builder clearAnnotatorSelector() {
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelector_ = null;
+    public Builder clearRequest() {
+      if (requestBuilder_ == null) {
+        request_ = null;
         onChanged();
       } else {
-        annotatorSelector_ = null;
-        annotatorSelectorBuilder_ = null;
+        request_ = null;
+        requestBuilder_ = null;
       }
 
       return this;
@@ -1373,66 +1328,464 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder
-        getAnnotatorSelectorBuilder() {
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.Builder
+        getRequestBuilder() {
 
       onChanged();
-      return getAnnotatorSelectorFieldBuilder().getBuilder();
+      return getRequestFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
-        getAnnotatorSelectorOrBuilder() {
-      if (annotatorSelectorBuilder_ != null) {
-        return annotatorSelectorBuilder_.getMessageOrBuilder();
+    public com.google.cloud.contactcenterinsights.v1.IngestConversationsRequestOrBuilder
+        getRequestOrBuilder() {
+      if (requestBuilder_ != null) {
+        return requestBuilder_.getMessageOrBuilder();
       } else {
-        return annotatorSelector_ == null
-            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
-            : annotatorSelector_;
+        return request_ == null
+            ? com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
+                .getDefaultInstance()
+            : request_;
       }
     }
     /**
      *
      *
      * <pre>
-     * Output only. The annotator selector used for the analysis (if any).
+     * Output only. The original request for ingest.
      * </pre>
      *
      * <code>
-     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.contactcenterinsights.v1.IngestConversationsRequest request = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector,
-            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
-            com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>
-        getAnnotatorSelectorFieldBuilder() {
-      if (annotatorSelectorBuilder_ == null) {
-        annotatorSelectorBuilder_ =
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.Builder,
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequestOrBuilder>
+        getRequestFieldBuilder() {
+      if (requestBuilder_ == null) {
+        requestBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector,
-                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
-                com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>(
-                getAnnotatorSelector(), getParentForChildren(), isClean());
-        annotatorSelector_ = null;
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.Builder,
+                com.google.cloud.contactcenterinsights.v1.IngestConversationsRequestOrBuilder>(
+                getRequest(), getParentForChildren(), isClean());
+        request_ = null;
       }
-      return annotatorSelectorBuilder_;
+      return requestBuilder_;
+    }
+
+    private java.util.List<com.google.rpc.Status> partialErrors_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePartialErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        partialErrors_ = new java.util.ArrayList<com.google.rpc.Status>(partialErrors_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        partialErrorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
+      if (partialErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(partialErrors_);
+      } else {
+        return partialErrorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPartialErrorsCount() {
+      if (partialErrorsBuilder_ == null) {
+        return partialErrors_.size();
+      } else {
+        return partialErrorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status getPartialErrors(int index) {
+      if (partialErrorsBuilder_ == null) {
+        return partialErrors_.get(index);
+      } else {
+        return partialErrorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPartialErrors(int index, com.google.rpc.Status value) {
+      if (partialErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialErrorsIsMutable();
+        partialErrors_.set(index, value);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        partialErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(com.google.rpc.Status value) {
+      if (partialErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(value);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(int index, com.google.rpc.Status value) {
+      if (partialErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(index, value);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(com.google.rpc.Status.Builder builderForValue) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPartialErrors(java.lang.Iterable<? extends com.google.rpc.Status> values) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partialErrors_);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPartialErrors() {
+      if (partialErrorsBuilder_ == null) {
+        partialErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePartialErrors(int index) {
+      if (partialErrorsBuilder_ == null) {
+        ensurePartialErrorsIsMutable();
+        partialErrors_.remove(index);
+        onChanged();
+      } else {
+        partialErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder getPartialErrorsBuilder(int index) {
+      return getPartialErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
+      if (partialErrorsBuilder_ == null) {
+        return partialErrors_.get(index);
+      } else {
+        return partialErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder>
+        getPartialErrorsOrBuilderList() {
+      if (partialErrorsBuilder_ != null) {
+        return partialErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(partialErrors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder addPartialErrorsBuilder() {
+      return getPartialErrorsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder addPartialErrorsBuilder(int index) {
+      return getPartialErrorsFieldBuilder()
+          .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Partial errors during ingest operation that might cause the operation
+     * output to be incomplete.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.rpc.Status partial_errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.rpc.Status.Builder> getPartialErrorsBuilderList() {
+      return getPartialErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        getPartialErrorsFieldBuilder() {
+      if (partialErrorsBuilder_ == null) {
+        partialErrorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                partialErrors_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        partialErrors_ = null;
+      }
+      return partialErrorsBuilder_;
     }
 
     @java.lang.Override
@@ -1446,27 +1799,26 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata)
+    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata)
-  private static final com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.IngestConversationsMetadata)
+  private static final com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE =
-        new com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata();
+    DEFAULT_INSTANCE = new com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata();
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+  public static com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateAnalysisOperationMetadata> PARSER =
-      new com.google.protobuf.AbstractParser<CreateAnalysisOperationMetadata>() {
+  private static final com.google.protobuf.Parser<IngestConversationsMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<IngestConversationsMetadata>() {
         @java.lang.Override
-        public CreateAnalysisOperationMetadata parsePartialFrom(
+        public IngestConversationsMetadata parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1485,17 +1837,17 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         }
       };
 
-  public static com.google.protobuf.Parser<CreateAnalysisOperationMetadata> parser() {
+  public static com.google.protobuf.Parser<IngestConversationsMetadata> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateAnalysisOperationMetadata> getParserForType() {
+  public com.google.protobuf.Parser<IngestConversationsMetadata> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata
+  public com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
