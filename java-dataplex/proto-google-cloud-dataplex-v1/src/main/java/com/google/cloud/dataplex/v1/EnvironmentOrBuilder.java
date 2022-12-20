@@ -83,8 +83,9 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the environment. This ID will be
-   * different if the environment is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the environment. This
+   * ID will be different if the environment is deleted and re-created with the
+   * same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -96,8 +97,9 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the environment. This ID will be
-   * different if the environment is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the environment. This
+   * ID will be different if the environment is deleted and re-created with the
+   * same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -421,7 +423,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. URI Endpoints to access sessions associated with the Environment.
+   * Output only. URI Endpoints to access sessions associated with the
+   * Environment.
    * </pre>
    *
    * <code>
@@ -435,7 +438,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. URI Endpoints to access sessions associated with the Environment.
+   * Output only. URI Endpoints to access sessions associated with the
+   * Environment.
    * </pre>
    *
    * <code>
@@ -449,7 +453,8 @@ public interface EnvironmentOrBuilder
    *
    *
    * <pre>
-   * Output only. URI Endpoints to access sessions associated with the Environment.
+   * Output only. URI Endpoints to access sessions associated with the
+   * Environment.
    * </pre>
    *
    * <code>

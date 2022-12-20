@@ -27,8 +27,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Required. Set to `true` if user-managed or `false` if managed by Dataplex. The
-   * default is `false` (managed by Dataplex).
+   * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
+   * The default is `false` (managed by Dataplex).
    * - Set to `false`to enable Dataplex discovery to update the schema.
    *   including new data discovery, schema inference, and schema evolution.
    *   Users retain the ability to input and edit the schema. Dataplex
@@ -117,8 +117,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. The sequence of fields describing the partition structure in entities.
-   * If this field is empty, there are no partitions within the data.
+   * Optional. The sequence of fields describing the partition structure in
+   * entities. If this field is empty, there are no partitions within the data.
    * </pre>
    *
    * <code>
@@ -130,8 +130,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. The sequence of fields describing the partition structure in entities.
-   * If this field is empty, there are no partitions within the data.
+   * Optional. The sequence of fields describing the partition structure in
+   * entities. If this field is empty, there are no partitions within the data.
    * </pre>
    *
    * <code>
@@ -143,8 +143,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. The sequence of fields describing the partition structure in entities.
-   * If this field is empty, there are no partitions within the data.
+   * Optional. The sequence of fields describing the partition structure in
+   * entities. If this field is empty, there are no partitions within the data.
    * </pre>
    *
    * <code>
@@ -156,8 +156,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. The sequence of fields describing the partition structure in entities.
-   * If this field is empty, there are no partitions within the data.
+   * Optional. The sequence of fields describing the partition structure in
+   * entities. If this field is empty, there are no partitions within the data.
    * </pre>
    *
    * <code>
@@ -170,8 +170,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. The sequence of fields describing the partition structure in entities.
-   * If this field is empty, there are no partitions within the data.
+   * Optional. The sequence of fields describing the partition structure in
+   * entities. If this field is empty, there are no partitions within the data.
    * </pre>
    *
    * <code>
@@ -185,7 +185,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. The structure of paths containing partition data within the entity.
+   * Optional. The structure of paths containing partition data within the
+   * entity.
    * </pre>
    *
    * <code>
@@ -199,7 +200,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. The structure of paths containing partition data within the entity.
+   * Optional. The structure of paths containing partition data within the
+   * entity.
    * </pre>
    *
    * <code>

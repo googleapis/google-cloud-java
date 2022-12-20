@@ -60,8 +60,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the task. This ID will be
-   * different if the task is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the task. This ID will
+   * be different if the task is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -73,8 +73,8 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the task. This ID will be
-   * different if the task is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the task. This ID will
+   * be different if the task is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

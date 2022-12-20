@@ -1089,12 +1089,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1106,12 +1104,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1126,12 +1122,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1143,12 +1137,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1165,12 +1157,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1460,12 +1450,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1489,12 +1477,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1509,12 +1495,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -1534,12 +1518,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Override to common configuration of open source components installed on
-       * the Dataproc cluster.
-       * The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format, for example
-       * `core:hadoop.tmp.dir`.
-       * For more information, see [Cluster
+       * Optional. Override to common configuration of open source components
+       * installed on the Dataproc cluster. The properties to set on daemon
+       * config files. Property keys are specified in `prefix:property` format,
+       * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
        * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
        * </pre>
        *
@@ -2569,12 +2551,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Override to common configuration of open source components installed on
-         * the Dataproc cluster.
-         * The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format, for example
-         * `core:hadoop.tmp.dir`.
-         * For more information, see [Cluster
+         * Optional. Override to common configuration of open source components
+         * installed on the Dataproc cluster. The properties to set on daemon
+         * config files. Property keys are specified in `prefix:property` format,
+         * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
          * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
          * </pre>
          *
@@ -2598,12 +2578,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Override to common configuration of open source components installed on
-         * the Dataproc cluster.
-         * The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format, for example
-         * `core:hadoop.tmp.dir`.
-         * For more information, see [Cluster
+         * Optional. Override to common configuration of open source components
+         * installed on the Dataproc cluster. The properties to set on daemon
+         * config files. Property keys are specified in `prefix:property` format,
+         * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
          * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
          * </pre>
          *
@@ -2618,12 +2596,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Override to common configuration of open source components installed on
-         * the Dataproc cluster.
-         * The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format, for example
-         * `core:hadoop.tmp.dir`.
-         * For more information, see [Cluster
+         * Optional. Override to common configuration of open source components
+         * installed on the Dataproc cluster. The properties to set on daemon
+         * config files. Property keys are specified in `prefix:property` format,
+         * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
          * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
          * </pre>
          *
@@ -2643,12 +2619,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Override to common configuration of open source components installed on
-         * the Dataproc cluster.
-         * The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format, for example
-         * `core:hadoop.tmp.dir`.
-         * For more information, see [Cluster
+         * Optional. Override to common configuration of open source components
+         * installed on the Dataproc cluster. The properties to set on daemon
+         * config files. Property keys are specified in `prefix:property` format,
+         * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
          * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
          * </pre>
          *
@@ -2675,12 +2649,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Override to common configuration of open source components installed on
-         * the Dataproc cluster.
-         * The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format, for example
-         * `core:hadoop.tmp.dir`.
-         * For more information, see [Cluster
+         * Optional. Override to common configuration of open source components
+         * installed on the Dataproc cluster. The properties to set on daemon
+         * config files. Property keys are specified in `prefix:property` format,
+         * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
          * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
          * </pre>
          *
@@ -2703,12 +2675,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Override to common configuration of open source components installed on
-         * the Dataproc cluster.
-         * The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format, for example
-         * `core:hadoop.tmp.dir`.
-         * For more information, see [Cluster
+         * Optional. Override to common configuration of open source components
+         * installed on the Dataproc cluster. The properties to set on daemon
+         * config files. Property keys are specified in `prefix:property` format,
+         * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
          * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
          * </pre>
          *
@@ -2730,12 +2700,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Override to common configuration of open source components installed on
-         * the Dataproc cluster.
-         * The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format, for example
-         * `core:hadoop.tmp.dir`.
-         * For more information, see [Cluster
+         * Optional. Override to common configuration of open source components
+         * installed on the Dataproc cluster. The properties to set on daemon
+         * config files. Property keys are specified in `prefix:property` format,
+         * for example `core:hadoop.tmp.dir`. For more information, see [Cluster
          * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
          * </pre>
          *
@@ -2825,8 +2793,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-       * VPC network named Default within the project is used.
+       * Optional. The Cloud VPC network in which the job is run. By default,
+       * the Cloud VPC network named Default within the project is used.
        * </pre>
        *
        * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2838,8 +2806,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-       * VPC network named Default within the project is used.
+       * Optional. The Cloud VPC network in which the job is run. By default,
+       * the Cloud VPC network named Default within the project is used.
        * </pre>
        *
        * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2851,8 +2819,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-       * VPC network named Default within the project is used.
+       * Optional. The Cloud VPC network in which the job is run. By default,
+       * the Cloud VPC network named Default within the project is used.
        * </pre>
        *
        * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3053,8 +3021,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-       * VPC network named Default within the project is used.
+       * Optional. The Cloud VPC network in which the job is run. By default,
+       * the Cloud VPC network named Default within the project is used.
        * </pre>
        *
        * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3068,8 +3036,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-       * VPC network named Default within the project is used.
+       * Optional. The Cloud VPC network in which the job is run. By default,
+       * the Cloud VPC network named Default within the project is used.
        * </pre>
        *
        * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3096,8 +3064,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-       * VPC network named Default within the project is used.
+       * Optional. The Cloud VPC network in which the job is run. By default,
+       * the Cloud VPC network named Default within the project is used.
        * </pre>
        *
        * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3712,8 +3680,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-         * VPC network named Default within the project is used.
+         * Optional. The Cloud VPC network in which the job is run. By default,
+         * the Cloud VPC network named Default within the project is used.
          * </pre>
          *
          * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3728,8 +3696,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-         * VPC network named Default within the project is used.
+         * Optional. The Cloud VPC network in which the job is run. By default,
+         * the Cloud VPC network named Default within the project is used.
          * </pre>
          *
          * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3757,8 +3725,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-         * VPC network named Default within the project is used.
+         * Optional. The Cloud VPC network in which the job is run. By default,
+         * the Cloud VPC network named Default within the project is used.
          * </pre>
          *
          * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3786,8 +3754,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-         * VPC network named Default within the project is used.
+         * Optional. The Cloud VPC network in which the job is run. By default,
+         * the Cloud VPC network named Default within the project is used.
          * </pre>
          *
          * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3808,8 +3776,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-         * VPC network named Default within the project is used.
+         * Optional. The Cloud VPC network in which the job is run. By default,
+         * the Cloud VPC network named Default within the project is used.
          * </pre>
          *
          * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3828,8 +3796,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The Cloud VPC network in which the job is run. By default, the Cloud
-         * VPC network named Default within the project is used.
+         * Optional. The Cloud VPC network in which the job is run. By default,
+         * the Cloud VPC network named Default within the project is used.
          * </pre>
          *
          * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5942,13 +5910,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * tasks periodically.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running tasks periodically. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+     * string from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * This field is required for RECURRING tasks.
      * </pre>
      *
@@ -5961,13 +5929,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * tasks periodically.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running tasks periodically. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+     * string from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * This field is required for RECURRING tasks.
      * </pre>
      *
@@ -5980,13 +5948,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * tasks periodically.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running tasks periodically. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+     * string from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * This field is required for RECURRING tasks.
      * </pre>
      *
@@ -6389,13 +6357,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * tasks periodically.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running tasks periodically. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+     * string from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * This field is required for RECURRING tasks.
      * </pre>
      *
@@ -6410,13 +6378,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * tasks periodically.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running tasks periodically. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+     * string from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * This field is required for RECURRING tasks.
      * </pre>
      *
@@ -6444,13 +6412,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * tasks periodically.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running tasks periodically. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+     * string from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * This field is required for RECURRING tasks.
      * </pre>
      *
@@ -7380,13 +7348,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * tasks periodically.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running tasks periodically. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+       * string from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * This field is required for RECURRING tasks.
        * </pre>
        *
@@ -7402,13 +7370,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * tasks periodically.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running tasks periodically. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+       * string from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * This field is required for RECURRING tasks.
        * </pre>
        *
@@ -7437,13 +7405,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * tasks periodically.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running tasks periodically. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+       * string from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * This field is required for RECURRING tasks.
        * </pre>
        *
@@ -7472,13 +7440,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * tasks periodically.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running tasks periodically. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+       * string from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * This field is required for RECURRING tasks.
        * </pre>
        *
@@ -7500,13 +7468,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * tasks periodically.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running tasks periodically. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+       * string from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * This field is required for RECURRING tasks.
        * </pre>
        *
@@ -7526,13 +7494,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * tasks periodically.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running tasks periodically. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid
+       * string from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * This field is required for RECURRING tasks.
        * </pre>
        *
@@ -7768,9 +7736,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The project in which jobs are run. By default, the project containing the
-     * Lake is used. If a project is provided, the
-     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * Optional. The project in which jobs are run. By default, the project
+     * containing the Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+     * must belong to this project.
      * </pre>
      *
      * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7782,9 +7751,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The project in which jobs are run. By default, the project containing the
-     * Lake is used. If a project is provided, the
-     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * Optional. The project in which jobs are run. By default, the project
+     * containing the Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+     * must belong to this project.
      * </pre>
      *
      * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8124,9 +8094,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The project in which jobs are run. By default, the project containing the
-     * Lake is used. If a project is provided, the
-     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * Optional. The project in which jobs are run. By default, the project
+     * containing the Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+     * must belong to this project.
      * </pre>
      *
      * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8149,9 +8120,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The project in which jobs are run. By default, the project containing the
-     * Lake is used. If a project is provided, the
-     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+     * Optional. The project in which jobs are run. By default, the project
+     * containing the Lake is used. If a project is provided, the
+     * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+     * must belong to this project.
      * </pre>
      *
      * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9100,9 +9072,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The project in which jobs are run. By default, the project containing the
-       * Lake is used. If a project is provided, the
-       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * Optional. The project in which jobs are run. By default, the project
+       * containing the Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+       * must belong to this project.
        * </pre>
        *
        * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9124,9 +9097,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The project in which jobs are run. By default, the project containing the
-       * Lake is used. If a project is provided, the
-       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * Optional. The project in which jobs are run. By default, the project
+       * containing the Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+       * must belong to this project.
        * </pre>
        *
        * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9148,9 +9122,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The project in which jobs are run. By default, the project containing the
-       * Lake is used. If a project is provided, the
-       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * Optional. The project in which jobs are run. By default, the project
+       * containing the Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+       * must belong to this project.
        * </pre>
        *
        * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9171,9 +9146,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The project in which jobs are run. By default, the project containing the
-       * Lake is used. If a project is provided, the
-       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * Optional. The project in which jobs are run. By default, the project
+       * containing the Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+       * must belong to this project.
        * </pre>
        *
        * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9190,9 +9166,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The project in which jobs are run. By default, the project containing the
-       * Lake is used. If a project is provided, the
-       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account] must belong to this project.
+       * Optional. The project in which jobs are run. By default, the project
+       * containing the Lake is used. If a project is provided, the
+       * [ExecutionSpec.service_account][google.cloud.dataplex.v1.Task.ExecutionSpec.service_account]
+       * must belong to this project.
        * </pre>
        *
        * <code>string project = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9823,8 +9800,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9836,8 +9813,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9849,8 +9826,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9863,8 +9840,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9878,9 +9855,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9892,9 +9869,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9906,9 +9883,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9921,9 +9898,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10477,8 +10454,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10492,8 +10469,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10507,8 +10484,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10523,8 +10500,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10542,9 +10519,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10558,9 +10535,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10574,9 +10551,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10591,9 +10568,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12034,8 +12011,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12049,8 +12026,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12064,8 +12041,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12080,8 +12057,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12096,8 +12073,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12119,8 +12096,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12141,8 +12118,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12160,8 +12137,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12178,8 +12155,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12211,9 +12188,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12227,9 +12204,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12243,9 +12220,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12260,9 +12237,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12277,9 +12254,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12301,9 +12278,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12324,9 +12301,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12344,9 +12321,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12363,9 +12340,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12665,9 +12642,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-     * file or the path to a Notebook Content. The execution args are accessible
-     * as environment variables
+     * Required. Path to input notebook. This can be the Cloud Storage URI of
+     * the notebook file or the path to a Notebook Content. The execution args
+     * are accessible as environment variables
      * (`TASK_key=value`).
      * </pre>
      *
@@ -12680,9 +12657,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-     * file or the path to a Notebook Content. The execution args are accessible
-     * as environment variables
+     * Required. Path to input notebook. This can be the Cloud Storage URI of
+     * the notebook file or the path to a Notebook Content. The execution args
+     * are accessible as environment variables
      * (`TASK_key=value`).
      * </pre>
      *
@@ -12737,8 +12714,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12750,8 +12727,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12763,8 +12740,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12777,8 +12754,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12792,9 +12769,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12806,9 +12783,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12820,9 +12797,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12835,9 +12812,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12904,9 +12881,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-     * file or the path to a Notebook Content. The execution args are accessible
-     * as environment variables
+     * Required. Path to input notebook. This can be the Cloud Storage URI of
+     * the notebook file or the path to a Notebook Content. The execution args
+     * are accessible as environment variables
      * (`TASK_key=value`).
      * </pre>
      *
@@ -12930,9 +12907,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-     * file or the path to a Notebook Content. The execution args are accessible
-     * as environment variables
+     * Required. Path to input notebook. This can be the Cloud Storage URI of
+     * the notebook file or the path to a Notebook Content. The execution args
+     * are accessible as environment variables
      * (`TASK_key=value`).
      * </pre>
      *
@@ -13014,8 +12991,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13029,8 +13006,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13044,8 +13021,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13060,8 +13037,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-     * executor.
+     * Optional. Cloud Storage URIs of files to be placed in the working
+     * directory of each executor.
      * </pre>
      *
      * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13079,9 +13056,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13095,9 +13072,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13111,9 +13088,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13128,9 +13105,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-     * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-     * .zip.
+     * Optional. Cloud Storage URIs of archives to be extracted into the working
+     * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+     * .tgz, and .zip.
      * </pre>
      *
      * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13601,9 +13578,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-       * file or the path to a Notebook Content. The execution args are accessible
-       * as environment variables
+       * Required. Path to input notebook. This can be the Cloud Storage URI of
+       * the notebook file or the path to a Notebook Content. The execution args
+       * are accessible as environment variables
        * (`TASK_key=value`).
        * </pre>
        *
@@ -13626,9 +13603,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-       * file or the path to a Notebook Content. The execution args are accessible
-       * as environment variables
+       * Required. Path to input notebook. This can be the Cloud Storage URI of
+       * the notebook file or the path to a Notebook Content. The execution args
+       * are accessible as environment variables
        * (`TASK_key=value`).
        * </pre>
        *
@@ -13651,9 +13628,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-       * file or the path to a Notebook Content. The execution args are accessible
-       * as environment variables
+       * Required. Path to input notebook. This can be the Cloud Storage URI of
+       * the notebook file or the path to a Notebook Content. The execution args
+       * are accessible as environment variables
        * (`TASK_key=value`).
        * </pre>
        *
@@ -13675,9 +13652,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-       * file or the path to a Notebook Content. The execution args are accessible
-       * as environment variables
+       * Required. Path to input notebook. This can be the Cloud Storage URI of
+       * the notebook file or the path to a Notebook Content. The execution args
+       * are accessible as environment variables
        * (`TASK_key=value`).
        * </pre>
        *
@@ -13695,9 +13672,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Path to input notebook. This can be the Cloud Storage URI of the notebook
-       * file or the path to a Notebook Content. The execution args are accessible
-       * as environment variables
+       * Required. Path to input notebook. This can be the Cloud Storage URI of
+       * the notebook file or the path to a Notebook Content. The execution args
+       * are accessible as environment variables
        * (`TASK_key=value`).
        * </pre>
        *
@@ -13938,8 +13915,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13953,8 +13930,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13968,8 +13945,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13984,8 +13961,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14000,8 +13977,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14023,8 +14000,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14045,8 +14022,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14064,8 +14041,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14082,8 +14059,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of files to be placed in the working directory of each
-       * executor.
+       * Optional. Cloud Storage URIs of files to be placed in the working
+       * directory of each executor.
        * </pre>
        *
        * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14115,9 +14092,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14131,9 +14108,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14147,9 +14124,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14164,9 +14141,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14181,9 +14158,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14205,9 +14182,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14228,9 +14205,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14248,9 +14225,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14267,9 +14244,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cloud Storage URIs of archives to be extracted into the working directory
-       * of each executor. Supported file types: .jar, .tar, .tar.gz, .tgz, and
-       * .zip.
+       * Optional. Cloud Storage URIs of archives to be extracted into the working
+       * directory of each executor. Supported file types: .jar, .tar, .tar.gz,
+       * .tgz, and .zip.
        * </pre>
        *
        * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -15552,8 +15529,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the task. This ID will be
-   * different if the task is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the task. This ID will
+   * be different if the task is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15576,8 +15553,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the task. This ID will be
-   * different if the task is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the task. This ID will
+   * be different if the task is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -17065,8 +17042,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the task. This ID will be
-     * different if the task is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the task. This ID will
+     * be different if the task is deleted and re-created with the same name.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -17088,8 +17065,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the task. This ID will be
-     * different if the task is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the task. This ID will
+     * be different if the task is deleted and re-created with the same name.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -17111,8 +17088,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the task. This ID will be
-     * different if the task is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the task. This ID will
+     * be different if the task is deleted and re-created with the same name.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -17133,8 +17110,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the task. This ID will be
-     * different if the task is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the task. This ID will
+     * be different if the task is deleted and re-created with the same name.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -17151,8 +17128,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the task. This ID will be
-     * different if the task is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the task. This ID will
+     * be different if the task is deleted and re-created with the same name.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -83,8 +83,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the zone. This ID will be
-   * different if the zone is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the zone. This ID will
+   * be different if the zone is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -96,8 +96,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the zone. This ID will be
-   * different if the zone is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the zone. This ID will
+   * be different if the zone is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -326,7 +326,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data in this zone.
+   * Optional. Specification of the discovery feature applied to data in this
+   * zone.
    * </pre>
    *
    * <code>
@@ -340,7 +341,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data in this zone.
+   * Optional. Specification of the discovery feature applied to data in this
+   * zone.
    * </pre>
    *
    * <code>
@@ -354,7 +356,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data in this zone.
+   * Optional. Specification of the discovery feature applied to data in this
+   * zone.
    * </pre>
    *
    * <code>
@@ -367,8 +370,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Required. Specification of the resources that are referenced by the assets within
-   * this zone.
+   * Required. Specification of the resources that are referenced by the assets
+   * within this zone.
    * </pre>
    *
    * <code>
@@ -382,8 +385,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Required. Specification of the resources that are referenced by the assets within
-   * this zone.
+   * Required. Specification of the resources that are referenced by the assets
+   * within this zone.
    * </pre>
    *
    * <code>
@@ -397,8 +400,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Required. Specification of the resources that are referenced by the assets within
-   * this zone.
+   * Required. Specification of the resources that are referenced by the assets
+   * within this zone.
    * </pre>
    *
    * <code>
