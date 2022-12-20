@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.6.23](https://github.com/googleapis/java-iam/compare/v1.6.22...v1.6.23) (2022-12-20)
+
+
+### Dependencies
+
+* Update dependency com.google.api:api-common to v2.3.1 ([#567](https://github.com/googleapis/java-iam/issues/567)) ([17e62e8](https://github.com/googleapis/java-iam/commit/17e62e80f0ea8c2d4edfe6bb16ef5ee7acbc22f3))
+* Update dependency com.google.auth:google-auth-library-oauth2-http to v1.14.0 ([#571](https://github.com/googleapis/java-iam/issues/571)) ([9c48311](https://github.com/googleapis/java-iam/commit/9c48311fbac25f9c9545f3404a42cdadf8ebb243))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.0 ([#565](https://github.com/googleapis/java-iam/issues/565)) ([32be2fb](https://github.com/googleapis/java-iam/commit/32be2fb0cfafa3681489c18e367cf12f22c567d3))
+* Update dependency com.google.cloud:google-iam-policy to v1.6.22 ([#560](https://github.com/googleapis/java-iam/issues/560)) ([de39d89](https://github.com/googleapis/java-iam/commit/de39d89c08c9e45bc977ea393570a8d01cf48af2))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.12 ([#563](https://github.com/googleapis/java-iam/issues/563)) ([607e260](https://github.com/googleapis/java-iam/commit/607e2601b71ff1fb51406e6c97dd79208296f404))
+* Update dependency com.google.protobuf:protobuf-java to v3.21.12 ([#564](https://github.com/googleapis/java-iam/issues/564)) ([4b2b26b](https://github.com/googleapis/java-iam/commit/4b2b26bd29d88ccb602a71225d6e2decb49b9649))
+* Update dependency io.grpc:grpc-protobuf to v1.51.1 ([#573](https://github.com/googleapis/java-iam/issues/573)) ([2143ec8](https://github.com/googleapis/java-iam/commit/2143ec8a90dbcdb128dffea9777fa9d183c3068e))
+* Update dependency io.grpc:grpc-stub to v1.51.1 ([#574](https://github.com/googleapis/java-iam/issues/574)) ([488496a](https://github.com/googleapis/java-iam/commit/488496aa09c9d976bf0c450fb8584f07e7c74c03))
+
 ## [1.6.22](https://github.com/googleapis/java-iam/compare/v1.6.21...v1.6.22) (2022-11-28)
 
 
