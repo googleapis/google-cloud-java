@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for [GetQueuedResource][google.cloud.tpu.v2alpha1.Tpu.GetQueuedResource]
+ * Request for
+ * [GetQueuedResource][google.cloud.tpu.v2alpha1.Tpu.GetQueuedResource]
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.GetQueuedResourceRequest}
@@ -284,7 +285,8 @@ public final class GetQueuedResourceRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request for [GetQueuedResource][google.cloud.tpu.v2alpha1.Tpu.GetQueuedResource]
+   * Request for
+   * [GetQueuedResource][google.cloud.tpu.v2alpha1.Tpu.GetQueuedResource]
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.GetQueuedResourceRequest}

@@ -135,8 +135,8 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. If this field is populated, it contains a description of why the TPU Node
-   * is unhealthy.
+   * Output only. If this field is populated, it contains a description of why
+   * the TPU Node is unhealthy.
    * </pre>
    *
    * <code>string health_description = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -148,8 +148,8 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. If this field is populated, it contains a description of why the TPU Node
-   * is unhealthy.
+   * Output only. If this field is populated, it contains a description of why
+   * the TPU Node is unhealthy.
    * </pre>
    *
    * <code>string health_description = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -803,7 +803,8 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. The qualified name of the QueuedResource that requested this Node.
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
    * </pre>
    *
    * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -815,7 +816,8 @@ public interface NodeOrBuilder
    *
    *
    * <pre>
-   * Output only. The qualified name of the QueuedResource that requested this Node.
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
    * </pre>
    *
    * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
