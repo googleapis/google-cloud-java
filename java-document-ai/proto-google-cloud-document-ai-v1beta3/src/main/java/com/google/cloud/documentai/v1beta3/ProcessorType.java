@@ -44,6 +44,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     category_ = "";
     availableLocations_ = java.util.Collections.emptyList();
     launchStage_ = 0;
+    sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -998,6 +999,67 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
   }
 
+  public static final int SAMPLE_DOCUMENT_URIS_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList sampleDocumentUris_;
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @return A list containing the sampleDocumentUris.
+   */
+  public com.google.protobuf.ProtocolStringList getSampleDocumentUrisList() {
+    return sampleDocumentUris_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @return The count of sampleDocumentUris.
+   */
+  public int getSampleDocumentUrisCount() {
+    return sampleDocumentUris_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sampleDocumentUris at the given index.
+   */
+  public java.lang.String getSampleDocumentUris(int index) {
+    return sampleDocumentUris_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sampleDocumentUris at the given index.
+   */
+  public com.google.protobuf.ByteString getSampleDocumentUrisBytes(int index) {
+    return sampleDocumentUris_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1030,6 +1092,9 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     if (launchStage_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, launchStage_);
     }
+    for (int i = 0; i < sampleDocumentUris_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, sampleDocumentUris_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1058,6 +1123,14 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     if (launchStage_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, launchStage_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < sampleDocumentUris_.size(); i++) {
+        dataSize += computeStringSizeNoTag(sampleDocumentUris_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSampleDocumentUrisList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1080,6 +1153,7 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     if (!getAvailableLocationsList().equals(other.getAvailableLocationsList())) return false;
     if (getAllowCreation() != other.getAllowCreation()) return false;
     if (launchStage_ != other.launchStage_) return false;
+    if (!getSampleDocumentUrisList().equals(other.getSampleDocumentUrisList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1105,6 +1179,10 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCreation());
     hash = (37 * hash) + LAUNCH_STAGE_FIELD_NUMBER;
     hash = (53 * hash) + launchStage_;
+    if (getSampleDocumentUrisCount() > 0) {
+      hash = (37 * hash) + SAMPLE_DOCUMENT_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getSampleDocumentUrisList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1261,6 +1339,8 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
       launchStage_ = 0;
 
+      sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1303,6 +1383,11 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       }
       result.allowCreation_ = allowCreation_;
       result.launchStage_ = launchStage_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        sampleDocumentUris_ = sampleDocumentUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.sampleDocumentUris_ = sampleDocumentUris_;
       onBuilt();
       return result;
     }
@@ -1398,6 +1483,16 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
       if (other.launchStage_ != 0) {
         setLaunchStageValue(other.getLaunchStageValue());
       }
+      if (!other.sampleDocumentUris_.isEmpty()) {
+        if (sampleDocumentUris_.isEmpty()) {
+          sampleDocumentUris_ = other.sampleDocumentUris_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureSampleDocumentUrisIsMutable();
+          sampleDocumentUris_.addAll(other.sampleDocumentUris_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1468,6 +1563,13 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 64
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSampleDocumentUrisIsMutable();
+                sampleDocumentUris_.add(s);
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2358,6 +2460,174 @@ public final class ProcessorType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLaunchStage() {
 
       launchStage_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList sampleDocumentUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureSampleDocumentUrisIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        sampleDocumentUris_ = new com.google.protobuf.LazyStringArrayList(sampleDocumentUris_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @return A list containing the sampleDocumentUris.
+     */
+    public com.google.protobuf.ProtocolStringList getSampleDocumentUrisList() {
+      return sampleDocumentUris_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @return The count of sampleDocumentUris.
+     */
+    public int getSampleDocumentUrisCount() {
+      return sampleDocumentUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The sampleDocumentUris at the given index.
+     */
+    public java.lang.String getSampleDocumentUris(int index) {
+      return sampleDocumentUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sampleDocumentUris at the given index.
+     */
+    public com.google.protobuf.ByteString getSampleDocumentUrisBytes(int index) {
+      return sampleDocumentUris_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The sampleDocumentUris to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSampleDocumentUris(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSampleDocumentUrisIsMutable();
+      sampleDocumentUris_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @param value The sampleDocumentUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSampleDocumentUris(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSampleDocumentUrisIsMutable();
+      sampleDocumentUris_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @param values The sampleDocumentUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSampleDocumentUris(java.lang.Iterable<java.lang.String> values) {
+      ensureSampleDocumentUrisIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sampleDocumentUris_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSampleDocumentUris() {
+      sampleDocumentUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of Cloud Storage URIs of sample documents for this processor.
+     * </pre>
+     *
+     * <code>repeated string sample_document_uris = 9;</code>
+     *
+     * @param value The bytes of the sampleDocumentUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSampleDocumentUrisBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSampleDocumentUrisIsMutable();
+      sampleDocumentUris_.add(value);
       onChanged();
       return this;
     }

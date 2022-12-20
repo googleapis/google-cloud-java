@@ -202,4 +202,55 @@ public interface ProcessorTypeOrBuilder
    * @return The launchStage.
    */
   com.google.api.LaunchStage getLaunchStage();
+
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @return A list containing the sampleDocumentUris.
+   */
+  java.util.List<java.lang.String> getSampleDocumentUrisList();
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @return The count of sampleDocumentUris.
+   */
+  int getSampleDocumentUrisCount();
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sampleDocumentUris at the given index.
+   */
+  java.lang.String getSampleDocumentUris(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A set of Cloud Storage URIs of sample documents for this processor.
+   * </pre>
+   *
+   * <code>repeated string sample_document_uris = 9;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sampleDocumentUris at the given index.
+   */
+  com.google.protobuf.ByteString getSampleDocumentUrisBytes(int index);
 }

@@ -1383,8 +1383,10 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
-     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and
+     * Set the default (active) version of a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
+     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+     * and
      * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
      * </pre>
      */
@@ -1896,8 +1898,10 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
-     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and
+     * Set the default (active) version of a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
+     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+     * and
      * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
      * </pre>
      */
@@ -2221,8 +2225,10 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
-     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and
+     * Set the default (active) version of a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
+     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+     * and
      * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
      * </pre>
      */
@@ -2544,8 +2550,10 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
-     * Set the default (active) version of a [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
-     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument] and
+     * Set the default (active) version of a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] that will be used in
+     * [ProcessDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ProcessDocument]
+     * and
      * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
      * </pre>
      */

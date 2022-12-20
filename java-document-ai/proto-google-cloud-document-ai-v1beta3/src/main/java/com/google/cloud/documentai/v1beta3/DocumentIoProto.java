@@ -55,6 +55,14 @@ public final class DocumentIoProto {
       internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_OcrConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_OcrConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -76,19 +84,25 @@ public final class DocumentIoProto {
           + "utConfig\022@\n\ngcs_prefix\030\001 \001(\0132*.google.cl"
           + "oud.documentai.v1beta3.GcsPrefixH\000\022F\n\rgc"
           + "s_documents\030\002 \001(\0132-.google.cloud.documen"
-          + "tai.v1beta3.GcsDocumentsH\000B\010\n\006source\"\335\001\n"
+          + "tai.v1beta3.GcsDocumentsH\000B\010\n\006source\"\217\003\n"
           + "\024DocumentOutputConfig\022b\n\021gcs_output_conf"
           + "ig\030\001 \001(\0132E.google.cloud.documentai.v1bet"
           + "a3.DocumentOutputConfig.GcsOutputConfigH"
-          + "\000\032R\n\017GcsOutputConfig\022\017\n\007gcs_uri\030\001 \001(\t\022.\n"
-          + "\nfield_mask\030\002 \001(\0132\032.google.protobuf.Fiel"
-          + "dMaskB\r\n\013destinationB\354\001\n#com.google.clou"
-          + "d.documentai.v1beta3B\017DocumentIoProtoP\001Z"
-          + "Igoogle.golang.org/genproto/googleapis/c"
-          + "loud/documentai/v1beta3;documentai\252\002\037Goo"
-          + "gle.Cloud.DocumentAI.V1Beta3\312\002\037Google\\Cl"
-          + "oud\\DocumentAI\\V1beta3\352\002\"Google::Cloud::"
-          + "DocumentAI::V1beta3b\006proto3"
+          + "\000\032\203\002\n\017GcsOutputConfig\022\017\n\007gcs_uri\030\001 \001(\t\022."
+          + "\n\nfield_mask\030\002 \001(\0132\032.google.protobuf.Fie"
+          + "ldMask\022m\n\017sharding_config\030\003 \001(\0132T.google"
+          + ".cloud.documentai.v1beta3.DocumentOutput"
+          + "Config.GcsOutputConfig.ShardingConfig\032@\n"
+          + "\016ShardingConfig\022\027\n\017pages_per_shard\030\001 \001(\005"
+          + "\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destination\"."
+          + "\n\tOcrConfig\022!\n\031enable_native_pdf_parsing"
+          + "\030\003 \001(\010B\354\001\n#com.google.cloud.documentai.v"
+          + "1beta3B\017DocumentIoProtoP\001ZIgoogle.golang"
+          + ".org/genproto/googleapis/cloud/documenta"
+          + "i/v1beta3;documentai\252\002\037Google.Cloud.Docu"
+          + "mentAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI"
+          + "\\V1beta3\352\002\"Google::Cloud::DocumentAI::V1"
+          + "beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -152,7 +166,25 @@ public final class DocumentIoProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_descriptor,
             new java.lang.String[] {
-              "GcsUri", "FieldMask",
+              "GcsUri", "FieldMask", "ShardingConfig",
+            });
+    internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor =
+        internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor,
+            new java.lang.String[] {
+              "PagesPerShard", "PagesOverlap",
+            });
+    internal_static_google_cloud_documentai_v1beta3_OcrConfig_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_documentai_v1beta3_OcrConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_OcrConfig_descriptor,
+            new java.lang.String[] {
+              "EnableNativePdfParsing",
             });
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }

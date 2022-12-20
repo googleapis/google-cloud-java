@@ -136,6 +136,49 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
      */
     com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the sharding config for the output document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+     * </code>
+     *
+     * @return Whether the shardingConfig field is set.
+     */
+    boolean hasShardingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the sharding config for the output document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+     * </code>
+     *
+     * @return The shardingConfig.
+     */
+    com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+        getShardingConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the sharding config for the output document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+     * </code>
+     */
+    com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfigOrBuilder
+        getShardingConfigOrBuilder();
   }
   /**
    *
@@ -184,6 +227,696 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           .ensureFieldAccessorsInitialized(
               com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.class,
               com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.Builder.class);
+    }
+
+    public interface ShardingConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of pages per shard.
+       * </pre>
+       *
+       * <code>int32 pages_per_shard = 1;</code>
+       *
+       * @return The pagesPerShard.
+       */
+      int getPagesPerShard();
+
+      /**
+       *
+       *
+       * <pre>
+       * The number of overlapping pages between consecutive shards.
+       * </pre>
+       *
+       * <code>int32 pages_overlap = 2;</code>
+       *
+       * @return The pagesOverlap.
+       */
+      int getPagesOverlap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sharding config for the output document.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig}
+     */
+    public static final class ShardingConfig extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
+        ShardingConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ShardingConfig.newBuilder() to construct.
+      private ShardingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ShardingConfig() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ShardingConfig();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentIoProto
+            .internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentIoProto
+            .internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                    .class,
+                com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                    .Builder.class);
+      }
+
+      public static final int PAGES_PER_SHARD_FIELD_NUMBER = 1;
+      private int pagesPerShard_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of pages per shard.
+       * </pre>
+       *
+       * <code>int32 pages_per_shard = 1;</code>
+       *
+       * @return The pagesPerShard.
+       */
+      @java.lang.Override
+      public int getPagesPerShard() {
+        return pagesPerShard_;
+      }
+
+      public static final int PAGES_OVERLAP_FIELD_NUMBER = 2;
+      private int pagesOverlap_;
+      /**
+       *
+       *
+       * <pre>
+       * The number of overlapping pages between consecutive shards.
+       * </pre>
+       *
+       * <code>int32 pages_overlap = 2;</code>
+       *
+       * @return The pagesOverlap.
+       */
+      @java.lang.Override
+      public int getPagesOverlap() {
+        return pagesOverlap_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (pagesPerShard_ != 0) {
+          output.writeInt32(1, pagesPerShard_);
+        }
+        if (pagesOverlap_ != 0) {
+          output.writeInt32(2, pagesOverlap_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (pagesPerShard_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, pagesPerShard_);
+        }
+        if (pagesOverlap_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pagesOverlap_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig other =
+            (com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
+                obj;
+
+        if (getPagesPerShard() != other.getPagesPerShard()) return false;
+        if (getPagesOverlap() != other.getPagesOverlap()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PAGES_PER_SHARD_FIELD_NUMBER;
+        hash = (53 * hash) + getPagesPerShard();
+        hash = (37 * hash) + PAGES_OVERLAP_FIELD_NUMBER;
+        hash = (53 * hash) + getPagesOverlap();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The sharding config for the output document.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentIoProto
+              .internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentIoProto
+              .internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                      .class,
+                  com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          pagesPerShard_ = 0;
+
+          pagesOverlap_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1.DocumentIoProto
+              .internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+            build() {
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+            buildPartial() {
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              result =
+                  new com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+                      .ShardingConfig(this);
+          result.pagesPerShard_ = pagesPerShard_;
+          result.pagesOverlap_ = pagesOverlap_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                other) {
+          if (other
+              == com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                  .getDefaultInstance()) return this;
+          if (other.getPagesPerShard() != 0) {
+            setPagesPerShard(other.getPagesPerShard());
+          }
+          if (other.getPagesOverlap() != 0) {
+            setPagesOverlap(other.getPagesOverlap());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    pagesPerShard_ = input.readInt32();
+
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    pagesOverlap_ = input.readInt32();
+
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int pagesPerShard_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of pages per shard.
+         * </pre>
+         *
+         * <code>int32 pages_per_shard = 1;</code>
+         *
+         * @return The pagesPerShard.
+         */
+        @java.lang.Override
+        public int getPagesPerShard() {
+          return pagesPerShard_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of pages per shard.
+         * </pre>
+         *
+         * <code>int32 pages_per_shard = 1;</code>
+         *
+         * @param value The pagesPerShard to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPagesPerShard(int value) {
+
+          pagesPerShard_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of pages per shard.
+         * </pre>
+         *
+         * <code>int32 pages_per_shard = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPagesPerShard() {
+
+          pagesPerShard_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int pagesOverlap_;
+        /**
+         *
+         *
+         * <pre>
+         * The number of overlapping pages between consecutive shards.
+         * </pre>
+         *
+         * <code>int32 pages_overlap = 2;</code>
+         *
+         * @return The pagesOverlap.
+         */
+        @java.lang.Override
+        public int getPagesOverlap() {
+          return pagesOverlap_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of overlapping pages between consecutive shards.
+         * </pre>
+         *
+         * <code>int32 pages_overlap = 2;</code>
+         *
+         * @param value The pagesOverlap to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPagesOverlap(int value) {
+
+          pagesOverlap_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The number of overlapping pages between consecutive shards.
+         * </pre>
+         *
+         * <code>int32 pages_overlap = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPagesOverlap() {
+
+          pagesOverlap_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
+      private static final com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+                .ShardingConfig();
+      }
+
+      public static com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ShardingConfig> PARSER =
+          new com.google.protobuf.AbstractParser<ShardingConfig>() {
+            @java.lang.Override
+            public ShardingConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ShardingConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ShardingConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     public static final int GCS_URI_FIELD_NUMBER = 1;
@@ -287,6 +1020,65 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       return getFieldMask();
     }
 
+    public static final int SHARDING_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+        shardingConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the sharding config for the output document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+     * </code>
+     *
+     * @return Whether the shardingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasShardingConfig() {
+      return shardingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the sharding config for the output document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+     * </code>
+     *
+     * @return The shardingConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+        getShardingConfig() {
+      return shardingConfig_ == null
+          ? com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              .getDefaultInstance()
+          : shardingConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the sharding config for the output document.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+            .ShardingConfigOrBuilder
+        getShardingConfigOrBuilder() {
+      return getShardingConfig();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -307,6 +1099,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       if (fieldMask_ != null) {
         output.writeMessage(2, getFieldMask());
       }
+      if (shardingConfig_ != null) {
+        output.writeMessage(3, getShardingConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -321,6 +1116,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
       if (fieldMask_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFieldMask());
+      }
+      if (shardingConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getShardingConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -343,6 +1141,10 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       if (hasFieldMask()) {
         if (!getFieldMask().equals(other.getFieldMask())) return false;
       }
+      if (hasShardingConfig() != other.hasShardingConfig()) return false;
+      if (hasShardingConfig()) {
+        if (!getShardingConfig().equals(other.getShardingConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -359,6 +1161,10 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       if (hasFieldMask()) {
         hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
         hash = (53 * hash) + getFieldMask().hashCode();
+      }
+      if (hasShardingConfig()) {
+        hash = (37 * hash) + SHARDING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getShardingConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -511,6 +1317,12 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           fieldMask_ = null;
           fieldMaskBuilder_ = null;
         }
+        if (shardingConfigBuilder_ == null) {
+          shardingConfig_ = null;
+        } else {
+          shardingConfig_ = null;
+          shardingConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -545,6 +1357,11 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           result.fieldMask_ = fieldMask_;
         } else {
           result.fieldMask_ = fieldMaskBuilder_.build();
+        }
+        if (shardingConfigBuilder_ == null) {
+          result.shardingConfig_ = shardingConfig_;
+        } else {
+          result.shardingConfig_ = shardingConfigBuilder_.build();
         }
         onBuilt();
         return result;
@@ -608,6 +1425,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         if (other.hasFieldMask()) {
           mergeFieldMask(other.getFieldMask());
         }
+        if (other.hasShardingConfig()) {
+          mergeShardingConfig(other.getShardingConfig());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -646,6 +1466,13 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
 
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getShardingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -970,6 +1797,231 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           fieldMask_ = null;
         }
         return fieldMaskBuilder_;
+      }
+
+      private com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+          shardingConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig,
+              com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                  .Builder,
+              com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+                  .ShardingConfigOrBuilder>
+          shardingConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       *
+       * @return Whether the shardingConfig field is set.
+       */
+      public boolean hasShardingConfig() {
+        return shardingConfigBuilder_ != null || shardingConfig_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       *
+       * @return The shardingConfig.
+       */
+      public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+          getShardingConfig() {
+        if (shardingConfigBuilder_ == null) {
+          return shardingConfig_ == null
+              ? com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                  .getDefaultInstance()
+              : shardingConfig_;
+        } else {
+          return shardingConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       */
+      public Builder setShardingConfig(
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              value) {
+        if (shardingConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          shardingConfig_ = value;
+          onChanged();
+        } else {
+          shardingConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       */
+      public Builder setShardingConfig(
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig.Builder
+              builderForValue) {
+        if (shardingConfigBuilder_ == null) {
+          shardingConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          shardingConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       */
+      public Builder mergeShardingConfig(
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              value) {
+        if (shardingConfigBuilder_ == null) {
+          if (shardingConfig_ != null) {
+            shardingConfig_ =
+                com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                    .newBuilder(shardingConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            shardingConfig_ = value;
+          }
+          onChanged();
+        } else {
+          shardingConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       */
+      public Builder clearShardingConfig() {
+        if (shardingConfigBuilder_ == null) {
+          shardingConfig_ = null;
+          onChanged();
+        } else {
+          shardingConfig_ = null;
+          shardingConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              .Builder
+          getShardingConfigBuilder() {
+
+        onChanged();
+        return getShardingConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+              .ShardingConfigOrBuilder
+          getShardingConfigOrBuilder() {
+        if (shardingConfigBuilder_ != null) {
+          return shardingConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return shardingConfig_ == null
+              ? com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                  .getDefaultInstance()
+              : shardingConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies the sharding config for the output document.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig sharding_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig,
+              com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                  .Builder,
+              com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+                  .ShardingConfigOrBuilder>
+          getShardingConfigFieldBuilder() {
+        if (shardingConfigBuilder_ == null) {
+          shardingConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+                      .ShardingConfig,
+                  com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                      .Builder,
+                  com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+                      .ShardingConfigOrBuilder>(
+                  getShardingConfig(), getParentForChildren(), isClean());
+          shardingConfig_ = null;
+        }
+        return shardingConfigBuilder_;
       }
 
       @java.lang.Override

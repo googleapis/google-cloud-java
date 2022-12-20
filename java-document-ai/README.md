@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-document-ai</artifactId>
-  <version>2.10.0</version>
+  <version>2.11.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-document-ai:2.10.0'
+implementation 'com.google.cloud:google-cloud-document-ai:2.11.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-document-ai" % "2.10.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-document-ai" % "2.11.0"
 ```
 
 ## Authentication
