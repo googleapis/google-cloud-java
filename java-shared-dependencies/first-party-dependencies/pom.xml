@@ -61,7 +61,7 @@
     <gson.version>2.10</gson.version>
     <guava.version>31.1-jre</guava.version>
     <protobuf.version>3.21.12</protobuf.version>
-    <google.api-common.version>2.2.2</google.api-common.version>
+    <google.api-common.version>2.3.1</google.api-common.version>
     <google.common-protos.version>2.11.0</google.common-protos.version>
     <google.core.version>2.9.0</google.core.version>
     <google.auth.version>1.14.0</google.auth.version>
