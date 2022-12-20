@@ -49,6 +49,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     desiredDatapathProvider_ = 0;
     desiredPrivateIpv6GoogleAccess_ = 0;
     desiredMasterVersion_ = "";
+    desiredStackType_ = 0;
   }
 
   @java.lang.Override
@@ -2030,6 +2031,46 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredNodePoolLoggingConfig();
   }
 
+  public static final int DESIRED_STACK_TYPE_FIELD_NUMBER = 119;
+  private int desiredStackType_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired stack type of the cluster.
+   * If a stack type is provided and does not match the current stack type of
+   * the cluster, update will attempt to change the stack type to the new type.
+   * </pre>
+   *
+   * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+   *
+   * @return The enum numeric value on the wire for desiredStackType.
+   */
+  @java.lang.Override
+  public int getDesiredStackTypeValue() {
+    return desiredStackType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired stack type of the cluster.
+   * If a stack type is provided and does not match the current stack type of
+   * the cluster, update will attempt to change the stack type to the new type.
+   * </pre>
+   *
+   * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+   *
+   * @return The desiredStackType.
+   */
+  @java.lang.Override
+  public com.google.container.v1.StackType getDesiredStackType() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.StackType result =
+        com.google.container.v1.StackType.valueOf(desiredStackType_);
+    return result == null ? com.google.container.v1.StackType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2160,6 +2201,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredNodePoolLoggingConfig_ != null) {
       output.writeMessage(116, getDesiredNodePoolLoggingConfig());
+    }
+    if (desiredStackType_ != com.google.container.v1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(119, desiredStackType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2343,6 +2387,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               116, getDesiredNodePoolLoggingConfig());
     }
+    if (desiredStackType_ != com.google.container.v1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(119, desiredStackType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2510,6 +2557,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getDesiredNodePoolLoggingConfig().equals(other.getDesiredNodePoolLoggingConfig()))
         return false;
     }
+    if (desiredStackType_ != other.desiredStackType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2658,6 +2706,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodePoolLoggingConfig().hashCode();
     }
+    hash = (37 * hash) + DESIRED_STACK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + desiredStackType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2985,6 +3035,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolLoggingConfig_ = null;
         desiredNodePoolLoggingConfigBuilder_ = null;
       }
+      desiredStackType_ = 0;
+
       return this;
     }
 
@@ -3173,6 +3225,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfigBuilder_.build();
       }
+      result.desiredStackType_ = desiredStackType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -3350,6 +3403,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredNodePoolLoggingConfig()) {
         mergeDesiredNodePoolLoggingConfig(other.getDesiredNodePoolLoggingConfig());
+      }
+      if (other.desiredStackType_ != 0) {
+        setDesiredStackTypeValue(other.getDesiredStackTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3640,6 +3696,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 930
+            case 952:
+              {
+                desiredStackType_ = input.readEnum();
+
+                break;
+              } // case 952
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10403,6 +10465,107 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolLoggingConfig_ = null;
       }
       return desiredNodePoolLoggingConfigBuilder_;
+    }
+
+    private int desiredStackType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @return The enum numeric value on the wire for desiredStackType.
+     */
+    @java.lang.Override
+    public int getDesiredStackTypeValue() {
+      return desiredStackType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @param value The enum numeric value on the wire for desiredStackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredStackTypeValue(int value) {
+
+      desiredStackType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @return The desiredStackType.
+     */
+    @java.lang.Override
+    public com.google.container.v1.StackType getDesiredStackType() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.StackType result =
+          com.google.container.v1.StackType.valueOf(desiredStackType_);
+      return result == null ? com.google.container.v1.StackType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @param value The desiredStackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredStackType(com.google.container.v1.StackType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      desiredStackType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredStackType() {
+
+      desiredStackType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
