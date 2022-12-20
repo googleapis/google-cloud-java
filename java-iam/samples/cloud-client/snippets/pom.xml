@@ -73,7 +73,7 @@
         <groupId>com.google.cloud</groupId>
         <scope>import</scope>
         <type>pom</type>
-        <version>26.1.5</version>
+        <version>26.2.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
