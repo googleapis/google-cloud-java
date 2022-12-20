@@ -1,0 +1,240 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.dataplex.v1",
+  "libraryPackage": "com.google.cloud.dataplex.v1",
+  "services": {
+    "ContentService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ContentServiceClient",
+          "rpcs": {
+            "CreateContent": {
+              "methods": ["createContent", "createContent", "createContent", "createContentCallable"]
+            },
+            "DeleteContent": {
+              "methods": ["deleteContent", "deleteContent", "deleteContent", "deleteContentCallable"]
+            },
+            "GetContent": {
+              "methods": ["getContent", "getContent", "getContent", "getContentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListContent": {
+              "methods": ["listContent", "listContent", "listContent", "listContentPagedCallable", "listContentCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateContent": {
+              "methods": ["updateContent", "updateContent", "updateContentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataScanService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataScanServiceClient",
+          "rpcs": {
+            "CreateDataScan": {
+              "methods": ["createDataScanAsync", "createDataScanAsync", "createDataScanAsync", "createDataScanOperationCallable", "createDataScanCallable"]
+            },
+            "DeleteDataScan": {
+              "methods": ["deleteDataScanAsync", "deleteDataScanAsync", "deleteDataScanAsync", "deleteDataScanOperationCallable", "deleteDataScanCallable"]
+            },
+            "GetDataScan": {
+              "methods": ["getDataScan", "getDataScan", "getDataScan", "getDataScanCallable"]
+            },
+            "GetDataScanJob": {
+              "methods": ["getDataScanJob", "getDataScanJob", "getDataScanJob", "getDataScanJobCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDataScanJobs": {
+              "methods": ["listDataScanJobs", "listDataScanJobs", "listDataScanJobs", "listDataScanJobsPagedCallable", "listDataScanJobsCallable"]
+            },
+            "ListDataScans": {
+              "methods": ["listDataScans", "listDataScans", "listDataScans", "listDataScansPagedCallable", "listDataScansCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RunDataScan": {
+              "methods": ["runDataScan", "runDataScan", "runDataScan", "runDataScanCallable"]
+            },
+            "UpdateDataScan": {
+              "methods": ["updateDataScanAsync", "updateDataScanAsync", "updateDataScanOperationCallable", "updateDataScanCallable"]
+            }
+          }
+        }
+      }
+    },
+    "MetadataService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetadataServiceClient",
+          "rpcs": {
+            "CreateEntity": {
+              "methods": ["createEntity", "createEntity", "createEntity", "createEntityCallable"]
+            },
+            "CreatePartition": {
+              "methods": ["createPartition", "createPartition", "createPartition", "createPartitionCallable"]
+            },
+            "DeleteEntity": {
+              "methods": ["deleteEntity", "deleteEntity", "deleteEntity", "deleteEntityCallable"]
+            },
+            "DeletePartition": {
+              "methods": ["deletePartition", "deletePartition", "deletePartition", "deletePartitionCallable"]
+            },
+            "GetEntity": {
+              "methods": ["getEntity", "getEntity", "getEntity", "getEntityCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPartition": {
+              "methods": ["getPartition", "getPartition", "getPartition", "getPartitionCallable"]
+            },
+            "ListEntities": {
+              "methods": ["listEntities", "listEntities", "listEntities", "listEntitiesPagedCallable", "listEntitiesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPartitions": {
+              "methods": ["listPartitions", "listPartitions", "listPartitions", "listPartitionsPagedCallable", "listPartitionsCallable"]
+            },
+            "UpdateEntity": {
+              "methods": ["updateEntity", "updateEntityCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataplexService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataplexServiceClient",
+          "rpcs": {
+            "CancelJob": {
+              "methods": ["cancelJob", "cancelJob", "cancelJob", "cancelJobCallable"]
+            },
+            "CreateAsset": {
+              "methods": ["createAssetAsync", "createAssetAsync", "createAssetAsync", "createAssetOperationCallable", "createAssetCallable"]
+            },
+            "CreateEnvironment": {
+              "methods": ["createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentOperationCallable", "createEnvironmentCallable"]
+            },
+            "CreateLake": {
+              "methods": ["createLakeAsync", "createLakeAsync", "createLakeAsync", "createLakeOperationCallable", "createLakeCallable"]
+            },
+            "CreateTask": {
+              "methods": ["createTaskAsync", "createTaskAsync", "createTaskAsync", "createTaskOperationCallable", "createTaskCallable"]
+            },
+            "CreateZone": {
+              "methods": ["createZoneAsync", "createZoneAsync", "createZoneAsync", "createZoneOperationCallable", "createZoneCallable"]
+            },
+            "DeleteAsset": {
+              "methods": ["deleteAssetAsync", "deleteAssetAsync", "deleteAssetAsync", "deleteAssetOperationCallable", "deleteAssetCallable"]
+            },
+            "DeleteEnvironment": {
+              "methods": ["deleteEnvironmentAsync", "deleteEnvironmentAsync", "deleteEnvironmentAsync", "deleteEnvironmentOperationCallable", "deleteEnvironmentCallable"]
+            },
+            "DeleteLake": {
+              "methods": ["deleteLakeAsync", "deleteLakeAsync", "deleteLakeAsync", "deleteLakeOperationCallable", "deleteLakeCallable"]
+            },
+            "DeleteTask": {
+              "methods": ["deleteTaskAsync", "deleteTaskAsync", "deleteTaskAsync", "deleteTaskOperationCallable", "deleteTaskCallable"]
+            },
+            "DeleteZone": {
+              "methods": ["deleteZoneAsync", "deleteZoneAsync", "deleteZoneAsync", "deleteZoneOperationCallable", "deleteZoneCallable"]
+            },
+            "GetAsset": {
+              "methods": ["getAsset", "getAsset", "getAsset", "getAssetCallable"]
+            },
+            "GetEnvironment": {
+              "methods": ["getEnvironment", "getEnvironment", "getEnvironment", "getEnvironmentCallable"]
+            },
+            "GetJob": {
+              "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
+            },
+            "GetLake": {
+              "methods": ["getLake", "getLake", "getLake", "getLakeCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTask": {
+              "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
+            },
+            "GetZone": {
+              "methods": ["getZone", "getZone", "getZone", "getZoneCallable"]
+            },
+            "ListAssetActions": {
+              "methods": ["listAssetActions", "listAssetActions", "listAssetActions", "listAssetActionsPagedCallable", "listAssetActionsCallable"]
+            },
+            "ListAssets": {
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
+            },
+            "ListEnvironments": {
+              "methods": ["listEnvironments", "listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
+            "ListJobs": {
+              "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
+            },
+            "ListLakeActions": {
+              "methods": ["listLakeActions", "listLakeActions", "listLakeActions", "listLakeActionsPagedCallable", "listLakeActionsCallable"]
+            },
+            "ListLakes": {
+              "methods": ["listLakes", "listLakes", "listLakes", "listLakesPagedCallable", "listLakesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
+            "ListTasks": {
+              "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
+            },
+            "ListZoneActions": {
+              "methods": ["listZoneActions", "listZoneActions", "listZoneActions", "listZoneActionsPagedCallable", "listZoneActionsCallable"]
+            },
+            "ListZones": {
+              "methods": ["listZones", "listZones", "listZones", "listZonesPagedCallable", "listZonesCallable"]
+            },
+            "UpdateAsset": {
+              "methods": ["updateAssetAsync", "updateAssetAsync", "updateAssetOperationCallable", "updateAssetCallable"]
+            },
+            "UpdateEnvironment": {
+              "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]
+            },
+            "UpdateLake": {
+              "methods": ["updateLakeAsync", "updateLakeAsync", "updateLakeOperationCallable", "updateLakeCallable"]
+            },
+            "UpdateTask": {
+              "methods": ["updateTaskAsync", "updateTaskAsync", "updateTaskOperationCallable", "updateTaskCallable"]
+            },
+            "UpdateZone": {
+              "methods": ["updateZoneAsync", "updateZoneAsync", "updateZoneOperationCallable", "updateZoneCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
