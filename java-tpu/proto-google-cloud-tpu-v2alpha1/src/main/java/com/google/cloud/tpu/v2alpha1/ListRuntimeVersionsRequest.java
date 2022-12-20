@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for [ListRuntimeVersions][google.cloud.tpu.v2alpha1.Tpu.ListRuntimeVersions].
+ * Request for
+ * [ListRuntimeVersions][google.cloud.tpu.v2alpha1.Tpu.ListRuntimeVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest}
@@ -488,7 +489,8 @@ public final class ListRuntimeVersionsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request for [ListRuntimeVersions][google.cloud.tpu.v2alpha1.Tpu.ListRuntimeVersions].
+   * Request for
+   * [ListRuntimeVersions][google.cloud.tpu.v2alpha1.Tpu.ListRuntimeVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest}

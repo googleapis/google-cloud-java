@@ -1336,7 +1336,7 @@ public class TpuClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name.
    * @param queuedResource Required. The queued resource.
-   * @param queuedResourceId The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+   * @param queuedResourceId The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
    *     regex format.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1374,7 +1374,7 @@ public class TpuClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name.
    * @param queuedResource Required. The queued resource.
-   * @param queuedResourceId The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+   * @param queuedResourceId The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
    *     regex format.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

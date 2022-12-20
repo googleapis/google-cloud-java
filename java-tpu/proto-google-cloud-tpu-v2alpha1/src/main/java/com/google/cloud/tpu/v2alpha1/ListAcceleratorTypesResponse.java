@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Response for [ListAcceleratorTypes][google.cloud.tpu.v2alpha1.Tpu.ListAcceleratorTypes].
+ * Response for
+ * [ListAcceleratorTypes][google.cloud.tpu.v2alpha1.Tpu.ListAcceleratorTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.ListAcceleratorTypesResponse}
@@ -440,7 +441,8 @@ public final class ListAcceleratorTypesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response for [ListAcceleratorTypes][google.cloud.tpu.v2alpha1.Tpu.ListAcceleratorTypes].
+   * Response for
+   * [ListAcceleratorTypes][google.cloud.tpu.v2alpha1.Tpu.ListAcceleratorTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.ListAcceleratorTypesResponse}
