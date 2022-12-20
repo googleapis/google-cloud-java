@@ -27,10 +27,12 @@ public interface ReplicationStatusOrBuilder
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -42,10 +44,12 @@ public interface ReplicationStatusOrBuilder
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -57,10 +61,12 @@ public interface ReplicationStatusOrBuilder
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -72,10 +78,12 @@ public interface ReplicationStatusOrBuilder
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -88,10 +96,12 @@ public interface ReplicationStatusOrBuilder
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -104,10 +114,12 @@ public interface ReplicationStatusOrBuilder
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;

@@ -27,8 +27,8 @@ public interface CustomerManagedEncryptionStatusOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Cloud KMS CryptoKeyVersion used to encrypt the
-   * secret payload, in the following format:
+   * Required. The resource name of the Cloud KMS CryptoKeyVersion used to
+   * encrypt the secret payload, in the following format:
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -41,8 +41,8 @@ public interface CustomerManagedEncryptionStatusOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Cloud KMS CryptoKeyVersion used to encrypt the
-   * secret payload, in the following format:
+   * Required. The resource name of the Cloud KMS CryptoKeyVersion used to
+   * encrypt the secret payload, in the following format:
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;versions/&#42;`.
    * </pre>
    *

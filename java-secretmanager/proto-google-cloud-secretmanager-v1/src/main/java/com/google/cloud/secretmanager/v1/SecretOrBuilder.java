@@ -27,7 +27,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -39,7 +41,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -52,7 +56,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secretmanager.v1.Secret].
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -67,7 +72,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secretmanager.v1.Secret].
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -82,7 +88,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secretmanager.v1.Secret].
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -96,7 +103,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -109,7 +117,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -122,7 +131,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -228,8 +238,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -241,8 +251,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -254,8 +264,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -267,8 +277,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -281,8 +291,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -295,8 +305,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
+   * Optional. Timestamp in UTC when the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+   * This is always provided on output, regardless of what was sent on input.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -309,8 +320,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
+   * Optional. Timestamp in UTC when the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+   * This is always provided on output, regardless of what was sent on input.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -323,8 +335,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
+   * Optional. Timestamp in UTC when the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+   * This is always provided on output, regardless of what was sent on input.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -336,7 +349,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Input only. The TTL for the
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -348,7 +362,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Input only. The TTL for the
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -360,7 +375,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Input only. The TTL for the
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -371,7 +387,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * Optional. Etag of the currently stored
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -383,7 +400,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * Optional. Etag of the currently stored
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -396,8 +414,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-   * rotation policy.
+   * Optional. Rotation policy attached to the
+   * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+   * no rotation policy.
    * </pre>
    *
    * <code>
@@ -411,8 +430,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-   * rotation policy.
+   * Optional. Rotation policy attached to the
+   * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+   * no rotation policy.
    * </pre>
    *
    * <code>
@@ -426,8 +446,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-   * rotation policy.
+   * Optional. Rotation policy attached to the
+   * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+   * no rotation policy.
    * </pre>
    *
    * <code>
@@ -534,6 +555,110 @@ public interface SecretOrBuilder
    * </code>
    */
   long getVersionAliasesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAnnotations(java.lang.String key);
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
   public com.google.cloud.secretmanager.v1.Secret.ExpirationCase getExpirationCase();
 }
