@@ -152,4 +152,63 @@ public interface IssueOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the sampleUtterances.
+   */
+  java.util.List<java.lang.String> getSampleUtterancesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of sampleUtterances.
+   */
+  int getSampleUtterancesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The sampleUtterances at the given index.
+   */
+  java.lang.String getSampleUtterances(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sampleUtterances at the given index.
+   */
+  com.google.protobuf.ByteString getSampleUtterancesBytes(int index);
 }

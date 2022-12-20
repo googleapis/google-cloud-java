@@ -40,6 +40,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
   private Issue() {
     name_ = "";
     displayName_ = "";
+    sampleUtterances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -268,6 +269,75 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     return getUpdateTime();
   }
 
+  public static final int SAMPLE_UTTERANCES_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList sampleUtterances_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the sampleUtterances.
+   */
+  public com.google.protobuf.ProtocolStringList getSampleUtterancesList() {
+    return sampleUtterances_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of sampleUtterances.
+   */
+  public int getSampleUtterancesCount() {
+    return sampleUtterances_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The sampleUtterances at the given index.
+   */
+  public java.lang.String getSampleUtterances(int index) {
+    return sampleUtterances_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource names of the sample representative utterances that match to this
+   * issue.
+   * </pre>
+   *
+   * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sampleUtterances at the given index.
+   */
+  public com.google.protobuf.ByteString getSampleUtterancesBytes(int index) {
+    return sampleUtterances_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -294,6 +364,9 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
+    for (int i = 0; i < sampleUtterances_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sampleUtterances_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -314,6 +387,14 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     }
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < sampleUtterances_.size(); i++) {
+        dataSize += computeStringSizeNoTag(sampleUtterances_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSampleUtterancesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -341,6 +422,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getSampleUtterancesList().equals(other.getSampleUtterancesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -363,6 +445,10 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (getSampleUtterancesCount() > 0) {
+      hash = (37 * hash) + SAMPLE_UTTERANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getSampleUtterancesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -518,6 +604,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      sampleUtterances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -545,6 +633,7 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contactcenterinsights.v1.Issue buildPartial() {
       com.google.cloud.contactcenterinsights.v1.Issue result =
           new com.google.cloud.contactcenterinsights.v1.Issue(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.displayName_ = displayName_;
       if (createTimeBuilder_ == null) {
@@ -557,6 +646,11 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        sampleUtterances_ = sampleUtterances_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.sampleUtterances_ = sampleUtterances_;
       onBuilt();
       return result;
     }
@@ -621,6 +715,16 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (!other.sampleUtterances_.isEmpty()) {
+        if (sampleUtterances_.isEmpty()) {
+          sampleUtterances_ = other.sampleUtterances_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureSampleUtterancesIsMutable();
+          sampleUtterances_.addAll(other.sampleUtterances_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -671,6 +775,13 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 34
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSampleUtterancesIsMutable();
+                sampleUtterances_.add(s);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -687,6 +798,8 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1310,6 +1423,192 @@ public final class Issue extends com.google.protobuf.GeneratedMessageV3
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList sampleUtterances_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureSampleUtterancesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        sampleUtterances_ = new com.google.protobuf.LazyStringArrayList(sampleUtterances_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the sampleUtterances.
+     */
+    public com.google.protobuf.ProtocolStringList getSampleUtterancesList() {
+      return sampleUtterances_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of sampleUtterances.
+     */
+    public int getSampleUtterancesCount() {
+      return sampleUtterances_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sampleUtterances at the given index.
+     */
+    public java.lang.String getSampleUtterances(int index) {
+      return sampleUtterances_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sampleUtterances at the given index.
+     */
+    public com.google.protobuf.ByteString getSampleUtterancesBytes(int index) {
+      return sampleUtterances_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The sampleUtterances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSampleUtterances(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSampleUtterancesIsMutable();
+      sampleUtterances_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The sampleUtterances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSampleUtterances(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSampleUtterancesIsMutable();
+      sampleUtterances_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The sampleUtterances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSampleUtterances(java.lang.Iterable<java.lang.String> values) {
+      ensureSampleUtterancesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sampleUtterances_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSampleUtterances() {
+      sampleUtterances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource names of the sample representative utterances that match to this
+     * issue.
+     * </pre>
+     *
+     * <code>repeated string sample_utterances = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the sampleUtterances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSampleUtterancesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSampleUtterancesIsMutable();
+      sampleUtterances_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -37,6 +37,9 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contactcenterinsights.v1.Analysis;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -53,6 +56,7 @@ import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
@@ -68,6 +72,9 @@ import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -116,18 +123,22 @@ import javax.annotation.Generated;
 public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
-          .add(DeleteIssueModelMetadata.getDescriptor())
           .add(DeployIssueModelMetadata.getDescriptor())
-          .add(CreateAnalysisOperationMetadata.getDescriptor())
-          .add(Empty.getDescriptor())
           .add(Analysis.getDescriptor())
-          .add(ExportInsightsDataResponse.getDescriptor())
-          .add(UndeployIssueModelResponse.getDescriptor())
+          .add(IngestConversationsResponse.getDescriptor())
           .add(CreateIssueModelMetadata.getDescriptor())
-          .add(UndeployIssueModelMetadata.getDescriptor())
           .add(ExportInsightsDataMetadata.getDescriptor())
           .add(IssueModel.getDescriptor())
+          .add(IngestConversationsMetadata.getDescriptor())
           .add(DeployIssueModelResponse.getDescriptor())
+          .add(DeleteIssueModelMetadata.getDescriptor())
+          .add(CreateAnalysisOperationMetadata.getDescriptor())
+          .add(Empty.getDescriptor())
+          .add(BulkAnalyzeConversationsMetadata.getDescriptor())
+          .add(ExportInsightsDataResponse.getDescriptor())
+          .add(UndeployIssueModelResponse.getDescriptor())
+          .add(UndeployIssueModelMetadata.getDescriptor())
+          .add(BulkAnalyzeConversationsResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateConversationRequest, Conversation>
@@ -468,6 +479,88 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
                       .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsMethodDescriptor =
+          ApiMethodDescriptor.<BulkAnalyzeConversationsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkAnalyzeConversations")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BulkAnalyzeConversationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/conversations:bulkAnalyze",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkAnalyzeConversationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BulkAnalyzeConversationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BulkAnalyzeConversationsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<IngestConversationsRequest, Operation>
+      ingestConversationsMethodDescriptor =
+          ApiMethodDescriptor.<IngestConversationsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/IngestConversations")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<IngestConversationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/conversations:ingest",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<IngestConversationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<IngestConversationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (IngestConversationsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<ExportInsightsDataRequest, Operation>
@@ -883,6 +976,40 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
           .setResponseParser(
               ProtoMessageResponseParser.<Issue>newBuilder()
                   .setDefaultInstance(Issue.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteIssueRequest, Empty> deleteIssueMethodDescriptor =
+      ApiMethodDescriptor.<DeleteIssueRequest, Empty>newBuilder()
+          .setFullMethodName(
+              "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteIssue")
+          .setHttpMethod("DELETE")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<DeleteIssueRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/issueModels/*/issues/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteIssueRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteIssueRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Empty>newBuilder()
+                  .setDefaultInstance(Empty.getDefaultInstance())
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
@@ -1414,6 +1541,17 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   private final UnaryCallable<ListAnalysesRequest, ListAnalysesPagedResponse>
       listAnalysesPagedCallable;
   private final UnaryCallable<DeleteAnalysisRequest, Empty> deleteAnalysisCallable;
+  private final UnaryCallable<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsCallable;
+  private final OperationCallable<
+          BulkAnalyzeConversationsRequest,
+          BulkAnalyzeConversationsResponse,
+          BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsOperationCallable;
+  private final UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable;
+  private final OperationCallable<
+          IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsOperationCallable;
   private final UnaryCallable<ExportInsightsDataRequest, Operation> exportInsightsDataCallable;
   private final OperationCallable<
           ExportInsightsDataRequest, ExportInsightsDataResponse, ExportInsightsDataMetadata>
@@ -1439,6 +1577,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   private final UnaryCallable<GetIssueRequest, Issue> getIssueCallable;
   private final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable;
   private final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable;
+  private final UnaryCallable<DeleteIssueRequest, Empty> deleteIssueCallable;
   private final UnaryCallable<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>
       calculateIssueModelStatsCallable;
   private final UnaryCallable<CreatePhraseMatcherRequest, PhraseMatcher>
@@ -1556,6 +1695,18 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
             .setMethodDescriptor(deleteAnalysisMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<BulkAnalyzeConversationsRequest, Operation>
+        bulkAnalyzeConversationsTransportSettings =
+            HttpJsonCallSettings.<BulkAnalyzeConversationsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkAnalyzeConversationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<IngestConversationsRequest, Operation>
+        ingestConversationsTransportSettings =
+            HttpJsonCallSettings.<IngestConversationsRequest, Operation>newBuilder()
+                .setMethodDescriptor(ingestConversationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ExportInsightsDataRequest, Operation> exportInsightsDataTransportSettings =
         HttpJsonCallSettings.<ExportInsightsDataRequest, Operation>newBuilder()
             .setMethodDescriptor(exportInsightsDataMethodDescriptor)
@@ -1610,6 +1761,11 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     HttpJsonCallSettings<UpdateIssueRequest, Issue> updateIssueTransportSettings =
         HttpJsonCallSettings.<UpdateIssueRequest, Issue>newBuilder()
             .setMethodDescriptor(updateIssueMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<DeleteIssueRequest, Empty> deleteIssueTransportSettings =
+        HttpJsonCallSettings.<DeleteIssueRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteIssueMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>
@@ -1738,6 +1894,28 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     this.deleteAnalysisCallable =
         callableFactory.createUnaryCallable(
             deleteAnalysisTransportSettings, settings.deleteAnalysisSettings(), clientContext);
+    this.bulkAnalyzeConversationsCallable =
+        callableFactory.createUnaryCallable(
+            bulkAnalyzeConversationsTransportSettings,
+            settings.bulkAnalyzeConversationsSettings(),
+            clientContext);
+    this.bulkAnalyzeConversationsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkAnalyzeConversationsTransportSettings,
+            settings.bulkAnalyzeConversationsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.ingestConversationsCallable =
+        callableFactory.createUnaryCallable(
+            ingestConversationsTransportSettings,
+            settings.ingestConversationsSettings(),
+            clientContext);
+    this.ingestConversationsOperationCallable =
+        callableFactory.createOperationCallable(
+            ingestConversationsTransportSettings,
+            settings.ingestConversationsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.exportInsightsDataCallable =
         callableFactory.createUnaryCallable(
             exportInsightsDataTransportSettings,
@@ -1805,6 +1983,9 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     this.updateIssueCallable =
         callableFactory.createUnaryCallable(
             updateIssueTransportSettings, settings.updateIssueSettings(), clientContext);
+    this.deleteIssueCallable =
+        callableFactory.createUnaryCallable(
+            deleteIssueTransportSettings, settings.deleteIssueSettings(), clientContext);
     this.calculateIssueModelStatsCallable =
         callableFactory.createUnaryCallable(
             calculateIssueModelStatsTransportSettings,
@@ -1882,6 +2063,8 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     methodDescriptors.add(getAnalysisMethodDescriptor);
     methodDescriptors.add(listAnalysesMethodDescriptor);
     methodDescriptors.add(deleteAnalysisMethodDescriptor);
+    methodDescriptors.add(bulkAnalyzeConversationsMethodDescriptor);
+    methodDescriptors.add(ingestConversationsMethodDescriptor);
     methodDescriptors.add(exportInsightsDataMethodDescriptor);
     methodDescriptors.add(createIssueModelMethodDescriptor);
     methodDescriptors.add(updateIssueModelMethodDescriptor);
@@ -1893,6 +2076,7 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
     methodDescriptors.add(getIssueMethodDescriptor);
     methodDescriptors.add(listIssuesMethodDescriptor);
     methodDescriptors.add(updateIssueMethodDescriptor);
+    methodDescriptors.add(deleteIssueMethodDescriptor);
     methodDescriptors.add(calculateIssueModelStatsMethodDescriptor);
     methodDescriptors.add(createPhraseMatcherMethodDescriptor);
     methodDescriptors.add(getPhraseMatcherMethodDescriptor);
@@ -1975,6 +2159,33 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   @Override
   public UnaryCallable<DeleteAnalysisRequest, Empty> deleteAnalysisCallable() {
     return deleteAnalysisCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsCallable() {
+    return bulkAnalyzeConversationsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkAnalyzeConversationsRequest,
+          BulkAnalyzeConversationsResponse,
+          BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsOperationCallable() {
+    return bulkAnalyzeConversationsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable() {
+    return ingestConversationsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsOperationCallable() {
+    return ingestConversationsOperationCallable;
   }
 
   @Override
@@ -2063,6 +2274,11 @@ public class HttpJsonContactCenterInsightsStub extends ContactCenterInsightsStub
   @Override
   public UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable() {
     return updateIssueCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteIssueRequest, Empty> deleteIssueCallable() {
+    return deleteIssueCallable;
   }
 
   @Override

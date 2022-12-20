@@ -25,6 +25,9 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contactcenterinsights.v1.Analysis;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -41,6 +44,7 @@ import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
@@ -56,6 +60,9 @@ import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -156,6 +163,31 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
   }
 
   public OperationCallable<
+          BulkAnalyzeConversationsRequest,
+          BulkAnalyzeConversationsResponse,
+          BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: bulkAnalyzeConversationsOperationCallable()");
+  }
+
+  public UnaryCallable<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkAnalyzeConversationsCallable()");
+  }
+
+  public OperationCallable<
+          IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: ingestConversationsOperationCallable()");
+  }
+
+  public UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: ingestConversationsCallable()");
+  }
+
+  public OperationCallable<
           ExportInsightsDataRequest, ExportInsightsDataResponse, ExportInsightsDataMetadata>
       exportInsightsDataOperationCallable() {
     throw new UnsupportedOperationException(
@@ -227,6 +259,10 @@ public abstract class ContactCenterInsightsStub implements BackgroundResource {
 
   public UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable() {
     throw new UnsupportedOperationException("Not implemented: updateIssueCallable()");
+  }
+
+  public UnaryCallable<DeleteIssueRequest, Empty> deleteIssueCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteIssueCallable()");
   }
 
   public UnaryCallable<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>

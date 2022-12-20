@@ -1437,6 +1437,352 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Analyzes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String filter = "filter-1274492040";
+   *   float analysisPercentage = 1609757661;
+   *   BulkAnalyzeConversationsResponse response =
+   *       contactCenterInsightsClient
+   *           .bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource to create analyses in.
+   * @param filter Required. Filter used to select the subset of conversations to analyze.
+   * @param analysisPercentage Required. Percentage of selected conversation to analyze, between [0,
+   *     100].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkAnalyzeConversationsResponse, BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsAsync(LocationName parent, String filter, float analysisPercentage) {
+    BulkAnalyzeConversationsRequest request =
+        BulkAnalyzeConversationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .setAnalysisPercentage(analysisPercentage)
+            .build();
+    return bulkAnalyzeConversationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String filter = "filter-1274492040";
+   *   float analysisPercentage = 1609757661;
+   *   BulkAnalyzeConversationsResponse response =
+   *       contactCenterInsightsClient
+   *           .bulkAnalyzeConversationsAsync(parent, filter, analysisPercentage)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource to create analyses in.
+   * @param filter Required. Filter used to select the subset of conversations to analyze.
+   * @param analysisPercentage Required. Percentage of selected conversation to analyze, between [0,
+   *     100].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkAnalyzeConversationsResponse, BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsAsync(String parent, String filter, float analysisPercentage) {
+    BulkAnalyzeConversationsRequest request =
+        BulkAnalyzeConversationsRequest.newBuilder()
+            .setParent(parent)
+            .setFilter(filter)
+            .setAnalysisPercentage(analysisPercentage)
+            .build();
+    return bulkAnalyzeConversationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkAnalyzeConversationsRequest request =
+   *       BulkAnalyzeConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setAnalysisPercentage(1609757661)
+   *           .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+   *           .build();
+   *   BulkAnalyzeConversationsResponse response =
+   *       contactCenterInsightsClient.bulkAnalyzeConversationsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkAnalyzeConversationsResponse, BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsAsync(BulkAnalyzeConversationsRequest request) {
+    return bulkAnalyzeConversationsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkAnalyzeConversationsRequest request =
+   *       BulkAnalyzeConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setAnalysisPercentage(1609757661)
+   *           .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BulkAnalyzeConversationsResponse, BulkAnalyzeConversationsMetadata> future =
+   *       contactCenterInsightsClient
+   *           .bulkAnalyzeConversationsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BulkAnalyzeConversationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BulkAnalyzeConversationsRequest,
+          BulkAnalyzeConversationsResponse,
+          BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsOperationCallable() {
+    return stub.bulkAnalyzeConversationsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkAnalyzeConversationsRequest request =
+   *       BulkAnalyzeConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setAnalysisPercentage(1609757661)
+   *           .setAnnotatorSelector(AnnotatorSelector.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.bulkAnalyzeConversationsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsCallable() {
+    return stub.bulkAnalyzeConversationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports conversations and processes them according to the user's configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   IngestConversationsResponse response =
+   *       contactCenterInsightsClient.ingestConversationsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new conversations.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsAsync(LocationName parent) {
+    IngestConversationsRequest request =
+        IngestConversationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return ingestConversationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports conversations and processes them according to the user's configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   IngestConversationsResponse response =
+   *       contactCenterInsightsClient.ingestConversationsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for new conversations.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsAsync(String parent) {
+    IngestConversationsRequest request =
+        IngestConversationsRequest.newBuilder().setParent(parent).build();
+    return ingestConversationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports conversations and processes them according to the user's configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IngestConversationsRequest request =
+   *       IngestConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversationConfig(
+   *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
+   *           .build();
+   *   IngestConversationsResponse response =
+   *       contactCenterInsightsClient.ingestConversationsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsAsync(IngestConversationsRequest request) {
+    return ingestConversationsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports conversations and processes them according to the user's configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IngestConversationsRequest request =
+   *       IngestConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversationConfig(
+   *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<IngestConversationsResponse, IngestConversationsMetadata> future =
+   *       contactCenterInsightsClient.ingestConversationsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   IngestConversationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsOperationCallable() {
+    return stub.ingestConversationsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports conversations and processes them according to the user's configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IngestConversationsRequest request =
+   *       IngestConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversationConfig(
+   *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.ingestConversationsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable() {
+    return stub.ingestConversationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Export insights data to a destination defined in the request body.
    *
    * <p>Sample code:
@@ -2848,6 +3194,121 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable() {
     return stub.updateIssueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   IssueName name = IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]");
+   *   contactCenterInsightsClient.deleteIssue(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the issue to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIssue(IssueName name) {
+    DeleteIssueRequest request =
+        DeleteIssueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteIssue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String name = IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]").toString();
+   *   contactCenterInsightsClient.deleteIssue(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the issue to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIssue(String name) {
+    DeleteIssueRequest request = DeleteIssueRequest.newBuilder().setName(name).build();
+    deleteIssue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteIssueRequest request =
+   *       DeleteIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]").toString())
+   *           .build();
+   *   contactCenterInsightsClient.deleteIssue(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteIssue(DeleteIssueRequest request) {
+    deleteIssueCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an issue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   DeleteIssueRequest request =
+   *       DeleteIssueRequest.newBuilder()
+   *           .setName(
+   *               IssueName.of("[PROJECT]", "[LOCATION]", "[ISSUE_MODEL]", "[ISSUE]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       contactCenterInsightsClient.deleteIssueCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteIssueRequest, Empty> deleteIssueCallable() {
+    return stub.deleteIssueCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

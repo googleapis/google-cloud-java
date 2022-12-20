@@ -29,6 +29,9 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contactcenterinsights.v1.Analysis;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -45,6 +48,7 @@ import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
@@ -60,6 +64,9 @@ import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
@@ -202,6 +209,28 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsMethodDescriptor =
+          MethodDescriptor.<BulkAnalyzeConversationsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkAnalyzeConversations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BulkAnalyzeConversationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<IngestConversationsRequest, Operation>
+      ingestConversationsMethodDescriptor =
+          MethodDescriptor.<IngestConversationsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/IngestConversations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(IngestConversationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ExportInsightsDataRequest, Operation>
       exportInsightsDataMethodDescriptor =
           MethodDescriptor.<ExportInsightsDataRequest, Operation>newBuilder()
@@ -316,6 +345,15 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Issue.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteIssueRequest, Empty> deleteIssueMethodDescriptor =
+      MethodDescriptor.<DeleteIssueRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteIssue")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteIssueRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<
@@ -481,6 +519,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final UnaryCallable<ListAnalysesRequest, ListAnalysesPagedResponse>
       listAnalysesPagedCallable;
   private final UnaryCallable<DeleteAnalysisRequest, Empty> deleteAnalysisCallable;
+  private final UnaryCallable<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsCallable;
+  private final OperationCallable<
+          BulkAnalyzeConversationsRequest,
+          BulkAnalyzeConversationsResponse,
+          BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsOperationCallable;
+  private final UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable;
+  private final OperationCallable<
+          IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsOperationCallable;
   private final UnaryCallable<ExportInsightsDataRequest, Operation> exportInsightsDataCallable;
   private final OperationCallable<
           ExportInsightsDataRequest, ExportInsightsDataResponse, ExportInsightsDataMetadata>
@@ -506,6 +555,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final UnaryCallable<GetIssueRequest, Issue> getIssueCallable;
   private final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable;
   private final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable;
+  private final UnaryCallable<DeleteIssueRequest, Empty> deleteIssueCallable;
   private final UnaryCallable<CalculateIssueModelStatsRequest, CalculateIssueModelStatsResponse>
       calculateIssueModelStatsCallable;
   private final UnaryCallable<CreatePhraseMatcherRequest, PhraseMatcher>
@@ -664,6 +714,27 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<BulkAnalyzeConversationsRequest, Operation>
+        bulkAnalyzeConversationsTransportSettings =
+            GrpcCallSettings.<BulkAnalyzeConversationsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkAnalyzeConversationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<IngestConversationsRequest, Operation> ingestConversationsTransportSettings =
+        GrpcCallSettings.<IngestConversationsRequest, Operation>newBuilder()
+            .setMethodDescriptor(ingestConversationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ExportInsightsDataRequest, Operation> exportInsightsDataTransportSettings =
         GrpcCallSettings.<ExportInsightsDataRequest, Operation>newBuilder()
             .setMethodDescriptor(exportInsightsDataMethodDescriptor)
@@ -772,6 +843,16 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("issue.name", String.valueOf(request.getIssue().getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteIssueRequest, Empty> deleteIssueTransportSettings =
+        GrpcCallSettings.<DeleteIssueRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteIssueMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
                   return params.build();
                 })
             .build();
@@ -973,6 +1054,28 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
     this.deleteAnalysisCallable =
         callableFactory.createUnaryCallable(
             deleteAnalysisTransportSettings, settings.deleteAnalysisSettings(), clientContext);
+    this.bulkAnalyzeConversationsCallable =
+        callableFactory.createUnaryCallable(
+            bulkAnalyzeConversationsTransportSettings,
+            settings.bulkAnalyzeConversationsSettings(),
+            clientContext);
+    this.bulkAnalyzeConversationsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkAnalyzeConversationsTransportSettings,
+            settings.bulkAnalyzeConversationsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.ingestConversationsCallable =
+        callableFactory.createUnaryCallable(
+            ingestConversationsTransportSettings,
+            settings.ingestConversationsSettings(),
+            clientContext);
+    this.ingestConversationsOperationCallable =
+        callableFactory.createOperationCallable(
+            ingestConversationsTransportSettings,
+            settings.ingestConversationsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.exportInsightsDataCallable =
         callableFactory.createUnaryCallable(
             exportInsightsDataTransportSettings,
@@ -1040,6 +1143,9 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
     this.updateIssueCallable =
         callableFactory.createUnaryCallable(
             updateIssueTransportSettings, settings.updateIssueSettings(), clientContext);
+    this.deleteIssueCallable =
+        callableFactory.createUnaryCallable(
+            deleteIssueTransportSettings, settings.deleteIssueSettings(), clientContext);
     this.calculateIssueModelStatsCallable =
         callableFactory.createUnaryCallable(
             calculateIssueModelStatsTransportSettings,
@@ -1173,6 +1279,33 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   }
 
   @Override
+  public UnaryCallable<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsCallable() {
+    return bulkAnalyzeConversationsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkAnalyzeConversationsRequest,
+          BulkAnalyzeConversationsResponse,
+          BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsOperationCallable() {
+    return bulkAnalyzeConversationsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable() {
+    return ingestConversationsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsOperationCallable() {
+    return ingestConversationsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ExportInsightsDataRequest, Operation> exportInsightsDataCallable() {
     return exportInsightsDataCallable;
   }
@@ -1258,6 +1391,11 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   @Override
   public UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable() {
     return updateIssueCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteIssueRequest, Empty> deleteIssueCallable() {
+    return deleteIssueCallable;
   }
 
   @Override
