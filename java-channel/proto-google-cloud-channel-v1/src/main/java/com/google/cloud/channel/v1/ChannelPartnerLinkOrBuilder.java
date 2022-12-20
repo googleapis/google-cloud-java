@@ -209,8 +209,8 @@ public interface ChannelPartnerLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Public identifier that a customer must use to generate a transfer token
-   * to move to this distributor-reseller combination.
+   * Output only. Public identifier that a customer must use to generate a
+   * transfer token to move to this distributor-reseller combination.
    * </pre>
    *
    * <code>string public_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -222,8 +222,8 @@ public interface ChannelPartnerLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Public identifier that a customer must use to generate a transfer token
-   * to move to this distributor-reseller combination.
+   * Output only. Public identifier that a customer must use to generate a
+   * transfer token to move to this distributor-reseller combination.
    * </pre>
    *
    * <code>string public_id = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.GetChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.GetChannelPartnerLink].
+ * Request message for
+ * [CloudChannelService.GetChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.GetChannelPartnerLink].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.GetChannelPartnerLinkRequest}
@@ -336,7 +337,8 @@ public final class GetChannelPartnerLinkRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.GetChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.GetChannelPartnerLink].
+   * Request message for
+   * [CloudChannelService.GetChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.GetChannelPartnerLink].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.GetChannelPartnerLinkRequest}

@@ -824,7 +824,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * List SKUs for upgrading or downgrading an entitlement. Make the purchase
-   * using [CloudChannelService.ChangeOffer][google.cloud.channel.v1.CloudChannelService.ChangeOffer].
+   * using
+   * [CloudChannelService.ChangeOffer][google.cloud.channel.v1.CloudChannelService.ChangeOffer].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase}
@@ -1318,7 +1319,8 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * List SKUs for upgrading or downgrading an entitlement. Make the purchase
-     * using [CloudChannelService.ChangeOffer][google.cloud.channel.v1.CloudChannelService.ChangeOffer].
+     * using
+     * [CloudChannelService.ChangeOffer][google.cloud.channel.v1.CloudChannelService.ChangeOffer].
      * </pre>
      *
      * Protobuf type {@code google.cloud.channel.v1.ListPurchasableSkusRequest.ChangeOfferPurchase}
@@ -2037,9 +2039,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, returns at most 100 SKUs.
-   * The maximum value is 1000; the server will coerce values above 1000.
+   * Optional. Requested page size. Server might return fewer results than
+   * requested. If unspecified, returns at most 100 SKUs. The maximum value is
+   * 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3291,9 +3293,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, returns at most 100 SKUs.
-     * The maximum value is 1000; the server will coerce values above 1000.
+     * Optional. Requested page size. Server might return fewer results than
+     * requested. If unspecified, returns at most 100 SKUs. The maximum value is
+     * 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3308,9 +3310,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, returns at most 100 SKUs.
-     * The maximum value is 1000; the server will coerce values above 1000.
+     * Optional. Requested page size. Server might return fewer results than
+     * requested. If unspecified, returns at most 100 SKUs. The maximum value is
+     * 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3328,9 +3330,9 @@ public final class ListPurchasableSkusRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, returns at most 100 SKUs.
-     * The maximum value is 1000; the server will coerce values above 1000.
+     * Optional. Requested page size. Server might return fewer results than
+     * requested. If unspecified, returns at most 100 SKUs. The maximum value is
+     * 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

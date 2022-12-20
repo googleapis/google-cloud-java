@@ -27,9 +27,8 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account for listing channel partner
-   * links.
-   * Parent uses the format: accounts/{account_id}
+   * Required. The resource name of the reseller account for listing channel
+   * partner links. Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,9 +40,8 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account for listing channel partner
-   * links.
-   * Parent uses the format: accounts/{account_id}
+   * Required. The resource name of the reseller account for listing channel
+   * partner links. Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,9 +54,9 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, server will pick a default size (25).
-   * The maximum value is 200; the server will coerce values above 200.
+   * Optional. Requested page size. Server might return fewer results than
+   * requested. If unspecified, server will pick a default size (25). The
+   * maximum value is 200; the server will coerce values above 200.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,8 +71,10 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    * <pre>
    * Optional. A token for a page of results other than the first page.
    * Obtained using
-   * [ListChannelPartnerLinksResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token] of the previous
-   * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks] call.
+   * [ListChannelPartnerLinksResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88,8 +88,10 @@ public interface ListChannelPartnerLinksRequestOrBuilder
    * <pre>
    * Optional. A token for a page of results other than the first page.
    * Obtained using
-   * [ListChannelPartnerLinksResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token] of the previous
-   * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks] call.
+   * [ListChannelPartnerLinksResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

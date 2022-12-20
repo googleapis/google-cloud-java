@@ -27,8 +27,9 @@ public interface CreateCustomerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the customer that will receive this repricing config.
-   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+   * Required. The resource name of the customer that will receive this
+   * repricing config. Parent uses the format:
+   * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface CreateCustomerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the customer that will receive this repricing config.
-   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+   * Required. The resource name of the customer that will receive this
+   * repricing config. Parent uses the format:
+   * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>

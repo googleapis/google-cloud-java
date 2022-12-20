@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
+ * Request message for
+ * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListReportsRequest}
@@ -75,9 +76,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The resource name of the partner account to list available reports for.
-   * Parent uses the format:
-   * accounts/{account_id}
+   * Required. The resource name of the partner account to list available
+   * reports for. Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,9 +100,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The resource name of the partner account to list available reports for.
-   * Parent uses the format:
-   * accounts/{account_id}
+   * Required. The resource name of the partner account to list available
+   * reports for. Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -128,9 +127,9 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Requested page size of the report. The server might return fewer results
-   * than requested. If unspecified, returns 20 reports.
-   * The maximum value is 100.
+   * Optional. Requested page size of the report. The server might return fewer
+   * results than requested. If unspecified, returns 20 reports. The maximum
+   * value is 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -150,8 +149,10 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. A token that specifies a page of results beyond the first page.
    * Obtained through
-   * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token] of the previous
-   * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports] call.
+   * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -176,8 +177,10 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. A token that specifies a page of results beyond the first page.
    * Obtained through
-   * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token] of the previous
-   * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports] call.
+   * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -442,7 +445,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
+   * Request message for
+   * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListReportsRequest}
@@ -651,9 +655,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the partner account to list available reports for.
-     * Parent uses the format:
-     * accounts/{account_id}
+     * Required. The resource name of the partner account to list available
+     * reports for. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -675,9 +678,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the partner account to list available reports for.
-     * Parent uses the format:
-     * accounts/{account_id}
+     * Required. The resource name of the partner account to list available
+     * reports for. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -699,9 +701,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the partner account to list available reports for.
-     * Parent uses the format:
-     * accounts/{account_id}
+     * Required. The resource name of the partner account to list available
+     * reports for. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -722,9 +723,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the partner account to list available reports for.
-     * Parent uses the format:
-     * accounts/{account_id}
+     * Required. The resource name of the partner account to list available
+     * reports for. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -741,9 +741,8 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the partner account to list available reports for.
-     * Parent uses the format:
-     * accounts/{account_id}
+     * Required. The resource name of the partner account to list available
+     * reports for. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -767,9 +766,9 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Requested page size of the report. The server might return fewer results
-     * than requested. If unspecified, returns 20 reports.
-     * The maximum value is 100.
+     * Optional. Requested page size of the report. The server might return fewer
+     * results than requested. If unspecified, returns 20 reports. The maximum
+     * value is 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -784,9 +783,9 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Requested page size of the report. The server might return fewer results
-     * than requested. If unspecified, returns 20 reports.
-     * The maximum value is 100.
+     * Optional. Requested page size of the report. The server might return fewer
+     * results than requested. If unspecified, returns 20 reports. The maximum
+     * value is 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -804,9 +803,9 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Requested page size of the report. The server might return fewer results
-     * than requested. If unspecified, returns 20 reports.
-     * The maximum value is 100.
+     * Optional. Requested page size of the report. The server might return fewer
+     * results than requested. If unspecified, returns 20 reports. The maximum
+     * value is 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -827,8 +826,10 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A token that specifies a page of results beyond the first page.
      * Obtained through
-     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token] of the previous
-     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports] call.
+     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -852,8 +853,10 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A token that specifies a page of results beyond the first page.
      * Obtained through
-     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token] of the previous
-     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports] call.
+     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -877,8 +880,10 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A token that specifies a page of results beyond the first page.
      * Obtained through
-     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token] of the previous
-     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports] call.
+     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -901,8 +906,10 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A token that specifies a page of results beyond the first page.
      * Obtained through
-     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token] of the previous
-     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports] call.
+     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -921,8 +928,10 @@ public final class ListReportsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A token that specifies a page of results beyond the first page.
      * Obtained through
-     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token] of the previous
-     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports] call.
+     * [ListReportsResponse.next_page_token][google.cloud.channel.v1.ListReportsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

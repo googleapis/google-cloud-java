@@ -168,7 +168,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * Optional. The customer to transfer has an entitlement with the populated
+   * legacy SKU.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -184,7 +185,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * Optional. The customer to transfer has an entitlement with the populated
+   * legacy SKU.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -200,7 +202,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+   * Optional. The customer to transfer has an entitlement with the populated
+   * legacy SKU.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -998,7 +1001,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1013,7 +1017,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1034,7 +1039,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1057,7 +1063,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1077,7 +1084,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1104,7 +1112,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1125,7 +1134,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1140,7 +1150,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -1159,7 +1170,8 @@ public final class TransferableSku extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The customer to transfer has an entitlement with the populated legacy SKU.
+     * Optional. The customer to transfer has an entitlement with the populated
+     * legacy SKU.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.Sku legacy_sku = 12 [(.google.api.field_behavior) = OPTIONAL];

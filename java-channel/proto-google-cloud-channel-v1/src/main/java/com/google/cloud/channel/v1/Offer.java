@@ -23,8 +23,8 @@ package com.google.cloud.channel.v1;
  *
  * <pre>
  * Represents an offer made to resellers for purchase.
- * An offer is associated with a [Sku][google.cloud.channel.v1.Sku], has a plan for payment, a price, and
- * defines the constraints for buying.
+ * An offer is associated with a [Sku][google.cloud.channel.v1.Sku], has a plan
+ * for payment, a price, and defines the constraints for buying.
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.Offer}
@@ -874,8 +874,8 @@ public final class Offer extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents an offer made to resellers for purchase.
-   * An offer is associated with a [Sku][google.cloud.channel.v1.Sku], has a plan for payment, a price, and
-   * defines the constraints for buying.
+   * An offer is associated with a [Sku][google.cloud.channel.v1.Sku], has a plan
+   * for payment, a price, and defines the constraints for buying.
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.Offer}

@@ -236,7 +236,9 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Suspension reason for an entitlement if [provisioning_state][google.cloud.channel.v1.Entitlement.provisioning_state] = SUSPENDED.
+   * Suspension reason for an entitlement if
+   * [provisioning_state][google.cloud.channel.v1.Entitlement.provisioning_state]
+   * = SUSPENDED.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.channel.v1.Entitlement.SuspensionReason}
@@ -831,7 +833,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -851,7 +854,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -868,7 +872,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -886,7 +891,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -903,7 +909,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -926,11 +933,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. This purchase order (PO) information is for resellers to use for their
-   * company tracking usage. If a purchaseOrderId value is given, it appears in
-   * the API responses and shows up in the invoice. The property accepts up to
-   * 80 plain text characters. This is only supported for Google Workspace
-   * entitlements.
+   * Optional. This purchase order (PO) information is for resellers to use for
+   * their company tracking usage. If a purchaseOrderId value is given, it
+   * appears in the API responses and shows up in the invoice. The property
+   * accepts up to 80 plain text characters. This is only supported for Google
+   * Workspace entitlements.
    * </pre>
    *
    * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -953,11 +960,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. This purchase order (PO) information is for resellers to use for their
-   * company tracking usage. If a purchaseOrderId value is given, it appears in
-   * the API responses and shows up in the invoice. The property accepts up to
-   * 80 plain text characters. This is only supported for Google Workspace
-   * entitlements.
+   * Optional. This purchase order (PO) information is for resellers to use for
+   * their company tracking usage. If a purchaseOrderId value is given, it
+   * appears in the API responses and shows up in the invoice. The property
+   * accepts up to 80 plain text characters. This is only supported for Google
+   * Workspace entitlements.
    * </pre>
    *
    * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3065,7 +3072,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3084,7 +3092,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3100,7 +3109,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3118,7 +3128,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3143,7 +3154,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3167,7 +3179,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3191,7 +3204,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3210,7 +3224,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3226,7 +3241,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3243,7 +3259,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3264,7 +3281,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3284,7 +3302,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Enumerable of all current suspension reasons for an entitlement.
+     * Output only. Enumerable of all current suspension reasons for an
+     * entitlement.
      * </pre>
      *
      * <code>
@@ -3308,11 +3327,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This purchase order (PO) information is for resellers to use for their
-     * company tracking usage. If a purchaseOrderId value is given, it appears in
-     * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters. This is only supported for Google Workspace
-     * entitlements.
+     * Optional. This purchase order (PO) information is for resellers to use for
+     * their company tracking usage. If a purchaseOrderId value is given, it
+     * appears in the API responses and shows up in the invoice. The property
+     * accepts up to 80 plain text characters. This is only supported for Google
+     * Workspace entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3334,11 +3353,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This purchase order (PO) information is for resellers to use for their
-     * company tracking usage. If a purchaseOrderId value is given, it appears in
-     * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters. This is only supported for Google Workspace
-     * entitlements.
+     * Optional. This purchase order (PO) information is for resellers to use for
+     * their company tracking usage. If a purchaseOrderId value is given, it
+     * appears in the API responses and shows up in the invoice. The property
+     * accepts up to 80 plain text characters. This is only supported for Google
+     * Workspace entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3360,11 +3379,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This purchase order (PO) information is for resellers to use for their
-     * company tracking usage. If a purchaseOrderId value is given, it appears in
-     * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters. This is only supported for Google Workspace
-     * entitlements.
+     * Optional. This purchase order (PO) information is for resellers to use for
+     * their company tracking usage. If a purchaseOrderId value is given, it
+     * appears in the API responses and shows up in the invoice. The property
+     * accepts up to 80 plain text characters. This is only supported for Google
+     * Workspace entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3385,11 +3404,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This purchase order (PO) information is for resellers to use for their
-     * company tracking usage. If a purchaseOrderId value is given, it appears in
-     * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters. This is only supported for Google Workspace
-     * entitlements.
+     * Optional. This purchase order (PO) information is for resellers to use for
+     * their company tracking usage. If a purchaseOrderId value is given, it
+     * appears in the API responses and shows up in the invoice. The property
+     * accepts up to 80 plain text characters. This is only supported for Google
+     * Workspace entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3406,11 +3425,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This purchase order (PO) information is for resellers to use for their
-     * company tracking usage. If a purchaseOrderId value is given, it appears in
-     * the API responses and shows up in the invoice. The property accepts up to
-     * 80 plain text characters. This is only supported for Google Workspace
-     * entitlements.
+     * Optional. This purchase order (PO) information is for resellers to use for
+     * their company tracking usage. If a purchaseOrderId value is given, it
+     * appears in the API responses and shows up in the invoice. The property
+     * accepts up to 80 plain text characters. This is only supported for Google
+     * Workspace entitlements.
      * </pre>
      *
      * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>

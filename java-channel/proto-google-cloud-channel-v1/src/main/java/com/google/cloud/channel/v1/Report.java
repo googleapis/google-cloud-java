@@ -77,9 +77,9 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The report's resource name. Specifies the account and report used to
-   * generate report data. The report_id identifier is a UID
-   * (for example, `613bf59q`).
+   * Required. The report's resource name. Specifies the account and report used
+   * to generate report data. The report_id identifier is a UID (for example,
+   * `613bf59q`).
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
    * </pre>
@@ -104,9 +104,9 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The report's resource name. Specifies the account and report used to
-   * generate report data. The report_id identifier is a UID
-   * (for example, `613bf59q`).
+   * Required. The report's resource name. Specifies the account and report used
+   * to generate report data. The report_id identifier is a UID (for example,
+   * `613bf59q`).
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
    * </pre>
@@ -748,9 +748,9 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The report's resource name. Specifies the account and report used to
-     * generate report data. The report_id identifier is a UID
-     * (for example, `613bf59q`).
+     * Required. The report's resource name. Specifies the account and report used
+     * to generate report data. The report_id identifier is a UID (for example,
+     * `613bf59q`).
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -774,9 +774,9 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The report's resource name. Specifies the account and report used to
-     * generate report data. The report_id identifier is a UID
-     * (for example, `613bf59q`).
+     * Required. The report's resource name. Specifies the account and report used
+     * to generate report data. The report_id identifier is a UID (for example,
+     * `613bf59q`).
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -800,9 +800,9 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The report's resource name. Specifies the account and report used to
-     * generate report data. The report_id identifier is a UID
-     * (for example, `613bf59q`).
+     * Required. The report's resource name. Specifies the account and report used
+     * to generate report data. The report_id identifier is a UID (for example,
+     * `613bf59q`).
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -825,9 +825,9 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The report's resource name. Specifies the account and report used to
-     * generate report data. The report_id identifier is a UID
-     * (for example, `613bf59q`).
+     * Required. The report's resource name. Specifies the account and report used
+     * to generate report data. The report_id identifier is a UID (for example,
+     * `613bf59q`).
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -846,9 +846,9 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The report's resource name. Specifies the account and report used to
-     * generate report data. The report_id identifier is a UID
-     * (for example, `613bf59q`).
+     * Required. The report's resource name. Specifies the account and report used
+     * to generate report data. The report_id identifier is a UID (for example,
+     * `613bf59q`).
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>

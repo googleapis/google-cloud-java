@@ -168,9 +168,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Specifies whether this parameter is allowed to be changed. For example, for
-   * a Google Workspace Business Starter entitlement in commitment plan,
-   * num_units is editable when entitlement is active.
+   * Output only. Specifies whether this parameter is allowed to be changed. For
+   * example, for a Google Workspace Business Starter entitlement in commitment
+   * plan, num_units is editable when entitlement is active.
    * </pre>
    *
    * <code>bool editable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -854,9 +854,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies whether this parameter is allowed to be changed. For example, for
-     * a Google Workspace Business Starter entitlement in commitment plan,
-     * num_units is editable when entitlement is active.
+     * Output only. Specifies whether this parameter is allowed to be changed. For
+     * example, for a Google Workspace Business Starter entitlement in commitment
+     * plan, num_units is editable when entitlement is active.
      * </pre>
      *
      * <code>bool editable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -871,9 +871,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies whether this parameter is allowed to be changed. For example, for
-     * a Google Workspace Business Starter entitlement in commitment plan,
-     * num_units is editable when entitlement is active.
+     * Output only. Specifies whether this parameter is allowed to be changed. For
+     * example, for a Google Workspace Business Starter entitlement in commitment
+     * plan, num_units is editable when entitlement is active.
      * </pre>
      *
      * <code>bool editable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -891,9 +891,9 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Specifies whether this parameter is allowed to be changed. For example, for
-     * a Google Workspace Business Starter entitlement in commitment plan,
-     * num_units is editable when entitlement is active.
+     * Output only. Specifies whether this parameter is allowed to be changed. For
+     * example, for a Google Workspace Business Starter entitlement in commitment
+     * plan, num_units is editable when entitlement is active.
      * </pre>
      *
      * <code>bool editable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

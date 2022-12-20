@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.GetCustomer][google.cloud.channel.v1.CloudChannelService.GetCustomer].
+ * Request message for
+ * [CloudChannelService.GetCustomer][google.cloud.channel.v1.CloudChannelService.GetCustomer].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.GetCustomerRequest}
@@ -285,7 +286,8 @@ public final class GetCustomerRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.GetCustomer][google.cloud.channel.v1.CloudChannelService.GetCustomer].
+   * Request message for
+   * [CloudChannelService.GetCustomer][google.cloud.channel.v1.CloudChannelService.GetCustomer].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.GetCustomerRequest}

@@ -27,7 +27,8 @@ public interface DeleteChannelPartnerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the channel partner repricing config rule to delete.
+   * Required. The resource name of the channel partner repricing config rule to
+   * delete.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface DeleteChannelPartnerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the channel partner repricing config rule to delete.
+   * Required. The resource name of the channel partner repricing config rule to
+   * delete.
    * </pre>
    *
    * <code>

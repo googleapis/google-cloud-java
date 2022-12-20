@@ -78,8 +78,9 @@ public interface ListReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-   * the next page of results.
+   * Pass this token to
+   * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -91,8 +92,9 @@ public interface ListReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-   * the next page of results.
+   * Pass this token to
+   * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

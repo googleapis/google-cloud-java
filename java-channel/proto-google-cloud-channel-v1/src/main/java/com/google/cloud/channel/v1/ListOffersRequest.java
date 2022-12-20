@@ -76,8 +76,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account from which to list Offers.
-   * Parent uses the format: accounts/{account_id}.
+   * Required. The resource name of the reseller account from which to list
+   * Offers. Parent uses the format: accounts/{account_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,8 +100,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The resource name of the reseller account from which to list Offers.
-   * Parent uses the format: accounts/{account_id}.
+   * Required. The resource name of the reseller account from which to list
+   * Offers. Parent uses the format: accounts/{account_id}.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,9 +127,9 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, returns at most 500 Offers.
-   * The maximum value is 1000; the server will coerce values above 1000.
+   * Optional. Requested page size. Server might return fewer results than
+   * requested. If unspecified, returns at most 500 Offers. The maximum value is
+   * 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -721,8 +721,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list Offers.
-     * Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the reseller account from which to list
+     * Offers. Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -744,8 +744,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list Offers.
-     * Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the reseller account from which to list
+     * Offers. Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -767,8 +767,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list Offers.
-     * Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the reseller account from which to list
+     * Offers. Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -789,8 +789,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list Offers.
-     * Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the reseller account from which to list
+     * Offers. Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -807,8 +807,8 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The resource name of the reseller account from which to list Offers.
-     * Parent uses the format: accounts/{account_id}.
+     * Required. The resource name of the reseller account from which to list
+     * Offers. Parent uses the format: accounts/{account_id}.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -832,9 +832,9 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, returns at most 500 Offers.
-     * The maximum value is 1000; the server will coerce values above 1000.
+     * Optional. Requested page size. Server might return fewer results than
+     * requested. If unspecified, returns at most 500 Offers. The maximum value is
+     * 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -849,9 +849,9 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, returns at most 500 Offers.
-     * The maximum value is 1000; the server will coerce values above 1000.
+     * Optional. Requested page size. Server might return fewer results than
+     * requested. If unspecified, returns at most 500 Offers. The maximum value is
+     * 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -869,9 +869,9 @@ public final class ListOffersRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Requested page size. Server might return fewer results than requested.
-     * If unspecified, returns at most 500 Offers.
-     * The maximum value is 1000; the server will coerce values above 1000.
+     * Optional. Requested page size. Server might return fewer results than
+     * requested. If unspecified, returns at most 500 Offers. The maximum value is
+     * 1000; the server will coerce values above 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
