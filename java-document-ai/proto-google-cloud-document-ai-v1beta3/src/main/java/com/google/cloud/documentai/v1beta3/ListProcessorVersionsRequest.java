@@ -74,8 +74,9 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to list all versions.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * Required. The parent (project, location and processor) to list all
+   * versions. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>
@@ -100,8 +101,9 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to list all versions.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * Required. The parent (project, location and processor) to list all
+   * versions. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>
@@ -576,8 +578,9 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to list all versions.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`
+     * Required. The parent (project, location and processor) to list all
+     * versions. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -601,8 +604,9 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to list all versions.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`
+     * Required. The parent (project, location and processor) to list all
+     * versions. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -626,8 +630,9 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to list all versions.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`
+     * Required. The parent (project, location and processor) to list all
+     * versions. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -650,8 +655,9 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to list all versions.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`
+     * Required. The parent (project, location and processor) to list all
+     * versions. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>
@@ -670,8 +676,9 @@ public final class ListProcessorVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The parent (project, location and processor) to list all versions.
-     * Format: `projects/{project}/locations/{location}/processors/{processor}`
+     * Required. The parent (project, location and processor) to list all
+     * versions. Format:
+     * `projects/{project}/locations/{location}/processors/{processor}`
      * </pre>
      *
      * <code>

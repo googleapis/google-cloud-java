@@ -308,8 +308,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will be
-   * reviewed with.
+   * Required. The resource name of the HumanReviewConfig that the document will
+   * be reviewed with.
    * </pre>
    *
    * <code>
@@ -334,8 +334,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will be
-   * reviewed with.
+   * Required. The resource name of the HumanReviewConfig that the document will
+   * be reviewed with.
    * </pre>
    *
    * <code>
@@ -1152,8 +1152,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1177,8 +1177,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1202,8 +1202,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1226,8 +1226,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1246,8 +1246,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
