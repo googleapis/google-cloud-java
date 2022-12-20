@@ -22,10 +22,11 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * A [Secret][google.cloud.secretmanager.v1.Secret] is a logical secret whose value and versions can
- * be accessed.
- * A [Secret][google.cloud.secretmanager.v1.Secret] is made up of zero or more [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] that
- * represent the secret data.
+ * A [Secret][google.cloud.secretmanager.v1.Secret] is a logical secret whose
+ * value and versions can be accessed.
+ * A [Secret][google.cloud.secretmanager.v1.Secret] is made up of zero or more
+ * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] that represent
+ * the secret data.
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.Secret}
@@ -70,6 +71,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         return internalGetLabels();
       case 11:
         return internalGetVersionAliases();
+      case 13:
+        return internalGetAnnotations();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -138,7 +141,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -161,7 +166,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -187,7 +194,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secretmanager.v1.Secret].
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -205,7 +213,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secretmanager.v1.Secret].
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -225,7 +234,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secretmanager.v1.Secret].
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -244,7 +254,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -260,7 +271,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -276,7 +288,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -419,8 +432,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -435,8 +448,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -452,8 +465,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -468,8 +481,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -484,8 +497,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-   * control plane operations are called on the secret or its versions.
+   * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+   * when control plane operations are called on the secret or its versions.
    * </pre>
    *
    * <code>
@@ -502,8 +515,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
+   * Optional. Timestamp in UTC when the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+   * This is always provided on output, regardless of what was sent on input.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -519,8 +533,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
+   * Optional. Timestamp in UTC when the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+   * This is always provided on output, regardless of what was sent on input.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -539,8 +554,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-   * always provided on output, regardless of what was sent on input.
+   * Optional. Timestamp in UTC when the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+   * This is always provided on output, regardless of what was sent on input.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -559,7 +575,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Input only. The TTL for the
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -574,7 +591,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Input only. The TTL for the
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -592,7 +610,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * Input only. The TTL for the
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -611,7 +630,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * Optional. Etag of the currently stored
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -634,7 +654,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+   * Optional. Etag of the currently stored
+   * [Secret][google.cloud.secretmanager.v1.Secret].
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -660,8 +681,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-   * rotation policy.
+   * Optional. Rotation policy attached to the
+   * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+   * no rotation policy.
    * </pre>
    *
    * <code>
@@ -678,8 +700,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-   * rotation policy.
+   * Optional. Rotation policy attached to the
+   * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+   * no rotation policy.
    * </pre>
    *
    * <code>
@@ -698,8 +721,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-   * rotation policy.
+   * Optional. Rotation policy attached to the
+   * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+   * no rotation policy.
    * </pre>
    *
    * <code>
@@ -847,6 +871,142 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int ANNOTATIONS_FIELD_NUMBER = 13;
+
+  private static final class AnnotationsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.secretmanager.v1.ResourcesProto
+                .internal_static_google_cloud_secretmanager_v1_Secret_AnnotationsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetAnnotations() {
+    if (annotations_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+    }
+    return annotations_;
+  }
+
+  public int getAnnotationsCount() {
+    return internalGetAnnotations().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAnnotations(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAnnotations().getMap().containsKey(key);
+  }
+  /** Use {@link #getAnnotationsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+    return getAnnotationsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+    return internalGetAnnotations().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAnnotationsOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom metadata about the secret.
+   * Annotations are distinct from various forms of labels.
+   * Annotations exist to allow client tools to store their own state
+   * information without requiring a database.
+   * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+   * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+   * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+   * alphanumerics in between these symbols.
+   * The total size of annotation keys and values must be less than 16KiB.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -889,6 +1049,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetVersionAliases(), VersionAliasesDefaultEntryHolder.defaultEntry, 11);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 13);
     getUnknownFields().writeTo(output);
   }
 
@@ -946,6 +1108,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, versionAliases__);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAnnotations().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+          AnnotationsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, annotations__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -978,6 +1150,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (!getRotation().equals(other.getRotation())) return false;
     }
     if (!internalGetVersionAliases().equals(other.internalGetVersionAliases())) return false;
+    if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 6:
@@ -1027,6 +1200,10 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetVersionAliases().getMap().isEmpty()) {
       hash = (37 * hash) + VERSION_ALIASES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetVersionAliases().hashCode();
+    }
+    if (!internalGetAnnotations().getMap().isEmpty()) {
+      hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAnnotations().hashCode();
     }
     switch (expirationCase_) {
       case 6:
@@ -1144,10 +1321,11 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secretmanager.v1.Secret] is a logical secret whose value and versions can
-   * be accessed.
-   * A [Secret][google.cloud.secretmanager.v1.Secret] is made up of zero or more [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] that
-   * represent the secret data.
+   * A [Secret][google.cloud.secretmanager.v1.Secret] is a logical secret whose
+   * value and versions can be accessed.
+   * A [Secret][google.cloud.secretmanager.v1.Secret] is made up of zero or more
+   * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] that represent
+   * the secret data.
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.Secret}
@@ -1168,6 +1346,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
           return internalGetLabels();
         case 11:
           return internalGetVersionAliases();
+        case 13:
+          return internalGetAnnotations();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1180,6 +1360,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableLabels();
         case 11:
           return internalGetMutableVersionAliases();
+        case 13:
+          return internalGetMutableAnnotations();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1242,6 +1424,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         rotationBuilder_ = null;
       }
       internalGetMutableVersionAliases().clear();
+      internalGetMutableAnnotations().clear();
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -1316,6 +1499,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       result.versionAliases_ = internalGetVersionAliases();
       result.versionAliases_.makeImmutable();
+      result.annotations_ = internalGetAnnotations();
+      result.annotations_.makeImmutable();
       result.expirationCase_ = expirationCase_;
       onBuilt();
       return result;
@@ -1412,6 +1597,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         mergeRotation(other.getRotation());
       }
       internalGetMutableVersionAliases().mergeFrom(other.internalGetVersionAliases());
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
           {
@@ -1531,6 +1717,17 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
                     .put(versionAliases__.getKey(), versionAliases__.getValue());
                 break;
               } // case 90
+            case 106:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> annotations__ =
+                    input.readMessage(
+                        AnnotationsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAnnotations()
+                    .getMutableMap()
+                    .put(annotations__.getKey(), annotations__.getValue());
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1569,7 +1766,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1591,7 +1790,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1613,7 +1814,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1634,7 +1837,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1651,7 +1856,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secretmanager.v1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1680,7 +1887,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1697,7 +1905,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1720,7 +1929,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1745,7 +1955,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1768,7 +1979,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1797,7 +2009,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1820,7 +2033,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1837,7 +2051,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1858,7 +2073,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secretmanager.v1.Secret].
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1893,7 +2109,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1909,7 +2126,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1931,7 +2149,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1955,7 +2174,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1976,7 +2196,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -2002,7 +2223,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -2024,7 +2246,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -2040,7 +2263,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -2060,7 +2284,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secretmanager.v1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -2311,8 +2536,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2330,8 +2555,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2349,8 +2574,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2368,8 +2593,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2393,8 +2618,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2416,8 +2641,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2441,8 +2666,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2466,8 +2691,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2488,8 +2713,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2511,8 +2736,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2534,8 +2759,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2556,8 +2781,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2578,8 +2803,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2593,8 +2818,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2612,8 +2837,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2632,8 +2857,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2648,8 +2873,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2664,8 +2889,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A list of up to 10 Pub/Sub topics to which messages are published when
-     * control plane operations are called on the secret or its versions.
+     * Optional. A list of up to 10 Pub/Sub topics to which messages are published
+     * when control plane operations are called on the secret or its versions.
      * </pre>
      *
      * <code>
@@ -2702,8 +2927,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2719,8 +2945,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2746,8 +2973,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2770,8 +2998,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2791,8 +3020,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2824,8 +3054,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2851,8 +3082,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2865,8 +3097,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2887,8 +3120,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
-     * always provided on output, regardless of what was sent on input.
+     * Optional. Timestamp in UTC when the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire.
+     * This is always provided on output, regardless of what was sent on input.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2926,7 +3160,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2941,7 +3176,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2966,7 +3202,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2988,7 +3225,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3007,7 +3245,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3038,7 +3277,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3063,7 +3303,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3075,7 +3316,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3095,7 +3337,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * Input only. The TTL for the
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3128,7 +3371,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * Optional. Etag of the currently stored
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3150,7 +3394,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * Optional. Etag of the currently stored
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3172,7 +3417,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * Optional. Etag of the currently stored
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3193,7 +3439,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * Optional. Etag of the currently stored
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3210,7 +3457,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Etag of the currently stored [Secret][google.cloud.secretmanager.v1.Secret].
+     * Optional. Etag of the currently stored
+     * [Secret][google.cloud.secretmanager.v1.Secret].
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3239,8 +3487,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3256,8 +3505,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3279,8 +3529,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3304,8 +3555,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3326,8 +3578,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3355,8 +3608,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3378,8 +3632,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3395,8 +3650,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3416,8 +3672,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Rotation policy attached to the [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is no
-     * rotation policy.
+     * Optional. Rotation policy attached to the
+     * [Secret][google.cloud.secretmanager.v1.Secret]. May be excluded if there is
+     * no rotation policy.
      * </pre>
      *
      * <code>
@@ -3665,6 +3922,230 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllVersionAliases(java.util.Map<java.lang.String, java.lang.Long> values) {
       internalGetMutableVersionAliases().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAnnotations() {
+      if (annotations_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      return annotations_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAnnotations() {
+      onChanged();
+      ;
+      if (annotations_ == null) {
+        annotations_ =
+            com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
+      }
+      if (!annotations_.isMutable()) {
+        annotations_ = annotations_.copy();
+      }
+      return annotations_;
+    }
+
+    public int getAnnotationsCount() {
+      return internalGetAnnotations().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom metadata about the secret.
+     * Annotations are distinct from various forms of labels.
+     * Annotations exist to allow client tools to store their own state
+     * information without requiring a database.
+     * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+     * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+     * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+     * alphanumerics in between these symbols.
+     * The total size of annotation keys and values must be less than 16KiB.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAnnotations().getMap().containsKey(key);
+    }
+    /** Use {@link #getAnnotationsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
+      return getAnnotationsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom metadata about the secret.
+     * Annotations are distinct from various forms of labels.
+     * Annotations exist to allow client tools to store their own state
+     * information without requiring a database.
+     * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+     * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+     * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+     * alphanumerics in between these symbols.
+     * The total size of annotation keys and values must be less than 16KiB.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
+      return internalGetAnnotations().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom metadata about the secret.
+     * Annotations are distinct from various forms of labels.
+     * Annotations exist to allow client tools to store their own state
+     * information without requiring a database.
+     * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+     * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+     * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+     * alphanumerics in between these symbols.
+     * The total size of annotation keys and values must be less than 16KiB.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom metadata about the secret.
+     * Annotations are distinct from various forms of labels.
+     * Annotations exist to allow client tools to store their own state
+     * information without requiring a database.
+     * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+     * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+     * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+     * alphanumerics in between these symbols.
+     * The total size of annotation keys and values must be less than 16KiB.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAnnotations() {
+      internalGetMutableAnnotations().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom metadata about the secret.
+     * Annotations are distinct from various forms of labels.
+     * Annotations exist to allow client tools to store their own state
+     * information without requiring a database.
+     * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+     * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+     * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+     * alphanumerics in between these symbols.
+     * The total size of annotation keys and values must be less than 16KiB.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAnnotations(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAnnotations().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      return internalGetMutableAnnotations().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom metadata about the secret.
+     * Annotations are distinct from various forms of labels.
+     * Annotations exist to allow client tools to store their own state
+     * information without requiring a database.
+     * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+     * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+     * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+     * alphanumerics in between these symbols.
+     * The total size of annotation keys and values must be less than 16KiB.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAnnotations(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableAnnotations().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom metadata about the secret.
+     * Annotations are distinct from various forms of labels.
+     * Annotations exist to allow client tools to store their own state
+     * information without requiring a database.
+     * Annotation keys must be between 1 and 63 characters long, have a UTF-8
+     * encoding of maximum 128 bytes, begin and end with an alphanumeric character
+     * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
+     * alphanumerics in between these symbols.
+     * The total size of annotation keys and values must be less than 16KiB.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAnnotations().getMutableMap().putAll(values);
       return this;
     }
 

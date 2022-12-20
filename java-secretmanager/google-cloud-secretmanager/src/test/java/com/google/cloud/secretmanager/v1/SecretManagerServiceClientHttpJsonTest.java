@@ -202,6 +202,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -257,6 +258,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -414,6 +416,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -465,6 +468,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -516,6 +520,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -529,6 +534,7 @@ public class SecretManagerServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -568,6 +574,7 @@ public class SecretManagerServiceClientHttpJsonTest {
               .setEtag("etag3123477")
               .setRotation(Rotation.newBuilder().build())
               .putAllVersionAliases(new HashMap<String, Long>())
+              .putAllAnnotations(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSecret(secret, updateMask);

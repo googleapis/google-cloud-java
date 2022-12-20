@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1;
  *
  * <pre>
  * A secret payload resource in the Secret Manager API. This contains the
- * sensitive secret payload that is associated with a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+ * sensitive secret payload that is associated with a
+ * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.SecretPayload}
@@ -93,12 +94,18 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
-   * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
-   * the crc32c checksum and store it to include in future
-   * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
-   * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
-   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+   * Optional. If specified,
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+   * will verify the integrity of the received
+   * [data][google.cloud.secretmanager.v1.SecretPayload.data] on
+   * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+   * calls using the crc32c checksum and store it to include in future
+   * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion]
+   * responses. If a checksum is not provided in the
+   * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+   * request, the
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+   * will generate and store one for you.
    * The CRC32C value is encoded as a Int64 for compatibility, and can be
    * safely downconverted to uint32 in languages that support this type.
    * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -116,12 +123,18 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
-   * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
-   * the crc32c checksum and store it to include in future
-   * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
-   * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
-   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+   * Optional. If specified,
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+   * will verify the integrity of the received
+   * [data][google.cloud.secretmanager.v1.SecretPayload.data] on
+   * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+   * calls using the crc32c checksum and store it to include in future
+   * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion]
+   * responses. If a checksum is not provided in the
+   * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+   * request, the
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+   * will generate and store one for you.
    * The CRC32C value is encoded as a Int64 for compatibility, and can be
    * safely downconverted to uint32 in languages that support this type.
    * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -314,7 +327,8 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A secret payload resource in the Secret Manager API. This contains the
-   * sensitive secret payload that is associated with a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * sensitive secret payload that is associated with a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.SecretPayload}
@@ -560,12 +574,18 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
-     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
-     * the crc32c checksum and store it to include in future
-     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
-     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
-     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * Optional. If specified,
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will verify the integrity of the received
+     * [data][google.cloud.secretmanager.v1.SecretPayload.data] on
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * calls using the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion]
+     * responses. If a checksum is not provided in the
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will generate and store one for you.
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -583,12 +603,18 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
-     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
-     * the crc32c checksum and store it to include in future
-     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
-     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
-     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * Optional. If specified,
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will verify the integrity of the received
+     * [data][google.cloud.secretmanager.v1.SecretPayload.data] on
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * calls using the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion]
+     * responses. If a checksum is not provided in the
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will generate and store one for you.
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -606,12 +632,18 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
-     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
-     * the crc32c checksum and store it to include in future
-     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
-     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
-     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * Optional. If specified,
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will verify the integrity of the received
+     * [data][google.cloud.secretmanager.v1.SecretPayload.data] on
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * calls using the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion]
+     * responses. If a checksum is not provided in the
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will generate and store one for you.
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types
@@ -632,12 +664,18 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If specified, [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will verify the integrity of the
-     * received [data][google.cloud.secretmanager.v1.SecretPayload.data] on [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] calls using
-     * the crc32c checksum and store it to include in future
-     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion] responses. If a checksum is
-     * not provided in the [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion] request, the
-     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] will generate and store one for you.
+     * Optional. If specified,
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will verify the integrity of the received
+     * [data][google.cloud.secretmanager.v1.SecretPayload.data] on
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * calls using the crc32c checksum and store it to include in future
+     * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion]
+     * responses. If a checksum is not provided in the
+     * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion]
+     * request, the
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * will generate and store one for you.
      * The CRC32C value is encoded as a Int64 for compatibility, and can be
      * safely downconverted to uint32 in languages that support this type.
      * https://cloud.google.com/apis/design/design_patterns#integer_types

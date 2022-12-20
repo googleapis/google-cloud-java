@@ -27,7 +27,8 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be
+   * replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
@@ -39,7 +40,8 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be
+   * replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
@@ -51,7 +53,8 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions.
+   * The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be
+   * replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.Replication.Automatic automatic = 1;</code>
@@ -62,7 +65,8 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be
+   * replicated into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
@@ -74,7 +78,8 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be
+   * replicated into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>
@@ -86,7 +91,8 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified.
+   * The [Secret][google.cloud.secretmanager.v1.Secret] will only be
+   * replicated into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.Replication.UserManaged user_managed = 2;</code>

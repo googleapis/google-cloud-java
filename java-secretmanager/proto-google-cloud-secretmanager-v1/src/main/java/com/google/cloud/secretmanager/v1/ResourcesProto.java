@@ -40,6 +40,10 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_secretmanager_v1_Secret_VersionAliasesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_secretmanager_v1_Secret_AnnotationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_secretmanager_v1_Secret_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_secretmanager_v1_SecretVersion_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_secretmanager_v1_SecretVersion_fieldAccessorTable;
@@ -109,7 +113,7 @@ public final class ResourcesProto {
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032\036google/protobuf/dura"
           + "tion.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\356\005\n\006Secret\022\021\n\004name\030\001 \001(\tB\003\340A\003\022G\n\013rep"
+          + "oto\"\364\006\n\006Secret\022\021\n\004name\030\001 \001(\tB\003\340A\003\022G\n\013rep"
           + "lication\030\002 \001(\0132*.google.cloud.secretmana"
           + "ger.v1.ReplicationB\006\340A\005\340A\002\0224\n\013create_tim"
           + "e\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
@@ -123,71 +127,74 @@ public final class ResourcesProto {
           + "d.secretmanager.v1.RotationB\003\340A\001\022W\n\017vers"
           + "ion_aliases\030\013 \003(\01329.google.cloud.secretm"
           + "anager.v1.Secret.VersionAliasesEntryB\003\340A"
-          + "\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\t:\0028\001\0325\n\023VersionAliasesEntry\022\013\n\003key\030\001"
-          + " \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001:M\352AJ\n#secretmana"
-          + "ger.googleapis.com/Secret\022#projects/{pro"
-          + "ject}/secrets/{secret}B\014\n\nexpiration\"\242\004\n"
-          + "\rSecretVersion\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013cre"
-          + "ate_time\030\002 \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\003\340A\003\0225\n\014destroy_time\030\003 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\022F\n\005state\030\004 \001(\01622."
-          + "google.cloud.secretmanager.v1.SecretVers"
-          + "ion.StateB\003\340A\003\022L\n\022replication_status\030\005 \001"
-          + "(\01320.google.cloud.secretmanager.v1.Repli"
-          + "cationStatus\022\021\n\004etag\030\006 \001(\tB\003\340A\003\022.\n!clien"
-          + "t_specified_payload_checksum\030\007 \001(\010B\003\340A\003\""
-          + "H\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007ENABL"
-          + "ED\020\001\022\014\n\010DISABLED\020\002\022\r\n\tDESTROYED\020\003:n\352Ak\n*"
-          + "secretmanager.googleapis.com/SecretVersi"
-          + "on\022=projects/{project}/secrets/{secret}/"
-          + "versions/{secret_version}\"\220\004\n\013Replicatio"
-          + "n\022I\n\tautomatic\030\001 \001(\01324.google.cloud.secr"
-          + "etmanager.v1.Replication.AutomaticH\000\022N\n\014"
-          + "user_managed\030\002 \001(\01326.google.cloud.secret"
-          + "manager.v1.Replication.UserManagedH\000\032o\n\t"
-          + "Automatic\022b\n\033customer_managed_encryption"
-          + "\030\001 \001(\01328.google.cloud.secretmanager.v1.C"
-          + "ustomerManagedEncryptionB\003\340A\001\032\345\001\n\013UserMa"
-          + "naged\022U\n\010replicas\030\001 \003(\0132>.google.cloud.s"
-          + "ecretmanager.v1.Replication.UserManaged."
-          + "ReplicaB\003\340A\002\032\177\n\007Replica\022\020\n\010location\030\001 \001("
-          + "\t\022b\n\033customer_managed_encryption\030\002 \001(\01328"
-          + ".google.cloud.secretmanager.v1.CustomerM"
-          + "anagedEncryptionB\003\340A\001B\r\n\013replication\"6\n\031"
-          + "CustomerManagedEncryption\022\031\n\014kms_key_nam"
-          + "e\030\001 \001(\tB\003\340A\002\"\353\004\n\021ReplicationStatus\022U\n\tau"
-          + "tomatic\030\001 \001(\0132@.google.cloud.secretmanag"
-          + "er.v1.ReplicationStatus.AutomaticStatusH"
-          + "\000\022Z\n\014user_managed\030\002 \001(\0132B.google.cloud.s"
-          + "ecretmanager.v1.ReplicationStatus.UserMa"
-          + "nagedStatusH\000\032{\n\017AutomaticStatus\022h\n\033cust"
-          + "omer_managed_encryption\030\001 \001(\0132>.google.c"
-          + "loud.secretmanager.v1.CustomerManagedEnc"
-          + "ryptionStatusB\003\340A\003\032\217\002\n\021UserManagedStatus"
-          + "\022g\n\010replicas\030\001 \003(\0132P.google.cloud.secret"
-          + "manager.v1.ReplicationStatus.UserManaged"
-          + "Status.ReplicaStatusB\003\340A\003\032\220\001\n\rReplicaSta"
-          + "tus\022\025\n\010location\030\001 \001(\tB\003\340A\003\022h\n\033customer_m"
-          + "anaged_encryption\030\002 \001(\0132>.google.cloud.s"
-          + "ecretmanager.v1.CustomerManagedEncryptio"
-          + "nStatusB\003\340A\003B\024\n\022replication_status\"D\n\037Cu"
-          + "stomerManagedEncryptionStatus\022!\n\024kms_key"
-          + "_version_name\030\001 \001(\tB\003\340A\002\"_\n\005Topic\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\002:C\352A@\n\033pubsub.googleapis.com"
-          + "/Topic\022!projects/{project}/topics/{topic"
-          + "}\"\200\001\n\010Rotation\022;\n\022next_rotation_time\030\001 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\001\0227\n\017r"
-          + "otation_period\030\002 \001(\0132\031.google.protobuf.D"
-          + "urationB\003\340A\004\"L\n\rSecretPayload\022\014\n\004data\030\001 "
-          + "\001(\014\022\035\n\013data_crc32c\030\002 \001(\003B\003\340A\001H\000\210\001\001B\016\n\014_d"
-          + "ata_crc32cB\355\001\n!com.google.cloud.secretma"
-          + "nager.v1B\016ResourcesProtoP\001ZJgoogle.golan"
-          + "g.org/genproto/googleapis/cloud/secretma"
-          + "nager/v1;secretmanager\370\001\001\242\002\003GSM\252\002\035Google"
-          + ".Cloud.SecretManager.V1\312\002\035Google\\Cloud\\S"
-          + "ecretManager\\V1\352\002 Google::Cloud::SecretM"
-          + "anager::V1b\006proto3"
+          + "\001\022P\n\013annotations\030\r \003(\01326.google.cloud.se"
+          + "cretmanager.v1.Secret.AnnotationsEntryB\003"
+          + "\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\t:\0028\001\0325\n\023VersionAliasesEntry\022\013\n\003key"
+          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\0322\n\020Annotations"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:M\352"
+          + "AJ\n#secretmanager.googleapis.com/Secret\022"
+          + "#projects/{project}/secrets/{secret}B\014\n\n"
+          + "expiration\"\242\004\n\rSecretVersion\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\003\0224\n\013create_time\030\002 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0225\n\014destroy_time\030\003 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022F\n\005"
+          + "state\030\004 \001(\01622.google.cloud.secretmanager"
+          + ".v1.SecretVersion.StateB\003\340A\003\022L\n\022replicat"
+          + "ion_status\030\005 \001(\01320.google.cloud.secretma"
+          + "nager.v1.ReplicationStatus\022\021\n\004etag\030\006 \001(\t"
+          + "B\003\340A\003\022.\n!client_specified_payload_checks"
+          + "um\030\007 \001(\010B\003\340A\003\"H\n\005State\022\025\n\021STATE_UNSPECIF"
+          + "IED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED\020\002\022\r\n\tDEST"
+          + "ROYED\020\003:n\352Ak\n*secretmanager.googleapis.c"
+          + "om/SecretVersion\022=projects/{project}/sec"
+          + "rets/{secret}/versions/{secret_version}\""
+          + "\220\004\n\013Replication\022I\n\tautomatic\030\001 \001(\01324.goo"
+          + "gle.cloud.secretmanager.v1.Replication.A"
+          + "utomaticH\000\022N\n\014user_managed\030\002 \001(\01326.googl"
+          + "e.cloud.secretmanager.v1.Replication.Use"
+          + "rManagedH\000\032o\n\tAutomatic\022b\n\033customer_mana"
+          + "ged_encryption\030\001 \001(\01328.google.cloud.secr"
+          + "etmanager.v1.CustomerManagedEncryptionB\003"
+          + "\340A\001\032\345\001\n\013UserManaged\022U\n\010replicas\030\001 \003(\0132>."
+          + "google.cloud.secretmanager.v1.Replicatio"
+          + "n.UserManaged.ReplicaB\003\340A\002\032\177\n\007Replica\022\020\n"
+          + "\010location\030\001 \001(\t\022b\n\033customer_managed_encr"
+          + "yption\030\002 \001(\01328.google.cloud.secretmanage"
+          + "r.v1.CustomerManagedEncryptionB\003\340A\001B\r\n\013r"
+          + "eplication\"6\n\031CustomerManagedEncryption\022"
+          + "\031\n\014kms_key_name\030\001 \001(\tB\003\340A\002\"\353\004\n\021Replicati"
+          + "onStatus\022U\n\tautomatic\030\001 \001(\0132@.google.clo"
+          + "ud.secretmanager.v1.ReplicationStatus.Au"
+          + "tomaticStatusH\000\022Z\n\014user_managed\030\002 \001(\0132B."
+          + "google.cloud.secretmanager.v1.Replicatio"
+          + "nStatus.UserManagedStatusH\000\032{\n\017Automatic"
+          + "Status\022h\n\033customer_managed_encryption\030\001 "
+          + "\001(\0132>.google.cloud.secretmanager.v1.Cust"
+          + "omerManagedEncryptionStatusB\003\340A\003\032\217\002\n\021Use"
+          + "rManagedStatus\022g\n\010replicas\030\001 \003(\0132P.googl"
+          + "e.cloud.secretmanager.v1.ReplicationStat"
+          + "us.UserManagedStatus.ReplicaStatusB\003\340A\003\032"
+          + "\220\001\n\rReplicaStatus\022\025\n\010location\030\001 \001(\tB\003\340A\003"
+          + "\022h\n\033customer_managed_encryption\030\002 \001(\0132>."
+          + "google.cloud.secretmanager.v1.CustomerMa"
+          + "nagedEncryptionStatusB\003\340A\003B\024\n\022replicatio"
+          + "n_status\"D\n\037CustomerManagedEncryptionSta"
+          + "tus\022!\n\024kms_key_version_name\030\001 \001(\tB\003\340A\002\"_"
+          + "\n\005Topic\022\021\n\004name\030\001 \001(\tB\003\340A\002:C\352A@\n\033pubsub."
+          + "googleapis.com/Topic\022!projects/{project}"
+          + "/topics/{topic}\"\200\001\n\010Rotation\022;\n\022next_rot"
+          + "ation_time\030\001 \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\001\0227\n\017rotation_period\030\002 \001(\0132\031.goo"
+          + "gle.protobuf.DurationB\003\340A\004\"L\n\rSecretPayl"
+          + "oad\022\014\n\004data\030\001 \001(\014\022\035\n\013data_crc32c\030\002 \001(\003B\003"
+          + "\340A\001H\000\210\001\001B\016\n\014_data_crc32cB\355\001\n!com.google."
+          + "cloud.secretmanager.v1B\016ResourcesProtoP\001"
+          + "ZJgoogle.golang.org/genproto/googleapis/"
+          + "cloud/secretmanager/v1;secretmanager\370\001\001\242"
+          + "\002\003GSM\252\002\035Google.Cloud.SecretManager.V1\312\002\035"
+          + "Google\\Cloud\\SecretManager\\V1\352\002 Google::"
+          + "Cloud::SecretManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -214,6 +221,7 @@ public final class ResourcesProto {
               "Etag",
               "Rotation",
               "VersionAliases",
+              "Annotations",
               "Expiration",
             });
     internal_static_google_cloud_secretmanager_v1_Secret_LabelsEntry_descriptor =
@@ -229,6 +237,14 @@ public final class ResourcesProto {
     internal_static_google_cloud_secretmanager_v1_Secret_VersionAliasesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_secretmanager_v1_Secret_VersionAliasesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_secretmanager_v1_Secret_AnnotationsEntry_descriptor =
+        internal_static_google_cloud_secretmanager_v1_Secret_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_secretmanager_v1_Secret_AnnotationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_secretmanager_v1_Secret_AnnotationsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
