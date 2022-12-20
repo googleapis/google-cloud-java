@@ -27,7 +27,9 @@ public interface GetAzureServerConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig] resource to describe.
+   * Required. The name of the
+   * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
+   * resource to describe.
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -45,7 +47,9 @@ public interface GetAzureServerConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig] resource to describe.
+   * Required. The name of the
+   * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
+   * resource to describe.
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)

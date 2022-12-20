@@ -648,7 +648,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP project and region.
+     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -679,7 +680,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
+     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
      * </pre>
      */
     public void getAwsCluster(
@@ -694,8 +696,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+     * on a given Google Cloud project and region.
      * </pre>
      */
     public void listAwsClusters(
@@ -710,9 +712,10 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
-     * Fails if the cluster has one or more associated [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
-     * resources.
+     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
+     * Fails if the cluster has one or more associated
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -746,7 +749,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool], attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool],
+     * attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -777,7 +781,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Describes a specific
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
     public void getAwsNodePool(
@@ -792,7 +797,9 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources on a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resources on a given
+     * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
     public void listAwsNodePools(
@@ -807,7 +814,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -944,7 +952,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP project and region.
+     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -979,7 +988,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
+     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
      * </pre>
      */
     public void getAwsCluster(
@@ -996,8 +1006,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+     * on a given Google Cloud project and region.
      * </pre>
      */
     public void listAwsClusters(
@@ -1014,9 +1024,10 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
-     * Fails if the cluster has one or more associated [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
-     * resources.
+     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
+     * Fails if the cluster has one or more associated
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1054,7 +1065,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool], attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool],
+     * attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1089,7 +1101,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Describes a specific
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
     public void getAwsNodePool(
@@ -1106,7 +1119,9 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources on a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resources on a given
+     * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
     public void listAwsNodePools(
@@ -1123,7 +1138,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1181,7 +1197,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP project and region.
+     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1210,7 +1227,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
+     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AwsCluster getAwsCluster(
@@ -1223,8 +1241,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+     * on a given Google Cloud project and region.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse listAwsClusters(
@@ -1237,9 +1255,10 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
-     * Fails if the cluster has one or more associated [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
-     * resources.
+     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
+     * Fails if the cluster has one or more associated
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1269,7 +1288,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool], attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool],
+     * attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1298,7 +1318,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Describes a specific
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePool(
@@ -1311,7 +1332,9 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources on a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resources on a given
+     * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse listAwsNodePools(
@@ -1324,7 +1347,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1375,7 +1399,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource on a given GCP project and region.
+     * Creates a new [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1404,7 +1429,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
+     * Describes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1418,8 +1444,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+     * on a given Google Cloud project and region.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1433,9 +1459,10 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
-     * Fails if the cluster has one or more associated [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
-     * resources.
+     * Deletes a specific [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+     * resource.
+     * Fails if the cluster has one or more associated
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1467,7 +1494,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool], attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Creates a new [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool],
+     * attached to a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1496,7 +1524,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Describes a specific
+     * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1510,7 +1539,9 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resources on a given [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
+     * Lists all [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resources on a given
+     * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1524,7 +1555,8 @@ public final class AwsClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
+     * Deletes a specific [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
+     * resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.

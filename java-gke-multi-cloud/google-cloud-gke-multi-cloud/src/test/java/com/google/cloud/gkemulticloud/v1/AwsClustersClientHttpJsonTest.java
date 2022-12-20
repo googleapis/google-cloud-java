@@ -105,6 +105,8 @@ public class AwsClustersClientHttpJsonTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -175,6 +177,8 @@ public class AwsClustersClientHttpJsonTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -245,6 +249,8 @@ public class AwsClustersClientHttpJsonTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -273,6 +279,8 @@ public class AwsClustersClientHttpJsonTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -321,6 +329,8 @@ public class AwsClustersClientHttpJsonTest {
               .setClusterCaCertificate("clusterCaCertificate-683492737")
               .setFleet(Fleet.newBuilder().build())
               .setLoggingConfig(LoggingConfig.newBuilder().build())
+              .addAllErrors(new ArrayList<AwsClusterError>())
+              .setMonitoringConfig(MonitoringConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAwsClusterAsync(awsCluster, updateMask).get();
@@ -350,6 +360,8 @@ public class AwsClustersClientHttpJsonTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -410,6 +422,8 @@ public class AwsClustersClientHttpJsonTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -709,6 +723,7 @@ public class AwsClustersClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -776,6 +791,7 @@ public class AwsClustersClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -843,6 +859,7 @@ public class AwsClustersClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -868,6 +885,7 @@ public class AwsClustersClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -913,6 +931,7 @@ public class AwsClustersClientHttpJsonTest {
               .setEtag("etag3123477")
               .putAllAnnotations(new HashMap<String, String>())
               .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+              .addAllErrors(new ArrayList<AwsNodePoolError>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAwsNodePoolAsync(awsNodePool, updateMask).get();
@@ -939,6 +958,7 @@ public class AwsClustersClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -998,6 +1018,7 @@ public class AwsClustersClientHttpJsonTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     mockService.addResponse(expectedResponse);
 

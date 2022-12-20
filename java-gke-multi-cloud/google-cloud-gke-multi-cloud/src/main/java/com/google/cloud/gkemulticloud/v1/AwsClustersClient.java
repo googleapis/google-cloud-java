@@ -240,7 +240,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsCluster, OperationMetadata> createAwsClusterAsync(
@@ -292,7 +292,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsCluster, OperationMetadata> createAwsClusterAsync(
@@ -446,10 +446,12 @@ public class AwsClustersClient implements BackgroundResource {
    *     `control_plane.config_encryption.kms_key_arn`. &#42; `control_plane.instance_type`. &#42;
    *     `control_plane.security_group_ids`. &#42; `control_plane.proxy_config`. &#42;
    *     `control_plane.proxy_config.secret_arn`. &#42; `control_plane.proxy_config.secret_version`.
+   *     &#42; `control_plane.root_volume.size_gib`. &#42; `control_plane.root_volume.volume_type`.
    *     &#42; `control_plane.root_volume.iops`. &#42; `control_plane.root_volume.kms_key_arn`.
-   *     &#42; `control_plane.root_volume.volume_type`. &#42; `control_plane.root_volume.size_gib`.
    *     &#42; `control_plane.ssh_config`. &#42; `control_plane.ssh_config.ec2_key_pair`. &#42;
-   *     `control_plane.instance_placement.tenancy`. &#42; `logging_config`.
+   *     `control_plane.instance_placement.tenancy`. &#42; `control_plane.iam_instance_profile`.
+   *     &#42; `logging_config.component_config.enable_components`. &#42; `control_plane.tags`.
+   *     &#42; `monitoring_config.managed_prometheus_config.enabled`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsCluster, OperationMetadata> updateAwsClusterAsync(
@@ -1144,7 +1146,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsNodePool, OperationMetadata> createAwsNodePoolAsync(
@@ -1197,7 +1199,7 @@ public class AwsClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsNodePool, OperationMetadata> createAwsNodePoolAsync(
@@ -1352,7 +1354,11 @@ public class AwsClustersClient implements BackgroundResource {
    *     `config.root_volume.kms_key_arn`. &#42; `config.root_volume.volume_type`. &#42;
    *     `config.root_volume.size_gib`. &#42; `config.proxy_config`. &#42;
    *     `config.proxy_config.secret_arn`. &#42; `config.proxy_config.secret_version`. &#42;
-   *     `config.ssh_config`. &#42; `config.ssh_config.ec2_key_pair`.
+   *     `config.ssh_config`. &#42; `config.ssh_config.ec2_key_pair`. &#42;
+   *     `config.instance_placement.tenancy`. &#42; `config.iam_instance_profile`. &#42;
+   *     `config.labels`. &#42; `config.tags`. &#42; `config.autoscaling_metrics_collection`. &#42;
+   *     `config.autoscaling_metrics_collection.granularity`. &#42;
+   *     `config.autoscaling_metrics_collection.metrics`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AwsNodePool, OperationMetadata> updateAwsNodePoolAsync(

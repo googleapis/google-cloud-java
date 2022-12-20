@@ -105,8 +105,8 @@ public interface AzureNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of tags to apply to all underlying Azure resources for this node
-   * pool. This currently only includes Virtual Machine Scale Sets.
+   * Optional. A set of tags to apply to all underlying Azure resources for this
+   * node pool. This currently only includes Virtual Machine Scale Sets.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -119,8 +119,8 @@ public interface AzureNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of tags to apply to all underlying Azure resources for this node
-   * pool. This currently only includes Virtual Machine Scale Sets.
+   * Optional. A set of tags to apply to all underlying Azure resources for this
+   * node pool. This currently only includes Virtual Machine Scale Sets.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -136,8 +136,8 @@ public interface AzureNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of tags to apply to all underlying Azure resources for this node
-   * pool. This currently only includes Virtual Machine Scale Sets.
+   * Optional. A set of tags to apply to all underlying Azure resources for this
+   * node pool. This currently only includes Virtual Machine Scale Sets.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -150,8 +150,8 @@ public interface AzureNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of tags to apply to all underlying Azure resources for this node
-   * pool. This currently only includes Virtual Machine Scale Sets.
+   * Optional. A set of tags to apply to all underlying Azure resources for this
+   * node pool. This currently only includes Virtual Machine Scale Sets.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -169,8 +169,8 @@ public interface AzureNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of tags to apply to all underlying Azure resources for this node
-   * pool. This currently only includes Virtual Machine Scale Sets.
+   * Optional. A set of tags to apply to all underlying Azure resources for this
+   * node pool. This currently only includes Virtual Machine Scale Sets.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.

@@ -70,8 +70,8 @@ public interface ListAzureNodePoolsRequestOrBuilder
    * If not specified, a default value of 50 will be used by the service.
    * Regardless of the pageSize value, the response can include a partial list
    * and a caller should only rely on response's
-   * [nextPageToken][google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse.next_page_token] to determine if
-   * there are more instances left to be queried.
+   * [nextPageToken][google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse.next_page_token]
+   * to determine if there are more instances left to be queried.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -85,7 +85,8 @@ public interface ListAzureNodePoolsRequestOrBuilder
    *
    * <pre>
    * The `nextPageToken` value returned from a previous
-   * [azureNodePools.list][google.cloud.gkemulticloud.v1.AzureClusters.ListAzureNodePools] request, if any.
+   * [azureNodePools.list][google.cloud.gkemulticloud.v1.AzureClusters.ListAzureNodePools]
+   * request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -98,7 +99,8 @@ public interface ListAzureNodePoolsRequestOrBuilder
    *
    * <pre>
    * The `nextPageToken` value returned from a previous
-   * [azureNodePools.list][google.cloud.gkemulticloud.v1.AzureClusters.ListAzureNodePools] request, if any.
+   * [azureNodePools.list][google.cloud.gkemulticloud.v1.AzureClusters.ListAzureNodePools]
+   * request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>

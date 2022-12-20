@@ -27,7 +27,8 @@ public interface CreateAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource where this node pool will be created.
+   * Required. The [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+   * resource where this node pool will be created.
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -45,7 +46,8 @@ public interface CreateAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource where this node pool will be created.
+   * Required. The [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
+   * resource where this node pool will be created.
    * `AwsCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -64,7 +66,8 @@ public interface CreateAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The specification of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to create.
+   * Required. The specification of the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to create.
    * </pre>
    *
    * <code>
@@ -78,7 +81,8 @@ public interface CreateAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The specification of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to create.
+   * Required. The specification of the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to create.
    * </pre>
    *
    * <code>
@@ -92,7 +96,8 @@ public interface CreateAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The specification of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to create.
+   * Required. The specification of the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to create.
    * </pre>
    *
    * <code>
@@ -105,12 +110,13 @@ public interface CreateAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A client provided ID the resource. Must be unique within the parent
-   * resource.
-   * The provided ID will be part of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
-   * resource name formatted as
+   * Required. A client provided ID the resource. Must be unique within the
+   * parent resource.
+   * The provided ID will be part of the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource name
+   * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
-   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
    * <code>string aws_node_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -122,12 +128,13 @@ public interface CreateAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A client provided ID the resource. Must be unique within the parent
-   * resource.
-   * The provided ID will be part of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool]
-   * resource name formatted as
+   * Required. A client provided ID the resource. Must be unique within the
+   * parent resource.
+   * The provided ID will be part of the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource name
+   * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
-   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
    * <code>string aws_node_pool_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

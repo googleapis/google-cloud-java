@@ -27,7 +27,9 @@ public interface GetAwsServerConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AwsServerConfig][google.cloud.gkemulticloud.v1.AwsServerConfig] resource to describe.
+   * Required. The name of the
+   * [AwsServerConfig][google.cloud.gkemulticloud.v1.AwsServerConfig] resource
+   * to describe.
    * `AwsServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsServerConfig`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -45,7 +47,9 @@ public interface GetAwsServerConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AwsServerConfig][google.cloud.gkemulticloud.v1.AwsServerConfig] resource to describe.
+   * Required. The name of the
+   * [AwsServerConfig][google.cloud.gkemulticloud.v1.AwsServerConfig] resource
+   * to describe.
    * `AwsServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsServerConfig`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)

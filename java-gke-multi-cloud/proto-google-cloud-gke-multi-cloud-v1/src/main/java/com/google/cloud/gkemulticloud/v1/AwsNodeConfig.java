@@ -412,10 +412,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -437,10 +437,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -453,10 +453,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -473,10 +473,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -499,7 +499,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+   * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+   * pool.
    * </pre>
    *
    * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -522,7 +523,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+   * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+   * pool.
    * </pre>
    *
    * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -657,9 +659,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -673,9 +675,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -689,9 +691,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -706,9 +708,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -887,6 +889,70 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     return getInstancePlacement();
   }
 
+  public static final int AUTOSCALING_METRICS_COLLECTION_FIELD_NUMBER = 15;
+  private com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+      autoscalingMetricsCollection_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration related to CloudWatch metrics collection on the
+   * Auto Scaling group of the node pool.
+   * When unspecified, metrics collection is disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoscalingMetricsCollection field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoscalingMetricsCollection() {
+    return autoscalingMetricsCollection_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration related to CloudWatch metrics collection on the
+   * Auto Scaling group of the node pool.
+   * When unspecified, metrics collection is disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoscalingMetricsCollection.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+      getAutoscalingMetricsCollection() {
+    return autoscalingMetricsCollection_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+            .getDefaultInstance()
+        : autoscalingMetricsCollection_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration related to CloudWatch metrics collection on the
+   * Auto Scaling group of the node pool.
+   * When unspecified, metrics collection is disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder
+      getAutoscalingMetricsCollectionOrBuilder() {
+    return getAutoscalingMetricsCollection();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -934,6 +1000,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (instancePlacement_ != null) {
       output.writeMessage(14, getInstancePlacement());
+    }
+    if (autoscalingMetricsCollection_ != null) {
+      output.writeMessage(15, getAutoscalingMetricsCollection());
     }
     getUnknownFields().writeTo(output);
   }
@@ -999,6 +1068,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (instancePlacement_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getInstancePlacement());
     }
+    if (autoscalingMetricsCollection_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, getAutoscalingMetricsCollection());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1041,6 +1115,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasInstancePlacement() != other.hasInstancePlacement()) return false;
     if (hasInstancePlacement()) {
       if (!getInstancePlacement().equals(other.getInstancePlacement())) return false;
+    }
+    if (hasAutoscalingMetricsCollection() != other.hasAutoscalingMetricsCollection()) return false;
+    if (hasAutoscalingMetricsCollection()) {
+      if (!getAutoscalingMetricsCollection().equals(other.getAutoscalingMetricsCollection()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1094,6 +1173,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasInstancePlacement()) {
       hash = (37 * hash) + INSTANCE_PLACEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getInstancePlacement().hashCode();
+    }
+    if (hasAutoscalingMetricsCollection()) {
+      hash = (37 * hash) + AUTOSCALING_METRICS_COLLECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoscalingMetricsCollection().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1304,6 +1387,12 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         instancePlacement_ = null;
         instancePlacementBuilder_ = null;
       }
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        autoscalingMetricsCollection_ = null;
+      } else {
+        autoscalingMetricsCollection_ = null;
+        autoscalingMetricsCollectionBuilder_ = null;
+      }
       return this;
     }
 
@@ -1377,6 +1466,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         result.instancePlacement_ = instancePlacement_;
       } else {
         result.instancePlacement_ = instancePlacementBuilder_.build();
+      }
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        result.autoscalingMetricsCollection_ = autoscalingMetricsCollection_;
+      } else {
+        result.autoscalingMetricsCollection_ = autoscalingMetricsCollectionBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1494,6 +1588,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasInstancePlacement()) {
         mergeInstancePlacement(other.getInstancePlacement());
       }
+      if (other.hasAutoscalingMetricsCollection()) {
+        mergeAutoscalingMetricsCollection(other.getAutoscalingMetricsCollection());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1609,6 +1706,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getAutoscalingMetricsCollectionFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2556,10 +2660,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-     * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-     * Keys can be up to 127 Unicode characters.
-     * Values can be up to 255 Unicode characters.
+     * Optional. Key/value metadata to assign to each underlying AWS resource.
+     * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+     * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+     * 255 Unicode characters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2581,10 +2685,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-     * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-     * Keys can be up to 127 Unicode characters.
-     * Values can be up to 255 Unicode characters.
+     * Optional. Key/value metadata to assign to each underlying AWS resource.
+     * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+     * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+     * 255 Unicode characters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2597,10 +2701,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-     * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-     * Keys can be up to 127 Unicode characters.
-     * Values can be up to 255 Unicode characters.
+     * Optional. Key/value metadata to assign to each underlying AWS resource.
+     * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+     * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+     * 255 Unicode characters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2617,10 +2721,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-     * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-     * Keys can be up to 127 Unicode characters.
-     * Values can be up to 255 Unicode characters.
+     * Optional. Key/value metadata to assign to each underlying AWS resource.
+     * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+     * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+     * 255 Unicode characters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2645,10 +2749,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-     * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-     * Keys can be up to 127 Unicode characters.
-     * Values can be up to 255 Unicode characters.
+     * Optional. Key/value metadata to assign to each underlying AWS resource.
+     * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+     * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+     * 255 Unicode characters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2669,10 +2773,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-     * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-     * Keys can be up to 127 Unicode characters.
-     * Values can be up to 255 Unicode characters.
+     * Optional. Key/value metadata to assign to each underlying AWS resource.
+     * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+     * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+     * 255 Unicode characters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2692,10 +2796,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-     * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-     * Keys can be up to 127 Unicode characters.
-     * Values can be up to 255 Unicode characters.
+     * Optional. Key/value metadata to assign to each underlying AWS resource.
+     * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+     * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+     * 255 Unicode characters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2710,7 +2814,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+     * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+     * pool.
      * </pre>
      *
      * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2732,7 +2837,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+     * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+     * pool.
      * </pre>
      *
      * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2754,7 +2860,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+     * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+     * pool.
      * </pre>
      *
      * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2775,7 +2882,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+     * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+     * pool.
      * </pre>
      *
      * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2792,7 +2900,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+     * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+     * pool.
      * </pre>
      *
      * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3149,9 +3258,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3166,9 +3275,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3183,9 +3292,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3201,9 +3310,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3219,9 +3328,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3244,9 +3353,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3268,9 +3377,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3289,9 +3398,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3309,9 +3418,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The IDs of additional security groups to add to nodes in this pool. The
-     * manager will automatically create security groups with minimum rules
-     * needed for a functioning cluster.
+     * Optional. The IDs of additional security groups to add to nodes in this
+     * pool. The manager will automatically create security groups with minimum
+     * rules needed for a functioning cluster.
      * </pre>
      *
      * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3958,6 +4067,238 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         instancePlacement_ = null;
       }
       return instancePlacementBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+        autoscalingMetricsCollection_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection,
+            com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.Builder,
+            com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder>
+        autoscalingMetricsCollectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoscalingMetricsCollection field is set.
+     */
+    public boolean hasAutoscalingMetricsCollection() {
+      return autoscalingMetricsCollectionBuilder_ != null || autoscalingMetricsCollection_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoscalingMetricsCollection.
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+        getAutoscalingMetricsCollection() {
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        return autoscalingMetricsCollection_ == null
+            ? com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+                .getDefaultInstance()
+            : autoscalingMetricsCollection_;
+      } else {
+        return autoscalingMetricsCollectionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoscalingMetricsCollection(
+        com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection value) {
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoscalingMetricsCollection_ = value;
+        onChanged();
+      } else {
+        autoscalingMetricsCollectionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoscalingMetricsCollection(
+        com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.Builder
+            builderForValue) {
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        autoscalingMetricsCollection_ = builderForValue.build();
+        onChanged();
+      } else {
+        autoscalingMetricsCollectionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoscalingMetricsCollection(
+        com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection value) {
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        if (autoscalingMetricsCollection_ != null) {
+          autoscalingMetricsCollection_ =
+              com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.newBuilder(
+                      autoscalingMetricsCollection_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          autoscalingMetricsCollection_ = value;
+        }
+        onChanged();
+      } else {
+        autoscalingMetricsCollectionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoscalingMetricsCollection() {
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        autoscalingMetricsCollection_ = null;
+        onChanged();
+      } else {
+        autoscalingMetricsCollection_ = null;
+        autoscalingMetricsCollectionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.Builder
+        getAutoscalingMetricsCollectionBuilder() {
+
+      onChanged();
+      return getAutoscalingMetricsCollectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder
+        getAutoscalingMetricsCollectionOrBuilder() {
+      if (autoscalingMetricsCollectionBuilder_ != null) {
+        return autoscalingMetricsCollectionBuilder_.getMessageOrBuilder();
+      } else {
+        return autoscalingMetricsCollection_ == null
+            ? com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+                .getDefaultInstance()
+            : autoscalingMetricsCollection_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration related to CloudWatch metrics collection on the
+     * Auto Scaling group of the node pool.
+     * When unspecified, metrics collection is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection,
+            com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.Builder,
+            com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder>
+        getAutoscalingMetricsCollectionFieldBuilder() {
+      if (autoscalingMetricsCollectionBuilder_ == null) {
+        autoscalingMetricsCollectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection,
+                com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.Builder,
+                com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder>(
+                getAutoscalingMetricsCollection(), getParentForChildren(), isClean());
+        autoscalingMetricsCollection_ = null;
+      }
+      return autoscalingMetricsCollectionBuilder_;
     }
 
     @java.lang.Override

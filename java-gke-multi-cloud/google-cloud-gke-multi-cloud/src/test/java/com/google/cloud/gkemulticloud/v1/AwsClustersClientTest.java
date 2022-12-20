@@ -109,6 +109,8 @@ public class AwsClustersClientTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -178,6 +180,8 @@ public class AwsClustersClientTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -247,6 +251,8 @@ public class AwsClustersClientTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -312,6 +318,8 @@ public class AwsClustersClientTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 
@@ -366,6 +374,8 @@ public class AwsClustersClientTest {
             .setClusterCaCertificate("clusterCaCertificate-683492737")
             .setFleet(Fleet.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 
@@ -636,6 +646,7 @@ public class AwsClustersClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -702,6 +713,7 @@ public class AwsClustersClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -768,6 +780,7 @@ public class AwsClustersClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -830,6 +843,7 @@ public class AwsClustersClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 
@@ -883,6 +897,7 @@ public class AwsClustersClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
+            .addAllErrors(new ArrayList<AwsNodePoolError>())
             .build();
     mockAwsClusters.addResponse(expectedResponse);
 

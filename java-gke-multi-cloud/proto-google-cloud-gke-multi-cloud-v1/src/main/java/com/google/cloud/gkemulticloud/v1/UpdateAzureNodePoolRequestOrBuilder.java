@@ -27,7 +27,8 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to update.
+   * Required. The [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resource to update.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to update.
+   * Required. The [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resource to update.
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to update.
+   * Required. The [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resource to update.
    * </pre>
    *
    * <code>
@@ -88,7 +91,7 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
    *  *   `autoscaling.max_node_count`.
-   *  *   `config.vm_size`.
+   *  *   `config.ssh_config.authorized_key`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -108,7 +111,7 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
    *  *   `autoscaling.max_node_count`.
-   *  *   `config.vm_size`.
+   *  *   `config.ssh_config.authorized_key`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -128,7 +131,7 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    *  *   `version`.
    *  *   `autoscaling.min_node_count`.
    *  *   `autoscaling.max_node_count`.
-   *  *   `config.vm_size`.
+   *  *   `config.ssh_config.authorized_key`.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];

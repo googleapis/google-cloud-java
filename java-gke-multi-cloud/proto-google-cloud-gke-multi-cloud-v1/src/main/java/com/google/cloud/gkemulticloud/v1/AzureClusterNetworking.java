@@ -76,8 +76,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The Azure Resource Manager (ARM) ID of the VNet associated with your
-   * cluster.
+   * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
+   * your cluster.
    * All components in the cluster (i.e. control plane and node pools) run on a
    * single VNet.
    * Example:
@@ -105,8 +105,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The Azure Resource Manager (ARM) ID of the VNet associated with your
-   * cluster.
+   * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
+   * your cluster.
    * All components in the cluster (i.e. control plane and node pools) run on a
    * single VNet.
    * Example:
@@ -303,8 +303,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The ARM ID of the subnet where Kubernetes private service type load
-   * balancers are deployed. When unspecified, it defaults to
+   * Optional. The ARM ID of the subnet where Kubernetes private service type
+   * load balancers are deployed. When unspecified, it defaults to
    * AzureControlPlane.subnet_id.
    * Example:
    * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
@@ -331,8 +331,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The ARM ID of the subnet where Kubernetes private service type load
-   * balancers are deployed. When unspecified, it defaults to
+   * Optional. The ARM ID of the subnet where Kubernetes private service type
+   * load balancers are deployed. When unspecified, it defaults to
    * AzureControlPlane.subnet_id.
    * Example:
    * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
@@ -802,8 +802,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with your
-     * cluster.
+     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
+     * your cluster.
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
      * Example:
@@ -830,8 +830,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with your
-     * cluster.
+     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
+     * your cluster.
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
      * Example:
@@ -858,8 +858,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with your
-     * cluster.
+     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
+     * your cluster.
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
      * Example:
@@ -885,8 +885,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with your
-     * cluster.
+     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
+     * your cluster.
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
      * Example:
@@ -908,8 +908,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with your
-     * cluster.
+     * Required. The Azure Resource Manager (ARM) ID of the VNet associated with
+     * your cluster.
      * All components in the cluster (i.e. control plane and node pools) run on a
      * single VNet.
      * Example:
@@ -1374,8 +1374,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The ARM ID of the subnet where Kubernetes private service type load
-     * balancers are deployed. When unspecified, it defaults to
+     * Optional. The ARM ID of the subnet where Kubernetes private service type
+     * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
@@ -1401,8 +1401,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The ARM ID of the subnet where Kubernetes private service type load
-     * balancers are deployed. When unspecified, it defaults to
+     * Optional. The ARM ID of the subnet where Kubernetes private service type
+     * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
@@ -1428,8 +1428,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The ARM ID of the subnet where Kubernetes private service type load
-     * balancers are deployed. When unspecified, it defaults to
+     * Optional. The ARM ID of the subnet where Kubernetes private service type
+     * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
@@ -1454,8 +1454,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The ARM ID of the subnet where Kubernetes private service type load
-     * balancers are deployed. When unspecified, it defaults to
+     * Optional. The ARM ID of the subnet where Kubernetes private service type
+     * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
@@ -1476,8 +1476,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The ARM ID of the subnet where Kubernetes private service type load
-     * balancers are deployed. When unspecified, it defaults to
+     * Optional. The ARM ID of the subnet where Kubernetes private service type
+     * load balancers are deployed. When unspecified, it defaults to
      * AzureControlPlane.subnet_id.
      * Example:
      * "/subscriptions/d00494d6-6f3c-4280-bbb2-899e163d1d30/resourceGroups/anthos_cluster_gkeust4/providers/Microsoft.Network/virtualNetworks/gke-vnet-gkeust4/subnets/subnetid456"
