@@ -1557,4 +1557,222 @@ public class DataprocMetastoreClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void removeIamPolicyTest() throws Exception {
+    RemoveIamPolicyResponse expectedResponse =
+        RemoveIamPolicyResponse.newBuilder().setSuccess(true).build();
+    mockDataprocMetastore.addResponse(expectedResponse);
+
+    RemoveIamPolicyRequest request =
+        RemoveIamPolicyRequest.newBuilder()
+            .setResource(
+                BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+            .setAsynchronous(true)
+            .build();
+
+    RemoveIamPolicyResponse actualResponse = client.removeIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveIamPolicyRequest actualRequest = ((RemoveIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getAsynchronous(), actualRequest.getAsynchronous());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      RemoveIamPolicyRequest request =
+          RemoveIamPolicyRequest.newBuilder()
+              .setResource(
+                  BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+              .setAsynchronous(true)
+              .build();
+      client.removeIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryMetadataTest() throws Exception {
+    QueryMetadataResponse expectedResponse =
+        QueryMetadataResponse.newBuilder()
+            .setResultManifestUri("resultManifestUri233134176")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("queryMetadataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    QueryMetadataRequest request =
+        QueryMetadataRequest.newBuilder()
+            .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+            .setQuery("query107944136")
+            .build();
+
+    QueryMetadataResponse actualResponse = client.queryMetadataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryMetadataRequest actualRequest = ((QueryMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getService(), actualRequest.getService());
+    Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      QueryMetadataRequest request =
+          QueryMetadataRequest.newBuilder()
+              .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+              .setQuery("query107944136")
+              .build();
+      client.queryMetadataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void moveTableToDatabaseTest() throws Exception {
+    MoveTableToDatabaseResponse expectedResponse = MoveTableToDatabaseResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("moveTableToDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    MoveTableToDatabaseRequest request =
+        MoveTableToDatabaseRequest.newBuilder()
+            .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+            .setTableName("tableName-1988717703")
+            .setDbName("dbName-1339126743")
+            .setDestinationDbName("destinationDbName-2077361705")
+            .build();
+
+    MoveTableToDatabaseResponse actualResponse = client.moveTableToDatabaseAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveTableToDatabaseRequest actualRequest = ((MoveTableToDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getService(), actualRequest.getService());
+    Assert.assertEquals(request.getTableName(), actualRequest.getTableName());
+    Assert.assertEquals(request.getDbName(), actualRequest.getDbName());
+    Assert.assertEquals(request.getDestinationDbName(), actualRequest.getDestinationDbName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveTableToDatabaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      MoveTableToDatabaseRequest request =
+          MoveTableToDatabaseRequest.newBuilder()
+              .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+              .setTableName("tableName-1988717703")
+              .setDbName("dbName-1339126743")
+              .setDestinationDbName("destinationDbName-2077361705")
+              .build();
+      client.moveTableToDatabaseAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void alterMetadataResourceLocationTest() throws Exception {
+    AlterMetadataResourceLocationResponse expectedResponse =
+        AlterMetadataResourceLocationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("alterMetadataResourceLocationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataprocMetastore.addResponse(resultOperation);
+
+    AlterMetadataResourceLocationRequest request =
+        AlterMetadataResourceLocationRequest.newBuilder()
+            .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+            .setResourceName("resourceName-384566343")
+            .setLocationUri("locationUri552310135")
+            .build();
+
+    AlterMetadataResourceLocationResponse actualResponse =
+        client.alterMetadataResourceLocationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataprocMetastore.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AlterMetadataResourceLocationRequest actualRequest =
+        ((AlterMetadataResourceLocationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getService(), actualRequest.getService());
+    Assert.assertEquals(request.getResourceName(), actualRequest.getResourceName());
+    Assert.assertEquals(request.getLocationUri(), actualRequest.getLocationUri());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void alterMetadataResourceLocationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataprocMetastore.addException(exception);
+
+    try {
+      AlterMetadataResourceLocationRequest request =
+          AlterMetadataResourceLocationRequest.newBuilder()
+              .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+              .setResourceName("resourceName-384566343")
+              .setLocationUri("locationUri552310135")
+              .build();
+      client.alterMetadataResourceLocationAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }

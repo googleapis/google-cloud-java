@@ -213,6 +213,53 @@ public class DataprocMetastoreSettings extends ClientSettings<DataprocMetastoreS
     return ((DataprocMetastoreStubSettings) getStubSettings()).deleteBackupOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeIamPolicy. */
+  public UnaryCallSettings<RemoveIamPolicyRequest, RemoveIamPolicyResponse>
+      removeIamPolicySettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).removeIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryMetadata. */
+  public UnaryCallSettings<QueryMetadataRequest, Operation> queryMetadataSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).queryMetadataSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryMetadata. */
+  public OperationCallSettings<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).queryMetadataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveTableToDatabase. */
+  public UnaryCallSettings<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings()).moveTableToDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveTableToDatabase. */
+  public OperationCallSettings<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings())
+        .moveTableToDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to alterMetadataResourceLocation. */
+  public UnaryCallSettings<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings())
+        .alterMetadataResourceLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to alterMetadataResourceLocation. */
+  public OperationCallSettings<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationSettings() {
+    return ((DataprocMetastoreStubSettings) getStubSettings())
+        .alterMetadataResourceLocationOperationSettings();
+  }
+
   public static final DataprocMetastoreSettings create(DataprocMetastoreStubSettings stub)
       throws IOException {
     return new DataprocMetastoreSettings.Builder(stub.toBuilder()).build();
@@ -468,6 +515,52 @@ public class DataprocMetastoreSettings extends ClientSettings<DataprocMetastoreS
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return getStubSettingsBuilder().deleteBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeIamPolicy. */
+    public UnaryCallSettings.Builder<RemoveIamPolicyRequest, RemoveIamPolicyResponse>
+        removeIamPolicySettings() {
+      return getStubSettingsBuilder().removeIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryMetadata. */
+    public UnaryCallSettings.Builder<QueryMetadataRequest, Operation> queryMetadataSettings() {
+      return getStubSettingsBuilder().queryMetadataSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryMetadata. */
+    public OperationCallSettings.Builder<
+            QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+        queryMetadataOperationSettings() {
+      return getStubSettingsBuilder().queryMetadataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveTableToDatabase. */
+    public UnaryCallSettings.Builder<MoveTableToDatabaseRequest, Operation>
+        moveTableToDatabaseSettings() {
+      return getStubSettingsBuilder().moveTableToDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveTableToDatabase. */
+    public OperationCallSettings.Builder<
+            MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+        moveTableToDatabaseOperationSettings() {
+      return getStubSettingsBuilder().moveTableToDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to alterMetadataResourceLocation. */
+    public UnaryCallSettings.Builder<AlterMetadataResourceLocationRequest, Operation>
+        alterMetadataResourceLocationSettings() {
+      return getStubSettingsBuilder().alterMetadataResourceLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to alterMetadataResourceLocation. */
+    public OperationCallSettings.Builder<
+            AlterMetadataResourceLocationRequest,
+            AlterMetadataResourceLocationResponse,
+            OperationMetadata>
+        alterMetadataResourceLocationOperationSettings() {
+      return getStubSettingsBuilder().alterMetadataResourceLocationOperationSettings();
     }
 
     @Override

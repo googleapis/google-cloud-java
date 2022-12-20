@@ -2527,6 +2527,358 @@ public class DataprocMetastoreClient implements BackgroundResource {
     return stub.deleteBackupCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the attached IAM policies for a resource
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   RemoveIamPolicyRequest request =
+   *       RemoveIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setAsynchronous(true)
+   *           .build();
+   *   RemoveIamPolicyResponse response = dataprocMetastoreClient.removeIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveIamPolicyResponse removeIamPolicy(RemoveIamPolicyRequest request) {
+    return removeIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the attached IAM policies for a resource
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   RemoveIamPolicyRequest request =
+   *       RemoveIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[BACKUP]").toString())
+   *           .setAsynchronous(true)
+   *           .build();
+   *   ApiFuture<RemoveIamPolicyResponse> future =
+   *       dataprocMetastoreClient.removeIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveIamPolicyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveIamPolicyRequest, RemoveIamPolicyResponse>
+      removeIamPolicyCallable() {
+    return stub.removeIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query DPMS metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   QueryMetadataRequest request =
+   *       QueryMetadataRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setQuery("query107944136")
+   *           .build();
+   *   QueryMetadataResponse response = dataprocMetastoreClient.queryMetadataAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueryMetadataResponse, OperationMetadata> queryMetadataAsync(
+      QueryMetadataRequest request) {
+    return queryMetadataOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query DPMS metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   QueryMetadataRequest request =
+   *       QueryMetadataRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setQuery("query107944136")
+   *           .build();
+   *   OperationFuture<QueryMetadataResponse, OperationMetadata> future =
+   *       dataprocMetastoreClient.queryMetadataOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QueryMetadataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable() {
+    return stub.queryMetadataOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query DPMS metadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   QueryMetadataRequest request =
+   *       QueryMetadataRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setQuery("query107944136")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.queryMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable() {
+    return stub.queryMetadataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Move a table to another database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   MoveTableToDatabaseRequest request =
+   *       MoveTableToDatabaseRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setTableName("tableName-1988717703")
+   *           .setDbName("dbName-1339126743")
+   *           .setDestinationDbName("destinationDbName-2077361705")
+   *           .build();
+   *   MoveTableToDatabaseResponse response =
+   *       dataprocMetastoreClient.moveTableToDatabaseAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseAsync(MoveTableToDatabaseRequest request) {
+    return moveTableToDatabaseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Move a table to another database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   MoveTableToDatabaseRequest request =
+   *       MoveTableToDatabaseRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setTableName("tableName-1988717703")
+   *           .setDbName("dbName-1339126743")
+   *           .setDestinationDbName("destinationDbName-2077361705")
+   *           .build();
+   *   OperationFuture<MoveTableToDatabaseResponse, OperationMetadata> future =
+   *       dataprocMetastoreClient.moveTableToDatabaseOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MoveTableToDatabaseResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable() {
+    return stub.moveTableToDatabaseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Move a table to another database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   MoveTableToDatabaseRequest request =
+   *       MoveTableToDatabaseRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setTableName("tableName-1988717703")
+   *           .setDbName("dbName-1339126743")
+   *           .setDestinationDbName("destinationDbName-2077361705")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.moveTableToDatabaseCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable() {
+    return stub.moveTableToDatabaseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Alter metadata resource location. The metadata resource can be a database, table, or partition.
+   * This functionality only updates the parent directory for the respective metadata resource and
+   * does not transfer any existing data to the new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   AlterMetadataResourceLocationRequest request =
+   *       AlterMetadataResourceLocationRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResourceName("resourceName-384566343")
+   *           .setLocationUri("locationUri552310135")
+   *           .build();
+   *   AlterMetadataResourceLocationResponse response =
+   *       dataprocMetastoreClient.alterMetadataResourceLocationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AlterMetadataResourceLocationResponse, OperationMetadata>
+      alterMetadataResourceLocationAsync(AlterMetadataResourceLocationRequest request) {
+    return alterMetadataResourceLocationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Alter metadata resource location. The metadata resource can be a database, table, or partition.
+   * This functionality only updates the parent directory for the respective metadata resource and
+   * does not transfer any existing data to the new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   AlterMetadataResourceLocationRequest request =
+   *       AlterMetadataResourceLocationRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResourceName("resourceName-384566343")
+   *           .setLocationUri("locationUri552310135")
+   *           .build();
+   *   OperationFuture<AlterMetadataResourceLocationResponse, OperationMetadata> future =
+   *       dataprocMetastoreClient
+   *           .alterMetadataResourceLocationOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   AlterMetadataResourceLocationResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable() {
+    return stub.alterMetadataResourceLocationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Alter metadata resource location. The metadata resource can be a database, table, or partition.
+   * This functionality only updates the parent directory for the respective metadata resource and
+   * does not transfer any existing data to the new location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.create()) {
+   *   AlterMetadataResourceLocationRequest request =
+   *       AlterMetadataResourceLocationRequest.newBuilder()
+   *           .setService(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+   *           .setResourceName("resourceName-384566343")
+   *           .setLocationUri("locationUri552310135")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataprocMetastoreClient.alterMetadataResourceLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable() {
+    return stub.alterMetadataResourceLocationCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
