@@ -39,8 +39,10 @@ public class AsyncListJobs {
       ListJobsRequest request =
           ListJobsRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setLegacyAppEngineCron(true)
               .build();
       ApiFuture<Job> future = cloudSchedulerClient.listJobsPagedCallable().futureCall(request);
       // Do something.

@@ -16,32 +16,46 @@
 
 package com.google.cloud.scheduler.v1beta1.samples;
 
-// [START cloudscheduler_v1beta1_generated_CloudScheduler_RunJob_sync]
+// [START cloudscheduler_v1beta1_generated_CloudScheduler_ListLocations_Paged_async]
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
-import com.google.cloud.scheduler.v1beta1.Job;
-import com.google.cloud.scheduler.v1beta1.JobName;
-import com.google.cloud.scheduler.v1beta1.RunJobRequest;
+import com.google.common.base.Strings;
 
-public class SyncRunJob {
+public class AsyncListLocationsPaged {
 
   public static void main(String[] args) throws Exception {
-    syncRunJob();
+    asyncListLocationsPaged();
   }
 
-  public static void syncRunJob() throws Exception {
+  public static void asyncListLocationsPaged() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-      RunJobRequest request =
-          RunJobRequest.newBuilder()
-              .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
-              .setLegacyAppEngineCron(true)
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
               .build();
-      Job response = cloudSchedulerClient.runJob(request);
+      while (true) {
+        ListLocationsResponse response = cloudSchedulerClient.listLocationsCallable().call(request);
+        for (Location element : response.getLocationsList()) {
+          // doThingsWith(element);
+        }
+        String nextPageToken = response.getNextPageToken();
+        if (!Strings.isNullOrEmpty(nextPageToken)) {
+          request = request.toBuilder().setPageToken(nextPageToken).build();
+        } else {
+          break;
+        }
+      }
     }
   }
 }
-// [END cloudscheduler_v1beta1_generated_CloudScheduler_RunJob_sync]
+// [END cloudscheduler_v1beta1_generated_CloudScheduler_ListLocations_Paged_async]

@@ -17,6 +17,7 @@
 package com.google.cloud.scheduler.v1beta1.stub;
 
 import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListJobsPagedResponse;
+import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -30,6 +31,10 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.scheduler.v1beta1.CreateJobRequest;
 import com.google.cloud.scheduler.v1beta1.DeleteJobRequest;
 import com.google.cloud.scheduler.v1beta1.GetJobRequest;
@@ -83,6 +88,9 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListJobsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(
+                                fields, "legacyAppEngineCron", request.getLegacyAppEngineCron());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -220,6 +228,8 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "legacyAppEngineCron", request.getLegacyAppEngineCron());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -340,6 +350,74 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLocationRequest, Location>
+      getLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetLocationRequest, Location>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/GetLocation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Location>newBuilder()
+                      .setDefaultInstance(Location.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
@@ -349,6 +427,10 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
   private final UnaryCallable<PauseJobRequest, Job> pauseJobCallable;
   private final UnaryCallable<ResumeJobRequest, Job> resumeJobCallable;
   private final UnaryCallable<RunJobRequest, Job> runJobCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -432,6 +514,17 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
             .setMethodDescriptor(runJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
@@ -460,6 +553,15 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
     this.runJobCallable =
         callableFactory.createUnaryCallable(
             runJobTransportSettings, settings.runJobSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -476,6 +578,8 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
     methodDescriptors.add(pauseJobMethodDescriptor);
     methodDescriptors.add(resumeJobMethodDescriptor);
     methodDescriptors.add(runJobMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
+    methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -522,6 +626,22 @@ public class HttpJsonCloudSchedulerStub extends CloudSchedulerStub {
   @Override
   public UnaryCallable<RunJobRequest, Job> runJobCallable() {
     return runJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

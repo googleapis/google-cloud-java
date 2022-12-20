@@ -39,6 +39,7 @@ public class AsyncRunJob {
       RunJobRequest request =
           RunJobRequest.newBuilder()
               .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setLegacyAppEngineCron(true)
               .build();
       ApiFuture<Job> future = cloudSchedulerClient.runJobCallable().futureCall(request);
       // Do something.

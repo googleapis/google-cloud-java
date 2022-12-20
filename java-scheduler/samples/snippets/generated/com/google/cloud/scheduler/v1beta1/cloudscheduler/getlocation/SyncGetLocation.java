@@ -16,32 +16,27 @@
 
 package com.google.cloud.scheduler.v1beta1.samples;
 
-// [START cloudscheduler_v1beta1_generated_CloudScheduler_RunJob_sync]
+// [START cloudscheduler_v1beta1_generated_CloudScheduler_GetLocation_sync]
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.Location;
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
-import com.google.cloud.scheduler.v1beta1.Job;
-import com.google.cloud.scheduler.v1beta1.JobName;
-import com.google.cloud.scheduler.v1beta1.RunJobRequest;
 
-public class SyncRunJob {
+public class SyncGetLocation {
 
   public static void main(String[] args) throws Exception {
-    syncRunJob();
+    syncGetLocation();
   }
 
-  public static void syncRunJob() throws Exception {
+  public static void syncGetLocation() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-      RunJobRequest request =
-          RunJobRequest.newBuilder()
-              .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
-              .setLegacyAppEngineCron(true)
-              .build();
-      Job response = cloudSchedulerClient.runJob(request);
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      Location response = cloudSchedulerClient.getLocation(request);
     }
   }
 }
-// [END cloudscheduler_v1beta1_generated_CloudScheduler_RunJob_sync]
+// [END cloudscheduler_v1beta1_generated_CloudScheduler_GetLocation_sync]

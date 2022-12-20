@@ -132,8 +132,13 @@ public interface AppEngineHttpTargetOrBuilder
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
    * * `X-CloudScheduler`: This header will be set to true.
-   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
-   * the following headers:
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
+   * If the job has an
+   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
+   * Scheduler sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -165,8 +170,13 @@ public interface AppEngineHttpTargetOrBuilder
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
    * * `X-CloudScheduler`: This header will be set to true.
-   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
-   * the following headers:
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
+   * If the job has an
+   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
+   * Scheduler sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -201,8 +211,13 @@ public interface AppEngineHttpTargetOrBuilder
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
    * * `X-CloudScheduler`: This header will be set to true.
-   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
-   * the following headers:
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
+   * If the job has an
+   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
+   * Scheduler sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -234,8 +249,13 @@ public interface AppEngineHttpTargetOrBuilder
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
    * * `X-CloudScheduler`: This header will be set to true.
-   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
-   * the following headers:
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
+   * If the job has an
+   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
+   * Scheduler sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -272,8 +292,13 @@ public interface AppEngineHttpTargetOrBuilder
    *   `"AppEngine-Google; (+http://code.google.com/appengine)"` to the
    *   modified `User-Agent`.
    * * `X-CloudScheduler`: This header will be set to true.
-   * If the job has an [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud Scheduler sets
-   * the following headers:
+   * * `X-CloudScheduler-JobName`: This header will contain the job name.
+   * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
+   * the unix-cron format, this header will contain the job schedule time in
+   * RFC3339 UTC "Zulu" format.
+   * If the job has an
+   * [body][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.body], Cloud
+   * Scheduler sets the following headers:
    * * `Content-Type`: By default, the `Content-Type` header is set to
    *   `"application/octet-stream"`. The default can be overridden by explictly
    *   setting `Content-Type` to a particular media type when the job is
@@ -299,7 +324,8 @@ public interface AppEngineHttpTargetOrBuilder
    * Body.
    * HTTP request body. A request body is allowed only if the HTTP method is
    * POST or PUT. It will result in invalid argument error to set a body on a
-   * job with an incompatible [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
+   * job with an incompatible
+   * [HttpMethod][google.cloud.scheduler.v1beta1.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 5;</code>

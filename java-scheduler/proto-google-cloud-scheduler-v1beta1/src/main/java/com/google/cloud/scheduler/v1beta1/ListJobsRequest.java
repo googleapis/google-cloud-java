@@ -22,7 +22,8 @@ package com.google.cloud.scheduler.v1beta1;
  *
  *
  * <pre>
- * Request message for listing jobs using [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+ * Request message for listing jobs using
+ * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.ListJobsRequest}
@@ -39,6 +40,7 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   private ListJobsRequest() {
     parent_ = "";
+    filter_ = "";
     pageToken_ = "";
   }
 
@@ -123,6 +125,67 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 4;
+  private volatile java.lang.Object filter_;
+  /**
+   *
+   *
+   * <pre>
+   * `filter` can be used to specify a subset of jobs.
+   * If `filter` equals `target_config="HttpConfig"`, then the http
+   * target jobs are retrieved. If `filter` equals
+   * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+   * retrieved. If `filter` equals `labels.foo=value1
+   * labels.foo=value2` then only jobs which are labeled with
+   * foo=value1 AND foo=value2 will be returned.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * `filter` can be used to specify a subset of jobs.
+   * If `filter` equals `target_config="HttpConfig"`, then the http
+   * target jobs are retrieved. If `filter` equals
+   * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+   * retrieved. If `filter` equals `labels.foo=value1
+   * labels.foo=value2` then only jobs which are labeled with
+   * foo=value1 AND foo=value2 will be returned.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
   private int pageSize_;
   /**
@@ -154,10 +217,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-   * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-   * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+   * returned from the previous call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+   * an error to switch the value of
+   * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -183,10 +249,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-   * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-   * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+   * returned from the previous call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+   * an error to switch the value of
+   * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -206,6 +275,26 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int LEGACY_APP_ENGINE_CRON_FIELD_NUMBER = 7;
+  private boolean legacyAppEngineCron_;
+  /**
+   *
+   *
+   * <pre>
+   * This field is used to manage the legacy App Engine Cron jobs using the
+   * Cloud Scheduler API. If the field is set to true, the jobs in the __cron
+   * queue will be listed instead.
+   * </pre>
+   *
+   * <code>bool legacy_app_engine_cron = 7;</code>
+   *
+   * @return The legacyAppEngineCron.
+   */
+  @java.lang.Override
+  public boolean getLegacyAppEngineCron() {
+    return legacyAppEngineCron_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -223,11 +312,17 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filter_);
+    }
     if (pageSize_ != 0) {
       output.writeInt32(5, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pageToken_);
+    }
+    if (legacyAppEngineCron_ != false) {
+      output.writeBool(7, legacyAppEngineCron_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -241,11 +336,17 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
+    }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pageToken_);
+    }
+    if (legacyAppEngineCron_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, legacyAppEngineCron_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -264,8 +365,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.scheduler.v1beta1.ListJobsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getLegacyAppEngineCron() != other.getLegacyAppEngineCron()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -279,10 +382,14 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + LEGACY_APP_ENGINE_CRON_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLegacyAppEngineCron());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,7 +494,8 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for listing jobs using [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+   * Request message for listing jobs using
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.ListJobsRequest}
@@ -423,9 +531,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       super.clear();
       parent_ = "";
 
+      filter_ = "";
+
       pageSize_ = 0;
 
       pageToken_ = "";
+
+      legacyAppEngineCron_ = false;
 
       return this;
     }
@@ -455,8 +567,10 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       com.google.cloud.scheduler.v1beta1.ListJobsRequest result =
           new com.google.cloud.scheduler.v1beta1.ListJobsRequest(this);
       result.parent_ = parent_;
+      result.filter_ = filter_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      result.legacyAppEngineCron_ = legacyAppEngineCron_;
       onBuilt();
       return result;
     }
@@ -511,12 +625,19 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         parent_ = other.parent_;
         onChanged();
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
+      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
         onChanged();
+      }
+      if (other.getLegacyAppEngineCron() != false) {
+        setLegacyAppEngineCron(other.getLegacyAppEngineCron());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -550,6 +671,12 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
                 break;
               } // case 10
+            case 34:
+              {
+                filter_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
             case 40:
               {
                 pageSize_ = input.readInt32();
@@ -562,6 +689,12 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
                 break;
               } // case 50
+            case 56:
+              {
+                legacyAppEngineCron_ = input.readBool();
+
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -700,6 +833,142 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * `filter` can be used to specify a subset of jobs.
+     * If `filter` equals `target_config="HttpConfig"`, then the http
+     * target jobs are retrieved. If `filter` equals
+     * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+     * retrieved. If `filter` equals `labels.foo=value1
+     * labels.foo=value2` then only jobs which are labeled with
+     * foo=value1 AND foo=value2 will be returned.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `filter` can be used to specify a subset of jobs.
+     * If `filter` equals `target_config="HttpConfig"`, then the http
+     * target jobs are retrieved. If `filter` equals
+     * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+     * retrieved. If `filter` equals `labels.foo=value1
+     * labels.foo=value2` then only jobs which are labeled with
+     * foo=value1 AND foo=value2 will be returned.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `filter` can be used to specify a subset of jobs.
+     * If `filter` equals `target_config="HttpConfig"`, then the http
+     * target jobs are retrieved. If `filter` equals
+     * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+     * retrieved. If `filter` equals `labels.foo=value1
+     * labels.foo=value2` then only jobs which are labeled with
+     * foo=value1 AND foo=value2 will be returned.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `filter` can be used to specify a subset of jobs.
+     * If `filter` equals `target_config="HttpConfig"`, then the http
+     * target jobs are retrieved. If `filter` equals
+     * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+     * retrieved. If `filter` equals `labels.foo=value1
+     * labels.foo=value2` then only jobs which are labeled with
+     * foo=value1 AND foo=value2 will be returned.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * `filter` can be used to specify a subset of jobs.
+     * If `filter` equals `target_config="HttpConfig"`, then the http
+     * target jobs are retrieved. If `filter` equals
+     * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+     * retrieved. If `filter` equals `labels.foo=value1
+     * labels.foo=value2` then only jobs which are labeled with
+     * foo=value1 AND foo=value2 will be returned.
+     * </pre>
+     *
+     * <code>string filter = 4;</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+
     private int pageSize_;
     /**
      *
@@ -772,10 +1041,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+     * returned from the previous call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+     * an error to switch the value of
+     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -800,10 +1072,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+     * returned from the previous call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+     * an error to switch the value of
+     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -828,10 +1103,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+     * returned from the previous call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+     * an error to switch the value of
+     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -855,10 +1133,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+     * returned from the previous call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+     * an error to switch the value of
+     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -878,10 +1159,13 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * A token identifying a page of results the server will return. To
      * request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-     * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-     * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+     * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+     * returned from the previous call to
+     * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+     * an error to switch the value of
+     * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+     * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 6;</code>
@@ -896,6 +1180,64 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       pageToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean legacyAppEngineCron_;
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to manage the legacy App Engine Cron jobs using the
+     * Cloud Scheduler API. If the field is set to true, the jobs in the __cron
+     * queue will be listed instead.
+     * </pre>
+     *
+     * <code>bool legacy_app_engine_cron = 7;</code>
+     *
+     * @return The legacyAppEngineCron.
+     */
+    @java.lang.Override
+    public boolean getLegacyAppEngineCron() {
+      return legacyAppEngineCron_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to manage the legacy App Engine Cron jobs using the
+     * Cloud Scheduler API. If the field is set to true, the jobs in the __cron
+     * queue will be listed instead.
+     * </pre>
+     *
+     * <code>bool legacy_app_engine_cron = 7;</code>
+     *
+     * @param value The legacyAppEngineCron to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLegacyAppEngineCron(boolean value) {
+
+      legacyAppEngineCron_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to manage the legacy App Engine Cron jobs using the
+     * Cloud Scheduler API. If the field is set to true, the jobs in the __cron
+     * queue will be listed instead.
+     * </pre>
+     *
+     * <code>bool legacy_app_engine_cron = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLegacyAppEngineCron() {
+
+      legacyAppEngineCron_ = false;
       onChanged();
       return this;
     }
