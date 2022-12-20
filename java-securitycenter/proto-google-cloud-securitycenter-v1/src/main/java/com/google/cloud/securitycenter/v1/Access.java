@@ -46,6 +46,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     principalSubject_ = "";
     serviceAccountKeyName_ = "";
     serviceAccountDelegationInfo_ = java.util.Collections.emptyList();
+    userName_ = "";
   }
 
   @java.lang.Override
@@ -238,7 +239,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * What kind of user agent is associated, e.g. operating system shells,
+   * What kind of user agent is associated, for example operating system shells,
    * embedded or stand-alone applications, etc.
    * </pre>
    *
@@ -262,7 +263,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * What kind of user agent is associated, e.g. operating system shells,
+   * What kind of user agent is associated, for example operating system shells,
    * embedded or stand-alone applications, etc.
    * </pre>
    *
@@ -603,6 +604,67 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     return serviceAccountDelegationInfo_.get(index);
   }
 
+  public static final int USER_NAME_FIELD_NUMBER = 11;
+  private volatile java.lang.Object userName_;
+  /**
+   *
+   *
+   * <pre>
+   * A string that represents the username of a user, user account, or other
+   * entity involved in the access event. What the entity is and what its role
+   * in the access event is depends on the finding that this field appears in.
+   * The entity is likely not an IAM principal, but could be a user that is
+   * logged into an operating system, if the finding is VM-related, or a user
+   * that is logged into some type of application that is involved in the
+   * access event.
+   * </pre>
+   *
+   * <code>string user_name = 11;</code>
+   *
+   * @return The userName.
+   */
+  @java.lang.Override
+  public java.lang.String getUserName() {
+    java.lang.Object ref = userName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      userName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A string that represents the username of a user, user account, or other
+   * entity involved in the access event. What the entity is and what its role
+   * in the access event is depends on the finding that this field appears in.
+   * The entity is likely not an IAM principal, but could be a user that is
+   * logged into an operating system, if the finding is VM-related, or a user
+   * that is logged into some type of application that is involved in the
+   * access event.
+   * </pre>
+   *
+   * <code>string user_name = 11;</code>
+   *
+   * @return The bytes for userName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUserNameBytes() {
+    java.lang.Object ref = userName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      userName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -644,6 +706,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < serviceAccountDelegationInfo_.size(); i++) {
       output.writeMessage(9, serviceAccountDelegationInfo_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, userName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -682,6 +747,9 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, serviceAccountDelegationInfo_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, userName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -711,6 +779,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceAccountKeyName().equals(other.getServiceAccountKeyName())) return false;
     if (!getServiceAccountDelegationInfoList().equals(other.getServiceAccountDelegationInfoList()))
       return false;
+    if (!getUserName().equals(other.getUserName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -744,6 +813,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SERVICE_ACCOUNT_DELEGATION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getServiceAccountDelegationInfoList().hashCode();
     }
+    hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUserName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -909,6 +980,8 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         serviceAccountDelegationInfoBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      userName_ = "";
+
       return this;
     }
 
@@ -959,6 +1032,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.serviceAccountDelegationInfo_ = serviceAccountDelegationInfoBuilder_.build();
       }
+      result.userName_ = userName_;
       onBuilt();
       return result;
     }
@@ -1067,6 +1141,10 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getUserName().isEmpty()) {
+        userName_ = other.userName_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1155,6 +1233,12 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 74
+            case 90:
+              {
+                userName_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1607,7 +1691,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of user agent is associated, e.g. operating system shells,
+     * What kind of user agent is associated, for example operating system shells,
      * embedded or stand-alone applications, etc.
      * </pre>
      *
@@ -1630,7 +1714,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of user agent is associated, e.g. operating system shells,
+     * What kind of user agent is associated, for example operating system shells,
      * embedded or stand-alone applications, etc.
      * </pre>
      *
@@ -1653,7 +1737,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of user agent is associated, e.g. operating system shells,
+     * What kind of user agent is associated, for example operating system shells,
      * embedded or stand-alone applications, etc.
      * </pre>
      *
@@ -1675,7 +1759,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of user agent is associated, e.g. operating system shells,
+     * What kind of user agent is associated, for example operating system shells,
      * embedded or stand-alone applications, etc.
      * </pre>
      *
@@ -1693,7 +1777,7 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of user agent is associated, e.g. operating system shells,
+     * What kind of user agent is associated, for example operating system shells,
      * embedded or stand-alone applications, etc.
      * </pre>
      *
@@ -2667,6 +2751,142 @@ public final class Access extends com.google.protobuf.GeneratedMessageV3
         serviceAccountDelegationInfo_ = null;
       }
       return serviceAccountDelegationInfoBuilder_;
+    }
+
+    private java.lang.Object userName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A string that represents the username of a user, user account, or other
+     * entity involved in the access event. What the entity is and what its role
+     * in the access event is depends on the finding that this field appears in.
+     * The entity is likely not an IAM principal, but could be a user that is
+     * logged into an operating system, if the finding is VM-related, or a user
+     * that is logged into some type of application that is involved in the
+     * access event.
+     * </pre>
+     *
+     * <code>string user_name = 11;</code>
+     *
+     * @return The userName.
+     */
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string that represents the username of a user, user account, or other
+     * entity involved in the access event. What the entity is and what its role
+     * in the access event is depends on the finding that this field appears in.
+     * The entity is likely not an IAM principal, but could be a user that is
+     * logged into an operating system, if the finding is VM-related, or a user
+     * that is logged into some type of application that is involved in the
+     * access event.
+     * </pre>
+     *
+     * <code>string user_name = 11;</code>
+     *
+     * @return The bytes for userName.
+     */
+    public com.google.protobuf.ByteString getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string that represents the username of a user, user account, or other
+     * entity involved in the access event. What the entity is and what its role
+     * in the access event is depends on the finding that this field appears in.
+     * The entity is likely not an IAM principal, but could be a user that is
+     * logged into an operating system, if the finding is VM-related, or a user
+     * that is logged into some type of application that is involved in the
+     * access event.
+     * </pre>
+     *
+     * <code>string user_name = 11;</code>
+     *
+     * @param value The userName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      userName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string that represents the username of a user, user account, or other
+     * entity involved in the access event. What the entity is and what its role
+     * in the access event is depends on the finding that this field appears in.
+     * The entity is likely not an IAM principal, but could be a user that is
+     * logged into an operating system, if the finding is VM-related, or a user
+     * that is logged into some type of application that is involved in the
+     * access event.
+     * </pre>
+     *
+     * <code>string user_name = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUserName() {
+
+      userName_ = getDefaultInstance().getUserName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A string that represents the username of a user, user account, or other
+     * entity involved in the access event. What the entity is and what its role
+     * in the access event is depends on the finding that this field appears in.
+     * The entity is likely not an IAM principal, but could be a user that is
+     * logged into an operating system, if the finding is VM-related, or a user
+     * that is logged into some type of application that is involved in the
+     * access event.
+     * </pre>
+     *
+     * <code>string user_name = 11;</code>
+     *
+     * @param value The bytes for userName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      userName_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
