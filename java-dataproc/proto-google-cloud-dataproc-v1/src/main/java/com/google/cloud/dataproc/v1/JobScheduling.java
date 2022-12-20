@@ -74,14 +74,12 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
    * Optional. Maximum number of times per hour a driver may be restarted as
    * a result of driver exiting with non-zero code before job is
    * reported failed.
-   * A job may be reported as thrashing if driver exits with non-zero code
-   * 4 times within 10 minute window.
+   * A job may be reported as thrashing if the driver exits with a non-zero code
+   * four times within a 10-minute window.
    * Maximum value is 10.
-   * **Note:** Currently, this restartable job option is
-   * not supported in Dataproc
-   * [workflow
-   * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-   * jobs.
+   * **Note:** This restartable job option is not supported in Dataproc
+   * [workflow templates]
+   * (https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
    * </pre>
    *
    * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -99,14 +97,14 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Maximum number of times in total a driver may be restarted as a result of
-   * driver exiting with non-zero code before job is reported failed.
+   * Optional. Maximum total number of times a driver may be restarted as a
+   * result of the driver exiting with a non-zero code. After the maximum number
+   * is reached, the job will be reported as failed.
    * Maximum value is 240.
    * **Note:** Currently, this restartable job option is
    * not supported in Dataproc
    * [workflow
-   * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-   * jobs.
+   * templates](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
    * </pre>
    *
    * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -475,14 +473,12 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Optional. Maximum number of times per hour a driver may be restarted as
      * a result of driver exiting with non-zero code before job is
      * reported failed.
-     * A job may be reported as thrashing if driver exits with non-zero code
-     * 4 times within 10 minute window.
+     * A job may be reported as thrashing if the driver exits with a non-zero code
+     * four times within a 10-minute window.
      * Maximum value is 10.
-     * **Note:** Currently, this restartable job option is
-     * not supported in Dataproc
-     * [workflow
-     * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-     * jobs.
+     * **Note:** This restartable job option is not supported in Dataproc
+     * [workflow templates]
+     * (https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
      * </pre>
      *
      * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -500,14 +496,12 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Optional. Maximum number of times per hour a driver may be restarted as
      * a result of driver exiting with non-zero code before job is
      * reported failed.
-     * A job may be reported as thrashing if driver exits with non-zero code
-     * 4 times within 10 minute window.
+     * A job may be reported as thrashing if the driver exits with a non-zero code
+     * four times within a 10-minute window.
      * Maximum value is 10.
-     * **Note:** Currently, this restartable job option is
-     * not supported in Dataproc
-     * [workflow
-     * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-     * jobs.
+     * **Note:** This restartable job option is not supported in Dataproc
+     * [workflow templates]
+     * (https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
      * </pre>
      *
      * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -528,14 +522,12 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * Optional. Maximum number of times per hour a driver may be restarted as
      * a result of driver exiting with non-zero code before job is
      * reported failed.
-     * A job may be reported as thrashing if driver exits with non-zero code
-     * 4 times within 10 minute window.
+     * A job may be reported as thrashing if the driver exits with a non-zero code
+     * four times within a 10-minute window.
      * Maximum value is 10.
-     * **Note:** Currently, this restartable job option is
-     * not supported in Dataproc
-     * [workflow
-     * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-     * jobs.
+     * **Note:** This restartable job option is not supported in Dataproc
+     * [workflow templates]
+     * (https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
      * </pre>
      *
      * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -554,14 +546,14 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Maximum number of times in total a driver may be restarted as a result of
-     * driver exiting with non-zero code before job is reported failed.
+     * Optional. Maximum total number of times a driver may be restarted as a
+     * result of the driver exiting with a non-zero code. After the maximum number
+     * is reached, the job will be reported as failed.
      * Maximum value is 240.
      * **Note:** Currently, this restartable job option is
      * not supported in Dataproc
      * [workflow
-     * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-     * jobs.
+     * templates](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
      * </pre>
      *
      * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -576,14 +568,14 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Maximum number of times in total a driver may be restarted as a result of
-     * driver exiting with non-zero code before job is reported failed.
+     * Optional. Maximum total number of times a driver may be restarted as a
+     * result of the driver exiting with a non-zero code. After the maximum number
+     * is reached, the job will be reported as failed.
      * Maximum value is 240.
      * **Note:** Currently, this restartable job option is
      * not supported in Dataproc
      * [workflow
-     * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-     * jobs.
+     * templates](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
      * </pre>
      *
      * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -601,14 +593,14 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Maximum number of times in total a driver may be restarted as a result of
-     * driver exiting with non-zero code before job is reported failed.
+     * Optional. Maximum total number of times a driver may be restarted as a
+     * result of the driver exiting with a non-zero code. After the maximum number
+     * is reached, the job will be reported as failed.
      * Maximum value is 240.
      * **Note:** Currently, this restartable job option is
      * not supported in Dataproc
      * [workflow
-     * template](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template)
-     * jobs.
+     * templates](https://cloud.google.com/dataproc/docs/concepts/workflows/using-workflows#adding_jobs_to_a_template).
      * </pre>
      *
      * <code>int32 max_failures_total = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

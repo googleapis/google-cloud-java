@@ -77,10 +77,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Controls the use of
-   * [preemptible instances]
-   * (https://cloud.google.com/compute/docs/instances/preemptible)
-   * within the group.
+   * Controls the use of preemptible instances within the group.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility}
@@ -113,8 +110,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Instances are preemptible.
-     * This option is allowed only for secondary worker groups.
+     * Instances are [preemptible]
+     * (https://cloud.google.com/compute/docs/instances/preemptible).
+     * This option is allowed only for [secondary worker]
+     * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
+     * groups.
      * </pre>
      *
      * <code>PREEMPTIBLE = 2;</code>
@@ -150,8 +150,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Instances are preemptible.
-     * This option is allowed only for secondary worker groups.
+     * Instances are [preemptible]
+     * (https://cloud.google.com/compute/docs/instances/preemptible).
+     * This option is allowed only for [secondary worker]
+     * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
+     * groups.
      * </pre>
      *
      * <code>PREEMPTIBLE = 2;</code>

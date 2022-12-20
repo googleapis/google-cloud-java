@@ -104,7 +104,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If unspecified, Compute Engine default behavior will apply, which
-     * is the same as [INHERIT_FROM_SUBNETWORK][google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.INHERIT_FROM_SUBNETWORK].
+     * is the same as
+     * [INHERIT_FROM_SUBNETWORK][google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.INHERIT_FROM_SUBNETWORK].
      * </pre>
      *
      * <code>PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0;</code>
@@ -152,7 +153,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If unspecified, Compute Engine default behavior will apply, which
-     * is the same as [INHERIT_FROM_SUBNETWORK][google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.INHERIT_FROM_SUBNETWORK].
+     * is the same as
+     * [INHERIT_FROM_SUBNETWORK][google.cloud.dataproc.v1.GceClusterConfig.PrivateIpv6GoogleAccess.INHERIT_FROM_SUBNETWORK].
      * </pre>
      *
      * <code>PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0;</code>
@@ -998,7 +1000,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * Optional. Shielded Instance Config for clusters using [Compute Engine
+   * Shielded
    * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
    * </pre>
    *
@@ -1016,7 +1019,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * Optional. Shielded Instance Config for clusters using [Compute Engine
+   * Shielded
    * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
    * </pre>
    *
@@ -1036,7 +1040,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * Optional. Shielded Instance Config for clusters using [Compute Engine
+   * Shielded
    * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
    * </pre>
    *
@@ -3623,7 +3628,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3640,7 +3646,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3663,7 +3670,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3689,7 +3697,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3712,7 +3721,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3743,7 +3753,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3766,7 +3777,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3784,7 +3796,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
@@ -3806,7 +3819,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+     * Optional. Shielded Instance Config for clusters using [Compute Engine
+     * Shielded
      * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
      * </pre>
      *
