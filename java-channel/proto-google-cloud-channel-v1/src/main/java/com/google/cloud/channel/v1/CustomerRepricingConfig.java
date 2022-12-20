@@ -126,8 +126,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The configuration for bill modifications made by a reseller before
-   * sending it to customers.
+   * Required. The configuration for bill modifications made by a reseller
+   * before sending it to customers.
    * </pre>
    *
    * <code>
@@ -144,8 +144,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The configuration for bill modifications made by a reseller before
-   * sending it to customers.
+   * Required. The configuration for bill modifications made by a reseller
+   * before sending it to customers.
    * </pre>
    *
    * <code>
@@ -164,8 +164,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The configuration for bill modifications made by a reseller before
-   * sending it to customers.
+   * Required. The configuration for bill modifications made by a reseller
+   * before sending it to customers.
    * </pre>
    *
    * <code>
@@ -183,9 +183,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-   * mid-month.
+   * Output only. Timestamp of an update to the repricing rule. If `update_time`
+   * is after
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * then it indicates this was set mid-month.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -201,9 +202,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-   * mid-month.
+   * Output only. Timestamp of an update to the repricing rule. If `update_time`
+   * is after
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * then it indicates this was set mid-month.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -219,9 +221,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-   * mid-month.
+   * Output only. Timestamp of an update to the repricing rule. If `update_time`
+   * is after
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * then it indicates this was set mid-month.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -756,8 +759,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -773,8 +776,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -796,8 +799,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -821,8 +824,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -844,8 +847,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -873,8 +876,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -896,8 +899,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -913,8 +916,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -934,8 +937,8 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The configuration for bill modifications made by a reseller before
-     * sending it to customers.
+     * Required. The configuration for bill modifications made by a reseller
+     * before sending it to customers.
      * </pre>
      *
      * <code>
@@ -969,9 +972,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -987,9 +991,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -1011,9 +1016,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -1037,9 +1043,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -1060,9 +1067,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -1088,9 +1096,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -1112,9 +1121,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -1130,9 +1140,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>
@@ -1152,9 +1163,10 @@ public final class CustomerRepricingConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-     * mid-month.
+     * Output only. Timestamp of an update to the repricing rule. If `update_time`
+     * is after
+     * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+     * then it indicates this was set mid-month.
      * </pre>
      *
      * <code>

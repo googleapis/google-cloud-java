@@ -54,8 +54,8 @@ public interface ListCustomersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of customers to return. The service may return fewer
-   * than this value. If unspecified, returns at most 10 customers. The
+   * Optional. The maximum number of customers to return. The service may return
+   * fewer than this value. If unspecified, returns at most 10 customers. The
    * maximum value is 50.
    * </pre>
    *
@@ -71,8 +71,10 @@ public interface ListCustomersRequestOrBuilder
    * <pre>
    * Optional. A token identifying a page of results other than the first page.
    * Obtained through
-   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -86,8 +88,10 @@ public interface ListCustomersRequestOrBuilder
    * <pre>
    * Optional. A token identifying a page of results other than the first page.
    * Obtained through
-   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -100,7 +104,8 @@ public interface ListCustomersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+   * results. See
    * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
    * for more information.
    * </pre>
@@ -114,7 +119,8 @@ public interface ListCustomersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+   * results. See
    * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
    * for more information.
    * </pre>

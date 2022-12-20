@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.UpdateCustomer][google.cloud.channel.v1.CloudChannelService.UpdateCustomer].
+ * Request message for
+ * [CloudChannelService.UpdateCustomer][google.cloud.channel.v1.CloudChannelService.UpdateCustomer].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.UpdateCustomerRequest}
@@ -347,7 +348,8 @@ public final class UpdateCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.UpdateCustomer][google.cloud.channel.v1.CloudChannelService.UpdateCustomer].
+   * Request message for
+   * [CloudChannelService.UpdateCustomer][google.cloud.channel.v1.CloudChannelService.UpdateCustomer].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.UpdateCustomerRequest}

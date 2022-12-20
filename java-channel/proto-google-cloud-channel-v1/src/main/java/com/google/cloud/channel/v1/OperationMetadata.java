@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Provides contextual information about a [google.longrunning.Operation][google.longrunning.Operation].
+ * Provides contextual information about a
+ * [google.longrunning.Operation][google.longrunning.Operation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.OperationMetadata}
@@ -627,7 +628,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Provides contextual information about a [google.longrunning.Operation][google.longrunning.Operation].
+   * Provides contextual information about a
+   * [google.longrunning.Operation][google.longrunning.Operation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.OperationMetadata}

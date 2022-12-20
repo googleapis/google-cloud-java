@@ -269,7 +269,8 @@ public interface EntitlementOrBuilder
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -284,7 +285,8 @@ public interface EntitlementOrBuilder
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -298,7 +300,8 @@ public interface EntitlementOrBuilder
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -313,7 +316,8 @@ public interface EntitlementOrBuilder
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -327,7 +331,8 @@ public interface EntitlementOrBuilder
    *
    *
    * <pre>
-   * Output only. Enumerable of all current suspension reasons for an entitlement.
+   * Output only. Enumerable of all current suspension reasons for an
+   * entitlement.
    * </pre>
    *
    * <code>
@@ -343,11 +348,11 @@ public interface EntitlementOrBuilder
    *
    *
    * <pre>
-   * Optional. This purchase order (PO) information is for resellers to use for their
-   * company tracking usage. If a purchaseOrderId value is given, it appears in
-   * the API responses and shows up in the invoice. The property accepts up to
-   * 80 plain text characters. This is only supported for Google Workspace
-   * entitlements.
+   * Optional. This purchase order (PO) information is for resellers to use for
+   * their company tracking usage. If a purchaseOrderId value is given, it
+   * appears in the API responses and shows up in the invoice. The property
+   * accepts up to 80 plain text characters. This is only supported for Google
+   * Workspace entitlements.
    * </pre>
    *
    * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -359,11 +364,11 @@ public interface EntitlementOrBuilder
    *
    *
    * <pre>
-   * Optional. This purchase order (PO) information is for resellers to use for their
-   * company tracking usage. If a purchaseOrderId value is given, it appears in
-   * the API responses and shows up in the invoice. The property accepts up to
-   * 80 plain text characters. This is only supported for Google Workspace
-   * entitlements.
+   * Optional. This purchase order (PO) information is for resellers to use for
+   * their company tracking usage. If a purchaseOrderId value is given, it
+   * appears in the API responses and shows up in the invoice. The property
+   * accepts up to 80 plain text characters. This is only supported for Google
+   * Workspace entitlements.
    * </pre>
    *
    * <code>string purchase_order_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>

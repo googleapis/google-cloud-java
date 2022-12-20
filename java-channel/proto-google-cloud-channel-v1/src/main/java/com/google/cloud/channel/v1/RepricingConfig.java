@@ -39,6 +39,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
   private RepricingConfig() {
     rebillingBasis_ = 0;
+    conditionalOverrides_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1353,8 +1354,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The YearMonth when these adjustments activate. The Day field needs to be
-   * "0" since we only accept YearMonth repricing boundaries.
+   * Required. The YearMonth when these adjustments activate. The Day field
+   * needs to be "0" since we only accept YearMonth repricing boundaries.
    * </pre>
    *
    * <code>.google.type.Date effective_invoice_month = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1370,8 +1371,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The YearMonth when these adjustments activate. The Day field needs to be
-   * "0" since we only accept YearMonth repricing boundaries.
+   * Required. The YearMonth when these adjustments activate. The Day field
+   * needs to be "0" since we only accept YearMonth repricing boundaries.
    * </pre>
    *
    * <code>.google.type.Date effective_invoice_month = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1389,8 +1390,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The YearMonth when these adjustments activate. The Day field needs to be
-   * "0" since we only accept YearMonth repricing boundaries.
+   * Required. The YearMonth when these adjustments activate. The Day field
+   * needs to be "0" since we only accept YearMonth repricing boundaries.
    * </pre>
    *
    * <code>.google.type.Date effective_invoice_month = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1461,8 +1462,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to use for this bill. Specifies the relative cost
-   * based on repricing costs you will apply.
+   * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to
+   * use for this bill. Specifies the relative cost based on repricing costs you
+   * will apply.
    * </pre>
    *
    * <code>
@@ -1479,8 +1481,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to use for this bill. Specifies the relative cost
-   * based on repricing costs you will apply.
+   * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to
+   * use for this bill. Specifies the relative cost based on repricing costs you
+   * will apply.
    * </pre>
    *
    * <code>
@@ -1495,6 +1498,87 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.channel.v1.RebillingBasis result =
         com.google.cloud.channel.v1.RebillingBasis.valueOf(rebillingBasis_);
     return result == null ? com.google.cloud.channel.v1.RebillingBasis.UNRECOGNIZED : result;
+  }
+
+  public static final int CONDITIONAL_OVERRIDES_FIELD_NUMBER = 6;
+  private java.util.List<com.google.cloud.channel.v1.ConditionalOverride> conditionalOverrides_;
+  /**
+   *
+   *
+   * <pre>
+   * The conditional overrides to apply for this configuration. If you list
+   * multiple overrides, only the first valid override is used.  If you don't
+   * list any overrides, the API uses the normal adjustment and rebilling basis.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.channel.v1.ConditionalOverride>
+      getConditionalOverridesList() {
+    return conditionalOverrides_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The conditional overrides to apply for this configuration. If you list
+   * multiple overrides, only the first valid override is used.  If you don't
+   * list any overrides, the API uses the normal adjustment and rebilling basis.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.channel.v1.ConditionalOverrideOrBuilder>
+      getConditionalOverridesOrBuilderList() {
+    return conditionalOverrides_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The conditional overrides to apply for this configuration. If you list
+   * multiple overrides, only the first valid override is used.  If you don't
+   * list any overrides, the API uses the normal adjustment and rebilling basis.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+   */
+  @java.lang.Override
+  public int getConditionalOverridesCount() {
+    return conditionalOverrides_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The conditional overrides to apply for this configuration. If you list
+   * multiple overrides, only the first valid override is used.  If you don't
+   * list any overrides, the API uses the normal adjustment and rebilling basis.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.ConditionalOverride getConditionalOverrides(int index) {
+    return conditionalOverrides_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The conditional overrides to apply for this configuration. If you list
+   * multiple overrides, only the first valid override is used.  If you don't
+   * list any overrides, the API uses the normal adjustment and rebilling basis.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.channel.v1.ConditionalOverrideOrBuilder getConditionalOverridesOrBuilder(
+      int index) {
+    return conditionalOverrides_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1529,6 +1613,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           5, (com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity) granularity_);
     }
+    for (int i = 0; i < conditionalOverrides_.size(); i++) {
+      output.writeMessage(6, conditionalOverrides_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1560,6 +1647,10 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
               5,
               (com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity) granularity_);
     }
+    for (int i = 0; i < conditionalOverrides_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, conditionalOverrides_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1585,6 +1676,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       if (!getAdjustment().equals(other.getAdjustment())) return false;
     }
     if (rebillingBasis_ != other.rebillingBasis_) return false;
+    if (!getConditionalOverridesList().equals(other.getConditionalOverridesList())) return false;
     if (!getGranularityCase().equals(other.getGranularityCase())) return false;
     switch (granularityCase_) {
       case 4:
@@ -1618,6 +1710,10 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + REBILLING_BASIS_FIELD_NUMBER;
     hash = (53 * hash) + rebillingBasis_;
+    if (getConditionalOverridesCount() > 0) {
+      hash = (37 * hash) + CONDITIONAL_OVERRIDES_FIELD_NUMBER;
+      hash = (53 * hash) + getConditionalOverridesList().hashCode();
+    }
     switch (granularityCase_) {
       case 4:
         hash = (37 * hash) + ENTITLEMENT_GRANULARITY_FIELD_NUMBER;
@@ -1788,6 +1884,13 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       rebillingBasis_ = 0;
 
+      if (conditionalOverridesBuilder_ == null) {
+        conditionalOverrides_ = java.util.Collections.emptyList();
+      } else {
+        conditionalOverrides_ = null;
+        conditionalOverridesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       granularityCase_ = 0;
       granularity_ = null;
       return this;
@@ -1817,6 +1920,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.channel.v1.RepricingConfig buildPartial() {
       com.google.cloud.channel.v1.RepricingConfig result =
           new com.google.cloud.channel.v1.RepricingConfig(this);
+      int from_bitField0_ = bitField0_;
       if (granularityCase_ == 4) {
         if (entitlementGranularityBuilder_ == null) {
           result.granularity_ = granularity_;
@@ -1842,6 +1946,15 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         result.adjustment_ = adjustmentBuilder_.build();
       }
       result.rebillingBasis_ = rebillingBasis_;
+      if (conditionalOverridesBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          conditionalOverrides_ = java.util.Collections.unmodifiableList(conditionalOverrides_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.conditionalOverrides_ = conditionalOverrides_;
+      } else {
+        result.conditionalOverrides_ = conditionalOverridesBuilder_.build();
+      }
       result.granularityCase_ = granularityCase_;
       onBuilt();
       return result;
@@ -1900,6 +2013,33 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (other.rebillingBasis_ != 0) {
         setRebillingBasisValue(other.getRebillingBasisValue());
+      }
+      if (conditionalOverridesBuilder_ == null) {
+        if (!other.conditionalOverrides_.isEmpty()) {
+          if (conditionalOverrides_.isEmpty()) {
+            conditionalOverrides_ = other.conditionalOverrides_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureConditionalOverridesIsMutable();
+            conditionalOverrides_.addAll(other.conditionalOverrides_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.conditionalOverrides_.isEmpty()) {
+          if (conditionalOverridesBuilder_.isEmpty()) {
+            conditionalOverridesBuilder_.dispose();
+            conditionalOverridesBuilder_ = null;
+            conditionalOverrides_ = other.conditionalOverrides_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            conditionalOverridesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getConditionalOverridesFieldBuilder()
+                    : null;
+          } else {
+            conditionalOverridesBuilder_.addAllMessages(other.conditionalOverrides_);
+          }
+        }
       }
       switch (other.getGranularityCase()) {
         case ENTITLEMENT_GRANULARITY:
@@ -1976,6 +2116,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
                 granularityCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.channel.v1.ConditionalOverride m =
+                    input.readMessage(
+                        com.google.cloud.channel.v1.ConditionalOverride.parser(),
+                        extensionRegistry);
+                if (conditionalOverridesBuilder_ == null) {
+                  ensureConditionalOverridesIsMutable();
+                  conditionalOverrides_.add(m);
+                } else {
+                  conditionalOverridesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2006,6 +2160,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity,
@@ -2520,8 +2676,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2537,8 +2693,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2560,8 +2716,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2585,8 +2741,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2607,8 +2763,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2636,8 +2792,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2659,8 +2815,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2676,8 +2832,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2697,8 +2853,8 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The YearMonth when these adjustments activate. The Day field needs to be
-     * "0" since we only accept YearMonth repricing boundaries.
+     * Required. The YearMonth when these adjustments activate. The Day field
+     * needs to be "0" since we only accept YearMonth repricing boundaries.
      * </pre>
      *
      * <code>
@@ -2927,8 +3083,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to use for this bill. Specifies the relative cost
-     * based on repricing costs you will apply.
+     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to
+     * use for this bill. Specifies the relative cost based on repricing costs you
+     * will apply.
      * </pre>
      *
      * <code>
@@ -2945,8 +3102,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to use for this bill. Specifies the relative cost
-     * based on repricing costs you will apply.
+     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to
+     * use for this bill. Specifies the relative cost based on repricing costs you
+     * will apply.
      * </pre>
      *
      * <code>
@@ -2966,8 +3124,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to use for this bill. Specifies the relative cost
-     * based on repricing costs you will apply.
+     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to
+     * use for this bill. Specifies the relative cost based on repricing costs you
+     * will apply.
      * </pre>
      *
      * <code>
@@ -2987,8 +3146,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to use for this bill. Specifies the relative cost
-     * based on repricing costs you will apply.
+     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to
+     * use for this bill. Specifies the relative cost based on repricing costs you
+     * will apply.
      * </pre>
      *
      * <code>
@@ -3011,8 +3171,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to use for this bill. Specifies the relative cost
-     * based on repricing costs you will apply.
+     * Required. The [RebillingBasis][google.cloud.channel.v1.RebillingBasis] to
+     * use for this bill. Specifies the relative cost based on repricing costs you
+     * will apply.
      * </pre>
      *
      * <code>
@@ -3026,6 +3187,404 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       rebillingBasis_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.channel.v1.ConditionalOverride> conditionalOverrides_ =
+        java.util.Collections.emptyList();
+
+    private void ensureConditionalOverridesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        conditionalOverrides_ =
+            new java.util.ArrayList<com.google.cloud.channel.v1.ConditionalOverride>(
+                conditionalOverrides_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.channel.v1.ConditionalOverride,
+            com.google.cloud.channel.v1.ConditionalOverride.Builder,
+            com.google.cloud.channel.v1.ConditionalOverrideOrBuilder>
+        conditionalOverridesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public java.util.List<com.google.cloud.channel.v1.ConditionalOverride>
+        getConditionalOverridesList() {
+      if (conditionalOverridesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(conditionalOverrides_);
+      } else {
+        return conditionalOverridesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public int getConditionalOverridesCount() {
+      if (conditionalOverridesBuilder_ == null) {
+        return conditionalOverrides_.size();
+      } else {
+        return conditionalOverridesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public com.google.cloud.channel.v1.ConditionalOverride getConditionalOverrides(int index) {
+      if (conditionalOverridesBuilder_ == null) {
+        return conditionalOverrides_.get(index);
+      } else {
+        return conditionalOverridesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder setConditionalOverrides(
+        int index, com.google.cloud.channel.v1.ConditionalOverride value) {
+      if (conditionalOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionalOverridesIsMutable();
+        conditionalOverrides_.set(index, value);
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder setConditionalOverrides(
+        int index, com.google.cloud.channel.v1.ConditionalOverride.Builder builderForValue) {
+      if (conditionalOverridesBuilder_ == null) {
+        ensureConditionalOverridesIsMutable();
+        conditionalOverrides_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder addConditionalOverrides(com.google.cloud.channel.v1.ConditionalOverride value) {
+      if (conditionalOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionalOverridesIsMutable();
+        conditionalOverrides_.add(value);
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder addConditionalOverrides(
+        int index, com.google.cloud.channel.v1.ConditionalOverride value) {
+      if (conditionalOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionalOverridesIsMutable();
+        conditionalOverrides_.add(index, value);
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder addConditionalOverrides(
+        com.google.cloud.channel.v1.ConditionalOverride.Builder builderForValue) {
+      if (conditionalOverridesBuilder_ == null) {
+        ensureConditionalOverridesIsMutable();
+        conditionalOverrides_.add(builderForValue.build());
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder addConditionalOverrides(
+        int index, com.google.cloud.channel.v1.ConditionalOverride.Builder builderForValue) {
+      if (conditionalOverridesBuilder_ == null) {
+        ensureConditionalOverridesIsMutable();
+        conditionalOverrides_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder addAllConditionalOverrides(
+        java.lang.Iterable<? extends com.google.cloud.channel.v1.ConditionalOverride> values) {
+      if (conditionalOverridesBuilder_ == null) {
+        ensureConditionalOverridesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, conditionalOverrides_);
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder clearConditionalOverrides() {
+      if (conditionalOverridesBuilder_ == null) {
+        conditionalOverrides_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public Builder removeConditionalOverrides(int index) {
+      if (conditionalOverridesBuilder_ == null) {
+        ensureConditionalOverridesIsMutable();
+        conditionalOverrides_.remove(index);
+        onChanged();
+      } else {
+        conditionalOverridesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public com.google.cloud.channel.v1.ConditionalOverride.Builder getConditionalOverridesBuilder(
+        int index) {
+      return getConditionalOverridesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public com.google.cloud.channel.v1.ConditionalOverrideOrBuilder
+        getConditionalOverridesOrBuilder(int index) {
+      if (conditionalOverridesBuilder_ == null) {
+        return conditionalOverrides_.get(index);
+      } else {
+        return conditionalOverridesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public java.util.List<? extends com.google.cloud.channel.v1.ConditionalOverrideOrBuilder>
+        getConditionalOverridesOrBuilderList() {
+      if (conditionalOverridesBuilder_ != null) {
+        return conditionalOverridesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(conditionalOverrides_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public com.google.cloud.channel.v1.ConditionalOverride.Builder
+        addConditionalOverridesBuilder() {
+      return getConditionalOverridesFieldBuilder()
+          .addBuilder(com.google.cloud.channel.v1.ConditionalOverride.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public com.google.cloud.channel.v1.ConditionalOverride.Builder addConditionalOverridesBuilder(
+        int index) {
+      return getConditionalOverridesFieldBuilder()
+          .addBuilder(index, com.google.cloud.channel.v1.ConditionalOverride.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The conditional overrides to apply for this configuration. If you list
+     * multiple overrides, only the first valid override is used.  If you don't
+     * list any overrides, the API uses the normal adjustment and rebilling basis.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.channel.v1.ConditionalOverride conditional_overrides = 6;</code>
+     */
+    public java.util.List<com.google.cloud.channel.v1.ConditionalOverride.Builder>
+        getConditionalOverridesBuilderList() {
+      return getConditionalOverridesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.channel.v1.ConditionalOverride,
+            com.google.cloud.channel.v1.ConditionalOverride.Builder,
+            com.google.cloud.channel.v1.ConditionalOverrideOrBuilder>
+        getConditionalOverridesFieldBuilder() {
+      if (conditionalOverridesBuilder_ == null) {
+        conditionalOverridesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.channel.v1.ConditionalOverride,
+                com.google.cloud.channel.v1.ConditionalOverride.Builder,
+                com.google.cloud.channel.v1.ConditionalOverrideOrBuilder>(
+                conditionalOverrides_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        conditionalOverrides_ = null;
+      }
+      return conditionalOverridesBuilder_;
     }
 
     @java.lang.Override

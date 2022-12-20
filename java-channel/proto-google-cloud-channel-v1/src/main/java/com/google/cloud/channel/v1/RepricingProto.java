@@ -55,6 +55,18 @@ public final class RepricingProto {
       internal_static_google_cloud_channel_v1_PercentageAdjustment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_channel_v1_PercentageAdjustment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_channel_v1_ConditionalOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_channel_v1_ConditionalOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_channel_v1_RepricingCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_channel_v1_RepricingCondition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_channel_v1_SkuGroupCondition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_channel_v1_SkuGroupCondition_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -86,7 +98,7 @@ public final class RepricingProto {
           + "elPartnerRepricingConfig\022zaccounts/{acco"
           + "unt}/channelPartnerLinks/{channel_partne"
           + "r}/channelPartnerRepricingConfigs/{chann"
-          + "el_partner_repricing_config}\"\260\004\n\017Reprici"
+          + "el_partner_repricing_config}\"\375\004\n\017Reprici"
           + "ngConfig\022b\n\027entitlement_granularity\030\004 \001("
           + "\0132?.google.cloud.channel.v1.RepricingCon"
           + "fig.EntitlementGranularityH\000\022i\n\033channel_"
@@ -97,20 +109,32 @@ public final class RepricingProto {
           + "stment\030\002 \001(\0132,.google.cloud.channel.v1.R"
           + "epricingAdjustmentB\003\340A\002\022E\n\017rebilling_bas"
           + "is\030\003 \001(\0162\'.google.cloud.channel.v1.Rebil"
-          + "lingBasisB\003\340A\002\032[\n\026EntitlementGranularity"
-          + "\022A\n\013entitlement\030\001 \001(\tB,\372A)\n\'cloudchannel"
-          + ".googleapis.com/Entitlement\032\033\n\031ChannelPa"
-          + "rtnerGranularityB\r\n\013granularity\"s\n\023Repri"
-          + "cingAdjustment\022N\n\025percentage_adjustment\030"
-          + "\002 \001(\0132-.google.cloud.channel.v1.Percenta"
-          + "geAdjustmentH\000B\014\n\nadjustment\"@\n\024Percenta"
-          + "geAdjustment\022(\n\npercentage\030\002 \001(\0132\024.googl"
-          + "e.type.Decimal*]\n\016RebillingBasis\022\037\n\033REBI"
-          + "LLING_BASIS_UNSPECIFIED\020\000\022\020\n\014COST_AT_LIS"
-          + "T\020\001\022\030\n\024DIRECT_CUSTOMER_COST\020\002Bo\n\033com.goo"
-          + "gle.cloud.channel.v1B\016RepricingProtoP\001Z>"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/channel/v1;channelb\006proto3"
+          + "lingBasisB\003\340A\002\022K\n\025conditional_overrides\030"
+          + "\006 \003(\0132,.google.cloud.channel.v1.Conditio"
+          + "nalOverride\032[\n\026EntitlementGranularity\022A\n"
+          + "\013entitlement\030\001 \001(\tB,\372A)\n\'cloudchannel.go"
+          + "ogleapis.com/Entitlement\032\033\n\031ChannelPartn"
+          + "erGranularityB\r\n\013granularity\"s\n\023Repricin"
+          + "gAdjustment\022N\n\025percentage_adjustment\030\002 \001"
+          + "(\0132-.google.cloud.channel.v1.PercentageA"
+          + "djustmentH\000B\014\n\nadjustment\"@\n\024PercentageA"
+          + "djustment\022(\n\npercentage\030\002 \001(\0132\024.google.t"
+          + "ype.Decimal\"\362\001\n\023ConditionalOverride\022E\n\na"
+          + "djustment\030\001 \001(\0132,.google.cloud.channel.v"
+          + "1.RepricingAdjustmentB\003\340A\002\022E\n\017rebilling_"
+          + "basis\030\002 \001(\0162\'.google.cloud.channel.v1.Re"
+          + "billingBasisB\003\340A\002\022M\n\023repricing_condition"
+          + "\030\003 \001(\0132+.google.cloud.channel.v1.Reprici"
+          + "ngConditionB\003\340A\002\"l\n\022RepricingCondition\022I"
+          + "\n\023sku_group_condition\030\001 \001(\0132*.google.clo"
+          + "ud.channel.v1.SkuGroupConditionH\000B\013\n\tcon"
+          + "dition\"&\n\021SkuGroupCondition\022\021\n\tsku_group"
+          + "\030\001 \001(\t*]\n\016RebillingBasis\022\037\n\033REBILLING_BA"
+          + "SIS_UNSPECIFIED\020\000\022\020\n\014COST_AT_LIST\020\001\022\030\n\024D"
+          + "IRECT_CUSTOMER_COST\020\002Bo\n\033com.google.clou"
+          + "d.channel.v1B\016RepricingProtoP\001Z>google.g"
+          + "olang.org/genproto/googleapis/cloud/chan"
+          + "nel/v1;channelb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -149,6 +173,7 @@ public final class RepricingProto {
               "EffectiveInvoiceMonth",
               "Adjustment",
               "RebillingBasis",
+              "ConditionalOverrides",
               "Granularity",
             });
     internal_static_google_cloud_channel_v1_RepricingConfig_EntitlementGranularity_descriptor =
@@ -180,6 +205,30 @@ public final class RepricingProto {
             internal_static_google_cloud_channel_v1_PercentageAdjustment_descriptor,
             new java.lang.String[] {
               "Percentage",
+            });
+    internal_static_google_cloud_channel_v1_ConditionalOverride_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_channel_v1_ConditionalOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_channel_v1_ConditionalOverride_descriptor,
+            new java.lang.String[] {
+              "Adjustment", "RebillingBasis", "RepricingCondition",
+            });
+    internal_static_google_cloud_channel_v1_RepricingCondition_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_channel_v1_RepricingCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_channel_v1_RepricingCondition_descriptor,
+            new java.lang.String[] {
+              "SkuGroupCondition", "Condition",
+            });
+    internal_static_google_cloud_channel_v1_SkuGroupCondition_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_channel_v1_SkuGroupCondition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_channel_v1_SkuGroupCondition_descriptor,
+            new java.lang.String[] {
+              "SkuGroup",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -23,7 +23,8 @@ package com.google.cloud.channel.v1;
  *
  * <pre>
  * The result of a [RunReportJob][] operation. Contains the name to use in
- * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job] and the status of the operation.
+ * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+ * and the status of the operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ReportJob}
@@ -345,7 +346,8 @@ public final class ReportJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The result of a [RunReportJob][] operation. Contains the name to use in
-   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job] and the status of the operation.
+   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+   * and the status of the operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ReportJob}

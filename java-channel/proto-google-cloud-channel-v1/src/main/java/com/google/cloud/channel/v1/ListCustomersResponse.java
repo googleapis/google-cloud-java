@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers].
+ * Response message for
+ * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListCustomersResponse}
@@ -144,7 +145,9 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -168,7 +171,9 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -362,7 +367,8 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers].
+   * Response message for
+   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListCustomersResponse}
@@ -942,7 +948,9 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -965,7 +973,9 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -988,7 +998,9 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1010,7 +1022,9 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1028,7 +1042,9 @@ public final class ListCustomersResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomersRequest.page_token][google.cloud.channel.v1.ListCustomersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

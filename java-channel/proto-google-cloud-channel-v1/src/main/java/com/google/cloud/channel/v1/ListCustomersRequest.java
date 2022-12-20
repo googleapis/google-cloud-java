@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+ * Request message for
+ * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListCustomersRequest}
@@ -126,8 +127,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum number of customers to return. The service may return fewer
-   * than this value. If unspecified, returns at most 10 customers. The
+   * Optional. The maximum number of customers to return. The service may return
+   * fewer than this value. If unspecified, returns at most 10 customers. The
    * maximum value is 50.
    * </pre>
    *
@@ -148,8 +149,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A token identifying a page of results other than the first page.
    * Obtained through
-   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -174,8 +177,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Optional. A token identifying a page of results other than the first page.
    * Obtained through
-   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+   * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -201,7 +206,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+   * results. See
    * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
    * for more information.
    * </pre>
@@ -226,7 +232,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+   * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+   * results. See
    * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
    * for more information.
    * </pre>
@@ -438,7 +445,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+   * Request message for
+   * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListCustomersRequest}
@@ -759,8 +767,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of customers to return. The service may return fewer
-     * than this value. If unspecified, returns at most 10 customers. The
+     * Optional. The maximum number of customers to return. The service may return
+     * fewer than this value. If unspecified, returns at most 10 customers. The
      * maximum value is 50.
      * </pre>
      *
@@ -776,8 +784,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of customers to return. The service may return fewer
-     * than this value. If unspecified, returns at most 10 customers. The
+     * Optional. The maximum number of customers to return. The service may return
+     * fewer than this value. If unspecified, returns at most 10 customers. The
      * maximum value is 50.
      * </pre>
      *
@@ -796,8 +804,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of customers to return. The service may return fewer
-     * than this value. If unspecified, returns at most 10 customers. The
+     * Optional. The maximum number of customers to return. The service may return
+     * fewer than this value. If unspecified, returns at most 10 customers. The
      * maximum value is 50.
      * </pre>
      *
@@ -819,8 +827,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results other than the first page.
      * Obtained through
-     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -844,8 +854,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results other than the first page.
      * Obtained through
-     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -869,8 +881,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results other than the first page.
      * Obtained through
-     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,8 +907,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results other than the first page.
      * Obtained through
-     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -913,8 +929,10 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Optional. A token identifying a page of results other than the first page.
      * Obtained through
-     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers] call.
+     * [ListCustomersResponse.next_page_token][google.cloud.channel.v1.ListCustomersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -938,7 +956,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+     * results. See
      * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
      * for more information.
      * </pre>
@@ -962,7 +981,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+     * results. See
      * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
      * for more information.
      * </pre>
@@ -986,7 +1006,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+     * results. See
      * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
      * for more information.
      * </pre>
@@ -1009,7 +1030,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+     * results. See
      * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
      * for more information.
      * </pre>
@@ -1028,7 +1050,8 @@ public final class ListCustomersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Filters applied to the [CloudChannelService.ListCustomers] results. See
+     * Optional. Filters applied to the [CloudChannelService.ListCustomers]
+     * results. See
      * https://cloud.google.com/channel/docs/concepts/google-cloud/filter-customers
      * for more information.
      * </pre>

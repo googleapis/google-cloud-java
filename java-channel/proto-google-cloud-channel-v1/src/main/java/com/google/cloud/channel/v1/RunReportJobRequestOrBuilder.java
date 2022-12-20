@@ -27,8 +27,8 @@ public interface RunReportJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The report's resource name. Specifies the account and report used to
-   * generate report data. The report_id identifier is a UID (for example,
+   * Required. The report's resource name. Specifies the account and report used
+   * to generate report data. The report_id identifier is a UID (for example,
    * `613bf59q`).
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
@@ -45,8 +45,8 @@ public interface RunReportJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The report's resource name. Specifies the account and report used to
-   * generate report data. The report_id identifier is a UID (for example,
+   * Required. The report's resource name. Specifies the account and report used
+   * to generate report data. The report_id identifier is a UID (for example,
    * `613bf59q`).
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
@@ -105,8 +105,8 @@ public interface RunReportJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A structured string that defines conditions on dimension columns to
-   * restrict the report output.
+   * Optional. A structured string that defines conditions on dimension columns
+   * to restrict the report output.
    * Filters support logical operators (AND, OR, NOT) and conditional operators
    * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
    * For example:
@@ -124,8 +124,8 @@ public interface RunReportJobRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A structured string that defines conditions on dimension columns to
-   * restrict the report output.
+   * Optional. A structured string that defines conditions on dimension columns
+   * to restrict the report output.
    * Filters support logical operators (AND, OR, NOT) and conditional operators
    * (=, !=, &lt;, &gt;, &lt;=, and &gt;=) using `column_id` as keys.
    * For example:

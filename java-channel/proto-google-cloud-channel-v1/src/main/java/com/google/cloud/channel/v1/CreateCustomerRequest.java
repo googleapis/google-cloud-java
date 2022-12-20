@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.CreateCustomer][google.cloud.channel.v1.CloudChannelService.CreateCustomer]
+ * Request message for
+ * [CloudChannelService.CreateCustomer][google.cloud.channel.v1.CloudChannelService.CreateCustomer]
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.CreateCustomerRequest}
@@ -73,8 +74,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of reseller account in which to create the customer.
-   * Parent uses the format: accounts/{account_id}
+   * Required. The resource name of reseller account in which to create the
+   * customer. Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -97,8 +98,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of reseller account in which to create the customer.
-   * Parent uses the format: accounts/{account_id}
+   * Required. The resource name of reseller account in which to create the
+   * customer. Parent uses the format: accounts/{account_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -346,7 +347,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.CreateCustomer][google.cloud.channel.v1.CloudChannelService.CreateCustomer]
+   * Request message for
+   * [CloudChannelService.CreateCustomer][google.cloud.channel.v1.CloudChannelService.CreateCustomer]
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.CreateCustomerRequest}
@@ -538,8 +540,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of reseller account in which to create the customer.
-     * Parent uses the format: accounts/{account_id}
+     * Required. The resource name of reseller account in which to create the
+     * customer. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -561,8 +563,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of reseller account in which to create the customer.
-     * Parent uses the format: accounts/{account_id}
+     * Required. The resource name of reseller account in which to create the
+     * customer. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -584,8 +586,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of reseller account in which to create the customer.
-     * Parent uses the format: accounts/{account_id}
+     * Required. The resource name of reseller account in which to create the
+     * customer. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -606,8 +608,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of reseller account in which to create the customer.
-     * Parent uses the format: accounts/{account_id}
+     * Required. The resource name of reseller account in which to create the
+     * customer. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -624,8 +626,8 @@ public final class CreateCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of reseller account in which to create the customer.
-     * Parent uses the format: accounts/{account_id}
+     * Required. The resource name of reseller account in which to create the
+     * customer. Parent uses the format: accounts/{account_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

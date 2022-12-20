@@ -81,7 +81,9 @@ public interface ListChannelPartnerLinksResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -94,7 +96,9 @@ public interface ListChannelPartnerLinksResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

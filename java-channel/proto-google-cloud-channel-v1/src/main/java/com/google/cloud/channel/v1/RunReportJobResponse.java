@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob].
+ * Response message for
+ * [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.RunReportJobResponse}
@@ -71,7 +72,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+   * Pass `report_job.name` to
+   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
    * to retrieve the report's results.
    * </pre>
    *
@@ -87,7 +89,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+   * Pass `report_job.name` to
+   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
    * to retrieve the report's results.
    * </pre>
    *
@@ -105,7 +108,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+   * Pass `report_job.name` to
+   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
    * to retrieve the report's results.
    * </pre>
    *
@@ -352,7 +356,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response message for [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob].
+   * Response message for
+   * [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.RunReportJobResponse}
@@ -556,7 +561,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -571,7 +577,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -592,7 +599,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -615,7 +623,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -635,7 +644,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -662,7 +672,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -683,7 +694,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -698,7 +710,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *
@@ -717,7 +730,8 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+     * Pass `report_job.name` to
+     * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
      * to retrieve the report's results.
      * </pre>
      *

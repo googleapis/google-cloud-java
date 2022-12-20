@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
+ * Response message for
+ * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListCustomerRepricingConfigsResponse}
@@ -155,8 +156,9 @@ public final class ListCustomerRepricingConfigsResponse
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -180,8 +182,9 @@ public final class ListCustomerRepricingConfigsResponse
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -379,7 +382,8 @@ public final class ListCustomerRepricingConfigsResponse
    *
    *
    * <pre>
-   * Response message for [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
+   * Response message for
+   * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListCustomerRepricingConfigsResponse}
@@ -1017,8 +1021,9 @@ public final class ListCustomerRepricingConfigsResponse
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1041,8 +1046,9 @@ public final class ListCustomerRepricingConfigsResponse
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1065,8 +1071,9 @@ public final class ListCustomerRepricingConfigsResponse
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1088,8 +1095,9 @@ public final class ListCustomerRepricingConfigsResponse
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1107,8 +1115,9 @@ public final class ListCustomerRepricingConfigsResponse
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListCustomerRepricingConfigsRequest.page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

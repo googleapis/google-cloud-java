@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements].
+ * Response message for
+ * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListEntitlementsResponse}
@@ -144,7 +145,9 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    * <pre>
    * A token to list the next page of results.
-   * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -168,7 +171,9 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    * <pre>
    * A token to list the next page of results.
-   * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -362,7 +367,8 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements].
+   * Response message for
+   * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListEntitlementsResponse}
@@ -945,7 +951,9 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to list the next page of results.
-     * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -968,7 +976,9 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to list the next page of results.
-     * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -991,7 +1001,9 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to list the next page of results.
-     * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1013,7 +1025,9 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to list the next page of results.
-     * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1031,7 +1045,9 @@ public final class ListEntitlementsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to list the next page of results.
-     * Pass to [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEntitlementsRequest.page_token][google.cloud.channel.v1.ListEntitlementsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

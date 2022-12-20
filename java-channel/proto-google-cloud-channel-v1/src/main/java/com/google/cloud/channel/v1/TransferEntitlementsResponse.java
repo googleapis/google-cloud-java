@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
+ * Response message for
+ * [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
  * This is put in the response field of google.longrunning.Operation.
  * </pre>
  *
@@ -303,7 +304,8 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response message for [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
+   * Response message for
+   * [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
    * This is put in the response field of google.longrunning.Operation.
    * </pre>
    *

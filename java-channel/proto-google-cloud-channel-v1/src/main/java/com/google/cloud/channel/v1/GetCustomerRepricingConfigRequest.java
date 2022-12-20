@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.GetCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.GetCustomerRepricingConfig].
+ * Request message for
+ * [CloudChannelService.GetCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.GetCustomerRepricingConfig].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.GetCustomerRepricingConfigRequest}
@@ -289,7 +290,8 @@ public final class GetCustomerRepricingConfigRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.GetCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.GetCustomerRepricingConfig].
+   * Request message for
+   * [CloudChannelService.GetCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.GetCustomerRepricingConfig].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.GetCustomerRepricingConfigRequest}
