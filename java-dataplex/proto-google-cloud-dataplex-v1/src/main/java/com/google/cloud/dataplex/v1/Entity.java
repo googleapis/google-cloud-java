@@ -379,8 +379,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Whether the entity is compatible and can be represented in the metadata
-       * store.
+       * Output only. Whether the entity is compatible and can be represented in
+       * the metadata store.
        * </pre>
        *
        * <code>bool compatible = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -393,8 +393,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Provides additional detail if the entity is incompatible with the
-       * metadata store.
+       * Output only. Provides additional detail if the entity is incompatible
+       * with the metadata store.
        * </pre>
        *
        * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -406,8 +406,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Provides additional detail if the entity is incompatible with the
-       * metadata store.
+       * Output only. Provides additional detail if the entity is incompatible
+       * with the metadata store.
        * </pre>
        *
        * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -472,8 +472,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Whether the entity is compatible and can be represented in the metadata
-       * store.
+       * Output only. Whether the entity is compatible and can be represented in
+       * the metadata store.
        * </pre>
        *
        * <code>bool compatible = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -491,8 +491,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Provides additional detail if the entity is incompatible with the
-       * metadata store.
+       * Output only. Provides additional detail if the entity is incompatible
+       * with the metadata store.
        * </pre>
        *
        * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -515,8 +515,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Provides additional detail if the entity is incompatible with the
-       * metadata store.
+       * Output only. Provides additional detail if the entity is incompatible
+       * with the metadata store.
        * </pre>
        *
        * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -910,8 +910,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Whether the entity is compatible and can be represented in the metadata
-         * store.
+         * Output only. Whether the entity is compatible and can be represented in
+         * the metadata store.
          * </pre>
          *
          * <code>bool compatible = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -926,8 +926,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Whether the entity is compatible and can be represented in the metadata
-         * store.
+         * Output only. Whether the entity is compatible and can be represented in
+         * the metadata store.
          * </pre>
          *
          * <code>bool compatible = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -945,8 +945,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Whether the entity is compatible and can be represented in the metadata
-         * store.
+         * Output only. Whether the entity is compatible and can be represented in
+         * the metadata store.
          * </pre>
          *
          * <code>bool compatible = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -965,8 +965,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Provides additional detail if the entity is incompatible with the
-         * metadata store.
+         * Output only. Provides additional detail if the entity is incompatible
+         * with the metadata store.
          * </pre>
          *
          * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -988,8 +988,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Provides additional detail if the entity is incompatible with the
-         * metadata store.
+         * Output only. Provides additional detail if the entity is incompatible
+         * with the metadata store.
          * </pre>
          *
          * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1011,8 +1011,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Provides additional detail if the entity is incompatible with the
-         * metadata store.
+         * Output only. Provides additional detail if the entity is incompatible
+         * with the metadata store.
          * </pre>
          *
          * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1033,8 +1033,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Provides additional detail if the entity is incompatible with the
-         * metadata store.
+         * Output only. Provides additional detail if the entity is incompatible
+         * with the metadata store.
          * </pre>
          *
          * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1051,8 +1051,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Output only. Provides additional detail if the entity is incompatible with the
-         * metadata store.
+         * Output only. Provides additional detail if the entity is incompatible
+         * with the metadata store.
          * </pre>
          *
          * <code>string reason = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2232,8 +2232,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User friendly longer description text. Must be shorter than or equal to
-   * 1024 characters.
+   * Optional. User friendly longer description text. Must be shorter than or
+   * equal to 1024 characters.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2256,8 +2256,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User friendly longer description text. Must be shorter than or equal to
-   * 1024 characters.
+   * Optional. User friendly longer description text. Must be shorter than or
+   * equal to 1024 characters.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2440,8 +2440,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The etag associated with the entity, which can be retrieved with a
-   * [GetEntity][] request. Required for update and delete requests.
+   * Optional. The etag associated with the entity, which can be retrieved with
+   * a [GetEntity][] request. Required for update and delete requests.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2464,8 +2464,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The etag associated with the entity, which can be retrieved with a
-   * [GetEntity][] request. Required for update and delete requests.
+   * Optional. The etag associated with the entity, which can be retrieved with
+   * a [GetEntity][] request. Required for update and delete requests.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2531,8 +2531,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The ID of the asset associated with the storage location containing the
-   * entity data. The entity must be with in the same zone with the asset.
+   * Required. Immutable. The ID of the asset associated with the storage
+   * location containing the entity data. The entity must be with in the same
+   * zone with the asset.
    * </pre>
    *
    * <code>
@@ -2557,8 +2558,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The ID of the asset associated with the storage location containing the
-   * entity data. The entity must be with in the same zone with the asset.
+   * Required. Immutable. The ID of the asset associated with the storage
+   * location containing the entity data. The entity must be with in the same
+   * zone with the asset.
    * </pre>
    *
    * <code>
@@ -2647,9 +2649,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The set of items within the data path constituting the data in the entity,
-   * represented as a glob path.
-   * Example: `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
+   * Optional. The set of items within the data path constituting the data in
+   * the entity, represented as a glob path. Example:
+   * `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
    * </pre>
    *
    * <code>string data_path_pattern = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2672,9 +2674,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The set of items within the data path constituting the data in the entity,
-   * represented as a glob path.
-   * Example: `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
+   * Optional. The set of items within the data path constituting the data in
+   * the entity, represented as a glob path. Example:
+   * `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
    * </pre>
    *
    * <code>string data_path_pattern = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3898,8 +3900,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text. Must be shorter than or equal to
-     * 1024 characters.
+     * Optional. User friendly longer description text. Must be shorter than or
+     * equal to 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3921,8 +3923,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text. Must be shorter than or equal to
-     * 1024 characters.
+     * Optional. User friendly longer description text. Must be shorter than or
+     * equal to 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3944,8 +3946,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text. Must be shorter than or equal to
-     * 1024 characters.
+     * Optional. User friendly longer description text. Must be shorter than or
+     * equal to 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3966,8 +3968,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text. Must be shorter than or equal to
-     * 1024 characters.
+     * Optional. User friendly longer description text. Must be shorter than or
+     * equal to 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3984,8 +3986,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User friendly longer description text. Must be shorter than or equal to
-     * 1024 characters.
+     * Optional. User friendly longer description text. Must be shorter than or
+     * equal to 1024 characters.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4542,8 +4544,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag associated with the entity, which can be retrieved with a
-     * [GetEntity][] request. Required for update and delete requests.
+     * Optional. The etag associated with the entity, which can be retrieved with
+     * a [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4565,8 +4567,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag associated with the entity, which can be retrieved with a
-     * [GetEntity][] request. Required for update and delete requests.
+     * Optional. The etag associated with the entity, which can be retrieved with
+     * a [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4588,8 +4590,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag associated with the entity, which can be retrieved with a
-     * [GetEntity][] request. Required for update and delete requests.
+     * Optional. The etag associated with the entity, which can be retrieved with
+     * a [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4610,8 +4612,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag associated with the entity, which can be retrieved with a
-     * [GetEntity][] request. Required for update and delete requests.
+     * Optional. The etag associated with the entity, which can be retrieved with
+     * a [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4628,8 +4630,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The etag associated with the entity, which can be retrieved with a
-     * [GetEntity][] request. Required for update and delete requests.
+     * Optional. The etag associated with the entity, which can be retrieved with
+     * a [GetEntity][] request. Required for update and delete requests.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4754,8 +4756,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The ID of the asset associated with the storage location containing the
-     * entity data. The entity must be with in the same zone with the asset.
+     * Required. Immutable. The ID of the asset associated with the storage
+     * location containing the entity data. The entity must be with in the same
+     * zone with the asset.
      * </pre>
      *
      * <code>
@@ -4779,8 +4782,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The ID of the asset associated with the storage location containing the
-     * entity data. The entity must be with in the same zone with the asset.
+     * Required. Immutable. The ID of the asset associated with the storage
+     * location containing the entity data. The entity must be with in the same
+     * zone with the asset.
      * </pre>
      *
      * <code>
@@ -4804,8 +4808,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The ID of the asset associated with the storage location containing the
-     * entity data. The entity must be with in the same zone with the asset.
+     * Required. Immutable. The ID of the asset associated with the storage
+     * location containing the entity data. The entity must be with in the same
+     * zone with the asset.
      * </pre>
      *
      * <code>
@@ -4828,8 +4833,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The ID of the asset associated with the storage location containing the
-     * entity data. The entity must be with in the same zone with the asset.
+     * Required. Immutable. The ID of the asset associated with the storage
+     * location containing the entity data. The entity must be with in the same
+     * zone with the asset.
      * </pre>
      *
      * <code>
@@ -4848,8 +4854,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The ID of the asset associated with the storage location containing the
-     * entity data. The entity must be with in the same zone with the asset.
+     * Required. Immutable. The ID of the asset associated with the storage
+     * location containing the entity data. The entity must be with in the same
+     * zone with the asset.
      * </pre>
      *
      * <code>
@@ -5011,9 +5018,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The set of items within the data path constituting the data in the entity,
-     * represented as a glob path.
-     * Example: `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
+     * Optional. The set of items within the data path constituting the data in
+     * the entity, represented as a glob path. Example:
+     * `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
      * </pre>
      *
      * <code>string data_path_pattern = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5035,9 +5042,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The set of items within the data path constituting the data in the entity,
-     * represented as a glob path.
-     * Example: `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
+     * Optional. The set of items within the data path constituting the data in
+     * the entity, represented as a glob path. Example:
+     * `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
      * </pre>
      *
      * <code>string data_path_pattern = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5059,9 +5066,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The set of items within the data path constituting the data in the entity,
-     * represented as a glob path.
-     * Example: `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
+     * Optional. The set of items within the data path constituting the data in
+     * the entity, represented as a glob path. Example:
+     * `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
      * </pre>
      *
      * <code>string data_path_pattern = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5082,9 +5089,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The set of items within the data path constituting the data in the entity,
-     * represented as a glob path.
-     * Example: `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
+     * Optional. The set of items within the data path constituting the data in
+     * the entity, represented as a glob path. Example:
+     * `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
      * </pre>
      *
      * <code>string data_path_pattern = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5101,9 +5108,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The set of items within the data path constituting the data in the entity,
-     * represented as a glob path.
-     * Example: `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
+     * Optional. The set of items within the data path constituting the data in
+     * the entity, represented as a glob path. Example:
+     * `gs://bucket/path/to/data/&#42;*&#47;&#42;.csv`.
      * </pre>
      *
      * <code>string data_path_pattern = 13 [(.google.api.field_behavior) = OPTIONAL];</code>

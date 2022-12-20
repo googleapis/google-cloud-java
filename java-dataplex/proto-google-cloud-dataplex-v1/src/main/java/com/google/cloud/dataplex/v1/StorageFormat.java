@@ -615,8 +615,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII",
+     * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -628,8 +628,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII",
+     * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -642,8 +642,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The number of rows to interpret as header rows that should be skipped
-     * when reading data rows. Defaults to 0.
+     * Optional. The number of rows to interpret as header rows that should be
+     * skipped when reading data rows. Defaults to 0.
      * </pre>
      *
      * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -763,8 +763,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII",
+     * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -787,8 +787,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-     * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII",
+     * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -814,8 +814,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The number of rows to interpret as header rows that should be skipped
-     * when reading data rows. Defaults to 0.
+     * Optional. The number of rows to interpret as header rows that should be
+     * skipped when reading data rows. Defaults to 0.
      * </pre>
      *
      * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1334,8 +1334,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII",
+       * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1357,8 +1357,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII",
+       * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1380,8 +1380,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII",
+       * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1402,8 +1402,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII",
+       * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1420,8 +1420,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and
-       * "ISO-8859-1". Defaults to UTF-8 if unspecified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII",
+       * "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1445,8 +1445,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows. Defaults to 0.
+       * Optional. The number of rows to interpret as header rows that should be
+       * skipped when reading data rows. Defaults to 0.
        * </pre>
        *
        * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1461,8 +1461,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows. Defaults to 0.
+       * Optional. The number of rows to interpret as header rows that should be
+       * skipped when reading data rows. Defaults to 0.
        * </pre>
        *
        * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1480,8 +1480,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows. Defaults to 0.
+       * Optional. The number of rows to interpret as header rows that should be
+       * skipped when reading data rows. Defaults to 0.
        * </pre>
        *
        * <code>int32 header_rows = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1790,8 +1790,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-     * "ISO-8859-1". Defaults to UTF-8 if not specified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+     * and "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1803,8 +1803,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-     * "ISO-8859-1". Defaults to UTF-8 if not specified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+     * and "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1868,8 +1868,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-     * "ISO-8859-1". Defaults to UTF-8 if not specified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+     * and "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1892,8 +1892,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-     * "ISO-8859-1". Defaults to UTF-8 if not specified.
+     * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+     * and "ISO-8859-1". Defaults to UTF-8 if not specified.
      * </pre>
      *
      * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2253,8 +2253,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-       * "ISO-8859-1". Defaults to UTF-8 if not specified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+       * and "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2276,8 +2276,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-       * "ISO-8859-1". Defaults to UTF-8 if not specified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+       * and "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2299,8 +2299,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-       * "ISO-8859-1". Defaults to UTF-8 if not specified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+       * and "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2321,8 +2321,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-       * "ISO-8859-1". Defaults to UTF-8 if not specified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+       * and "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2339,8 +2339,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8" and
-       * "ISO-8859-1". Defaults to UTF-8 if not specified.
+       * Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8"
+       * and "ISO-8859-1". Defaults to UTF-8 if not specified.
        * </pre>
        *
        * <code>string encoding = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2423,6 +2423,648 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface IcebergOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.StorageFormat.IcebergOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location of where the iceberg metadata is present, must be
+     * within the table path
+     * </pre>
+     *
+     * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The metadataLocation.
+     */
+    java.lang.String getMetadataLocation();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location of where the iceberg metadata is present, must be
+     * within the table path
+     * </pre>
+     *
+     * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for metadataLocation.
+     */
+    com.google.protobuf.ByteString getMetadataLocationBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Describes Iceberg data format.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.StorageFormat.IcebergOptions}
+   */
+  public static final class IcebergOptions extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.StorageFormat.IcebergOptions)
+      IcebergOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use IcebergOptions.newBuilder() to construct.
+    private IcebergOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IcebergOptions() {
+      metadataLocation_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new IcebergOptions();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.MetadataProto
+          .internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.MetadataProto
+          .internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.class,
+              com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder.class);
+    }
+
+    public static final int METADATA_LOCATION_FIELD_NUMBER = 1;
+    private volatile java.lang.Object metadataLocation_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location of where the iceberg metadata is present, must be
+     * within the table path
+     * </pre>
+     *
+     * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The metadataLocation.
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataLocation() {
+      java.lang.Object ref = metadataLocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataLocation_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The location of where the iceberg metadata is present, must be
+     * within the table path
+     * </pre>
+     *
+     * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for metadataLocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMetadataLocationBytes() {
+      java.lang.Object ref = metadataLocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        metadataLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataLocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metadataLocation_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataLocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metadataLocation_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions other =
+          (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) obj;
+
+      if (!getMetadataLocation().equals(other.getMetadataLocation())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + METADATA_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataLocation().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes Iceberg data format.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.StorageFormat.IcebergOptions}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.StorageFormat.IcebergOptions)
+        com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.MetadataProto
+            .internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.MetadataProto
+            .internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.class,
+                com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        metadataLocation_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.MetadataProto
+            .internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions build() {
+        com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions buildPartial() {
+        com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions result =
+            new com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions(this);
+        result.metadataLocation_ = metadataLocation_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) {
+          return mergeFrom((com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions other) {
+        if (other == com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance())
+          return this;
+        if (!other.getMetadataLocation().isEmpty()) {
+          metadataLocation_ = other.metadataLocation_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  metadataLocation_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private java.lang.Object metadataLocation_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The location of where the iceberg metadata is present, must be
+       * within the table path
+       * </pre>
+       *
+       * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The metadataLocation.
+       */
+      public java.lang.String getMetadataLocation() {
+        java.lang.Object ref = metadataLocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metadataLocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The location of where the iceberg metadata is present, must be
+       * within the table path
+       * </pre>
+       *
+       * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for metadataLocation.
+       */
+      public com.google.protobuf.ByteString getMetadataLocationBytes() {
+        java.lang.Object ref = metadataLocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          metadataLocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The location of where the iceberg metadata is present, must be
+       * within the table path
+       * </pre>
+       *
+       * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The metadataLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetadataLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        metadataLocation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The location of where the iceberg metadata is present, must be
+       * within the table path
+       * </pre>
+       *
+       * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMetadataLocation() {
+
+        metadataLocation_ = getDefaultInstance().getMetadataLocation();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The location of where the iceberg metadata is present, must be
+       * within the table path
+       * </pre>
+       *
+       * <code>string metadata_location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for metadataLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetadataLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        metadataLocation_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.StorageFormat.IcebergOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.StorageFormat.IcebergOptions)
+    private static final com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions();
+    }
+
+    public static com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IcebergOptions> PARSER =
+        new com.google.protobuf.AbstractParser<IcebergOptions>() {
+          @java.lang.Override
+          public IcebergOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IcebergOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IcebergOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int optionsCase_ = 0;
   private java.lang.Object options_;
 
@@ -2432,6 +3074,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CSV(10),
     JSON(11),
+    ICEBERG(12),
     OPTIONS_NOT_SET(0);
     private final int value;
 
@@ -2454,6 +3097,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return CSV;
         case 11:
           return JSON;
+        case 12:
+          return ICEBERG;
         case 0:
           return OPTIONS_NOT_SET;
         default:
@@ -2476,8 +3121,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The data format associated with the stored data, which represents
-   * content type values. The value is inferred from mime type.
+   * Output only. The data format associated with the stored data, which
+   * represents content type values. The value is inferred from mime type.
    * </pre>
    *
    * <code>
@@ -2494,8 +3139,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The data format associated with the stored data, which represents
-   * content type values. The value is inferred from mime type.
+   * Output only. The data format associated with the stored data, which
+   * represents content type values. The value is inferred from mime type.
    * </pre>
    *
    * <code>
@@ -2568,6 +3213,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    * - application/x-avro
    * - application/x-orc
    * - application/x-tfrecord
+   * - application/x-parquet+iceberg
+   * - application/x-avro+iceberg
+   * - application/x-orc+iceberg
    * - application/json
    * - application/{subtypes}
    * - text/csv
@@ -2603,6 +3251,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    * - application/x-avro
    * - application/x-orc
    * - application/x-tfrecord
+   * - application/x-parquet+iceberg
+   * - application/x-avro+iceberg
+   * - application/x-orc+iceberg
    * - application/json
    * - application/{subtypes}
    * - text/csv
@@ -2743,6 +3394,63 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.StorageFormat.JsonOptions.getDefaultInstance();
   }
 
+  public static final int ICEBERG_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional information about iceberg tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the iceberg field is set.
+   */
+  @java.lang.Override
+  public boolean hasIceberg() {
+    return optionsCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional information about iceberg tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The iceberg.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions getIceberg() {
+    if (optionsCase_ == 12) {
+      return (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_;
+    }
+    return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional information about iceberg tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder getIcebergOrBuilder() {
+    if (optionsCase_ == 12) {
+      return (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_;
+    }
+    return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2776,6 +3484,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     if (optionsCase_ == 11) {
       output.writeMessage(11, (com.google.cloud.dataplex.v1.StorageFormat.JsonOptions) options_);
     }
+    if (optionsCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2808,6 +3519,11 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.cloud.dataplex.v1.StorageFormat.JsonOptions) options_);
     }
+    if (optionsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2834,6 +3550,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         break;
       case 11:
         if (!getJson().equals(other.getJson())) return false;
+        break;
+      case 12:
+        if (!getIceberg().equals(other.getIceberg())) return false;
         break;
       case 0:
       default:
@@ -2863,6 +3582,10 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + JSON_FIELD_NUMBER;
         hash = (53 * hash) + getJson().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + ICEBERG_FIELD_NUMBER;
+        hash = (53 * hash) + getIceberg().hashCode();
         break;
       case 0:
       default:
@@ -3017,6 +3740,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       if (jsonBuilder_ != null) {
         jsonBuilder_.clear();
       }
+      if (icebergBuilder_ != null) {
+        icebergBuilder_.clear();
+      }
       optionsCase_ = 0;
       options_ = null;
       return this;
@@ -3061,6 +3787,13 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           result.options_ = options_;
         } else {
           result.options_ = jsonBuilder_.build();
+        }
+      }
+      if (optionsCase_ == 12) {
+        if (icebergBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = icebergBuilder_.build();
         }
       }
       result.optionsCase_ = optionsCase_;
@@ -3134,6 +3867,11 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
             mergeJson(other.getJson());
             break;
           }
+        case ICEBERG:
+          {
+            mergeIceberg(other.getIceberg());
+            break;
+          }
         case OPTIONS_NOT_SET:
           {
             break;
@@ -3195,6 +3933,12 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
                 optionsCase_ = 11;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(getIcebergFieldBuilder().getBuilder(), extensionRegistry);
+                optionsCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3231,8 +3975,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The data format associated with the stored data, which represents
-     * content type values. The value is inferred from mime type.
+     * Output only. The data format associated with the stored data, which
+     * represents content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3249,8 +3993,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The data format associated with the stored data, which represents
-     * content type values. The value is inferred from mime type.
+     * Output only. The data format associated with the stored data, which
+     * represents content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3270,8 +4014,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The data format associated with the stored data, which represents
-     * content type values. The value is inferred from mime type.
+     * Output only. The data format associated with the stored data, which
+     * represents content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3293,8 +4037,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The data format associated with the stored data, which represents
-     * content type values. The value is inferred from mime type.
+     * Output only. The data format associated with the stored data, which
+     * represents content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3317,8 +4061,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The data format associated with the stored data, which represents
-     * content type values. The value is inferred from mime type.
+     * Output only. The data format associated with the stored data, which
+     * represents content type values. The value is inferred from mime type.
      * </pre>
      *
      * <code>
@@ -3454,6 +4198,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * - application/x-avro
      * - application/x-orc
      * - application/x-tfrecord
+     * - application/x-parquet+iceberg
+     * - application/x-avro+iceberg
+     * - application/x-orc+iceberg
      * - application/json
      * - application/{subtypes}
      * - text/csv
@@ -3488,6 +4235,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * - application/x-avro
      * - application/x-orc
      * - application/x-tfrecord
+     * - application/x-parquet+iceberg
+     * - application/x-avro+iceberg
+     * - application/x-orc+iceberg
      * - application/json
      * - application/{subtypes}
      * - text/csv
@@ -3522,6 +4272,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * - application/x-avro
      * - application/x-orc
      * - application/x-tfrecord
+     * - application/x-parquet+iceberg
+     * - application/x-avro+iceberg
+     * - application/x-orc+iceberg
      * - application/json
      * - application/{subtypes}
      * - text/csv
@@ -3555,6 +4308,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * - application/x-avro
      * - application/x-orc
      * - application/x-tfrecord
+     * - application/x-parquet+iceberg
+     * - application/x-avro+iceberg
+     * - application/x-orc+iceberg
      * - application/json
      * - application/{subtypes}
      * - text/csv
@@ -3584,6 +4340,9 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * - application/x-avro
      * - application/x-orc
      * - application/x-tfrecord
+     * - application/x-parquet+iceberg
+     * - application/x-avro+iceberg
+     * - application/x-orc+iceberg
      * - application/json
      * - application/{subtypes}
      * - text/csv
@@ -4065,6 +4824,236 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return jsonBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions,
+            com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder,
+            com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder>
+        icebergBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the iceberg field is set.
+     */
+    @java.lang.Override
+    public boolean hasIceberg() {
+      return optionsCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The iceberg.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions getIceberg() {
+      if (icebergBuilder_ == null) {
+        if (optionsCase_ == 12) {
+          return (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_;
+        }
+        return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
+      } else {
+        if (optionsCase_ == 12) {
+          return icebergBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIceberg(com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions value) {
+      if (icebergBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        options_ = value;
+        onChanged();
+      } else {
+        icebergBuilder_.setMessage(value);
+      }
+      optionsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIceberg(
+        com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder builderForValue) {
+      if (icebergBuilder_ == null) {
+        options_ = builderForValue.build();
+        onChanged();
+      } else {
+        icebergBuilder_.setMessage(builderForValue.build());
+      }
+      optionsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIceberg(com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions value) {
+      if (icebergBuilder_ == null) {
+        if (optionsCase_ == 12
+            && options_
+                != com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance()) {
+          options_ =
+              com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.newBuilder(
+                      (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          options_ = value;
+        }
+        onChanged();
+      } else {
+        if (optionsCase_ == 12) {
+          icebergBuilder_.mergeFrom(value);
+        } else {
+          icebergBuilder_.setMessage(value);
+        }
+      }
+      optionsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIceberg() {
+      if (icebergBuilder_ == null) {
+        if (optionsCase_ == 12) {
+          optionsCase_ = 0;
+          options_ = null;
+          onChanged();
+        }
+      } else {
+        if (optionsCase_ == 12) {
+          optionsCase_ = 0;
+          options_ = null;
+        }
+        icebergBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder getIcebergBuilder() {
+      return getIcebergFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder
+        getIcebergOrBuilder() {
+      if ((optionsCase_ == 12) && (icebergBuilder_ != null)) {
+        return icebergBuilder_.getMessageOrBuilder();
+      } else {
+        if (optionsCase_ == 12) {
+          return (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_;
+        }
+        return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional information about iceberg tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.StorageFormat.IcebergOptions iceberg = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions,
+            com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder,
+            com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder>
+        getIcebergFieldBuilder() {
+      if (icebergBuilder_ == null) {
+        if (!(optionsCase_ == 12)) {
+          options_ = com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
+        }
+        icebergBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions,
+                com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder,
+                com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder>(
+                (com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions) options_,
+                getParentForChildren(),
+                isClean());
+        options_ = null;
+      }
+      optionsCase_ = 12;
+      onChanged();
+      ;
+      return icebergBuilder_;
     }
 
     @java.lang.Override

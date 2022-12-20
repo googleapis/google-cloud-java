@@ -177,8 +177,8 @@ public interface SessionEventOrBuilder
    *
    *
    * <pre>
-   * If the session is associated with an Environment with fast startup enabled,
-   * and was pre-created before being assigned to a user.
+   * If the session is associated with an environment with fast startup enabled,
+   * and was created before being assigned to a user.
    * </pre>
    *
    * <code>bool fast_startup_enabled = 7;</code>
