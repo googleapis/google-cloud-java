@@ -27,8 +27,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of origins, which determines the rows of the response matrix.
-   * Several size restrictions apply to the cardinality of origins and
+   * Required. Array of origins, which determines the rows of the response
+   * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
@@ -47,8 +47,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of origins, which determines the rows of the response matrix.
-   * Several size restrictions apply to the cardinality of origins and
+   * Required. Array of origins, which determines the rows of the response
+   * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
@@ -67,8 +67,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of origins, which determines the rows of the response matrix.
-   * Several size restrictions apply to the cardinality of origins and
+   * Required. Array of origins, which determines the rows of the response
+   * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
@@ -87,8 +87,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of origins, which determines the rows of the response matrix.
-   * Several size restrictions apply to the cardinality of origins and
+   * Required. Array of origins, which determines the rows of the response
+   * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
@@ -108,8 +108,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of origins, which determines the rows of the response matrix.
-   * Several size restrictions apply to the cardinality of origins and
+   * Required. Array of origins, which determines the rows of the response
+   * matrix. Several size restrictions apply to the cardinality of origins and
    * destinations:
    * * The number of elements (origins × destinations) must be no greater than
    * 625 in any case.
@@ -129,7 +129,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of destinations, which determines the columns of the response matrix.
+   * Required. Array of destinations, which determines the columns of the
+   * response matrix.
    * </pre>
    *
    * <code>
@@ -141,7 +142,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of destinations, which determines the columns of the response matrix.
+   * Required. Array of destinations, which determines the columns of the
+   * response matrix.
    * </pre>
    *
    * <code>
@@ -153,7 +155,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of destinations, which determines the columns of the response matrix.
+   * Required. Array of destinations, which determines the columns of the
+   * response matrix.
    * </pre>
    *
    * <code>
@@ -165,7 +168,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of destinations, which determines the columns of the response matrix.
+   * Required. Array of destinations, which determines the columns of the
+   * response matrix.
    * </pre>
    *
    * <code>
@@ -178,7 +182,8 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Array of destinations, which determines the columns of the response matrix.
+   * Required. Array of destinations, which determines the columns of the
+   * response matrix.
    * </pre>
    *
    * <code>
@@ -220,13 +225,11 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies how to compute the route. The server attempts to use the selected
-   * routing preference to compute the route. If the routing preference results
-   * in an error or an extra long latency, an error is returned. In the future,
-   * we might implement a fallback mechanism to use a different option when the
-   * preferred option does not give a valid result. You can specify this option
-   * only when the `travel_mode` is `DRIVE` or `TWO_WHEELER`, otherwise the
-   * request fails.
+   * Optional. Specifies how to compute the route. The server attempts to use
+   * the selected routing preference to compute the route. If the routing
+   * preference results in an error or an extra long latency, an error is
+   * returned. You can specify this option only when the `travel_mode` is
+   * `DRIVE` or `TWO_WHEELER`, otherwise the request fails.
    * </pre>
    *
    * <code>
@@ -240,13 +243,11 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies how to compute the route. The server attempts to use the selected
-   * routing preference to compute the route. If the routing preference results
-   * in an error or an extra long latency, an error is returned. In the future,
-   * we might implement a fallback mechanism to use a different option when the
-   * preferred option does not give a valid result. You can specify this option
-   * only when the `travel_mode` is `DRIVE` or `TWO_WHEELER`, otherwise the
-   * request fails.
+   * Optional. Specifies how to compute the route. The server attempts to use
+   * the selected routing preference to compute the route. If the routing
+   * preference results in an error or an extra long latency, an error is
+   * returned. You can specify this option only when the `travel_mode` is
+   * `DRIVE` or `TWO_WHEELER`, otherwise the request fails.
    * </pre>
    *
    * <code>
@@ -261,9 +262,9 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The departure time. If you don't set this value, this defaults to the time
-   * that you made the request. If you set this value to a time that has already
-   * occurred, the request fails.
+   * Optional. The departure time. If you don't set this value, this defaults to
+   * the time that you made the request. If you set this value to a time that
+   * has already occurred, the request fails.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -276,9 +277,9 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The departure time. If you don't set this value, this defaults to the time
-   * that you made the request. If you set this value to a time that has already
-   * occurred, the request fails.
+   * Optional. The departure time. If you don't set this value, this defaults to
+   * the time that you made the request. If you set this value to a time that
+   * has already occurred, the request fails.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -291,9 +292,9 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The departure time. If you don't set this value, this defaults to the time
-   * that you made the request. If you set this value to a time that has already
-   * occurred, the request fails.
+   * Optional. The departure time. If you don't set this value, this defaults to
+   * the time that you made the request. If you set this value to a time that
+   * has already occurred, the request fails.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 5 [(.google.api.field_behavior) = OPTIONAL];
