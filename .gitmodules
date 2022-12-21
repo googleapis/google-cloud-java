@@ -1,0 +1,402 @@
+[submodule "java-accessapproval"]
+	path = java-accessapproval
+	url = git@github.com:googleapis/java-accessapproval.git
+[submodule "java-accesscontextmanager"]
+	path = java-accesscontextmanager
+	url = git@github.com:googleapis/java-accesscontextmanager.git
+[submodule "java-aiplatform"]
+	path = java-aiplatform
+	url = git@github.com:googleapis/java-aiplatform.git
+[submodule "java-analytics-admin"]
+	path = java-analytics-admin
+	url = git@github.com:googleapis/java-analytics-admin.git
+[submodule "java-analytics-data"]
+	path = java-analytics-data
+	url = git@github.com:googleapis/java-analytics-data.git
+[submodule "java-api-gateway"]
+	path = java-api-gateway
+	url = git@github.com:googleapis/java-api-gateway.git
+[submodule "java-apigee-connect"]
+	path = java-apigee-connect
+	url = git@github.com:googleapis/java-apigee-connect.git
+[submodule "java-apigee-registry"]
+	path = java-apigee-registry
+	url = git@github.com:googleapis/java-apigee-registry.git
+[submodule "java-apikeys"]
+	path = java-apikeys
+	url = git@github.com:googleapis/java-apikeys.git
+[submodule "java-appengine-admin"]
+	path = java-appengine-admin
+	url = git@github.com:googleapis/java-appengine-admin.git
+[submodule "java-area120-tables"]
+	path = java-area120-tables
+	url = git@github.com:googleapis/java-area120-tables.git
+[submodule "java-artifact-registry"]
+	path = java-artifact-registry
+	url = git@github.com:googleapis/java-artifact-registry.git
+[submodule "java-asset"]
+	path = java-asset
+	url = git@github.com:googleapis/java-asset.git
+[submodule "java-assured-workloads"]
+	path = java-assured-workloads
+	url = git@github.com:googleapis/java-assured-workloads.git
+[submodule "java-automl"]
+	path = java-automl
+	url = git@github.com:googleapis/java-automl.git
+[submodule "java-bare-metal-solution"]
+	path = java-bare-metal-solution
+	url = git@github.com:googleapis/java-bare-metal-solution.git
+[submodule "java-batch"]
+	path = java-batch
+	url = git@github.com:googleapis/java-batch.git
+[submodule "java-beyondcorp-appconnections"]
+	path = java-beyondcorp-appconnections
+	url = git@github.com:googleapis/java-beyondcorp-appconnections.git
+[submodule "java-beyondcorp-appconnectors"]
+	path = java-beyondcorp-appconnectors
+	url = git@github.com:googleapis/java-beyondcorp-appconnectors.git
+[submodule "java-beyondcorp-appgateways"]
+	path = java-beyondcorp-appgateways
+	url = git@github.com:googleapis/java-beyondcorp-appgateways.git
+[submodule "java-beyondcorp-clientconnectorservices"]
+	path = java-beyondcorp-clientconnectorservices
+	url = git@github.com:googleapis/java-beyondcorp-clientconnectorservices.git
+[submodule "java-beyondcorp-clientgateways"]
+	path = java-beyondcorp-clientgateways
+	url = git@github.com:googleapis/java-beyondcorp-clientgateways.git
+[submodule "java-bigqueryconnection"]
+	path = java-bigqueryconnection
+	url = git@github.com:googleapis/java-bigqueryconnection.git
+[submodule "java-bigquery-data-exchange"]
+	path = java-bigquery-data-exchange
+	url = git@github.com:googleapis/java-bigquery-data-exchange.git
+[submodule "java-bigquerydatapolicy"]
+	path = java-bigquerydatapolicy
+	url = git@github.com:googleapis/java-bigquerydatapolicy.git
+[submodule "java-bigquerydatatransfer"]
+	path = java-bigquerydatatransfer
+	url = git@github.com:googleapis/java-bigquerydatatransfer.git
+[submodule "java-bigquerymigration"]
+	path = java-bigquerymigration
+	url = git@github.com:googleapis/java-bigquerymigration.git
+[submodule "java-bigqueryreservation"]
+	path = java-bigqueryreservation
+	url = git@github.com:googleapis/java-bigqueryreservation.git
+[submodule "java-billing"]
+	path = java-billing
+	url = git@github.com:googleapis/java-billing.git
+[submodule "java-billingbudgets"]
+	path = java-billingbudgets
+	url = git@github.com:googleapis/java-billingbudgets.git
+[submodule "java-binary-authorization"]
+	path = java-binary-authorization
+	url = git@github.com:googleapis/java-binary-authorization.git
+[submodule "java-certificate-manager"]
+	path = java-certificate-manager
+	url = git@github.com:googleapis/java-certificate-manager.git
+[submodule "java-channel"]
+	path = java-channel
+	url = git@github.com:googleapis/java-channel.git
+[submodule "java-cloudbuild"]
+	path = java-cloudbuild
+	url = git@github.com:googleapis/java-cloudbuild.git
+[submodule "java-cloudcommerceconsumerprocurement"]
+	path = java-cloudcommerceconsumerprocurement
+	url = git@github.com:googleapis/java-cloudcommerceconsumerprocurement.git
+[submodule "java-compute"]
+	path = java-compute
+	url = git@github.com:googleapis/java-compute.git
+[submodule "java-contact-center-insights"]
+	path = java-contact-center-insights
+	url = git@github.com:googleapis/java-contact-center-insights.git
+[submodule "java-container"]
+	path = java-container
+	url = git@github.com:googleapis/java-container.git
+[submodule "java-containeranalysis"]
+	path = java-containeranalysis
+	url = git@github.com:googleapis/java-containeranalysis.git
+[submodule "java-datacatalog"]
+	path = java-datacatalog
+	url = git@github.com:googleapis/java-datacatalog.git
+[submodule "java-dataflow"]
+	path = java-dataflow
+	url = git@github.com:googleapis/java-dataflow.git
+[submodule "java-dataform"]
+	path = java-dataform
+	url = git@github.com:googleapis/java-dataform.git
+[submodule "java-data-fusion"]
+	path = java-data-fusion
+	url = git@github.com:googleapis/java-data-fusion.git
+[submodule "java-datalabeling"]
+	path = java-datalabeling
+	url = git@github.com:googleapis/java-datalabeling.git
+[submodule "java-dataplex"]
+	path = java-dataplex
+	url = git@github.com:googleapis/java-dataplex.git
+[submodule "java-dataproc"]
+	path = java-dataproc
+	url = git@github.com:googleapis/java-dataproc.git
+[submodule "java-dataproc-metastore"]
+	path = java-dataproc-metastore
+	url = git@github.com:googleapis/java-dataproc-metastore.git
+[submodule "java-datastream"]
+	path = java-datastream
+	url = git@github.com:googleapis/java-datastream.git
+[submodule "java-debugger-client"]
+	path = java-debugger-client
+	url = git@github.com:googleapis/java-debugger-client.git
+[submodule "java-deploy"]
+	path = java-deploy
+	url = git@github.com:googleapis/java-deploy.git
+[submodule "java-dialogflow"]
+	path = java-dialogflow
+	url = git@github.com:googleapis/java-dialogflow.git
+[submodule "java-dialogflow-cx"]
+	path = java-dialogflow-cx
+	url = git@github.com:googleapis/java-dialogflow-cx.git
+[submodule "java-distributedcloudedge"]
+	path = java-distributedcloudedge
+	url = git@github.com:googleapis/java-distributedcloudedge.git
+[submodule "java-dlp"]
+	path = java-dlp
+	url = git@github.com:googleapis/java-dlp.git
+[submodule "java-dms"]
+	path = java-dms
+	url = git@github.com:googleapis/java-dms.git
+[submodule "java-dns"]
+	path = java-dns
+	url = git@github.com:googleapis/java-dns.git
+[submodule "java-document-ai"]
+	path = java-document-ai
+	url = git@github.com:googleapis/java-document-ai.git
+[submodule "java-domains"]
+	path = java-domains
+	url = git@github.com:googleapis/java-domains.git
+[submodule "java-errorreporting"]
+	path = java-errorreporting
+	url = git@github.com:googleapis/java-errorreporting.git
+[submodule "java-essential-contacts"]
+	path = java-essential-contacts
+	url = git@github.com:googleapis/java-essential-contacts.git
+[submodule "java-eventarc"]
+	path = java-eventarc
+	url = git@github.com:googleapis/java-eventarc.git
+[submodule "java-eventarc-publishing"]
+	path = java-eventarc-publishing
+	url = git@github.com:googleapis/java-eventarc-publishing.git
+[submodule "java-filestore"]
+	path = java-filestore
+	url = git@github.com:googleapis/java-filestore.git
+[submodule "java-functions"]
+	path = java-functions
+	url = git@github.com:googleapis/java-functions.git
+[submodule "java-game-servers"]
+	path = java-game-servers
+	url = git@github.com:googleapis/java-game-servers.git
+[submodule "java-gke-backup"]
+	path = java-gke-backup
+	url = git@github.com:googleapis/java-gke-backup.git
+[submodule "java-gke-connect-gateway"]
+	path = java-gke-connect-gateway
+	url = git@github.com:googleapis/java-gke-connect-gateway.git
+[submodule "java-gkehub"]
+	path = java-gkehub
+	url = git@github.com:googleapis/java-gkehub.git
+[submodule "java-gke-multi-cloud"]
+	path = java-gke-multi-cloud
+	url = git@github.com:googleapis/java-gke-multi-cloud.git
+[submodule "java-grafeas"]
+	path = java-grafeas
+	url = git@github.com:googleapis/java-grafeas.git
+[submodule "java-gsuite-addons"]
+	path = java-gsuite-addons
+	url = git@github.com:googleapis/java-gsuite-addons.git
+[submodule "java-iam-admin"]
+	path = java-iam-admin
+	url = git@github.com:googleapis/java-iam-admin.git
+[submodule "java-iamcredentials"]
+	path = java-iamcredentials
+	url = git@github.com:googleapis/java-iamcredentials.git
+[submodule "java-ids"]
+	path = java-ids
+	url = git@github.com:googleapis/java-ids.git
+[submodule "java-iot"]
+	path = java-iot
+	url = git@github.com:googleapis/java-iot.git
+[submodule "java-kms"]
+	path = java-kms
+	url = git@github.com:googleapis/java-kms.git
+[submodule "java-language"]
+	path = java-language
+	url = git@github.com:googleapis/java-language.git
+[submodule "java-life-sciences"]
+	path = java-life-sciences
+	url = git@github.com:googleapis/java-life-sciences.git
+[submodule "java-managed-identities"]
+	path = java-managed-identities
+	url = git@github.com:googleapis/java-managed-identities.git
+[submodule "java-mediatranslation"]
+	path = java-mediatranslation
+	url = git@github.com:googleapis/java-mediatranslation.git
+[submodule "java-memcache"]
+	path = java-memcache
+	url = git@github.com:googleapis/java-memcache.git
+[submodule "java-monitoring"]
+	path = java-monitoring
+	url = git@github.com:googleapis/java-monitoring.git
+[submodule "java-monitoring-dashboards"]
+	path = java-monitoring-dashboards
+	url = git@github.com:googleapis/java-monitoring-dashboards.git
+[submodule "java-networkconnectivity"]
+	path = java-networkconnectivity
+	url = git@github.com:googleapis/java-networkconnectivity.git
+[submodule "java-network-management"]
+	path = java-network-management
+	url = git@github.com:googleapis/java-network-management.git
+[submodule "java-network-security"]
+	path = java-network-security
+	url = git@github.com:googleapis/java-network-security.git
+[submodule "java-notebooks"]
+	path = java-notebooks
+	url = git@github.com:googleapis/java-notebooks.git
+[submodule "java-notification"]
+	path = java-notification
+	url = git@github.com:googleapis/java-notification.git
+[submodule "java-optimization"]
+	path = java-optimization
+	url = git@github.com:googleapis/java-optimization.git
+[submodule "java-orchestration-airflow"]
+	path = java-orchestration-airflow
+	url = git@github.com:googleapis/java-orchestration-airflow.git
+[submodule "java-orgpolicy"]
+	path = java-orgpolicy
+	url = git@github.com:googleapis/java-orgpolicy.git
+[submodule "java-os-config"]
+	path = java-os-config
+	url = git@github.com:googleapis/java-os-config.git
+[submodule "java-os-login"]
+	path = java-os-login
+	url = git@github.com:googleapis/java-os-login.git
+[submodule "java-phishingprotection"]
+	path = java-phishingprotection
+	url = git@github.com:googleapis/java-phishingprotection.git
+[submodule "java-policy-troubleshooter"]
+	path = java-policy-troubleshooter
+	url = git@github.com:googleapis/java-policy-troubleshooter.git
+[submodule "java-private-catalog"]
+	path = java-private-catalog
+	url = git@github.com:googleapis/java-private-catalog.git
+[submodule "java-profiler"]
+	path = java-profiler
+	url = git@github.com:googleapis/java-profiler.git
+[submodule "java-recaptchaenterprise"]
+	path = java-recaptchaenterprise
+	url = git@github.com:googleapis/java-recaptchaenterprise.git
+[submodule "java-recommendations-ai"]
+	path = java-recommendations-ai
+	url = git@github.com:googleapis/java-recommendations-ai.git
+[submodule "java-recommender"]
+	path = java-recommender
+	url = git@github.com:googleapis/java-recommender.git
+[submodule "java-redis"]
+	path = java-redis
+	url = git@github.com:googleapis/java-redis.git
+[submodule "java-resourcemanager"]
+	path = java-resourcemanager
+	url = git@github.com:googleapis/java-resourcemanager.git
+[submodule "java-resource-settings"]
+	path = java-resource-settings
+	url = git@github.com:googleapis/java-resource-settings.git
+[submodule "java-retail"]
+	path = java-retail
+	url = git@github.com:googleapis/java-retail.git
+[submodule "java-run"]
+	path = java-run
+	url = git@github.com:googleapis/java-run.git
+[submodule "java-scheduler"]
+	path = java-scheduler
+	url = git@github.com:googleapis/java-scheduler.git
+[submodule "java-secretmanager"]
+	path = java-secretmanager
+	url = git@github.com:googleapis/java-secretmanager.git
+[submodule "java-securitycenter"]
+	path = java-securitycenter
+	url = git@github.com:googleapis/java-securitycenter.git
+[submodule "java-securitycenter-settings"]
+	path = java-securitycenter-settings
+	url = git@github.com:googleapis/java-securitycenter-settings.git
+[submodule "java-security-private-ca"]
+	path = java-security-private-ca
+	url = git@github.com:googleapis/java-security-private-ca.git
+[submodule "java-service-control"]
+	path = java-service-control
+	url = git@github.com:googleapis/java-service-control.git
+[submodule "java-servicedirectory"]
+	path = java-servicedirectory
+	url = git@github.com:googleapis/java-servicedirectory.git
+[submodule "java-service-management"]
+	path = java-service-management
+	url = git@github.com:googleapis/java-service-management.git
+[submodule "java-service-usage"]
+	path = java-service-usage
+	url = git@github.com:googleapis/java-service-usage.git
+[submodule "java-shell"]
+	path = java-shell
+	url = git@github.com:googleapis/java-shell.git
+[submodule "java-speech"]
+	path = java-speech
+	url = git@github.com:googleapis/java-speech.git
+[submodule "java-storage-transfer"]
+	path = java-storage-transfer
+	url = git@github.com:googleapis/java-storage-transfer.git
+[submodule "java-talent"]
+	path = java-talent
+	url = git@github.com:googleapis/java-talent.git
+[submodule "java-tasks"]
+	path = java-tasks
+	url = git@github.com:googleapis/java-tasks.git
+[submodule "java-texttospeech"]
+	path = java-texttospeech
+	url = git@github.com:googleapis/java-texttospeech.git
+[submodule "java-tpu"]
+	path = java-tpu
+	url = git@github.com:googleapis/java-tpu.git
+[submodule "java-trace"]
+	path = java-trace
+	url = git@github.com:googleapis/java-trace.git
+[submodule "java-translate"]
+	path = java-translate
+	url = git@github.com:googleapis/java-translate.git
+[submodule "java-video-intelligence"]
+	path = java-video-intelligence
+	url = git@github.com:googleapis/java-video-intelligence.git
+[submodule "java-video-live-stream"]
+	path = java-video-live-stream
+	url = git@github.com:googleapis/java-video-live-stream.git
+[submodule "java-video-stitcher"]
+	path = java-video-stitcher
+	url = git@github.com:googleapis/java-video-stitcher.git
+[submodule "java-video-transcoder"]
+	path = java-video-transcoder
+	url = git@github.com:googleapis/java-video-transcoder.git
+[submodule "java-vision"]
+	path = java-vision
+	url = git@github.com:googleapis/java-vision.git
+[submodule "java-vmmigration"]
+	path = java-vmmigration
+	url = git@github.com:googleapis/java-vmmigration.git
+[submodule "java-vpcaccess"]
+	path = java-vpcaccess
+	url = git@github.com:googleapis/java-vpcaccess.git
+[submodule "java-webrisk"]
+	path = java-webrisk
+	url = git@github.com:googleapis/java-webrisk.git
+[submodule "java-websecurityscanner"]
+	path = java-websecurityscanner
+	url = git@github.com:googleapis/java-websecurityscanner.git
+[submodule "java-workflow-executions"]
+	path = java-workflow-executions
+	url = git@github.com:googleapis/java-workflow-executions.git
+[submodule "java-workflows"]
+	path = java-workflows
+	url = git@github.com:googleapis/java-workflows.git
