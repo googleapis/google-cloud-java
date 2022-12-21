@@ -1,5 +1,0 @@
-deprecation_warning: |
-  > This repo contains beta version of Recommendations AI and may occasionally
-  > make backwards-incompatible changes.
-  > Recommendations AI is now GA and available as
-  > [Google Cloud Retail](https://github.com/googleapis/java-retail)
