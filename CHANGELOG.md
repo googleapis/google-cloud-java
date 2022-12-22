@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.13.7](https://github.com/googleapis/java-logging/compare/v3.13.6...v3.13.7) (2022-12-19)
+
+
+### Bug Fixes
+
+* Install auth plugin on gke environment tests ([#1232](https://github.com/googleapis/java-logging/issues/1232)) ([d18bbba](https://github.com/googleapis/java-logging/commit/d18bbba07bc44e1bdc231a9ad0eaa258fb94081d))
+
 ## [3.13.6](https://github.com/googleapis/java-logging/compare/v3.13.5...v3.13.6) (2022-12-07)
 
 
