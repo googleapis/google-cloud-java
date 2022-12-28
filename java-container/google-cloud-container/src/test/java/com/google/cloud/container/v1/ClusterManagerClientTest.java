@@ -115,6 +115,7 @@ import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.UsableSubnetwork;
 import com.google.container.v1.VerticalPodAutoscaling;
 import com.google.container.v1.VirtualNIC;
+import com.google.container.v1.WindowsNodeConfig;
 import com.google.container.v1.WorkloadIdentityConfig;
 import com.google.container.v1.WorkloadMetadataConfig;
 import com.google.protobuf.AbstractMessage;
@@ -721,6 +722,7 @@ public class ClusterManagerClientTest {
             .setFastSocket(FastSocket.newBuilder().build())
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .setResourceLabels(ResourceLabels.newBuilder().build())
+            .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -753,6 +755,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getFastSocket(), actualRequest.getFastSocket());
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
+    Assert.assertEquals(request.getWindowsNodeConfig(), actualRequest.getWindowsNodeConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -789,6 +792,7 @@ public class ClusterManagerClientTest {
               .setFastSocket(FastSocket.newBuilder().build())
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
+              .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

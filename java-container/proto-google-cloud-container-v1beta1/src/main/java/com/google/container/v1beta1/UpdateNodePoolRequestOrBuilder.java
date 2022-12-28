@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2461
+   *     google/container/v1beta1/cluster_service.proto;l=2518
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2461
+   *     google/container/v1beta1/cluster_service.proto;l=2518
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2470
+   *     google/container/v1beta1/cluster_service.proto;l=2527
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2470
+   *     google/container/v1beta1/cluster_service.proto;l=2527
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2477
+   *     google/container/v1beta1/cluster_service.proto;l=2534
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2477
+   *     google/container/v1beta1/cluster_service.proto;l=2534
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2484
+   *     google/container/v1beta1/cluster_service.proto;l=2541
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2484
+   *     google/container/v1beta1/cluster_service.proto;l=2541
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -842,4 +842,39 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1beta1.ResourceLabels resource_labels = 33;</code>
    */
   com.google.container.v1beta1.ResourceLabelsOrBuilder getResourceLabelsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+   *
+   * @return Whether the windowsNodeConfig field is set.
+   */
+  boolean hasWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+   *
+   * @return The windowsNodeConfig.
+   */
+  com.google.container.v1beta1.WindowsNodeConfig getWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+   */
+  com.google.container.v1beta1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder();
 }

@@ -806,6 +806,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setFastSocket(FastSocket.newBuilder().build())
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
    *           .setResourceLabels(ResourceLabels.newBuilder().build())
+   *           .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -855,6 +856,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setFastSocket(FastSocket.newBuilder().build())
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
    *           .setResourceLabels(ResourceLabels.newBuilder().build())
+   *           .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
