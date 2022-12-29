@@ -64,6 +64,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     tpuIpv4CidrBlock_ = "";
     conditions_ = java.util.Collections.emptyList();
     id_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -3622,6 +3623,59 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     return getNodePoolAutoConfig();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 139;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of cluster
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 139;</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of cluster
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 139;</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3820,6 +3874,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (nodePoolAutoConfig_ != null) {
       output.writeMessage(136, getNodePoolAutoConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 139, etag_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4048,6 +4105,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(136, getNodePoolAutoConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(139, etag_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4219,6 +4279,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasNodePoolAutoConfig()) {
       if (!getNodePoolAutoConfig().equals(other.getNodePoolAutoConfig())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4424,6 +4485,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NODE_POOL_AUTO_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNodePoolAutoConfig().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4844,6 +4907,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         nodePoolAutoConfig_ = null;
         nodePoolAutoConfigBuilder_ = null;
       }
+      etag_ = "";
+
       return this;
     }
 
@@ -5082,6 +5147,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.nodePoolAutoConfig_ = nodePoolAutoConfigBuilder_.build();
       }
+      result.etag_ = etag_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -5398,6 +5464,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasNodePoolAutoConfig()) {
         mergeNodePoolAutoConfig(other.getNodePoolAutoConfig());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5837,6 +5907,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 1090
+            case 1114:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 1114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16023,6 +16099,122 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         nodePoolAutoConfig_ = null;
       }
       return nodePoolAutoConfigBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of cluster
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 139;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of cluster
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 139;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of cluster
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 139;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of cluster
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 139;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of cluster
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 139;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

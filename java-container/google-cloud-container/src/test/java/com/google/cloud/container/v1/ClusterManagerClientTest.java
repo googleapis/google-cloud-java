@@ -320,6 +320,7 @@ public class ClusterManagerClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -418,6 +419,7 @@ public class ClusterManagerClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -719,6 +721,7 @@ public class ClusterManagerClientTest {
             .setGcfsConfig(GcfsConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
+            .setEtag("etag3123477")
             .setFastSocket(FastSocket.newBuilder().build())
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .setResourceLabels(ResourceLabels.newBuilder().build())
@@ -752,6 +755,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
     Assert.assertEquals(request.getConfidentialNodes(), actualRequest.getConfidentialNodes());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
+    Assert.assertEquals(request.getEtag(), actualRequest.getEtag());
     Assert.assertEquals(request.getFastSocket(), actualRequest.getFastSocket());
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
@@ -789,6 +793,7 @@ public class ClusterManagerClientTest {
               .setGcfsConfig(GcfsConfig.newBuilder().build())
               .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
+              .setEtag("etag3123477")
               .setFastSocket(FastSocket.newBuilder().build())
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
@@ -2059,6 +2064,7 @@ public class ClusterManagerClientTest {
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2113,6 +2119,7 @@ public class ClusterManagerClientTest {
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
