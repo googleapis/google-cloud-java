@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.14.0](https://github.com/googleapis/java-logging/compare/v3.13.7...v3.14.0) (2022-12-31)
+
+
+### Features
+
+* Next release from main branch is 3.14.0 ([#1236](https://github.com/googleapis/java-logging/issues/1236)) ([125d94c](https://github.com/googleapis/java-logging/commit/125d94c9e88196ddd02d4a4acb49bf124cbda81a))
+
+
+### Dependencies
+
+* Update dependency org.easymock:easymock to v5.1.0 ([#1238](https://github.com/googleapis/java-logging/issues/1238)) ([d9a381a](https://github.com/googleapis/java-logging/commit/d9a381a1f2418e2d9a16afa110459e90a3c53d00))
+
 ## [3.13.7](https://github.com/googleapis/java-logging/compare/v3.13.6...v3.13.7) (2022-12-19)
 
 
