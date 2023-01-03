@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.core.BetaApi;
 import com.google.auto.value.AutoValue;
+import javax.annotation.Nullable;
 
 /**
  * Class for Identity and Access Management (IAM) policies. IAM policies are used to specify access
@@ -32,9 +33,11 @@ import com.google.auto.value.AutoValue;
 @AutoValue
 public abstract class Condition {
   /** Get IAM Policy Binding Condition Title */
+  @Nullable
   public abstract String getTitle();
 
   /** Get IAM Policy Binding Condition Description */
+  @Nullable
   public abstract String getDescription();
 
   /** Get IAM Policy Binding Condition Expression */
@@ -51,10 +54,10 @@ public abstract class Condition {
   @AutoValue.Builder
   public abstract static class Builder {
     /** Set IAM Policy Binding Condition Title */
-    public abstract Builder setTitle(String title);
+    public abstract Builder setTitle(@Nullable String title);
 
     /** Set IAM Policy Binding Condition Description */
-    public abstract Builder setDescription(String description);
+    public abstract Builder setDescription(@Nullable String description);
 
     /** Set IAM Policy Binding Condition Expression */
     public abstract Builder setExpression(String expression);
