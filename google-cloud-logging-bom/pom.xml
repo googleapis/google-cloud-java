@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging-bom</artifactId>
-  <version>3.14.0</version><!-- {x-version-update:google-cloud-logging:current} -->
+  <version>3.14.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -53,17 +53,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
-        <version>3.14.0</version><!-- {x-version-update:google-cloud-logging:current} -->
+        <version>3.14.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-logging-v2</artifactId>
-        <version>0.103.0</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
+        <version>0.103.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-logging-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
-        <version>0.103.0</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
+        <version>0.103.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
