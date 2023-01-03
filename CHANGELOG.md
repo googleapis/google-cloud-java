@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.13.1](https://github.com/googleapis/java-datastore/compare/v2.13.0...v2.13.1) (2023-01-03)
+
+
+### Dependencies
+
+* Update dependency com.google.errorprone:error_prone_core to v2.17.0 ([#944](https://github.com/googleapis/java-datastore/issues/944)) ([b0fd082](https://github.com/googleapis/java-datastore/commit/b0fd082f34d642f450d51e0c732daa3023fc57a4))
+* Update dependency org.easymock:easymock to v5.1.0 ([#945](https://github.com/googleapis/java-datastore/issues/945)) ([7774aac](https://github.com/googleapis/java-datastore/commit/7774aaca4bb99bd5114002a511981dc6992b00f4))
+
 ## [2.13.0](https://github.com/googleapis/java-datastore/compare/v2.12.5...v2.13.0) (2022-12-06)
 
 

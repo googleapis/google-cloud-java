@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore-bom</artifactId>
-  <version>2.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore-bom:current} -->
+  <version>2.13.1</version><!-- {x-version-update:google-cloud-datastore-bom:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -52,22 +52,22 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
-        <version>2.13.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+        <version>2.13.1</version><!-- {x-version-update:google-cloud-datastore:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datastore-admin-v1</artifactId>
-        <version>2.13.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datastore-admin-v1:current} -->
+        <version>2.13.1</version><!-- {x-version-update:grpc-google-cloud-datastore-admin-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
-        <version>0.104.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
+        <version>0.104.1</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-admin-v1</artifactId>
-        <version>2.13.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datastore-admin-v1:current} -->
+        <version>2.13.1</version><!-- {x-version-update:proto-google-cloud-datastore-admin-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
