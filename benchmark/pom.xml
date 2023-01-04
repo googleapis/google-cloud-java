@@ -6,7 +6,7 @@
   <parent>
     <artifactId>google-cloud-bigquery-parent</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>2.20.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <version>2.20.1</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
 
   <properties>
