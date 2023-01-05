@@ -30,7 +30,7 @@ import java.util.Map;
 final class MDCEventEnhancer implements LoggingEventEnhancer {
 
   @Override
-  public final void enhanceLogEntry(LogEntry.Builder builder, ILoggingEvent e) {
+  public void enhanceLogEntry(LogEntry.Builder builder, ILoggingEvent e) {
     for (Map.Entry<String, String> entry : e.getMDCPropertyMap().entrySet()) {
       if (null != entry.getKey() && null != entry.getValue()) {
         builder.addLabel(entry.getKey(), entry.getValue());

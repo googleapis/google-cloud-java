@@ -102,7 +102,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private static final String TYPE =
       "type.googleapis.com/google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent";
   private static final List<LoggingEventEnhancer> DEFAULT_LOGGING_EVENT_ENHANCERS =
-      ImmutableList.<LoggingEventEnhancer>of(new MDCEventEnhancer());
+      ImmutableList.of(new MDCEventEnhancer());
   public static final String JAVA_LOGBACK_LIBRARY_NAME = "java-logback";
   // Using release-please annotations to update DEFAULT_INSTRUMENTATION_VERSION with latest version.
   // See
@@ -111,7 +111,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   public static final String DEFAULT_INSTRUMENTATION_VERSION = "0.129.9-alpha-SNAPSHOT";
   // {x-version-update-end}
   private static boolean instrumentationAdded = false;
-  private static Object instrumentationLock = new Object();
+  private static final Object instrumentationLock = new Object();
 
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
@@ -158,7 +158,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    * Sets the name of the monitored resource (Optional). If not define the appender will try to
    * identify the resource type automatically. Currently support resource types include "gae_app",
    * "gce_instance", "k8s_container", "cloud_run_revision" and "cloud_function". If the appender
-   * fails to identify the resource type it will be set to "global".
+   * fails to identify the resource type, it will be set to "global".
    *
    * <p>Must be a one of the <a href=
    * "https://cloud.google.com/logging/docs/api/v2/resource-list">supported</a> resource types.
@@ -248,7 +248,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   /**
    * Returns the current value of the ingestion mode.
    *
-   * <p>The method is deprecated. Use appender configuration to setup the ingestion
+   * <p>The method is deprecated. Use appender configuration to set up the ingestion
    *
    * @return a {@link Synchronicity} value of the ingestion module.
    */
@@ -344,7 +344,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   @Override
   protected void append(ILoggingEvent e) {
-    List<LogEntry> entriesList = new ArrayList<LogEntry>();
+    List<LogEntry> entriesList = new ArrayList<>();
     entriesList.add(logEntryFor(e));
     // Check if instrumentation was already added - if not, create a log entry with instrumentation
     // data
@@ -531,7 +531,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    * The package-private helper method used to set the flag which indicates if instrumentation info
    * already written or not.
    *
-   * @returns The value of the flag before it was set.
+   * @return The value of the flag before it was set.
    */
   static boolean setInstrumentationStatus(boolean value) {
     if (instrumentationAdded == value) return instrumentationAdded;

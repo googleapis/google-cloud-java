@@ -63,9 +63,9 @@ public class LoggingAppenderTest {
   private static final String OVERRIDED_PROJECT_ID = "some-project-id";
   private static final String DUMMY_CRED_FILE_PATH =
       "src/test/java/com/google/cloud/logging/logback/dummy-credentials.json";
-  private static Payload.JsonPayload JSON_PAYLOAD =
+  private static final Payload.JsonPayload JSON_PAYLOAD =
       Payload.JsonPayload.of(ImmutableMap.of("message", "this is a test"));
-  private static Payload.JsonPayload JSON_ERROR_PAYLOAD =
+  private static final Payload.JsonPayload JSON_ERROR_PAYLOAD =
       Payload.JsonPayload.of(
           ImmutableMap.of(
               "message",
