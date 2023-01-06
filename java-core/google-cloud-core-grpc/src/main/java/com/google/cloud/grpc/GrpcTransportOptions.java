@@ -32,8 +32,6 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import io.grpc.internal.SharedResourceHolder;
-import io.grpc.internal.SharedResourceHolder.Resource;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
@@ -51,8 +49,8 @@ public class GrpcTransportOptions implements TransportOptions {
   private transient ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   /** Shared thread pool executor. */
-  private static final Resource<ScheduledExecutorService> EXECUTOR =
-      new Resource<ScheduledExecutorService>() {
+  private static final SharedResourceHolder.Resource<ScheduledExecutorService> EXECUTOR =
+      new SharedResourceHolder.Resource<ScheduledExecutorService>() {
         @Override
         public ScheduledExecutorService create() {
           ScheduledThreadPoolExecutor service =
