@@ -124,6 +124,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
@@ -183,6 +184,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
@@ -242,6 +244,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
@@ -290,6 +293,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
@@ -338,6 +342,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
             .build();
