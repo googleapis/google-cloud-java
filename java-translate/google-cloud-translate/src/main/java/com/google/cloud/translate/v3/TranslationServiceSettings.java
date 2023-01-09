@@ -65,7 +65,10 @@ import javax.annotation.Generated;
  * translationServiceSettingsBuilder
  *     .translateTextSettings()
  *     .setRetrySettings(
- *         translationServiceSettingsBuilder.translateTextSettings().getRetrySettings().toBuilder()
+ *         translationServiceSettingsBuilder
+ *             .translateTextSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TranslationServiceSettings translationServiceSettings =
