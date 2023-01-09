@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.9.1](https://github.com/googleapis/java-core/compare/v2.9.0...v2.9.1) (2023-01-09)
+
+
+### Bug Fixes
+
+* Make title and description of Condition Nullable ([#1063](https://github.com/googleapis/java-core/issues/1063)) ([1238462](https://github.com/googleapis/java-core/commit/12384628ab07b7edb04181c79ed07e742277e4c4))
+
+
+### Documentation
+
+* Update javadocs for ReadChannel to be more clear about the behavior ([#1050](https://github.com/googleapis/java-core/issues/1050)) ([8b574f6](https://github.com/googleapis/java-core/commit/8b574f66c6e77b31ec8d544319a116f5c19804b9))
+
+
+### Dependencies
+
+* Update dependency com.google.api-client:google-api-client-bom to v2.1.2 ([#1064](https://github.com/googleapis/java-core/issues/1064)) ([6bf1c24](https://github.com/googleapis/java-core/commit/6bf1c2414978340cb997acb18e98815e20028718))
+* Update dependency com.google.api:api-common to v2.3.1 ([#1053](https://github.com/googleapis/java-core/issues/1053)) ([43ce490](https://github.com/googleapis/java-core/commit/43ce49083ebdfada11732ff82aa407c69311f4c9))
+* Update dependency com.google.api:api-common to v2.4.0 ([#1069](https://github.com/googleapis/java-core/issues/1069)) ([083bc07](https://github.com/googleapis/java-core/commit/083bc071f4529cd2a827cd4586e5c02690f4ffcd))
+* Update dependency com.google.api:gax-bom to v2.21.0 ([#1070](https://github.com/googleapis/java-core/issues/1070)) ([e133832](https://github.com/googleapis/java-core/commit/e133832eb6e81089745e21d9b0188cb91af0a51b))
+* Update dependency com.google.api.grpc:proto-google-common-protos to v2.12.0 ([#1067](https://github.com/googleapis/java-core/issues/1067)) ([bfab3ad](https://github.com/googleapis/java-core/commit/bfab3adbcefea538d50d567297eb491650ad19ba))
+* Update dependency com.google.api.grpc:proto-google-iam-v1 to v1.6.23 ([#1060](https://github.com/googleapis/java-core/issues/1060)) ([a2e5c4e](https://github.com/googleapis/java-core/commit/a2e5c4eb35824ee019b0d0b8f984144f07d76c0a))
+* Update dependency com.google.api.grpc:proto-google-iam-v1 to v1.7.0 ([#1068](https://github.com/googleapis/java-core/issues/1068)) ([404f222](https://github.com/googleapis/java-core/commit/404f2220ea85253945f470a6370870cce248c11e))
+* Update dependency com.google.auth:google-auth-library-bom to v1.14.0 ([#1056](https://github.com/googleapis/java-core/issues/1056)) ([328628d](https://github.com/googleapis/java-core/commit/328628da55cea6d27c4fe4ed2aaa14bf2bc59a58))
+* Update dependency com.google.code.gson:gson to v2.10.1 ([#1066](https://github.com/googleapis/java-core/issues/1066)) ([a4b941e](https://github.com/googleapis/java-core/commit/a4b941e8daed4650bd019a7c03602cd617bdcad2))
+* Update dependency com.google.errorprone:error_prone_annotations to v2.17.0 ([#1061](https://github.com/googleapis/java-core/issues/1061)) ([e7159c2](https://github.com/googleapis/java-core/commit/e7159c28eb4882395cc351d3dbd29db74a75c271))
+* Update dependency com.google.errorprone:error_prone_annotations to v2.18.0 ([#1071](https://github.com/googleapis/java-core/issues/1071)) ([b85690f](https://github.com/googleapis/java-core/commit/b85690fdcf0803502412bf5af418c17b43a718e7))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.12 ([#1054](https://github.com/googleapis/java-core/issues/1054)) ([3fc149e](https://github.com/googleapis/java-core/commit/3fc149e28a8724b100717c0ddfb138338401fea9))
+* Update dependency io.grpc:grpc-bom to v1.51.1 ([#1058](https://github.com/googleapis/java-core/issues/1058)) ([d8ca14c](https://github.com/googleapis/java-core/commit/d8ca14cdb10d5af41396b40702a4abd7c9b5b15c))
+* Update dependency org.easymock:easymock to v5.1.0 ([#1062](https://github.com/googleapis/java-core/issues/1062)) ([4c0095d](https://github.com/googleapis/java-core/commit/4c0095daa0a17564c972434e4824c03b2204e3e0))
+* Update dependency org.threeten:threetenbp to v1.6.5 ([#1052](https://github.com/googleapis/java-core/issues/1052)) ([7e12b5d](https://github.com/googleapis/java-core/commit/7e12b5d137db97d95320416cd80e467bb300c499))
+
 ## [2.9.0](https://github.com/googleapis/java-core/compare/v2.8.28...v2.9.0) (2022-12-05)
 
 
