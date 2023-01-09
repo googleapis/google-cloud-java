@@ -1,6 +1,25 @@
 # Changelog
 
 
+## [3.1.1](https://github.com/googleapis/java-shared-dependencies/compare/v3.1.0...v3.1.1) (2023-01-09)
+
+
+### Dependencies
+
+* Adding `gapic-generator-java-bom` to `first-party-dependencies` ([#957](https://github.com/googleapis/java-shared-dependencies/issues/957)) ([f051e6e](https://github.com/googleapis/java-shared-dependencies/commit/f051e6ee0ad4a705014d9d2f8211ddad464b3ca4))
+* Update dependency com.google.api-client:google-api-client-bom to v2.1.2 ([#956](https://github.com/googleapis/java-shared-dependencies/issues/956)) ([dbfde36](https://github.com/googleapis/java-shared-dependencies/commit/dbfde36f5b0806192ea99d45382c84cff518f500))
+* Update dependency com.google.api:api-common to v2.3.1 ([#947](https://github.com/googleapis/java-shared-dependencies/issues/947)) ([f35c3bf](https://github.com/googleapis/java-shared-dependencies/commit/f35c3bf518e8b488ddeb28a6ff86719b24a62df5))
+* Update dependency com.google.auth:google-auth-library-bom to v1.14.0 ([#950](https://github.com/googleapis/java-shared-dependencies/issues/950)) ([e5609ca](https://github.com/googleapis/java-shared-dependencies/commit/e5609ca23657e1c37825c6d8930da1fb5080b8a6))
+* Update dependency com.google.code.gson:gson to v2.10.1 ([#958](https://github.com/googleapis/java-shared-dependencies/issues/958)) ([bd35327](https://github.com/googleapis/java-shared-dependencies/commit/bd353274c16d01915923a6fa34796d0b78672fb0))
+* Update dependency com.google.errorprone:error_prone_annotations to v2.17.0 ([#955](https://github.com/googleapis/java-shared-dependencies/issues/955)) ([b656786](https://github.com/googleapis/java-shared-dependencies/commit/b6567863e659ff3eb6cc7b4b42a42acc7ebd24ed))
+* Update dependency com.google.errorprone:error_prone_annotations to v2.18.0 ([#961](https://github.com/googleapis/java-shared-dependencies/issues/961)) ([0c4ff89](https://github.com/googleapis/java-shared-dependencies/commit/0c4ff895e103164dc0c95bc9789f9a3dc6c2f1a4))
+* Update dependency com.google.protobuf:protobuf-bom to v3.21.12 ([#948](https://github.com/googleapis/java-shared-dependencies/issues/948)) ([812ce38](https://github.com/googleapis/java-shared-dependencies/commit/812ce38e95de4db15184f9dd38bbd4c2affa2133))
+* Update dependency io.grpc:grpc-bom to v1.51.1 ([#953](https://github.com/googleapis/java-shared-dependencies/issues/953)) ([a86e70a](https://github.com/googleapis/java-shared-dependencies/commit/a86e70ac7be07cdb3b69d0cf4fc1afedbf7048fd))
+* Update dependency org.checkerframework:checker-qual to v3.29.0 ([#959](https://github.com/googleapis/java-shared-dependencies/issues/959)) ([784a79b](https://github.com/googleapis/java-shared-dependencies/commit/784a79b49b109d18858fd603dbdd37a4947280af))
+* Update dependency org.threeten:threetenbp to v1.6.5 ([#946](https://github.com/googleapis/java-shared-dependencies/issues/946)) ([403555e](https://github.com/googleapis/java-shared-dependencies/commit/403555e4010aef84e909e0b0e48cf5571d9e3184))
+* Update google.core.version to v2.9.1 ([#962](https://github.com/googleapis/java-shared-dependencies/issues/962)) ([c1e648d](https://github.com/googleapis/java-shared-dependencies/commit/c1e648d5045f871ed5670f949978430ad2d49484))
+* Update iam.version to v1.6.23 ([#954](https://github.com/googleapis/java-shared-dependencies/issues/954)) ([bb4730e](https://github.com/googleapis/java-shared-dependencies/commit/bb4730e7dcac57b6653825d63c7408d2182b0a27))
+
 ## [3.1.0](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.6...v3.1.0) (2022-12-05)
 
 

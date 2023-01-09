@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>shared-dependencies-upper-bound-test</artifactId>
   <packaging>pom</packaging>
-  <version>3.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>3.1.1</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Upper bound test for Google Cloud Shared Dependencies</name>
   <url>https://github.com/googleapis/java-shared-dependencies</url>
   <description>
@@ -53,7 +53,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <version>3.1.1</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
