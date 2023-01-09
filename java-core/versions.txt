@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-core:2.9.1:2.9.1
+google-cloud-core:2.9.1:2.9.2-SNAPSHOT
