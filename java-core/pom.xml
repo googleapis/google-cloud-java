@@ -152,7 +152,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-core-parent</site.installationModule>
     <gax.version>2.20.1</gax.version>
-    <google.api-common.version>2.3.1</google.api-common.version>
+    <google.api-common.version>2.4.0</google.api-common.version>
     <google.common-protos.version>2.11.0</google.common-protos.version>
     <google.iam.version>1.6.23</google.iam.version>
     <google.auth.version>1.14.0</google.auth.version>
