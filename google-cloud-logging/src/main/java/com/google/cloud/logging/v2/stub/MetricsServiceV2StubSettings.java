@@ -85,7 +85,10 @@ import org.threeten.bp.Duration;
  * metricsSettingsBuilder
  *     .getLogMetricSettings()
  *     .setRetrySettings(
- *         metricsSettingsBuilder.getLogMetricSettings().getRetrySettings().toBuilder()
+ *         metricsSettingsBuilder
+ *             .getLogMetricSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetricsServiceV2StubSettings metricsSettings = metricsSettingsBuilder.build();

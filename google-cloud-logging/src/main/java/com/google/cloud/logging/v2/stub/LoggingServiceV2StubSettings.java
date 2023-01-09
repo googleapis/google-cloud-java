@@ -103,7 +103,10 @@ import org.threeten.bp.Duration;
  * loggingSettingsBuilder
  *     .deleteLogSettings()
  *     .setRetrySettings(
- *         loggingSettingsBuilder.deleteLogSettings().getRetrySettings().toBuilder()
+ *         loggingSettingsBuilder
+ *             .deleteLogSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LoggingServiceV2StubSettings loggingSettings = loggingSettingsBuilder.build();

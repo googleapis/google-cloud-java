@@ -77,7 +77,10 @@ import javax.annotation.Generated;
  * loggingSettingsBuilder
  *     .deleteLogSettings()
  *     .setRetrySettings(
- *         loggingSettingsBuilder.deleteLogSettings().getRetrySettings().toBuilder()
+ *         loggingSettingsBuilder
+ *             .deleteLogSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LoggingSettings loggingSettings = loggingSettingsBuilder.build();

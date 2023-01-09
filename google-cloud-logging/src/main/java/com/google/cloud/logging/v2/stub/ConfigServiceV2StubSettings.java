@@ -124,7 +124,10 @@ import org.threeten.bp.Duration;
  * configSettingsBuilder
  *     .getBucketSettings()
  *     .setRetrySettings(
- *         configSettingsBuilder.getBucketSettings().getRetrySettings().toBuilder()
+ *         configSettingsBuilder
+ *             .getBucketSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ConfigServiceV2StubSettings configSettings = configSettingsBuilder.build();
