@@ -10,8 +10,8 @@
   <description>Eventarc lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-iam-parent</artifactId>
-    <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+    <artifactId>google-iam-policy-parent</artifactId>
+    <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-iam-policy</site.installationModule>

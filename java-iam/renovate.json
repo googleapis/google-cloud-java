@@ -39,7 +39,7 @@
     },
     {
       "packagePatterns": [
-        "^com.google.api.grpc:proto-google-iam-v1",
+        "^com.google.cloud:google-iam-policy",
         "^com.google.cloud:libraries-bom",
         "^com.google.cloud.samples:shared-configuration"
       ],

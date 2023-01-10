@@ -21,23 +21,9 @@ deep-remove-regex:
 
 deep-preserve-regex:
   - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-  - "/proto-google-iam-v1/src/main/java/com/google/iam/v1/logging"
-  - "/proto-google-iam-v1/src/main/proto/google/iam/v1"
 
 deep-copy-regex:
-  - source: "/google/iam/v1/google-iam-v1-java/grpc-google-iam-v1-java/src"
-    dest: "/owl-bot-staging/v1/grpc-google-iam-v1/src"
-  - source: "/google/iam/v1/google-iam-v1-java/proto-google-iam-v1-java/src"
-    dest: "/owl-bot-staging/v1/proto-google-iam-v1/src"
-  - source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/grpc-google-cloud-iam-v2beta-java/src"
-    dest: "/owl-bot-staging/v2beta/grpc-google-iam-v2beta/src"
-  - source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/proto-google-cloud-iam-v2beta-java/src"
-    dest: "/owl-bot-staging/v2beta/proto-google-iam-v2beta/src"
   - source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/gapic-google-cloud-iam-v2beta-java/src"
     dest: "/owl-bot-staging/v2beta/google-iam-policy/src"
-  - source: "/google/iam/v2/google-cloud-iam-v2-java/grpc-google-cloud-iam-v2-java/src"
-    dest: "/owl-bot-staging/v2/grpc-google-iam-v2/src"
-  - source: "/google/iam/v2/google-cloud-iam-v2-java/proto-google-cloud-iam-v2-java/src"
-    dest: "/owl-bot-staging/v2/proto-google-iam-v2/src"
   - source: "/google/iam/v2/google-cloud-iam-v2-java/gapic-google-cloud-iam-v2-java/src"
     dest: "/owl-bot-staging/v2/google-iam-policy/src"

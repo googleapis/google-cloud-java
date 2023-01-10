@@ -33,7 +33,7 @@ python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 # compile all packages
 mvn clean install -B -q -DskipTests=true
 
-export NAME=proto-google-iam-v1
+export NAME=google-iam-policy
 export VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
 
 # build the docs

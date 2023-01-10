@@ -11,7 +11,7 @@
   "repo": "googleapis/java-iam",
   "repo_short": "java-iam",
   "library_type": "OTHER",
-  "distribution_name": "com.google.api.grpc:proto-google-iam-v1",
+  "distribution_name": "com.google.cloud:google-iam-policy",
   "excluded_poms": "proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1",
-  "excluded_dependencies": "grpc-google-iam-v1"
+  "excluded_dependencies": "google-iam-policy"
 }

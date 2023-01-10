@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-iam-parent</artifactId>
+  <artifactId>google-iam-policy-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
-  <name>Google IAM Parent</name>
+  <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+  <name>Google IAM Policy Parent</name>
   <url>https://github.com/googleapis/java-iam</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -68,58 +68,12 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-bom</artifactId>
-        <version>3.21.12</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <!-- This should not depend on this, because the shared dependencies BOM
-          includes proto-google-iam-v1 from this repository. Avoid circular
-          dependencies -->
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.1.0</version>
+        <version>3.1.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-iam-v2</artifactId>
-        <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v2:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-iam-v2</artifactId>
-        <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v2:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-iam-policy</artifactId>
-        <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-iam-v2beta</artifactId>
-        <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v2beta:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-iam-v1</artifactId>
-        <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-iam-v2beta</artifactId>
-        <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v2beta:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-iam-v1</artifactId>
-        <version>1.6.24-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
-      </dependency>
-
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -130,12 +84,6 @@
   </dependencyManagement>
 
   <modules>
-    <module>proto-google-iam-v1</module>
-    <module>grpc-google-iam-v2beta</module>
-    <module>grpc-google-iam-v2</module>
-    <module>proto-google-iam-v2beta</module>
-    <module>proto-google-iam-v2</module>
-    <module>grpc-google-iam-v1</module>
     <module>google-iam-policy</module>
   </modules>
 
