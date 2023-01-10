@@ -46,6 +46,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     imageType_ = "";
     locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     name_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -89,7 +90,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2518
+   *     google/container/v1beta1/cluster_service.proto;l=2528
    * @return The projectId.
    */
   @java.lang.Override
@@ -118,7 +119,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2518
+   *     google/container/v1beta1/cluster_service.proto;l=2528
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -150,7 +151,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2527
+   *     google/container/v1beta1/cluster_service.proto;l=2537
    * @return The zone.
    */
   @java.lang.Override
@@ -179,7 +180,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2527
+   *     google/container/v1beta1/cluster_service.proto;l=2537
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -210,7 +211,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2534
+   *     google/container/v1beta1/cluster_service.proto;l=2544
    * @return The clusterId.
    */
   @java.lang.Override
@@ -238,7 +239,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2534
+   *     google/container/v1beta1/cluster_service.proto;l=2544
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -269,7 +270,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2541
+   *     google/container/v1beta1/cluster_service.proto;l=2551
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -297,7 +298,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2541
+   *     google/container/v1beta1/cluster_service.proto;l=2551
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1101,6 +1102,59 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getGvnic();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 30;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the node pool.
+   * If an etag is provided and does not match the current etag of the node
+   * pool, update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 30;</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the node pool.
+   * If an etag is provided and does not match the current etag of the node
+   * pool, update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 30;</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FAST_SOCKET_FIELD_NUMBER = 31;
   private com.google.container.v1beta1.FastSocket fastSocket_;
   /**
@@ -1367,6 +1421,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (gvnic_ != null) {
       output.writeMessage(29, getGvnic());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, etag_);
+    }
     if (fastSocket_ != null) {
       output.writeMessage(31, getFastSocket());
     }
@@ -1451,6 +1508,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (gvnic_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, etag_);
+    }
     if (fastSocket_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getFastSocket());
     }
@@ -1531,6 +1591,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasGvnic()) {
       if (!getGvnic().equals(other.getGvnic())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (hasFastSocket() != other.hasFastSocket()) return false;
     if (hasFastSocket()) {
       if (!getFastSocket().equals(other.getFastSocket())) return false;
@@ -1620,6 +1681,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + GVNIC_FIELD_NUMBER;
       hash = (53 * hash) + getGvnic().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     if (hasFastSocket()) {
       hash = (37 * hash) + FAST_SOCKET_FIELD_NUMBER;
       hash = (53 * hash) + getFastSocket().hashCode();
@@ -1856,6 +1919,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gvnic_ = null;
         gvnicBuilder_ = null;
       }
+      etag_ = "";
+
       if (fastSocketBuilder_ == null) {
         fastSocket_ = null;
       } else {
@@ -1975,6 +2040,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.gvnic_ = gvnicBuilder_.build();
       }
+      result.etag_ = etag_;
       if (fastSocketBuilder_ == null) {
         result.fastSocket_ = fastSocket_;
       } else {
@@ -2115,6 +2181,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasGvnic()) {
         mergeGvnic(other.getGvnic());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
       }
       if (other.hasFastSocket()) {
         mergeFastSocket(other.getFastSocket());
@@ -2272,6 +2342,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
                 break;
               } // case 234
+            case 242:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 242
             case 250:
               {
                 input.readMessage(getFastSocketFieldBuilder().getBuilder(), extensionRegistry);
@@ -2330,7 +2406,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2518
+     *     google/container/v1beta1/cluster_service.proto;l=2528
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2358,7 +2434,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2518
+     *     google/container/v1beta1/cluster_service.proto;l=2528
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2386,7 +2462,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2518
+     *     google/container/v1beta1/cluster_service.proto;l=2528
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2413,7 +2489,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2518
+     *     google/container/v1beta1/cluster_service.proto;l=2528
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2436,7 +2512,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2518
+     *     google/container/v1beta1/cluster_service.proto;l=2528
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2466,7 +2542,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2527
+     *     google/container/v1beta1/cluster_service.proto;l=2537
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2494,7 +2570,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2527
+     *     google/container/v1beta1/cluster_service.proto;l=2537
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2522,7 +2598,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2527
+     *     google/container/v1beta1/cluster_service.proto;l=2537
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2549,7 +2625,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2527
+     *     google/container/v1beta1/cluster_service.proto;l=2537
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2572,7 +2648,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2527
+     *     google/container/v1beta1/cluster_service.proto;l=2537
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2601,7 +2677,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2534
+     *     google/container/v1beta1/cluster_service.proto;l=2544
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2628,7 +2704,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2534
+     *     google/container/v1beta1/cluster_service.proto;l=2544
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2655,7 +2731,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2534
+     *     google/container/v1beta1/cluster_service.proto;l=2544
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2681,7 +2757,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2534
+     *     google/container/v1beta1/cluster_service.proto;l=2544
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2703,7 +2779,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2534
+     *     google/container/v1beta1/cluster_service.proto;l=2544
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2732,7 +2808,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2541
+     *     google/container/v1beta1/cluster_service.proto;l=2551
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2759,7 +2835,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2541
+     *     google/container/v1beta1/cluster_service.proto;l=2551
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2786,7 +2862,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2541
+     *     google/container/v1beta1/cluster_service.proto;l=2551
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2812,7 +2888,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2541
+     *     google/container/v1beta1/cluster_service.proto;l=2551
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2834,7 +2910,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2541
+     *     google/container/v1beta1/cluster_service.proto;l=2551
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -5532,6 +5608,122 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gvnic_ = null;
       }
       return gvnicBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the node pool.
+     * If an etag is provided and does not match the current etag of the node
+     * pool, update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 30;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the node pool.
+     * If an etag is provided and does not match the current etag of the node
+     * pool, update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 30;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the node pool.
+     * If an etag is provided and does not match the current etag of the node
+     * pool, update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 30;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the node pool.
+     * If an etag is provided and does not match the current etag of the node
+     * pool, update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 30;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the node pool.
+     * If an etag is provided and does not match the current etag of the node
+     * pool, update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 30;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.container.v1beta1.FastSocket fastSocket_;

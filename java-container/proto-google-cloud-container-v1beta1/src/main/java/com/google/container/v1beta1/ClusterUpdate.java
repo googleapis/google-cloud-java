@@ -49,6 +49,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     desiredDatapathProvider_ = 0;
     desiredPrivateIpv6GoogleAccess_ = 0;
     desiredMasterVersion_ = "";
+    etag_ = "";
     desiredStackType_ = 0;
   }
 
@@ -2384,6 +2385,59 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredGatewayApiConfig();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 115;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the cluster.
+   * If an etag is provided and does not match the current etag of the cluster,
+   * update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 115;</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the cluster.
+   * If an etag is provided and does not match the current etag of the cluster,
+   * update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 115;</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER = 116;
   private com.google.container.v1beta1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;
   /**
@@ -2627,6 +2681,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredGatewayApiConfig_ != null) {
       output.writeMessage(114, getDesiredGatewayApiConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 115, etag_);
+    }
     if (desiredNodePoolLoggingConfig_ != null) {
       output.writeMessage(116, getDesiredNodePoolLoggingConfig());
     }
@@ -2843,6 +2900,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               114, getDesiredGatewayApiConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(115, etag_);
+    }
     if (desiredNodePoolLoggingConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -3047,6 +3107,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredGatewayApiConfig()) {
       if (!getDesiredGatewayApiConfig().equals(other.getDesiredGatewayApiConfig())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (hasDesiredNodePoolLoggingConfig() != other.hasDesiredNodePoolLoggingConfig()) return false;
     if (hasDesiredNodePoolLoggingConfig()) {
       if (!getDesiredNodePoolLoggingConfig().equals(other.getDesiredNodePoolLoggingConfig()))
@@ -3225,6 +3286,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_GATEWAY_API_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredGatewayApiConfig().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     if (hasDesiredNodePoolLoggingConfig()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodePoolLoggingConfig().hashCode();
@@ -3604,6 +3667,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredGatewayApiConfig_ = null;
         desiredGatewayApiConfigBuilder_ = null;
       }
+      etag_ = "";
+
       if (desiredNodePoolLoggingConfigBuilder_ == null) {
         desiredNodePoolLoggingConfig_ = null;
       } else {
@@ -3833,6 +3898,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredGatewayApiConfig_ = desiredGatewayApiConfigBuilder_.build();
       }
+      result.etag_ = etag_;
       if (desiredNodePoolLoggingConfigBuilder_ == null) {
         result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfig_;
       } else {
@@ -4034,6 +4100,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredGatewayApiConfig()) {
         mergeDesiredGatewayApiConfig(other.getDesiredGatewayApiConfig());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
       }
       if (other.hasDesiredNodePoolLoggingConfig()) {
         mergeDesiredNodePoolLoggingConfig(other.getDesiredNodePoolLoggingConfig());
@@ -4372,6 +4442,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 914
+            case 922:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 922
             case 930:
               {
                 input.readMessage(
@@ -12404,6 +12480,122 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredGatewayApiConfig_ = null;
       }
       return desiredGatewayApiConfigBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.container.v1beta1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;

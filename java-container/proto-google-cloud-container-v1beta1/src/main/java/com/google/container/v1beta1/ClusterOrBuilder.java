@@ -2576,4 +2576,33 @@ public interface ClusterOrBuilder
    * <code>optional .google.container.v1beta1.ProtectConfig protect_config = 137;</code>
    */
   com.google.container.v1beta1.ProtectConfigOrBuilder getProtectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of cluster
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 139;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of cluster
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 139;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

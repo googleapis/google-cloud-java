@@ -1687,6 +1687,35 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The current etag of the cluster.
+   * If an etag is provided and does not match the current etag of the cluster,
+   * update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 115;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the cluster.
+   * If an etag is provided and does not match the current etag of the cluster,
+   * update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 115;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired node pool logging configuration defaults for the cluster.
    * </pre>
    *
