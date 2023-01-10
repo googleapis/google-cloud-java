@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-beyondcorp-clientconnectorservices-v1</artifactId>
-  <version>0.5.0</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-clientconnectorservices-v1:current} -->
+  <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-beyondcorp-clientconnectorservices-v1:current} -->
   <name>grpc-google-cloud-beyondcorp-clientconnectorservices-v1</name>
   <description>GRPC library for google-cloud-beyondcorp-clientconnectorservices</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-clientconnectorservices-parent</artifactId>
-    <version>0.5.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
+    <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
   </parent>
   <dependencies>
     <dependency>

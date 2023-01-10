@@ -5,12 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-devtools-source-protos</artifactId>
-  <version>1.7.0</version><!-- {x-version-update:proto-google-devtools-source-protos:current} -->
+  <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-devtools-source-protos:current} -->
   <name>proto-google-devtools-source-protos</name>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-debugger-client-parent</artifactId>
-    <version>1.7.0</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
+    <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-debugger-client:current} -->
   </parent>
 
   <dependencies>

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-notebooks-v1beta1</artifactId>
-  <version>0.12.0</version><!-- {x-version-update:grpc-google-cloud-notebooks-v1beta1:current} -->
+  <version>0.13.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-notebooks-v1beta1:current} -->
   <name>grpc-google-cloud-notebooks-v1beta1</name>
   <description>GRPC library for grpc-google-cloud-notebooks-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-notebooks-parent</artifactId>
-    <version>1.5.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
+    <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-notebooks:current} -->
   </parent>
   <dependencies>
     <dependency>

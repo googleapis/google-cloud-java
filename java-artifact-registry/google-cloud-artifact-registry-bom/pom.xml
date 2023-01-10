@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-artifact-registry-bom</artifactId>
-  <version>1.6.0</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.1.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,27 +27,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-artifact-registry</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
+        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-artifact-registry:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-artifact-registry-v1beta2</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1beta2:current} -->
+        <version>0.13.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-artifact-registry-v1</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1:current} -->
+        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-artifact-registry-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-artifact-registry-v1beta2</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1beta2:current} -->
+        <version>0.13.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1beta2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-artifact-registry-v1</artifactId>
-        <version>1.6.0</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1:current} -->
+        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-artifact-registry-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

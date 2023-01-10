@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage-transfer</artifactId>
-  <version>1.7.0</version><!-- {x-version-update:google-cloud-storage-transfer:current} -->
+  <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage-transfer:current} -->
   <packaging>jar</packaging>
   <name>Google Storage Transfer Service</name>
   <description>Storage Transfer Service Secure, low-cost services for transferring data from cloud or on-premises sources.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-storage-transfer-parent</artifactId>
-    <version>1.7.0</version><!-- {x-version-update:google-cloud-storage-transfer:current} -->
+    <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage-transfer:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-storage-transfer</site.installationModule>
