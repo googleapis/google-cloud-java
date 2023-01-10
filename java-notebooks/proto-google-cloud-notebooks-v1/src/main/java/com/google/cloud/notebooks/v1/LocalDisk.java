@@ -87,12 +87,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
      * Valid values:
-     * * FEATURE_TYPE_UNSPECIFIED
-     * * MULTI_IP_SUBNET
-     * * SECURE_BOOT
-     * * UEFI_COMPATIBLE
-     * * VIRTIO_SCSI_MULTIQUEUE
-     * * WINDOWS
+     * * `FEATURE_TYPE_UNSPECIFIED`
+     * * `MULTI_IP_SUBNET`
+     * * `SECURE_BOOT`
+     * * `UEFI_COMPATIBLE`
+     * * `VIRTIO_SCSI_MULTIQUEUE`
+     * * `WINDOWS`
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -108,12 +108,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
      * Valid values:
-     * * FEATURE_TYPE_UNSPECIFIED
-     * * MULTI_IP_SUBNET
-     * * SECURE_BOOT
-     * * UEFI_COMPATIBLE
-     * * VIRTIO_SCSI_MULTIQUEUE
-     * * WINDOWS
+     * * `FEATURE_TYPE_UNSPECIFIED`
+     * * `MULTI_IP_SUBNET`
+     * * `SECURE_BOOT`
+     * * `UEFI_COMPATIBLE`
+     * * `VIRTIO_SCSI_MULTIQUEUE`
+     * * `WINDOWS`
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -186,12 +186,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
      * Valid values:
-     * * FEATURE_TYPE_UNSPECIFIED
-     * * MULTI_IP_SUBNET
-     * * SECURE_BOOT
-     * * UEFI_COMPATIBLE
-     * * VIRTIO_SCSI_MULTIQUEUE
-     * * WINDOWS
+     * * `FEATURE_TYPE_UNSPECIFIED`
+     * * `MULTI_IP_SUBNET`
+     * * `SECURE_BOOT`
+     * * `UEFI_COMPATIBLE`
+     * * `VIRTIO_SCSI_MULTIQUEUE`
+     * * `WINDOWS`
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -218,12 +218,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
      * Valid values:
-     * * FEATURE_TYPE_UNSPECIFIED
-     * * MULTI_IP_SUBNET
-     * * SECURE_BOOT
-     * * UEFI_COMPATIBLE
-     * * VIRTIO_SCSI_MULTIQUEUE
-     * * WINDOWS
+     * * `FEATURE_TYPE_UNSPECIFIED`
+     * * `MULTI_IP_SUBNET`
+     * * `SECURE_BOOT`
+     * * `UEFI_COMPATIBLE`
+     * * `VIRTIO_SCSI_MULTIQUEUE`
+     * * `WINDOWS`
      * </pre>
      *
      * <code>string type = 1;</code>
@@ -595,12 +595,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -626,12 +626,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -657,12 +657,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -687,12 +687,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -713,12 +713,12 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -850,7 +850,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Output only. Specifies a unique device name
    * of your choice that is reflected into the
-   * /dev/disk/by-id/google-* tree of a Linux operating system running within
+   * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
    * the instance. This name can be used to reference the device for mounting,
    * resizing, and so on, from within the instance.
    * If not specified, the server chooses a default device name to apply to this
@@ -880,7 +880,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Output only. Specifies a unique device name
    * of your choice that is reflected into the
-   * /dev/disk/by-id/google-* tree of a Linux operating system running within
+   * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
    * the instance. This name can be used to reference the device for mounting,
    * resizing, and so on, from within the instance.
    * If not specified, the server chooses a default device name to apply to this
@@ -1098,8 +1098,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
-   * * NVME
-   * * SCSI
+   * * `NVME`
+   * * `SCSI`
    * </pre>
    *
    * <code>string interface = 7;</code>
@@ -1128,8 +1128,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
-   * * NVME
-   * * SCSI
+   * * `NVME`
+   * * `SCSI`
    * </pre>
    *
    * <code>string interface = 7;</code>
@@ -1265,11 +1265,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-   * not specified, the default is to attach the disk in READ_WRITE mode.
+   * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
+   * If not specified, the default is to attach the disk in `READ_WRITE` mode.
    * Valid values:
-   * * READ_ONLY
-   * * READ_WRITE
+   * * `READ_ONLY`
+   * * `READ_WRITE`
    * </pre>
    *
    * <code>string mode = 10;</code>
@@ -1292,11 +1292,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-   * not specified, the default is to attach the disk in READ_WRITE mode.
+   * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
+   * If not specified, the default is to attach the disk in `READ_WRITE` mode.
    * Valid values:
-   * * READ_ONLY
-   * * READ_WRITE
+   * * `READ_ONLY`
+   * * `READ_WRITE`
    * </pre>
    *
    * <code>string mode = 10;</code>
@@ -1373,11 +1373,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
-   * specified, the default is PERSISTENT.
+   * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
+   * specified, the default is `PERSISTENT`.
    * Valid values:
-   * * PERSISTENT
-   * * SCRATCH
+   * * `PERSISTENT`
+   * * `SCRATCH`
    * </pre>
    *
    * <code>string type = 12;</code>
@@ -1400,11 +1400,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
-   * specified, the default is PERSISTENT.
+   * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
+   * specified, the default is `PERSISTENT`.
    * Valid values:
-   * * PERSISTENT
-   * * SCRATCH
+   * * `PERSISTENT`
+   * * `SCRATCH`
    * </pre>
    *
    * <code>string type = 12;</code>
@@ -2188,7 +2188,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Output only. Specifies a unique device name
      * of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to this
@@ -2217,7 +2217,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Output only. Specifies a unique device name
      * of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to this
@@ -2246,7 +2246,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Output only. Specifies a unique device name
      * of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to this
@@ -2274,7 +2274,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Output only. Specifies a unique device name
      * of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to this
@@ -2298,7 +2298,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Output only. Specifies a unique device name
      * of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to this
@@ -3078,8 +3078,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -3107,8 +3107,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -3136,8 +3136,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -3164,8 +3164,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -3188,8 +3188,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -3487,11 +3487,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
+     * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -3513,11 +3513,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
+     * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -3539,11 +3539,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
+     * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -3564,11 +3564,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
+     * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -3585,11 +3585,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
+     * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
+     * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -3724,11 +3724,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
-     * specified, the default is PERSISTENT.
+     * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
+     * specified, the default is `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -3750,11 +3750,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
-     * specified, the default is PERSISTENT.
+     * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
+     * specified, the default is `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -3776,11 +3776,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
-     * specified, the default is PERSISTENT.
+     * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
+     * specified, the default is `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -3801,11 +3801,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
-     * specified, the default is PERSISTENT.
+     * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
+     * specified, the default is `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -3822,11 +3822,11 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not
-     * specified, the default is PERSISTENT.
+     * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
+     * specified, the default is `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>

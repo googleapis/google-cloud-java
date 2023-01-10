@@ -1378,9 +1378,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Definition of a hardware accelerator. Note that not all combinations
-   * of `type` and `core_count` are valid. Check [GPUs on
-   * Compute Engine](/compute/docs/gpus/#gpus-list) to find a valid
-   * combination. TPUs are not supported.
+   * of `type` and `core_count` are valid. Check [GPUs on Compute
+   * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+   * valid combination. TPUs are not supported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.notebooks.v1.Instance.AcceleratorConfig}
@@ -1660,9 +1660,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Definition of a hardware accelerator. Note that not all combinations
-     * of `type` and `core_count` are valid. Check [GPUs on
-     * Compute Engine](/compute/docs/gpus/#gpus-list) to find a valid
-     * combination. TPUs are not supported.
+     * of `type` and `core_count` are valid. Check [GPUs on Compute
+     * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+     * valid combination. TPUs are not supported.
      * </pre>
      *
      * Protobuf type {@code google.cloud.notebooks.v1.Instance.AcceleratorConfig}
@@ -2090,9 +2090,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates a unique device name of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
-     * the instance. This name can be used to reference the device for mounting,
-     * resizing, and so on, from within the instance.
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+     * within the instance. This name can be used to reference the device for
+     * mounting, resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -2108,9 +2108,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates a unique device name of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
-     * the instance. This name can be used to reference the device for mounting,
-     * resizing, and so on, from within the instance.
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+     * within the instance. This name can be used to reference the device for
+     * mounting, resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -2230,8 +2230,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -2250,8 +2250,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -2350,11 +2350,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
-     * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * The mode in which to attach this disk, either `READ_WRITE` or
+     * `READ_ONLY`. If not specified, the default is to attach the disk in
+     * `READ_WRITE` mode. Valid values:
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -2366,11 +2366,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
-     * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * The mode in which to attach this disk, either `READ_WRITE` or
+     * `READ_ONLY`. If not specified, the default is to attach the disk in
+     * `READ_WRITE` mode. Valid values:
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -2410,10 +2410,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+     * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -2425,10 +2425,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+     * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -2505,12 +2505,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2525,12 +2525,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2597,12 +2597,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2628,12 +2628,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read  Enabling guest operating system
        * features to see a list of available options.
        * Valid values:
-       * * FEATURE_TYPE_UNSPECIFIED
-       * * MULTI_IP_SUBNET
-       * * SECURE_BOOT
-       * * UEFI_COMPATIBLE
-       * * VIRTIO_SCSI_MULTIQUEUE
-       * * WINDOWS
+       * * `FEATURE_TYPE_UNSPECIFIED`
+       * * `MULTI_IP_SUBNET`
+       * * `SECURE_BOOT`
+       * * `UEFI_COMPATIBLE`
+       * * `VIRTIO_SCSI_MULTIQUEUE`
+       * * `WINDOWS`
        * </pre>
        *
        * <code>string type = 1;</code>
@@ -2998,12 +2998,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         * * FEATURE_TYPE_UNSPECIFIED
-         * * MULTI_IP_SUBNET
-         * * SECURE_BOOT
-         * * UEFI_COMPATIBLE
-         * * VIRTIO_SCSI_MULTIQUEUE
-         * * WINDOWS
+         * * `FEATURE_TYPE_UNSPECIFIED`
+         * * `MULTI_IP_SUBNET`
+         * * `SECURE_BOOT`
+         * * `UEFI_COMPATIBLE`
+         * * `VIRTIO_SCSI_MULTIQUEUE`
+         * * `WINDOWS`
          * </pre>
          *
          * <code>string type = 1;</code>
@@ -3028,12 +3028,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         * * FEATURE_TYPE_UNSPECIFIED
-         * * MULTI_IP_SUBNET
-         * * SECURE_BOOT
-         * * UEFI_COMPATIBLE
-         * * VIRTIO_SCSI_MULTIQUEUE
-         * * WINDOWS
+         * * `FEATURE_TYPE_UNSPECIFIED`
+         * * `MULTI_IP_SUBNET`
+         * * `SECURE_BOOT`
+         * * `UEFI_COMPATIBLE`
+         * * `VIRTIO_SCSI_MULTIQUEUE`
+         * * `WINDOWS`
          * </pre>
          *
          * <code>string type = 1;</code>
@@ -3058,12 +3058,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         * * FEATURE_TYPE_UNSPECIFIED
-         * * MULTI_IP_SUBNET
-         * * SECURE_BOOT
-         * * UEFI_COMPATIBLE
-         * * VIRTIO_SCSI_MULTIQUEUE
-         * * WINDOWS
+         * * `FEATURE_TYPE_UNSPECIFIED`
+         * * `MULTI_IP_SUBNET`
+         * * `SECURE_BOOT`
+         * * `UEFI_COMPATIBLE`
+         * * `VIRTIO_SCSI_MULTIQUEUE`
+         * * `WINDOWS`
          * </pre>
          *
          * <code>string type = 1;</code>
@@ -3087,12 +3087,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         * * FEATURE_TYPE_UNSPECIFIED
-         * * MULTI_IP_SUBNET
-         * * SECURE_BOOT
-         * * UEFI_COMPATIBLE
-         * * VIRTIO_SCSI_MULTIQUEUE
-         * * WINDOWS
+         * * `FEATURE_TYPE_UNSPECIFIED`
+         * * `MULTI_IP_SUBNET`
+         * * `SECURE_BOOT`
+         * * `UEFI_COMPATIBLE`
+         * * `VIRTIO_SCSI_MULTIQUEUE`
+         * * `WINDOWS`
          * </pre>
          *
          * <code>string type = 1;</code>
@@ -3112,12 +3112,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
          * The ID of a supported feature. Read  Enabling guest operating system
          * features to see a list of available options.
          * Valid values:
-         * * FEATURE_TYPE_UNSPECIFIED
-         * * MULTI_IP_SUBNET
-         * * SECURE_BOOT
-         * * UEFI_COMPATIBLE
-         * * VIRTIO_SCSI_MULTIQUEUE
-         * * WINDOWS
+         * * `FEATURE_TYPE_UNSPECIFIED`
+         * * `MULTI_IP_SUBNET`
+         * * `SECURE_BOOT`
+         * * `UEFI_COMPATIBLE`
+         * * `VIRTIO_SCSI_MULTIQUEUE`
+         * * `WINDOWS`
          * </pre>
          *
          * <code>string type = 1;</code>
@@ -3248,9 +3248,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates a unique device name of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
-     * the instance. This name can be used to reference the device for mounting,
-     * resizing, and so on, from within the instance.
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+     * within the instance. This name can be used to reference the device for
+     * mounting, resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -3277,9 +3277,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Indicates a unique device name of your choice that is reflected into the
-     * /dev/disk/by-id/google-* tree of a Linux operating system running within
-     * the instance. This name can be used to reference the device for mounting,
-     * resizing, and so on, from within the instance.
+     * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+     * within the instance. This name can be used to reference the device for
+     * mounting, resizing, and so on, from within the instance.
      * If not specified, the server chooses a default device name to apply to
      * this disk, in the form persistent-disk-x, where x is a number assigned by
      * Google Compute Engine.This field is only applicable for persistent disks.
@@ -3442,8 +3442,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -3473,8 +3473,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
      * performance.
      * Valid values:
-     * * NVME
-     * * SCSI
+     * * `NVME`
+     * * `SCSI`
      * </pre>
      *
      * <code>string interface = 7;</code>
@@ -3620,11 +3620,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
-     * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * The mode in which to attach this disk, either `READ_WRITE` or
+     * `READ_ONLY`. If not specified, the default is to attach the disk in
+     * `READ_WRITE` mode. Valid values:
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -3647,11 +3647,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-     * not specified, the default is to attach the disk in READ_WRITE mode.
-     * Valid values:
-     * * READ_ONLY
-     * * READ_WRITE
+     * The mode in which to attach this disk, either `READ_WRITE` or
+     * `READ_ONLY`. If not specified, the default is to attach the disk in
+     * `READ_WRITE` mode. Valid values:
+     * * `READ_ONLY`
+     * * `READ_WRITE`
      * </pre>
      *
      * <code>string mode = 10;</code>
@@ -3728,10 +3728,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+     * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -3754,10 +3754,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+     * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
      * Valid values:
-     * * PERSISTENT
-     * * SCRATCH
+     * * `PERSISTENT`
+     * * `SCRATCH`
      * </pre>
      *
      * <code>string type = 12;</code>
@@ -4532,9 +4532,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates a unique device name of your choice that is reflected into the
-       * /dev/disk/by-id/google-* tree of a Linux operating system running within
-       * the instance. This name can be used to reference the device for mounting,
-       * resizing, and so on, from within the instance.
+       * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+       * within the instance. This name can be used to reference the device for
+       * mounting, resizing, and so on, from within the instance.
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4560,9 +4560,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates a unique device name of your choice that is reflected into the
-       * /dev/disk/by-id/google-* tree of a Linux operating system running within
-       * the instance. This name can be used to reference the device for mounting,
-       * resizing, and so on, from within the instance.
+       * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+       * within the instance. This name can be used to reference the device for
+       * mounting, resizing, and so on, from within the instance.
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4588,9 +4588,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates a unique device name of your choice that is reflected into the
-       * /dev/disk/by-id/google-* tree of a Linux operating system running within
-       * the instance. This name can be used to reference the device for mounting,
-       * resizing, and so on, from within the instance.
+       * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+       * within the instance. This name can be used to reference the device for
+       * mounting, resizing, and so on, from within the instance.
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4615,9 +4615,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates a unique device name of your choice that is reflected into the
-       * /dev/disk/by-id/google-* tree of a Linux operating system running within
-       * the instance. This name can be used to reference the device for mounting,
-       * resizing, and so on, from within the instance.
+       * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+       * within the instance. This name can be used to reference the device for
+       * mounting, resizing, and so on, from within the instance.
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -4638,9 +4638,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Indicates a unique device name of your choice that is reflected into the
-       * /dev/disk/by-id/google-* tree of a Linux operating system running within
-       * the instance. This name can be used to reference the device for mounting,
-       * resizing, and so on, from within the instance.
+       * `/dev/disk/by-id/google-*` tree of a Linux operating system running
+       * within the instance. This name can be used to reference the device for
+       * mounting, resizing, and so on, from within the instance.
        * If not specified, the server chooses a default device name to apply to
        * this disk, in the form persistent-disk-x, where x is a number assigned by
        * Google Compute Engine.This field is only applicable for persistent disks.
@@ -5227,8 +5227,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       * * NVME
-       * * SCSI
+       * * `NVME`
+       * * `SCSI`
        * </pre>
        *
        * <code>string interface = 7;</code>
@@ -5257,8 +5257,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       * * NVME
-       * * SCSI
+       * * `NVME`
+       * * `SCSI`
        * </pre>
        *
        * <code>string interface = 7;</code>
@@ -5287,8 +5287,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       * * NVME
-       * * SCSI
+       * * `NVME`
+       * * `SCSI`
        * </pre>
        *
        * <code>string interface = 7;</code>
@@ -5316,8 +5316,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       * * NVME
-       * * SCSI
+       * * `NVME`
+       * * `SCSI`
        * </pre>
        *
        * <code>string interface = 7;</code>
@@ -5341,8 +5341,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD
        * performance.
        * Valid values:
-       * * NVME
-       * * SCSI
+       * * `NVME`
+       * * `SCSI`
        * </pre>
        *
        * <code>string interface = 7;</code>
@@ -5663,11 +5663,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-       * not specified, the default is to attach the disk in READ_WRITE mode.
-       * Valid values:
-       * * READ_ONLY
-       * * READ_WRITE
+       * The mode in which to attach this disk, either `READ_WRITE` or
+       * `READ_ONLY`. If not specified, the default is to attach the disk in
+       * `READ_WRITE` mode. Valid values:
+       * * `READ_ONLY`
+       * * `READ_WRITE`
        * </pre>
        *
        * <code>string mode = 10;</code>
@@ -5689,11 +5689,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-       * not specified, the default is to attach the disk in READ_WRITE mode.
-       * Valid values:
-       * * READ_ONLY
-       * * READ_WRITE
+       * The mode in which to attach this disk, either `READ_WRITE` or
+       * `READ_ONLY`. If not specified, the default is to attach the disk in
+       * `READ_WRITE` mode. Valid values:
+       * * `READ_ONLY`
+       * * `READ_WRITE`
        * </pre>
        *
        * <code>string mode = 10;</code>
@@ -5715,11 +5715,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-       * not specified, the default is to attach the disk in READ_WRITE mode.
-       * Valid values:
-       * * READ_ONLY
-       * * READ_WRITE
+       * The mode in which to attach this disk, either `READ_WRITE` or
+       * `READ_ONLY`. If not specified, the default is to attach the disk in
+       * `READ_WRITE` mode. Valid values:
+       * * `READ_ONLY`
+       * * `READ_WRITE`
        * </pre>
        *
        * <code>string mode = 10;</code>
@@ -5740,11 +5740,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-       * not specified, the default is to attach the disk in READ_WRITE mode.
-       * Valid values:
-       * * READ_ONLY
-       * * READ_WRITE
+       * The mode in which to attach this disk, either `READ_WRITE` or
+       * `READ_ONLY`. If not specified, the default is to attach the disk in
+       * `READ_WRITE` mode. Valid values:
+       * * `READ_ONLY`
+       * * `READ_WRITE`
        * </pre>
        *
        * <code>string mode = 10;</code>
@@ -5761,11 +5761,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If
-       * not specified, the default is to attach the disk in READ_WRITE mode.
-       * Valid values:
-       * * READ_ONLY
-       * * READ_WRITE
+       * The mode in which to attach this disk, either `READ_WRITE` or
+       * `READ_ONLY`. If not specified, the default is to attach the disk in
+       * `READ_WRITE` mode. Valid values:
+       * * `READ_ONLY`
+       * * `READ_WRITE`
        * </pre>
        *
        * <code>string mode = 10;</code>
@@ -5900,10 +5900,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+       * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       * * PERSISTENT
-       * * SCRATCH
+       * * `PERSISTENT`
+       * * `SCRATCH`
        * </pre>
        *
        * <code>string type = 12;</code>
@@ -5925,10 +5925,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+       * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       * * PERSISTENT
-       * * SCRATCH
+       * * `PERSISTENT`
+       * * `SCRATCH`
        * </pre>
        *
        * <code>string type = 12;</code>
@@ -5950,10 +5950,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+       * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       * * PERSISTENT
-       * * SCRATCH
+       * * `PERSISTENT`
+       * * `SCRATCH`
        * </pre>
        *
        * <code>string type = 12;</code>
@@ -5974,10 +5974,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+       * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       * * PERSISTENT
-       * * SCRATCH
+       * * `PERSISTENT`
+       * * `SCRATCH`
        * </pre>
        *
        * <code>string type = 12;</code>
@@ -5994,10 +5994,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates the type of the disk, either SCRATCH or PERSISTENT.
+       * Indicates the type of the disk, either `SCRATCH` or `PERSISTENT`.
        * Valid values:
-       * * PERSISTENT
-       * * SCRATCH
+       * * `PERSISTENT`
+       * * `SCRATCH`
        * </pre>
        *
        * <code>string type = 12;</code>
@@ -6136,7 +6136,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A set of Shielded Instance options.
-   * Check [Images using supported Shielded VM features]
+   * Check [Images using supported Shielded VM
+   * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
    * Not all combinations are valid.
    * </pre>
    *
@@ -6426,7 +6427,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of Shielded Instance options.
-     * Check [Images using supported Shielded VM features]
+     * Check [Images using supported Shielded VM
+     * features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
      * Not all combinations are valid.
      * </pre>
      *
@@ -7061,13 +7063,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+     * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
      * </pre>
      *
      * <code>string target_image = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
      * @return The targetImage.
      */
     @java.lang.Deprecated
@@ -7076,13 +7078,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+     * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
      * </pre>
      *
      * <code>string target_image = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
      * @return The bytes for targetImage.
      */
     @java.lang.Deprecated
@@ -7870,13 +7872,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+     * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
      * </pre>
      *
      * <code>string target_image = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
      * @return The targetImage.
      */
     @java.lang.Override
@@ -7896,13 +7898,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+     * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
      * </pre>
      *
      * <code>string target_image = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+     *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
      * @return The bytes for targetImage.
      */
     @java.lang.Override
@@ -9373,13 +9375,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+       * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
        * </pre>
        *
        * <code>string target_image = 8 [deprecated = true];</code>
        *
        * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
        * @return The targetImage.
        */
       @java.lang.Deprecated
@@ -9398,13 +9400,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+       * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
        * </pre>
        *
        * <code>string target_image = 8 [deprecated = true];</code>
        *
        * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
        * @return The bytes for targetImage.
        */
       @java.lang.Deprecated
@@ -9423,13 +9425,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+       * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
        * </pre>
        *
        * <code>string target_image = 8 [deprecated = true];</code>
        *
        * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
        * @param value The targetImage to set.
        * @return This builder for chaining.
        */
@@ -9447,13 +9449,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+       * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
        * </pre>
        *
        * <code>string target_image = 8 [deprecated = true];</code>
        *
        * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -9467,13 +9469,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+       * Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
        * </pre>
        *
        * <code>string target_image = 8 [deprecated = true];</code>
        *
        * @deprecated google.cloud.notebooks.v1.Instance.UpgradeHistoryEntry.target_image is
-       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=351
+       *     deprecated. See google/cloud/notebooks/v1/instance.proto;l=352
        * @param value The bytes for targetImage to set.
        * @return This builder for chaining.
        */
@@ -10293,7 +10295,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -10317,7 +10320,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -10346,8 +10350,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -10364,8 +10368,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -10384,8 +10388,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -10557,8 +10561,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-   * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+   * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+   * specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -10619,9 +10623,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-   * based on how big your notebooks and data are. If not specified, this
-   * defaults to 100.
+   * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+   * big your notebooks and data are. If not specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -14399,7 +14402,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -14422,7 +14426,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -14445,7 +14450,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -14467,7 +14473,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -14485,7 +14492,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -14517,8 +14525,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14534,8 +14542,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14557,8 +14565,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14583,8 +14591,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14606,8 +14614,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14637,8 +14645,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14660,8 +14668,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14678,8 +14686,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -14700,8 +14708,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -15108,8 +15116,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+     * specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -15125,8 +15133,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+     * specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -15145,8 +15153,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+     * specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -15272,9 +15280,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+     * big your notebooks and data are. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -15290,9 +15297,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+     * big your notebooks and data are. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -15311,9 +15317,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+     * big your notebooks and data are. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>

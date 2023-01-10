@@ -1717,14 +1717,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * Optional. Reserved IP Range name is used for VPC Peering.
    * The subnetwork allocation will use the range *name* if it's assigned.
    * Example: managed-notebooks-range-c
-   * PEERING_RANGE_NAME_3=managed-notebooks-range-c
-   * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
-   *   --global &#92;
-   *   --prefix-length=24 &#92;
-   *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
-   *   --network=$NETWORK &#92;
-   *   --addresses=192.168.0.0 &#92;
-   *   --purpose=VPC_PEERING
+   *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
+   *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+   *       --global &#92;
+   *       --prefix-length=24 &#92;
+   *       --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+   *       --network=$NETWORK &#92;
+   *       --addresses=192.168.0.0 &#92;
+   *       --purpose=VPC_PEERING
    * Field value will be: `managed-notebooks-range-c`
    * </pre>
    *
@@ -1751,14 +1751,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
    * Optional. Reserved IP Range name is used for VPC Peering.
    * The subnetwork allocation will use the range *name* if it's assigned.
    * Example: managed-notebooks-range-c
-   * PEERING_RANGE_NAME_3=managed-notebooks-range-c
-   * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
-   *   --global &#92;
-   *   --prefix-length=24 &#92;
-   *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
-   *   --network=$NETWORK &#92;
-   *   --addresses=192.168.0.0 &#92;
-   *   --purpose=VPC_PEERING
+   *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
+   *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+   *       --global &#92;
+   *       --prefix-length=24 &#92;
+   *       --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+   *       --network=$NETWORK &#92;
+   *       --addresses=192.168.0.0 &#92;
+   *       --purpose=VPC_PEERING
    * Field value will be: `managed-notebooks-range-c`
    * </pre>
    *
@@ -5406,14 +5406,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
      * Example: managed-notebooks-range-c
-     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
-     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
-     *   --global &#92;
-     *   --prefix-length=24 &#92;
-     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
-     *   --network=$NETWORK &#92;
-     *   --addresses=192.168.0.0 &#92;
-     *   --purpose=VPC_PEERING
+     *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *       --global &#92;
+     *       --prefix-length=24 &#92;
+     *       --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *       --network=$NETWORK &#92;
+     *       --addresses=192.168.0.0 &#92;
+     *       --purpose=VPC_PEERING
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5439,14 +5439,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
      * Example: managed-notebooks-range-c
-     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
-     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
-     *   --global &#92;
-     *   --prefix-length=24 &#92;
-     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
-     *   --network=$NETWORK &#92;
-     *   --addresses=192.168.0.0 &#92;
-     *   --purpose=VPC_PEERING
+     *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *       --global &#92;
+     *       --prefix-length=24 &#92;
+     *       --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *       --network=$NETWORK &#92;
+     *       --addresses=192.168.0.0 &#92;
+     *       --purpose=VPC_PEERING
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5472,14 +5472,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
      * Example: managed-notebooks-range-c
-     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
-     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
-     *   --global &#92;
-     *   --prefix-length=24 &#92;
-     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
-     *   --network=$NETWORK &#92;
-     *   --addresses=192.168.0.0 &#92;
-     *   --purpose=VPC_PEERING
+     *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *       --global &#92;
+     *       --prefix-length=24 &#92;
+     *       --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *       --network=$NETWORK &#92;
+     *       --addresses=192.168.0.0 &#92;
+     *       --purpose=VPC_PEERING
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5504,14 +5504,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
      * Example: managed-notebooks-range-c
-     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
-     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
-     *   --global &#92;
-     *   --prefix-length=24 &#92;
-     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
-     *   --network=$NETWORK &#92;
-     *   --addresses=192.168.0.0 &#92;
-     *   --purpose=VPC_PEERING
+     *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *       --global &#92;
+     *       --prefix-length=24 &#92;
+     *       --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *       --network=$NETWORK &#92;
+     *       --addresses=192.168.0.0 &#92;
+     *       --purpose=VPC_PEERING
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *
@@ -5532,14 +5532,14 @@ public final class VirtualMachineConfig extends com.google.protobuf.GeneratedMes
      * Optional. Reserved IP Range name is used for VPC Peering.
      * The subnetwork allocation will use the range *name* if it's assigned.
      * Example: managed-notebooks-range-c
-     * PEERING_RANGE_NAME_3=managed-notebooks-range-c
-     * gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
-     *   --global &#92;
-     *   --prefix-length=24 &#92;
-     *   --description="Google Cloud Managed Notebooks Range 24 c" &#92;
-     *   --network=$NETWORK &#92;
-     *   --addresses=192.168.0.0 &#92;
-     *   --purpose=VPC_PEERING
+     *     PEERING_RANGE_NAME_3=managed-notebooks-range-c
+     *     gcloud compute addresses create $PEERING_RANGE_NAME_3 &#92;
+     *       --global &#92;
+     *       --prefix-length=24 &#92;
+     *       --description="Google Cloud Managed Notebooks Range 24 c" &#92;
+     *       --network=$NETWORK &#92;
+     *       --addresses=192.168.0.0 &#92;
+     *       --purpose=VPC_PEERING
      * Field value will be: `managed-notebooks-range-c`
      * </pre>
      *

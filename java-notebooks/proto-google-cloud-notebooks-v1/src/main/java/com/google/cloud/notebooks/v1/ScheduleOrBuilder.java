@@ -55,8 +55,8 @@ public interface ScheduleOrBuilder
    *
    * <pre>
    * Output only. Display name used for UI purposes.
-   * Name can only contain alphanumeric characters, hyphens '-',
-   * and underscores '_'.
+   * Name can only contain alphanumeric characters, hyphens `-`,
+   * and underscores `_`.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -69,8 +69,8 @@ public interface ScheduleOrBuilder
    *
    * <pre>
    * Output only. Display name used for UI purposes.
-   * Name can only contain alphanumeric characters, hyphens '-',
-   * and underscores '_'.
+   * Name can only contain alphanumeric characters, hyphens `-`,
+   * and underscores `_`.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -123,7 +123,7 @@ public interface ScheduleOrBuilder
    * <pre>
    * Cron-tab formatted schedule by which the job will execute.
    * Format: minute, hour, day of month, month, day of week,
-   * e.g. 0 0 * * WED = every Wednesday
+   * e.g. `0 0 * * WED` = every Wednesday
    * More examples: https://crontab.guru/examples.html
    * </pre>
    *
@@ -138,7 +138,7 @@ public interface ScheduleOrBuilder
    * <pre>
    * Cron-tab formatted schedule by which the job will execute.
    * Format: minute, hour, day of month, month, day of week,
-   * e.g. 0 0 * * WED = every Wednesday
+   * e.g. `0 0 * * WED` = every Wednesday
    * More examples: https://crontab.guru/examples.html
    * </pre>
    *

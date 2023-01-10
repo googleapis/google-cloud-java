@@ -142,7 +142,10 @@ import org.threeten.bp.Duration;
  * notebookServiceSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         notebookServiceSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         notebookServiceSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NotebookServiceStubSettings notebookServiceSettings = notebookServiceSettingsBuilder.build();

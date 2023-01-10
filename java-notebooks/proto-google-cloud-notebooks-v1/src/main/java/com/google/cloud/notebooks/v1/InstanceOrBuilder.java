@@ -365,7 +365,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -378,7 +379,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -394,8 +396,8 @@ public interface InstanceOrBuilder
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -409,8 +411,8 @@ public interface InstanceOrBuilder
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -424,8 +426,8 @@ public interface InstanceOrBuilder
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -540,8 +542,8 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-   * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+   * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+   * specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -586,9 +588,8 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-   * based on how big your notebooks and data are. If not specified, this
-   * defaults to 100.
+   * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+   * big your notebooks and data are. If not specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>

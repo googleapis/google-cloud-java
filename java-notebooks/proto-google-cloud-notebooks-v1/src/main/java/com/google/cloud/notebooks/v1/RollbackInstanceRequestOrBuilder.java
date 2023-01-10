@@ -55,7 +55,7 @@ public interface RollbackInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The snapshot for rollback.
-   * Example: "projects/test-project/global/snapshots/krwlzipynril".
+   * Example: `projects/test-project/global/snapshots/krwlzipynril`.
    * </pre>
    *
    * <code>string target_snapshot = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -68,7 +68,7 @@ public interface RollbackInstanceRequestOrBuilder
    *
    * <pre>
    * Required. The snapshot for rollback.
-   * Example: "projects/test-project/global/snapshots/krwlzipynril".
+   * Example: `projects/test-project/global/snapshots/krwlzipynril`.
    * </pre>
    *
    * <code>string target_snapshot = 2 [(.google.api.field_behavior) = REQUIRED];</code>
