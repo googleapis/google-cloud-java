@@ -106,7 +106,10 @@ import org.threeten.bp.Duration;
  * dataScanServiceSettingsBuilder
  *     .getDataScanSettings()
  *     .setRetrySettings(
- *         dataScanServiceSettingsBuilder.getDataScanSettings().getRetrySettings().toBuilder()
+ *         dataScanServiceSettingsBuilder
+ *             .getDataScanSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataScanServiceStubSettings dataScanServiceSettings = dataScanServiceSettingsBuilder.build();

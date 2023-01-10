@@ -72,7 +72,10 @@ import javax.annotation.Generated;
  * dataScanServiceSettingsBuilder
  *     .getDataScanSettings()
  *     .setRetrySettings(
- *         dataScanServiceSettingsBuilder.getDataScanSettings().getRetrySettings().toBuilder()
+ *         dataScanServiceSettingsBuilder
+ *             .getDataScanSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataScanServiceSettings dataScanServiceSettings = dataScanServiceSettingsBuilder.build();

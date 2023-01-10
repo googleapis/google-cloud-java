@@ -149,7 +149,10 @@ import org.threeten.bp.Duration;
  * dataplexServiceSettingsBuilder
  *     .getLakeSettings()
  *     .setRetrySettings(
- *         dataplexServiceSettingsBuilder.getLakeSettings().getRetrySettings().toBuilder()
+ *         dataplexServiceSettingsBuilder
+ *             .getLakeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataplexServiceStubSettings dataplexServiceSettings = dataplexServiceSettingsBuilder.build();

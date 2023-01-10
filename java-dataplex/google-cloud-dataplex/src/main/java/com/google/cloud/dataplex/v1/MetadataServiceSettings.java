@@ -70,7 +70,10 @@ import javax.annotation.Generated;
  * metadataServiceSettingsBuilder
  *     .createEntitySettings()
  *     .setRetrySettings(
- *         metadataServiceSettingsBuilder.createEntitySettings().getRetrySettings().toBuilder()
+ *         metadataServiceSettingsBuilder
+ *             .createEntitySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetadataServiceSettings metadataServiceSettings = metadataServiceSettingsBuilder.build();
