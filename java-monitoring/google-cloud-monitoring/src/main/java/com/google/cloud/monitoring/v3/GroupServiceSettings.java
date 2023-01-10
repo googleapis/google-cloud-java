@@ -72,7 +72,10 @@ import javax.annotation.Generated;
  * groupServiceSettingsBuilder
  *     .getGroupSettings()
  *     .setRetrySettings(
- *         groupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
+ *         groupServiceSettingsBuilder
+ *             .getGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GroupServiceSettings groupServiceSettings = groupServiceSettingsBuilder.build();

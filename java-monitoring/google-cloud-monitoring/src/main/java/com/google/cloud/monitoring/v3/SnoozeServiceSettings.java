@@ -16,7 +16,7 @@
 
 package com.google.cloud.monitoring.v3;
 
-import static com.google.cloud.monitoring.v3.QueryServiceClient.QueryTimeSeriesPagedResponse;
+import static com.google.cloud.monitoring.v3.SnoozeServiceClient.ListSnoozesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -29,16 +29,20 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.cloud.monitoring.v3.stub.QueryServiceStubSettings;
-import com.google.monitoring.v3.QueryTimeSeriesRequest;
-import com.google.monitoring.v3.QueryTimeSeriesResponse;
+import com.google.cloud.monitoring.v3.stub.SnoozeServiceStubSettings;
+import com.google.monitoring.v3.CreateSnoozeRequest;
+import com.google.monitoring.v3.GetSnoozeRequest;
+import com.google.monitoring.v3.ListSnoozesRequest;
+import com.google.monitoring.v3.ListSnoozesResponse;
+import com.google.monitoring.v3.Snooze;
+import com.google.monitoring.v3.UpdateSnoozeRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Settings class to configure an instance of {@link QueryServiceClient}.
+ * Settings class to configure an instance of {@link SnoozeServiceClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -51,7 +55,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of queryTimeSeries to 30 seconds:
+ * <p>For example, to set the total timeout of createSnooze to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -59,66 +63,80 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * QueryServiceSettings.Builder queryServiceSettingsBuilder = QueryServiceSettings.newBuilder();
- * queryServiceSettingsBuilder
- *     .queryTimeSeriesSettings()
+ * SnoozeServiceSettings.Builder snoozeServiceSettingsBuilder = SnoozeServiceSettings.newBuilder();
+ * snoozeServiceSettingsBuilder
+ *     .createSnoozeSettings()
  *     .setRetrySettings(
- *         queryServiceSettingsBuilder
- *             .queryTimeSeriesSettings()
+ *         snoozeServiceSettingsBuilder
+ *             .createSnoozeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * QueryServiceSettings queryServiceSettings = queryServiceSettingsBuilder.build();
+ * SnoozeServiceSettings snoozeServiceSettings = snoozeServiceSettingsBuilder.build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
-public class QueryServiceSettings extends ClientSettings<QueryServiceSettings> {
+public class SnoozeServiceSettings extends ClientSettings<SnoozeServiceSettings> {
 
-  /** Returns the object with the settings used for calls to queryTimeSeries. */
-  public PagedCallSettings<
-          QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
-      queryTimeSeriesSettings() {
-    return ((QueryServiceStubSettings) getStubSettings()).queryTimeSeriesSettings();
+  /** Returns the object with the settings used for calls to createSnooze. */
+  public UnaryCallSettings<CreateSnoozeRequest, Snooze> createSnoozeSettings() {
+    return ((SnoozeServiceStubSettings) getStubSettings()).createSnoozeSettings();
   }
 
-  public static final QueryServiceSettings create(QueryServiceStubSettings stub)
+  /** Returns the object with the settings used for calls to listSnoozes. */
+  public PagedCallSettings<ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>
+      listSnoozesSettings() {
+    return ((SnoozeServiceStubSettings) getStubSettings()).listSnoozesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSnooze. */
+  public UnaryCallSettings<GetSnoozeRequest, Snooze> getSnoozeSettings() {
+    return ((SnoozeServiceStubSettings) getStubSettings()).getSnoozeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSnooze. */
+  public UnaryCallSettings<UpdateSnoozeRequest, Snooze> updateSnoozeSettings() {
+    return ((SnoozeServiceStubSettings) getStubSettings()).updateSnoozeSettings();
+  }
+
+  public static final SnoozeServiceSettings create(SnoozeServiceStubSettings stub)
       throws IOException {
-    return new QueryServiceSettings.Builder(stub.toBuilder()).build();
+    return new SnoozeServiceSettings.Builder(stub.toBuilder()).build();
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return QueryServiceStubSettings.defaultExecutorProviderBuilder();
+    return SnoozeServiceStubSettings.defaultExecutorProviderBuilder();
   }
 
   /** Returns the default service endpoint. */
   public static String getDefaultEndpoint() {
-    return QueryServiceStubSettings.getDefaultEndpoint();
+    return SnoozeServiceStubSettings.getDefaultEndpoint();
   }
 
   /** Returns the default service scopes. */
   public static List<String> getDefaultServiceScopes() {
-    return QueryServiceStubSettings.getDefaultServiceScopes();
+    return SnoozeServiceStubSettings.getDefaultServiceScopes();
   }
 
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return QueryServiceStubSettings.defaultCredentialsProviderBuilder();
+    return SnoozeServiceStubSettings.defaultCredentialsProviderBuilder();
   }
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return QueryServiceStubSettings.defaultGrpcTransportProviderBuilder();
+    return SnoozeServiceStubSettings.defaultGrpcTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return QueryServiceStubSettings.defaultTransportChannelProvider();
+    return SnoozeServiceStubSettings.defaultTransportChannelProvider();
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return QueryServiceStubSettings.defaultApiClientHeaderProviderBuilder();
+    return SnoozeServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
   /** Returns a new builder for this class. */
@@ -136,35 +154,35 @@ public class QueryServiceSettings extends ClientSettings<QueryServiceSettings> {
     return new Builder(this);
   }
 
-  protected QueryServiceSettings(Builder settingsBuilder) throws IOException {
+  protected SnoozeServiceSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
   }
 
-  /** Builder for QueryServiceSettings. */
-  public static class Builder extends ClientSettings.Builder<QueryServiceSettings, Builder> {
+  /** Builder for SnoozeServiceSettings. */
+  public static class Builder extends ClientSettings.Builder<SnoozeServiceSettings, Builder> {
 
     protected Builder() throws IOException {
       this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
-      super(QueryServiceStubSettings.newBuilder(clientContext));
+      super(SnoozeServiceStubSettings.newBuilder(clientContext));
     }
 
-    protected Builder(QueryServiceSettings settings) {
+    protected Builder(SnoozeServiceSettings settings) {
       super(settings.getStubSettings().toBuilder());
     }
 
-    protected Builder(QueryServiceStubSettings.Builder stubSettings) {
+    protected Builder(SnoozeServiceStubSettings.Builder stubSettings) {
       super(stubSettings);
     }
 
     private static Builder createDefault() {
-      return new Builder(QueryServiceStubSettings.newBuilder());
+      return new Builder(SnoozeServiceStubSettings.newBuilder());
     }
 
-    public QueryServiceStubSettings.Builder getStubSettingsBuilder() {
-      return ((QueryServiceStubSettings.Builder) getStubSettings());
+    public SnoozeServiceStubSettings.Builder getStubSettingsBuilder() {
+      return ((SnoozeServiceStubSettings.Builder) getStubSettings());
     }
 
     /**
@@ -179,16 +197,31 @@ public class QueryServiceSettings extends ClientSettings<QueryServiceSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to queryTimeSeries. */
+    /** Returns the builder for the settings used for calls to createSnooze. */
+    public UnaryCallSettings.Builder<CreateSnoozeRequest, Snooze> createSnoozeSettings() {
+      return getStubSettingsBuilder().createSnoozeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSnoozes. */
     public PagedCallSettings.Builder<
-            QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
-        queryTimeSeriesSettings() {
-      return getStubSettingsBuilder().queryTimeSeriesSettings();
+            ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>
+        listSnoozesSettings() {
+      return getStubSettingsBuilder().listSnoozesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSnooze. */
+    public UnaryCallSettings.Builder<GetSnoozeRequest, Snooze> getSnoozeSettings() {
+      return getStubSettingsBuilder().getSnoozeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSnooze. */
+    public UnaryCallSettings.Builder<UpdateSnoozeRequest, Snooze> updateSnoozeSettings() {
+      return getStubSettingsBuilder().updateSnoozeSettings();
     }
 
     @Override
-    public QueryServiceSettings build() throws IOException {
-      return new QueryServiceSettings(this);
+    public SnoozeServiceSettings build() throws IOException {
+      return new SnoozeServiceSettings(this);
     }
   }
 }

@@ -16,7 +16,7 @@
 
 package com.google.cloud.monitoring.v3.stub;
 
-import static com.google.cloud.monitoring.v3.QueryServiceClient.QueryTimeSeriesPagedResponse;
+import static com.google.cloud.monitoring.v3.SnoozeServiceClient.ListSnoozesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -44,16 +44,20 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.monitoring.v3.QueryTimeSeriesRequest;
-import com.google.monitoring.v3.QueryTimeSeriesResponse;
-import com.google.monitoring.v3.TimeSeriesData;
+import com.google.monitoring.v3.CreateSnoozeRequest;
+import com.google.monitoring.v3.GetSnoozeRequest;
+import com.google.monitoring.v3.ListSnoozesRequest;
+import com.google.monitoring.v3.ListSnoozesResponse;
+import com.google.monitoring.v3.Snooze;
+import com.google.monitoring.v3.UpdateSnoozeRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Settings class to configure an instance of {@link QueryServiceStub}.
+ * Settings class to configure an instance of {@link SnoozeServiceStub}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -66,7 +70,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of queryTimeSeries to 30 seconds:
+ * <p>For example, to set the total timeout of createSnooze to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -74,22 +78,22 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * QueryServiceStubSettings.Builder queryServiceSettingsBuilder =
- *     QueryServiceStubSettings.newBuilder();
- * queryServiceSettingsBuilder
- *     .queryTimeSeriesSettings()
+ * SnoozeServiceStubSettings.Builder snoozeServiceSettingsBuilder =
+ *     SnoozeServiceStubSettings.newBuilder();
+ * snoozeServiceSettingsBuilder
+ *     .createSnoozeSettings()
  *     .setRetrySettings(
- *         queryServiceSettingsBuilder
- *             .queryTimeSeriesSettings()
+ *         snoozeServiceSettingsBuilder
+ *             .createSnoozeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * QueryServiceStubSettings queryServiceSettings = queryServiceSettingsBuilder.build();
+ * SnoozeServiceStubSettings snoozeServiceSettings = snoozeServiceSettingsBuilder.build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
-public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSettings> {
+public class SnoozeServiceStubSettings extends StubSettings<SnoozeServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
@@ -98,81 +102,91 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
           .add("https://www.googleapis.com/auth/monitoring.read")
           .build();
 
-  private final PagedCallSettings<
-          QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
-      queryTimeSeriesSettings;
+  private final UnaryCallSettings<CreateSnoozeRequest, Snooze> createSnoozeSettings;
+  private final PagedCallSettings<ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>
+      listSnoozesSettings;
+  private final UnaryCallSettings<GetSnoozeRequest, Snooze> getSnoozeSettings;
+  private final UnaryCallSettings<UpdateSnoozeRequest, Snooze> updateSnoozeSettings;
 
-  private static final PagedListDescriptor<
-          QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData>
-      QUERY_TIME_SERIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData>() {
+  private static final PagedListDescriptor<ListSnoozesRequest, ListSnoozesResponse, Snooze>
+      LIST_SNOOZES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSnoozesRequest, ListSnoozesResponse, Snooze>() {
             @Override
             public String emptyToken() {
               return "";
             }
 
             @Override
-            public QueryTimeSeriesRequest injectToken(
-                QueryTimeSeriesRequest payload, String token) {
-              return QueryTimeSeriesRequest.newBuilder(payload).setPageToken(token).build();
+            public ListSnoozesRequest injectToken(ListSnoozesRequest payload, String token) {
+              return ListSnoozesRequest.newBuilder(payload).setPageToken(token).build();
             }
 
             @Override
-            public QueryTimeSeriesRequest injectPageSize(
-                QueryTimeSeriesRequest payload, int pageSize) {
-              return QueryTimeSeriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            public ListSnoozesRequest injectPageSize(ListSnoozesRequest payload, int pageSize) {
+              return ListSnoozesRequest.newBuilder(payload).setPageSize(pageSize).build();
             }
 
             @Override
-            public Integer extractPageSize(QueryTimeSeriesRequest payload) {
+            public Integer extractPageSize(ListSnoozesRequest payload) {
               return payload.getPageSize();
             }
 
             @Override
-            public String extractNextToken(QueryTimeSeriesResponse payload) {
+            public String extractNextToken(ListSnoozesResponse payload) {
               return payload.getNextPageToken();
             }
 
             @Override
-            public Iterable<TimeSeriesData> extractResources(QueryTimeSeriesResponse payload) {
-              return payload.getTimeSeriesDataList() == null
-                  ? ImmutableList.<TimeSeriesData>of()
-                  : payload.getTimeSeriesDataList();
+            public Iterable<Snooze> extractResources(ListSnoozesResponse payload) {
+              return payload.getSnoozesList() == null
+                  ? ImmutableList.<Snooze>of()
+                  : payload.getSnoozesList();
             }
           };
 
   private static final PagedListResponseFactory<
-          QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
-      QUERY_TIME_SERIES_PAGE_STR_FACT =
+          ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>
+      LIST_SNOOZES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>() {
+              ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>() {
             @Override
-            public ApiFuture<QueryTimeSeriesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<QueryTimeSeriesRequest, QueryTimeSeriesResponse> callable,
-                QueryTimeSeriesRequest request,
+            public ApiFuture<ListSnoozesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSnoozesRequest, ListSnoozesResponse> callable,
+                ListSnoozesRequest request,
                 ApiCallContext context,
-                ApiFuture<QueryTimeSeriesResponse> futureResponse) {
-              PageContext<QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData>
-                  pageContext =
-                      PageContext.create(
-                          callable, QUERY_TIME_SERIES_PAGE_STR_DESC, request, context);
-              return QueryTimeSeriesPagedResponse.createAsync(pageContext, futureResponse);
+                ApiFuture<ListSnoozesResponse> futureResponse) {
+              PageContext<ListSnoozesRequest, ListSnoozesResponse, Snooze> pageContext =
+                  PageContext.create(callable, LIST_SNOOZES_PAGE_STR_DESC, request, context);
+              return ListSnoozesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
-  /** Returns the object with the settings used for calls to queryTimeSeries. */
-  public PagedCallSettings<
-          QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
-      queryTimeSeriesSettings() {
-    return queryTimeSeriesSettings;
+  /** Returns the object with the settings used for calls to createSnooze. */
+  public UnaryCallSettings<CreateSnoozeRequest, Snooze> createSnoozeSettings() {
+    return createSnoozeSettings;
   }
 
-  public QueryServiceStub createStub() throws IOException {
+  /** Returns the object with the settings used for calls to listSnoozes. */
+  public PagedCallSettings<ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>
+      listSnoozesSettings() {
+    return listSnoozesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSnooze. */
+  public UnaryCallSettings<GetSnoozeRequest, Snooze> getSnoozeSettings() {
+    return getSnoozeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSnooze. */
+  public UnaryCallSettings<UpdateSnoozeRequest, Snooze> updateSnoozeSettings() {
+    return updateSnoozeSettings;
+  }
+
+  public SnoozeServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcQueryServiceStub.create(this);
+      return GrpcSnoozeServiceStub.create(this);
     }
     throw new UnsupportedOperationException(
         String.format(
@@ -220,7 +234,7 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(QueryServiceStubSettings.class))
+            "gapic", GaxProperties.getLibraryVersion(SnoozeServiceStubSettings.class))
         .setTransportToken(
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
@@ -240,25 +254,35 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
     return new Builder(this);
   }
 
-  protected QueryServiceStubSettings(Builder settingsBuilder) throws IOException {
+  protected SnoozeServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    queryTimeSeriesSettings = settingsBuilder.queryTimeSeriesSettings().build();
+    createSnoozeSettings = settingsBuilder.createSnoozeSettings().build();
+    listSnoozesSettings = settingsBuilder.listSnoozesSettings().build();
+    getSnoozeSettings = settingsBuilder.getSnoozeSettings().build();
+    updateSnoozeSettings = settingsBuilder.updateSnoozeSettings().build();
   }
 
-  /** Builder for QueryServiceStubSettings. */
-  public static class Builder extends StubSettings.Builder<QueryServiceStubSettings, Builder> {
+  /** Builder for SnoozeServiceStubSettings. */
+  public static class Builder extends StubSettings.Builder<SnoozeServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<CreateSnoozeRequest, Snooze> createSnoozeSettings;
     private final PagedCallSettings.Builder<
-            QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
-        queryTimeSeriesSettings;
+            ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>
+        listSnoozesSettings;
+    private final UnaryCallSettings.Builder<GetSnoozeRequest, Snooze> getSnoozeSettings;
+    private final UnaryCallSettings.Builder<UpdateSnoozeRequest, Snooze> updateSnoozeSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_15_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_14_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -267,8 +291,25 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_15_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(30000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("retry_policy_14_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -279,20 +320,28 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      queryTimeSeriesSettings = PagedCallSettings.newBuilder(QUERY_TIME_SERIES_PAGE_STR_FACT);
+      createSnoozeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSnoozesSettings = PagedCallSettings.newBuilder(LIST_SNOOZES_PAGE_STR_FACT);
+      getSnoozeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSnoozeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(queryTimeSeriesSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createSnoozeSettings, listSnoozesSettings, getSnoozeSettings, updateSnoozeSettings);
       initDefaults(this);
     }
 
-    protected Builder(QueryServiceStubSettings settings) {
+    protected Builder(SnoozeServiceStubSettings settings) {
       super(settings);
 
-      queryTimeSeriesSettings = settings.queryTimeSeriesSettings.toBuilder();
+      createSnoozeSettings = settings.createSnoozeSettings.toBuilder();
+      listSnoozesSettings = settings.listSnoozesSettings.toBuilder();
+      getSnoozeSettings = settings.getSnoozeSettings.toBuilder();
+      updateSnoozeSettings = settings.updateSnoozeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(queryTimeSeriesSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createSnoozeSettings, listSnoozesSettings, getSnoozeSettings, updateSnoozeSettings);
     }
 
     private static Builder createDefault() {
@@ -310,9 +359,24 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
 
     private static Builder initDefaults(Builder builder) {
       builder
-          .queryTimeSeriesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .createSnoozeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_15_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_15_params"));
+
+      builder
+          .listSnoozesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_14_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_14_params"));
+
+      builder
+          .getSnoozeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_14_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_14_params"));
+
+      builder
+          .updateSnoozeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_15_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_15_params"));
 
       return builder;
     }
@@ -332,16 +396,31 @@ public class QueryServiceStubSettings extends StubSettings<QueryServiceStubSetti
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to queryTimeSeries. */
+    /** Returns the builder for the settings used for calls to createSnooze. */
+    public UnaryCallSettings.Builder<CreateSnoozeRequest, Snooze> createSnoozeSettings() {
+      return createSnoozeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSnoozes. */
     public PagedCallSettings.Builder<
-            QueryTimeSeriesRequest, QueryTimeSeriesResponse, QueryTimeSeriesPagedResponse>
-        queryTimeSeriesSettings() {
-      return queryTimeSeriesSettings;
+            ListSnoozesRequest, ListSnoozesResponse, ListSnoozesPagedResponse>
+        listSnoozesSettings() {
+      return listSnoozesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSnooze. */
+    public UnaryCallSettings.Builder<GetSnoozeRequest, Snooze> getSnoozeSettings() {
+      return getSnoozeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSnooze. */
+    public UnaryCallSettings.Builder<UpdateSnoozeRequest, Snooze> updateSnoozeSettings() {
+      return updateSnoozeSettings;
     }
 
     @Override
-    public QueryServiceStubSettings build() throws IOException {
-      return new QueryServiceStubSettings(this);
+    public SnoozeServiceStubSettings build() throws IOException {
+      return new SnoozeServiceStubSettings(this);
     }
   }
 }
